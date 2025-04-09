@@ -15,15 +15,15 @@ import (
 type CpsThirdPartyEnrollment struct {
 	pulumi.CustomResourceState
 
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrOutput `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsThirdPartyEnrollmentAdminContactOutput `pulumi:"adminContact"`
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName pulumi.BoolPtrOutput `pulumi:"allowDuplicateCommonName"`
 	// List of warnings to be automatically approved
 	AutoApproveWarnings pulumi.StringArrayOutput `pulumi:"autoApproveWarnings"`
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType pulumi.StringPtrOutput `pulumi:"certificateChainType"`
 	// When set to false, the certificate will be deployed to both staging and production networks
 	ChangeManagement pulumi.BoolPtrOutput `pulumi:"changeManagement"`
@@ -109,15 +109,15 @@ func GetCpsThirdPartyEnrollment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpsThirdPartyEnrollment resources.
 type cpsThirdPartyEnrollmentState struct {
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator to use at organization
 	AdminContact *CpsThirdPartyEnrollmentAdminContact `pulumi:"adminContact"`
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName *bool `pulumi:"allowDuplicateCommonName"`
 	// List of warnings to be automatically approved
 	AutoApproveWarnings []string `pulumi:"autoApproveWarnings"`
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType *string `pulumi:"certificateChainType"`
 	// When set to false, the certificate will be deployed to both staging and production networks
 	ChangeManagement *bool `pulumi:"changeManagement"`
@@ -147,15 +147,15 @@ type cpsThirdPartyEnrollmentState struct {
 }
 
 type CpsThirdPartyEnrollmentState struct {
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
 	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsThirdPartyEnrollmentAdminContactPtrInput
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName pulumi.BoolPtrInput
 	// List of warnings to be automatically approved
 	AutoApproveWarnings pulumi.StringArrayInput
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType pulumi.StringPtrInput
 	// When set to false, the certificate will be deployed to both staging and production networks
 	ChangeManagement pulumi.BoolPtrInput
@@ -189,15 +189,15 @@ func (CpsThirdPartyEnrollmentState) ElementType() reflect.Type {
 }
 
 type cpsThirdPartyEnrollmentArgs struct {
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsThirdPartyEnrollmentAdminContact `pulumi:"adminContact"`
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName *bool `pulumi:"allowDuplicateCommonName"`
 	// List of warnings to be automatically approved
 	AutoApproveWarnings []string `pulumi:"autoApproveWarnings"`
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType *string `pulumi:"certificateChainType"`
 	// When set to false, the certificate will be deployed to both staging and production networks
 	ChangeManagement *bool `pulumi:"changeManagement"`
@@ -228,15 +228,15 @@ type cpsThirdPartyEnrollmentArgs struct {
 
 // The set of arguments for constructing a CpsThirdPartyEnrollment resource.
 type CpsThirdPartyEnrollmentArgs struct {
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
 	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsThirdPartyEnrollmentAdminContactInput
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName pulumi.BoolPtrInput
 	// List of warnings to be automatically approved
 	AutoApproveWarnings pulumi.StringArrayInput
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType pulumi.StringPtrInput
 	// When set to false, the certificate will be deployed to both staging and production networks
 	ChangeManagement pulumi.BoolPtrInput
@@ -352,7 +352,7 @@ func (o CpsThirdPartyEnrollmentOutput) ToCpsThirdPartyEnrollmentOutputWithContex
 	return o
 }
 
-// Whether acknowledge warnings before certificate verification
+// Whether acknowledge warnings before certificate verification. Default is false
 func (o CpsThirdPartyEnrollmentOutput) AcknowledgePreVerificationWarnings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.BoolPtrOutput { return v.AcknowledgePreVerificationWarnings }).(pulumi.BoolPtrOutput)
 }
@@ -362,7 +362,7 @@ func (o CpsThirdPartyEnrollmentOutput) AdminContact() CpsThirdPartyEnrollmentAdm
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) CpsThirdPartyEnrollmentAdminContactOutput { return v.AdminContact }).(CpsThirdPartyEnrollmentAdminContactOutput)
 }
 
-// Allow to duplicate common name
+// Allow to duplicate common name. Default is false
 func (o CpsThirdPartyEnrollmentOutput) AllowDuplicateCommonName() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.BoolPtrOutput { return v.AllowDuplicateCommonName }).(pulumi.BoolPtrOutput)
 }
@@ -372,7 +372,7 @@ func (o CpsThirdPartyEnrollmentOutput) AutoApproveWarnings() pulumi.StringArrayO
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.StringArrayOutput { return v.AutoApproveWarnings }).(pulumi.StringArrayOutput)
 }
 
-// Certificate trust chain type
+// Certificate trust chain type. Default is 'default'
 func (o CpsThirdPartyEnrollmentOutput) CertificateChainType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.StringPtrOutput { return v.CertificateChainType }).(pulumi.StringPtrOutput)
 }

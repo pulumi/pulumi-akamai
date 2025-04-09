@@ -11,21 +11,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyHostnameCertStatus {
+    /**
+     * @return The hostname part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     private @Nullable String hostname;
+    /**
+     * @return The certificate&#39;s deployment status on the production network.
+     * 
+     */
     private @Nullable String productionStatus;
+    /**
+     * @return The certificate&#39;s deployment status on the staging network.
+     * 
+     */
     private @Nullable String stagingStatus;
+    /**
+     * @return The destination part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     private @Nullable String target;
 
     private PropertyHostnameCertStatus() {}
+    /**
+     * @return The hostname part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     public Optional<String> hostname() {
         return Optional.ofNullable(this.hostname);
     }
+    /**
+     * @return The certificate&#39;s deployment status on the production network.
+     * 
+     */
     public Optional<String> productionStatus() {
         return Optional.ofNullable(this.productionStatus);
     }
+    /**
+     * @return The certificate&#39;s deployment status on the staging network.
+     * 
+     */
     public Optional<String> stagingStatus() {
         return Optional.ofNullable(this.stagingStatus);
     }
+    /**
+     * @return The destination part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     public Optional<String> target() {
         return Optional.ofNullable(this.target);
     }

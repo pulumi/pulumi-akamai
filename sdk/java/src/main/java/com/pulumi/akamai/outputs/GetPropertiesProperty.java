@@ -18,6 +18,11 @@ public final class GetPropertiesProperty {
     private Integer productionVersion;
     private String propertyId;
     private String propertyName;
+    /**
+     * @return Specifies the type of the property.
+     * 
+     */
+    private String propertyType;
     private Integer stagingVersion;
 
     private GetPropertiesProperty() {}
@@ -42,6 +47,13 @@ public final class GetPropertiesProperty {
     public String propertyName() {
         return this.propertyName;
     }
+    /**
+     * @return Specifies the type of the property.
+     * 
+     */
+    public String propertyType() {
+        return this.propertyType;
+    }
     public Integer stagingVersion() {
         return this.stagingVersion;
     }
@@ -62,6 +74,7 @@ public final class GetPropertiesProperty {
         private Integer productionVersion;
         private String propertyId;
         private String propertyName;
+        private String propertyType;
         private Integer stagingVersion;
         public Builder() {}
         public Builder(GetPropertiesProperty defaults) {
@@ -73,6 +86,7 @@ public final class GetPropertiesProperty {
     	      this.productionVersion = defaults.productionVersion;
     	      this.propertyId = defaults.propertyId;
     	      this.propertyName = defaults.propertyName;
+    	      this.propertyType = defaults.propertyType;
     	      this.stagingVersion = defaults.stagingVersion;
         }
 
@@ -133,6 +147,14 @@ public final class GetPropertiesProperty {
             return this;
         }
         @CustomType.Setter
+        public Builder propertyType(String propertyType) {
+            if (propertyType == null) {
+              throw new MissingRequiredPropertyException("GetPropertiesProperty", "propertyType");
+            }
+            this.propertyType = propertyType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stagingVersion(Integer stagingVersion) {
             if (stagingVersion == null) {
               throw new MissingRequiredPropertyException("GetPropertiesProperty", "stagingVersion");
@@ -149,6 +171,7 @@ public final class GetPropertiesProperty {
             _resultValue.productionVersion = productionVersion;
             _resultValue.propertyId = propertyId;
             _resultValue.propertyName = propertyName;
+            _resultValue.propertyType = propertyType;
             _resultValue.stagingVersion = stagingVersion;
             return _resultValue;
         }

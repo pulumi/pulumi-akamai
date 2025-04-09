@@ -74,7 +74,15 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
      * 
      */
     private @Nullable String objectUnavailableBackupHost;
+    /**
+     * @return Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     private @Nullable Boolean objectUnavailableBlocklistOriginIp;
+    /**
+     * @return This sets the delay before blocklisting an IP address.
+     * 
+     */
     private @Nullable String objectUnavailableBlocklistWindow;
     /**
      * @return Changes the request protocol.
@@ -136,7 +144,15 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
      * 
      */
     private @Nullable String originUnavailableBackupHost;
+    /**
+     * @return Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     private @Nullable Boolean originUnavailableBlocklistOriginIp;
+    /**
+     * @return This sets the delay before blocklisting an IP address.
+     * 
+     */
     private @Nullable String originUnavailableBlocklistWindow;
     /**
      * @return Modifies the request protocol.
@@ -198,7 +214,15 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
      * 
      */
     private @Nullable String originUnresponsiveBackupHost;
+    /**
+     * @return Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     private @Nullable Boolean originUnresponsiveBlocklistOriginIp;
+    /**
+     * @return This sets the delay before blocklisting an IP address.
+     * 
+     */
     private @Nullable String originUnresponsiveBlocklistWindow;
     /**
      * @return This allows you to change the request protocol.
@@ -346,9 +370,17 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
     public Optional<String> objectUnavailableBackupHost() {
         return Optional.ofNullable(this.objectUnavailableBackupHost);
     }
+    /**
+     * @return Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> objectUnavailableBlocklistOriginIp() {
         return Optional.ofNullable(this.objectUnavailableBlocklistOriginIp);
     }
+    /**
+     * @return This sets the delay before blocklisting an IP address.
+     * 
+     */
     public Optional<String> objectUnavailableBlocklistWindow() {
         return Optional.ofNullable(this.objectUnavailableBlocklistWindow);
     }
@@ -436,9 +468,17 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
     public Optional<String> originUnavailableBackupHost() {
         return Optional.ofNullable(this.originUnavailableBackupHost);
     }
+    /**
+     * @return Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> originUnavailableBlocklistOriginIp() {
         return Optional.ofNullable(this.originUnavailableBlocklistOriginIp);
     }
+    /**
+     * @return This sets the delay before blocklisting an IP address.
+     * 
+     */
     public Optional<String> originUnavailableBlocklistWindow() {
         return Optional.ofNullable(this.originUnavailableBlocklistWindow);
     }
@@ -526,9 +566,17 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
     public Optional<String> originUnresponsiveBackupHost() {
         return Optional.ofNullable(this.originUnresponsiveBackupHost);
     }
+    /**
+     * @return Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> originUnresponsiveBlocklistOriginIp() {
         return Optional.ofNullable(this.originUnresponsiveBlocklistOriginIp);
     }
+    /**
+     * @return This sets the delay before blocklisting an IP address.
+     * 
+     */
     public Optional<String> originUnresponsiveBlocklistWindow() {
         return Optional.ofNullable(this.originUnresponsiveBlocklistWindow);
     }

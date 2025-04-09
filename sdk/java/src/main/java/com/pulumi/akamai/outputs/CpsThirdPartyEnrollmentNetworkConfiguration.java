@@ -21,7 +21,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfiguration {
      */
     private @Nullable CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication clientMutualAuthentication;
     /**
-     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
      * 
      */
     private @Nullable Boolean cloneDnsNames;
@@ -36,22 +36,22 @@ public final class CpsThirdPartyEnrollmentNetworkConfiguration {
      */
     private String geography;
     /**
-     * @return Mandatory Ciphers which are included for enrollment
+     * @return Mandatory Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
      * 
      */
     private @Nullable String mustHaveCiphers;
     /**
-     * @return Enable OCSP stapling
+     * @return Enable OCSP stapling. Default is &#39;on&#39;
      * 
      */
     private @Nullable String ocspStapling;
     /**
-     * @return Preferred Ciphers which are included for enrollment
+     * @return Preferred Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
      * 
      */
     private @Nullable String preferredCiphers;
     /**
-     * @return Enable QUIC protocol
+     * @return Enable QUIC protocol. Default is false
      * 
      */
     private @Nullable Boolean quicEnabled;
@@ -65,7 +65,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfiguration {
         return Optional.ofNullable(this.clientMutualAuthentication);
     }
     /**
-     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
      * 
      */
     public Optional<Boolean> cloneDnsNames() {
@@ -86,28 +86,28 @@ public final class CpsThirdPartyEnrollmentNetworkConfiguration {
         return this.geography;
     }
     /**
-     * @return Mandatory Ciphers which are included for enrollment
+     * @return Mandatory Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
      * 
      */
     public Optional<String> mustHaveCiphers() {
         return Optional.ofNullable(this.mustHaveCiphers);
     }
     /**
-     * @return Enable OCSP stapling
+     * @return Enable OCSP stapling. Default is &#39;on&#39;
      * 
      */
     public Optional<String> ocspStapling() {
         return Optional.ofNullable(this.ocspStapling);
     }
     /**
-     * @return Preferred Ciphers which are included for enrollment
+     * @return Preferred Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
      * 
      */
     public Optional<String> preferredCiphers() {
         return Optional.ofNullable(this.preferredCiphers);
     }
     /**
-     * @return Enable QUIC protocol
+     * @return Enable QUIC protocol. Default is false
      * 
      */
     public Optional<Boolean> quicEnabled() {

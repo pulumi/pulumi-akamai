@@ -219,16 +219,32 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
         return Optional.ofNullable(this.directConnectGeo);
     }
 
+    /**
+     * Encodes any equal (`=`) characters in a query parameter&#39;s value.
+     * 
+     */
     @Import(name="encodeEquals")
     private @Nullable Boolean encodeEquals;
 
+    /**
+     * @return Encodes any equal (`=`) characters in a query parameter&#39;s value.
+     * 
+     */
     public Optional<Boolean> encodeEquals() {
         return Optional.ofNullable(this.encodeEquals);
     }
 
+    /**
+     * Encodes the query string parameters.
+     * 
+     */
     @Import(name="encodeQueryParams")
     private @Nullable Boolean encodeQueryParams;
 
+    /**
+     * @return Encodes the query string parameters.
+     * 
+     */
     public Optional<Boolean> encodeQueryParams() {
         return Optional.ofNullable(this.encodeQueryParams);
     }
@@ -411,9 +427,17 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
         return Optional.ofNullable(this.secretKey);
     }
 
+    /**
+     * Sorts the query string parameters alphabetically by key name.
+     * 
+     */
     @Import(name="sortQueryParams")
     private @Nullable Boolean sortQueryParams;
 
+    /**
+     * @return Sorts the query string parameters alphabetically by key name.
+     * 
+     */
     public Optional<Boolean> sortQueryParams() {
         return Optional.ofNullable(this.sortQueryParams);
     }
@@ -678,11 +702,23 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
             return this;
         }
 
+        /**
+         * @param encodeEquals Encodes any equal (`=`) characters in a query parameter&#39;s value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodeEquals(@Nullable Boolean encodeEquals) {
             $.encodeEquals = encodeEquals;
             return this;
         }
 
+        /**
+         * @param encodeQueryParams Encodes the query string parameters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodeQueryParams(@Nullable Boolean encodeQueryParams) {
             $.encodeQueryParams = encodeQueryParams;
             return this;
@@ -818,6 +854,12 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
             return this;
         }
 
+        /**
+         * @param sortQueryParams Sorts the query string parameters alphabetically by key name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sortQueryParams(@Nullable Boolean sortQueryParams) {
             $.sortQueryParams = sortQueryParams;
             return this;

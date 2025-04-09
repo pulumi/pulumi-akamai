@@ -219,6 +219,7 @@ from .get_cloudwrapper_properties import *
 from .get_contract import *
 from .get_contracts import *
 from .get_cp_code import *
+from .get_cp_codes import *
 from .get_cps_csr import *
 from .get_cps_deployments import *
 from .get_cps_enrollment import *
@@ -271,7 +272,10 @@ from .get_properties import *
 from .get_properties_search import *
 from .get_property import *
 from .get_property_activation import *
+from .get_property_hostname_activation import *
+from .get_property_hostname_activations import *
 from .get_property_hostnames import *
+from .get_property_hostnames_diff import *
 from .get_property_include import *
 from .get_property_include_activation import *
 from .get_property_include_parents import *
@@ -306,6 +310,7 @@ from .network_list_subscription import *
 from .property import *
 from .property_activation import *
 from .property_bootstrap import *
+from .property_hostname_bucket import *
 from .property_include import *
 from .property_include_activation import *
 from .provider import *
@@ -1312,6 +1317,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/propertyBootstrap:PropertyBootstrap": "PropertyBootstrap"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/propertyHostnameBucket",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/propertyHostnameBucket:PropertyHostnameBucket": "PropertyHostnameBucket"
   }
  },
  {

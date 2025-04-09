@@ -12,6 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetCpCodeResult {
     private String contractId;
+    private String createdDate;
     private String groupId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -24,6 +25,9 @@ public final class GetCpCodeResult {
     private GetCpCodeResult() {}
     public String contractId() {
         return this.contractId;
+    }
+    public String createdDate() {
+        return this.createdDate;
     }
     public String groupId() {
         return this.groupId;
@@ -52,6 +56,7 @@ public final class GetCpCodeResult {
     @CustomType.Builder
     public static final class Builder {
         private String contractId;
+        private String createdDate;
         private String groupId;
         private String id;
         private String name;
@@ -60,6 +65,7 @@ public final class GetCpCodeResult {
         public Builder(GetCpCodeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contractId = defaults.contractId;
+    	      this.createdDate = defaults.createdDate;
     	      this.groupId = defaults.groupId;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
@@ -72,6 +78,14 @@ public final class GetCpCodeResult {
               throw new MissingRequiredPropertyException("GetCpCodeResult", "contractId");
             }
             this.contractId = contractId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder createdDate(String createdDate) {
+            if (createdDate == null) {
+              throw new MissingRequiredPropertyException("GetCpCodeResult", "createdDate");
+            }
+            this.createdDate = createdDate;
             return this;
         }
         @CustomType.Setter
@@ -112,6 +126,7 @@ public final class GetCpCodeResult {
         public GetCpCodeResult build() {
             final var _resultValue = new GetCpCodeResult();
             _resultValue.contractId = contractId;
+            _resultValue.createdDate = createdDate;
             _resultValue.groupId = groupId;
             _resultValue.id = id;
             _resultValue.name = name;

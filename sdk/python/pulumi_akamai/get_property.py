@@ -27,7 +27,7 @@ class GetPropertyResult:
     """
     A collection of values returned by getProperty.
     """
-    def __init__(__self__, asset_id=None, contract_id=None, group_id=None, id=None, latest_version=None, name=None, note=None, product_id=None, production_version=None, property_id=None, rule_format=None, rules=None, staging_version=None, version=None):
+    def __init__(__self__, asset_id=None, contract_id=None, group_id=None, id=None, latest_version=None, name=None, note=None, product_id=None, production_version=None, property_id=None, property_type=None, rule_format=None, rules=None, staging_version=None, version=None):
         if asset_id and not isinstance(asset_id, str):
             raise TypeError("Expected argument 'asset_id' to be a str")
         pulumi.set(__self__, "asset_id", asset_id)
@@ -58,6 +58,9 @@ class GetPropertyResult:
         if property_id and not isinstance(property_id, str):
             raise TypeError("Expected argument 'property_id' to be a str")
         pulumi.set(__self__, "property_id", property_id)
+        if property_type and not isinstance(property_type, str):
+            raise TypeError("Expected argument 'property_type' to be a str")
+        pulumi.set(__self__, "property_type", property_type)
         if rule_format and not isinstance(rule_format, str):
             raise TypeError("Expected argument 'rule_format' to be a str")
         pulumi.set(__self__, "rule_format", rule_format)
@@ -125,6 +128,11 @@ class GetPropertyResult:
         return pulumi.get(self, "property_id")
 
     @property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> builtins.str:
+        return pulumi.get(self, "property_type")
+
+    @property
     @pulumi.getter(name="ruleFormat")
     def rule_format(self) -> builtins.str:
         return pulumi.get(self, "rule_format")
@@ -161,6 +169,7 @@ class AwaitableGetPropertyResult(GetPropertyResult):
             product_id=self.product_id,
             production_version=self.production_version,
             property_id=self.property_id,
+            property_type=self.property_type,
             rule_format=self.rule_format,
             rules=self.rules,
             staging_version=self.staging_version,
@@ -190,6 +199,7 @@ def get_property(name: Optional[builtins.str] = None,
         product_id=pulumi.get(__ret__, 'product_id'),
         production_version=pulumi.get(__ret__, 'production_version'),
         property_id=pulumi.get(__ret__, 'property_id'),
+        property_type=pulumi.get(__ret__, 'property_type'),
         rule_format=pulumi.get(__ret__, 'rule_format'),
         rules=pulumi.get(__ret__, 'rules'),
         staging_version=pulumi.get(__ret__, 'staging_version'),
@@ -216,6 +226,7 @@ def get_property_output(name: Optional[pulumi.Input[builtins.str]] = None,
         product_id=pulumi.get(__response__, 'product_id'),
         production_version=pulumi.get(__response__, 'production_version'),
         property_id=pulumi.get(__response__, 'property_id'),
+        property_type=pulumi.get(__response__, 'property_type'),
         rule_format=pulumi.get(__response__, 'rule_format'),
         rules=pulumi.get(__response__, 'rules'),
         staging_version=pulumi.get(__response__, 'staging_version'),

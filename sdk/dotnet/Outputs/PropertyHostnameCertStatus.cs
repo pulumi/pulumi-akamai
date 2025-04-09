@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class PropertyHostnameCertStatus
     {
+        /// <summary>
+        /// The hostname part of the CNAME record used to validate the certificate's domain.
+        /// </summary>
         public readonly string? Hostname;
+        /// <summary>
+        /// The certificate's deployment status on the production network.
+        /// </summary>
         public readonly string? ProductionStatus;
+        /// <summary>
+        /// The certificate's deployment status on the staging network.
+        /// </summary>
         public readonly string? StagingStatus;
+        /// <summary>
+        /// The destination part of the CNAME record used to validate the certificate's domain.
+        /// </summary>
         public readonly string? Target;
 
         [OutputConstructor]

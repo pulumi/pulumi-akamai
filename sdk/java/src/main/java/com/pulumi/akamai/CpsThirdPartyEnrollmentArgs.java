@@ -25,14 +25,14 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
     public static final CpsThirdPartyEnrollmentArgs Empty = new CpsThirdPartyEnrollmentArgs();
 
     /**
-     * Whether acknowledge warnings before certificate verification
+     * Whether acknowledge warnings before certificate verification. Default is false
      * 
      */
     @Import(name="acknowledgePreVerificationWarnings")
     private @Nullable Output<Boolean> acknowledgePreVerificationWarnings;
 
     /**
-     * @return Whether acknowledge warnings before certificate verification
+     * @return Whether acknowledge warnings before certificate verification. Default is false
      * 
      */
     public Optional<Output<Boolean>> acknowledgePreVerificationWarnings() {
@@ -55,14 +55,14 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Allow to duplicate common name
+     * Allow to duplicate common name. Default is false
      * 
      */
     @Import(name="allowDuplicateCommonName")
     private @Nullable Output<Boolean> allowDuplicateCommonName;
 
     /**
-     * @return Allow to duplicate common name
+     * @return Allow to duplicate common name. Default is false
      * 
      */
     public Optional<Output<Boolean>> allowDuplicateCommonName() {
@@ -85,14 +85,14 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Certificate trust chain type
+     * Certificate trust chain type. Default is &#39;default&#39;
      * 
      */
     @Import(name="certificateChainType")
     private @Nullable Output<String> certificateChainType;
 
     /**
-     * @return Certificate trust chain type
+     * @return Certificate trust chain type. Default is &#39;default&#39;
      * 
      */
     public Optional<Output<String>> certificateChainType() {
@@ -328,7 +328,7 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param acknowledgePreVerificationWarnings Whether acknowledge warnings before certificate verification
+         * @param acknowledgePreVerificationWarnings Whether acknowledge warnings before certificate verification. Default is false
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param acknowledgePreVerificationWarnings Whether acknowledge warnings before certificate verification
+         * @param acknowledgePreVerificationWarnings Whether acknowledge warnings before certificate verification. Default is false
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param allowDuplicateCommonName Allow to duplicate common name
+         * @param allowDuplicateCommonName Allow to duplicate common name. Default is false
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param allowDuplicateCommonName Allow to duplicate common name
+         * @param allowDuplicateCommonName Allow to duplicate common name. Default is false
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certificateChainType Certificate trust chain type
+         * @param certificateChainType Certificate trust chain type. Default is &#39;default&#39;
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certificateChainType Certificate trust chain type
+         * @param certificateChainType Certificate trust chain type. Default is &#39;default&#39;
          * 
          * @return builder
          * 

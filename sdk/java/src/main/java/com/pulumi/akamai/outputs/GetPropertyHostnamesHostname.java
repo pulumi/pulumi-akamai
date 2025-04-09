@@ -12,29 +12,69 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyHostnamesHostname {
+    /**
+     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * 
+     */
     private String certProvisioningType;
     private List<GetPropertyHostnamesHostnameCertStatus> certStatuses;
+    /**
+     * @return The hostname that your end users see, indicated by the Host header in end user requests.
+     * 
+     */
     private String cnameFrom;
+    /**
+     * @return The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object&#39;s `edgeHostnameDomain` member.
+     * 
+     */
     private String cnameTo;
+    /**
+     * @return A hostname&#39;s CNAME type. Supports only the `EDGE_HOSTNAME` value.
+     * 
+     */
     private String cnameType;
+    /**
+     * @return The unique identifier for the edge hostname.
+     * 
+     */
     private String edgeHostnameId;
 
     private GetPropertyHostnamesHostname() {}
+    /**
+     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * 
+     */
     public String certProvisioningType() {
         return this.certProvisioningType;
     }
     public List<GetPropertyHostnamesHostnameCertStatus> certStatuses() {
         return this.certStatuses;
     }
+    /**
+     * @return The hostname that your end users see, indicated by the Host header in end user requests.
+     * 
+     */
     public String cnameFrom() {
         return this.cnameFrom;
     }
+    /**
+     * @return The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object&#39;s `edgeHostnameDomain` member.
+     * 
+     */
     public String cnameTo() {
         return this.cnameTo;
     }
+    /**
+     * @return A hostname&#39;s CNAME type. Supports only the `EDGE_HOSTNAME` value.
+     * 
+     */
     public String cnameType() {
         return this.cnameType;
     }
+    /**
+     * @return The unique identifier for the edge hostname.
+     * 
+     */
     public String edgeHostnameId() {
         return this.edgeHostnameId;
     }

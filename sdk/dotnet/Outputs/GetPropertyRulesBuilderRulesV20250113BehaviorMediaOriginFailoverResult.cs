@@ -61,7 +61,13 @@ namespace Pulumi.Akamai.Outputs
         /// This specifies the origin hostname.
         /// </summary>
         public readonly string? ObjectUnavailableBackupHost;
+        /// <summary>
+        /// Enabling this blocklists the origin's IP address.
+        /// </summary>
         public readonly bool? ObjectUnavailableBlocklistOriginIp;
+        /// <summary>
+        /// This sets the delay before blocklisting an IP address.
+        /// </summary>
         public readonly string? ObjectUnavailableBlocklistWindow;
         /// <summary>
         /// Changes the request protocol.
@@ -111,7 +117,13 @@ namespace Pulumi.Akamai.Outputs
         /// This specifies the origin hostname.
         /// </summary>
         public readonly string? OriginUnavailableBackupHost;
+        /// <summary>
+        /// Enabling this blocklists the origin's IP address.
+        /// </summary>
         public readonly bool? OriginUnavailableBlocklistOriginIp;
+        /// <summary>
+        /// This sets the delay before blocklisting an IP address.
+        /// </summary>
         public readonly string? OriginUnavailableBlocklistWindow;
         /// <summary>
         /// Modifies the request protocol.
@@ -161,7 +173,13 @@ namespace Pulumi.Akamai.Outputs
         /// This specifies the origin hostname.
         /// </summary>
         public readonly string? OriginUnresponsiveBackupHost;
+        /// <summary>
+        /// Enabling this blocklists the origin's IP address.
+        /// </summary>
         public readonly bool? OriginUnresponsiveBlocklistOriginIp;
+        /// <summary>
+        /// This sets the delay before blocklisting an IP address.
+        /// </summary>
         public readonly string? OriginUnresponsiveBlocklistWindow;
         /// <summary>
         /// This allows you to change the request protocol.

@@ -23,6 +23,7 @@ func GetPropertyRulesTemplate(ctx *pulumi.Context, args *GetPropertyRulesTemplat
 
 // A collection of arguments for invoking getPropertyRulesTemplate.
 type GetPropertyRulesTemplateArgs struct {
+	FollowLinks       *bool                              `pulumi:"followLinks"`
 	TemplateFile      *string                            `pulumi:"templateFile"`
 	Templates         []GetPropertyRulesTemplateTemplate `pulumi:"templates"`
 	VarDefinitionFile *string                            `pulumi:"varDefinitionFile"`
@@ -32,6 +33,7 @@ type GetPropertyRulesTemplateArgs struct {
 
 // A collection of values returned by getPropertyRulesTemplate.
 type GetPropertyRulesTemplateResult struct {
+	FollowLinks *bool `pulumi:"followLinks"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                string                             `pulumi:"id"`
 	Json              string                             `pulumi:"json"`
@@ -53,6 +55,7 @@ func GetPropertyRulesTemplateOutput(ctx *pulumi.Context, args GetPropertyRulesTe
 
 // A collection of arguments for invoking getPropertyRulesTemplate.
 type GetPropertyRulesTemplateOutputArgs struct {
+	FollowLinks       pulumi.BoolPtrInput                        `pulumi:"followLinks"`
 	TemplateFile      pulumi.StringPtrInput                      `pulumi:"templateFile"`
 	Templates         GetPropertyRulesTemplateTemplateArrayInput `pulumi:"templates"`
 	VarDefinitionFile pulumi.StringPtrInput                      `pulumi:"varDefinitionFile"`
@@ -77,6 +80,10 @@ func (o GetPropertyRulesTemplateResultOutput) ToGetPropertyRulesTemplateResultOu
 
 func (o GetPropertyRulesTemplateResultOutput) ToGetPropertyRulesTemplateResultOutputWithContext(ctx context.Context) GetPropertyRulesTemplateResultOutput {
 	return o
+}
+
+func (o GetPropertyRulesTemplateResultOutput) FollowLinks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateResult) *bool { return v.FollowLinks }).(pulumi.BoolPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

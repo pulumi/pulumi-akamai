@@ -37,6 +37,7 @@ export interface GetPropertyResult {
     readonly productId: string;
     readonly productionVersion: number;
     readonly propertyId: string;
+    readonly propertyType: string;
     readonly ruleFormat: string;
     readonly rules: string;
     readonly stagingVersion: number;

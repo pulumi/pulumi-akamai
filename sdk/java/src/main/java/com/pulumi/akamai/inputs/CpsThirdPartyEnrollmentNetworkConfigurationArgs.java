@@ -35,14 +35,14 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
     }
 
     /**
-     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
      * 
      */
     @Import(name="cloneDnsNames")
     private @Nullable Output<Boolean> cloneDnsNames;
 
     /**
-     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
      * 
      */
     public Optional<Output<Boolean>> cloneDnsNames() {
@@ -80,14 +80,14 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
     }
 
     /**
-     * Mandatory Ciphers which are included for enrollment
+     * Mandatory Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
      * 
      */
     @Import(name="mustHaveCiphers")
     private @Nullable Output<String> mustHaveCiphers;
 
     /**
-     * @return Mandatory Ciphers which are included for enrollment
+     * @return Mandatory Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
      * 
      */
     public Optional<Output<String>> mustHaveCiphers() {
@@ -95,14 +95,14 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
     }
 
     /**
-     * Enable OCSP stapling
+     * Enable OCSP stapling. Default is &#39;on&#39;
      * 
      */
     @Import(name="ocspStapling")
     private @Nullable Output<String> ocspStapling;
 
     /**
-     * @return Enable OCSP stapling
+     * @return Enable OCSP stapling. Default is &#39;on&#39;
      * 
      */
     public Optional<Output<String>> ocspStapling() {
@@ -110,14 +110,14 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
     }
 
     /**
-     * Preferred Ciphers which are included for enrollment
+     * Preferred Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
      * 
      */
     @Import(name="preferredCiphers")
     private @Nullable Output<String> preferredCiphers;
 
     /**
-     * @return Preferred Ciphers which are included for enrollment
+     * @return Preferred Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
      * 
      */
     public Optional<Output<String>> preferredCiphers() {
@@ -125,14 +125,14 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
     }
 
     /**
-     * Enable QUIC protocol
+     * Enable QUIC protocol. Default is false
      * 
      */
     @Import(name="quicEnabled")
     private @Nullable Output<Boolean> quicEnabled;
 
     /**
-     * @return Enable QUIC protocol
+     * @return Enable QUIC protocol. Default is false
      * 
      */
     public Optional<Output<Boolean>> quicEnabled() {
@@ -192,7 +192,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param mustHaveCiphers Mandatory Ciphers which are included for enrollment
+         * @param mustHaveCiphers Mandatory Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param mustHaveCiphers Mandatory Ciphers which are included for enrollment
+         * @param mustHaveCiphers Mandatory Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param ocspStapling Enable OCSP stapling
+         * @param ocspStapling Enable OCSP stapling. Default is &#39;on&#39;
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param ocspStapling Enable OCSP stapling
+         * @param ocspStapling Enable OCSP stapling. Default is &#39;on&#39;
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param preferredCiphers Preferred Ciphers which are included for enrollment
+         * @param preferredCiphers Preferred Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param preferredCiphers Preferred Ciphers which are included for enrollment
+         * @param preferredCiphers Preferred Ciphers which are included for enrollment. Default is &#39;ak-akamai-2020q1&#39;
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param quicEnabled Enable QUIC protocol
+         * @param quicEnabled Enable QUIC protocol. Default is false
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param quicEnabled Enable QUIC protocol
+         * @param quicEnabled Enable QUIC protocol. Default is false
          * 
          * @return builder
          * 

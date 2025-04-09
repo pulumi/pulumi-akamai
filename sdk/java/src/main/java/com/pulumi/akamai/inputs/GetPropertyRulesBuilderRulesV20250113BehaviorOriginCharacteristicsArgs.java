@@ -220,16 +220,32 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
         return Optional.ofNullable(this.directConnectGeo);
     }
 
+    /**
+     * Encodes any equal (`=`) characters in a query parameter&#39;s value.
+     * 
+     */
     @Import(name="encodeEquals")
     private @Nullable Output<Boolean> encodeEquals;
 
+    /**
+     * @return Encodes any equal (`=`) characters in a query parameter&#39;s value.
+     * 
+     */
     public Optional<Output<Boolean>> encodeEquals() {
         return Optional.ofNullable(this.encodeEquals);
     }
 
+    /**
+     * Encodes the query string parameters.
+     * 
+     */
     @Import(name="encodeQueryParams")
     private @Nullable Output<Boolean> encodeQueryParams;
 
+    /**
+     * @return Encodes the query string parameters.
+     * 
+     */
     public Optional<Output<Boolean>> encodeQueryParams() {
         return Optional.ofNullable(this.encodeQueryParams);
     }
@@ -412,9 +428,17 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
         return Optional.ofNullable(this.secretKey);
     }
 
+    /**
+     * Sorts the query string parameters alphabetically by key name.
+     * 
+     */
     @Import(name="sortQueryParams")
     private @Nullable Output<Boolean> sortQueryParams;
 
+    /**
+     * @return Sorts the query string parameters alphabetically by key name.
+     * 
+     */
     public Optional<Output<Boolean>> sortQueryParams() {
         return Optional.ofNullable(this.sortQueryParams);
     }
@@ -813,20 +837,44 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
             return directConnectGeo(Output.of(directConnectGeo));
         }
 
+        /**
+         * @param encodeEquals Encodes any equal (`=`) characters in a query parameter&#39;s value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodeEquals(@Nullable Output<Boolean> encodeEquals) {
             $.encodeEquals = encodeEquals;
             return this;
         }
 
+        /**
+         * @param encodeEquals Encodes any equal (`=`) characters in a query parameter&#39;s value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodeEquals(Boolean encodeEquals) {
             return encodeEquals(Output.of(encodeEquals));
         }
 
+        /**
+         * @param encodeQueryParams Encodes the query string parameters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodeQueryParams(@Nullable Output<Boolean> encodeQueryParams) {
             $.encodeQueryParams = encodeQueryParams;
             return this;
         }
 
+        /**
+         * @param encodeQueryParams Encodes the query string parameters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodeQueryParams(Boolean encodeQueryParams) {
             return encodeQueryParams(Output.of(encodeQueryParams));
         }
@@ -1077,11 +1125,23 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
             return secretKey(Output.of(secretKey));
         }
 
+        /**
+         * @param sortQueryParams Sorts the query string parameters alphabetically by key name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sortQueryParams(@Nullable Output<Boolean> sortQueryParams) {
             $.sortQueryParams = sortQueryParams;
             return this;
         }
 
+        /**
+         * @param sortQueryParams Sorts the query string parameters alphabetically by key name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sortQueryParams(Boolean sortQueryParams) {
             return sortQueryParams(Output.of(sortQueryParams));
         }

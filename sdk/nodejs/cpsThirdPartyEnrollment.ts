@@ -35,7 +35,7 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
     }
 
     /**
-     * Whether acknowledge warnings before certificate verification
+     * Whether acknowledge warnings before certificate verification. Default is false
      */
     public readonly acknowledgePreVerificationWarnings!: pulumi.Output<boolean | undefined>;
     /**
@@ -43,7 +43,7 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
      */
     public readonly adminContact!: pulumi.Output<outputs.CpsThirdPartyEnrollmentAdminContact>;
     /**
-     * Allow to duplicate common name
+     * Allow to duplicate common name. Default is false
      */
     public readonly allowDuplicateCommonName!: pulumi.Output<boolean | undefined>;
     /**
@@ -51,7 +51,7 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
      */
     public readonly autoApproveWarnings!: pulumi.Output<string[] | undefined>;
     /**
-     * Certificate trust chain type
+     * Certificate trust chain type. Default is 'default'
      */
     public readonly certificateChainType!: pulumi.Output<string | undefined>;
     /**
@@ -193,7 +193,7 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
  */
 export interface CpsThirdPartyEnrollmentState {
     /**
-     * Whether acknowledge warnings before certificate verification
+     * Whether acknowledge warnings before certificate verification. Default is false
      */
     acknowledgePreVerificationWarnings?: pulumi.Input<boolean>;
     /**
@@ -201,7 +201,7 @@ export interface CpsThirdPartyEnrollmentState {
      */
     adminContact?: pulumi.Input<inputs.CpsThirdPartyEnrollmentAdminContact>;
     /**
-     * Allow to duplicate common name
+     * Allow to duplicate common name. Default is false
      */
     allowDuplicateCommonName?: pulumi.Input<boolean>;
     /**
@@ -209,7 +209,7 @@ export interface CpsThirdPartyEnrollmentState {
      */
     autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Certificate trust chain type
+     * Certificate trust chain type. Default is 'default'
      */
     certificateChainType?: pulumi.Input<string>;
     /**
@@ -268,7 +268,7 @@ export interface CpsThirdPartyEnrollmentState {
  */
 export interface CpsThirdPartyEnrollmentArgs {
     /**
-     * Whether acknowledge warnings before certificate verification
+     * Whether acknowledge warnings before certificate verification. Default is false
      */
     acknowledgePreVerificationWarnings?: pulumi.Input<boolean>;
     /**
@@ -276,7 +276,7 @@ export interface CpsThirdPartyEnrollmentArgs {
      */
     adminContact: pulumi.Input<inputs.CpsThirdPartyEnrollmentAdminContact>;
     /**
-     * Allow to duplicate common name
+     * Allow to duplicate common name. Default is false
      */
     allowDuplicateCommonName?: pulumi.Input<boolean>;
     /**
@@ -284,7 +284,7 @@ export interface CpsThirdPartyEnrollmentArgs {
      */
     autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Certificate trust chain type
+     * Certificate trust chain type. Default is 'default'
      */
     certificateChainType?: pulumi.Input<string>;
     /**

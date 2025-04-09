@@ -84,9 +84,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("objectUnavailableBackupHost")]
         public string? ObjectUnavailableBackupHost { get; set; }
 
+        /// <summary>
+        /// Enabling this blocklists the origin's IP address.
+        /// </summary>
         [Input("objectUnavailableBlocklistOriginIp")]
         public bool? ObjectUnavailableBlocklistOriginIp { get; set; }
 
+        /// <summary>
+        /// This sets the delay before blocklisting an IP address.
+        /// </summary>
         [Input("objectUnavailableBlocklistWindow")]
         public string? ObjectUnavailableBlocklistWindow { get; set; }
 
@@ -168,9 +174,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("originUnavailableBackupHost")]
         public string? OriginUnavailableBackupHost { get; set; }
 
+        /// <summary>
+        /// Enabling this blocklists the origin's IP address.
+        /// </summary>
         [Input("originUnavailableBlocklistOriginIp")]
         public bool? OriginUnavailableBlocklistOriginIp { get; set; }
 
+        /// <summary>
+        /// This sets the delay before blocklisting an IP address.
+        /// </summary>
         [Input("originUnavailableBlocklistWindow")]
         public string? OriginUnavailableBlocklistWindow { get; set; }
 
@@ -252,9 +264,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("originUnresponsiveBackupHost")]
         public string? OriginUnresponsiveBackupHost { get; set; }
 
+        /// <summary>
+        /// Enabling this blocklists the origin's IP address.
+        /// </summary>
         [Input("originUnresponsiveBlocklistOriginIp")]
         public bool? OriginUnresponsiveBlocklistOriginIp { get; set; }
 
+        /// <summary>
+        /// This sets the delay before blocklisting an IP address.
+        /// </summary>
         [Input("originUnresponsiveBlocklistWindow")]
         public string? OriginUnresponsiveBlocklistWindow { get; set; }
 

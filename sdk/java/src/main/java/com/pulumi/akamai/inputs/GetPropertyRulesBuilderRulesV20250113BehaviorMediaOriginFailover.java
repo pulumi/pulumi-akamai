@@ -197,16 +197,32 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
         return Optional.ofNullable(this.objectUnavailableBackupHost);
     }
 
+    /**
+     * Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     @Import(name="objectUnavailableBlocklistOriginIp")
     private @Nullable Boolean objectUnavailableBlocklistOriginIp;
 
+    /**
+     * @return Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> objectUnavailableBlocklistOriginIp() {
         return Optional.ofNullable(this.objectUnavailableBlocklistOriginIp);
     }
 
+    /**
+     * This sets the delay before blocklisting an IP address.
+     * 
+     */
     @Import(name="objectUnavailableBlocklistWindow")
     private @Nullable String objectUnavailableBlocklistWindow;
 
+    /**
+     * @return This sets the delay before blocklisting an IP address.
+     * 
+     */
     public Optional<String> objectUnavailableBlocklistWindow() {
         return Optional.ofNullable(this.objectUnavailableBlocklistWindow);
     }
@@ -391,16 +407,32 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
         return Optional.ofNullable(this.originUnavailableBackupHost);
     }
 
+    /**
+     * Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     @Import(name="originUnavailableBlocklistOriginIp")
     private @Nullable Boolean originUnavailableBlocklistOriginIp;
 
+    /**
+     * @return Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> originUnavailableBlocklistOriginIp() {
         return Optional.ofNullable(this.originUnavailableBlocklistOriginIp);
     }
 
+    /**
+     * This sets the delay before blocklisting an IP address.
+     * 
+     */
     @Import(name="originUnavailableBlocklistWindow")
     private @Nullable String originUnavailableBlocklistWindow;
 
+    /**
+     * @return This sets the delay before blocklisting an IP address.
+     * 
+     */
     public Optional<String> originUnavailableBlocklistWindow() {
         return Optional.ofNullable(this.originUnavailableBlocklistWindow);
     }
@@ -585,16 +617,32 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
         return Optional.ofNullable(this.originUnresponsiveBackupHost);
     }
 
+    /**
+     * Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     @Import(name="originUnresponsiveBlocklistOriginIp")
     private @Nullable Boolean originUnresponsiveBlocklistOriginIp;
 
+    /**
+     * @return Enabling this blocklists the origin&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> originUnresponsiveBlocklistOriginIp() {
         return Optional.ofNullable(this.originUnresponsiveBlocklistOriginIp);
     }
 
+    /**
+     * This sets the delay before blocklisting an IP address.
+     * 
+     */
     @Import(name="originUnresponsiveBlocklistWindow")
     private @Nullable String originUnresponsiveBlocklistWindow;
 
+    /**
+     * @return This sets the delay before blocklisting an IP address.
+     * 
+     */
     public Optional<String> originUnresponsiveBlocklistWindow() {
         return Optional.ofNullable(this.originUnresponsiveBlocklistWindow);
     }
@@ -988,11 +1036,23 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
             return this;
         }
 
+        /**
+         * @param objectUnavailableBlocklistOriginIp Enabling this blocklists the origin&#39;s IP address.
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectUnavailableBlocklistOriginIp(@Nullable Boolean objectUnavailableBlocklistOriginIp) {
             $.objectUnavailableBlocklistOriginIp = objectUnavailableBlocklistOriginIp;
             return this;
         }
 
+        /**
+         * @param objectUnavailableBlocklistWindow This sets the delay before blocklisting an IP address.
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectUnavailableBlocklistWindow(@Nullable String objectUnavailableBlocklistWindow) {
             $.objectUnavailableBlocklistWindow = objectUnavailableBlocklistWindow;
             return this;
@@ -1140,11 +1200,23 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
             return this;
         }
 
+        /**
+         * @param originUnavailableBlocklistOriginIp Enabling this blocklists the origin&#39;s IP address.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originUnavailableBlocklistOriginIp(@Nullable Boolean originUnavailableBlocklistOriginIp) {
             $.originUnavailableBlocklistOriginIp = originUnavailableBlocklistOriginIp;
             return this;
         }
 
+        /**
+         * @param originUnavailableBlocklistWindow This sets the delay before blocklisting an IP address.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originUnavailableBlocklistWindow(@Nullable String originUnavailableBlocklistWindow) {
             $.originUnavailableBlocklistWindow = originUnavailableBlocklistWindow;
             return this;
@@ -1292,11 +1364,23 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorMediaOriginFailo
             return this;
         }
 
+        /**
+         * @param originUnresponsiveBlocklistOriginIp Enabling this blocklists the origin&#39;s IP address.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originUnresponsiveBlocklistOriginIp(@Nullable Boolean originUnresponsiveBlocklistOriginIp) {
             $.originUnresponsiveBlocklistOriginIp = originUnresponsiveBlocklistOriginIp;
             return this;
         }
 
+        /**
+         * @param originUnresponsiveBlocklistWindow This sets the delay before blocklisting an IP address.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originUnresponsiveBlocklistWindow(@Nullable String originUnresponsiveBlocklistWindow) {
             $.originUnresponsiveBlocklistWindow = originUnresponsiveBlocklistWindow;
             return this;

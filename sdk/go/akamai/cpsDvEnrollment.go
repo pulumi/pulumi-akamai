@@ -15,13 +15,13 @@ import (
 type CpsDvEnrollment struct {
 	pulumi.CustomResourceState
 
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrOutput `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsDvEnrollmentAdminContactOutput `pulumi:"adminContact"`
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName pulumi.BoolPtrOutput `pulumi:"allowDuplicateCommonName"`
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType pulumi.StringPtrOutput `pulumi:"certificateChainType"`
 	// Certificate type of enrollment
 	CertificateType pulumi.StringOutput `pulumi:"certificateType"`
@@ -117,13 +117,13 @@ func GetCpsDvEnrollment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpsDvEnrollment resources.
 type cpsDvEnrollmentState struct {
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator to use at organization
 	AdminContact *CpsDvEnrollmentAdminContact `pulumi:"adminContact"`
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName *bool `pulumi:"allowDuplicateCommonName"`
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType *string `pulumi:"certificateChainType"`
 	// Certificate type of enrollment
 	CertificateType *string `pulumi:"certificateType"`
@@ -160,13 +160,13 @@ type cpsDvEnrollmentState struct {
 }
 
 type CpsDvEnrollmentState struct {
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
 	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsDvEnrollmentAdminContactPtrInput
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName pulumi.BoolPtrInput
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType pulumi.StringPtrInput
 	// Certificate type of enrollment
 	CertificateType pulumi.StringPtrInput
@@ -207,13 +207,13 @@ func (CpsDvEnrollmentState) ElementType() reflect.Type {
 }
 
 type cpsDvEnrollmentArgs struct {
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsDvEnrollmentAdminContact `pulumi:"adminContact"`
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName *bool `pulumi:"allowDuplicateCommonName"`
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType *string `pulumi:"certificateChainType"`
 	// Common name used for enrollment
 	CommonName string `pulumi:"commonName"`
@@ -241,13 +241,13 @@ type cpsDvEnrollmentArgs struct {
 
 // The set of arguments for constructing a CpsDvEnrollment resource.
 type CpsDvEnrollmentArgs struct {
-	// Whether acknowledge warnings before certificate verification
+	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
 	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsDvEnrollmentAdminContactInput
-	// Allow to duplicate common name
+	// Allow to duplicate common name. Default is false
 	AllowDuplicateCommonName pulumi.BoolPtrInput
-	// Certificate trust chain type
+	// Certificate trust chain type. Default is 'default'
 	CertificateChainType pulumi.StringPtrInput
 	// Common name used for enrollment
 	CommonName pulumi.StringInput
@@ -360,7 +360,7 @@ func (o CpsDvEnrollmentOutput) ToCpsDvEnrollmentOutputWithContext(ctx context.Co
 	return o
 }
 
-// Whether acknowledge warnings before certificate verification
+// Whether acknowledge warnings before certificate verification. Default is false
 func (o CpsDvEnrollmentOutput) AcknowledgePreVerificationWarnings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolPtrOutput { return v.AcknowledgePreVerificationWarnings }).(pulumi.BoolPtrOutput)
 }
@@ -370,12 +370,12 @@ func (o CpsDvEnrollmentOutput) AdminContact() CpsDvEnrollmentAdminContactOutput 
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentAdminContactOutput { return v.AdminContact }).(CpsDvEnrollmentAdminContactOutput)
 }
 
-// Allow to duplicate common name
+// Allow to duplicate common name. Default is false
 func (o CpsDvEnrollmentOutput) AllowDuplicateCommonName() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolPtrOutput { return v.AllowDuplicateCommonName }).(pulumi.BoolPtrOutput)
 }
 
-// Certificate trust chain type
+// Certificate trust chain type. Default is 'default'
 func (o CpsDvEnrollmentOutput) CertificateChainType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringPtrOutput { return v.CertificateChainType }).(pulumi.StringPtrOutput)
 }

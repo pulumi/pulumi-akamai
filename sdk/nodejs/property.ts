@@ -89,6 +89,11 @@ export class Property extends pulumi.CustomResource {
      */
     public /*out*/ readonly stagingVersion!: pulumi.Output<number>;
     /**
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     */
+    public readonly useHostnameBucket!: pulumi.Output<boolean | undefined>;
+    /**
      * Property version notes
      */
     public readonly versionNotes!: pulumi.Output<string>;
@@ -121,6 +126,7 @@ export class Property extends pulumi.CustomResource {
             resourceInputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
             resourceInputs["rules"] = state ? state.rules : undefined;
             resourceInputs["stagingVersion"] = state ? state.stagingVersion : undefined;
+            resourceInputs["useHostnameBucket"] = state ? state.useHostnameBucket : undefined;
             resourceInputs["versionNotes"] = state ? state.versionNotes : undefined;
         } else {
             const args = argsOrState as PropertyArgs | undefined;
@@ -141,6 +147,7 @@ export class Property extends pulumi.CustomResource {
             resourceInputs["propertyId"] = args ? args.propertyId : undefined;
             resourceInputs["ruleFormat"] = args ? args.ruleFormat : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["useHostnameBucket"] = args ? args.useHostnameBucket : undefined;
             resourceInputs["versionNotes"] = args ? args.versionNotes : undefined;
             resourceInputs["assetId"] = undefined /*out*/;
             resourceInputs["latestVersion"] = undefined /*out*/;
@@ -216,6 +223,11 @@ export interface PropertyState {
      */
     stagingVersion?: pulumi.Input<number>;
     /**
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     */
+    useHostnameBucket?: pulumi.Input<boolean>;
+    /**
      * Property version notes
      */
     versionNotes?: pulumi.Input<string>;
@@ -254,6 +266,11 @@ export interface PropertyArgs {
      * Property Rules as JSON
      */
     rules?: pulumi.Input<string>;
+    /**
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     */
+    useHostnameBucket?: pulumi.Input<boolean>;
     /**
      * Property version notes
      */

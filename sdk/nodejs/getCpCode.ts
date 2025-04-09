@@ -27,6 +27,7 @@ export interface GetCpCodeArgs {
  */
 export interface GetCpCodeResult {
     readonly contractId: string;
+    readonly createdDate: string;
     readonly groupId: string;
     /**
      * The provider-assigned unique ID for this managed resource.

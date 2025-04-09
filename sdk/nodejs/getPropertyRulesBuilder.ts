@@ -20,6 +20,7 @@ export function getPropertyRulesBuilder(args?: GetPropertyRulesBuilderArgs, opts
         "rulesV20240813": args.rulesV20240813,
         "rulesV20241021": args.rulesV20241021,
         "rulesV20250113": args.rulesV20250113,
+        "rulesV20250218": args.rulesV20250218,
     }, opts);
 }
 
@@ -37,6 +38,7 @@ export interface GetPropertyRulesBuilderArgs {
     rulesV20240813?: inputs.GetPropertyRulesBuilderRulesV20240813;
     rulesV20241021?: inputs.GetPropertyRulesBuilderRulesV20241021;
     rulesV20250113?: inputs.GetPropertyRulesBuilderRulesV20250113;
+    rulesV20250218?: inputs.GetPropertyRulesBuilderRulesV20250218;
 }
 
 /**
@@ -59,6 +61,7 @@ export interface GetPropertyRulesBuilderResult {
     readonly rulesV20240813?: outputs.GetPropertyRulesBuilderRulesV20240813;
     readonly rulesV20241021?: outputs.GetPropertyRulesBuilderRulesV20241021;
     readonly rulesV20250113?: outputs.GetPropertyRulesBuilderRulesV20250113;
+    readonly rulesV20250218?: outputs.GetPropertyRulesBuilderRulesV20250218;
 }
 export function getPropertyRulesBuilderOutput(args?: GetPropertyRulesBuilderOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyRulesBuilderResult> {
     args = args || {};
@@ -74,6 +77,7 @@ export function getPropertyRulesBuilderOutput(args?: GetPropertyRulesBuilderOutp
         "rulesV20240813": args.rulesV20240813,
         "rulesV20241021": args.rulesV20241021,
         "rulesV20250113": args.rulesV20250113,
+        "rulesV20250218": args.rulesV20250218,
     }, opts);
 }
 
@@ -91,4 +95,5 @@ export interface GetPropertyRulesBuilderOutputArgs {
     rulesV20240813?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20240813Args>;
     rulesV20241021?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20241021Args>;
     rulesV20250113?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20250113Args>;
+    rulesV20250218?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20250218Args>;
 }

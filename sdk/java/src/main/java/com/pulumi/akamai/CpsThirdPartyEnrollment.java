@@ -25,14 +25,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment")
 public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource {
     /**
-     * Whether acknowledge warnings before certificate verification
+     * Whether acknowledge warnings before certificate verification. Default is false
      * 
      */
     @Export(name="acknowledgePreVerificationWarnings", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> acknowledgePreVerificationWarnings;
 
     /**
-     * @return Whether acknowledge warnings before certificate verification
+     * @return Whether acknowledge warnings before certificate verification. Default is false
      * 
      */
     public Output<Optional<Boolean>> acknowledgePreVerificationWarnings() {
@@ -53,14 +53,14 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
         return this.adminContact;
     }
     /**
-     * Allow to duplicate common name
+     * Allow to duplicate common name. Default is false
      * 
      */
     @Export(name="allowDuplicateCommonName", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> allowDuplicateCommonName;
 
     /**
-     * @return Allow to duplicate common name
+     * @return Allow to duplicate common name. Default is false
      * 
      */
     public Output<Optional<Boolean>> allowDuplicateCommonName() {
@@ -81,14 +81,14 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
         return Codegen.optional(this.autoApproveWarnings);
     }
     /**
-     * Certificate trust chain type
+     * Certificate trust chain type. Default is &#39;default&#39;
      * 
      */
     @Export(name="certificateChainType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> certificateChainType;
 
     /**
-     * @return Certificate trust chain type
+     * @return Certificate trust chain type. Default is &#39;default&#39;
      * 
      */
     public Output<Optional<String>> certificateChainType() {
