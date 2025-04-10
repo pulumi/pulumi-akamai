@@ -54,6 +54,9 @@ namespace Pulumi.Akamai
         [Input("rulesV20250113")]
         public Inputs.GetPropertyRulesBuilderRulesV20250113Args? RulesV20250113 { get; set; }
 
+        [Input("rulesV20250218")]
+        public Inputs.GetPropertyRulesBuilderRulesV20250218Args? RulesV20250218 { get; set; }
+
         public GetPropertyRulesBuilderArgs()
         {
         }
@@ -92,6 +95,9 @@ namespace Pulumi.Akamai
         [Input("rulesV20250113")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20250113InputArgs>? RulesV20250113 { get; set; }
 
+        [Input("rulesV20250218")]
+        public Input<Inputs.GetPropertyRulesBuilderRulesV20250218InputArgs>? RulesV20250218 { get; set; }
+
         public GetPropertyRulesBuilderInvokeArgs()
         {
         }
@@ -118,6 +124,7 @@ namespace Pulumi.Akamai
         public readonly Outputs.GetPropertyRulesBuilderRulesV20240813Result? RulesV20240813;
         public readonly Outputs.GetPropertyRulesBuilderRulesV20241021Result? RulesV20241021;
         public readonly Outputs.GetPropertyRulesBuilderRulesV20250113Result? RulesV20250113;
+        public readonly Outputs.GetPropertyRulesBuilderRulesV20250218Result? RulesV20250218;
 
         [OutputConstructor]
         private GetPropertyRulesBuilderResult(
@@ -145,7 +152,9 @@ namespace Pulumi.Akamai
 
             Outputs.GetPropertyRulesBuilderRulesV20241021Result? rulesV20241021,
 
-            Outputs.GetPropertyRulesBuilderRulesV20250113Result? rulesV20250113)
+            Outputs.GetPropertyRulesBuilderRulesV20250113Result? rulesV20250113,
+
+            Outputs.GetPropertyRulesBuilderRulesV20250218Result? rulesV20250218)
         {
             Id = id;
             Json = json;
@@ -160,6 +169,7 @@ namespace Pulumi.Akamai
             RulesV20240813 = rulesV20240813;
             RulesV20241021 = rulesV20241021;
             RulesV20250113 = rulesV20250113;
+            RulesV20250218 = rulesV20250218;
         }
     }
 }

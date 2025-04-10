@@ -33,6 +33,7 @@ type GetPropertyRulesBuilderArgs struct {
 	RulesV20240813 *GetPropertyRulesBuilderRulesV20240813 `pulumi:"rulesV20240813"`
 	RulesV20241021 *GetPropertyRulesBuilderRulesV20241021 `pulumi:"rulesV20241021"`
 	RulesV20250113 *GetPropertyRulesBuilderRulesV20250113 `pulumi:"rulesV20250113"`
+	RulesV20250218 *GetPropertyRulesBuilderRulesV20250218 `pulumi:"rulesV20250218"`
 }
 
 // A collection of values returned by getPropertyRulesBuilder.
@@ -51,6 +52,7 @@ type GetPropertyRulesBuilderResult struct {
 	RulesV20240813 *GetPropertyRulesBuilderRulesV20240813 `pulumi:"rulesV20240813"`
 	RulesV20241021 *GetPropertyRulesBuilderRulesV20241021 `pulumi:"rulesV20241021"`
 	RulesV20250113 *GetPropertyRulesBuilderRulesV20250113 `pulumi:"rulesV20250113"`
+	RulesV20250218 *GetPropertyRulesBuilderRulesV20250218 `pulumi:"rulesV20250218"`
 }
 
 func GetPropertyRulesBuilderOutput(ctx *pulumi.Context, args GetPropertyRulesBuilderOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesBuilderResultOutput {
@@ -74,6 +76,7 @@ type GetPropertyRulesBuilderOutputArgs struct {
 	RulesV20240813 GetPropertyRulesBuilderRulesV20240813PtrInput `pulumi:"rulesV20240813"`
 	RulesV20241021 GetPropertyRulesBuilderRulesV20241021PtrInput `pulumi:"rulesV20241021"`
 	RulesV20250113 GetPropertyRulesBuilderRulesV20250113PtrInput `pulumi:"rulesV20250113"`
+	RulesV20250218 GetPropertyRulesBuilderRulesV20250218PtrInput `pulumi:"rulesV20250218"`
 }
 
 func (GetPropertyRulesBuilderOutputArgs) ElementType() reflect.Type {
@@ -146,6 +149,10 @@ func (o GetPropertyRulesBuilderResultOutput) RulesV20241021() GetPropertyRulesBu
 
 func (o GetPropertyRulesBuilderResultOutput) RulesV20250113() GetPropertyRulesBuilderRulesV20250113PtrOutput {
 	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20250113 { return v.RulesV20250113 }).(GetPropertyRulesBuilderRulesV20250113PtrOutput)
+}
+
+func (o GetPropertyRulesBuilderResultOutput) RulesV20250218() GetPropertyRulesBuilderRulesV20250218PtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20250218 { return v.RulesV20250218 }).(GetPropertyRulesBuilderRulesV20250218PtrOutput)
 }
 
 func init() {

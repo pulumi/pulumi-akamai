@@ -269,6 +269,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &PropertyActivation{}
 	case "akamai:index/propertyBootstrap:PropertyBootstrap":
 		r = &PropertyBootstrap{}
+	case "akamai:index/propertyHostnameBucket:PropertyHostnameBucket":
+		r = &PropertyHostnameBucket{}
 	case "akamai:index/propertyInclude:PropertyInclude":
 		r = &PropertyInclude{}
 	case "akamai:index/propertyIncludeActivation:PropertyIncludeActivation":
@@ -922,6 +924,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/propertyBootstrap",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/propertyHostnameBucket",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

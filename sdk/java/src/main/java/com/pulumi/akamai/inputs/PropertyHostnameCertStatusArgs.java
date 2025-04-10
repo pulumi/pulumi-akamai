@@ -15,30 +15,62 @@ public final class PropertyHostnameCertStatusArgs extends com.pulumi.resources.R
 
     public static final PropertyHostnameCertStatusArgs Empty = new PropertyHostnameCertStatusArgs();
 
+    /**
+     * The hostname part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
+    /**
+     * @return The hostname part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     public Optional<Output<String>> hostname() {
         return Optional.ofNullable(this.hostname);
     }
 
+    /**
+     * The certificate&#39;s deployment status on the production network.
+     * 
+     */
     @Import(name="productionStatus")
     private @Nullable Output<String> productionStatus;
 
+    /**
+     * @return The certificate&#39;s deployment status on the production network.
+     * 
+     */
     public Optional<Output<String>> productionStatus() {
         return Optional.ofNullable(this.productionStatus);
     }
 
+    /**
+     * The certificate&#39;s deployment status on the staging network.
+     * 
+     */
     @Import(name="stagingStatus")
     private @Nullable Output<String> stagingStatus;
 
+    /**
+     * @return The certificate&#39;s deployment status on the staging network.
+     * 
+     */
     public Optional<Output<String>> stagingStatus() {
         return Optional.ofNullable(this.stagingStatus);
     }
 
+    /**
+     * The destination part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     @Import(name="target")
     private @Nullable Output<String> target;
 
+    /**
+     * @return The destination part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     public Optional<Output<String>> target() {
         return Optional.ofNullable(this.target);
     }
@@ -70,38 +102,86 @@ public final class PropertyHostnameCertStatusArgs extends com.pulumi.resources.R
             $ = new PropertyHostnameCertStatusArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param hostname The hostname part of the CNAME record used to validate the certificate&#39;s domain.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(@Nullable Output<String> hostname) {
             $.hostname = hostname;
             return this;
         }
 
+        /**
+         * @param hostname The hostname part of the CNAME record used to validate the certificate&#39;s domain.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
         }
 
+        /**
+         * @param productionStatus The certificate&#39;s deployment status on the production network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder productionStatus(@Nullable Output<String> productionStatus) {
             $.productionStatus = productionStatus;
             return this;
         }
 
+        /**
+         * @param productionStatus The certificate&#39;s deployment status on the production network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder productionStatus(String productionStatus) {
             return productionStatus(Output.of(productionStatus));
         }
 
+        /**
+         * @param stagingStatus The certificate&#39;s deployment status on the staging network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder stagingStatus(@Nullable Output<String> stagingStatus) {
             $.stagingStatus = stagingStatus;
             return this;
         }
 
+        /**
+         * @param stagingStatus The certificate&#39;s deployment status on the staging network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder stagingStatus(String stagingStatus) {
             return stagingStatus(Output.of(stagingStatus));
         }
 
+        /**
+         * @param target The destination part of the CNAME record used to validate the certificate&#39;s domain.
+         * 
+         * @return builder
+         * 
+         */
         public Builder target(@Nullable Output<String> target) {
             $.target = target;
             return this;
         }
 
+        /**
+         * @param target The destination part of the CNAME record used to validate the certificate&#39;s domain.
+         * 
+         * @return builder
+         * 
+         */
         public Builder target(String target) {
             return target(Output.of(target));
         }

@@ -224,6 +224,8 @@ import com.pulumi.akamai.inputs.GetContractArgs;
 import com.pulumi.akamai.inputs.GetContractPlainArgs;
 import com.pulumi.akamai.inputs.GetCpCodeArgs;
 import com.pulumi.akamai.inputs.GetCpCodePlainArgs;
+import com.pulumi.akamai.inputs.GetCpCodesArgs;
+import com.pulumi.akamai.inputs.GetCpCodesPlainArgs;
 import com.pulumi.akamai.inputs.GetCpsCsrArgs;
 import com.pulumi.akamai.inputs.GetCpsCsrPlainArgs;
 import com.pulumi.akamai.inputs.GetCpsDeploymentsArgs;
@@ -301,7 +303,13 @@ import com.pulumi.akamai.inputs.GetPropertiesSearchPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyActivationArgs;
 import com.pulumi.akamai.inputs.GetPropertyActivationPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyArgs;
+import com.pulumi.akamai.inputs.GetPropertyHostnameActivationArgs;
+import com.pulumi.akamai.inputs.GetPropertyHostnameActivationPlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyHostnameActivationsArgs;
+import com.pulumi.akamai.inputs.GetPropertyHostnameActivationsPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnamesArgs;
+import com.pulumi.akamai.inputs.GetPropertyHostnamesDiffArgs;
+import com.pulumi.akamai.inputs.GetPropertyHostnamesDiffPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnamesPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyIncludeActivationArgs;
 import com.pulumi.akamai.inputs.GetPropertyIncludeActivationPlainArgs;
@@ -438,6 +446,7 @@ import com.pulumi.akamai.outputs.GetCloudwrapperPropertiesResult;
 import com.pulumi.akamai.outputs.GetContractResult;
 import com.pulumi.akamai.outputs.GetContractsResult;
 import com.pulumi.akamai.outputs.GetCpCodeResult;
+import com.pulumi.akamai.outputs.GetCpCodesResult;
 import com.pulumi.akamai.outputs.GetCpsCsrResult;
 import com.pulumi.akamai.outputs.GetCpsDeploymentsResult;
 import com.pulumi.akamai.outputs.GetCpsWarningsResult;
@@ -487,6 +496,9 @@ import com.pulumi.akamai.outputs.GetNetworkListsResult;
 import com.pulumi.akamai.outputs.GetPropertiesResult;
 import com.pulumi.akamai.outputs.GetPropertiesSearchResult;
 import com.pulumi.akamai.outputs.GetPropertyActivationResult;
+import com.pulumi.akamai.outputs.GetPropertyHostnameActivationResult;
+import com.pulumi.akamai.outputs.GetPropertyHostnameActivationsResult;
+import com.pulumi.akamai.outputs.GetPropertyHostnamesDiffResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnamesResult;
 import com.pulumi.akamai.outputs.GetPropertyIncludeActivationResult;
 import com.pulumi.akamai.outputs.GetPropertyIncludeParentsResult;
@@ -2375,6 +2387,21 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetCpCodeResult> getCpCodePlain(GetCpCodePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCpCode:getCpCode", TypeShape.of(GetCpCodeResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetCpCodesResult> getCpCodes(GetCpCodesArgs args) {
+        return getCpCodes(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCpCodesResult> getCpCodesPlain(GetCpCodesPlainArgs args) {
+        return getCpCodesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCpCodesResult> getCpCodes(GetCpCodesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCpCodes:getCpCodes", TypeShape.of(GetCpCodesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCpCodesResult> getCpCodes(GetCpCodesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCpCodes:getCpCodes", TypeShape.of(GetCpCodesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCpCodesResult> getCpCodesPlain(GetCpCodesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCpCodes:getCpCodes", TypeShape.of(GetCpCodesResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetCpsCsrResult> getCpsCsr(GetCpsCsrArgs args) {
         return getCpsCsr(args, InvokeOptions.Empty);
     }
@@ -3221,6 +3248,36 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetPropertyActivationResult> getPropertyActivationPlain(GetPropertyActivationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getPropertyActivation:getPropertyActivation", TypeShape.of(GetPropertyActivationResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetPropertyHostnameActivationResult> getPropertyHostnameActivation(GetPropertyHostnameActivationArgs args) {
+        return getPropertyHostnameActivation(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyHostnameActivationResult> getPropertyHostnameActivationPlain(GetPropertyHostnameActivationPlainArgs args) {
+        return getPropertyHostnameActivationPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyHostnameActivationResult> getPropertyHostnameActivation(GetPropertyHostnameActivationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyHostnameActivation:getPropertyHostnameActivation", TypeShape.of(GetPropertyHostnameActivationResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyHostnameActivationResult> getPropertyHostnameActivation(GetPropertyHostnameActivationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyHostnameActivation:getPropertyHostnameActivation", TypeShape.of(GetPropertyHostnameActivationResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPropertyHostnameActivationResult> getPropertyHostnameActivationPlain(GetPropertyHostnameActivationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyHostnameActivation:getPropertyHostnameActivation", TypeShape.of(GetPropertyHostnameActivationResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyHostnameActivationsResult> getPropertyHostnameActivations(GetPropertyHostnameActivationsArgs args) {
+        return getPropertyHostnameActivations(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyHostnameActivationsResult> getPropertyHostnameActivationsPlain(GetPropertyHostnameActivationsPlainArgs args) {
+        return getPropertyHostnameActivationsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyHostnameActivationsResult> getPropertyHostnameActivations(GetPropertyHostnameActivationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyHostnameActivations:getPropertyHostnameActivations", TypeShape.of(GetPropertyHostnameActivationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyHostnameActivationsResult> getPropertyHostnameActivations(GetPropertyHostnameActivationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyHostnameActivations:getPropertyHostnameActivations", TypeShape.of(GetPropertyHostnameActivationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPropertyHostnameActivationsResult> getPropertyHostnameActivationsPlain(GetPropertyHostnameActivationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyHostnameActivations:getPropertyHostnameActivations", TypeShape.of(GetPropertyHostnameActivationsResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetPropertyHostnamesResult> getPropertyHostnames(GetPropertyHostnamesArgs args) {
         return getPropertyHostnames(args, InvokeOptions.Empty);
     }
@@ -3235,6 +3292,21 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetPropertyHostnamesResult> getPropertyHostnamesPlain(GetPropertyHostnamesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getPropertyHostnames:getPropertyHostnames", TypeShape.of(GetPropertyHostnamesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyHostnamesDiffResult> getPropertyHostnamesDiff(GetPropertyHostnamesDiffArgs args) {
+        return getPropertyHostnamesDiff(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyHostnamesDiffResult> getPropertyHostnamesDiffPlain(GetPropertyHostnamesDiffPlainArgs args) {
+        return getPropertyHostnamesDiffPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyHostnamesDiffResult> getPropertyHostnamesDiff(GetPropertyHostnamesDiffArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyHostnamesDiff:getPropertyHostnamesDiff", TypeShape.of(GetPropertyHostnamesDiffResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyHostnamesDiffResult> getPropertyHostnamesDiff(GetPropertyHostnamesDiffArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyHostnamesDiff:getPropertyHostnamesDiff", TypeShape.of(GetPropertyHostnamesDiffResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPropertyHostnamesDiffResult> getPropertyHostnamesDiffPlain(GetPropertyHostnamesDiffPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyHostnamesDiff:getPropertyHostnamesDiff", TypeShape.of(GetPropertyHostnamesDiffResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetPropertyIncludeResult> getPropertyInclude(GetPropertyIncludeArgs args) {
         return getPropertyInclude(args, InvokeOptions.Empty);

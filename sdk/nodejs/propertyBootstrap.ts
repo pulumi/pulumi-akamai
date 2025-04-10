@@ -52,6 +52,11 @@ export class PropertyBootstrap extends pulumi.CustomResource {
      * Product ID to be assigned to the Property
      */
     public readonly productId!: pulumi.Output<string>;
+    /**
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     */
+    public readonly useHostnameBucket!: pulumi.Output<boolean>;
 
     /**
      * Create a PropertyBootstrap resource with the given unique name, arguments, and options.
@@ -71,6 +76,7 @@ export class PropertyBootstrap extends pulumi.CustomResource {
             resourceInputs["groupId"] = state ? state.groupId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["productId"] = state ? state.productId : undefined;
+            resourceInputs["useHostnameBucket"] = state ? state.useHostnameBucket : undefined;
         } else {
             const args = argsOrState as PropertyBootstrapArgs | undefined;
             if ((!args || args.contractId === undefined) && !opts.urn) {
@@ -86,6 +92,7 @@ export class PropertyBootstrap extends pulumi.CustomResource {
             resourceInputs["groupId"] = args ? args.groupId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["useHostnameBucket"] = args ? args.useHostnameBucket : undefined;
             resourceInputs["assetId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -117,6 +124,11 @@ export interface PropertyBootstrapState {
      * Product ID to be assigned to the Property
      */
     productId?: pulumi.Input<string>;
+    /**
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     */
+    useHostnameBucket?: pulumi.Input<boolean>;
 }
 
 /**
@@ -139,4 +151,9 @@ export interface PropertyBootstrapArgs {
      * Product ID to be assigned to the Property
      */
     productId: pulumi.Input<string>;
+    /**
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     */
+    useHostnameBucket?: pulumi.Input<boolean>;
 }

@@ -5,6 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -90,6 +91,23 @@ public final class PropertyBootstrapState extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.productId);
     }
 
+    /**
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     * 
+     */
+    @Import(name="useHostnameBucket")
+    private @Nullable Output<Boolean> useHostnameBucket;
+
+    /**
+     * @return Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     * 
+     */
+    public Optional<Output<Boolean>> useHostnameBucket() {
+        return Optional.ofNullable(this.useHostnameBucket);
+    }
+
     private PropertyBootstrapState() {}
 
     private PropertyBootstrapState(PropertyBootstrapState $) {
@@ -98,6 +116,7 @@ public final class PropertyBootstrapState extends com.pulumi.resources.ResourceA
         this.groupId = $.groupId;
         this.name = $.name;
         this.productId = $.productId;
+        this.useHostnameBucket = $.useHostnameBucket;
     }
 
     public static Builder builder() {
@@ -221,6 +240,29 @@ public final class PropertyBootstrapState extends com.pulumi.resources.ResourceA
          */
         public Builder productId(String productId) {
             return productId(Output.of(productId));
+        }
+
+        /**
+         * @param useHostnameBucket Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+         * incrementing property versions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder useHostnameBucket(@Nullable Output<Boolean> useHostnameBucket) {
+            $.useHostnameBucket = useHostnameBucket;
+            return this;
+        }
+
+        /**
+         * @param useHostnameBucket Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+         * incrementing property versions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder useHostnameBucket(Boolean useHostnameBucket) {
+            return useHostnameBucket(Output.of(useHostnameBucket));
         }
 
         public PropertyBootstrapState build() {

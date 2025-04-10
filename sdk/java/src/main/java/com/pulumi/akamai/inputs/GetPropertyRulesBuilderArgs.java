@@ -13,6 +13,7 @@ import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20240531Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20240813Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20241021Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20250113Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20250218Args;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.util.Objects;
@@ -94,6 +95,13 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
         return Optional.ofNullable(this.rulesV20250113);
     }
 
+    @Import(name="rulesV20250218")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20250218Args> rulesV20250218;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20250218Args>> rulesV20250218() {
+        return Optional.ofNullable(this.rulesV20250218);
+    }
+
     private GetPropertyRulesBuilderArgs() {}
 
     private GetPropertyRulesBuilderArgs(GetPropertyRulesBuilderArgs $) {
@@ -107,6 +115,7 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
         this.rulesV20240813 = $.rulesV20240813;
         this.rulesV20241021 = $.rulesV20241021;
         this.rulesV20250113 = $.rulesV20250113;
+        this.rulesV20250218 = $.rulesV20250218;
     }
 
     public static Builder builder() {
@@ -215,6 +224,15 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
 
         public Builder rulesV20250113(GetPropertyRulesBuilderRulesV20250113Args rulesV20250113) {
             return rulesV20250113(Output.of(rulesV20250113));
+        }
+
+        public Builder rulesV20250218(@Nullable Output<GetPropertyRulesBuilderRulesV20250218Args> rulesV20250218) {
+            $.rulesV20250218 = rulesV20250218;
+            return this;
+        }
+
+        public Builder rulesV20250218(GetPropertyRulesBuilderRulesV20250218Args rulesV20250218) {
+            return rulesV20250218(Output.of(rulesV20250218));
         }
 
         public GetPropertyRulesBuilderArgs build() {

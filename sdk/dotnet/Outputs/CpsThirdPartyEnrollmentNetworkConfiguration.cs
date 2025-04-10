@@ -18,7 +18,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly Outputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication? ClientMutualAuthentication;
         /// <summary>
-        /// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+        /// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
         /// </summary>
         public readonly bool? CloneDnsNames;
         /// <summary>
@@ -30,19 +30,19 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string Geography;
         /// <summary>
-        /// Mandatory Ciphers which are included for enrollment
+        /// Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
         /// </summary>
         public readonly string? MustHaveCiphers;
         /// <summary>
-        /// Enable OCSP stapling
+        /// Enable OCSP stapling. Default is 'on'
         /// </summary>
         public readonly string? OcspStapling;
         /// <summary>
-        /// Preferred Ciphers which are included for enrollment
+        /// Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
         /// </summary>
         public readonly string? PreferredCiphers;
         /// <summary>
-        /// Enable QUIC protocol
+        /// Enable QUIC protocol. Default is false
         /// </summary>
         public readonly bool? QuicEnabled;
 

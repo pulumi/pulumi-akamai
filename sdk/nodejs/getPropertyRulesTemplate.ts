@@ -10,6 +10,7 @@ export function getPropertyRulesTemplate(args?: GetPropertyRulesTemplateArgs, op
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", {
+        "followLinks": args.followLinks,
         "templateFile": args.templateFile,
         "templates": args.templates,
         "varDefinitionFile": args.varDefinitionFile,
@@ -22,6 +23,7 @@ export function getPropertyRulesTemplate(args?: GetPropertyRulesTemplateArgs, op
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateArgs {
+    followLinks?: boolean;
     templateFile?: string;
     templates?: inputs.GetPropertyRulesTemplateTemplate[];
     varDefinitionFile?: string;
@@ -33,6 +35,7 @@ export interface GetPropertyRulesTemplateArgs {
  * A collection of values returned by getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateResult {
+    readonly followLinks?: boolean;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -48,6 +51,7 @@ export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOu
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", {
+        "followLinks": args.followLinks,
         "templateFile": args.templateFile,
         "templates": args.templates,
         "varDefinitionFile": args.varDefinitionFile,
@@ -60,6 +64,7 @@ export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOu
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateOutputArgs {
+    followLinks?: pulumi.Input<boolean>;
     templateFile?: pulumi.Input<string>;
     templates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateTemplateArgs>[]>;
     varDefinitionFile?: pulumi.Input<string>;

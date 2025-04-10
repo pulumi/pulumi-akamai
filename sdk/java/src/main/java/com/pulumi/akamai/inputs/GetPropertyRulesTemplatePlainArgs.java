@@ -6,6 +6,7 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.akamai.inputs.GetPropertyRulesTemplateTemplate;
 import com.pulumi.akamai.inputs.GetPropertyRulesTemplateVariable;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,13 @@ import javax.annotation.Nullable;
 public final class GetPropertyRulesTemplatePlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetPropertyRulesTemplatePlainArgs Empty = new GetPropertyRulesTemplatePlainArgs();
+
+    @Import(name="followLinks")
+    private @Nullable Boolean followLinks;
+
+    public Optional<Boolean> followLinks() {
+        return Optional.ofNullable(this.followLinks);
+    }
 
     @Import(name="templateFile")
     private @Nullable String templateFile;
@@ -55,6 +63,7 @@ public final class GetPropertyRulesTemplatePlainArgs extends com.pulumi.resource
     private GetPropertyRulesTemplatePlainArgs() {}
 
     private GetPropertyRulesTemplatePlainArgs(GetPropertyRulesTemplatePlainArgs $) {
+        this.followLinks = $.followLinks;
         this.templateFile = $.templateFile;
         this.templates = $.templates;
         this.varDefinitionFile = $.varDefinitionFile;
@@ -78,6 +87,11 @@ public final class GetPropertyRulesTemplatePlainArgs extends com.pulumi.resource
 
         public Builder(GetPropertyRulesTemplatePlainArgs defaults) {
             $ = new GetPropertyRulesTemplatePlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder followLinks(@Nullable Boolean followLinks) {
+            $.followLinks = followLinks;
+            return this;
         }
 
         public Builder templateFile(@Nullable String templateFile) {

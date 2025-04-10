@@ -23,17 +23,20 @@ func GetPropertyHostnames(ctx *pulumi.Context, args *GetPropertyHostnamesArgs, o
 
 // A collection of arguments for invoking getPropertyHostnames.
 type GetPropertyHostnamesArgs struct {
-	ContractId string `pulumi:"contractId"`
-	GroupId    string `pulumi:"groupId"`
-	PropertyId string `pulumi:"propertyId"`
-	Version    *int   `pulumi:"version"`
+	ContractId                string `pulumi:"contractId"`
+	FilterPendingDefaultCerts *bool  `pulumi:"filterPendingDefaultCerts"`
+	GroupId                   string `pulumi:"groupId"`
+	PropertyId                string `pulumi:"propertyId"`
+	Version                   *int   `pulumi:"version"`
 }
 
 // A collection of values returned by getPropertyHostnames.
 type GetPropertyHostnamesResult struct {
-	ContractId string                         `pulumi:"contractId"`
-	GroupId    string                         `pulumi:"groupId"`
-	Hostnames  []GetPropertyHostnamesHostname `pulumi:"hostnames"`
+	ContractId                string                               `pulumi:"contractId"`
+	FilterPendingDefaultCerts *bool                                `pulumi:"filterPendingDefaultCerts"`
+	GroupId                   string                               `pulumi:"groupId"`
+	HostnameBuckets           []GetPropertyHostnamesHostnameBucket `pulumi:"hostnameBuckets"`
+	Hostnames                 []GetPropertyHostnamesHostname       `pulumi:"hostnames"`
 	// The provider-assigned unique ID for this managed resource.
 	Id         string `pulumi:"id"`
 	PropertyId string `pulumi:"propertyId"`
@@ -51,10 +54,11 @@ func GetPropertyHostnamesOutput(ctx *pulumi.Context, args GetPropertyHostnamesOu
 
 // A collection of arguments for invoking getPropertyHostnames.
 type GetPropertyHostnamesOutputArgs struct {
-	ContractId pulumi.StringInput `pulumi:"contractId"`
-	GroupId    pulumi.StringInput `pulumi:"groupId"`
-	PropertyId pulumi.StringInput `pulumi:"propertyId"`
-	Version    pulumi.IntPtrInput `pulumi:"version"`
+	ContractId                pulumi.StringInput  `pulumi:"contractId"`
+	FilterPendingDefaultCerts pulumi.BoolPtrInput `pulumi:"filterPendingDefaultCerts"`
+	GroupId                   pulumi.StringInput  `pulumi:"groupId"`
+	PropertyId                pulumi.StringInput  `pulumi:"propertyId"`
+	Version                   pulumi.IntPtrInput  `pulumi:"version"`
 }
 
 func (GetPropertyHostnamesOutputArgs) ElementType() reflect.Type {
@@ -80,8 +84,16 @@ func (o GetPropertyHostnamesResultOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyHostnamesResult) string { return v.ContractId }).(pulumi.StringOutput)
 }
 
+func (o GetPropertyHostnamesResultOutput) FilterPendingDefaultCerts() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesResult) *bool { return v.FilterPendingDefaultCerts }).(pulumi.BoolPtrOutput)
+}
+
 func (o GetPropertyHostnamesResultOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyHostnamesResult) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyHostnamesResultOutput) HostnameBuckets() GetPropertyHostnamesHostnameBucketArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesResult) []GetPropertyHostnamesHostnameBucket { return v.HostnameBuckets }).(GetPropertyHostnamesHostnameBucketArrayOutput)
 }
 
 func (o GetPropertyHostnamesResultOutput) Hostnames() GetPropertyHostnamesHostnameArrayOutput {

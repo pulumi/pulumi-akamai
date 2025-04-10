@@ -30,8 +30,9 @@ type LookupCpCodeArgs struct {
 
 // A collection of values returned by getCpCode.
 type LookupCpCodeResult struct {
-	ContractId string `pulumi:"contractId"`
-	GroupId    string `pulumi:"groupId"`
+	ContractId  string `pulumi:"contractId"`
+	CreatedDate string `pulumi:"createdDate"`
+	GroupId     string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id         string   `pulumi:"id"`
 	Name       string   `pulumi:"name"`
@@ -75,6 +76,10 @@ func (o LookupCpCodeResultOutput) ToLookupCpCodeResultOutputWithContext(ctx cont
 
 func (o LookupCpCodeResultOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCpCodeResult) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o LookupCpCodeResultOutput) CreatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCpCodeResult) string { return v.CreatedDate }).(pulumi.StringOutput)
 }
 
 func (o LookupCpCodeResultOutput) GroupId() pulumi.StringOutput {

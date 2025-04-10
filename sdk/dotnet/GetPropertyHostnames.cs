@@ -27,6 +27,9 @@ namespace Pulumi.Akamai
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
+        [Input("filterPendingDefaultCerts")]
+        public bool? FilterPendingDefaultCerts { get; set; }
+
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
@@ -46,6 +49,9 @@ namespace Pulumi.Akamai
     {
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
+
+        [Input("filterPendingDefaultCerts")]
+        public Input<bool>? FilterPendingDefaultCerts { get; set; }
 
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
@@ -67,7 +73,9 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyHostnamesResult
     {
         public readonly string ContractId;
+        public readonly bool? FilterPendingDefaultCerts;
         public readonly string GroupId;
+        public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameBucketResult> HostnameBuckets;
         public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameResult> Hostnames;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -80,7 +88,11 @@ namespace Pulumi.Akamai
         private GetPropertyHostnamesResult(
             string contractId,
 
+            bool? filterPendingDefaultCerts,
+
             string groupId,
+
+            ImmutableArray<Outputs.GetPropertyHostnamesHostnameBucketResult> hostnameBuckets,
 
             ImmutableArray<Outputs.GetPropertyHostnamesHostnameResult> hostnames,
 
@@ -91,7 +103,9 @@ namespace Pulumi.Akamai
             int version)
         {
             ContractId = contractId;
+            FilterPendingDefaultCerts = filterPendingDefaultCerts;
             GroupId = groupId;
+            HostnameBuckets = hostnameBuckets;
             Hostnames = hostnames;
             Id = id;
             PropertyId = propertyId;

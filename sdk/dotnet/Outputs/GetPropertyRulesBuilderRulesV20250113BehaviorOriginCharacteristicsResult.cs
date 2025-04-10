@@ -66,7 +66,13 @@ namespace Pulumi.Akamai.Outputs
         /// Provides a region used by Akamai Direct Connection.
         /// </summary>
         public readonly string? DirectConnectGeo;
+        /// <summary>
+        /// Encodes any equal (`=`) characters in a query parameter's value.
+        /// </summary>
         public readonly bool? EncodeEquals;
+        /// <summary>
+        /// Encodes the query string parameters.
+        /// </summary>
         public readonly bool? EncodeQueryParams;
         /// <summary>
         /// Specifies the version of the encryption algorithm, an integer from `1` to `5`.
@@ -112,6 +118,9 @@ namespace Pulumi.Akamai.Outputs
         /// Specifies the shared secret key.
         /// </summary>
         public readonly string? SecretKey;
+        /// <summary>
+        /// Sorts the query string parameters alphabetically by key name.
+        /// </summary>
         public readonly bool? SortQueryParams;
         /// <summary>
         /// This option is for internal usage only.

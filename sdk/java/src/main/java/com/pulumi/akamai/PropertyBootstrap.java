@@ -10,6 +10,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
+import java.lang.Boolean;
 import java.lang.String;
 import javax.annotation.Nullable;
 
@@ -84,6 +85,22 @@ public class PropertyBootstrap extends com.pulumi.resources.CustomResource {
      */
     public Output<String> productId() {
         return this.productId;
+    }
+    /**
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     * 
+     */
+    @Export(name="useHostnameBucket", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> useHostnameBucket;
+
+    /**
+     * @return Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     * 
+     */
+    public Output<Boolean> useHostnameBucket() {
+        return this.useHostnameBucket;
     }
 
     /**

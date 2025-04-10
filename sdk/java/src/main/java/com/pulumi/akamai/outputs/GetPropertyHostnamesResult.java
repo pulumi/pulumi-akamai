@@ -4,17 +4,23 @@
 package com.pulumi.akamai.outputs;
 
 import com.pulumi.akamai.outputs.GetPropertyHostnamesHostname;
+import com.pulumi.akamai.outputs.GetPropertyHostnamesHostnameBucket;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyHostnamesResult {
     private String contractId;
+    private @Nullable Boolean filterPendingDefaultCerts;
     private String groupId;
+    private List<GetPropertyHostnamesHostnameBucket> hostnameBuckets;
     private List<GetPropertyHostnamesHostname> hostnames;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -28,8 +34,14 @@ public final class GetPropertyHostnamesResult {
     public String contractId() {
         return this.contractId;
     }
+    public Optional<Boolean> filterPendingDefaultCerts() {
+        return Optional.ofNullable(this.filterPendingDefaultCerts);
+    }
     public String groupId() {
         return this.groupId;
+    }
+    public List<GetPropertyHostnamesHostnameBucket> hostnameBuckets() {
+        return this.hostnameBuckets;
     }
     public List<GetPropertyHostnamesHostname> hostnames() {
         return this.hostnames;
@@ -58,7 +70,9 @@ public final class GetPropertyHostnamesResult {
     @CustomType.Builder
     public static final class Builder {
         private String contractId;
+        private @Nullable Boolean filterPendingDefaultCerts;
         private String groupId;
+        private List<GetPropertyHostnamesHostnameBucket> hostnameBuckets;
         private List<GetPropertyHostnamesHostname> hostnames;
         private String id;
         private String propertyId;
@@ -67,7 +81,9 @@ public final class GetPropertyHostnamesResult {
         public Builder(GetPropertyHostnamesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contractId = defaults.contractId;
+    	      this.filterPendingDefaultCerts = defaults.filterPendingDefaultCerts;
     	      this.groupId = defaults.groupId;
+    	      this.hostnameBuckets = defaults.hostnameBuckets;
     	      this.hostnames = defaults.hostnames;
     	      this.id = defaults.id;
     	      this.propertyId = defaults.propertyId;
@@ -83,12 +99,29 @@ public final class GetPropertyHostnamesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder filterPendingDefaultCerts(@Nullable Boolean filterPendingDefaultCerts) {
+
+            this.filterPendingDefaultCerts = filterPendingDefaultCerts;
+            return this;
+        }
+        @CustomType.Setter
         public Builder groupId(String groupId) {
             if (groupId == null) {
               throw new MissingRequiredPropertyException("GetPropertyHostnamesResult", "groupId");
             }
             this.groupId = groupId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder hostnameBuckets(List<GetPropertyHostnamesHostnameBucket> hostnameBuckets) {
+            if (hostnameBuckets == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesResult", "hostnameBuckets");
+            }
+            this.hostnameBuckets = hostnameBuckets;
+            return this;
+        }
+        public Builder hostnameBuckets(GetPropertyHostnamesHostnameBucket... hostnameBuckets) {
+            return hostnameBuckets(List.of(hostnameBuckets));
         }
         @CustomType.Setter
         public Builder hostnames(List<GetPropertyHostnamesHostname> hostnames) {
@@ -128,7 +161,9 @@ public final class GetPropertyHostnamesResult {
         public GetPropertyHostnamesResult build() {
             final var _resultValue = new GetPropertyHostnamesResult();
             _resultValue.contractId = contractId;
+            _resultValue.filterPendingDefaultCerts = filterPendingDefaultCerts;
             _resultValue.groupId = groupId;
+            _resultValue.hostnameBuckets = hostnameBuckets;
             _resultValue.hostnames = hostnames;
             _resultValue.id = id;
             _resultValue.propertyId = propertyId;

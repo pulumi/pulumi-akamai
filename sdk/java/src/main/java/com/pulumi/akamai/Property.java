@@ -14,6 +14,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -215,6 +216,22 @@ public class Property extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> stagingVersion() {
         return this.stagingVersion;
+    }
+    /**
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     * 
+     */
+    @Export(name="useHostnameBucket", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> useHostnameBucket;
+
+    /**
+     * @return Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+     * incrementing property versions.
+     * 
+     */
+    public Output<Optional<Boolean>> useHostnameBucket() {
+        return Codegen.optional(this.useHostnameBucket);
     }
     /**
      * Property version notes

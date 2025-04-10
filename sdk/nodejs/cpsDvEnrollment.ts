@@ -35,7 +35,7 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
     }
 
     /**
-     * Whether acknowledge warnings before certificate verification
+     * Whether acknowledge warnings before certificate verification. Default is false
      */
     public readonly acknowledgePreVerificationWarnings!: pulumi.Output<boolean | undefined>;
     /**
@@ -43,11 +43,11 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
      */
     public readonly adminContact!: pulumi.Output<outputs.CpsDvEnrollmentAdminContact>;
     /**
-     * Allow to duplicate common name
+     * Allow to duplicate common name. Default is false
      */
     public readonly allowDuplicateCommonName!: pulumi.Output<boolean | undefined>;
     /**
-     * Certificate trust chain type
+     * Certificate trust chain type. Default is 'default'
      */
     public readonly certificateChainType!: pulumi.Output<string | undefined>;
     /**
@@ -211,7 +211,7 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
  */
 export interface CpsDvEnrollmentState {
     /**
-     * Whether acknowledge warnings before certificate verification
+     * Whether acknowledge warnings before certificate verification. Default is false
      */
     acknowledgePreVerificationWarnings?: pulumi.Input<boolean>;
     /**
@@ -219,11 +219,11 @@ export interface CpsDvEnrollmentState {
      */
     adminContact?: pulumi.Input<inputs.CpsDvEnrollmentAdminContact>;
     /**
-     * Allow to duplicate common name
+     * Allow to duplicate common name. Default is false
      */
     allowDuplicateCommonName?: pulumi.Input<boolean>;
     /**
-     * Certificate trust chain type
+     * Certificate trust chain type. Default is 'default'
      */
     certificateChainType?: pulumi.Input<string>;
     /**
@@ -297,7 +297,7 @@ export interface CpsDvEnrollmentState {
  */
 export interface CpsDvEnrollmentArgs {
     /**
-     * Whether acknowledge warnings before certificate verification
+     * Whether acknowledge warnings before certificate verification. Default is false
      */
     acknowledgePreVerificationWarnings?: pulumi.Input<boolean>;
     /**
@@ -305,11 +305,11 @@ export interface CpsDvEnrollmentArgs {
      */
     adminContact: pulumi.Input<inputs.CpsDvEnrollmentAdminContact>;
     /**
-     * Allow to duplicate common name
+     * Allow to duplicate common name. Default is false
      */
     allowDuplicateCommonName?: pulumi.Input<boolean>;
     /**
-     * Certificate trust chain type
+     * Certificate trust chain type. Default is 'default'
      */
     certificateChainType?: pulumi.Input<string>;
     /**

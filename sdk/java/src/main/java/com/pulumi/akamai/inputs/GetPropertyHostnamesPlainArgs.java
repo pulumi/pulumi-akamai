@@ -5,6 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -21,6 +22,13 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
 
     public String contractId() {
         return this.contractId;
+    }
+
+    @Import(name="filterPendingDefaultCerts")
+    private @Nullable Boolean filterPendingDefaultCerts;
+
+    public Optional<Boolean> filterPendingDefaultCerts() {
+        return Optional.ofNullable(this.filterPendingDefaultCerts);
     }
 
     @Import(name="groupId", required=true)
@@ -48,6 +56,7 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
 
     private GetPropertyHostnamesPlainArgs(GetPropertyHostnamesPlainArgs $) {
         this.contractId = $.contractId;
+        this.filterPendingDefaultCerts = $.filterPendingDefaultCerts;
         this.groupId = $.groupId;
         this.propertyId = $.propertyId;
         this.version = $.version;
@@ -73,6 +82,11 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
 
         public Builder contractId(String contractId) {
             $.contractId = contractId;
+            return this;
+        }
+
+        public Builder filterPendingDefaultCerts(@Nullable Boolean filterPendingDefaultCerts) {
+            $.filterPendingDefaultCerts = filterPendingDefaultCerts;
             return this;
         }
 

@@ -24,6 +24,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyRulesTemplateArgs : global::Pulumi.InvokeArgs
     {
+        [Input("followLinks")]
+        public bool? FollowLinks { get; set; }
+
         [Input("templateFile")]
         public string? TemplateFile { get; set; }
 
@@ -57,6 +60,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyRulesTemplateInvokeArgs : global::Pulumi.InvokeArgs
     {
+        [Input("followLinks")]
+        public Input<bool>? FollowLinks { get; set; }
+
         [Input("templateFile")]
         public Input<string>? TemplateFile { get; set; }
 
@@ -92,6 +98,7 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetPropertyRulesTemplateResult
     {
+        public readonly bool? FollowLinks;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -105,6 +112,8 @@ namespace Pulumi.Akamai
 
         [OutputConstructor]
         private GetPropertyRulesTemplateResult(
+            bool? followLinks,
+
             string id,
 
             string json,
@@ -119,6 +128,7 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetPropertyRulesTemplateVariableResult> variables)
         {
+            FollowLinks = followLinks;
             Id = id;
             Json = json;
             TemplateFile = templateFile;

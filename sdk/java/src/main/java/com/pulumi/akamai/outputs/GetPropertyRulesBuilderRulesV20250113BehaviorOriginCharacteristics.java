@@ -80,7 +80,15 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
      * 
      */
     private @Nullable String directConnectGeo;
+    /**
+     * @return Encodes any equal (`=`) characters in a query parameter&#39;s value.
+     * 
+     */
     private @Nullable Boolean encodeEquals;
+    /**
+     * @return Encodes the query string parameters.
+     * 
+     */
     private @Nullable Boolean encodeQueryParams;
     /**
      * @return Specifies the version of the encryption algorithm, an integer from `1` to `5`.
@@ -136,6 +144,10 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
      * 
      */
     private @Nullable String secretKey;
+    /**
+     * @return Sorts the query string parameters alphabetically by key name.
+     * 
+     */
     private @Nullable Boolean sortQueryParams;
     /**
      * @return This option is for internal usage only.
@@ -248,9 +260,17 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
     public Optional<String> directConnectGeo() {
         return Optional.ofNullable(this.directConnectGeo);
     }
+    /**
+     * @return Encodes any equal (`=`) characters in a query parameter&#39;s value.
+     * 
+     */
     public Optional<Boolean> encodeEquals() {
         return Optional.ofNullable(this.encodeEquals);
     }
+    /**
+     * @return Encodes the query string parameters.
+     * 
+     */
     public Optional<Boolean> encodeQueryParams() {
         return Optional.ofNullable(this.encodeQueryParams);
     }
@@ -336,6 +356,10 @@ public final class GetPropertyRulesBuilderRulesV20250113BehaviorOriginCharacteri
     public Optional<String> secretKey() {
         return Optional.ofNullable(this.secretKey);
     }
+    /**
+     * @return Sorts the query string parameters alphabetically by key name.
+     * 
+     */
     public Optional<Boolean> sortQueryParams() {
         return Optional.ofNullable(this.sortQueryParams);
     }

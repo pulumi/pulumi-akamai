@@ -99,9 +99,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("directConnectGeo")]
         public Input<string>? DirectConnectGeo { get; set; }
 
+        /// <summary>
+        /// Encodes any equal (`=`) characters in a query parameter's value.
+        /// </summary>
         [Input("encodeEquals")]
         public Input<bool>? EncodeEquals { get; set; }
 
+        /// <summary>
+        /// Encodes the query string parameters.
+        /// </summary>
         [Input("encodeQueryParams")]
         public Input<bool>? EncodeQueryParams { get; set; }
 
@@ -177,6 +183,9 @@ namespace Pulumi.Akamai.Inputs
         [Input("secretKey")]
         public Input<string>? SecretKey { get; set; }
 
+        /// <summary>
+        /// Sorts the query string parameters alphabetically by key name.
+        /// </summary>
         [Input("sortQueryParams")]
         public Input<bool>? SortQueryParams { get; set; }
 

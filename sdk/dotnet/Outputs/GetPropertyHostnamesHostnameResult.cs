@@ -13,11 +13,26 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyHostnamesHostnameResult
     {
+        /// <summary>
+        /// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        /// </summary>
         public readonly string CertProvisioningType;
         public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameCertStatusResult> CertStatuses;
+        /// <summary>
+        /// The hostname that your end users see, indicated by the Host header in end user requests.
+        /// </summary>
         public readonly string CnameFrom;
+        /// <summary>
+        /// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
+        /// </summary>
         public readonly string CnameTo;
+        /// <summary>
+        /// A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
+        /// </summary>
         public readonly string CnameType;
+        /// <summary>
+        /// The unique identifier for the edge hostname.
+        /// </summary>
         public readonly string EdgeHostnameId;
 
         [OutputConstructor]

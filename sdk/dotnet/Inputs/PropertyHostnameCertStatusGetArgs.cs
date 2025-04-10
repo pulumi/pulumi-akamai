@@ -12,15 +12,27 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class PropertyHostnameCertStatusGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The hostname part of the CNAME record used to validate the certificate's domain.
+        /// </summary>
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
 
+        /// <summary>
+        /// The certificate's deployment status on the production network.
+        /// </summary>
         [Input("productionStatus")]
         public Input<string>? ProductionStatus { get; set; }
 
+        /// <summary>
+        /// The certificate's deployment status on the staging network.
+        /// </summary>
         [Input("stagingStatus")]
         public Input<string>? StagingStatus { get; set; }
 
+        /// <summary>
+        /// The destination part of the CNAME record used to validate the certificate's domain.
+        /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
 
