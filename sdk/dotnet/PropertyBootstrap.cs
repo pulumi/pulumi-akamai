@@ -42,6 +42,13 @@ namespace Pulumi.Akamai
         [Output("productId")]
         public Output<string> ProductId { get; private set; } = null!;
 
+        /// <summary>
+        /// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+        /// incrementing property versions.
+        /// </summary>
+        [Output("useHostnameBucket")]
+        public Output<bool> UseHostnameBucket { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a PropertyBootstrap resource with the given unique name, arguments, and options.
@@ -112,6 +119,13 @@ namespace Pulumi.Akamai
         [Input("productId", required: true)]
         public Input<string> ProductId { get; set; } = null!;
 
+        /// <summary>
+        /// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+        /// incrementing property versions.
+        /// </summary>
+        [Input("useHostnameBucket")]
+        public Input<bool>? UseHostnameBucket { get; set; }
+
         public PropertyBootstrapArgs()
         {
         }
@@ -149,6 +163,13 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
+
+        /// <summary>
+        /// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+        /// incrementing property versions.
+        /// </summary>
+        [Input("useHostnameBucket")]
+        public Input<bool>? UseHostnameBucket { get; set; }
 
         public PropertyBootstrapState()
         {

@@ -7,6 +7,7 @@ import com.pulumi.akamai.outputs.GetPropertyRulesTemplateTemplate;
 import com.pulumi.akamai.outputs.GetPropertyRulesTemplateVariable;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesTemplateResult {
+    private @Nullable Boolean followLinks;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -28,6 +30,9 @@ public final class GetPropertyRulesTemplateResult {
     private @Nullable List<GetPropertyRulesTemplateVariable> variables;
 
     private GetPropertyRulesTemplateResult() {}
+    public Optional<Boolean> followLinks() {
+        return Optional.ofNullable(this.followLinks);
+    }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -63,6 +68,7 @@ public final class GetPropertyRulesTemplateResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean followLinks;
         private String id;
         private String json;
         private @Nullable String templateFile;
@@ -73,6 +79,7 @@ public final class GetPropertyRulesTemplateResult {
         public Builder() {}
         public Builder(GetPropertyRulesTemplateResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.followLinks = defaults.followLinks;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
     	      this.templateFile = defaults.templateFile;
@@ -82,6 +89,12 @@ public final class GetPropertyRulesTemplateResult {
     	      this.variables = defaults.variables;
         }
 
+        @CustomType.Setter
+        public Builder followLinks(@Nullable Boolean followLinks) {
+
+            this.followLinks = followLinks;
+            return this;
+        }
         @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
@@ -136,6 +149,7 @@ public final class GetPropertyRulesTemplateResult {
         }
         public GetPropertyRulesTemplateResult build() {
             final var _resultValue = new GetPropertyRulesTemplateResult();
+            _resultValue.followLinks = followLinks;
             _resultValue.id = id;
             _resultValue.json = json;
             _resultValue.templateFile = templateFile;

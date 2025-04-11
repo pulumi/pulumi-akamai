@@ -28,13 +28,19 @@ class GetPropertyHostnamesResult:
     """
     A collection of values returned by getPropertyHostnames.
     """
-    def __init__(__self__, contract_id=None, group_id=None, hostnames=None, id=None, property_id=None, version=None):
+    def __init__(__self__, contract_id=None, filter_pending_default_certs=None, group_id=None, hostname_buckets=None, hostnames=None, id=None, property_id=None, version=None):
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
+        if filter_pending_default_certs and not isinstance(filter_pending_default_certs, bool):
+            raise TypeError("Expected argument 'filter_pending_default_certs' to be a bool")
+        pulumi.set(__self__, "filter_pending_default_certs", filter_pending_default_certs)
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
         pulumi.set(__self__, "group_id", group_id)
+        if hostname_buckets and not isinstance(hostname_buckets, list):
+            raise TypeError("Expected argument 'hostname_buckets' to be a list")
+        pulumi.set(__self__, "hostname_buckets", hostname_buckets)
         if hostnames and not isinstance(hostnames, list):
             raise TypeError("Expected argument 'hostnames' to be a list")
         pulumi.set(__self__, "hostnames", hostnames)
@@ -54,9 +60,19 @@ class GetPropertyHostnamesResult:
         return pulumi.get(self, "contract_id")
 
     @property
+    @pulumi.getter(name="filterPendingDefaultCerts")
+    def filter_pending_default_certs(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "filter_pending_default_certs")
+
+    @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> builtins.str:
         return pulumi.get(self, "group_id")
+
+    @property
+    @pulumi.getter(name="hostnameBuckets")
+    def hostname_buckets(self) -> Sequence['outputs.GetPropertyHostnamesHostnameBucketResult']:
+        return pulumi.get(self, "hostname_buckets")
 
     @property
     @pulumi.getter
@@ -89,7 +105,9 @@ class AwaitableGetPropertyHostnamesResult(GetPropertyHostnamesResult):
             yield self
         return GetPropertyHostnamesResult(
             contract_id=self.contract_id,
+            filter_pending_default_certs=self.filter_pending_default_certs,
             group_id=self.group_id,
+            hostname_buckets=self.hostname_buckets,
             hostnames=self.hostnames,
             id=self.id,
             property_id=self.property_id,
@@ -97,6 +115,7 @@ class AwaitableGetPropertyHostnamesResult(GetPropertyHostnamesResult):
 
 
 def get_property_hostnames(contract_id: Optional[builtins.str] = None,
+                           filter_pending_default_certs: Optional[builtins.bool] = None,
                            group_id: Optional[builtins.str] = None,
                            property_id: Optional[builtins.str] = None,
                            version: Optional[builtins.int] = None,
@@ -106,6 +125,7 @@ def get_property_hostnames(contract_id: Optional[builtins.str] = None,
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
+    __args__['filterPendingDefaultCerts'] = filter_pending_default_certs
     __args__['groupId'] = group_id
     __args__['propertyId'] = property_id
     __args__['version'] = version
@@ -114,12 +134,15 @@ def get_property_hostnames(contract_id: Optional[builtins.str] = None,
 
     return AwaitableGetPropertyHostnamesResult(
         contract_id=pulumi.get(__ret__, 'contract_id'),
+        filter_pending_default_certs=pulumi.get(__ret__, 'filter_pending_default_certs'),
         group_id=pulumi.get(__ret__, 'group_id'),
+        hostname_buckets=pulumi.get(__ret__, 'hostname_buckets'),
         hostnames=pulumi.get(__ret__, 'hostnames'),
         id=pulumi.get(__ret__, 'id'),
         property_id=pulumi.get(__ret__, 'property_id'),
         version=pulumi.get(__ret__, 'version'))
 def get_property_hostnames_output(contract_id: Optional[pulumi.Input[builtins.str]] = None,
+                                  filter_pending_default_certs: Optional[pulumi.Input[Optional[builtins.bool]]] = None,
                                   group_id: Optional[pulumi.Input[builtins.str]] = None,
                                   property_id: Optional[pulumi.Input[builtins.str]] = None,
                                   version: Optional[pulumi.Input[Optional[builtins.int]]] = None,
@@ -129,6 +152,7 @@ def get_property_hostnames_output(contract_id: Optional[pulumi.Input[builtins.st
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
+    __args__['filterPendingDefaultCerts'] = filter_pending_default_certs
     __args__['groupId'] = group_id
     __args__['propertyId'] = property_id
     __args__['version'] = version
@@ -136,7 +160,9 @@ def get_property_hostnames_output(contract_id: Optional[pulumi.Input[builtins.st
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyHostnames:getPropertyHostnames', __args__, opts=opts, typ=GetPropertyHostnamesResult)
     return __ret__.apply(lambda __response__: GetPropertyHostnamesResult(
         contract_id=pulumi.get(__response__, 'contract_id'),
+        filter_pending_default_certs=pulumi.get(__response__, 'filter_pending_default_certs'),
         group_id=pulumi.get(__response__, 'group_id'),
+        hostname_buckets=pulumi.get(__response__, 'hostname_buckets'),
         hostnames=pulumi.get(__response__, 'hostnames'),
         id=pulumi.get(__response__, 'id'),
         property_id=pulumi.get(__response__, 'property_id'),

@@ -10,21 +10,53 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyHostnamesHostnameCertStatus {
+    /**
+     * @return The hostname part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     private String hostname;
+    /**
+     * @return The certificate&#39;s deployment status on the production network.
+     * 
+     */
     private String productionStatus;
+    /**
+     * @return The certificate&#39;s deployment status on the staging network.
+     * 
+     */
     private String stagingStatus;
+    /**
+     * @return The destination part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     private String target;
 
     private GetPropertyHostnamesHostnameCertStatus() {}
+    /**
+     * @return The hostname part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     public String hostname() {
         return this.hostname;
     }
+    /**
+     * @return The certificate&#39;s deployment status on the production network.
+     * 
+     */
     public String productionStatus() {
         return this.productionStatus;
     }
+    /**
+     * @return The certificate&#39;s deployment status on the staging network.
+     * 
+     */
     public String stagingStatus() {
         return this.stagingStatus;
     }
+    /**
+     * @return The destination part of the CNAME record used to validate the certificate&#39;s domain.
+     * 
+     */
     public String target() {
         return this.target;
     }

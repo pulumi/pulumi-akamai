@@ -61,6 +61,7 @@ namespace Pulumi.Akamai
     public sealed class GetCpCodeResult
     {
         public readonly string ContractId;
+        public readonly string CreatedDate;
         public readonly string GroupId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -73,6 +74,8 @@ namespace Pulumi.Akamai
         private GetCpCodeResult(
             string contractId,
 
+            string createdDate,
+
             string groupId,
 
             string id,
@@ -82,6 +85,7 @@ namespace Pulumi.Akamai
             ImmutableArray<string> productIds)
         {
             ContractId = contractId;
+            CreatedDate = createdDate;
             GroupId = groupId;
             Id = id;
             Name = name;

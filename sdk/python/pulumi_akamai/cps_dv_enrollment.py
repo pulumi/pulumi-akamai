@@ -49,9 +49,9 @@ class CpsDvEnrollmentArgs:
         :param pulumi.Input[builtins.str] signature_algorithm: SHA algorithm type
         :param pulumi.Input[builtins.bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input['CpsDvEnrollmentTechContactArgs'] tech_contact: Contact information for an administrator at Akamai
-        :param pulumi.Input[builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
-        :param pulumi.Input[builtins.bool] allow_duplicate_common_name: Allow to duplicate common name
-        :param pulumi.Input[builtins.str] certificate_chain_type: Certificate trust chain type
+        :param pulumi.Input[builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification. Default is false
+        :param pulumi.Input[builtins.bool] allow_duplicate_common_name: Allow to duplicate common name. Default is false
+        :param pulumi.Input[builtins.str] certificate_chain_type: Certificate trust chain type. Default is 'default'
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] sans: List of SANs
         :param pulumi.Input['CpsDvEnrollmentTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
@@ -200,7 +200,7 @@ class CpsDvEnrollmentArgs:
     @pulumi.getter(name="acknowledgePreVerificationWarnings")
     def acknowledge_pre_verification_warnings(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        Whether acknowledge warnings before certificate verification
+        Whether acknowledge warnings before certificate verification. Default is false
         """
         return pulumi.get(self, "acknowledge_pre_verification_warnings")
 
@@ -212,7 +212,7 @@ class CpsDvEnrollmentArgs:
     @pulumi.getter(name="allowDuplicateCommonName")
     def allow_duplicate_common_name(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        Allow to duplicate common name
+        Allow to duplicate common name. Default is false
         """
         return pulumi.get(self, "allow_duplicate_common_name")
 
@@ -224,7 +224,7 @@ class CpsDvEnrollmentArgs:
     @pulumi.getter(name="certificateChainType")
     def certificate_chain_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Certificate trust chain type
+        Certificate trust chain type. Default is 'default'
         """
         return pulumi.get(self, "certificate_chain_type")
 
@@ -282,10 +282,10 @@ class _CpsDvEnrollmentState:
                  validation_type: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering CpsDvEnrollment resources.
-        :param pulumi.Input[builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
+        :param pulumi.Input[builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification. Default is false
         :param pulumi.Input['CpsDvEnrollmentAdminContactArgs'] admin_contact: Contact information for the certificate administrator to use at organization
-        :param pulumi.Input[builtins.bool] allow_duplicate_common_name: Allow to duplicate common name
-        :param pulumi.Input[builtins.str] certificate_chain_type: Certificate trust chain type
+        :param pulumi.Input[builtins.bool] allow_duplicate_common_name: Allow to duplicate common name. Default is false
+        :param pulumi.Input[builtins.str] certificate_chain_type: Certificate trust chain type. Default is 'default'
         :param pulumi.Input[builtins.str] certificate_type: Certificate type of enrollment
         :param pulumi.Input[builtins.str] common_name: Common name used for enrollment
         :param pulumi.Input[builtins.str] contract_id: Contract ID for which enrollment is retrieved
@@ -348,7 +348,7 @@ class _CpsDvEnrollmentState:
     @pulumi.getter(name="acknowledgePreVerificationWarnings")
     def acknowledge_pre_verification_warnings(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        Whether acknowledge warnings before certificate verification
+        Whether acknowledge warnings before certificate verification. Default is false
         """
         return pulumi.get(self, "acknowledge_pre_verification_warnings")
 
@@ -372,7 +372,7 @@ class _CpsDvEnrollmentState:
     @pulumi.getter(name="allowDuplicateCommonName")
     def allow_duplicate_common_name(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        Allow to duplicate common name
+        Allow to duplicate common name. Default is false
         """
         return pulumi.get(self, "allow_duplicate_common_name")
 
@@ -384,7 +384,7 @@ class _CpsDvEnrollmentState:
     @pulumi.getter(name="certificateChainType")
     def certificate_chain_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Certificate trust chain type
+        Certificate trust chain type. Default is 'default'
         """
         return pulumi.get(self, "certificate_chain_type")
 
@@ -610,10 +610,10 @@ class CpsDvEnrollment(pulumi.CustomResource):
         Create a CpsDvEnrollment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
+        :param pulumi.Input[builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification. Default is false
         :param pulumi.Input[Union['CpsDvEnrollmentAdminContactArgs', 'CpsDvEnrollmentAdminContactArgsDict']] admin_contact: Contact information for the certificate administrator to use at organization
-        :param pulumi.Input[builtins.bool] allow_duplicate_common_name: Allow to duplicate common name
-        :param pulumi.Input[builtins.str] certificate_chain_type: Certificate trust chain type
+        :param pulumi.Input[builtins.bool] allow_duplicate_common_name: Allow to duplicate common name. Default is false
+        :param pulumi.Input[builtins.str] certificate_chain_type: Certificate trust chain type. Default is 'default'
         :param pulumi.Input[builtins.str] common_name: Common name used for enrollment
         :param pulumi.Input[builtins.str] contract_id: Contract ID for which enrollment is retrieved
         :param pulumi.Input[Union['CpsDvEnrollmentCsrArgs', 'CpsDvEnrollmentCsrArgsDict']] csr: Certificate signing request generated during enrollment creation
@@ -750,10 +750,10 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
+        :param pulumi.Input[builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification. Default is false
         :param pulumi.Input[Union['CpsDvEnrollmentAdminContactArgs', 'CpsDvEnrollmentAdminContactArgsDict']] admin_contact: Contact information for the certificate administrator to use at organization
-        :param pulumi.Input[builtins.bool] allow_duplicate_common_name: Allow to duplicate common name
-        :param pulumi.Input[builtins.str] certificate_chain_type: Certificate trust chain type
+        :param pulumi.Input[builtins.bool] allow_duplicate_common_name: Allow to duplicate common name. Default is false
+        :param pulumi.Input[builtins.str] certificate_chain_type: Certificate trust chain type. Default is 'default'
         :param pulumi.Input[builtins.str] certificate_type: Certificate type of enrollment
         :param pulumi.Input[builtins.str] common_name: Common name used for enrollment
         :param pulumi.Input[builtins.str] contract_id: Contract ID for which enrollment is retrieved
@@ -801,7 +801,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @pulumi.getter(name="acknowledgePreVerificationWarnings")
     def acknowledge_pre_verification_warnings(self) -> pulumi.Output[Optional[builtins.bool]]:
         """
-        Whether acknowledge warnings before certificate verification
+        Whether acknowledge warnings before certificate verification. Default is false
         """
         return pulumi.get(self, "acknowledge_pre_verification_warnings")
 
@@ -817,7 +817,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @pulumi.getter(name="allowDuplicateCommonName")
     def allow_duplicate_common_name(self) -> pulumi.Output[Optional[builtins.bool]]:
         """
-        Allow to duplicate common name
+        Allow to duplicate common name. Default is false
         """
         return pulumi.get(self, "allow_duplicate_common_name")
 
@@ -825,7 +825,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @pulumi.getter(name="certificateChainType")
     def certificate_chain_type(self) -> pulumi.Output[Optional[builtins.str]]:
         """
-        Certificate trust chain type
+        Certificate trust chain type. Default is 'default'
         """
         return pulumi.get(self, "certificate_chain_type")
 

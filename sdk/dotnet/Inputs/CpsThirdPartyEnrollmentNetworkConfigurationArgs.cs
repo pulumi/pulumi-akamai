@@ -19,7 +19,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<Inputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs>? ClientMutualAuthentication { get; set; }
 
         /// <summary>
-        /// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+        /// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
         /// </summary>
         [Input("cloneDnsNames")]
         public Input<bool>? CloneDnsNames { get; set; }
@@ -43,25 +43,25 @@ namespace Pulumi.Akamai.Inputs
         public Input<string> Geography { get; set; } = null!;
 
         /// <summary>
-        /// Mandatory Ciphers which are included for enrollment
+        /// Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
         /// </summary>
         [Input("mustHaveCiphers")]
         public Input<string>? MustHaveCiphers { get; set; }
 
         /// <summary>
-        /// Enable OCSP stapling
+        /// Enable OCSP stapling. Default is 'on'
         /// </summary>
         [Input("ocspStapling")]
         public Input<string>? OcspStapling { get; set; }
 
         /// <summary>
-        /// Preferred Ciphers which are included for enrollment
+        /// Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
         /// </summary>
         [Input("preferredCiphers")]
         public Input<string>? PreferredCiphers { get; set; }
 
         /// <summary>
-        /// Enable QUIC protocol
+        /// Enable QUIC protocol. Default is false
         /// </summary>
         [Input("quicEnabled")]
         public Input<bool>? QuicEnabled { get; set; }

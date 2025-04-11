@@ -27,10 +27,13 @@ class GetCpCodeResult:
     """
     A collection of values returned by getCpCode.
     """
-    def __init__(__self__, contract_id=None, group_id=None, id=None, name=None, product_ids=None):
+    def __init__(__self__, contract_id=None, created_date=None, group_id=None, id=None, name=None, product_ids=None):
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
+        if created_date and not isinstance(created_date, str):
+            raise TypeError("Expected argument 'created_date' to be a str")
+        pulumi.set(__self__, "created_date", created_date)
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
         pulumi.set(__self__, "group_id", group_id)
@@ -48,6 +51,11 @@ class GetCpCodeResult:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> builtins.str:
         return pulumi.get(self, "contract_id")
+
+    @property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> builtins.str:
+        return pulumi.get(self, "created_date")
 
     @property
     @pulumi.getter(name="groupId")
@@ -80,6 +88,7 @@ class AwaitableGetCpCodeResult(GetCpCodeResult):
             yield self
         return GetCpCodeResult(
             contract_id=self.contract_id,
+            created_date=self.created_date,
             group_id=self.group_id,
             id=self.id,
             name=self.name,
@@ -102,6 +111,7 @@ def get_cp_code(contract_id: Optional[builtins.str] = None,
 
     return AwaitableGetCpCodeResult(
         contract_id=pulumi.get(__ret__, 'contract_id'),
+        created_date=pulumi.get(__ret__, 'created_date'),
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
@@ -121,6 +131,7 @@ def get_cp_code_output(contract_id: Optional[pulumi.Input[builtins.str]] = None,
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCpCode:getCpCode', __args__, opts=opts, typ=GetCpCodeResult)
     return __ret__.apply(lambda __response__: GetCpCodeResult(
         contract_id=pulumi.get(__response__, 'contract_id'),
+        created_date=pulumi.get(__response__, 'created_date'),
         group_id=pulumi.get(__response__, 'group_id'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),

@@ -5,10 +5,10 @@ Subject: [PATCH] fork
 
 
 diff --git a/pkg/providers/property/resource_akamai_property.go b/pkg/providers/property/resource_akamai_property.go
-index 08fbe95b..9dbb121d 100644
+index 9c66c004..a32b229d 100644
 --- a/pkg/providers/property/resource_akamai_property.go
 +++ b/pkg/providers/property/resource_akamai_property.go
-@@ -484,9 +484,10 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter
+@@ -517,9 +517,10 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter
  	// Save minimum state BEFORE moving on
  	d.SetId(propertyID)
  	attrs := map[string]interface{}{
@@ -22,7 +22,7 @@ index 08fbe95b..9dbb121d 100644
  	}
  	if err := tf.SetAttrs(d, attrs); err != nil {
  		return diag.FromErr(err)
-@@ -748,6 +749,7 @@ func resourcePropertyUpdate(ctx context.Context, d *schema.ResourceData, m inter
+@@ -789,6 +790,7 @@ func resourcePropertyUpdate(ctx context.Context, d *schema.ResourceData, m inter
  
  	var propertyVersion int
  	if v, ok := d.GetOk("read_version"); ok && v.(int) != 0 {

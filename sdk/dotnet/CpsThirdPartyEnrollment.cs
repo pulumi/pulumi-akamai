@@ -13,7 +13,7 @@ namespace Pulumi.Akamai
     public partial class CpsThirdPartyEnrollment : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Whether acknowledge warnings before certificate verification
+        /// Whether acknowledge warnings before certificate verification. Default is false
         /// </summary>
         [Output("acknowledgePreVerificationWarnings")]
         public Output<bool?> AcknowledgePreVerificationWarnings { get; private set; } = null!;
@@ -25,7 +25,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.CpsThirdPartyEnrollmentAdminContact> AdminContact { get; private set; } = null!;
 
         /// <summary>
-        /// Allow to duplicate common name
+        /// Allow to duplicate common name. Default is false
         /// </summary>
         [Output("allowDuplicateCommonName")]
         public Output<bool?> AllowDuplicateCommonName { get; private set; } = null!;
@@ -37,7 +37,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> AutoApproveWarnings { get; private set; } = null!;
 
         /// <summary>
-        /// Certificate trust chain type
+        /// Certificate trust chain type. Default is 'default'
         /// </summary>
         [Output("certificateChainType")]
         public Output<string?> CertificateChainType { get; private set; } = null!;
@@ -164,7 +164,7 @@ namespace Pulumi.Akamai
     public sealed class CpsThirdPartyEnrollmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether acknowledge warnings before certificate verification
+        /// Whether acknowledge warnings before certificate verification. Default is false
         /// </summary>
         [Input("acknowledgePreVerificationWarnings")]
         public Input<bool>? AcknowledgePreVerificationWarnings { get; set; }
@@ -176,7 +176,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.CpsThirdPartyEnrollmentAdminContactArgs> AdminContact { get; set; } = null!;
 
         /// <summary>
-        /// Allow to duplicate common name
+        /// Allow to duplicate common name. Default is false
         /// </summary>
         [Input("allowDuplicateCommonName")]
         public Input<bool>? AllowDuplicateCommonName { get; set; }
@@ -194,7 +194,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Certificate trust chain type
+        /// Certificate trust chain type. Default is 'default'
         /// </summary>
         [Input("certificateChainType")]
         public Input<string>? CertificateChainType { get; set; }
@@ -289,7 +289,7 @@ namespace Pulumi.Akamai
     public sealed class CpsThirdPartyEnrollmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether acknowledge warnings before certificate verification
+        /// Whether acknowledge warnings before certificate verification. Default is false
         /// </summary>
         [Input("acknowledgePreVerificationWarnings")]
         public Input<bool>? AcknowledgePreVerificationWarnings { get; set; }
@@ -301,7 +301,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.CpsThirdPartyEnrollmentAdminContactGetArgs>? AdminContact { get; set; }
 
         /// <summary>
-        /// Allow to duplicate common name
+        /// Allow to duplicate common name. Default is false
         /// </summary>
         [Input("allowDuplicateCommonName")]
         public Input<bool>? AllowDuplicateCommonName { get; set; }
@@ -319,7 +319,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Certificate trust chain type
+        /// Certificate trust chain type. Default is 'default'
         /// </summary>
         [Input("certificateChainType")]
         public Input<string>? CertificateChainType { get; set; }

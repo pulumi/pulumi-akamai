@@ -29,7 +29,10 @@ class GetPropertyRulesTemplateResult:
     """
     A collection of values returned by getPropertyRulesTemplate.
     """
-    def __init__(__self__, id=None, json=None, template_file=None, templates=None, var_definition_file=None, var_values_file=None, variables=None):
+    def __init__(__self__, follow_links=None, id=None, json=None, template_file=None, templates=None, var_definition_file=None, var_values_file=None, variables=None):
+        if follow_links and not isinstance(follow_links, bool):
+            raise TypeError("Expected argument 'follow_links' to be a bool")
+        pulumi.set(__self__, "follow_links", follow_links)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -51,6 +54,11 @@ class GetPropertyRulesTemplateResult:
         if variables and not isinstance(variables, list):
             raise TypeError("Expected argument 'variables' to be a list")
         pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter(name="followLinks")
+    def follow_links(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "follow_links")
 
     @property
     @pulumi.getter
@@ -97,6 +105,7 @@ class AwaitableGetPropertyRulesTemplateResult(GetPropertyRulesTemplateResult):
         if False:
             yield self
         return GetPropertyRulesTemplateResult(
+            follow_links=self.follow_links,
             id=self.id,
             json=self.json,
             template_file=self.template_file,
@@ -106,7 +115,8 @@ class AwaitableGetPropertyRulesTemplateResult(GetPropertyRulesTemplateResult):
             variables=self.variables)
 
 
-def get_property_rules_template(template_file: Optional[builtins.str] = None,
+def get_property_rules_template(follow_links: Optional[builtins.bool] = None,
+                                template_file: Optional[builtins.str] = None,
                                 templates: Optional[Sequence[Union['GetPropertyRulesTemplateTemplateArgs', 'GetPropertyRulesTemplateTemplateArgsDict']]] = None,
                                 var_definition_file: Optional[builtins.str] = None,
                                 var_values_file: Optional[builtins.str] = None,
@@ -116,6 +126,7 @@ def get_property_rules_template(template_file: Optional[builtins.str] = None,
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['followLinks'] = follow_links
     __args__['templateFile'] = template_file
     __args__['templates'] = templates
     __args__['varDefinitionFile'] = var_definition_file
@@ -125,6 +136,7 @@ def get_property_rules_template(template_file: Optional[builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate', __args__, opts=opts, typ=GetPropertyRulesTemplateResult).value
 
     return AwaitableGetPropertyRulesTemplateResult(
+        follow_links=pulumi.get(__ret__, 'follow_links'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         template_file=pulumi.get(__ret__, 'template_file'),
@@ -132,7 +144,8 @@ def get_property_rules_template(template_file: Optional[builtins.str] = None,
         var_definition_file=pulumi.get(__ret__, 'var_definition_file'),
         var_values_file=pulumi.get(__ret__, 'var_values_file'),
         variables=pulumi.get(__ret__, 'variables'))
-def get_property_rules_template_output(template_file: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+def get_property_rules_template_output(follow_links: Optional[pulumi.Input[Optional[builtins.bool]]] = None,
+                                       template_file: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                        templates: Optional[pulumi.Input[Optional[Sequence[Union['GetPropertyRulesTemplateTemplateArgs', 'GetPropertyRulesTemplateTemplateArgsDict']]]]] = None,
                                        var_definition_file: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                        var_values_file: Optional[pulumi.Input[Optional[builtins.str]]] = None,
@@ -142,6 +155,7 @@ def get_property_rules_template_output(template_file: Optional[pulumi.Input[Opti
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['followLinks'] = follow_links
     __args__['templateFile'] = template_file
     __args__['templates'] = templates
     __args__['varDefinitionFile'] = var_definition_file
@@ -150,6 +164,7 @@ def get_property_rules_template_output(template_file: Optional[pulumi.Input[Opti
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate', __args__, opts=opts, typ=GetPropertyRulesTemplateResult)
     return __ret__.apply(lambda __response__: GetPropertyRulesTemplateResult(
+        follow_links=pulumi.get(__response__, 'follow_links'),
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
         template_file=pulumi.get(__response__, 'template_file'),

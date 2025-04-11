@@ -23,19 +23,24 @@ class PropertyBootstrapArgs:
                  contract_id: pulumi.Input[builtins.str],
                  group_id: pulumi.Input[builtins.str],
                  product_id: pulumi.Input[builtins.str],
-                 name: Optional[pulumi.Input[builtins.str]] = None):
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None):
         """
         The set of arguments for constructing a PropertyBootstrap resource.
         :param pulumi.Input[builtins.str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[builtins.str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[builtins.str] name: Name to give to the Property (must be unique)
+        :param pulumi.Input[builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+               incrementing property versions.
         """
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "group_id", group_id)
         pulumi.set(__self__, "product_id", product_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if use_hostname_bucket is not None:
+            pulumi.set(__self__, "use_hostname_bucket", use_hostname_bucket)
 
     @property
     @pulumi.getter(name="contractId")
@@ -85,6 +90,19 @@ class PropertyBootstrapArgs:
     def name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "name", value)
 
+    @property
+    @pulumi.getter(name="useHostnameBucket")
+    def use_hostname_bucket(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+        incrementing property versions.
+        """
+        return pulumi.get(self, "use_hostname_bucket")
+
+    @use_hostname_bucket.setter
+    def use_hostname_bucket(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "use_hostname_bucket", value)
+
 
 @pulumi.input_type
 class _PropertyBootstrapState:
@@ -93,7 +111,8 @@ class _PropertyBootstrapState:
                  contract_id: Optional[pulumi.Input[builtins.str]] = None,
                  group_id: Optional[pulumi.Input[builtins.str]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[builtins.str]] = None):
+                 product_id: Optional[pulumi.Input[builtins.str]] = None,
+                 use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None):
         """
         Input properties used for looking up and filtering PropertyBootstrap resources.
         :param pulumi.Input[builtins.str] asset_id: ID of the property in the Identity and Access Management API.
@@ -101,6 +120,8 @@ class _PropertyBootstrapState:
         :param pulumi.Input[builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[builtins.str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[builtins.str] product_id: Product ID to be assigned to the Property
+        :param pulumi.Input[builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+               incrementing property versions.
         """
         if asset_id is not None:
             pulumi.set(__self__, "asset_id", asset_id)
@@ -112,6 +133,8 @@ class _PropertyBootstrapState:
             pulumi.set(__self__, "name", name)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
+        if use_hostname_bucket is not None:
+            pulumi.set(__self__, "use_hostname_bucket", use_hostname_bucket)
 
     @property
     @pulumi.getter(name="assetId")
@@ -173,6 +196,19 @@ class _PropertyBootstrapState:
     def product_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "product_id", value)
 
+    @property
+    @pulumi.getter(name="useHostnameBucket")
+    def use_hostname_bucket(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+        incrementing property versions.
+        """
+        return pulumi.get(self, "use_hostname_bucket")
+
+    @use_hostname_bucket.setter
+    def use_hostname_bucket(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "use_hostname_bucket", value)
+
 
 class PropertyBootstrap(pulumi.CustomResource):
     @overload
@@ -183,6 +219,7 @@ class PropertyBootstrap(pulumi.CustomResource):
                  group_id: Optional[pulumi.Input[builtins.str]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  product_id: Optional[pulumi.Input[builtins.str]] = None,
+                 use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         """
         Create a PropertyBootstrap resource with the given unique name, props, and options.
@@ -192,6 +229,8 @@ class PropertyBootstrap(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[builtins.str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[builtins.str] product_id: Product ID to be assigned to the Property
+        :param pulumi.Input[builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+               incrementing property versions.
         """
         ...
     @overload
@@ -220,6 +259,7 @@ class PropertyBootstrap(pulumi.CustomResource):
                  group_id: Optional[pulumi.Input[builtins.str]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  product_id: Optional[pulumi.Input[builtins.str]] = None,
+                 use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -239,6 +279,7 @@ class PropertyBootstrap(pulumi.CustomResource):
             if product_id is None and not opts.urn:
                 raise TypeError("Missing required property 'product_id'")
             __props__.__dict__["product_id"] = product_id
+            __props__.__dict__["use_hostname_bucket"] = use_hostname_bucket
             __props__.__dict__["asset_id"] = None
         super(PropertyBootstrap, __self__).__init__(
             'akamai:index/propertyBootstrap:PropertyBootstrap',
@@ -254,7 +295,8 @@ class PropertyBootstrap(pulumi.CustomResource):
             contract_id: Optional[pulumi.Input[builtins.str]] = None,
             group_id: Optional[pulumi.Input[builtins.str]] = None,
             name: Optional[pulumi.Input[builtins.str]] = None,
-            product_id: Optional[pulumi.Input[builtins.str]] = None) -> 'PropertyBootstrap':
+            product_id: Optional[pulumi.Input[builtins.str]] = None,
+            use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None) -> 'PropertyBootstrap':
         """
         Get an existing PropertyBootstrap resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -267,6 +309,8 @@ class PropertyBootstrap(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[builtins.str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[builtins.str] product_id: Product ID to be assigned to the Property
+        :param pulumi.Input[builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+               incrementing property versions.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -277,6 +321,7 @@ class PropertyBootstrap(pulumi.CustomResource):
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["name"] = name
         __props__.__dict__["product_id"] = product_id
+        __props__.__dict__["use_hostname_bucket"] = use_hostname_bucket
         return PropertyBootstrap(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -318,4 +363,13 @@ class PropertyBootstrap(pulumi.CustomResource):
         Product ID to be assigned to the Property
         """
         return pulumi.get(self, "product_id")
+
+    @property
+    @pulumi.getter(name="useHostnameBucket")
+    def use_hostname_bucket(self) -> pulumi.Output[builtins.bool]:
+        """
+        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+        incrementing property versions.
+        """
+        return pulumi.get(self, "use_hostname_bucket")
 

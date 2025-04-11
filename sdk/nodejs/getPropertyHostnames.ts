@@ -10,6 +10,7 @@ export function getPropertyHostnames(args: GetPropertyHostnamesArgs, opts?: pulu
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyHostnames:getPropertyHostnames", {
         "contractId": args.contractId,
+        "filterPendingDefaultCerts": args.filterPendingDefaultCerts,
         "groupId": args.groupId,
         "propertyId": args.propertyId,
         "version": args.version,
@@ -21,6 +22,7 @@ export function getPropertyHostnames(args: GetPropertyHostnamesArgs, opts?: pulu
  */
 export interface GetPropertyHostnamesArgs {
     contractId: string;
+    filterPendingDefaultCerts?: boolean;
     groupId: string;
     propertyId: string;
     version?: number;
@@ -31,7 +33,9 @@ export interface GetPropertyHostnamesArgs {
  */
 export interface GetPropertyHostnamesResult {
     readonly contractId: string;
+    readonly filterPendingDefaultCerts?: boolean;
     readonly groupId: string;
+    readonly hostnameBuckets: outputs.GetPropertyHostnamesHostnameBucket[];
     readonly hostnames: outputs.GetPropertyHostnamesHostname[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -44,6 +48,7 @@ export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs,
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyHostnames:getPropertyHostnames", {
         "contractId": args.contractId,
+        "filterPendingDefaultCerts": args.filterPendingDefaultCerts,
         "groupId": args.groupId,
         "propertyId": args.propertyId,
         "version": args.version,
@@ -55,6 +60,7 @@ export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs,
  */
 export interface GetPropertyHostnamesOutputArgs {
     contractId: pulumi.Input<string>;
+    filterPendingDefaultCerts?: pulumi.Input<boolean>;
     groupId: pulumi.Input<string>;
     propertyId: pulumi.Input<string>;
     version?: pulumi.Input<number>;

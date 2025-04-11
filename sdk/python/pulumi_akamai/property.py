@@ -30,6 +30,7 @@ class PropertyArgs:
                  property_id: Optional[pulumi.Input[builtins.str]] = None,
                  rule_format: Optional[pulumi.Input[builtins.str]] = None,
                  rules: Optional[pulumi.Input[builtins.str]] = None,
+                 use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None,
                  version_notes: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Property resource.
@@ -40,6 +41,8 @@ class PropertyArgs:
         :param pulumi.Input[builtins.str] property_id: Property ID
         :param pulumi.Input[builtins.str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[builtins.str] rules: Property Rules as JSON
+        :param pulumi.Input[builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+               incrementing property versions.
         :param pulumi.Input[builtins.str] version_notes: Property version notes
         """
         pulumi.set(__self__, "contract_id", contract_id)
@@ -55,6 +58,8 @@ class PropertyArgs:
             pulumi.set(__self__, "rule_format", rule_format)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
+        if use_hostname_bucket is not None:
+            pulumi.set(__self__, "use_hostname_bucket", use_hostname_bucket)
         if version_notes is not None:
             pulumi.set(__self__, "version_notes", version_notes)
 
@@ -152,6 +157,19 @@ class PropertyArgs:
         pulumi.set(self, "rules", value)
 
     @property
+    @pulumi.getter(name="useHostnameBucket")
+    def use_hostname_bucket(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+        incrementing property versions.
+        """
+        return pulumi.get(self, "use_hostname_bucket")
+
+    @use_hostname_bucket.setter
+    def use_hostname_bucket(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "use_hostname_bucket", value)
+
+    @property
     @pulumi.getter(name="versionNotes")
     def version_notes(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -182,6 +200,7 @@ class _PropertyState:
                  rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]] = None,
                  rules: Optional[pulumi.Input[builtins.str]] = None,
                  staging_version: Optional[pulumi.Input[builtins.int]] = None,
+                 use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None,
                  version_notes: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Property resources.
@@ -198,6 +217,8 @@ class _PropertyState:
         :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]] rule_warnings: Rule validation warnings
         :param pulumi.Input[builtins.str] rules: Property Rules as JSON
         :param pulumi.Input[builtins.int] staging_version: Property's version currently activated in staging (zero when not active in staging)
+        :param pulumi.Input[builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+               incrementing property versions.
         :param pulumi.Input[builtins.str] version_notes: Property version notes
         """
         if asset_id is not None:
@@ -230,6 +251,8 @@ class _PropertyState:
             pulumi.set(__self__, "rules", rules)
         if staging_version is not None:
             pulumi.set(__self__, "staging_version", staging_version)
+        if use_hostname_bucket is not None:
+            pulumi.set(__self__, "use_hostname_bucket", use_hostname_bucket)
         if version_notes is not None:
             pulumi.set(__self__, "version_notes", version_notes)
 
@@ -408,6 +431,19 @@ class _PropertyState:
         pulumi.set(self, "staging_version", value)
 
     @property
+    @pulumi.getter(name="useHostnameBucket")
+    def use_hostname_bucket(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+        incrementing property versions.
+        """
+        return pulumi.get(self, "use_hostname_bucket")
+
+    @use_hostname_bucket.setter
+    def use_hostname_bucket(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "use_hostname_bucket", value)
+
+    @property
     @pulumi.getter(name="versionNotes")
     def version_notes(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -433,6 +469,7 @@ class Property(pulumi.CustomResource):
                  property_id: Optional[pulumi.Input[builtins.str]] = None,
                  rule_format: Optional[pulumi.Input[builtins.str]] = None,
                  rules: Optional[pulumi.Input[builtins.str]] = None,
+                 use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None,
                  version_notes: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
@@ -446,6 +483,8 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] property_id: Property ID
         :param pulumi.Input[builtins.str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[builtins.str] rules: Property Rules as JSON
+        :param pulumi.Input[builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+               incrementing property versions.
         :param pulumi.Input[builtins.str] version_notes: Property version notes
         """
         ...
@@ -479,6 +518,7 @@ class Property(pulumi.CustomResource):
                  property_id: Optional[pulumi.Input[builtins.str]] = None,
                  rule_format: Optional[pulumi.Input[builtins.str]] = None,
                  rules: Optional[pulumi.Input[builtins.str]] = None,
+                 use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None,
                  version_notes: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -503,6 +543,7 @@ class Property(pulumi.CustomResource):
             __props__.__dict__["property_id"] = property_id
             __props__.__dict__["rule_format"] = rule_format
             __props__.__dict__["rules"] = rules
+            __props__.__dict__["use_hostname_bucket"] = use_hostname_bucket
             __props__.__dict__["version_notes"] = version_notes
             __props__.__dict__["asset_id"] = None
             __props__.__dict__["latest_version"] = None
@@ -538,6 +579,7 @@ class Property(pulumi.CustomResource):
             rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict']]]]] = None,
             rules: Optional[pulumi.Input[builtins.str]] = None,
             staging_version: Optional[pulumi.Input[builtins.int]] = None,
+            use_hostname_bucket: Optional[pulumi.Input[builtins.bool]] = None,
             version_notes: Optional[pulumi.Input[builtins.str]] = None) -> 'Property':
         """
         Get an existing Property resource's state with the given name, id, and optional extra
@@ -559,6 +601,8 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict']]]] rule_warnings: Rule validation warnings
         :param pulumi.Input[builtins.str] rules: Property Rules as JSON
         :param pulumi.Input[builtins.int] staging_version: Property's version currently activated in staging (zero when not active in staging)
+        :param pulumi.Input[builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+               incrementing property versions.
         :param pulumi.Input[builtins.str] version_notes: Property version notes
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -580,6 +624,7 @@ class Property(pulumi.CustomResource):
         __props__.__dict__["rule_warnings"] = rule_warnings
         __props__.__dict__["rules"] = rules
         __props__.__dict__["staging_version"] = staging_version
+        __props__.__dict__["use_hostname_bucket"] = use_hostname_bucket
         __props__.__dict__["version_notes"] = version_notes
         return Property(resource_name, opts=opts, __props__=__props__)
 
@@ -696,6 +741,15 @@ class Property(pulumi.CustomResource):
         Property's version currently activated in staging (zero when not active in staging)
         """
         return pulumi.get(self, "staging_version")
+
+    @property
+    @pulumi.getter(name="useHostnameBucket")
+    def use_hostname_bucket(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+        incrementing property versions.
+        """
+        return pulumi.get(self, "use_hostname_bucket")
 
     @property
     @pulumi.getter(name="versionNotes")

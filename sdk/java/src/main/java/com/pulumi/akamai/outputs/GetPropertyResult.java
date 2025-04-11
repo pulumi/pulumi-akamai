@@ -27,6 +27,7 @@ public final class GetPropertyResult {
     private String productId;
     private Integer productionVersion;
     private String propertyId;
+    private String propertyType;
     private String ruleFormat;
     private String rules;
     private Integer stagingVersion;
@@ -67,6 +68,9 @@ public final class GetPropertyResult {
     public String propertyId() {
         return this.propertyId;
     }
+    public String propertyType() {
+        return this.propertyType;
+    }
     public String ruleFormat() {
         return this.ruleFormat;
     }
@@ -99,6 +103,7 @@ public final class GetPropertyResult {
         private String productId;
         private Integer productionVersion;
         private String propertyId;
+        private String propertyType;
         private String ruleFormat;
         private String rules;
         private Integer stagingVersion;
@@ -116,6 +121,7 @@ public final class GetPropertyResult {
     	      this.productId = defaults.productId;
     	      this.productionVersion = defaults.productionVersion;
     	      this.propertyId = defaults.propertyId;
+    	      this.propertyType = defaults.propertyType;
     	      this.ruleFormat = defaults.ruleFormat;
     	      this.rules = defaults.rules;
     	      this.stagingVersion = defaults.stagingVersion;
@@ -203,6 +209,14 @@ public final class GetPropertyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder propertyType(String propertyType) {
+            if (propertyType == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "propertyType");
+            }
+            this.propertyType = propertyType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ruleFormat(String ruleFormat) {
             if (ruleFormat == null) {
               throw new MissingRequiredPropertyException("GetPropertyResult", "ruleFormat");
@@ -244,6 +258,7 @@ public final class GetPropertyResult {
             _resultValue.productId = productId;
             _resultValue.productionVersion = productionVersion;
             _resultValue.propertyId = propertyId;
+            _resultValue.propertyType = propertyType;
             _resultValue.ruleFormat = ruleFormat;
             _resultValue.rules = rules;
             _resultValue.stagingVersion = stagingVersion;

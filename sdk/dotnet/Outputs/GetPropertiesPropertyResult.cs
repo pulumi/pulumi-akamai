@@ -20,6 +20,10 @@ namespace Pulumi.Akamai.Outputs
         public readonly int ProductionVersion;
         public readonly string PropertyId;
         public readonly string PropertyName;
+        /// <summary>
+        /// Specifies the type of the property.
+        /// </summary>
+        public readonly string PropertyType;
         public readonly int StagingVersion;
 
         [OutputConstructor]
@@ -38,6 +42,8 @@ namespace Pulumi.Akamai.Outputs
 
             string propertyName,
 
+            string propertyType,
+
             int stagingVersion)
         {
             ContractId = contractId;
@@ -47,6 +53,7 @@ namespace Pulumi.Akamai.Outputs
             ProductionVersion = productionVersion;
             PropertyId = propertyId;
             PropertyName = propertyName;
+            PropertyType = propertyType;
             StagingVersion = stagingVersion;
         }
     }

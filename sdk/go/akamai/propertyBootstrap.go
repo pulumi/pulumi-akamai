@@ -25,6 +25,9 @@ type PropertyBootstrap struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringOutput `pulumi:"productId"`
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+	// incrementing property versions.
+	UseHostnameBucket pulumi.BoolOutput `pulumi:"useHostnameBucket"`
 }
 
 // NewPropertyBootstrap registers a new resource with the given unique name, arguments, and options.
@@ -76,6 +79,9 @@ type propertyBootstrapState struct {
 	Name *string `pulumi:"name"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+	// incrementing property versions.
+	UseHostnameBucket *bool `pulumi:"useHostnameBucket"`
 }
 
 type PropertyBootstrapState struct {
@@ -89,6 +95,9 @@ type PropertyBootstrapState struct {
 	Name pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+	// incrementing property versions.
+	UseHostnameBucket pulumi.BoolPtrInput
 }
 
 func (PropertyBootstrapState) ElementType() reflect.Type {
@@ -104,6 +113,9 @@ type propertyBootstrapArgs struct {
 	Name *string `pulumi:"name"`
 	// Product ID to be assigned to the Property
 	ProductId string `pulumi:"productId"`
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+	// incrementing property versions.
+	UseHostnameBucket *bool `pulumi:"useHostnameBucket"`
 }
 
 // The set of arguments for constructing a PropertyBootstrap resource.
@@ -116,6 +128,9 @@ type PropertyBootstrapArgs struct {
 	Name pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringInput
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+	// incrementing property versions.
+	UseHostnameBucket pulumi.BoolPtrInput
 }
 
 func (PropertyBootstrapArgs) ElementType() reflect.Type {
@@ -228,6 +243,12 @@ func (o PropertyBootstrapOutput) Name() pulumi.StringOutput {
 // Product ID to be assigned to the Property
 func (o PropertyBootstrapOutput) ProductId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyBootstrap) pulumi.StringOutput { return v.ProductId }).(pulumi.StringOutput)
+}
+
+// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
+// incrementing property versions.
+func (o PropertyBootstrapOutput) UseHostnameBucket() pulumi.BoolOutput {
+	return o.ApplyT(func(v *PropertyBootstrap) pulumi.BoolOutput { return v.UseHostnameBucket }).(pulumi.BoolOutput)
 }
 
 type PropertyBootstrapArrayOutput struct{ *pulumi.OutputState }

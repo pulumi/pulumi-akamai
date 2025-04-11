@@ -67,6 +67,7 @@ namespace Pulumi.Akamai
         public readonly string ProductId;
         public readonly int ProductionVersion;
         public readonly string PropertyId;
+        public readonly string PropertyType;
         public readonly string RuleFormat;
         public readonly string Rules;
         public readonly int StagingVersion;
@@ -94,6 +95,8 @@ namespace Pulumi.Akamai
 
             string propertyId,
 
+            string propertyType,
+
             string ruleFormat,
 
             string rules,
@@ -112,6 +115,7 @@ namespace Pulumi.Akamai
             ProductId = productId;
             ProductionVersion = productionVersion;
             PropertyId = propertyId;
+            PropertyType = propertyType;
             RuleFormat = ruleFormat;
             Rules = rules;
             StagingVersion = stagingVersion;

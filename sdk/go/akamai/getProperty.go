@@ -40,6 +40,7 @@ type LookupPropertyResult struct {
 	ProductId         string `pulumi:"productId"`
 	ProductionVersion int    `pulumi:"productionVersion"`
 	PropertyId        string `pulumi:"propertyId"`
+	PropertyType      string `pulumi:"propertyType"`
 	RuleFormat        string `pulumi:"ruleFormat"`
 	Rules             string `pulumi:"rules"`
 	StagingVersion    int    `pulumi:"stagingVersion"`
@@ -119,6 +120,10 @@ func (o LookupPropertyResultOutput) ProductionVersion() pulumi.IntOutput {
 
 func (o LookupPropertyResultOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.PropertyId }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) PropertyType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.PropertyType }).(pulumi.StringOutput)
 }
 
 func (o LookupPropertyResultOutput) RuleFormat() pulumi.StringOutput {

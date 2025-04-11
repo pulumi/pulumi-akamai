@@ -112,6 +112,7 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_iam_authorized_users",
 			"akamai_iam_user",
 			"akamai_iam_users",
+			"akamai_property_rules_builder",
 		},
 		Resources: map[string]*tfbridge.ResourceInfo{
 			"akamai_cloudwrapper_configuration": {ComputeID: tfbridge.DelegateIDField("configName", "akamai", "https://github.com/pulumi/pulumi-akamai")},

@@ -1080,6 +1080,11 @@ export const getCpCode: typeof import("./getCpCode").getCpCode = null as any;
 export const getCpCodeOutput: typeof import("./getCpCode").getCpCodeOutput = null as any;
 utilities.lazyLoad(exports, ["getCpCode","getCpCodeOutput"], () => require("./getCpCode"));
 
+export { GetCpCodesArgs, GetCpCodesResult, GetCpCodesOutputArgs } from "./getCpCodes";
+export const getCpCodes: typeof import("./getCpCodes").getCpCodes = null as any;
+export const getCpCodesOutput: typeof import("./getCpCodes").getCpCodesOutput = null as any;
+utilities.lazyLoad(exports, ["getCpCodes","getCpCodesOutput"], () => require("./getCpCodes"));
+
 export { GetCpsCsrArgs, GetCpsCsrResult, GetCpsCsrOutputArgs } from "./getCpsCsr";
 export const getCpsCsr: typeof import("./getCpsCsr").getCpsCsr = null as any;
 export const getCpsCsrOutput: typeof import("./getCpsCsr").getCpsCsrOutput = null as any;
@@ -1330,10 +1335,25 @@ export const getPropertyActivation: typeof import("./getPropertyActivation").get
 export const getPropertyActivationOutput: typeof import("./getPropertyActivation").getPropertyActivationOutput = null as any;
 utilities.lazyLoad(exports, ["getPropertyActivation","getPropertyActivationOutput"], () => require("./getPropertyActivation"));
 
+export { GetPropertyHostnameActivationArgs, GetPropertyHostnameActivationResult, GetPropertyHostnameActivationOutputArgs } from "./getPropertyHostnameActivation";
+export const getPropertyHostnameActivation: typeof import("./getPropertyHostnameActivation").getPropertyHostnameActivation = null as any;
+export const getPropertyHostnameActivationOutput: typeof import("./getPropertyHostnameActivation").getPropertyHostnameActivationOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyHostnameActivation","getPropertyHostnameActivationOutput"], () => require("./getPropertyHostnameActivation"));
+
+export { GetPropertyHostnameActivationsArgs, GetPropertyHostnameActivationsResult, GetPropertyHostnameActivationsOutputArgs } from "./getPropertyHostnameActivations";
+export const getPropertyHostnameActivations: typeof import("./getPropertyHostnameActivations").getPropertyHostnameActivations = null as any;
+export const getPropertyHostnameActivationsOutput: typeof import("./getPropertyHostnameActivations").getPropertyHostnameActivationsOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyHostnameActivations","getPropertyHostnameActivationsOutput"], () => require("./getPropertyHostnameActivations"));
+
 export { GetPropertyHostnamesArgs, GetPropertyHostnamesResult, GetPropertyHostnamesOutputArgs } from "./getPropertyHostnames";
 export const getPropertyHostnames: typeof import("./getPropertyHostnames").getPropertyHostnames = null as any;
 export const getPropertyHostnamesOutput: typeof import("./getPropertyHostnames").getPropertyHostnamesOutput = null as any;
 utilities.lazyLoad(exports, ["getPropertyHostnames","getPropertyHostnamesOutput"], () => require("./getPropertyHostnames"));
+
+export { GetPropertyHostnamesDiffArgs, GetPropertyHostnamesDiffResult, GetPropertyHostnamesDiffOutputArgs } from "./getPropertyHostnamesDiff";
+export const getPropertyHostnamesDiff: typeof import("./getPropertyHostnamesDiff").getPropertyHostnamesDiff = null as any;
+export const getPropertyHostnamesDiffOutput: typeof import("./getPropertyHostnamesDiff").getPropertyHostnamesDiffOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyHostnamesDiff","getPropertyHostnamesDiffOutput"], () => require("./getPropertyHostnamesDiff"));
 
 export { GetPropertyIncludeArgs, GetPropertyIncludeResult, GetPropertyIncludeOutputArgs } from "./getPropertyInclude";
 export const getPropertyInclude: typeof import("./getPropertyInclude").getPropertyInclude = null as any;
@@ -1374,11 +1394,6 @@ export { GetPropertyRulesArgs, GetPropertyRulesResult, GetPropertyRulesOutputArg
 export const getPropertyRules: typeof import("./getPropertyRules").getPropertyRules = null as any;
 export const getPropertyRulesOutput: typeof import("./getPropertyRules").getPropertyRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getPropertyRules","getPropertyRulesOutput"], () => require("./getPropertyRules"));
-
-export { GetPropertyRulesBuilderArgs, GetPropertyRulesBuilderResult, GetPropertyRulesBuilderOutputArgs } from "./getPropertyRulesBuilder";
-export const getPropertyRulesBuilder: typeof import("./getPropertyRulesBuilder").getPropertyRulesBuilder = null as any;
-export const getPropertyRulesBuilderOutput: typeof import("./getPropertyRulesBuilder").getPropertyRulesBuilderOutput = null as any;
-utilities.lazyLoad(exports, ["getPropertyRulesBuilder","getPropertyRulesBuilderOutput"], () => require("./getPropertyRulesBuilder"));
 
 export { GetPropertyRulesTemplateArgs, GetPropertyRulesTemplateResult, GetPropertyRulesTemplateOutputArgs } from "./getPropertyRulesTemplate";
 export const getPropertyRulesTemplate: typeof import("./getPropertyRulesTemplate").getPropertyRulesTemplate = null as any;
@@ -1504,6 +1519,11 @@ export { PropertyBootstrapArgs, PropertyBootstrapState } from "./propertyBootstr
 export type PropertyBootstrap = import("./propertyBootstrap").PropertyBootstrap;
 export const PropertyBootstrap: typeof import("./propertyBootstrap").PropertyBootstrap = null as any;
 utilities.lazyLoad(exports, ["PropertyBootstrap"], () => require("./propertyBootstrap"));
+
+export { PropertyHostnameBucketArgs, PropertyHostnameBucketState } from "./propertyHostnameBucket";
+export type PropertyHostnameBucket = import("./propertyHostnameBucket").PropertyHostnameBucket;
+export const PropertyHostnameBucket: typeof import("./propertyHostnameBucket").PropertyHostnameBucket = null as any;
+utilities.lazyLoad(exports, ["PropertyHostnameBucket"], () => require("./propertyHostnameBucket"));
 
 export { PropertyIncludeArgs, PropertyIncludeState } from "./propertyInclude";
 export type PropertyInclude = import("./propertyInclude").PropertyInclude;
@@ -1782,6 +1802,8 @@ const _module = {
                 return new PropertyActivation(name, <any>undefined, { urn })
             case "akamai:index/propertyBootstrap:PropertyBootstrap":
                 return new PropertyBootstrap(name, <any>undefined, { urn })
+            case "akamai:index/propertyHostnameBucket:PropertyHostnameBucket":
+                return new PropertyHostnameBucket(name, <any>undefined, { urn })
             case "akamai:index/propertyInclude:PropertyInclude":
                 return new PropertyInclude(name, <any>undefined, { urn })
             case "akamai:index/propertyIncludeActivation:PropertyIncludeActivation":
@@ -1915,6 +1937,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/networkListSubscription",
 pulumi.runtime.registerResourceModule("akamai", "index/property", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyBootstrap", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/propertyHostnameBucket", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyInclude", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyIncludeActivation", _module)
 pulumi.runtime.registerResourcePackage("akamai", {
