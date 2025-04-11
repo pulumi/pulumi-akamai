@@ -1,3 +1,0 @@
-name: akamai-property-ts
-runtime: nodejs
-description: A minimal TypeScript Pulumi program to create an Akamai Property
