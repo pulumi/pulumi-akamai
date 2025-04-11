@@ -1395,11 +1395,6 @@ export const getPropertyRules: typeof import("./getPropertyRules").getPropertyRu
 export const getPropertyRulesOutput: typeof import("./getPropertyRules").getPropertyRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getPropertyRules","getPropertyRulesOutput"], () => require("./getPropertyRules"));
 
-export { GetPropertyRulesBuilderArgs, GetPropertyRulesBuilderResult, GetPropertyRulesBuilderOutputArgs } from "./getPropertyRulesBuilder";
-export const getPropertyRulesBuilder: typeof import("./getPropertyRulesBuilder").getPropertyRulesBuilder = null as any;
-export const getPropertyRulesBuilderOutput: typeof import("./getPropertyRulesBuilder").getPropertyRulesBuilderOutput = null as any;
-utilities.lazyLoad(exports, ["getPropertyRulesBuilder","getPropertyRulesBuilderOutput"], () => require("./getPropertyRulesBuilder"));
-
 export { GetPropertyRulesTemplateArgs, GetPropertyRulesTemplateResult, GetPropertyRulesTemplateOutputArgs } from "./getPropertyRulesTemplate";
 export const getPropertyRulesTemplate: typeof import("./getPropertyRulesTemplate").getPropertyRulesTemplate = null as any;
 export const getPropertyRulesTemplateOutput: typeof import("./getPropertyRulesTemplate").getPropertyRulesTemplateOutput = null as any;

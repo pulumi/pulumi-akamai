@@ -293,7 +293,6 @@
         "getPropertyProducts.ts",
         "getPropertyRuleFormats.ts",
         "getPropertyRules.ts",
-        "getPropertyRulesBuilder.ts",
         "getPropertyRulesTemplate.ts",
         "getZoneDnssecStatus.ts",
         "gtmAsmap.ts",

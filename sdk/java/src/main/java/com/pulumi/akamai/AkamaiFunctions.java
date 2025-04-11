@@ -325,8 +325,6 @@ import com.pulumi.akamai.inputs.GetPropertyPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyProductsArgs;
 import com.pulumi.akamai.inputs.GetPropertyProductsPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesTemplateArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesTemplatePlainArgs;
@@ -508,7 +506,6 @@ import com.pulumi.akamai.outputs.GetPropertyIncludesResult;
 import com.pulumi.akamai.outputs.GetPropertyProductsResult;
 import com.pulumi.akamai.outputs.GetPropertyResult;
 import com.pulumi.akamai.outputs.GetPropertyRuleFormatsResult;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderResult;
 import com.pulumi.akamai.outputs.GetPropertyRulesResult;
 import com.pulumi.akamai.outputs.GetPropertyRulesTemplateResult;
 import com.pulumi.akamai.outputs.GetZoneDnssecStatusResult;
@@ -3433,27 +3430,6 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetPropertyRulesResult> getPropertyRulesPlain(GetPropertyRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getPropertyRules:getPropertyRules", TypeShape.of(GetPropertyRulesResult.class), args, Utilities.withVersion(options));
-    }
-    public static Output<GetPropertyRulesBuilderResult> getPropertyRulesBuilder() {
-        return getPropertyRulesBuilder(GetPropertyRulesBuilderArgs.Empty, InvokeOptions.Empty);
-    }
-    public static CompletableFuture<GetPropertyRulesBuilderResult> getPropertyRulesBuilderPlain() {
-        return getPropertyRulesBuilderPlain(GetPropertyRulesBuilderPlainArgs.Empty, InvokeOptions.Empty);
-    }
-    public static Output<GetPropertyRulesBuilderResult> getPropertyRulesBuilder(GetPropertyRulesBuilderArgs args) {
-        return getPropertyRulesBuilder(args, InvokeOptions.Empty);
-    }
-    public static CompletableFuture<GetPropertyRulesBuilderResult> getPropertyRulesBuilderPlain(GetPropertyRulesBuilderPlainArgs args) {
-        return getPropertyRulesBuilderPlain(args, InvokeOptions.Empty);
-    }
-    public static Output<GetPropertyRulesBuilderResult> getPropertyRulesBuilder(GetPropertyRulesBuilderArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", TypeShape.of(GetPropertyRulesBuilderResult.class), args, Utilities.withVersion(options));
-    }
-    public static Output<GetPropertyRulesBuilderResult> getPropertyRulesBuilder(GetPropertyRulesBuilderArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", TypeShape.of(GetPropertyRulesBuilderResult.class), args, Utilities.withVersion(options));
-    }
-    public static CompletableFuture<GetPropertyRulesBuilderResult> getPropertyRulesBuilderPlain(GetPropertyRulesBuilderPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", TypeShape.of(GetPropertyRulesBuilderResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetPropertyRulesTemplateResult> getPropertyRulesTemplate() {
         return getPropertyRulesTemplate(GetPropertyRulesTemplateArgs.Empty, InvokeOptions.Empty);
