@@ -338,6 +338,9 @@ class _CloudletsPolicyState:
 
 
 class CloudletsPolicy(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cloudletsPolicy:CloudletsPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -154,6 +154,9 @@ class _GtmCidrmapState:
 
 
 class GtmCidrmap(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/gtmCidrmap:GtmCidrmap"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

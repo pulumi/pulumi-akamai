@@ -350,6 +350,9 @@ class _PropertyIncludeState:
 
 
 class PropertyInclude(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/propertyInclude:PropertyInclude"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

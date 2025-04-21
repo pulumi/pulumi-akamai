@@ -122,6 +122,9 @@ class _CloudwrapperActivationState:
 
 
 class CloudwrapperActivation(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cloudwrapperActivation:CloudwrapperActivation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

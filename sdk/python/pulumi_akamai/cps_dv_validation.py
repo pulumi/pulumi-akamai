@@ -179,6 +179,9 @@ class _CpsDvValidationState:
 
 
 class CpsDvValidation(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cpsDvValidation:CpsDvValidation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

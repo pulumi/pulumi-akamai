@@ -80,6 +80,9 @@ class _BotmanCustomCodeState:
 
 
 class BotmanCustomCode(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanCustomCode:BotmanCustomCode"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -162,6 +162,9 @@ class _CpCodeState:
 
 
 class CpCode(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cpCode:CpCode"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

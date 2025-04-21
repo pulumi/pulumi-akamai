@@ -214,6 +214,9 @@ class _ImagingPolicyImageState:
 
 
 class ImagingPolicyImage(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/imagingPolicyImage:ImagingPolicyImage"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
