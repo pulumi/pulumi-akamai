@@ -80,6 +80,9 @@ class _BotmanBotAnalyticsCookieState:
 
 
 class BotmanBotAnalyticsCookie(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -176,6 +176,9 @@ class _AppSecRuleUpgradeState:
 
 
 class AppSecRuleUpgrade(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

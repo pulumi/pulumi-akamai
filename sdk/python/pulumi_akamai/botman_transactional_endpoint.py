@@ -126,6 +126,9 @@ class _BotmanTransactionalEndpointState:
 
 
 class BotmanTransactionalEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanTransactionalEndpoint:BotmanTransactionalEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

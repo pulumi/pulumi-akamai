@@ -595,6 +595,9 @@ class _CpsThirdPartyEnrollmentState:
 
 
 class CpsThirdPartyEnrollment(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

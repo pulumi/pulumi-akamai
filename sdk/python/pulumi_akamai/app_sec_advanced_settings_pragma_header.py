@@ -128,6 +128,9 @@ class _AppSecAdvancedSettingsPragmaHeaderState:
 
 
 class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

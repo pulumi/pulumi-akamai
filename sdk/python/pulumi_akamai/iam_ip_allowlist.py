@@ -65,6 +65,9 @@ class _IamIpAllowlistState:
 
 
 class IamIpAllowlist(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/iamIpAllowlist:IamIpAllowlist"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -154,6 +154,9 @@ class _GtmAsmapState:
 
 
 class GtmAsmap(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/gtmAsmap:GtmAsmap"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

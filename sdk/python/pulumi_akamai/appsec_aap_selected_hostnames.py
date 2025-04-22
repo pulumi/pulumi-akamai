@@ -160,6 +160,9 @@ class _AppsecAapSelectedHostnamesState:
 
 
 class AppsecAapSelectedHostnames(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appsecAapSelectedHostnames:AppsecAapSelectedHostnames"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -127,6 +127,9 @@ class _BotmanContentProtectionRuleSequenceState:
 
 
 class BotmanContentProtectionRuleSequence(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanContentProtectionRuleSequence:BotmanContentProtectionRuleSequence"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
