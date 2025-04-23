@@ -207,6 +207,9 @@ class _NetworkListActivationsState:
 
 
 class NetworkListActivations(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/networkListActivations:NetworkListActivations"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

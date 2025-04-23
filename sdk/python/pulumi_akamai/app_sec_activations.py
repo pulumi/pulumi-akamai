@@ -207,6 +207,9 @@ class _AppSecActivationsState:
 
 
 class AppSecActivations(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecActivations:AppSecActivations"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

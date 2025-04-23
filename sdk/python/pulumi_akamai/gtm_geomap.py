@@ -154,6 +154,9 @@ class _GtmGeomapState:
 
 
 class GtmGeomap(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/gtmGeomap:GtmGeomap"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

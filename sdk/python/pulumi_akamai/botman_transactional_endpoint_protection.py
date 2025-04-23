@@ -80,6 +80,9 @@ class _BotmanTransactionalEndpointProtectionState:
 
 
 class BotmanTransactionalEndpointProtection(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanTransactionalEndpointProtection:BotmanTransactionalEndpointProtection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

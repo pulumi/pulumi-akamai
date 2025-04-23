@@ -211,6 +211,9 @@ class _PropertyBootstrapState:
 
 
 class PropertyBootstrap(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/propertyBootstrap:PropertyBootstrap"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

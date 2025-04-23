@@ -112,6 +112,9 @@ class _AppSecRatePolicyState:
 
 
 class AppSecRatePolicy(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecRatePolicy:AppSecRatePolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

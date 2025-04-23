@@ -190,6 +190,9 @@ class _AppSecAttackGroupState:
 
 
 class AppSecAttackGroup(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecAttackGroup:AppSecAttackGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

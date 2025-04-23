@@ -92,6 +92,9 @@ class _BotmanServeAlternateActionState:
 
 
 class BotmanServeAlternateAction(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanServeAlternateAction:BotmanServeAlternateAction"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

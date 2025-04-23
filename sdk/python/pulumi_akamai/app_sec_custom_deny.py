@@ -112,6 +112,9 @@ class _AppSecCustomDenyState:
 
 
 class AppSecCustomDeny(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecCustomDeny:AppSecCustomDeny"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

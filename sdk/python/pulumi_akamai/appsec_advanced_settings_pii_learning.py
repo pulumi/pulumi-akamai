@@ -96,6 +96,9 @@ class _AppsecAdvancedSettingsPiiLearningState:
 
 
 class AppsecAdvancedSettingsPiiLearning(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appsecAdvancedSettingsPiiLearning:AppsecAdvancedSettingsPiiLearning"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

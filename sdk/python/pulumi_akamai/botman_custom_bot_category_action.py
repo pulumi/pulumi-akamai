@@ -126,6 +126,9 @@ class _BotmanCustomBotCategoryActionState:
 
 
 class BotmanCustomBotCategoryAction(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanCustomBotCategoryAction:BotmanCustomBotCategoryAction"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -92,6 +92,9 @@ class _BotmanConditionalActionState:
 
 
 class BotmanConditionalAction(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanConditionalAction:BotmanConditionalAction"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

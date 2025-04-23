@@ -143,6 +143,9 @@ class _BotmanContentProtectionJavascriptInjectionRuleState:
 
 
 class BotmanContentProtectionJavascriptInjectionRule(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanContentProtectionJavascriptInjectionRule:BotmanContentProtectionJavascriptInjectionRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

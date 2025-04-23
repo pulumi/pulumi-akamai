@@ -103,6 +103,9 @@ class _BotmanBotCategoryExceptionState:
 
 
 class BotmanBotCategoryException(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanBotCategoryException:BotmanBotCategoryException"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

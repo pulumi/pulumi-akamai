@@ -128,6 +128,9 @@ class _AppSecConfigurationRenameState:
 
 
 class AppSecConfigurationRename(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecConfigurationRename:AppSecConfigurationRename"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
