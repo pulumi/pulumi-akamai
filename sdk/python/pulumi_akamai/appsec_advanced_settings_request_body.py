@@ -160,6 +160,9 @@ class _AppsecAdvancedSettingsRequestBodyState:
 
 
 class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

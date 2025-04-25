@@ -143,6 +143,9 @@ class _AppSecSlowPostProtectionState:
 
 
 class AppSecSlowPostProtection(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

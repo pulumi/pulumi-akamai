@@ -143,6 +143,9 @@ class _AppSecReputationProtectionState:
 
 
 class AppSecReputationProtection(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecReputationProtection:AppSecReputationProtection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

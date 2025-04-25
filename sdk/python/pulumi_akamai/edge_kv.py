@@ -190,6 +190,9 @@ class _EdgeKvState:
 
 
 class EdgeKv(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/edgeKv:EdgeKv"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

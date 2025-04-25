@@ -369,6 +369,9 @@ class _PropertyHostnameBucketState:
 
 
 class PropertyHostnameBucket(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/propertyHostnameBucket:PropertyHostnameBucket"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

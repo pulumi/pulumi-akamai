@@ -108,6 +108,9 @@ class _AppSecCustomRuleState:
 
 
 class AppSecCustomRule(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecCustomRule:AppSecCustomRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

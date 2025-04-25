@@ -305,6 +305,9 @@ class _ClientlistListState:
 
 
 class ClientlistList(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/clientlistList:ClientlistList"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

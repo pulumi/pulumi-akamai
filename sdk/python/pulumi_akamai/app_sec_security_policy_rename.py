@@ -127,6 +127,9 @@ class _AppSecSecurityPolicyRenameState:
 
 
 class AppSecSecurityPolicyRename(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

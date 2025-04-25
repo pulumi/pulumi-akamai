@@ -355,6 +355,9 @@ class _CpsUploadCertificateState:
 
 
 class CpsUploadCertificate(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cpsUploadCertificate:CpsUploadCertificate"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
