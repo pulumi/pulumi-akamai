@@ -192,6 +192,9 @@ class _EdgekvGroupItemsState:
 
 
 class EdgekvGroupItems(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/edgekvGroupItems:EdgekvGroupItems"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

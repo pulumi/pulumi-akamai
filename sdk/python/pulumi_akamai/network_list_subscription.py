@@ -80,6 +80,9 @@ class _NetworkListSubscriptionState:
 
 
 class NetworkListSubscription(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/networkListSubscription:NetworkListSubscription"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

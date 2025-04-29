@@ -158,6 +158,9 @@ class _AppSecPenaltyBoxState:
 
 
 class AppSecPenaltyBox(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecPenaltyBox:AppSecPenaltyBox"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

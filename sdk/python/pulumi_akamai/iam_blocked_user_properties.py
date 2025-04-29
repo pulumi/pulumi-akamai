@@ -127,6 +127,9 @@ class _IamBlockedUserPropertiesState:
 
 
 class IamBlockedUserProperties(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

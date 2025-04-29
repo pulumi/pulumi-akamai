@@ -689,6 +689,9 @@ class _GtmDomainState:
 
 
 class GtmDomain(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/gtmDomain:GtmDomain"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

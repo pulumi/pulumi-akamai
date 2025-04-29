@@ -143,6 +143,9 @@ class _AppSecApiConstraintsProtectionState:
 
 
 class AppSecApiConstraintsProtection(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecApiConstraintsProtection:AppSecApiConstraintsProtection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

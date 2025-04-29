@@ -457,6 +457,9 @@ class _PropertyState:
 
 
 class Property(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/property:Property"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -80,6 +80,9 @@ class _BotmanCustomBotCategorySequenceState:
 
 
 class BotmanCustomBotCategorySequence(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanCustomBotCategorySequence:BotmanCustomBotCategorySequence"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

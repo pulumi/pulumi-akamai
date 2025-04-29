@@ -713,6 +713,9 @@ class _DatastreamState:
 
 
 class Datastream(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/datastream:Datastream"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

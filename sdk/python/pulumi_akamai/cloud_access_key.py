@@ -331,6 +331,9 @@ class _CloudAccessKeyState:
 
 
 class CloudAccessKey(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cloudAccessKey:CloudAccessKey"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

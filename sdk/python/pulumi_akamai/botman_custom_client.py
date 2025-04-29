@@ -92,6 +92,9 @@ class _BotmanCustomClientState:
 
 
 class BotmanCustomClient(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanCustomClient:BotmanCustomClient"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
