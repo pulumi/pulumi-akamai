@@ -328,6 +328,9 @@ class _CloudwrapperConfigurationState:
 
 
 class CloudwrapperConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cloudwrapperConfiguration:CloudwrapperConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -103,6 +103,9 @@ class _BotmanJavascriptInjectionState:
 
 
 class BotmanJavascriptInjection(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanJavascriptInjection:BotmanJavascriptInjection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

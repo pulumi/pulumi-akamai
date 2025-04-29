@@ -586,6 +586,9 @@ class _CpsDvEnrollmentState:
 
 
 class CpsDvEnrollment(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cpsDvEnrollment:CpsDvEnrollment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

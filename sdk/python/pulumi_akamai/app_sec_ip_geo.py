@@ -287,6 +287,9 @@ class _AppSecIPGeoState:
 
 
 class AppSecIPGeo(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecIPGeo:AppSecIPGeo"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

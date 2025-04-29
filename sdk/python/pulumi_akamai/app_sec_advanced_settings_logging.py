@@ -128,6 +128,9 @@ class _AppSecAdvancedSettingsLoggingState:
 
 
 class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

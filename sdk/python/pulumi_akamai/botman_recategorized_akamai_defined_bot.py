@@ -103,6 +103,9 @@ class _BotmanRecategorizedAkamaiDefinedBotState:
 
 
 class BotmanRecategorizedAkamaiDefinedBot(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanRecategorizedAkamaiDefinedBot:BotmanRecategorizedAkamaiDefinedBot"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -258,6 +258,9 @@ class _CloudletsApplicationLoadBalancerState:
 
 
 class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

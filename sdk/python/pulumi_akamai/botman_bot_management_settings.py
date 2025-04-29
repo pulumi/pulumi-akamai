@@ -103,6 +103,9 @@ class _BotmanBotManagementSettingsState:
 
 
 class BotmanBotManagementSettings(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/botmanBotManagementSettings:BotmanBotManagementSettings"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

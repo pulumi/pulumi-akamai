@@ -207,6 +207,9 @@ class _AppSecWafModeState:
 
 
 class AppSecWafMode(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecWafMode:AppSecWafMode"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

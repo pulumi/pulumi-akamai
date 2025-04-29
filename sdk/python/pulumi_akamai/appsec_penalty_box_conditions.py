@@ -127,6 +127,9 @@ class _AppsecPenaltyBoxConditionsState:
 
 
 class AppsecPenaltyBoxConditions(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appsecPenaltyBoxConditions:AppsecPenaltyBoxConditions"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

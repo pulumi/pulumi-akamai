@@ -127,6 +127,9 @@ class _AppSecByPassNetworkListState:
 
 
 class AppSecByPassNetworkList(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

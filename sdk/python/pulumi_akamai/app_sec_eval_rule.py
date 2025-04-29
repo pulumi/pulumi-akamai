@@ -190,6 +190,9 @@ class _AppSecEvalRuleState:
 
 
 class AppSecEvalRule(pulumi.CustomResource):
+
+    pulumi_type = "akamai:index/appSecEvalRule:AppSecEvalRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
