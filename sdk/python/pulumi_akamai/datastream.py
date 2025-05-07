@@ -712,10 +712,8 @@ class _DatastreamState:
         pulumi.set(self, "sumologic_connector", value)
 
 
+@pulumi.type_token("akamai:index/datastream:Datastream")
 class Datastream(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/datastream:Datastream"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -153,10 +153,8 @@ class _GtmCidrmapState:
         pulumi.set(self, "wait_on_complete", value)
 
 
+@pulumi.type_token("akamai:index/gtmCidrmap:GtmCidrmap")
 class GtmCidrmap(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/gtmCidrmap:GtmCidrmap"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

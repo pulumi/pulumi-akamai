@@ -153,10 +153,8 @@ class _GtmAsmapState:
         pulumi.set(self, "wait_on_complete", value)
 
 
+@pulumi.type_token("akamai:index/gtmAsmap:GtmAsmap")
 class GtmAsmap(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/gtmAsmap:GtmAsmap"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -225,10 +225,8 @@ class _IamCidrBlockState:
         pulumi.set(self, "modified_date", value)
 
 
+@pulumi.type_token("akamai:index/iamCidrBlock:IamCidrBlock")
 class IamCidrBlock(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/iamCidrBlock:IamCidrBlock"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

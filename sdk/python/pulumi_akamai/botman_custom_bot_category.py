@@ -91,10 +91,8 @@ class _BotmanCustomBotCategoryState:
         pulumi.set(self, "custom_bot_category", value)
 
 
+@pulumi.type_token("akamai:index/botmanCustomBotCategory:BotmanCustomBotCategory")
 class BotmanCustomBotCategory(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanCustomBotCategory:BotmanCustomBotCategory"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

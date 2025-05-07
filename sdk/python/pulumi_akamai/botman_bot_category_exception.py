@@ -102,10 +102,8 @@ class _BotmanBotCategoryExceptionState:
         pulumi.set(self, "security_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/botmanBotCategoryException:BotmanBotCategoryException")
 class BotmanBotCategoryException(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanBotCategoryException:BotmanBotCategoryException"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

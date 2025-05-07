@@ -111,10 +111,8 @@ class _AppSecMatchTargetState:
         pulumi.set(self, "match_target_id", value)
 
 
+@pulumi.type_token("akamai:index/appSecMatchTarget:AppSecMatchTarget")
 class AppSecMatchTarget(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecMatchTarget:AppSecMatchTarget"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

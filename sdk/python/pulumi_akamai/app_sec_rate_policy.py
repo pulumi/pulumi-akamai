@@ -111,10 +111,8 @@ class _AppSecRatePolicyState:
         pulumi.set(self, "rate_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/appSecRatePolicy:AppSecRatePolicy")
 class AppSecRatePolicy(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecRatePolicy:AppSecRatePolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -79,10 +79,8 @@ class _BotmanCustomClientSequenceState:
         pulumi.set(self, "custom_client_ids", value)
 
 
+@pulumi.type_token("akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence")
 class BotmanCustomClientSequence(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

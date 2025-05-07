@@ -349,10 +349,8 @@ class _PropertyIncludeState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("akamai:index/propertyInclude:PropertyInclude")
 class PropertyInclude(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/propertyInclude:PropertyInclude"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

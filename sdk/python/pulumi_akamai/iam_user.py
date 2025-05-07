@@ -814,10 +814,8 @@ class _IamUserState:
         pulumi.set(self, "zip_code", value)
 
 
+@pulumi.type_token("akamai:index/iamUser:IamUser")
 class IamUser(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/iamUser:IamUser"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

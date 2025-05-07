@@ -585,10 +585,8 @@ class _CpsDvEnrollmentState:
         pulumi.set(self, "validation_type", value)
 
 
+@pulumi.type_token("akamai:index/cpsDvEnrollment:CpsDvEnrollment")
 class CpsDvEnrollment(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cpsDvEnrollment:CpsDvEnrollment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

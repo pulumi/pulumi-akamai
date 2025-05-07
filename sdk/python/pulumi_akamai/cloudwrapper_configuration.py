@@ -327,10 +327,8 @@ class _CloudwrapperConfigurationState:
         pulumi.set(self, "timeouts", value)
 
 
+@pulumi.type_token("akamai:index/cloudwrapperConfiguration:CloudwrapperConfiguration")
 class CloudwrapperConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cloudwrapperConfiguration:CloudwrapperConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

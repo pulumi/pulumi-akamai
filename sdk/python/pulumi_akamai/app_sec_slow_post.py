@@ -226,10 +226,8 @@ class _AppSecSlowPostState:
         pulumi.set(self, "slow_rate_threshold_rate", value)
 
 
+@pulumi.type_token("akamai:index/appSecSlowPost:AppSecSlowPost")
 class AppSecSlowPost(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecSlowPost:AppSecSlowPost"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

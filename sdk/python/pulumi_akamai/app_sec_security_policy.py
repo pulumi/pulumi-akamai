@@ -206,10 +206,8 @@ class _AppSecSecurityPolicyState:
         pulumi.set(self, "security_policy_prefix", value)
 
 
+@pulumi.type_token("akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy")
 class AppSecSecurityPolicy(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

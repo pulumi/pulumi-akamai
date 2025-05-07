@@ -337,10 +337,8 @@ class _CloudletsPolicyState:
         pulumi.set(self, "warnings", value)
 
 
+@pulumi.type_token("akamai:index/cloudletsPolicy:CloudletsPolicy")
 class CloudletsPolicy(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cloudletsPolicy:CloudletsPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -111,10 +111,8 @@ class _AppSecReputationProfileState:
         pulumi.set(self, "reputation_profile_id", value)
 
 
+@pulumi.type_token("akamai:index/appSecReputationProfile:AppSecReputationProfile")
 class AppSecReputationProfile(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecReputationProfile:AppSecReputationProfile"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

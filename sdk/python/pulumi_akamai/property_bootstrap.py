@@ -210,10 +210,8 @@ class _PropertyBootstrapState:
         pulumi.set(self, "use_hostname_bucket", value)
 
 
+@pulumi.type_token("akamai:index/propertyBootstrap:PropertyBootstrap")
 class PropertyBootstrap(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/propertyBootstrap:PropertyBootstrap"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

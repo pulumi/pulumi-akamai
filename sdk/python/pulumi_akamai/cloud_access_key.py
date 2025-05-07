@@ -330,10 +330,8 @@ class _CloudAccessKeyState:
         pulumi.set(self, "timeouts", value)
 
 
+@pulumi.type_token("akamai:index/cloudAccessKey:CloudAccessKey")
 class CloudAccessKey(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cloudAccessKey:CloudAccessKey"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

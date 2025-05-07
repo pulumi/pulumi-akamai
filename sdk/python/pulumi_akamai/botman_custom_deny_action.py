@@ -91,10 +91,8 @@ class _BotmanCustomDenyActionState:
         pulumi.set(self, "custom_deny_action", value)
 
 
+@pulumi.type_token("akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction")
 class BotmanCustomDenyAction(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

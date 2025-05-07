@@ -112,10 +112,8 @@ class _IamGroupState:
         pulumi.set(self, "sub_groups", value)
 
 
+@pulumi.type_token("akamai:index/iamGroup:IamGroup")
 class IamGroup(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/iamGroup:IamGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

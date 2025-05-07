@@ -306,10 +306,8 @@ class _NetworkListState:
         pulumi.set(self, "uniqueid", value)
 
 
+@pulumi.type_token("akamai:index/networkList:NetworkList")
 class NetworkList(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/networkList:NetworkList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
