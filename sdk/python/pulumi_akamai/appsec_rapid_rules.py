@@ -175,10 +175,8 @@ class _AppsecRapidRulesState:
         pulumi.set(self, "security_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/appsecRapidRules:AppsecRapidRules")
 class AppsecRapidRules(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appsecRapidRules:AppsecRapidRules"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

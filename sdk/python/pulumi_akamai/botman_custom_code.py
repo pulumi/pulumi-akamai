@@ -79,10 +79,8 @@ class _BotmanCustomCodeState:
         pulumi.set(self, "custom_code", value)
 
 
+@pulumi.type_token("akamai:index/botmanCustomCode:BotmanCustomCode")
 class BotmanCustomCode(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanCustomCode:BotmanCustomCode"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

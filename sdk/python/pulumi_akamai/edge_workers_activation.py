@@ -208,10 +208,8 @@ class _EdgeWorkersActivationState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("akamai:index/edgeWorkersActivation:EdgeWorkersActivation")
 class EdgeWorkersActivation(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/edgeWorkersActivation:EdgeWorkersActivation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

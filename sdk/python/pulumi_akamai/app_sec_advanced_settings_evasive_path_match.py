@@ -127,10 +127,8 @@ class _AppSecAdvancedSettingsEvasivePathMatchState:
         pulumi.set(self, "security_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch")
 class AppSecAdvancedSettingsEvasivePathMatch(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

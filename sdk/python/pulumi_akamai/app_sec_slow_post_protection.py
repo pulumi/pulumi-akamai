@@ -142,10 +142,8 @@ class _AppSecSlowPostProtectionState:
         pulumi.set(self, "security_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection")
 class AppSecSlowPostProtection(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -1535,10 +1535,8 @@ export type PropertyIncludeActivation = import("./propertyIncludeActivation").Pr
 export const PropertyIncludeActivation: typeof import("./propertyIncludeActivation").PropertyIncludeActivation = null as any;
 utilities.lazyLoad(exports, ["PropertyIncludeActivation"], () => require("./propertyIncludeActivation"));
 
-export { ProviderArgs } from "./provider";
-export type Provider = import("./provider").Provider;
-export const Provider: typeof import("./provider").Provider = null as any;
-utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+export * from "./provider";
+import { Provider } from "./provider";
 
 
 // Export sub-modules:

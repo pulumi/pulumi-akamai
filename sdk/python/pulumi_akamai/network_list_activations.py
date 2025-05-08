@@ -206,10 +206,8 @@ class _NetworkListActivationsState:
         pulumi.set(self, "sync_point", value)
 
 
+@pulumi.type_token("akamai:index/networkListActivations:NetworkListActivations")
 class NetworkListActivations(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/networkListActivations:NetworkListActivations"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

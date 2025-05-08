@@ -79,10 +79,8 @@ class _BotmanChallengeInjectionRulesState:
         pulumi.set(self, "config_id", value)
 
 
+@pulumi.type_token("akamai:index/botmanChallengeInjectionRules:BotmanChallengeInjectionRules")
 class BotmanChallengeInjectionRules(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanChallengeInjectionRules:BotmanChallengeInjectionRules"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -798,10 +798,8 @@ class _GtmPropertyState:
         pulumi.set(self, "weighted_hash_bits_for_ipv6", value)
 
 
+@pulumi.type_token("akamai:index/gtmProperty:GtmProperty")
 class GtmProperty(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/gtmProperty:GtmProperty"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -102,10 +102,8 @@ class _BotmanBotManagementSettingsState:
         pulumi.set(self, "security_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/botmanBotManagementSettings:BotmanBotManagementSettings")
 class BotmanBotManagementSettings(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanBotManagementSettings:BotmanBotManagementSettings"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

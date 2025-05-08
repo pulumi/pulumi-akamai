@@ -159,10 +159,8 @@ class _AppsecAapSelectedHostnamesState:
         pulumi.set(self, "security_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/appsecAapSelectedHostnames:AppsecAapSelectedHostnames")
 class AppsecAapSelectedHostnames(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appsecAapSelectedHostnames:AppsecAapSelectedHostnames"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -688,10 +688,8 @@ class _GtmDomainState:
         pulumi.set(self, "wait_on_complete", value)
 
 
+@pulumi.type_token("akamai:index/gtmDomain:GtmDomain")
 class GtmDomain(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/gtmDomain:GtmDomain"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

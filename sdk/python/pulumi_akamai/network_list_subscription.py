@@ -79,10 +79,8 @@ class _NetworkListSubscriptionState:
         pulumi.set(self, "recipients", value)
 
 
+@pulumi.type_token("akamai:index/networkListSubscription:NetworkListSubscription")
 class NetworkListSubscription(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/networkListSubscription:NetworkListSubscription"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

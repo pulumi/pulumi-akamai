@@ -213,10 +213,8 @@ class _ImagingPolicyVideoState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("akamai:index/imagingPolicyVideo:ImagingPolicyVideo")
 class ImagingPolicyVideo(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/imagingPolicyVideo:ImagingPolicyVideo"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

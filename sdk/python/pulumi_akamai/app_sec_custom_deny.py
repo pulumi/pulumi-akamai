@@ -111,10 +111,8 @@ class _AppSecCustomDenyState:
         pulumi.set(self, "custom_deny_id", value)
 
 
+@pulumi.type_token("akamai:index/appSecCustomDeny:AppSecCustomDeny")
 class AppSecCustomDeny(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecCustomDeny:AppSecCustomDeny"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

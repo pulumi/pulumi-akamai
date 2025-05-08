@@ -255,10 +255,8 @@ class _AppSecSiemSettingsState:
         pulumi.set(self, "siem_id", value)
 
 
+@pulumi.type_token("akamai:index/appSecSiemSettings:AppSecSiemSettings")
 class AppSecSiemSettings(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecSiemSettings:AppSecSiemSettings"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
