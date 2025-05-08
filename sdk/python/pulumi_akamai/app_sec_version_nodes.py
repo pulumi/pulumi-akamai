@@ -111,10 +111,8 @@ class _AppSecVersionNodesState:
         pulumi.set(self, "version_notes", value)
 
 
+@pulumi.type_token("akamai:index/appSecVersionNodes:AppSecVersionNodes")
 class AppSecVersionNodes(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecVersionNodes:AppSecVersionNodes"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

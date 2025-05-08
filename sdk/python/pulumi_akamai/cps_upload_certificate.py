@@ -354,10 +354,8 @@ class _CpsUploadCertificateState:
         pulumi.set(self, "wait_for_deployment", value)
 
 
+@pulumi.type_token("akamai:index/cpsUploadCertificate:CpsUploadCertificate")
 class CpsUploadCertificate(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cpsUploadCertificate:CpsUploadCertificate"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

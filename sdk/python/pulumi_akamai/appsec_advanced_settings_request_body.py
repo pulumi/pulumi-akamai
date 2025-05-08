@@ -159,10 +159,8 @@ class _AppsecAdvancedSettingsRequestBodyState:
         pulumi.set(self, "security_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody")
 class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

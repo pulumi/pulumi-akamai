@@ -257,10 +257,8 @@ class _EdgeWorkerState:
         pulumi.set(self, "warnings", value)
 
 
+@pulumi.type_token("akamai:index/edgeWorker:EdgeWorker")
 class EdgeWorker(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/edgeWorker:EdgeWorker"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

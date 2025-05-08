@@ -364,10 +364,8 @@ class _DnsZoneState:
         pulumi.set(self, "zone", value)
 
 
+@pulumi.type_token("akamai:index/dnsZone:DnsZone")
 class DnsZone(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/dnsZone:DnsZone"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

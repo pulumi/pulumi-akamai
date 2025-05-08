@@ -176,10 +176,8 @@ class _CloudletsApplicationLoadBalancerActivationState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation")
 class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

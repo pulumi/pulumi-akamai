@@ -304,10 +304,8 @@ class _ClientlistListState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("akamai:index/clientlistList:ClientlistList")
 class ClientlistList(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/clientlistList:ClientlistList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

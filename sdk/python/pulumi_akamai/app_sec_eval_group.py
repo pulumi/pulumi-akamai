@@ -189,10 +189,8 @@ class _AppSecEvalGroupState:
         pulumi.set(self, "security_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/appSecEvalGroup:AppSecEvalGroup")
 class AppSecEvalGroup(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecEvalGroup:AppSecEvalGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

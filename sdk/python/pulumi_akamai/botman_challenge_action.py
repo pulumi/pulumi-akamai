@@ -91,10 +91,8 @@ class _BotmanChallengeActionState:
         pulumi.set(self, "config_id", value)
 
 
+@pulumi.type_token("akamai:index/botmanChallengeAction:BotmanChallengeAction")
 class BotmanChallengeAction(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanChallengeAction:BotmanChallengeAction"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

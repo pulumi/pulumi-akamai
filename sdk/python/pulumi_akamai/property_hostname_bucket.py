@@ -368,10 +368,8 @@ class _PropertyHostnameBucketState:
         pulumi.set(self, "timeout_for_activation", value)
 
 
+@pulumi.type_token("akamai:index/propertyHostnameBucket:PropertyHostnameBucket")
 class PropertyHostnameBucket(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/propertyHostnameBucket:PropertyHostnameBucket"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -79,10 +79,8 @@ class _BotmanClientSideSecurityState:
         pulumi.set(self, "config_id", value)
 
 
+@pulumi.type_token("akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity")
 class BotmanClientSideSecurity(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

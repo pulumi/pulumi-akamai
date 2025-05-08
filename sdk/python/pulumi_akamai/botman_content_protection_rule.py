@@ -142,10 +142,8 @@ class _BotmanContentProtectionRuleState:
         pulumi.set(self, "security_policy_id", value)
 
 
+@pulumi.type_token("akamai:index/botmanContentProtectionRule:BotmanContentProtectionRule")
 class BotmanContentProtectionRule(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/botmanContentProtectionRule:BotmanContentProtectionRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -161,10 +161,8 @@ class _CpCodeState:
         pulumi.set(self, "timeouts", value)
 
 
+@pulumi.type_token("akamai:index/cpCode:CpCode")
 class CpCode(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cpCode:CpCode"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

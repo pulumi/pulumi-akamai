@@ -224,10 +224,8 @@ class _CloudletsPolicyActivationState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation")
 class CloudletsPolicyActivation(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

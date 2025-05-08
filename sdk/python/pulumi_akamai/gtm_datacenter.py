@@ -442,10 +442,8 @@ class _GtmDatacenterState:
         pulumi.set(self, "wait_on_complete", value)
 
 
+@pulumi.type_token("akamai:index/gtmDatacenter:GtmDatacenter")
 class GtmDatacenter(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/gtmDatacenter:GtmDatacenter"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

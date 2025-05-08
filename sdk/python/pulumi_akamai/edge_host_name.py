@@ -307,10 +307,8 @@ class _EdgeHostNameState:
         pulumi.set(self, "use_cases", value)
 
 
+@pulumi.type_token("akamai:index/edgeHostName:EdgeHostName")
 class EdgeHostName(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/edgeHostName:EdgeHostName"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

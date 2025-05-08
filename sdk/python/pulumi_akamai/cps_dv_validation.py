@@ -178,10 +178,8 @@ class _CpsDvValidationState:
         pulumi.set(self, "timeouts", value)
 
 
+@pulumi.type_token("akamai:index/cpsDvValidation:CpsDvValidation")
 class CpsDvValidation(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cpsDvValidation:CpsDvValidation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

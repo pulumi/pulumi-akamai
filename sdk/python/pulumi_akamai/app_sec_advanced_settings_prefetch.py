@@ -188,10 +188,8 @@ class _AppSecAdvancedSettingsPrefetchState:
         pulumi.set(self, "extensions", value)
 
 
+@pulumi.type_token("akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch")
 class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

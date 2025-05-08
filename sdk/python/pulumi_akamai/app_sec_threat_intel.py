@@ -126,10 +126,8 @@ class _AppSecThreatIntelState:
         pulumi.set(self, "threat_intel", value)
 
 
+@pulumi.type_token("akamai:index/appSecThreatIntel:AppSecThreatIntel")
 class AppSecThreatIntel(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/appSecThreatIntel:AppSecThreatIntel"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

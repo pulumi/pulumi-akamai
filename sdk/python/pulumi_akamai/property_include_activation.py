@@ -365,10 +365,8 @@ class _PropertyIncludeActivationState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("akamai:index/propertyIncludeActivation:PropertyIncludeActivation")
 class PropertyIncludeActivation(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/propertyIncludeActivation:PropertyIncludeActivation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

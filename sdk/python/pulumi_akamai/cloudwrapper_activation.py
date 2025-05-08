@@ -121,10 +121,8 @@ class _CloudwrapperActivationState:
         pulumi.set(self, "timeouts", value)
 
 
+@pulumi.type_token("akamai:index/cloudwrapperActivation:CloudwrapperActivation")
 class CloudwrapperActivation(pulumi.CustomResource):
-
-    pulumi_type = "akamai:index/cloudwrapperActivation:CloudwrapperActivation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
