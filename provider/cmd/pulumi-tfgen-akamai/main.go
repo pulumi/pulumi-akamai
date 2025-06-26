@@ -27,6 +27,8 @@ func main() {
 	providerInfo.SchemaPostProcessor = func(spec *schema.PackageSpec) {
 		akamai.MakeTypeRecursive(spec, "akamai:index/getImagingPolicyImagePolicyPostBreakpointTransformation:getImagingPolicyImagePolicyPostBreakpointTransformation")
 		akamai.MakeTypeRecursive(spec, "akamai:index/getImagingPolicyImagePolicyTransformation:getImagingPolicyImagePolicyTransformation")
+		akamai.MakeTypeRecursive(spec, "akamai:index/IamApiClientGroupAccessGroupSubGroup:IamApiClientGroupAccessGroupSubGroup")
+		akamai.MakeTypeRecursive(spec, "akamai:index/getIamApiClientGroupAccessGroupSubGroup:getIamApiClientGroupAccessGroupSubGroup")
 	}
 	tfgen.MainWithMuxer("akamai", providerInfo)
 }
