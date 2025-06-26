@@ -1389,6 +1389,8 @@ github.com/ajstarks/svgo v0.0.0-20180226025133-644b8db467af/go.mod h1:K08gAheRH3
 github.com/ajstarks/svgo v0.0.0-20211024235047-1546f124cd8b/go.mod h1:1KcenG0jGWcpt8ov532z81sp/kMMUG485J2InIOyADM=
 github.com/akamai/AkamaiOPEN-edgegrid-golang/v10 v10.1.0 h1:puGswCf+1faEX0dKXjew9sacs7wN8N4TMJFwIx6EE48=
 github.com/akamai/AkamaiOPEN-edgegrid-golang/v10 v10.1.0/go.mod h1:x8+fcnZ8/9+Q6DF+6LXcgWWa8Ni/YFOuXAgyvcuCjbs=
+github.com/akamai/terraform-provider-akamai/v7 v7.1.0 h1:QIpcP2W6O2owDBU07+1mZQIqOzewmlbihs2gFh5tODo=
+github.com/akamai/terraform-provider-akamai/v7 v7.1.0/go.mod h1:v1ShzZa35/jU38oOqaB+9YnAa6fADajCbHAcYMBjQVQ=
 github.com/alecthomas/assert/v2 v2.2.2/go.mod h1:pXcQ2Asjp247dahGEmsZ6ru0UVwnkhktn7S0bBDLxvQ=
 github.com/alecthomas/assert/v2 v2.3.0/go.mod h1:pXcQ2Asjp247dahGEmsZ6ru0UVwnkhktn7S0bBDLxvQ=
 github.com/alecthomas/participle/v2 v2.0.0/go.mod h1:rAKZdJldHu8084ojcWevWAL8KmEU+AT+Olodb+WoN2Y=
@@ -2216,6 +2218,8 @@ github.com/pulumi/inflector v0.1.1 h1:dvlxlWtXwOJTUUtcYDvwnl6Mpg33prhK+7mzeF+Sob
 github.com/pulumi/inflector v0.1.1/go.mod h1:HUFCjcPTz96YtTuUlwG3i3EZG4WlniBvR9bd+iJxCUY=
 github.com/pulumi/providertest v0.3.0 h1:Dv10aoFaNQBDRtK8cRbd2uk9vEhpC/NryN+0y7NX4/o=
 github.com/pulumi/providertest v0.3.0/go.mod h1:aTxVfdxP/Pe0iPbokjBp99x0XaY4fkZB2CjIS5wysMs=
+github.com/pulumi/pulumi-akamai/provider/v8 v8.0.0-20250618051140-036c6f81a277 h1:HwKet/x7q1YBSECLiMLZcbgumhgihwLujLwoH+RvcEM=
+github.com/pulumi/pulumi-akamai/provider/v8 v8.0.0-20250618051140-036c6f81a277/go.mod h1:2TyzUqj1T4LZ0nzgtvvJxtVcQWcoPCeAX3adAx9WBfM=
 github.com/pulumi/pulumi-java/pkg v1.12.0 h1:T7yFnFr0bgqy6huVUANMyUeGO1/Y3r2CJJ6S5YQDQCU=
 github.com/pulumi/pulumi-java/pkg v1.12.0/go.mod h1:g8QQjEgB5wTsZptyf1vbIcI/pgYEGJObnihAEgymkAo=
 github.com/pulumi/pulumi-terraform-bridge/v3 v3.110.0 h1:dSrgT3BVGDtmFZtIyT1fyO3nJ7mFt4/WEoGXoiym0tQ=

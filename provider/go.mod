@@ -12,7 +12,8 @@ replace (
 )
 
 require (
-	github.com/akamai/terraform-provider-akamai/v8 v8.0.0
+	github.com/akamai/terraform-provider-akamai/v7 v7.1.0
+	github.com/pulumi/pulumi-akamai/provider/v8 v8.0.0-20250618051140-036c6f81a277
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.110.0
 	github.com/pulumi/pulumi/pkg/v3 v3.175.0
 	github.com/pulumi/pulumi/sdk/v3 v3.175.0
