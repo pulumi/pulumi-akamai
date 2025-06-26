@@ -14,27 +14,27 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetCloudletsPolicyActivationPropertyInfoResult
     {
         /// <summary>
-        /// The name of the user who activated the property
+        /// The name of the user who activated the property.
         /// </summary>
         public readonly string ActivatedBy;
         /// <summary>
-        /// The date on which the property was activated (in milliseconds since Epoch)
+        /// The date on which the property was activated (in milliseconds since Epoch).
         /// </summary>
         public readonly int ActivationDate;
         /// <summary>
-        /// Defines the group association for the policy or property
+        /// Defines the group association for the policy or property.
         /// </summary>
         public readonly int GroupId;
         /// <summary>
-        /// The name of the property
+        /// The name of the property.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The activation status for the property. Can be active, inactive, deactivated, pending or failed
+        /// The activation status for the property. Can be active, inactive, deactivated, pending or failed.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// The version number of the activated property
+        /// The version number of the activated property.
         /// </summary>
         public readonly int Version;
 

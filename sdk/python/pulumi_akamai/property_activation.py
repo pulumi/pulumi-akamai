@@ -33,10 +33,15 @@ class PropertyActivationArgs:
                  timeouts: Optional[pulumi.Input['PropertyActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyActivation resource.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] contacts: One or more email addresses to which to send activation status changes.
+        :param pulumi.Input[builtins.str] property_id: Your property's ID, including the prp_ prefix.
+        :param pulumi.Input[builtins.int] version: Your property's version number.
+        :param pulumi.Input[builtins.str] activation_id: The ID given to the activation event while it's in progress.
         :param pulumi.Input[builtins.bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
-        :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
-        :param pulumi.Input[builtins.str] note: assigns a log message to the activation request
-        :param pulumi.Input['PropertyActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
+        :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network.
+        :param pulumi.Input[builtins.str] network: Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        :param pulumi.Input[builtins.str] note: Assigns a log message to the activation request.
+        :param pulumi.Input['PropertyActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing.
         """
         pulumi.set(__self__, "contacts", contacts)
         pulumi.set(__self__, "property_id", property_id)
@@ -57,6 +62,9 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter
     def contacts(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
+        """
+        One or more email addresses to which to send activation status changes.
+        """
         return pulumi.get(self, "contacts")
 
     @contacts.setter
@@ -66,6 +74,9 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter(name="propertyId")
     def property_id(self) -> pulumi.Input[builtins.str]:
+        """
+        Your property's ID, including the prp_ prefix.
+        """
         return pulumi.get(self, "property_id")
 
     @property_id.setter
@@ -75,6 +86,9 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter
     def version(self) -> pulumi.Input[builtins.int]:
+        """
+        Your property's version number.
+        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -84,6 +98,9 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The ID given to the activation event while it's in progress.
+        """
         return pulumi.get(self, "activation_id")
 
     @activation_id.setter
@@ -106,7 +123,7 @@ class PropertyActivationArgs:
     @pulumi.getter(name="complianceRecord")
     def compliance_record(self) -> Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']]:
         """
-        Provides an audit record when activating on a production network
+        Provides an audit record when activating on a production network.
         """
         return pulumi.get(self, "compliance_record")
 
@@ -117,6 +134,9 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        """
         return pulumi.get(self, "network")
 
     @network.setter
@@ -127,7 +147,7 @@ class PropertyActivationArgs:
     @pulumi.getter
     def note(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        assigns a log message to the activation request
+        Assigns a log message to the activation request.
         """
         return pulumi.get(self, "note")
 
@@ -139,7 +159,7 @@ class PropertyActivationArgs:
     @pulumi.getter
     def timeouts(self) -> Optional[pulumi.Input['PropertyActivationTimeoutsArgs']]:
         """
-        Enables to set timeout for processing
+        Enables to set timeout for processing.
         """
         return pulumi.get(self, "timeouts")
 
@@ -166,10 +186,19 @@ class _PropertyActivationState:
                  warnings: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering PropertyActivation resources.
+        :param pulumi.Input[builtins.str] activation_id: The ID given to the activation event while it's in progress.
         :param pulumi.Input[builtins.bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
-        :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
-        :param pulumi.Input[builtins.str] note: assigns a log message to the activation request
-        :param pulumi.Input['PropertyActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
+        :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] contacts: One or more email addresses to which to send activation status changes.
+        :param pulumi.Input[builtins.str] errors: Errors returned during activation.
+        :param pulumi.Input[builtins.str] network: Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        :param pulumi.Input[builtins.str] note: Assigns a log message to the activation request.
+        :param pulumi.Input[builtins.str] property_id: Your property's ID, including the prp_ prefix.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]] rule_errors: Any errors returned by the API about rules.
+        :param pulumi.Input[builtins.str] status: The property version's activation status on the given network.
+        :param pulumi.Input['PropertyActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing.
+        :param pulumi.Input[builtins.int] version: Your property's version number.
+        :param pulumi.Input[builtins.str] warnings: Warnings returned during activation.
         """
         if activation_id is not None:
             pulumi.set(__self__, "activation_id", activation_id)
@@ -201,6 +230,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The ID given to the activation event while it's in progress.
+        """
         return pulumi.get(self, "activation_id")
 
     @activation_id.setter
@@ -223,7 +255,7 @@ class _PropertyActivationState:
     @pulumi.getter(name="complianceRecord")
     def compliance_record(self) -> Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']]:
         """
-        Provides an audit record when activating on a production network
+        Provides an audit record when activating on a production network.
         """
         return pulumi.get(self, "compliance_record")
 
@@ -234,6 +266,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        One or more email addresses to which to send activation status changes.
+        """
         return pulumi.get(self, "contacts")
 
     @contacts.setter
@@ -243,6 +278,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def errors(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Errors returned during activation.
+        """
         return pulumi.get(self, "errors")
 
     @errors.setter
@@ -252,6 +290,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        """
         return pulumi.get(self, "network")
 
     @network.setter
@@ -262,7 +303,7 @@ class _PropertyActivationState:
     @pulumi.getter
     def note(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        assigns a log message to the activation request
+        Assigns a log message to the activation request.
         """
         return pulumi.get(self, "note")
 
@@ -273,6 +314,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter(name="propertyId")
     def property_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Your property's ID, including the prp_ prefix.
+        """
         return pulumi.get(self, "property_id")
 
     @property_id.setter
@@ -282,6 +326,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter(name="ruleErrors")
     def rule_errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]]:
+        """
+        Any errors returned by the API about rules.
+        """
         return pulumi.get(self, "rule_errors")
 
     @rule_errors.setter
@@ -291,6 +338,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The property version's activation status on the given network.
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -301,7 +351,7 @@ class _PropertyActivationState:
     @pulumi.getter
     def timeouts(self) -> Optional[pulumi.Input['PropertyActivationTimeoutsArgs']]:
         """
-        Enables to set timeout for processing
+        Enables to set timeout for processing.
         """
         return pulumi.get(self, "timeouts")
 
@@ -312,6 +362,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Your property's version number.
+        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -321,6 +374,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def warnings(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Warnings returned during activation.
+        """
         return pulumi.get(self, "warnings")
 
     @warnings.setter
@@ -348,10 +404,15 @@ class PropertyActivation(pulumi.CustomResource):
         Create a PropertyActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[builtins.str] activation_id: The ID given to the activation event while it's in progress.
         :param pulumi.Input[builtins.bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
-        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']] compliance_record: Provides an audit record when activating on a production network
-        :param pulumi.Input[builtins.str] note: assigns a log message to the activation request
-        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']] compliance_record: Provides an audit record when activating on a production network.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] contacts: One or more email addresses to which to send activation status changes.
+        :param pulumi.Input[builtins.str] network: Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        :param pulumi.Input[builtins.str] note: Assigns a log message to the activation request.
+        :param pulumi.Input[builtins.str] property_id: Your property's ID, including the prp_ prefix.
+        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing.
+        :param pulumi.Input[builtins.int] version: Your property's version number.
         """
         ...
     @overload
@@ -445,10 +506,19 @@ class PropertyActivation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[builtins.str] activation_id: The ID given to the activation event while it's in progress.
         :param pulumi.Input[builtins.bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
-        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']] compliance_record: Provides an audit record when activating on a production network
-        :param pulumi.Input[builtins.str] note: assigns a log message to the activation request
-        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']] compliance_record: Provides an audit record when activating on a production network.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] contacts: One or more email addresses to which to send activation status changes.
+        :param pulumi.Input[builtins.str] errors: Errors returned during activation.
+        :param pulumi.Input[builtins.str] network: Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        :param pulumi.Input[builtins.str] note: Assigns a log message to the activation request.
+        :param pulumi.Input[builtins.str] property_id: Your property's ID, including the prp_ prefix.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict']]]] rule_errors: Any errors returned by the API about rules.
+        :param pulumi.Input[builtins.str] status: The property version's activation status on the given network.
+        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing.
+        :param pulumi.Input[builtins.int] version: Your property's version number.
+        :param pulumi.Input[builtins.str] warnings: Warnings returned during activation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -472,6 +542,9 @@ class PropertyActivation(pulumi.CustomResource):
     @property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> pulumi.Output[builtins.str]:
+        """
+        The ID given to the activation event while it's in progress.
+        """
         return pulumi.get(self, "activation_id")
 
     @property
@@ -486,63 +559,87 @@ class PropertyActivation(pulumi.CustomResource):
     @pulumi.getter(name="complianceRecord")
     def compliance_record(self) -> pulumi.Output[Optional['outputs.PropertyActivationComplianceRecord']]:
         """
-        Provides an audit record when activating on a production network
+        Provides an audit record when activating on a production network.
         """
         return pulumi.get(self, "compliance_record")
 
     @property
     @pulumi.getter
     def contacts(self) -> pulumi.Output[Sequence[builtins.str]]:
+        """
+        One or more email addresses to which to send activation status changes.
+        """
         return pulumi.get(self, "contacts")
 
     @property
     @pulumi.getter
     def errors(self) -> pulumi.Output[builtins.str]:
+        """
+        Errors returned during activation.
+        """
         return pulumi.get(self, "errors")
 
     @property
     @pulumi.getter
     def network(self) -> pulumi.Output[Optional[builtins.str]]:
+        """
+        Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        """
         return pulumi.get(self, "network")
 
     @property
     @pulumi.getter
     def note(self) -> pulumi.Output[Optional[builtins.str]]:
         """
-        assigns a log message to the activation request
+        Assigns a log message to the activation request.
         """
         return pulumi.get(self, "note")
 
     @property
     @pulumi.getter(name="propertyId")
     def property_id(self) -> pulumi.Output[builtins.str]:
+        """
+        Your property's ID, including the prp_ prefix.
+        """
         return pulumi.get(self, "property_id")
 
     @property
     @pulumi.getter(name="ruleErrors")
     def rule_errors(self) -> pulumi.Output[Sequence['outputs.PropertyActivationRuleError']]:
+        """
+        Any errors returned by the API about rules.
+        """
         return pulumi.get(self, "rule_errors")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
+        """
+        The property version's activation status on the given network.
+        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
     def timeouts(self) -> pulumi.Output[Optional['outputs.PropertyActivationTimeouts']]:
         """
-        Enables to set timeout for processing
+        Enables to set timeout for processing.
         """
         return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter
     def version(self) -> pulumi.Output[builtins.int]:
+        """
+        Your property's version number.
+        """
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter
     def warnings(self) -> pulumi.Output[builtins.str]:
+        """
+        Warnings returned during activation.
+        """
         return pulumi.get(self, "warnings")
 

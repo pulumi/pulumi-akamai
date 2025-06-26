@@ -148,6 +148,28 @@ __all__ = [
     'GtmPropertyTrafficTargetArgsDict',
     'GtmResourceResourceInstanceArgs',
     'GtmResourceResourceInstanceArgsDict',
+    'IamApiClientActionsArgs',
+    'IamApiClientActionsArgsDict',
+    'IamApiClientApiAccessArgs',
+    'IamApiClientApiAccessArgsDict',
+    'IamApiClientApiAccessApiArgs',
+    'IamApiClientApiAccessApiArgsDict',
+    'IamApiClientCredentialArgs',
+    'IamApiClientCredentialArgsDict',
+    'IamApiClientCredentialActionsArgs',
+    'IamApiClientCredentialActionsArgsDict',
+    'IamApiClientGroupAccessArgs',
+    'IamApiClientGroupAccessArgsDict',
+    'IamApiClientGroupAccessGroupArgs',
+    'IamApiClientGroupAccessGroupArgsDict',
+    'IamApiClientGroupAccessGroupSubGroupArgs',
+    'IamApiClientGroupAccessGroupSubGroupArgsDict',
+    'IamApiClientIpAclArgs',
+    'IamApiClientIpAclArgsDict',
+    'IamApiClientPurgeOptionsArgs',
+    'IamApiClientPurgeOptionsArgsDict',
+    'IamApiClientPurgeOptionsCpCodeAccessArgs',
+    'IamApiClientPurgeOptionsCpCodeAccessArgsDict',
     'IamCidrBlockActionsArgs',
     'IamCidrBlockActionsArgsDict',
     'IamUserUserNotificationsArgs',
@@ -7695,6 +7717,1265 @@ class GtmResourceResourceInstanceArgs:
     @use_default_load_object.setter
     def use_default_load_object(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "use_default_load_object", value)
+
+
+if not MYPY:
+    class IamApiClientActionsArgsDict(TypedDict):
+        deactivate_all: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can deactivate the API client's credentials.
+        """
+        delete: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can remove the API client.
+        """
+        edit: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can update the API client.
+        """
+        edit_apis: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can update the `apis` the API client can access, same as `edit_auth`.
+        """
+        edit_auth: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can update the `apis` the API client can access, same as `edit_apis`.
+        """
+        edit_groups: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can update the `groups` the API client can access.
+        """
+        edit_ip_acl: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can update the 'ip acl' the API client can access.
+        """
+        edit_switch_account: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can update the API client's option to manage many accounts.
+        """
+        lock: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can lock the API client.
+        """
+        transfer: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can transfer the API client to a new owner.
+        """
+        unlock: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can unlock the API client.
+        """
+elif False:
+    IamApiClientActionsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientActionsArgs:
+    def __init__(__self__, *,
+                 deactivate_all: Optional[pulumi.Input[builtins.bool]] = None,
+                 delete: Optional[pulumi.Input[builtins.bool]] = None,
+                 edit: Optional[pulumi.Input[builtins.bool]] = None,
+                 edit_apis: Optional[pulumi.Input[builtins.bool]] = None,
+                 edit_auth: Optional[pulumi.Input[builtins.bool]] = None,
+                 edit_groups: Optional[pulumi.Input[builtins.bool]] = None,
+                 edit_ip_acl: Optional[pulumi.Input[builtins.bool]] = None,
+                 edit_switch_account: Optional[pulumi.Input[builtins.bool]] = None,
+                 lock: Optional[pulumi.Input[builtins.bool]] = None,
+                 transfer: Optional[pulumi.Input[builtins.bool]] = None,
+                 unlock: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[builtins.bool] deactivate_all: Whether you can deactivate the API client's credentials.
+        :param pulumi.Input[builtins.bool] delete: Whether you can remove the API client.
+        :param pulumi.Input[builtins.bool] edit: Whether you can update the API client.
+        :param pulumi.Input[builtins.bool] edit_apis: Whether you can update the `apis` the API client can access, same as `edit_auth`.
+        :param pulumi.Input[builtins.bool] edit_auth: Whether you can update the `apis` the API client can access, same as `edit_apis`.
+        :param pulumi.Input[builtins.bool] edit_groups: Whether you can update the `groups` the API client can access.
+        :param pulumi.Input[builtins.bool] edit_ip_acl: Whether you can update the 'ip acl' the API client can access.
+        :param pulumi.Input[builtins.bool] edit_switch_account: Whether you can update the API client's option to manage many accounts.
+        :param pulumi.Input[builtins.bool] lock: Whether you can lock the API client.
+        :param pulumi.Input[builtins.bool] transfer: Whether you can transfer the API client to a new owner.
+        :param pulumi.Input[builtins.bool] unlock: Whether you can unlock the API client.
+        """
+        if deactivate_all is not None:
+            pulumi.set(__self__, "deactivate_all", deactivate_all)
+        if delete is not None:
+            pulumi.set(__self__, "delete", delete)
+        if edit is not None:
+            pulumi.set(__self__, "edit", edit)
+        if edit_apis is not None:
+            pulumi.set(__self__, "edit_apis", edit_apis)
+        if edit_auth is not None:
+            pulumi.set(__self__, "edit_auth", edit_auth)
+        if edit_groups is not None:
+            pulumi.set(__self__, "edit_groups", edit_groups)
+        if edit_ip_acl is not None:
+            pulumi.set(__self__, "edit_ip_acl", edit_ip_acl)
+        if edit_switch_account is not None:
+            pulumi.set(__self__, "edit_switch_account", edit_switch_account)
+        if lock is not None:
+            pulumi.set(__self__, "lock", lock)
+        if transfer is not None:
+            pulumi.set(__self__, "transfer", transfer)
+        if unlock is not None:
+            pulumi.set(__self__, "unlock", unlock)
+
+    @property
+    @pulumi.getter(name="deactivateAll")
+    def deactivate_all(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can deactivate the API client's credentials.
+        """
+        return pulumi.get(self, "deactivate_all")
+
+    @deactivate_all.setter
+    def deactivate_all(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "deactivate_all", value)
+
+    @property
+    @pulumi.getter
+    def delete(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can remove the API client.
+        """
+        return pulumi.get(self, "delete")
+
+    @delete.setter
+    def delete(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "delete", value)
+
+    @property
+    @pulumi.getter
+    def edit(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can update the API client.
+        """
+        return pulumi.get(self, "edit")
+
+    @edit.setter
+    def edit(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "edit", value)
+
+    @property
+    @pulumi.getter(name="editApis")
+    def edit_apis(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can update the `apis` the API client can access, same as `edit_auth`.
+        """
+        return pulumi.get(self, "edit_apis")
+
+    @edit_apis.setter
+    def edit_apis(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "edit_apis", value)
+
+    @property
+    @pulumi.getter(name="editAuth")
+    def edit_auth(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can update the `apis` the API client can access, same as `edit_apis`.
+        """
+        return pulumi.get(self, "edit_auth")
+
+    @edit_auth.setter
+    def edit_auth(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "edit_auth", value)
+
+    @property
+    @pulumi.getter(name="editGroups")
+    def edit_groups(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can update the `groups` the API client can access.
+        """
+        return pulumi.get(self, "edit_groups")
+
+    @edit_groups.setter
+    def edit_groups(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "edit_groups", value)
+
+    @property
+    @pulumi.getter(name="editIpAcl")
+    def edit_ip_acl(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can update the 'ip acl' the API client can access.
+        """
+        return pulumi.get(self, "edit_ip_acl")
+
+    @edit_ip_acl.setter
+    def edit_ip_acl(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "edit_ip_acl", value)
+
+    @property
+    @pulumi.getter(name="editSwitchAccount")
+    def edit_switch_account(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can update the API client's option to manage many accounts.
+        """
+        return pulumi.get(self, "edit_switch_account")
+
+    @edit_switch_account.setter
+    def edit_switch_account(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "edit_switch_account", value)
+
+    @property
+    @pulumi.getter
+    def lock(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can lock the API client.
+        """
+        return pulumi.get(self, "lock")
+
+    @lock.setter
+    def lock(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "lock", value)
+
+    @property
+    @pulumi.getter
+    def transfer(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can transfer the API client to a new owner.
+        """
+        return pulumi.get(self, "transfer")
+
+    @transfer.setter
+    def transfer(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "transfer", value)
+
+    @property
+    @pulumi.getter
+    def unlock(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can unlock the API client.
+        """
+        return pulumi.get(self, "unlock")
+
+    @unlock.setter
+    def unlock(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "unlock", value)
+
+
+if not MYPY:
+    class IamApiClientApiAccessArgsDict(TypedDict):
+        all_accessible_apis: pulumi.Input[builtins.bool]
+        """
+        Enables the API client to access a full set of available APIs.
+        """
+        apis: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientApiAccessApiArgsDict']]]]
+        """
+        The set of APIs the API client can access when `all_accessible_apis` is `false`.
+        """
+elif False:
+    IamApiClientApiAccessArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientApiAccessArgs:
+    def __init__(__self__, *,
+                 all_accessible_apis: pulumi.Input[builtins.bool],
+                 apis: Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientApiAccessApiArgs']]]] = None):
+        """
+        :param pulumi.Input[builtins.bool] all_accessible_apis: Enables the API client to access a full set of available APIs.
+        :param pulumi.Input[Sequence[pulumi.Input['IamApiClientApiAccessApiArgs']]] apis: The set of APIs the API client can access when `all_accessible_apis` is `false`.
+        """
+        pulumi.set(__self__, "all_accessible_apis", all_accessible_apis)
+        if apis is not None:
+            pulumi.set(__self__, "apis", apis)
+
+    @property
+    @pulumi.getter(name="allAccessibleApis")
+    def all_accessible_apis(self) -> pulumi.Input[builtins.bool]:
+        """
+        Enables the API client to access a full set of available APIs.
+        """
+        return pulumi.get(self, "all_accessible_apis")
+
+    @all_accessible_apis.setter
+    def all_accessible_apis(self, value: pulumi.Input[builtins.bool]):
+        pulumi.set(self, "all_accessible_apis", value)
+
+    @property
+    @pulumi.getter
+    def apis(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientApiAccessApiArgs']]]]:
+        """
+        The set of APIs the API client can access when `all_accessible_apis` is `false`.
+        """
+        return pulumi.get(self, "apis")
+
+    @apis.setter
+    def apis(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientApiAccessApiArgs']]]]):
+        pulumi.set(self, "apis", value)
+
+
+if not MYPY:
+    class IamApiClientApiAccessApiArgsDict(TypedDict):
+        access_level: pulumi.Input[builtins.str]
+        """
+        The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
+        """
+        api_id: pulumi.Input[builtins.int]
+        """
+        A unique identifier of the API.
+        """
+        api_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A human-readable name for the API.
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A human-readable description for the API.
+        """
+        documentation_url: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A link to more information about the API.
+        """
+        endpoint: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Specifies where the API can access resources.
+        """
+elif False:
+    IamApiClientApiAccessApiArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientApiAccessApiArgs:
+    def __init__(__self__, *,
+                 access_level: pulumi.Input[builtins.str],
+                 api_id: pulumi.Input[builtins.int],
+                 api_name: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 documentation_url: Optional[pulumi.Input[builtins.str]] = None,
+                 endpoint: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] access_level: The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
+        :param pulumi.Input[builtins.int] api_id: A unique identifier of the API.
+        :param pulumi.Input[builtins.str] api_name: A human-readable name for the API.
+        :param pulumi.Input[builtins.str] description: A human-readable description for the API.
+        :param pulumi.Input[builtins.str] documentation_url: A link to more information about the API.
+        :param pulumi.Input[builtins.str] endpoint: Specifies where the API can access resources.
+        """
+        pulumi.set(__self__, "access_level", access_level)
+        pulumi.set(__self__, "api_id", api_id)
+        if api_name is not None:
+            pulumi.set(__self__, "api_name", api_name)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if documentation_url is not None:
+            pulumi.set(__self__, "documentation_url", documentation_url)
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+
+    @property
+    @pulumi.getter(name="accessLevel")
+    def access_level(self) -> pulumi.Input[builtins.str]:
+        """
+        The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
+        """
+        return pulumi.get(self, "access_level")
+
+    @access_level.setter
+    def access_level(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "access_level", value)
+
+    @property
+    @pulumi.getter(name="apiId")
+    def api_id(self) -> pulumi.Input[builtins.int]:
+        """
+        A unique identifier of the API.
+        """
+        return pulumi.get(self, "api_id")
+
+    @api_id.setter
+    def api_id(self, value: pulumi.Input[builtins.int]):
+        pulumi.set(self, "api_id", value)
+
+    @property
+    @pulumi.getter(name="apiName")
+    def api_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A human-readable name for the API.
+        """
+        return pulumi.get(self, "api_name")
+
+    @api_name.setter
+    def api_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "api_name", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A human-readable description for the API.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="documentationUrl")
+    def documentation_url(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A link to more information about the API.
+        """
+        return pulumi.get(self, "documentation_url")
+
+    @documentation_url.setter
+    def documentation_url(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "documentation_url", value)
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Specifies where the API can access resources.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @endpoint.setter
+    def endpoint(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "endpoint", value)
+
+
+if not MYPY:
+    class IamApiClientCredentialArgsDict(TypedDict):
+        actions: NotRequired[pulumi.Input['IamApiClientCredentialActionsArgsDict']]
+        """
+        Actions available on the API client's credentials.
+        """
+        client_secret: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The client secret.
+        """
+        client_token: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The part of the credential that identifies the API client.
+        """
+        created_on: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The ISO 8601 timestamp indicating when the credential was created.
+        """
+        credential_id: NotRequired[pulumi.Input[builtins.int]]
+        """
+        A unique identifier of the credential.
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A human-readable description for the credential.
+        """
+        expires_on: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+        """
+elif False:
+    IamApiClientCredentialArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientCredentialArgs:
+    def __init__(__self__, *,
+                 actions: Optional[pulumi.Input['IamApiClientCredentialActionsArgs']] = None,
+                 client_secret: Optional[pulumi.Input[builtins.str]] = None,
+                 client_token: Optional[pulumi.Input[builtins.str]] = None,
+                 created_on: Optional[pulumi.Input[builtins.str]] = None,
+                 credential_id: Optional[pulumi.Input[builtins.int]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 expires_on: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input['IamApiClientCredentialActionsArgs'] actions: Actions available on the API client's credentials.
+        :param pulumi.Input[builtins.str] client_secret: The client secret.
+        :param pulumi.Input[builtins.str] client_token: The part of the credential that identifies the API client.
+        :param pulumi.Input[builtins.str] created_on: The ISO 8601 timestamp indicating when the credential was created.
+        :param pulumi.Input[builtins.int] credential_id: A unique identifier of the credential.
+        :param pulumi.Input[builtins.str] description: A human-readable description for the credential.
+        :param pulumi.Input[builtins.str] expires_on: The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+        :param pulumi.Input[builtins.str] status: Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+        """
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if client_token is not None:
+            pulumi.set(__self__, "client_token", client_token)
+        if created_on is not None:
+            pulumi.set(__self__, "created_on", created_on)
+        if credential_id is not None:
+            pulumi.set(__self__, "credential_id", credential_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if expires_on is not None:
+            pulumi.set(__self__, "expires_on", expires_on)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def actions(self) -> Optional[pulumi.Input['IamApiClientCredentialActionsArgs']]:
+        """
+        Actions available on the API client's credentials.
+        """
+        return pulumi.get(self, "actions")
+
+    @actions.setter
+    def actions(self, value: Optional[pulumi.Input['IamApiClientCredentialActionsArgs']]):
+        pulumi.set(self, "actions", value)
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The client secret.
+        """
+        return pulumi.get(self, "client_secret")
+
+    @client_secret.setter
+    def client_secret(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "client_secret", value)
+
+    @property
+    @pulumi.getter(name="clientToken")
+    def client_token(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The part of the credential that identifies the API client.
+        """
+        return pulumi.get(self, "client_token")
+
+    @client_token.setter
+    def client_token(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "client_token", value)
+
+    @property
+    @pulumi.getter(name="createdOn")
+    def created_on(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The ISO 8601 timestamp indicating when the credential was created.
+        """
+        return pulumi.get(self, "created_on")
+
+    @created_on.setter
+    def created_on(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "created_on", value)
+
+    @property
+    @pulumi.getter(name="credentialId")
+    def credential_id(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        A unique identifier of the credential.
+        """
+        return pulumi.get(self, "credential_id")
+
+    @credential_id.setter
+    def credential_id(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "credential_id", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A human-readable description for the credential.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="expiresOn")
+    def expires_on(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+        """
+        return pulumi.get(self, "expires_on")
+
+    @expires_on.setter
+    def expires_on(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "expires_on", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
+
+
+if not MYPY:
+    class IamApiClientCredentialActionsArgsDict(TypedDict):
+        activate: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can activate the credential.
+        """
+        deactivate: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can deactivate the credential.
+        """
+        delete: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can remove the credential.
+        """
+        edit_description: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can modify the credential's description.
+        """
+        edit_expiration: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether you can modify the credential's expiration date.
+        """
+elif False:
+    IamApiClientCredentialActionsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientCredentialActionsArgs:
+    def __init__(__self__, *,
+                 activate: Optional[pulumi.Input[builtins.bool]] = None,
+                 deactivate: Optional[pulumi.Input[builtins.bool]] = None,
+                 delete: Optional[pulumi.Input[builtins.bool]] = None,
+                 edit_description: Optional[pulumi.Input[builtins.bool]] = None,
+                 edit_expiration: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[builtins.bool] activate: Whether you can activate the credential.
+        :param pulumi.Input[builtins.bool] deactivate: Whether you can deactivate the credential.
+        :param pulumi.Input[builtins.bool] delete: Whether you can remove the credential.
+        :param pulumi.Input[builtins.bool] edit_description: Whether you can modify the credential's description.
+        :param pulumi.Input[builtins.bool] edit_expiration: Whether you can modify the credential's expiration date.
+        """
+        if activate is not None:
+            pulumi.set(__self__, "activate", activate)
+        if deactivate is not None:
+            pulumi.set(__self__, "deactivate", deactivate)
+        if delete is not None:
+            pulumi.set(__self__, "delete", delete)
+        if edit_description is not None:
+            pulumi.set(__self__, "edit_description", edit_description)
+        if edit_expiration is not None:
+            pulumi.set(__self__, "edit_expiration", edit_expiration)
+
+    @property
+    @pulumi.getter
+    def activate(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can activate the credential.
+        """
+        return pulumi.get(self, "activate")
+
+    @activate.setter
+    def activate(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "activate", value)
+
+    @property
+    @pulumi.getter
+    def deactivate(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can deactivate the credential.
+        """
+        return pulumi.get(self, "deactivate")
+
+    @deactivate.setter
+    def deactivate(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "deactivate", value)
+
+    @property
+    @pulumi.getter
+    def delete(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can remove the credential.
+        """
+        return pulumi.get(self, "delete")
+
+    @delete.setter
+    def delete(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "delete", value)
+
+    @property
+    @pulumi.getter(name="editDescription")
+    def edit_description(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can modify the credential's description.
+        """
+        return pulumi.get(self, "edit_description")
+
+    @edit_description.setter
+    def edit_description(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "edit_description", value)
+
+    @property
+    @pulumi.getter(name="editExpiration")
+    def edit_expiration(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether you can modify the credential's expiration date.
+        """
+        return pulumi.get(self, "edit_expiration")
+
+    @edit_expiration.setter
+    def edit_expiration(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "edit_expiration", value)
+
+
+if not MYPY:
+    class IamApiClientGroupAccessArgsDict(TypedDict):
+        clone_authorized_user_groups: pulumi.Input[builtins.bool]
+        """
+        Sets the API client's group access the same as the authorized user.
+        """
+        groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupArgsDict']]]]
+        """
+        Groups the API client can access.
+        """
+elif False:
+    IamApiClientGroupAccessArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientGroupAccessArgs:
+    def __init__(__self__, *,
+                 clone_authorized_user_groups: pulumi.Input[builtins.bool],
+                 groups: Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupArgs']]]] = None):
+        """
+        :param pulumi.Input[builtins.bool] clone_authorized_user_groups: Sets the API client's group access the same as the authorized user.
+        :param pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupArgs']]] groups: Groups the API client can access.
+        """
+        pulumi.set(__self__, "clone_authorized_user_groups", clone_authorized_user_groups)
+        if groups is not None:
+            pulumi.set(__self__, "groups", groups)
+
+    @property
+    @pulumi.getter(name="cloneAuthorizedUserGroups")
+    def clone_authorized_user_groups(self) -> pulumi.Input[builtins.bool]:
+        """
+        Sets the API client's group access the same as the authorized user.
+        """
+        return pulumi.get(self, "clone_authorized_user_groups")
+
+    @clone_authorized_user_groups.setter
+    def clone_authorized_user_groups(self, value: pulumi.Input[builtins.bool]):
+        pulumi.set(self, "clone_authorized_user_groups", value)
+
+    @property
+    @pulumi.getter
+    def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupArgs']]]]:
+        """
+        Groups the API client can access.
+        """
+        return pulumi.get(self, "groups")
+
+    @groups.setter
+    def groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupArgs']]]]):
+        pulumi.set(self, "groups", value)
+
+
+if not MYPY:
+    class IamApiClientGroupAccessGroupArgsDict(TypedDict):
+        group_id: pulumi.Input[builtins.int]
+        """
+        A unique identifier for the group.
+        """
+        role_id: pulumi.Input[builtins.int]
+        """
+        A unique identifier for the role.
+        """
+        group_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A human-readable name for the group.
+        """
+        is_blocked: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Blocks the API client access to the group's child groups.
+        """
+        parent_group_id: NotRequired[pulumi.Input[builtins.int]]
+        """
+        A unique identifier for the parent group within the group tree.
+        """
+        role_description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A human-readable description for the role to convey its use.
+        """
+        role_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A human-readable name for the role.
+        """
+        sub_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgsDict']]]]
+        """
+        Groups the API client can access.
+        """
+elif False:
+    IamApiClientGroupAccessGroupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientGroupAccessGroupArgs:
+    def __init__(__self__, *,
+                 group_id: pulumi.Input[builtins.int],
+                 role_id: pulumi.Input[builtins.int],
+                 group_name: Optional[pulumi.Input[builtins.str]] = None,
+                 is_blocked: Optional[pulumi.Input[builtins.bool]] = None,
+                 parent_group_id: Optional[pulumi.Input[builtins.int]] = None,
+                 role_description: Optional[pulumi.Input[builtins.str]] = None,
+                 role_name: Optional[pulumi.Input[builtins.str]] = None,
+                 sub_groups: Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]]] = None):
+        """
+        :param pulumi.Input[builtins.int] group_id: A unique identifier for the group.
+        :param pulumi.Input[builtins.int] role_id: A unique identifier for the role.
+        :param pulumi.Input[builtins.str] group_name: A human-readable name for the group.
+        :param pulumi.Input[builtins.bool] is_blocked: Blocks the API client access to the group's child groups.
+        :param pulumi.Input[builtins.int] parent_group_id: A unique identifier for the parent group within the group tree.
+        :param pulumi.Input[builtins.str] role_description: A human-readable description for the role to convey its use.
+        :param pulumi.Input[builtins.str] role_name: A human-readable name for the role.
+        :param pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]] sub_groups: Groups the API client can access.
+        """
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "role_id", role_id)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+        if is_blocked is not None:
+            pulumi.set(__self__, "is_blocked", is_blocked)
+        if parent_group_id is not None:
+            pulumi.set(__self__, "parent_group_id", parent_group_id)
+        if role_description is not None:
+            pulumi.set(__self__, "role_description", role_description)
+        if role_name is not None:
+            pulumi.set(__self__, "role_name", role_name)
+        if sub_groups is not None:
+            pulumi.set(__self__, "sub_groups", sub_groups)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> pulumi.Input[builtins.int]:
+        """
+        A unique identifier for the group.
+        """
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: pulumi.Input[builtins.int]):
+        pulumi.set(self, "group_id", value)
+
+    @property
+    @pulumi.getter(name="roleId")
+    def role_id(self) -> pulumi.Input[builtins.int]:
+        """
+        A unique identifier for the role.
+        """
+        return pulumi.get(self, "role_id")
+
+    @role_id.setter
+    def role_id(self, value: pulumi.Input[builtins.int]):
+        pulumi.set(self, "role_id", value)
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A human-readable name for the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @group_name.setter
+    def group_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "group_name", value)
+
+    @property
+    @pulumi.getter(name="isBlocked")
+    def is_blocked(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Blocks the API client access to the group's child groups.
+        """
+        return pulumi.get(self, "is_blocked")
+
+    @is_blocked.setter
+    def is_blocked(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_blocked", value)
+
+    @property
+    @pulumi.getter(name="parentGroupId")
+    def parent_group_id(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        A unique identifier for the parent group within the group tree.
+        """
+        return pulumi.get(self, "parent_group_id")
+
+    @parent_group_id.setter
+    def parent_group_id(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "parent_group_id", value)
+
+    @property
+    @pulumi.getter(name="roleDescription")
+    def role_description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A human-readable description for the role to convey its use.
+        """
+        return pulumi.get(self, "role_description")
+
+    @role_description.setter
+    def role_description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "role_description", value)
+
+    @property
+    @pulumi.getter(name="roleName")
+    def role_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A human-readable name for the role.
+        """
+        return pulumi.get(self, "role_name")
+
+    @role_name.setter
+    def role_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "role_name", value)
+
+    @property
+    @pulumi.getter(name="subGroups")
+    def sub_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]]]:
+        """
+        Groups the API client can access.
+        """
+        return pulumi.get(self, "sub_groups")
+
+    @sub_groups.setter
+    def sub_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]]]):
+        pulumi.set(self, "sub_groups", value)
+
+
+if not MYPY:
+    class IamApiClientGroupAccessGroupSubGroupArgsDict(TypedDict):
+        group_id: pulumi.Input[builtins.int]
+        """
+        A unique identifier for the group.
+        """
+        role_id: pulumi.Input[builtins.int]
+        """
+        A unique identifier for the role.
+        """
+        group_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A human-readable name for the group.
+        """
+        is_blocked: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Blocks the API client access to the group's child groups.
+        """
+        parent_group_id: NotRequired[pulumi.Input[builtins.int]]
+        """
+        A unique identifier for the parent group within the group tree.
+        """
+        role_description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A human-readable description for the role to convey its use.
+        """
+        role_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A human-readable name for the role.
+        """
+        sub_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgsDict']]]]
+        """
+        Groups the API client can access.
+        """
+elif False:
+    IamApiClientGroupAccessGroupSubGroupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientGroupAccessGroupSubGroupArgs:
+    def __init__(__self__, *,
+                 group_id: pulumi.Input[builtins.int],
+                 role_id: pulumi.Input[builtins.int],
+                 group_name: Optional[pulumi.Input[builtins.str]] = None,
+                 is_blocked: Optional[pulumi.Input[builtins.bool]] = None,
+                 parent_group_id: Optional[pulumi.Input[builtins.int]] = None,
+                 role_description: Optional[pulumi.Input[builtins.str]] = None,
+                 role_name: Optional[pulumi.Input[builtins.str]] = None,
+                 sub_groups: Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]]] = None):
+        """
+        :param pulumi.Input[builtins.int] group_id: A unique identifier for the group.
+        :param pulumi.Input[builtins.int] role_id: A unique identifier for the role.
+        :param pulumi.Input[builtins.str] group_name: A human-readable name for the group.
+        :param pulumi.Input[builtins.bool] is_blocked: Blocks the API client access to the group's child groups.
+        :param pulumi.Input[builtins.int] parent_group_id: A unique identifier for the parent group within the group tree.
+        :param pulumi.Input[builtins.str] role_description: A human-readable description for the role to convey its use.
+        :param pulumi.Input[builtins.str] role_name: A human-readable name for the role.
+        :param pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]] sub_groups: Groups the API client can access.
+        """
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "role_id", role_id)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+        if is_blocked is not None:
+            pulumi.set(__self__, "is_blocked", is_blocked)
+        if parent_group_id is not None:
+            pulumi.set(__self__, "parent_group_id", parent_group_id)
+        if role_description is not None:
+            pulumi.set(__self__, "role_description", role_description)
+        if role_name is not None:
+            pulumi.set(__self__, "role_name", role_name)
+        if sub_groups is not None:
+            pulumi.set(__self__, "sub_groups", sub_groups)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> pulumi.Input[builtins.int]:
+        """
+        A unique identifier for the group.
+        """
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: pulumi.Input[builtins.int]):
+        pulumi.set(self, "group_id", value)
+
+    @property
+    @pulumi.getter(name="roleId")
+    def role_id(self) -> pulumi.Input[builtins.int]:
+        """
+        A unique identifier for the role.
+        """
+        return pulumi.get(self, "role_id")
+
+    @role_id.setter
+    def role_id(self, value: pulumi.Input[builtins.int]):
+        pulumi.set(self, "role_id", value)
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A human-readable name for the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @group_name.setter
+    def group_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "group_name", value)
+
+    @property
+    @pulumi.getter(name="isBlocked")
+    def is_blocked(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Blocks the API client access to the group's child groups.
+        """
+        return pulumi.get(self, "is_blocked")
+
+    @is_blocked.setter
+    def is_blocked(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_blocked", value)
+
+    @property
+    @pulumi.getter(name="parentGroupId")
+    def parent_group_id(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        A unique identifier for the parent group within the group tree.
+        """
+        return pulumi.get(self, "parent_group_id")
+
+    @parent_group_id.setter
+    def parent_group_id(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "parent_group_id", value)
+
+    @property
+    @pulumi.getter(name="roleDescription")
+    def role_description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A human-readable description for the role to convey its use.
+        """
+        return pulumi.get(self, "role_description")
+
+    @role_description.setter
+    def role_description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "role_description", value)
+
+    @property
+    @pulumi.getter(name="roleName")
+    def role_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A human-readable name for the role.
+        """
+        return pulumi.get(self, "role_name")
+
+    @role_name.setter
+    def role_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "role_name", value)
+
+    @property
+    @pulumi.getter(name="subGroups")
+    def sub_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]]]:
+        """
+        Groups the API client can access.
+        """
+        return pulumi.get(self, "sub_groups")
+
+    @sub_groups.setter
+    def sub_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]]]):
+        pulumi.set(self, "sub_groups", value)
+
+
+if not MYPY:
+    class IamApiClientIpAclArgsDict(TypedDict):
+        enable: pulumi.Input[builtins.bool]
+        """
+        Enables the API client to access the IP access control list (ACL).
+        """
+        cidrs: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        IP addresses or CIDR blocks the API client can access.
+        """
+elif False:
+    IamApiClientIpAclArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientIpAclArgs:
+    def __init__(__self__, *,
+                 enable: pulumi.Input[builtins.bool],
+                 cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable: Enables the API client to access the IP access control list (ACL).
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cidrs: IP addresses or CIDR blocks the API client can access.
+        """
+        pulumi.set(__self__, "enable", enable)
+        if cidrs is not None:
+            pulumi.set(__self__, "cidrs", cidrs)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> pulumi.Input[builtins.bool]:
+        """
+        Enables the API client to access the IP access control list (ACL).
+        """
+        return pulumi.get(self, "enable")
+
+    @enable.setter
+    def enable(self, value: pulumi.Input[builtins.bool]):
+        pulumi.set(self, "enable", value)
+
+    @property
+    @pulumi.getter
+    def cidrs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        IP addresses or CIDR blocks the API client can access.
+        """
+        return pulumi.get(self, "cidrs")
+
+    @cidrs.setter
+    def cidrs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "cidrs", value)
+
+
+if not MYPY:
+    class IamApiClientPurgeOptionsArgsDict(TypedDict):
+        can_purge_by_cache_tag: pulumi.Input[builtins.bool]
+        """
+        Whether the API client can purge content by cache tag.
+        """
+        can_purge_by_cp_code: pulumi.Input[builtins.bool]
+        """
+        Whether the API client can purge content by CP code.
+        """
+        cp_code_access: pulumi.Input['IamApiClientPurgeOptionsCpCodeAccessArgsDict']
+        """
+        CP codes the API client can purge.
+        """
+elif False:
+    IamApiClientPurgeOptionsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientPurgeOptionsArgs:
+    def __init__(__self__, *,
+                 can_purge_by_cache_tag: pulumi.Input[builtins.bool],
+                 can_purge_by_cp_code: pulumi.Input[builtins.bool],
+                 cp_code_access: pulumi.Input['IamApiClientPurgeOptionsCpCodeAccessArgs']):
+        """
+        :param pulumi.Input[builtins.bool] can_purge_by_cache_tag: Whether the API client can purge content by cache tag.
+        :param pulumi.Input[builtins.bool] can_purge_by_cp_code: Whether the API client can purge content by CP code.
+        :param pulumi.Input['IamApiClientPurgeOptionsCpCodeAccessArgs'] cp_code_access: CP codes the API client can purge.
+        """
+        pulumi.set(__self__, "can_purge_by_cache_tag", can_purge_by_cache_tag)
+        pulumi.set(__self__, "can_purge_by_cp_code", can_purge_by_cp_code)
+        pulumi.set(__self__, "cp_code_access", cp_code_access)
+
+    @property
+    @pulumi.getter(name="canPurgeByCacheTag")
+    def can_purge_by_cache_tag(self) -> pulumi.Input[builtins.bool]:
+        """
+        Whether the API client can purge content by cache tag.
+        """
+        return pulumi.get(self, "can_purge_by_cache_tag")
+
+    @can_purge_by_cache_tag.setter
+    def can_purge_by_cache_tag(self, value: pulumi.Input[builtins.bool]):
+        pulumi.set(self, "can_purge_by_cache_tag", value)
+
+    @property
+    @pulumi.getter(name="canPurgeByCpCode")
+    def can_purge_by_cp_code(self) -> pulumi.Input[builtins.bool]:
+        """
+        Whether the API client can purge content by CP code.
+        """
+        return pulumi.get(self, "can_purge_by_cp_code")
+
+    @can_purge_by_cp_code.setter
+    def can_purge_by_cp_code(self, value: pulumi.Input[builtins.bool]):
+        pulumi.set(self, "can_purge_by_cp_code", value)
+
+    @property
+    @pulumi.getter(name="cpCodeAccess")
+    def cp_code_access(self) -> pulumi.Input['IamApiClientPurgeOptionsCpCodeAccessArgs']:
+        """
+        CP codes the API client can purge.
+        """
+        return pulumi.get(self, "cp_code_access")
+
+    @cp_code_access.setter
+    def cp_code_access(self, value: pulumi.Input['IamApiClientPurgeOptionsCpCodeAccessArgs']):
+        pulumi.set(self, "cp_code_access", value)
+
+
+if not MYPY:
+    class IamApiClientPurgeOptionsCpCodeAccessArgsDict(TypedDict):
+        all_current_and_new_cp_codes: pulumi.Input[builtins.bool]
+        """
+        Whether the API can purge content by all current and new CP codes.
+        """
+        cp_codes: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]
+        """
+        CP codes the API client can purge.
+        """
+elif False:
+    IamApiClientPurgeOptionsCpCodeAccessArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IamApiClientPurgeOptionsCpCodeAccessArgs:
+    def __init__(__self__, *,
+                 all_current_and_new_cp_codes: pulumi.Input[builtins.bool],
+                 cp_codes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]] = None):
+        """
+        :param pulumi.Input[builtins.bool] all_current_and_new_cp_codes: Whether the API can purge content by all current and new CP codes.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] cp_codes: CP codes the API client can purge.
+        """
+        pulumi.set(__self__, "all_current_and_new_cp_codes", all_current_and_new_cp_codes)
+        if cp_codes is not None:
+            pulumi.set(__self__, "cp_codes", cp_codes)
+
+    @property
+    @pulumi.getter(name="allCurrentAndNewCpCodes")
+    def all_current_and_new_cp_codes(self) -> pulumi.Input[builtins.bool]:
+        """
+        Whether the API can purge content by all current and new CP codes.
+        """
+        return pulumi.get(self, "all_current_and_new_cp_codes")
+
+    @all_current_and_new_cp_codes.setter
+    def all_current_and_new_cp_codes(self, value: pulumi.Input[builtins.bool]):
+        pulumi.set(self, "all_current_and_new_cp_codes", value)
+
+    @property
+    @pulumi.getter(name="cpCodes")
+    def cp_codes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]:
+        """
+        CP codes the API client can purge.
+        """
+        return pulumi.get(self, "cp_codes")
+
+    @cp_codes.setter
+    def cp_codes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]):
+        pulumi.set(self, "cp_codes", value)
 
 
 if not MYPY:

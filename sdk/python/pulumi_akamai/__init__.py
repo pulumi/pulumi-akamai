@@ -250,6 +250,8 @@ from .get_gtm_resource import *
 from .get_gtm_resources import *
 from .get_iam_account_switch_keys import *
 from .get_iam_allowed_apis import *
+from .get_iam_api_client import *
+from .get_iam_api_clients import *
 from .get_iam_blocked_properties import *
 from .get_iam_cidr_block import *
 from .get_iam_cidr_blocks import *
@@ -293,6 +295,7 @@ from .gtm_domain import *
 from .gtm_geomap import *
 from .gtm_property import *
 from .gtm_resource import *
+from .iam_api_client import *
 from .iam_blocked_user_properties import *
 from .iam_cidr_block import *
 from .iam_group import *
@@ -1188,6 +1191,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/gtmResource:GtmResource": "GtmResource"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/iamApiClient",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/iamApiClient:IamApiClient": "IamApiClient"
   }
  },
  {

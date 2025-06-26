@@ -6,9 +6,11 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-export function getCloudletsPolicy(args: GetCloudletsPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsPolicyResult> {
+export function getCloudletsPolicy(args?: GetCloudletsPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsPolicyResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsPolicy:getCloudletsPolicy", {
+        "name": args.name,
         "policyId": args.policyId,
         "version": args.version,
     }, opts);
@@ -18,7 +20,8 @@ export function getCloudletsPolicy(args: GetCloudletsPolicyArgs, opts?: pulumi.I
  * A collection of arguments for invoking getCloudletsPolicy.
  */
 export interface GetCloudletsPolicyArgs {
-    policyId: number;
+    name?: string;
+    policyId?: number;
     version?: number;
 }
 
@@ -46,9 +49,11 @@ export interface GetCloudletsPolicyResult {
     readonly versionDescription: string;
     readonly warnings: string;
 }
-export function getCloudletsPolicyOutput(args: GetCloudletsPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudletsPolicyResult> {
+export function getCloudletsPolicyOutput(args?: GetCloudletsPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudletsPolicyResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudletsPolicy:getCloudletsPolicy", {
+        "name": args.name,
         "policyId": args.policyId,
         "version": args.version,
     }, opts);
@@ -58,6 +63,7 @@ export function getCloudletsPolicyOutput(args: GetCloudletsPolicyOutputArgs, opt
  * A collection of arguments for invoking getCloudletsPolicy.
  */
 export interface GetCloudletsPolicyOutputArgs {
-    policyId: pulumi.Input<number>;
+    name?: pulumi.Input<string>;
+    policyId?: pulumi.Input<number>;
     version?: pulumi.Input<number>;
 }

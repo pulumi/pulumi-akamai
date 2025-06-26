@@ -22,7 +22,7 @@ class AppSecConfigurationArgs:
     def __init__(__self__, *,
                  contract_id: pulumi.Input[builtins.str],
                  description: pulumi.Input[builtins.str],
-                 group_id: pulumi.Input[builtins.int],
+                 group_id: pulumi.Input[builtins.str],
                  host_names: pulumi.Input[Sequence[pulumi.Input[builtins.str]]],
                  create_from_config_id: Optional[pulumi.Input[builtins.int]] = None,
                  create_from_version: Optional[pulumi.Input[builtins.int]] = None,
@@ -31,7 +31,7 @@ class AppSecConfigurationArgs:
         The set of arguments for constructing a AppSecConfiguration resource.
         :param pulumi.Input[builtins.str] contract_id: Unique identifier of the Akamai contract associated with the new configuration
         :param pulumi.Input[builtins.str] description: Brief description of the new configuration
-        :param pulumi.Input[builtins.int] group_id: Unique identifier of the contract group associated with the new configuration
+        :param pulumi.Input[builtins.str] group_id: Unique identifier of the contract group associated with the new configuration
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] host_names: Hostnames to be protected by the new configuration
         :param pulumi.Input[builtins.int] create_from_config_id: Unique identifier of the existing configuration being cloned to create the new configuration
         :param pulumi.Input[builtins.int] create_from_version: Version number of the existing configuration being cloned to create the new configuration
@@ -74,14 +74,14 @@ class AppSecConfigurationArgs:
 
     @property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> pulumi.Input[builtins.int]:
+    def group_id(self) -> pulumi.Input[builtins.str]:
         """
         Unique identifier of the contract group associated with the new configuration
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: pulumi.Input[builtins.int]):
+    def group_id(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "group_id", value)
 
     @property
@@ -141,7 +141,7 @@ class _AppSecConfigurationState:
                  create_from_config_id: Optional[pulumi.Input[builtins.int]] = None,
                  create_from_version: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[builtins.int]] = None,
+                 group_id: Optional[pulumi.Input[builtins.str]] = None,
                  host_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -151,7 +151,7 @@ class _AppSecConfigurationState:
         :param pulumi.Input[builtins.int] create_from_config_id: Unique identifier of the existing configuration being cloned to create the new configuration
         :param pulumi.Input[builtins.int] create_from_version: Version number of the existing configuration being cloned to create the new configuration
         :param pulumi.Input[builtins.str] description: Brief description of the new configuration
-        :param pulumi.Input[builtins.int] group_id: Unique identifier of the contract group associated with the new configuration
+        :param pulumi.Input[builtins.str] group_id: Unique identifier of the contract group associated with the new configuration
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] host_names: Hostnames to be protected by the new configuration
         :param pulumi.Input[builtins.str] name: Name of the new configuration
         """
@@ -234,14 +234,14 @@ class _AppSecConfigurationState:
 
     @property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[builtins.int]]:
+    def group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         Unique identifier of the contract group associated with the new configuration
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[builtins.int]]):
+    def group_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @property
@@ -279,7 +279,7 @@ class AppSecConfiguration(pulumi.CustomResource):
                  create_from_config_id: Optional[pulumi.Input[builtins.int]] = None,
                  create_from_version: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[builtins.int]] = None,
+                 group_id: Optional[pulumi.Input[builtins.str]] = None,
                  host_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -291,7 +291,7 @@ class AppSecConfiguration(pulumi.CustomResource):
         :param pulumi.Input[builtins.int] create_from_config_id: Unique identifier of the existing configuration being cloned to create the new configuration
         :param pulumi.Input[builtins.int] create_from_version: Version number of the existing configuration being cloned to create the new configuration
         :param pulumi.Input[builtins.str] description: Brief description of the new configuration
-        :param pulumi.Input[builtins.int] group_id: Unique identifier of the contract group associated with the new configuration
+        :param pulumi.Input[builtins.str] group_id: Unique identifier of the contract group associated with the new configuration
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] host_names: Hostnames to be protected by the new configuration
         :param pulumi.Input[builtins.str] name: Name of the new configuration
         """
@@ -322,7 +322,7 @@ class AppSecConfiguration(pulumi.CustomResource):
                  create_from_config_id: Optional[pulumi.Input[builtins.int]] = None,
                  create_from_version: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[builtins.int]] = None,
+                 group_id: Optional[pulumi.Input[builtins.str]] = None,
                  host_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -365,7 +365,7 @@ class AppSecConfiguration(pulumi.CustomResource):
             create_from_config_id: Optional[pulumi.Input[builtins.int]] = None,
             create_from_version: Optional[pulumi.Input[builtins.int]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
-            group_id: Optional[pulumi.Input[builtins.int]] = None,
+            group_id: Optional[pulumi.Input[builtins.str]] = None,
             host_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             name: Optional[pulumi.Input[builtins.str]] = None) -> 'AppSecConfiguration':
         """
@@ -380,7 +380,7 @@ class AppSecConfiguration(pulumi.CustomResource):
         :param pulumi.Input[builtins.int] create_from_config_id: Unique identifier of the existing configuration being cloned to create the new configuration
         :param pulumi.Input[builtins.int] create_from_version: Version number of the existing configuration being cloned to create the new configuration
         :param pulumi.Input[builtins.str] description: Brief description of the new configuration
-        :param pulumi.Input[builtins.int] group_id: Unique identifier of the contract group associated with the new configuration
+        :param pulumi.Input[builtins.str] group_id: Unique identifier of the contract group associated with the new configuration
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] host_names: Hostnames to be protected by the new configuration
         :param pulumi.Input[builtins.str] name: Name of the new configuration
         """
@@ -440,7 +440,7 @@ class AppSecConfiguration(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> pulumi.Output[builtins.int]:
+    def group_id(self) -> pulumi.Output[builtins.str]:
         """
         Unique identifier of the contract group associated with the new configuration
         """

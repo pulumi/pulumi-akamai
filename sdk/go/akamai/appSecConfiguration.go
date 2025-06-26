@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v9/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ type AppSecConfiguration struct {
 	// Brief description of the new configuration
 	Description pulumi.StringOutput `pulumi:"description"`
 	// Unique identifier of the contract group associated with the new configuration
-	GroupId pulumi.IntOutput `pulumi:"groupId"`
+	GroupId pulumi.StringOutput `pulumi:"groupId"`
 	// Hostnames to be protected by the new configuration
 	HostNames pulumi.StringArrayOutput `pulumi:"hostNames"`
 	// Name of the new configuration
@@ -86,7 +86,7 @@ type appSecConfigurationState struct {
 	// Brief description of the new configuration
 	Description *string `pulumi:"description"`
 	// Unique identifier of the contract group associated with the new configuration
-	GroupId *int `pulumi:"groupId"`
+	GroupId *string `pulumi:"groupId"`
 	// Hostnames to be protected by the new configuration
 	HostNames []string `pulumi:"hostNames"`
 	// Name of the new configuration
@@ -105,7 +105,7 @@ type AppSecConfigurationState struct {
 	// Brief description of the new configuration
 	Description pulumi.StringPtrInput
 	// Unique identifier of the contract group associated with the new configuration
-	GroupId pulumi.IntPtrInput
+	GroupId pulumi.StringPtrInput
 	// Hostnames to be protected by the new configuration
 	HostNames pulumi.StringArrayInput
 	// Name of the new configuration
@@ -126,7 +126,7 @@ type appSecConfigurationArgs struct {
 	// Brief description of the new configuration
 	Description string `pulumi:"description"`
 	// Unique identifier of the contract group associated with the new configuration
-	GroupId int `pulumi:"groupId"`
+	GroupId string `pulumi:"groupId"`
 	// Hostnames to be protected by the new configuration
 	HostNames []string `pulumi:"hostNames"`
 	// Name of the new configuration
@@ -144,7 +144,7 @@ type AppSecConfigurationArgs struct {
 	// Brief description of the new configuration
 	Description pulumi.StringInput
 	// Unique identifier of the contract group associated with the new configuration
-	GroupId pulumi.IntInput
+	GroupId pulumi.StringInput
 	// Hostnames to be protected by the new configuration
 	HostNames pulumi.StringArrayInput
 	// Name of the new configuration
@@ -264,8 +264,8 @@ func (o AppSecConfigurationOutput) Description() pulumi.StringOutput {
 }
 
 // Unique identifier of the contract group associated with the new configuration
-func (o AppSecConfigurationOutput) GroupId() pulumi.IntOutput {
-	return o.ApplyT(func(v *AppSecConfiguration) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
+func (o AppSecConfigurationOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecConfiguration) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
 
 // Hostnames to be protected by the new configuration

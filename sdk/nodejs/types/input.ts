@@ -11465,6 +11465,267 @@ export interface GtmResourceResourceInstance {
     useDefaultLoadObject?: pulumi.Input<boolean>;
 }
 
+export interface IamApiClientActions {
+    /**
+     * Whether you can deactivate the API client's credentials.
+     */
+    deactivateAll?: pulumi.Input<boolean>;
+    /**
+     * Whether you can remove the API client.
+     */
+    delete?: pulumi.Input<boolean>;
+    /**
+     * Whether you can update the API client.
+     */
+    edit?: pulumi.Input<boolean>;
+    /**
+     * Whether you can update the `apis` the API client can access, same as `editAuth`.
+     */
+    editApis?: pulumi.Input<boolean>;
+    /**
+     * Whether you can update the `apis` the API client can access, same as `editApis`.
+     */
+    editAuth?: pulumi.Input<boolean>;
+    /**
+     * Whether you can update the `groups` the API client can access.
+     */
+    editGroups?: pulumi.Input<boolean>;
+    /**
+     * Whether you can update the 'ip acl' the API client can access.
+     */
+    editIpAcl?: pulumi.Input<boolean>;
+    /**
+     * Whether you can update the API client's option to manage many accounts.
+     */
+    editSwitchAccount?: pulumi.Input<boolean>;
+    /**
+     * Whether you can lock the API client.
+     */
+    lock?: pulumi.Input<boolean>;
+    /**
+     * Whether you can transfer the API client to a new owner.
+     */
+    transfer?: pulumi.Input<boolean>;
+    /**
+     * Whether you can unlock the API client.
+     */
+    unlock?: pulumi.Input<boolean>;
+}
+
+export interface IamApiClientApiAccess {
+    /**
+     * Enables the API client to access a full set of available APIs.
+     */
+    allAccessibleApis: pulumi.Input<boolean>;
+    /**
+     * The set of APIs the API client can access when `allAccessibleApis` is `false`.
+     */
+    apis?: pulumi.Input<pulumi.Input<inputs.IamApiClientApiAccessApi>[]>;
+}
+
+export interface IamApiClientApiAccessApi {
+    /**
+     * The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
+     */
+    accessLevel: pulumi.Input<string>;
+    /**
+     * A unique identifier of the API.
+     */
+    apiId: pulumi.Input<number>;
+    /**
+     * A human-readable name for the API.
+     */
+    apiName?: pulumi.Input<string>;
+    /**
+     * A human-readable description for the API.
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * A link to more information about the API.
+     */
+    documentationUrl?: pulumi.Input<string>;
+    /**
+     * Specifies where the API can access resources.
+     */
+    endpoint?: pulumi.Input<string>;
+}
+
+export interface IamApiClientCredential {
+    /**
+     * Actions available on the API client's credentials.
+     */
+    actions?: pulumi.Input<inputs.IamApiClientCredentialActions>;
+    /**
+     * The client secret.
+     */
+    clientSecret?: pulumi.Input<string>;
+    /**
+     * The part of the credential that identifies the API client.
+     */
+    clientToken?: pulumi.Input<string>;
+    /**
+     * The ISO 8601 timestamp indicating when the credential was created.
+     */
+    createdOn?: pulumi.Input<string>;
+    /**
+     * A unique identifier of the credential.
+     */
+    credentialId?: pulumi.Input<number>;
+    /**
+     * A human-readable description for the credential.
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+     */
+    expiresOn?: pulumi.Input<string>;
+    /**
+     * Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+     */
+    status?: pulumi.Input<string>;
+}
+
+export interface IamApiClientCredentialActions {
+    /**
+     * Whether you can activate the credential.
+     */
+    activate?: pulumi.Input<boolean>;
+    /**
+     * Whether you can deactivate the credential.
+     */
+    deactivate?: pulumi.Input<boolean>;
+    /**
+     * Whether you can remove the credential.
+     */
+    delete?: pulumi.Input<boolean>;
+    /**
+     * Whether you can modify the credential's description.
+     */
+    editDescription?: pulumi.Input<boolean>;
+    /**
+     * Whether you can modify the credential's expiration date.
+     */
+    editExpiration?: pulumi.Input<boolean>;
+}
+
+export interface IamApiClientGroupAccess {
+    /**
+     * Sets the API client's group access the same as the authorized user.
+     */
+    cloneAuthorizedUserGroups: pulumi.Input<boolean>;
+    /**
+     * Groups the API client can access.
+     */
+    groups?: pulumi.Input<pulumi.Input<inputs.IamApiClientGroupAccessGroup>[]>;
+}
+
+export interface IamApiClientGroupAccessGroup {
+    /**
+     * A unique identifier for the group.
+     */
+    groupId: pulumi.Input<number>;
+    /**
+     * A human-readable name for the group.
+     */
+    groupName?: pulumi.Input<string>;
+    /**
+     * Blocks the API client access to the group's child groups.
+     */
+    isBlocked?: pulumi.Input<boolean>;
+    /**
+     * A unique identifier for the parent group within the group tree.
+     */
+    parentGroupId?: pulumi.Input<number>;
+    /**
+     * A human-readable description for the role to convey its use.
+     */
+    roleDescription?: pulumi.Input<string>;
+    /**
+     * A unique identifier for the role.
+     */
+    roleId: pulumi.Input<number>;
+    /**
+     * A human-readable name for the role.
+     */
+    roleName?: pulumi.Input<string>;
+    /**
+     * Groups the API client can access.
+     */
+    subGroups?: pulumi.Input<pulumi.Input<inputs.IamApiClientGroupAccessGroupSubGroup>[]>;
+}
+
+export interface IamApiClientGroupAccessGroupSubGroup {
+    /**
+     * A unique identifier for the group.
+     */
+    groupId: pulumi.Input<number>;
+    /**
+     * A human-readable name for the group.
+     */
+    groupName?: pulumi.Input<string>;
+    /**
+     * Blocks the API client access to the group's child groups.
+     */
+    isBlocked?: pulumi.Input<boolean>;
+    /**
+     * A unique identifier for the parent group within the group tree.
+     */
+    parentGroupId?: pulumi.Input<number>;
+    /**
+     * A human-readable description for the role to convey its use.
+     */
+    roleDescription?: pulumi.Input<string>;
+    /**
+     * A unique identifier for the role.
+     */
+    roleId: pulumi.Input<number>;
+    /**
+     * A human-readable name for the role.
+     */
+    roleName?: pulumi.Input<string>;
+    /**
+     * Groups the API client can access.
+     */
+    subGroups?: pulumi.Input<pulumi.Input<inputs.IamApiClientGroupAccessGroupSubGroup>[]>;
+}
+
+export interface IamApiClientIpAcl {
+    /**
+     * IP addresses or CIDR blocks the API client can access.
+     */
+    cidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Enables the API client to access the IP access control list (ACL).
+     */
+    enable: pulumi.Input<boolean>;
+}
+
+export interface IamApiClientPurgeOptions {
+    /**
+     * Whether the API client can purge content by cache tag.
+     */
+    canPurgeByCacheTag: pulumi.Input<boolean>;
+    /**
+     * Whether the API client can purge content by CP code.
+     */
+    canPurgeByCpCode: pulumi.Input<boolean>;
+    /**
+     * CP codes the API client can purge.
+     */
+    cpCodeAccess: pulumi.Input<inputs.IamApiClientPurgeOptionsCpCodeAccess>;
+}
+
+export interface IamApiClientPurgeOptionsCpCodeAccess {
+    /**
+     * Whether the API can purge content by all current and new CP codes.
+     */
+    allCurrentAndNewCpCodes: pulumi.Input<boolean>;
+    /**
+     * CP codes the API client can purge.
+     */
+    cpCodes?: pulumi.Input<pulumi.Input<number>[]>;
+}
+
 export interface IamCidrBlockActions {
     /**
      * Whether you can delete this CIDR block. You can't delete a CIDR block from an IP address not on the allowlist, or if the CIDR block is the only one on the allowlist.

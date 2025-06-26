@@ -1387,8 +1387,8 @@ github.com/ajstarks/deck v0.0.0-20200831202436-30c9fc6549a9/go.mod h1:JynElWSGnm
 github.com/ajstarks/deck/generate v0.0.0-20210309230005-c3f852c02e19/go.mod h1:T13YZdzov6OU0A1+RfKZiZN9ca6VeKdBdyDV+BY97Tk=
 github.com/ajstarks/svgo v0.0.0-20180226025133-644b8db467af/go.mod h1:K08gAheRH3/J6wwsYMMT4xOr94bZjxIelGM0+d/wbFw=
 github.com/ajstarks/svgo v0.0.0-20211024235047-1546f124cd8b/go.mod h1:1KcenG0jGWcpt8ov532z81sp/kMMUG485J2InIOyADM=
-github.com/akamai/AkamaiOPEN-edgegrid-golang/v10 v10.1.0 h1:puGswCf+1faEX0dKXjew9sacs7wN8N4TMJFwIx6EE48=
-github.com/akamai/AkamaiOPEN-edgegrid-golang/v10 v10.1.0/go.mod h1:x8+fcnZ8/9+Q6DF+6LXcgWWa8Ni/YFOuXAgyvcuCjbs=
+github.com/akamai/AkamaiOPEN-edgegrid-golang/v11 v11.0.0 h1:ot8yMzEm0Kx2LCTOzlM7zh4ASLFZ6H0iYhtIKolSujs=
+github.com/akamai/AkamaiOPEN-edgegrid-golang/v11 v11.0.0/go.mod h1:rvh3imDA6EaQi+oM/GQHkQAOHbXPKJ7EWJvfjuw141Q=
 github.com/alecthomas/assert/v2 v2.2.2/go.mod h1:pXcQ2Asjp247dahGEmsZ6ru0UVwnkhktn7S0bBDLxvQ=
 github.com/alecthomas/assert/v2 v2.3.0/go.mod h1:pXcQ2Asjp247dahGEmsZ6ru0UVwnkhktn7S0bBDLxvQ=
 github.com/alecthomas/participle/v2 v2.0.0/go.mod h1:rAKZdJldHu8084ojcWevWAL8KmEU+AT+Olodb+WoN2Y=

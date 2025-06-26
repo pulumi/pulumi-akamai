@@ -12,74 +12,74 @@ import java.util.Objects;
 @CustomType
 public final class GetCloudletsPolicyActivationPropertyInfo {
     /**
-     * @return The name of the user who activated the property
+     * @return The name of the user who activated the property.
      * 
      */
     private String activatedBy;
     /**
-     * @return The date on which the property was activated (in milliseconds since Epoch)
+     * @return The date on which the property was activated (in milliseconds since Epoch).
      * 
      */
     private Integer activationDate;
     /**
-     * @return Defines the group association for the policy or property
+     * @return Defines the group association for the policy or property.
      * 
      */
     private Integer groupId;
     /**
-     * @return The name of the property
+     * @return The name of the property.
      * 
      */
     private String name;
     /**
-     * @return The activation status for the property. Can be active, inactive, deactivated, pending or failed
+     * @return The activation status for the property. Can be active, inactive, deactivated, pending or failed.
      * 
      */
     private String status;
     /**
-     * @return The version number of the activated property
+     * @return The version number of the activated property.
      * 
      */
     private Integer version;
 
     private GetCloudletsPolicyActivationPropertyInfo() {}
     /**
-     * @return The name of the user who activated the property
+     * @return The name of the user who activated the property.
      * 
      */
     public String activatedBy() {
         return this.activatedBy;
     }
     /**
-     * @return The date on which the property was activated (in milliseconds since Epoch)
+     * @return The date on which the property was activated (in milliseconds since Epoch).
      * 
      */
     public Integer activationDate() {
         return this.activationDate;
     }
     /**
-     * @return Defines the group association for the policy or property
+     * @return Defines the group association for the policy or property.
      * 
      */
     public Integer groupId() {
         return this.groupId;
     }
     /**
-     * @return The name of the property
+     * @return The name of the property.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return The activation status for the property. Can be active, inactive, deactivated, pending or failed
+     * @return The activation status for the property. Can be active, inactive, deactivated, pending or failed.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return The version number of the activated property
+     * @return The version number of the activated property.
      * 
      */
     public Integer version() {

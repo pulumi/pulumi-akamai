@@ -92,14 +92,14 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
      * Unique identifier of the contract group associated with the new configuration
      * 
      */
-    @Export(name="groupId", refs={Integer.class}, tree="[0]")
-    private Output<Integer> groupId;
+    @Export(name="groupId", refs={String.class}, tree="[0]")
+    private Output<String> groupId;
 
     /**
      * @return Unique identifier of the contract group associated with the new configuration
      * 
      */
-    public Output<Integer> groupId() {
+    public Output<String> groupId() {
         return this.groupId;
     }
     /**

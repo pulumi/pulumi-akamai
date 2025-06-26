@@ -97,13 +97,13 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
      * 
      */
     @Import(name="groupId")
-    private @Nullable Output<Integer> groupId;
+    private @Nullable Output<String> groupId;
 
     /**
      * @return Unique identifier of the contract group associated with the new configuration
      * 
      */
-    public Optional<Output<Integer>> groupId() {
+    public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
     }
 
@@ -279,7 +279,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
          * @return builder
          * 
          */
-        public Builder groupId(@Nullable Output<Integer> groupId) {
+        public Builder groupId(@Nullable Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
@@ -290,7 +290,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
          * @return builder
          * 
          */
-        public Builder groupId(Integer groupId) {
+        public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
         }
 

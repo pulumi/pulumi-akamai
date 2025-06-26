@@ -14,12 +14,12 @@ import java.util.Objects;
 @CustomType
 public final class GetIamAllowedApisAllowedApi {
     /**
-     * @return API access levels, possible values are READ-ONLY and READ-WRITE.
+     * @return API access levels, possible values are READ-ONLY, READ-WRITE, CREDENTIAL-READ-ONLY and CREDENTIAL-READ-WRITE.
      * 
      */
     private List<String> accessLevels;
     /**
-     * @return Unique identifier for each API.
+     * @return A unique identifier for each API.
      * 
      */
     private Integer apiId;
@@ -29,12 +29,12 @@ public final class GetIamAllowedApisAllowedApi {
      */
     private String apiName;
     /**
-     * @return Descriptive label for the API.
+     * @return A human-readable name for the API.
      * 
      */
     private String description;
     /**
-     * @return Link to more information about the API.
+     * @return A link to more information about the API.
      * 
      */
     private String documentationUrl;
@@ -56,14 +56,14 @@ public final class GetIamAllowedApisAllowedApi {
 
     private GetIamAllowedApisAllowedApi() {}
     /**
-     * @return API access levels, possible values are READ-ONLY and READ-WRITE.
+     * @return API access levels, possible values are READ-ONLY, READ-WRITE, CREDENTIAL-READ-ONLY and CREDENTIAL-READ-WRITE.
      * 
      */
     public List<String> accessLevels() {
         return this.accessLevels;
     }
     /**
-     * @return Unique identifier for each API.
+     * @return A unique identifier for each API.
      * 
      */
     public Integer apiId() {
@@ -77,14 +77,14 @@ public final class GetIamAllowedApisAllowedApi {
         return this.apiName;
     }
     /**
-     * @return Descriptive label for the API.
+     * @return A human-readable name for the API.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Link to more information about the API.
+     * @return A link to more information about the API.
      * 
      */
     public String documentationUrl() {

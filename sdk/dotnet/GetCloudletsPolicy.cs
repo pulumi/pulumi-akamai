@@ -11,10 +11,10 @@ namespace Pulumi.Akamai
 {
     public static class GetCloudletsPolicy
     {
-        public static Task<GetCloudletsPolicyResult> InvokeAsync(GetCloudletsPolicyArgs args, InvokeOptions? options = null)
+        public static Task<GetCloudletsPolicyResult> InvokeAsync(GetCloudletsPolicyArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsPolicyResult>("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args ?? new GetCloudletsPolicyArgs(), options.WithDefaults());
 
-        public static Output<GetCloudletsPolicyResult> Invoke(GetCloudletsPolicyInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetCloudletsPolicyResult> Invoke(GetCloudletsPolicyInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsPolicyResult>("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args ?? new GetCloudletsPolicyInvokeArgs(), options.WithDefaults());
 
         public static Output<GetCloudletsPolicyResult> Invoke(GetCloudletsPolicyInvokeArgs args, InvokeOutputOptions options)
@@ -24,8 +24,11 @@ namespace Pulumi.Akamai
 
     public sealed class GetCloudletsPolicyArgs : global::Pulumi.InvokeArgs
     {
-        [Input("policyId", required: true)]
-        public int PolicyId { get; set; }
+        [Input("name")]
+        public string? Name { get; set; }
+
+        [Input("policyId")]
+        public int? PolicyId { get; set; }
 
         [Input("version")]
         public int? Version { get; set; }
@@ -38,8 +41,11 @@ namespace Pulumi.Akamai
 
     public sealed class GetCloudletsPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("policyId", required: true)]
-        public Input<int> PolicyId { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        [Input("policyId")]
+        public Input<int>? PolicyId { get; set; }
 
         [Input("version")]
         public Input<int>? Version { get; set; }

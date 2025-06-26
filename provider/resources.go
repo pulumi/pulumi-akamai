@@ -23,10 +23,10 @@ import (
 
 	_ "embed"
 
-	_ "github.com/akamai/terraform-provider-akamai/v7/pkg/providers" // Load the providers
+	_ "github.com/akamai/terraform-provider-akamai/v8/pkg/providers" // Load the providers
 
-	"github.com/akamai/terraform-provider-akamai/v7/pkg/akamai"
-	"github.com/akamai/terraform-provider-akamai/v7/pkg/providers/registry"
+	"github.com/akamai/terraform-provider-akamai/v8/pkg/akamai"
+	"github.com/akamai/terraform-provider-akamai/v8/pkg/providers/registry"
 
 	pf "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/pf/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
@@ -35,7 +35,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 
-	"github.com/pulumi/pulumi-akamai/provider/v8/pkg/version"
+	"github.com/pulumi/pulumi-akamai/provider/v9/pkg/version"
 )
 
 // all of the token components used below.

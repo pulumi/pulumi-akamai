@@ -25,7 +25,7 @@
             "respectSchemaVersion": true
         },
         "go": {
-            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai",
+            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v9/go/akamai",
             "generateResourceContainerTypes": true,
             "generateExtraInputTypes": true,
             "respectSchemaVersion": true
@@ -2224,6 +2224,444 @@
             "required": [
                 "datacenterId"
             ]
+        },
+        "akamai:index/IamApiClientActions:IamApiClientActions": {
+            "properties": {
+                "deactivateAll": {
+                    "type": "boolean",
+                    "description": "Whether you can deactivate the API client's credentials.\n"
+                },
+                "delete": {
+                    "type": "boolean",
+                    "description": "Whether you can remove the API client.\n"
+                },
+                "edit": {
+                    "type": "boolean",
+                    "description": "Whether you can update the API client.\n"
+                },
+                "editApis": {
+                    "type": "boolean",
+                    "description": "Whether you can update the `apis` the API client can access, same as `edit_auth`.\n"
+                },
+                "editAuth": {
+                    "type": "boolean",
+                    "description": "Whether you can update the `apis` the API client can access, same as `edit_apis`.\n"
+                },
+                "editGroups": {
+                    "type": "boolean",
+                    "description": "Whether you can update the `groups` the API client can access.\n"
+                },
+                "editIpAcl": {
+                    "type": "boolean",
+                    "description": "Whether you can update the 'ip acl' the API client can access.\n"
+                },
+                "editSwitchAccount": {
+                    "type": "boolean",
+                    "description": "Whether you can update the API client's option to manage many accounts.\n"
+                },
+                "lock": {
+                    "type": "boolean",
+                    "description": "Whether you can lock the API client.\n"
+                },
+                "transfer": {
+                    "type": "boolean",
+                    "description": "Whether you can transfer the API client to a new owner.\n"
+                },
+                "unlock": {
+                    "type": "boolean",
+                    "description": "Whether you can unlock the API client.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "deactivateAll",
+                        "delete",
+                        "edit",
+                        "editApis",
+                        "editAuth",
+                        "editGroups",
+                        "editIpAcl",
+                        "editSwitchAccount",
+                        "lock",
+                        "transfer",
+                        "unlock"
+                    ]
+                }
+            }
+        },
+        "akamai:index/IamApiClientApiAccess:IamApiClientApiAccess": {
+            "properties": {
+                "allAccessibleApis": {
+                    "type": "boolean",
+                    "description": "Enables the API client to access a full set of available APIs.\n"
+                },
+                "apis": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/IamApiClientApiAccessApi:IamApiClientApiAccessApi"
+                    },
+                    "description": "The set of APIs the API client can access when `all_accessible_apis` is `false`.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "allAccessibleApis"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "allAccessibleApis",
+                        "apis"
+                    ]
+                }
+            }
+        },
+        "akamai:index/IamApiClientApiAccessApi:IamApiClientApiAccessApi": {
+            "properties": {
+                "accessLevel": {
+                    "type": "string",
+                    "description": "The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.\n"
+                },
+                "apiId": {
+                    "type": "integer",
+                    "description": "A unique identifier of the API.\n"
+                },
+                "apiName": {
+                    "type": "string",
+                    "description": "A human-readable name for the API.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A human-readable description for the API.\n"
+                },
+                "documentationUrl": {
+                    "type": "string",
+                    "description": "A link to more information about the API.\n"
+                },
+                "endpoint": {
+                    "type": "string",
+                    "description": "Specifies where the API can access resources.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accessLevel",
+                "apiId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "accessLevel",
+                        "apiId",
+                        "apiName",
+                        "description",
+                        "documentationUrl",
+                        "endpoint"
+                    ]
+                }
+            }
+        },
+        "akamai:index/IamApiClientCredential:IamApiClientCredential": {
+            "properties": {
+                "actions": {
+                    "$ref": "#/types/akamai:index/IamApiClientCredentialActions:IamApiClientCredentialActions",
+                    "description": "Actions available on the API client's credentials.\n"
+                },
+                "clientSecret": {
+                    "type": "string",
+                    "description": "The client secret.\n",
+                    "secret": true
+                },
+                "clientToken": {
+                    "type": "string",
+                    "description": "The part of the credential that identifies the API client.\n",
+                    "secret": true
+                },
+                "createdOn": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the credential was created.\n"
+                },
+                "credentialId": {
+                    "type": "integer",
+                    "description": "A unique identifier of the credential.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A human-readable description for the credential.\n"
+                },
+                "expiresOn": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "actions",
+                        "clientSecret",
+                        "clientToken",
+                        "createdOn",
+                        "credentialId",
+                        "description",
+                        "expiresOn",
+                        "status"
+                    ]
+                }
+            }
+        },
+        "akamai:index/IamApiClientCredentialActions:IamApiClientCredentialActions": {
+            "properties": {
+                "activate": {
+                    "type": "boolean",
+                    "description": "Whether you can activate the credential.\n"
+                },
+                "deactivate": {
+                    "type": "boolean",
+                    "description": "Whether you can deactivate the credential.\n"
+                },
+                "delete": {
+                    "type": "boolean",
+                    "description": "Whether you can remove the credential.\n"
+                },
+                "editDescription": {
+                    "type": "boolean",
+                    "description": "Whether you can modify the credential's description.\n"
+                },
+                "editExpiration": {
+                    "type": "boolean",
+                    "description": "Whether you can modify the credential's expiration date.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "activate",
+                        "deactivate",
+                        "delete",
+                        "editDescription",
+                        "editExpiration"
+                    ]
+                }
+            }
+        },
+        "akamai:index/IamApiClientGroupAccess:IamApiClientGroupAccess": {
+            "properties": {
+                "cloneAuthorizedUserGroups": {
+                    "type": "boolean",
+                    "description": "Sets the API client's group access the same as the authorized user.\n"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/IamApiClientGroupAccessGroup:IamApiClientGroupAccessGroup"
+                    },
+                    "description": "Groups the API client can access.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cloneAuthorizedUserGroups"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "cloneAuthorizedUserGroups",
+                        "groups"
+                    ]
+                }
+            }
+        },
+        "akamai:index/IamApiClientGroupAccessGroup:IamApiClientGroupAccessGroup": {
+            "properties": {
+                "groupId": {
+                    "type": "integer",
+                    "description": "A unique identifier for the group.\n"
+                },
+                "groupName": {
+                    "type": "string",
+                    "description": "A human-readable name for the group.\n"
+                },
+                "isBlocked": {
+                    "type": "boolean",
+                    "description": "Blocks the API client access to the group's child groups.\n"
+                },
+                "parentGroupId": {
+                    "type": "integer",
+                    "description": "A unique identifier for the parent group within the group tree.\n"
+                },
+                "roleDescription": {
+                    "type": "string",
+                    "description": "A human-readable description for the role to convey its use.\n"
+                },
+                "roleId": {
+                    "type": "integer",
+                    "description": "A unique identifier for the role.\n"
+                },
+                "roleName": {
+                    "type": "string",
+                    "description": "A human-readable name for the role.\n"
+                },
+                "subGroups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/IamApiClientGroupAccessGroupSubGroup:IamApiClientGroupAccessGroupSubGroup"
+                    },
+                    "description": "Groups the API client can access.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "groupId",
+                "roleId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "groupId",
+                        "groupName",
+                        "isBlocked",
+                        "parentGroupId",
+                        "roleDescription",
+                        "roleId",
+                        "roleName",
+                        "subGroups"
+                    ]
+                }
+            }
+        },
+        "akamai:index/IamApiClientGroupAccessGroupSubGroup:IamApiClientGroupAccessGroupSubGroup": {
+            "properties": {
+                "groupId": {
+                    "type": "integer",
+                    "description": "A unique identifier for the group.\n"
+                },
+                "groupName": {
+                    "type": "string",
+                    "description": "A human-readable name for the group.\n"
+                },
+                "isBlocked": {
+                    "type": "boolean",
+                    "description": "Blocks the API client access to the group's child groups.\n"
+                },
+                "parentGroupId": {
+                    "type": "integer",
+                    "description": "A unique identifier for the parent group within the group tree.\n"
+                },
+                "roleDescription": {
+                    "type": "string",
+                    "description": "A human-readable description for the role to convey its use.\n"
+                },
+                "roleId": {
+                    "type": "integer",
+                    "description": "A unique identifier for the role.\n"
+                },
+                "roleName": {
+                    "type": "string",
+                    "description": "A human-readable name for the role.\n"
+                },
+                "subGroups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/IamApiClientGroupAccessGroupSubGroup:IamApiClientGroupAccessGroupSubGroup"
+                    },
+                    "description": "Groups the API client can access.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "groupId",
+                "roleId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "groupId",
+                        "groupName",
+                        "isBlocked",
+                        "parentGroupId",
+                        "roleDescription",
+                        "roleId",
+                        "roleName",
+                        "subGroups"
+                    ]
+                }
+            }
+        },
+        "akamai:index/IamApiClientIpAcl:IamApiClientIpAcl": {
+            "properties": {
+                "cidrs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IP addresses or CIDR blocks the API client can access.\n"
+                },
+                "enable": {
+                    "type": "boolean",
+                    "description": "Enables the API client to access the IP access control list (ACL).\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "enable"
+            ]
+        },
+        "akamai:index/IamApiClientPurgeOptions:IamApiClientPurgeOptions": {
+            "properties": {
+                "canPurgeByCacheTag": {
+                    "type": "boolean",
+                    "description": "Whether the API client can purge content by cache tag.\n"
+                },
+                "canPurgeByCpCode": {
+                    "type": "boolean",
+                    "description": "Whether the API client can purge content by CP code.\n"
+                },
+                "cpCodeAccess": {
+                    "$ref": "#/types/akamai:index/IamApiClientPurgeOptionsCpCodeAccess:IamApiClientPurgeOptionsCpCodeAccess",
+                    "description": "CP codes the API client can purge.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "canPurgeByCacheTag",
+                "canPurgeByCpCode",
+                "cpCodeAccess"
+            ]
+        },
+        "akamai:index/IamApiClientPurgeOptionsCpCodeAccess:IamApiClientPurgeOptionsCpCodeAccess": {
+            "properties": {
+                "allCurrentAndNewCpCodes": {
+                    "type": "boolean",
+                    "description": "Whether the API can purge content by all current and new CP codes.\n"
+                },
+                "cpCodes": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "CP codes the API client can purge.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "allCurrentAndNewCpCodes"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "allCurrentAndNewCpCodes",
+                        "cpCodes"
+                    ]
+                }
+            }
         },
         "akamai:index/IamCidrBlockActions:IamCidrBlockActions": {
             "properties": {
@@ -4991,25 +5429,25 @@
             "properties": {
                 "apiVersion": {
                     "type": "string",
-                    "description": "The specific version of this API\n"
+                    "description": "The specific version of this API.\n"
                 },
                 "network": {
                     "type": "string",
-                    "description": "The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated\n"
+                    "description": "The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated.\n"
                 },
                 "policyInfos": {
                     "type": "array",
                     "items": {
                         "$ref": "#/types/akamai:index/getCloudletsPolicyActivationPolicyInfo:getCloudletsPolicyActivationPolicyInfo"
                     },
-                    "description": "The object containing Cloudlet policy information\n"
+                    "description": "The object containing Cloudlet policy information.\n"
                 },
                 "propertyInfos": {
                     "type": "array",
                     "items": {
                         "$ref": "#/types/akamai:index/getCloudletsPolicyActivationPropertyInfo:getCloudletsPolicyActivationPropertyInfo"
                     },
-                    "description": "A set containing information about the property associated with a particular Cloudlet policy\n"
+                    "description": "A set containing information about the property associated with a particular Cloudlet policy.\n"
                 }
             },
             "type": "object",
@@ -5029,31 +5467,31 @@
             "properties": {
                 "activatedBy": {
                     "type": "string",
-                    "description": "The name of the user who activated the policy\n"
+                    "description": "The name of the user who activated the policy.\n"
                 },
                 "activationDate": {
                     "type": "integer",
-                    "description": "The date on which the policy was activated (in milliseconds since Epoch)\n"
+                    "description": "The date on which the policy was activated (in milliseconds since Epoch).\n"
                 },
                 "name": {
                     "type": "string",
-                    "description": "The name of the policy\n"
+                    "description": "The name of the policy.\n"
                 },
                 "policyId": {
                     "type": "integer",
-                    "description": "An integer ID that is associated with all versions of a policy\n"
+                    "description": "An integer ID that is associated with all versions of a policy.\n"
                 },
                 "status": {
                     "type": "string",
-                    "description": "The activation status for the policy: active, inactive, deactivated, pending or failed\n"
+                    "description": "The activation status for the policy: active, inactive, deactivated, pending or failed.\n"
                 },
                 "statusDetail": {
                     "type": "string",
-                    "description": "Information about the status of an activation operation\n"
+                    "description": "Information about the status of an activation operation.\n"
                 },
                 "version": {
                     "type": "integer",
-                    "description": "The version number of the activated policy\n"
+                    "description": "The version number of the activated policy.\n"
                 }
             },
             "type": "object",
@@ -5076,27 +5514,27 @@
             "properties": {
                 "activatedBy": {
                     "type": "string",
-                    "description": "The name of the user who activated the property\n"
+                    "description": "The name of the user who activated the property.\n"
                 },
                 "activationDate": {
                     "type": "integer",
-                    "description": "The date on which the property was activated (in milliseconds since Epoch)\n"
+                    "description": "The date on which the property was activated (in milliseconds since Epoch).\n"
                 },
                 "groupId": {
                     "type": "integer",
-                    "description": "Defines the group association for the policy or property\n"
+                    "description": "Defines the group association for the policy or property.\n"
                 },
                 "name": {
                     "type": "string",
-                    "description": "The name of the property\n"
+                    "description": "The name of the property.\n"
                 },
                 "status": {
                     "type": "string",
-                    "description": "The activation status for the property. Can be active, inactive, deactivated, pending or failed\n"
+                    "description": "The activation status for the property. Can be active, inactive, deactivated, pending or failed.\n"
                 },
                 "version": {
                     "type": "integer",
-                    "description": "The version number of the activated property\n"
+                    "description": "The version number of the activated property.\n"
                 }
             },
             "type": "object",
@@ -8802,11 +9240,11 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "API access levels, possible values are READ-ONLY and READ-WRITE.\n"
+                    "description": "API access levels, possible values are READ-ONLY, READ-WRITE, CREDENTIAL-READ-ONLY and CREDENTIAL-READ-WRITE.\n"
                 },
                 "apiId": {
                     "type": "integer",
-                    "description": "Unique identifier for each API.\n"
+                    "description": "A unique identifier for each API.\n"
                 },
                 "apiName": {
                     "type": "string",
@@ -8814,11 +9252,11 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "Descriptive label for the API.\n"
+                    "description": "A human-readable name for the API.\n"
                 },
                 "documentationUrl": {
                     "type": "string",
-                    "description": "Link to more information about the API.\n"
+                    "description": "A link to more information about the API.\n"
                 },
                 "endpoint": {
                     "type": "string",
@@ -8843,6 +9281,572 @@
                 "endpoint",
                 "hasAccess",
                 "serviceProviderId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientActions:getIamApiClientActions": {
+            "properties": {
+                "deactivateAll": {
+                    "type": "boolean",
+                    "description": "Whether you can deactivate the API client's credentials.\n"
+                },
+                "delete": {
+                    "type": "boolean",
+                    "description": "Whether you can remove the API client.\n"
+                },
+                "edit": {
+                    "type": "boolean",
+                    "description": "Whether you can update the API client.\n"
+                },
+                "editApis": {
+                    "type": "boolean",
+                    "description": "Whether you can update the `apis` the API client can access, same as `edit_auth`.\n"
+                },
+                "editAuth": {
+                    "type": "boolean",
+                    "description": "Whether you can update the `apis` the API client can access, same as `edit_apis`.\n"
+                },
+                "editGroups": {
+                    "type": "boolean",
+                    "description": "Whether you can update the `groups` the API client can access.\n"
+                },
+                "editIpAcl": {
+                    "type": "boolean",
+                    "description": "Whether you can update the `ip_acl` the API client can access.\n"
+                },
+                "editSwitchAccount": {
+                    "type": "boolean",
+                    "description": "Whether you can update the API client's option to manage many accounts.\n"
+                },
+                "lock": {
+                    "type": "boolean",
+                    "description": "Whether you can lock the API client.\n"
+                },
+                "transfer": {
+                    "type": "boolean",
+                    "description": "Whether you can transfer the API client to a new owner.\n"
+                },
+                "unlock": {
+                    "type": "boolean",
+                    "description": "Whether you can unlock the API client.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "deactivateAll",
+                "delete",
+                "edit",
+                "editApis",
+                "editAuth",
+                "editGroups",
+                "editIpAcl",
+                "editSwitchAccount",
+                "lock",
+                "transfer",
+                "unlock"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientApiAccess:getIamApiClientApiAccess": {
+            "properties": {
+                "allAccessibleApis": {
+                    "type": "boolean",
+                    "description": "Whether the API client has access to a full set of available APIs.\n"
+                },
+                "apis": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getIamApiClientApiAccessApi:getIamApiClientApiAccessApi"
+                    },
+                    "description": "The set of APIs the API client can access when `all_accessible_apis` is disabled.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "allAccessibleApis",
+                "apis"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientApiAccessApi:getIamApiClientApiAccessApi": {
+            "properties": {
+                "accessLevel": {
+                    "type": "string",
+                    "description": "The API client's access level on an API basis, either `READ-ONLY`, `READ-WRITE`, `CREDENTIAL-READ-ONLY`, or `CREDENTIAL-READ-WRITE`.\n"
+                },
+                "apiId": {
+                    "type": "integer",
+                    "description": "A unique identifier for each API.\n"
+                },
+                "apiName": {
+                    "type": "string",
+                    "description": "A human-readable name for the API.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A human-readable description for the API.\n"
+                },
+                "documentationUrl": {
+                    "type": "string",
+                    "description": "A link to more information about the API.\n"
+                },
+                "endpoint": {
+                    "type": "string",
+                    "description": "Specifies where the API can access resources.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accessLevel",
+                "apiId",
+                "apiName",
+                "description",
+                "documentationUrl",
+                "endpoint"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientCredential:getIamApiClientCredential": {
+            "properties": {
+                "actions": {
+                    "$ref": "#/types/akamai:index/getIamApiClientCredentialActions:getIamApiClientCredentialActions",
+                    "description": "Specifies activities available on the API client's credentials.\n"
+                },
+                "clientToken": {
+                    "type": "string",
+                    "description": "The part of the credential that identifies the API client.\n",
+                    "secret": true
+                },
+                "createdOn": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the credential was created.\n"
+                },
+                "credentialId": {
+                    "type": "integer",
+                    "description": "A unique identifier for each credential.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A human-readable description for the API client.\n"
+                },
+                "expiresOn": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the credential expires.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Whether a credential is `ACTIVE`, `INACTIVE`, or `DELETED`.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "actions",
+                "clientToken",
+                "createdOn",
+                "credentialId",
+                "description",
+                "expiresOn",
+                "status"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientCredentialActions:getIamApiClientCredentialActions": {
+            "properties": {
+                "activate": {
+                    "type": "boolean",
+                    "description": "Whether you can activate the credential.\n"
+                },
+                "deactivate": {
+                    "type": "boolean",
+                    "description": "Whether you can deactivate the credential.\n"
+                },
+                "delete": {
+                    "type": "boolean",
+                    "description": "Whether you can remove the credential.\n"
+                },
+                "editDescription": {
+                    "type": "boolean",
+                    "description": "Whether you can modify the credential's description.\n"
+                },
+                "editExpiration": {
+                    "type": "boolean",
+                    "description": "Whether you can modify the credential's expiration date.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "activate",
+                "deactivate",
+                "delete",
+                "editDescription",
+                "editExpiration"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientGroupAccess:getIamApiClientGroupAccess": {
+            "properties": {
+                "cloneAuthorizedUserGroups": {
+                    "type": "boolean",
+                    "description": "Sets the API client's group access the same as the authorized user.\n"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getIamApiClientGroupAccessGroup:getIamApiClientGroupAccessGroup"
+                    },
+                    "description": "Groups the API client can access.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cloneAuthorizedUserGroups",
+                "groups"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientGroupAccessGroup:getIamApiClientGroupAccessGroup": {
+            "properties": {
+                "groupId": {
+                    "type": "integer",
+                    "description": "Unique identifier for each group.\n"
+                },
+                "groupName": {
+                    "type": "string",
+                    "description": "Descriptive label for the group.\n"
+                },
+                "isBlocked": {
+                    "type": "boolean",
+                    "description": "Blocks the API client access to the group's child groups.\n"
+                },
+                "parentGroupId": {
+                    "type": "integer",
+                    "description": "Unique identifier for the parent group within the group tree.\n"
+                },
+                "roleDescription": {
+                    "type": "string",
+                    "description": "Descriptive label for the role to convey its use.\n"
+                },
+                "roleId": {
+                    "type": "integer",
+                    "description": "Unique identifier for each role.\n"
+                },
+                "roleName": {
+                    "type": "string",
+                    "description": "Descriptive label for the role.\n"
+                },
+                "subGroups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getIamApiClientGroupAccessGroupSubGroup:getIamApiClientGroupAccessGroupSubGroup"
+                    },
+                    "description": "Groups the API client can access.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "groupId",
+                "groupName",
+                "isBlocked",
+                "parentGroupId",
+                "roleDescription",
+                "roleId",
+                "roleName",
+                "subGroups"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientGroupAccessGroupSubGroup:getIamApiClientGroupAccessGroupSubGroup": {
+            "properties": {
+                "groupId": {
+                    "type": "integer",
+                    "description": "Unique identifier for each group.\n"
+                },
+                "groupName": {
+                    "type": "string",
+                    "description": "Descriptive label for the group.\n"
+                },
+                "isBlocked": {
+                    "type": "boolean",
+                    "description": "Blocks the API client access to the group's child groups.\n"
+                },
+                "parentGroupId": {
+                    "type": "integer",
+                    "description": "Unique identifier for the parent group within the group tree.\n"
+                },
+                "roleDescription": {
+                    "type": "string",
+                    "description": "Descriptive label for the role to convey its use.\n"
+                },
+                "roleId": {
+                    "type": "integer",
+                    "description": "Unique identifier for each role.\n"
+                },
+                "roleName": {
+                    "type": "string",
+                    "description": "Descriptive label for the role.\n"
+                },
+                "subGroups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getIamApiClientGroupAccessGroupSubGroup:getIamApiClientGroupAccessGroupSubGroup"
+                    },
+                    "description": "Groups the API client can access.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "groupId",
+                "groupName",
+                "isBlocked",
+                "parentGroupId",
+                "roleDescription",
+                "roleId",
+                "roleName",
+                "subGroups"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientIpAcl:getIamApiClientIpAcl": {
+            "properties": {
+                "cidrs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IP addresses or CIDR blocks the API client can access.\n"
+                },
+                "enable": {
+                    "type": "boolean",
+                    "description": "Enables the API client to access the IP access control list (ACL).\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cidrs",
+                "enable"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientPurgeOptions:getIamApiClientPurgeOptions": {
+            "properties": {
+                "canPurgeByCacheTag": {
+                    "type": "boolean",
+                    "description": "Whether the API client can purge content by cache tag.\n"
+                },
+                "canPurgeByCpCode": {
+                    "type": "boolean",
+                    "description": "Whether the API client can purge content by CP code.\n"
+                },
+                "cpCodeAccess": {
+                    "$ref": "#/types/akamai:index/getIamApiClientPurgeOptionsCpCodeAccess:getIamApiClientPurgeOptionsCpCodeAccess",
+                    "description": "CP codes the API client can purge.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "canPurgeByCacheTag",
+                "canPurgeByCpCode",
+                "cpCodeAccess"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientPurgeOptionsCpCodeAccess:getIamApiClientPurgeOptionsCpCodeAccess": {
+            "properties": {
+                "allCurrentAndNewCpCodes": {
+                    "type": "boolean",
+                    "description": "Whether the API can purge content by all current and new CP codes.\n"
+                },
+                "cpCodes": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "CP codes the API client can purge.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "allCurrentAndNewCpCodes",
+                "cpCodes"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientsApiClient:getIamApiClientsApiClient": {
+            "properties": {
+                "accessToken": {
+                    "type": "string",
+                    "description": "The part of the client secret that identifies your API client and lets you access applications and resources.\n"
+                },
+                "actions": {
+                    "$ref": "#/types/akamai:index/getIamApiClientsApiClientActions:getIamApiClientsApiClientActions",
+                    "description": "Specifies activities available for the API client.\n"
+                },
+                "activeCredentialCount": {
+                    "type": "integer",
+                    "description": "The number of credentials active for the API client.\n"
+                },
+                "allowAccountSwitch": {
+                    "type": "boolean",
+                    "description": "Whether the API client can manage more than one account.\n"
+                },
+                "authorizedUsers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The API client's valid users.\n"
+                },
+                "canAutoCreateCredential": {
+                    "type": "boolean",
+                    "description": "Whether the API client can create a credential for a new API client.\n"
+                },
+                "clientDescription": {
+                    "type": "string",
+                    "description": "A human-readable description of the API client.\n"
+                },
+                "clientId": {
+                    "type": "string",
+                    "description": "A unique identifier for the API client.\n"
+                },
+                "clientName": {
+                    "type": "string",
+                    "description": "A human-readable name for the API client.\n"
+                },
+                "clientType": {
+                    "type": "string",
+                    "description": "Specifies the API client's ownership and credential management.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the API client.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the API client was created.\n"
+                },
+                "isLocked": {
+                    "type": "boolean",
+                    "description": "Whether the API client is locked.\n"
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Email addresses to notify users when credentials expire.\n"
+                },
+                "serviceConsumerToken": {
+                    "type": "string",
+                    "description": "Unique identifier for the service hostname.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accessToken",
+                "actions",
+                "activeCredentialCount",
+                "allowAccountSwitch",
+                "authorizedUsers",
+                "canAutoCreateCredential",
+                "clientDescription",
+                "clientId",
+                "clientName",
+                "clientType",
+                "createdBy",
+                "createdDate",
+                "isLocked",
+                "notificationEmails",
+                "serviceConsumerToken"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getIamApiClientsApiClientActions:getIamApiClientsApiClientActions": {
+            "properties": {
+                "deactivateAll": {
+                    "type": "boolean",
+                    "description": "Whether you can deactivate the API client's credentials.\n"
+                },
+                "delete": {
+                    "type": "boolean",
+                    "description": "Whether you can remove the API client.\n"
+                },
+                "edit": {
+                    "type": "boolean",
+                    "description": "Whether you can update the API client.\n"
+                },
+                "lock": {
+                    "type": "boolean",
+                    "description": "Whether you can lock the API client.\n"
+                },
+                "transfer": {
+                    "type": "boolean",
+                    "description": "Whether you can transfer the API client to a new owner.\n"
+                },
+                "unlock": {
+                    "type": "boolean",
+                    "description": "Whether you can unlock the API client.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "deactivateAll",
+                "delete",
+                "edit",
+                "lock",
+                "transfer",
+                "unlock"
             ],
             "language": {
                 "nodejs": {
@@ -13703,7 +14707,7 @@
                     "description": "Brief description of the new configuration\n"
                 },
                 "groupId": {
-                    "type": "integer",
+                    "type": "string",
                     "description": "Unique identifier of the contract group associated with the new configuration\n"
                 },
                 "hostNames": {
@@ -13744,7 +14748,7 @@
                     "description": "Brief description of the new configuration\n"
                 },
                 "groupId": {
-                    "type": "integer",
+                    "type": "string",
                     "description": "Unique identifier of the contract group associated with the new configuration\n"
                 },
                 "hostNames": {
@@ -13789,7 +14793,7 @@
                         "description": "Brief description of the new configuration\n"
                     },
                     "groupId": {
-                        "type": "integer",
+                        "type": "string",
                         "description": "Unique identifier of the contract group associated with the new configuration\n"
                     },
                     "hostNames": {
@@ -18810,52 +19814,53 @@
             "properties": {
                 "cloudletCode": {
                     "type": "string",
-                    "description": "Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)\n"
+                    "description": "Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).\n"
                 },
                 "cloudletId": {
                     "type": "integer",
-                    "description": "An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies\n"
+                    "description": "An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.\n"
                 },
                 "description": {
                     "type": "string",
-                    "description": "The description of this specific policy\n"
+                    "description": "The description of this specific policy.\n"
                 },
                 "groupId": {
                     "type": "string",
-                    "description": "Defines the group association for the policy. You must have edit privileges for the group\n"
+                    "description": "Defines the group association for the policy. You must have edit privileges for the group.\n"
                 },
                 "isShared": {
                     "type": "boolean",
-                    "description": "The type of policy that you want to create\n"
+                    "description": "The type of policy that you want to create.\n"
                 },
                 "matchRuleFormat": {
                     "type": "string",
-                    "description": "The version of the Cloudlet specific matchRules\n"
+                    "description": "The version of the Cloudlet specific matchRules.\n"
                 },
                 "matchRules": {
                     "type": "string",
-                    "description": "A JSON structure that defines the rules for this policy\n"
+                    "description": "A JSON structure that defines the rules for this policy.\n"
                 },
                 "name": {
                     "type": "string",
-                    "description": "The name of the policy. The name must be unique\n"
+                    "description": "The name of the policy. The name must be unique.\n"
                 },
                 "timeouts": {
                     "$ref": "#/types/akamai:index/CloudletsPolicyTimeouts:CloudletsPolicyTimeouts",
-                    "description": "Enables to set timeout for processing\n"
+                    "description": "Enables to set timeout for processing.\n"
                 },
                 "version": {
                     "type": "integer",
-                    "description": "The version number of the policy\n"
+                    "description": "The version number of the policy.\n"
                 },
                 "warnings": {
                     "type": "string",
-                    "description": "A JSON encoded list of warnings\n"
+                    "description": "A JSON encoded list of warnings.\n"
                 }
             },
             "required": [
                 "cloudletCode",
                 "cloudletId",
+                "description",
                 "groupId",
                 "name",
                 "version",
@@ -18864,35 +19869,35 @@
             "inputProperties": {
                 "cloudletCode": {
                     "type": "string",
-                    "description": "Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)\n"
+                    "description": "Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).\n"
                 },
                 "description": {
                     "type": "string",
-                    "description": "The description of this specific policy\n"
+                    "description": "The description of this specific policy.\n"
                 },
                 "groupId": {
                     "type": "string",
-                    "description": "Defines the group association for the policy. You must have edit privileges for the group\n"
+                    "description": "Defines the group association for the policy. You must have edit privileges for the group.\n"
                 },
                 "isShared": {
                     "type": "boolean",
-                    "description": "The type of policy that you want to create\n"
+                    "description": "The type of policy that you want to create.\n"
                 },
                 "matchRuleFormat": {
                     "type": "string",
-                    "description": "The version of the Cloudlet specific matchRules\n"
+                    "description": "The version of the Cloudlet specific matchRules.\n"
                 },
                 "matchRules": {
                     "type": "string",
-                    "description": "A JSON structure that defines the rules for this policy\n"
+                    "description": "A JSON structure that defines the rules for this policy.\n"
                 },
                 "name": {
                     "type": "string",
-                    "description": "The name of the policy. The name must be unique\n"
+                    "description": "The name of the policy. The name must be unique.\n"
                 },
                 "timeouts": {
                     "$ref": "#/types/akamai:index/CloudletsPolicyTimeouts:CloudletsPolicyTimeouts",
-                    "description": "Enables to set timeout for processing\n"
+                    "description": "Enables to set timeout for processing.\n"
                 }
             },
             "requiredInputs": [
@@ -18904,47 +19909,47 @@
                 "properties": {
                     "cloudletCode": {
                         "type": "string",
-                        "description": "Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)\n"
+                        "description": "Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).\n"
                     },
                     "cloudletId": {
                         "type": "integer",
-                        "description": "An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies\n"
+                        "description": "An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.\n"
                     },
                     "description": {
                         "type": "string",
-                        "description": "The description of this specific policy\n"
+                        "description": "The description of this specific policy.\n"
                     },
                     "groupId": {
                         "type": "string",
-                        "description": "Defines the group association for the policy. You must have edit privileges for the group\n"
+                        "description": "Defines the group association for the policy. You must have edit privileges for the group.\n"
                     },
                     "isShared": {
                         "type": "boolean",
-                        "description": "The type of policy that you want to create\n"
+                        "description": "The type of policy that you want to create.\n"
                     },
                     "matchRuleFormat": {
                         "type": "string",
-                        "description": "The version of the Cloudlet specific matchRules\n"
+                        "description": "The version of the Cloudlet specific matchRules.\n"
                     },
                     "matchRules": {
                         "type": "string",
-                        "description": "A JSON structure that defines the rules for this policy\n"
+                        "description": "A JSON structure that defines the rules for this policy.\n"
                     },
                     "name": {
                         "type": "string",
-                        "description": "The name of the policy. The name must be unique\n"
+                        "description": "The name of the policy. The name must be unique.\n"
                     },
                     "timeouts": {
                         "$ref": "#/types/akamai:index/CloudletsPolicyTimeouts:CloudletsPolicyTimeouts",
-                        "description": "Enables to set timeout for processing\n"
+                        "description": "Enables to set timeout for processing.\n"
                     },
                     "version": {
                         "type": "integer",
-                        "description": "The version number of the policy\n"
+                        "description": "The version number of the policy.\n"
                     },
                     "warnings": {
                         "type": "string",
-                        "description": "A JSON encoded list of warnings\n"
+                        "description": "A JSON encoded list of warnings.\n"
                     }
                 },
                 "type": "object"
@@ -23071,6 +24076,277 @@
                 }
             ]
         },
+        "akamai:index/iamApiClient:IamApiClient": {
+            "properties": {
+                "accessToken": {
+                    "type": "string",
+                    "description": "The part of the client secret that identifies your API client and lets you access applications and resources.\n",
+                    "secret": true
+                },
+                "actions": {
+                    "$ref": "#/types/akamai:index/IamApiClientActions:IamApiClientActions",
+                    "description": "Specifies activities available for the API client.\n"
+                },
+                "activeCredentialCount": {
+                    "type": "integer",
+                    "description": "The number of credentials active for the API client. When the count is zero, you can delete the API client without\ninterruption.\n"
+                },
+                "allowAccountSwitch": {
+                    "type": "boolean",
+                    "description": "Enables the API client to manage more than one account.\n"
+                },
+                "apiAccess": {
+                    "$ref": "#/types/akamai:index/IamApiClientApiAccess:IamApiClientApiAccess",
+                    "description": "The APIs the API client can access.\n"
+                },
+                "authorizedUsers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single\nusername in an array.\n"
+                },
+                "baseUrl": {
+                    "type": "string",
+                    "description": "The base URL for the service.\n",
+                    "secret": true
+                },
+                "canAutoCreateCredential": {
+                    "type": "boolean",
+                    "description": "Whether the API client can create a credential for a new API client. The default is false.\n"
+                },
+                "clientDescription": {
+                    "type": "string",
+                    "description": "A human-readable description of the API client.\n"
+                },
+                "clientId": {
+                    "type": "string",
+                    "description": "A unique identifier for the API client.\n"
+                },
+                "clientName": {
+                    "type": "string",
+                    "description": "A human-readable name for the API client.\n"
+                },
+                "clientType": {
+                    "type": "string",
+                    "description": "Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the\ncredentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the API client.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the API client was created.\n"
+                },
+                "credential": {
+                    "$ref": "#/types/akamai:index/IamApiClientCredential:IamApiClientCredential"
+                },
+                "groupAccess": {
+                    "$ref": "#/types/akamai:index/IamApiClientGroupAccess:IamApiClientGroupAccess",
+                    "description": "Specifies the API client's group access.\n"
+                },
+                "ipAcl": {
+                    "$ref": "#/types/akamai:index/IamApiClientIpAcl:IamApiClientIpAcl",
+                    "description": "Specifies the API client's IP list restriction.\n"
+                },
+                "lock": {
+                    "type": "boolean",
+                    "description": "Whether to lock or unlock the API client.\n"
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Email addresses to notify users when credentials expire.\n"
+                },
+                "purgeOptions": {
+                    "$ref": "#/types/akamai:index/IamApiClientPurgeOptions:IamApiClientPurgeOptions",
+                    "description": "Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`\nof `CCU API`.\n"
+                }
+            },
+            "required": [
+                "accessToken",
+                "actions",
+                "activeCredentialCount",
+                "allowAccountSwitch",
+                "apiAccess",
+                "authorizedUsers",
+                "baseUrl",
+                "canAutoCreateCredential",
+                "clientDescription",
+                "clientId",
+                "clientName",
+                "clientType",
+                "createdBy",
+                "createdDate",
+                "credential",
+                "groupAccess",
+                "lock",
+                "notificationEmails"
+            ],
+            "inputProperties": {
+                "allowAccountSwitch": {
+                    "type": "boolean",
+                    "description": "Enables the API client to manage more than one account.\n"
+                },
+                "apiAccess": {
+                    "$ref": "#/types/akamai:index/IamApiClientApiAccess:IamApiClientApiAccess",
+                    "description": "The APIs the API client can access.\n"
+                },
+                "authorizedUsers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single\nusername in an array.\n"
+                },
+                "canAutoCreateCredential": {
+                    "type": "boolean",
+                    "description": "Whether the API client can create a credential for a new API client. The default is false.\n"
+                },
+                "clientDescription": {
+                    "type": "string",
+                    "description": "A human-readable description of the API client.\n"
+                },
+                "clientName": {
+                    "type": "string",
+                    "description": "A human-readable name for the API client.\n"
+                },
+                "clientType": {
+                    "type": "string",
+                    "description": "Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the\ncredentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.\n"
+                },
+                "credential": {
+                    "$ref": "#/types/akamai:index/IamApiClientCredential:IamApiClientCredential"
+                },
+                "groupAccess": {
+                    "$ref": "#/types/akamai:index/IamApiClientGroupAccess:IamApiClientGroupAccess",
+                    "description": "Specifies the API client's group access.\n"
+                },
+                "ipAcl": {
+                    "$ref": "#/types/akamai:index/IamApiClientIpAcl:IamApiClientIpAcl",
+                    "description": "Specifies the API client's IP list restriction.\n"
+                },
+                "lock": {
+                    "type": "boolean",
+                    "description": "Whether to lock or unlock the API client.\n"
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Email addresses to notify users when credentials expire.\n"
+                },
+                "purgeOptions": {
+                    "$ref": "#/types/akamai:index/IamApiClientPurgeOptions:IamApiClientPurgeOptions",
+                    "description": "Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`\nof `CCU API`.\n"
+                }
+            },
+            "requiredInputs": [
+                "apiAccess",
+                "authorizedUsers",
+                "clientName",
+                "clientType",
+                "credential",
+                "groupAccess"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering IamApiClient resources.\n",
+                "properties": {
+                    "accessToken": {
+                        "type": "string",
+                        "description": "The part of the client secret that identifies your API client and lets you access applications and resources.\n",
+                        "secret": true
+                    },
+                    "actions": {
+                        "$ref": "#/types/akamai:index/IamApiClientActions:IamApiClientActions",
+                        "description": "Specifies activities available for the API client.\n"
+                    },
+                    "activeCredentialCount": {
+                        "type": "integer",
+                        "description": "The number of credentials active for the API client. When the count is zero, you can delete the API client without\ninterruption.\n"
+                    },
+                    "allowAccountSwitch": {
+                        "type": "boolean",
+                        "description": "Enables the API client to manage more than one account.\n"
+                    },
+                    "apiAccess": {
+                        "$ref": "#/types/akamai:index/IamApiClientApiAccess:IamApiClientApiAccess",
+                        "description": "The APIs the API client can access.\n"
+                    },
+                    "authorizedUsers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single\nusername in an array.\n"
+                    },
+                    "baseUrl": {
+                        "type": "string",
+                        "description": "The base URL for the service.\n",
+                        "secret": true
+                    },
+                    "canAutoCreateCredential": {
+                        "type": "boolean",
+                        "description": "Whether the API client can create a credential for a new API client. The default is false.\n"
+                    },
+                    "clientDescription": {
+                        "type": "string",
+                        "description": "A human-readable description of the API client.\n"
+                    },
+                    "clientId": {
+                        "type": "string",
+                        "description": "A unique identifier for the API client.\n"
+                    },
+                    "clientName": {
+                        "type": "string",
+                        "description": "A human-readable name for the API client.\n"
+                    },
+                    "clientType": {
+                        "type": "string",
+                        "description": "Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the\ncredentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.\n"
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "description": "The user who created the API client.\n"
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "The ISO 8601 timestamp indicating when the API client was created.\n"
+                    },
+                    "credential": {
+                        "$ref": "#/types/akamai:index/IamApiClientCredential:IamApiClientCredential"
+                    },
+                    "groupAccess": {
+                        "$ref": "#/types/akamai:index/IamApiClientGroupAccess:IamApiClientGroupAccess",
+                        "description": "Specifies the API client's group access.\n"
+                    },
+                    "ipAcl": {
+                        "$ref": "#/types/akamai:index/IamApiClientIpAcl:IamApiClientIpAcl",
+                        "description": "Specifies the API client's IP list restriction.\n"
+                    },
+                    "lock": {
+                        "type": "boolean",
+                        "description": "Whether to lock or unlock the API client.\n"
+                    },
+                    "notificationEmails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Email addresses to notify users when credentials expire.\n"
+                    },
+                    "purgeOptions": {
+                        "$ref": "#/types/akamai:index/IamApiClientPurgeOptions:IamApiClientPurgeOptions",
+                        "description": "Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`\nof `CCU API`.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties": {
             "properties": {
                 "blockedProperties": {
@@ -24618,7 +25894,8 @@
         "akamai:index/propertyActivation:PropertyActivation": {
             "properties": {
                 "activationId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID given to the activation event while it's in progress.\n"
                 },
                 "autoAcknowledgeRuleWarnings": {
                     "type": "boolean",
@@ -24626,45 +25903,53 @@
                 },
                 "complianceRecord": {
                     "$ref": "#/types/akamai:index/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord",
-                    "description": "Provides an audit record when activating on a production network\n"
+                    "description": "Provides an audit record when activating on a production network.\n"
                 },
                 "contacts": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "One or more email addresses to which to send activation status changes.\n"
                 },
                 "errors": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Errors returned during activation.\n"
                 },
                 "network": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.\n"
                 },
                 "note": {
                     "type": "string",
-                    "description": "assigns a log message to the activation request\n"
+                    "description": "Assigns a log message to the activation request.\n"
                 },
                 "propertyId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Your property's ID, including the prp_ prefix.\n"
                 },
                 "ruleErrors": {
                     "type": "array",
                     "items": {
                         "$ref": "#/types/akamai:index/PropertyActivationRuleError:PropertyActivationRuleError"
-                    }
+                    },
+                    "description": "Any errors returned by the API about rules.\n"
                 },
                 "status": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The property version's activation status on the given network.\n"
                 },
                 "timeouts": {
                     "$ref": "#/types/akamai:index/PropertyActivationTimeouts:PropertyActivationTimeouts",
-                    "description": "Enables to set timeout for processing\n"
+                    "description": "Enables to set timeout for processing.\n"
                 },
                 "version": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "Your property's version number.\n"
                 },
                 "warnings": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Warnings returned during activation.\n"
                 }
             },
             "required": [
@@ -24679,7 +25964,8 @@
             ],
             "inputProperties": {
                 "activationId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID given to the activation event while it's in progress.\n"
                 },
                 "autoAcknowledgeRuleWarnings": {
                     "type": "boolean",
@@ -24687,30 +25973,34 @@
                 },
                 "complianceRecord": {
                     "$ref": "#/types/akamai:index/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord",
-                    "description": "Provides an audit record when activating on a production network\n"
+                    "description": "Provides an audit record when activating on a production network.\n"
                 },
                 "contacts": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "One or more email addresses to which to send activation status changes.\n"
                 },
                 "network": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.\n"
                 },
                 "note": {
                     "type": "string",
-                    "description": "assigns a log message to the activation request\n"
+                    "description": "Assigns a log message to the activation request.\n"
                 },
                 "propertyId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Your property's ID, including the prp_ prefix.\n"
                 },
                 "timeouts": {
                     "$ref": "#/types/akamai:index/PropertyActivationTimeouts:PropertyActivationTimeouts",
-                    "description": "Enables to set timeout for processing\n"
+                    "description": "Enables to set timeout for processing.\n"
                 },
                 "version": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "Your property's version number.\n"
                 }
             },
             "requiredInputs": [
@@ -24722,7 +26012,8 @@
                 "description": "Input properties used for looking up and filtering PropertyActivation resources.\n",
                 "properties": {
                     "activationId": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The ID given to the activation event while it's in progress.\n"
                     },
                     "autoAcknowledgeRuleWarnings": {
                         "type": "boolean",
@@ -24730,45 +26021,53 @@
                     },
                     "complianceRecord": {
                         "$ref": "#/types/akamai:index/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord",
-                        "description": "Provides an audit record when activating on a production network\n"
+                        "description": "Provides an audit record when activating on a production network.\n"
                     },
                     "contacts": {
                         "type": "array",
                         "items": {
                             "type": "string"
-                        }
+                        },
+                        "description": "One or more email addresses to which to send activation status changes.\n"
                     },
                     "errors": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Errors returned during activation.\n"
                     },
                     "network": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.\n"
                     },
                     "note": {
                         "type": "string",
-                        "description": "assigns a log message to the activation request\n"
+                        "description": "Assigns a log message to the activation request.\n"
                     },
                     "propertyId": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Your property's ID, including the prp_ prefix.\n"
                     },
                     "ruleErrors": {
                         "type": "array",
                         "items": {
                             "$ref": "#/types/akamai:index/PropertyActivationRuleError:PropertyActivationRuleError"
-                        }
+                        },
+                        "description": "Any errors returned by the API about rules.\n"
                     },
                     "status": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The property version's activation status on the given network.\n"
                     },
                     "timeouts": {
                         "$ref": "#/types/akamai:index/PropertyActivationTimeouts:PropertyActivationTimeouts",
-                        "description": "Enables to set timeout for processing\n"
+                        "description": "Enables to set timeout for processing.\n"
                     },
                     "version": {
-                        "type": "integer"
+                        "type": "integer",
+                        "description": "Your property's version number.\n"
                     },
                     "warnings": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Warnings returned during activation.\n"
                     }
                 },
                 "type": "object"
@@ -30144,6 +31443,9 @@
             "inputs": {
                 "description": "A collection of arguments for invoking getCloudletsPolicy.\n",
                 "properties": {
+                    "name": {
+                        "type": "string"
+                    },
                     "policyId": {
                         "type": "integer"
                     },
@@ -30151,10 +31453,7 @@
                         "type": "integer"
                     }
                 },
-                "type": "object",
-                "required": [
-                    "policyId"
-                ]
+                "type": "object"
             },
             "outputs": {
                 "description": "A collection of values returned by getCloudletsPolicy.\n",
@@ -32479,6 +33778,142 @@
                 "required": [
                     "allowedApis",
                     "username",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getIamApiClient:getIamApiClient": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getIamApiClient.\n",
+                "properties": {
+                    "clientId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getIamApiClient.\n",
+                "properties": {
+                    "accessToken": {
+                        "secret": true,
+                        "type": "string"
+                    },
+                    "actions": {
+                        "$ref": "#/types/akamai:index/getIamApiClientActions:getIamApiClientActions"
+                    },
+                    "activeCredentialCount": {
+                        "type": "integer"
+                    },
+                    "allowAccountSwitch": {
+                        "type": "boolean"
+                    },
+                    "apiAccess": {
+                        "$ref": "#/types/akamai:index/getIamApiClientApiAccess:getIamApiClientApiAccess"
+                    },
+                    "authorizedUsers": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "baseUrl": {
+                        "secret": true,
+                        "type": "string"
+                    },
+                    "canAutoCreateCredential": {
+                        "type": "boolean"
+                    },
+                    "clientDescription": {
+                        "type": "string"
+                    },
+                    "clientId": {
+                        "type": "string"
+                    },
+                    "clientName": {
+                        "type": "string"
+                    },
+                    "clientType": {
+                        "type": "string"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "createdDate": {
+                        "type": "string"
+                    },
+                    "credentials": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getIamApiClientCredential:getIamApiClientCredential"
+                        },
+                        "type": "array"
+                    },
+                    "groupAccess": {
+                        "$ref": "#/types/akamai:index/getIamApiClientGroupAccess:getIamApiClientGroupAccess"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.\n",
+                        "type": "string"
+                    },
+                    "ipAcl": {
+                        "$ref": "#/types/akamai:index/getIamApiClientIpAcl:getIamApiClientIpAcl"
+                    },
+                    "isLocked": {
+                        "type": "boolean"
+                    },
+                    "notificationEmails": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "purgeOptions": {
+                        "$ref": "#/types/akamai:index/getIamApiClientPurgeOptions:getIamApiClientPurgeOptions"
+                    }
+                },
+                "required": [
+                    "accessToken",
+                    "actions",
+                    "activeCredentialCount",
+                    "allowAccountSwitch",
+                    "apiAccess",
+                    "authorizedUsers",
+                    "baseUrl",
+                    "canAutoCreateCredential",
+                    "clientDescription",
+                    "clientName",
+                    "clientType",
+                    "createdBy",
+                    "createdDate",
+                    "credentials",
+                    "groupAccess",
+                    "ipAcl",
+                    "isLocked",
+                    "notificationEmails",
+                    "purgeOptions",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getIamApiClients:getIamApiClients": {
+            "outputs": {
+                "description": "A collection of values returned by getIamApiClients.\n",
+                "properties": {
+                    "apiClients": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getIamApiClientsApiClient:getIamApiClientsApiClient"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "apiClients",
                     "id"
                 ],
                 "type": "object"

@@ -1225,6 +1225,16 @@ export const getIamAllowedApis: typeof import("./getIamAllowedApis").getIamAllow
 export const getIamAllowedApisOutput: typeof import("./getIamAllowedApis").getIamAllowedApisOutput = null as any;
 utilities.lazyLoad(exports, ["getIamAllowedApis","getIamAllowedApisOutput"], () => require("./getIamAllowedApis"));
 
+export { GetIamApiClientArgs, GetIamApiClientResult, GetIamApiClientOutputArgs } from "./getIamApiClient";
+export const getIamApiClient: typeof import("./getIamApiClient").getIamApiClient = null as any;
+export const getIamApiClientOutput: typeof import("./getIamApiClient").getIamApiClientOutput = null as any;
+utilities.lazyLoad(exports, ["getIamApiClient","getIamApiClientOutput"], () => require("./getIamApiClient"));
+
+export { GetIamApiClientsResult } from "./getIamApiClients";
+export const getIamApiClients: typeof import("./getIamApiClients").getIamApiClients = null as any;
+export const getIamApiClientsOutput: typeof import("./getIamApiClients").getIamApiClientsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamApiClients","getIamApiClientsOutput"], () => require("./getIamApiClients"));
+
 export { GetIamBlockedPropertiesArgs, GetIamBlockedPropertiesResult, GetIamBlockedPropertiesOutputArgs } from "./getIamBlockedProperties";
 export const getIamBlockedProperties: typeof import("./getIamBlockedProperties").getIamBlockedProperties = null as any;
 export const getIamBlockedPropertiesOutput: typeof import("./getIamBlockedProperties").getIamBlockedPropertiesOutput = null as any;
@@ -1439,6 +1449,11 @@ export { GtmResourceArgs, GtmResourceState } from "./gtmResource";
 export type GtmResource = import("./gtmResource").GtmResource;
 export const GtmResource: typeof import("./gtmResource").GtmResource = null as any;
 utilities.lazyLoad(exports, ["GtmResource"], () => require("./gtmResource"));
+
+export { IamApiClientArgs, IamApiClientState } from "./iamApiClient";
+export type IamApiClient = import("./iamApiClient").IamApiClient;
+export const IamApiClient: typeof import("./iamApiClient").IamApiClient = null as any;
+utilities.lazyLoad(exports, ["IamApiClient"], () => require("./iamApiClient"));
 
 export { IamBlockedUserPropertiesArgs, IamBlockedUserPropertiesState } from "./iamBlockedUserProperties";
 export type IamBlockedUserProperties = import("./iamBlockedUserProperties").IamBlockedUserProperties;
@@ -1768,6 +1783,8 @@ const _module = {
                 return new GtmProperty(name, <any>undefined, { urn })
             case "akamai:index/gtmResource:GtmResource":
                 return new GtmResource(name, <any>undefined, { urn })
+            case "akamai:index/iamApiClient:IamApiClient":
+                return new IamApiClient(name, <any>undefined, { urn })
             case "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties":
                 return new IamBlockedUserProperties(name, <any>undefined, { urn })
             case "akamai:index/iamCidrBlock:IamCidrBlock":
@@ -1919,6 +1936,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/gtmDomain", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmGeomap", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmProperty", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmResource", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/iamApiClient", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/iamBlockedUserProperties", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/iamCidrBlock", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/iamGroup", _module)

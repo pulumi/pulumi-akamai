@@ -4,8 +4,8 @@
 package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,11 +15,18 @@ public final class GetCloudletsPolicyPlainArgs extends com.pulumi.resources.Invo
 
     public static final GetCloudletsPolicyPlainArgs Empty = new GetCloudletsPolicyPlainArgs();
 
-    @Import(name="policyId", required=true)
-    private Integer policyId;
+    @Import(name="name")
+    private @Nullable String name;
 
-    public Integer policyId() {
-        return this.policyId;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
+    }
+
+    @Import(name="policyId")
+    private @Nullable Integer policyId;
+
+    public Optional<Integer> policyId() {
+        return Optional.ofNullable(this.policyId);
     }
 
     @Import(name="version")
@@ -32,6 +39,7 @@ public final class GetCloudletsPolicyPlainArgs extends com.pulumi.resources.Invo
     private GetCloudletsPolicyPlainArgs() {}
 
     private GetCloudletsPolicyPlainArgs(GetCloudletsPolicyPlainArgs $) {
+        this.name = $.name;
         this.policyId = $.policyId;
         this.version = $.version;
     }
@@ -54,7 +62,12 @@ public final class GetCloudletsPolicyPlainArgs extends com.pulumi.resources.Invo
             $ = new GetCloudletsPolicyPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder policyId(Integer policyId) {
+        public Builder name(@Nullable String name) {
+            $.name = name;
+            return this;
+        }
+
+        public Builder policyId(@Nullable Integer policyId) {
             $.policyId = policyId;
             return this;
         }
@@ -65,9 +78,6 @@ public final class GetCloudletsPolicyPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetCloudletsPolicyPlainArgs build() {
-            if ($.policyId == null) {
-                throw new MissingRequiredPropertyException("GetCloudletsPolicyPlainArgs", "policyId");
-            }
             return $;
         }
     }

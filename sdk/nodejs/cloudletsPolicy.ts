@@ -35,47 +35,47 @@ export class CloudletsPolicy extends pulumi.CustomResource {
     }
 
     /**
-     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
      */
     public readonly cloudletCode!: pulumi.Output<string>;
     /**
-     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
      */
     public /*out*/ readonly cloudletId!: pulumi.Output<number>;
     /**
-     * The description of this specific policy
+     * The description of this specific policy.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    public readonly description!: pulumi.Output<string>;
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group
+     * Defines the group association for the policy. You must have edit privileges for the group.
      */
     public readonly groupId!: pulumi.Output<string>;
     /**
-     * The type of policy that you want to create
+     * The type of policy that you want to create.
      */
     public readonly isShared!: pulumi.Output<boolean | undefined>;
     /**
-     * The version of the Cloudlet specific matchRules
+     * The version of the Cloudlet specific matchRules.
      */
     public readonly matchRuleFormat!: pulumi.Output<string | undefined>;
     /**
-     * A JSON structure that defines the rules for this policy
+     * A JSON structure that defines the rules for this policy.
      */
     public readonly matchRules!: pulumi.Output<string | undefined>;
     /**
-     * The name of the policy. The name must be unique
+     * The name of the policy. The name must be unique.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * Enables to set timeout for processing
+     * Enables to set timeout for processing.
      */
     public readonly timeouts!: pulumi.Output<outputs.CloudletsPolicyTimeouts | undefined>;
     /**
-     * The version number of the policy
+     * The version number of the policy.
      */
     public /*out*/ readonly version!: pulumi.Output<number>;
     /**
-     * A JSON encoded list of warnings
+     * A JSON encoded list of warnings.
      */
     public /*out*/ readonly warnings!: pulumi.Output<string>;
 
@@ -133,47 +133,47 @@ export class CloudletsPolicy extends pulumi.CustomResource {
  */
 export interface CloudletsPolicyState {
     /**
-     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
      */
     cloudletCode?: pulumi.Input<string>;
     /**
-     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
      */
     cloudletId?: pulumi.Input<number>;
     /**
-     * The description of this specific policy
+     * The description of this specific policy.
      */
     description?: pulumi.Input<string>;
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group
+     * Defines the group association for the policy. You must have edit privileges for the group.
      */
     groupId?: pulumi.Input<string>;
     /**
-     * The type of policy that you want to create
+     * The type of policy that you want to create.
      */
     isShared?: pulumi.Input<boolean>;
     /**
-     * The version of the Cloudlet specific matchRules
+     * The version of the Cloudlet specific matchRules.
      */
     matchRuleFormat?: pulumi.Input<string>;
     /**
-     * A JSON structure that defines the rules for this policy
+     * A JSON structure that defines the rules for this policy.
      */
     matchRules?: pulumi.Input<string>;
     /**
-     * The name of the policy. The name must be unique
+     * The name of the policy. The name must be unique.
      */
     name?: pulumi.Input<string>;
     /**
-     * Enables to set timeout for processing
+     * Enables to set timeout for processing.
      */
     timeouts?: pulumi.Input<inputs.CloudletsPolicyTimeouts>;
     /**
-     * The version number of the policy
+     * The version number of the policy.
      */
     version?: pulumi.Input<number>;
     /**
-     * A JSON encoded list of warnings
+     * A JSON encoded list of warnings.
      */
     warnings?: pulumi.Input<string>;
 }
@@ -183,35 +183,35 @@ export interface CloudletsPolicyState {
  */
 export interface CloudletsPolicyArgs {
     /**
-     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
      */
     cloudletCode: pulumi.Input<string>;
     /**
-     * The description of this specific policy
+     * The description of this specific policy.
      */
     description?: pulumi.Input<string>;
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group
+     * Defines the group association for the policy. You must have edit privileges for the group.
      */
     groupId: pulumi.Input<string>;
     /**
-     * The type of policy that you want to create
+     * The type of policy that you want to create.
      */
     isShared?: pulumi.Input<boolean>;
     /**
-     * The version of the Cloudlet specific matchRules
+     * The version of the Cloudlet specific matchRules.
      */
     matchRuleFormat?: pulumi.Input<string>;
     /**
-     * A JSON structure that defines the rules for this policy
+     * A JSON structure that defines the rules for this policy.
      */
     matchRules?: pulumi.Input<string>;
     /**
-     * The name of the policy. The name must be unique
+     * The name of the policy. The name must be unique.
      */
     name?: pulumi.Input<string>;
     /**
-     * Enables to set timeout for processing
+     * Enables to set timeout for processing.
      */
     timeouts?: pulumi.Input<inputs.CloudletsPolicyTimeouts>;
 }

@@ -13,67 +13,67 @@ namespace Pulumi.Akamai
     public partial class CloudletsPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        /// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
         /// </summary>
         [Output("cloudletCode")]
         public Output<string> CloudletCode { get; private set; } = null!;
 
         /// <summary>
-        /// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+        /// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
         /// </summary>
         [Output("cloudletId")]
         public Output<int> CloudletId { get; private set; } = null!;
 
         /// <summary>
-        /// The description of this specific policy
+        /// The description of this specific policy.
         /// </summary>
         [Output("description")]
-        public Output<string?> Description { get; private set; } = null!;
+        public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Defines the group association for the policy. You must have edit privileges for the group
+        /// Defines the group association for the policy. You must have edit privileges for the group.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// The type of policy that you want to create
+        /// The type of policy that you want to create.
         /// </summary>
         [Output("isShared")]
         public Output<bool?> IsShared { get; private set; } = null!;
 
         /// <summary>
-        /// The version of the Cloudlet specific matchRules
+        /// The version of the Cloudlet specific matchRules.
         /// </summary>
         [Output("matchRuleFormat")]
         public Output<string?> MatchRuleFormat { get; private set; } = null!;
 
         /// <summary>
-        /// A JSON structure that defines the rules for this policy
+        /// A JSON structure that defines the rules for this policy.
         /// </summary>
         [Output("matchRules")]
         public Output<string?> MatchRules { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the policy. The name must be unique
+        /// The name of the policy. The name must be unique.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Enables to set timeout for processing
+        /// Enables to set timeout for processing.
         /// </summary>
         [Output("timeouts")]
         public Output<Outputs.CloudletsPolicyTimeouts?> Timeouts { get; private set; } = null!;
 
         /// <summary>
-        /// The version number of the policy
+        /// The version number of the policy.
         /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
 
         /// <summary>
-        /// A JSON encoded list of warnings
+        /// A JSON encoded list of warnings.
         /// </summary>
         [Output("warnings")]
         public Output<string> Warnings { get; private set; } = null!;
@@ -125,49 +125,49 @@ namespace Pulumi.Akamai
     public sealed class CloudletsPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        /// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
         /// </summary>
         [Input("cloudletCode", required: true)]
         public Input<string> CloudletCode { get; set; } = null!;
 
         /// <summary>
-        /// The description of this specific policy
+        /// The description of this specific policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Defines the group association for the policy. You must have edit privileges for the group
+        /// Defines the group association for the policy. You must have edit privileges for the group.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// The type of policy that you want to create
+        /// The type of policy that you want to create.
         /// </summary>
         [Input("isShared")]
         public Input<bool>? IsShared { get; set; }
 
         /// <summary>
-        /// The version of the Cloudlet specific matchRules
+        /// The version of the Cloudlet specific matchRules.
         /// </summary>
         [Input("matchRuleFormat")]
         public Input<string>? MatchRuleFormat { get; set; }
 
         /// <summary>
-        /// A JSON structure that defines the rules for this policy
+        /// A JSON structure that defines the rules for this policy.
         /// </summary>
         [Input("matchRules")]
         public Input<string>? MatchRules { get; set; }
 
         /// <summary>
-        /// The name of the policy. The name must be unique
+        /// The name of the policy. The name must be unique.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Enables to set timeout for processing
+        /// Enables to set timeout for processing.
         /// </summary>
         [Input("timeouts")]
         public Input<Inputs.CloudletsPolicyTimeoutsArgs>? Timeouts { get; set; }
@@ -181,67 +181,67 @@ namespace Pulumi.Akamai
     public sealed class CloudletsPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        /// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
         /// </summary>
         [Input("cloudletCode")]
         public Input<string>? CloudletCode { get; set; }
 
         /// <summary>
-        /// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+        /// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
         /// </summary>
         [Input("cloudletId")]
         public Input<int>? CloudletId { get; set; }
 
         /// <summary>
-        /// The description of this specific policy
+        /// The description of this specific policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Defines the group association for the policy. You must have edit privileges for the group
+        /// Defines the group association for the policy. You must have edit privileges for the group.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// The type of policy that you want to create
+        /// The type of policy that you want to create.
         /// </summary>
         [Input("isShared")]
         public Input<bool>? IsShared { get; set; }
 
         /// <summary>
-        /// The version of the Cloudlet specific matchRules
+        /// The version of the Cloudlet specific matchRules.
         /// </summary>
         [Input("matchRuleFormat")]
         public Input<string>? MatchRuleFormat { get; set; }
 
         /// <summary>
-        /// A JSON structure that defines the rules for this policy
+        /// A JSON structure that defines the rules for this policy.
         /// </summary>
         [Input("matchRules")]
         public Input<string>? MatchRules { get; set; }
 
         /// <summary>
-        /// The name of the policy. The name must be unique
+        /// The name of the policy. The name must be unique.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Enables to set timeout for processing
+        /// Enables to set timeout for processing.
         /// </summary>
         [Input("timeouts")]
         public Input<Inputs.CloudletsPolicyTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
-        /// The version number of the policy
+        /// The version number of the policy.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 
         /// <summary>
-        /// A JSON encoded list of warnings
+        /// A JSON encoded list of warnings.
         /// </summary>
         [Input("warnings")]
         public Input<string>? Warnings { get; set; }
