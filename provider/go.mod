@@ -12,8 +12,7 @@ replace (
 )
 
 require (
-	github.com/akamai/terraform-provider-akamai/v7 v7.1.0
-	github.com/pulumi/pulumi-akamai/provider/v8 v8.0.0-20250618051140-036c6f81a277
+	github.com/akamai/terraform-provider-akamai/v8 v8.0.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.110.0
 	github.com/pulumi/pulumi/pkg/v3 v3.175.0
 	github.com/pulumi/pulumi/sdk/v3 v3.175.0
@@ -35,7 +34,7 @@ require (
 	github.com/ProtonMail/go-crypto v1.1.6 // indirect
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
-	github.com/akamai/AkamaiOPEN-edgegrid-golang/v10 v10.1.0 // indirect
+	github.com/akamai/AkamaiOPEN-edgegrid-golang/v11 v11.0.0 // indirect
 	github.com/allegro/bigcache/v2 v2.2.5 // indirect
 	github.com/apparentlymart/go-cidr v1.1.0 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
