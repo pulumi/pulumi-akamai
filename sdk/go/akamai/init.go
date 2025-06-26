@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
-	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v9/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -237,6 +237,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &GtmProperty{}
 	case "akamai:index/gtmResource:GtmResource":
 		r = &GtmResource{}
+	case "akamai:index/iamApiClient:IamApiClient":
+		r = &IamApiClient{}
 	case "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties":
 		r = &IamBlockedUserProperties{}
 	case "akamai:index/iamCidrBlock:IamCidrBlock":
@@ -844,6 +846,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/gtmResource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/iamApiClient",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

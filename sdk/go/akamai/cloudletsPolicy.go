@@ -8,34 +8,34 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v9/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type CloudletsPolicy struct {
 	pulumi.CustomResourceState
 
-	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
 	CloudletCode pulumi.StringOutput `pulumi:"cloudletCode"`
-	// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+	// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
 	CloudletId pulumi.IntOutput `pulumi:"cloudletId"`
-	// The description of this specific policy
-	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// Defines the group association for the policy. You must have edit privileges for the group
+	// The description of this specific policy.
+	Description pulumi.StringOutput `pulumi:"description"`
+	// Defines the group association for the policy. You must have edit privileges for the group.
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	// The type of policy that you want to create
+	// The type of policy that you want to create.
 	IsShared pulumi.BoolPtrOutput `pulumi:"isShared"`
-	// The version of the Cloudlet specific matchRules
+	// The version of the Cloudlet specific matchRules.
 	MatchRuleFormat pulumi.StringPtrOutput `pulumi:"matchRuleFormat"`
-	// A JSON structure that defines the rules for this policy
+	// A JSON structure that defines the rules for this policy.
 	MatchRules pulumi.StringPtrOutput `pulumi:"matchRules"`
-	// The name of the policy. The name must be unique
+	// The name of the policy. The name must be unique.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Enables to set timeout for processing
+	// Enables to set timeout for processing.
 	Timeouts CloudletsPolicyTimeoutsPtrOutput `pulumi:"timeouts"`
-	// The version number of the policy
+	// The version number of the policy.
 	Version pulumi.IntOutput `pulumi:"version"`
-	// A JSON encoded list of warnings
+	// A JSON encoded list of warnings.
 	Warnings pulumi.StringOutput `pulumi:"warnings"`
 }
 
@@ -75,52 +75,52 @@ func GetCloudletsPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudletsPolicy resources.
 type cloudletsPolicyState struct {
-	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
 	CloudletCode *string `pulumi:"cloudletCode"`
-	// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+	// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
 	CloudletId *int `pulumi:"cloudletId"`
-	// The description of this specific policy
+	// The description of this specific policy.
 	Description *string `pulumi:"description"`
-	// Defines the group association for the policy. You must have edit privileges for the group
+	// Defines the group association for the policy. You must have edit privileges for the group.
 	GroupId *string `pulumi:"groupId"`
-	// The type of policy that you want to create
+	// The type of policy that you want to create.
 	IsShared *bool `pulumi:"isShared"`
-	// The version of the Cloudlet specific matchRules
+	// The version of the Cloudlet specific matchRules.
 	MatchRuleFormat *string `pulumi:"matchRuleFormat"`
-	// A JSON structure that defines the rules for this policy
+	// A JSON structure that defines the rules for this policy.
 	MatchRules *string `pulumi:"matchRules"`
-	// The name of the policy. The name must be unique
+	// The name of the policy. The name must be unique.
 	Name *string `pulumi:"name"`
-	// Enables to set timeout for processing
+	// Enables to set timeout for processing.
 	Timeouts *CloudletsPolicyTimeouts `pulumi:"timeouts"`
-	// The version number of the policy
+	// The version number of the policy.
 	Version *int `pulumi:"version"`
-	// A JSON encoded list of warnings
+	// A JSON encoded list of warnings.
 	Warnings *string `pulumi:"warnings"`
 }
 
 type CloudletsPolicyState struct {
-	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
 	CloudletCode pulumi.StringPtrInput
-	// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+	// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
 	CloudletId pulumi.IntPtrInput
-	// The description of this specific policy
+	// The description of this specific policy.
 	Description pulumi.StringPtrInput
-	// Defines the group association for the policy. You must have edit privileges for the group
+	// Defines the group association for the policy. You must have edit privileges for the group.
 	GroupId pulumi.StringPtrInput
-	// The type of policy that you want to create
+	// The type of policy that you want to create.
 	IsShared pulumi.BoolPtrInput
-	// The version of the Cloudlet specific matchRules
+	// The version of the Cloudlet specific matchRules.
 	MatchRuleFormat pulumi.StringPtrInput
-	// A JSON structure that defines the rules for this policy
+	// A JSON structure that defines the rules for this policy.
 	MatchRules pulumi.StringPtrInput
-	// The name of the policy. The name must be unique
+	// The name of the policy. The name must be unique.
 	Name pulumi.StringPtrInput
-	// Enables to set timeout for processing
+	// Enables to set timeout for processing.
 	Timeouts CloudletsPolicyTimeoutsPtrInput
-	// The version number of the policy
+	// The version number of the policy.
 	Version pulumi.IntPtrInput
-	// A JSON encoded list of warnings
+	// A JSON encoded list of warnings.
 	Warnings pulumi.StringPtrInput
 }
 
@@ -129,41 +129,41 @@ func (CloudletsPolicyState) ElementType() reflect.Type {
 }
 
 type cloudletsPolicyArgs struct {
-	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
 	CloudletCode string `pulumi:"cloudletCode"`
-	// The description of this specific policy
+	// The description of this specific policy.
 	Description *string `pulumi:"description"`
-	// Defines the group association for the policy. You must have edit privileges for the group
+	// Defines the group association for the policy. You must have edit privileges for the group.
 	GroupId string `pulumi:"groupId"`
-	// The type of policy that you want to create
+	// The type of policy that you want to create.
 	IsShared *bool `pulumi:"isShared"`
-	// The version of the Cloudlet specific matchRules
+	// The version of the Cloudlet specific matchRules.
 	MatchRuleFormat *string `pulumi:"matchRuleFormat"`
-	// A JSON structure that defines the rules for this policy
+	// A JSON structure that defines the rules for this policy.
 	MatchRules *string `pulumi:"matchRules"`
-	// The name of the policy. The name must be unique
+	// The name of the policy. The name must be unique.
 	Name *string `pulumi:"name"`
-	// Enables to set timeout for processing
+	// Enables to set timeout for processing.
 	Timeouts *CloudletsPolicyTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a CloudletsPolicy resource.
 type CloudletsPolicyArgs struct {
-	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
 	CloudletCode pulumi.StringInput
-	// The description of this specific policy
+	// The description of this specific policy.
 	Description pulumi.StringPtrInput
-	// Defines the group association for the policy. You must have edit privileges for the group
+	// Defines the group association for the policy. You must have edit privileges for the group.
 	GroupId pulumi.StringInput
-	// The type of policy that you want to create
+	// The type of policy that you want to create.
 	IsShared pulumi.BoolPtrInput
-	// The version of the Cloudlet specific matchRules
+	// The version of the Cloudlet specific matchRules.
 	MatchRuleFormat pulumi.StringPtrInput
-	// A JSON structure that defines the rules for this policy
+	// A JSON structure that defines the rules for this policy.
 	MatchRules pulumi.StringPtrInput
-	// The name of the policy. The name must be unique
+	// The name of the policy. The name must be unique.
 	Name pulumi.StringPtrInput
-	// Enables to set timeout for processing
+	// Enables to set timeout for processing.
 	Timeouts CloudletsPolicyTimeoutsPtrInput
 }
 
@@ -254,57 +254,57 @@ func (o CloudletsPolicyOutput) ToCloudletsPolicyOutputWithContext(ctx context.Co
 	return o
 }
 
-// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
 func (o CloudletsPolicyOutput) CloudletCode() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.CloudletCode }).(pulumi.StringOutput)
 }
 
-// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
 func (o CloudletsPolicyOutput) CloudletId() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.IntOutput { return v.CloudletId }).(pulumi.IntOutput)
 }
 
-// The description of this specific policy
-func (o CloudletsPolicyOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+// The description of this specific policy.
+func (o CloudletsPolicyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// Defines the group association for the policy. You must have edit privileges for the group
+// Defines the group association for the policy. You must have edit privileges for the group.
 func (o CloudletsPolicyOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// The type of policy that you want to create
+// The type of policy that you want to create.
 func (o CloudletsPolicyOutput) IsShared() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.BoolPtrOutput { return v.IsShared }).(pulumi.BoolPtrOutput)
 }
 
-// The version of the Cloudlet specific matchRules
+// The version of the Cloudlet specific matchRules.
 func (o CloudletsPolicyOutput) MatchRuleFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringPtrOutput { return v.MatchRuleFormat }).(pulumi.StringPtrOutput)
 }
 
-// A JSON structure that defines the rules for this policy
+// A JSON structure that defines the rules for this policy.
 func (o CloudletsPolicyOutput) MatchRules() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringPtrOutput { return v.MatchRules }).(pulumi.StringPtrOutput)
 }
 
-// The name of the policy. The name must be unique
+// The name of the policy. The name must be unique.
 func (o CloudletsPolicyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Enables to set timeout for processing
+// Enables to set timeout for processing.
 func (o CloudletsPolicyOutput) Timeouts() CloudletsPolicyTimeoutsPtrOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) CloudletsPolicyTimeoutsPtrOutput { return v.Timeouts }).(CloudletsPolicyTimeoutsPtrOutput)
 }
 
-// The version number of the policy
+// The version number of the policy.
 func (o CloudletsPolicyOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }
 
-// A JSON encoded list of warnings
+// A JSON encoded list of warnings.
 func (o CloudletsPolicyOutput) Warnings() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.Warnings }).(pulumi.StringOutput)
 }

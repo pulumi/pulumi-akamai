@@ -83,13 +83,13 @@ public final class AppSecConfigurationArgs extends com.pulumi.resources.Resource
      * 
      */
     @Import(name="groupId", required=true)
-    private Output<Integer> groupId;
+    private Output<String> groupId;
 
     /**
      * @return Unique identifier of the contract group associated with the new configuration
      * 
      */
-    public Output<Integer> groupId() {
+    public Output<String> groupId() {
         return this.groupId;
     }
 
@@ -243,7 +243,7 @@ public final class AppSecConfigurationArgs extends com.pulumi.resources.Resource
          * @return builder
          * 
          */
-        public Builder groupId(Output<Integer> groupId) {
+        public Builder groupId(Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
@@ -254,7 +254,7 @@ public final class AppSecConfigurationArgs extends com.pulumi.resources.Resource
          * @return builder
          * 
          */
-        public Builder groupId(Integer groupId) {
+        public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
         }
 

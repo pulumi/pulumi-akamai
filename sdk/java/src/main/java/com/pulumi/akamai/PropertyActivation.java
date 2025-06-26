@@ -23,9 +23,17 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/propertyActivation:PropertyActivation")
 public class PropertyActivation extends com.pulumi.resources.CustomResource {
+    /**
+     * The ID given to the activation event while it&#39;s in progress.
+     * 
+     */
     @Export(name="activationId", refs={String.class}, tree="[0]")
     private Output<String> activationId;
 
+    /**
+     * @return The ID given to the activation event while it&#39;s in progress.
+     * 
+     */
     public Output<String> activationId() {
         return this.activationId;
     }
@@ -44,92 +52,156 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.autoAcknowledgeRuleWarnings);
     }
     /**
-     * Provides an audit record when activating on a production network
+     * Provides an audit record when activating on a production network.
      * 
      */
     @Export(name="complianceRecord", refs={PropertyActivationComplianceRecord.class}, tree="[0]")
     private Output</* @Nullable */ PropertyActivationComplianceRecord> complianceRecord;
 
     /**
-     * @return Provides an audit record when activating on a production network
+     * @return Provides an audit record when activating on a production network.
      * 
      */
     public Output<Optional<PropertyActivationComplianceRecord>> complianceRecord() {
         return Codegen.optional(this.complianceRecord);
     }
+    /**
+     * One or more email addresses to which to send activation status changes.
+     * 
+     */
     @Export(name="contacts", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> contacts;
 
+    /**
+     * @return One or more email addresses to which to send activation status changes.
+     * 
+     */
     public Output<List<String>> contacts() {
         return this.contacts;
     }
+    /**
+     * Errors returned during activation.
+     * 
+     */
     @Export(name="errors", refs={String.class}, tree="[0]")
     private Output<String> errors;
 
+    /**
+     * @return Errors returned during activation.
+     * 
+     */
     public Output<String> errors() {
         return this.errors;
     }
+    /**
+     * Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+     * 
+     */
     @Export(name="network", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> network;
 
+    /**
+     * @return Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+     * 
+     */
     public Output<Optional<String>> network() {
         return Codegen.optional(this.network);
     }
     /**
-     * assigns a log message to the activation request
+     * Assigns a log message to the activation request.
      * 
      */
     @Export(name="note", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> note;
 
     /**
-     * @return assigns a log message to the activation request
+     * @return Assigns a log message to the activation request.
      * 
      */
     public Output<Optional<String>> note() {
         return Codegen.optional(this.note);
     }
+    /**
+     * Your property&#39;s ID, including the prp_ prefix.
+     * 
+     */
     @Export(name="propertyId", refs={String.class}, tree="[0]")
     private Output<String> propertyId;
 
+    /**
+     * @return Your property&#39;s ID, including the prp_ prefix.
+     * 
+     */
     public Output<String> propertyId() {
         return this.propertyId;
     }
+    /**
+     * Any errors returned by the API about rules.
+     * 
+     */
     @Export(name="ruleErrors", refs={List.class,PropertyActivationRuleError.class}, tree="[0,1]")
     private Output<List<PropertyActivationRuleError>> ruleErrors;
 
+    /**
+     * @return Any errors returned by the API about rules.
+     * 
+     */
     public Output<List<PropertyActivationRuleError>> ruleErrors() {
         return this.ruleErrors;
     }
+    /**
+     * The property version&#39;s activation status on the given network.
+     * 
+     */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
+    /**
+     * @return The property version&#39;s activation status on the given network.
+     * 
+     */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * Enables to set timeout for processing
+     * Enables to set timeout for processing.
      * 
      */
     @Export(name="timeouts", refs={PropertyActivationTimeouts.class}, tree="[0]")
     private Output</* @Nullable */ PropertyActivationTimeouts> timeouts;
 
     /**
-     * @return Enables to set timeout for processing
+     * @return Enables to set timeout for processing.
      * 
      */
     public Output<Optional<PropertyActivationTimeouts>> timeouts() {
         return Codegen.optional(this.timeouts);
     }
+    /**
+     * Your property&#39;s version number.
+     * 
+     */
     @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
+    /**
+     * @return Your property&#39;s version number.
+     * 
+     */
     public Output<Integer> version() {
         return this.version;
     }
+    /**
+     * Warnings returned during activation.
+     * 
+     */
     @Export(name="warnings", refs={String.class}, tree="[0]")
     private Output<String> warnings;
 
+    /**
+     * @return Warnings returned during activation.
+     * 
+     */
     public Output<String> warnings() {
         return this.warnings;
     }

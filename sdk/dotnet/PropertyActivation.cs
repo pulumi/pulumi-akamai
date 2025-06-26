@@ -12,6 +12,9 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/propertyActivation:PropertyActivation")]
     public partial class PropertyActivation : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The ID given to the activation event while it's in progress.
+        /// </summary>
         [Output("activationId")]
         public Output<string> ActivationId { get; private set; } = null!;
 
@@ -22,44 +25,68 @@ namespace Pulumi.Akamai
         public Output<bool?> AutoAcknowledgeRuleWarnings { get; private set; } = null!;
 
         /// <summary>
-        /// Provides an audit record when activating on a production network
+        /// Provides an audit record when activating on a production network.
         /// </summary>
         [Output("complianceRecord")]
         public Output<Outputs.PropertyActivationComplianceRecord?> ComplianceRecord { get; private set; } = null!;
 
+        /// <summary>
+        /// One or more email addresses to which to send activation status changes.
+        /// </summary>
         [Output("contacts")]
         public Output<ImmutableArray<string>> Contacts { get; private set; } = null!;
 
+        /// <summary>
+        /// Errors returned during activation.
+        /// </summary>
         [Output("errors")]
         public Output<string> Errors { get; private set; } = null!;
 
+        /// <summary>
+        /// Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        /// </summary>
         [Output("network")]
         public Output<string?> Network { get; private set; } = null!;
 
         /// <summary>
-        /// assigns a log message to the activation request
+        /// Assigns a log message to the activation request.
         /// </summary>
         [Output("note")]
         public Output<string?> Note { get; private set; } = null!;
 
+        /// <summary>
+        /// Your property's ID, including the prp_ prefix.
+        /// </summary>
         [Output("propertyId")]
         public Output<string> PropertyId { get; private set; } = null!;
 
+        /// <summary>
+        /// Any errors returned by the API about rules.
+        /// </summary>
         [Output("ruleErrors")]
         public Output<ImmutableArray<Outputs.PropertyActivationRuleError>> RuleErrors { get; private set; } = null!;
 
+        /// <summary>
+        /// The property version's activation status on the given network.
+        /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// Enables to set timeout for processing
+        /// Enables to set timeout for processing.
         /// </summary>
         [Output("timeouts")]
         public Output<Outputs.PropertyActivationTimeouts?> Timeouts { get; private set; } = null!;
 
+        /// <summary>
+        /// Your property's version number.
+        /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
 
+        /// <summary>
+        /// Warnings returned during activation.
+        /// </summary>
         [Output("warnings")]
         public Output<string> Warnings { get; private set; } = null!;
 
@@ -113,6 +140,9 @@ namespace Pulumi.Akamai
 
     public sealed class PropertyActivationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID given to the activation event while it's in progress.
+        /// </summary>
         [Input("activationId")]
         public Input<string>? ActivationId { get; set; }
 
@@ -123,37 +153,50 @@ namespace Pulumi.Akamai
         public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
 
         /// <summary>
-        /// Provides an audit record when activating on a production network
+        /// Provides an audit record when activating on a production network.
         /// </summary>
         [Input("complianceRecord")]
         public Input<Inputs.PropertyActivationComplianceRecordArgs>? ComplianceRecord { get; set; }
 
         [Input("contacts", required: true)]
         private InputList<string>? _contacts;
+
+        /// <summary>
+        /// One or more email addresses to which to send activation status changes.
+        /// </summary>
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
             set => _contacts = value;
         }
 
+        /// <summary>
+        /// Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// assigns a log message to the activation request
+        /// Assigns a log message to the activation request.
         /// </summary>
         [Input("note")]
         public Input<string>? Note { get; set; }
 
+        /// <summary>
+        /// Your property's ID, including the prp_ prefix.
+        /// </summary>
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
 
         /// <summary>
-        /// Enables to set timeout for processing
+        /// Enables to set timeout for processing.
         /// </summary>
         [Input("timeouts")]
         public Input<Inputs.PropertyActivationTimeoutsArgs>? Timeouts { get; set; }
 
+        /// <summary>
+        /// Your property's version number.
+        /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 
@@ -165,6 +208,9 @@ namespace Pulumi.Akamai
 
     public sealed class PropertyActivationState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID given to the activation event while it's in progress.
+        /// </summary>
         [Input("activationId")]
         public Input<string>? ActivationId { get; set; }
 
@@ -175,54 +221,80 @@ namespace Pulumi.Akamai
         public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
 
         /// <summary>
-        /// Provides an audit record when activating on a production network
+        /// Provides an audit record when activating on a production network.
         /// </summary>
         [Input("complianceRecord")]
         public Input<Inputs.PropertyActivationComplianceRecordGetArgs>? ComplianceRecord { get; set; }
 
         [Input("contacts")]
         private InputList<string>? _contacts;
+
+        /// <summary>
+        /// One or more email addresses to which to send activation status changes.
+        /// </summary>
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
             set => _contacts = value;
         }
 
+        /// <summary>
+        /// Errors returned during activation.
+        /// </summary>
         [Input("errors")]
         public Input<string>? Errors { get; set; }
 
+        /// <summary>
+        /// Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+        /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// assigns a log message to the activation request
+        /// Assigns a log message to the activation request.
         /// </summary>
         [Input("note")]
         public Input<string>? Note { get; set; }
 
+        /// <summary>
+        /// Your property's ID, including the prp_ prefix.
+        /// </summary>
         [Input("propertyId")]
         public Input<string>? PropertyId { get; set; }
 
         [Input("ruleErrors")]
         private InputList<Inputs.PropertyActivationRuleErrorGetArgs>? _ruleErrors;
+
+        /// <summary>
+        /// Any errors returned by the API about rules.
+        /// </summary>
         public InputList<Inputs.PropertyActivationRuleErrorGetArgs> RuleErrors
         {
             get => _ruleErrors ?? (_ruleErrors = new InputList<Inputs.PropertyActivationRuleErrorGetArgs>());
             set => _ruleErrors = value;
         }
 
+        /// <summary>
+        /// The property version's activation status on the given network.
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// Enables to set timeout for processing
+        /// Enables to set timeout for processing.
         /// </summary>
         [Input("timeouts")]
         public Input<Inputs.PropertyActivationTimeoutsGetArgs>? Timeouts { get; set; }
 
+        /// <summary>
+        /// Your property's version number.
+        /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 
+        /// <summary>
+        /// Warnings returned during activation.
+        /// </summary>
         [Input("warnings")]
         public Input<string>? Warnings { get; set; }
 

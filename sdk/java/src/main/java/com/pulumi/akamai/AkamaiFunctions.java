@@ -278,6 +278,8 @@ import com.pulumi.akamai.inputs.GetIamAccountSwitchKeysArgs;
 import com.pulumi.akamai.inputs.GetIamAccountSwitchKeysPlainArgs;
 import com.pulumi.akamai.inputs.GetIamAllowedApisArgs;
 import com.pulumi.akamai.inputs.GetIamAllowedApisPlainArgs;
+import com.pulumi.akamai.inputs.GetIamApiClientArgs;
+import com.pulumi.akamai.inputs.GetIamApiClientPlainArgs;
 import com.pulumi.akamai.inputs.GetIamBlockedPropertiesArgs;
 import com.pulumi.akamai.inputs.GetIamBlockedPropertiesPlainArgs;
 import com.pulumi.akamai.inputs.GetIamCidrBlockArgs;
@@ -473,6 +475,8 @@ import com.pulumi.akamai.outputs.GetGtmResourceResult;
 import com.pulumi.akamai.outputs.GetGtmResourcesResult;
 import com.pulumi.akamai.outputs.GetIamAccountSwitchKeysResult;
 import com.pulumi.akamai.outputs.GetIamAllowedApisResult;
+import com.pulumi.akamai.outputs.GetIamApiClientResult;
+import com.pulumi.akamai.outputs.GetIamApiClientsResult;
 import com.pulumi.akamai.outputs.GetIamBlockedPropertiesResult;
 import com.pulumi.akamai.outputs.GetIamCidrBlockResult;
 import com.pulumi.akamai.outputs.GetIamCidrBlocksResult;
@@ -2126,6 +2130,12 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetCloudletsPhasedReleaseMatchRuleResult> getCloudletsPhasedReleaseMatchRulePlain(GetCloudletsPhasedReleaseMatchRulePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", TypeShape.of(GetCloudletsPhasedReleaseMatchRuleResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetCloudletsPolicyResult> getCloudletsPolicy() {
+        return getCloudletsPolicy(GetCloudletsPolicyArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudletsPolicyResult> getCloudletsPolicyPlain() {
+        return getCloudletsPolicyPlain(GetCloudletsPolicyPlainArgs.Empty, InvokeOptions.Empty);
+    }
     public static Output<GetCloudletsPolicyResult> getCloudletsPolicy(GetCloudletsPolicyArgs args) {
         return getCloudletsPolicy(args, InvokeOptions.Empty);
     }
@@ -2854,6 +2864,48 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetIamAllowedApisResult> getIamAllowedApisPlain(GetIamAllowedApisPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getIamAllowedApis:getIamAllowedApis", TypeShape.of(GetIamAllowedApisResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetIamApiClientResult> getIamApiClient() {
+        return getIamApiClient(GetIamApiClientArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetIamApiClientResult> getIamApiClientPlain() {
+        return getIamApiClientPlain(GetIamApiClientPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetIamApiClientResult> getIamApiClient(GetIamApiClientArgs args) {
+        return getIamApiClient(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetIamApiClientResult> getIamApiClientPlain(GetIamApiClientPlainArgs args) {
+        return getIamApiClientPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetIamApiClientResult> getIamApiClient(GetIamApiClientArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getIamApiClient:getIamApiClient", TypeShape.of(GetIamApiClientResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetIamApiClientResult> getIamApiClient(GetIamApiClientArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getIamApiClient:getIamApiClient", TypeShape.of(GetIamApiClientResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetIamApiClientResult> getIamApiClientPlain(GetIamApiClientPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getIamApiClient:getIamApiClient", TypeShape.of(GetIamApiClientResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetIamApiClientsResult> getIamApiClients() {
+        return getIamApiClients(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetIamApiClientsResult> getIamApiClientsPlain() {
+        return getIamApiClientsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetIamApiClientsResult> getIamApiClients(InvokeArgs args) {
+        return getIamApiClients(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetIamApiClientsResult> getIamApiClientsPlain(InvokeArgs args) {
+        return getIamApiClientsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetIamApiClientsResult> getIamApiClients(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getIamApiClients:getIamApiClients", TypeShape.of(GetIamApiClientsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetIamApiClientsResult> getIamApiClients(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getIamApiClients:getIamApiClients", TypeShape.of(GetIamApiClientsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetIamApiClientsResult> getIamApiClientsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getIamApiClients:getIamApiClients", TypeShape.of(GetIamApiClientsResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetIamBlockedPropertiesResult> getIamBlockedProperties(GetIamBlockedPropertiesArgs args) {
         return getIamBlockedProperties(args, InvokeOptions.Empty);

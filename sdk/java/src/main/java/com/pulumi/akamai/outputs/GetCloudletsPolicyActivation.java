@@ -14,50 +14,50 @@ import java.util.Objects;
 @CustomType
 public final class GetCloudletsPolicyActivation {
     /**
-     * @return The specific version of this API
+     * @return The specific version of this API.
      * 
      */
     private String apiVersion;
     /**
-     * @return The network type, either &#39;staging&#39; or &#39;prod&#39; where a property or a Cloudlet policy has been activated
+     * @return The network type, either &#39;staging&#39; or &#39;prod&#39; where a property or a Cloudlet policy has been activated.
      * 
      */
     private String network;
     /**
-     * @return The object containing Cloudlet policy information
+     * @return The object containing Cloudlet policy information.
      * 
      */
     private List<GetCloudletsPolicyActivationPolicyInfo> policyInfos;
     /**
-     * @return A set containing information about the property associated with a particular Cloudlet policy
+     * @return A set containing information about the property associated with a particular Cloudlet policy.
      * 
      */
     private List<GetCloudletsPolicyActivationPropertyInfo> propertyInfos;
 
     private GetCloudletsPolicyActivation() {}
     /**
-     * @return The specific version of this API
+     * @return The specific version of this API.
      * 
      */
     public String apiVersion() {
         return this.apiVersion;
     }
     /**
-     * @return The network type, either &#39;staging&#39; or &#39;prod&#39; where a property or a Cloudlet policy has been activated
+     * @return The network type, either &#39;staging&#39; or &#39;prod&#39; where a property or a Cloudlet policy has been activated.
      * 
      */
     public String network() {
         return this.network;
     }
     /**
-     * @return The object containing Cloudlet policy information
+     * @return The object containing Cloudlet policy information.
      * 
      */
     public List<GetCloudletsPolicyActivationPolicyInfo> policyInfos() {
         return this.policyInfos;
     }
     /**
-     * @return A set containing information about the property associated with a particular Cloudlet policy
+     * @return A set containing information about the property associated with a particular Cloudlet policy.
      * 
      */
     public List<GetCloudletsPolicyActivationPropertyInfo> propertyInfos() {

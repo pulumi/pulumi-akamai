@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v9/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,8 +23,9 @@ func LookupCloudletsPolicy(ctx *pulumi.Context, args *LookupCloudletsPolicyArgs,
 
 // A collection of arguments for invoking getCloudletsPolicy.
 type LookupCloudletsPolicyArgs struct {
-	PolicyId int  `pulumi:"policyId"`
-	Version  *int `pulumi:"version"`
+	Name     *string `pulumi:"name"`
+	PolicyId *int    `pulumi:"policyId"`
+	Version  *int    `pulumi:"version"`
 }
 
 // A collection of values returned by getCloudletsPolicy.
@@ -59,8 +60,9 @@ func LookupCloudletsPolicyOutput(ctx *pulumi.Context, args LookupCloudletsPolicy
 
 // A collection of arguments for invoking getCloudletsPolicy.
 type LookupCloudletsPolicyOutputArgs struct {
-	PolicyId pulumi.IntInput    `pulumi:"policyId"`
-	Version  pulumi.IntPtrInput `pulumi:"version"`
+	Name     pulumi.StringPtrInput `pulumi:"name"`
+	PolicyId pulumi.IntPtrInput    `pulumi:"policyId"`
+	Version  pulumi.IntPtrInput    `pulumi:"version"`
 }
 
 func (LookupCloudletsPolicyOutputArgs) ElementType() reflect.Type {

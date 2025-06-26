@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v9/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -13052,6 +13052,2079 @@ func (o GtmResourceResourceInstanceArrayOutput) Index(i pulumi.IntInput) GtmReso
 	}).(GtmResourceResourceInstanceOutput)
 }
 
+type IamApiClientActions struct {
+	// Whether you can deactivate the API client's credentials.
+	DeactivateAll *bool `pulumi:"deactivateAll"`
+	// Whether you can remove the API client.
+	Delete *bool `pulumi:"delete"`
+	// Whether you can update the API client.
+	Edit *bool `pulumi:"edit"`
+	// Whether you can update the `apis` the API client can access, same as `editAuth`.
+	EditApis *bool `pulumi:"editApis"`
+	// Whether you can update the `apis` the API client can access, same as `editApis`.
+	EditAuth *bool `pulumi:"editAuth"`
+	// Whether you can update the `groups` the API client can access.
+	EditGroups *bool `pulumi:"editGroups"`
+	// Whether you can update the 'ip acl' the API client can access.
+	EditIpAcl *bool `pulumi:"editIpAcl"`
+	// Whether you can update the API client's option to manage many accounts.
+	EditSwitchAccount *bool `pulumi:"editSwitchAccount"`
+	// Whether you can lock the API client.
+	Lock *bool `pulumi:"lock"`
+	// Whether you can transfer the API client to a new owner.
+	Transfer *bool `pulumi:"transfer"`
+	// Whether you can unlock the API client.
+	Unlock *bool `pulumi:"unlock"`
+}
+
+// IamApiClientActionsInput is an input type that accepts IamApiClientActionsArgs and IamApiClientActionsOutput values.
+// You can construct a concrete instance of `IamApiClientActionsInput` via:
+//
+//	IamApiClientActionsArgs{...}
+type IamApiClientActionsInput interface {
+	pulumi.Input
+
+	ToIamApiClientActionsOutput() IamApiClientActionsOutput
+	ToIamApiClientActionsOutputWithContext(context.Context) IamApiClientActionsOutput
+}
+
+type IamApiClientActionsArgs struct {
+	// Whether you can deactivate the API client's credentials.
+	DeactivateAll pulumi.BoolPtrInput `pulumi:"deactivateAll"`
+	// Whether you can remove the API client.
+	Delete pulumi.BoolPtrInput `pulumi:"delete"`
+	// Whether you can update the API client.
+	Edit pulumi.BoolPtrInput `pulumi:"edit"`
+	// Whether you can update the `apis` the API client can access, same as `editAuth`.
+	EditApis pulumi.BoolPtrInput `pulumi:"editApis"`
+	// Whether you can update the `apis` the API client can access, same as `editApis`.
+	EditAuth pulumi.BoolPtrInput `pulumi:"editAuth"`
+	// Whether you can update the `groups` the API client can access.
+	EditGroups pulumi.BoolPtrInput `pulumi:"editGroups"`
+	// Whether you can update the 'ip acl' the API client can access.
+	EditIpAcl pulumi.BoolPtrInput `pulumi:"editIpAcl"`
+	// Whether you can update the API client's option to manage many accounts.
+	EditSwitchAccount pulumi.BoolPtrInput `pulumi:"editSwitchAccount"`
+	// Whether you can lock the API client.
+	Lock pulumi.BoolPtrInput `pulumi:"lock"`
+	// Whether you can transfer the API client to a new owner.
+	Transfer pulumi.BoolPtrInput `pulumi:"transfer"`
+	// Whether you can unlock the API client.
+	Unlock pulumi.BoolPtrInput `pulumi:"unlock"`
+}
+
+func (IamApiClientActionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientActions)(nil)).Elem()
+}
+
+func (i IamApiClientActionsArgs) ToIamApiClientActionsOutput() IamApiClientActionsOutput {
+	return i.ToIamApiClientActionsOutputWithContext(context.Background())
+}
+
+func (i IamApiClientActionsArgs) ToIamApiClientActionsOutputWithContext(ctx context.Context) IamApiClientActionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientActionsOutput)
+}
+
+func (i IamApiClientActionsArgs) ToIamApiClientActionsPtrOutput() IamApiClientActionsPtrOutput {
+	return i.ToIamApiClientActionsPtrOutputWithContext(context.Background())
+}
+
+func (i IamApiClientActionsArgs) ToIamApiClientActionsPtrOutputWithContext(ctx context.Context) IamApiClientActionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientActionsOutput).ToIamApiClientActionsPtrOutputWithContext(ctx)
+}
+
+// IamApiClientActionsPtrInput is an input type that accepts IamApiClientActionsArgs, IamApiClientActionsPtr and IamApiClientActionsPtrOutput values.
+// You can construct a concrete instance of `IamApiClientActionsPtrInput` via:
+//
+//	        IamApiClientActionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type IamApiClientActionsPtrInput interface {
+	pulumi.Input
+
+	ToIamApiClientActionsPtrOutput() IamApiClientActionsPtrOutput
+	ToIamApiClientActionsPtrOutputWithContext(context.Context) IamApiClientActionsPtrOutput
+}
+
+type iamApiClientActionsPtrType IamApiClientActionsArgs
+
+func IamApiClientActionsPtr(v *IamApiClientActionsArgs) IamApiClientActionsPtrInput {
+	return (*iamApiClientActionsPtrType)(v)
+}
+
+func (*iamApiClientActionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientActions)(nil)).Elem()
+}
+
+func (i *iamApiClientActionsPtrType) ToIamApiClientActionsPtrOutput() IamApiClientActionsPtrOutput {
+	return i.ToIamApiClientActionsPtrOutputWithContext(context.Background())
+}
+
+func (i *iamApiClientActionsPtrType) ToIamApiClientActionsPtrOutputWithContext(ctx context.Context) IamApiClientActionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientActionsPtrOutput)
+}
+
+type IamApiClientActionsOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientActionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientActions)(nil)).Elem()
+}
+
+func (o IamApiClientActionsOutput) ToIamApiClientActionsOutput() IamApiClientActionsOutput {
+	return o
+}
+
+func (o IamApiClientActionsOutput) ToIamApiClientActionsOutputWithContext(ctx context.Context) IamApiClientActionsOutput {
+	return o
+}
+
+func (o IamApiClientActionsOutput) ToIamApiClientActionsPtrOutput() IamApiClientActionsPtrOutput {
+	return o.ToIamApiClientActionsPtrOutputWithContext(context.Background())
+}
+
+func (o IamApiClientActionsOutput) ToIamApiClientActionsPtrOutputWithContext(ctx context.Context) IamApiClientActionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IamApiClientActions) *IamApiClientActions {
+		return &v
+	}).(IamApiClientActionsPtrOutput)
+}
+
+// Whether you can deactivate the API client's credentials.
+func (o IamApiClientActionsOutput) DeactivateAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.DeactivateAll }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can remove the API client.
+func (o IamApiClientActionsOutput) Delete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.Delete }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the API client.
+func (o IamApiClientActionsOutput) Edit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.Edit }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the `apis` the API client can access, same as `editAuth`.
+func (o IamApiClientActionsOutput) EditApis() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.EditApis }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the `apis` the API client can access, same as `editApis`.
+func (o IamApiClientActionsOutput) EditAuth() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.EditAuth }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the `groups` the API client can access.
+func (o IamApiClientActionsOutput) EditGroups() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.EditGroups }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the 'ip acl' the API client can access.
+func (o IamApiClientActionsOutput) EditIpAcl() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.EditIpAcl }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the API client's option to manage many accounts.
+func (o IamApiClientActionsOutput) EditSwitchAccount() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.EditSwitchAccount }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can lock the API client.
+func (o IamApiClientActionsOutput) Lock() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.Lock }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can transfer the API client to a new owner.
+func (o IamApiClientActionsOutput) Transfer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.Transfer }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can unlock the API client.
+func (o IamApiClientActionsOutput) Unlock() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientActions) *bool { return v.Unlock }).(pulumi.BoolPtrOutput)
+}
+
+type IamApiClientActionsPtrOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientActionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientActions)(nil)).Elem()
+}
+
+func (o IamApiClientActionsPtrOutput) ToIamApiClientActionsPtrOutput() IamApiClientActionsPtrOutput {
+	return o
+}
+
+func (o IamApiClientActionsPtrOutput) ToIamApiClientActionsPtrOutputWithContext(ctx context.Context) IamApiClientActionsPtrOutput {
+	return o
+}
+
+func (o IamApiClientActionsPtrOutput) Elem() IamApiClientActionsOutput {
+	return o.ApplyT(func(v *IamApiClientActions) IamApiClientActions {
+		if v != nil {
+			return *v
+		}
+		var ret IamApiClientActions
+		return ret
+	}).(IamApiClientActionsOutput)
+}
+
+// Whether you can deactivate the API client's credentials.
+func (o IamApiClientActionsPtrOutput) DeactivateAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DeactivateAll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can remove the API client.
+func (o IamApiClientActionsPtrOutput) Delete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Delete
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the API client.
+func (o IamApiClientActionsPtrOutput) Edit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Edit
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the `apis` the API client can access, same as `editAuth`.
+func (o IamApiClientActionsPtrOutput) EditApis() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EditApis
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the `apis` the API client can access, same as `editApis`.
+func (o IamApiClientActionsPtrOutput) EditAuth() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EditAuth
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the `groups` the API client can access.
+func (o IamApiClientActionsPtrOutput) EditGroups() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EditGroups
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the 'ip acl' the API client can access.
+func (o IamApiClientActionsPtrOutput) EditIpAcl() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EditIpAcl
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can update the API client's option to manage many accounts.
+func (o IamApiClientActionsPtrOutput) EditSwitchAccount() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EditSwitchAccount
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can lock the API client.
+func (o IamApiClientActionsPtrOutput) Lock() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Lock
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can transfer the API client to a new owner.
+func (o IamApiClientActionsPtrOutput) Transfer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Transfer
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can unlock the API client.
+func (o IamApiClientActionsPtrOutput) Unlock() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Unlock
+	}).(pulumi.BoolPtrOutput)
+}
+
+type IamApiClientApiAccess struct {
+	// Enables the API client to access a full set of available APIs.
+	AllAccessibleApis bool `pulumi:"allAccessibleApis"`
+	// The set of APIs the API client can access when `allAccessibleApis` is `false`.
+	Apis []IamApiClientApiAccessApi `pulumi:"apis"`
+}
+
+// IamApiClientApiAccessInput is an input type that accepts IamApiClientApiAccessArgs and IamApiClientApiAccessOutput values.
+// You can construct a concrete instance of `IamApiClientApiAccessInput` via:
+//
+//	IamApiClientApiAccessArgs{...}
+type IamApiClientApiAccessInput interface {
+	pulumi.Input
+
+	ToIamApiClientApiAccessOutput() IamApiClientApiAccessOutput
+	ToIamApiClientApiAccessOutputWithContext(context.Context) IamApiClientApiAccessOutput
+}
+
+type IamApiClientApiAccessArgs struct {
+	// Enables the API client to access a full set of available APIs.
+	AllAccessibleApis pulumi.BoolInput `pulumi:"allAccessibleApis"`
+	// The set of APIs the API client can access when `allAccessibleApis` is `false`.
+	Apis IamApiClientApiAccessApiArrayInput `pulumi:"apis"`
+}
+
+func (IamApiClientApiAccessArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientApiAccess)(nil)).Elem()
+}
+
+func (i IamApiClientApiAccessArgs) ToIamApiClientApiAccessOutput() IamApiClientApiAccessOutput {
+	return i.ToIamApiClientApiAccessOutputWithContext(context.Background())
+}
+
+func (i IamApiClientApiAccessArgs) ToIamApiClientApiAccessOutputWithContext(ctx context.Context) IamApiClientApiAccessOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientApiAccessOutput)
+}
+
+func (i IamApiClientApiAccessArgs) ToIamApiClientApiAccessPtrOutput() IamApiClientApiAccessPtrOutput {
+	return i.ToIamApiClientApiAccessPtrOutputWithContext(context.Background())
+}
+
+func (i IamApiClientApiAccessArgs) ToIamApiClientApiAccessPtrOutputWithContext(ctx context.Context) IamApiClientApiAccessPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientApiAccessOutput).ToIamApiClientApiAccessPtrOutputWithContext(ctx)
+}
+
+// IamApiClientApiAccessPtrInput is an input type that accepts IamApiClientApiAccessArgs, IamApiClientApiAccessPtr and IamApiClientApiAccessPtrOutput values.
+// You can construct a concrete instance of `IamApiClientApiAccessPtrInput` via:
+//
+//	        IamApiClientApiAccessArgs{...}
+//
+//	or:
+//
+//	        nil
+type IamApiClientApiAccessPtrInput interface {
+	pulumi.Input
+
+	ToIamApiClientApiAccessPtrOutput() IamApiClientApiAccessPtrOutput
+	ToIamApiClientApiAccessPtrOutputWithContext(context.Context) IamApiClientApiAccessPtrOutput
+}
+
+type iamApiClientApiAccessPtrType IamApiClientApiAccessArgs
+
+func IamApiClientApiAccessPtr(v *IamApiClientApiAccessArgs) IamApiClientApiAccessPtrInput {
+	return (*iamApiClientApiAccessPtrType)(v)
+}
+
+func (*iamApiClientApiAccessPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientApiAccess)(nil)).Elem()
+}
+
+func (i *iamApiClientApiAccessPtrType) ToIamApiClientApiAccessPtrOutput() IamApiClientApiAccessPtrOutput {
+	return i.ToIamApiClientApiAccessPtrOutputWithContext(context.Background())
+}
+
+func (i *iamApiClientApiAccessPtrType) ToIamApiClientApiAccessPtrOutputWithContext(ctx context.Context) IamApiClientApiAccessPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientApiAccessPtrOutput)
+}
+
+type IamApiClientApiAccessOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientApiAccessOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientApiAccess)(nil)).Elem()
+}
+
+func (o IamApiClientApiAccessOutput) ToIamApiClientApiAccessOutput() IamApiClientApiAccessOutput {
+	return o
+}
+
+func (o IamApiClientApiAccessOutput) ToIamApiClientApiAccessOutputWithContext(ctx context.Context) IamApiClientApiAccessOutput {
+	return o
+}
+
+func (o IamApiClientApiAccessOutput) ToIamApiClientApiAccessPtrOutput() IamApiClientApiAccessPtrOutput {
+	return o.ToIamApiClientApiAccessPtrOutputWithContext(context.Background())
+}
+
+func (o IamApiClientApiAccessOutput) ToIamApiClientApiAccessPtrOutputWithContext(ctx context.Context) IamApiClientApiAccessPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IamApiClientApiAccess) *IamApiClientApiAccess {
+		return &v
+	}).(IamApiClientApiAccessPtrOutput)
+}
+
+// Enables the API client to access a full set of available APIs.
+func (o IamApiClientApiAccessOutput) AllAccessibleApis() pulumi.BoolOutput {
+	return o.ApplyT(func(v IamApiClientApiAccess) bool { return v.AllAccessibleApis }).(pulumi.BoolOutput)
+}
+
+// The set of APIs the API client can access when `allAccessibleApis` is `false`.
+func (o IamApiClientApiAccessOutput) Apis() IamApiClientApiAccessApiArrayOutput {
+	return o.ApplyT(func(v IamApiClientApiAccess) []IamApiClientApiAccessApi { return v.Apis }).(IamApiClientApiAccessApiArrayOutput)
+}
+
+type IamApiClientApiAccessPtrOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientApiAccessPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientApiAccess)(nil)).Elem()
+}
+
+func (o IamApiClientApiAccessPtrOutput) ToIamApiClientApiAccessPtrOutput() IamApiClientApiAccessPtrOutput {
+	return o
+}
+
+func (o IamApiClientApiAccessPtrOutput) ToIamApiClientApiAccessPtrOutputWithContext(ctx context.Context) IamApiClientApiAccessPtrOutput {
+	return o
+}
+
+func (o IamApiClientApiAccessPtrOutput) Elem() IamApiClientApiAccessOutput {
+	return o.ApplyT(func(v *IamApiClientApiAccess) IamApiClientApiAccess {
+		if v != nil {
+			return *v
+		}
+		var ret IamApiClientApiAccess
+		return ret
+	}).(IamApiClientApiAccessOutput)
+}
+
+// Enables the API client to access a full set of available APIs.
+func (o IamApiClientApiAccessPtrOutput) AllAccessibleApis() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientApiAccess) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.AllAccessibleApis
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The set of APIs the API client can access when `allAccessibleApis` is `false`.
+func (o IamApiClientApiAccessPtrOutput) Apis() IamApiClientApiAccessApiArrayOutput {
+	return o.ApplyT(func(v *IamApiClientApiAccess) []IamApiClientApiAccessApi {
+		if v == nil {
+			return nil
+		}
+		return v.Apis
+	}).(IamApiClientApiAccessApiArrayOutput)
+}
+
+type IamApiClientApiAccessApi struct {
+	// The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
+	AccessLevel string `pulumi:"accessLevel"`
+	// A unique identifier of the API.
+	ApiId int `pulumi:"apiId"`
+	// A human-readable name for the API.
+	ApiName *string `pulumi:"apiName"`
+	// A human-readable description for the API.
+	Description *string `pulumi:"description"`
+	// A link to more information about the API.
+	DocumentationUrl *string `pulumi:"documentationUrl"`
+	// Specifies where the API can access resources.
+	Endpoint *string `pulumi:"endpoint"`
+}
+
+// IamApiClientApiAccessApiInput is an input type that accepts IamApiClientApiAccessApiArgs and IamApiClientApiAccessApiOutput values.
+// You can construct a concrete instance of `IamApiClientApiAccessApiInput` via:
+//
+//	IamApiClientApiAccessApiArgs{...}
+type IamApiClientApiAccessApiInput interface {
+	pulumi.Input
+
+	ToIamApiClientApiAccessApiOutput() IamApiClientApiAccessApiOutput
+	ToIamApiClientApiAccessApiOutputWithContext(context.Context) IamApiClientApiAccessApiOutput
+}
+
+type IamApiClientApiAccessApiArgs struct {
+	// The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
+	AccessLevel pulumi.StringInput `pulumi:"accessLevel"`
+	// A unique identifier of the API.
+	ApiId pulumi.IntInput `pulumi:"apiId"`
+	// A human-readable name for the API.
+	ApiName pulumi.StringPtrInput `pulumi:"apiName"`
+	// A human-readable description for the API.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A link to more information about the API.
+	DocumentationUrl pulumi.StringPtrInput `pulumi:"documentationUrl"`
+	// Specifies where the API can access resources.
+	Endpoint pulumi.StringPtrInput `pulumi:"endpoint"`
+}
+
+func (IamApiClientApiAccessApiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientApiAccessApi)(nil)).Elem()
+}
+
+func (i IamApiClientApiAccessApiArgs) ToIamApiClientApiAccessApiOutput() IamApiClientApiAccessApiOutput {
+	return i.ToIamApiClientApiAccessApiOutputWithContext(context.Background())
+}
+
+func (i IamApiClientApiAccessApiArgs) ToIamApiClientApiAccessApiOutputWithContext(ctx context.Context) IamApiClientApiAccessApiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientApiAccessApiOutput)
+}
+
+// IamApiClientApiAccessApiArrayInput is an input type that accepts IamApiClientApiAccessApiArray and IamApiClientApiAccessApiArrayOutput values.
+// You can construct a concrete instance of `IamApiClientApiAccessApiArrayInput` via:
+//
+//	IamApiClientApiAccessApiArray{ IamApiClientApiAccessApiArgs{...} }
+type IamApiClientApiAccessApiArrayInput interface {
+	pulumi.Input
+
+	ToIamApiClientApiAccessApiArrayOutput() IamApiClientApiAccessApiArrayOutput
+	ToIamApiClientApiAccessApiArrayOutputWithContext(context.Context) IamApiClientApiAccessApiArrayOutput
+}
+
+type IamApiClientApiAccessApiArray []IamApiClientApiAccessApiInput
+
+func (IamApiClientApiAccessApiArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IamApiClientApiAccessApi)(nil)).Elem()
+}
+
+func (i IamApiClientApiAccessApiArray) ToIamApiClientApiAccessApiArrayOutput() IamApiClientApiAccessApiArrayOutput {
+	return i.ToIamApiClientApiAccessApiArrayOutputWithContext(context.Background())
+}
+
+func (i IamApiClientApiAccessApiArray) ToIamApiClientApiAccessApiArrayOutputWithContext(ctx context.Context) IamApiClientApiAccessApiArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientApiAccessApiArrayOutput)
+}
+
+type IamApiClientApiAccessApiOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientApiAccessApiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientApiAccessApi)(nil)).Elem()
+}
+
+func (o IamApiClientApiAccessApiOutput) ToIamApiClientApiAccessApiOutput() IamApiClientApiAccessApiOutput {
+	return o
+}
+
+func (o IamApiClientApiAccessApiOutput) ToIamApiClientApiAccessApiOutputWithContext(ctx context.Context) IamApiClientApiAccessApiOutput {
+	return o
+}
+
+// The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
+func (o IamApiClientApiAccessApiOutput) AccessLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v IamApiClientApiAccessApi) string { return v.AccessLevel }).(pulumi.StringOutput)
+}
+
+// A unique identifier of the API.
+func (o IamApiClientApiAccessApiOutput) ApiId() pulumi.IntOutput {
+	return o.ApplyT(func(v IamApiClientApiAccessApi) int { return v.ApiId }).(pulumi.IntOutput)
+}
+
+// A human-readable name for the API.
+func (o IamApiClientApiAccessApiOutput) ApiName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientApiAccessApi) *string { return v.ApiName }).(pulumi.StringPtrOutput)
+}
+
+// A human-readable description for the API.
+func (o IamApiClientApiAccessApiOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientApiAccessApi) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A link to more information about the API.
+func (o IamApiClientApiAccessApiOutput) DocumentationUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientApiAccessApi) *string { return v.DocumentationUrl }).(pulumi.StringPtrOutput)
+}
+
+// Specifies where the API can access resources.
+func (o IamApiClientApiAccessApiOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientApiAccessApi) *string { return v.Endpoint }).(pulumi.StringPtrOutput)
+}
+
+type IamApiClientApiAccessApiArrayOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientApiAccessApiArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IamApiClientApiAccessApi)(nil)).Elem()
+}
+
+func (o IamApiClientApiAccessApiArrayOutput) ToIamApiClientApiAccessApiArrayOutput() IamApiClientApiAccessApiArrayOutput {
+	return o
+}
+
+func (o IamApiClientApiAccessApiArrayOutput) ToIamApiClientApiAccessApiArrayOutputWithContext(ctx context.Context) IamApiClientApiAccessApiArrayOutput {
+	return o
+}
+
+func (o IamApiClientApiAccessApiArrayOutput) Index(i pulumi.IntInput) IamApiClientApiAccessApiOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IamApiClientApiAccessApi {
+		return vs[0].([]IamApiClientApiAccessApi)[vs[1].(int)]
+	}).(IamApiClientApiAccessApiOutput)
+}
+
+type IamApiClientCredential struct {
+	// Actions available on the API client's credentials.
+	Actions *IamApiClientCredentialActions `pulumi:"actions"`
+	// The client secret.
+	ClientSecret *string `pulumi:"clientSecret"`
+	// The part of the credential that identifies the API client.
+	ClientToken *string `pulumi:"clientToken"`
+	// The ISO 8601 timestamp indicating when the credential was created.
+	CreatedOn *string `pulumi:"createdOn"`
+	// A unique identifier of the credential.
+	CredentialId *int `pulumi:"credentialId"`
+	// A human-readable description for the credential.
+	Description *string `pulumi:"description"`
+	// The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+	ExpiresOn *string `pulumi:"expiresOn"`
+	// Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+	Status *string `pulumi:"status"`
+}
+
+// IamApiClientCredentialInput is an input type that accepts IamApiClientCredentialArgs and IamApiClientCredentialOutput values.
+// You can construct a concrete instance of `IamApiClientCredentialInput` via:
+//
+//	IamApiClientCredentialArgs{...}
+type IamApiClientCredentialInput interface {
+	pulumi.Input
+
+	ToIamApiClientCredentialOutput() IamApiClientCredentialOutput
+	ToIamApiClientCredentialOutputWithContext(context.Context) IamApiClientCredentialOutput
+}
+
+type IamApiClientCredentialArgs struct {
+	// Actions available on the API client's credentials.
+	Actions IamApiClientCredentialActionsPtrInput `pulumi:"actions"`
+	// The client secret.
+	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
+	// The part of the credential that identifies the API client.
+	ClientToken pulumi.StringPtrInput `pulumi:"clientToken"`
+	// The ISO 8601 timestamp indicating when the credential was created.
+	CreatedOn pulumi.StringPtrInput `pulumi:"createdOn"`
+	// A unique identifier of the credential.
+	CredentialId pulumi.IntPtrInput `pulumi:"credentialId"`
+	// A human-readable description for the credential.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+	ExpiresOn pulumi.StringPtrInput `pulumi:"expiresOn"`
+	// Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (IamApiClientCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientCredential)(nil)).Elem()
+}
+
+func (i IamApiClientCredentialArgs) ToIamApiClientCredentialOutput() IamApiClientCredentialOutput {
+	return i.ToIamApiClientCredentialOutputWithContext(context.Background())
+}
+
+func (i IamApiClientCredentialArgs) ToIamApiClientCredentialOutputWithContext(ctx context.Context) IamApiClientCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientCredentialOutput)
+}
+
+func (i IamApiClientCredentialArgs) ToIamApiClientCredentialPtrOutput() IamApiClientCredentialPtrOutput {
+	return i.ToIamApiClientCredentialPtrOutputWithContext(context.Background())
+}
+
+func (i IamApiClientCredentialArgs) ToIamApiClientCredentialPtrOutputWithContext(ctx context.Context) IamApiClientCredentialPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientCredentialOutput).ToIamApiClientCredentialPtrOutputWithContext(ctx)
+}
+
+// IamApiClientCredentialPtrInput is an input type that accepts IamApiClientCredentialArgs, IamApiClientCredentialPtr and IamApiClientCredentialPtrOutput values.
+// You can construct a concrete instance of `IamApiClientCredentialPtrInput` via:
+//
+//	        IamApiClientCredentialArgs{...}
+//
+//	or:
+//
+//	        nil
+type IamApiClientCredentialPtrInput interface {
+	pulumi.Input
+
+	ToIamApiClientCredentialPtrOutput() IamApiClientCredentialPtrOutput
+	ToIamApiClientCredentialPtrOutputWithContext(context.Context) IamApiClientCredentialPtrOutput
+}
+
+type iamApiClientCredentialPtrType IamApiClientCredentialArgs
+
+func IamApiClientCredentialPtr(v *IamApiClientCredentialArgs) IamApiClientCredentialPtrInput {
+	return (*iamApiClientCredentialPtrType)(v)
+}
+
+func (*iamApiClientCredentialPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientCredential)(nil)).Elem()
+}
+
+func (i *iamApiClientCredentialPtrType) ToIamApiClientCredentialPtrOutput() IamApiClientCredentialPtrOutput {
+	return i.ToIamApiClientCredentialPtrOutputWithContext(context.Background())
+}
+
+func (i *iamApiClientCredentialPtrType) ToIamApiClientCredentialPtrOutputWithContext(ctx context.Context) IamApiClientCredentialPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientCredentialPtrOutput)
+}
+
+type IamApiClientCredentialOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientCredential)(nil)).Elem()
+}
+
+func (o IamApiClientCredentialOutput) ToIamApiClientCredentialOutput() IamApiClientCredentialOutput {
+	return o
+}
+
+func (o IamApiClientCredentialOutput) ToIamApiClientCredentialOutputWithContext(ctx context.Context) IamApiClientCredentialOutput {
+	return o
+}
+
+func (o IamApiClientCredentialOutput) ToIamApiClientCredentialPtrOutput() IamApiClientCredentialPtrOutput {
+	return o.ToIamApiClientCredentialPtrOutputWithContext(context.Background())
+}
+
+func (o IamApiClientCredentialOutput) ToIamApiClientCredentialPtrOutputWithContext(ctx context.Context) IamApiClientCredentialPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IamApiClientCredential) *IamApiClientCredential {
+		return &v
+	}).(IamApiClientCredentialPtrOutput)
+}
+
+// Actions available on the API client's credentials.
+func (o IamApiClientCredentialOutput) Actions() IamApiClientCredentialActionsPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredential) *IamApiClientCredentialActions { return v.Actions }).(IamApiClientCredentialActionsPtrOutput)
+}
+
+// The client secret.
+func (o IamApiClientCredentialOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredential) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
+}
+
+// The part of the credential that identifies the API client.
+func (o IamApiClientCredentialOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredential) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
+}
+
+// The ISO 8601 timestamp indicating when the credential was created.
+func (o IamApiClientCredentialOutput) CreatedOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredential) *string { return v.CreatedOn }).(pulumi.StringPtrOutput)
+}
+
+// A unique identifier of the credential.
+func (o IamApiClientCredentialOutput) CredentialId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredential) *int { return v.CredentialId }).(pulumi.IntPtrOutput)
+}
+
+// A human-readable description for the credential.
+func (o IamApiClientCredentialOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredential) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+func (o IamApiClientCredentialOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredential) *string { return v.ExpiresOn }).(pulumi.StringPtrOutput)
+}
+
+// Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+func (o IamApiClientCredentialOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredential) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type IamApiClientCredentialPtrOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientCredentialPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientCredential)(nil)).Elem()
+}
+
+func (o IamApiClientCredentialPtrOutput) ToIamApiClientCredentialPtrOutput() IamApiClientCredentialPtrOutput {
+	return o
+}
+
+func (o IamApiClientCredentialPtrOutput) ToIamApiClientCredentialPtrOutputWithContext(ctx context.Context) IamApiClientCredentialPtrOutput {
+	return o
+}
+
+func (o IamApiClientCredentialPtrOutput) Elem() IamApiClientCredentialOutput {
+	return o.ApplyT(func(v *IamApiClientCredential) IamApiClientCredential {
+		if v != nil {
+			return *v
+		}
+		var ret IamApiClientCredential
+		return ret
+	}).(IamApiClientCredentialOutput)
+}
+
+// Actions available on the API client's credentials.
+func (o IamApiClientCredentialPtrOutput) Actions() IamApiClientCredentialActionsPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredential) *IamApiClientCredentialActions {
+		if v == nil {
+			return nil
+		}
+		return v.Actions
+	}).(IamApiClientCredentialActionsPtrOutput)
+}
+
+// The client secret.
+func (o IamApiClientCredentialPtrOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientSecret
+	}).(pulumi.StringPtrOutput)
+}
+
+// The part of the credential that identifies the API client.
+func (o IamApiClientCredentialPtrOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientToken
+	}).(pulumi.StringPtrOutput)
+}
+
+// The ISO 8601 timestamp indicating when the credential was created.
+func (o IamApiClientCredentialPtrOutput) CreatedOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CreatedOn
+	}).(pulumi.StringPtrOutput)
+}
+
+// A unique identifier of the credential.
+func (o IamApiClientCredentialPtrOutput) CredentialId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredential) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CredentialId
+	}).(pulumi.IntPtrOutput)
+}
+
+// A human-readable description for the credential.
+func (o IamApiClientCredentialPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+func (o IamApiClientCredentialPtrOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExpiresOn
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+func (o IamApiClientCredentialPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+type IamApiClientCredentialActions struct {
+	// Whether you can activate the credential.
+	Activate *bool `pulumi:"activate"`
+	// Whether you can deactivate the credential.
+	Deactivate *bool `pulumi:"deactivate"`
+	// Whether you can remove the credential.
+	Delete *bool `pulumi:"delete"`
+	// Whether you can modify the credential's description.
+	EditDescription *bool `pulumi:"editDescription"`
+	// Whether you can modify the credential's expiration date.
+	EditExpiration *bool `pulumi:"editExpiration"`
+}
+
+// IamApiClientCredentialActionsInput is an input type that accepts IamApiClientCredentialActionsArgs and IamApiClientCredentialActionsOutput values.
+// You can construct a concrete instance of `IamApiClientCredentialActionsInput` via:
+//
+//	IamApiClientCredentialActionsArgs{...}
+type IamApiClientCredentialActionsInput interface {
+	pulumi.Input
+
+	ToIamApiClientCredentialActionsOutput() IamApiClientCredentialActionsOutput
+	ToIamApiClientCredentialActionsOutputWithContext(context.Context) IamApiClientCredentialActionsOutput
+}
+
+type IamApiClientCredentialActionsArgs struct {
+	// Whether you can activate the credential.
+	Activate pulumi.BoolPtrInput `pulumi:"activate"`
+	// Whether you can deactivate the credential.
+	Deactivate pulumi.BoolPtrInput `pulumi:"deactivate"`
+	// Whether you can remove the credential.
+	Delete pulumi.BoolPtrInput `pulumi:"delete"`
+	// Whether you can modify the credential's description.
+	EditDescription pulumi.BoolPtrInput `pulumi:"editDescription"`
+	// Whether you can modify the credential's expiration date.
+	EditExpiration pulumi.BoolPtrInput `pulumi:"editExpiration"`
+}
+
+func (IamApiClientCredentialActionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientCredentialActions)(nil)).Elem()
+}
+
+func (i IamApiClientCredentialActionsArgs) ToIamApiClientCredentialActionsOutput() IamApiClientCredentialActionsOutput {
+	return i.ToIamApiClientCredentialActionsOutputWithContext(context.Background())
+}
+
+func (i IamApiClientCredentialActionsArgs) ToIamApiClientCredentialActionsOutputWithContext(ctx context.Context) IamApiClientCredentialActionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientCredentialActionsOutput)
+}
+
+func (i IamApiClientCredentialActionsArgs) ToIamApiClientCredentialActionsPtrOutput() IamApiClientCredentialActionsPtrOutput {
+	return i.ToIamApiClientCredentialActionsPtrOutputWithContext(context.Background())
+}
+
+func (i IamApiClientCredentialActionsArgs) ToIamApiClientCredentialActionsPtrOutputWithContext(ctx context.Context) IamApiClientCredentialActionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientCredentialActionsOutput).ToIamApiClientCredentialActionsPtrOutputWithContext(ctx)
+}
+
+// IamApiClientCredentialActionsPtrInput is an input type that accepts IamApiClientCredentialActionsArgs, IamApiClientCredentialActionsPtr and IamApiClientCredentialActionsPtrOutput values.
+// You can construct a concrete instance of `IamApiClientCredentialActionsPtrInput` via:
+//
+//	        IamApiClientCredentialActionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type IamApiClientCredentialActionsPtrInput interface {
+	pulumi.Input
+
+	ToIamApiClientCredentialActionsPtrOutput() IamApiClientCredentialActionsPtrOutput
+	ToIamApiClientCredentialActionsPtrOutputWithContext(context.Context) IamApiClientCredentialActionsPtrOutput
+}
+
+type iamApiClientCredentialActionsPtrType IamApiClientCredentialActionsArgs
+
+func IamApiClientCredentialActionsPtr(v *IamApiClientCredentialActionsArgs) IamApiClientCredentialActionsPtrInput {
+	return (*iamApiClientCredentialActionsPtrType)(v)
+}
+
+func (*iamApiClientCredentialActionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientCredentialActions)(nil)).Elem()
+}
+
+func (i *iamApiClientCredentialActionsPtrType) ToIamApiClientCredentialActionsPtrOutput() IamApiClientCredentialActionsPtrOutput {
+	return i.ToIamApiClientCredentialActionsPtrOutputWithContext(context.Background())
+}
+
+func (i *iamApiClientCredentialActionsPtrType) ToIamApiClientCredentialActionsPtrOutputWithContext(ctx context.Context) IamApiClientCredentialActionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientCredentialActionsPtrOutput)
+}
+
+type IamApiClientCredentialActionsOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientCredentialActionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientCredentialActions)(nil)).Elem()
+}
+
+func (o IamApiClientCredentialActionsOutput) ToIamApiClientCredentialActionsOutput() IamApiClientCredentialActionsOutput {
+	return o
+}
+
+func (o IamApiClientCredentialActionsOutput) ToIamApiClientCredentialActionsOutputWithContext(ctx context.Context) IamApiClientCredentialActionsOutput {
+	return o
+}
+
+func (o IamApiClientCredentialActionsOutput) ToIamApiClientCredentialActionsPtrOutput() IamApiClientCredentialActionsPtrOutput {
+	return o.ToIamApiClientCredentialActionsPtrOutputWithContext(context.Background())
+}
+
+func (o IamApiClientCredentialActionsOutput) ToIamApiClientCredentialActionsPtrOutputWithContext(ctx context.Context) IamApiClientCredentialActionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IamApiClientCredentialActions) *IamApiClientCredentialActions {
+		return &v
+	}).(IamApiClientCredentialActionsPtrOutput)
+}
+
+// Whether you can activate the credential.
+func (o IamApiClientCredentialActionsOutput) Activate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredentialActions) *bool { return v.Activate }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can deactivate the credential.
+func (o IamApiClientCredentialActionsOutput) Deactivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredentialActions) *bool { return v.Deactivate }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can remove the credential.
+func (o IamApiClientCredentialActionsOutput) Delete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredentialActions) *bool { return v.Delete }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can modify the credential's description.
+func (o IamApiClientCredentialActionsOutput) EditDescription() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredentialActions) *bool { return v.EditDescription }).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can modify the credential's expiration date.
+func (o IamApiClientCredentialActionsOutput) EditExpiration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientCredentialActions) *bool { return v.EditExpiration }).(pulumi.BoolPtrOutput)
+}
+
+type IamApiClientCredentialActionsPtrOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientCredentialActionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientCredentialActions)(nil)).Elem()
+}
+
+func (o IamApiClientCredentialActionsPtrOutput) ToIamApiClientCredentialActionsPtrOutput() IamApiClientCredentialActionsPtrOutput {
+	return o
+}
+
+func (o IamApiClientCredentialActionsPtrOutput) ToIamApiClientCredentialActionsPtrOutputWithContext(ctx context.Context) IamApiClientCredentialActionsPtrOutput {
+	return o
+}
+
+func (o IamApiClientCredentialActionsPtrOutput) Elem() IamApiClientCredentialActionsOutput {
+	return o.ApplyT(func(v *IamApiClientCredentialActions) IamApiClientCredentialActions {
+		if v != nil {
+			return *v
+		}
+		var ret IamApiClientCredentialActions
+		return ret
+	}).(IamApiClientCredentialActionsOutput)
+}
+
+// Whether you can activate the credential.
+func (o IamApiClientCredentialActionsPtrOutput) Activate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredentialActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Activate
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can deactivate the credential.
+func (o IamApiClientCredentialActionsPtrOutput) Deactivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredentialActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Deactivate
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can remove the credential.
+func (o IamApiClientCredentialActionsPtrOutput) Delete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredentialActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Delete
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can modify the credential's description.
+func (o IamApiClientCredentialActionsPtrOutput) EditDescription() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredentialActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EditDescription
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you can modify the credential's expiration date.
+func (o IamApiClientCredentialActionsPtrOutput) EditExpiration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientCredentialActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EditExpiration
+	}).(pulumi.BoolPtrOutput)
+}
+
+type IamApiClientGroupAccess struct {
+	// Sets the API client's group access the same as the authorized user.
+	CloneAuthorizedUserGroups bool `pulumi:"cloneAuthorizedUserGroups"`
+	// Groups the API client can access.
+	Groups []IamApiClientGroupAccessGroup `pulumi:"groups"`
+}
+
+// IamApiClientGroupAccessInput is an input type that accepts IamApiClientGroupAccessArgs and IamApiClientGroupAccessOutput values.
+// You can construct a concrete instance of `IamApiClientGroupAccessInput` via:
+//
+//	IamApiClientGroupAccessArgs{...}
+type IamApiClientGroupAccessInput interface {
+	pulumi.Input
+
+	ToIamApiClientGroupAccessOutput() IamApiClientGroupAccessOutput
+	ToIamApiClientGroupAccessOutputWithContext(context.Context) IamApiClientGroupAccessOutput
+}
+
+type IamApiClientGroupAccessArgs struct {
+	// Sets the API client's group access the same as the authorized user.
+	CloneAuthorizedUserGroups pulumi.BoolInput `pulumi:"cloneAuthorizedUserGroups"`
+	// Groups the API client can access.
+	Groups IamApiClientGroupAccessGroupArrayInput `pulumi:"groups"`
+}
+
+func (IamApiClientGroupAccessArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientGroupAccess)(nil)).Elem()
+}
+
+func (i IamApiClientGroupAccessArgs) ToIamApiClientGroupAccessOutput() IamApiClientGroupAccessOutput {
+	return i.ToIamApiClientGroupAccessOutputWithContext(context.Background())
+}
+
+func (i IamApiClientGroupAccessArgs) ToIamApiClientGroupAccessOutputWithContext(ctx context.Context) IamApiClientGroupAccessOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientGroupAccessOutput)
+}
+
+func (i IamApiClientGroupAccessArgs) ToIamApiClientGroupAccessPtrOutput() IamApiClientGroupAccessPtrOutput {
+	return i.ToIamApiClientGroupAccessPtrOutputWithContext(context.Background())
+}
+
+func (i IamApiClientGroupAccessArgs) ToIamApiClientGroupAccessPtrOutputWithContext(ctx context.Context) IamApiClientGroupAccessPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientGroupAccessOutput).ToIamApiClientGroupAccessPtrOutputWithContext(ctx)
+}
+
+// IamApiClientGroupAccessPtrInput is an input type that accepts IamApiClientGroupAccessArgs, IamApiClientGroupAccessPtr and IamApiClientGroupAccessPtrOutput values.
+// You can construct a concrete instance of `IamApiClientGroupAccessPtrInput` via:
+//
+//	        IamApiClientGroupAccessArgs{...}
+//
+//	or:
+//
+//	        nil
+type IamApiClientGroupAccessPtrInput interface {
+	pulumi.Input
+
+	ToIamApiClientGroupAccessPtrOutput() IamApiClientGroupAccessPtrOutput
+	ToIamApiClientGroupAccessPtrOutputWithContext(context.Context) IamApiClientGroupAccessPtrOutput
+}
+
+type iamApiClientGroupAccessPtrType IamApiClientGroupAccessArgs
+
+func IamApiClientGroupAccessPtr(v *IamApiClientGroupAccessArgs) IamApiClientGroupAccessPtrInput {
+	return (*iamApiClientGroupAccessPtrType)(v)
+}
+
+func (*iamApiClientGroupAccessPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientGroupAccess)(nil)).Elem()
+}
+
+func (i *iamApiClientGroupAccessPtrType) ToIamApiClientGroupAccessPtrOutput() IamApiClientGroupAccessPtrOutput {
+	return i.ToIamApiClientGroupAccessPtrOutputWithContext(context.Background())
+}
+
+func (i *iamApiClientGroupAccessPtrType) ToIamApiClientGroupAccessPtrOutputWithContext(ctx context.Context) IamApiClientGroupAccessPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientGroupAccessPtrOutput)
+}
+
+type IamApiClientGroupAccessOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientGroupAccessOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientGroupAccess)(nil)).Elem()
+}
+
+func (o IamApiClientGroupAccessOutput) ToIamApiClientGroupAccessOutput() IamApiClientGroupAccessOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessOutput) ToIamApiClientGroupAccessOutputWithContext(ctx context.Context) IamApiClientGroupAccessOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessOutput) ToIamApiClientGroupAccessPtrOutput() IamApiClientGroupAccessPtrOutput {
+	return o.ToIamApiClientGroupAccessPtrOutputWithContext(context.Background())
+}
+
+func (o IamApiClientGroupAccessOutput) ToIamApiClientGroupAccessPtrOutputWithContext(ctx context.Context) IamApiClientGroupAccessPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IamApiClientGroupAccess) *IamApiClientGroupAccess {
+		return &v
+	}).(IamApiClientGroupAccessPtrOutput)
+}
+
+// Sets the API client's group access the same as the authorized user.
+func (o IamApiClientGroupAccessOutput) CloneAuthorizedUserGroups() pulumi.BoolOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccess) bool { return v.CloneAuthorizedUserGroups }).(pulumi.BoolOutput)
+}
+
+// Groups the API client can access.
+func (o IamApiClientGroupAccessOutput) Groups() IamApiClientGroupAccessGroupArrayOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccess) []IamApiClientGroupAccessGroup { return v.Groups }).(IamApiClientGroupAccessGroupArrayOutput)
+}
+
+type IamApiClientGroupAccessPtrOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientGroupAccessPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientGroupAccess)(nil)).Elem()
+}
+
+func (o IamApiClientGroupAccessPtrOutput) ToIamApiClientGroupAccessPtrOutput() IamApiClientGroupAccessPtrOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessPtrOutput) ToIamApiClientGroupAccessPtrOutputWithContext(ctx context.Context) IamApiClientGroupAccessPtrOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessPtrOutput) Elem() IamApiClientGroupAccessOutput {
+	return o.ApplyT(func(v *IamApiClientGroupAccess) IamApiClientGroupAccess {
+		if v != nil {
+			return *v
+		}
+		var ret IamApiClientGroupAccess
+		return ret
+	}).(IamApiClientGroupAccessOutput)
+}
+
+// Sets the API client's group access the same as the authorized user.
+func (o IamApiClientGroupAccessPtrOutput) CloneAuthorizedUserGroups() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientGroupAccess) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.CloneAuthorizedUserGroups
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Groups the API client can access.
+func (o IamApiClientGroupAccessPtrOutput) Groups() IamApiClientGroupAccessGroupArrayOutput {
+	return o.ApplyT(func(v *IamApiClientGroupAccess) []IamApiClientGroupAccessGroup {
+		if v == nil {
+			return nil
+		}
+		return v.Groups
+	}).(IamApiClientGroupAccessGroupArrayOutput)
+}
+
+type IamApiClientGroupAccessGroup struct {
+	// A unique identifier for the group.
+	GroupId int `pulumi:"groupId"`
+	// A human-readable name for the group.
+	GroupName *string `pulumi:"groupName"`
+	// Blocks the API client access to the group's child groups.
+	IsBlocked *bool `pulumi:"isBlocked"`
+	// A unique identifier for the parent group within the group tree.
+	ParentGroupId *int `pulumi:"parentGroupId"`
+	// A human-readable description for the role to convey its use.
+	RoleDescription *string `pulumi:"roleDescription"`
+	// A unique identifier for the role.
+	RoleId int `pulumi:"roleId"`
+	// A human-readable name for the role.
+	RoleName *string `pulumi:"roleName"`
+	// Groups the API client can access.
+	SubGroups []IamApiClientGroupAccessGroupSubGroup `pulumi:"subGroups"`
+}
+
+// IamApiClientGroupAccessGroupInput is an input type that accepts IamApiClientGroupAccessGroupArgs and IamApiClientGroupAccessGroupOutput values.
+// You can construct a concrete instance of `IamApiClientGroupAccessGroupInput` via:
+//
+//	IamApiClientGroupAccessGroupArgs{...}
+type IamApiClientGroupAccessGroupInput interface {
+	pulumi.Input
+
+	ToIamApiClientGroupAccessGroupOutput() IamApiClientGroupAccessGroupOutput
+	ToIamApiClientGroupAccessGroupOutputWithContext(context.Context) IamApiClientGroupAccessGroupOutput
+}
+
+type IamApiClientGroupAccessGroupArgs struct {
+	// A unique identifier for the group.
+	GroupId pulumi.IntInput `pulumi:"groupId"`
+	// A human-readable name for the group.
+	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
+	// Blocks the API client access to the group's child groups.
+	IsBlocked pulumi.BoolPtrInput `pulumi:"isBlocked"`
+	// A unique identifier for the parent group within the group tree.
+	ParentGroupId pulumi.IntPtrInput `pulumi:"parentGroupId"`
+	// A human-readable description for the role to convey its use.
+	RoleDescription pulumi.StringPtrInput `pulumi:"roleDescription"`
+	// A unique identifier for the role.
+	RoleId pulumi.IntInput `pulumi:"roleId"`
+	// A human-readable name for the role.
+	RoleName pulumi.StringPtrInput `pulumi:"roleName"`
+	// Groups the API client can access.
+	SubGroups IamApiClientGroupAccessGroupSubGroupArrayInput `pulumi:"subGroups"`
+}
+
+func (IamApiClientGroupAccessGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientGroupAccessGroup)(nil)).Elem()
+}
+
+func (i IamApiClientGroupAccessGroupArgs) ToIamApiClientGroupAccessGroupOutput() IamApiClientGroupAccessGroupOutput {
+	return i.ToIamApiClientGroupAccessGroupOutputWithContext(context.Background())
+}
+
+func (i IamApiClientGroupAccessGroupArgs) ToIamApiClientGroupAccessGroupOutputWithContext(ctx context.Context) IamApiClientGroupAccessGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientGroupAccessGroupOutput)
+}
+
+// IamApiClientGroupAccessGroupArrayInput is an input type that accepts IamApiClientGroupAccessGroupArray and IamApiClientGroupAccessGroupArrayOutput values.
+// You can construct a concrete instance of `IamApiClientGroupAccessGroupArrayInput` via:
+//
+//	IamApiClientGroupAccessGroupArray{ IamApiClientGroupAccessGroupArgs{...} }
+type IamApiClientGroupAccessGroupArrayInput interface {
+	pulumi.Input
+
+	ToIamApiClientGroupAccessGroupArrayOutput() IamApiClientGroupAccessGroupArrayOutput
+	ToIamApiClientGroupAccessGroupArrayOutputWithContext(context.Context) IamApiClientGroupAccessGroupArrayOutput
+}
+
+type IamApiClientGroupAccessGroupArray []IamApiClientGroupAccessGroupInput
+
+func (IamApiClientGroupAccessGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IamApiClientGroupAccessGroup)(nil)).Elem()
+}
+
+func (i IamApiClientGroupAccessGroupArray) ToIamApiClientGroupAccessGroupArrayOutput() IamApiClientGroupAccessGroupArrayOutput {
+	return i.ToIamApiClientGroupAccessGroupArrayOutputWithContext(context.Background())
+}
+
+func (i IamApiClientGroupAccessGroupArray) ToIamApiClientGroupAccessGroupArrayOutputWithContext(ctx context.Context) IamApiClientGroupAccessGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientGroupAccessGroupArrayOutput)
+}
+
+type IamApiClientGroupAccessGroupOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientGroupAccessGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientGroupAccessGroup)(nil)).Elem()
+}
+
+func (o IamApiClientGroupAccessGroupOutput) ToIamApiClientGroupAccessGroupOutput() IamApiClientGroupAccessGroupOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessGroupOutput) ToIamApiClientGroupAccessGroupOutputWithContext(ctx context.Context) IamApiClientGroupAccessGroupOutput {
+	return o
+}
+
+// A unique identifier for the group.
+func (o IamApiClientGroupAccessGroupOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroup) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// A human-readable name for the group.
+func (o IamApiClientGroupAccessGroupOutput) GroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroup) *string { return v.GroupName }).(pulumi.StringPtrOutput)
+}
+
+// Blocks the API client access to the group's child groups.
+func (o IamApiClientGroupAccessGroupOutput) IsBlocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroup) *bool { return v.IsBlocked }).(pulumi.BoolPtrOutput)
+}
+
+// A unique identifier for the parent group within the group tree.
+func (o IamApiClientGroupAccessGroupOutput) ParentGroupId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroup) *int { return v.ParentGroupId }).(pulumi.IntPtrOutput)
+}
+
+// A human-readable description for the role to convey its use.
+func (o IamApiClientGroupAccessGroupOutput) RoleDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroup) *string { return v.RoleDescription }).(pulumi.StringPtrOutput)
+}
+
+// A unique identifier for the role.
+func (o IamApiClientGroupAccessGroupOutput) RoleId() pulumi.IntOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroup) int { return v.RoleId }).(pulumi.IntOutput)
+}
+
+// A human-readable name for the role.
+func (o IamApiClientGroupAccessGroupOutput) RoleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroup) *string { return v.RoleName }).(pulumi.StringPtrOutput)
+}
+
+// Groups the API client can access.
+func (o IamApiClientGroupAccessGroupOutput) SubGroups() IamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroup) []IamApiClientGroupAccessGroupSubGroup { return v.SubGroups }).(IamApiClientGroupAccessGroupSubGroupArrayOutput)
+}
+
+type IamApiClientGroupAccessGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientGroupAccessGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IamApiClientGroupAccessGroup)(nil)).Elem()
+}
+
+func (o IamApiClientGroupAccessGroupArrayOutput) ToIamApiClientGroupAccessGroupArrayOutput() IamApiClientGroupAccessGroupArrayOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessGroupArrayOutput) ToIamApiClientGroupAccessGroupArrayOutputWithContext(ctx context.Context) IamApiClientGroupAccessGroupArrayOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessGroupArrayOutput) Index(i pulumi.IntInput) IamApiClientGroupAccessGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IamApiClientGroupAccessGroup {
+		return vs[0].([]IamApiClientGroupAccessGroup)[vs[1].(int)]
+	}).(IamApiClientGroupAccessGroupOutput)
+}
+
+type IamApiClientGroupAccessGroupSubGroup struct {
+	// A unique identifier for the group.
+	GroupId int `pulumi:"groupId"`
+	// A human-readable name for the group.
+	GroupName *string `pulumi:"groupName"`
+	// Blocks the API client access to the group's child groups.
+	IsBlocked *bool `pulumi:"isBlocked"`
+	// A unique identifier for the parent group within the group tree.
+	ParentGroupId *int `pulumi:"parentGroupId"`
+	// A human-readable description for the role to convey its use.
+	RoleDescription *string `pulumi:"roleDescription"`
+	// A unique identifier for the role.
+	RoleId int `pulumi:"roleId"`
+	// A human-readable name for the role.
+	RoleName *string `pulumi:"roleName"`
+	// Groups the API client can access.
+	SubGroups []IamApiClientGroupAccessGroupSubGroup `pulumi:"subGroups"`
+}
+
+// IamApiClientGroupAccessGroupSubGroupInput is an input type that accepts IamApiClientGroupAccessGroupSubGroupArgs and IamApiClientGroupAccessGroupSubGroupOutput values.
+// You can construct a concrete instance of `IamApiClientGroupAccessGroupSubGroupInput` via:
+//
+//	IamApiClientGroupAccessGroupSubGroupArgs{...}
+type IamApiClientGroupAccessGroupSubGroupInput interface {
+	pulumi.Input
+
+	ToIamApiClientGroupAccessGroupSubGroupOutput() IamApiClientGroupAccessGroupSubGroupOutput
+	ToIamApiClientGroupAccessGroupSubGroupOutputWithContext(context.Context) IamApiClientGroupAccessGroupSubGroupOutput
+}
+
+type IamApiClientGroupAccessGroupSubGroupArgs struct {
+	// A unique identifier for the group.
+	GroupId pulumi.IntInput `pulumi:"groupId"`
+	// A human-readable name for the group.
+	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
+	// Blocks the API client access to the group's child groups.
+	IsBlocked pulumi.BoolPtrInput `pulumi:"isBlocked"`
+	// A unique identifier for the parent group within the group tree.
+	ParentGroupId pulumi.IntPtrInput `pulumi:"parentGroupId"`
+	// A human-readable description for the role to convey its use.
+	RoleDescription pulumi.StringPtrInput `pulumi:"roleDescription"`
+	// A unique identifier for the role.
+	RoleId pulumi.IntInput `pulumi:"roleId"`
+	// A human-readable name for the role.
+	RoleName pulumi.StringPtrInput `pulumi:"roleName"`
+	// Groups the API client can access.
+	SubGroups IamApiClientGroupAccessGroupSubGroupArrayInput `pulumi:"subGroups"`
+}
+
+func (IamApiClientGroupAccessGroupSubGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientGroupAccessGroupSubGroup)(nil)).Elem()
+}
+
+func (i IamApiClientGroupAccessGroupSubGroupArgs) ToIamApiClientGroupAccessGroupSubGroupOutput() IamApiClientGroupAccessGroupSubGroupOutput {
+	return i.ToIamApiClientGroupAccessGroupSubGroupOutputWithContext(context.Background())
+}
+
+func (i IamApiClientGroupAccessGroupSubGroupArgs) ToIamApiClientGroupAccessGroupSubGroupOutputWithContext(ctx context.Context) IamApiClientGroupAccessGroupSubGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientGroupAccessGroupSubGroupOutput)
+}
+
+// IamApiClientGroupAccessGroupSubGroupArrayInput is an input type that accepts IamApiClientGroupAccessGroupSubGroupArray and IamApiClientGroupAccessGroupSubGroupArrayOutput values.
+// You can construct a concrete instance of `IamApiClientGroupAccessGroupSubGroupArrayInput` via:
+//
+//	IamApiClientGroupAccessGroupSubGroupArray{ IamApiClientGroupAccessGroupSubGroupArgs{...} }
+type IamApiClientGroupAccessGroupSubGroupArrayInput interface {
+	pulumi.Input
+
+	ToIamApiClientGroupAccessGroupSubGroupArrayOutput() IamApiClientGroupAccessGroupSubGroupArrayOutput
+	ToIamApiClientGroupAccessGroupSubGroupArrayOutputWithContext(context.Context) IamApiClientGroupAccessGroupSubGroupArrayOutput
+}
+
+type IamApiClientGroupAccessGroupSubGroupArray []IamApiClientGroupAccessGroupSubGroupInput
+
+func (IamApiClientGroupAccessGroupSubGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IamApiClientGroupAccessGroupSubGroup)(nil)).Elem()
+}
+
+func (i IamApiClientGroupAccessGroupSubGroupArray) ToIamApiClientGroupAccessGroupSubGroupArrayOutput() IamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return i.ToIamApiClientGroupAccessGroupSubGroupArrayOutputWithContext(context.Background())
+}
+
+func (i IamApiClientGroupAccessGroupSubGroupArray) ToIamApiClientGroupAccessGroupSubGroupArrayOutputWithContext(ctx context.Context) IamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientGroupAccessGroupSubGroupArrayOutput)
+}
+
+type IamApiClientGroupAccessGroupSubGroupOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientGroupAccessGroupSubGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientGroupAccessGroupSubGroup)(nil)).Elem()
+}
+
+func (o IamApiClientGroupAccessGroupSubGroupOutput) ToIamApiClientGroupAccessGroupSubGroupOutput() IamApiClientGroupAccessGroupSubGroupOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessGroupSubGroupOutput) ToIamApiClientGroupAccessGroupSubGroupOutputWithContext(ctx context.Context) IamApiClientGroupAccessGroupSubGroupOutput {
+	return o
+}
+
+// A unique identifier for the group.
+func (o IamApiClientGroupAccessGroupSubGroupOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroupSubGroup) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// A human-readable name for the group.
+func (o IamApiClientGroupAccessGroupSubGroupOutput) GroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroupSubGroup) *string { return v.GroupName }).(pulumi.StringPtrOutput)
+}
+
+// Blocks the API client access to the group's child groups.
+func (o IamApiClientGroupAccessGroupSubGroupOutput) IsBlocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroupSubGroup) *bool { return v.IsBlocked }).(pulumi.BoolPtrOutput)
+}
+
+// A unique identifier for the parent group within the group tree.
+func (o IamApiClientGroupAccessGroupSubGroupOutput) ParentGroupId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroupSubGroup) *int { return v.ParentGroupId }).(pulumi.IntPtrOutput)
+}
+
+// A human-readable description for the role to convey its use.
+func (o IamApiClientGroupAccessGroupSubGroupOutput) RoleDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroupSubGroup) *string { return v.RoleDescription }).(pulumi.StringPtrOutput)
+}
+
+// A unique identifier for the role.
+func (o IamApiClientGroupAccessGroupSubGroupOutput) RoleId() pulumi.IntOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroupSubGroup) int { return v.RoleId }).(pulumi.IntOutput)
+}
+
+// A human-readable name for the role.
+func (o IamApiClientGroupAccessGroupSubGroupOutput) RoleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroupSubGroup) *string { return v.RoleName }).(pulumi.StringPtrOutput)
+}
+
+// Groups the API client can access.
+func (o IamApiClientGroupAccessGroupSubGroupOutput) SubGroups() IamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return o.ApplyT(func(v IamApiClientGroupAccessGroupSubGroup) []IamApiClientGroupAccessGroupSubGroup {
+		return v.SubGroups
+	}).(IamApiClientGroupAccessGroupSubGroupArrayOutput)
+}
+
+type IamApiClientGroupAccessGroupSubGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientGroupAccessGroupSubGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IamApiClientGroupAccessGroupSubGroup)(nil)).Elem()
+}
+
+func (o IamApiClientGroupAccessGroupSubGroupArrayOutput) ToIamApiClientGroupAccessGroupSubGroupArrayOutput() IamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessGroupSubGroupArrayOutput) ToIamApiClientGroupAccessGroupSubGroupArrayOutputWithContext(ctx context.Context) IamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return o
+}
+
+func (o IamApiClientGroupAccessGroupSubGroupArrayOutput) Index(i pulumi.IntInput) IamApiClientGroupAccessGroupSubGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IamApiClientGroupAccessGroupSubGroup {
+		return vs[0].([]IamApiClientGroupAccessGroupSubGroup)[vs[1].(int)]
+	}).(IamApiClientGroupAccessGroupSubGroupOutput)
+}
+
+type IamApiClientIpAcl struct {
+	// IP addresses or CIDR blocks the API client can access.
+	Cidrs []string `pulumi:"cidrs"`
+	// Enables the API client to access the IP access control list (ACL).
+	Enable bool `pulumi:"enable"`
+}
+
+// IamApiClientIpAclInput is an input type that accepts IamApiClientIpAclArgs and IamApiClientIpAclOutput values.
+// You can construct a concrete instance of `IamApiClientIpAclInput` via:
+//
+//	IamApiClientIpAclArgs{...}
+type IamApiClientIpAclInput interface {
+	pulumi.Input
+
+	ToIamApiClientIpAclOutput() IamApiClientIpAclOutput
+	ToIamApiClientIpAclOutputWithContext(context.Context) IamApiClientIpAclOutput
+}
+
+type IamApiClientIpAclArgs struct {
+	// IP addresses or CIDR blocks the API client can access.
+	Cidrs pulumi.StringArrayInput `pulumi:"cidrs"`
+	// Enables the API client to access the IP access control list (ACL).
+	Enable pulumi.BoolInput `pulumi:"enable"`
+}
+
+func (IamApiClientIpAclArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientIpAcl)(nil)).Elem()
+}
+
+func (i IamApiClientIpAclArgs) ToIamApiClientIpAclOutput() IamApiClientIpAclOutput {
+	return i.ToIamApiClientIpAclOutputWithContext(context.Background())
+}
+
+func (i IamApiClientIpAclArgs) ToIamApiClientIpAclOutputWithContext(ctx context.Context) IamApiClientIpAclOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientIpAclOutput)
+}
+
+func (i IamApiClientIpAclArgs) ToIamApiClientIpAclPtrOutput() IamApiClientIpAclPtrOutput {
+	return i.ToIamApiClientIpAclPtrOutputWithContext(context.Background())
+}
+
+func (i IamApiClientIpAclArgs) ToIamApiClientIpAclPtrOutputWithContext(ctx context.Context) IamApiClientIpAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientIpAclOutput).ToIamApiClientIpAclPtrOutputWithContext(ctx)
+}
+
+// IamApiClientIpAclPtrInput is an input type that accepts IamApiClientIpAclArgs, IamApiClientIpAclPtr and IamApiClientIpAclPtrOutput values.
+// You can construct a concrete instance of `IamApiClientIpAclPtrInput` via:
+//
+//	        IamApiClientIpAclArgs{...}
+//
+//	or:
+//
+//	        nil
+type IamApiClientIpAclPtrInput interface {
+	pulumi.Input
+
+	ToIamApiClientIpAclPtrOutput() IamApiClientIpAclPtrOutput
+	ToIamApiClientIpAclPtrOutputWithContext(context.Context) IamApiClientIpAclPtrOutput
+}
+
+type iamApiClientIpAclPtrType IamApiClientIpAclArgs
+
+func IamApiClientIpAclPtr(v *IamApiClientIpAclArgs) IamApiClientIpAclPtrInput {
+	return (*iamApiClientIpAclPtrType)(v)
+}
+
+func (*iamApiClientIpAclPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientIpAcl)(nil)).Elem()
+}
+
+func (i *iamApiClientIpAclPtrType) ToIamApiClientIpAclPtrOutput() IamApiClientIpAclPtrOutput {
+	return i.ToIamApiClientIpAclPtrOutputWithContext(context.Background())
+}
+
+func (i *iamApiClientIpAclPtrType) ToIamApiClientIpAclPtrOutputWithContext(ctx context.Context) IamApiClientIpAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientIpAclPtrOutput)
+}
+
+type IamApiClientIpAclOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientIpAclOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientIpAcl)(nil)).Elem()
+}
+
+func (o IamApiClientIpAclOutput) ToIamApiClientIpAclOutput() IamApiClientIpAclOutput {
+	return o
+}
+
+func (o IamApiClientIpAclOutput) ToIamApiClientIpAclOutputWithContext(ctx context.Context) IamApiClientIpAclOutput {
+	return o
+}
+
+func (o IamApiClientIpAclOutput) ToIamApiClientIpAclPtrOutput() IamApiClientIpAclPtrOutput {
+	return o.ToIamApiClientIpAclPtrOutputWithContext(context.Background())
+}
+
+func (o IamApiClientIpAclOutput) ToIamApiClientIpAclPtrOutputWithContext(ctx context.Context) IamApiClientIpAclPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IamApiClientIpAcl) *IamApiClientIpAcl {
+		return &v
+	}).(IamApiClientIpAclPtrOutput)
+}
+
+// IP addresses or CIDR blocks the API client can access.
+func (o IamApiClientIpAclOutput) Cidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v IamApiClientIpAcl) []string { return v.Cidrs }).(pulumi.StringArrayOutput)
+}
+
+// Enables the API client to access the IP access control list (ACL).
+func (o IamApiClientIpAclOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v IamApiClientIpAcl) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+type IamApiClientIpAclPtrOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientIpAclPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientIpAcl)(nil)).Elem()
+}
+
+func (o IamApiClientIpAclPtrOutput) ToIamApiClientIpAclPtrOutput() IamApiClientIpAclPtrOutput {
+	return o
+}
+
+func (o IamApiClientIpAclPtrOutput) ToIamApiClientIpAclPtrOutputWithContext(ctx context.Context) IamApiClientIpAclPtrOutput {
+	return o
+}
+
+func (o IamApiClientIpAclPtrOutput) Elem() IamApiClientIpAclOutput {
+	return o.ApplyT(func(v *IamApiClientIpAcl) IamApiClientIpAcl {
+		if v != nil {
+			return *v
+		}
+		var ret IamApiClientIpAcl
+		return ret
+	}).(IamApiClientIpAclOutput)
+}
+
+// IP addresses or CIDR blocks the API client can access.
+func (o IamApiClientIpAclPtrOutput) Cidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IamApiClientIpAcl) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cidrs
+	}).(pulumi.StringArrayOutput)
+}
+
+// Enables the API client to access the IP access control list (ACL).
+func (o IamApiClientIpAclPtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientIpAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+type IamApiClientPurgeOptions struct {
+	// Whether the API client can purge content by cache tag.
+	CanPurgeByCacheTag bool `pulumi:"canPurgeByCacheTag"`
+	// Whether the API client can purge content by CP code.
+	CanPurgeByCpCode bool `pulumi:"canPurgeByCpCode"`
+	// CP codes the API client can purge.
+	CpCodeAccess IamApiClientPurgeOptionsCpCodeAccess `pulumi:"cpCodeAccess"`
+}
+
+// IamApiClientPurgeOptionsInput is an input type that accepts IamApiClientPurgeOptionsArgs and IamApiClientPurgeOptionsOutput values.
+// You can construct a concrete instance of `IamApiClientPurgeOptionsInput` via:
+//
+//	IamApiClientPurgeOptionsArgs{...}
+type IamApiClientPurgeOptionsInput interface {
+	pulumi.Input
+
+	ToIamApiClientPurgeOptionsOutput() IamApiClientPurgeOptionsOutput
+	ToIamApiClientPurgeOptionsOutputWithContext(context.Context) IamApiClientPurgeOptionsOutput
+}
+
+type IamApiClientPurgeOptionsArgs struct {
+	// Whether the API client can purge content by cache tag.
+	CanPurgeByCacheTag pulumi.BoolInput `pulumi:"canPurgeByCacheTag"`
+	// Whether the API client can purge content by CP code.
+	CanPurgeByCpCode pulumi.BoolInput `pulumi:"canPurgeByCpCode"`
+	// CP codes the API client can purge.
+	CpCodeAccess IamApiClientPurgeOptionsCpCodeAccessInput `pulumi:"cpCodeAccess"`
+}
+
+func (IamApiClientPurgeOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientPurgeOptions)(nil)).Elem()
+}
+
+func (i IamApiClientPurgeOptionsArgs) ToIamApiClientPurgeOptionsOutput() IamApiClientPurgeOptionsOutput {
+	return i.ToIamApiClientPurgeOptionsOutputWithContext(context.Background())
+}
+
+func (i IamApiClientPurgeOptionsArgs) ToIamApiClientPurgeOptionsOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientPurgeOptionsOutput)
+}
+
+func (i IamApiClientPurgeOptionsArgs) ToIamApiClientPurgeOptionsPtrOutput() IamApiClientPurgeOptionsPtrOutput {
+	return i.ToIamApiClientPurgeOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i IamApiClientPurgeOptionsArgs) ToIamApiClientPurgeOptionsPtrOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientPurgeOptionsOutput).ToIamApiClientPurgeOptionsPtrOutputWithContext(ctx)
+}
+
+// IamApiClientPurgeOptionsPtrInput is an input type that accepts IamApiClientPurgeOptionsArgs, IamApiClientPurgeOptionsPtr and IamApiClientPurgeOptionsPtrOutput values.
+// You can construct a concrete instance of `IamApiClientPurgeOptionsPtrInput` via:
+//
+//	        IamApiClientPurgeOptionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type IamApiClientPurgeOptionsPtrInput interface {
+	pulumi.Input
+
+	ToIamApiClientPurgeOptionsPtrOutput() IamApiClientPurgeOptionsPtrOutput
+	ToIamApiClientPurgeOptionsPtrOutputWithContext(context.Context) IamApiClientPurgeOptionsPtrOutput
+}
+
+type iamApiClientPurgeOptionsPtrType IamApiClientPurgeOptionsArgs
+
+func IamApiClientPurgeOptionsPtr(v *IamApiClientPurgeOptionsArgs) IamApiClientPurgeOptionsPtrInput {
+	return (*iamApiClientPurgeOptionsPtrType)(v)
+}
+
+func (*iamApiClientPurgeOptionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientPurgeOptions)(nil)).Elem()
+}
+
+func (i *iamApiClientPurgeOptionsPtrType) ToIamApiClientPurgeOptionsPtrOutput() IamApiClientPurgeOptionsPtrOutput {
+	return i.ToIamApiClientPurgeOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i *iamApiClientPurgeOptionsPtrType) ToIamApiClientPurgeOptionsPtrOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientPurgeOptionsPtrOutput)
+}
+
+type IamApiClientPurgeOptionsOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientPurgeOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientPurgeOptions)(nil)).Elem()
+}
+
+func (o IamApiClientPurgeOptionsOutput) ToIamApiClientPurgeOptionsOutput() IamApiClientPurgeOptionsOutput {
+	return o
+}
+
+func (o IamApiClientPurgeOptionsOutput) ToIamApiClientPurgeOptionsOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsOutput {
+	return o
+}
+
+func (o IamApiClientPurgeOptionsOutput) ToIamApiClientPurgeOptionsPtrOutput() IamApiClientPurgeOptionsPtrOutput {
+	return o.ToIamApiClientPurgeOptionsPtrOutputWithContext(context.Background())
+}
+
+func (o IamApiClientPurgeOptionsOutput) ToIamApiClientPurgeOptionsPtrOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IamApiClientPurgeOptions) *IamApiClientPurgeOptions {
+		return &v
+	}).(IamApiClientPurgeOptionsPtrOutput)
+}
+
+// Whether the API client can purge content by cache tag.
+func (o IamApiClientPurgeOptionsOutput) CanPurgeByCacheTag() pulumi.BoolOutput {
+	return o.ApplyT(func(v IamApiClientPurgeOptions) bool { return v.CanPurgeByCacheTag }).(pulumi.BoolOutput)
+}
+
+// Whether the API client can purge content by CP code.
+func (o IamApiClientPurgeOptionsOutput) CanPurgeByCpCode() pulumi.BoolOutput {
+	return o.ApplyT(func(v IamApiClientPurgeOptions) bool { return v.CanPurgeByCpCode }).(pulumi.BoolOutput)
+}
+
+// CP codes the API client can purge.
+func (o IamApiClientPurgeOptionsOutput) CpCodeAccess() IamApiClientPurgeOptionsCpCodeAccessOutput {
+	return o.ApplyT(func(v IamApiClientPurgeOptions) IamApiClientPurgeOptionsCpCodeAccess { return v.CpCodeAccess }).(IamApiClientPurgeOptionsCpCodeAccessOutput)
+}
+
+type IamApiClientPurgeOptionsPtrOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientPurgeOptionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientPurgeOptions)(nil)).Elem()
+}
+
+func (o IamApiClientPurgeOptionsPtrOutput) ToIamApiClientPurgeOptionsPtrOutput() IamApiClientPurgeOptionsPtrOutput {
+	return o
+}
+
+func (o IamApiClientPurgeOptionsPtrOutput) ToIamApiClientPurgeOptionsPtrOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsPtrOutput {
+	return o
+}
+
+func (o IamApiClientPurgeOptionsPtrOutput) Elem() IamApiClientPurgeOptionsOutput {
+	return o.ApplyT(func(v *IamApiClientPurgeOptions) IamApiClientPurgeOptions {
+		if v != nil {
+			return *v
+		}
+		var ret IamApiClientPurgeOptions
+		return ret
+	}).(IamApiClientPurgeOptionsOutput)
+}
+
+// Whether the API client can purge content by cache tag.
+func (o IamApiClientPurgeOptionsPtrOutput) CanPurgeByCacheTag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientPurgeOptions) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.CanPurgeByCacheTag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether the API client can purge content by CP code.
+func (o IamApiClientPurgeOptionsPtrOutput) CanPurgeByCpCode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientPurgeOptions) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.CanPurgeByCpCode
+	}).(pulumi.BoolPtrOutput)
+}
+
+// CP codes the API client can purge.
+func (o IamApiClientPurgeOptionsPtrOutput) CpCodeAccess() IamApiClientPurgeOptionsCpCodeAccessPtrOutput {
+	return o.ApplyT(func(v *IamApiClientPurgeOptions) *IamApiClientPurgeOptionsCpCodeAccess {
+		if v == nil {
+			return nil
+		}
+		return &v.CpCodeAccess
+	}).(IamApiClientPurgeOptionsCpCodeAccessPtrOutput)
+}
+
+type IamApiClientPurgeOptionsCpCodeAccess struct {
+	// Whether the API can purge content by all current and new CP codes.
+	AllCurrentAndNewCpCodes bool `pulumi:"allCurrentAndNewCpCodes"`
+	// CP codes the API client can purge.
+	CpCodes []int `pulumi:"cpCodes"`
+}
+
+// IamApiClientPurgeOptionsCpCodeAccessInput is an input type that accepts IamApiClientPurgeOptionsCpCodeAccessArgs and IamApiClientPurgeOptionsCpCodeAccessOutput values.
+// You can construct a concrete instance of `IamApiClientPurgeOptionsCpCodeAccessInput` via:
+//
+//	IamApiClientPurgeOptionsCpCodeAccessArgs{...}
+type IamApiClientPurgeOptionsCpCodeAccessInput interface {
+	pulumi.Input
+
+	ToIamApiClientPurgeOptionsCpCodeAccessOutput() IamApiClientPurgeOptionsCpCodeAccessOutput
+	ToIamApiClientPurgeOptionsCpCodeAccessOutputWithContext(context.Context) IamApiClientPurgeOptionsCpCodeAccessOutput
+}
+
+type IamApiClientPurgeOptionsCpCodeAccessArgs struct {
+	// Whether the API can purge content by all current and new CP codes.
+	AllCurrentAndNewCpCodes pulumi.BoolInput `pulumi:"allCurrentAndNewCpCodes"`
+	// CP codes the API client can purge.
+	CpCodes pulumi.IntArrayInput `pulumi:"cpCodes"`
+}
+
+func (IamApiClientPurgeOptionsCpCodeAccessArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientPurgeOptionsCpCodeAccess)(nil)).Elem()
+}
+
+func (i IamApiClientPurgeOptionsCpCodeAccessArgs) ToIamApiClientPurgeOptionsCpCodeAccessOutput() IamApiClientPurgeOptionsCpCodeAccessOutput {
+	return i.ToIamApiClientPurgeOptionsCpCodeAccessOutputWithContext(context.Background())
+}
+
+func (i IamApiClientPurgeOptionsCpCodeAccessArgs) ToIamApiClientPurgeOptionsCpCodeAccessOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsCpCodeAccessOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientPurgeOptionsCpCodeAccessOutput)
+}
+
+func (i IamApiClientPurgeOptionsCpCodeAccessArgs) ToIamApiClientPurgeOptionsCpCodeAccessPtrOutput() IamApiClientPurgeOptionsCpCodeAccessPtrOutput {
+	return i.ToIamApiClientPurgeOptionsCpCodeAccessPtrOutputWithContext(context.Background())
+}
+
+func (i IamApiClientPurgeOptionsCpCodeAccessArgs) ToIamApiClientPurgeOptionsCpCodeAccessPtrOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsCpCodeAccessPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientPurgeOptionsCpCodeAccessOutput).ToIamApiClientPurgeOptionsCpCodeAccessPtrOutputWithContext(ctx)
+}
+
+// IamApiClientPurgeOptionsCpCodeAccessPtrInput is an input type that accepts IamApiClientPurgeOptionsCpCodeAccessArgs, IamApiClientPurgeOptionsCpCodeAccessPtr and IamApiClientPurgeOptionsCpCodeAccessPtrOutput values.
+// You can construct a concrete instance of `IamApiClientPurgeOptionsCpCodeAccessPtrInput` via:
+//
+//	        IamApiClientPurgeOptionsCpCodeAccessArgs{...}
+//
+//	or:
+//
+//	        nil
+type IamApiClientPurgeOptionsCpCodeAccessPtrInput interface {
+	pulumi.Input
+
+	ToIamApiClientPurgeOptionsCpCodeAccessPtrOutput() IamApiClientPurgeOptionsCpCodeAccessPtrOutput
+	ToIamApiClientPurgeOptionsCpCodeAccessPtrOutputWithContext(context.Context) IamApiClientPurgeOptionsCpCodeAccessPtrOutput
+}
+
+type iamApiClientPurgeOptionsCpCodeAccessPtrType IamApiClientPurgeOptionsCpCodeAccessArgs
+
+func IamApiClientPurgeOptionsCpCodeAccessPtr(v *IamApiClientPurgeOptionsCpCodeAccessArgs) IamApiClientPurgeOptionsCpCodeAccessPtrInput {
+	return (*iamApiClientPurgeOptionsCpCodeAccessPtrType)(v)
+}
+
+func (*iamApiClientPurgeOptionsCpCodeAccessPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientPurgeOptionsCpCodeAccess)(nil)).Elem()
+}
+
+func (i *iamApiClientPurgeOptionsCpCodeAccessPtrType) ToIamApiClientPurgeOptionsCpCodeAccessPtrOutput() IamApiClientPurgeOptionsCpCodeAccessPtrOutput {
+	return i.ToIamApiClientPurgeOptionsCpCodeAccessPtrOutputWithContext(context.Background())
+}
+
+func (i *iamApiClientPurgeOptionsCpCodeAccessPtrType) ToIamApiClientPurgeOptionsCpCodeAccessPtrOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsCpCodeAccessPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IamApiClientPurgeOptionsCpCodeAccessPtrOutput)
+}
+
+type IamApiClientPurgeOptionsCpCodeAccessOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientPurgeOptionsCpCodeAccessOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IamApiClientPurgeOptionsCpCodeAccess)(nil)).Elem()
+}
+
+func (o IamApiClientPurgeOptionsCpCodeAccessOutput) ToIamApiClientPurgeOptionsCpCodeAccessOutput() IamApiClientPurgeOptionsCpCodeAccessOutput {
+	return o
+}
+
+func (o IamApiClientPurgeOptionsCpCodeAccessOutput) ToIamApiClientPurgeOptionsCpCodeAccessOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsCpCodeAccessOutput {
+	return o
+}
+
+func (o IamApiClientPurgeOptionsCpCodeAccessOutput) ToIamApiClientPurgeOptionsCpCodeAccessPtrOutput() IamApiClientPurgeOptionsCpCodeAccessPtrOutput {
+	return o.ToIamApiClientPurgeOptionsCpCodeAccessPtrOutputWithContext(context.Background())
+}
+
+func (o IamApiClientPurgeOptionsCpCodeAccessOutput) ToIamApiClientPurgeOptionsCpCodeAccessPtrOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsCpCodeAccessPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IamApiClientPurgeOptionsCpCodeAccess) *IamApiClientPurgeOptionsCpCodeAccess {
+		return &v
+	}).(IamApiClientPurgeOptionsCpCodeAccessPtrOutput)
+}
+
+// Whether the API can purge content by all current and new CP codes.
+func (o IamApiClientPurgeOptionsCpCodeAccessOutput) AllCurrentAndNewCpCodes() pulumi.BoolOutput {
+	return o.ApplyT(func(v IamApiClientPurgeOptionsCpCodeAccess) bool { return v.AllCurrentAndNewCpCodes }).(pulumi.BoolOutput)
+}
+
+// CP codes the API client can purge.
+func (o IamApiClientPurgeOptionsCpCodeAccessOutput) CpCodes() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v IamApiClientPurgeOptionsCpCodeAccess) []int { return v.CpCodes }).(pulumi.IntArrayOutput)
+}
+
+type IamApiClientPurgeOptionsCpCodeAccessPtrOutput struct{ *pulumi.OutputState }
+
+func (IamApiClientPurgeOptionsCpCodeAccessPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IamApiClientPurgeOptionsCpCodeAccess)(nil)).Elem()
+}
+
+func (o IamApiClientPurgeOptionsCpCodeAccessPtrOutput) ToIamApiClientPurgeOptionsCpCodeAccessPtrOutput() IamApiClientPurgeOptionsCpCodeAccessPtrOutput {
+	return o
+}
+
+func (o IamApiClientPurgeOptionsCpCodeAccessPtrOutput) ToIamApiClientPurgeOptionsCpCodeAccessPtrOutputWithContext(ctx context.Context) IamApiClientPurgeOptionsCpCodeAccessPtrOutput {
+	return o
+}
+
+func (o IamApiClientPurgeOptionsCpCodeAccessPtrOutput) Elem() IamApiClientPurgeOptionsCpCodeAccessOutput {
+	return o.ApplyT(func(v *IamApiClientPurgeOptionsCpCodeAccess) IamApiClientPurgeOptionsCpCodeAccess {
+		if v != nil {
+			return *v
+		}
+		var ret IamApiClientPurgeOptionsCpCodeAccess
+		return ret
+	}).(IamApiClientPurgeOptionsCpCodeAccessOutput)
+}
+
+// Whether the API can purge content by all current and new CP codes.
+func (o IamApiClientPurgeOptionsCpCodeAccessPtrOutput) AllCurrentAndNewCpCodes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamApiClientPurgeOptionsCpCodeAccess) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.AllCurrentAndNewCpCodes
+	}).(pulumi.BoolPtrOutput)
+}
+
+// CP codes the API client can purge.
+func (o IamApiClientPurgeOptionsCpCodeAccessPtrOutput) CpCodes() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v *IamApiClientPurgeOptionsCpCodeAccess) []int {
+		if v == nil {
+			return nil
+		}
+		return v.CpCodes
+	}).(pulumi.IntArrayOutput)
+}
+
 type IamCidrBlockActions struct {
 	// Whether you can delete this CIDR block. You can't delete a CIDR block from an IP address not on the allowlist, or if the CIDR block is the only one on the allowlist.
 	Delete *bool `pulumi:"delete"`
@@ -24748,13 +26821,13 @@ func (o GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsP
 }
 
 type GetCloudletsPolicyActivationType struct {
-	// The specific version of this API
+	// The specific version of this API.
 	ApiVersion string `pulumi:"apiVersion"`
-	// The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated
+	// The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated.
 	Network string `pulumi:"network"`
-	// The object containing Cloudlet policy information
+	// The object containing Cloudlet policy information.
 	PolicyInfos []GetCloudletsPolicyActivationPolicyInfo `pulumi:"policyInfos"`
-	// A set containing information about the property associated with a particular Cloudlet policy
+	// A set containing information about the property associated with a particular Cloudlet policy.
 	PropertyInfos []GetCloudletsPolicyActivationPropertyInfo `pulumi:"propertyInfos"`
 }
 
@@ -24770,13 +26843,13 @@ type GetCloudletsPolicyActivationTypeInput interface {
 }
 
 type GetCloudletsPolicyActivationTypeArgs struct {
-	// The specific version of this API
+	// The specific version of this API.
 	ApiVersion pulumi.StringInput `pulumi:"apiVersion"`
-	// The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated
+	// The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated.
 	Network pulumi.StringInput `pulumi:"network"`
-	// The object containing Cloudlet policy information
+	// The object containing Cloudlet policy information.
 	PolicyInfos GetCloudletsPolicyActivationPolicyInfoArrayInput `pulumi:"policyInfos"`
-	// A set containing information about the property associated with a particular Cloudlet policy
+	// A set containing information about the property associated with a particular Cloudlet policy.
 	PropertyInfos GetCloudletsPolicyActivationPropertyInfoArrayInput `pulumi:"propertyInfos"`
 }
 
@@ -24831,24 +26904,24 @@ func (o GetCloudletsPolicyActivationTypeOutput) ToGetCloudletsPolicyActivationTy
 	return o
 }
 
-// The specific version of this API
+// The specific version of this API.
 func (o GetCloudletsPolicyActivationTypeOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationType) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
-// The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated
+// The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated.
 func (o GetCloudletsPolicyActivationTypeOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationType) string { return v.Network }).(pulumi.StringOutput)
 }
 
-// The object containing Cloudlet policy information
+// The object containing Cloudlet policy information.
 func (o GetCloudletsPolicyActivationTypeOutput) PolicyInfos() GetCloudletsPolicyActivationPolicyInfoArrayOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationType) []GetCloudletsPolicyActivationPolicyInfo {
 		return v.PolicyInfos
 	}).(GetCloudletsPolicyActivationPolicyInfoArrayOutput)
 }
 
-// A set containing information about the property associated with a particular Cloudlet policy
+// A set containing information about the property associated with a particular Cloudlet policy.
 func (o GetCloudletsPolicyActivationTypeOutput) PropertyInfos() GetCloudletsPolicyActivationPropertyInfoArrayOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationType) []GetCloudletsPolicyActivationPropertyInfo {
 		return v.PropertyInfos
@@ -24876,19 +26949,19 @@ func (o GetCloudletsPolicyActivationTypeArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetCloudletsPolicyActivationPolicyInfo struct {
-	// The name of the user who activated the policy
+	// The name of the user who activated the policy.
 	ActivatedBy string `pulumi:"activatedBy"`
-	// The date on which the policy was activated (in milliseconds since Epoch)
+	// The date on which the policy was activated (in milliseconds since Epoch).
 	ActivationDate int `pulumi:"activationDate"`
-	// The name of the policy
+	// The name of the policy.
 	Name string `pulumi:"name"`
-	// An integer ID that is associated with all versions of a policy
+	// An integer ID that is associated with all versions of a policy.
 	PolicyId int `pulumi:"policyId"`
-	// The activation status for the policy: active, inactive, deactivated, pending or failed
+	// The activation status for the policy: active, inactive, deactivated, pending or failed.
 	Status string `pulumi:"status"`
-	// Information about the status of an activation operation
+	// Information about the status of an activation operation.
 	StatusDetail string `pulumi:"statusDetail"`
-	// The version number of the activated policy
+	// The version number of the activated policy.
 	Version int `pulumi:"version"`
 }
 
@@ -24904,19 +26977,19 @@ type GetCloudletsPolicyActivationPolicyInfoInput interface {
 }
 
 type GetCloudletsPolicyActivationPolicyInfoArgs struct {
-	// The name of the user who activated the policy
+	// The name of the user who activated the policy.
 	ActivatedBy pulumi.StringInput `pulumi:"activatedBy"`
-	// The date on which the policy was activated (in milliseconds since Epoch)
+	// The date on which the policy was activated (in milliseconds since Epoch).
 	ActivationDate pulumi.IntInput `pulumi:"activationDate"`
-	// The name of the policy
+	// The name of the policy.
 	Name pulumi.StringInput `pulumi:"name"`
-	// An integer ID that is associated with all versions of a policy
+	// An integer ID that is associated with all versions of a policy.
 	PolicyId pulumi.IntInput `pulumi:"policyId"`
-	// The activation status for the policy: active, inactive, deactivated, pending or failed
+	// The activation status for the policy: active, inactive, deactivated, pending or failed.
 	Status pulumi.StringInput `pulumi:"status"`
-	// Information about the status of an activation operation
+	// Information about the status of an activation operation.
 	StatusDetail pulumi.StringInput `pulumi:"statusDetail"`
-	// The version number of the activated policy
+	// The version number of the activated policy.
 	Version pulumi.IntInput `pulumi:"version"`
 }
 
@@ -24971,37 +27044,37 @@ func (o GetCloudletsPolicyActivationPolicyInfoOutput) ToGetCloudletsPolicyActiva
 	return o
 }
 
-// The name of the user who activated the policy
+// The name of the user who activated the policy.
 func (o GetCloudletsPolicyActivationPolicyInfoOutput) ActivatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPolicyInfo) string { return v.ActivatedBy }).(pulumi.StringOutput)
 }
 
-// The date on which the policy was activated (in milliseconds since Epoch)
+// The date on which the policy was activated (in milliseconds since Epoch).
 func (o GetCloudletsPolicyActivationPolicyInfoOutput) ActivationDate() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPolicyInfo) int { return v.ActivationDate }).(pulumi.IntOutput)
 }
 
-// The name of the policy
+// The name of the policy.
 func (o GetCloudletsPolicyActivationPolicyInfoOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPolicyInfo) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// An integer ID that is associated with all versions of a policy
+// An integer ID that is associated with all versions of a policy.
 func (o GetCloudletsPolicyActivationPolicyInfoOutput) PolicyId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPolicyInfo) int { return v.PolicyId }).(pulumi.IntOutput)
 }
 
-// The activation status for the policy: active, inactive, deactivated, pending or failed
+// The activation status for the policy: active, inactive, deactivated, pending or failed.
 func (o GetCloudletsPolicyActivationPolicyInfoOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPolicyInfo) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Information about the status of an activation operation
+// Information about the status of an activation operation.
 func (o GetCloudletsPolicyActivationPolicyInfoOutput) StatusDetail() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPolicyInfo) string { return v.StatusDetail }).(pulumi.StringOutput)
 }
 
-// The version number of the activated policy
+// The version number of the activated policy.
 func (o GetCloudletsPolicyActivationPolicyInfoOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPolicyInfo) int { return v.Version }).(pulumi.IntOutput)
 }
@@ -25027,17 +27100,17 @@ func (o GetCloudletsPolicyActivationPolicyInfoArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetCloudletsPolicyActivationPropertyInfo struct {
-	// The name of the user who activated the property
+	// The name of the user who activated the property.
 	ActivatedBy string `pulumi:"activatedBy"`
-	// The date on which the property was activated (in milliseconds since Epoch)
+	// The date on which the property was activated (in milliseconds since Epoch).
 	ActivationDate int `pulumi:"activationDate"`
-	// Defines the group association for the policy or property
+	// Defines the group association for the policy or property.
 	GroupId int `pulumi:"groupId"`
-	// The name of the property
+	// The name of the property.
 	Name string `pulumi:"name"`
-	// The activation status for the property. Can be active, inactive, deactivated, pending or failed
+	// The activation status for the property. Can be active, inactive, deactivated, pending or failed.
 	Status string `pulumi:"status"`
-	// The version number of the activated property
+	// The version number of the activated property.
 	Version int `pulumi:"version"`
 }
 
@@ -25053,17 +27126,17 @@ type GetCloudletsPolicyActivationPropertyInfoInput interface {
 }
 
 type GetCloudletsPolicyActivationPropertyInfoArgs struct {
-	// The name of the user who activated the property
+	// The name of the user who activated the property.
 	ActivatedBy pulumi.StringInput `pulumi:"activatedBy"`
-	// The date on which the property was activated (in milliseconds since Epoch)
+	// The date on which the property was activated (in milliseconds since Epoch).
 	ActivationDate pulumi.IntInput `pulumi:"activationDate"`
-	// Defines the group association for the policy or property
+	// Defines the group association for the policy or property.
 	GroupId pulumi.IntInput `pulumi:"groupId"`
-	// The name of the property
+	// The name of the property.
 	Name pulumi.StringInput `pulumi:"name"`
-	// The activation status for the property. Can be active, inactive, deactivated, pending or failed
+	// The activation status for the property. Can be active, inactive, deactivated, pending or failed.
 	Status pulumi.StringInput `pulumi:"status"`
-	// The version number of the activated property
+	// The version number of the activated property.
 	Version pulumi.IntInput `pulumi:"version"`
 }
 
@@ -25118,32 +27191,32 @@ func (o GetCloudletsPolicyActivationPropertyInfoOutput) ToGetCloudletsPolicyActi
 	return o
 }
 
-// The name of the user who activated the property
+// The name of the user who activated the property.
 func (o GetCloudletsPolicyActivationPropertyInfoOutput) ActivatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPropertyInfo) string { return v.ActivatedBy }).(pulumi.StringOutput)
 }
 
-// The date on which the property was activated (in milliseconds since Epoch)
+// The date on which the property was activated (in milliseconds since Epoch).
 func (o GetCloudletsPolicyActivationPropertyInfoOutput) ActivationDate() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPropertyInfo) int { return v.ActivationDate }).(pulumi.IntOutput)
 }
 
-// Defines the group association for the policy or property
+// Defines the group association for the policy or property.
 func (o GetCloudletsPolicyActivationPropertyInfoOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPropertyInfo) int { return v.GroupId }).(pulumi.IntOutput)
 }
 
-// The name of the property
+// The name of the property.
 func (o GetCloudletsPolicyActivationPropertyInfoOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPropertyInfo) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The activation status for the property. Can be active, inactive, deactivated, pending or failed
+// The activation status for the property. Can be active, inactive, deactivated, pending or failed.
 func (o GetCloudletsPolicyActivationPropertyInfoOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPropertyInfo) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// The version number of the activated property
+// The version number of the activated property.
 func (o GetCloudletsPolicyActivationPropertyInfoOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudletsPolicyActivationPropertyInfo) int { return v.Version }).(pulumi.IntOutput)
 }
@@ -39678,15 +41751,15 @@ func (o GetIamAccountSwitchKeysAccountSwitchKeyArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetIamAllowedApisAllowedApi struct {
-	// API access levels, possible values are READ-ONLY and READ-WRITE.
+	// API access levels, possible values are READ-ONLY, READ-WRITE, CREDENTIAL-READ-ONLY and CREDENTIAL-READ-WRITE.
 	AccessLevels []string `pulumi:"accessLevels"`
-	// Unique identifier for each API.
+	// A unique identifier for each API.
 	ApiId int `pulumi:"apiId"`
 	// Name of the API.
 	ApiName string `pulumi:"apiName"`
-	// Descriptive label for the API.
+	// A human-readable name for the API.
 	Description string `pulumi:"description"`
-	// Link to more information about the API.
+	// A link to more information about the API.
 	DocumentationUrl string `pulumi:"documentationUrl"`
 	// Specifies where the API can access resources.
 	Endpoint string `pulumi:"endpoint"`
@@ -39708,15 +41781,15 @@ type GetIamAllowedApisAllowedApiInput interface {
 }
 
 type GetIamAllowedApisAllowedApiArgs struct {
-	// API access levels, possible values are READ-ONLY and READ-WRITE.
+	// API access levels, possible values are READ-ONLY, READ-WRITE, CREDENTIAL-READ-ONLY and CREDENTIAL-READ-WRITE.
 	AccessLevels pulumi.StringArrayInput `pulumi:"accessLevels"`
-	// Unique identifier for each API.
+	// A unique identifier for each API.
 	ApiId pulumi.IntInput `pulumi:"apiId"`
 	// Name of the API.
 	ApiName pulumi.StringInput `pulumi:"apiName"`
-	// Descriptive label for the API.
+	// A human-readable name for the API.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Link to more information about the API.
+	// A link to more information about the API.
 	DocumentationUrl pulumi.StringInput `pulumi:"documentationUrl"`
 	// Specifies where the API can access resources.
 	Endpoint pulumi.StringInput `pulumi:"endpoint"`
@@ -39777,12 +41850,12 @@ func (o GetIamAllowedApisAllowedApiOutput) ToGetIamAllowedApisAllowedApiOutputWi
 	return o
 }
 
-// API access levels, possible values are READ-ONLY and READ-WRITE.
+// API access levels, possible values are READ-ONLY, READ-WRITE, CREDENTIAL-READ-ONLY and CREDENTIAL-READ-WRITE.
 func (o GetIamAllowedApisAllowedApiOutput) AccessLevels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetIamAllowedApisAllowedApi) []string { return v.AccessLevels }).(pulumi.StringArrayOutput)
 }
 
-// Unique identifier for each API.
+// A unique identifier for each API.
 func (o GetIamAllowedApisAllowedApiOutput) ApiId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIamAllowedApisAllowedApi) int { return v.ApiId }).(pulumi.IntOutput)
 }
@@ -39792,12 +41865,12 @@ func (o GetIamAllowedApisAllowedApiOutput) ApiName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIamAllowedApisAllowedApi) string { return v.ApiName }).(pulumi.StringOutput)
 }
 
-// Descriptive label for the API.
+// A human-readable name for the API.
 func (o GetIamAllowedApisAllowedApiOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIamAllowedApisAllowedApi) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Link to more information about the API.
+// A link to more information about the API.
 func (o GetIamAllowedApisAllowedApiOutput) DocumentationUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIamAllowedApisAllowedApi) string { return v.DocumentationUrl }).(pulumi.StringOutput)
 }
@@ -39835,6 +41908,1485 @@ func (o GetIamAllowedApisAllowedApiArrayOutput) Index(i pulumi.IntInput) GetIamA
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamAllowedApisAllowedApi {
 		return vs[0].([]GetIamAllowedApisAllowedApi)[vs[1].(int)]
 	}).(GetIamAllowedApisAllowedApiOutput)
+}
+
+type GetIamApiClientActions struct {
+	// Whether you can deactivate the API client's credentials.
+	DeactivateAll bool `pulumi:"deactivateAll"`
+	// Whether you can remove the API client.
+	Delete bool `pulumi:"delete"`
+	// Whether you can update the API client.
+	Edit bool `pulumi:"edit"`
+	// Whether you can update the `apis` the API client can access, same as `editAuth`.
+	EditApis bool `pulumi:"editApis"`
+	// Whether you can update the `apis` the API client can access, same as `editApis`.
+	EditAuth bool `pulumi:"editAuth"`
+	// Whether you can update the `groups` the API client can access.
+	EditGroups bool `pulumi:"editGroups"`
+	// Whether you can update the `ipAcl` the API client can access.
+	EditIpAcl bool `pulumi:"editIpAcl"`
+	// Whether you can update the API client's option to manage many accounts.
+	EditSwitchAccount bool `pulumi:"editSwitchAccount"`
+	// Whether you can lock the API client.
+	Lock bool `pulumi:"lock"`
+	// Whether you can transfer the API client to a new owner.
+	Transfer bool `pulumi:"transfer"`
+	// Whether you can unlock the API client.
+	Unlock bool `pulumi:"unlock"`
+}
+
+// GetIamApiClientActionsInput is an input type that accepts GetIamApiClientActionsArgs and GetIamApiClientActionsOutput values.
+// You can construct a concrete instance of `GetIamApiClientActionsInput` via:
+//
+//	GetIamApiClientActionsArgs{...}
+type GetIamApiClientActionsInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientActionsOutput() GetIamApiClientActionsOutput
+	ToGetIamApiClientActionsOutputWithContext(context.Context) GetIamApiClientActionsOutput
+}
+
+type GetIamApiClientActionsArgs struct {
+	// Whether you can deactivate the API client's credentials.
+	DeactivateAll pulumi.BoolInput `pulumi:"deactivateAll"`
+	// Whether you can remove the API client.
+	Delete pulumi.BoolInput `pulumi:"delete"`
+	// Whether you can update the API client.
+	Edit pulumi.BoolInput `pulumi:"edit"`
+	// Whether you can update the `apis` the API client can access, same as `editAuth`.
+	EditApis pulumi.BoolInput `pulumi:"editApis"`
+	// Whether you can update the `apis` the API client can access, same as `editApis`.
+	EditAuth pulumi.BoolInput `pulumi:"editAuth"`
+	// Whether you can update the `groups` the API client can access.
+	EditGroups pulumi.BoolInput `pulumi:"editGroups"`
+	// Whether you can update the `ipAcl` the API client can access.
+	EditIpAcl pulumi.BoolInput `pulumi:"editIpAcl"`
+	// Whether you can update the API client's option to manage many accounts.
+	EditSwitchAccount pulumi.BoolInput `pulumi:"editSwitchAccount"`
+	// Whether you can lock the API client.
+	Lock pulumi.BoolInput `pulumi:"lock"`
+	// Whether you can transfer the API client to a new owner.
+	Transfer pulumi.BoolInput `pulumi:"transfer"`
+	// Whether you can unlock the API client.
+	Unlock pulumi.BoolInput `pulumi:"unlock"`
+}
+
+func (GetIamApiClientActionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientActions)(nil)).Elem()
+}
+
+func (i GetIamApiClientActionsArgs) ToGetIamApiClientActionsOutput() GetIamApiClientActionsOutput {
+	return i.ToGetIamApiClientActionsOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientActionsArgs) ToGetIamApiClientActionsOutputWithContext(ctx context.Context) GetIamApiClientActionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientActionsOutput)
+}
+
+type GetIamApiClientActionsOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientActionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientActions)(nil)).Elem()
+}
+
+func (o GetIamApiClientActionsOutput) ToGetIamApiClientActionsOutput() GetIamApiClientActionsOutput {
+	return o
+}
+
+func (o GetIamApiClientActionsOutput) ToGetIamApiClientActionsOutputWithContext(ctx context.Context) GetIamApiClientActionsOutput {
+	return o
+}
+
+// Whether you can deactivate the API client's credentials.
+func (o GetIamApiClientActionsOutput) DeactivateAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.DeactivateAll }).(pulumi.BoolOutput)
+}
+
+// Whether you can remove the API client.
+func (o GetIamApiClientActionsOutput) Delete() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.Delete }).(pulumi.BoolOutput)
+}
+
+// Whether you can update the API client.
+func (o GetIamApiClientActionsOutput) Edit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.Edit }).(pulumi.BoolOutput)
+}
+
+// Whether you can update the `apis` the API client can access, same as `editAuth`.
+func (o GetIamApiClientActionsOutput) EditApis() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.EditApis }).(pulumi.BoolOutput)
+}
+
+// Whether you can update the `apis` the API client can access, same as `editApis`.
+func (o GetIamApiClientActionsOutput) EditAuth() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.EditAuth }).(pulumi.BoolOutput)
+}
+
+// Whether you can update the `groups` the API client can access.
+func (o GetIamApiClientActionsOutput) EditGroups() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.EditGroups }).(pulumi.BoolOutput)
+}
+
+// Whether you can update the `ipAcl` the API client can access.
+func (o GetIamApiClientActionsOutput) EditIpAcl() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.EditIpAcl }).(pulumi.BoolOutput)
+}
+
+// Whether you can update the API client's option to manage many accounts.
+func (o GetIamApiClientActionsOutput) EditSwitchAccount() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.EditSwitchAccount }).(pulumi.BoolOutput)
+}
+
+// Whether you can lock the API client.
+func (o GetIamApiClientActionsOutput) Lock() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.Lock }).(pulumi.BoolOutput)
+}
+
+// Whether you can transfer the API client to a new owner.
+func (o GetIamApiClientActionsOutput) Transfer() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.Transfer }).(pulumi.BoolOutput)
+}
+
+// Whether you can unlock the API client.
+func (o GetIamApiClientActionsOutput) Unlock() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientActions) bool { return v.Unlock }).(pulumi.BoolOutput)
+}
+
+type GetIamApiClientApiAccess struct {
+	// Whether the API client has access to a full set of available APIs.
+	AllAccessibleApis bool `pulumi:"allAccessibleApis"`
+	// The set of APIs the API client can access when `allAccessibleApis` is disabled.
+	Apis []GetIamApiClientApiAccessApi `pulumi:"apis"`
+}
+
+// GetIamApiClientApiAccessInput is an input type that accepts GetIamApiClientApiAccessArgs and GetIamApiClientApiAccessOutput values.
+// You can construct a concrete instance of `GetIamApiClientApiAccessInput` via:
+//
+//	GetIamApiClientApiAccessArgs{...}
+type GetIamApiClientApiAccessInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientApiAccessOutput() GetIamApiClientApiAccessOutput
+	ToGetIamApiClientApiAccessOutputWithContext(context.Context) GetIamApiClientApiAccessOutput
+}
+
+type GetIamApiClientApiAccessArgs struct {
+	// Whether the API client has access to a full set of available APIs.
+	AllAccessibleApis pulumi.BoolInput `pulumi:"allAccessibleApis"`
+	// The set of APIs the API client can access when `allAccessibleApis` is disabled.
+	Apis GetIamApiClientApiAccessApiArrayInput `pulumi:"apis"`
+}
+
+func (GetIamApiClientApiAccessArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientApiAccess)(nil)).Elem()
+}
+
+func (i GetIamApiClientApiAccessArgs) ToGetIamApiClientApiAccessOutput() GetIamApiClientApiAccessOutput {
+	return i.ToGetIamApiClientApiAccessOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientApiAccessArgs) ToGetIamApiClientApiAccessOutputWithContext(ctx context.Context) GetIamApiClientApiAccessOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientApiAccessOutput)
+}
+
+type GetIamApiClientApiAccessOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientApiAccessOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientApiAccess)(nil)).Elem()
+}
+
+func (o GetIamApiClientApiAccessOutput) ToGetIamApiClientApiAccessOutput() GetIamApiClientApiAccessOutput {
+	return o
+}
+
+func (o GetIamApiClientApiAccessOutput) ToGetIamApiClientApiAccessOutputWithContext(ctx context.Context) GetIamApiClientApiAccessOutput {
+	return o
+}
+
+// Whether the API client has access to a full set of available APIs.
+func (o GetIamApiClientApiAccessOutput) AllAccessibleApis() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientApiAccess) bool { return v.AllAccessibleApis }).(pulumi.BoolOutput)
+}
+
+// The set of APIs the API client can access when `allAccessibleApis` is disabled.
+func (o GetIamApiClientApiAccessOutput) Apis() GetIamApiClientApiAccessApiArrayOutput {
+	return o.ApplyT(func(v GetIamApiClientApiAccess) []GetIamApiClientApiAccessApi { return v.Apis }).(GetIamApiClientApiAccessApiArrayOutput)
+}
+
+type GetIamApiClientApiAccessApi struct {
+	// The API client's access level on an API basis, either `READ-ONLY`, `READ-WRITE`, `CREDENTIAL-READ-ONLY`, or `CREDENTIAL-READ-WRITE`.
+	AccessLevel string `pulumi:"accessLevel"`
+	// A unique identifier for each API.
+	ApiId int `pulumi:"apiId"`
+	// A human-readable name for the API.
+	ApiName string `pulumi:"apiName"`
+	// A human-readable description for the API.
+	Description string `pulumi:"description"`
+	// A link to more information about the API.
+	DocumentationUrl string `pulumi:"documentationUrl"`
+	// Specifies where the API can access resources.
+	Endpoint string `pulumi:"endpoint"`
+}
+
+// GetIamApiClientApiAccessApiInput is an input type that accepts GetIamApiClientApiAccessApiArgs and GetIamApiClientApiAccessApiOutput values.
+// You can construct a concrete instance of `GetIamApiClientApiAccessApiInput` via:
+//
+//	GetIamApiClientApiAccessApiArgs{...}
+type GetIamApiClientApiAccessApiInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientApiAccessApiOutput() GetIamApiClientApiAccessApiOutput
+	ToGetIamApiClientApiAccessApiOutputWithContext(context.Context) GetIamApiClientApiAccessApiOutput
+}
+
+type GetIamApiClientApiAccessApiArgs struct {
+	// The API client's access level on an API basis, either `READ-ONLY`, `READ-WRITE`, `CREDENTIAL-READ-ONLY`, or `CREDENTIAL-READ-WRITE`.
+	AccessLevel pulumi.StringInput `pulumi:"accessLevel"`
+	// A unique identifier for each API.
+	ApiId pulumi.IntInput `pulumi:"apiId"`
+	// A human-readable name for the API.
+	ApiName pulumi.StringInput `pulumi:"apiName"`
+	// A human-readable description for the API.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A link to more information about the API.
+	DocumentationUrl pulumi.StringInput `pulumi:"documentationUrl"`
+	// Specifies where the API can access resources.
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+}
+
+func (GetIamApiClientApiAccessApiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientApiAccessApi)(nil)).Elem()
+}
+
+func (i GetIamApiClientApiAccessApiArgs) ToGetIamApiClientApiAccessApiOutput() GetIamApiClientApiAccessApiOutput {
+	return i.ToGetIamApiClientApiAccessApiOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientApiAccessApiArgs) ToGetIamApiClientApiAccessApiOutputWithContext(ctx context.Context) GetIamApiClientApiAccessApiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientApiAccessApiOutput)
+}
+
+// GetIamApiClientApiAccessApiArrayInput is an input type that accepts GetIamApiClientApiAccessApiArray and GetIamApiClientApiAccessApiArrayOutput values.
+// You can construct a concrete instance of `GetIamApiClientApiAccessApiArrayInput` via:
+//
+//	GetIamApiClientApiAccessApiArray{ GetIamApiClientApiAccessApiArgs{...} }
+type GetIamApiClientApiAccessApiArrayInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientApiAccessApiArrayOutput() GetIamApiClientApiAccessApiArrayOutput
+	ToGetIamApiClientApiAccessApiArrayOutputWithContext(context.Context) GetIamApiClientApiAccessApiArrayOutput
+}
+
+type GetIamApiClientApiAccessApiArray []GetIamApiClientApiAccessApiInput
+
+func (GetIamApiClientApiAccessApiArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientApiAccessApi)(nil)).Elem()
+}
+
+func (i GetIamApiClientApiAccessApiArray) ToGetIamApiClientApiAccessApiArrayOutput() GetIamApiClientApiAccessApiArrayOutput {
+	return i.ToGetIamApiClientApiAccessApiArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientApiAccessApiArray) ToGetIamApiClientApiAccessApiArrayOutputWithContext(ctx context.Context) GetIamApiClientApiAccessApiArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientApiAccessApiArrayOutput)
+}
+
+type GetIamApiClientApiAccessApiOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientApiAccessApiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientApiAccessApi)(nil)).Elem()
+}
+
+func (o GetIamApiClientApiAccessApiOutput) ToGetIamApiClientApiAccessApiOutput() GetIamApiClientApiAccessApiOutput {
+	return o
+}
+
+func (o GetIamApiClientApiAccessApiOutput) ToGetIamApiClientApiAccessApiOutputWithContext(ctx context.Context) GetIamApiClientApiAccessApiOutput {
+	return o
+}
+
+// The API client's access level on an API basis, either `READ-ONLY`, `READ-WRITE`, `CREDENTIAL-READ-ONLY`, or `CREDENTIAL-READ-WRITE`.
+func (o GetIamApiClientApiAccessApiOutput) AccessLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientApiAccessApi) string { return v.AccessLevel }).(pulumi.StringOutput)
+}
+
+// A unique identifier for each API.
+func (o GetIamApiClientApiAccessApiOutput) ApiId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamApiClientApiAccessApi) int { return v.ApiId }).(pulumi.IntOutput)
+}
+
+// A human-readable name for the API.
+func (o GetIamApiClientApiAccessApiOutput) ApiName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientApiAccessApi) string { return v.ApiName }).(pulumi.StringOutput)
+}
+
+// A human-readable description for the API.
+func (o GetIamApiClientApiAccessApiOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientApiAccessApi) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A link to more information about the API.
+func (o GetIamApiClientApiAccessApiOutput) DocumentationUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientApiAccessApi) string { return v.DocumentationUrl }).(pulumi.StringOutput)
+}
+
+// Specifies where the API can access resources.
+func (o GetIamApiClientApiAccessApiOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientApiAccessApi) string { return v.Endpoint }).(pulumi.StringOutput)
+}
+
+type GetIamApiClientApiAccessApiArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientApiAccessApiArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientApiAccessApi)(nil)).Elem()
+}
+
+func (o GetIamApiClientApiAccessApiArrayOutput) ToGetIamApiClientApiAccessApiArrayOutput() GetIamApiClientApiAccessApiArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientApiAccessApiArrayOutput) ToGetIamApiClientApiAccessApiArrayOutputWithContext(ctx context.Context) GetIamApiClientApiAccessApiArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientApiAccessApiArrayOutput) Index(i pulumi.IntInput) GetIamApiClientApiAccessApiOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamApiClientApiAccessApi {
+		return vs[0].([]GetIamApiClientApiAccessApi)[vs[1].(int)]
+	}).(GetIamApiClientApiAccessApiOutput)
+}
+
+type GetIamApiClientCredential struct {
+	// Specifies activities available on the API client's credentials.
+	Actions GetIamApiClientCredentialActions `pulumi:"actions"`
+	// The part of the credential that identifies the API client.
+	ClientToken string `pulumi:"clientToken"`
+	// The ISO 8601 timestamp indicating when the credential was created.
+	CreatedOn string `pulumi:"createdOn"`
+	// A unique identifier for each credential.
+	CredentialId int `pulumi:"credentialId"`
+	// A human-readable description for the API client.
+	Description string `pulumi:"description"`
+	// The ISO 8601 timestamp indicating when the credential expires.
+	ExpiresOn string `pulumi:"expiresOn"`
+	// Whether a credential is `ACTIVE`, `INACTIVE`, or `DELETED`.
+	Status string `pulumi:"status"`
+}
+
+// GetIamApiClientCredentialInput is an input type that accepts GetIamApiClientCredentialArgs and GetIamApiClientCredentialOutput values.
+// You can construct a concrete instance of `GetIamApiClientCredentialInput` via:
+//
+//	GetIamApiClientCredentialArgs{...}
+type GetIamApiClientCredentialInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientCredentialOutput() GetIamApiClientCredentialOutput
+	ToGetIamApiClientCredentialOutputWithContext(context.Context) GetIamApiClientCredentialOutput
+}
+
+type GetIamApiClientCredentialArgs struct {
+	// Specifies activities available on the API client's credentials.
+	Actions GetIamApiClientCredentialActionsInput `pulumi:"actions"`
+	// The part of the credential that identifies the API client.
+	ClientToken pulumi.StringInput `pulumi:"clientToken"`
+	// The ISO 8601 timestamp indicating when the credential was created.
+	CreatedOn pulumi.StringInput `pulumi:"createdOn"`
+	// A unique identifier for each credential.
+	CredentialId pulumi.IntInput `pulumi:"credentialId"`
+	// A human-readable description for the API client.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The ISO 8601 timestamp indicating when the credential expires.
+	ExpiresOn pulumi.StringInput `pulumi:"expiresOn"`
+	// Whether a credential is `ACTIVE`, `INACTIVE`, or `DELETED`.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetIamApiClientCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientCredential)(nil)).Elem()
+}
+
+func (i GetIamApiClientCredentialArgs) ToGetIamApiClientCredentialOutput() GetIamApiClientCredentialOutput {
+	return i.ToGetIamApiClientCredentialOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientCredentialArgs) ToGetIamApiClientCredentialOutputWithContext(ctx context.Context) GetIamApiClientCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientCredentialOutput)
+}
+
+// GetIamApiClientCredentialArrayInput is an input type that accepts GetIamApiClientCredentialArray and GetIamApiClientCredentialArrayOutput values.
+// You can construct a concrete instance of `GetIamApiClientCredentialArrayInput` via:
+//
+//	GetIamApiClientCredentialArray{ GetIamApiClientCredentialArgs{...} }
+type GetIamApiClientCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientCredentialArrayOutput() GetIamApiClientCredentialArrayOutput
+	ToGetIamApiClientCredentialArrayOutputWithContext(context.Context) GetIamApiClientCredentialArrayOutput
+}
+
+type GetIamApiClientCredentialArray []GetIamApiClientCredentialInput
+
+func (GetIamApiClientCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientCredential)(nil)).Elem()
+}
+
+func (i GetIamApiClientCredentialArray) ToGetIamApiClientCredentialArrayOutput() GetIamApiClientCredentialArrayOutput {
+	return i.ToGetIamApiClientCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientCredentialArray) ToGetIamApiClientCredentialArrayOutputWithContext(ctx context.Context) GetIamApiClientCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientCredentialArrayOutput)
+}
+
+type GetIamApiClientCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientCredential)(nil)).Elem()
+}
+
+func (o GetIamApiClientCredentialOutput) ToGetIamApiClientCredentialOutput() GetIamApiClientCredentialOutput {
+	return o
+}
+
+func (o GetIamApiClientCredentialOutput) ToGetIamApiClientCredentialOutputWithContext(ctx context.Context) GetIamApiClientCredentialOutput {
+	return o
+}
+
+// Specifies activities available on the API client's credentials.
+func (o GetIamApiClientCredentialOutput) Actions() GetIamApiClientCredentialActionsOutput {
+	return o.ApplyT(func(v GetIamApiClientCredential) GetIamApiClientCredentialActions { return v.Actions }).(GetIamApiClientCredentialActionsOutput)
+}
+
+// The part of the credential that identifies the API client.
+func (o GetIamApiClientCredentialOutput) ClientToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientCredential) string { return v.ClientToken }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 timestamp indicating when the credential was created.
+func (o GetIamApiClientCredentialOutput) CreatedOn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientCredential) string { return v.CreatedOn }).(pulumi.StringOutput)
+}
+
+// A unique identifier for each credential.
+func (o GetIamApiClientCredentialOutput) CredentialId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamApiClientCredential) int { return v.CredentialId }).(pulumi.IntOutput)
+}
+
+// A human-readable description for the API client.
+func (o GetIamApiClientCredentialOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientCredential) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 timestamp indicating when the credential expires.
+func (o GetIamApiClientCredentialOutput) ExpiresOn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientCredential) string { return v.ExpiresOn }).(pulumi.StringOutput)
+}
+
+// Whether a credential is `ACTIVE`, `INACTIVE`, or `DELETED`.
+func (o GetIamApiClientCredentialOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientCredential) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetIamApiClientCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientCredential)(nil)).Elem()
+}
+
+func (o GetIamApiClientCredentialArrayOutput) ToGetIamApiClientCredentialArrayOutput() GetIamApiClientCredentialArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientCredentialArrayOutput) ToGetIamApiClientCredentialArrayOutputWithContext(ctx context.Context) GetIamApiClientCredentialArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientCredentialArrayOutput) Index(i pulumi.IntInput) GetIamApiClientCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamApiClientCredential {
+		return vs[0].([]GetIamApiClientCredential)[vs[1].(int)]
+	}).(GetIamApiClientCredentialOutput)
+}
+
+type GetIamApiClientCredentialActions struct {
+	// Whether you can activate the credential.
+	Activate bool `pulumi:"activate"`
+	// Whether you can deactivate the credential.
+	Deactivate bool `pulumi:"deactivate"`
+	// Whether you can remove the credential.
+	Delete bool `pulumi:"delete"`
+	// Whether you can modify the credential's description.
+	EditDescription bool `pulumi:"editDescription"`
+	// Whether you can modify the credential's expiration date.
+	EditExpiration bool `pulumi:"editExpiration"`
+}
+
+// GetIamApiClientCredentialActionsInput is an input type that accepts GetIamApiClientCredentialActionsArgs and GetIamApiClientCredentialActionsOutput values.
+// You can construct a concrete instance of `GetIamApiClientCredentialActionsInput` via:
+//
+//	GetIamApiClientCredentialActionsArgs{...}
+type GetIamApiClientCredentialActionsInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientCredentialActionsOutput() GetIamApiClientCredentialActionsOutput
+	ToGetIamApiClientCredentialActionsOutputWithContext(context.Context) GetIamApiClientCredentialActionsOutput
+}
+
+type GetIamApiClientCredentialActionsArgs struct {
+	// Whether you can activate the credential.
+	Activate pulumi.BoolInput `pulumi:"activate"`
+	// Whether you can deactivate the credential.
+	Deactivate pulumi.BoolInput `pulumi:"deactivate"`
+	// Whether you can remove the credential.
+	Delete pulumi.BoolInput `pulumi:"delete"`
+	// Whether you can modify the credential's description.
+	EditDescription pulumi.BoolInput `pulumi:"editDescription"`
+	// Whether you can modify the credential's expiration date.
+	EditExpiration pulumi.BoolInput `pulumi:"editExpiration"`
+}
+
+func (GetIamApiClientCredentialActionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientCredentialActions)(nil)).Elem()
+}
+
+func (i GetIamApiClientCredentialActionsArgs) ToGetIamApiClientCredentialActionsOutput() GetIamApiClientCredentialActionsOutput {
+	return i.ToGetIamApiClientCredentialActionsOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientCredentialActionsArgs) ToGetIamApiClientCredentialActionsOutputWithContext(ctx context.Context) GetIamApiClientCredentialActionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientCredentialActionsOutput)
+}
+
+type GetIamApiClientCredentialActionsOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientCredentialActionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientCredentialActions)(nil)).Elem()
+}
+
+func (o GetIamApiClientCredentialActionsOutput) ToGetIamApiClientCredentialActionsOutput() GetIamApiClientCredentialActionsOutput {
+	return o
+}
+
+func (o GetIamApiClientCredentialActionsOutput) ToGetIamApiClientCredentialActionsOutputWithContext(ctx context.Context) GetIamApiClientCredentialActionsOutput {
+	return o
+}
+
+// Whether you can activate the credential.
+func (o GetIamApiClientCredentialActionsOutput) Activate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientCredentialActions) bool { return v.Activate }).(pulumi.BoolOutput)
+}
+
+// Whether you can deactivate the credential.
+func (o GetIamApiClientCredentialActionsOutput) Deactivate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientCredentialActions) bool { return v.Deactivate }).(pulumi.BoolOutput)
+}
+
+// Whether you can remove the credential.
+func (o GetIamApiClientCredentialActionsOutput) Delete() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientCredentialActions) bool { return v.Delete }).(pulumi.BoolOutput)
+}
+
+// Whether you can modify the credential's description.
+func (o GetIamApiClientCredentialActionsOutput) EditDescription() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientCredentialActions) bool { return v.EditDescription }).(pulumi.BoolOutput)
+}
+
+// Whether you can modify the credential's expiration date.
+func (o GetIamApiClientCredentialActionsOutput) EditExpiration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientCredentialActions) bool { return v.EditExpiration }).(pulumi.BoolOutput)
+}
+
+type GetIamApiClientGroupAccess struct {
+	// Sets the API client's group access the same as the authorized user.
+	CloneAuthorizedUserGroups bool `pulumi:"cloneAuthorizedUserGroups"`
+	// Groups the API client can access.
+	Groups []GetIamApiClientGroupAccessGroup `pulumi:"groups"`
+}
+
+// GetIamApiClientGroupAccessInput is an input type that accepts GetIamApiClientGroupAccessArgs and GetIamApiClientGroupAccessOutput values.
+// You can construct a concrete instance of `GetIamApiClientGroupAccessInput` via:
+//
+//	GetIamApiClientGroupAccessArgs{...}
+type GetIamApiClientGroupAccessInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientGroupAccessOutput() GetIamApiClientGroupAccessOutput
+	ToGetIamApiClientGroupAccessOutputWithContext(context.Context) GetIamApiClientGroupAccessOutput
+}
+
+type GetIamApiClientGroupAccessArgs struct {
+	// Sets the API client's group access the same as the authorized user.
+	CloneAuthorizedUserGroups pulumi.BoolInput `pulumi:"cloneAuthorizedUserGroups"`
+	// Groups the API client can access.
+	Groups GetIamApiClientGroupAccessGroupArrayInput `pulumi:"groups"`
+}
+
+func (GetIamApiClientGroupAccessArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientGroupAccess)(nil)).Elem()
+}
+
+func (i GetIamApiClientGroupAccessArgs) ToGetIamApiClientGroupAccessOutput() GetIamApiClientGroupAccessOutput {
+	return i.ToGetIamApiClientGroupAccessOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientGroupAccessArgs) ToGetIamApiClientGroupAccessOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientGroupAccessOutput)
+}
+
+type GetIamApiClientGroupAccessOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientGroupAccessOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientGroupAccess)(nil)).Elem()
+}
+
+func (o GetIamApiClientGroupAccessOutput) ToGetIamApiClientGroupAccessOutput() GetIamApiClientGroupAccessOutput {
+	return o
+}
+
+func (o GetIamApiClientGroupAccessOutput) ToGetIamApiClientGroupAccessOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessOutput {
+	return o
+}
+
+// Sets the API client's group access the same as the authorized user.
+func (o GetIamApiClientGroupAccessOutput) CloneAuthorizedUserGroups() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccess) bool { return v.CloneAuthorizedUserGroups }).(pulumi.BoolOutput)
+}
+
+// Groups the API client can access.
+func (o GetIamApiClientGroupAccessOutput) Groups() GetIamApiClientGroupAccessGroupArrayOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccess) []GetIamApiClientGroupAccessGroup { return v.Groups }).(GetIamApiClientGroupAccessGroupArrayOutput)
+}
+
+type GetIamApiClientGroupAccessGroup struct {
+	// Unique identifier for each group.
+	GroupId int `pulumi:"groupId"`
+	// Descriptive label for the group.
+	GroupName string `pulumi:"groupName"`
+	// Blocks the API client access to the group's child groups.
+	IsBlocked bool `pulumi:"isBlocked"`
+	// Unique identifier for the parent group within the group tree.
+	ParentGroupId int `pulumi:"parentGroupId"`
+	// Descriptive label for the role to convey its use.
+	RoleDescription string `pulumi:"roleDescription"`
+	// Unique identifier for each role.
+	RoleId int `pulumi:"roleId"`
+	// Descriptive label for the role.
+	RoleName string `pulumi:"roleName"`
+	// Groups the API client can access.
+	SubGroups []GetIamApiClientGroupAccessGroupSubGroup `pulumi:"subGroups"`
+}
+
+// GetIamApiClientGroupAccessGroupInput is an input type that accepts GetIamApiClientGroupAccessGroupArgs and GetIamApiClientGroupAccessGroupOutput values.
+// You can construct a concrete instance of `GetIamApiClientGroupAccessGroupInput` via:
+//
+//	GetIamApiClientGroupAccessGroupArgs{...}
+type GetIamApiClientGroupAccessGroupInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientGroupAccessGroupOutput() GetIamApiClientGroupAccessGroupOutput
+	ToGetIamApiClientGroupAccessGroupOutputWithContext(context.Context) GetIamApiClientGroupAccessGroupOutput
+}
+
+type GetIamApiClientGroupAccessGroupArgs struct {
+	// Unique identifier for each group.
+	GroupId pulumi.IntInput `pulumi:"groupId"`
+	// Descriptive label for the group.
+	GroupName pulumi.StringInput `pulumi:"groupName"`
+	// Blocks the API client access to the group's child groups.
+	IsBlocked pulumi.BoolInput `pulumi:"isBlocked"`
+	// Unique identifier for the parent group within the group tree.
+	ParentGroupId pulumi.IntInput `pulumi:"parentGroupId"`
+	// Descriptive label for the role to convey its use.
+	RoleDescription pulumi.StringInput `pulumi:"roleDescription"`
+	// Unique identifier for each role.
+	RoleId pulumi.IntInput `pulumi:"roleId"`
+	// Descriptive label for the role.
+	RoleName pulumi.StringInput `pulumi:"roleName"`
+	// Groups the API client can access.
+	SubGroups GetIamApiClientGroupAccessGroupSubGroupArrayInput `pulumi:"subGroups"`
+}
+
+func (GetIamApiClientGroupAccessGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientGroupAccessGroup)(nil)).Elem()
+}
+
+func (i GetIamApiClientGroupAccessGroupArgs) ToGetIamApiClientGroupAccessGroupOutput() GetIamApiClientGroupAccessGroupOutput {
+	return i.ToGetIamApiClientGroupAccessGroupOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientGroupAccessGroupArgs) ToGetIamApiClientGroupAccessGroupOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientGroupAccessGroupOutput)
+}
+
+// GetIamApiClientGroupAccessGroupArrayInput is an input type that accepts GetIamApiClientGroupAccessGroupArray and GetIamApiClientGroupAccessGroupArrayOutput values.
+// You can construct a concrete instance of `GetIamApiClientGroupAccessGroupArrayInput` via:
+//
+//	GetIamApiClientGroupAccessGroupArray{ GetIamApiClientGroupAccessGroupArgs{...} }
+type GetIamApiClientGroupAccessGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientGroupAccessGroupArrayOutput() GetIamApiClientGroupAccessGroupArrayOutput
+	ToGetIamApiClientGroupAccessGroupArrayOutputWithContext(context.Context) GetIamApiClientGroupAccessGroupArrayOutput
+}
+
+type GetIamApiClientGroupAccessGroupArray []GetIamApiClientGroupAccessGroupInput
+
+func (GetIamApiClientGroupAccessGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientGroupAccessGroup)(nil)).Elem()
+}
+
+func (i GetIamApiClientGroupAccessGroupArray) ToGetIamApiClientGroupAccessGroupArrayOutput() GetIamApiClientGroupAccessGroupArrayOutput {
+	return i.ToGetIamApiClientGroupAccessGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientGroupAccessGroupArray) ToGetIamApiClientGroupAccessGroupArrayOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientGroupAccessGroupArrayOutput)
+}
+
+type GetIamApiClientGroupAccessGroupOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientGroupAccessGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientGroupAccessGroup)(nil)).Elem()
+}
+
+func (o GetIamApiClientGroupAccessGroupOutput) ToGetIamApiClientGroupAccessGroupOutput() GetIamApiClientGroupAccessGroupOutput {
+	return o
+}
+
+func (o GetIamApiClientGroupAccessGroupOutput) ToGetIamApiClientGroupAccessGroupOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessGroupOutput {
+	return o
+}
+
+// Unique identifier for each group.
+func (o GetIamApiClientGroupAccessGroupOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroup) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// Descriptive label for the group.
+func (o GetIamApiClientGroupAccessGroupOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroup) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+// Blocks the API client access to the group's child groups.
+func (o GetIamApiClientGroupAccessGroupOutput) IsBlocked() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroup) bool { return v.IsBlocked }).(pulumi.BoolOutput)
+}
+
+// Unique identifier for the parent group within the group tree.
+func (o GetIamApiClientGroupAccessGroupOutput) ParentGroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroup) int { return v.ParentGroupId }).(pulumi.IntOutput)
+}
+
+// Descriptive label for the role to convey its use.
+func (o GetIamApiClientGroupAccessGroupOutput) RoleDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroup) string { return v.RoleDescription }).(pulumi.StringOutput)
+}
+
+// Unique identifier for each role.
+func (o GetIamApiClientGroupAccessGroupOutput) RoleId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroup) int { return v.RoleId }).(pulumi.IntOutput)
+}
+
+// Descriptive label for the role.
+func (o GetIamApiClientGroupAccessGroupOutput) RoleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroup) string { return v.RoleName }).(pulumi.StringOutput)
+}
+
+// Groups the API client can access.
+func (o GetIamApiClientGroupAccessGroupOutput) SubGroups() GetIamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroup) []GetIamApiClientGroupAccessGroupSubGroup { return v.SubGroups }).(GetIamApiClientGroupAccessGroupSubGroupArrayOutput)
+}
+
+type GetIamApiClientGroupAccessGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientGroupAccessGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientGroupAccessGroup)(nil)).Elem()
+}
+
+func (o GetIamApiClientGroupAccessGroupArrayOutput) ToGetIamApiClientGroupAccessGroupArrayOutput() GetIamApiClientGroupAccessGroupArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientGroupAccessGroupArrayOutput) ToGetIamApiClientGroupAccessGroupArrayOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessGroupArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientGroupAccessGroupArrayOutput) Index(i pulumi.IntInput) GetIamApiClientGroupAccessGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamApiClientGroupAccessGroup {
+		return vs[0].([]GetIamApiClientGroupAccessGroup)[vs[1].(int)]
+	}).(GetIamApiClientGroupAccessGroupOutput)
+}
+
+type GetIamApiClientGroupAccessGroupSubGroup struct {
+	// Unique identifier for each group.
+	GroupId int `pulumi:"groupId"`
+	// Descriptive label for the group.
+	GroupName string `pulumi:"groupName"`
+	// Blocks the API client access to the group's child groups.
+	IsBlocked bool `pulumi:"isBlocked"`
+	// Unique identifier for the parent group within the group tree.
+	ParentGroupId int `pulumi:"parentGroupId"`
+	// Descriptive label for the role to convey its use.
+	RoleDescription string `pulumi:"roleDescription"`
+	// Unique identifier for each role.
+	RoleId int `pulumi:"roleId"`
+	// Descriptive label for the role.
+	RoleName string `pulumi:"roleName"`
+	// Groups the API client can access.
+	SubGroups []GetIamApiClientGroupAccessGroupSubGroup `pulumi:"subGroups"`
+}
+
+// GetIamApiClientGroupAccessGroupSubGroupInput is an input type that accepts GetIamApiClientGroupAccessGroupSubGroupArgs and GetIamApiClientGroupAccessGroupSubGroupOutput values.
+// You can construct a concrete instance of `GetIamApiClientGroupAccessGroupSubGroupInput` via:
+//
+//	GetIamApiClientGroupAccessGroupSubGroupArgs{...}
+type GetIamApiClientGroupAccessGroupSubGroupInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientGroupAccessGroupSubGroupOutput() GetIamApiClientGroupAccessGroupSubGroupOutput
+	ToGetIamApiClientGroupAccessGroupSubGroupOutputWithContext(context.Context) GetIamApiClientGroupAccessGroupSubGroupOutput
+}
+
+type GetIamApiClientGroupAccessGroupSubGroupArgs struct {
+	// Unique identifier for each group.
+	GroupId pulumi.IntInput `pulumi:"groupId"`
+	// Descriptive label for the group.
+	GroupName pulumi.StringInput `pulumi:"groupName"`
+	// Blocks the API client access to the group's child groups.
+	IsBlocked pulumi.BoolInput `pulumi:"isBlocked"`
+	// Unique identifier for the parent group within the group tree.
+	ParentGroupId pulumi.IntInput `pulumi:"parentGroupId"`
+	// Descriptive label for the role to convey its use.
+	RoleDescription pulumi.StringInput `pulumi:"roleDescription"`
+	// Unique identifier for each role.
+	RoleId pulumi.IntInput `pulumi:"roleId"`
+	// Descriptive label for the role.
+	RoleName pulumi.StringInput `pulumi:"roleName"`
+	// Groups the API client can access.
+	SubGroups GetIamApiClientGroupAccessGroupSubGroupArrayInput `pulumi:"subGroups"`
+}
+
+func (GetIamApiClientGroupAccessGroupSubGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientGroupAccessGroupSubGroup)(nil)).Elem()
+}
+
+func (i GetIamApiClientGroupAccessGroupSubGroupArgs) ToGetIamApiClientGroupAccessGroupSubGroupOutput() GetIamApiClientGroupAccessGroupSubGroupOutput {
+	return i.ToGetIamApiClientGroupAccessGroupSubGroupOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientGroupAccessGroupSubGroupArgs) ToGetIamApiClientGroupAccessGroupSubGroupOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessGroupSubGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientGroupAccessGroupSubGroupOutput)
+}
+
+// GetIamApiClientGroupAccessGroupSubGroupArrayInput is an input type that accepts GetIamApiClientGroupAccessGroupSubGroupArray and GetIamApiClientGroupAccessGroupSubGroupArrayOutput values.
+// You can construct a concrete instance of `GetIamApiClientGroupAccessGroupSubGroupArrayInput` via:
+//
+//	GetIamApiClientGroupAccessGroupSubGroupArray{ GetIamApiClientGroupAccessGroupSubGroupArgs{...} }
+type GetIamApiClientGroupAccessGroupSubGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientGroupAccessGroupSubGroupArrayOutput() GetIamApiClientGroupAccessGroupSubGroupArrayOutput
+	ToGetIamApiClientGroupAccessGroupSubGroupArrayOutputWithContext(context.Context) GetIamApiClientGroupAccessGroupSubGroupArrayOutput
+}
+
+type GetIamApiClientGroupAccessGroupSubGroupArray []GetIamApiClientGroupAccessGroupSubGroupInput
+
+func (GetIamApiClientGroupAccessGroupSubGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientGroupAccessGroupSubGroup)(nil)).Elem()
+}
+
+func (i GetIamApiClientGroupAccessGroupSubGroupArray) ToGetIamApiClientGroupAccessGroupSubGroupArrayOutput() GetIamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return i.ToGetIamApiClientGroupAccessGroupSubGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientGroupAccessGroupSubGroupArray) ToGetIamApiClientGroupAccessGroupSubGroupArrayOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientGroupAccessGroupSubGroupArrayOutput)
+}
+
+type GetIamApiClientGroupAccessGroupSubGroupOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientGroupAccessGroupSubGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientGroupAccessGroupSubGroup)(nil)).Elem()
+}
+
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) ToGetIamApiClientGroupAccessGroupSubGroupOutput() GetIamApiClientGroupAccessGroupSubGroupOutput {
+	return o
+}
+
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) ToGetIamApiClientGroupAccessGroupSubGroupOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessGroupSubGroupOutput {
+	return o
+}
+
+// Unique identifier for each group.
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroupSubGroup) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// Descriptive label for the group.
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroupSubGroup) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+// Blocks the API client access to the group's child groups.
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) IsBlocked() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroupSubGroup) bool { return v.IsBlocked }).(pulumi.BoolOutput)
+}
+
+// Unique identifier for the parent group within the group tree.
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) ParentGroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroupSubGroup) int { return v.ParentGroupId }).(pulumi.IntOutput)
+}
+
+// Descriptive label for the role to convey its use.
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) RoleDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroupSubGroup) string { return v.RoleDescription }).(pulumi.StringOutput)
+}
+
+// Unique identifier for each role.
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) RoleId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroupSubGroup) int { return v.RoleId }).(pulumi.IntOutput)
+}
+
+// Descriptive label for the role.
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) RoleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroupSubGroup) string { return v.RoleName }).(pulumi.StringOutput)
+}
+
+// Groups the API client can access.
+func (o GetIamApiClientGroupAccessGroupSubGroupOutput) SubGroups() GetIamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return o.ApplyT(func(v GetIamApiClientGroupAccessGroupSubGroup) []GetIamApiClientGroupAccessGroupSubGroup {
+		return v.SubGroups
+	}).(GetIamApiClientGroupAccessGroupSubGroupArrayOutput)
+}
+
+type GetIamApiClientGroupAccessGroupSubGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientGroupAccessGroupSubGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientGroupAccessGroupSubGroup)(nil)).Elem()
+}
+
+func (o GetIamApiClientGroupAccessGroupSubGroupArrayOutput) ToGetIamApiClientGroupAccessGroupSubGroupArrayOutput() GetIamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientGroupAccessGroupSubGroupArrayOutput) ToGetIamApiClientGroupAccessGroupSubGroupArrayOutputWithContext(ctx context.Context) GetIamApiClientGroupAccessGroupSubGroupArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientGroupAccessGroupSubGroupArrayOutput) Index(i pulumi.IntInput) GetIamApiClientGroupAccessGroupSubGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamApiClientGroupAccessGroupSubGroup {
+		return vs[0].([]GetIamApiClientGroupAccessGroupSubGroup)[vs[1].(int)]
+	}).(GetIamApiClientGroupAccessGroupSubGroupOutput)
+}
+
+type GetIamApiClientIpAcl struct {
+	// IP addresses or CIDR blocks the API client can access.
+	Cidrs []string `pulumi:"cidrs"`
+	// Enables the API client to access the IP access control list (ACL).
+	Enable bool `pulumi:"enable"`
+}
+
+// GetIamApiClientIpAclInput is an input type that accepts GetIamApiClientIpAclArgs and GetIamApiClientIpAclOutput values.
+// You can construct a concrete instance of `GetIamApiClientIpAclInput` via:
+//
+//	GetIamApiClientIpAclArgs{...}
+type GetIamApiClientIpAclInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientIpAclOutput() GetIamApiClientIpAclOutput
+	ToGetIamApiClientIpAclOutputWithContext(context.Context) GetIamApiClientIpAclOutput
+}
+
+type GetIamApiClientIpAclArgs struct {
+	// IP addresses or CIDR blocks the API client can access.
+	Cidrs pulumi.StringArrayInput `pulumi:"cidrs"`
+	// Enables the API client to access the IP access control list (ACL).
+	Enable pulumi.BoolInput `pulumi:"enable"`
+}
+
+func (GetIamApiClientIpAclArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientIpAcl)(nil)).Elem()
+}
+
+func (i GetIamApiClientIpAclArgs) ToGetIamApiClientIpAclOutput() GetIamApiClientIpAclOutput {
+	return i.ToGetIamApiClientIpAclOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientIpAclArgs) ToGetIamApiClientIpAclOutputWithContext(ctx context.Context) GetIamApiClientIpAclOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientIpAclOutput)
+}
+
+type GetIamApiClientIpAclOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientIpAclOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientIpAcl)(nil)).Elem()
+}
+
+func (o GetIamApiClientIpAclOutput) ToGetIamApiClientIpAclOutput() GetIamApiClientIpAclOutput {
+	return o
+}
+
+func (o GetIamApiClientIpAclOutput) ToGetIamApiClientIpAclOutputWithContext(ctx context.Context) GetIamApiClientIpAclOutput {
+	return o
+}
+
+// IP addresses or CIDR blocks the API client can access.
+func (o GetIamApiClientIpAclOutput) Cidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamApiClientIpAcl) []string { return v.Cidrs }).(pulumi.StringArrayOutput)
+}
+
+// Enables the API client to access the IP access control list (ACL).
+func (o GetIamApiClientIpAclOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientIpAcl) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+type GetIamApiClientPurgeOptions struct {
+	// Whether the API client can purge content by cache tag.
+	CanPurgeByCacheTag bool `pulumi:"canPurgeByCacheTag"`
+	// Whether the API client can purge content by CP code.
+	CanPurgeByCpCode bool `pulumi:"canPurgeByCpCode"`
+	// CP codes the API client can purge.
+	CpCodeAccess GetIamApiClientPurgeOptionsCpCodeAccess `pulumi:"cpCodeAccess"`
+}
+
+// GetIamApiClientPurgeOptionsInput is an input type that accepts GetIamApiClientPurgeOptionsArgs and GetIamApiClientPurgeOptionsOutput values.
+// You can construct a concrete instance of `GetIamApiClientPurgeOptionsInput` via:
+//
+//	GetIamApiClientPurgeOptionsArgs{...}
+type GetIamApiClientPurgeOptionsInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientPurgeOptionsOutput() GetIamApiClientPurgeOptionsOutput
+	ToGetIamApiClientPurgeOptionsOutputWithContext(context.Context) GetIamApiClientPurgeOptionsOutput
+}
+
+type GetIamApiClientPurgeOptionsArgs struct {
+	// Whether the API client can purge content by cache tag.
+	CanPurgeByCacheTag pulumi.BoolInput `pulumi:"canPurgeByCacheTag"`
+	// Whether the API client can purge content by CP code.
+	CanPurgeByCpCode pulumi.BoolInput `pulumi:"canPurgeByCpCode"`
+	// CP codes the API client can purge.
+	CpCodeAccess GetIamApiClientPurgeOptionsCpCodeAccessInput `pulumi:"cpCodeAccess"`
+}
+
+func (GetIamApiClientPurgeOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientPurgeOptions)(nil)).Elem()
+}
+
+func (i GetIamApiClientPurgeOptionsArgs) ToGetIamApiClientPurgeOptionsOutput() GetIamApiClientPurgeOptionsOutput {
+	return i.ToGetIamApiClientPurgeOptionsOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientPurgeOptionsArgs) ToGetIamApiClientPurgeOptionsOutputWithContext(ctx context.Context) GetIamApiClientPurgeOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientPurgeOptionsOutput)
+}
+
+type GetIamApiClientPurgeOptionsOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientPurgeOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientPurgeOptions)(nil)).Elem()
+}
+
+func (o GetIamApiClientPurgeOptionsOutput) ToGetIamApiClientPurgeOptionsOutput() GetIamApiClientPurgeOptionsOutput {
+	return o
+}
+
+func (o GetIamApiClientPurgeOptionsOutput) ToGetIamApiClientPurgeOptionsOutputWithContext(ctx context.Context) GetIamApiClientPurgeOptionsOutput {
+	return o
+}
+
+// Whether the API client can purge content by cache tag.
+func (o GetIamApiClientPurgeOptionsOutput) CanPurgeByCacheTag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientPurgeOptions) bool { return v.CanPurgeByCacheTag }).(pulumi.BoolOutput)
+}
+
+// Whether the API client can purge content by CP code.
+func (o GetIamApiClientPurgeOptionsOutput) CanPurgeByCpCode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientPurgeOptions) bool { return v.CanPurgeByCpCode }).(pulumi.BoolOutput)
+}
+
+// CP codes the API client can purge.
+func (o GetIamApiClientPurgeOptionsOutput) CpCodeAccess() GetIamApiClientPurgeOptionsCpCodeAccessOutput {
+	return o.ApplyT(func(v GetIamApiClientPurgeOptions) GetIamApiClientPurgeOptionsCpCodeAccess { return v.CpCodeAccess }).(GetIamApiClientPurgeOptionsCpCodeAccessOutput)
+}
+
+type GetIamApiClientPurgeOptionsCpCodeAccess struct {
+	// Whether the API can purge content by all current and new CP codes.
+	AllCurrentAndNewCpCodes bool `pulumi:"allCurrentAndNewCpCodes"`
+	// CP codes the API client can purge.
+	CpCodes []int `pulumi:"cpCodes"`
+}
+
+// GetIamApiClientPurgeOptionsCpCodeAccessInput is an input type that accepts GetIamApiClientPurgeOptionsCpCodeAccessArgs and GetIamApiClientPurgeOptionsCpCodeAccessOutput values.
+// You can construct a concrete instance of `GetIamApiClientPurgeOptionsCpCodeAccessInput` via:
+//
+//	GetIamApiClientPurgeOptionsCpCodeAccessArgs{...}
+type GetIamApiClientPurgeOptionsCpCodeAccessInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientPurgeOptionsCpCodeAccessOutput() GetIamApiClientPurgeOptionsCpCodeAccessOutput
+	ToGetIamApiClientPurgeOptionsCpCodeAccessOutputWithContext(context.Context) GetIamApiClientPurgeOptionsCpCodeAccessOutput
+}
+
+type GetIamApiClientPurgeOptionsCpCodeAccessArgs struct {
+	// Whether the API can purge content by all current and new CP codes.
+	AllCurrentAndNewCpCodes pulumi.BoolInput `pulumi:"allCurrentAndNewCpCodes"`
+	// CP codes the API client can purge.
+	CpCodes pulumi.IntArrayInput `pulumi:"cpCodes"`
+}
+
+func (GetIamApiClientPurgeOptionsCpCodeAccessArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientPurgeOptionsCpCodeAccess)(nil)).Elem()
+}
+
+func (i GetIamApiClientPurgeOptionsCpCodeAccessArgs) ToGetIamApiClientPurgeOptionsCpCodeAccessOutput() GetIamApiClientPurgeOptionsCpCodeAccessOutput {
+	return i.ToGetIamApiClientPurgeOptionsCpCodeAccessOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientPurgeOptionsCpCodeAccessArgs) ToGetIamApiClientPurgeOptionsCpCodeAccessOutputWithContext(ctx context.Context) GetIamApiClientPurgeOptionsCpCodeAccessOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientPurgeOptionsCpCodeAccessOutput)
+}
+
+type GetIamApiClientPurgeOptionsCpCodeAccessOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientPurgeOptionsCpCodeAccessOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientPurgeOptionsCpCodeAccess)(nil)).Elem()
+}
+
+func (o GetIamApiClientPurgeOptionsCpCodeAccessOutput) ToGetIamApiClientPurgeOptionsCpCodeAccessOutput() GetIamApiClientPurgeOptionsCpCodeAccessOutput {
+	return o
+}
+
+func (o GetIamApiClientPurgeOptionsCpCodeAccessOutput) ToGetIamApiClientPurgeOptionsCpCodeAccessOutputWithContext(ctx context.Context) GetIamApiClientPurgeOptionsCpCodeAccessOutput {
+	return o
+}
+
+// Whether the API can purge content by all current and new CP codes.
+func (o GetIamApiClientPurgeOptionsCpCodeAccessOutput) AllCurrentAndNewCpCodes() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientPurgeOptionsCpCodeAccess) bool { return v.AllCurrentAndNewCpCodes }).(pulumi.BoolOutput)
+}
+
+// CP codes the API client can purge.
+func (o GetIamApiClientPurgeOptionsCpCodeAccessOutput) CpCodes() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetIamApiClientPurgeOptionsCpCodeAccess) []int { return v.CpCodes }).(pulumi.IntArrayOutput)
+}
+
+type GetIamApiClientsApiClient struct {
+	// The part of the client secret that identifies your API client and lets you access applications and resources.
+	AccessToken string `pulumi:"accessToken"`
+	// Specifies activities available for the API client.
+	Actions GetIamApiClientsApiClientActions `pulumi:"actions"`
+	// The number of credentials active for the API client.
+	ActiveCredentialCount int `pulumi:"activeCredentialCount"`
+	// Whether the API client can manage more than one account.
+	AllowAccountSwitch bool `pulumi:"allowAccountSwitch"`
+	// The API client's valid users.
+	AuthorizedUsers []string `pulumi:"authorizedUsers"`
+	// Whether the API client can create a credential for a new API client.
+	CanAutoCreateCredential bool `pulumi:"canAutoCreateCredential"`
+	// A human-readable description of the API client.
+	ClientDescription string `pulumi:"clientDescription"`
+	// A unique identifier for the API client.
+	ClientId string `pulumi:"clientId"`
+	// A human-readable name for the API client.
+	ClientName string `pulumi:"clientName"`
+	// Specifies the API client's ownership and credential management.
+	ClientType string `pulumi:"clientType"`
+	// The user who created the API client.
+	CreatedBy string `pulumi:"createdBy"`
+	// The ISO 8601 timestamp indicating when the API client was created.
+	CreatedDate string `pulumi:"createdDate"`
+	// Whether the API client is locked.
+	IsLocked bool `pulumi:"isLocked"`
+	// Email addresses to notify users when credentials expire.
+	NotificationEmails []string `pulumi:"notificationEmails"`
+	// Unique identifier for the service hostname.
+	ServiceConsumerToken string `pulumi:"serviceConsumerToken"`
+}
+
+// GetIamApiClientsApiClientInput is an input type that accepts GetIamApiClientsApiClientArgs and GetIamApiClientsApiClientOutput values.
+// You can construct a concrete instance of `GetIamApiClientsApiClientInput` via:
+//
+//	GetIamApiClientsApiClientArgs{...}
+type GetIamApiClientsApiClientInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientsApiClientOutput() GetIamApiClientsApiClientOutput
+	ToGetIamApiClientsApiClientOutputWithContext(context.Context) GetIamApiClientsApiClientOutput
+}
+
+type GetIamApiClientsApiClientArgs struct {
+	// The part of the client secret that identifies your API client and lets you access applications and resources.
+	AccessToken pulumi.StringInput `pulumi:"accessToken"`
+	// Specifies activities available for the API client.
+	Actions GetIamApiClientsApiClientActionsInput `pulumi:"actions"`
+	// The number of credentials active for the API client.
+	ActiveCredentialCount pulumi.IntInput `pulumi:"activeCredentialCount"`
+	// Whether the API client can manage more than one account.
+	AllowAccountSwitch pulumi.BoolInput `pulumi:"allowAccountSwitch"`
+	// The API client's valid users.
+	AuthorizedUsers pulumi.StringArrayInput `pulumi:"authorizedUsers"`
+	// Whether the API client can create a credential for a new API client.
+	CanAutoCreateCredential pulumi.BoolInput `pulumi:"canAutoCreateCredential"`
+	// A human-readable description of the API client.
+	ClientDescription pulumi.StringInput `pulumi:"clientDescription"`
+	// A unique identifier for the API client.
+	ClientId pulumi.StringInput `pulumi:"clientId"`
+	// A human-readable name for the API client.
+	ClientName pulumi.StringInput `pulumi:"clientName"`
+	// Specifies the API client's ownership and credential management.
+	ClientType pulumi.StringInput `pulumi:"clientType"`
+	// The user who created the API client.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The ISO 8601 timestamp indicating when the API client was created.
+	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
+	// Whether the API client is locked.
+	IsLocked pulumi.BoolInput `pulumi:"isLocked"`
+	// Email addresses to notify users when credentials expire.
+	NotificationEmails pulumi.StringArrayInput `pulumi:"notificationEmails"`
+	// Unique identifier for the service hostname.
+	ServiceConsumerToken pulumi.StringInput `pulumi:"serviceConsumerToken"`
+}
+
+func (GetIamApiClientsApiClientArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientsApiClient)(nil)).Elem()
+}
+
+func (i GetIamApiClientsApiClientArgs) ToGetIamApiClientsApiClientOutput() GetIamApiClientsApiClientOutput {
+	return i.ToGetIamApiClientsApiClientOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientsApiClientArgs) ToGetIamApiClientsApiClientOutputWithContext(ctx context.Context) GetIamApiClientsApiClientOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientsApiClientOutput)
+}
+
+// GetIamApiClientsApiClientArrayInput is an input type that accepts GetIamApiClientsApiClientArray and GetIamApiClientsApiClientArrayOutput values.
+// You can construct a concrete instance of `GetIamApiClientsApiClientArrayInput` via:
+//
+//	GetIamApiClientsApiClientArray{ GetIamApiClientsApiClientArgs{...} }
+type GetIamApiClientsApiClientArrayInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientsApiClientArrayOutput() GetIamApiClientsApiClientArrayOutput
+	ToGetIamApiClientsApiClientArrayOutputWithContext(context.Context) GetIamApiClientsApiClientArrayOutput
+}
+
+type GetIamApiClientsApiClientArray []GetIamApiClientsApiClientInput
+
+func (GetIamApiClientsApiClientArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientsApiClient)(nil)).Elem()
+}
+
+func (i GetIamApiClientsApiClientArray) ToGetIamApiClientsApiClientArrayOutput() GetIamApiClientsApiClientArrayOutput {
+	return i.ToGetIamApiClientsApiClientArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientsApiClientArray) ToGetIamApiClientsApiClientArrayOutputWithContext(ctx context.Context) GetIamApiClientsApiClientArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientsApiClientArrayOutput)
+}
+
+type GetIamApiClientsApiClientOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientsApiClientOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientsApiClient)(nil)).Elem()
+}
+
+func (o GetIamApiClientsApiClientOutput) ToGetIamApiClientsApiClientOutput() GetIamApiClientsApiClientOutput {
+	return o
+}
+
+func (o GetIamApiClientsApiClientOutput) ToGetIamApiClientsApiClientOutputWithContext(ctx context.Context) GetIamApiClientsApiClientOutput {
+	return o
+}
+
+// The part of the client secret that identifies your API client and lets you access applications and resources.
+func (o GetIamApiClientsApiClientOutput) AccessToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) string { return v.AccessToken }).(pulumi.StringOutput)
+}
+
+// Specifies activities available for the API client.
+func (o GetIamApiClientsApiClientOutput) Actions() GetIamApiClientsApiClientActionsOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) GetIamApiClientsApiClientActions { return v.Actions }).(GetIamApiClientsApiClientActionsOutput)
+}
+
+// The number of credentials active for the API client.
+func (o GetIamApiClientsApiClientOutput) ActiveCredentialCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) int { return v.ActiveCredentialCount }).(pulumi.IntOutput)
+}
+
+// Whether the API client can manage more than one account.
+func (o GetIamApiClientsApiClientOutput) AllowAccountSwitch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) bool { return v.AllowAccountSwitch }).(pulumi.BoolOutput)
+}
+
+// The API client's valid users.
+func (o GetIamApiClientsApiClientOutput) AuthorizedUsers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) []string { return v.AuthorizedUsers }).(pulumi.StringArrayOutput)
+}
+
+// Whether the API client can create a credential for a new API client.
+func (o GetIamApiClientsApiClientOutput) CanAutoCreateCredential() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) bool { return v.CanAutoCreateCredential }).(pulumi.BoolOutput)
+}
+
+// A human-readable description of the API client.
+func (o GetIamApiClientsApiClientOutput) ClientDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) string { return v.ClientDescription }).(pulumi.StringOutput)
+}
+
+// A unique identifier for the API client.
+func (o GetIamApiClientsApiClientOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) string { return v.ClientId }).(pulumi.StringOutput)
+}
+
+// A human-readable name for the API client.
+func (o GetIamApiClientsApiClientOutput) ClientName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) string { return v.ClientName }).(pulumi.StringOutput)
+}
+
+// Specifies the API client's ownership and credential management.
+func (o GetIamApiClientsApiClientOutput) ClientType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) string { return v.ClientType }).(pulumi.StringOutput)
+}
+
+// The user who created the API client.
+func (o GetIamApiClientsApiClientOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 timestamp indicating when the API client was created.
+func (o GetIamApiClientsApiClientOutput) CreatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) string { return v.CreatedDate }).(pulumi.StringOutput)
+}
+
+// Whether the API client is locked.
+func (o GetIamApiClientsApiClientOutput) IsLocked() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) bool { return v.IsLocked }).(pulumi.BoolOutput)
+}
+
+// Email addresses to notify users when credentials expire.
+func (o GetIamApiClientsApiClientOutput) NotificationEmails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) []string { return v.NotificationEmails }).(pulumi.StringArrayOutput)
+}
+
+// Unique identifier for the service hostname.
+func (o GetIamApiClientsApiClientOutput) ServiceConsumerToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClient) string { return v.ServiceConsumerToken }).(pulumi.StringOutput)
+}
+
+type GetIamApiClientsApiClientArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientsApiClientArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamApiClientsApiClient)(nil)).Elem()
+}
+
+func (o GetIamApiClientsApiClientArrayOutput) ToGetIamApiClientsApiClientArrayOutput() GetIamApiClientsApiClientArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientsApiClientArrayOutput) ToGetIamApiClientsApiClientArrayOutputWithContext(ctx context.Context) GetIamApiClientsApiClientArrayOutput {
+	return o
+}
+
+func (o GetIamApiClientsApiClientArrayOutput) Index(i pulumi.IntInput) GetIamApiClientsApiClientOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamApiClientsApiClient {
+		return vs[0].([]GetIamApiClientsApiClient)[vs[1].(int)]
+	}).(GetIamApiClientsApiClientOutput)
+}
+
+type GetIamApiClientsApiClientActions struct {
+	// Whether you can deactivate the API client's credentials.
+	DeactivateAll bool `pulumi:"deactivateAll"`
+	// Whether you can remove the API client.
+	Delete bool `pulumi:"delete"`
+	// Whether you can update the API client.
+	Edit bool `pulumi:"edit"`
+	// Whether you can lock the API client.
+	Lock bool `pulumi:"lock"`
+	// Whether you can transfer the API client to a new owner.
+	Transfer bool `pulumi:"transfer"`
+	// Whether you can unlock the API client.
+	Unlock bool `pulumi:"unlock"`
+}
+
+// GetIamApiClientsApiClientActionsInput is an input type that accepts GetIamApiClientsApiClientActionsArgs and GetIamApiClientsApiClientActionsOutput values.
+// You can construct a concrete instance of `GetIamApiClientsApiClientActionsInput` via:
+//
+//	GetIamApiClientsApiClientActionsArgs{...}
+type GetIamApiClientsApiClientActionsInput interface {
+	pulumi.Input
+
+	ToGetIamApiClientsApiClientActionsOutput() GetIamApiClientsApiClientActionsOutput
+	ToGetIamApiClientsApiClientActionsOutputWithContext(context.Context) GetIamApiClientsApiClientActionsOutput
+}
+
+type GetIamApiClientsApiClientActionsArgs struct {
+	// Whether you can deactivate the API client's credentials.
+	DeactivateAll pulumi.BoolInput `pulumi:"deactivateAll"`
+	// Whether you can remove the API client.
+	Delete pulumi.BoolInput `pulumi:"delete"`
+	// Whether you can update the API client.
+	Edit pulumi.BoolInput `pulumi:"edit"`
+	// Whether you can lock the API client.
+	Lock pulumi.BoolInput `pulumi:"lock"`
+	// Whether you can transfer the API client to a new owner.
+	Transfer pulumi.BoolInput `pulumi:"transfer"`
+	// Whether you can unlock the API client.
+	Unlock pulumi.BoolInput `pulumi:"unlock"`
+}
+
+func (GetIamApiClientsApiClientActionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientsApiClientActions)(nil)).Elem()
+}
+
+func (i GetIamApiClientsApiClientActionsArgs) ToGetIamApiClientsApiClientActionsOutput() GetIamApiClientsApiClientActionsOutput {
+	return i.ToGetIamApiClientsApiClientActionsOutputWithContext(context.Background())
+}
+
+func (i GetIamApiClientsApiClientActionsArgs) ToGetIamApiClientsApiClientActionsOutputWithContext(ctx context.Context) GetIamApiClientsApiClientActionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamApiClientsApiClientActionsOutput)
+}
+
+type GetIamApiClientsApiClientActionsOutput struct{ *pulumi.OutputState }
+
+func (GetIamApiClientsApiClientActionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamApiClientsApiClientActions)(nil)).Elem()
+}
+
+func (o GetIamApiClientsApiClientActionsOutput) ToGetIamApiClientsApiClientActionsOutput() GetIamApiClientsApiClientActionsOutput {
+	return o
+}
+
+func (o GetIamApiClientsApiClientActionsOutput) ToGetIamApiClientsApiClientActionsOutputWithContext(ctx context.Context) GetIamApiClientsApiClientActionsOutput {
+	return o
+}
+
+// Whether you can deactivate the API client's credentials.
+func (o GetIamApiClientsApiClientActionsOutput) DeactivateAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClientActions) bool { return v.DeactivateAll }).(pulumi.BoolOutput)
+}
+
+// Whether you can remove the API client.
+func (o GetIamApiClientsApiClientActionsOutput) Delete() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClientActions) bool { return v.Delete }).(pulumi.BoolOutput)
+}
+
+// Whether you can update the API client.
+func (o GetIamApiClientsApiClientActionsOutput) Edit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClientActions) bool { return v.Edit }).(pulumi.BoolOutput)
+}
+
+// Whether you can lock the API client.
+func (o GetIamApiClientsApiClientActionsOutput) Lock() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClientActions) bool { return v.Lock }).(pulumi.BoolOutput)
+}
+
+// Whether you can transfer the API client to a new owner.
+func (o GetIamApiClientsApiClientActionsOutput) Transfer() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClientActions) bool { return v.Transfer }).(pulumi.BoolOutput)
+}
+
+// Whether you can unlock the API client.
+func (o GetIamApiClientsApiClientActionsOutput) Unlock() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIamApiClientsApiClientActions) bool { return v.Unlock }).(pulumi.BoolOutput)
 }
 
 type GetIamBlockedPropertiesBlockedProperty struct {
@@ -58019,6 +61571,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyTrafficTargetArrayInput)(nil)).Elem(), GtmPropertyTrafficTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourceResourceInstanceInput)(nil)).Elem(), GtmResourceResourceInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourceResourceInstanceArrayInput)(nil)).Elem(), GtmResourceResourceInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientActionsInput)(nil)).Elem(), IamApiClientActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientActionsPtrInput)(nil)).Elem(), IamApiClientActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientApiAccessInput)(nil)).Elem(), IamApiClientApiAccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientApiAccessPtrInput)(nil)).Elem(), IamApiClientApiAccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientApiAccessApiInput)(nil)).Elem(), IamApiClientApiAccessApiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientApiAccessApiArrayInput)(nil)).Elem(), IamApiClientApiAccessApiArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientCredentialInput)(nil)).Elem(), IamApiClientCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientCredentialPtrInput)(nil)).Elem(), IamApiClientCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientCredentialActionsInput)(nil)).Elem(), IamApiClientCredentialActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientCredentialActionsPtrInput)(nil)).Elem(), IamApiClientCredentialActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientGroupAccessInput)(nil)).Elem(), IamApiClientGroupAccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientGroupAccessPtrInput)(nil)).Elem(), IamApiClientGroupAccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientGroupAccessGroupInput)(nil)).Elem(), IamApiClientGroupAccessGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientGroupAccessGroupArrayInput)(nil)).Elem(), IamApiClientGroupAccessGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientGroupAccessGroupSubGroupInput)(nil)).Elem(), IamApiClientGroupAccessGroupSubGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientGroupAccessGroupSubGroupArrayInput)(nil)).Elem(), IamApiClientGroupAccessGroupSubGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientIpAclInput)(nil)).Elem(), IamApiClientIpAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientIpAclPtrInput)(nil)).Elem(), IamApiClientIpAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientPurgeOptionsInput)(nil)).Elem(), IamApiClientPurgeOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientPurgeOptionsPtrInput)(nil)).Elem(), IamApiClientPurgeOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientPurgeOptionsCpCodeAccessInput)(nil)).Elem(), IamApiClientPurgeOptionsCpCodeAccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IamApiClientPurgeOptionsCpCodeAccessPtrInput)(nil)).Elem(), IamApiClientPurgeOptionsCpCodeAccessArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IamCidrBlockActionsInput)(nil)).Elem(), IamCidrBlockActionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IamCidrBlockActionsPtrInput)(nil)).Elem(), IamCidrBlockActionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IamUserUserNotificationsInput)(nil)).Elem(), IamUserUserNotificationsArgs{})
@@ -58363,6 +61937,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamAccountSwitchKeysAccountSwitchKeyArrayInput)(nil)).Elem(), GetIamAccountSwitchKeysAccountSwitchKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamAllowedApisAllowedApiInput)(nil)).Elem(), GetIamAllowedApisAllowedApiArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamAllowedApisAllowedApiArrayInput)(nil)).Elem(), GetIamAllowedApisAllowedApiArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientActionsInput)(nil)).Elem(), GetIamApiClientActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientApiAccessInput)(nil)).Elem(), GetIamApiClientApiAccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientApiAccessApiInput)(nil)).Elem(), GetIamApiClientApiAccessApiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientApiAccessApiArrayInput)(nil)).Elem(), GetIamApiClientApiAccessApiArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientCredentialInput)(nil)).Elem(), GetIamApiClientCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientCredentialArrayInput)(nil)).Elem(), GetIamApiClientCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientCredentialActionsInput)(nil)).Elem(), GetIamApiClientCredentialActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientGroupAccessInput)(nil)).Elem(), GetIamApiClientGroupAccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientGroupAccessGroupInput)(nil)).Elem(), GetIamApiClientGroupAccessGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientGroupAccessGroupArrayInput)(nil)).Elem(), GetIamApiClientGroupAccessGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientGroupAccessGroupSubGroupInput)(nil)).Elem(), GetIamApiClientGroupAccessGroupSubGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientGroupAccessGroupSubGroupArrayInput)(nil)).Elem(), GetIamApiClientGroupAccessGroupSubGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientIpAclInput)(nil)).Elem(), GetIamApiClientIpAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientPurgeOptionsInput)(nil)).Elem(), GetIamApiClientPurgeOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientPurgeOptionsCpCodeAccessInput)(nil)).Elem(), GetIamApiClientPurgeOptionsCpCodeAccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientsApiClientInput)(nil)).Elem(), GetIamApiClientsApiClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientsApiClientArrayInput)(nil)).Elem(), GetIamApiClientsApiClientArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamApiClientsApiClientActionsInput)(nil)).Elem(), GetIamApiClientsApiClientActionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamBlockedPropertiesBlockedPropertyInput)(nil)).Elem(), GetIamBlockedPropertiesBlockedPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamBlockedPropertiesBlockedPropertyArrayInput)(nil)).Elem(), GetIamBlockedPropertiesBlockedPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamCidrBlockActionsInput)(nil)).Elem(), GetIamCidrBlockActionsArgs{})
@@ -58734,6 +62326,28 @@ func init() {
 	pulumi.RegisterOutputType(GtmPropertyTrafficTargetArrayOutput{})
 	pulumi.RegisterOutputType(GtmResourceResourceInstanceOutput{})
 	pulumi.RegisterOutputType(GtmResourceResourceInstanceArrayOutput{})
+	pulumi.RegisterOutputType(IamApiClientActionsOutput{})
+	pulumi.RegisterOutputType(IamApiClientActionsPtrOutput{})
+	pulumi.RegisterOutputType(IamApiClientApiAccessOutput{})
+	pulumi.RegisterOutputType(IamApiClientApiAccessPtrOutput{})
+	pulumi.RegisterOutputType(IamApiClientApiAccessApiOutput{})
+	pulumi.RegisterOutputType(IamApiClientApiAccessApiArrayOutput{})
+	pulumi.RegisterOutputType(IamApiClientCredentialOutput{})
+	pulumi.RegisterOutputType(IamApiClientCredentialPtrOutput{})
+	pulumi.RegisterOutputType(IamApiClientCredentialActionsOutput{})
+	pulumi.RegisterOutputType(IamApiClientCredentialActionsPtrOutput{})
+	pulumi.RegisterOutputType(IamApiClientGroupAccessOutput{})
+	pulumi.RegisterOutputType(IamApiClientGroupAccessPtrOutput{})
+	pulumi.RegisterOutputType(IamApiClientGroupAccessGroupOutput{})
+	pulumi.RegisterOutputType(IamApiClientGroupAccessGroupArrayOutput{})
+	pulumi.RegisterOutputType(IamApiClientGroupAccessGroupSubGroupOutput{})
+	pulumi.RegisterOutputType(IamApiClientGroupAccessGroupSubGroupArrayOutput{})
+	pulumi.RegisterOutputType(IamApiClientIpAclOutput{})
+	pulumi.RegisterOutputType(IamApiClientIpAclPtrOutput{})
+	pulumi.RegisterOutputType(IamApiClientPurgeOptionsOutput{})
+	pulumi.RegisterOutputType(IamApiClientPurgeOptionsPtrOutput{})
+	pulumi.RegisterOutputType(IamApiClientPurgeOptionsCpCodeAccessOutput{})
+	pulumi.RegisterOutputType(IamApiClientPurgeOptionsCpCodeAccessPtrOutput{})
 	pulumi.RegisterOutputType(IamCidrBlockActionsOutput{})
 	pulumi.RegisterOutputType(IamCidrBlockActionsPtrOutput{})
 	pulumi.RegisterOutputType(IamUserUserNotificationsOutput{})
@@ -59078,6 +62692,24 @@ func init() {
 	pulumi.RegisterOutputType(GetIamAccountSwitchKeysAccountSwitchKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetIamAllowedApisAllowedApiOutput{})
 	pulumi.RegisterOutputType(GetIamAllowedApisAllowedApiArrayOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientActionsOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientApiAccessOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientApiAccessApiOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientApiAccessApiArrayOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientCredentialOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientCredentialActionsOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientGroupAccessOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientGroupAccessGroupOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientGroupAccessGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientGroupAccessGroupSubGroupOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientGroupAccessGroupSubGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientIpAclOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientPurgeOptionsOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientPurgeOptionsCpCodeAccessOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientsApiClientOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientsApiClientArrayOutput{})
+	pulumi.RegisterOutputType(GetIamApiClientsApiClientActionsOutput{})
 	pulumi.RegisterOutputType(GetIamBlockedPropertiesBlockedPropertyOutput{})
 	pulumi.RegisterOutputType(GetIamBlockedPropertiesBlockedPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetIamCidrBlockActionsOutput{})

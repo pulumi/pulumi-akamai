@@ -19,14 +19,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     public static final CloudletsPolicyState Empty = new CloudletsPolicyState();
 
     /**
-     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
      * 
      */
     @Import(name="cloudletCode")
     private @Nullable Output<String> cloudletCode;
 
     /**
-     * @return Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+     * @return Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
      * 
      */
     public Optional<Output<String>> cloudletCode() {
@@ -34,14 +34,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
      * 
      */
     @Import(name="cloudletId")
     private @Nullable Output<Integer> cloudletId;
 
     /**
-     * @return An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+     * @return An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
      * 
      */
     public Optional<Output<Integer>> cloudletId() {
@@ -49,14 +49,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The description of this specific policy
+     * The description of this specific policy.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description of this specific policy
+     * @return The description of this specific policy.
      * 
      */
     public Optional<Output<String>> description() {
@@ -64,14 +64,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group
+     * Defines the group association for the policy. You must have edit privileges for the group.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return Defines the group association for the policy. You must have edit privileges for the group
+     * @return Defines the group association for the policy. You must have edit privileges for the group.
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -79,14 +79,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The type of policy that you want to create
+     * The type of policy that you want to create.
      * 
      */
     @Import(name="isShared")
     private @Nullable Output<Boolean> isShared;
 
     /**
-     * @return The type of policy that you want to create
+     * @return The type of policy that you want to create.
      * 
      */
     public Optional<Output<Boolean>> isShared() {
@@ -94,14 +94,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The version of the Cloudlet specific matchRules
+     * The version of the Cloudlet specific matchRules.
      * 
      */
     @Import(name="matchRuleFormat")
     private @Nullable Output<String> matchRuleFormat;
 
     /**
-     * @return The version of the Cloudlet specific matchRules
+     * @return The version of the Cloudlet specific matchRules.
      * 
      */
     public Optional<Output<String>> matchRuleFormat() {
@@ -109,14 +109,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * A JSON structure that defines the rules for this policy
+     * A JSON structure that defines the rules for this policy.
      * 
      */
     @Import(name="matchRules")
     private @Nullable Output<String> matchRules;
 
     /**
-     * @return A JSON structure that defines the rules for this policy
+     * @return A JSON structure that defines the rules for this policy.
      * 
      */
     public Optional<Output<String>> matchRules() {
@@ -124,14 +124,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The name of the policy. The name must be unique
+     * The name of the policy. The name must be unique.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name of the policy. The name must be unique
+     * @return The name of the policy. The name must be unique.
      * 
      */
     public Optional<Output<String>> name() {
@@ -139,14 +139,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Enables to set timeout for processing
+     * Enables to set timeout for processing.
      * 
      */
     @Import(name="timeouts")
     private @Nullable Output<CloudletsPolicyTimeoutsArgs> timeouts;
 
     /**
-     * @return Enables to set timeout for processing
+     * @return Enables to set timeout for processing.
      * 
      */
     public Optional<Output<CloudletsPolicyTimeoutsArgs>> timeouts() {
@@ -154,14 +154,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The version number of the policy
+     * The version number of the policy.
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return The version number of the policy
+     * @return The version number of the policy.
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -169,14 +169,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * A JSON encoded list of warnings
+     * A JSON encoded list of warnings.
      * 
      */
     @Import(name="warnings")
     private @Nullable Output<String> warnings;
 
     /**
-     * @return A JSON encoded list of warnings
+     * @return A JSON encoded list of warnings.
      * 
      */
     public Optional<Output<String>> warnings() {
@@ -218,7 +218,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletCode Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+         * @param cloudletCode Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletCode Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+         * @param cloudletCode Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletId An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+         * @param cloudletId An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletId An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+         * @param cloudletId An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description The description of this specific policy
+         * @param description The description of this specific policy.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description The description of this specific policy
+         * @param description The description of this specific policy.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param groupId Defines the group association for the policy. You must have edit privileges for the group
+         * @param groupId Defines the group association for the policy. You must have edit privileges for the group.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param groupId Defines the group association for the policy. You must have edit privileges for the group
+         * @param groupId Defines the group association for the policy. You must have edit privileges for the group.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param isShared The type of policy that you want to create
+         * @param isShared The type of policy that you want to create.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param isShared The type of policy that you want to create
+         * @param isShared The type of policy that you want to create.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param matchRuleFormat The version of the Cloudlet specific matchRules
+         * @param matchRuleFormat The version of the Cloudlet specific matchRules.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param matchRuleFormat The version of the Cloudlet specific matchRules
+         * @param matchRuleFormat The version of the Cloudlet specific matchRules.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param matchRules A JSON structure that defines the rules for this policy
+         * @param matchRules A JSON structure that defines the rules for this policy.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param matchRules A JSON structure that defines the rules for this policy
+         * @param matchRules A JSON structure that defines the rules for this policy.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name The name of the policy. The name must be unique
+         * @param name The name of the policy. The name must be unique.
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name The name of the policy. The name must be unique
+         * @param name The name of the policy. The name must be unique.
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeouts Enables to set timeout for processing
+         * @param timeouts Enables to set timeout for processing.
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeouts Enables to set timeout for processing
+         * @param timeouts Enables to set timeout for processing.
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param version The version number of the policy
+         * @param version The version number of the policy.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param version The version number of the policy
+         * @param version The version number of the policy.
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param warnings A JSON encoded list of warnings
+         * @param warnings A JSON encoded list of warnings.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param warnings A JSON encoded list of warnings
+         * @param warnings A JSON encoded list of warnings.
          * 
          * @return builder
          * 

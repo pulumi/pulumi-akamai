@@ -20,154 +20,154 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/cloudletsPolicy:CloudletsPolicy")
 public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
     /**
-     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
      * 
      */
     @Export(name="cloudletCode", refs={String.class}, tree="[0]")
     private Output<String> cloudletCode;
 
     /**
-     * @return Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+     * @return Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
      * 
      */
     public Output<String> cloudletCode() {
         return this.cloudletCode;
     }
     /**
-     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
      * 
      */
     @Export(name="cloudletId", refs={Integer.class}, tree="[0]")
     private Output<Integer> cloudletId;
 
     /**
-     * @return An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+     * @return An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
      * 
      */
     public Output<Integer> cloudletId() {
         return this.cloudletId;
     }
     /**
-     * The description of this specific policy
+     * The description of this specific policy.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output</* @Nullable */ String> description;
+    private Output<String> description;
 
     /**
-     * @return The description of this specific policy
+     * @return The description of this specific policy.
      * 
      */
-    public Output<Optional<String>> description() {
-        return Codegen.optional(this.description);
+    public Output<String> description() {
+        return this.description;
     }
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group
+     * Defines the group association for the policy. You must have edit privileges for the group.
      * 
      */
     @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
-     * @return Defines the group association for the policy. You must have edit privileges for the group
+     * @return Defines the group association for the policy. You must have edit privileges for the group.
      * 
      */
     public Output<String> groupId() {
         return this.groupId;
     }
     /**
-     * The type of policy that you want to create
+     * The type of policy that you want to create.
      * 
      */
     @Export(name="isShared", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isShared;
 
     /**
-     * @return The type of policy that you want to create
+     * @return The type of policy that you want to create.
      * 
      */
     public Output<Optional<Boolean>> isShared() {
         return Codegen.optional(this.isShared);
     }
     /**
-     * The version of the Cloudlet specific matchRules
+     * The version of the Cloudlet specific matchRules.
      * 
      */
     @Export(name="matchRuleFormat", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> matchRuleFormat;
 
     /**
-     * @return The version of the Cloudlet specific matchRules
+     * @return The version of the Cloudlet specific matchRules.
      * 
      */
     public Output<Optional<String>> matchRuleFormat() {
         return Codegen.optional(this.matchRuleFormat);
     }
     /**
-     * A JSON structure that defines the rules for this policy
+     * A JSON structure that defines the rules for this policy.
      * 
      */
     @Export(name="matchRules", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> matchRules;
 
     /**
-     * @return A JSON structure that defines the rules for this policy
+     * @return A JSON structure that defines the rules for this policy.
      * 
      */
     public Output<Optional<String>> matchRules() {
         return Codegen.optional(this.matchRules);
     }
     /**
-     * The name of the policy. The name must be unique
+     * The name of the policy. The name must be unique.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return The name of the policy. The name must be unique
+     * @return The name of the policy. The name must be unique.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * Enables to set timeout for processing
+     * Enables to set timeout for processing.
      * 
      */
     @Export(name="timeouts", refs={CloudletsPolicyTimeouts.class}, tree="[0]")
     private Output</* @Nullable */ CloudletsPolicyTimeouts> timeouts;
 
     /**
-     * @return Enables to set timeout for processing
+     * @return Enables to set timeout for processing.
      * 
      */
     public Output<Optional<CloudletsPolicyTimeouts>> timeouts() {
         return Codegen.optional(this.timeouts);
     }
     /**
-     * The version number of the policy
+     * The version number of the policy.
      * 
      */
     @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     /**
-     * @return The version number of the policy
+     * @return The version number of the policy.
      * 
      */
     public Output<Integer> version() {
         return this.version;
     }
     /**
-     * A JSON encoded list of warnings
+     * A JSON encoded list of warnings.
      * 
      */
     @Export(name="warnings", refs={String.class}, tree="[0]")
     private Output<String> warnings;
 
     /**
-     * @return A JSON encoded list of warnings
+     * @return A JSON encoded list of warnings.
      * 
      */
     public Output<String> warnings() {

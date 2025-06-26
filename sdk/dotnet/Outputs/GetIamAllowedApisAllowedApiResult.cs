@@ -14,11 +14,11 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetIamAllowedApisAllowedApiResult
     {
         /// <summary>
-        /// API access levels, possible values are READ-ONLY and READ-WRITE.
+        /// API access levels, possible values are READ-ONLY, READ-WRITE, CREDENTIAL-READ-ONLY and CREDENTIAL-READ-WRITE.
         /// </summary>
         public readonly ImmutableArray<string> AccessLevels;
         /// <summary>
-        /// Unique identifier for each API.
+        /// A unique identifier for each API.
         /// </summary>
         public readonly int ApiId;
         /// <summary>
@@ -26,11 +26,11 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string ApiName;
         /// <summary>
-        /// Descriptive label for the API.
+        /// A human-readable name for the API.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Link to more information about the API.
+        /// A link to more information about the API.
         /// </summary>
         public readonly string DocumentationUrl;
         /// <summary>

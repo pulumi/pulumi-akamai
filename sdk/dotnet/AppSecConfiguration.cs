@@ -46,7 +46,7 @@ namespace Pulumi.Akamai
         /// Unique identifier of the contract group associated with the new configuration
         /// </summary>
         [Output("groupId")]
-        public Output<int> GroupId { get; private set; } = null!;
+        public Output<string> GroupId { get; private set; } = null!;
 
         /// <summary>
         /// Hostnames to be protected by the new configuration
@@ -134,7 +134,7 @@ namespace Pulumi.Akamai
         /// Unique identifier of the contract group associated with the new configuration
         /// </summary>
         [Input("groupId", required: true)]
-        public Input<int> GroupId { get; set; } = null!;
+        public Input<string> GroupId { get; set; } = null!;
 
         [Input("hostNames", required: true)]
         private InputList<string>? _hostNames;
@@ -196,7 +196,7 @@ namespace Pulumi.Akamai
         /// Unique identifier of the contract group associated with the new configuration
         /// </summary>
         [Input("groupId")]
-        public Input<int>? GroupId { get; set; }
+        public Input<string>? GroupId { get; set; }
 
         [Input("hostNames")]
         private InputList<string>? _hostNames;

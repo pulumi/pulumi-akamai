@@ -8,30 +8,39 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v9/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type PropertyActivation struct {
 	pulumi.CustomResourceState
 
+	// The ID given to the activation event while it's in progress.
 	ActivationId pulumi.StringOutput `pulumi:"activationId"`
 	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrOutput `pulumi:"autoAcknowledgeRuleWarnings"`
-	// Provides an audit record when activating on a production network
+	// Provides an audit record when activating on a production network.
 	ComplianceRecord PropertyActivationComplianceRecordPtrOutput `pulumi:"complianceRecord"`
-	Contacts         pulumi.StringArrayOutput                    `pulumi:"contacts"`
-	Errors           pulumi.StringOutput                         `pulumi:"errors"`
-	Network          pulumi.StringPtrOutput                      `pulumi:"network"`
-	// assigns a log message to the activation request
-	Note       pulumi.StringPtrOutput                 `pulumi:"note"`
-	PropertyId pulumi.StringOutput                    `pulumi:"propertyId"`
+	// One or more email addresses to which to send activation status changes.
+	Contacts pulumi.StringArrayOutput `pulumi:"contacts"`
+	// Errors returned during activation.
+	Errors pulumi.StringOutput `pulumi:"errors"`
+	// Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+	Network pulumi.StringPtrOutput `pulumi:"network"`
+	// Assigns a log message to the activation request.
+	Note pulumi.StringPtrOutput `pulumi:"note"`
+	// Your property's ID, including the prp_ prefix.
+	PropertyId pulumi.StringOutput `pulumi:"propertyId"`
+	// Any errors returned by the API about rules.
 	RuleErrors PropertyActivationRuleErrorArrayOutput `pulumi:"ruleErrors"`
-	Status     pulumi.StringOutput                    `pulumi:"status"`
-	// Enables to set timeout for processing
+	// The property version's activation status on the given network.
+	Status pulumi.StringOutput `pulumi:"status"`
+	// Enables to set timeout for processing.
 	Timeouts PropertyActivationTimeoutsPtrOutput `pulumi:"timeouts"`
-	Version  pulumi.IntOutput                    `pulumi:"version"`
-	Warnings pulumi.StringOutput                 `pulumi:"warnings"`
+	// Your property's version number.
+	Version pulumi.IntOutput `pulumi:"version"`
+	// Warnings returned during activation.
+	Warnings pulumi.StringOutput `pulumi:"warnings"`
 }
 
 // NewPropertyActivation registers a new resource with the given unique name, arguments, and options.
@@ -79,42 +88,60 @@ func GetPropertyActivation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PropertyActivation resources.
 type propertyActivationState struct {
+	// The ID given to the activation event while it's in progress.
 	ActivationId *string `pulumi:"activationId"`
 	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`
-	// Provides an audit record when activating on a production network
+	// Provides an audit record when activating on a production network.
 	ComplianceRecord *PropertyActivationComplianceRecord `pulumi:"complianceRecord"`
-	Contacts         []string                            `pulumi:"contacts"`
-	Errors           *string                             `pulumi:"errors"`
-	Network          *string                             `pulumi:"network"`
-	// assigns a log message to the activation request
-	Note       *string                       `pulumi:"note"`
-	PropertyId *string                       `pulumi:"propertyId"`
+	// One or more email addresses to which to send activation status changes.
+	Contacts []string `pulumi:"contacts"`
+	// Errors returned during activation.
+	Errors *string `pulumi:"errors"`
+	// Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+	Network *string `pulumi:"network"`
+	// Assigns a log message to the activation request.
+	Note *string `pulumi:"note"`
+	// Your property's ID, including the prp_ prefix.
+	PropertyId *string `pulumi:"propertyId"`
+	// Any errors returned by the API about rules.
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
-	Status     *string                       `pulumi:"status"`
-	// Enables to set timeout for processing
+	// The property version's activation status on the given network.
+	Status *string `pulumi:"status"`
+	// Enables to set timeout for processing.
 	Timeouts *PropertyActivationTimeouts `pulumi:"timeouts"`
-	Version  *int                        `pulumi:"version"`
-	Warnings *string                     `pulumi:"warnings"`
+	// Your property's version number.
+	Version *int `pulumi:"version"`
+	// Warnings returned during activation.
+	Warnings *string `pulumi:"warnings"`
 }
 
 type PropertyActivationState struct {
+	// The ID given to the activation event while it's in progress.
 	ActivationId pulumi.StringPtrInput
 	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
-	// Provides an audit record when activating on a production network
+	// Provides an audit record when activating on a production network.
 	ComplianceRecord PropertyActivationComplianceRecordPtrInput
-	Contacts         pulumi.StringArrayInput
-	Errors           pulumi.StringPtrInput
-	Network          pulumi.StringPtrInput
-	// assigns a log message to the activation request
-	Note       pulumi.StringPtrInput
+	// One or more email addresses to which to send activation status changes.
+	Contacts pulumi.StringArrayInput
+	// Errors returned during activation.
+	Errors pulumi.StringPtrInput
+	// Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+	Network pulumi.StringPtrInput
+	// Assigns a log message to the activation request.
+	Note pulumi.StringPtrInput
+	// Your property's ID, including the prp_ prefix.
 	PropertyId pulumi.StringPtrInput
+	// Any errors returned by the API about rules.
 	RuleErrors PropertyActivationRuleErrorArrayInput
-	Status     pulumi.StringPtrInput
-	// Enables to set timeout for processing
+	// The property version's activation status on the given network.
+	Status pulumi.StringPtrInput
+	// Enables to set timeout for processing.
 	Timeouts PropertyActivationTimeoutsPtrInput
-	Version  pulumi.IntPtrInput
+	// Your property's version number.
+	Version pulumi.IntPtrInput
+	// Warnings returned during activation.
 	Warnings pulumi.StringPtrInput
 }
 
@@ -123,36 +150,46 @@ func (PropertyActivationState) ElementType() reflect.Type {
 }
 
 type propertyActivationArgs struct {
+	// The ID given to the activation event while it's in progress.
 	ActivationId *string `pulumi:"activationId"`
 	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`
-	// Provides an audit record when activating on a production network
+	// Provides an audit record when activating on a production network.
 	ComplianceRecord *PropertyActivationComplianceRecord `pulumi:"complianceRecord"`
-	Contacts         []string                            `pulumi:"contacts"`
-	Network          *string                             `pulumi:"network"`
-	// assigns a log message to the activation request
-	Note       *string `pulumi:"note"`
-	PropertyId string  `pulumi:"propertyId"`
-	// Enables to set timeout for processing
+	// One or more email addresses to which to send activation status changes.
+	Contacts []string `pulumi:"contacts"`
+	// Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+	Network *string `pulumi:"network"`
+	// Assigns a log message to the activation request.
+	Note *string `pulumi:"note"`
+	// Your property's ID, including the prp_ prefix.
+	PropertyId string `pulumi:"propertyId"`
+	// Enables to set timeout for processing.
 	Timeouts *PropertyActivationTimeouts `pulumi:"timeouts"`
-	Version  int                         `pulumi:"version"`
+	// Your property's version number.
+	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a PropertyActivation resource.
 type PropertyActivationArgs struct {
+	// The ID given to the activation event while it's in progress.
 	ActivationId pulumi.StringPtrInput
 	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
-	// Provides an audit record when activating on a production network
+	// Provides an audit record when activating on a production network.
 	ComplianceRecord PropertyActivationComplianceRecordPtrInput
-	Contacts         pulumi.StringArrayInput
-	Network          pulumi.StringPtrInput
-	// assigns a log message to the activation request
-	Note       pulumi.StringPtrInput
+	// One or more email addresses to which to send activation status changes.
+	Contacts pulumi.StringArrayInput
+	// Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+	Network pulumi.StringPtrInput
+	// Assigns a log message to the activation request.
+	Note pulumi.StringPtrInput
+	// Your property's ID, including the prp_ prefix.
 	PropertyId pulumi.StringInput
-	// Enables to set timeout for processing
+	// Enables to set timeout for processing.
 	Timeouts PropertyActivationTimeoutsPtrInput
-	Version  pulumi.IntInput
+	// Your property's version number.
+	Version pulumi.IntInput
 }
 
 func (PropertyActivationArgs) ElementType() reflect.Type {
@@ -242,6 +279,7 @@ func (o PropertyActivationOutput) ToPropertyActivationOutputWithContext(ctx cont
 	return o
 }
 
+// The ID given to the activation event while it's in progress.
 func (o PropertyActivationOutput) ActivationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.ActivationId }).(pulumi.StringOutput)
 }
@@ -251,49 +289,57 @@ func (o PropertyActivationOutput) AutoAcknowledgeRuleWarnings() pulumi.BoolPtrOu
 	return o.ApplyT(func(v *PropertyActivation) pulumi.BoolPtrOutput { return v.AutoAcknowledgeRuleWarnings }).(pulumi.BoolPtrOutput)
 }
 
-// Provides an audit record when activating on a production network
+// Provides an audit record when activating on a production network.
 func (o PropertyActivationOutput) ComplianceRecord() PropertyActivationComplianceRecordPtrOutput {
 	return o.ApplyT(func(v *PropertyActivation) PropertyActivationComplianceRecordPtrOutput { return v.ComplianceRecord }).(PropertyActivationComplianceRecordPtrOutput)
 }
 
+// One or more email addresses to which to send activation status changes.
 func (o PropertyActivationOutput) Contacts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringArrayOutput { return v.Contacts }).(pulumi.StringArrayOutput)
 }
 
+// Errors returned during activation.
 func (o PropertyActivationOutput) Errors() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.Errors }).(pulumi.StringOutput)
 }
 
+// Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
 func (o PropertyActivationOutput) Network() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringPtrOutput { return v.Network }).(pulumi.StringPtrOutput)
 }
 
-// assigns a log message to the activation request
+// Assigns a log message to the activation request.
 func (o PropertyActivationOutput) Note() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringPtrOutput { return v.Note }).(pulumi.StringPtrOutput)
 }
 
+// Your property's ID, including the prp_ prefix.
 func (o PropertyActivationOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.PropertyId }).(pulumi.StringOutput)
 }
 
+// Any errors returned by the API about rules.
 func (o PropertyActivationOutput) RuleErrors() PropertyActivationRuleErrorArrayOutput {
 	return o.ApplyT(func(v *PropertyActivation) PropertyActivationRuleErrorArrayOutput { return v.RuleErrors }).(PropertyActivationRuleErrorArrayOutput)
 }
 
+// The property version's activation status on the given network.
 func (o PropertyActivationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// Enables to set timeout for processing
+// Enables to set timeout for processing.
 func (o PropertyActivationOutput) Timeouts() PropertyActivationTimeoutsPtrOutput {
 	return o.ApplyT(func(v *PropertyActivation) PropertyActivationTimeoutsPtrOutput { return v.Timeouts }).(PropertyActivationTimeoutsPtrOutput)
 }
 
+// Your property's version number.
 func (o PropertyActivationOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }
 
+// Warnings returned during activation.
 func (o PropertyActivationOutput) Warnings() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.Warnings }).(pulumi.StringOutput)
 }

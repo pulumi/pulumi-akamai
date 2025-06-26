@@ -32,14 +32,14 @@ class CloudletsPolicyArgs:
                  timeouts: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsPolicy resource.
-        :param pulumi.Input[builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
-        :param pulumi.Input[builtins.str] group_id: Defines the group association for the policy. You must have edit privileges for the group
-        :param pulumi.Input[builtins.str] description: The description of this specific policy
-        :param pulumi.Input[builtins.bool] is_shared: The type of policy that you want to create
-        :param pulumi.Input[builtins.str] match_rule_format: The version of the Cloudlet specific matchRules
-        :param pulumi.Input[builtins.str] match_rules: A JSON structure that defines the rules for this policy
-        :param pulumi.Input[builtins.str] name: The name of the policy. The name must be unique
-        :param pulumi.Input['CloudletsPolicyTimeoutsArgs'] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
+        :param pulumi.Input[builtins.str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
+        :param pulumi.Input[builtins.str] description: The description of this specific policy.
+        :param pulumi.Input[builtins.bool] is_shared: The type of policy that you want to create.
+        :param pulumi.Input[builtins.str] match_rule_format: The version of the Cloudlet specific matchRules.
+        :param pulumi.Input[builtins.str] match_rules: A JSON structure that defines the rules for this policy.
+        :param pulumi.Input[builtins.str] name: The name of the policy. The name must be unique.
+        :param pulumi.Input['CloudletsPolicyTimeoutsArgs'] timeouts: Enables to set timeout for processing.
         """
         pulumi.set(__self__, "cloudlet_code", cloudlet_code)
         pulumi.set(__self__, "group_id", group_id)
@@ -60,7 +60,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> pulumi.Input[builtins.str]:
         """
-        Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
         """
         return pulumi.get(self, "cloudlet_code")
 
@@ -72,7 +72,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[builtins.str]:
         """
-        Defines the group association for the policy. You must have edit privileges for the group
+        Defines the group association for the policy. You must have edit privileges for the group.
         """
         return pulumi.get(self, "group_id")
 
@@ -84,7 +84,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The description of this specific policy
+        The description of this specific policy.
         """
         return pulumi.get(self, "description")
 
@@ -96,7 +96,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter(name="isShared")
     def is_shared(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        The type of policy that you want to create
+        The type of policy that you want to create.
         """
         return pulumi.get(self, "is_shared")
 
@@ -108,7 +108,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter(name="matchRuleFormat")
     def match_rule_format(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The version of the Cloudlet specific matchRules
+        The version of the Cloudlet specific matchRules.
         """
         return pulumi.get(self, "match_rule_format")
 
@@ -120,7 +120,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter(name="matchRules")
     def match_rules(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        A JSON structure that defines the rules for this policy
+        A JSON structure that defines the rules for this policy.
         """
         return pulumi.get(self, "match_rules")
 
@@ -132,7 +132,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The name of the policy. The name must be unique
+        The name of the policy. The name must be unique.
         """
         return pulumi.get(self, "name")
 
@@ -144,7 +144,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter
     def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]:
         """
-        Enables to set timeout for processing
+        Enables to set timeout for processing.
         """
         return pulumi.get(self, "timeouts")
 
@@ -169,17 +169,17 @@ class _CloudletsPolicyState:
                  warnings: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudletsPolicy resources.
-        :param pulumi.Input[builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
-        :param pulumi.Input[builtins.int] cloudlet_id: An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
-        :param pulumi.Input[builtins.str] description: The description of this specific policy
-        :param pulumi.Input[builtins.str] group_id: Defines the group association for the policy. You must have edit privileges for the group
-        :param pulumi.Input[builtins.bool] is_shared: The type of policy that you want to create
-        :param pulumi.Input[builtins.str] match_rule_format: The version of the Cloudlet specific matchRules
-        :param pulumi.Input[builtins.str] match_rules: A JSON structure that defines the rules for this policy
-        :param pulumi.Input[builtins.str] name: The name of the policy. The name must be unique
-        :param pulumi.Input['CloudletsPolicyTimeoutsArgs'] timeouts: Enables to set timeout for processing
-        :param pulumi.Input[builtins.int] version: The version number of the policy
-        :param pulumi.Input[builtins.str] warnings: A JSON encoded list of warnings
+        :param pulumi.Input[builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
+        :param pulumi.Input[builtins.int] cloudlet_id: An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
+        :param pulumi.Input[builtins.str] description: The description of this specific policy.
+        :param pulumi.Input[builtins.str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
+        :param pulumi.Input[builtins.bool] is_shared: The type of policy that you want to create.
+        :param pulumi.Input[builtins.str] match_rule_format: The version of the Cloudlet specific matchRules.
+        :param pulumi.Input[builtins.str] match_rules: A JSON structure that defines the rules for this policy.
+        :param pulumi.Input[builtins.str] name: The name of the policy. The name must be unique.
+        :param pulumi.Input['CloudletsPolicyTimeoutsArgs'] timeouts: Enables to set timeout for processing.
+        :param pulumi.Input[builtins.int] version: The version number of the policy.
+        :param pulumi.Input[builtins.str] warnings: A JSON encoded list of warnings.
         """
         if cloudlet_code is not None:
             pulumi.set(__self__, "cloudlet_code", cloudlet_code)
@@ -208,7 +208,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
         """
         return pulumi.get(self, "cloudlet_code")
 
@@ -220,7 +220,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="cloudletId")
     def cloudlet_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+        An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
         """
         return pulumi.get(self, "cloudlet_id")
 
@@ -232,7 +232,7 @@ class _CloudletsPolicyState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The description of this specific policy
+        The description of this specific policy.
         """
         return pulumi.get(self, "description")
 
@@ -244,7 +244,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Defines the group association for the policy. You must have edit privileges for the group
+        Defines the group association for the policy. You must have edit privileges for the group.
         """
         return pulumi.get(self, "group_id")
 
@@ -256,7 +256,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="isShared")
     def is_shared(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        The type of policy that you want to create
+        The type of policy that you want to create.
         """
         return pulumi.get(self, "is_shared")
 
@@ -268,7 +268,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="matchRuleFormat")
     def match_rule_format(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The version of the Cloudlet specific matchRules
+        The version of the Cloudlet specific matchRules.
         """
         return pulumi.get(self, "match_rule_format")
 
@@ -280,7 +280,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="matchRules")
     def match_rules(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        A JSON structure that defines the rules for this policy
+        A JSON structure that defines the rules for this policy.
         """
         return pulumi.get(self, "match_rules")
 
@@ -292,7 +292,7 @@ class _CloudletsPolicyState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The name of the policy. The name must be unique
+        The name of the policy. The name must be unique.
         """
         return pulumi.get(self, "name")
 
@@ -304,7 +304,7 @@ class _CloudletsPolicyState:
     @pulumi.getter
     def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]:
         """
-        Enables to set timeout for processing
+        Enables to set timeout for processing.
         """
         return pulumi.get(self, "timeouts")
 
@@ -316,7 +316,7 @@ class _CloudletsPolicyState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        The version number of the policy
+        The version number of the policy.
         """
         return pulumi.get(self, "version")
 
@@ -328,7 +328,7 @@ class _CloudletsPolicyState:
     @pulumi.getter
     def warnings(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        A JSON encoded list of warnings
+        A JSON encoded list of warnings.
         """
         return pulumi.get(self, "warnings")
 
@@ -356,14 +356,14 @@ class CloudletsPolicy(pulumi.CustomResource):
         Create a CloudletsPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
-        :param pulumi.Input[builtins.str] description: The description of this specific policy
-        :param pulumi.Input[builtins.str] group_id: Defines the group association for the policy. You must have edit privileges for the group
-        :param pulumi.Input[builtins.bool] is_shared: The type of policy that you want to create
-        :param pulumi.Input[builtins.str] match_rule_format: The version of the Cloudlet specific matchRules
-        :param pulumi.Input[builtins.str] match_rules: A JSON structure that defines the rules for this policy
-        :param pulumi.Input[builtins.str] name: The name of the policy. The name must be unique
-        :param pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
+        :param pulumi.Input[builtins.str] description: The description of this specific policy.
+        :param pulumi.Input[builtins.str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
+        :param pulumi.Input[builtins.bool] is_shared: The type of policy that you want to create.
+        :param pulumi.Input[builtins.str] match_rule_format: The version of the Cloudlet specific matchRules.
+        :param pulumi.Input[builtins.str] match_rules: A JSON structure that defines the rules for this policy.
+        :param pulumi.Input[builtins.str] name: The name of the policy. The name must be unique.
+        :param pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']] timeouts: Enables to set timeout for processing.
         """
         ...
     @overload
@@ -448,17 +448,17 @@ class CloudletsPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
-        :param pulumi.Input[builtins.int] cloudlet_id: An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
-        :param pulumi.Input[builtins.str] description: The description of this specific policy
-        :param pulumi.Input[builtins.str] group_id: Defines the group association for the policy. You must have edit privileges for the group
-        :param pulumi.Input[builtins.bool] is_shared: The type of policy that you want to create
-        :param pulumi.Input[builtins.str] match_rule_format: The version of the Cloudlet specific matchRules
-        :param pulumi.Input[builtins.str] match_rules: A JSON structure that defines the rules for this policy
-        :param pulumi.Input[builtins.str] name: The name of the policy. The name must be unique
-        :param pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
-        :param pulumi.Input[builtins.int] version: The version number of the policy
-        :param pulumi.Input[builtins.str] warnings: A JSON encoded list of warnings
+        :param pulumi.Input[builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
+        :param pulumi.Input[builtins.int] cloudlet_id: An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
+        :param pulumi.Input[builtins.str] description: The description of this specific policy.
+        :param pulumi.Input[builtins.str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
+        :param pulumi.Input[builtins.bool] is_shared: The type of policy that you want to create.
+        :param pulumi.Input[builtins.str] match_rule_format: The version of the Cloudlet specific matchRules.
+        :param pulumi.Input[builtins.str] match_rules: A JSON structure that defines the rules for this policy.
+        :param pulumi.Input[builtins.str] name: The name of the policy. The name must be unique.
+        :param pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']] timeouts: Enables to set timeout for processing.
+        :param pulumi.Input[builtins.int] version: The version number of the policy.
+        :param pulumi.Input[builtins.str] warnings: A JSON encoded list of warnings.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -481,7 +481,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> pulumi.Output[builtins.str]:
         """
-        Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
         """
         return pulumi.get(self, "cloudlet_code")
 
@@ -489,15 +489,15 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="cloudletId")
     def cloudlet_id(self) -> pulumi.Output[builtins.int]:
         """
-        An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
+        An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
         """
         return pulumi.get(self, "cloudlet_id")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[Optional[builtins.str]]:
+    def description(self) -> pulumi.Output[builtins.str]:
         """
-        The description of this specific policy
+        The description of this specific policy.
         """
         return pulumi.get(self, "description")
 
@@ -505,7 +505,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[builtins.str]:
         """
-        Defines the group association for the policy. You must have edit privileges for the group
+        Defines the group association for the policy. You must have edit privileges for the group.
         """
         return pulumi.get(self, "group_id")
 
@@ -513,7 +513,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="isShared")
     def is_shared(self) -> pulumi.Output[Optional[builtins.bool]]:
         """
-        The type of policy that you want to create
+        The type of policy that you want to create.
         """
         return pulumi.get(self, "is_shared")
 
@@ -521,7 +521,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="matchRuleFormat")
     def match_rule_format(self) -> pulumi.Output[Optional[builtins.str]]:
         """
-        The version of the Cloudlet specific matchRules
+        The version of the Cloudlet specific matchRules.
         """
         return pulumi.get(self, "match_rule_format")
 
@@ -529,7 +529,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="matchRules")
     def match_rules(self) -> pulumi.Output[Optional[builtins.str]]:
         """
-        A JSON structure that defines the rules for this policy
+        A JSON structure that defines the rules for this policy.
         """
         return pulumi.get(self, "match_rules")
 
@@ -537,7 +537,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        The name of the policy. The name must be unique
+        The name of the policy. The name must be unique.
         """
         return pulumi.get(self, "name")
 
@@ -545,7 +545,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter
     def timeouts(self) -> pulumi.Output[Optional['outputs.CloudletsPolicyTimeouts']]:
         """
-        Enables to set timeout for processing
+        Enables to set timeout for processing.
         """
         return pulumi.get(self, "timeouts")
 
@@ -553,7 +553,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[builtins.int]:
         """
-        The version number of the policy
+        The version number of the policy.
         """
         return pulumi.get(self, "version")
 
@@ -561,7 +561,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter
     def warnings(self) -> pulumi.Output[builtins.str]:
         """
-        A JSON encoded list of warnings
+        A JSON encoded list of warnings.
         """
         return pulumi.get(self, "warnings")
 

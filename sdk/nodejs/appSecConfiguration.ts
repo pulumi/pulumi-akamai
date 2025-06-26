@@ -55,7 +55,7 @@ export class AppSecConfiguration extends pulumi.CustomResource {
     /**
      * Unique identifier of the contract group associated with the new configuration
      */
-    public readonly groupId!: pulumi.Output<number>;
+    public readonly groupId!: pulumi.Output<string>;
     /**
      * Hostnames to be protected by the new configuration
      */
@@ -141,7 +141,7 @@ export interface AppSecConfigurationState {
     /**
      * Unique identifier of the contract group associated with the new configuration
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<string>;
     /**
      * Hostnames to be protected by the new configuration
      */
@@ -175,7 +175,7 @@ export interface AppSecConfigurationArgs {
     /**
      * Unique identifier of the contract group associated with the new configuration
      */
-    groupId: pulumi.Input<number>;
+    groupId: pulumi.Input<string>;
     /**
      * Hostnames to be protected by the new configuration
      */

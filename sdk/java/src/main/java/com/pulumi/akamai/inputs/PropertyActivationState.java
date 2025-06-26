@@ -21,9 +21,17 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
 
     public static final PropertyActivationState Empty = new PropertyActivationState();
 
+    /**
+     * The ID given to the activation event while it&#39;s in progress.
+     * 
+     */
     @Import(name="activationId")
     private @Nullable Output<String> activationId;
 
+    /**
+     * @return The ID given to the activation event while it&#39;s in progress.
+     * 
+     */
     public Optional<Output<String>> activationId() {
         return Optional.ofNullable(this.activationId);
     }
@@ -44,102 +52,166 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
     }
 
     /**
-     * Provides an audit record when activating on a production network
+     * Provides an audit record when activating on a production network.
      * 
      */
     @Import(name="complianceRecord")
     private @Nullable Output<PropertyActivationComplianceRecordArgs> complianceRecord;
 
     /**
-     * @return Provides an audit record when activating on a production network
+     * @return Provides an audit record when activating on a production network.
      * 
      */
     public Optional<Output<PropertyActivationComplianceRecordArgs>> complianceRecord() {
         return Optional.ofNullable(this.complianceRecord);
     }
 
+    /**
+     * One or more email addresses to which to send activation status changes.
+     * 
+     */
     @Import(name="contacts")
     private @Nullable Output<List<String>> contacts;
 
+    /**
+     * @return One or more email addresses to which to send activation status changes.
+     * 
+     */
     public Optional<Output<List<String>>> contacts() {
         return Optional.ofNullable(this.contacts);
     }
 
+    /**
+     * Errors returned during activation.
+     * 
+     */
     @Import(name="errors")
     private @Nullable Output<String> errors;
 
+    /**
+     * @return Errors returned during activation.
+     * 
+     */
     public Optional<Output<String>> errors() {
         return Optional.ofNullable(this.errors);
     }
 
+    /**
+     * Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+     * 
+     */
     @Import(name="network")
     private @Nullable Output<String> network;
 
+    /**
+     * @return Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+     * 
+     */
     public Optional<Output<String>> network() {
         return Optional.ofNullable(this.network);
     }
 
     /**
-     * assigns a log message to the activation request
+     * Assigns a log message to the activation request.
      * 
      */
     @Import(name="note")
     private @Nullable Output<String> note;
 
     /**
-     * @return assigns a log message to the activation request
+     * @return Assigns a log message to the activation request.
      * 
      */
     public Optional<Output<String>> note() {
         return Optional.ofNullable(this.note);
     }
 
+    /**
+     * Your property&#39;s ID, including the prp_ prefix.
+     * 
+     */
     @Import(name="propertyId")
     private @Nullable Output<String> propertyId;
 
+    /**
+     * @return Your property&#39;s ID, including the prp_ prefix.
+     * 
+     */
     public Optional<Output<String>> propertyId() {
         return Optional.ofNullable(this.propertyId);
     }
 
+    /**
+     * Any errors returned by the API about rules.
+     * 
+     */
     @Import(name="ruleErrors")
     private @Nullable Output<List<PropertyActivationRuleErrorArgs>> ruleErrors;
 
+    /**
+     * @return Any errors returned by the API about rules.
+     * 
+     */
     public Optional<Output<List<PropertyActivationRuleErrorArgs>>> ruleErrors() {
         return Optional.ofNullable(this.ruleErrors);
     }
 
+    /**
+     * The property version&#39;s activation status on the given network.
+     * 
+     */
     @Import(name="status")
     private @Nullable Output<String> status;
 
+    /**
+     * @return The property version&#39;s activation status on the given network.
+     * 
+     */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
     /**
-     * Enables to set timeout for processing
+     * Enables to set timeout for processing.
      * 
      */
     @Import(name="timeouts")
     private @Nullable Output<PropertyActivationTimeoutsArgs> timeouts;
 
     /**
-     * @return Enables to set timeout for processing
+     * @return Enables to set timeout for processing.
      * 
      */
     public Optional<Output<PropertyActivationTimeoutsArgs>> timeouts() {
         return Optional.ofNullable(this.timeouts);
     }
 
+    /**
+     * Your property&#39;s version number.
+     * 
+     */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
+    /**
+     * @return Your property&#39;s version number.
+     * 
+     */
     public Optional<Output<Integer>> version() {
         return Optional.ofNullable(this.version);
     }
 
+    /**
+     * Warnings returned during activation.
+     * 
+     */
     @Import(name="warnings")
     private @Nullable Output<String> warnings;
 
+    /**
+     * @return Warnings returned during activation.
+     * 
+     */
     public Optional<Output<String>> warnings() {
         return Optional.ofNullable(this.warnings);
     }
@@ -180,11 +252,23 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
             $ = new PropertyActivationState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param activationId The ID given to the activation event while it&#39;s in progress.
+         * 
+         * @return builder
+         * 
+         */
         public Builder activationId(@Nullable Output<String> activationId) {
             $.activationId = activationId;
             return this;
         }
 
+        /**
+         * @param activationId The ID given to the activation event while it&#39;s in progress.
+         * 
+         * @return builder
+         * 
+         */
         public Builder activationId(String activationId) {
             return activationId(Output.of(activationId));
         }
@@ -211,7 +295,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param complianceRecord Provides an audit record when activating on a production network
+         * @param complianceRecord Provides an audit record when activating on a production network.
          * 
          * @return builder
          * 
@@ -222,7 +306,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param complianceRecord Provides an audit record when activating on a production network
+         * @param complianceRecord Provides an audit record when activating on a production network.
          * 
          * @return builder
          * 
@@ -231,39 +315,81 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
             return complianceRecord(Output.of(complianceRecord));
         }
 
+        /**
+         * @param contacts One or more email addresses to which to send activation status changes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contacts(@Nullable Output<List<String>> contacts) {
             $.contacts = contacts;
             return this;
         }
 
+        /**
+         * @param contacts One or more email addresses to which to send activation status changes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contacts(List<String> contacts) {
             return contacts(Output.of(contacts));
         }
 
+        /**
+         * @param contacts One or more email addresses to which to send activation status changes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contacts(String... contacts) {
             return contacts(List.of(contacts));
         }
 
+        /**
+         * @param errors Errors returned during activation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder errors(@Nullable Output<String> errors) {
             $.errors = errors;
             return this;
         }
 
+        /**
+         * @param errors Errors returned during activation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder errors(String errors) {
             return errors(Output.of(errors));
         }
 
+        /**
+         * @param network Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+         * 
+         * @return builder
+         * 
+         */
         public Builder network(@Nullable Output<String> network) {
             $.network = network;
             return this;
         }
 
+        /**
+         * @param network Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
+         * 
+         * @return builder
+         * 
+         */
         public Builder network(String network) {
             return network(Output.of(network));
         }
 
         /**
-         * @param note assigns a log message to the activation request
+         * @param note Assigns a log message to the activation request.
          * 
          * @return builder
          * 
@@ -274,7 +400,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param note assigns a log message to the activation request
+         * @param note Assigns a log message to the activation request.
          * 
          * @return builder
          * 
@@ -283,39 +409,81 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
             return note(Output.of(note));
         }
 
+        /**
+         * @param propertyId Your property&#39;s ID, including the prp_ prefix.
+         * 
+         * @return builder
+         * 
+         */
         public Builder propertyId(@Nullable Output<String> propertyId) {
             $.propertyId = propertyId;
             return this;
         }
 
+        /**
+         * @param propertyId Your property&#39;s ID, including the prp_ prefix.
+         * 
+         * @return builder
+         * 
+         */
         public Builder propertyId(String propertyId) {
             return propertyId(Output.of(propertyId));
         }
 
+        /**
+         * @param ruleErrors Any errors returned by the API about rules.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ruleErrors(@Nullable Output<List<PropertyActivationRuleErrorArgs>> ruleErrors) {
             $.ruleErrors = ruleErrors;
             return this;
         }
 
+        /**
+         * @param ruleErrors Any errors returned by the API about rules.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ruleErrors(List<PropertyActivationRuleErrorArgs> ruleErrors) {
             return ruleErrors(Output.of(ruleErrors));
         }
 
+        /**
+         * @param ruleErrors Any errors returned by the API about rules.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ruleErrors(PropertyActivationRuleErrorArgs... ruleErrors) {
             return ruleErrors(List.of(ruleErrors));
         }
 
+        /**
+         * @param status The property version&#39;s activation status on the given network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
             return this;
         }
 
+        /**
+         * @param status The property version&#39;s activation status on the given network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
         /**
-         * @param timeouts Enables to set timeout for processing
+         * @param timeouts Enables to set timeout for processing.
          * 
          * @return builder
          * 
@@ -326,7 +494,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeouts Enables to set timeout for processing
+         * @param timeouts Enables to set timeout for processing.
          * 
          * @return builder
          * 
@@ -335,20 +503,44 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
             return timeouts(Output.of(timeouts));
         }
 
+        /**
+         * @param version Your property&#39;s version number.
+         * 
+         * @return builder
+         * 
+         */
         public Builder version(@Nullable Output<Integer> version) {
             $.version = version;
             return this;
         }
 
+        /**
+         * @param version Your property&#39;s version number.
+         * 
+         * @return builder
+         * 
+         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }
 
+        /**
+         * @param warnings Warnings returned during activation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder warnings(@Nullable Output<String> warnings) {
             $.warnings = warnings;
             return this;
         }
 
+        /**
+         * @param warnings Warnings returned during activation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder warnings(String warnings) {
             return warnings(Output.of(warnings));
         }

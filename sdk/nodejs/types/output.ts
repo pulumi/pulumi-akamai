@@ -2912,77 +2912,77 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValu
 
 export interface GetCloudletsPolicyActivation {
     /**
-     * The specific version of this API
+     * The specific version of this API.
      */
     apiVersion: string;
     /**
-     * The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated
+     * The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated.
      */
     network: string;
     /**
-     * The object containing Cloudlet policy information
+     * The object containing Cloudlet policy information.
      */
     policyInfos: outputs.GetCloudletsPolicyActivationPolicyInfo[];
     /**
-     * A set containing information about the property associated with a particular Cloudlet policy
+     * A set containing information about the property associated with a particular Cloudlet policy.
      */
     propertyInfos: outputs.GetCloudletsPolicyActivationPropertyInfo[];
 }
 
 export interface GetCloudletsPolicyActivationPolicyInfo {
     /**
-     * The name of the user who activated the policy
+     * The name of the user who activated the policy.
      */
     activatedBy: string;
     /**
-     * The date on which the policy was activated (in milliseconds since Epoch)
+     * The date on which the policy was activated (in milliseconds since Epoch).
      */
     activationDate: number;
     /**
-     * The name of the policy
+     * The name of the policy.
      */
     name: string;
     /**
-     * An integer ID that is associated with all versions of a policy
+     * An integer ID that is associated with all versions of a policy.
      */
     policyId: number;
     /**
-     * The activation status for the policy: active, inactive, deactivated, pending or failed
+     * The activation status for the policy: active, inactive, deactivated, pending or failed.
      */
     status: string;
     /**
-     * Information about the status of an activation operation
+     * Information about the status of an activation operation.
      */
     statusDetail: string;
     /**
-     * The version number of the activated policy
+     * The version number of the activated policy.
      */
     version: number;
 }
 
 export interface GetCloudletsPolicyActivationPropertyInfo {
     /**
-     * The name of the user who activated the property
+     * The name of the user who activated the property.
      */
     activatedBy: string;
     /**
-     * The date on which the property was activated (in milliseconds since Epoch)
+     * The date on which the property was activated (in milliseconds since Epoch).
      */
     activationDate: number;
     /**
-     * Defines the group association for the policy or property
+     * Defines the group association for the policy or property.
      */
     groupId: number;
     /**
-     * The name of the property
+     * The name of the property.
      */
     name: string;
     /**
-     * The activation status for the property. Can be active, inactive, deactivated, pending or failed
+     * The activation status for the property. Can be active, inactive, deactivated, pending or failed.
      */
     status: string;
     /**
-     * The version number of the activated property
+     * The version number of the activated property.
      */
     version: number;
 }
@@ -5222,11 +5222,11 @@ export interface GetIamAccountSwitchKeysAccountSwitchKey {
 
 export interface GetIamAllowedApisAllowedApi {
     /**
-     * API access levels, possible values are READ-ONLY and READ-WRITE.
+     * API access levels, possible values are READ-ONLY, READ-WRITE, CREDENTIAL-READ-ONLY and CREDENTIAL-READ-WRITE.
      */
     accessLevels: string[];
     /**
-     * Unique identifier for each API.
+     * A unique identifier for each API.
      */
     apiId: number;
     /**
@@ -5234,11 +5234,11 @@ export interface GetIamAllowedApisAllowedApi {
      */
     apiName: string;
     /**
-     * Descriptive label for the API.
+     * A human-readable name for the API.
      */
     description: string;
     /**
-     * Link to more information about the API.
+     * A link to more information about the API.
      */
     documentationUrl: string;
     /**
@@ -5253,6 +5253,353 @@ export interface GetIamAllowedApisAllowedApi {
      * Unique identifier for the API's service provider.
      */
     serviceProviderId: number;
+}
+
+export interface GetIamApiClientActions {
+    /**
+     * Whether you can deactivate the API client's credentials.
+     */
+    deactivateAll: boolean;
+    /**
+     * Whether you can remove the API client.
+     */
+    delete: boolean;
+    /**
+     * Whether you can update the API client.
+     */
+    edit: boolean;
+    /**
+     * Whether you can update the `apis` the API client can access, same as `editAuth`.
+     */
+    editApis: boolean;
+    /**
+     * Whether you can update the `apis` the API client can access, same as `editApis`.
+     */
+    editAuth: boolean;
+    /**
+     * Whether you can update the `groups` the API client can access.
+     */
+    editGroups: boolean;
+    /**
+     * Whether you can update the `ipAcl` the API client can access.
+     */
+    editIpAcl: boolean;
+    /**
+     * Whether you can update the API client's option to manage many accounts.
+     */
+    editSwitchAccount: boolean;
+    /**
+     * Whether you can lock the API client.
+     */
+    lock: boolean;
+    /**
+     * Whether you can transfer the API client to a new owner.
+     */
+    transfer: boolean;
+    /**
+     * Whether you can unlock the API client.
+     */
+    unlock: boolean;
+}
+
+export interface GetIamApiClientApiAccess {
+    /**
+     * Whether the API client has access to a full set of available APIs.
+     */
+    allAccessibleApis: boolean;
+    /**
+     * The set of APIs the API client can access when `allAccessibleApis` is disabled.
+     */
+    apis: outputs.GetIamApiClientApiAccessApi[];
+}
+
+export interface GetIamApiClientApiAccessApi {
+    /**
+     * The API client's access level on an API basis, either `READ-ONLY`, `READ-WRITE`, `CREDENTIAL-READ-ONLY`, or `CREDENTIAL-READ-WRITE`.
+     */
+    accessLevel: string;
+    /**
+     * A unique identifier for each API.
+     */
+    apiId: number;
+    /**
+     * A human-readable name for the API.
+     */
+    apiName: string;
+    /**
+     * A human-readable description for the API.
+     */
+    description: string;
+    /**
+     * A link to more information about the API.
+     */
+    documentationUrl: string;
+    /**
+     * Specifies where the API can access resources.
+     */
+    endpoint: string;
+}
+
+export interface GetIamApiClientCredential {
+    /**
+     * Specifies activities available on the API client's credentials.
+     */
+    actions: outputs.GetIamApiClientCredentialActions;
+    /**
+     * The part of the credential that identifies the API client.
+     */
+    clientToken: string;
+    /**
+     * The ISO 8601 timestamp indicating when the credential was created.
+     */
+    createdOn: string;
+    /**
+     * A unique identifier for each credential.
+     */
+    credentialId: number;
+    /**
+     * A human-readable description for the API client.
+     */
+    description: string;
+    /**
+     * The ISO 8601 timestamp indicating when the credential expires.
+     */
+    expiresOn: string;
+    /**
+     * Whether a credential is `ACTIVE`, `INACTIVE`, or `DELETED`.
+     */
+    status: string;
+}
+
+export interface GetIamApiClientCredentialActions {
+    /**
+     * Whether you can activate the credential.
+     */
+    activate: boolean;
+    /**
+     * Whether you can deactivate the credential.
+     */
+    deactivate: boolean;
+    /**
+     * Whether you can remove the credential.
+     */
+    delete: boolean;
+    /**
+     * Whether you can modify the credential's description.
+     */
+    editDescription: boolean;
+    /**
+     * Whether you can modify the credential's expiration date.
+     */
+    editExpiration: boolean;
+}
+
+export interface GetIamApiClientGroupAccess {
+    /**
+     * Sets the API client's group access the same as the authorized user.
+     */
+    cloneAuthorizedUserGroups: boolean;
+    /**
+     * Groups the API client can access.
+     */
+    groups: outputs.GetIamApiClientGroupAccessGroup[];
+}
+
+export interface GetIamApiClientGroupAccessGroup {
+    /**
+     * Unique identifier for each group.
+     */
+    groupId: number;
+    /**
+     * Descriptive label for the group.
+     */
+    groupName: string;
+    /**
+     * Blocks the API client access to the group's child groups.
+     */
+    isBlocked: boolean;
+    /**
+     * Unique identifier for the parent group within the group tree.
+     */
+    parentGroupId: number;
+    /**
+     * Descriptive label for the role to convey its use.
+     */
+    roleDescription: string;
+    /**
+     * Unique identifier for each role.
+     */
+    roleId: number;
+    /**
+     * Descriptive label for the role.
+     */
+    roleName: string;
+    /**
+     * Groups the API client can access.
+     */
+    subGroups: outputs.GetIamApiClientGroupAccessGroupSubGroup[];
+}
+
+export interface GetIamApiClientGroupAccessGroupSubGroup {
+    /**
+     * Unique identifier for each group.
+     */
+    groupId: number;
+    /**
+     * Descriptive label for the group.
+     */
+    groupName: string;
+    /**
+     * Blocks the API client access to the group's child groups.
+     */
+    isBlocked: boolean;
+    /**
+     * Unique identifier for the parent group within the group tree.
+     */
+    parentGroupId: number;
+    /**
+     * Descriptive label for the role to convey its use.
+     */
+    roleDescription: string;
+    /**
+     * Unique identifier for each role.
+     */
+    roleId: number;
+    /**
+     * Descriptive label for the role.
+     */
+    roleName: string;
+    /**
+     * Groups the API client can access.
+     */
+    subGroups: outputs.GetIamApiClientGroupAccessGroupSubGroup[];
+}
+
+export interface GetIamApiClientIpAcl {
+    /**
+     * IP addresses or CIDR blocks the API client can access.
+     */
+    cidrs: string[];
+    /**
+     * Enables the API client to access the IP access control list (ACL).
+     */
+    enable: boolean;
+}
+
+export interface GetIamApiClientPurgeOptions {
+    /**
+     * Whether the API client can purge content by cache tag.
+     */
+    canPurgeByCacheTag: boolean;
+    /**
+     * Whether the API client can purge content by CP code.
+     */
+    canPurgeByCpCode: boolean;
+    /**
+     * CP codes the API client can purge.
+     */
+    cpCodeAccess: outputs.GetIamApiClientPurgeOptionsCpCodeAccess;
+}
+
+export interface GetIamApiClientPurgeOptionsCpCodeAccess {
+    /**
+     * Whether the API can purge content by all current and new CP codes.
+     */
+    allCurrentAndNewCpCodes: boolean;
+    /**
+     * CP codes the API client can purge.
+     */
+    cpCodes: number[];
+}
+
+export interface GetIamApiClientsApiClient {
+    /**
+     * The part of the client secret that identifies your API client and lets you access applications and resources.
+     */
+    accessToken: string;
+    /**
+     * Specifies activities available for the API client.
+     */
+    actions: outputs.GetIamApiClientsApiClientActions;
+    /**
+     * The number of credentials active for the API client.
+     */
+    activeCredentialCount: number;
+    /**
+     * Whether the API client can manage more than one account.
+     */
+    allowAccountSwitch: boolean;
+    /**
+     * The API client's valid users.
+     */
+    authorizedUsers: string[];
+    /**
+     * Whether the API client can create a credential for a new API client.
+     */
+    canAutoCreateCredential: boolean;
+    /**
+     * A human-readable description of the API client.
+     */
+    clientDescription: string;
+    /**
+     * A unique identifier for the API client.
+     */
+    clientId: string;
+    /**
+     * A human-readable name for the API client.
+     */
+    clientName: string;
+    /**
+     * Specifies the API client's ownership and credential management.
+     */
+    clientType: string;
+    /**
+     * The user who created the API client.
+     */
+    createdBy: string;
+    /**
+     * The ISO 8601 timestamp indicating when the API client was created.
+     */
+    createdDate: string;
+    /**
+     * Whether the API client is locked.
+     */
+    isLocked: boolean;
+    /**
+     * Email addresses to notify users when credentials expire.
+     */
+    notificationEmails: string[];
+    /**
+     * Unique identifier for the service hostname.
+     */
+    serviceConsumerToken: string;
+}
+
+export interface GetIamApiClientsApiClientActions {
+    /**
+     * Whether you can deactivate the API client's credentials.
+     */
+    deactivateAll: boolean;
+    /**
+     * Whether you can remove the API client.
+     */
+    delete: boolean;
+    /**
+     * Whether you can update the API client.
+     */
+    edit: boolean;
+    /**
+     * Whether you can lock the API client.
+     */
+    lock: boolean;
+    /**
+     * Whether you can transfer the API client to a new owner.
+     */
+    transfer: boolean;
+    /**
+     * Whether you can unlock the API client.
+     */
+    unlock: boolean;
 }
 
 export interface GetIamBlockedPropertiesBlockedProperty {
@@ -8356,6 +8703,267 @@ export interface GtmResourceResourceInstance {
     loadObjectPort?: number;
     loadServers?: string[];
     useDefaultLoadObject?: boolean;
+}
+
+export interface IamApiClientActions {
+    /**
+     * Whether you can deactivate the API client's credentials.
+     */
+    deactivateAll: boolean;
+    /**
+     * Whether you can remove the API client.
+     */
+    delete: boolean;
+    /**
+     * Whether you can update the API client.
+     */
+    edit: boolean;
+    /**
+     * Whether you can update the `apis` the API client can access, same as `editAuth`.
+     */
+    editApis: boolean;
+    /**
+     * Whether you can update the `apis` the API client can access, same as `editApis`.
+     */
+    editAuth: boolean;
+    /**
+     * Whether you can update the `groups` the API client can access.
+     */
+    editGroups: boolean;
+    /**
+     * Whether you can update the 'ip acl' the API client can access.
+     */
+    editIpAcl: boolean;
+    /**
+     * Whether you can update the API client's option to manage many accounts.
+     */
+    editSwitchAccount: boolean;
+    /**
+     * Whether you can lock the API client.
+     */
+    lock: boolean;
+    /**
+     * Whether you can transfer the API client to a new owner.
+     */
+    transfer: boolean;
+    /**
+     * Whether you can unlock the API client.
+     */
+    unlock: boolean;
+}
+
+export interface IamApiClientApiAccess {
+    /**
+     * Enables the API client to access a full set of available APIs.
+     */
+    allAccessibleApis: boolean;
+    /**
+     * The set of APIs the API client can access when `allAccessibleApis` is `false`.
+     */
+    apis: outputs.IamApiClientApiAccessApi[];
+}
+
+export interface IamApiClientApiAccessApi {
+    /**
+     * The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
+     */
+    accessLevel: string;
+    /**
+     * A unique identifier of the API.
+     */
+    apiId: number;
+    /**
+     * A human-readable name for the API.
+     */
+    apiName: string;
+    /**
+     * A human-readable description for the API.
+     */
+    description: string;
+    /**
+     * A link to more information about the API.
+     */
+    documentationUrl: string;
+    /**
+     * Specifies where the API can access resources.
+     */
+    endpoint: string;
+}
+
+export interface IamApiClientCredential {
+    /**
+     * Actions available on the API client's credentials.
+     */
+    actions: outputs.IamApiClientCredentialActions;
+    /**
+     * The client secret.
+     */
+    clientSecret: string;
+    /**
+     * The part of the credential that identifies the API client.
+     */
+    clientToken: string;
+    /**
+     * The ISO 8601 timestamp indicating when the credential was created.
+     */
+    createdOn: string;
+    /**
+     * A unique identifier of the credential.
+     */
+    credentialId: number;
+    /**
+     * A human-readable description for the credential.
+     */
+    description: string;
+    /**
+     * The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+     */
+    expiresOn: string;
+    /**
+     * Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+     */
+    status: string;
+}
+
+export interface IamApiClientCredentialActions {
+    /**
+     * Whether you can activate the credential.
+     */
+    activate: boolean;
+    /**
+     * Whether you can deactivate the credential.
+     */
+    deactivate: boolean;
+    /**
+     * Whether you can remove the credential.
+     */
+    delete: boolean;
+    /**
+     * Whether you can modify the credential's description.
+     */
+    editDescription: boolean;
+    /**
+     * Whether you can modify the credential's expiration date.
+     */
+    editExpiration: boolean;
+}
+
+export interface IamApiClientGroupAccess {
+    /**
+     * Sets the API client's group access the same as the authorized user.
+     */
+    cloneAuthorizedUserGroups: boolean;
+    /**
+     * Groups the API client can access.
+     */
+    groups: outputs.IamApiClientGroupAccessGroup[];
+}
+
+export interface IamApiClientGroupAccessGroup {
+    /**
+     * A unique identifier for the group.
+     */
+    groupId: number;
+    /**
+     * A human-readable name for the group.
+     */
+    groupName: string;
+    /**
+     * Blocks the API client access to the group's child groups.
+     */
+    isBlocked: boolean;
+    /**
+     * A unique identifier for the parent group within the group tree.
+     */
+    parentGroupId: number;
+    /**
+     * A human-readable description for the role to convey its use.
+     */
+    roleDescription: string;
+    /**
+     * A unique identifier for the role.
+     */
+    roleId: number;
+    /**
+     * A human-readable name for the role.
+     */
+    roleName: string;
+    /**
+     * Groups the API client can access.
+     */
+    subGroups: outputs.IamApiClientGroupAccessGroupSubGroup[];
+}
+
+export interface IamApiClientGroupAccessGroupSubGroup {
+    /**
+     * A unique identifier for the group.
+     */
+    groupId: number;
+    /**
+     * A human-readable name for the group.
+     */
+    groupName: string;
+    /**
+     * Blocks the API client access to the group's child groups.
+     */
+    isBlocked: boolean;
+    /**
+     * A unique identifier for the parent group within the group tree.
+     */
+    parentGroupId: number;
+    /**
+     * A human-readable description for the role to convey its use.
+     */
+    roleDescription: string;
+    /**
+     * A unique identifier for the role.
+     */
+    roleId: number;
+    /**
+     * A human-readable name for the role.
+     */
+    roleName: string;
+    /**
+     * Groups the API client can access.
+     */
+    subGroups: outputs.IamApiClientGroupAccessGroupSubGroup[];
+}
+
+export interface IamApiClientIpAcl {
+    /**
+     * IP addresses or CIDR blocks the API client can access.
+     */
+    cidrs?: string[];
+    /**
+     * Enables the API client to access the IP access control list (ACL).
+     */
+    enable: boolean;
+}
+
+export interface IamApiClientPurgeOptions {
+    /**
+     * Whether the API client can purge content by cache tag.
+     */
+    canPurgeByCacheTag: boolean;
+    /**
+     * Whether the API client can purge content by CP code.
+     */
+    canPurgeByCpCode: boolean;
+    /**
+     * CP codes the API client can purge.
+     */
+    cpCodeAccess: outputs.IamApiClientPurgeOptionsCpCodeAccess;
+}
+
+export interface IamApiClientPurgeOptionsCpCodeAccess {
+    /**
+     * Whether the API can purge content by all current and new CP codes.
+     */
+    allCurrentAndNewCpCodes: boolean;
+    /**
+     * CP codes the API client can purge.
+     */
+    cpCodes: number[];
 }
 
 export interface IamCidrBlockActions {

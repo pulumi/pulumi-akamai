@@ -5,8 +5,8 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,11 +16,18 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
 
     public static final GetCloudletsPolicyArgs Empty = new GetCloudletsPolicyArgs();
 
-    @Import(name="policyId", required=true)
-    private Output<Integer> policyId;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
-    public Output<Integer> policyId() {
-        return this.policyId;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
+    }
+
+    @Import(name="policyId")
+    private @Nullable Output<Integer> policyId;
+
+    public Optional<Output<Integer>> policyId() {
+        return Optional.ofNullable(this.policyId);
     }
 
     @Import(name="version")
@@ -33,6 +40,7 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
     private GetCloudletsPolicyArgs() {}
 
     private GetCloudletsPolicyArgs(GetCloudletsPolicyArgs $) {
+        this.name = $.name;
         this.policyId = $.policyId;
         this.version = $.version;
     }
@@ -55,7 +63,16 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
             $ = new GetCloudletsPolicyArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder policyId(Output<Integer> policyId) {
+        public Builder name(@Nullable Output<String> name) {
+            $.name = name;
+            return this;
+        }
+
+        public Builder name(String name) {
+            return name(Output.of(name));
+        }
+
+        public Builder policyId(@Nullable Output<Integer> policyId) {
             $.policyId = policyId;
             return this;
         }
@@ -74,9 +91,6 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetCloudletsPolicyArgs build() {
-            if ($.policyId == null) {
-                throw new MissingRequiredPropertyException("GetCloudletsPolicyArgs", "policyId");
-            }
             return $;
         }
     }
