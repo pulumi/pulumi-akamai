@@ -1,18 +1,18 @@
-module github.com/pulumi/pulumi-akamai/provider/v8
+module github.com/pulumi/pulumi-akamai/provider/v9
 
 go 1.23.6
 
 toolchain go1.24.2
 
 replace (
-	github.com/akamai/terraform-provider-akamai/v7 => ../upstream
+	github.com/akamai/terraform-provider-akamai/v8 => ../upstream
 	github.com/hashicorp/go-getter v1.5.0 => github.com/hashicorp/go-getter v1.4.0
 	github.com/hashicorp/terraform-exec => github.com/hashicorp/terraform-exec v0.15.0
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20250530111747-935112552988
 )
 
 require (
-	github.com/akamai/terraform-provider-akamai/v7 v7.0.0
+	github.com/akamai/terraform-provider-akamai/v8 v8.0.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.110.0
 	github.com/pulumi/pulumi/pkg/v3 v3.175.0
 	github.com/pulumi/pulumi/sdk/v3 v3.175.0
