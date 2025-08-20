@@ -35745,7 +35745,7 @@
                 "properties": {
                     "__self__": {
                         "type": "ref",
-                        "$ref": "#/resources/pulumi:providers:akamai"
+                        "$ref": "#/provider"
                     }
                 },
                 "type": "pulumi:providers:akamai/terraformConfig",
