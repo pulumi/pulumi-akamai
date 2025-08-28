@@ -32,8 +32,8 @@ export class BotmanCustomClientSequence extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanCustomClientSequence.__pulumiType;
     }
 
-    public readonly configId!: pulumi.Output<number>;
-    public readonly customClientIds!: pulumi.Output<string[]>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly customClientIds: pulumi.Output<string[]>;
 
     /**
      * Create a BotmanCustomClientSequence resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class BotmanCustomClientSequence extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanCustomClientSequenceState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["customClientIds"] = state ? state.customClientIds : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["customClientIds"] = state?.customClientIds;
         } else {
             const args = argsOrState as BotmanCustomClientSequenceArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.customClientIds === undefined) && !opts.urn) {
+            if (args?.customClientIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customClientIds'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["customClientIds"] = args ? args.customClientIds : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["customClientIds"] = args?.customClientIds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanCustomClientSequence.__pulumiType, name, resourceInputs, opts);

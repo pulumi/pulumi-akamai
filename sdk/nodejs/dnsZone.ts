@@ -34,24 +34,24 @@ export class DnsZone extends pulumi.CustomResource {
         return obj['__pulumiType'] === DnsZone.__pulumiType;
     }
 
-    public /*out*/ readonly activationState!: pulumi.Output<string>;
-    public /*out*/ readonly aliasCount!: pulumi.Output<number>;
-    public readonly comment!: pulumi.Output<string | undefined>;
-    public readonly contract!: pulumi.Output<string>;
-    public readonly endCustomerId!: pulumi.Output<string | undefined>;
-    public readonly group!: pulumi.Output<string | undefined>;
-    public readonly masters!: pulumi.Output<string[] | undefined>;
+    declare public /*out*/ readonly activationState: pulumi.Output<string>;
+    declare public /*out*/ readonly aliasCount: pulumi.Output<number>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
+    declare public readonly contract: pulumi.Output<string>;
+    declare public readonly endCustomerId: pulumi.Output<string | undefined>;
+    declare public readonly group: pulumi.Output<string | undefined>;
+    declare public readonly masters: pulumi.Output<string[] | undefined>;
     /**
      * Outbound zone transfer properties.
      */
-    public readonly outboundZoneTransfer!: pulumi.Output<outputs.DnsZoneOutboundZoneTransfer | undefined>;
-    public readonly signAndServe!: pulumi.Output<boolean | undefined>;
-    public readonly signAndServeAlgorithm!: pulumi.Output<string | undefined>;
-    public readonly target!: pulumi.Output<string | undefined>;
-    public readonly tsigKey!: pulumi.Output<outputs.DnsZoneTsigKey | undefined>;
-    public readonly type!: pulumi.Output<string>;
-    public /*out*/ readonly versionId!: pulumi.Output<string>;
-    public readonly zone!: pulumi.Output<string>;
+    declare public readonly outboundZoneTransfer: pulumi.Output<outputs.DnsZoneOutboundZoneTransfer | undefined>;
+    declare public readonly signAndServe: pulumi.Output<boolean | undefined>;
+    declare public readonly signAndServeAlgorithm: pulumi.Output<string | undefined>;
+    declare public readonly target: pulumi.Output<string | undefined>;
+    declare public readonly tsigKey: pulumi.Output<outputs.DnsZoneTsigKey | undefined>;
+    declare public readonly type: pulumi.Output<string>;
+    declare public /*out*/ readonly versionId: pulumi.Output<string>;
+    declare public readonly zone: pulumi.Output<string>;
 
     /**
      * Create a DnsZone resource with the given unique name, arguments, and options.
@@ -66,44 +66,44 @@ export class DnsZone extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DnsZoneState | undefined;
-            resourceInputs["activationState"] = state ? state.activationState : undefined;
-            resourceInputs["aliasCount"] = state ? state.aliasCount : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["contract"] = state ? state.contract : undefined;
-            resourceInputs["endCustomerId"] = state ? state.endCustomerId : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
-            resourceInputs["masters"] = state ? state.masters : undefined;
-            resourceInputs["outboundZoneTransfer"] = state ? state.outboundZoneTransfer : undefined;
-            resourceInputs["signAndServe"] = state ? state.signAndServe : undefined;
-            resourceInputs["signAndServeAlgorithm"] = state ? state.signAndServeAlgorithm : undefined;
-            resourceInputs["target"] = state ? state.target : undefined;
-            resourceInputs["tsigKey"] = state ? state.tsigKey : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["versionId"] = state ? state.versionId : undefined;
-            resourceInputs["zone"] = state ? state.zone : undefined;
+            resourceInputs["activationState"] = state?.activationState;
+            resourceInputs["aliasCount"] = state?.aliasCount;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["contract"] = state?.contract;
+            resourceInputs["endCustomerId"] = state?.endCustomerId;
+            resourceInputs["group"] = state?.group;
+            resourceInputs["masters"] = state?.masters;
+            resourceInputs["outboundZoneTransfer"] = state?.outboundZoneTransfer;
+            resourceInputs["signAndServe"] = state?.signAndServe;
+            resourceInputs["signAndServeAlgorithm"] = state?.signAndServeAlgorithm;
+            resourceInputs["target"] = state?.target;
+            resourceInputs["tsigKey"] = state?.tsigKey;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["versionId"] = state?.versionId;
+            resourceInputs["zone"] = state?.zone;
         } else {
             const args = argsOrState as DnsZoneArgs | undefined;
-            if ((!args || args.contract === undefined) && !opts.urn) {
+            if (args?.contract === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contract'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.zone === undefined) && !opts.urn) {
+            if (args?.zone === undefined && !opts.urn) {
                 throw new Error("Missing required property 'zone'");
             }
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["contract"] = args ? args.contract : undefined;
-            resourceInputs["endCustomerId"] = args ? args.endCustomerId : undefined;
-            resourceInputs["group"] = args ? args.group : undefined;
-            resourceInputs["masters"] = args ? args.masters : undefined;
-            resourceInputs["outboundZoneTransfer"] = args ? args.outboundZoneTransfer : undefined;
-            resourceInputs["signAndServe"] = args ? args.signAndServe : undefined;
-            resourceInputs["signAndServeAlgorithm"] = args ? args.signAndServeAlgorithm : undefined;
-            resourceInputs["target"] = args ? args.target : undefined;
-            resourceInputs["tsigKey"] = args ? args.tsigKey : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["zone"] = args ? args.zone : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["contract"] = args?.contract;
+            resourceInputs["endCustomerId"] = args?.endCustomerId;
+            resourceInputs["group"] = args?.group;
+            resourceInputs["masters"] = args?.masters;
+            resourceInputs["outboundZoneTransfer"] = args?.outboundZoneTransfer;
+            resourceInputs["signAndServe"] = args?.signAndServe;
+            resourceInputs["signAndServeAlgorithm"] = args?.signAndServeAlgorithm;
+            resourceInputs["target"] = args?.target;
+            resourceInputs["tsigKey"] = args?.tsigKey;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["zone"] = args?.zone;
             resourceInputs["activationState"] = undefined /*out*/;
             resourceInputs["aliasCount"] = undefined /*out*/;
             resourceInputs["versionId"] = undefined /*out*/;

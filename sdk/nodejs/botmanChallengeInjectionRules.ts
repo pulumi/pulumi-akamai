@@ -32,8 +32,8 @@ export class BotmanChallengeInjectionRules extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanChallengeInjectionRules.__pulumiType;
     }
 
-    public readonly challengeInjectionRules!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly challengeInjectionRules: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
 
     /**
      * Create a BotmanChallengeInjectionRules resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class BotmanChallengeInjectionRules extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanChallengeInjectionRulesState | undefined;
-            resourceInputs["challengeInjectionRules"] = state ? state.challengeInjectionRules : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["challengeInjectionRules"] = state?.challengeInjectionRules;
+            resourceInputs["configId"] = state?.configId;
         } else {
             const args = argsOrState as BotmanChallengeInjectionRulesArgs | undefined;
-            if ((!args || args.challengeInjectionRules === undefined) && !opts.urn) {
+            if (args?.challengeInjectionRules === undefined && !opts.urn) {
                 throw new Error("Missing required property 'challengeInjectionRules'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            resourceInputs["challengeInjectionRules"] = args ? args.challengeInjectionRules : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["challengeInjectionRules"] = args?.challengeInjectionRules;
+            resourceInputs["configId"] = args?.configId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanChallengeInjectionRules.__pulumiType, name, resourceInputs, opts);

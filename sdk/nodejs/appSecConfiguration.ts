@@ -35,35 +35,35 @@ export class AppSecConfiguration extends pulumi.CustomResource {
     /**
      * Unique identifier of the new security configuration
      */
-    public /*out*/ readonly configId!: pulumi.Output<number>;
+    declare public /*out*/ readonly configId: pulumi.Output<number>;
     /**
      * Unique identifier of the Akamai contract associated with the new configuration
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * Unique identifier of the existing configuration being cloned to create the new configuration
      */
-    public readonly createFromConfigId!: pulumi.Output<number | undefined>;
+    declare public readonly createFromConfigId: pulumi.Output<number | undefined>;
     /**
      * Version number of the existing configuration being cloned to create the new configuration
      */
-    public readonly createFromVersion!: pulumi.Output<number | undefined>;
+    declare public readonly createFromVersion: pulumi.Output<number | undefined>;
     /**
      * Brief description of the new configuration
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Unique identifier of the contract group associated with the new configuration
      */
-    public readonly groupId!: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
     /**
      * Hostnames to be protected by the new configuration
      */
-    public readonly hostNames!: pulumi.Output<string[]>;
+    declare public readonly hostNames: pulumi.Output<string[]>;
     /**
      * Name of the new configuration
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a AppSecConfiguration resource with the given unique name, arguments, and options.
@@ -78,35 +78,35 @@ export class AppSecConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecConfigurationState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["createFromConfigId"] = state ? state.createFromConfigId : undefined;
-            resourceInputs["createFromVersion"] = state ? state.createFromVersion : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["hostNames"] = state ? state.hostNames : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["createFromConfigId"] = state?.createFromConfigId;
+            resourceInputs["createFromVersion"] = state?.createFromVersion;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["hostNames"] = state?.hostNames;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as AppSecConfigurationArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.hostNames === undefined) && !opts.urn) {
+            if (args?.hostNames === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostNames'");
             }
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["createFromConfigId"] = args ? args.createFromConfigId : undefined;
-            resourceInputs["createFromVersion"] = args ? args.createFromVersion : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["hostNames"] = args ? args.hostNames : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["createFromConfigId"] = args?.createFromConfigId;
+            resourceInputs["createFromVersion"] = args?.createFromVersion;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["hostNames"] = args?.hostNames;
+            resourceInputs["name"] = args?.name;
             resourceInputs["configId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

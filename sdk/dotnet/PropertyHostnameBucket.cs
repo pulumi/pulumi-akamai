@@ -19,29 +19,25 @@ namespace Pulumi.Akamai
         public Output<string> ActivationId { get; private set; } = null!;
 
         /// <summary>
-        /// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        /// possible
+        /// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
 
         /// <summary>
-        /// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        /// possible
+        /// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-        /// the number of hostnames that will be active after making the changes.
+        /// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         /// </summary>
         [Output("hostnameCount")]
         public Output<int> HostnameCount { get; private set; } = null!;
 
         /// <summary>
-        /// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-        /// certificate provisioning type and edge hostname.
+        /// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         /// </summary>
         [Output("hostnames")]
         public Output<ImmutableDictionary<string, Outputs.PropertyHostnameBucketHostnames>> Hostnames { get; private set; } = null!;
@@ -129,22 +125,19 @@ namespace Pulumi.Akamai
     public sealed class PropertyHostnameBucketArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        /// possible
+        /// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        /// possible
+        /// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-        /// the number of hostnames that will be active after making the changes.
+        /// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         /// </summary>
         [Input("hostnameCount")]
         public Input<int>? HostnameCount { get; set; }
@@ -153,8 +146,7 @@ namespace Pulumi.Akamai
         private InputMap<Inputs.PropertyHostnameBucketHostnamesArgs>? _hostnames;
 
         /// <summary>
-        /// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-        /// certificate provisioning type and edge hostname.
+        /// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         /// </summary>
         public InputMap<Inputs.PropertyHostnameBucketHostnamesArgs> Hostnames
         {
@@ -213,22 +205,19 @@ namespace Pulumi.Akamai
         public Input<string>? ActivationId { get; set; }
 
         /// <summary>
-        /// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        /// possible
+        /// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        /// possible
+        /// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-        /// the number of hostnames that will be active after making the changes.
+        /// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         /// </summary>
         [Input("hostnameCount")]
         public Input<int>? HostnameCount { get; set; }
@@ -237,8 +226,7 @@ namespace Pulumi.Akamai
         private InputMap<Inputs.PropertyHostnameBucketHostnamesGetArgs>? _hostnames;
 
         /// <summary>
-        /// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-        /// certificate provisioning type and edge hostname.
+        /// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         /// </summary>
         public InputMap<Inputs.PropertyHostnameBucketHostnamesGetArgs> Hostnames
         {

@@ -35,15 +35,15 @@ export class BotmanCustomBotCategoryItemSequence extends pulumi.CustomResource {
     /**
      * Unique identifiers of bots in this category, sorted in preferred order
      */
-    public readonly botIds!: pulumi.Output<string[]>;
+    declare public readonly botIds: pulumi.Output<string[]>;
     /**
      * Unique identifier of the bot category
      */
-    public readonly categoryId!: pulumi.Output<string>;
+    declare public readonly categoryId: pulumi.Output<string>;
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
 
     /**
      * Create a BotmanCustomBotCategoryItemSequence resource with the given unique name, arguments, and options.
@@ -58,23 +58,23 @@ export class BotmanCustomBotCategoryItemSequence extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanCustomBotCategoryItemSequenceState | undefined;
-            resourceInputs["botIds"] = state ? state.botIds : undefined;
-            resourceInputs["categoryId"] = state ? state.categoryId : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["botIds"] = state?.botIds;
+            resourceInputs["categoryId"] = state?.categoryId;
+            resourceInputs["configId"] = state?.configId;
         } else {
             const args = argsOrState as BotmanCustomBotCategoryItemSequenceArgs | undefined;
-            if ((!args || args.botIds === undefined) && !opts.urn) {
+            if (args?.botIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'botIds'");
             }
-            if ((!args || args.categoryId === undefined) && !opts.urn) {
+            if (args?.categoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'categoryId'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            resourceInputs["botIds"] = args ? args.botIds : undefined;
-            resourceInputs["categoryId"] = args ? args.categoryId : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["botIds"] = args?.botIds;
+            resourceInputs["categoryId"] = args?.categoryId;
+            resourceInputs["configId"] = args?.configId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanCustomBotCategoryItemSequence.__pulumiType, name, resourceInputs, opts);

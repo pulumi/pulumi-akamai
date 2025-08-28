@@ -32,8 +32,8 @@ export class BotmanTransactionalEndpointProtection extends pulumi.CustomResource
         return obj['__pulumiType'] === BotmanTransactionalEndpointProtection.__pulumiType;
     }
 
-    public readonly configId!: pulumi.Output<number>;
-    public readonly transactionalEndpointProtection!: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly transactionalEndpointProtection: pulumi.Output<string>;
 
     /**
      * Create a BotmanTransactionalEndpointProtection resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class BotmanTransactionalEndpointProtection extends pulumi.CustomResource
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanTransactionalEndpointProtectionState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["transactionalEndpointProtection"] = state ? state.transactionalEndpointProtection : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["transactionalEndpointProtection"] = state?.transactionalEndpointProtection;
         } else {
             const args = argsOrState as BotmanTransactionalEndpointProtectionArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.transactionalEndpointProtection === undefined) && !opts.urn) {
+            if (args?.transactionalEndpointProtection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'transactionalEndpointProtection'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["transactionalEndpointProtection"] = args ? args.transactionalEndpointProtection : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["transactionalEndpointProtection"] = args?.transactionalEndpointProtection;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanTransactionalEndpointProtection.__pulumiType, name, resourceInputs, opts);

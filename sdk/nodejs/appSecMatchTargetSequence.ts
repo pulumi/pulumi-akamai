@@ -35,11 +35,11 @@ export class AppSecMatchTargetSequence extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * JSON-formatted definition of the processing sequence for all defined match targets
      */
-    public readonly matchTargetSequence!: pulumi.Output<string | undefined>;
+    declare public readonly matchTargetSequence: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppSecMatchTargetSequence resource with the given unique name, arguments, and options.
@@ -54,15 +54,15 @@ export class AppSecMatchTargetSequence extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecMatchTargetSequenceState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["matchTargetSequence"] = state ? state.matchTargetSequence : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["matchTargetSequence"] = state?.matchTargetSequence;
         } else {
             const args = argsOrState as AppSecMatchTargetSequenceArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["matchTargetSequence"] = args ? args.matchTargetSequence : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["matchTargetSequence"] = args?.matchTargetSequence;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecMatchTargetSequence.__pulumiType, name, resourceInputs, opts);

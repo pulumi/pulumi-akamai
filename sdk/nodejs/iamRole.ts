@@ -35,19 +35,19 @@ export class IamRole extends pulumi.CustomResource {
     /**
      * The description for a role.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * The list of existing unique identifiers for the granted roles.
      */
-    public readonly grantedRoles!: pulumi.Output<number[]>;
+    declare public readonly grantedRoles: pulumi.Output<number[]>;
     /**
      * The name you supply for a role.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a IamRole resource with the given unique name, arguments, and options.
@@ -62,22 +62,22 @@ export class IamRole extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamRoleState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["grantedRoles"] = state ? state.grantedRoles : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["grantedRoles"] = state?.grantedRoles;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as IamRoleArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.grantedRoles === undefined) && !opts.urn) {
+            if (args?.grantedRoles === undefined && !opts.urn) {
                 throw new Error("Missing required property 'grantedRoles'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["grantedRoles"] = args ? args.grantedRoles : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["grantedRoles"] = args?.grantedRoles;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IamRole.__pulumiType, name, resourceInputs, opts);

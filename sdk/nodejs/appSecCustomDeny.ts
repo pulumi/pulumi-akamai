@@ -35,15 +35,15 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * JSON-formatted information about the properties and property values for the custom deny
      */
-    public readonly customDeny!: pulumi.Output<string>;
+    declare public readonly customDeny: pulumi.Output<string>;
     /**
      * custom_deny_id
      */
-    public /*out*/ readonly customDenyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly customDenyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecCustomDeny resource with the given unique name, arguments, and options.
@@ -58,19 +58,19 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecCustomDenyState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["customDeny"] = state ? state.customDeny : undefined;
-            resourceInputs["customDenyId"] = state ? state.customDenyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["customDeny"] = state?.customDeny;
+            resourceInputs["customDenyId"] = state?.customDenyId;
         } else {
             const args = argsOrState as AppSecCustomDenyArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.customDeny === undefined) && !opts.urn) {
+            if (args?.customDeny === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customDeny'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["customDeny"] = args ? args.customDeny : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["customDeny"] = args?.customDeny;
             resourceInputs["customDenyId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

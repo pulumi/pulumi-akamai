@@ -37,83 +37,83 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
     /**
      * Whether acknowledge warnings before certificate verification. Default is false
      */
-    public readonly acknowledgePreVerificationWarnings!: pulumi.Output<boolean | undefined>;
+    declare public readonly acknowledgePreVerificationWarnings: pulumi.Output<boolean | undefined>;
     /**
      * Contact information for the certificate administrator to use at organization
      */
-    public readonly adminContact!: pulumi.Output<outputs.CpsDvEnrollmentAdminContact>;
+    declare public readonly adminContact: pulumi.Output<outputs.CpsDvEnrollmentAdminContact>;
     /**
      * Allow to duplicate common name. Default is false
      */
-    public readonly allowDuplicateCommonName!: pulumi.Output<boolean | undefined>;
+    declare public readonly allowDuplicateCommonName: pulumi.Output<boolean | undefined>;
     /**
      * Certificate trust chain type. Default is 'default'
      */
-    public readonly certificateChainType!: pulumi.Output<string | undefined>;
+    declare public readonly certificateChainType: pulumi.Output<string | undefined>;
     /**
      * Certificate type of enrollment
      */
-    public /*out*/ readonly certificateType!: pulumi.Output<string>;
+    declare public /*out*/ readonly certificateType: pulumi.Output<string>;
     /**
      * Common name used for enrollment
      */
-    public readonly commonName!: pulumi.Output<string>;
+    declare public readonly commonName: pulumi.Output<string>;
     /**
      * Contract ID for which enrollment is retrieved
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * Certificate signing request generated during enrollment creation
      */
-    public readonly csr!: pulumi.Output<outputs.CpsDvEnrollmentCsr>;
+    declare public readonly csr: pulumi.Output<outputs.CpsDvEnrollmentCsr>;
     /**
      * DNS challenge information
      */
-    public /*out*/ readonly dnsChallenges!: pulumi.Output<outputs.CpsDvEnrollmentDnsChallenge[]>;
+    declare public /*out*/ readonly dnsChallenges: pulumi.Output<outputs.CpsDvEnrollmentDnsChallenge[]>;
     /**
      * HTTP challenge information
      */
-    public /*out*/ readonly httpChallenges!: pulumi.Output<outputs.CpsDvEnrollmentHttpChallenge[]>;
+    declare public /*out*/ readonly httpChallenges: pulumi.Output<outputs.CpsDvEnrollmentHttpChallenge[]>;
     /**
      * Settings containing network information and TLS Metadata used by CPS
      */
-    public readonly networkConfiguration!: pulumi.Output<outputs.CpsDvEnrollmentNetworkConfiguration>;
+    declare public readonly networkConfiguration: pulumi.Output<outputs.CpsDvEnrollmentNetworkConfiguration>;
     /**
      * Organization information
      */
-    public readonly organization!: pulumi.Output<outputs.CpsDvEnrollmentOrganization>;
+    declare public readonly organization: pulumi.Output<outputs.CpsDvEnrollmentOrganization>;
     /**
      * The registration authority or certificate authority (CA) used to obtain a certificate
      */
-    public /*out*/ readonly registrationAuthority!: pulumi.Output<string>;
+    declare public /*out*/ readonly registrationAuthority: pulumi.Output<string>;
     /**
      * List of SANs
      */
-    public readonly sans!: pulumi.Output<string[] | undefined>;
+    declare public readonly sans: pulumi.Output<string[] | undefined>;
     /**
      * Type of TLS deployment network
      */
-    public readonly secureNetwork!: pulumi.Output<string>;
+    declare public readonly secureNetwork: pulumi.Output<string>;
     /**
      * SHA algorithm type
      */
-    public readonly signatureAlgorithm!: pulumi.Output<string>;
+    declare public readonly signatureAlgorithm: pulumi.Output<string>;
     /**
      * Whether Server Name Indication is used for enrollment
      */
-    public readonly sniOnly!: pulumi.Output<boolean>;
+    declare public readonly sniOnly: pulumi.Output<boolean>;
     /**
      * Contact information for an administrator at Akamai
      */
-    public readonly techContact!: pulumi.Output<outputs.CpsDvEnrollmentTechContact>;
+    declare public readonly techContact: pulumi.Output<outputs.CpsDvEnrollmentTechContact>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.CpsDvEnrollmentTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.CpsDvEnrollmentTimeouts | undefined>;
     /**
      * Enrolment validation type
      */
-    public /*out*/ readonly validationType!: pulumi.Output<string>;
+    declare public /*out*/ readonly validationType: pulumi.Output<string>;
 
     /**
      * Create a CpsDvEnrollment resource with the given unique name, arguments, and options.
@@ -128,73 +128,73 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpsDvEnrollmentState | undefined;
-            resourceInputs["acknowledgePreVerificationWarnings"] = state ? state.acknowledgePreVerificationWarnings : undefined;
-            resourceInputs["adminContact"] = state ? state.adminContact : undefined;
-            resourceInputs["allowDuplicateCommonName"] = state ? state.allowDuplicateCommonName : undefined;
-            resourceInputs["certificateChainType"] = state ? state.certificateChainType : undefined;
-            resourceInputs["certificateType"] = state ? state.certificateType : undefined;
-            resourceInputs["commonName"] = state ? state.commonName : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["csr"] = state ? state.csr : undefined;
-            resourceInputs["dnsChallenges"] = state ? state.dnsChallenges : undefined;
-            resourceInputs["httpChallenges"] = state ? state.httpChallenges : undefined;
-            resourceInputs["networkConfiguration"] = state ? state.networkConfiguration : undefined;
-            resourceInputs["organization"] = state ? state.organization : undefined;
-            resourceInputs["registrationAuthority"] = state ? state.registrationAuthority : undefined;
-            resourceInputs["sans"] = state ? state.sans : undefined;
-            resourceInputs["secureNetwork"] = state ? state.secureNetwork : undefined;
-            resourceInputs["signatureAlgorithm"] = state ? state.signatureAlgorithm : undefined;
-            resourceInputs["sniOnly"] = state ? state.sniOnly : undefined;
-            resourceInputs["techContact"] = state ? state.techContact : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["validationType"] = state ? state.validationType : undefined;
+            resourceInputs["acknowledgePreVerificationWarnings"] = state?.acknowledgePreVerificationWarnings;
+            resourceInputs["adminContact"] = state?.adminContact;
+            resourceInputs["allowDuplicateCommonName"] = state?.allowDuplicateCommonName;
+            resourceInputs["certificateChainType"] = state?.certificateChainType;
+            resourceInputs["certificateType"] = state?.certificateType;
+            resourceInputs["commonName"] = state?.commonName;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["csr"] = state?.csr;
+            resourceInputs["dnsChallenges"] = state?.dnsChallenges;
+            resourceInputs["httpChallenges"] = state?.httpChallenges;
+            resourceInputs["networkConfiguration"] = state?.networkConfiguration;
+            resourceInputs["organization"] = state?.organization;
+            resourceInputs["registrationAuthority"] = state?.registrationAuthority;
+            resourceInputs["sans"] = state?.sans;
+            resourceInputs["secureNetwork"] = state?.secureNetwork;
+            resourceInputs["signatureAlgorithm"] = state?.signatureAlgorithm;
+            resourceInputs["sniOnly"] = state?.sniOnly;
+            resourceInputs["techContact"] = state?.techContact;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["validationType"] = state?.validationType;
         } else {
             const args = argsOrState as CpsDvEnrollmentArgs | undefined;
-            if ((!args || args.adminContact === undefined) && !opts.urn) {
+            if (args?.adminContact === undefined && !opts.urn) {
                 throw new Error("Missing required property 'adminContact'");
             }
-            if ((!args || args.commonName === undefined) && !opts.urn) {
+            if (args?.commonName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'commonName'");
             }
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.csr === undefined) && !opts.urn) {
+            if (args?.csr === undefined && !opts.urn) {
                 throw new Error("Missing required property 'csr'");
             }
-            if ((!args || args.networkConfiguration === undefined) && !opts.urn) {
+            if (args?.networkConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkConfiguration'");
             }
-            if ((!args || args.organization === undefined) && !opts.urn) {
+            if (args?.organization === undefined && !opts.urn) {
                 throw new Error("Missing required property 'organization'");
             }
-            if ((!args || args.secureNetwork === undefined) && !opts.urn) {
+            if (args?.secureNetwork === undefined && !opts.urn) {
                 throw new Error("Missing required property 'secureNetwork'");
             }
-            if ((!args || args.signatureAlgorithm === undefined) && !opts.urn) {
+            if (args?.signatureAlgorithm === undefined && !opts.urn) {
                 throw new Error("Missing required property 'signatureAlgorithm'");
             }
-            if ((!args || args.sniOnly === undefined) && !opts.urn) {
+            if (args?.sniOnly === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sniOnly'");
             }
-            if ((!args || args.techContact === undefined) && !opts.urn) {
+            if (args?.techContact === undefined && !opts.urn) {
                 throw new Error("Missing required property 'techContact'");
             }
-            resourceInputs["acknowledgePreVerificationWarnings"] = args ? args.acknowledgePreVerificationWarnings : undefined;
-            resourceInputs["adminContact"] = args ? args.adminContact : undefined;
-            resourceInputs["allowDuplicateCommonName"] = args ? args.allowDuplicateCommonName : undefined;
-            resourceInputs["certificateChainType"] = args ? args.certificateChainType : undefined;
-            resourceInputs["commonName"] = args ? args.commonName : undefined;
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["csr"] = args ? args.csr : undefined;
-            resourceInputs["networkConfiguration"] = args ? args.networkConfiguration : undefined;
-            resourceInputs["organization"] = args ? args.organization : undefined;
-            resourceInputs["sans"] = args ? args.sans : undefined;
-            resourceInputs["secureNetwork"] = args ? args.secureNetwork : undefined;
-            resourceInputs["signatureAlgorithm"] = args ? args.signatureAlgorithm : undefined;
-            resourceInputs["sniOnly"] = args ? args.sniOnly : undefined;
-            resourceInputs["techContact"] = args ? args.techContact : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["acknowledgePreVerificationWarnings"] = args?.acknowledgePreVerificationWarnings;
+            resourceInputs["adminContact"] = args?.adminContact;
+            resourceInputs["allowDuplicateCommonName"] = args?.allowDuplicateCommonName;
+            resourceInputs["certificateChainType"] = args?.certificateChainType;
+            resourceInputs["commonName"] = args?.commonName;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["csr"] = args?.csr;
+            resourceInputs["networkConfiguration"] = args?.networkConfiguration;
+            resourceInputs["organization"] = args?.organization;
+            resourceInputs["sans"] = args?.sans;
+            resourceInputs["secureNetwork"] = args?.secureNetwork;
+            resourceInputs["signatureAlgorithm"] = args?.signatureAlgorithm;
+            resourceInputs["sniOnly"] = args?.sniOnly;
+            resourceInputs["techContact"] = args?.techContact;
+            resourceInputs["timeouts"] = args?.timeouts;
             resourceInputs["certificateType"] = undefined /*out*/;
             resourceInputs["dnsChallenges"] = undefined /*out*/;
             resourceInputs["httpChallenges"] = undefined /*out*/;

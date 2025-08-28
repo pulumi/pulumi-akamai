@@ -35,19 +35,19 @@ export class BotmanContentProtectionJavascriptInjectionRule extends pulumi.Custo
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * The content protection JavaScript injection rule
      */
-    public readonly contentProtectionJavascriptInjectionRule!: pulumi.Output<string>;
+    declare public readonly contentProtectionJavascriptInjectionRule: pulumi.Output<string>;
     /**
      * Unique identifier of a content protection JavaScript injection rule
      */
-    public /*out*/ readonly contentProtectionJavascriptInjectionRuleId!: pulumi.Output<string>;
+    declare public /*out*/ readonly contentProtectionJavascriptInjectionRuleId: pulumi.Output<string>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a BotmanContentProtectionJavascriptInjectionRule resource with the given unique name, arguments, and options.
@@ -62,24 +62,24 @@ export class BotmanContentProtectionJavascriptInjectionRule extends pulumi.Custo
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanContentProtectionJavascriptInjectionRuleState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["contentProtectionJavascriptInjectionRule"] = state ? state.contentProtectionJavascriptInjectionRule : undefined;
-            resourceInputs["contentProtectionJavascriptInjectionRuleId"] = state ? state.contentProtectionJavascriptInjectionRuleId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["contentProtectionJavascriptInjectionRule"] = state?.contentProtectionJavascriptInjectionRule;
+            resourceInputs["contentProtectionJavascriptInjectionRuleId"] = state?.contentProtectionJavascriptInjectionRuleId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as BotmanContentProtectionJavascriptInjectionRuleArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.contentProtectionJavascriptInjectionRule === undefined) && !opts.urn) {
+            if (args?.contentProtectionJavascriptInjectionRule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contentProtectionJavascriptInjectionRule'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["contentProtectionJavascriptInjectionRule"] = args ? args.contentProtectionJavascriptInjectionRule : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["contentProtectionJavascriptInjectionRule"] = args?.contentProtectionJavascriptInjectionRule;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
             resourceInputs["contentProtectionJavascriptInjectionRuleId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -37,23 +37,23 @@ export class CpsDvValidation extends pulumi.CustomResource {
     /**
      * Whether to acknowledge all post-verification warnings
      */
-    public readonly acknowledgePostVerificationWarnings!: pulumi.Output<boolean | undefined>;
+    declare public readonly acknowledgePostVerificationWarnings: pulumi.Output<boolean | undefined>;
     /**
      * The unique identifier of enrollment
      */
-    public readonly enrollmentId!: pulumi.Output<number>;
+    declare public readonly enrollmentId: pulumi.Output<number>;
     /**
      * List of SANs
      */
-    public readonly sans!: pulumi.Output<string[] | undefined>;
+    declare public readonly sans: pulumi.Output<string[] | undefined>;
     /**
      * Status of validation
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.CpsDvValidationTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.CpsDvValidationTimeouts | undefined>;
 
     /**
      * Create a CpsDvValidation resource with the given unique name, arguments, and options.
@@ -68,20 +68,20 @@ export class CpsDvValidation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpsDvValidationState | undefined;
-            resourceInputs["acknowledgePostVerificationWarnings"] = state ? state.acknowledgePostVerificationWarnings : undefined;
-            resourceInputs["enrollmentId"] = state ? state.enrollmentId : undefined;
-            resourceInputs["sans"] = state ? state.sans : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
+            resourceInputs["acknowledgePostVerificationWarnings"] = state?.acknowledgePostVerificationWarnings;
+            resourceInputs["enrollmentId"] = state?.enrollmentId;
+            resourceInputs["sans"] = state?.sans;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeouts"] = state?.timeouts;
         } else {
             const args = argsOrState as CpsDvValidationArgs | undefined;
-            if ((!args || args.enrollmentId === undefined) && !opts.urn) {
+            if (args?.enrollmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enrollmentId'");
             }
-            resourceInputs["acknowledgePostVerificationWarnings"] = args ? args.acknowledgePostVerificationWarnings : undefined;
-            resourceInputs["enrollmentId"] = args ? args.enrollmentId : undefined;
-            resourceInputs["sans"] = args ? args.sans : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["acknowledgePostVerificationWarnings"] = args?.acknowledgePostVerificationWarnings;
+            resourceInputs["enrollmentId"] = args?.enrollmentId;
+            resourceInputs["sans"] = args?.sans;
+            resourceInputs["timeouts"] = args?.timeouts;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

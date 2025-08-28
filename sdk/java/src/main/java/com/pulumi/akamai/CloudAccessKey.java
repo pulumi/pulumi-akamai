@@ -50,16 +50,14 @@ public class CloudAccessKey extends com.pulumi.resources.CustomResource {
         return this.accessKeyUid;
     }
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Two options are available:
-     * &#34;AWS4_HMAC_SHA256&#34; or &#34;GOOG4_HMAC_SHA256&#34;.
+     * The type of cloud provider signing process used to authenticate API requests. Two options are available: &#34;AWS4_HMAC_SHA256&#34; or &#34;GOOG4_HMAC_SHA256&#34;.
      * 
      */
     @Export(name="authenticationMethod", refs={String.class}, tree="[0]")
     private Output<String> authenticationMethod;
 
     /**
-     * @return The type of cloud provider signing process used to authenticate API requests. Two options are available:
-     * &#34;AWS4_HMAC_SHA256&#34; or &#34;GOOG4_HMAC_SHA256&#34;.
+     * @return The type of cloud provider signing process used to authenticate API requests. Two options are available: &#34;AWS4_HMAC_SHA256&#34; or &#34;GOOG4_HMAC_SHA256&#34;.
      * 
      */
     public Output<String> authenticationMethod() {
@@ -80,36 +78,28 @@ public class CloudAccessKey extends com.pulumi.resources.CustomResource {
         return this.contractId;
     }
     /**
-     * The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      * 
      */
     @Export(name="credentialsA", refs={CloudAccessKeyCredentialsA.class}, tree="[0]")
     private Output</* @Nullable */ CloudAccessKeyCredentialsA> credentialsA;
 
     /**
-     * @return The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * @return The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      * 
      */
     public Output<Optional<CloudAccessKeyCredentialsA>> credentialsA() {
         return Codegen.optional(this.credentialsA);
     }
     /**
-     * The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      * 
      */
     @Export(name="credentialsB", refs={CloudAccessKeyCredentialsB.class}, tree="[0]")
     private Output</* @Nullable */ CloudAccessKeyCredentialsB> credentialsB;
 
     /**
-     * @return The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * @return The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      * 
      */
     public Output<Optional<CloudAccessKeyCredentialsB>> credentialsB() {

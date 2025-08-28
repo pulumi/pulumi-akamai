@@ -33,31 +33,29 @@ export class ImagingPolicyImage extends pulumi.CustomResource {
     }
 
     /**
-     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-     * to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-     * it back to false only when there are any changes to the policy qualifying it for the new version.
+     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
      */
-    public readonly activateOnProduction!: pulumi.Output<boolean | undefined>;
+    declare public readonly activateOnProduction: pulumi.Output<boolean | undefined>;
     /**
      * Unique identifier for the Akamai Contract containing the Policy Set(s)
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * A JSON encoded policy
      */
-    public readonly json!: pulumi.Output<string>;
+    declare public readonly json: pulumi.Output<string>;
     /**
      * Unique identifier for a Policy. It is not possible to modify the id of the policy.
      */
-    public readonly policyId!: pulumi.Output<string>;
+    declare public readonly policyId: pulumi.Output<string>;
     /**
      * Unique identifier for the Image & Video Manager Policy Set.
      */
-    public readonly policysetId!: pulumi.Output<string>;
+    declare public readonly policysetId: pulumi.Output<string>;
     /**
      * The version number of this policy version
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    declare public /*out*/ readonly version: pulumi.Output<number>;
 
     /**
      * Create a ImagingPolicyImage resource with the given unique name, arguments, and options.
@@ -72,31 +70,31 @@ export class ImagingPolicyImage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ImagingPolicyImageState | undefined;
-            resourceInputs["activateOnProduction"] = state ? state.activateOnProduction : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["json"] = state ? state.json : undefined;
-            resourceInputs["policyId"] = state ? state.policyId : undefined;
-            resourceInputs["policysetId"] = state ? state.policysetId : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["activateOnProduction"] = state?.activateOnProduction;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["json"] = state?.json;
+            resourceInputs["policyId"] = state?.policyId;
+            resourceInputs["policysetId"] = state?.policysetId;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ImagingPolicyImageArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.json === undefined) && !opts.urn) {
+            if (args?.json === undefined && !opts.urn) {
                 throw new Error("Missing required property 'json'");
             }
-            if ((!args || args.policyId === undefined) && !opts.urn) {
+            if (args?.policyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policyId'");
             }
-            if ((!args || args.policysetId === undefined) && !opts.urn) {
+            if (args?.policysetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policysetId'");
             }
-            resourceInputs["activateOnProduction"] = args ? args.activateOnProduction : undefined;
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["json"] = args ? args.json : undefined;
-            resourceInputs["policyId"] = args ? args.policyId : undefined;
-            resourceInputs["policysetId"] = args ? args.policysetId : undefined;
+            resourceInputs["activateOnProduction"] = args?.activateOnProduction;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["json"] = args?.json;
+            resourceInputs["policyId"] = args?.policyId;
+            resourceInputs["policysetId"] = args?.policysetId;
             resourceInputs["version"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -109,9 +107,7 @@ export class ImagingPolicyImage extends pulumi.CustomResource {
  */
 export interface ImagingPolicyImageState {
     /**
-     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-     * to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-     * it back to false only when there are any changes to the policy qualifying it for the new version.
+     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
      */
     activateOnProduction?: pulumi.Input<boolean>;
     /**
@@ -141,9 +137,7 @@ export interface ImagingPolicyImageState {
  */
 export interface ImagingPolicyImageArgs {
     /**
-     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-     * to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-     * it back to false only when there are any changes to the policy qualifying it for the new version.
+     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
      */
     activateOnProduction?: pulumi.Input<boolean>;
     /**

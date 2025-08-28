@@ -35,15 +35,15 @@ export class AppSecThreatIntel extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
     /**
      * Whether threat intelligence protection should be on or off
      */
-    public readonly threatIntel!: pulumi.Output<string>;
+    declare public readonly threatIntel: pulumi.Output<string>;
 
     /**
      * Create a AppSecThreatIntel resource with the given unique name, arguments, and options.
@@ -58,23 +58,23 @@ export class AppSecThreatIntel extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecThreatIntelState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            resourceInputs["threatIntel"] = state ? state.threatIntel : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
+            resourceInputs["threatIntel"] = state?.threatIntel;
         } else {
             const args = argsOrState as AppSecThreatIntelArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.threatIntel === undefined) && !opts.urn) {
+            if (args?.threatIntel === undefined && !opts.urn) {
                 throw new Error("Missing required property 'threatIntel'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            resourceInputs["threatIntel"] = args ? args.threatIntel : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
+            resourceInputs["threatIntel"] = args?.threatIntel;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecThreatIntel.__pulumiType, name, resourceInputs, opts);

@@ -35,19 +35,19 @@ export class AppsecAdvancedSettingsRequestBody extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
      */
-    public readonly requestBodyInspectionLimit!: pulumi.Output<string>;
+    declare public readonly requestBodyInspectionLimit: pulumi.Output<string>;
     /**
      * Indicates if the Request body inspection size should be overridden at policy
      */
-    public readonly requestBodyInspectionLimitOverride!: pulumi.Output<boolean | undefined>;
+    declare public readonly requestBodyInspectionLimitOverride: pulumi.Output<boolean | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string | undefined>;
+    declare public readonly securityPolicyId: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppsecAdvancedSettingsRequestBody resource with the given unique name, arguments, and options.
@@ -62,22 +62,22 @@ export class AppsecAdvancedSettingsRequestBody extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppsecAdvancedSettingsRequestBodyState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["requestBodyInspectionLimit"] = state ? state.requestBodyInspectionLimit : undefined;
-            resourceInputs["requestBodyInspectionLimitOverride"] = state ? state.requestBodyInspectionLimitOverride : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["requestBodyInspectionLimit"] = state?.requestBodyInspectionLimit;
+            resourceInputs["requestBodyInspectionLimitOverride"] = state?.requestBodyInspectionLimitOverride;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppsecAdvancedSettingsRequestBodyArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.requestBodyInspectionLimit === undefined) && !opts.urn) {
+            if (args?.requestBodyInspectionLimit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'requestBodyInspectionLimit'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["requestBodyInspectionLimit"] = args ? args.requestBodyInspectionLimit : undefined;
-            resourceInputs["requestBodyInspectionLimitOverride"] = args ? args.requestBodyInspectionLimitOverride : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["requestBodyInspectionLimit"] = args?.requestBodyInspectionLimit;
+            resourceInputs["requestBodyInspectionLimitOverride"] = args?.requestBodyInspectionLimitOverride;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppsecAdvancedSettingsRequestBody.__pulumiType, name, resourceInputs, opts);

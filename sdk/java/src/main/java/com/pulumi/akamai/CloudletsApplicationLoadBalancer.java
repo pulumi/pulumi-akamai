@@ -35,18 +35,14 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
         return Codegen.optional(this.balancingType);
     }
     /**
-     * The object containing information on conditional origins being used as data centers for an Application Load Balancer
-     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-     * application load balancer configuration.
+     * The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
      * 
      */
     @Export(name="dataCenters", refs={List.class,CloudletsApplicationLoadBalancerDataCenter.class}, tree="[0,1]")
     private Output<List<CloudletsApplicationLoadBalancerDataCenter>> dataCenters;
 
     /**
-     * @return The object containing information on conditional origins being used as data centers for an Application Load Balancer
-     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-     * application load balancer configuration.
+     * @return The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
      * 
      */
     public Output<List<CloudletsApplicationLoadBalancerDataCenter>> dataCenters() {

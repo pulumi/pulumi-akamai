@@ -37,39 +37,39 @@ export class EdgeWorker extends pulumi.CustomResource {
     /**
      * The unique identifier of the EdgeWorker
      */
-    public /*out*/ readonly edgeworkerId!: pulumi.Output<number>;
+    declare public /*out*/ readonly edgeworkerId: pulumi.Output<number>;
     /**
      * Defines the group association for the EdgeWorker
      */
-    public readonly groupId!: pulumi.Output<number>;
+    declare public readonly groupId: pulumi.Output<number>;
     /**
      * The path to the EdgeWorkers tgz code bundle
      */
-    public readonly localBundle!: pulumi.Output<string | undefined>;
+    declare public readonly localBundle: pulumi.Output<string | undefined>;
     /**
      * The local bundle hash for the EdgeWorker
      */
-    public /*out*/ readonly localBundleHash!: pulumi.Output<string>;
+    declare public /*out*/ readonly localBundleHash: pulumi.Output<string>;
     /**
      * The EdgeWorker name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The unique identifier of a resource tier
      */
-    public readonly resourceTierId!: pulumi.Output<number>;
+    declare public readonly resourceTierId: pulumi.Output<number>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.EdgeWorkerTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.EdgeWorkerTimeouts | undefined>;
     /**
      * The bundle version
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
     /**
      * The list of warnings returned by EdgeWorker validation
      */
-    public /*out*/ readonly warnings!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly warnings: pulumi.Output<string[]>;
 
     /**
      * Create a EdgeWorker resource with the given unique name, arguments, and options.
@@ -84,28 +84,28 @@ export class EdgeWorker extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EdgeWorkerState | undefined;
-            resourceInputs["edgeworkerId"] = state ? state.edgeworkerId : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["localBundle"] = state ? state.localBundle : undefined;
-            resourceInputs["localBundleHash"] = state ? state.localBundleHash : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["resourceTierId"] = state ? state.resourceTierId : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["warnings"] = state ? state.warnings : undefined;
+            resourceInputs["edgeworkerId"] = state?.edgeworkerId;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["localBundle"] = state?.localBundle;
+            resourceInputs["localBundleHash"] = state?.localBundleHash;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["resourceTierId"] = state?.resourceTierId;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["warnings"] = state?.warnings;
         } else {
             const args = argsOrState as EdgeWorkerArgs | undefined;
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.resourceTierId === undefined) && !opts.urn) {
+            if (args?.resourceTierId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceTierId'");
             }
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["localBundle"] = args ? args.localBundle : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["resourceTierId"] = args ? args.resourceTierId : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["localBundle"] = args?.localBundle;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["resourceTierId"] = args?.resourceTierId;
+            resourceInputs["timeouts"] = args?.timeouts;
             resourceInputs["edgeworkerId"] = undefined /*out*/;
             resourceInputs["localBundleHash"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;

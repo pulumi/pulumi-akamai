@@ -32,16 +32,12 @@ class PropertyHostnameBucketArgs:
                  timeout_for_activation: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a PropertyHostnameBucket resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-               certificate provisioning type and edge hostname.
+        :param pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         :param pulumi.Input[_builtins.str] network: The network to activate on, either `STAGING` or `PRODUCTION`.
         :param pulumi.Input[_builtins.str] property_id: The unique identifier for the property.
-        :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-               possible
-        :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-               possible
-        :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-               the number of hostnames that will be active after making the changes.
+        :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
+        :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
+        :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the request.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.
         :param pulumi.Input[_builtins.int] timeout_for_activation: The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
@@ -66,8 +62,7 @@ class PropertyHostnameBucketArgs:
     @pulumi.getter
     def hostnames(self) -> pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]]:
         """
-        The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-        certificate provisioning type and edge hostname.
+        The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         """
         return pulumi.get(self, "hostnames")
 
@@ -103,8 +98,7 @@ class PropertyHostnameBucketArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        possible
+        The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "contract_id")
 
@@ -116,8 +110,7 @@ class PropertyHostnameBucketArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        possible
+        The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "group_id")
 
@@ -129,8 +122,7 @@ class PropertyHostnameBucketArgs:
     @pulumi.getter(name="hostnameCount")
     def hostname_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-        the number of hostnames that will be active after making the changes.
+        The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         """
         return pulumi.get(self, "hostname_count")
 
@@ -192,14 +184,10 @@ class _PropertyHostnameBucketState:
         """
         Input properties used for looking up and filtering PropertyHostnameBucket resources.
         :param pulumi.Input[_builtins.str] activation_id: The ID of the latest hostname bucket activation.
-        :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-               possible
-        :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-               possible
-        :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-               the number of hostnames that will be active after making the changes.
-        :param pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-               certificate provisioning type and edge hostname.
+        :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
+        :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
+        :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
+        :param pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         :param pulumi.Input[_builtins.str] network: The network to activate on, either `STAGING` or `PRODUCTION`.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the request.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.
@@ -246,8 +234,7 @@ class _PropertyHostnameBucketState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        possible
+        The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "contract_id")
 
@@ -259,8 +246,7 @@ class _PropertyHostnameBucketState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        possible
+        The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "group_id")
 
@@ -272,8 +258,7 @@ class _PropertyHostnameBucketState:
     @pulumi.getter(name="hostnameCount")
     def hostname_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-        the number of hostnames that will be active after making the changes.
+        The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         """
         return pulumi.get(self, "hostname_count")
 
@@ -285,8 +270,7 @@ class _PropertyHostnameBucketState:
     @pulumi.getter
     def hostnames(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]]]:
         """
-        The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-        certificate provisioning type and edge hostname.
+        The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         """
         return pulumi.get(self, "hostnames")
 
@@ -387,14 +371,10 @@ class PropertyHostnameBucket(pulumi.CustomResource):
         Create a PropertyHostnameBucket resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-               possible
-        :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-               possible
-        :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-               the number of hostnames that will be active after making the changes.
-        :param pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-               certificate provisioning type and edge hostname.
+        :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
+        :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
+        :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         :param pulumi.Input[_builtins.str] network: The network to activate on, either `STAGING` or `PRODUCTION`.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the request.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.
@@ -488,14 +468,10 @@ class PropertyHostnameBucket(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] activation_id: The ID of the latest hostname bucket activation.
-        :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-               possible
-        :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-               possible
-        :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-               the number of hostnames that will be active after making the changes.
-        :param pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-               certificate provisioning type and edge hostname.
+        :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
+        :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
+        :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         :param pulumi.Input[_builtins.str] network: The network to activate on, either `STAGING` or `PRODUCTION`.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the request.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.
@@ -532,8 +508,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        possible
+        The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "contract_id")
 
@@ -541,8 +516,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-        possible
+        The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "group_id")
 
@@ -550,8 +524,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
     @pulumi.getter(name="hostnameCount")
     def hostname_count(self) -> pulumi.Output[_builtins.int]:
         """
-        The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-        the number of hostnames that will be active after making the changes.
+        The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         """
         return pulumi.get(self, "hostname_count")
 
@@ -559,8 +532,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
     @pulumi.getter
     def hostnames(self) -> pulumi.Output[Mapping[str, 'outputs.PropertyHostnameBucketHostnames']]:
         """
-        The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-        certificate provisioning type and edge hostname.
+        The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         """
         return pulumi.get(self, "hostnames")
 

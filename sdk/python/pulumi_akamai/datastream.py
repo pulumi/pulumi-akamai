@@ -45,8 +45,7 @@ class DatastreamArgs:
         The set of arguments for constructing a Datastream resource.
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-               identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input['DatastreamDeliveryConfigurationArgs'] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
@@ -116,8 +115,7 @@ class DatastreamArgs:
     @pulumi.getter(name="datasetFields")
     def dataset_fields(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]:
         """
-        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-        identifiers define how the value for these fields appear in the log lines
+        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         """
         return pulumi.get(self, "dataset_fields")
 
@@ -335,8 +333,7 @@ class _DatastreamState:
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
         :param pulumi.Input[_builtins.str] created_by: The username who created the stream
         :param pulumi.Input[_builtins.str] created_date: The date and time when the stream was created
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-               identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input['DatastreamDeliveryConfigurationArgs'] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
@@ -488,8 +485,7 @@ class _DatastreamState:
     @pulumi.getter(name="datasetFields")
     def dataset_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
         """
-        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-        identifiers define how the value for these fields appear in the log lines
+        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         """
         return pulumi.get(self, "dataset_fields")
 
@@ -745,8 +741,7 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-               identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
@@ -897,8 +892,7 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
         :param pulumi.Input[_builtins.str] created_by: The username who created the stream
         :param pulumi.Input[_builtins.str] created_date: The date and time when the stream was created
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-               identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
@@ -999,8 +993,7 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="datasetFields")
     def dataset_fields(self) -> pulumi.Output[Sequence[_builtins.int]]:
         """
-        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-        identifiers define how the value for these fields appear in the log lines
+        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         """
         return pulumi.get(self, "dataset_fields")
 

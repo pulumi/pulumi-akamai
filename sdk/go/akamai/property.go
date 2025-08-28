@@ -43,8 +43,7 @@ type Property struct {
 	Rules pulumi.StringOutput `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntOutput `pulumi:"stagingVersion"`
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket pulumi.BoolPtrOutput `pulumi:"useHostnameBucket"`
 	// Property version notes
 	VersionNotes pulumi.StringOutput `pulumi:"versionNotes"`
@@ -123,8 +122,7 @@ type propertyState struct {
 	Rules *string `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion *int `pulumi:"stagingVersion"`
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket *bool `pulumi:"useHostnameBucket"`
 	// Property version notes
 	VersionNotes *string `pulumi:"versionNotes"`
@@ -159,8 +157,7 @@ type PropertyState struct {
 	Rules pulumi.StringPtrInput
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntPtrInput
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket pulumi.BoolPtrInput
 	// Property version notes
 	VersionNotes pulumi.StringPtrInput
@@ -186,8 +183,7 @@ type propertyArgs struct {
 	RuleFormat *string `pulumi:"ruleFormat"`
 	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket *bool `pulumi:"useHostnameBucket"`
 	// Property version notes
 	VersionNotes *string `pulumi:"versionNotes"`
@@ -210,8 +206,7 @@ type PropertyArgs struct {
 	RuleFormat pulumi.StringPtrInput
 	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket pulumi.BoolPtrInput
 	// Property version notes
 	VersionNotes pulumi.StringPtrInput
@@ -377,8 +372,7 @@ func (o PropertyOutput) StagingVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.StagingVersion }).(pulumi.IntOutput)
 }
 
-// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-// incrementing property versions.
+// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 func (o PropertyOutput) UseHostnameBucket() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Property) pulumi.BoolPtrOutput { return v.UseHostnameBucket }).(pulumi.BoolPtrOutput)
 }

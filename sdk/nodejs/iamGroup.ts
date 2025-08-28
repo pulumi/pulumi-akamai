@@ -35,15 +35,15 @@ export class IamGroup extends pulumi.CustomResource {
     /**
      * Human readable name for a group.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique identifier for the parent group.
      */
-    public readonly parentGroupId!: pulumi.Output<number>;
+    declare public readonly parentGroupId: pulumi.Output<number>;
     /**
      * Subgroups IDs.
      */
-    public /*out*/ readonly subGroups!: pulumi.Output<number[]>;
+    declare public /*out*/ readonly subGroups: pulumi.Output<number[]>;
 
     /**
      * Create a IamGroup resource with the given unique name, arguments, and options.
@@ -58,16 +58,16 @@ export class IamGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamGroupState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["parentGroupId"] = state ? state.parentGroupId : undefined;
-            resourceInputs["subGroups"] = state ? state.subGroups : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["parentGroupId"] = state?.parentGroupId;
+            resourceInputs["subGroups"] = state?.subGroups;
         } else {
             const args = argsOrState as IamGroupArgs | undefined;
-            if ((!args || args.parentGroupId === undefined) && !opts.urn) {
+            if (args?.parentGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'parentGroupId'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["parentGroupId"] = args ? args.parentGroupId : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["parentGroupId"] = args?.parentGroupId;
             resourceInputs["subGroups"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

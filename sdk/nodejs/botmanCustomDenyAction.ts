@@ -32,9 +32,9 @@ export class BotmanCustomDenyAction extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanCustomDenyAction.__pulumiType;
     }
 
-    public /*out*/ readonly actionId!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
-    public readonly customDenyAction!: pulumi.Output<string>;
+    declare public /*out*/ readonly actionId: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly customDenyAction: pulumi.Output<string>;
 
     /**
      * Create a BotmanCustomDenyAction resource with the given unique name, arguments, and options.
@@ -49,19 +49,19 @@ export class BotmanCustomDenyAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanCustomDenyActionState | undefined;
-            resourceInputs["actionId"] = state ? state.actionId : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["customDenyAction"] = state ? state.customDenyAction : undefined;
+            resourceInputs["actionId"] = state?.actionId;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["customDenyAction"] = state?.customDenyAction;
         } else {
             const args = argsOrState as BotmanCustomDenyActionArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.customDenyAction === undefined) && !opts.urn) {
+            if (args?.customDenyAction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customDenyAction'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["customDenyAction"] = args ? args.customDenyAction : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["customDenyAction"] = args?.customDenyAction;
             resourceInputs["actionId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -21,16 +21,14 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
     public static final PropertyHostnameBucketArgs Empty = new PropertyHostnameBucketArgs();
 
     /**
-     * The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-     * possible
+     * The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-     * possible
+     * @return The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -38,16 +36,14 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-     * possible
+     * The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-     * possible
+     * @return The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -55,16 +51,14 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-     * the number of hostnames that will be active after making the changes.
+     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
      * 
      */
     @Import(name="hostnameCount")
     private @Nullable Output<Integer> hostnameCount;
 
     /**
-     * @return The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-     * the number of hostnames that will be active after making the changes.
+     * @return The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
      * 
      */
     public Optional<Output<Integer>> hostnameCount() {
@@ -72,16 +66,14 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of
-     * certificate provisioning type and edge hostname.
+     * The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
      * 
      */
     @Import(name="hostnames", required=true)
     private Output<Map<String,PropertyHostnameBucketHostnamesArgs>> hostnames;
 
     /**
-     * @return The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of
-     * certificate provisioning type and edge hostname.
+     * @return The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
      * 
      */
     public Output<Map<String,PropertyHostnameBucketHostnamesArgs>> hostnames() {
@@ -196,8 +188,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param contractId The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-         * possible
+         * @param contractId The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
          * 
          * @return builder
          * 
@@ -208,8 +199,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param contractId The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-         * possible
+         * @param contractId The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
          * 
          * @return builder
          * 
@@ -219,8 +209,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param groupId The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-         * possible
+         * @param groupId The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
          * 
          * @return builder
          * 
@@ -231,8 +220,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param groupId The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-         * possible
+         * @param groupId The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
          * 
          * @return builder
          * 
@@ -242,8 +230,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hostnameCount The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-         * the number of hostnames that will be active after making the changes.
+         * @param hostnameCount The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
          * 
          * @return builder
          * 
@@ -254,8 +241,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hostnameCount The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-         * the number of hostnames that will be active after making the changes.
+         * @param hostnameCount The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
          * 
          * @return builder
          * 
@@ -265,8 +251,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hostnames The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of
-         * certificate provisioning type and edge hostname.
+         * @param hostnames The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
          * 
          * @return builder
          * 
@@ -277,8 +262,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hostnames The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of
-         * certificate provisioning type and edge hostname.
+         * @param hostnames The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
          * 
          * @return builder
          * 

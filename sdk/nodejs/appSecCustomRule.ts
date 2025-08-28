@@ -35,12 +35,12 @@ export class AppSecCustomRule extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * JSON-formatted definition of the custom rule
      */
-    public readonly customRule!: pulumi.Output<string>;
-    public /*out*/ readonly customRuleId!: pulumi.Output<number>;
+    declare public readonly customRule: pulumi.Output<string>;
+    declare public /*out*/ readonly customRuleId: pulumi.Output<number>;
 
     /**
      * Create a AppSecCustomRule resource with the given unique name, arguments, and options.
@@ -55,19 +55,19 @@ export class AppSecCustomRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecCustomRuleState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["customRule"] = state ? state.customRule : undefined;
-            resourceInputs["customRuleId"] = state ? state.customRuleId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["customRule"] = state?.customRule;
+            resourceInputs["customRuleId"] = state?.customRuleId;
         } else {
             const args = argsOrState as AppSecCustomRuleArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.customRule === undefined) && !opts.urn) {
+            if (args?.customRule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customRule'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["customRule"] = args ? args.customRule : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["customRule"] = args?.customRule;
             resourceInputs["customRuleId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

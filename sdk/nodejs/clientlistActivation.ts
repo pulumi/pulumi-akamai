@@ -35,31 +35,31 @@ export class ClientlistActivation extends pulumi.CustomResource {
     /**
      * A brief description for the activation.
      */
-    public readonly comments!: pulumi.Output<string | undefined>;
+    declare public readonly comments: pulumi.Output<string | undefined>;
     /**
      * The client list unique identifier.
      */
-    public readonly listId!: pulumi.Output<string>;
+    declare public readonly listId: pulumi.Output<string>;
     /**
      * The network environment where you activate your client list: either STAGING or PRODUCTION.
      */
-    public readonly network!: pulumi.Output<string>;
+    declare public readonly network: pulumi.Output<string>;
     /**
      * Users to notify via email.
      */
-    public readonly notificationRecipients!: pulumi.Output<string[] | undefined>;
+    declare public readonly notificationRecipients: pulumi.Output<string[] | undefined>;
     /**
      * Identifies the Siebel ticket, if the activation is linked to one.
      */
-    public readonly siebelTicketId!: pulumi.Output<string | undefined>;
+    declare public readonly siebelTicketId: pulumi.Output<string | undefined>;
     /**
      * The current activation status, either ACTIVE, INACTIVE, MODIFIED, PENDING_ACTIVATION, PENDING_DEACTIVATION, or FAILED.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * The client list version.
      */
-    public readonly version!: pulumi.Output<number>;
+    declare public readonly version: pulumi.Output<number>;
 
     /**
      * Create a ClientlistActivation resource with the given unique name, arguments, and options.
@@ -74,30 +74,30 @@ export class ClientlistActivation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClientlistActivationState | undefined;
-            resourceInputs["comments"] = state ? state.comments : undefined;
-            resourceInputs["listId"] = state ? state.listId : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["notificationRecipients"] = state ? state.notificationRecipients : undefined;
-            resourceInputs["siebelTicketId"] = state ? state.siebelTicketId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["comments"] = state?.comments;
+            resourceInputs["listId"] = state?.listId;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["notificationRecipients"] = state?.notificationRecipients;
+            resourceInputs["siebelTicketId"] = state?.siebelTicketId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ClientlistActivationArgs | undefined;
-            if ((!args || args.listId === undefined) && !opts.urn) {
+            if (args?.listId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listId'");
             }
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["comments"] = args ? args.comments : undefined;
-            resourceInputs["listId"] = args ? args.listId : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["notificationRecipients"] = args ? args.notificationRecipients : undefined;
-            resourceInputs["siebelTicketId"] = args ? args.siebelTicketId : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["comments"] = args?.comments;
+            resourceInputs["listId"] = args?.listId;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["notificationRecipients"] = args?.notificationRecipients;
+            resourceInputs["siebelTicketId"] = args?.siebelTicketId;
+            resourceInputs["version"] = args?.version;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

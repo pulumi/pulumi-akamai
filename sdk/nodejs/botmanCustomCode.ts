@@ -32,8 +32,8 @@ export class BotmanCustomCode extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanCustomCode.__pulumiType;
     }
 
-    public readonly configId!: pulumi.Output<number>;
-    public readonly customCode!: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly customCode: pulumi.Output<string>;
 
     /**
      * Create a BotmanCustomCode resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class BotmanCustomCode extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanCustomCodeState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["customCode"] = state ? state.customCode : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["customCode"] = state?.customCode;
         } else {
             const args = argsOrState as BotmanCustomCodeArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.customCode === undefined) && !opts.urn) {
+            if (args?.customCode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customCode'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["customCode"] = args ? args.customCode : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["customCode"] = args?.customCode;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanCustomCode.__pulumiType, name, resourceInputs, opts);

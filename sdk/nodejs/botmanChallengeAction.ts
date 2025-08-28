@@ -32,9 +32,9 @@ export class BotmanChallengeAction extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanChallengeAction.__pulumiType;
     }
 
-    public /*out*/ readonly actionId!: pulumi.Output<string>;
-    public readonly challengeAction!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
+    declare public /*out*/ readonly actionId: pulumi.Output<string>;
+    declare public readonly challengeAction: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
 
     /**
      * Create a BotmanChallengeAction resource with the given unique name, arguments, and options.
@@ -49,19 +49,19 @@ export class BotmanChallengeAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanChallengeActionState | undefined;
-            resourceInputs["actionId"] = state ? state.actionId : undefined;
-            resourceInputs["challengeAction"] = state ? state.challengeAction : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["actionId"] = state?.actionId;
+            resourceInputs["challengeAction"] = state?.challengeAction;
+            resourceInputs["configId"] = state?.configId;
         } else {
             const args = argsOrState as BotmanChallengeActionArgs | undefined;
-            if ((!args || args.challengeAction === undefined) && !opts.urn) {
+            if (args?.challengeAction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'challengeAction'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            resourceInputs["challengeAction"] = args ? args.challengeAction : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["challengeAction"] = args?.challengeAction;
+            resourceInputs["configId"] = args?.configId;
             resourceInputs["actionId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

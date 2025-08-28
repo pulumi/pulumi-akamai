@@ -61,16 +61,14 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.groupId);
     }
     /**
-     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-     * list
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
      * 
      */
     @Export(name="lists", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> lists;
 
     /**
-     * @return A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-     * list
+     * @return A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
      * 
      */
     public Output<Optional<List<String>>> lists() {

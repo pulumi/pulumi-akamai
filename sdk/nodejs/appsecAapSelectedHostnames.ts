@@ -35,19 +35,19 @@ export class AppsecAapSelectedHostnames extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * List of hostnames to be evaluated
      */
-    public readonly evaluatedHosts!: pulumi.Output<string[] | undefined>;
+    declare public readonly evaluatedHosts: pulumi.Output<string[] | undefined>;
     /**
      * List of hostnames to be protected
      */
-    public readonly protectedHosts!: pulumi.Output<string[] | undefined>;
+    declare public readonly protectedHosts: pulumi.Output<string[] | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppsecAapSelectedHostnames resource with the given unique name, arguments, and options.
@@ -62,22 +62,22 @@ export class AppsecAapSelectedHostnames extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppsecAapSelectedHostnamesState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["evaluatedHosts"] = state ? state.evaluatedHosts : undefined;
-            resourceInputs["protectedHosts"] = state ? state.protectedHosts : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["evaluatedHosts"] = state?.evaluatedHosts;
+            resourceInputs["protectedHosts"] = state?.protectedHosts;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppsecAapSelectedHostnamesArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["evaluatedHosts"] = args ? args.evaluatedHosts : undefined;
-            resourceInputs["protectedHosts"] = args ? args.protectedHosts : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["evaluatedHosts"] = args?.evaluatedHosts;
+            resourceInputs["protectedHosts"] = args?.protectedHosts;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppsecAapSelectedHostnames.__pulumiType, name, resourceInputs, opts);

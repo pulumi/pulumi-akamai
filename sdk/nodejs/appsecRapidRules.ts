@@ -35,23 +35,23 @@ export class AppsecRapidRules extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Default action that applies to violations of all rapid rules
      */
-    public readonly defaultAction!: pulumi.Output<string>;
+    declare public readonly defaultAction: pulumi.Output<string>;
     /**
      * Hidden attribute containing information about rapid rules status enabled/disabled
      */
-    public /*out*/ readonly enabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly enabled: pulumi.Output<boolean>;
     /**
      * JSON-formatted list of rule definition (ID, action, action lock and exception)
      */
-    public readonly ruleDefinitions!: pulumi.Output<string>;
+    declare public readonly ruleDefinitions: pulumi.Output<string>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppsecRapidRules resource with the given unique name, arguments, and options.
@@ -66,23 +66,23 @@ export class AppsecRapidRules extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppsecRapidRulesState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["defaultAction"] = state ? state.defaultAction : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["ruleDefinitions"] = state ? state.ruleDefinitions : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["defaultAction"] = state?.defaultAction;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["ruleDefinitions"] = state?.ruleDefinitions;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppsecRapidRulesArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["defaultAction"] = args ? args.defaultAction : undefined;
-            resourceInputs["ruleDefinitions"] = args ? args.ruleDefinitions : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["defaultAction"] = args?.defaultAction;
+            resourceInputs["ruleDefinitions"] = args?.ruleDefinitions;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
             resourceInputs["enabled"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

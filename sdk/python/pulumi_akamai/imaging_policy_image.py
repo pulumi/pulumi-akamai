@@ -30,9 +30,7 @@ class ImagingPolicyImageArgs:
         :param pulumi.Input[_builtins.str] json: A JSON encoded policy
         :param pulumi.Input[_builtins.str] policy_id: Unique identifier for a Policy. It is not possible to modify the id of the policy.
         :param pulumi.Input[_builtins.str] policyset_id: Unique identifier for the Image & Video Manager Policy Set.
-        :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-               to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-               it back to false only when there are any changes to the policy qualifying it for the new version.
+        :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         """
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "json", json)
@@ -93,9 +91,7 @@ class ImagingPolicyImageArgs:
     @pulumi.getter(name="activateOnProduction")
     def activate_on_production(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-        to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-        it back to false only when there are any changes to the policy qualifying it for the new version.
+        With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         """
         return pulumi.get(self, "activate_on_production")
 
@@ -115,9 +111,7 @@ class _ImagingPolicyImageState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ImagingPolicyImage resources.
-        :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-               to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-               it back to false only when there are any changes to the policy qualifying it for the new version.
+        :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         :param pulumi.Input[_builtins.str] contract_id: Unique identifier for the Akamai Contract containing the Policy Set(s)
         :param pulumi.Input[_builtins.str] json: A JSON encoded policy
         :param pulumi.Input[_builtins.str] policy_id: Unique identifier for a Policy. It is not possible to modify the id of the policy.
@@ -141,9 +135,7 @@ class _ImagingPolicyImageState:
     @pulumi.getter(name="activateOnProduction")
     def activate_on_production(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-        to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-        it back to false only when there are any changes to the policy qualifying it for the new version.
+        With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         """
         return pulumi.get(self, "activate_on_production")
 
@@ -228,9 +220,7 @@ class ImagingPolicyImage(pulumi.CustomResource):
         Create a ImagingPolicyImage resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-               to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-               it back to false only when there are any changes to the policy qualifying it for the new version.
+        :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         :param pulumi.Input[_builtins.str] contract_id: Unique identifier for the Akamai Contract containing the Policy Set(s)
         :param pulumi.Input[_builtins.str] json: A JSON encoded policy
         :param pulumi.Input[_builtins.str] policy_id: Unique identifier for a Policy. It is not possible to modify the id of the policy.
@@ -310,9 +300,7 @@ class ImagingPolicyImage(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-               to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-               it back to false only when there are any changes to the policy qualifying it for the new version.
+        :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         :param pulumi.Input[_builtins.str] contract_id: Unique identifier for the Akamai Contract containing the Policy Set(s)
         :param pulumi.Input[_builtins.str] json: A JSON encoded policy
         :param pulumi.Input[_builtins.str] policy_id: Unique identifier for a Policy. It is not possible to modify the id of the policy.
@@ -335,9 +323,7 @@ class ImagingPolicyImage(pulumi.CustomResource):
     @pulumi.getter(name="activateOnProduction")
     def activate_on_production(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-        to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-        it back to false only when there are any changes to the policy qualifying it for the new version.
+        With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         """
         return pulumi.get(self, "activate_on_production")
 

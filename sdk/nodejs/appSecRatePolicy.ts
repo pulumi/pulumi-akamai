@@ -35,15 +35,15 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * JSON-formatted definition of the rate policy
      */
-    public readonly ratePolicy!: pulumi.Output<string>;
+    declare public readonly ratePolicy: pulumi.Output<string>;
     /**
      * Unique identifier of the rate policy
      */
-    public /*out*/ readonly ratePolicyId!: pulumi.Output<number>;
+    declare public /*out*/ readonly ratePolicyId: pulumi.Output<number>;
 
     /**
      * Create a AppSecRatePolicy resource with the given unique name, arguments, and options.
@@ -58,19 +58,19 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecRatePolicyState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["ratePolicy"] = state ? state.ratePolicy : undefined;
-            resourceInputs["ratePolicyId"] = state ? state.ratePolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["ratePolicy"] = state?.ratePolicy;
+            resourceInputs["ratePolicyId"] = state?.ratePolicyId;
         } else {
             const args = argsOrState as AppSecRatePolicyArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.ratePolicy === undefined) && !opts.urn) {
+            if (args?.ratePolicy === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ratePolicy'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["ratePolicy"] = args ? args.ratePolicy : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["ratePolicy"] = args?.ratePolicy;
             resourceInputs["ratePolicyId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -32,16 +32,14 @@ public class AppSecSlowPost extends com.pulumi.resources.CustomResource {
         return this.configId;
     }
     /**
-     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-     * specified action
+     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
      * 
      */
     @Export(name="durationThresholdTimeout", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> durationThresholdTimeout;
 
     /**
-     * @return Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-     * specified action
+     * @return Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
      * 
      */
     public Output<Optional<Integer>> durationThresholdTimeout() {

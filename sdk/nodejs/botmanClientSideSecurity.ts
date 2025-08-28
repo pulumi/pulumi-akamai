@@ -32,8 +32,8 @@ export class BotmanClientSideSecurity extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanClientSideSecurity.__pulumiType;
     }
 
-    public readonly clientSideSecurity!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly clientSideSecurity: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
 
     /**
      * Create a BotmanClientSideSecurity resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class BotmanClientSideSecurity extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanClientSideSecurityState | undefined;
-            resourceInputs["clientSideSecurity"] = state ? state.clientSideSecurity : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["clientSideSecurity"] = state?.clientSideSecurity;
+            resourceInputs["configId"] = state?.configId;
         } else {
             const args = argsOrState as BotmanClientSideSecurityArgs | undefined;
-            if ((!args || args.clientSideSecurity === undefined) && !opts.urn) {
+            if (args?.clientSideSecurity === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clientSideSecurity'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            resourceInputs["clientSideSecurity"] = args ? args.clientSideSecurity : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["clientSideSecurity"] = args?.clientSideSecurity;
+            resourceInputs["configId"] = args?.configId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanClientSideSecurity.__pulumiType, name, resourceInputs, opts);

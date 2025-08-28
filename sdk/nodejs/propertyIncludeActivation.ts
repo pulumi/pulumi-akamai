@@ -37,47 +37,47 @@ export class PropertyIncludeActivation extends pulumi.CustomResource {
     /**
      * Automatically acknowledge all rule warnings for activation and continue
      */
-    public readonly autoAcknowledgeRuleWarnings!: pulumi.Output<boolean | undefined>;
+    declare public readonly autoAcknowledgeRuleWarnings: pulumi.Output<boolean | undefined>;
     /**
      * Provides an audit record when activating on a production network
      */
-    public readonly complianceRecord!: pulumi.Output<outputs.PropertyIncludeActivationComplianceRecord | undefined>;
+    declare public readonly complianceRecord: pulumi.Output<outputs.PropertyIncludeActivationComplianceRecord | undefined>;
     /**
      * The contract under which the include is activated
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * The group under which the include is activated
      */
-    public readonly groupId!: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
     /**
      * The unique identifier of the include
      */
-    public readonly includeId!: pulumi.Output<string>;
+    declare public readonly includeId: pulumi.Output<string>;
     /**
      * The network for which the activation will be performed
      */
-    public readonly network!: pulumi.Output<string>;
+    declare public readonly network: pulumi.Output<string>;
     /**
      * The note to assign to a log message of the activation request
      */
-    public readonly note!: pulumi.Output<string | undefined>;
+    declare public readonly note: pulumi.Output<string | undefined>;
     /**
      * The list of email addresses to notify about an activation status
      */
-    public readonly notifyEmails!: pulumi.Output<string[]>;
+    declare public readonly notifyEmails: pulumi.Output<string[]>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.PropertyIncludeActivationTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.PropertyIncludeActivationTimeouts | undefined>;
     /**
      * The validation information in JSON format
      */
-    public /*out*/ readonly validations!: pulumi.Output<string>;
+    declare public /*out*/ readonly validations: pulumi.Output<string>;
     /**
      * The unique identifier of the include
      */
-    public readonly version!: pulumi.Output<number>;
+    declare public readonly version: pulumi.Output<number>;
 
     /**
      * Create a PropertyIncludeActivation resource with the given unique name, arguments, and options.
@@ -92,47 +92,47 @@ export class PropertyIncludeActivation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyIncludeActivationState | undefined;
-            resourceInputs["autoAcknowledgeRuleWarnings"] = state ? state.autoAcknowledgeRuleWarnings : undefined;
-            resourceInputs["complianceRecord"] = state ? state.complianceRecord : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["includeId"] = state ? state.includeId : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["note"] = state ? state.note : undefined;
-            resourceInputs["notifyEmails"] = state ? state.notifyEmails : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["validations"] = state ? state.validations : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["autoAcknowledgeRuleWarnings"] = state?.autoAcknowledgeRuleWarnings;
+            resourceInputs["complianceRecord"] = state?.complianceRecord;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["includeId"] = state?.includeId;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["note"] = state?.note;
+            resourceInputs["notifyEmails"] = state?.notifyEmails;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["validations"] = state?.validations;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as PropertyIncludeActivationArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.includeId === undefined) && !opts.urn) {
+            if (args?.includeId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'includeId'");
             }
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            if ((!args || args.notifyEmails === undefined) && !opts.urn) {
+            if (args?.notifyEmails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'notifyEmails'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["autoAcknowledgeRuleWarnings"] = args ? args.autoAcknowledgeRuleWarnings : undefined;
-            resourceInputs["complianceRecord"] = args ? args.complianceRecord : undefined;
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["includeId"] = args ? args.includeId : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["note"] = args ? args.note : undefined;
-            resourceInputs["notifyEmails"] = args ? args.notifyEmails : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["autoAcknowledgeRuleWarnings"] = args?.autoAcknowledgeRuleWarnings;
+            resourceInputs["complianceRecord"] = args?.complianceRecord;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["includeId"] = args?.includeId;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["note"] = args?.note;
+            resourceInputs["notifyEmails"] = args?.notifyEmails;
+            resourceInputs["timeouts"] = args?.timeouts;
+            resourceInputs["version"] = args?.version;
             resourceInputs["validations"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

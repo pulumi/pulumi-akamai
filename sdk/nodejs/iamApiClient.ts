@@ -37,84 +37,80 @@ export class IamApiClient extends pulumi.CustomResource {
     /**
      * The part of the client secret that identifies your API client and lets you access applications and resources.
      */
-    public /*out*/ readonly accessToken!: pulumi.Output<string>;
+    declare public /*out*/ readonly accessToken: pulumi.Output<string>;
     /**
      * Specifies activities available for the API client.
      */
-    public /*out*/ readonly actions!: pulumi.Output<outputs.IamApiClientActions>;
+    declare public /*out*/ readonly actions: pulumi.Output<outputs.IamApiClientActions>;
     /**
-     * The number of credentials active for the API client. When the count is zero, you can delete the API client without
-     * interruption.
+     * The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
      */
-    public /*out*/ readonly activeCredentialCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly activeCredentialCount: pulumi.Output<number>;
     /**
      * Enables the API client to manage more than one account.
      */
-    public readonly allowAccountSwitch!: pulumi.Output<boolean>;
+    declare public readonly allowAccountSwitch: pulumi.Output<boolean>;
     /**
      * The APIs the API client can access.
      */
-    public readonly apiAccess!: pulumi.Output<outputs.IamApiClientApiAccess>;
+    declare public readonly apiAccess: pulumi.Output<outputs.IamApiClientApiAccess>;
     /**
-     * The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-     * username in an array.
+     * The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
      */
-    public readonly authorizedUsers!: pulumi.Output<string[]>;
+    declare public readonly authorizedUsers: pulumi.Output<string[]>;
     /**
      * The base URL for the service.
      */
-    public /*out*/ readonly baseUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly baseUrl: pulumi.Output<string>;
     /**
      * Whether the API client can create a credential for a new API client. The default is false.
      */
-    public readonly canAutoCreateCredential!: pulumi.Output<boolean>;
+    declare public readonly canAutoCreateCredential: pulumi.Output<boolean>;
     /**
      * A human-readable description of the API client.
      */
-    public readonly clientDescription!: pulumi.Output<string>;
+    declare public readonly clientDescription: pulumi.Output<string>;
     /**
      * A unique identifier for the API client.
      */
-    public /*out*/ readonly clientId!: pulumi.Output<string>;
+    declare public /*out*/ readonly clientId: pulumi.Output<string>;
     /**
      * A human-readable name for the API client.
      */
-    public readonly clientName!: pulumi.Output<string>;
+    declare public readonly clientName: pulumi.Output<string>;
     /**
-     * Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-     * credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+     * Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
      */
-    public readonly clientType!: pulumi.Output<string>;
+    declare public readonly clientType: pulumi.Output<string>;
     /**
      * The user who created the API client.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * The ISO 8601 timestamp indicating when the API client was created.
      */
-    public /*out*/ readonly createdDate!: pulumi.Output<string>;
-    public readonly credential!: pulumi.Output<outputs.IamApiClientCredential>;
+    declare public /*out*/ readonly createdDate: pulumi.Output<string>;
+    declare public readonly credential: pulumi.Output<outputs.IamApiClientCredential>;
     /**
      * Specifies the API client's group access.
      */
-    public readonly groupAccess!: pulumi.Output<outputs.IamApiClientGroupAccess>;
+    declare public readonly groupAccess: pulumi.Output<outputs.IamApiClientGroupAccess>;
     /**
      * Specifies the API client's IP list restriction.
      */
-    public readonly ipAcl!: pulumi.Output<outputs.IamApiClientIpAcl | undefined>;
+    declare public readonly ipAcl: pulumi.Output<outputs.IamApiClientIpAcl | undefined>;
     /**
      * Whether to lock or unlock the API client.
      */
-    public readonly lock!: pulumi.Output<boolean>;
+    declare public readonly lock: pulumi.Output<boolean>;
     /**
      * Email addresses to notify users when credentials expire.
      */
-    public readonly notificationEmails!: pulumi.Output<string[]>;
+    declare public readonly notificationEmails: pulumi.Output<string[]>;
     /**
-     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of
-     * `CCU API`.
+     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
      */
-    public readonly purgeOptions!: pulumi.Output<outputs.IamApiClientPurgeOptions | undefined>;
+    declare public readonly purgeOptions: pulumi.Output<outputs.IamApiClientPurgeOptions | undefined>;
 
     /**
      * Create a IamApiClient resource with the given unique name, arguments, and options.
@@ -129,59 +125,59 @@ export class IamApiClient extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamApiClientState | undefined;
-            resourceInputs["accessToken"] = state ? state.accessToken : undefined;
-            resourceInputs["actions"] = state ? state.actions : undefined;
-            resourceInputs["activeCredentialCount"] = state ? state.activeCredentialCount : undefined;
-            resourceInputs["allowAccountSwitch"] = state ? state.allowAccountSwitch : undefined;
-            resourceInputs["apiAccess"] = state ? state.apiAccess : undefined;
-            resourceInputs["authorizedUsers"] = state ? state.authorizedUsers : undefined;
-            resourceInputs["baseUrl"] = state ? state.baseUrl : undefined;
-            resourceInputs["canAutoCreateCredential"] = state ? state.canAutoCreateCredential : undefined;
-            resourceInputs["clientDescription"] = state ? state.clientDescription : undefined;
-            resourceInputs["clientId"] = state ? state.clientId : undefined;
-            resourceInputs["clientName"] = state ? state.clientName : undefined;
-            resourceInputs["clientType"] = state ? state.clientType : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["createdDate"] = state ? state.createdDate : undefined;
-            resourceInputs["credential"] = state ? state.credential : undefined;
-            resourceInputs["groupAccess"] = state ? state.groupAccess : undefined;
-            resourceInputs["ipAcl"] = state ? state.ipAcl : undefined;
-            resourceInputs["lock"] = state ? state.lock : undefined;
-            resourceInputs["notificationEmails"] = state ? state.notificationEmails : undefined;
-            resourceInputs["purgeOptions"] = state ? state.purgeOptions : undefined;
+            resourceInputs["accessToken"] = state?.accessToken;
+            resourceInputs["actions"] = state?.actions;
+            resourceInputs["activeCredentialCount"] = state?.activeCredentialCount;
+            resourceInputs["allowAccountSwitch"] = state?.allowAccountSwitch;
+            resourceInputs["apiAccess"] = state?.apiAccess;
+            resourceInputs["authorizedUsers"] = state?.authorizedUsers;
+            resourceInputs["baseUrl"] = state?.baseUrl;
+            resourceInputs["canAutoCreateCredential"] = state?.canAutoCreateCredential;
+            resourceInputs["clientDescription"] = state?.clientDescription;
+            resourceInputs["clientId"] = state?.clientId;
+            resourceInputs["clientName"] = state?.clientName;
+            resourceInputs["clientType"] = state?.clientType;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["createdDate"] = state?.createdDate;
+            resourceInputs["credential"] = state?.credential;
+            resourceInputs["groupAccess"] = state?.groupAccess;
+            resourceInputs["ipAcl"] = state?.ipAcl;
+            resourceInputs["lock"] = state?.lock;
+            resourceInputs["notificationEmails"] = state?.notificationEmails;
+            resourceInputs["purgeOptions"] = state?.purgeOptions;
         } else {
             const args = argsOrState as IamApiClientArgs | undefined;
-            if ((!args || args.apiAccess === undefined) && !opts.urn) {
+            if (args?.apiAccess === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apiAccess'");
             }
-            if ((!args || args.authorizedUsers === undefined) && !opts.urn) {
+            if (args?.authorizedUsers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'authorizedUsers'");
             }
-            if ((!args || args.clientName === undefined) && !opts.urn) {
+            if (args?.clientName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clientName'");
             }
-            if ((!args || args.clientType === undefined) && !opts.urn) {
+            if (args?.clientType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clientType'");
             }
-            if ((!args || args.credential === undefined) && !opts.urn) {
+            if (args?.credential === undefined && !opts.urn) {
                 throw new Error("Missing required property 'credential'");
             }
-            if ((!args || args.groupAccess === undefined) && !opts.urn) {
+            if (args?.groupAccess === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupAccess'");
             }
-            resourceInputs["allowAccountSwitch"] = args ? args.allowAccountSwitch : undefined;
-            resourceInputs["apiAccess"] = args ? args.apiAccess : undefined;
-            resourceInputs["authorizedUsers"] = args ? args.authorizedUsers : undefined;
-            resourceInputs["canAutoCreateCredential"] = args ? args.canAutoCreateCredential : undefined;
-            resourceInputs["clientDescription"] = args ? args.clientDescription : undefined;
-            resourceInputs["clientName"] = args ? args.clientName : undefined;
-            resourceInputs["clientType"] = args ? args.clientType : undefined;
-            resourceInputs["credential"] = args ? args.credential : undefined;
-            resourceInputs["groupAccess"] = args ? args.groupAccess : undefined;
-            resourceInputs["ipAcl"] = args ? args.ipAcl : undefined;
-            resourceInputs["lock"] = args ? args.lock : undefined;
-            resourceInputs["notificationEmails"] = args ? args.notificationEmails : undefined;
-            resourceInputs["purgeOptions"] = args ? args.purgeOptions : undefined;
+            resourceInputs["allowAccountSwitch"] = args?.allowAccountSwitch;
+            resourceInputs["apiAccess"] = args?.apiAccess;
+            resourceInputs["authorizedUsers"] = args?.authorizedUsers;
+            resourceInputs["canAutoCreateCredential"] = args?.canAutoCreateCredential;
+            resourceInputs["clientDescription"] = args?.clientDescription;
+            resourceInputs["clientName"] = args?.clientName;
+            resourceInputs["clientType"] = args?.clientType;
+            resourceInputs["credential"] = args?.credential;
+            resourceInputs["groupAccess"] = args?.groupAccess;
+            resourceInputs["ipAcl"] = args?.ipAcl;
+            resourceInputs["lock"] = args?.lock;
+            resourceInputs["notificationEmails"] = args?.notificationEmails;
+            resourceInputs["purgeOptions"] = args?.purgeOptions;
             resourceInputs["accessToken"] = undefined /*out*/;
             resourceInputs["actions"] = undefined /*out*/;
             resourceInputs["activeCredentialCount"] = undefined /*out*/;
@@ -210,8 +206,7 @@ export interface IamApiClientState {
      */
     actions?: pulumi.Input<inputs.IamApiClientActions>;
     /**
-     * The number of credentials active for the API client. When the count is zero, you can delete the API client without
-     * interruption.
+     * The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
      */
     activeCredentialCount?: pulumi.Input<number>;
     /**
@@ -223,8 +218,7 @@ export interface IamApiClientState {
      */
     apiAccess?: pulumi.Input<inputs.IamApiClientApiAccess>;
     /**
-     * The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-     * username in an array.
+     * The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
      */
     authorizedUsers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -248,8 +242,7 @@ export interface IamApiClientState {
      */
     clientName?: pulumi.Input<string>;
     /**
-     * Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-     * credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+     * Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
      */
     clientType?: pulumi.Input<string>;
     /**
@@ -278,8 +271,7 @@ export interface IamApiClientState {
      */
     notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of
-     * `CCU API`.
+     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
      */
     purgeOptions?: pulumi.Input<inputs.IamApiClientPurgeOptions>;
 }
@@ -297,8 +289,7 @@ export interface IamApiClientArgs {
      */
     apiAccess: pulumi.Input<inputs.IamApiClientApiAccess>;
     /**
-     * The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-     * username in an array.
+     * The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
      */
     authorizedUsers: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -314,8 +305,7 @@ export interface IamApiClientArgs {
      */
     clientName: pulumi.Input<string>;
     /**
-     * Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-     * credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+     * Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
      */
     clientType: pulumi.Input<string>;
     credential: pulumi.Input<inputs.IamApiClientCredential>;
@@ -336,8 +326,7 @@ export interface IamApiClientArgs {
      */
     notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of
-     * `CCU API`.
+     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
      */
     purgeOptions?: pulumi.Input<inputs.IamApiClientPurgeOptions>;
 }

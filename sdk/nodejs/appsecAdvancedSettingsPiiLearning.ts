@@ -35,11 +35,11 @@ export class AppsecAdvancedSettingsPiiLearning extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Whether to enable the PII learning advanced setting
      */
-    public readonly enablePiiLearning!: pulumi.Output<boolean>;
+    declare public readonly enablePiiLearning: pulumi.Output<boolean>;
 
     /**
      * Create a AppsecAdvancedSettingsPiiLearning resource with the given unique name, arguments, and options.
@@ -54,18 +54,18 @@ export class AppsecAdvancedSettingsPiiLearning extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppsecAdvancedSettingsPiiLearningState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["enablePiiLearning"] = state ? state.enablePiiLearning : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["enablePiiLearning"] = state?.enablePiiLearning;
         } else {
             const args = argsOrState as AppsecAdvancedSettingsPiiLearningArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.enablePiiLearning === undefined) && !opts.urn) {
+            if (args?.enablePiiLearning === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enablePiiLearning'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["enablePiiLearning"] = args ? args.enablePiiLearning : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["enablePiiLearning"] = args?.enablePiiLearning;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppsecAdvancedSettingsPiiLearning.__pulumiType, name, resourceInputs, opts);

@@ -35,15 +35,15 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
     /**
      * New name to be given to the security policy
      */
-    public readonly securityPolicyName!: pulumi.Output<string>;
+    declare public readonly securityPolicyName: pulumi.Output<string>;
 
     /**
      * Create a AppSecSecurityPolicyRename resource with the given unique name, arguments, and options.
@@ -58,23 +58,23 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecSecurityPolicyRenameState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            resourceInputs["securityPolicyName"] = state ? state.securityPolicyName : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
+            resourceInputs["securityPolicyName"] = state?.securityPolicyName;
         } else {
             const args = argsOrState as AppSecSecurityPolicyRenameArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.securityPolicyName === undefined) && !opts.urn) {
+            if (args?.securityPolicyName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyName'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            resourceInputs["securityPolicyName"] = args ? args.securityPolicyName : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
+            resourceInputs["securityPolicyName"] = args?.securityPolicyName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecSecurityPolicyRename.__pulumiType, name, resourceInputs, opts);

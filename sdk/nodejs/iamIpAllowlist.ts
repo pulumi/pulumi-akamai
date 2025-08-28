@@ -35,7 +35,7 @@ export class IamIpAllowlist extends pulumi.CustomResource {
     /**
      * Whether to enable or disable the allowlist.
      */
-    public readonly enable!: pulumi.Output<boolean>;
+    declare public readonly enable: pulumi.Output<boolean>;
 
     /**
      * Create a IamIpAllowlist resource with the given unique name, arguments, and options.
@@ -50,13 +50,13 @@ export class IamIpAllowlist extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamIpAllowlistState | undefined;
-            resourceInputs["enable"] = state ? state.enable : undefined;
+            resourceInputs["enable"] = state?.enable;
         } else {
             const args = argsOrState as IamIpAllowlistArgs | undefined;
-            if ((!args || args.enable === undefined) && !opts.urn) {
+            if (args?.enable === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enable'");
             }
-            resourceInputs["enable"] = args ? args.enable : undefined;
+            resourceInputs["enable"] = args?.enable;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IamIpAllowlist.__pulumiType, name, resourceInputs, opts);

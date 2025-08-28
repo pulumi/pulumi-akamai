@@ -34,11 +34,11 @@ export class GtmCidrmap extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmCidrmap.__pulumiType;
     }
 
-    public readonly assignments!: pulumi.Output<outputs.GtmCidrmapAssignment[] | undefined>;
-    public readonly defaultDatacenter!: pulumi.Output<outputs.GtmCidrmapDefaultDatacenter>;
-    public readonly domain!: pulumi.Output<string>;
-    public readonly name!: pulumi.Output<string>;
-    public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
+    declare public readonly assignments: pulumi.Output<outputs.GtmCidrmapAssignment[] | undefined>;
+    declare public readonly defaultDatacenter: pulumi.Output<outputs.GtmCidrmapDefaultDatacenter>;
+    declare public readonly domain: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly waitOnComplete: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a GtmCidrmap resource with the given unique name, arguments, and options.
@@ -53,24 +53,24 @@ export class GtmCidrmap extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmCidrmapState | undefined;
-            resourceInputs["assignments"] = state ? state.assignments : undefined;
-            resourceInputs["defaultDatacenter"] = state ? state.defaultDatacenter : undefined;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
+            resourceInputs["assignments"] = state?.assignments;
+            resourceInputs["defaultDatacenter"] = state?.defaultDatacenter;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["waitOnComplete"] = state?.waitOnComplete;
         } else {
             const args = argsOrState as GtmCidrmapArgs | undefined;
-            if ((!args || args.defaultDatacenter === undefined) && !opts.urn) {
+            if (args?.defaultDatacenter === undefined && !opts.urn) {
                 throw new Error("Missing required property 'defaultDatacenter'");
             }
-            if ((!args || args.domain === undefined) && !opts.urn) {
+            if (args?.domain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            resourceInputs["assignments"] = args ? args.assignments : undefined;
-            resourceInputs["defaultDatacenter"] = args ? args.defaultDatacenter : undefined;
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["assignments"] = args?.assignments;
+            resourceInputs["defaultDatacenter"] = args?.defaultDatacenter;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["waitOnComplete"] = args?.waitOnComplete;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap" }] };

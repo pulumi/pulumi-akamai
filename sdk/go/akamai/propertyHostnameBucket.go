@@ -17,17 +17,13 @@ type PropertyHostnameBucket struct {
 
 	// The ID of the latest hostname bucket activation.
 	ActivationId pulumi.StringOutput `pulumi:"activationId"`
-	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-	// the number of hostnames that will be active after making the changes.
+	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
 	HostnameCount pulumi.IntOutput `pulumi:"hostnameCount"`
-	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-	// certificate provisioning type and edge hostname.
+	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
 	Hostnames PropertyHostnameBucketHostnamesMapOutput `pulumi:"hostnames"`
 	// The network to activate on, either `STAGING` or `PRODUCTION`.
 	Network pulumi.StringOutput `pulumi:"network"`
@@ -84,17 +80,13 @@ func GetPropertyHostnameBucket(ctx *pulumi.Context,
 type propertyHostnameBucketState struct {
 	// The ID of the latest hostname bucket activation.
 	ActivationId *string `pulumi:"activationId"`
-	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	ContractId *string `pulumi:"contractId"`
-	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	GroupId *string `pulumi:"groupId"`
-	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-	// the number of hostnames that will be active after making the changes.
+	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
 	HostnameCount *int `pulumi:"hostnameCount"`
-	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-	// certificate provisioning type and edge hostname.
+	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
 	Hostnames map[string]PropertyHostnameBucketHostnames `pulumi:"hostnames"`
 	// The network to activate on, either `STAGING` or `PRODUCTION`.
 	Network *string `pulumi:"network"`
@@ -113,17 +105,13 @@ type propertyHostnameBucketState struct {
 type PropertyHostnameBucketState struct {
 	// The ID of the latest hostname bucket activation.
 	ActivationId pulumi.StringPtrInput
-	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	ContractId pulumi.StringPtrInput
-	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	GroupId pulumi.StringPtrInput
-	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-	// the number of hostnames that will be active after making the changes.
+	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
 	HostnameCount pulumi.IntPtrInput
-	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-	// certificate provisioning type and edge hostname.
+	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
 	Hostnames PropertyHostnameBucketHostnamesMapInput
 	// The network to activate on, either `STAGING` or `PRODUCTION`.
 	Network pulumi.StringPtrInput
@@ -144,17 +132,13 @@ func (PropertyHostnameBucketState) ElementType() reflect.Type {
 }
 
 type propertyHostnameBucketArgs struct {
-	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	ContractId *string `pulumi:"contractId"`
-	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	GroupId *string `pulumi:"groupId"`
-	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-	// the number of hostnames that will be active after making the changes.
+	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
 	HostnameCount *int `pulumi:"hostnameCount"`
-	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-	// certificate provisioning type and edge hostname.
+	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
 	Hostnames map[string]PropertyHostnameBucketHostnames `pulumi:"hostnames"`
 	// The network to activate on, either `STAGING` or `PRODUCTION`.
 	Network string `pulumi:"network"`
@@ -170,17 +154,13 @@ type propertyHostnameBucketArgs struct {
 
 // The set of arguments for constructing a PropertyHostnameBucket resource.
 type PropertyHostnameBucketArgs struct {
-	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	ContractId pulumi.StringPtrInput
-	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-	// possible
+	// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	GroupId pulumi.StringPtrInput
-	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-	// the number of hostnames that will be active after making the changes.
+	// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
 	HostnameCount pulumi.IntPtrInput
-	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-	// certificate provisioning type and edge hostname.
+	// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
 	Hostnames PropertyHostnameBucketHostnamesMapInput
 	// The network to activate on, either `STAGING` or `PRODUCTION`.
 	Network pulumi.StringInput
@@ -286,26 +266,22 @@ func (o PropertyHostnameBucketOutput) ActivationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyHostnameBucket) pulumi.StringOutput { return v.ActivationId }).(pulumi.StringOutput)
 }
 
-// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-// possible
+// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 func (o PropertyHostnameBucketOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyHostnameBucket) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-// possible
+// The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 func (o PropertyHostnameBucketOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyHostnameBucket) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-// the number of hostnames that will be active after making the changes.
+// The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
 func (o PropertyHostnameBucketOutput) HostnameCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *PropertyHostnameBucket) pulumi.IntOutput { return v.HostnameCount }).(pulumi.IntOutput)
 }
 
-// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-// certificate provisioning type and edge hostname.
+// The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
 func (o PropertyHostnameBucketOutput) Hostnames() PropertyHostnameBucketHostnamesMapOutput {
 	return o.ApplyT(func(v *PropertyHostnameBucket) PropertyHostnameBucketHostnamesMapOutput { return v.Hostnames }).(PropertyHostnameBucketHostnamesMapOutput)
 }

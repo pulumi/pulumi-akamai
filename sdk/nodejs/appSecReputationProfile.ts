@@ -35,15 +35,15 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * JSON-formatted definition of the reputation profile
      */
-    public readonly reputationProfile!: pulumi.Output<string>;
+    declare public readonly reputationProfile: pulumi.Output<string>;
     /**
      * Unique identifier of the reputation profile
      */
-    public /*out*/ readonly reputationProfileId!: pulumi.Output<number>;
+    declare public /*out*/ readonly reputationProfileId: pulumi.Output<number>;
 
     /**
      * Create a AppSecReputationProfile resource with the given unique name, arguments, and options.
@@ -58,19 +58,19 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecReputationProfileState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["reputationProfile"] = state ? state.reputationProfile : undefined;
-            resourceInputs["reputationProfileId"] = state ? state.reputationProfileId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["reputationProfile"] = state?.reputationProfile;
+            resourceInputs["reputationProfileId"] = state?.reputationProfileId;
         } else {
             const args = argsOrState as AppSecReputationProfileArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.reputationProfile === undefined) && !opts.urn) {
+            if (args?.reputationProfile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'reputationProfile'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["reputationProfile"] = args ? args.reputationProfile : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["reputationProfile"] = args?.reputationProfile;
             resourceInputs["reputationProfileId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

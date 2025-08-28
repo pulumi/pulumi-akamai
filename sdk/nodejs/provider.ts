@@ -30,8 +30,8 @@ export class Provider extends pulumi.ProviderResource {
     /**
      * The section of the edgerc file to use for configuration
      */
-    public readonly configSection!: pulumi.Output<string | undefined>;
-    public readonly edgerc!: pulumi.Output<string | undefined>;
+    declare public readonly configSection: pulumi.Output<string | undefined>;
+    declare public readonly edgerc: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -44,15 +44,15 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["cacheEnabled"] = pulumi.output(args ? args.cacheEnabled : undefined).apply(JSON.stringify);
-            resourceInputs["config"] = pulumi.output(args ? args.config : undefined).apply(JSON.stringify);
-            resourceInputs["configSection"] = args ? args.configSection : undefined;
-            resourceInputs["edgerc"] = args ? args.edgerc : undefined;
-            resourceInputs["requestLimit"] = pulumi.output(args ? args.requestLimit : undefined).apply(JSON.stringify);
-            resourceInputs["retryDisabled"] = pulumi.output(args ? args.retryDisabled : undefined).apply(JSON.stringify);
-            resourceInputs["retryMax"] = pulumi.output(args ? args.retryMax : undefined).apply(JSON.stringify);
-            resourceInputs["retryWaitMax"] = pulumi.output(args ? args.retryWaitMax : undefined).apply(JSON.stringify);
-            resourceInputs["retryWaitMin"] = pulumi.output(args ? args.retryWaitMin : undefined).apply(JSON.stringify);
+            resourceInputs["cacheEnabled"] = pulumi.output(args?.cacheEnabled).apply(JSON.stringify);
+            resourceInputs["config"] = pulumi.output(args?.config).apply(JSON.stringify);
+            resourceInputs["configSection"] = args?.configSection;
+            resourceInputs["edgerc"] = args?.edgerc;
+            resourceInputs["requestLimit"] = pulumi.output(args?.requestLimit).apply(JSON.stringify);
+            resourceInputs["retryDisabled"] = pulumi.output(args?.retryDisabled).apply(JSON.stringify);
+            resourceInputs["retryMax"] = pulumi.output(args?.retryMax).apply(JSON.stringify);
+            resourceInputs["retryWaitMax"] = pulumi.output(args?.retryWaitMax).apply(JSON.stringify);
+            resourceInputs["retryWaitMin"] = pulumi.output(args?.retryWaitMin).apply(JSON.stringify);
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);

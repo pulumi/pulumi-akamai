@@ -35,27 +35,27 @@ export class NetworkListActivations extends pulumi.CustomResource {
     /**
      * The Akamai network on which the list is activated: STAGING or PRODUCTION
      */
-    public readonly network!: pulumi.Output<string | undefined>;
+    declare public readonly network: pulumi.Output<string | undefined>;
     /**
      * Unique identifier of the network list
      */
-    public readonly networkListId!: pulumi.Output<string>;
+    declare public readonly networkListId: pulumi.Output<string>;
     /**
      * Descriptive text to accompany the activation
      */
-    public readonly notes!: pulumi.Output<string | undefined>;
+    declare public readonly notes: pulumi.Output<string | undefined>;
     /**
      * List of email addresses of Control Center users who receive an email when activation of this list is complete
      */
-    public readonly notificationEmails!: pulumi.Output<string[]>;
+    declare public readonly notificationEmails: pulumi.Output<string[]>;
     /**
      * This network list's current activation status in the environment specified by the "network" attribute
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Identifies the sync point of the network list to be activated
      */
-    public readonly syncPoint!: pulumi.Output<number>;
+    declare public readonly syncPoint: pulumi.Output<number>;
 
     /**
      * Create a NetworkListActivations resource with the given unique name, arguments, and options.
@@ -70,28 +70,28 @@ export class NetworkListActivations extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListActivationsState | undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["networkListId"] = state ? state.networkListId : undefined;
-            resourceInputs["notes"] = state ? state.notes : undefined;
-            resourceInputs["notificationEmails"] = state ? state.notificationEmails : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["syncPoint"] = state ? state.syncPoint : undefined;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["networkListId"] = state?.networkListId;
+            resourceInputs["notes"] = state?.notes;
+            resourceInputs["notificationEmails"] = state?.notificationEmails;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["syncPoint"] = state?.syncPoint;
         } else {
             const args = argsOrState as NetworkListActivationsArgs | undefined;
-            if ((!args || args.networkListId === undefined) && !opts.urn) {
+            if (args?.networkListId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkListId'");
             }
-            if ((!args || args.notificationEmails === undefined) && !opts.urn) {
+            if (args?.notificationEmails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'notificationEmails'");
             }
-            if ((!args || args.syncPoint === undefined) && !opts.urn) {
+            if (args?.syncPoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'syncPoint'");
             }
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["networkListId"] = args ? args.networkListId : undefined;
-            resourceInputs["notes"] = args ? args.notes : undefined;
-            resourceInputs["notificationEmails"] = args ? args.notificationEmails : undefined;
-            resourceInputs["syncPoint"] = args ? args.syncPoint : undefined;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["networkListId"] = args?.networkListId;
+            resourceInputs["notes"] = args?.notes;
+            resourceInputs["notificationEmails"] = args?.notificationEmails;
+            resourceInputs["syncPoint"] = args?.syncPoint;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

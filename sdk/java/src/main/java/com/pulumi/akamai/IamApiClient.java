@@ -54,16 +54,14 @@ public class IamApiClient extends com.pulumi.resources.CustomResource {
         return this.actions;
     }
     /**
-     * The number of credentials active for the API client. When the count is zero, you can delete the API client without
-     * interruption.
+     * The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
      * 
      */
     @Export(name="activeCredentialCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> activeCredentialCount;
 
     /**
-     * @return The number of credentials active for the API client. When the count is zero, you can delete the API client without
-     * interruption.
+     * @return The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
      * 
      */
     public Output<Integer> activeCredentialCount() {
@@ -98,16 +96,14 @@ public class IamApiClient extends com.pulumi.resources.CustomResource {
         return this.apiAccess;
     }
     /**
-     * The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single
-     * username in an array.
+     * The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single username in an array.
      * 
      */
     @Export(name="authorizedUsers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> authorizedUsers;
 
     /**
-     * @return The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single
-     * username in an array.
+     * @return The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single username in an array.
      * 
      */
     public Output<List<String>> authorizedUsers() {
@@ -184,16 +180,14 @@ public class IamApiClient extends com.pulumi.resources.CustomResource {
         return this.clientName;
     }
     /**
-     * Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the
-     * credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
+     * Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
      * 
      */
     @Export(name="clientType", refs={String.class}, tree="[0]")
     private Output<String> clientType;
 
     /**
-     * @return Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the
-     * credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
+     * @return Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
      * 
      */
     public Output<String> clientType() {
@@ -290,16 +284,14 @@ public class IamApiClient extends com.pulumi.resources.CustomResource {
         return this.notificationEmails;
     }
     /**
-     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-     * of `CCU API`.
+     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
      * 
      */
     @Export(name="purgeOptions", refs={IamApiClientPurgeOptions.class}, tree="[0]")
     private Output</* @Nullable */ IamApiClientPurgeOptions> purgeOptions;
 
     /**
-     * @return Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-     * of `CCU API`.
+     * @return Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
      * 
      */
     public Output<Optional<IamApiClientPurgeOptions>> purgeOptions() {

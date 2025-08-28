@@ -37,55 +37,55 @@ export class PropertyActivation extends pulumi.CustomResource {
     /**
      * The ID given to the activation event while it's in progress.
      */
-    public readonly activationId!: pulumi.Output<string>;
+    declare public readonly activationId: pulumi.Output<string>;
     /**
      * Automatically acknowledge all rule warnings for activation to continue. Default is false
      */
-    public readonly autoAcknowledgeRuleWarnings!: pulumi.Output<boolean | undefined>;
+    declare public readonly autoAcknowledgeRuleWarnings: pulumi.Output<boolean | undefined>;
     /**
      * Provides an audit record when activating on a production network.
      */
-    public readonly complianceRecord!: pulumi.Output<outputs.PropertyActivationComplianceRecord | undefined>;
+    declare public readonly complianceRecord: pulumi.Output<outputs.PropertyActivationComplianceRecord | undefined>;
     /**
      * One or more email addresses to which to send activation status changes.
      */
-    public readonly contacts!: pulumi.Output<string[]>;
+    declare public readonly contacts: pulumi.Output<string[]>;
     /**
      * Errors returned during activation.
      */
-    public /*out*/ readonly errors!: pulumi.Output<string>;
+    declare public /*out*/ readonly errors: pulumi.Output<string>;
     /**
      * Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
      */
-    public readonly network!: pulumi.Output<string | undefined>;
+    declare public readonly network: pulumi.Output<string | undefined>;
     /**
      * Assigns a log message to the activation request.
      */
-    public readonly note!: pulumi.Output<string | undefined>;
+    declare public readonly note: pulumi.Output<string | undefined>;
     /**
      * Your property's ID, including the prp_ prefix.
      */
-    public readonly propertyId!: pulumi.Output<string>;
+    declare public readonly propertyId: pulumi.Output<string>;
     /**
      * Any errors returned by the API about rules.
      */
-    public /*out*/ readonly ruleErrors!: pulumi.Output<outputs.PropertyActivationRuleError[]>;
+    declare public /*out*/ readonly ruleErrors: pulumi.Output<outputs.PropertyActivationRuleError[]>;
     /**
      * The property version's activation status on the given network.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Enables to set timeout for processing.
      */
-    public readonly timeouts!: pulumi.Output<outputs.PropertyActivationTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.PropertyActivationTimeouts | undefined>;
     /**
      * Your property's version number.
      */
-    public readonly version!: pulumi.Output<number>;
+    declare public readonly version: pulumi.Output<number>;
     /**
      * Warnings returned during activation.
      */
-    public /*out*/ readonly warnings!: pulumi.Output<string>;
+    declare public /*out*/ readonly warnings: pulumi.Output<string>;
 
     /**
      * Create a PropertyActivation resource with the given unique name, arguments, and options.
@@ -100,39 +100,39 @@ export class PropertyActivation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyActivationState | undefined;
-            resourceInputs["activationId"] = state ? state.activationId : undefined;
-            resourceInputs["autoAcknowledgeRuleWarnings"] = state ? state.autoAcknowledgeRuleWarnings : undefined;
-            resourceInputs["complianceRecord"] = state ? state.complianceRecord : undefined;
-            resourceInputs["contacts"] = state ? state.contacts : undefined;
-            resourceInputs["errors"] = state ? state.errors : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["note"] = state ? state.note : undefined;
-            resourceInputs["propertyId"] = state ? state.propertyId : undefined;
-            resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["warnings"] = state ? state.warnings : undefined;
+            resourceInputs["activationId"] = state?.activationId;
+            resourceInputs["autoAcknowledgeRuleWarnings"] = state?.autoAcknowledgeRuleWarnings;
+            resourceInputs["complianceRecord"] = state?.complianceRecord;
+            resourceInputs["contacts"] = state?.contacts;
+            resourceInputs["errors"] = state?.errors;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["note"] = state?.note;
+            resourceInputs["propertyId"] = state?.propertyId;
+            resourceInputs["ruleErrors"] = state?.ruleErrors;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["warnings"] = state?.warnings;
         } else {
             const args = argsOrState as PropertyActivationArgs | undefined;
-            if ((!args || args.contacts === undefined) && !opts.urn) {
+            if (args?.contacts === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contacts'");
             }
-            if ((!args || args.propertyId === undefined) && !opts.urn) {
+            if (args?.propertyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'propertyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["activationId"] = args ? args.activationId : undefined;
-            resourceInputs["autoAcknowledgeRuleWarnings"] = args ? args.autoAcknowledgeRuleWarnings : undefined;
-            resourceInputs["complianceRecord"] = args ? args.complianceRecord : undefined;
-            resourceInputs["contacts"] = args ? args.contacts : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["note"] = args ? args.note : undefined;
-            resourceInputs["propertyId"] = args ? args.propertyId : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["activationId"] = args?.activationId;
+            resourceInputs["autoAcknowledgeRuleWarnings"] = args?.autoAcknowledgeRuleWarnings;
+            resourceInputs["complianceRecord"] = args?.complianceRecord;
+            resourceInputs["contacts"] = args?.contacts;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["note"] = args?.note;
+            resourceInputs["propertyId"] = args?.propertyId;
+            resourceInputs["timeouts"] = args?.timeouts;
+            resourceInputs["version"] = args?.version;
             resourceInputs["errors"] = undefined /*out*/;
             resourceInputs["ruleErrors"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;

@@ -34,64 +34,56 @@ public class PropertyHostnameBucket extends com.pulumi.resources.CustomResource 
         return this.activationId;
     }
     /**
-     * The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-     * possible
+     * The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
      * 
      */
     @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
-     * @return The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-     * possible
+     * @return The unique identifier for the contract. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
      * 
      */
     public Output<String> contractId() {
         return this.contractId;
     }
     /**
-     * The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-     * possible
+     * The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
      * 
      */
     @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
-     * @return The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not
-     * possible
+     * @return The unique identifier for the group. Provide it if resolving the property without &#39;contract_id&#39; and &#39;group_id&#39; is not possible
      * 
      */
     public Output<String> groupId() {
         return this.groupId;
     }
     /**
-     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-     * the number of hostnames that will be active after making the changes.
+     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
      * 
      */
     @Export(name="hostnameCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> hostnameCount;
 
     /**
-     * @return The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-     * the number of hostnames that will be active after making the changes.
+     * @return The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
      * 
      */
     public Output<Integer> hostnameCount() {
         return this.hostnameCount;
     }
     /**
-     * The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of
-     * certificate provisioning type and edge hostname.
+     * The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
      * 
      */
     @Export(name="hostnames", refs={Map.class,String.class,PropertyHostnameBucketHostnames.class}, tree="[0,1,2]")
     private Output<Map<String,PropertyHostnameBucketHostnames>> hostnames;
 
     /**
-     * @return The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of
-     * certificate provisioning type and edge hostname.
+     * @return The hostnames mapping. The key represents &#39;cname_from&#39; and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
      * 
      */
     public Output<Map<String,PropertyHostnameBucketHostnames>> hostnames() {

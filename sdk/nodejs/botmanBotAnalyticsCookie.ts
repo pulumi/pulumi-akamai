@@ -32,8 +32,8 @@ export class BotmanBotAnalyticsCookie extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanBotAnalyticsCookie.__pulumiType;
     }
 
-    public readonly botAnalyticsCookie!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly botAnalyticsCookie: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
 
     /**
      * Create a BotmanBotAnalyticsCookie resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class BotmanBotAnalyticsCookie extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanBotAnalyticsCookieState | undefined;
-            resourceInputs["botAnalyticsCookie"] = state ? state.botAnalyticsCookie : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["botAnalyticsCookie"] = state?.botAnalyticsCookie;
+            resourceInputs["configId"] = state?.configId;
         } else {
             const args = argsOrState as BotmanBotAnalyticsCookieArgs | undefined;
-            if ((!args || args.botAnalyticsCookie === undefined) && !opts.urn) {
+            if (args?.botAnalyticsCookie === undefined && !opts.urn) {
                 throw new Error("Missing required property 'botAnalyticsCookie'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            resourceInputs["botAnalyticsCookie"] = args ? args.botAnalyticsCookie : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["botAnalyticsCookie"] = args?.botAnalyticsCookie;
+            resourceInputs["configId"] = args?.configId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanBotAnalyticsCookie.__pulumiType, name, resourceInputs, opts);

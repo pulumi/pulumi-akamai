@@ -32,9 +32,9 @@ export class BotmanCustomClient extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanCustomClient.__pulumiType;
     }
 
-    public readonly configId!: pulumi.Output<number>;
-    public readonly customClient!: pulumi.Output<string>;
-    public /*out*/ readonly customClientId!: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly customClient: pulumi.Output<string>;
+    declare public /*out*/ readonly customClientId: pulumi.Output<string>;
 
     /**
      * Create a BotmanCustomClient resource with the given unique name, arguments, and options.
@@ -49,19 +49,19 @@ export class BotmanCustomClient extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanCustomClientState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["customClient"] = state ? state.customClient : undefined;
-            resourceInputs["customClientId"] = state ? state.customClientId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["customClient"] = state?.customClient;
+            resourceInputs["customClientId"] = state?.customClientId;
         } else {
             const args = argsOrState as BotmanCustomClientArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.customClient === undefined) && !opts.urn) {
+            if (args?.customClient === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customClient'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["customClient"] = args ? args.customClient : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["customClient"] = args?.customClient;
             resourceInputs["customClientId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

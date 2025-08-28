@@ -35,44 +35,43 @@ export class NetworkList extends pulumi.CustomResource {
     /**
      * contract ID
      */
-    public readonly contractId!: pulumi.Output<string | undefined>;
+    declare public readonly contractId: pulumi.Output<string | undefined>;
     /**
      * A description of the network list
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * group ID
      */
-    public readonly groupId!: pulumi.Output<number | undefined>;
+    declare public readonly groupId: pulumi.Output<number | undefined>;
     /**
-     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-     * list
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
      */
-    public readonly lists!: pulumi.Output<string[] | undefined>;
+    declare public readonly lists: pulumi.Output<string[] | undefined>;
     /**
      * A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
      */
-    public readonly mode!: pulumi.Output<string>;
+    declare public readonly mode: pulumi.Output<string>;
     /**
      * The name to be assigned to the network list
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * network list ID
      */
-    public /*out*/ readonly networkListId!: pulumi.Output<string>;
+    declare public /*out*/ readonly networkListId: pulumi.Output<string>;
     /**
      * sync point
      */
-    public /*out*/ readonly syncPoint!: pulumi.Output<number>;
+    declare public /*out*/ readonly syncPoint: pulumi.Output<number>;
     /**
      * The type of the network list; must be either 'IP' or 'GEO'
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * unique ID
      */
-    public /*out*/ readonly uniqueid!: pulumi.Output<string>;
+    declare public /*out*/ readonly uniqueid: pulumi.Output<string>;
 
     /**
      * Create a NetworkList resource with the given unique name, arguments, and options.
@@ -87,34 +86,34 @@ export class NetworkList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListState | undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["lists"] = state ? state.lists : undefined;
-            resourceInputs["mode"] = state ? state.mode : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkListId"] = state ? state.networkListId : undefined;
-            resourceInputs["syncPoint"] = state ? state.syncPoint : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["uniqueid"] = state ? state.uniqueid : undefined;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["lists"] = state?.lists;
+            resourceInputs["mode"] = state?.mode;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkListId"] = state?.networkListId;
+            resourceInputs["syncPoint"] = state?.syncPoint;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["uniqueid"] = state?.uniqueid;
         } else {
             const args = argsOrState as NetworkListArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.mode === undefined) && !opts.urn) {
+            if (args?.mode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mode'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["lists"] = args ? args.lists : undefined;
-            resourceInputs["mode"] = args ? args.mode : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["lists"] = args?.lists;
+            resourceInputs["mode"] = args?.mode;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["type"] = args?.type;
             resourceInputs["networkListId"] = undefined /*out*/;
             resourceInputs["syncPoint"] = undefined /*out*/;
             resourceInputs["uniqueid"] = undefined /*out*/;
@@ -141,8 +140,7 @@ export interface NetworkListState {
      */
     groupId?: pulumi.Input<number>;
     /**
-     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-     * list
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
      */
     lists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -188,8 +186,7 @@ export interface NetworkListArgs {
      */
     groupId?: pulumi.Input<number>;
     /**
-     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-     * list
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
      */
     lists?: pulumi.Input<pulumi.Input<string>[]>;
     /**

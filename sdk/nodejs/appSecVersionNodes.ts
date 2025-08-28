@@ -35,15 +35,15 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Text representation
      */
-    public /*out*/ readonly outputText!: pulumi.Output<string>;
+    declare public /*out*/ readonly outputText: pulumi.Output<string>;
     /**
      * Brief description of the security configuration version
      */
-    public readonly versionNotes!: pulumi.Output<string>;
+    declare public readonly versionNotes: pulumi.Output<string>;
 
     /**
      * Create a AppSecVersionNodes resource with the given unique name, arguments, and options.
@@ -58,19 +58,19 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecVersionNodesState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["outputText"] = state ? state.outputText : undefined;
-            resourceInputs["versionNotes"] = state ? state.versionNotes : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["outputText"] = state?.outputText;
+            resourceInputs["versionNotes"] = state?.versionNotes;
         } else {
             const args = argsOrState as AppSecVersionNodesArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.versionNotes === undefined) && !opts.urn) {
+            if (args?.versionNotes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'versionNotes'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["versionNotes"] = args ? args.versionNotes : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["versionNotes"] = args?.versionNotes;
             resourceInputs["outputText"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

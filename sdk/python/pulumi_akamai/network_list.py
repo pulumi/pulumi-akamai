@@ -33,8 +33,7 @@ class NetworkListArgs:
         :param pulumi.Input[_builtins.str] type: The type of the network list; must be either 'IP' or 'GEO'
         :param pulumi.Input[_builtins.str] contract_id: contract ID
         :param pulumi.Input[_builtins.int] group_id: group ID
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lists: A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-               list
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lists: A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
         :param pulumi.Input[_builtins.str] name: The name to be assigned to the network list
         """
         pulumi.set(__self__, "description", description)
@@ -113,8 +112,7 @@ class NetworkListArgs:
     @pulumi.getter
     def lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-        list
+        A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
         """
         return pulumi.get(self, "lists")
 
@@ -153,8 +151,7 @@ class _NetworkListState:
         :param pulumi.Input[_builtins.str] contract_id: contract ID
         :param pulumi.Input[_builtins.str] description: A description of the network list
         :param pulumi.Input[_builtins.int] group_id: group ID
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lists: A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-               list
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lists: A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
         :param pulumi.Input[_builtins.str] mode: A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         :param pulumi.Input[_builtins.str] name: The name to be assigned to the network list
         :param pulumi.Input[_builtins.str] network_list_id: network list ID
@@ -223,8 +220,7 @@ class _NetworkListState:
     @pulumi.getter
     def lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-        list
+        A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
         """
         return pulumi.get(self, "lists")
 
@@ -326,8 +322,7 @@ class NetworkList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] contract_id: contract ID
         :param pulumi.Input[_builtins.str] description: A description of the network list
         :param pulumi.Input[_builtins.int] group_id: group ID
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lists: A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-               list
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lists: A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
         :param pulumi.Input[_builtins.str] mode: A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         :param pulumi.Input[_builtins.str] name: The name to be assigned to the network list
         :param pulumi.Input[_builtins.str] type: The type of the network list; must be either 'IP' or 'GEO'
@@ -417,8 +412,7 @@ class NetworkList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] contract_id: contract ID
         :param pulumi.Input[_builtins.str] description: A description of the network list
         :param pulumi.Input[_builtins.int] group_id: group ID
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lists: A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-               list
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lists: A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
         :param pulumi.Input[_builtins.str] mode: A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         :param pulumi.Input[_builtins.str] name: The name to be assigned to the network list
         :param pulumi.Input[_builtins.str] network_list_id: network list ID
@@ -470,8 +464,7 @@ class NetworkList(pulumi.CustomResource):
     @pulumi.getter
     def lists(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
-        A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-        list
+        A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
         """
         return pulumi.get(self, "lists")
 
