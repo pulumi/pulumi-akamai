@@ -39,8 +39,7 @@ class GtmDomainArgs:
         """
         The set of arguments for constructing a GtmDomain resource.
         :param pulumi.Input[_builtins.bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
-        :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-               ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         pulumi.set(__self__, "type", type)
         if cname_coalescing_enabled is not None:
@@ -218,8 +217,7 @@ class GtmDomainArgs:
     @pulumi.getter(name="signAndServeAlgorithm")
     def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-        ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         return pulumi.get(self, "sign_and_serve_algorithm")
 
@@ -279,8 +277,7 @@ class _GtmDomainState:
         """
         Input properties used for looking up and filtering GtmDomain resources.
         :param pulumi.Input[_builtins.bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
-        :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-               ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         if cname_coalescing_enabled is not None:
             pulumi.set(__self__, "cname_coalescing_enabled", cname_coalescing_enabled)
@@ -659,8 +656,7 @@ class _GtmDomainState:
     @pulumi.getter(name="signAndServeAlgorithm")
     def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-        ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         return pulumi.get(self, "sign_and_serve_algorithm")
 
@@ -716,8 +712,7 @@ class GtmDomain(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
-        :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-               ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         ...
     @overload
@@ -862,8 +857,7 @@ class GtmDomain(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
-        :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-               ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1079,8 +1073,7 @@ class GtmDomain(pulumi.CustomResource):
     @pulumi.getter(name="signAndServeAlgorithm")
     def sign_and_serve_algorithm(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-        ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         return pulumi.get(self, "sign_and_serve_algorithm")
 

@@ -17,9 +17,7 @@ type CloudletsApplicationLoadBalancer struct {
 
 	// The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
 	BalancingType pulumi.StringPtrOutput `pulumi:"balancingType"`
-	// The object containing information on conditional origins being used as data centers for an Application Load Balancer
-	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-	// application load balancer configuration.
+	// The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
 	DataCenters CloudletsApplicationLoadBalancerDataCenterArrayOutput `pulumi:"dataCenters"`
 	// The load balancer configuration version description
 	Description      pulumi.StringPtrOutput                                    `pulumi:"description"`
@@ -72,9 +70,7 @@ func GetCloudletsApplicationLoadBalancer(ctx *pulumi.Context,
 type cloudletsApplicationLoadBalancerState struct {
 	// The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
 	BalancingType *string `pulumi:"balancingType"`
-	// The object containing information on conditional origins being used as data centers for an Application Load Balancer
-	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-	// application load balancer configuration.
+	// The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
 	DataCenters []CloudletsApplicationLoadBalancerDataCenter `pulumi:"dataCenters"`
 	// The load balancer configuration version description
 	Description      *string                                           `pulumi:"description"`
@@ -92,9 +88,7 @@ type cloudletsApplicationLoadBalancerState struct {
 type CloudletsApplicationLoadBalancerState struct {
 	// The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
 	BalancingType pulumi.StringPtrInput
-	// The object containing information on conditional origins being used as data centers for an Application Load Balancer
-	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-	// application load balancer configuration.
+	// The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
 	DataCenters CloudletsApplicationLoadBalancerDataCenterArrayInput
 	// The load balancer configuration version description
 	Description      pulumi.StringPtrInput
@@ -116,9 +110,7 @@ func (CloudletsApplicationLoadBalancerState) ElementType() reflect.Type {
 type cloudletsApplicationLoadBalancerArgs struct {
 	// The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
 	BalancingType *string `pulumi:"balancingType"`
-	// The object containing information on conditional origins being used as data centers for an Application Load Balancer
-	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-	// application load balancer configuration.
+	// The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
 	DataCenters []CloudletsApplicationLoadBalancerDataCenter `pulumi:"dataCenters"`
 	// The load balancer configuration version description
 	Description      *string                                           `pulumi:"description"`
@@ -133,9 +125,7 @@ type cloudletsApplicationLoadBalancerArgs struct {
 type CloudletsApplicationLoadBalancerArgs struct {
 	// The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
 	BalancingType pulumi.StringPtrInput
-	// The object containing information on conditional origins being used as data centers for an Application Load Balancer
-	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-	// application load balancer configuration.
+	// The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
 	DataCenters CloudletsApplicationLoadBalancerDataCenterArrayInput
 	// The load balancer configuration version description
 	Description      pulumi.StringPtrInput
@@ -238,9 +228,7 @@ func (o CloudletsApplicationLoadBalancerOutput) BalancingType() pulumi.StringPtr
 	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) pulumi.StringPtrOutput { return v.BalancingType }).(pulumi.StringPtrOutput)
 }
 
-// The object containing information on conditional origins being used as data centers for an Application Load Balancer
-// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-// application load balancer configuration.
+// The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
 func (o CloudletsApplicationLoadBalancerOutput) DataCenters() CloudletsApplicationLoadBalancerDataCenterArrayOutput {
 	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) CloudletsApplicationLoadBalancerDataCenterArrayOutput {
 		return v.DataCenters

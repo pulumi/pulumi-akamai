@@ -37,27 +37,27 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
     /**
      * A unique identifier of the activation
      */
-    public /*out*/ readonly activationId!: pulumi.Output<number>;
+    declare public /*out*/ readonly activationId: pulumi.Output<number>;
     /**
      * Id of the EdgeWorker to activate
      */
-    public readonly edgeworkerId!: pulumi.Output<number>;
+    declare public readonly edgeworkerId: pulumi.Output<number>;
     /**
      * The network on which the version will be activated
      */
-    public readonly network!: pulumi.Output<string>;
+    declare public readonly network: pulumi.Output<string>;
     /**
      * Assigns a log message to the activation request
      */
-    public readonly note!: pulumi.Output<string | undefined>;
+    declare public readonly note: pulumi.Output<string | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.EdgeWorkersActivationTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.EdgeWorkersActivationTimeouts | undefined>;
     /**
      * The version of EdgeWorker to activate
      */
-    public readonly version!: pulumi.Output<string>;
+    declare public readonly version: pulumi.Output<string>;
 
     /**
      * Create a EdgeWorkersActivation resource with the given unique name, arguments, and options.
@@ -72,28 +72,28 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EdgeWorkersActivationState | undefined;
-            resourceInputs["activationId"] = state ? state.activationId : undefined;
-            resourceInputs["edgeworkerId"] = state ? state.edgeworkerId : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["note"] = state ? state.note : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["activationId"] = state?.activationId;
+            resourceInputs["edgeworkerId"] = state?.edgeworkerId;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["note"] = state?.note;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as EdgeWorkersActivationArgs | undefined;
-            if ((!args || args.edgeworkerId === undefined) && !opts.urn) {
+            if (args?.edgeworkerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'edgeworkerId'");
             }
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["edgeworkerId"] = args ? args.edgeworkerId : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["note"] = args ? args.note : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["edgeworkerId"] = args?.edgeworkerId;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["note"] = args?.note;
+            resourceInputs["timeouts"] = args?.timeouts;
+            resourceInputs["version"] = args?.version;
             resourceInputs["activationId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

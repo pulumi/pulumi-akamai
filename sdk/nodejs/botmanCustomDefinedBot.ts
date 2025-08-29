@@ -32,9 +32,9 @@ export class BotmanCustomDefinedBot extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanCustomDefinedBot.__pulumiType;
     }
 
-    public /*out*/ readonly botId!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
-    public readonly customDefinedBot!: pulumi.Output<string>;
+    declare public /*out*/ readonly botId: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly customDefinedBot: pulumi.Output<string>;
 
     /**
      * Create a BotmanCustomDefinedBot resource with the given unique name, arguments, and options.
@@ -49,19 +49,19 @@ export class BotmanCustomDefinedBot extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanCustomDefinedBotState | undefined;
-            resourceInputs["botId"] = state ? state.botId : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["customDefinedBot"] = state ? state.customDefinedBot : undefined;
+            resourceInputs["botId"] = state?.botId;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["customDefinedBot"] = state?.customDefinedBot;
         } else {
             const args = argsOrState as BotmanCustomDefinedBotArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.customDefinedBot === undefined) && !opts.urn) {
+            if (args?.customDefinedBot === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customDefinedBot'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["customDefinedBot"] = args ? args.customDefinedBot : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["customDefinedBot"] = args?.customDefinedBot;
             resourceInputs["botId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

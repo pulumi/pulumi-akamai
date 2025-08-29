@@ -32,10 +32,10 @@ export class BotmanTransactionalEndpoint extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanTransactionalEndpoint.__pulumiType;
     }
 
-    public readonly configId!: pulumi.Output<number>;
-    public readonly operationId!: pulumi.Output<string>;
-    public readonly securityPolicyId!: pulumi.Output<string>;
-    public readonly transactionalEndpoint!: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly operationId: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
+    declare public readonly transactionalEndpoint: pulumi.Output<string>;
 
     /**
      * Create a BotmanTransactionalEndpoint resource with the given unique name, arguments, and options.
@@ -50,28 +50,28 @@ export class BotmanTransactionalEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanTransactionalEndpointState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["operationId"] = state ? state.operationId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            resourceInputs["transactionalEndpoint"] = state ? state.transactionalEndpoint : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["operationId"] = state?.operationId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
+            resourceInputs["transactionalEndpoint"] = state?.transactionalEndpoint;
         } else {
             const args = argsOrState as BotmanTransactionalEndpointArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.operationId === undefined) && !opts.urn) {
+            if (args?.operationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operationId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.transactionalEndpoint === undefined) && !opts.urn) {
+            if (args?.transactionalEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'transactionalEndpoint'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["operationId"] = args ? args.operationId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            resourceInputs["transactionalEndpoint"] = args ? args.transactionalEndpoint : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["operationId"] = args?.operationId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
+            resourceInputs["transactionalEndpoint"] = args?.transactionalEndpoint;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanTransactionalEndpoint.__pulumiType, name, resourceInputs, opts);

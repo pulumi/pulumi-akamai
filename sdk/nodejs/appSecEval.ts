@@ -35,35 +35,35 @@ export class AppSecEval extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Versioning information for the Kona Rule Set currently in use in production
      */
-    public /*out*/ readonly currentRuleset!: pulumi.Output<string>;
+    declare public /*out*/ readonly currentRuleset: pulumi.Output<string>;
     /**
      * Evaluation mode (ASE_AUTO or ASE_MANUAL)
      */
-    public readonly evalMode!: pulumi.Output<string | undefined>;
+    declare public readonly evalMode: pulumi.Output<string | undefined>;
     /**
      * Evaluation mode operation (START, STOP, RESTART, UPDATE or COMPLETE)
      */
-    public readonly evalOperation!: pulumi.Output<string>;
+    declare public readonly evalOperation: pulumi.Output<string>;
     /**
      * Whether an evaluation is currently in progress
      */
-    public /*out*/ readonly evalStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly evalStatus: pulumi.Output<string>;
     /**
      * Versioning information for the Kona Rule Set being evaluated
      */
-    public /*out*/ readonly evaluatingRuleset!: pulumi.Output<string>;
+    declare public /*out*/ readonly evaluatingRuleset: pulumi.Output<string>;
     /**
      * Date when the evaluation period ends
      */
-    public /*out*/ readonly expirationDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly expirationDate: pulumi.Output<string>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecEval resource with the given unique name, arguments, and options.
@@ -78,29 +78,29 @@ export class AppSecEval extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecEvalState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["currentRuleset"] = state ? state.currentRuleset : undefined;
-            resourceInputs["evalMode"] = state ? state.evalMode : undefined;
-            resourceInputs["evalOperation"] = state ? state.evalOperation : undefined;
-            resourceInputs["evalStatus"] = state ? state.evalStatus : undefined;
-            resourceInputs["evaluatingRuleset"] = state ? state.evaluatingRuleset : undefined;
-            resourceInputs["expirationDate"] = state ? state.expirationDate : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["currentRuleset"] = state?.currentRuleset;
+            resourceInputs["evalMode"] = state?.evalMode;
+            resourceInputs["evalOperation"] = state?.evalOperation;
+            resourceInputs["evalStatus"] = state?.evalStatus;
+            resourceInputs["evaluatingRuleset"] = state?.evaluatingRuleset;
+            resourceInputs["expirationDate"] = state?.expirationDate;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecEvalArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.evalOperation === undefined) && !opts.urn) {
+            if (args?.evalOperation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'evalOperation'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["evalMode"] = args ? args.evalMode : undefined;
-            resourceInputs["evalOperation"] = args ? args.evalOperation : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["evalMode"] = args?.evalMode;
+            resourceInputs["evalOperation"] = args?.evalOperation;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
             resourceInputs["currentRuleset"] = undefined /*out*/;
             resourceInputs["evalStatus"] = undefined /*out*/;
             resourceInputs["evaluatingRuleset"] = undefined /*out*/;

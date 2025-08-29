@@ -19,18 +19,13 @@ type CloudAccessKey struct {
 	AccessKeyName pulumi.StringOutput `pulumi:"accessKeyName"`
 	// The unique identifier Akamai assigns to an access key.
 	AccessKeyUid pulumi.IntOutput `pulumi:"accessKeyUid"`
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available:
-	// "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
 	AuthenticationMethod pulumi.StringOutput `pulumi:"authenticationMethod"`
 	// The unique identifier for the contract assigned to the access key
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsA CloudAccessKeyCredentialsAPtrOutput `pulumi:"credentialsA"`
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsB CloudAccessKeyCredentialsBPtrOutput `pulumi:"credentialsB"`
 	// The unique identifier assigned to the access control group assigned to the access key
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
@@ -90,18 +85,13 @@ type cloudAccessKeyState struct {
 	AccessKeyName *string `pulumi:"accessKeyName"`
 	// The unique identifier Akamai assigns to an access key.
 	AccessKeyUid *int `pulumi:"accessKeyUid"`
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available:
-	// "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
 	AuthenticationMethod *string `pulumi:"authenticationMethod"`
 	// The unique identifier for the contract assigned to the access key
 	ContractId *string `pulumi:"contractId"`
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsA *CloudAccessKeyCredentialsA `pulumi:"credentialsA"`
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsB *CloudAccessKeyCredentialsB `pulumi:"credentialsB"`
 	// The unique identifier assigned to the access control group assigned to the access key
 	GroupId *int `pulumi:"groupId"`
@@ -117,18 +107,13 @@ type CloudAccessKeyState struct {
 	AccessKeyName pulumi.StringPtrInput
 	// The unique identifier Akamai assigns to an access key.
 	AccessKeyUid pulumi.IntPtrInput
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available:
-	// "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
 	AuthenticationMethod pulumi.StringPtrInput
 	// The unique identifier for the contract assigned to the access key
 	ContractId pulumi.StringPtrInput
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsA CloudAccessKeyCredentialsAPtrInput
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsB CloudAccessKeyCredentialsBPtrInput
 	// The unique identifier assigned to the access control group assigned to the access key
 	GroupId pulumi.IntPtrInput
@@ -146,18 +131,13 @@ func (CloudAccessKeyState) ElementType() reflect.Type {
 type cloudAccessKeyArgs struct {
 	// Name of the access key.
 	AccessKeyName string `pulumi:"accessKeyName"`
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available:
-	// "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
 	AuthenticationMethod string `pulumi:"authenticationMethod"`
 	// The unique identifier for the contract assigned to the access key
 	ContractId string `pulumi:"contractId"`
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsA *CloudAccessKeyCredentialsA `pulumi:"credentialsA"`
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsB *CloudAccessKeyCredentialsB `pulumi:"credentialsB"`
 	// The unique identifier assigned to the access control group assigned to the access key
 	GroupId int `pulumi:"groupId"`
@@ -170,18 +150,13 @@ type cloudAccessKeyArgs struct {
 type CloudAccessKeyArgs struct {
 	// Name of the access key.
 	AccessKeyName pulumi.StringInput
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available:
-	// "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
 	AuthenticationMethod pulumi.StringInput
 	// The unique identifier for the contract assigned to the access key
 	ContractId pulumi.StringInput
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsA CloudAccessKeyCredentialsAPtrInput
-	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-	// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-	// credentialsA and credentialsB).
+	// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 	CredentialsB CloudAccessKeyCredentialsBPtrInput
 	// The unique identifier assigned to the access control group assigned to the access key
 	GroupId pulumi.IntInput
@@ -287,8 +262,7 @@ func (o CloudAccessKeyOutput) AccessKeyUid() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAccessKey) pulumi.IntOutput { return v.AccessKeyUid }).(pulumi.IntOutput)
 }
 
-// The type of cloud provider signing process used to authenticate API requests. Two options are available:
-// "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
 func (o CloudAccessKeyOutput) AuthenticationMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAccessKey) pulumi.StringOutput { return v.AuthenticationMethod }).(pulumi.StringOutput)
 }
@@ -298,16 +272,12 @@ func (o CloudAccessKeyOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAccessKey) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-// credentialsA and credentialsB).
+// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 func (o CloudAccessKeyOutput) CredentialsA() CloudAccessKeyCredentialsAPtrOutput {
 	return o.ApplyT(func(v *CloudAccessKey) CloudAccessKeyCredentialsAPtrOutput { return v.CredentialsA }).(CloudAccessKeyCredentialsAPtrOutput)
 }
 
-// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-// credentialsA and credentialsB).
+// The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
 func (o CloudAccessKeyOutput) CredentialsB() CloudAccessKeyCredentialsBPtrOutput {
 	return o.ApplyT(func(v *CloudAccessKey) CloudAccessKeyCredentialsBPtrOutput { return v.CredentialsB }).(CloudAccessKeyCredentialsBPtrOutput)
 }

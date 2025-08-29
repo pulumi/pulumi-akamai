@@ -37,43 +37,43 @@ export class ClientlistList extends pulumi.CustomResource {
     /**
      * Contract ID for which client list is assigned.
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * Group ID for which client list is assigned.
      */
-    public readonly groupId!: pulumi.Output<number>;
+    declare public readonly groupId: pulumi.Output<number>;
     /**
      * Set of items containing item information.
      */
-    public readonly items!: pulumi.Output<outputs.ClientlistListItem[] | undefined>;
+    declare public readonly items: pulumi.Output<outputs.ClientlistListItem[] | undefined>;
     /**
      * The number of items that a client list contains.
      */
-    public /*out*/ readonly itemsCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly itemsCount: pulumi.Output<number>;
     /**
      * The ID of the client list.
      */
-    public /*out*/ readonly listId!: pulumi.Output<string>;
+    declare public /*out*/ readonly listId: pulumi.Output<string>;
     /**
      * The name of the client list.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The client list notes.
      */
-    public readonly notes!: pulumi.Output<string | undefined>;
+    declare public readonly notes: pulumi.Output<string | undefined>;
     /**
      * The client list tags.
      */
-    public readonly tags!: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<string[] | undefined>;
     /**
      * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * The current version of the client list.
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    declare public /*out*/ readonly version: pulumi.Output<number>;
 
     /**
      * Create a ClientlistList resource with the given unique name, arguments, and options.
@@ -88,34 +88,34 @@ export class ClientlistList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClientlistListState | undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["itemsCount"] = state ? state.itemsCount : undefined;
-            resourceInputs["listId"] = state ? state.listId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["notes"] = state ? state.notes : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["itemsCount"] = state?.itemsCount;
+            resourceInputs["listId"] = state?.listId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["notes"] = state?.notes;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ClientlistListArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["items"] = args ? args.items : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["notes"] = args ? args.notes : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["items"] = args?.items;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["notes"] = args?.notes;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["type"] = args?.type;
             resourceInputs["itemsCount"] = undefined /*out*/;
             resourceInputs["listId"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;

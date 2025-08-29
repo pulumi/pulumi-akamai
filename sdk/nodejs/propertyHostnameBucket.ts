@@ -37,51 +37,47 @@ export class PropertyHostnameBucket extends pulumi.CustomResource {
     /**
      * The ID of the latest hostname bucket activation.
      */
-    public /*out*/ readonly activationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly activationId: pulumi.Output<string>;
     /**
-     * The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-     * possible
+     * The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
-     * The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-     * possible
+     * The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
-    public readonly groupId!: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
     /**
-     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-     * the number of hostnames that will be active after making the changes.
+     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
      */
-    public readonly hostnameCount!: pulumi.Output<number>;
+    declare public readonly hostnameCount: pulumi.Output<number>;
     /**
-     * The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-     * certificate provisioning type and edge hostname.
+     * The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
      */
-    public readonly hostnames!: pulumi.Output<{[key: string]: outputs.PropertyHostnameBucketHostnames}>;
+    declare public readonly hostnames: pulumi.Output<{[key: string]: outputs.PropertyHostnameBucketHostnames}>;
     /**
      * The network to activate on, either `STAGING` or `PRODUCTION`.
      */
-    public readonly network!: pulumi.Output<string>;
+    declare public readonly network: pulumi.Output<string>;
     /**
      * Assigns a log message to the request.
      */
-    public readonly note!: pulumi.Output<string>;
+    declare public readonly note: pulumi.Output<string>;
     /**
      * Email addresses to notify when the activation status changes.
      */
-    public readonly notifyEmails!: pulumi.Output<string[]>;
+    declare public readonly notifyEmails: pulumi.Output<string[]>;
     /**
      * The number of hostnames with a `DEFAULT` certificate type that are still in the `PENDING` state.
      */
-    public /*out*/ readonly pendingDefaultCerts!: pulumi.Output<number>;
+    declare public /*out*/ readonly pendingDefaultCerts: pulumi.Output<number>;
     /**
      * The unique identifier for the property.
      */
-    public readonly propertyId!: pulumi.Output<string>;
+    declare public readonly propertyId: pulumi.Output<string>;
     /**
      * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
      */
-    public readonly timeoutForActivation!: pulumi.Output<number>;
+    declare public readonly timeoutForActivation: pulumi.Output<number>;
 
     /**
      * Create a PropertyHostnameBucket resource with the given unique name, arguments, and options.
@@ -96,37 +92,37 @@ export class PropertyHostnameBucket extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyHostnameBucketState | undefined;
-            resourceInputs["activationId"] = state ? state.activationId : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["hostnameCount"] = state ? state.hostnameCount : undefined;
-            resourceInputs["hostnames"] = state ? state.hostnames : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["note"] = state ? state.note : undefined;
-            resourceInputs["notifyEmails"] = state ? state.notifyEmails : undefined;
-            resourceInputs["pendingDefaultCerts"] = state ? state.pendingDefaultCerts : undefined;
-            resourceInputs["propertyId"] = state ? state.propertyId : undefined;
-            resourceInputs["timeoutForActivation"] = state ? state.timeoutForActivation : undefined;
+            resourceInputs["activationId"] = state?.activationId;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["hostnameCount"] = state?.hostnameCount;
+            resourceInputs["hostnames"] = state?.hostnames;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["note"] = state?.note;
+            resourceInputs["notifyEmails"] = state?.notifyEmails;
+            resourceInputs["pendingDefaultCerts"] = state?.pendingDefaultCerts;
+            resourceInputs["propertyId"] = state?.propertyId;
+            resourceInputs["timeoutForActivation"] = state?.timeoutForActivation;
         } else {
             const args = argsOrState as PropertyHostnameBucketArgs | undefined;
-            if ((!args || args.hostnames === undefined) && !opts.urn) {
+            if (args?.hostnames === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostnames'");
             }
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            if ((!args || args.propertyId === undefined) && !opts.urn) {
+            if (args?.propertyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'propertyId'");
             }
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["hostnameCount"] = args ? args.hostnameCount : undefined;
-            resourceInputs["hostnames"] = args ? args.hostnames : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["note"] = args ? args.note : undefined;
-            resourceInputs["notifyEmails"] = args ? args.notifyEmails : undefined;
-            resourceInputs["propertyId"] = args ? args.propertyId : undefined;
-            resourceInputs["timeoutForActivation"] = args ? args.timeoutForActivation : undefined;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["hostnameCount"] = args?.hostnameCount;
+            resourceInputs["hostnames"] = args?.hostnames;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["note"] = args?.note;
+            resourceInputs["notifyEmails"] = args?.notifyEmails;
+            resourceInputs["propertyId"] = args?.propertyId;
+            resourceInputs["timeoutForActivation"] = args?.timeoutForActivation;
             resourceInputs["activationId"] = undefined /*out*/;
             resourceInputs["pendingDefaultCerts"] = undefined /*out*/;
         }
@@ -144,23 +140,19 @@ export interface PropertyHostnameBucketState {
      */
     activationId?: pulumi.Input<string>;
     /**
-     * The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-     * possible
+     * The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
     contractId?: pulumi.Input<string>;
     /**
-     * The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-     * possible
+     * The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
     groupId?: pulumi.Input<string>;
     /**
-     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-     * the number of hostnames that will be active after making the changes.
+     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
      */
     hostnameCount?: pulumi.Input<number>;
     /**
-     * The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-     * certificate provisioning type and edge hostname.
+     * The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
      */
     hostnames?: pulumi.Input<{[key: string]: pulumi.Input<inputs.PropertyHostnameBucketHostnames>}>;
     /**
@@ -194,23 +186,19 @@ export interface PropertyHostnameBucketState {
  */
 export interface PropertyHostnameBucketArgs {
     /**
-     * The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-     * possible
+     * The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
     contractId?: pulumi.Input<string>;
     /**
-     * The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not
-     * possible
+     * The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
     groupId?: pulumi.Input<string>;
     /**
-     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about
-     * the number of hostnames that will be active after making the changes.
+     * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
      */
     hostnameCount?: pulumi.Input<number>;
     /**
-     * The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of
-     * certificate provisioning type and edge hostname.
+     * The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
      */
     hostnames: pulumi.Input<{[key: string]: pulumi.Input<inputs.PropertyHostnameBucketHostnames>}>;
     /**

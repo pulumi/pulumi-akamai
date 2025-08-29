@@ -30,8 +30,7 @@ class PropertyBootstrapArgs:
         :param pulumi.Input[_builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] name: Name to give to the Property (must be unique)
-        :param pulumi.Input[_builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-               incrementing property versions.
+        :param pulumi.Input[_builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         """
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "group_id", group_id)
@@ -93,8 +92,7 @@ class PropertyBootstrapArgs:
     @pulumi.getter(name="useHostnameBucket")
     def use_hostname_bucket(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-        incrementing property versions.
+        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         """
         return pulumi.get(self, "use_hostname_bucket")
 
@@ -119,8 +117,7 @@ class _PropertyBootstrapState:
         :param pulumi.Input[_builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[_builtins.str] product_id: Product ID to be assigned to the Property
-        :param pulumi.Input[_builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-               incrementing property versions.
+        :param pulumi.Input[_builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         """
         if asset_id is not None:
             pulumi.set(__self__, "asset_id", asset_id)
@@ -199,8 +196,7 @@ class _PropertyBootstrapState:
     @pulumi.getter(name="useHostnameBucket")
     def use_hostname_bucket(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-        incrementing property versions.
+        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         """
         return pulumi.get(self, "use_hostname_bucket")
 
@@ -229,8 +225,7 @@ class PropertyBootstrap(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[_builtins.str] product_id: Product ID to be assigned to the Property
-        :param pulumi.Input[_builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-               incrementing property versions.
+        :param pulumi.Input[_builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         """
         ...
     @overload
@@ -309,8 +304,7 @@ class PropertyBootstrap(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[_builtins.str] product_id: Product ID to be assigned to the Property
-        :param pulumi.Input[_builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-               incrementing property versions.
+        :param pulumi.Input[_builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -368,8 +362,7 @@ class PropertyBootstrap(pulumi.CustomResource):
     @pulumi.getter(name="useHostnameBucket")
     def use_hostname_bucket(self) -> pulumi.Output[_builtins.bool]:
         """
-        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-        incrementing property versions.
+        Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         """
         return pulumi.get(self, "use_hostname_bucket")
 

@@ -87,16 +87,14 @@ public class PropertyBootstrap extends com.pulumi.resources.CustomResource {
         return this.productId;
     }
     /**
-     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      * 
      */
     @Export(name="useHostnameBucket", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> useHostnameBucket;
 
     /**
-     * @return Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * @return Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      * 
      */
     public Output<Boolean> useHostnameBucket() {

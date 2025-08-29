@@ -32,9 +32,9 @@ export class BotmanServeAlternateAction extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanServeAlternateAction.__pulumiType;
     }
 
-    public /*out*/ readonly actionId!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
-    public readonly serveAlternateAction!: pulumi.Output<string>;
+    declare public /*out*/ readonly actionId: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly serveAlternateAction: pulumi.Output<string>;
 
     /**
      * Create a BotmanServeAlternateAction resource with the given unique name, arguments, and options.
@@ -49,19 +49,19 @@ export class BotmanServeAlternateAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanServeAlternateActionState | undefined;
-            resourceInputs["actionId"] = state ? state.actionId : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["serveAlternateAction"] = state ? state.serveAlternateAction : undefined;
+            resourceInputs["actionId"] = state?.actionId;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["serveAlternateAction"] = state?.serveAlternateAction;
         } else {
             const args = argsOrState as BotmanServeAlternateActionArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.serveAlternateAction === undefined) && !opts.urn) {
+            if (args?.serveAlternateAction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serveAlternateAction'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["serveAlternateAction"] = args ? args.serveAlternateAction : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["serveAlternateAction"] = args?.serveAlternateAction;
             resourceInputs["actionId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

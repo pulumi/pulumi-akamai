@@ -29,9 +29,7 @@ class CloudletsApplicationLoadBalancerArgs:
                  origin_description: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudletsApplicationLoadBalancer resource.
-        :param pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer
-               implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-               application load balancer configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         :param pulumi.Input[_builtins.str] origin_id: The conditional origin's unique identifier
         :param pulumi.Input[_builtins.str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
         :param pulumi.Input[_builtins.str] description: The load balancer configuration version description
@@ -52,9 +50,7 @@ class CloudletsApplicationLoadBalancerArgs:
     @pulumi.getter(name="dataCenters")
     def data_centers(self) -> pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]:
         """
-        The object containing information on conditional origins being used as data centers for an Application Load Balancer
-        implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-        application load balancer configuration.
+        The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         """
         return pulumi.get(self, "data_centers")
 
@@ -134,9 +130,7 @@ class _CloudletsApplicationLoadBalancerState:
         """
         Input properties used for looking up and filtering CloudletsApplicationLoadBalancer resources.
         :param pulumi.Input[_builtins.str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
-        :param pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer
-               implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-               application load balancer configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         :param pulumi.Input[_builtins.str] description: The load balancer configuration version description
         :param pulumi.Input[_builtins.str] origin_description: The load balancer configuration description
         :param pulumi.Input[_builtins.str] origin_id: The conditional origin's unique identifier
@@ -176,9 +170,7 @@ class _CloudletsApplicationLoadBalancerState:
     @pulumi.getter(name="dataCenters")
     def data_centers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]]:
         """
-        The object containing information on conditional origins being used as data centers for an Application Load Balancer
-        implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-        application load balancer configuration.
+        The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         """
         return pulumi.get(self, "data_centers")
 
@@ -274,9 +266,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer
-               implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-               application load balancer configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         :param pulumi.Input[_builtins.str] description: The load balancer configuration version description
         :param pulumi.Input[_builtins.str] origin_description: The load balancer configuration description
         :param pulumi.Input[_builtins.str] origin_id: The conditional origin's unique identifier
@@ -357,9 +347,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer
-               implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-               application load balancer configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         :param pulumi.Input[_builtins.str] description: The load balancer configuration version description
         :param pulumi.Input[_builtins.str] origin_description: The load balancer configuration description
         :param pulumi.Input[_builtins.str] origin_id: The conditional origin's unique identifier
@@ -392,9 +380,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
     @pulumi.getter(name="dataCenters")
     def data_centers(self) -> pulumi.Output[Sequence['outputs.CloudletsApplicationLoadBalancerDataCenter']]:
         """
-        The object containing information on conditional origins being used as data centers for an Application Load Balancer
-        implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-        application load balancer configuration.
+        The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         """
         return pulumi.get(self, "data_centers")
 

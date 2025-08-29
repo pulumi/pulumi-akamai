@@ -34,29 +34,28 @@ export class EdgeHostName extends pulumi.CustomResource {
         return obj['__pulumiType'] === EdgeHostName.__pulumiType;
     }
 
-    public readonly certificate!: pulumi.Output<number | undefined>;
-    public readonly contractId!: pulumi.Output<string>;
-    public readonly edgeHostname!: pulumi.Output<string>;
-    public readonly groupId!: pulumi.Output<string>;
-    public readonly ipBehavior!: pulumi.Output<string>;
-    public readonly productId!: pulumi.Output<string>;
+    declare public readonly certificate: pulumi.Output<number | undefined>;
+    declare public readonly contractId: pulumi.Output<string>;
+    declare public readonly edgeHostname: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
+    declare public readonly ipBehavior: pulumi.Output<string>;
+    declare public readonly productId: pulumi.Output<string>;
     /**
      * Email address that should receive updates on the IP behavior update request.
      */
-    public readonly statusUpdateEmails!: pulumi.Output<string[] | undefined>;
+    declare public readonly statusUpdateEmails: pulumi.Output<string[] | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.EdgeHostNameTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.EdgeHostNameTimeouts | undefined>;
     /**
-     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-     * value for product is used.
+     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
      */
-    public readonly ttl!: pulumi.Output<number | undefined>;
+    declare public readonly ttl: pulumi.Output<number | undefined>;
     /**
      * A JSON encoded list of use cases
      */
-    public readonly useCases!: pulumi.Output<string | undefined>;
+    declare public readonly useCases: pulumi.Output<string | undefined>;
 
     /**
      * Create a EdgeHostName resource with the given unique name, arguments, and options.
@@ -71,40 +70,40 @@ export class EdgeHostName extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EdgeHostNameState | undefined;
-            resourceInputs["certificate"] = state ? state.certificate : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["edgeHostname"] = state ? state.edgeHostname : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["ipBehavior"] = state ? state.ipBehavior : undefined;
-            resourceInputs["productId"] = state ? state.productId : undefined;
-            resourceInputs["statusUpdateEmails"] = state ? state.statusUpdateEmails : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["ttl"] = state ? state.ttl : undefined;
-            resourceInputs["useCases"] = state ? state.useCases : undefined;
+            resourceInputs["certificate"] = state?.certificate;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["edgeHostname"] = state?.edgeHostname;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["ipBehavior"] = state?.ipBehavior;
+            resourceInputs["productId"] = state?.productId;
+            resourceInputs["statusUpdateEmails"] = state?.statusUpdateEmails;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["ttl"] = state?.ttl;
+            resourceInputs["useCases"] = state?.useCases;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.edgeHostname === undefined) && !opts.urn) {
+            if (args?.edgeHostname === undefined && !opts.urn) {
                 throw new Error("Missing required property 'edgeHostname'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.ipBehavior === undefined) && !opts.urn) {
+            if (args?.ipBehavior === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipBehavior'");
             }
-            resourceInputs["certificate"] = args ? args.certificate : undefined;
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["edgeHostname"] = args ? args.edgeHostname : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["ipBehavior"] = args ? args.ipBehavior : undefined;
-            resourceInputs["productId"] = args ? args.productId : undefined;
-            resourceInputs["statusUpdateEmails"] = args ? args.statusUpdateEmails : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
-            resourceInputs["ttl"] = args ? args.ttl : undefined;
-            resourceInputs["useCases"] = args ? args.useCases : undefined;
+            resourceInputs["certificate"] = args?.certificate;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["edgeHostname"] = args?.edgeHostname;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["ipBehavior"] = args?.ipBehavior;
+            resourceInputs["productId"] = args?.productId;
+            resourceInputs["statusUpdateEmails"] = args?.statusUpdateEmails;
+            resourceInputs["timeouts"] = args?.timeouts;
+            resourceInputs["ttl"] = args?.ttl;
+            resourceInputs["useCases"] = args?.useCases;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:properties/edgeHostName:EdgeHostName" }] };
@@ -132,8 +131,7 @@ export interface EdgeHostNameState {
      */
     timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts>;
     /**
-     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-     * value for product is used.
+     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
      */
     ttl?: pulumi.Input<number>;
     /**
@@ -161,8 +159,7 @@ export interface EdgeHostNameArgs {
      */
     timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts>;
     /**
-     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-     * value for product is used.
+     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
      */
     ttl?: pulumi.Input<number>;
     /**

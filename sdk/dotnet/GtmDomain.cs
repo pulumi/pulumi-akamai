@@ -115,8 +115,7 @@ namespace Pulumi.Akamai
         public Output<bool?> SignAndServe { get; private set; } = null!;
 
         /// <summary>
-        /// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-        /// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        /// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         /// </summary>
         [Output("signAndServeAlgorithm")]
         public Output<string?> SignAndServeAlgorithm { get; private set; } = null!;
@@ -228,8 +227,7 @@ namespace Pulumi.Akamai
         public Input<bool>? SignAndServe { get; set; }
 
         /// <summary>
-        /// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-        /// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        /// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         /// </summary>
         [Input("signAndServeAlgorithm")]
         public Input<string>? SignAndServeAlgorithm { get; set; }
@@ -356,8 +354,7 @@ namespace Pulumi.Akamai
         public Input<bool>? SignAndServe { get; set; }
 
         /// <summary>
-        /// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-        /// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        /// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         /// </summary>
         [Input("signAndServeAlgorithm")]
         public Input<string>? SignAndServeAlgorithm { get; set; }

@@ -32,9 +32,9 @@ export class BotmanJavascriptInjection extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanJavascriptInjection.__pulumiType;
     }
 
-    public readonly configId!: pulumi.Output<number>;
-    public readonly javascriptInjection!: pulumi.Output<string>;
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly javascriptInjection: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a BotmanJavascriptInjection resource with the given unique name, arguments, and options.
@@ -49,23 +49,23 @@ export class BotmanJavascriptInjection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanJavascriptInjectionState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["javascriptInjection"] = state ? state.javascriptInjection : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["javascriptInjection"] = state?.javascriptInjection;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as BotmanJavascriptInjectionArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.javascriptInjection === undefined) && !opts.urn) {
+            if (args?.javascriptInjection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'javascriptInjection'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["javascriptInjection"] = args ? args.javascriptInjection : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["javascriptInjection"] = args?.javascriptInjection;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanJavascriptInjection.__pulumiType, name, resourceInputs, opts);

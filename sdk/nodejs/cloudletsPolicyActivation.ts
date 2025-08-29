@@ -37,31 +37,31 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
     /**
      * Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      */
-    public readonly associatedProperties!: pulumi.Output<string[] | undefined>;
+    declare public readonly associatedProperties: pulumi.Output<string[] | undefined>;
     /**
      * Indicates if policy that is being activated is a shared policy
      */
-    public /*out*/ readonly isShared!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isShared: pulumi.Output<boolean>;
     /**
      * The network you want to activate the policy version on (options are Staging and Production)
      */
-    public readonly network!: pulumi.Output<string>;
+    declare public readonly network: pulumi.Output<string>;
     /**
      * ID of the Cloudlets policy you want to activate
      */
-    public readonly policyId!: pulumi.Output<number>;
+    declare public readonly policyId: pulumi.Output<number>;
     /**
      * Activation status for this Cloudlets policy
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.CloudletsPolicyActivationTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.CloudletsPolicyActivationTimeouts | undefined>;
     /**
      * Cloudlets policy version you want to activate
      */
-    public readonly version!: pulumi.Output<number>;
+    declare public readonly version: pulumi.Output<number>;
 
     /**
      * Create a CloudletsPolicyActivation resource with the given unique name, arguments, and options.
@@ -76,29 +76,29 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudletsPolicyActivationState | undefined;
-            resourceInputs["associatedProperties"] = state ? state.associatedProperties : undefined;
-            resourceInputs["isShared"] = state ? state.isShared : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["policyId"] = state ? state.policyId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["associatedProperties"] = state?.associatedProperties;
+            resourceInputs["isShared"] = state?.isShared;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["policyId"] = state?.policyId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as CloudletsPolicyActivationArgs | undefined;
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            if ((!args || args.policyId === undefined) && !opts.urn) {
+            if (args?.policyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["associatedProperties"] = args ? args.associatedProperties : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["policyId"] = args ? args.policyId : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["associatedProperties"] = args?.associatedProperties;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["policyId"] = args?.policyId;
+            resourceInputs["timeouts"] = args?.timeouts;
+            resourceInputs["version"] = args?.version;
             resourceInputs["isShared"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
         }

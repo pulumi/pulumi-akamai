@@ -37,12 +37,12 @@ export class CloudwrapperActivation extends pulumi.CustomResource {
     /**
      * The configuration you want to activate.
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Unique hash value of the configuration.
      */
-    public readonly revision!: pulumi.Output<string>;
-    public readonly timeouts!: pulumi.Output<outputs.CloudwrapperActivationTimeouts | undefined>;
+    declare public readonly revision: pulumi.Output<string>;
+    declare public readonly timeouts: pulumi.Output<outputs.CloudwrapperActivationTimeouts | undefined>;
 
     /**
      * Create a CloudwrapperActivation resource with the given unique name, arguments, and options.
@@ -57,20 +57,20 @@ export class CloudwrapperActivation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudwrapperActivationState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["revision"] = state ? state.revision : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["revision"] = state?.revision;
+            resourceInputs["timeouts"] = state?.timeouts;
         } else {
             const args = argsOrState as CloudwrapperActivationArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.revision === undefined) && !opts.urn) {
+            if (args?.revision === undefined && !opts.urn) {
                 throw new Error("Missing required property 'revision'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["revision"] = args ? args.revision : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["revision"] = args?.revision;
+            resourceInputs["timeouts"] = args?.timeouts;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudwrapperActivation.__pulumiType, name, resourceInputs, opts);

@@ -32,10 +32,10 @@ export class BotmanAkamaiBotCategoryAction extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanAkamaiBotCategoryAction.__pulumiType;
     }
 
-    public readonly akamaiBotCategoryAction!: pulumi.Output<string>;
-    public readonly categoryId!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly akamaiBotCategoryAction: pulumi.Output<string>;
+    declare public readonly categoryId: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a BotmanAkamaiBotCategoryAction resource with the given unique name, arguments, and options.
@@ -50,28 +50,28 @@ export class BotmanAkamaiBotCategoryAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanAkamaiBotCategoryActionState | undefined;
-            resourceInputs["akamaiBotCategoryAction"] = state ? state.akamaiBotCategoryAction : undefined;
-            resourceInputs["categoryId"] = state ? state.categoryId : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["akamaiBotCategoryAction"] = state?.akamaiBotCategoryAction;
+            resourceInputs["categoryId"] = state?.categoryId;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as BotmanAkamaiBotCategoryActionArgs | undefined;
-            if ((!args || args.akamaiBotCategoryAction === undefined) && !opts.urn) {
+            if (args?.akamaiBotCategoryAction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'akamaiBotCategoryAction'");
             }
-            if ((!args || args.categoryId === undefined) && !opts.urn) {
+            if (args?.categoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'categoryId'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["akamaiBotCategoryAction"] = args ? args.akamaiBotCategoryAction : undefined;
-            resourceInputs["categoryId"] = args ? args.categoryId : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["akamaiBotCategoryAction"] = args?.akamaiBotCategoryAction;
+            resourceInputs["categoryId"] = args?.categoryId;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanAkamaiBotCategoryAction.__pulumiType, name, resourceInputs, opts);

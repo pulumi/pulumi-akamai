@@ -35,28 +35,27 @@ export class PropertyBootstrap extends pulumi.CustomResource {
     /**
      * ID of the property in the Identity and Access Management API.
      */
-    public /*out*/ readonly assetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly assetId: pulumi.Output<string>;
     /**
      * Contract ID to be assigned to the Property
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * Group ID to be assigned to the Property
      */
-    public readonly groupId!: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
     /**
      * Name to give to the Property (must be unique)
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Product ID to be assigned to the Property
      */
-    public readonly productId!: pulumi.Output<string>;
+    declare public readonly productId: pulumi.Output<string>;
     /**
-     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
-    public readonly useHostnameBucket!: pulumi.Output<boolean>;
+    declare public readonly useHostnameBucket: pulumi.Output<boolean>;
 
     /**
      * Create a PropertyBootstrap resource with the given unique name, arguments, and options.
@@ -71,28 +70,28 @@ export class PropertyBootstrap extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyBootstrapState | undefined;
-            resourceInputs["assetId"] = state ? state.assetId : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["productId"] = state ? state.productId : undefined;
-            resourceInputs["useHostnameBucket"] = state ? state.useHostnameBucket : undefined;
+            resourceInputs["assetId"] = state?.assetId;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["productId"] = state?.productId;
+            resourceInputs["useHostnameBucket"] = state?.useHostnameBucket;
         } else {
             const args = argsOrState as PropertyBootstrapArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.productId === undefined) && !opts.urn) {
+            if (args?.productId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'productId'");
             }
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["productId"] = args ? args.productId : undefined;
-            resourceInputs["useHostnameBucket"] = args ? args.useHostnameBucket : undefined;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["productId"] = args?.productId;
+            resourceInputs["useHostnameBucket"] = args?.useHostnameBucket;
             resourceInputs["assetId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -125,8 +124,7 @@ export interface PropertyBootstrapState {
      */
     productId?: pulumi.Input<string>;
     /**
-     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
     useHostnameBucket?: pulumi.Input<boolean>;
 }
@@ -152,8 +150,7 @@ export interface PropertyBootstrapArgs {
      */
     productId: pulumi.Input<string>;
     /**
-     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
     useHostnameBucket?: pulumi.Input<boolean>;
 }

@@ -85,16 +85,14 @@ public class EdgeHostName extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.timeouts);
     }
     /**
-     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-     * value for product is used.
+     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
      * 
      */
     @Export(name="ttl", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> ttl;
 
     /**
-     * @return The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-     * value for product is used.
+     * @return The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
      * 
      */
     public Output<Optional<Integer>> ttl() {

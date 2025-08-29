@@ -35,28 +35,27 @@ export class AppSecSlowPost extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
-     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-     * specified action
+     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
      */
-    public readonly durationThresholdTimeout!: pulumi.Output<number | undefined>;
+    declare public readonly durationThresholdTimeout: pulumi.Output<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
     /**
      * Action to be taken when slow POST protection is triggered
      */
-    public readonly slowRateAction!: pulumi.Output<string>;
+    declare public readonly slowRateAction: pulumi.Output<string>;
     /**
      * Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
      */
-    public readonly slowRateThresholdPeriod!: pulumi.Output<number | undefined>;
+    declare public readonly slowRateThresholdPeriod: pulumi.Output<number | undefined>;
     /**
      * Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
      */
-    public readonly slowRateThresholdRate!: pulumi.Output<number | undefined>;
+    declare public readonly slowRateThresholdRate: pulumi.Output<number | undefined>;
 
     /**
      * Create a AppSecSlowPost resource with the given unique name, arguments, and options.
@@ -71,29 +70,29 @@ export class AppSecSlowPost extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecSlowPostState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["durationThresholdTimeout"] = state ? state.durationThresholdTimeout : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            resourceInputs["slowRateAction"] = state ? state.slowRateAction : undefined;
-            resourceInputs["slowRateThresholdPeriod"] = state ? state.slowRateThresholdPeriod : undefined;
-            resourceInputs["slowRateThresholdRate"] = state ? state.slowRateThresholdRate : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["durationThresholdTimeout"] = state?.durationThresholdTimeout;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
+            resourceInputs["slowRateAction"] = state?.slowRateAction;
+            resourceInputs["slowRateThresholdPeriod"] = state?.slowRateThresholdPeriod;
+            resourceInputs["slowRateThresholdRate"] = state?.slowRateThresholdRate;
         } else {
             const args = argsOrState as AppSecSlowPostArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.slowRateAction === undefined) && !opts.urn) {
+            if (args?.slowRateAction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'slowRateAction'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["durationThresholdTimeout"] = args ? args.durationThresholdTimeout : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            resourceInputs["slowRateAction"] = args ? args.slowRateAction : undefined;
-            resourceInputs["slowRateThresholdPeriod"] = args ? args.slowRateThresholdPeriod : undefined;
-            resourceInputs["slowRateThresholdRate"] = args ? args.slowRateThresholdRate : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["durationThresholdTimeout"] = args?.durationThresholdTimeout;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
+            resourceInputs["slowRateAction"] = args?.slowRateAction;
+            resourceInputs["slowRateThresholdPeriod"] = args?.slowRateThresholdPeriod;
+            resourceInputs["slowRateThresholdRate"] = args?.slowRateThresholdRate;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecSlowPost.__pulumiType, name, resourceInputs, opts);
@@ -109,8 +108,7 @@ export interface AppSecSlowPostState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-     * specified action
+     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
      */
     durationThresholdTimeout?: pulumi.Input<number>;
     /**
@@ -140,8 +138,7 @@ export interface AppSecSlowPostArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-     * specified action
+     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
      */
     durationThresholdTimeout?: pulumi.Input<number>;
     /**

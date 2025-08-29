@@ -35,15 +35,15 @@ export class AppsecAdvancedSettingsAttackPayloadLogging extends pulumi.CustomRes
     /**
      * Whether to enable, disable, or update attack payload logging settings
      */
-    public readonly attackPayloadLogging!: pulumi.Output<string>;
+    declare public readonly attackPayloadLogging: pulumi.Output<string>;
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string | undefined>;
+    declare public readonly securityPolicyId: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppsecAdvancedSettingsAttackPayloadLogging resource with the given unique name, arguments, and options.
@@ -58,20 +58,20 @@ export class AppsecAdvancedSettingsAttackPayloadLogging extends pulumi.CustomRes
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppsecAdvancedSettingsAttackPayloadLoggingState | undefined;
-            resourceInputs["attackPayloadLogging"] = state ? state.attackPayloadLogging : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["attackPayloadLogging"] = state?.attackPayloadLogging;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppsecAdvancedSettingsAttackPayloadLoggingArgs | undefined;
-            if ((!args || args.attackPayloadLogging === undefined) && !opts.urn) {
+            if (args?.attackPayloadLogging === undefined && !opts.urn) {
                 throw new Error("Missing required property 'attackPayloadLogging'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            resourceInputs["attackPayloadLogging"] = args ? args.attackPayloadLogging : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["attackPayloadLogging"] = args?.attackPayloadLogging;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppsecAdvancedSettingsAttackPayloadLogging.__pulumiType, name, resourceInputs, opts);

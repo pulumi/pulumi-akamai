@@ -35,15 +35,15 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * JSON-formatted definition of the match target
      */
-    public readonly matchTarget!: pulumi.Output<string>;
+    declare public readonly matchTarget: pulumi.Output<string>;
     /**
      * Unique identifier of the match target
      */
-    public /*out*/ readonly matchTargetId!: pulumi.Output<number>;
+    declare public /*out*/ readonly matchTargetId: pulumi.Output<number>;
 
     /**
      * Create a AppSecMatchTarget resource with the given unique name, arguments, and options.
@@ -58,19 +58,19 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecMatchTargetState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["matchTarget"] = state ? state.matchTarget : undefined;
-            resourceInputs["matchTargetId"] = state ? state.matchTargetId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["matchTarget"] = state?.matchTarget;
+            resourceInputs["matchTargetId"] = state?.matchTargetId;
         } else {
             const args = argsOrState as AppSecMatchTargetArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.matchTarget === undefined) && !opts.urn) {
+            if (args?.matchTarget === undefined && !opts.urn) {
                 throw new Error("Missing required property 'matchTarget'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["matchTarget"] = args ? args.matchTarget : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["matchTarget"] = args?.matchTarget;
             resourceInputs["matchTargetId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

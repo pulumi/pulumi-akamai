@@ -120,16 +120,14 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-     * identifiers define how the value for these fields appear in the log lines
+     * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
      * 
      */
     @Import(name="datasetFields")
     private @Nullable Output<List<Integer>> datasetFields;
 
     /**
-     * @return A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-     * identifiers define how the value for these fields appear in the log lines
+     * @return A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
      * 
      */
     public Optional<Output<List<Integer>>> datasetFields() {
@@ -539,8 +537,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param datasetFields A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-         * identifiers define how the value for these fields appear in the log lines
+         * @param datasetFields A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
          * 
          * @return builder
          * 
@@ -551,8 +548,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param datasetFields A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-         * identifiers define how the value for these fields appear in the log lines
+         * @param datasetFields A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
          * 
          * @return builder
          * 
@@ -562,8 +558,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param datasetFields A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-         * identifiers define how the value for these fields appear in the log lines
+         * @param datasetFields A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
          * 
          * @return builder
          * 

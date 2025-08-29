@@ -32,9 +32,9 @@ export class BotmanBotManagementSettings extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanBotManagementSettings.__pulumiType;
     }
 
-    public readonly botManagementSettings!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly botManagementSettings: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a BotmanBotManagementSettings resource with the given unique name, arguments, and options.
@@ -49,23 +49,23 @@ export class BotmanBotManagementSettings extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanBotManagementSettingsState | undefined;
-            resourceInputs["botManagementSettings"] = state ? state.botManagementSettings : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["botManagementSettings"] = state?.botManagementSettings;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as BotmanBotManagementSettingsArgs | undefined;
-            if ((!args || args.botManagementSettings === undefined) && !opts.urn) {
+            if (args?.botManagementSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'botManagementSettings'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["botManagementSettings"] = args ? args.botManagementSettings : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["botManagementSettings"] = args?.botManagementSettings;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanBotManagementSettings.__pulumiType, name, resourceInputs, opts);

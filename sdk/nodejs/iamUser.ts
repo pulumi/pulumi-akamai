@@ -37,111 +37,111 @@ export class IamUser extends pulumi.CustomResource {
     /**
      * The user's street address.
      */
-    public readonly address!: pulumi.Output<string>;
+    declare public readonly address: pulumi.Output<string>;
     /**
      * A user's per-group role assignments, in JSON form.
      */
-    public readonly authGrantsJson!: pulumi.Output<string>;
+    declare public readonly authGrantsJson: pulumi.Output<string>;
     /**
      * The user's city.
      */
-    public readonly city!: pulumi.Output<string | undefined>;
+    declare public readonly city: pulumi.Output<string | undefined>;
     /**
      * To help characterize the user, the value can be any that are available from the view-contact-types operation.
      */
-    public readonly contactType!: pulumi.Output<string>;
+    declare public readonly contactType: pulumi.Output<string>;
     /**
      * As part of the user's location, the value can be any that are available from the view-supported-countries operation.
      */
-    public readonly country!: pulumi.Output<string>;
+    declare public readonly country: pulumi.Output<string>;
     /**
      * The user's email address.
      */
-    public readonly email!: pulumi.Output<string>;
+    declare public readonly email: pulumi.Output<string>;
     /**
      * Indicates whether email update is pending.
      */
-    public /*out*/ readonly emailUpdatePending!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly emailUpdatePending: pulumi.Output<boolean>;
     /**
      * Indicates whether multi-factor authentication is allowed.
      */
-    public readonly enableMfa!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableMfa: pulumi.Output<boolean | undefined>;
     /**
      * Indicates whether two-factor authentication is allowed.
      */
-    public readonly enableTfa!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableTfa: pulumi.Output<boolean | undefined>;
     /**
      * The user's first name.
      */
-    public readonly firstName!: pulumi.Output<string>;
+    declare public readonly firstName: pulumi.Output<string>;
     /**
      * The user's position at your company.
      */
-    public readonly jobTitle!: pulumi.Output<string | undefined>;
+    declare public readonly jobTitle: pulumi.Output<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the user last logged in.
      */
-    public /*out*/ readonly lastLogin!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastLogin: pulumi.Output<string>;
     /**
      * The user's surname.
      */
-    public readonly lastName!: pulumi.Output<string>;
+    declare public readonly lastName: pulumi.Output<string>;
     /**
      * Flag to block a user account.
      */
-    public readonly lock!: pulumi.Output<boolean | undefined>;
+    declare public readonly lock: pulumi.Output<boolean | undefined>;
     /**
      * The user's mobile phone number.
      */
-    public readonly mobilePhone!: pulumi.Output<string | undefined>;
+    declare public readonly mobilePhone: pulumi.Output<string | undefined>;
     /**
      * New password for a user.
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * The date a user's password expires.
      */
-    public /*out*/ readonly passwordExpiredAfter!: pulumi.Output<string>;
+    declare public /*out*/ readonly passwordExpiredAfter: pulumi.Output<string>;
     /**
      * The user's main phone number.
      */
-    public readonly phone!: pulumi.Output<string | undefined>;
+    declare public readonly phone: pulumi.Output<string | undefined>;
     /**
      * The value can be any that are available from the view-languages operation.
      */
-    public readonly preferredLanguage!: pulumi.Output<string>;
+    declare public readonly preferredLanguage: pulumi.Output<string>;
     /**
      * The user's secondary email address.
      */
-    public readonly secondaryEmail!: pulumi.Output<string | undefined>;
+    declare public readonly secondaryEmail: pulumi.Output<string | undefined>;
     /**
      * The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
      */
-    public readonly sessionTimeout!: pulumi.Output<number>;
+    declare public readonly sessionTimeout: pulumi.Output<number>;
     /**
      * The user's state.
      */
-    public readonly state!: pulumi.Output<string | undefined>;
+    declare public readonly state: pulumi.Output<string | undefined>;
     /**
      * Indicates whether two-factor authentication is configured.
      */
-    public /*out*/ readonly tfaConfigured!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly tfaConfigured: pulumi.Output<boolean>;
     /**
      * The user's time zone. The value can be any that are available from the view-time-zones operation.
      */
-    public readonly timeZone!: pulumi.Output<string>;
+    declare public readonly timeZone: pulumi.Output<string>;
     /**
      * A user's `loginId`. Typically, a user's email address.
      */
-    public /*out*/ readonly userName!: pulumi.Output<string>;
+    declare public /*out*/ readonly userName: pulumi.Output<string>;
     /**
      * Specifies email notifications the user receives for products.
      */
-    public readonly userNotifications!: pulumi.Output<outputs.IamUserUserNotifications>;
+    declare public readonly userNotifications: pulumi.Output<outputs.IamUserUserNotifications>;
     /**
      * The user's five-digit ZIP code.
      */
-    public readonly zipCode!: pulumi.Output<string | undefined>;
+    declare public readonly zipCode: pulumi.Output<string | undefined>;
 
     /**
      * Create a IamUser resource with the given unique name, arguments, and options.
@@ -156,72 +156,72 @@ export class IamUser extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamUserState | undefined;
-            resourceInputs["address"] = state ? state.address : undefined;
-            resourceInputs["authGrantsJson"] = state ? state.authGrantsJson : undefined;
-            resourceInputs["city"] = state ? state.city : undefined;
-            resourceInputs["contactType"] = state ? state.contactType : undefined;
-            resourceInputs["country"] = state ? state.country : undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["emailUpdatePending"] = state ? state.emailUpdatePending : undefined;
-            resourceInputs["enableMfa"] = state ? state.enableMfa : undefined;
-            resourceInputs["enableTfa"] = state ? state.enableTfa : undefined;
-            resourceInputs["firstName"] = state ? state.firstName : undefined;
-            resourceInputs["jobTitle"] = state ? state.jobTitle : undefined;
-            resourceInputs["lastLogin"] = state ? state.lastLogin : undefined;
-            resourceInputs["lastName"] = state ? state.lastName : undefined;
-            resourceInputs["lock"] = state ? state.lock : undefined;
-            resourceInputs["mobilePhone"] = state ? state.mobilePhone : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["passwordExpiredAfter"] = state ? state.passwordExpiredAfter : undefined;
-            resourceInputs["phone"] = state ? state.phone : undefined;
-            resourceInputs["preferredLanguage"] = state ? state.preferredLanguage : undefined;
-            resourceInputs["secondaryEmail"] = state ? state.secondaryEmail : undefined;
-            resourceInputs["sessionTimeout"] = state ? state.sessionTimeout : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["tfaConfigured"] = state ? state.tfaConfigured : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["userName"] = state ? state.userName : undefined;
-            resourceInputs["userNotifications"] = state ? state.userNotifications : undefined;
-            resourceInputs["zipCode"] = state ? state.zipCode : undefined;
+            resourceInputs["address"] = state?.address;
+            resourceInputs["authGrantsJson"] = state?.authGrantsJson;
+            resourceInputs["city"] = state?.city;
+            resourceInputs["contactType"] = state?.contactType;
+            resourceInputs["country"] = state?.country;
+            resourceInputs["email"] = state?.email;
+            resourceInputs["emailUpdatePending"] = state?.emailUpdatePending;
+            resourceInputs["enableMfa"] = state?.enableMfa;
+            resourceInputs["enableTfa"] = state?.enableTfa;
+            resourceInputs["firstName"] = state?.firstName;
+            resourceInputs["jobTitle"] = state?.jobTitle;
+            resourceInputs["lastLogin"] = state?.lastLogin;
+            resourceInputs["lastName"] = state?.lastName;
+            resourceInputs["lock"] = state?.lock;
+            resourceInputs["mobilePhone"] = state?.mobilePhone;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["passwordExpiredAfter"] = state?.passwordExpiredAfter;
+            resourceInputs["phone"] = state?.phone;
+            resourceInputs["preferredLanguage"] = state?.preferredLanguage;
+            resourceInputs["secondaryEmail"] = state?.secondaryEmail;
+            resourceInputs["sessionTimeout"] = state?.sessionTimeout;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["tfaConfigured"] = state?.tfaConfigured;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["userName"] = state?.userName;
+            resourceInputs["userNotifications"] = state?.userNotifications;
+            resourceInputs["zipCode"] = state?.zipCode;
         } else {
             const args = argsOrState as IamUserArgs | undefined;
-            if ((!args || args.authGrantsJson === undefined) && !opts.urn) {
+            if (args?.authGrantsJson === undefined && !opts.urn) {
                 throw new Error("Missing required property 'authGrantsJson'");
             }
-            if ((!args || args.country === undefined) && !opts.urn) {
+            if (args?.country === undefined && !opts.urn) {
                 throw new Error("Missing required property 'country'");
             }
-            if ((!args || args.email === undefined) && !opts.urn) {
+            if (args?.email === undefined && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
-            if ((!args || args.firstName === undefined) && !opts.urn) {
+            if (args?.firstName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'firstName'");
             }
-            if ((!args || args.lastName === undefined) && !opts.urn) {
+            if (args?.lastName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lastName'");
             }
-            resourceInputs["address"] = args ? args.address : undefined;
-            resourceInputs["authGrantsJson"] = args ? args.authGrantsJson : undefined;
-            resourceInputs["city"] = args ? args.city : undefined;
-            resourceInputs["contactType"] = args ? args.contactType : undefined;
-            resourceInputs["country"] = args ? args.country : undefined;
-            resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["enableMfa"] = args ? args.enableMfa : undefined;
-            resourceInputs["enableTfa"] = args ? args.enableTfa : undefined;
-            resourceInputs["firstName"] = args ? args.firstName : undefined;
-            resourceInputs["jobTitle"] = args ? args.jobTitle : undefined;
-            resourceInputs["lastName"] = args ? args.lastName : undefined;
-            resourceInputs["lock"] = args ? args.lock : undefined;
-            resourceInputs["mobilePhone"] = args ? args.mobilePhone : undefined;
+            resourceInputs["address"] = args?.address;
+            resourceInputs["authGrantsJson"] = args?.authGrantsJson;
+            resourceInputs["city"] = args?.city;
+            resourceInputs["contactType"] = args?.contactType;
+            resourceInputs["country"] = args?.country;
+            resourceInputs["email"] = args?.email;
+            resourceInputs["enableMfa"] = args?.enableMfa;
+            resourceInputs["enableTfa"] = args?.enableTfa;
+            resourceInputs["firstName"] = args?.firstName;
+            resourceInputs["jobTitle"] = args?.jobTitle;
+            resourceInputs["lastName"] = args?.lastName;
+            resourceInputs["lock"] = args?.lock;
+            resourceInputs["mobilePhone"] = args?.mobilePhone;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["phone"] = args ? args.phone : undefined;
-            resourceInputs["preferredLanguage"] = args ? args.preferredLanguage : undefined;
-            resourceInputs["secondaryEmail"] = args ? args.secondaryEmail : undefined;
-            resourceInputs["sessionTimeout"] = args ? args.sessionTimeout : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["timeZone"] = args ? args.timeZone : undefined;
-            resourceInputs["userNotifications"] = args ? args.userNotifications : undefined;
-            resourceInputs["zipCode"] = args ? args.zipCode : undefined;
+            resourceInputs["phone"] = args?.phone;
+            resourceInputs["preferredLanguage"] = args?.preferredLanguage;
+            resourceInputs["secondaryEmail"] = args?.secondaryEmail;
+            resourceInputs["sessionTimeout"] = args?.sessionTimeout;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["timeZone"] = args?.timeZone;
+            resourceInputs["userNotifications"] = args?.userNotifications;
+            resourceInputs["zipCode"] = args?.zipCode;
             resourceInputs["emailUpdatePending"] = undefined /*out*/;
             resourceInputs["lastLogin"] = undefined /*out*/;
             resourceInputs["passwordExpiredAfter"] = undefined /*out*/;

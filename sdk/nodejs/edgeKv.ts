@@ -35,23 +35,23 @@ export class EdgeKv extends pulumi.CustomResource {
     /**
      * Storage location for data
      */
-    public readonly geoLocation!: pulumi.Output<string | undefined>;
+    declare public readonly geoLocation: pulumi.Output<string | undefined>;
     /**
      * Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      */
-    public readonly groupId!: pulumi.Output<number>;
+    declare public readonly groupId: pulumi.Output<number>;
     /**
      * Name for the EKV namespace
      */
-    public readonly namespaceName!: pulumi.Output<string>;
+    declare public readonly namespaceName: pulumi.Output<string>;
     /**
      * The network on which the namespace will be activated
      */
-    public readonly network!: pulumi.Output<string>;
+    declare public readonly network: pulumi.Output<string>;
     /**
      * Retention period for data in this namespace. An update of this value will just affect new EKV items.
      */
-    public readonly retentionInSeconds!: pulumi.Output<number>;
+    declare public readonly retentionInSeconds: pulumi.Output<number>;
 
     /**
      * Create a EdgeKv resource with the given unique name, arguments, and options.
@@ -66,30 +66,30 @@ export class EdgeKv extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EdgeKvState | undefined;
-            resourceInputs["geoLocation"] = state ? state.geoLocation : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["namespaceName"] = state ? state.namespaceName : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["retentionInSeconds"] = state ? state.retentionInSeconds : undefined;
+            resourceInputs["geoLocation"] = state?.geoLocation;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["namespaceName"] = state?.namespaceName;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["retentionInSeconds"] = state?.retentionInSeconds;
         } else {
             const args = argsOrState as EdgeKvArgs | undefined;
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.namespaceName === undefined) && !opts.urn) {
+            if (args?.namespaceName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespaceName'");
             }
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            if ((!args || args.retentionInSeconds === undefined) && !opts.urn) {
+            if (args?.retentionInSeconds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'retentionInSeconds'");
             }
-            resourceInputs["geoLocation"] = args ? args.geoLocation : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["namespaceName"] = args ? args.namespaceName : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["retentionInSeconds"] = args ? args.retentionInSeconds : undefined;
+            resourceInputs["geoLocation"] = args?.geoLocation;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["namespaceName"] = args?.namespaceName;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["retentionInSeconds"] = args?.retentionInSeconds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(EdgeKv.__pulumiType, name, resourceInputs, opts);

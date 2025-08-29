@@ -21,8 +21,7 @@ type NetworkList struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// group ID
 	GroupId pulumi.IntPtrOutput `pulumi:"groupId"`
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-	// list
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
 	Lists pulumi.StringArrayOutput `pulumi:"lists"`
 	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode pulumi.StringOutput `pulumi:"mode"`
@@ -83,8 +82,7 @@ type networkListState struct {
 	Description *string `pulumi:"description"`
 	// group ID
 	GroupId *int `pulumi:"groupId"`
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-	// list
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
 	Lists []string `pulumi:"lists"`
 	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode *string `pulumi:"mode"`
@@ -107,8 +105,7 @@ type NetworkListState struct {
 	Description pulumi.StringPtrInput
 	// group ID
 	GroupId pulumi.IntPtrInput
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-	// list
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
 	Lists pulumi.StringArrayInput
 	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode pulumi.StringPtrInput
@@ -135,8 +132,7 @@ type networkListArgs struct {
 	Description string `pulumi:"description"`
 	// group ID
 	GroupId *int `pulumi:"groupId"`
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-	// list
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
 	Lists []string `pulumi:"lists"`
 	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode string `pulumi:"mode"`
@@ -154,8 +150,7 @@ type NetworkListArgs struct {
 	Description pulumi.StringInput
 	// group ID
 	GroupId pulumi.IntPtrInput
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-	// list
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
 	Lists pulumi.StringArrayInput
 	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode pulumi.StringInput
@@ -267,8 +262,7 @@ func (o NetworkListOutput) GroupId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.IntPtrOutput { return v.GroupId }).(pulumi.IntPtrOutput)
 }
 
-// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
-// list
+// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
 func (o NetworkListOutput) Lists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.StringArrayOutput { return v.Lists }).(pulumi.StringArrayOutput)
 }

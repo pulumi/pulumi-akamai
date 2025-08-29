@@ -37,11 +37,9 @@ class IamApiClientArgs:
         """
         The set of arguments for constructing a IamApiClient resource.
         :param pulumi.Input['IamApiClientApiAccessArgs'] api_access: The APIs the API client can access.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-               username in an array.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         :param pulumi.Input[_builtins.str] client_name: A human-readable name for the API client.
-        :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-               credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         :param pulumi.Input['IamApiClientGroupAccessArgs'] group_access: Specifies the API client's group access.
         :param pulumi.Input[_builtins.bool] allow_account_switch: Enables the API client to manage more than one account.
         :param pulumi.Input[_builtins.bool] can_auto_create_credential: Whether the API client can create a credential for a new API client. The default is false.
@@ -49,8 +47,7 @@ class IamApiClientArgs:
         :param pulumi.Input['IamApiClientIpAclArgs'] ip_acl: Specifies the API client's IP list restriction.
         :param pulumi.Input[_builtins.bool] lock: Whether to lock or unlock the API client.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: Email addresses to notify users when credentials expire.
-        :param pulumi.Input['IamApiClientPurgeOptionsArgs'] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-               of `CCU API`.
+        :param pulumi.Input['IamApiClientPurgeOptionsArgs'] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         pulumi.set(__self__, "api_access", api_access)
         pulumi.set(__self__, "authorized_users", authorized_users)
@@ -89,8 +86,7 @@ class IamApiClientArgs:
     @pulumi.getter(name="authorizedUsers")
     def authorized_users(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
-        The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-        username in an array.
+        The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         """
         return pulumi.get(self, "authorized_users")
 
@@ -114,8 +110,7 @@ class IamApiClientArgs:
     @pulumi.getter(name="clientType")
     def client_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-        credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         """
         return pulumi.get(self, "client_type")
 
@@ -220,8 +215,7 @@ class IamApiClientArgs:
     @pulumi.getter(name="purgeOptions")
     def purge_options(self) -> Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']]:
         """
-        Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-        of `CCU API`.
+        Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         return pulumi.get(self, "purge_options")
 
@@ -257,27 +251,23 @@ class _IamApiClientState:
         Input properties used for looking up and filtering IamApiClient resources.
         :param pulumi.Input[_builtins.str] access_token: The part of the client secret that identifies your API client and lets you access applications and resources.
         :param pulumi.Input['IamApiClientActionsArgs'] actions: Specifies activities available for the API client.
-        :param pulumi.Input[_builtins.int] active_credential_count: The number of credentials active for the API client. When the count is zero, you can delete the API client without
-               interruption.
+        :param pulumi.Input[_builtins.int] active_credential_count: The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
         :param pulumi.Input[_builtins.bool] allow_account_switch: Enables the API client to manage more than one account.
         :param pulumi.Input['IamApiClientApiAccessArgs'] api_access: The APIs the API client can access.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-               username in an array.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         :param pulumi.Input[_builtins.str] base_url: The base URL for the service.
         :param pulumi.Input[_builtins.bool] can_auto_create_credential: Whether the API client can create a credential for a new API client. The default is false.
         :param pulumi.Input[_builtins.str] client_description: A human-readable description of the API client.
         :param pulumi.Input[_builtins.str] client_id: A unique identifier for the API client.
         :param pulumi.Input[_builtins.str] client_name: A human-readable name for the API client.
-        :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-               credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         :param pulumi.Input[_builtins.str] created_by: The user who created the API client.
         :param pulumi.Input[_builtins.str] created_date: The ISO 8601 timestamp indicating when the API client was created.
         :param pulumi.Input['IamApiClientGroupAccessArgs'] group_access: Specifies the API client's group access.
         :param pulumi.Input['IamApiClientIpAclArgs'] ip_acl: Specifies the API client's IP list restriction.
         :param pulumi.Input[_builtins.bool] lock: Whether to lock or unlock the API client.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: Email addresses to notify users when credentials expire.
-        :param pulumi.Input['IamApiClientPurgeOptionsArgs'] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-               of `CCU API`.
+        :param pulumi.Input['IamApiClientPurgeOptionsArgs'] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
@@ -348,8 +338,7 @@ class _IamApiClientState:
     @pulumi.getter(name="activeCredentialCount")
     def active_credential_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The number of credentials active for the API client. When the count is zero, you can delete the API client without
-        interruption.
+        The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
         """
         return pulumi.get(self, "active_credential_count")
 
@@ -385,8 +374,7 @@ class _IamApiClientState:
     @pulumi.getter(name="authorizedUsers")
     def authorized_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-        username in an array.
+        The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         """
         return pulumi.get(self, "authorized_users")
 
@@ -458,8 +446,7 @@ class _IamApiClientState:
     @pulumi.getter(name="clientType")
     def client_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-        credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         """
         return pulumi.get(self, "client_type")
 
@@ -552,8 +539,7 @@ class _IamApiClientState:
     @pulumi.getter(name="purgeOptions")
     def purge_options(self) -> Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']]:
         """
-        Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-        of `CCU API`.
+        Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         return pulumi.get(self, "purge_options")
 
@@ -588,19 +574,16 @@ class IamApiClient(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_account_switch: Enables the API client to manage more than one account.
         :param pulumi.Input[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']] api_access: The APIs the API client can access.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-               username in an array.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         :param pulumi.Input[_builtins.bool] can_auto_create_credential: Whether the API client can create a credential for a new API client. The default is false.
         :param pulumi.Input[_builtins.str] client_description: A human-readable description of the API client.
         :param pulumi.Input[_builtins.str] client_name: A human-readable name for the API client.
-        :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-               credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         :param pulumi.Input[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']] group_access: Specifies the API client's group access.
         :param pulumi.Input[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']] ip_acl: Specifies the API client's IP list restriction.
         :param pulumi.Input[_builtins.bool] lock: Whether to lock or unlock the API client.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: Email addresses to notify users when credentials expire.
-        :param pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-               of `CCU API`.
+        :param pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         ...
     @overload
@@ -720,27 +703,23 @@ class IamApiClient(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_token: The part of the client secret that identifies your API client and lets you access applications and resources.
         :param pulumi.Input[Union['IamApiClientActionsArgs', 'IamApiClientActionsArgsDict']] actions: Specifies activities available for the API client.
-        :param pulumi.Input[_builtins.int] active_credential_count: The number of credentials active for the API client. When the count is zero, you can delete the API client without
-               interruption.
+        :param pulumi.Input[_builtins.int] active_credential_count: The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
         :param pulumi.Input[_builtins.bool] allow_account_switch: Enables the API client to manage more than one account.
         :param pulumi.Input[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']] api_access: The APIs the API client can access.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-               username in an array.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         :param pulumi.Input[_builtins.str] base_url: The base URL for the service.
         :param pulumi.Input[_builtins.bool] can_auto_create_credential: Whether the API client can create a credential for a new API client. The default is false.
         :param pulumi.Input[_builtins.str] client_description: A human-readable description of the API client.
         :param pulumi.Input[_builtins.str] client_id: A unique identifier for the API client.
         :param pulumi.Input[_builtins.str] client_name: A human-readable name for the API client.
-        :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-               credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         :param pulumi.Input[_builtins.str] created_by: The user who created the API client.
         :param pulumi.Input[_builtins.str] created_date: The ISO 8601 timestamp indicating when the API client was created.
         :param pulumi.Input[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']] group_access: Specifies the API client's group access.
         :param pulumi.Input[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']] ip_acl: Specifies the API client's IP list restriction.
         :param pulumi.Input[_builtins.bool] lock: Whether to lock or unlock the API client.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: Email addresses to notify users when credentials expire.
-        :param pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-               of `CCU API`.
+        :param pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -788,8 +767,7 @@ class IamApiClient(pulumi.CustomResource):
     @pulumi.getter(name="activeCredentialCount")
     def active_credential_count(self) -> pulumi.Output[_builtins.int]:
         """
-        The number of credentials active for the API client. When the count is zero, you can delete the API client without
-        interruption.
+        The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
         """
         return pulumi.get(self, "active_credential_count")
 
@@ -813,8 +791,7 @@ class IamApiClient(pulumi.CustomResource):
     @pulumi.getter(name="authorizedUsers")
     def authorized_users(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-        username in an array.
+        The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         """
         return pulumi.get(self, "authorized_users")
 
@@ -862,8 +839,7 @@ class IamApiClient(pulumi.CustomResource):
     @pulumi.getter(name="clientType")
     def client_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-        credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         """
         return pulumi.get(self, "client_type")
 
@@ -924,8 +900,7 @@ class IamApiClient(pulumi.CustomResource):
     @pulumi.getter(name="purgeOptions")
     def purge_options(self) -> pulumi.Output[Optional['outputs.IamApiClientPurgeOptions']]:
         """
-        Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-        of `CCU API`.
+        Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         return pulumi.get(self, "purge_options")
 

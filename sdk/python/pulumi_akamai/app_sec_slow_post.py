@@ -30,8 +30,7 @@ class AppSecSlowPostArgs:
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] slow_rate_action: Action to be taken when slow POST protection is triggered
-        :param pulumi.Input[_builtins.int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-               specified action
+        :param pulumi.Input[_builtins.int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         :param pulumi.Input[_builtins.int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
         :param pulumi.Input[_builtins.int] slow_rate_threshold_rate: Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
@@ -85,8 +84,7 @@ class AppSecSlowPostArgs:
     @pulumi.getter(name="durationThresholdTimeout")
     def duration_threshold_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-        specified action
+        Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         """
         return pulumi.get(self, "duration_threshold_timeout")
 
@@ -131,8 +129,7 @@ class _AppSecSlowPostState:
         """
         Input properties used for looking up and filtering AppSecSlowPost resources.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[_builtins.int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-               specified action
+        :param pulumi.Input[_builtins.int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] slow_rate_action: Action to be taken when slow POST protection is triggered
         :param pulumi.Input[_builtins.int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
@@ -167,8 +164,7 @@ class _AppSecSlowPostState:
     @pulumi.getter(name="durationThresholdTimeout")
     def duration_threshold_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-        specified action
+        Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         """
         return pulumi.get(self, "duration_threshold_timeout")
 
@@ -243,8 +239,7 @@ class AppSecSlowPost(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[_builtins.int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-               specified action
+        :param pulumi.Input[_builtins.int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] slow_rate_action: Action to be taken when slow POST protection is triggered
         :param pulumi.Input[_builtins.int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
@@ -324,8 +319,7 @@ class AppSecSlowPost(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[_builtins.int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-               specified action
+        :param pulumi.Input[_builtins.int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] slow_rate_action: Action to be taken when slow POST protection is triggered
         :param pulumi.Input[_builtins.int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
@@ -355,8 +349,7 @@ class AppSecSlowPost(pulumi.CustomResource):
     @pulumi.getter(name="durationThresholdTimeout")
     def duration_threshold_timeout(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
-        Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-        specified action
+        Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         """
         return pulumi.get(self, "duration_threshold_timeout")
 

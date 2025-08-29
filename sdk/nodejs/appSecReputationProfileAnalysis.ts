@@ -35,19 +35,19 @@ export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      */
-    public readonly forwardSharedIpToHttpHeaderSiem!: pulumi.Output<boolean>;
+    declare public readonly forwardSharedIpToHttpHeaderSiem: pulumi.Output<boolean>;
     /**
      * Whether to add client reputation details to requests forwarded to the origin server
      */
-    public readonly forwardToHttpHeader!: pulumi.Output<boolean>;
+    declare public readonly forwardToHttpHeader: pulumi.Output<boolean>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecReputationProfileAnalysis resource with the given unique name, arguments, and options.
@@ -62,28 +62,28 @@ export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecReputationProfileAnalysisState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["forwardSharedIpToHttpHeaderSiem"] = state ? state.forwardSharedIpToHttpHeaderSiem : undefined;
-            resourceInputs["forwardToHttpHeader"] = state ? state.forwardToHttpHeader : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["forwardSharedIpToHttpHeaderSiem"] = state?.forwardSharedIpToHttpHeaderSiem;
+            resourceInputs["forwardToHttpHeader"] = state?.forwardToHttpHeader;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecReputationProfileAnalysisArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.forwardSharedIpToHttpHeaderSiem === undefined) && !opts.urn) {
+            if (args?.forwardSharedIpToHttpHeaderSiem === undefined && !opts.urn) {
                 throw new Error("Missing required property 'forwardSharedIpToHttpHeaderSiem'");
             }
-            if ((!args || args.forwardToHttpHeader === undefined) && !opts.urn) {
+            if (args?.forwardToHttpHeader === undefined && !opts.urn) {
                 throw new Error("Missing required property 'forwardToHttpHeader'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["forwardSharedIpToHttpHeaderSiem"] = args ? args.forwardSharedIpToHttpHeaderSiem : undefined;
-            resourceInputs["forwardToHttpHeader"] = args ? args.forwardToHttpHeader : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["forwardSharedIpToHttpHeaderSiem"] = args?.forwardSharedIpToHttpHeaderSiem;
+            resourceInputs["forwardToHttpHeader"] = args?.forwardToHttpHeader;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecReputationProfileAnalysis.__pulumiType, name, resourceInputs, opts);

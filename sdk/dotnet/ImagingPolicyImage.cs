@@ -13,9 +13,7 @@ namespace Pulumi.Akamai
     public partial class ImagingPolicyImage : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-        /// to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-        /// it back to false only when there are any changes to the policy qualifying it for the new version.
+        /// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         /// </summary>
         [Output("activateOnProduction")]
         public Output<bool?> ActivateOnProduction { get; private set; } = null!;
@@ -97,9 +95,7 @@ namespace Pulumi.Akamai
     public sealed class ImagingPolicyImageArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-        /// to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-        /// it back to false only when there are any changes to the policy qualifying it for the new version.
+        /// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         /// </summary>
         [Input("activateOnProduction")]
         public Input<bool>? ActivateOnProduction { get; set; }
@@ -137,9 +133,7 @@ namespace Pulumi.Akamai
     public sealed class ImagingPolicyImageState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-        /// to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-        /// it back to false only when there are any changes to the policy qualifying it for the new version.
+        /// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         /// </summary>
         [Input("activateOnProduction")]
         public Input<bool>? ActivateOnProduction { get; set; }

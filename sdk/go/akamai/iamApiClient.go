@@ -19,15 +19,13 @@ type IamApiClient struct {
 	AccessToken pulumi.StringOutput `pulumi:"accessToken"`
 	// Specifies activities available for the API client.
 	Actions IamApiClientActionsOutput `pulumi:"actions"`
-	// The number of credentials active for the API client. When the count is zero, you can delete the API client without
-	// interruption.
+	// The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
 	ActiveCredentialCount pulumi.IntOutput `pulumi:"activeCredentialCount"`
 	// Enables the API client to manage more than one account.
 	AllowAccountSwitch pulumi.BoolOutput `pulumi:"allowAccountSwitch"`
 	// The APIs the API client can access.
 	ApiAccess IamApiClientApiAccessOutput `pulumi:"apiAccess"`
-	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-	// username in an array.
+	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
 	AuthorizedUsers pulumi.StringArrayOutput `pulumi:"authorizedUsers"`
 	// The base URL for the service.
 	BaseUrl pulumi.StringOutput `pulumi:"baseUrl"`
@@ -39,8 +37,7 @@ type IamApiClient struct {
 	ClientId pulumi.StringOutput `pulumi:"clientId"`
 	// A human-readable name for the API client.
 	ClientName pulumi.StringOutput `pulumi:"clientName"`
-	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-	// credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
 	ClientType pulumi.StringOutput `pulumi:"clientType"`
 	// The user who created the API client.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
@@ -55,8 +52,7 @@ type IamApiClient struct {
 	Lock pulumi.BoolOutput `pulumi:"lock"`
 	// Email addresses to notify users when credentials expire.
 	NotificationEmails pulumi.StringArrayOutput `pulumi:"notificationEmails"`
-	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of
-	// `CCU API`.
+	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
 	PurgeOptions IamApiClientPurgeOptionsPtrOutput `pulumi:"purgeOptions"`
 }
 
@@ -117,15 +113,13 @@ type iamApiClientState struct {
 	AccessToken *string `pulumi:"accessToken"`
 	// Specifies activities available for the API client.
 	Actions *IamApiClientActions `pulumi:"actions"`
-	// The number of credentials active for the API client. When the count is zero, you can delete the API client without
-	// interruption.
+	// The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
 	ActiveCredentialCount *int `pulumi:"activeCredentialCount"`
 	// Enables the API client to manage more than one account.
 	AllowAccountSwitch *bool `pulumi:"allowAccountSwitch"`
 	// The APIs the API client can access.
 	ApiAccess *IamApiClientApiAccess `pulumi:"apiAccess"`
-	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-	// username in an array.
+	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
 	AuthorizedUsers []string `pulumi:"authorizedUsers"`
 	// The base URL for the service.
 	BaseUrl *string `pulumi:"baseUrl"`
@@ -137,8 +131,7 @@ type iamApiClientState struct {
 	ClientId *string `pulumi:"clientId"`
 	// A human-readable name for the API client.
 	ClientName *string `pulumi:"clientName"`
-	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-	// credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
 	ClientType *string `pulumi:"clientType"`
 	// The user who created the API client.
 	CreatedBy *string `pulumi:"createdBy"`
@@ -153,8 +146,7 @@ type iamApiClientState struct {
 	Lock *bool `pulumi:"lock"`
 	// Email addresses to notify users when credentials expire.
 	NotificationEmails []string `pulumi:"notificationEmails"`
-	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of
-	// `CCU API`.
+	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
 	PurgeOptions *IamApiClientPurgeOptions `pulumi:"purgeOptions"`
 }
 
@@ -163,15 +155,13 @@ type IamApiClientState struct {
 	AccessToken pulumi.StringPtrInput
 	// Specifies activities available for the API client.
 	Actions IamApiClientActionsPtrInput
-	// The number of credentials active for the API client. When the count is zero, you can delete the API client without
-	// interruption.
+	// The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
 	ActiveCredentialCount pulumi.IntPtrInput
 	// Enables the API client to manage more than one account.
 	AllowAccountSwitch pulumi.BoolPtrInput
 	// The APIs the API client can access.
 	ApiAccess IamApiClientApiAccessPtrInput
-	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-	// username in an array.
+	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
 	AuthorizedUsers pulumi.StringArrayInput
 	// The base URL for the service.
 	BaseUrl pulumi.StringPtrInput
@@ -183,8 +173,7 @@ type IamApiClientState struct {
 	ClientId pulumi.StringPtrInput
 	// A human-readable name for the API client.
 	ClientName pulumi.StringPtrInput
-	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-	// credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
 	ClientType pulumi.StringPtrInput
 	// The user who created the API client.
 	CreatedBy pulumi.StringPtrInput
@@ -199,8 +188,7 @@ type IamApiClientState struct {
 	Lock pulumi.BoolPtrInput
 	// Email addresses to notify users when credentials expire.
 	NotificationEmails pulumi.StringArrayInput
-	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of
-	// `CCU API`.
+	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
 	PurgeOptions IamApiClientPurgeOptionsPtrInput
 }
 
@@ -213,8 +201,7 @@ type iamApiClientArgs struct {
 	AllowAccountSwitch *bool `pulumi:"allowAccountSwitch"`
 	// The APIs the API client can access.
 	ApiAccess IamApiClientApiAccess `pulumi:"apiAccess"`
-	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-	// username in an array.
+	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
 	AuthorizedUsers []string `pulumi:"authorizedUsers"`
 	// Whether the API client can create a credential for a new API client. The default is false.
 	CanAutoCreateCredential *bool `pulumi:"canAutoCreateCredential"`
@@ -222,8 +209,7 @@ type iamApiClientArgs struct {
 	ClientDescription *string `pulumi:"clientDescription"`
 	// A human-readable name for the API client.
 	ClientName string `pulumi:"clientName"`
-	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-	// credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
 	ClientType string                 `pulumi:"clientType"`
 	Credential IamApiClientCredential `pulumi:"credential"`
 	// Specifies the API client's group access.
@@ -234,8 +220,7 @@ type iamApiClientArgs struct {
 	Lock *bool `pulumi:"lock"`
 	// Email addresses to notify users when credentials expire.
 	NotificationEmails []string `pulumi:"notificationEmails"`
-	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of
-	// `CCU API`.
+	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
 	PurgeOptions *IamApiClientPurgeOptions `pulumi:"purgeOptions"`
 }
 
@@ -245,8 +230,7 @@ type IamApiClientArgs struct {
 	AllowAccountSwitch pulumi.BoolPtrInput
 	// The APIs the API client can access.
 	ApiAccess IamApiClientApiAccessInput
-	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-	// username in an array.
+	// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
 	AuthorizedUsers pulumi.StringArrayInput
 	// Whether the API client can create a credential for a new API client. The default is false.
 	CanAutoCreateCredential pulumi.BoolPtrInput
@@ -254,8 +238,7 @@ type IamApiClientArgs struct {
 	ClientDescription pulumi.StringPtrInput
 	// A human-readable name for the API client.
 	ClientName pulumi.StringInput
-	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-	// credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+	// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
 	ClientType pulumi.StringInput
 	Credential IamApiClientCredentialInput
 	// Specifies the API client's group access.
@@ -266,8 +249,7 @@ type IamApiClientArgs struct {
 	Lock pulumi.BoolPtrInput
 	// Email addresses to notify users when credentials expire.
 	NotificationEmails pulumi.StringArrayInput
-	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of
-	// `CCU API`.
+	// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
 	PurgeOptions IamApiClientPurgeOptionsPtrInput
 }
 
@@ -368,8 +350,7 @@ func (o IamApiClientOutput) Actions() IamApiClientActionsOutput {
 	return o.ApplyT(func(v *IamApiClient) IamApiClientActionsOutput { return v.Actions }).(IamApiClientActionsOutput)
 }
 
-// The number of credentials active for the API client. When the count is zero, you can delete the API client without
-// interruption.
+// The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
 func (o IamApiClientOutput) ActiveCredentialCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *IamApiClient) pulumi.IntOutput { return v.ActiveCredentialCount }).(pulumi.IntOutput)
 }
@@ -384,8 +365,7 @@ func (o IamApiClientOutput) ApiAccess() IamApiClientApiAccessOutput {
 	return o.ApplyT(func(v *IamApiClient) IamApiClientApiAccessOutput { return v.ApiAccess }).(IamApiClientApiAccessOutput)
 }
 
-// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-// username in an array.
+// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
 func (o IamApiClientOutput) AuthorizedUsers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IamApiClient) pulumi.StringArrayOutput { return v.AuthorizedUsers }).(pulumi.StringArrayOutput)
 }
@@ -415,8 +395,7 @@ func (o IamApiClientOutput) ClientName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamApiClient) pulumi.StringOutput { return v.ClientName }).(pulumi.StringOutput)
 }
 
-// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-// credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
 func (o IamApiClientOutput) ClientType() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamApiClient) pulumi.StringOutput { return v.ClientType }).(pulumi.StringOutput)
 }
@@ -455,8 +434,7 @@ func (o IamApiClientOutput) NotificationEmails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IamApiClient) pulumi.StringArrayOutput { return v.NotificationEmails }).(pulumi.StringArrayOutput)
 }
 
-// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of
-// `CCU API`.
+// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
 func (o IamApiClientOutput) PurgeOptions() IamApiClientPurgeOptionsPtrOutput {
 	return o.ApplyT(func(v *IamApiClient) IamApiClientPurgeOptionsPtrOutput { return v.PurgeOptions }).(IamApiClientPurgeOptionsPtrOutput)
 }

@@ -19,8 +19,7 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-        /// specified action
+        /// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         /// </summary>
         [Output("durationThresholdTimeout")]
         public Output<int?> DurationThresholdTimeout { get; private set; } = null!;
@@ -102,8 +101,7 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-        /// specified action
+        /// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         /// </summary>
         [Input("durationThresholdTimeout")]
         public Input<int>? DurationThresholdTimeout { get; set; }
@@ -147,8 +145,7 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-        /// specified action
+        /// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         /// </summary>
         [Input("durationThresholdTimeout")]
         public Input<int>? DurationThresholdTimeout { get; set; }

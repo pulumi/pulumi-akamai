@@ -34,39 +34,39 @@ export class GtmProperty extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmProperty.__pulumiType;
     }
 
-    public readonly backupCname!: pulumi.Output<string | undefined>;
-    public readonly backupIp!: pulumi.Output<string | undefined>;
-    public readonly balanceByDownloadScore!: pulumi.Output<boolean | undefined>;
-    public readonly cname!: pulumi.Output<string | undefined>;
-    public readonly comments!: pulumi.Output<string | undefined>;
-    public readonly domain!: pulumi.Output<string>;
-    public readonly dynamicTtl!: pulumi.Output<number | undefined>;
-    public readonly failbackDelay!: pulumi.Output<number | undefined>;
-    public readonly failoverDelay!: pulumi.Output<number | undefined>;
-    public readonly ghostDemandReporting!: pulumi.Output<boolean | undefined>;
-    public readonly handoutLimit!: pulumi.Output<number>;
-    public readonly handoutMode!: pulumi.Output<string>;
-    public readonly healthMax!: pulumi.Output<number | undefined>;
-    public readonly healthMultiplier!: pulumi.Output<number | undefined>;
-    public readonly healthThreshold!: pulumi.Output<number | undefined>;
-    public readonly ipv6!: pulumi.Output<boolean | undefined>;
-    public readonly livenessTests!: pulumi.Output<outputs.GtmPropertyLivenessTest[] | undefined>;
-    public readonly loadImbalancePercentage!: pulumi.Output<number | undefined>;
-    public readonly mapName!: pulumi.Output<string | undefined>;
-    public readonly maxUnreachablePenalty!: pulumi.Output<number | undefined>;
-    public readonly minLiveFraction!: pulumi.Output<number | undefined>;
-    public readonly name!: pulumi.Output<string>;
-    public readonly scoreAggregationType!: pulumi.Output<string>;
-    public readonly staticRrSets!: pulumi.Output<outputs.GtmPropertyStaticRrSet[] | undefined>;
-    public readonly stickinessBonusConstant!: pulumi.Output<number | undefined>;
-    public readonly stickinessBonusPercentage!: pulumi.Output<number | undefined>;
-    public readonly trafficTargets!: pulumi.Output<outputs.GtmPropertyTrafficTarget[] | undefined>;
-    public readonly type!: pulumi.Output<string>;
-    public readonly unreachableThreshold!: pulumi.Output<number | undefined>;
-    public readonly useComputedTargets!: pulumi.Output<boolean | undefined>;
-    public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
-    public /*out*/ readonly weightedHashBitsForIpv4!: pulumi.Output<number>;
-    public /*out*/ readonly weightedHashBitsForIpv6!: pulumi.Output<number>;
+    declare public readonly backupCname: pulumi.Output<string | undefined>;
+    declare public readonly backupIp: pulumi.Output<string | undefined>;
+    declare public readonly balanceByDownloadScore: pulumi.Output<boolean | undefined>;
+    declare public readonly cname: pulumi.Output<string | undefined>;
+    declare public readonly comments: pulumi.Output<string | undefined>;
+    declare public readonly domain: pulumi.Output<string>;
+    declare public readonly dynamicTtl: pulumi.Output<number | undefined>;
+    declare public readonly failbackDelay: pulumi.Output<number | undefined>;
+    declare public readonly failoverDelay: pulumi.Output<number | undefined>;
+    declare public readonly ghostDemandReporting: pulumi.Output<boolean | undefined>;
+    declare public readonly handoutLimit: pulumi.Output<number>;
+    declare public readonly handoutMode: pulumi.Output<string>;
+    declare public readonly healthMax: pulumi.Output<number | undefined>;
+    declare public readonly healthMultiplier: pulumi.Output<number | undefined>;
+    declare public readonly healthThreshold: pulumi.Output<number | undefined>;
+    declare public readonly ipv6: pulumi.Output<boolean | undefined>;
+    declare public readonly livenessTests: pulumi.Output<outputs.GtmPropertyLivenessTest[] | undefined>;
+    declare public readonly loadImbalancePercentage: pulumi.Output<number | undefined>;
+    declare public readonly mapName: pulumi.Output<string | undefined>;
+    declare public readonly maxUnreachablePenalty: pulumi.Output<number | undefined>;
+    declare public readonly minLiveFraction: pulumi.Output<number | undefined>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly scoreAggregationType: pulumi.Output<string>;
+    declare public readonly staticRrSets: pulumi.Output<outputs.GtmPropertyStaticRrSet[] | undefined>;
+    declare public readonly stickinessBonusConstant: pulumi.Output<number | undefined>;
+    declare public readonly stickinessBonusPercentage: pulumi.Output<number | undefined>;
+    declare public readonly trafficTargets: pulumi.Output<outputs.GtmPropertyTrafficTarget[] | undefined>;
+    declare public readonly type: pulumi.Output<string>;
+    declare public readonly unreachableThreshold: pulumi.Output<number | undefined>;
+    declare public readonly useComputedTargets: pulumi.Output<boolean | undefined>;
+    declare public readonly waitOnComplete: pulumi.Output<boolean | undefined>;
+    declare public /*out*/ readonly weightedHashBitsForIpv4: pulumi.Output<number>;
+    declare public /*out*/ readonly weightedHashBitsForIpv6: pulumi.Output<number>;
 
     /**
      * Create a GtmProperty resource with the given unique name, arguments, and options.
@@ -81,87 +81,87 @@ export class GtmProperty extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmPropertyState | undefined;
-            resourceInputs["backupCname"] = state ? state.backupCname : undefined;
-            resourceInputs["backupIp"] = state ? state.backupIp : undefined;
-            resourceInputs["balanceByDownloadScore"] = state ? state.balanceByDownloadScore : undefined;
-            resourceInputs["cname"] = state ? state.cname : undefined;
-            resourceInputs["comments"] = state ? state.comments : undefined;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["dynamicTtl"] = state ? state.dynamicTtl : undefined;
-            resourceInputs["failbackDelay"] = state ? state.failbackDelay : undefined;
-            resourceInputs["failoverDelay"] = state ? state.failoverDelay : undefined;
-            resourceInputs["ghostDemandReporting"] = state ? state.ghostDemandReporting : undefined;
-            resourceInputs["handoutLimit"] = state ? state.handoutLimit : undefined;
-            resourceInputs["handoutMode"] = state ? state.handoutMode : undefined;
-            resourceInputs["healthMax"] = state ? state.healthMax : undefined;
-            resourceInputs["healthMultiplier"] = state ? state.healthMultiplier : undefined;
-            resourceInputs["healthThreshold"] = state ? state.healthThreshold : undefined;
-            resourceInputs["ipv6"] = state ? state.ipv6 : undefined;
-            resourceInputs["livenessTests"] = state ? state.livenessTests : undefined;
-            resourceInputs["loadImbalancePercentage"] = state ? state.loadImbalancePercentage : undefined;
-            resourceInputs["mapName"] = state ? state.mapName : undefined;
-            resourceInputs["maxUnreachablePenalty"] = state ? state.maxUnreachablePenalty : undefined;
-            resourceInputs["minLiveFraction"] = state ? state.minLiveFraction : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["scoreAggregationType"] = state ? state.scoreAggregationType : undefined;
-            resourceInputs["staticRrSets"] = state ? state.staticRrSets : undefined;
-            resourceInputs["stickinessBonusConstant"] = state ? state.stickinessBonusConstant : undefined;
-            resourceInputs["stickinessBonusPercentage"] = state ? state.stickinessBonusPercentage : undefined;
-            resourceInputs["trafficTargets"] = state ? state.trafficTargets : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["unreachableThreshold"] = state ? state.unreachableThreshold : undefined;
-            resourceInputs["useComputedTargets"] = state ? state.useComputedTargets : undefined;
-            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
-            resourceInputs["weightedHashBitsForIpv4"] = state ? state.weightedHashBitsForIpv4 : undefined;
-            resourceInputs["weightedHashBitsForIpv6"] = state ? state.weightedHashBitsForIpv6 : undefined;
+            resourceInputs["backupCname"] = state?.backupCname;
+            resourceInputs["backupIp"] = state?.backupIp;
+            resourceInputs["balanceByDownloadScore"] = state?.balanceByDownloadScore;
+            resourceInputs["cname"] = state?.cname;
+            resourceInputs["comments"] = state?.comments;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["dynamicTtl"] = state?.dynamicTtl;
+            resourceInputs["failbackDelay"] = state?.failbackDelay;
+            resourceInputs["failoverDelay"] = state?.failoverDelay;
+            resourceInputs["ghostDemandReporting"] = state?.ghostDemandReporting;
+            resourceInputs["handoutLimit"] = state?.handoutLimit;
+            resourceInputs["handoutMode"] = state?.handoutMode;
+            resourceInputs["healthMax"] = state?.healthMax;
+            resourceInputs["healthMultiplier"] = state?.healthMultiplier;
+            resourceInputs["healthThreshold"] = state?.healthThreshold;
+            resourceInputs["ipv6"] = state?.ipv6;
+            resourceInputs["livenessTests"] = state?.livenessTests;
+            resourceInputs["loadImbalancePercentage"] = state?.loadImbalancePercentage;
+            resourceInputs["mapName"] = state?.mapName;
+            resourceInputs["maxUnreachablePenalty"] = state?.maxUnreachablePenalty;
+            resourceInputs["minLiveFraction"] = state?.minLiveFraction;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["scoreAggregationType"] = state?.scoreAggregationType;
+            resourceInputs["staticRrSets"] = state?.staticRrSets;
+            resourceInputs["stickinessBonusConstant"] = state?.stickinessBonusConstant;
+            resourceInputs["stickinessBonusPercentage"] = state?.stickinessBonusPercentage;
+            resourceInputs["trafficTargets"] = state?.trafficTargets;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["unreachableThreshold"] = state?.unreachableThreshold;
+            resourceInputs["useComputedTargets"] = state?.useComputedTargets;
+            resourceInputs["waitOnComplete"] = state?.waitOnComplete;
+            resourceInputs["weightedHashBitsForIpv4"] = state?.weightedHashBitsForIpv4;
+            resourceInputs["weightedHashBitsForIpv6"] = state?.weightedHashBitsForIpv6;
         } else {
             const args = argsOrState as GtmPropertyArgs | undefined;
-            if ((!args || args.domain === undefined) && !opts.urn) {
+            if (args?.domain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            if ((!args || args.handoutLimit === undefined) && !opts.urn) {
+            if (args?.handoutLimit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'handoutLimit'");
             }
-            if ((!args || args.handoutMode === undefined) && !opts.urn) {
+            if (args?.handoutMode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'handoutMode'");
             }
-            if ((!args || args.scoreAggregationType === undefined) && !opts.urn) {
+            if (args?.scoreAggregationType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scoreAggregationType'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["backupCname"] = args ? args.backupCname : undefined;
-            resourceInputs["backupIp"] = args ? args.backupIp : undefined;
-            resourceInputs["balanceByDownloadScore"] = args ? args.balanceByDownloadScore : undefined;
-            resourceInputs["cname"] = args ? args.cname : undefined;
-            resourceInputs["comments"] = args ? args.comments : undefined;
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["dynamicTtl"] = args ? args.dynamicTtl : undefined;
-            resourceInputs["failbackDelay"] = args ? args.failbackDelay : undefined;
-            resourceInputs["failoverDelay"] = args ? args.failoverDelay : undefined;
-            resourceInputs["ghostDemandReporting"] = args ? args.ghostDemandReporting : undefined;
-            resourceInputs["handoutLimit"] = args ? args.handoutLimit : undefined;
-            resourceInputs["handoutMode"] = args ? args.handoutMode : undefined;
-            resourceInputs["healthMax"] = args ? args.healthMax : undefined;
-            resourceInputs["healthMultiplier"] = args ? args.healthMultiplier : undefined;
-            resourceInputs["healthThreshold"] = args ? args.healthThreshold : undefined;
-            resourceInputs["ipv6"] = args ? args.ipv6 : undefined;
-            resourceInputs["livenessTests"] = args ? args.livenessTests : undefined;
-            resourceInputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
-            resourceInputs["mapName"] = args ? args.mapName : undefined;
-            resourceInputs["maxUnreachablePenalty"] = args ? args.maxUnreachablePenalty : undefined;
-            resourceInputs["minLiveFraction"] = args ? args.minLiveFraction : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["scoreAggregationType"] = args ? args.scoreAggregationType : undefined;
-            resourceInputs["staticRrSets"] = args ? args.staticRrSets : undefined;
-            resourceInputs["stickinessBonusConstant"] = args ? args.stickinessBonusConstant : undefined;
-            resourceInputs["stickinessBonusPercentage"] = args ? args.stickinessBonusPercentage : undefined;
-            resourceInputs["trafficTargets"] = args ? args.trafficTargets : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["unreachableThreshold"] = args ? args.unreachableThreshold : undefined;
-            resourceInputs["useComputedTargets"] = args ? args.useComputedTargets : undefined;
-            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["backupCname"] = args?.backupCname;
+            resourceInputs["backupIp"] = args?.backupIp;
+            resourceInputs["balanceByDownloadScore"] = args?.balanceByDownloadScore;
+            resourceInputs["cname"] = args?.cname;
+            resourceInputs["comments"] = args?.comments;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["dynamicTtl"] = args?.dynamicTtl;
+            resourceInputs["failbackDelay"] = args?.failbackDelay;
+            resourceInputs["failoverDelay"] = args?.failoverDelay;
+            resourceInputs["ghostDemandReporting"] = args?.ghostDemandReporting;
+            resourceInputs["handoutLimit"] = args?.handoutLimit;
+            resourceInputs["handoutMode"] = args?.handoutMode;
+            resourceInputs["healthMax"] = args?.healthMax;
+            resourceInputs["healthMultiplier"] = args?.healthMultiplier;
+            resourceInputs["healthThreshold"] = args?.healthThreshold;
+            resourceInputs["ipv6"] = args?.ipv6;
+            resourceInputs["livenessTests"] = args?.livenessTests;
+            resourceInputs["loadImbalancePercentage"] = args?.loadImbalancePercentage;
+            resourceInputs["mapName"] = args?.mapName;
+            resourceInputs["maxUnreachablePenalty"] = args?.maxUnreachablePenalty;
+            resourceInputs["minLiveFraction"] = args?.minLiveFraction;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["scoreAggregationType"] = args?.scoreAggregationType;
+            resourceInputs["staticRrSets"] = args?.staticRrSets;
+            resourceInputs["stickinessBonusConstant"] = args?.stickinessBonusConstant;
+            resourceInputs["stickinessBonusPercentage"] = args?.stickinessBonusPercentage;
+            resourceInputs["trafficTargets"] = args?.trafficTargets;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["unreachableThreshold"] = args?.unreachableThreshold;
+            resourceInputs["useComputedTargets"] = args?.useComputedTargets;
+            resourceInputs["waitOnComplete"] = args?.waitOnComplete;
             resourceInputs["weightedHashBitsForIpv4"] = undefined /*out*/;
             resourceInputs["weightedHashBitsForIpv6"] = undefined /*out*/;
         }

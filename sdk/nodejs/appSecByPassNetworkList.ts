@@ -35,15 +35,15 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
     /**
      * List of network list IDs that compose the bypass list
      */
-    public readonly bypassNetworkLists!: pulumi.Output<string[]>;
+    declare public readonly bypassNetworkLists: pulumi.Output<string[]>;
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * The unique identifier of the security policy governing the bypass network lists
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecByPassNetworkList resource with the given unique name, arguments, and options.
@@ -58,23 +58,23 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecByPassNetworkListState | undefined;
-            resourceInputs["bypassNetworkLists"] = state ? state.bypassNetworkLists : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["bypassNetworkLists"] = state?.bypassNetworkLists;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecByPassNetworkListArgs | undefined;
-            if ((!args || args.bypassNetworkLists === undefined) && !opts.urn) {
+            if (args?.bypassNetworkLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bypassNetworkLists'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["bypassNetworkLists"] = args ? args.bypassNetworkLists : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["bypassNetworkLists"] = args?.bypassNetworkLists;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecByPassNetworkList.__pulumiType, name, resourceInputs, opts);

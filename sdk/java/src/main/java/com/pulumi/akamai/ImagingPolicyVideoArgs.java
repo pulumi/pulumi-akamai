@@ -18,18 +18,14 @@ public final class ImagingPolicyVideoArgs extends com.pulumi.resources.ResourceA
     public static final ImagingPolicyVideoArgs Empty = new ImagingPolicyVideoArgs();
 
     /**
-     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-     * to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-     * it back to false only when there are any changes to the policy qualifying it for the new version.
+     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
      * 
      */
     @Import(name="activateOnProduction")
     private @Nullable Output<Boolean> activateOnProduction;
 
     /**
-     * @return With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-     * to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-     * it back to false only when there are any changes to the policy qualifying it for the new version.
+     * @return With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
      * 
      */
     public Optional<Output<Boolean>> activateOnProduction() {
@@ -125,9 +121,7 @@ public final class ImagingPolicyVideoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param activateOnProduction With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-         * to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-         * it back to false only when there are any changes to the policy qualifying it for the new version.
+         * @param activateOnProduction With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
          * 
          * @return builder
          * 
@@ -138,9 +132,7 @@ public final class ImagingPolicyVideoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param activateOnProduction With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-         * to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-         * it back to false only when there are any changes to the policy qualifying it for the new version.
+         * @param activateOnProduction With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
          * 
          * @return builder
          * 

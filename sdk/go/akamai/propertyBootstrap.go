@@ -25,8 +25,7 @@ type PropertyBootstrap struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringOutput `pulumi:"productId"`
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket pulumi.BoolOutput `pulumi:"useHostnameBucket"`
 }
 
@@ -79,8 +78,7 @@ type propertyBootstrapState struct {
 	Name *string `pulumi:"name"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket *bool `pulumi:"useHostnameBucket"`
 }
 
@@ -95,8 +93,7 @@ type PropertyBootstrapState struct {
 	Name pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket pulumi.BoolPtrInput
 }
 
@@ -113,8 +110,7 @@ type propertyBootstrapArgs struct {
 	Name *string `pulumi:"name"`
 	// Product ID to be assigned to the Property
 	ProductId string `pulumi:"productId"`
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket *bool `pulumi:"useHostnameBucket"`
 }
 
@@ -128,8 +124,7 @@ type PropertyBootstrapArgs struct {
 	Name pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringInput
-	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-	// incrementing property versions.
+	// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 	UseHostnameBucket pulumi.BoolPtrInput
 }
 
@@ -245,8 +240,7 @@ func (o PropertyBootstrapOutput) ProductId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyBootstrap) pulumi.StringOutput { return v.ProductId }).(pulumi.StringOutput)
 }
 
-// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-// incrementing property versions.
+// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
 func (o PropertyBootstrapOutput) UseHostnameBucket() pulumi.BoolOutput {
 	return o.ApplyT(func(v *PropertyBootstrap) pulumi.BoolOutput { return v.UseHostnameBucket }).(pulumi.BoolOutput)
 }

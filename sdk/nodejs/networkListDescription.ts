@@ -32,9 +32,9 @@ export class NetworkListDescription extends pulumi.CustomResource {
         return obj['__pulumiType'] === NetworkListDescription.__pulumiType;
     }
 
-    public readonly description!: pulumi.Output<string>;
-    public readonly name!: pulumi.Output<string>;
-    public readonly networkListId!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly networkListId: pulumi.Output<string>;
 
     /**
      * Create a NetworkListDescription resource with the given unique name, arguments, and options.
@@ -49,20 +49,20 @@ export class NetworkListDescription extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListDescriptionState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkListId"] = state ? state.networkListId : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkListId"] = state?.networkListId;
         } else {
             const args = argsOrState as NetworkListDescriptionArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.networkListId === undefined) && !opts.urn) {
+            if (args?.networkListId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkListId'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkListId"] = args ? args.networkListId : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkListId"] = args?.networkListId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NetworkListDescription.__pulumiType, name, resourceInputs, opts);

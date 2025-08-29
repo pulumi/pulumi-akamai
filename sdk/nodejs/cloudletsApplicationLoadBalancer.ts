@@ -37,34 +37,32 @@ export class CloudletsApplicationLoadBalancer extends pulumi.CustomResource {
     /**
      * The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
      */
-    public readonly balancingType!: pulumi.Output<string | undefined>;
+    declare public readonly balancingType: pulumi.Output<string | undefined>;
     /**
-     * The object containing information on conditional origins being used as data centers for an Application Load Balancer
-     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-     * application load balancer configuration.
+     * The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
      */
-    public readonly dataCenters!: pulumi.Output<outputs.CloudletsApplicationLoadBalancerDataCenter[]>;
+    declare public readonly dataCenters: pulumi.Output<outputs.CloudletsApplicationLoadBalancerDataCenter[]>;
     /**
      * The load balancer configuration version description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
-    public readonly livenessSettings!: pulumi.Output<outputs.CloudletsApplicationLoadBalancerLivenessSettings | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public readonly livenessSettings: pulumi.Output<outputs.CloudletsApplicationLoadBalancerLivenessSettings | undefined>;
     /**
      * The load balancer configuration description
      */
-    public readonly originDescription!: pulumi.Output<string | undefined>;
+    declare public readonly originDescription: pulumi.Output<string | undefined>;
     /**
      * The conditional origin's unique identifier
      */
-    public readonly originId!: pulumi.Output<string>;
+    declare public readonly originId: pulumi.Output<string>;
     /**
      * The load balancer configuration version
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    declare public /*out*/ readonly version: pulumi.Output<number>;
     /**
      * Describes warnings during activation of load balancer configuration
      */
-    public /*out*/ readonly warnings!: pulumi.Output<string>;
+    declare public /*out*/ readonly warnings: pulumi.Output<string>;
 
     /**
      * Create a CloudletsApplicationLoadBalancer resource with the given unique name, arguments, and options.
@@ -79,28 +77,28 @@ export class CloudletsApplicationLoadBalancer extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudletsApplicationLoadBalancerState | undefined;
-            resourceInputs["balancingType"] = state ? state.balancingType : undefined;
-            resourceInputs["dataCenters"] = state ? state.dataCenters : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["livenessSettings"] = state ? state.livenessSettings : undefined;
-            resourceInputs["originDescription"] = state ? state.originDescription : undefined;
-            resourceInputs["originId"] = state ? state.originId : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["warnings"] = state ? state.warnings : undefined;
+            resourceInputs["balancingType"] = state?.balancingType;
+            resourceInputs["dataCenters"] = state?.dataCenters;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["livenessSettings"] = state?.livenessSettings;
+            resourceInputs["originDescription"] = state?.originDescription;
+            resourceInputs["originId"] = state?.originId;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["warnings"] = state?.warnings;
         } else {
             const args = argsOrState as CloudletsApplicationLoadBalancerArgs | undefined;
-            if ((!args || args.dataCenters === undefined) && !opts.urn) {
+            if (args?.dataCenters === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataCenters'");
             }
-            if ((!args || args.originId === undefined) && !opts.urn) {
+            if (args?.originId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'originId'");
             }
-            resourceInputs["balancingType"] = args ? args.balancingType : undefined;
-            resourceInputs["dataCenters"] = args ? args.dataCenters : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["livenessSettings"] = args ? args.livenessSettings : undefined;
-            resourceInputs["originDescription"] = args ? args.originDescription : undefined;
-            resourceInputs["originId"] = args ? args.originId : undefined;
+            resourceInputs["balancingType"] = args?.balancingType;
+            resourceInputs["dataCenters"] = args?.dataCenters;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["livenessSettings"] = args?.livenessSettings;
+            resourceInputs["originDescription"] = args?.originDescription;
+            resourceInputs["originId"] = args?.originId;
             resourceInputs["version"] = undefined /*out*/;
             resourceInputs["warnings"] = undefined /*out*/;
         }
@@ -118,9 +116,7 @@ export interface CloudletsApplicationLoadBalancerState {
      */
     balancingType?: pulumi.Input<string>;
     /**
-     * The object containing information on conditional origins being used as data centers for an Application Load Balancer
-     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-     * application load balancer configuration.
+     * The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
      */
     dataCenters?: pulumi.Input<pulumi.Input<inputs.CloudletsApplicationLoadBalancerDataCenter>[]>;
     /**
@@ -155,9 +151,7 @@ export interface CloudletsApplicationLoadBalancerArgs {
      */
     balancingType?: pulumi.Input<string>;
     /**
-     * The object containing information on conditional origins being used as data centers for an Application Load Balancer
-     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-     * application load balancer configuration.
+     * The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
      */
     dataCenters: pulumi.Input<pulumi.Input<inputs.CloudletsApplicationLoadBalancerDataCenter>[]>;
     /**

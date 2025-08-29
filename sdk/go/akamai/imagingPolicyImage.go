@@ -15,9 +15,7 @@ import (
 type ImagingPolicyImage struct {
 	pulumi.CustomResourceState
 
-	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-	// to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-	// it back to false only when there are any changes to the policy qualifying it for the new version.
+	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
 	ActivateOnProduction pulumi.BoolPtrOutput `pulumi:"activateOnProduction"`
 	// Unique identifier for the Akamai Contract containing the Policy Set(s)
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
@@ -73,9 +71,7 @@ func GetImagingPolicyImage(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ImagingPolicyImage resources.
 type imagingPolicyImageState struct {
-	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-	// to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-	// it back to false only when there are any changes to the policy qualifying it for the new version.
+	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
 	ActivateOnProduction *bool `pulumi:"activateOnProduction"`
 	// Unique identifier for the Akamai Contract containing the Policy Set(s)
 	ContractId *string `pulumi:"contractId"`
@@ -90,9 +86,7 @@ type imagingPolicyImageState struct {
 }
 
 type ImagingPolicyImageState struct {
-	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-	// to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-	// it back to false only when there are any changes to the policy qualifying it for the new version.
+	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
 	ActivateOnProduction pulumi.BoolPtrInput
 	// Unique identifier for the Akamai Contract containing the Policy Set(s)
 	ContractId pulumi.StringPtrInput
@@ -111,9 +105,7 @@ func (ImagingPolicyImageState) ElementType() reflect.Type {
 }
 
 type imagingPolicyImageArgs struct {
-	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-	// to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-	// it back to false only when there are any changes to the policy qualifying it for the new version.
+	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
 	ActivateOnProduction *bool `pulumi:"activateOnProduction"`
 	// Unique identifier for the Akamai Contract containing the Policy Set(s)
 	ContractId string `pulumi:"contractId"`
@@ -127,9 +119,7 @@ type imagingPolicyImageArgs struct {
 
 // The set of arguments for constructing a ImagingPolicyImage resource.
 type ImagingPolicyImageArgs struct {
-	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-	// to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-	// it back to false only when there are any changes to the policy qualifying it for the new version.
+	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
 	ActivateOnProduction pulumi.BoolPtrInput
 	// Unique identifier for the Akamai Contract containing the Policy Set(s)
 	ContractId pulumi.StringInput
@@ -228,9 +218,7 @@ func (o ImagingPolicyImageOutput) ToImagingPolicyImageOutputWithContext(ctx cont
 	return o
 }
 
-// With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-// to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-// it back to false only when there are any changes to the policy qualifying it for the new version.
+// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
 func (o ImagingPolicyImageOutput) ActivateOnProduction() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ImagingPolicyImage) pulumi.BoolPtrOutput { return v.ActivateOnProduction }).(pulumi.BoolPtrOutput)
 }

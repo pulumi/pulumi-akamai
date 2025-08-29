@@ -35,23 +35,23 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Action to be taken for requests coming from an IPv4 address
      */
-    public readonly ipv4Action!: pulumi.Output<string>;
+    declare public readonly ipv4Action: pulumi.Output<string>;
     /**
      * Action to be taken for requests coming from an IPv6 address
      */
-    public readonly ipv6Action!: pulumi.Output<string>;
+    declare public readonly ipv6Action: pulumi.Output<string>;
     /**
      * Unique identifier of the rate policy
      */
-    public readonly ratePolicyId!: pulumi.Output<number>;
+    declare public readonly ratePolicyId: pulumi.Output<number>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecRatePolicyAction resource with the given unique name, arguments, and options.
@@ -66,33 +66,33 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecRatePolicyActionState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["ipv4Action"] = state ? state.ipv4Action : undefined;
-            resourceInputs["ipv6Action"] = state ? state.ipv6Action : undefined;
-            resourceInputs["ratePolicyId"] = state ? state.ratePolicyId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["ipv4Action"] = state?.ipv4Action;
+            resourceInputs["ipv6Action"] = state?.ipv6Action;
+            resourceInputs["ratePolicyId"] = state?.ratePolicyId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecRatePolicyActionArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.ipv4Action === undefined) && !opts.urn) {
+            if (args?.ipv4Action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipv4Action'");
             }
-            if ((!args || args.ipv6Action === undefined) && !opts.urn) {
+            if (args?.ipv6Action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipv6Action'");
             }
-            if ((!args || args.ratePolicyId === undefined) && !opts.urn) {
+            if (args?.ratePolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ratePolicyId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["ipv4Action"] = args ? args.ipv4Action : undefined;
-            resourceInputs["ipv6Action"] = args ? args.ipv6Action : undefined;
-            resourceInputs["ratePolicyId"] = args ? args.ratePolicyId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["ipv4Action"] = args?.ipv4Action;
+            resourceInputs["ipv6Action"] = args?.ipv6Action;
+            resourceInputs["ratePolicyId"] = args?.ratePolicyId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecRatePolicyAction.__pulumiType, name, resourceInputs, opts);
