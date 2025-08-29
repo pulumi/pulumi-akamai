@@ -43,8 +43,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.EdgeHostNameTimeouts?> Timeouts { get; private set; } = null!;
 
         /// <summary>
-        /// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-        /// value for product is used.
+        /// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
         /// </summary>
         [Output("ttl")]
         public Output<int?> Ttl { get; private set; } = null!;
@@ -142,8 +141,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.EdgeHostNameTimeoutsArgs>? Timeouts { get; set; }
 
         /// <summary>
-        /// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-        /// value for product is used.
+        /// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
         /// </summary>
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }
@@ -199,8 +197,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.EdgeHostNameTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
-        /// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-        /// value for product is used.
+        /// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
         /// </summary>
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }

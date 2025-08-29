@@ -37,43 +37,43 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
     /**
      * Whether to acknowledge change management
      */
-    public readonly acknowledgeChangeManagement!: pulumi.Output<boolean | undefined>;
+    declare public readonly acknowledgeChangeManagement: pulumi.Output<boolean | undefined>;
     /**
      * Whether to acknowledge post-verification warnings
      */
-    public readonly acknowledgePostVerificationWarnings!: pulumi.Output<boolean | undefined>;
+    declare public readonly acknowledgePostVerificationWarnings: pulumi.Output<boolean | undefined>;
     /**
      * List of post-verification warnings to be automatically acknowledged
      */
-    public readonly autoApproveWarnings!: pulumi.Output<string[] | undefined>;
+    declare public readonly autoApproveWarnings: pulumi.Output<string[] | undefined>;
     /**
      * ECDSA certificate in pem format to be uploaded
      */
-    public readonly certificateEcdsaPem!: pulumi.Output<string | undefined>;
+    declare public readonly certificateEcdsaPem: pulumi.Output<string | undefined>;
     /**
      * RSA certificate in pem format to be uploaded
      */
-    public readonly certificateRsaPem!: pulumi.Output<string | undefined>;
+    declare public readonly certificateRsaPem: pulumi.Output<string | undefined>;
     /**
      * The unique identifier of the enrollment
      */
-    public readonly enrollmentId!: pulumi.Output<number>;
+    declare public readonly enrollmentId: pulumi.Output<number>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.CpsUploadCertificateTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.CpsUploadCertificateTimeouts | undefined>;
     /**
      * Trust chain in pem format for provided ECDSA certificate
      */
-    public readonly trustChainEcdsaPem!: pulumi.Output<string | undefined>;
+    declare public readonly trustChainEcdsaPem: pulumi.Output<string | undefined>;
     /**
      * Trust chain in pem format for provided RSA certificate
      */
-    public readonly trustChainRsaPem!: pulumi.Output<string | undefined>;
+    declare public readonly trustChainRsaPem: pulumi.Output<string | undefined>;
     /**
      * Whether to wait for certificate to be deployed
      */
-    public readonly waitForDeployment!: pulumi.Output<boolean | undefined>;
+    declare public readonly waitForDeployment: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a CpsUploadCertificate resource with the given unique name, arguments, and options.
@@ -88,31 +88,31 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpsUploadCertificateState | undefined;
-            resourceInputs["acknowledgeChangeManagement"] = state ? state.acknowledgeChangeManagement : undefined;
-            resourceInputs["acknowledgePostVerificationWarnings"] = state ? state.acknowledgePostVerificationWarnings : undefined;
-            resourceInputs["autoApproveWarnings"] = state ? state.autoApproveWarnings : undefined;
-            resourceInputs["certificateEcdsaPem"] = state ? state.certificateEcdsaPem : undefined;
-            resourceInputs["certificateRsaPem"] = state ? state.certificateRsaPem : undefined;
-            resourceInputs["enrollmentId"] = state ? state.enrollmentId : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["trustChainEcdsaPem"] = state ? state.trustChainEcdsaPem : undefined;
-            resourceInputs["trustChainRsaPem"] = state ? state.trustChainRsaPem : undefined;
-            resourceInputs["waitForDeployment"] = state ? state.waitForDeployment : undefined;
+            resourceInputs["acknowledgeChangeManagement"] = state?.acknowledgeChangeManagement;
+            resourceInputs["acknowledgePostVerificationWarnings"] = state?.acknowledgePostVerificationWarnings;
+            resourceInputs["autoApproveWarnings"] = state?.autoApproveWarnings;
+            resourceInputs["certificateEcdsaPem"] = state?.certificateEcdsaPem;
+            resourceInputs["certificateRsaPem"] = state?.certificateRsaPem;
+            resourceInputs["enrollmentId"] = state?.enrollmentId;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["trustChainEcdsaPem"] = state?.trustChainEcdsaPem;
+            resourceInputs["trustChainRsaPem"] = state?.trustChainRsaPem;
+            resourceInputs["waitForDeployment"] = state?.waitForDeployment;
         } else {
             const args = argsOrState as CpsUploadCertificateArgs | undefined;
-            if ((!args || args.enrollmentId === undefined) && !opts.urn) {
+            if (args?.enrollmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enrollmentId'");
             }
-            resourceInputs["acknowledgeChangeManagement"] = args ? args.acknowledgeChangeManagement : undefined;
-            resourceInputs["acknowledgePostVerificationWarnings"] = args ? args.acknowledgePostVerificationWarnings : undefined;
-            resourceInputs["autoApproveWarnings"] = args ? args.autoApproveWarnings : undefined;
-            resourceInputs["certificateEcdsaPem"] = args ? args.certificateEcdsaPem : undefined;
-            resourceInputs["certificateRsaPem"] = args ? args.certificateRsaPem : undefined;
-            resourceInputs["enrollmentId"] = args ? args.enrollmentId : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
-            resourceInputs["trustChainEcdsaPem"] = args ? args.trustChainEcdsaPem : undefined;
-            resourceInputs["trustChainRsaPem"] = args ? args.trustChainRsaPem : undefined;
-            resourceInputs["waitForDeployment"] = args ? args.waitForDeployment : undefined;
+            resourceInputs["acknowledgeChangeManagement"] = args?.acknowledgeChangeManagement;
+            resourceInputs["acknowledgePostVerificationWarnings"] = args?.acknowledgePostVerificationWarnings;
+            resourceInputs["autoApproveWarnings"] = args?.autoApproveWarnings;
+            resourceInputs["certificateEcdsaPem"] = args?.certificateEcdsaPem;
+            resourceInputs["certificateRsaPem"] = args?.certificateRsaPem;
+            resourceInputs["enrollmentId"] = args?.enrollmentId;
+            resourceInputs["timeouts"] = args?.timeouts;
+            resourceInputs["trustChainEcdsaPem"] = args?.trustChainEcdsaPem;
+            resourceInputs["trustChainRsaPem"] = args?.trustChainRsaPem;
+            resourceInputs["waitForDeployment"] = args?.waitForDeployment;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CpsUploadCertificate.__pulumiType, name, resourceInputs, opts);

@@ -32,9 +32,9 @@ export class BotmanCustomBotCategory extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanCustomBotCategory.__pulumiType;
     }
 
-    public /*out*/ readonly categoryId!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
-    public readonly customBotCategory!: pulumi.Output<string>;
+    declare public /*out*/ readonly categoryId: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
+    declare public readonly customBotCategory: pulumi.Output<string>;
 
     /**
      * Create a BotmanCustomBotCategory resource with the given unique name, arguments, and options.
@@ -49,19 +49,19 @@ export class BotmanCustomBotCategory extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanCustomBotCategoryState | undefined;
-            resourceInputs["categoryId"] = state ? state.categoryId : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["customBotCategory"] = state ? state.customBotCategory : undefined;
+            resourceInputs["categoryId"] = state?.categoryId;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["customBotCategory"] = state?.customBotCategory;
         } else {
             const args = argsOrState as BotmanCustomBotCategoryArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.customBotCategory === undefined) && !opts.urn) {
+            if (args?.customBotCategory === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customBotCategory'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["customBotCategory"] = args ? args.customBotCategory : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["customBotCategory"] = args?.customBotCategory;
             resourceInputs["categoryId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

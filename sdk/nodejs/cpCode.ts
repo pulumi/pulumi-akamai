@@ -34,14 +34,14 @@ export class CpCode extends pulumi.CustomResource {
         return obj['__pulumiType'] === CpCode.__pulumiType;
     }
 
-    public readonly contractId!: pulumi.Output<string>;
-    public readonly groupId!: pulumi.Output<string>;
-    public readonly name!: pulumi.Output<string>;
-    public readonly productId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly productId: pulumi.Output<string>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.CpCodeTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.CpCodeTimeouts | undefined>;
 
     /**
      * Create a CpCode resource with the given unique name, arguments, and options.
@@ -56,24 +56,24 @@ export class CpCode extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpCodeState | undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["productId"] = state ? state.productId : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["productId"] = state?.productId;
+            resourceInputs["timeouts"] = state?.timeouts;
         } else {
             const args = argsOrState as CpCodeArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["productId"] = args ? args.productId : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["productId"] = args?.productId;
+            resourceInputs["timeouts"] = args?.timeouts;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:properties/cpCode:CpCode" }] };

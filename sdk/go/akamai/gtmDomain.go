@@ -49,8 +49,7 @@ type GtmDomain struct {
 	ServermonitorPool            pulumi.StringOutput      `pulumi:"servermonitorPool"`
 	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
 	SignAndServe pulumi.BoolPtrOutput `pulumi:"signAndServe"`
-	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
 	SignAndServeAlgorithm pulumi.StringPtrOutput `pulumi:"signAndServeAlgorithm"`
 	Type                  pulumi.StringOutput    `pulumi:"type"`
 	WaitOnComplete        pulumi.BoolPtrOutput   `pulumi:"waitOnComplete"`
@@ -129,8 +128,7 @@ type gtmDomainState struct {
 	ServermonitorPool            *string  `pulumi:"servermonitorPool"`
 	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
 	SignAndServe *bool `pulumi:"signAndServe"`
-	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
 	SignAndServeAlgorithm *string `pulumi:"signAndServeAlgorithm"`
 	Type                  *string `pulumi:"type"`
 	WaitOnComplete        *bool   `pulumi:"waitOnComplete"`
@@ -171,8 +169,7 @@ type GtmDomainState struct {
 	ServermonitorPool            pulumi.StringPtrInput
 	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
 	SignAndServe pulumi.BoolPtrInput
-	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
 	SignAndServeAlgorithm pulumi.StringPtrInput
 	Type                  pulumi.StringPtrInput
 	WaitOnComplete        pulumi.BoolPtrInput
@@ -198,8 +195,7 @@ type gtmDomainArgs struct {
 	Name                        *string  `pulumi:"name"`
 	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
 	SignAndServe *bool `pulumi:"signAndServe"`
-	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
 	SignAndServeAlgorithm *string `pulumi:"signAndServeAlgorithm"`
 	Type                  string  `pulumi:"type"`
 	WaitOnComplete        *bool   `pulumi:"waitOnComplete"`
@@ -222,8 +218,7 @@ type GtmDomainArgs struct {
 	Name                        pulumi.StringPtrInput
 	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
 	SignAndServe pulumi.BoolPtrInput
-	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
 	SignAndServeAlgorithm pulumi.StringPtrInput
 	Type                  pulumi.StringInput
 	WaitOnComplete        pulumi.BoolPtrInput
@@ -449,8 +444,7 @@ func (o GtmDomainOutput) SignAndServe() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.SignAndServe }).(pulumi.BoolPtrOutput)
 }
 
-// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
 func (o GtmDomainOutput) SignAndServeAlgorithm() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.SignAndServeAlgorithm }).(pulumi.StringPtrOutput)
 }

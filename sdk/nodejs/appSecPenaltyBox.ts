@@ -35,19 +35,19 @@ export class AppSecPenaltyBox extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * The action to be taken when the penalty box is triggered
      */
-    public readonly penaltyBoxAction!: pulumi.Output<string>;
+    declare public readonly penaltyBoxAction: pulumi.Output<string>;
     /**
      * Whether to enable the penalty box for the specified security policy
      */
-    public readonly penaltyBoxProtection!: pulumi.Output<boolean>;
+    declare public readonly penaltyBoxProtection: pulumi.Output<boolean>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecPenaltyBox resource with the given unique name, arguments, and options.
@@ -62,28 +62,28 @@ export class AppSecPenaltyBox extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecPenaltyBoxState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["penaltyBoxAction"] = state ? state.penaltyBoxAction : undefined;
-            resourceInputs["penaltyBoxProtection"] = state ? state.penaltyBoxProtection : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["penaltyBoxAction"] = state?.penaltyBoxAction;
+            resourceInputs["penaltyBoxProtection"] = state?.penaltyBoxProtection;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecPenaltyBoxArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.penaltyBoxAction === undefined) && !opts.urn) {
+            if (args?.penaltyBoxAction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'penaltyBoxAction'");
             }
-            if ((!args || args.penaltyBoxProtection === undefined) && !opts.urn) {
+            if (args?.penaltyBoxProtection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'penaltyBoxProtection'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["penaltyBoxAction"] = args ? args.penaltyBoxAction : undefined;
-            resourceInputs["penaltyBoxProtection"] = args ? args.penaltyBoxProtection : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["penaltyBoxAction"] = args?.penaltyBoxAction;
+            resourceInputs["penaltyBoxProtection"] = args?.penaltyBoxProtection;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecPenaltyBox.__pulumiType, name, resourceInputs, opts);

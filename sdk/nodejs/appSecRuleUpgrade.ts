@@ -35,27 +35,27 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Versioning information for the current KRS rule set
      */
-    public /*out*/ readonly currentRuleset!: pulumi.Output<string>;
+    declare public /*out*/ readonly currentRuleset: pulumi.Output<string>;
     /**
      * Whether an evaluation is currently in progress
      */
-    public /*out*/ readonly evalStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly evalStatus: pulumi.Output<string>;
     /**
      * Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      */
-    public /*out*/ readonly mode!: pulumi.Output<string>;
+    declare public /*out*/ readonly mode: pulumi.Output<string>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
     /**
      * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
      */
-    public readonly upgradeMode!: pulumi.Output<string | undefined>;
+    declare public readonly upgradeMode: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppSecRuleUpgrade resource with the given unique name, arguments, and options.
@@ -70,23 +70,23 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecRuleUpgradeState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["currentRuleset"] = state ? state.currentRuleset : undefined;
-            resourceInputs["evalStatus"] = state ? state.evalStatus : undefined;
-            resourceInputs["mode"] = state ? state.mode : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            resourceInputs["upgradeMode"] = state ? state.upgradeMode : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["currentRuleset"] = state?.currentRuleset;
+            resourceInputs["evalStatus"] = state?.evalStatus;
+            resourceInputs["mode"] = state?.mode;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
+            resourceInputs["upgradeMode"] = state?.upgradeMode;
         } else {
             const args = argsOrState as AppSecRuleUpgradeArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            resourceInputs["upgradeMode"] = args ? args.upgradeMode : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
+            resourceInputs["upgradeMode"] = args?.upgradeMode;
             resourceInputs["currentRuleset"] = undefined /*out*/;
             resourceInputs["evalStatus"] = undefined /*out*/;
             resourceInputs["mode"] = undefined /*out*/;

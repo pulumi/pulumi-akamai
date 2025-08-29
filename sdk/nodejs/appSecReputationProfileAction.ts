@@ -35,19 +35,19 @@ export class AppSecReputationProfileAction extends pulumi.CustomResource {
     /**
      * Action to be taken when the reputation profile is triggered
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Unique identifier of the reputation profile
      */
-    public readonly reputationProfileId!: pulumi.Output<number>;
+    declare public readonly reputationProfileId: pulumi.Output<number>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecReputationProfileAction resource with the given unique name, arguments, and options.
@@ -62,28 +62,28 @@ export class AppSecReputationProfileAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecReputationProfileActionState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["reputationProfileId"] = state ? state.reputationProfileId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["reputationProfileId"] = state?.reputationProfileId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecReputationProfileActionArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.reputationProfileId === undefined) && !opts.urn) {
+            if (args?.reputationProfileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'reputationProfileId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["reputationProfileId"] = args ? args.reputationProfileId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["reputationProfileId"] = args?.reputationProfileId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecReputationProfileAction.__pulumiType, name, resourceInputs, opts);

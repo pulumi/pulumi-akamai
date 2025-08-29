@@ -37,23 +37,23 @@ export class EdgekvGroupItems extends pulumi.CustomResource {
     /**
      * The name of the EdgeKV group.
      */
-    public readonly groupName!: pulumi.Output<string>;
+    declare public readonly groupName: pulumi.Output<string>;
     /**
      * A map of items within the specified group. Each item consists of an item key and a value.
      */
-    public readonly items!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly items: pulumi.Output<{[key: string]: string}>;
     /**
      * The name for the EdgeKV namespace.
      */
-    public readonly namespaceName!: pulumi.Output<string>;
+    declare public readonly namespaceName: pulumi.Output<string>;
     /**
      * The network against which to execute the API request.
      */
-    public readonly network!: pulumi.Output<string>;
+    declare public readonly network: pulumi.Output<string>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.EdgekvGroupItemsTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.EdgekvGroupItemsTimeouts | undefined>;
 
     /**
      * Create a EdgekvGroupItems resource with the given unique name, arguments, and options.
@@ -68,30 +68,30 @@ export class EdgekvGroupItems extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EdgekvGroupItemsState | undefined;
-            resourceInputs["groupName"] = state ? state.groupName : undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["namespaceName"] = state ? state.namespaceName : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
+            resourceInputs["groupName"] = state?.groupName;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["namespaceName"] = state?.namespaceName;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["timeouts"] = state?.timeouts;
         } else {
             const args = argsOrState as EdgekvGroupItemsArgs | undefined;
-            if ((!args || args.groupName === undefined) && !opts.urn) {
+            if (args?.groupName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupName'");
             }
-            if ((!args || args.items === undefined) && !opts.urn) {
+            if (args?.items === undefined && !opts.urn) {
                 throw new Error("Missing required property 'items'");
             }
-            if ((!args || args.namespaceName === undefined) && !opts.urn) {
+            if (args?.namespaceName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespaceName'");
             }
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            resourceInputs["groupName"] = args ? args.groupName : undefined;
-            resourceInputs["items"] = args ? args.items : undefined;
-            resourceInputs["namespaceName"] = args ? args.namespaceName : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["groupName"] = args?.groupName;
+            resourceInputs["items"] = args?.items;
+            resourceInputs["namespaceName"] = args?.namespaceName;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["timeouts"] = args?.timeouts;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(EdgekvGroupItems.__pulumiType, name, resourceInputs, opts);

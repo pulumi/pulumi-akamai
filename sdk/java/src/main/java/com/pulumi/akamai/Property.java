@@ -218,16 +218,14 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.stagingVersion;
     }
     /**
-     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      * 
      */
     @Export(name="useHostnameBucket", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> useHostnameBucket;
 
     /**
-     * @return Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * @return Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      * 
      */
     public Output<Optional<Boolean>> useHostnameBucket() {

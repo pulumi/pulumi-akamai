@@ -92,16 +92,14 @@ public final class PropertyBootstrapState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      * 
      */
     @Import(name="useHostnameBucket")
     private @Nullable Output<Boolean> useHostnameBucket;
 
     /**
-     * @return Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * @return Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      * 
      */
     public Optional<Output<Boolean>> useHostnameBucket() {
@@ -243,8 +241,7 @@ public final class PropertyBootstrapState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param useHostnameBucket Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-         * incrementing property versions.
+         * @param useHostnameBucket Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
          * 
          * @return builder
          * 
@@ -255,8 +252,7 @@ public final class PropertyBootstrapState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param useHostnameBucket Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-         * incrementing property versions.
+         * @param useHostnameBucket Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
          * 
          * @return builder
          * 

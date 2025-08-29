@@ -35,27 +35,27 @@ export class AppSecActivations extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration to be activated
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Network on which to activate the configuration version (STAGING or PRODUCTION)
      */
-    public readonly network!: pulumi.Output<string | undefined>;
+    declare public readonly network: pulumi.Output<string | undefined>;
     /**
      * Note describing the activation. Will use timestamp if omitted.
      */
-    public readonly note!: pulumi.Output<string | undefined>;
+    declare public readonly note: pulumi.Output<string | undefined>;
     /**
      * List of email addresses to be notified with the results of the activation
      */
-    public readonly notificationEmails!: pulumi.Output<string[]>;
+    declare public readonly notificationEmails: pulumi.Output<string[]>;
     /**
      * The results of the activation
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Version of the security configuration to be activated
      */
-    public readonly version!: pulumi.Output<number>;
+    declare public readonly version: pulumi.Output<number>;
 
     /**
      * Create a AppSecActivations resource with the given unique name, arguments, and options.
@@ -70,28 +70,28 @@ export class AppSecActivations extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecActivationsState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["note"] = state ? state.note : undefined;
-            resourceInputs["notificationEmails"] = state ? state.notificationEmails : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["note"] = state?.note;
+            resourceInputs["notificationEmails"] = state?.notificationEmails;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as AppSecActivationsArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.notificationEmails === undefined) && !opts.urn) {
+            if (args?.notificationEmails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'notificationEmails'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["note"] = args ? args.note : undefined;
-            resourceInputs["notificationEmails"] = args ? args.notificationEmails : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["note"] = args?.note;
+            resourceInputs["notificationEmails"] = args?.notificationEmails;
+            resourceInputs["version"] = args?.version;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

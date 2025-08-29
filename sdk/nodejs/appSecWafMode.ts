@@ -35,35 +35,35 @@ export class AppSecWafMode extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Versioning information for the current Kona Rule Set
      */
-    public /*out*/ readonly currentRuleset!: pulumi.Output<string>;
+    declare public /*out*/ readonly currentRuleset: pulumi.Output<string>;
     /**
      * Date on which the evaluation period ends, if applicable
      */
-    public /*out*/ readonly evalExpirationDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly evalExpirationDate: pulumi.Output<string>;
     /**
      * Versioning information for the Kona Rule Set being evaluated, if applicable
      */
-    public /*out*/ readonly evalRuleset!: pulumi.Output<string>;
+    declare public /*out*/ readonly evalRuleset: pulumi.Output<string>;
     /**
      * Whether an evaluation is currently in progress
      */
-    public /*out*/ readonly evalStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly evalStatus: pulumi.Output<string>;
     /**
      * How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      */
-    public readonly mode!: pulumi.Output<string>;
+    declare public readonly mode: pulumi.Output<string>;
     /**
      * Text representation
      */
-    public /*out*/ readonly outputText!: pulumi.Output<string>;
+    declare public /*out*/ readonly outputText: pulumi.Output<string>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecWafMode resource with the given unique name, arguments, and options.
@@ -78,28 +78,28 @@ export class AppSecWafMode extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecWafModeState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["currentRuleset"] = state ? state.currentRuleset : undefined;
-            resourceInputs["evalExpirationDate"] = state ? state.evalExpirationDate : undefined;
-            resourceInputs["evalRuleset"] = state ? state.evalRuleset : undefined;
-            resourceInputs["evalStatus"] = state ? state.evalStatus : undefined;
-            resourceInputs["mode"] = state ? state.mode : undefined;
-            resourceInputs["outputText"] = state ? state.outputText : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["currentRuleset"] = state?.currentRuleset;
+            resourceInputs["evalExpirationDate"] = state?.evalExpirationDate;
+            resourceInputs["evalRuleset"] = state?.evalRuleset;
+            resourceInputs["evalStatus"] = state?.evalStatus;
+            resourceInputs["mode"] = state?.mode;
+            resourceInputs["outputText"] = state?.outputText;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecWafModeArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.mode === undefined) && !opts.urn) {
+            if (args?.mode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mode'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["mode"] = args ? args.mode : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["mode"] = args?.mode;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
             resourceInputs["currentRuleset"] = undefined /*out*/;
             resourceInputs["evalExpirationDate"] = undefined /*out*/;
             resourceInputs["evalRuleset"] = undefined /*out*/;

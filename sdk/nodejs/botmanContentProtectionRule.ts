@@ -35,19 +35,19 @@ export class BotmanContentProtectionRule extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * The content protection rule
      */
-    public readonly contentProtectionRule!: pulumi.Output<string>;
+    declare public readonly contentProtectionRule: pulumi.Output<string>;
     /**
      * Unique identifier of a content protection rule
      */
-    public /*out*/ readonly contentProtectionRuleId!: pulumi.Output<string>;
+    declare public /*out*/ readonly contentProtectionRuleId: pulumi.Output<string>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a BotmanContentProtectionRule resource with the given unique name, arguments, and options.
@@ -62,24 +62,24 @@ export class BotmanContentProtectionRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanContentProtectionRuleState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["contentProtectionRule"] = state ? state.contentProtectionRule : undefined;
-            resourceInputs["contentProtectionRuleId"] = state ? state.contentProtectionRuleId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["contentProtectionRule"] = state?.contentProtectionRule;
+            resourceInputs["contentProtectionRuleId"] = state?.contentProtectionRuleId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as BotmanContentProtectionRuleArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.contentProtectionRule === undefined) && !opts.urn) {
+            if (args?.contentProtectionRule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contentProtectionRule'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["contentProtectionRule"] = args ? args.contentProtectionRule : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["contentProtectionRule"] = args?.contentProtectionRule;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
             resourceInputs["contentProtectionRuleId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

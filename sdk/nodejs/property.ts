@@ -37,66 +37,65 @@ export class Property extends pulumi.CustomResource {
     /**
      * ID of the property in the Identity and Access Management API.
      */
-    public /*out*/ readonly assetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly assetId: pulumi.Output<string>;
     /**
      * Contract ID to be assigned to the Property
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * Group ID to be assigned to the Property
      */
-    public readonly groupId!: pulumi.Output<string>;
-    public readonly hostnames!: pulumi.Output<outputs.PropertyHostname[] | undefined>;
+    declare public readonly groupId: pulumi.Output<string>;
+    declare public readonly hostnames: pulumi.Output<outputs.PropertyHostname[] | undefined>;
     /**
      * Property's current latest version number
      */
-    public /*out*/ readonly latestVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly latestVersion: pulumi.Output<number>;
     /**
      * Name to give to the Property (must be unique)
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Product ID to be assigned to the Property
      */
-    public readonly productId!: pulumi.Output<string>;
+    declare public readonly productId: pulumi.Output<string>;
     /**
      * Property's version currently activated in production (zero when not active in production)
      */
-    public /*out*/ readonly productionVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly productionVersion: pulumi.Output<number>;
     /**
      * Property ID
      */
-    public readonly propertyId!: pulumi.Output<string | undefined>;
+    declare public readonly propertyId: pulumi.Output<string | undefined>;
     /**
      * Required property's version to be read
      */
-    public /*out*/ readonly readVersion!: pulumi.Output<number>;
-    public /*out*/ readonly ruleErrors!: pulumi.Output<outputs.PropertyRuleError[]>;
+    declare public /*out*/ readonly readVersion: pulumi.Output<number>;
+    declare public /*out*/ readonly ruleErrors: pulumi.Output<outputs.PropertyRuleError[]>;
     /**
      * Specify the rule format version (defaults to latest version available when created)
      */
-    public readonly ruleFormat!: pulumi.Output<string>;
+    declare public readonly ruleFormat: pulumi.Output<string>;
     /**
      * Rule validation warnings
      */
-    public /*out*/ readonly ruleWarnings!: pulumi.Output<outputs.PropertyRuleWarning[]>;
+    declare public /*out*/ readonly ruleWarnings: pulumi.Output<outputs.PropertyRuleWarning[]>;
     /**
      * Property Rules as JSON
      */
-    public readonly rules!: pulumi.Output<string>;
+    declare public readonly rules: pulumi.Output<string>;
     /**
      * Property's version currently activated in staging (zero when not active in staging)
      */
-    public /*out*/ readonly stagingVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly stagingVersion: pulumi.Output<number>;
     /**
-     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
-    public readonly useHostnameBucket!: pulumi.Output<boolean | undefined>;
+    declare public readonly useHostnameBucket: pulumi.Output<boolean | undefined>;
     /**
      * Property version notes
      */
-    public readonly versionNotes!: pulumi.Output<string>;
+    declare public readonly versionNotes: pulumi.Output<string>;
 
     /**
      * Create a Property resource with the given unique name, arguments, and options.
@@ -111,44 +110,44 @@ export class Property extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyState | undefined;
-            resourceInputs["assetId"] = state ? state.assetId : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["hostnames"] = state ? state.hostnames : undefined;
-            resourceInputs["latestVersion"] = state ? state.latestVersion : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["productId"] = state ? state.productId : undefined;
-            resourceInputs["productionVersion"] = state ? state.productionVersion : undefined;
-            resourceInputs["propertyId"] = state ? state.propertyId : undefined;
-            resourceInputs["readVersion"] = state ? state.readVersion : undefined;
-            resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
-            resourceInputs["ruleFormat"] = state ? state.ruleFormat : undefined;
-            resourceInputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["stagingVersion"] = state ? state.stagingVersion : undefined;
-            resourceInputs["useHostnameBucket"] = state ? state.useHostnameBucket : undefined;
-            resourceInputs["versionNotes"] = state ? state.versionNotes : undefined;
+            resourceInputs["assetId"] = state?.assetId;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["hostnames"] = state?.hostnames;
+            resourceInputs["latestVersion"] = state?.latestVersion;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["productId"] = state?.productId;
+            resourceInputs["productionVersion"] = state?.productionVersion;
+            resourceInputs["propertyId"] = state?.propertyId;
+            resourceInputs["readVersion"] = state?.readVersion;
+            resourceInputs["ruleErrors"] = state?.ruleErrors;
+            resourceInputs["ruleFormat"] = state?.ruleFormat;
+            resourceInputs["ruleWarnings"] = state?.ruleWarnings;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["stagingVersion"] = state?.stagingVersion;
+            resourceInputs["useHostnameBucket"] = state?.useHostnameBucket;
+            resourceInputs["versionNotes"] = state?.versionNotes;
         } else {
             const args = argsOrState as PropertyArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.productId === undefined) && !opts.urn) {
+            if (args?.productId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'productId'");
             }
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["hostnames"] = args ? args.hostnames : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["productId"] = args ? args.productId : undefined;
-            resourceInputs["propertyId"] = args ? args.propertyId : undefined;
-            resourceInputs["ruleFormat"] = args ? args.ruleFormat : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["useHostnameBucket"] = args ? args.useHostnameBucket : undefined;
-            resourceInputs["versionNotes"] = args ? args.versionNotes : undefined;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["hostnames"] = args?.hostnames;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["productId"] = args?.productId;
+            resourceInputs["propertyId"] = args?.propertyId;
+            resourceInputs["ruleFormat"] = args?.ruleFormat;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["useHostnameBucket"] = args?.useHostnameBucket;
+            resourceInputs["versionNotes"] = args?.versionNotes;
             resourceInputs["assetId"] = undefined /*out*/;
             resourceInputs["latestVersion"] = undefined /*out*/;
             resourceInputs["productionVersion"] = undefined /*out*/;
@@ -223,8 +222,7 @@ export interface PropertyState {
      */
     stagingVersion?: pulumi.Input<number>;
     /**
-     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
     useHostnameBucket?: pulumi.Input<boolean>;
     /**
@@ -267,8 +265,7 @@ export interface PropertyArgs {
      */
     rules?: pulumi.Input<string>;
     /**
-     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-     * incrementing property versions.
+     * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
     useHostnameBucket?: pulumi.Input<boolean>;
     /**

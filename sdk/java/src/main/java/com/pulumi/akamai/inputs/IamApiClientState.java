@@ -55,16 +55,14 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of credentials active for the API client. When the count is zero, you can delete the API client without
-     * interruption.
+     * The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
      * 
      */
     @Import(name="activeCredentialCount")
     private @Nullable Output<Integer> activeCredentialCount;
 
     /**
-     * @return The number of credentials active for the API client. When the count is zero, you can delete the API client without
-     * interruption.
+     * @return The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
      * 
      */
     public Optional<Output<Integer>> activeCredentialCount() {
@@ -102,16 +100,14 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single
-     * username in an array.
+     * The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single username in an array.
      * 
      */
     @Import(name="authorizedUsers")
     private @Nullable Output<List<String>> authorizedUsers;
 
     /**
-     * @return The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single
-     * username in an array.
+     * @return The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single username in an array.
      * 
      */
     public Optional<Output<List<String>>> authorizedUsers() {
@@ -194,16 +190,14 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the
-     * credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
+     * Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
      * 
      */
     @Import(name="clientType")
     private @Nullable Output<String> clientType;
 
     /**
-     * @return Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the
-     * credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
+     * @return Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
      * 
      */
     public Optional<Output<String>> clientType() {
@@ -308,16 +302,14 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-     * of `CCU API`.
+     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
      * 
      */
     @Import(name="purgeOptions")
     private @Nullable Output<IamApiClientPurgeOptionsArgs> purgeOptions;
 
     /**
-     * @return Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-     * of `CCU API`.
+     * @return Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
      * 
      */
     public Optional<Output<IamApiClientPurgeOptionsArgs>> purgeOptions() {
@@ -410,8 +402,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param activeCredentialCount The number of credentials active for the API client. When the count is zero, you can delete the API client without
-         * interruption.
+         * @param activeCredentialCount The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
          * 
          * @return builder
          * 
@@ -422,8 +413,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param activeCredentialCount The number of credentials active for the API client. When the count is zero, you can delete the API client without
-         * interruption.
+         * @param activeCredentialCount The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
          * 
          * @return builder
          * 
@@ -475,8 +465,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizedUsers The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single
-         * username in an array.
+         * @param authorizedUsers The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single username in an array.
          * 
          * @return builder
          * 
@@ -487,8 +476,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizedUsers The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single
-         * username in an array.
+         * @param authorizedUsers The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single username in an array.
          * 
          * @return builder
          * 
@@ -498,8 +486,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizedUsers The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single
-         * username in an array.
+         * @param authorizedUsers The API client&#39;s valid users. When the &#39;client_type&#39; is either &#39;CLIENT&#39; or &#39;USER_CLIENT&#39;, you need to specify a single username in an array.
          * 
          * @return builder
          * 
@@ -614,8 +601,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientType Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the
-         * credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
+         * @param clientType Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
          * 
          * @return builder
          * 
@@ -626,8 +612,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientType Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the
-         * credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
+         * @param clientType Specifies the API client&#39;s ownership and credential management. &#39;CLIENT&#39; indicates the creator owns and manages the credentials. &#39;USER_CLIENT&#39; indicates another user owns the client and manages the credentials.
          * 
          * @return builder
          * 
@@ -782,8 +767,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param purgeOptions Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-         * of `CCU API`.
+         * @param purgeOptions Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
          * 
          * @return builder
          * 
@@ -794,8 +778,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param purgeOptions Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-         * of `CCU API`.
+         * @param purgeOptions Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
          * 
          * @return builder
          * 

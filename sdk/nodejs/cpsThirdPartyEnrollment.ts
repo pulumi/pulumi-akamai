@@ -37,72 +37,72 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
     /**
      * Whether acknowledge warnings before certificate verification. Default is false
      */
-    public readonly acknowledgePreVerificationWarnings!: pulumi.Output<boolean | undefined>;
+    declare public readonly acknowledgePreVerificationWarnings: pulumi.Output<boolean | undefined>;
     /**
      * Contact information for the certificate administrator to use at organization
      */
-    public readonly adminContact!: pulumi.Output<outputs.CpsThirdPartyEnrollmentAdminContact>;
+    declare public readonly adminContact: pulumi.Output<outputs.CpsThirdPartyEnrollmentAdminContact>;
     /**
      * Allow to duplicate common name. Default is false
      */
-    public readonly allowDuplicateCommonName!: pulumi.Output<boolean | undefined>;
+    declare public readonly allowDuplicateCommonName: pulumi.Output<boolean | undefined>;
     /**
      * List of warnings to be automatically approved
      */
-    public readonly autoApproveWarnings!: pulumi.Output<string[] | undefined>;
+    declare public readonly autoApproveWarnings: pulumi.Output<string[] | undefined>;
     /**
      * Certificate trust chain type. Default is 'default'
      */
-    public readonly certificateChainType!: pulumi.Output<string | undefined>;
+    declare public readonly certificateChainType: pulumi.Output<string | undefined>;
     /**
      * When set to false, the certificate will be deployed to both staging and production networks
      */
-    public readonly changeManagement!: pulumi.Output<boolean | undefined>;
+    declare public readonly changeManagement: pulumi.Output<boolean | undefined>;
     /**
      * Common name used for enrollment
      */
-    public readonly commonName!: pulumi.Output<string>;
+    declare public readonly commonName: pulumi.Output<string>;
     /**
      * Contract ID for which enrollment is retrieved
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * Data used for generation of Certificate Signing Request
      */
-    public readonly csr!: pulumi.Output<outputs.CpsThirdPartyEnrollmentCsr>;
+    declare public readonly csr: pulumi.Output<outputs.CpsThirdPartyEnrollmentCsr>;
     /**
      * When true, SANs are excluded from the CSR
      */
-    public readonly excludeSans!: pulumi.Output<boolean | undefined>;
+    declare public readonly excludeSans: pulumi.Output<boolean | undefined>;
     /**
      * Settings containing network information and TLS metadata used by CPS
      */
-    public readonly networkConfiguration!: pulumi.Output<outputs.CpsThirdPartyEnrollmentNetworkConfiguration>;
+    declare public readonly networkConfiguration: pulumi.Output<outputs.CpsThirdPartyEnrollmentNetworkConfiguration>;
     /**
      * Organization information
      */
-    public readonly organization!: pulumi.Output<outputs.CpsThirdPartyEnrollmentOrganization>;
+    declare public readonly organization: pulumi.Output<outputs.CpsThirdPartyEnrollmentOrganization>;
     /**
      * List of SANs
      */
-    public readonly sans!: pulumi.Output<string[] | undefined>;
+    declare public readonly sans: pulumi.Output<string[] | undefined>;
     /**
      * Type of TLS deployment network
      */
-    public readonly secureNetwork!: pulumi.Output<string>;
-    public readonly signatureAlgorithm!: pulumi.Output<string | undefined>;
+    declare public readonly secureNetwork: pulumi.Output<string>;
+    declare public readonly signatureAlgorithm: pulumi.Output<string | undefined>;
     /**
      * Whether Server Name Indication is used for enrollment
      */
-    public readonly sniOnly!: pulumi.Output<boolean>;
+    declare public readonly sniOnly: pulumi.Output<boolean>;
     /**
      * Contact information for an administrator at Akamai
      */
-    public readonly techContact!: pulumi.Output<outputs.CpsThirdPartyEnrollmentTechContact>;
+    declare public readonly techContact: pulumi.Output<outputs.CpsThirdPartyEnrollmentTechContact>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.CpsThirdPartyEnrollmentTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.CpsThirdPartyEnrollmentTimeouts | undefined>;
 
     /**
      * Create a CpsThirdPartyEnrollment resource with the given unique name, arguments, and options.
@@ -117,71 +117,71 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpsThirdPartyEnrollmentState | undefined;
-            resourceInputs["acknowledgePreVerificationWarnings"] = state ? state.acknowledgePreVerificationWarnings : undefined;
-            resourceInputs["adminContact"] = state ? state.adminContact : undefined;
-            resourceInputs["allowDuplicateCommonName"] = state ? state.allowDuplicateCommonName : undefined;
-            resourceInputs["autoApproveWarnings"] = state ? state.autoApproveWarnings : undefined;
-            resourceInputs["certificateChainType"] = state ? state.certificateChainType : undefined;
-            resourceInputs["changeManagement"] = state ? state.changeManagement : undefined;
-            resourceInputs["commonName"] = state ? state.commonName : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["csr"] = state ? state.csr : undefined;
-            resourceInputs["excludeSans"] = state ? state.excludeSans : undefined;
-            resourceInputs["networkConfiguration"] = state ? state.networkConfiguration : undefined;
-            resourceInputs["organization"] = state ? state.organization : undefined;
-            resourceInputs["sans"] = state ? state.sans : undefined;
-            resourceInputs["secureNetwork"] = state ? state.secureNetwork : undefined;
-            resourceInputs["signatureAlgorithm"] = state ? state.signatureAlgorithm : undefined;
-            resourceInputs["sniOnly"] = state ? state.sniOnly : undefined;
-            resourceInputs["techContact"] = state ? state.techContact : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
+            resourceInputs["acknowledgePreVerificationWarnings"] = state?.acknowledgePreVerificationWarnings;
+            resourceInputs["adminContact"] = state?.adminContact;
+            resourceInputs["allowDuplicateCommonName"] = state?.allowDuplicateCommonName;
+            resourceInputs["autoApproveWarnings"] = state?.autoApproveWarnings;
+            resourceInputs["certificateChainType"] = state?.certificateChainType;
+            resourceInputs["changeManagement"] = state?.changeManagement;
+            resourceInputs["commonName"] = state?.commonName;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["csr"] = state?.csr;
+            resourceInputs["excludeSans"] = state?.excludeSans;
+            resourceInputs["networkConfiguration"] = state?.networkConfiguration;
+            resourceInputs["organization"] = state?.organization;
+            resourceInputs["sans"] = state?.sans;
+            resourceInputs["secureNetwork"] = state?.secureNetwork;
+            resourceInputs["signatureAlgorithm"] = state?.signatureAlgorithm;
+            resourceInputs["sniOnly"] = state?.sniOnly;
+            resourceInputs["techContact"] = state?.techContact;
+            resourceInputs["timeouts"] = state?.timeouts;
         } else {
             const args = argsOrState as CpsThirdPartyEnrollmentArgs | undefined;
-            if ((!args || args.adminContact === undefined) && !opts.urn) {
+            if (args?.adminContact === undefined && !opts.urn) {
                 throw new Error("Missing required property 'adminContact'");
             }
-            if ((!args || args.commonName === undefined) && !opts.urn) {
+            if (args?.commonName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'commonName'");
             }
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.csr === undefined) && !opts.urn) {
+            if (args?.csr === undefined && !opts.urn) {
                 throw new Error("Missing required property 'csr'");
             }
-            if ((!args || args.networkConfiguration === undefined) && !opts.urn) {
+            if (args?.networkConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkConfiguration'");
             }
-            if ((!args || args.organization === undefined) && !opts.urn) {
+            if (args?.organization === undefined && !opts.urn) {
                 throw new Error("Missing required property 'organization'");
             }
-            if ((!args || args.secureNetwork === undefined) && !opts.urn) {
+            if (args?.secureNetwork === undefined && !opts.urn) {
                 throw new Error("Missing required property 'secureNetwork'");
             }
-            if ((!args || args.sniOnly === undefined) && !opts.urn) {
+            if (args?.sniOnly === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sniOnly'");
             }
-            if ((!args || args.techContact === undefined) && !opts.urn) {
+            if (args?.techContact === undefined && !opts.urn) {
                 throw new Error("Missing required property 'techContact'");
             }
-            resourceInputs["acknowledgePreVerificationWarnings"] = args ? args.acknowledgePreVerificationWarnings : undefined;
-            resourceInputs["adminContact"] = args ? args.adminContact : undefined;
-            resourceInputs["allowDuplicateCommonName"] = args ? args.allowDuplicateCommonName : undefined;
-            resourceInputs["autoApproveWarnings"] = args ? args.autoApproveWarnings : undefined;
-            resourceInputs["certificateChainType"] = args ? args.certificateChainType : undefined;
-            resourceInputs["changeManagement"] = args ? args.changeManagement : undefined;
-            resourceInputs["commonName"] = args ? args.commonName : undefined;
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["csr"] = args ? args.csr : undefined;
-            resourceInputs["excludeSans"] = args ? args.excludeSans : undefined;
-            resourceInputs["networkConfiguration"] = args ? args.networkConfiguration : undefined;
-            resourceInputs["organization"] = args ? args.organization : undefined;
-            resourceInputs["sans"] = args ? args.sans : undefined;
-            resourceInputs["secureNetwork"] = args ? args.secureNetwork : undefined;
-            resourceInputs["signatureAlgorithm"] = args ? args.signatureAlgorithm : undefined;
-            resourceInputs["sniOnly"] = args ? args.sniOnly : undefined;
-            resourceInputs["techContact"] = args ? args.techContact : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["acknowledgePreVerificationWarnings"] = args?.acknowledgePreVerificationWarnings;
+            resourceInputs["adminContact"] = args?.adminContact;
+            resourceInputs["allowDuplicateCommonName"] = args?.allowDuplicateCommonName;
+            resourceInputs["autoApproveWarnings"] = args?.autoApproveWarnings;
+            resourceInputs["certificateChainType"] = args?.certificateChainType;
+            resourceInputs["changeManagement"] = args?.changeManagement;
+            resourceInputs["commonName"] = args?.commonName;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["csr"] = args?.csr;
+            resourceInputs["excludeSans"] = args?.excludeSans;
+            resourceInputs["networkConfiguration"] = args?.networkConfiguration;
+            resourceInputs["organization"] = args?.organization;
+            resourceInputs["sans"] = args?.sans;
+            resourceInputs["secureNetwork"] = args?.secureNetwork;
+            resourceInputs["signatureAlgorithm"] = args?.signatureAlgorithm;
+            resourceInputs["sniOnly"] = args?.sniOnly;
+            resourceInputs["techContact"] = args?.techContact;
+            resourceInputs["timeouts"] = args?.timeouts;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CpsThirdPartyEnrollment.__pulumiType, name, resourceInputs, opts);

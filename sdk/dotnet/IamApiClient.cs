@@ -25,8 +25,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.IamApiClientActions> Actions { get; private set; } = null!;
 
         /// <summary>
-        /// The number of credentials active for the API client. When the count is zero, you can delete the API client without
-        /// interruption.
+        /// The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
         /// </summary>
         [Output("activeCredentialCount")]
         public Output<int> ActiveCredentialCount { get; private set; } = null!;
@@ -44,8 +43,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.IamApiClientApiAccess> ApiAccess { get; private set; } = null!;
 
         /// <summary>
-        /// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-        /// username in an array.
+        /// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         /// </summary>
         [Output("authorizedUsers")]
         public Output<ImmutableArray<string>> AuthorizedUsers { get; private set; } = null!;
@@ -81,8 +79,7 @@ namespace Pulumi.Akamai
         public Output<string> ClientName { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-        /// credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        /// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         /// </summary>
         [Output("clientType")]
         public Output<string> ClientType { get; private set; } = null!;
@@ -127,8 +124,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> NotificationEmails { get; private set; } = null!;
 
         /// <summary>
-        /// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-        /// of `CCU API`.
+        /// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         /// </summary>
         [Output("purgeOptions")]
         public Output<Outputs.IamApiClientPurgeOptions?> PurgeOptions { get; private set; } = null!;
@@ -200,8 +196,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _authorizedUsers;
 
         /// <summary>
-        /// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-        /// username in an array.
+        /// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         /// </summary>
         public InputList<string> AuthorizedUsers
         {
@@ -228,8 +223,7 @@ namespace Pulumi.Akamai
         public Input<string> ClientName { get; set; } = null!;
 
         /// <summary>
-        /// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-        /// credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        /// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         /// </summary>
         [Input("clientType", required: true)]
         public Input<string> ClientType { get; set; } = null!;
@@ -268,8 +262,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-        /// of `CCU API`.
+        /// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         /// </summary>
         [Input("purgeOptions")]
         public Input<Inputs.IamApiClientPurgeOptionsArgs>? PurgeOptions { get; set; }
@@ -305,8 +298,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.IamApiClientActionsGetArgs>? Actions { get; set; }
 
         /// <summary>
-        /// The number of credentials active for the API client. When the count is zero, you can delete the API client without
-        /// interruption.
+        /// The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
         /// </summary>
         [Input("activeCredentialCount")]
         public Input<int>? ActiveCredentialCount { get; set; }
@@ -327,8 +319,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _authorizedUsers;
 
         /// <summary>
-        /// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single
-        /// username in an array.
+        /// The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         /// </summary>
         public InputList<string> AuthorizedUsers
         {
@@ -377,8 +368,7 @@ namespace Pulumi.Akamai
         public Input<string>? ClientName { get; set; }
 
         /// <summary>
-        /// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the
-        /// credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
+        /// Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         /// </summary>
         [Input("clientType")]
         public Input<string>? ClientType { get; set; }
@@ -429,8 +419,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name`
-        /// of `CCU API`.
+        /// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         /// </summary>
         [Input("purgeOptions")]
         public Input<Inputs.IamApiClientPurgeOptionsGetArgs>? PurgeOptions { get; set; }

@@ -27,8 +27,7 @@ type Datastream struct {
 	// The date and time when the stream was created
 	CreatedDate      pulumi.StringOutput                 `pulumi:"createdDate"`
 	DatadogConnector DatastreamDatadogConnectorPtrOutput `pulumi:"datadogConnector"`
-	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-	// identifiers define how the value for these fields appear in the log lines
+	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
 	DatasetFields pulumi.IntArrayOutput `pulumi:"datasetFields"`
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  DatastreamDeliveryConfigurationOutput     `pulumi:"deliveryConfiguration"`
@@ -126,8 +125,7 @@ type datastreamState struct {
 	// The date and time when the stream was created
 	CreatedDate      *string                     `pulumi:"createdDate"`
 	DatadogConnector *DatastreamDatadogConnector `pulumi:"datadogConnector"`
-	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-	// identifiers define how the value for these fields appear in the log lines
+	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
 	DatasetFields []int `pulumi:"datasetFields"`
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  *DatastreamDeliveryConfiguration  `pulumi:"deliveryConfiguration"`
@@ -175,8 +173,7 @@ type DatastreamState struct {
 	// The date and time when the stream was created
 	CreatedDate      pulumi.StringPtrInput
 	DatadogConnector DatastreamDatadogConnectorPtrInput
-	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-	// identifiers define how the value for these fields appear in the log lines
+	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
 	DatasetFields pulumi.IntArrayInput
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  DatastreamDeliveryConfigurationPtrInput
@@ -224,8 +221,7 @@ type datastreamArgs struct {
 	// Identifies the contract that has access to the product
 	ContractId       string                      `pulumi:"contractId"`
 	DatadogConnector *DatastreamDatadogConnector `pulumi:"datadogConnector"`
-	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-	// identifiers define how the value for these fields appear in the log lines
+	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
 	DatasetFields []int `pulumi:"datasetFields"`
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  DatastreamDeliveryConfiguration   `pulumi:"deliveryConfiguration"`
@@ -258,8 +254,7 @@ type DatastreamArgs struct {
 	// Identifies the contract that has access to the product
 	ContractId       pulumi.StringInput
 	DatadogConnector DatastreamDatadogConnectorPtrInput
-	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-	// identifiers define how the value for these fields appear in the log lines
+	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
 	DatasetFields pulumi.IntArrayInput
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  DatastreamDeliveryConfigurationInput
@@ -402,8 +397,7 @@ func (o DatastreamOutput) DatadogConnector() DatastreamDatadogConnectorPtrOutput
 	return o.ApplyT(func(v *Datastream) DatastreamDatadogConnectorPtrOutput { return v.DatadogConnector }).(DatastreamDatadogConnectorPtrOutput)
 }
 
-// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-// identifiers define how the value for these fields appear in the log lines
+// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
 func (o DatastreamOutput) DatasetFields() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.IntArrayOutput { return v.DatasetFields }).(pulumi.IntArrayOutput)
 }

@@ -35,55 +35,55 @@ export class PropertyInclude extends pulumi.CustomResource {
     /**
      * ID of the include in the Identity and Access Management API.
      */
-    public /*out*/ readonly assetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly assetId: pulumi.Output<string>;
     /**
      * Identifies the contract to which the include is assigned
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * Identifies the group to which the include is assigned
      */
-    public readonly groupId!: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
     /**
      * Specifies the most recent version of the include
      */
-    public /*out*/ readonly latestVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly latestVersion: pulumi.Output<number>;
     /**
      * A descriptive name for the include
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The product assigned to the include
      */
-    public readonly productId!: pulumi.Output<string | undefined>;
+    declare public readonly productId: pulumi.Output<string | undefined>;
     /**
      * The most recent version to be activated to the production network
      */
-    public /*out*/ readonly productionVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly productionVersion: pulumi.Output<string>;
     /**
      * Rule validation errors
      */
-    public /*out*/ readonly ruleErrors!: pulumi.Output<string>;
+    declare public /*out*/ readonly ruleErrors: pulumi.Output<string>;
     /**
      * Indicates the versioned set of features and criteria
      */
-    public readonly ruleFormat!: pulumi.Output<string>;
+    declare public readonly ruleFormat: pulumi.Output<string>;
     /**
      * Rule validation warnings
      */
-    public /*out*/ readonly ruleWarnings!: pulumi.Output<string>;
+    declare public /*out*/ readonly ruleWarnings: pulumi.Output<string>;
     /**
      * Property Rules as JSON
      */
-    public readonly rules!: pulumi.Output<string>;
+    declare public readonly rules: pulumi.Output<string>;
     /**
      * The most recent version to be activated to the staging network
      */
-    public /*out*/ readonly stagingVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly stagingVersion: pulumi.Output<string>;
     /**
      * Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a PropertyInclude resource with the given unique name, arguments, and options.
@@ -98,40 +98,40 @@ export class PropertyInclude extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyIncludeState | undefined;
-            resourceInputs["assetId"] = state ? state.assetId : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["latestVersion"] = state ? state.latestVersion : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["productId"] = state ? state.productId : undefined;
-            resourceInputs["productionVersion"] = state ? state.productionVersion : undefined;
-            resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
-            resourceInputs["ruleFormat"] = state ? state.ruleFormat : undefined;
-            resourceInputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["stagingVersion"] = state ? state.stagingVersion : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["assetId"] = state?.assetId;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["latestVersion"] = state?.latestVersion;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["productId"] = state?.productId;
+            resourceInputs["productionVersion"] = state?.productionVersion;
+            resourceInputs["ruleErrors"] = state?.ruleErrors;
+            resourceInputs["ruleFormat"] = state?.ruleFormat;
+            resourceInputs["ruleWarnings"] = state?.ruleWarnings;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["stagingVersion"] = state?.stagingVersion;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as PropertyIncludeArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.ruleFormat === undefined) && !opts.urn) {
+            if (args?.ruleFormat === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleFormat'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["productId"] = args ? args.productId : undefined;
-            resourceInputs["ruleFormat"] = args ? args.ruleFormat : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["productId"] = args?.productId;
+            resourceInputs["ruleFormat"] = args?.ruleFormat;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["type"] = args?.type;
             resourceInputs["assetId"] = undefined /*out*/;
             resourceInputs["latestVersion"] = undefined /*out*/;
             resourceInputs["productionVersion"] = undefined /*out*/;

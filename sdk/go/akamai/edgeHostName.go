@@ -25,8 +25,7 @@ type EdgeHostName struct {
 	StatusUpdateEmails pulumi.StringArrayOutput `pulumi:"statusUpdateEmails"`
 	// Enables to set timeout for processing
 	Timeouts EdgeHostNameTimeoutsPtrOutput `pulumi:"timeouts"`
-	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-	// value for product is used.
+	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
 	Ttl pulumi.IntPtrOutput `pulumi:"ttl"`
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrOutput `pulumi:"useCases"`
@@ -90,8 +89,7 @@ type edgeHostNameState struct {
 	StatusUpdateEmails []string `pulumi:"statusUpdateEmails"`
 	// Enables to set timeout for processing
 	Timeouts *EdgeHostNameTimeouts `pulumi:"timeouts"`
-	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-	// value for product is used.
+	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
 	Ttl *int `pulumi:"ttl"`
 	// A JSON encoded list of use cases
 	UseCases *string `pulumi:"useCases"`
@@ -108,8 +106,7 @@ type EdgeHostNameState struct {
 	StatusUpdateEmails pulumi.StringArrayInput
 	// Enables to set timeout for processing
 	Timeouts EdgeHostNameTimeoutsPtrInput
-	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-	// value for product is used.
+	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
 	Ttl pulumi.IntPtrInput
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrInput
@@ -130,8 +127,7 @@ type edgeHostNameArgs struct {
 	StatusUpdateEmails []string `pulumi:"statusUpdateEmails"`
 	// Enables to set timeout for processing
 	Timeouts *EdgeHostNameTimeouts `pulumi:"timeouts"`
-	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-	// value for product is used.
+	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
 	Ttl *int `pulumi:"ttl"`
 	// A JSON encoded list of use cases
 	UseCases *string `pulumi:"useCases"`
@@ -149,8 +145,7 @@ type EdgeHostNameArgs struct {
 	StatusUpdateEmails pulumi.StringArrayInput
 	// Enables to set timeout for processing
 	Timeouts EdgeHostNameTimeoutsPtrInput
-	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-	// value for product is used.
+	// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
 	Ttl pulumi.IntPtrInput
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrInput
@@ -277,8 +272,7 @@ func (o EdgeHostNameOutput) Timeouts() EdgeHostNameTimeoutsPtrOutput {
 	return o.ApplyT(func(v *EdgeHostName) EdgeHostNameTimeoutsPtrOutput { return v.Timeouts }).(EdgeHostNameTimeoutsPtrOutput)
 }
 
-// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-// value for product is used.
+// The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
 func (o EdgeHostNameOutput) Ttl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.IntPtrOutput { return v.Ttl }).(pulumi.IntPtrOutput)
 }

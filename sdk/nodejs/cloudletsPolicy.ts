@@ -37,47 +37,47 @@ export class CloudletsPolicy extends pulumi.CustomResource {
     /**
      * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
      */
-    public readonly cloudletCode!: pulumi.Output<string>;
+    declare public readonly cloudletCode: pulumi.Output<string>;
     /**
      * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
      */
-    public /*out*/ readonly cloudletId!: pulumi.Output<number>;
+    declare public /*out*/ readonly cloudletId: pulumi.Output<number>;
     /**
      * The description of this specific policy.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Defines the group association for the policy. You must have edit privileges for the group.
      */
-    public readonly groupId!: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
     /**
      * The type of policy that you want to create.
      */
-    public readonly isShared!: pulumi.Output<boolean | undefined>;
+    declare public readonly isShared: pulumi.Output<boolean | undefined>;
     /**
      * The version of the Cloudlet specific matchRules.
      */
-    public readonly matchRuleFormat!: pulumi.Output<string | undefined>;
+    declare public readonly matchRuleFormat: pulumi.Output<string | undefined>;
     /**
      * A JSON structure that defines the rules for this policy.
      */
-    public readonly matchRules!: pulumi.Output<string | undefined>;
+    declare public readonly matchRules: pulumi.Output<string | undefined>;
     /**
      * The name of the policy. The name must be unique.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Enables to set timeout for processing.
      */
-    public readonly timeouts!: pulumi.Output<outputs.CloudletsPolicyTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.CloudletsPolicyTimeouts | undefined>;
     /**
      * The version number of the policy.
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    declare public /*out*/ readonly version: pulumi.Output<number>;
     /**
      * A JSON encoded list of warnings.
      */
-    public /*out*/ readonly warnings!: pulumi.Output<string>;
+    declare public /*out*/ readonly warnings: pulumi.Output<string>;
 
     /**
      * Create a CloudletsPolicy resource with the given unique name, arguments, and options.
@@ -92,33 +92,33 @@ export class CloudletsPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudletsPolicyState | undefined;
-            resourceInputs["cloudletCode"] = state ? state.cloudletCode : undefined;
-            resourceInputs["cloudletId"] = state ? state.cloudletId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["isShared"] = state ? state.isShared : undefined;
-            resourceInputs["matchRuleFormat"] = state ? state.matchRuleFormat : undefined;
-            resourceInputs["matchRules"] = state ? state.matchRules : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["warnings"] = state ? state.warnings : undefined;
+            resourceInputs["cloudletCode"] = state?.cloudletCode;
+            resourceInputs["cloudletId"] = state?.cloudletId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["isShared"] = state?.isShared;
+            resourceInputs["matchRuleFormat"] = state?.matchRuleFormat;
+            resourceInputs["matchRules"] = state?.matchRules;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["warnings"] = state?.warnings;
         } else {
             const args = argsOrState as CloudletsPolicyArgs | undefined;
-            if ((!args || args.cloudletCode === undefined) && !opts.urn) {
+            if (args?.cloudletCode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudletCode'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            resourceInputs["cloudletCode"] = args ? args.cloudletCode : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["isShared"] = args ? args.isShared : undefined;
-            resourceInputs["matchRuleFormat"] = args ? args.matchRuleFormat : undefined;
-            resourceInputs["matchRules"] = args ? args.matchRules : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["cloudletCode"] = args?.cloudletCode;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["isShared"] = args?.isShared;
+            resourceInputs["matchRuleFormat"] = args?.matchRuleFormat;
+            resourceInputs["matchRules"] = args?.matchRules;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["timeouts"] = args?.timeouts;
             resourceInputs["cloudletId"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
             resourceInputs["warnings"] = undefined /*out*/;

@@ -32,9 +32,9 @@ export class BotmanRecategorizedAkamaiDefinedBot extends pulumi.CustomResource {
         return obj['__pulumiType'] === BotmanRecategorizedAkamaiDefinedBot.__pulumiType;
     }
 
-    public readonly botId!: pulumi.Output<string>;
-    public readonly categoryId!: pulumi.Output<string>;
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly botId: pulumi.Output<string>;
+    declare public readonly categoryId: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<number>;
 
     /**
      * Create a BotmanRecategorizedAkamaiDefinedBot resource with the given unique name, arguments, and options.
@@ -49,23 +49,23 @@ export class BotmanRecategorizedAkamaiDefinedBot extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BotmanRecategorizedAkamaiDefinedBotState | undefined;
-            resourceInputs["botId"] = state ? state.botId : undefined;
-            resourceInputs["categoryId"] = state ? state.categoryId : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["botId"] = state?.botId;
+            resourceInputs["categoryId"] = state?.categoryId;
+            resourceInputs["configId"] = state?.configId;
         } else {
             const args = argsOrState as BotmanRecategorizedAkamaiDefinedBotArgs | undefined;
-            if ((!args || args.botId === undefined) && !opts.urn) {
+            if (args?.botId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'botId'");
             }
-            if ((!args || args.categoryId === undefined) && !opts.urn) {
+            if (args?.categoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'categoryId'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            resourceInputs["botId"] = args ? args.botId : undefined;
-            resourceInputs["categoryId"] = args ? args.categoryId : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["botId"] = args?.botId;
+            resourceInputs["categoryId"] = args?.categoryId;
+            resourceInputs["configId"] = args?.configId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BotmanRecategorizedAkamaiDefinedBot.__pulumiType, name, resourceInputs, opts);

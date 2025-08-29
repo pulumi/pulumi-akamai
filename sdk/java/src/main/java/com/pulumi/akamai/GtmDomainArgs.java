@@ -127,16 +127,14 @@ public final class GtmDomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
      * 
      */
     @Import(name="signAndServeAlgorithm")
     private @Nullable Output<String> signAndServeAlgorithm;
 
     /**
-     * @return The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     * @return The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
      * 
      */
     public Optional<Output<String>> signAndServeAlgorithm() {
@@ -340,8 +338,7 @@ public final class GtmDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param signAndServeAlgorithm The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-         * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+         * @param signAndServeAlgorithm The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
          * 
          * @return builder
          * 
@@ -352,8 +349,7 @@ public final class GtmDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param signAndServeAlgorithm The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-         * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+         * @param signAndServeAlgorithm The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
          * 
          * @return builder
          * 

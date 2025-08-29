@@ -37,23 +37,23 @@ export class CloudletsApplicationLoadBalancerActivation extends pulumi.CustomRes
     /**
      * The network you want to activate the application load balancer version on (options are Staging and Production)
      */
-    public readonly network!: pulumi.Output<string>;
+    declare public readonly network: pulumi.Output<string>;
     /**
      * The conditional origin’s unique identifier
      */
-    public readonly originId!: pulumi.Output<string>;
+    declare public readonly originId: pulumi.Output<string>;
     /**
      * Activation status for this application load balancer
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Enables to set timeout for processing
      */
-    public readonly timeouts!: pulumi.Output<outputs.CloudletsApplicationLoadBalancerActivationTimeouts | undefined>;
+    declare public readonly timeouts: pulumi.Output<outputs.CloudletsApplicationLoadBalancerActivationTimeouts | undefined>;
     /**
      * Cloudlets application load balancer version you want to activate
      */
-    public readonly version!: pulumi.Output<number>;
+    declare public readonly version: pulumi.Output<number>;
 
     /**
      * Create a CloudletsApplicationLoadBalancerActivation resource with the given unique name, arguments, and options.
@@ -68,26 +68,26 @@ export class CloudletsApplicationLoadBalancerActivation extends pulumi.CustomRes
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudletsApplicationLoadBalancerActivationState | undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["originId"] = state ? state.originId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["originId"] = state?.originId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeouts"] = state?.timeouts;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as CloudletsApplicationLoadBalancerActivationArgs | undefined;
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            if ((!args || args.originId === undefined) && !opts.urn) {
+            if (args?.originId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'originId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["originId"] = args ? args.originId : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["originId"] = args?.originId;
+            resourceInputs["timeouts"] = args?.timeouts;
+            resourceInputs["version"] = args?.version;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

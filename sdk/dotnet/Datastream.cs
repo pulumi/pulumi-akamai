@@ -49,8 +49,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamDatadogConnector?> DatadogConnector { get; private set; } = null!;
 
         /// <summary>
-        /// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-        /// identifiers define how the value for these fields appear in the log lines
+        /// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         /// </summary>
         [Output("datasetFields")]
         public Output<ImmutableArray<int>> DatasetFields { get; private set; } = null!;
@@ -222,8 +221,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _datasetFields;
 
         /// <summary>
-        /// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-        /// identifiers define how the value for these fields appear in the log lines
+        /// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         /// </summary>
         public InputList<int> DatasetFields
         {
@@ -348,8 +346,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _datasetFields;
 
         /// <summary>
-        /// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-        /// identifiers define how the value for these fields appear in the log lines
+        /// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         /// </summary>
         public InputList<int> DatasetFields
         {

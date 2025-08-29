@@ -37,40 +37,40 @@ export class CloudwrapperConfiguration extends pulumi.CustomResource {
     /**
      * Capacity Alerts enablement information for the configuration. The Alert Threshold should be between 50 and 100.
      */
-    public readonly capacityAlertsThreshold!: pulumi.Output<number | undefined>;
+    declare public readonly capacityAlertsThreshold: pulumi.Output<number | undefined>;
     /**
      * Additional information you provide to differentiate or track changes of the configuration.
      */
-    public readonly comments!: pulumi.Output<string>;
+    declare public readonly comments: pulumi.Output<string>;
     /**
      * Name of the configuration.
      */
-    public readonly configName!: pulumi.Output<string>;
+    declare public readonly configName: pulumi.Output<string>;
     /**
      * Contract ID having Cloud Wrapper entitlement.
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * List of locations to use with the configuration.
      */
-    public readonly locations!: pulumi.Output<outputs.CloudwrapperConfigurationLocation[] | undefined>;
+    declare public readonly locations: pulumi.Output<outputs.CloudwrapperConfigurationLocation[] | undefined>;
     /**
      * Email addresses to use for notifications.
      */
-    public readonly notificationEmails!: pulumi.Output<string[]>;
+    declare public readonly notificationEmails: pulumi.Output<string[]>;
     /**
      * List of properties belonging to eligible products.
      */
-    public readonly propertyIds!: pulumi.Output<string[]>;
+    declare public readonly propertyIds: pulumi.Output<string[]>;
     /**
      * Retain idle objects beyond their max idle lifetime.
      */
-    public readonly retainIdleObjects!: pulumi.Output<boolean>;
+    declare public readonly retainIdleObjects: pulumi.Output<boolean>;
     /**
      * Unique hash value of the configuration.
      */
-    public /*out*/ readonly revision!: pulumi.Output<string>;
-    public readonly timeouts!: pulumi.Output<outputs.CloudwrapperConfigurationTimeouts | undefined>;
+    declare public /*out*/ readonly revision: pulumi.Output<string>;
+    declare public readonly timeouts: pulumi.Output<outputs.CloudwrapperConfigurationTimeouts | undefined>;
 
     /**
      * Create a CloudwrapperConfiguration resource with the given unique name, arguments, and options.
@@ -85,39 +85,39 @@ export class CloudwrapperConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudwrapperConfigurationState | undefined;
-            resourceInputs["capacityAlertsThreshold"] = state ? state.capacityAlertsThreshold : undefined;
-            resourceInputs["comments"] = state ? state.comments : undefined;
-            resourceInputs["configName"] = state ? state.configName : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["locations"] = state ? state.locations : undefined;
-            resourceInputs["notificationEmails"] = state ? state.notificationEmails : undefined;
-            resourceInputs["propertyIds"] = state ? state.propertyIds : undefined;
-            resourceInputs["retainIdleObjects"] = state ? state.retainIdleObjects : undefined;
-            resourceInputs["revision"] = state ? state.revision : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
+            resourceInputs["capacityAlertsThreshold"] = state?.capacityAlertsThreshold;
+            resourceInputs["comments"] = state?.comments;
+            resourceInputs["configName"] = state?.configName;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["locations"] = state?.locations;
+            resourceInputs["notificationEmails"] = state?.notificationEmails;
+            resourceInputs["propertyIds"] = state?.propertyIds;
+            resourceInputs["retainIdleObjects"] = state?.retainIdleObjects;
+            resourceInputs["revision"] = state?.revision;
+            resourceInputs["timeouts"] = state?.timeouts;
         } else {
             const args = argsOrState as CloudwrapperConfigurationArgs | undefined;
-            if ((!args || args.comments === undefined) && !opts.urn) {
+            if (args?.comments === undefined && !opts.urn) {
                 throw new Error("Missing required property 'comments'");
             }
-            if ((!args || args.configName === undefined) && !opts.urn) {
+            if (args?.configName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configName'");
             }
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.propertyIds === undefined) && !opts.urn) {
+            if (args?.propertyIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'propertyIds'");
             }
-            resourceInputs["capacityAlertsThreshold"] = args ? args.capacityAlertsThreshold : undefined;
-            resourceInputs["comments"] = args ? args.comments : undefined;
-            resourceInputs["configName"] = args ? args.configName : undefined;
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["locations"] = args ? args.locations : undefined;
-            resourceInputs["notificationEmails"] = args ? args.notificationEmails : undefined;
-            resourceInputs["propertyIds"] = args ? args.propertyIds : undefined;
-            resourceInputs["retainIdleObjects"] = args ? args.retainIdleObjects : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["capacityAlertsThreshold"] = args?.capacityAlertsThreshold;
+            resourceInputs["comments"] = args?.comments;
+            resourceInputs["configName"] = args?.configName;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["locations"] = args?.locations;
+            resourceInputs["notificationEmails"] = args?.notificationEmails;
+            resourceInputs["propertyIds"] = args?.propertyIds;
+            resourceInputs["retainIdleObjects"] = args?.retainIdleObjects;
+            resourceInputs["timeouts"] = args?.timeouts;
             resourceInputs["revision"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

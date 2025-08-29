@@ -35,15 +35,15 @@ export class AppSecAdvancedSettingsPragmaHeader extends pulumi.CustomResource {
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * JSON-formatted information describing the conditions to exclude from the default remove action
      */
-    public readonly pragmaHeader!: pulumi.Output<string>;
+    declare public readonly pragmaHeader: pulumi.Output<string>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string | undefined>;
+    declare public readonly securityPolicyId: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppSecAdvancedSettingsPragmaHeader resource with the given unique name, arguments, and options.
@@ -58,20 +58,20 @@ export class AppSecAdvancedSettingsPragmaHeader extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecAdvancedSettingsPragmaHeaderState | undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["pragmaHeader"] = state ? state.pragmaHeader : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["pragmaHeader"] = state?.pragmaHeader;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecAdvancedSettingsPragmaHeaderArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.pragmaHeader === undefined) && !opts.urn) {
+            if (args?.pragmaHeader === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pragmaHeader'");
             }
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["pragmaHeader"] = args ? args.pragmaHeader : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["pragmaHeader"] = args?.pragmaHeader;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecAdvancedSettingsPragmaHeader.__pulumiType, name, resourceInputs, opts);

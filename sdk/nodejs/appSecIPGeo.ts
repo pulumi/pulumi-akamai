@@ -35,35 +35,35 @@ export class AppSecIPGeo extends pulumi.CustomResource {
     /**
      * List of IDs of ASN network list to be blocked
      */
-    public readonly asnNetworkLists!: pulumi.Output<string[] | undefined>;
+    declare public readonly asnNetworkLists: pulumi.Output<string[] | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * List of IDs of network list that are always allowed
      */
-    public readonly exceptionIpNetworkLists!: pulumi.Output<string[] | undefined>;
+    declare public readonly exceptionIpNetworkLists: pulumi.Output<string[] | undefined>;
     /**
      * List of IDs of geographic network list to be blocked
      */
-    public readonly geoNetworkLists!: pulumi.Output<string[] | undefined>;
+    declare public readonly geoNetworkLists: pulumi.Output<string[] | undefined>;
     /**
      * List of IDs of IP network list to be blocked
      */
-    public readonly ipNetworkLists!: pulumi.Output<string[] | undefined>;
+    declare public readonly ipNetworkLists: pulumi.Output<string[] | undefined>;
     /**
      * Protection mode (block or allow)
      */
-    public readonly mode!: pulumi.Output<string>;
+    declare public readonly mode: pulumi.Output<string>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
     /**
      * Action set for Ukraine geo control
      */
-    public readonly ukraineGeoControlAction!: pulumi.Output<string | undefined>;
+    declare public readonly ukraineGeoControlAction: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppSecIPGeo resource with the given unique name, arguments, and options.
@@ -78,33 +78,33 @@ export class AppSecIPGeo extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecIPGeoState | undefined;
-            resourceInputs["asnNetworkLists"] = state ? state.asnNetworkLists : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["exceptionIpNetworkLists"] = state ? state.exceptionIpNetworkLists : undefined;
-            resourceInputs["geoNetworkLists"] = state ? state.geoNetworkLists : undefined;
-            resourceInputs["ipNetworkLists"] = state ? state.ipNetworkLists : undefined;
-            resourceInputs["mode"] = state ? state.mode : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            resourceInputs["ukraineGeoControlAction"] = state ? state.ukraineGeoControlAction : undefined;
+            resourceInputs["asnNetworkLists"] = state?.asnNetworkLists;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["exceptionIpNetworkLists"] = state?.exceptionIpNetworkLists;
+            resourceInputs["geoNetworkLists"] = state?.geoNetworkLists;
+            resourceInputs["ipNetworkLists"] = state?.ipNetworkLists;
+            resourceInputs["mode"] = state?.mode;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
+            resourceInputs["ukraineGeoControlAction"] = state?.ukraineGeoControlAction;
         } else {
             const args = argsOrState as AppSecIPGeoArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.mode === undefined) && !opts.urn) {
+            if (args?.mode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mode'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["asnNetworkLists"] = args ? args.asnNetworkLists : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["exceptionIpNetworkLists"] = args ? args.exceptionIpNetworkLists : undefined;
-            resourceInputs["geoNetworkLists"] = args ? args.geoNetworkLists : undefined;
-            resourceInputs["ipNetworkLists"] = args ? args.ipNetworkLists : undefined;
-            resourceInputs["mode"] = args ? args.mode : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            resourceInputs["ukraineGeoControlAction"] = args ? args.ukraineGeoControlAction : undefined;
+            resourceInputs["asnNetworkLists"] = args?.asnNetworkLists;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["exceptionIpNetworkLists"] = args?.exceptionIpNetworkLists;
+            resourceInputs["geoNetworkLists"] = args?.geoNetworkLists;
+            resourceInputs["ipNetworkLists"] = args?.ipNetworkLists;
+            resourceInputs["mode"] = args?.mode;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
+            resourceInputs["ukraineGeoControlAction"] = args?.ukraineGeoControlAction;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecIPGeo.__pulumiType, name, resourceInputs, opts);

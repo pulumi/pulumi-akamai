@@ -97,8 +97,7 @@ namespace Pulumi.Akamai
         public Output<int> StagingVersion { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-        /// incrementing property versions.
+        /// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         /// </summary>
         [Output("useHostnameBucket")]
         public Output<bool?> UseHostnameBucket { get; private set; } = null!;
@@ -210,8 +209,7 @@ namespace Pulumi.Akamai
         public Input<string>? Rules { get; set; }
 
         /// <summary>
-        /// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-        /// incrementing property versions.
+        /// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         /// </summary>
         [Input("useHostnameBucket")]
         public Input<bool>? UseHostnameBucket { get; set; }
@@ -331,8 +329,7 @@ namespace Pulumi.Akamai
         public Input<int>? StagingVersion { get; set; }
 
         /// <summary>
-        /// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without
-        /// incrementing property versions.
+        /// Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         /// </summary>
         [Input("useHostnameBucket")]
         public Input<bool>? UseHostnameBucket { get; set; }

@@ -37,45 +37,40 @@ export class CloudAccessKey extends pulumi.CustomResource {
     /**
      * Name of the access key.
      */
-    public readonly accessKeyName!: pulumi.Output<string>;
+    declare public readonly accessKeyName: pulumi.Output<string>;
     /**
      * The unique identifier Akamai assigns to an access key.
      */
-    public /*out*/ readonly accessKeyUid!: pulumi.Output<number>;
+    declare public /*out*/ readonly accessKeyUid: pulumi.Output<number>;
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Two options are available:
-     * "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+     * The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
      */
-    public readonly authenticationMethod!: pulumi.Output<string>;
+    declare public readonly authenticationMethod: pulumi.Output<string>;
     /**
      * The unique identifier for the contract assigned to the access key
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
-     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
-    public readonly credentialsA!: pulumi.Output<outputs.CloudAccessKeyCredentialsA | undefined>;
+    declare public readonly credentialsA: pulumi.Output<outputs.CloudAccessKeyCredentialsA | undefined>;
     /**
-     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
-    public readonly credentialsB!: pulumi.Output<outputs.CloudAccessKeyCredentialsB | undefined>;
+    declare public readonly credentialsB: pulumi.Output<outputs.CloudAccessKeyCredentialsB | undefined>;
     /**
      * The unique identifier assigned to the access control group assigned to the access key
      */
-    public readonly groupId!: pulumi.Output<number>;
+    declare public readonly groupId: pulumi.Output<number>;
     /**
      * The secure networks that you assigned the access key to during creation
      */
-    public readonly networkConfiguration!: pulumi.Output<outputs.CloudAccessKeyNetworkConfiguration>;
+    declare public readonly networkConfiguration: pulumi.Output<outputs.CloudAccessKeyNetworkConfiguration>;
     /**
      * Value of `versionGuid` field for credentials marked as primary
      */
-    public /*out*/ readonly primaryGuid!: pulumi.Output<string>;
-    public readonly timeouts!: pulumi.Output<outputs.CloudAccessKeyTimeouts | undefined>;
+    declare public /*out*/ readonly primaryGuid: pulumi.Output<string>;
+    declare public readonly timeouts: pulumi.Output<outputs.CloudAccessKeyTimeouts | undefined>;
 
     /**
      * Create a CloudAccessKey resource with the given unique name, arguments, and options.
@@ -90,41 +85,41 @@ export class CloudAccessKey extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudAccessKeyState | undefined;
-            resourceInputs["accessKeyName"] = state ? state.accessKeyName : undefined;
-            resourceInputs["accessKeyUid"] = state ? state.accessKeyUid : undefined;
-            resourceInputs["authenticationMethod"] = state ? state.authenticationMethod : undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["credentialsA"] = state ? state.credentialsA : undefined;
-            resourceInputs["credentialsB"] = state ? state.credentialsB : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["networkConfiguration"] = state ? state.networkConfiguration : undefined;
-            resourceInputs["primaryGuid"] = state ? state.primaryGuid : undefined;
-            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
+            resourceInputs["accessKeyName"] = state?.accessKeyName;
+            resourceInputs["accessKeyUid"] = state?.accessKeyUid;
+            resourceInputs["authenticationMethod"] = state?.authenticationMethod;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["credentialsA"] = state?.credentialsA;
+            resourceInputs["credentialsB"] = state?.credentialsB;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["networkConfiguration"] = state?.networkConfiguration;
+            resourceInputs["primaryGuid"] = state?.primaryGuid;
+            resourceInputs["timeouts"] = state?.timeouts;
         } else {
             const args = argsOrState as CloudAccessKeyArgs | undefined;
-            if ((!args || args.accessKeyName === undefined) && !opts.urn) {
+            if (args?.accessKeyName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'accessKeyName'");
             }
-            if ((!args || args.authenticationMethod === undefined) && !opts.urn) {
+            if (args?.authenticationMethod === undefined && !opts.urn) {
                 throw new Error("Missing required property 'authenticationMethod'");
             }
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.networkConfiguration === undefined) && !opts.urn) {
+            if (args?.networkConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkConfiguration'");
             }
-            resourceInputs["accessKeyName"] = args ? args.accessKeyName : undefined;
-            resourceInputs["authenticationMethod"] = args ? args.authenticationMethod : undefined;
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["credentialsA"] = args ? args.credentialsA : undefined;
-            resourceInputs["credentialsB"] = args ? args.credentialsB : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["networkConfiguration"] = args ? args.networkConfiguration : undefined;
-            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["accessKeyName"] = args?.accessKeyName;
+            resourceInputs["authenticationMethod"] = args?.authenticationMethod;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["credentialsA"] = args?.credentialsA;
+            resourceInputs["credentialsB"] = args?.credentialsB;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["networkConfiguration"] = args?.networkConfiguration;
+            resourceInputs["timeouts"] = args?.timeouts;
             resourceInputs["accessKeyUid"] = undefined /*out*/;
             resourceInputs["primaryGuid"] = undefined /*out*/;
         }
@@ -146,8 +141,7 @@ export interface CloudAccessKeyState {
      */
     accessKeyUid?: pulumi.Input<number>;
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Two options are available:
-     * "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+     * The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
      */
     authenticationMethod?: pulumi.Input<string>;
     /**
@@ -155,15 +149,11 @@ export interface CloudAccessKeyState {
      */
     contractId?: pulumi.Input<string>;
     /**
-     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
     credentialsA?: pulumi.Input<inputs.CloudAccessKeyCredentialsA>;
     /**
-     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
     credentialsB?: pulumi.Input<inputs.CloudAccessKeyCredentialsB>;
     /**
@@ -190,8 +180,7 @@ export interface CloudAccessKeyArgs {
      */
     accessKeyName: pulumi.Input<string>;
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Two options are available:
-     * "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+     * The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
      */
     authenticationMethod: pulumi.Input<string>;
     /**
@@ -199,15 +188,11 @@ export interface CloudAccessKeyArgs {
      */
     contractId: pulumi.Input<string>;
     /**
-     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
     credentialsA?: pulumi.Input<inputs.CloudAccessKeyCredentialsA>;
     /**
-     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be
-     * identified as access key version. Access key can contain only two access key versions at specific time (defined as
-     * credentialsA and credentialsB).
+     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
     credentialsB?: pulumi.Input<inputs.CloudAccessKeyCredentialsB>;
     /**

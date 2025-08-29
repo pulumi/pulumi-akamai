@@ -32,8 +32,8 @@ export class NetworkListSubscription extends pulumi.CustomResource {
         return obj['__pulumiType'] === NetworkListSubscription.__pulumiType;
     }
 
-    public readonly networkLists!: pulumi.Output<string[]>;
-    public readonly recipients!: pulumi.Output<string[]>;
+    declare public readonly networkLists: pulumi.Output<string[]>;
+    declare public readonly recipients: pulumi.Output<string[]>;
 
     /**
      * Create a NetworkListSubscription resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class NetworkListSubscription extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListSubscriptionState | undefined;
-            resourceInputs["networkLists"] = state ? state.networkLists : undefined;
-            resourceInputs["recipients"] = state ? state.recipients : undefined;
+            resourceInputs["networkLists"] = state?.networkLists;
+            resourceInputs["recipients"] = state?.recipients;
         } else {
             const args = argsOrState as NetworkListSubscriptionArgs | undefined;
-            if ((!args || args.networkLists === undefined) && !opts.urn) {
+            if (args?.networkLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkLists'");
             }
-            if ((!args || args.recipients === undefined) && !opts.urn) {
+            if (args?.recipients === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recipients'");
             }
-            resourceInputs["networkLists"] = args ? args.networkLists : undefined;
-            resourceInputs["recipients"] = args ? args.recipients : undefined;
+            resourceInputs["networkLists"] = args?.networkLists;
+            resourceInputs["recipients"] = args?.recipients;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NetworkListSubscription.__pulumiType, name, resourceInputs, opts);

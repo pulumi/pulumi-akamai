@@ -91,16 +91,14 @@ public final class EdgeHostNameState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-     * value for product is used.
+     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
      * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
-     * @return The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-     * value for product is used.
+     * @return The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
      * 
      */
     public Optional<Output<Integer>> ttl() {
@@ -262,8 +260,7 @@ public final class EdgeHostNameState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ttl The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-         * value for product is used.
+         * @param ttl The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
          * 
          * @return builder
          * 
@@ -274,8 +271,7 @@ public final class EdgeHostNameState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ttl The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
-         * value for product is used.
+         * @param ttl The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
          * 
          * @return builder
          * 

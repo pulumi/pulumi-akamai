@@ -33,16 +33,14 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-     * specified action
+     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
      * 
      */
     @Import(name="durationThresholdTimeout")
     private @Nullable Output<Integer> durationThresholdTimeout;
 
     /**
-     * @return Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-     * specified action
+     * @return Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
      * 
      */
     public Optional<Output<Integer>> durationThresholdTimeout() {
@@ -160,8 +158,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param durationThresholdTimeout Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-         * specified action
+         * @param durationThresholdTimeout Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
          * 
          * @return builder
          * 
@@ -172,8 +169,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param durationThresholdTimeout Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-         * specified action
+         * @param durationThresholdTimeout Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
          * 
          * @return builder
          * 

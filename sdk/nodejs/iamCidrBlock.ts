@@ -37,39 +37,39 @@ export class IamCidrBlock extends pulumi.CustomResource {
     /**
      * Specifies activities available for the CIDR block.
      */
-    public /*out*/ readonly actions!: pulumi.Output<outputs.IamCidrBlockActions>;
+    declare public /*out*/ readonly actions: pulumi.Output<outputs.IamCidrBlockActions>;
     /**
      * The value of an IP address or IP address range.
      */
-    public readonly cidrBlock!: pulumi.Output<string>;
+    declare public readonly cidrBlock: pulumi.Output<string>;
     /**
      * Unique identifier for each CIDR block.
      */
-    public /*out*/ readonly cidrBlockId!: pulumi.Output<number>;
+    declare public /*out*/ readonly cidrBlockId: pulumi.Output<number>;
     /**
      * Descriptive label you provide for the CIDR block.
      */
-    public readonly comments!: pulumi.Output<string | undefined>;
+    declare public readonly comments: pulumi.Output<string | undefined>;
     /**
      * The user who created the CIDR block.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * ISO 8601 timestamp indicating when the CIDR block was created.
      */
-    public /*out*/ readonly createdDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdDate: pulumi.Output<string>;
     /**
      * Enables the CIDR block on the account.
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * The user who last edited the CIDR block.
      */
-    public /*out*/ readonly modifiedBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly modifiedBy: pulumi.Output<string>;
     /**
      * ISO 8601 timestamp indicating when the CIDR block was last modified.
      */
-    public /*out*/ readonly modifiedDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly modifiedDate: pulumi.Output<string>;
 
     /**
      * Create a IamCidrBlock resource with the given unique name, arguments, and options.
@@ -84,26 +84,26 @@ export class IamCidrBlock extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamCidrBlockState | undefined;
-            resourceInputs["actions"] = state ? state.actions : undefined;
-            resourceInputs["cidrBlock"] = state ? state.cidrBlock : undefined;
-            resourceInputs["cidrBlockId"] = state ? state.cidrBlockId : undefined;
-            resourceInputs["comments"] = state ? state.comments : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["createdDate"] = state ? state.createdDate : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["modifiedBy"] = state ? state.modifiedBy : undefined;
-            resourceInputs["modifiedDate"] = state ? state.modifiedDate : undefined;
+            resourceInputs["actions"] = state?.actions;
+            resourceInputs["cidrBlock"] = state?.cidrBlock;
+            resourceInputs["cidrBlockId"] = state?.cidrBlockId;
+            resourceInputs["comments"] = state?.comments;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["createdDate"] = state?.createdDate;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["modifiedBy"] = state?.modifiedBy;
+            resourceInputs["modifiedDate"] = state?.modifiedDate;
         } else {
             const args = argsOrState as IamCidrBlockArgs | undefined;
-            if ((!args || args.cidrBlock === undefined) && !opts.urn) {
+            if (args?.cidrBlock === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cidrBlock'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            resourceInputs["cidrBlock"] = args ? args.cidrBlock : undefined;
-            resourceInputs["comments"] = args ? args.comments : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["cidrBlock"] = args?.cidrBlock;
+            resourceInputs["comments"] = args?.comments;
+            resourceInputs["enabled"] = args?.enabled;
             resourceInputs["actions"] = undefined /*out*/;
             resourceInputs["cidrBlockId"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;

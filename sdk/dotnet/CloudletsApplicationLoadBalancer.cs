@@ -19,9 +19,7 @@ namespace Pulumi.Akamai
         public Output<string?> BalancingType { get; private set; } = null!;
 
         /// <summary>
-        /// The object containing information on conditional origins being used as data centers for an Application Load Balancer
-        /// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-        /// application load balancer configuration.
+        /// The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         /// </summary>
         [Output("dataCenters")]
         public Output<ImmutableArray<Outputs.CloudletsApplicationLoadBalancerDataCenter>> DataCenters { get; private set; } = null!;
@@ -115,9 +113,7 @@ namespace Pulumi.Akamai
         private InputList<Inputs.CloudletsApplicationLoadBalancerDataCenterArgs>? _dataCenters;
 
         /// <summary>
-        /// The object containing information on conditional origins being used as data centers for an Application Load Balancer
-        /// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-        /// application load balancer configuration.
+        /// The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         /// </summary>
         public InputList<Inputs.CloudletsApplicationLoadBalancerDataCenterArgs> DataCenters
         {
@@ -164,9 +160,7 @@ namespace Pulumi.Akamai
         private InputList<Inputs.CloudletsApplicationLoadBalancerDataCenterGetArgs>? _dataCenters;
 
         /// <summary>
-        /// The object containing information on conditional origins being used as data centers for an Application Load Balancer
-        /// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
-        /// application load balancer configuration.
+        /// The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         /// </summary>
         public InputList<Inputs.CloudletsApplicationLoadBalancerDataCenterGetArgs> DataCenters
         {

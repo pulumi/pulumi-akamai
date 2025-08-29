@@ -228,16 +228,14 @@ public class GtmDomain extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.signAndServe);
     }
     /**
-     * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
      * 
      */
     @Export(name="signAndServeAlgorithm", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> signAndServeAlgorithm;
 
     /**
-     * @return The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
-     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     * @return The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
      * 
      */
     public Output<Optional<String>> signAndServeAlgorithm() {

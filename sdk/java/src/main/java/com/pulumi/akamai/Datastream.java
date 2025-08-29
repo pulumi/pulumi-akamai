@@ -114,16 +114,14 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.datadogConnector);
     }
     /**
-     * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-     * identifiers define how the value for these fields appear in the log lines
+     * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
      * 
      */
     @Export(name="datasetFields", refs={List.class,Integer.class}, tree="[0,1]")
     private Output<List<Integer>> datasetFields;
 
     /**
-     * @return A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
-     * identifiers define how the value for these fields appear in the log lines
+     * @return A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
      * 
      */
     public Output<List<Integer>> datasetFields() {

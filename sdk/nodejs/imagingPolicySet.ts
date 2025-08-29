@@ -35,19 +35,19 @@ export class ImagingPolicySet extends pulumi.CustomResource {
     /**
      * The unique identifier for the Akamai Contract containing the Policy Set(s)
      */
-    public readonly contractId!: pulumi.Output<string>;
+    declare public readonly contractId: pulumi.Output<string>;
     /**
      * A friendly name for the Policy Set
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The geographic region which media using this Policy Set is optimized for
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The type of media this Policy Set manages
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a ImagingPolicySet resource with the given unique name, arguments, and options.
@@ -62,25 +62,25 @@ export class ImagingPolicySet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ImagingPolicySetState | undefined;
-            resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as ImagingPolicySetArgs | undefined;
-            if ((!args || args.contractId === undefined) && !opts.urn) {
+            if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.region === undefined) && !opts.urn) {
+            if (args?.region === undefined && !opts.urn) {
                 throw new Error("Missing required property 'region'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ImagingPolicySet.__pulumiType, name, resourceInputs, opts);

@@ -35,23 +35,23 @@ export class AppSecAttackGroup extends pulumi.CustomResource {
     /**
      * Unique name of the attack group to be modified
      */
-    public readonly attackGroup!: pulumi.Output<string>;
+    declare public readonly attackGroup: pulumi.Output<string>;
     /**
      * Action to be taken when the attack group is triggered
      */
-    public readonly attackGroupAction!: pulumi.Output<string>;
+    declare public readonly attackGroupAction: pulumi.Output<string>;
     /**
      * JSON-formatted condition and exception information for the attack group
      */
-    public readonly conditionException!: pulumi.Output<string | undefined>;
+    declare public readonly conditionException: pulumi.Output<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecAttackGroup resource with the given unique name, arguments, and options.
@@ -66,30 +66,30 @@ export class AppSecAttackGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecAttackGroupState | undefined;
-            resourceInputs["attackGroup"] = state ? state.attackGroup : undefined;
-            resourceInputs["attackGroupAction"] = state ? state.attackGroupAction : undefined;
-            resourceInputs["conditionException"] = state ? state.conditionException : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["attackGroup"] = state?.attackGroup;
+            resourceInputs["attackGroupAction"] = state?.attackGroupAction;
+            resourceInputs["conditionException"] = state?.conditionException;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecAttackGroupArgs | undefined;
-            if ((!args || args.attackGroup === undefined) && !opts.urn) {
+            if (args?.attackGroup === undefined && !opts.urn) {
                 throw new Error("Missing required property 'attackGroup'");
             }
-            if ((!args || args.attackGroupAction === undefined) && !opts.urn) {
+            if (args?.attackGroupAction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'attackGroupAction'");
             }
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["attackGroup"] = args ? args.attackGroup : undefined;
-            resourceInputs["attackGroupAction"] = args ? args.attackGroupAction : undefined;
-            resourceInputs["conditionException"] = args ? args.conditionException : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["attackGroup"] = args?.attackGroup;
+            resourceInputs["attackGroupAction"] = args?.attackGroupAction;
+            resourceInputs["conditionException"] = args?.conditionException;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecAttackGroup.__pulumiType, name, resourceInputs, opts);

@@ -19,18 +19,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/imagingPolicyImage:ImagingPolicyImage")
 public class ImagingPolicyImage extends com.pulumi.resources.CustomResource {
     /**
-     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-     * to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-     * it back to false only when there are any changes to the policy qualifying it for the new version.
+     * With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
      * 
      */
     @Export(name="activateOnProduction", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> activateOnProduction;
 
     /**
-     * @return With this flag set to false, the user can perform modifications on staging without affecting the version already saved
-     * to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
-     * it back to false only when there are any changes to the policy qualifying it for the new version.
+     * @return With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
      * 
      */
     public Output<Optional<Boolean>> activateOnProduction() {

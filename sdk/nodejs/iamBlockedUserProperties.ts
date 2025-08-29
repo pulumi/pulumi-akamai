@@ -35,15 +35,15 @@ export class IamBlockedUserProperties extends pulumi.CustomResource {
     /**
      * List of properties to block for a user.
      */
-    public readonly blockedProperties!: pulumi.Output<number[]>;
+    declare public readonly blockedProperties: pulumi.Output<number[]>;
     /**
      * A unique identifier for a group.
      */
-    public readonly groupId!: pulumi.Output<number>;
+    declare public readonly groupId: pulumi.Output<number>;
     /**
      * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
      */
-    public readonly identityId!: pulumi.Output<string>;
+    declare public readonly identityId: pulumi.Output<string>;
 
     /**
      * Create a IamBlockedUserProperties resource with the given unique name, arguments, and options.
@@ -58,23 +58,23 @@ export class IamBlockedUserProperties extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamBlockedUserPropertiesState | undefined;
-            resourceInputs["blockedProperties"] = state ? state.blockedProperties : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["identityId"] = state ? state.identityId : undefined;
+            resourceInputs["blockedProperties"] = state?.blockedProperties;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["identityId"] = state?.identityId;
         } else {
             const args = argsOrState as IamBlockedUserPropertiesArgs | undefined;
-            if ((!args || args.blockedProperties === undefined) && !opts.urn) {
+            if (args?.blockedProperties === undefined && !opts.urn) {
                 throw new Error("Missing required property 'blockedProperties'");
             }
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.identityId === undefined) && !opts.urn) {
+            if (args?.identityId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identityId'");
             }
-            resourceInputs["blockedProperties"] = args ? args.blockedProperties : undefined;
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["identityId"] = args ? args.identityId : undefined;
+            resourceInputs["blockedProperties"] = args?.blockedProperties;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["identityId"] = args?.identityId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IamBlockedUserProperties.__pulumiType, name, resourceInputs, opts);

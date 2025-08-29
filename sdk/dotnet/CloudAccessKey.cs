@@ -25,8 +25,7 @@ namespace Pulumi.Akamai
         public Output<int> AccessKeyUid { get; private set; } = null!;
 
         /// <summary>
-        /// The type of cloud provider signing process used to authenticate API requests. Two options are available:
-        /// "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+        /// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
         /// </summary>
         [Output("authenticationMethod")]
         public Output<string> AuthenticationMethod { get; private set; } = null!;
@@ -38,17 +37,13 @@ namespace Pulumi.Akamai
         public Output<string> ContractId { get; private set; } = null!;
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-        /// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-        /// credentialsA and credentialsB).
+        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Output("credentialsA")]
         public Output<Outputs.CloudAccessKeyCredentialsA?> CredentialsA { get; private set; } = null!;
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-        /// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-        /// credentialsA and credentialsB).
+        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Output("credentialsB")]
         public Output<Outputs.CloudAccessKeyCredentialsB?> CredentialsB { get; private set; } = null!;
@@ -127,8 +122,7 @@ namespace Pulumi.Akamai
         public Input<string> AccessKeyName { get; set; } = null!;
 
         /// <summary>
-        /// The type of cloud provider signing process used to authenticate API requests. Two options are available:
-        /// "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+        /// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
         /// </summary>
         [Input("authenticationMethod", required: true)]
         public Input<string> AuthenticationMethod { get; set; } = null!;
@@ -140,17 +134,13 @@ namespace Pulumi.Akamai
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-        /// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-        /// credentialsA and credentialsB).
+        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Input("credentialsA")]
         public Input<Inputs.CloudAccessKeyCredentialsAArgs>? CredentialsA { get; set; }
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-        /// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-        /// credentialsA and credentialsB).
+        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Input("credentialsB")]
         public Input<Inputs.CloudAccessKeyCredentialsBArgs>? CredentialsB { get; set; }
@@ -191,8 +181,7 @@ namespace Pulumi.Akamai
         public Input<int>? AccessKeyUid { get; set; }
 
         /// <summary>
-        /// The type of cloud provider signing process used to authenticate API requests. Two options are available:
-        /// "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+        /// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
         /// </summary>
         [Input("authenticationMethod")]
         public Input<string>? AuthenticationMethod { get; set; }
@@ -204,17 +193,13 @@ namespace Pulumi.Akamai
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-        /// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-        /// credentialsA and credentialsB).
+        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Input("credentialsA")]
         public Input<Inputs.CloudAccessKeyCredentialsAGetArgs>? CredentialsA { get; set; }
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be
-        /// identified as access key version. Access key can contain only two access key versions at specific time (defined as
-        /// credentialsA and credentialsB).
+        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Input("credentialsB")]
         public Input<Inputs.CloudAccessKeyCredentialsBGetArgs>? CredentialsB { get; set; }

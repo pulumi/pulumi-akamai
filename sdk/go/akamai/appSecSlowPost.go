@@ -17,8 +17,7 @@ type AppSecSlowPost struct {
 
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-	// specified action
+	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
 	DurationThresholdTimeout pulumi.IntPtrOutput `pulumi:"durationThresholdTimeout"`
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
@@ -71,8 +70,7 @@ func GetAppSecSlowPost(ctx *pulumi.Context,
 type appSecSlowPostState struct {
 	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-	// specified action
+	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
 	DurationThresholdTimeout *int `pulumi:"durationThresholdTimeout"`
 	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
@@ -87,8 +85,7 @@ type appSecSlowPostState struct {
 type AppSecSlowPostState struct {
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-	// specified action
+	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
 	DurationThresholdTimeout pulumi.IntPtrInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
@@ -107,8 +104,7 @@ func (AppSecSlowPostState) ElementType() reflect.Type {
 type appSecSlowPostArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-	// specified action
+	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
 	DurationThresholdTimeout *int `pulumi:"durationThresholdTimeout"`
 	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
@@ -124,8 +120,7 @@ type appSecSlowPostArgs struct {
 type AppSecSlowPostArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-	// specified action
+	// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
 	DurationThresholdTimeout pulumi.IntPtrInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
@@ -229,8 +224,7 @@ func (o AppSecSlowPostOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecSlowPost) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
-// specified action
+// Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
 func (o AppSecSlowPostOutput) DurationThresholdTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AppSecSlowPost) pulumi.IntPtrOutput { return v.DurationThresholdTimeout }).(pulumi.IntPtrOutput)
 }

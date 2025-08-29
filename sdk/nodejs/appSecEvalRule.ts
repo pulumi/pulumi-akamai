@@ -35,23 +35,23 @@ export class AppSecEvalRule extends pulumi.CustomResource {
     /**
      * JSON-formatted condition and exception information for the evaluation rule
      */
-    public readonly conditionException!: pulumi.Output<string | undefined>;
+    declare public readonly conditionException: pulumi.Output<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    public readonly configId!: pulumi.Output<number>;
+    declare public readonly configId: pulumi.Output<number>;
     /**
      * Action to be taken when the evaluation rule is triggered
      */
-    public readonly ruleAction!: pulumi.Output<string>;
+    declare public readonly ruleAction: pulumi.Output<string>;
     /**
      * Unique identifier of the evaluation rule being modified
      */
-    public readonly ruleId!: pulumi.Output<number>;
+    declare public readonly ruleId: pulumi.Output<number>;
     /**
      * Unique identifier of the security policy
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppSecEvalRule resource with the given unique name, arguments, and options.
@@ -66,30 +66,30 @@ export class AppSecEvalRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecEvalRuleState | undefined;
-            resourceInputs["conditionException"] = state ? state.conditionException : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["ruleAction"] = state ? state.ruleAction : undefined;
-            resourceInputs["ruleId"] = state ? state.ruleId : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["conditionException"] = state?.conditionException;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["ruleAction"] = state?.ruleAction;
+            resourceInputs["ruleId"] = state?.ruleId;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecEvalRuleArgs | undefined;
-            if ((!args || args.configId === undefined) && !opts.urn) {
+            if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.ruleAction === undefined) && !opts.urn) {
+            if (args?.ruleAction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleAction'");
             }
-            if ((!args || args.ruleId === undefined) && !opts.urn) {
+            if (args?.ruleId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleId'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["conditionException"] = args ? args.conditionException : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["ruleAction"] = args ? args.ruleAction : undefined;
-            resourceInputs["ruleId"] = args ? args.ruleId : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["conditionException"] = args?.conditionException;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["ruleAction"] = args?.ruleAction;
+            resourceInputs["ruleId"] = args?.ruleId;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecEvalRule.__pulumiType, name, resourceInputs, opts);
