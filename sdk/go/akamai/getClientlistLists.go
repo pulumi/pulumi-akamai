@@ -29,7 +29,6 @@ type GetClientlistListsArgs struct {
 
 // A collection of values returned by getClientlistLists.
 type GetClientlistListsResult struct {
-	// The provider-assigned unique ID for this managed resource.
 	Id         string                   `pulumi:"id"`
 	Json       string                   `pulumi:"json"`
 	ListIds    []string                 `pulumi:"listIds"`
@@ -73,7 +72,6 @@ func (o GetClientlistListsResultOutput) ToGetClientlistListsResultOutputWithCont
 	return o
 }
 
-// The provider-assigned unique ID for this managed resource.
 func (o GetClientlistListsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClientlistListsResult) string { return v.Id }).(pulumi.StringOutput)
 }

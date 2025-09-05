@@ -27,9 +27,6 @@ export interface GetClientlistListsArgs {
  * A collection of values returned by getClientlistLists.
  */
 export interface GetClientlistListsResult {
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
     readonly id: string;
     readonly json: string;
     readonly listIds: string[];

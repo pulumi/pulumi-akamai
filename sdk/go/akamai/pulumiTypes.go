@@ -15513,6 +15513,1127 @@ func (o IamUserUserNotificationsPtrOutput) Upgrades() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+type MtlskeystoreClientCertificateAkamaiVersion struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock *MtlskeystoreClientCertificateAkamaiVersionCertificateBlock `pulumi:"certificateBlock"`
+	// The user who created the client certificate version.
+	CreatedBy *string `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate *string `pulumi:"createdDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+	DeleteRequestedDate *string `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+	EllipticCurve *string `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate *string `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate *string `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer *string `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm *string `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when key algorithm `RSA` is used.
+	KeySizeInBytes *string `pulumi:"keySizeInBytes"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+	ScheduledDeleteDate *string `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status *string `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject *string `pulumi:"subject"`
+	// The unique identifier of the client certificate version.
+	Version *int `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid *string `pulumi:"versionGuid"`
+}
+
+// MtlskeystoreClientCertificateAkamaiVersionInput is an input type that accepts MtlskeystoreClientCertificateAkamaiVersionArgs and MtlskeystoreClientCertificateAkamaiVersionOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateAkamaiVersionInput` via:
+//
+//	MtlskeystoreClientCertificateAkamaiVersionArgs{...}
+type MtlskeystoreClientCertificateAkamaiVersionInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateAkamaiVersionOutput() MtlskeystoreClientCertificateAkamaiVersionOutput
+	ToMtlskeystoreClientCertificateAkamaiVersionOutputWithContext(context.Context) MtlskeystoreClientCertificateAkamaiVersionOutput
+}
+
+type MtlskeystoreClientCertificateAkamaiVersionArgs struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrInput `pulumi:"certificateBlock"`
+	// The user who created the client certificate version.
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate pulumi.StringPtrInput `pulumi:"createdDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+	DeleteRequestedDate pulumi.StringPtrInput `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+	EllipticCurve pulumi.StringPtrInput `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate pulumi.StringPtrInput `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate pulumi.StringPtrInput `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer pulumi.StringPtrInput `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm pulumi.StringPtrInput `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when key algorithm `RSA` is used.
+	KeySizeInBytes pulumi.StringPtrInput `pulumi:"keySizeInBytes"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+	ScheduledDeleteDate pulumi.StringPtrInput `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm pulumi.StringPtrInput `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject pulumi.StringPtrInput `pulumi:"subject"`
+	// The unique identifier of the client certificate version.
+	Version pulumi.IntPtrInput `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid pulumi.StringPtrInput `pulumi:"versionGuid"`
+}
+
+func (MtlskeystoreClientCertificateAkamaiVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateAkamaiVersion)(nil)).Elem()
+}
+
+func (i MtlskeystoreClientCertificateAkamaiVersionArgs) ToMtlskeystoreClientCertificateAkamaiVersionOutput() MtlskeystoreClientCertificateAkamaiVersionOutput {
+	return i.ToMtlskeystoreClientCertificateAkamaiVersionOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateAkamaiVersionArgs) ToMtlskeystoreClientCertificateAkamaiVersionOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateAkamaiVersionOutput)
+}
+
+// MtlskeystoreClientCertificateAkamaiVersionArrayInput is an input type that accepts MtlskeystoreClientCertificateAkamaiVersionArray and MtlskeystoreClientCertificateAkamaiVersionArrayOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateAkamaiVersionArrayInput` via:
+//
+//	MtlskeystoreClientCertificateAkamaiVersionArray{ MtlskeystoreClientCertificateAkamaiVersionArgs{...} }
+type MtlskeystoreClientCertificateAkamaiVersionArrayInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateAkamaiVersionArrayOutput() MtlskeystoreClientCertificateAkamaiVersionArrayOutput
+	ToMtlskeystoreClientCertificateAkamaiVersionArrayOutputWithContext(context.Context) MtlskeystoreClientCertificateAkamaiVersionArrayOutput
+}
+
+type MtlskeystoreClientCertificateAkamaiVersionArray []MtlskeystoreClientCertificateAkamaiVersionInput
+
+func (MtlskeystoreClientCertificateAkamaiVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MtlskeystoreClientCertificateAkamaiVersion)(nil)).Elem()
+}
+
+func (i MtlskeystoreClientCertificateAkamaiVersionArray) ToMtlskeystoreClientCertificateAkamaiVersionArrayOutput() MtlskeystoreClientCertificateAkamaiVersionArrayOutput {
+	return i.ToMtlskeystoreClientCertificateAkamaiVersionArrayOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateAkamaiVersionArray) ToMtlskeystoreClientCertificateAkamaiVersionArrayOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateAkamaiVersionArrayOutput)
+}
+
+type MtlskeystoreClientCertificateAkamaiVersionOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateAkamaiVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateAkamaiVersion)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) ToMtlskeystoreClientCertificateAkamaiVersionOutput() MtlskeystoreClientCertificateAkamaiVersionOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) ToMtlskeystoreClientCertificateAkamaiVersionOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionOutput {
+	return o
+}
+
+// Details of the certificate block for the client certificate version.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) CertificateBlock() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *MtlskeystoreClientCertificateAkamaiVersionCertificateBlock {
+		return v.CertificateBlock
+	}).(MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput)
+}
+
+// The user who created the client certificate version.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's creation.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) CreatedDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.CreatedDate }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) DeleteRequestedDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.DeleteRequestedDate }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) EllipticCurve() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.EllipticCurve }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating when the client certificate version expires.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) ExpiryDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.ExpiryDate }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's availability.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) IssuedDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.IssuedDate }).(pulumi.StringPtrOutput)
+}
+
+// The signing entity of the client certificate version.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) Issuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.Issuer }).(pulumi.StringPtrOutput)
+}
+
+// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) KeyAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.KeyAlgorithm }).(pulumi.StringPtrOutput)
+}
+
+// The private key length of the client certificate version when key algorithm `RSA` is used.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) KeySizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.KeySizeInBytes }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) ScheduledDeleteDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.ScheduledDeleteDate }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the algorithm that secures the data exchange between the edge server and origin.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
+}
+
+// The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The public key's entity stored in the client certificate version's subject public key field.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) Subject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.Subject }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier of the client certificate version.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *int { return v.Version }).(pulumi.IntPtrOutput)
+}
+
+// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+func (o MtlskeystoreClientCertificateAkamaiVersionOutput) VersionGuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersion) *string { return v.VersionGuid }).(pulumi.StringPtrOutput)
+}
+
+type MtlskeystoreClientCertificateAkamaiVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateAkamaiVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MtlskeystoreClientCertificateAkamaiVersion)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionArrayOutput) ToMtlskeystoreClientCertificateAkamaiVersionArrayOutput() MtlskeystoreClientCertificateAkamaiVersionArrayOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionArrayOutput) ToMtlskeystoreClientCertificateAkamaiVersionArrayOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionArrayOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionArrayOutput) Index(i pulumi.IntInput) MtlskeystoreClientCertificateAkamaiVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MtlskeystoreClientCertificateAkamaiVersion {
+		return vs[0].([]MtlskeystoreClientCertificateAkamaiVersion)[vs[1].(int)]
+	}).(MtlskeystoreClientCertificateAkamaiVersionOutput)
+}
+
+type MtlskeystoreClientCertificateAkamaiVersionCertificateBlock struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate *string `pulumi:"certificate"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain *string `pulumi:"trustChain"`
+}
+
+// MtlskeystoreClientCertificateAkamaiVersionCertificateBlockInput is an input type that accepts MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs and MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateAkamaiVersionCertificateBlockInput` via:
+//
+//	MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs{...}
+type MtlskeystoreClientCertificateAkamaiVersionCertificateBlockInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput
+	ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutputWithContext(context.Context) MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput
+}
+
+type MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate pulumi.StringPtrInput `pulumi:"certificate"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain pulumi.StringPtrInput `pulumi:"trustChain"`
+}
+
+func (MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateAkamaiVersionCertificateBlock)(nil)).Elem()
+}
+
+func (i MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput {
+	return i.ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput)
+}
+
+func (i MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput {
+	return i.ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput).ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutputWithContext(ctx)
+}
+
+// MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrInput is an input type that accepts MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs, MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtr and MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrInput` via:
+//
+//	        MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs{...}
+//
+//	or:
+//
+//	        nil
+type MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput
+	ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutputWithContext(context.Context) MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput
+}
+
+type mtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrType MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs
+
+func MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtr(v *MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs) MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrInput {
+	return (*mtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrType)(v)
+}
+
+func (*mtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MtlskeystoreClientCertificateAkamaiVersionCertificateBlock)(nil)).Elem()
+}
+
+func (i *mtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrType) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput {
+	return i.ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutputWithContext(context.Background())
+}
+
+func (i *mtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrType) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput)
+}
+
+type MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateAkamaiVersionCertificateBlock)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput {
+	return o.ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutputWithContext(context.Background())
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MtlskeystoreClientCertificateAkamaiVersionCertificateBlock) *MtlskeystoreClientCertificateAkamaiVersionCertificateBlock {
+		return &v
+	}).(MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput)
+}
+
+// A text representation of the client certificate in PEM format.
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersionCertificateBlock) *string { return v.Certificate }).(pulumi.StringPtrOutput)
+}
+
+// A text representation of the trust chain in PEM format.
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput) TrustChain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateAkamaiVersionCertificateBlock) *string { return v.TrustChain }).(pulumi.StringPtrOutput)
+}
+
+type MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MtlskeystoreClientCertificateAkamaiVersionCertificateBlock)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput) ToMtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput) Elem() MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateAkamaiVersionCertificateBlock) MtlskeystoreClientCertificateAkamaiVersionCertificateBlock {
+		if v != nil {
+			return *v
+		}
+		var ret MtlskeystoreClientCertificateAkamaiVersionCertificateBlock
+		return ret
+	}).(MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput)
+}
+
+// A text representation of the client certificate in PEM format.
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateAkamaiVersionCertificateBlock) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Certificate
+	}).(pulumi.StringPtrOutput)
+}
+
+// A text representation of the trust chain in PEM format.
+func (o MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput) TrustChain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateAkamaiVersionCertificateBlock) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TrustChain
+	}).(pulumi.StringPtrOutput)
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersions struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock *MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock `pulumi:"certificateBlock"`
+	// The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
+	CertificateSubmittedBy *string `pulumi:"certificateSubmittedBy"`
+	// An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
+	CertificateSubmittedDate *string `pulumi:"certificateSubmittedDate"`
+	// The user who created the client certificate version.
+	CreatedBy *string `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate *string `pulumi:"createdDate"`
+	// Details of the Certificate Signing Request (CSR) for the client certificate version.
+	CsrBlock *MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock `pulumi:"csrBlock"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+	DeleteRequestedDate *string `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+	EllipticCurve *string `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate *string `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate *string `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer *string `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm *string `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when key algorithm `RSA` is used.
+	KeySizeInBytes *string `pulumi:"keySizeInBytes"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+	ScheduledDeleteDate *string `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status *string `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject *string `pulumi:"subject"`
+	// The unique identifier of the client certificate version.
+	Version *int `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid *string `pulumi:"versionGuid"`
+}
+
+// MtlskeystoreClientCertificateThirdPartyVersionsInput is an input type that accepts MtlskeystoreClientCertificateThirdPartyVersionsArgs and MtlskeystoreClientCertificateThirdPartyVersionsOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateThirdPartyVersionsInput` via:
+//
+//	MtlskeystoreClientCertificateThirdPartyVersionsArgs{...}
+type MtlskeystoreClientCertificateThirdPartyVersionsInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateThirdPartyVersionsOutput() MtlskeystoreClientCertificateThirdPartyVersionsOutput
+	ToMtlskeystoreClientCertificateThirdPartyVersionsOutputWithContext(context.Context) MtlskeystoreClientCertificateThirdPartyVersionsOutput
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsArgs struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrInput `pulumi:"certificateBlock"`
+	// The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
+	CertificateSubmittedBy pulumi.StringPtrInput `pulumi:"certificateSubmittedBy"`
+	// An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
+	CertificateSubmittedDate pulumi.StringPtrInput `pulumi:"certificateSubmittedDate"`
+	// The user who created the client certificate version.
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate pulumi.StringPtrInput `pulumi:"createdDate"`
+	// Details of the Certificate Signing Request (CSR) for the client certificate version.
+	CsrBlock MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrInput `pulumi:"csrBlock"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+	DeleteRequestedDate pulumi.StringPtrInput `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+	EllipticCurve pulumi.StringPtrInput `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate pulumi.StringPtrInput `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate pulumi.StringPtrInput `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer pulumi.StringPtrInput `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm pulumi.StringPtrInput `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when key algorithm `RSA` is used.
+	KeySizeInBytes pulumi.StringPtrInput `pulumi:"keySizeInBytes"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+	ScheduledDeleteDate pulumi.StringPtrInput `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm pulumi.StringPtrInput `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject pulumi.StringPtrInput `pulumi:"subject"`
+	// The unique identifier of the client certificate version.
+	Version pulumi.IntPtrInput `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid pulumi.StringPtrInput `pulumi:"versionGuid"`
+}
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersions)(nil)).Elem()
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsOutput() MtlskeystoreClientCertificateThirdPartyVersionsOutput {
+	return i.ToMtlskeystoreClientCertificateThirdPartyVersionsOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateThirdPartyVersionsOutput)
+}
+
+// MtlskeystoreClientCertificateThirdPartyVersionsMapInput is an input type that accepts MtlskeystoreClientCertificateThirdPartyVersionsMap and MtlskeystoreClientCertificateThirdPartyVersionsMapOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateThirdPartyVersionsMapInput` via:
+//
+//	MtlskeystoreClientCertificateThirdPartyVersionsMap{ "key": MtlskeystoreClientCertificateThirdPartyVersionsArgs{...} }
+type MtlskeystoreClientCertificateThirdPartyVersionsMapInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateThirdPartyVersionsMapOutput() MtlskeystoreClientCertificateThirdPartyVersionsMapOutput
+	ToMtlskeystoreClientCertificateThirdPartyVersionsMapOutputWithContext(context.Context) MtlskeystoreClientCertificateThirdPartyVersionsMapOutput
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsMap map[string]MtlskeystoreClientCertificateThirdPartyVersionsInput
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]MtlskeystoreClientCertificateThirdPartyVersions)(nil)).Elem()
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsMap) ToMtlskeystoreClientCertificateThirdPartyVersionsMapOutput() MtlskeystoreClientCertificateThirdPartyVersionsMapOutput {
+	return i.ToMtlskeystoreClientCertificateThirdPartyVersionsMapOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsMap) ToMtlskeystoreClientCertificateThirdPartyVersionsMapOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateThirdPartyVersionsMapOutput)
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersions)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsOutput() MtlskeystoreClientCertificateThirdPartyVersionsOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsOutput {
+	return o
+}
+
+// Details of the certificate block for the client certificate version.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) CertificateBlock() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock {
+		return v.CertificateBlock
+	}).(MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput)
+}
+
+// The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) CertificateSubmittedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.CertificateSubmittedBy }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) CertificateSubmittedDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.CertificateSubmittedDate }).(pulumi.StringPtrOutput)
+}
+
+// The user who created the client certificate version.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's creation.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) CreatedDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.CreatedDate }).(pulumi.StringPtrOutput)
+}
+
+// Details of the Certificate Signing Request (CSR) for the client certificate version.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) CsrBlock() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock {
+		return v.CsrBlock
+	}).(MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) DeleteRequestedDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.DeleteRequestedDate }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) EllipticCurve() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.EllipticCurve }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating when the client certificate version expires.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) ExpiryDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.ExpiryDate }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's availability.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) IssuedDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.IssuedDate }).(pulumi.StringPtrOutput)
+}
+
+// The signing entity of the client certificate version.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) Issuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.Issuer }).(pulumi.StringPtrOutput)
+}
+
+// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) KeyAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.KeyAlgorithm }).(pulumi.StringPtrOutput)
+}
+
+// The private key length of the client certificate version when key algorithm `RSA` is used.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) KeySizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.KeySizeInBytes }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) ScheduledDeleteDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.ScheduledDeleteDate }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the algorithm that secures the data exchange between the edge server and origin.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
+}
+
+// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The public key's entity stored in the client certificate version's subject public key field.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) Subject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.Subject }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier of the client certificate version.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *int { return v.Version }).(pulumi.IntPtrOutput)
+}
+
+// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsOutput) VersionGuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersions) *string { return v.VersionGuid }).(pulumi.StringPtrOutput)
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsMapOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]MtlskeystoreClientCertificateThirdPartyVersions)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsMapOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsMapOutput() MtlskeystoreClientCertificateThirdPartyVersionsMapOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsMapOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsMapOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsMapOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsMapOutput) MapIndex(k pulumi.StringInput) MtlskeystoreClientCertificateThirdPartyVersionsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) MtlskeystoreClientCertificateThirdPartyVersions {
+		return vs[0].(map[string]MtlskeystoreClientCertificateThirdPartyVersions)[vs[1].(string)]
+	}).(MtlskeystoreClientCertificateThirdPartyVersionsOutput)
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate *string `pulumi:"certificate"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain *string `pulumi:"trustChain"`
+}
+
+// MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockInput is an input type that accepts MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs and MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockInput` via:
+//
+//	MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs{...}
+type MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput
+	ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutputWithContext(context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate pulumi.StringPtrInput `pulumi:"certificate"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain pulumi.StringPtrInput `pulumi:"trustChain"`
+}
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock)(nil)).Elem()
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput {
+	return i.ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput)
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput {
+	return i.ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput).ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutputWithContext(ctx)
+}
+
+// MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrInput is an input type that accepts MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs, MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtr and MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrInput` via:
+//
+//	        MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs{...}
+//
+//	or:
+//
+//	        nil
+type MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput
+	ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutputWithContext(context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput
+}
+
+type mtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrType MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs
+
+func MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtr(v *MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrInput {
+	return (*mtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrType)(v)
+}
+
+func (*mtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock)(nil)).Elem()
+}
+
+func (i *mtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrType) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput {
+	return i.ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutputWithContext(context.Background())
+}
+
+func (i *mtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrType) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput)
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput {
+	return o.ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutputWithContext(context.Background())
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock) *MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock {
+		return &v
+	}).(MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput)
+}
+
+// A text representation of the client certificate in PEM format.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock) *string { return v.Certificate }).(pulumi.StringPtrOutput)
+}
+
+// A text representation of the trust chain in PEM format.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput) TrustChain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock) *string { return v.TrustChain }).(pulumi.StringPtrOutput)
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput) Elem() MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock) MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock {
+		if v != nil {
+			return *v
+		}
+		var ret MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock
+		return ret
+	}).(MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput)
+}
+
+// A text representation of the client certificate in PEM format.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Certificate
+	}).(pulumi.StringPtrOutput)
+}
+
+// A text representation of the trust chain in PEM format.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput) TrustChain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TrustChain
+	}).(pulumi.StringPtrOutput)
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock struct {
+	// Text of the certificate signing request.
+	Csr *string `pulumi:"csr"`
+	// Identifies the client certificate's encryption algorithm.
+	KeyAlgorithm *string `pulumi:"keyAlgorithm"`
+}
+
+// MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockInput is an input type that accepts MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs and MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockInput` via:
+//
+//	MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs{...}
+type MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput
+	ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutputWithContext(context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs struct {
+	// Text of the certificate signing request.
+	Csr pulumi.StringPtrInput `pulumi:"csr"`
+	// Identifies the client certificate's encryption algorithm.
+	KeyAlgorithm pulumi.StringPtrInput `pulumi:"keyAlgorithm"`
+}
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock)(nil)).Elem()
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput {
+	return i.ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput)
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput {
+	return i.ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput).ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutputWithContext(ctx)
+}
+
+// MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrInput is an input type that accepts MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs, MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtr and MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrInput` via:
+//
+//	        MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs{...}
+//
+//	or:
+//
+//	        nil
+type MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput
+	ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutputWithContext(context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput
+}
+
+type mtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrType MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs
+
+func MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtr(v *MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrInput {
+	return (*mtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrType)(v)
+}
+
+func (*mtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock)(nil)).Elem()
+}
+
+func (i *mtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrType) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput {
+	return i.ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutputWithContext(context.Background())
+}
+
+func (i *mtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrType) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput)
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput {
+	return o.ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutputWithContext(context.Background())
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock) *MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock {
+		return &v
+	}).(MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput)
+}
+
+// Text of the certificate signing request.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput) Csr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock) *string { return v.Csr }).(pulumi.StringPtrOutput)
+}
+
+// Identifies the client certificate's encryption algorithm.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput) KeyAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock) *string { return v.KeyAlgorithm }).(pulumi.StringPtrOutput)
+}
+
+type MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput) ToMtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput) Elem() MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock) MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock {
+		if v != nil {
+			return *v
+		}
+		var ret MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock
+		return ret
+	}).(MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput)
+}
+
+// Text of the certificate signing request.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput) Csr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Csr
+	}).(pulumi.StringPtrOutput)
+}
+
+// Identifies the client certificate's encryption algorithm.
+func (o MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput) KeyAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyAlgorithm
+	}).(pulumi.StringPtrOutput)
+}
+
+type MtlskeystoreClientCertificateUploadTimeouts struct {
+	// Optional configurable resource create timeout. By default it's 30m.
+	Create *string `pulumi:"create"`
+	// Optional configurable resource update timeout. By default it's 30m.
+	Update *string `pulumi:"update"`
+}
+
+// MtlskeystoreClientCertificateUploadTimeoutsInput is an input type that accepts MtlskeystoreClientCertificateUploadTimeoutsArgs and MtlskeystoreClientCertificateUploadTimeoutsOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateUploadTimeoutsInput` via:
+//
+//	MtlskeystoreClientCertificateUploadTimeoutsArgs{...}
+type MtlskeystoreClientCertificateUploadTimeoutsInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateUploadTimeoutsOutput() MtlskeystoreClientCertificateUploadTimeoutsOutput
+	ToMtlskeystoreClientCertificateUploadTimeoutsOutputWithContext(context.Context) MtlskeystoreClientCertificateUploadTimeoutsOutput
+}
+
+type MtlskeystoreClientCertificateUploadTimeoutsArgs struct {
+	// Optional configurable resource create timeout. By default it's 30m.
+	Create pulumi.StringPtrInput `pulumi:"create"`
+	// Optional configurable resource update timeout. By default it's 30m.
+	Update pulumi.StringPtrInput `pulumi:"update"`
+}
+
+func (MtlskeystoreClientCertificateUploadTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateUploadTimeouts)(nil)).Elem()
+}
+
+func (i MtlskeystoreClientCertificateUploadTimeoutsArgs) ToMtlskeystoreClientCertificateUploadTimeoutsOutput() MtlskeystoreClientCertificateUploadTimeoutsOutput {
+	return i.ToMtlskeystoreClientCertificateUploadTimeoutsOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateUploadTimeoutsArgs) ToMtlskeystoreClientCertificateUploadTimeoutsOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateUploadTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateUploadTimeoutsOutput)
+}
+
+func (i MtlskeystoreClientCertificateUploadTimeoutsArgs) ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutput() MtlskeystoreClientCertificateUploadTimeoutsPtrOutput {
+	return i.ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i MtlskeystoreClientCertificateUploadTimeoutsArgs) ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateUploadTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateUploadTimeoutsOutput).ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutputWithContext(ctx)
+}
+
+// MtlskeystoreClientCertificateUploadTimeoutsPtrInput is an input type that accepts MtlskeystoreClientCertificateUploadTimeoutsArgs, MtlskeystoreClientCertificateUploadTimeoutsPtr and MtlskeystoreClientCertificateUploadTimeoutsPtrOutput values.
+// You can construct a concrete instance of `MtlskeystoreClientCertificateUploadTimeoutsPtrInput` via:
+//
+//	        MtlskeystoreClientCertificateUploadTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MtlskeystoreClientCertificateUploadTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutput() MtlskeystoreClientCertificateUploadTimeoutsPtrOutput
+	ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutputWithContext(context.Context) MtlskeystoreClientCertificateUploadTimeoutsPtrOutput
+}
+
+type mtlskeystoreClientCertificateUploadTimeoutsPtrType MtlskeystoreClientCertificateUploadTimeoutsArgs
+
+func MtlskeystoreClientCertificateUploadTimeoutsPtr(v *MtlskeystoreClientCertificateUploadTimeoutsArgs) MtlskeystoreClientCertificateUploadTimeoutsPtrInput {
+	return (*mtlskeystoreClientCertificateUploadTimeoutsPtrType)(v)
+}
+
+func (*mtlskeystoreClientCertificateUploadTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MtlskeystoreClientCertificateUploadTimeouts)(nil)).Elem()
+}
+
+func (i *mtlskeystoreClientCertificateUploadTimeoutsPtrType) ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutput() MtlskeystoreClientCertificateUploadTimeoutsPtrOutput {
+	return i.ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *mtlskeystoreClientCertificateUploadTimeoutsPtrType) ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateUploadTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MtlskeystoreClientCertificateUploadTimeoutsPtrOutput)
+}
+
+type MtlskeystoreClientCertificateUploadTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateUploadTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MtlskeystoreClientCertificateUploadTimeouts)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateUploadTimeoutsOutput) ToMtlskeystoreClientCertificateUploadTimeoutsOutput() MtlskeystoreClientCertificateUploadTimeoutsOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateUploadTimeoutsOutput) ToMtlskeystoreClientCertificateUploadTimeoutsOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateUploadTimeoutsOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateUploadTimeoutsOutput) ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutput() MtlskeystoreClientCertificateUploadTimeoutsPtrOutput {
+	return o.ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o MtlskeystoreClientCertificateUploadTimeoutsOutput) ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateUploadTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MtlskeystoreClientCertificateUploadTimeouts) *MtlskeystoreClientCertificateUploadTimeouts {
+		return &v
+	}).(MtlskeystoreClientCertificateUploadTimeoutsPtrOutput)
+}
+
+// Optional configurable resource create timeout. By default it's 30m.
+func (o MtlskeystoreClientCertificateUploadTimeoutsOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateUploadTimeouts) *string { return v.Create }).(pulumi.StringPtrOutput)
+}
+
+// Optional configurable resource update timeout. By default it's 30m.
+func (o MtlskeystoreClientCertificateUploadTimeoutsOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MtlskeystoreClientCertificateUploadTimeouts) *string { return v.Update }).(pulumi.StringPtrOutput)
+}
+
+type MtlskeystoreClientCertificateUploadTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (MtlskeystoreClientCertificateUploadTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MtlskeystoreClientCertificateUploadTimeouts)(nil)).Elem()
+}
+
+func (o MtlskeystoreClientCertificateUploadTimeoutsPtrOutput) ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutput() MtlskeystoreClientCertificateUploadTimeoutsPtrOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateUploadTimeoutsPtrOutput) ToMtlskeystoreClientCertificateUploadTimeoutsPtrOutputWithContext(ctx context.Context) MtlskeystoreClientCertificateUploadTimeoutsPtrOutput {
+	return o
+}
+
+func (o MtlskeystoreClientCertificateUploadTimeoutsPtrOutput) Elem() MtlskeystoreClientCertificateUploadTimeoutsOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateUploadTimeouts) MtlskeystoreClientCertificateUploadTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret MtlskeystoreClientCertificateUploadTimeouts
+		return ret
+	}).(MtlskeystoreClientCertificateUploadTimeoutsOutput)
+}
+
+// Optional configurable resource create timeout. By default it's 30m.
+func (o MtlskeystoreClientCertificateUploadTimeoutsPtrOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateUploadTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Create
+	}).(pulumi.StringPtrOutput)
+}
+
+// Optional configurable resource update timeout. By default it's 30m.
+func (o MtlskeystoreClientCertificateUploadTimeoutsPtrOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateUploadTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Update
+	}).(pulumi.StringPtrOutput)
+}
+
 type PropertyActivationComplianceRecord struct {
 	// Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
 	NoncomplianceReasonEmergency *PropertyActivationComplianceRecordNoncomplianceReasonEmergency `pulumi:"noncomplianceReasonEmergency"`
@@ -21030,7 +22151,7 @@ type GetClientlistListsList struct {
 	// The client list type.
 	ListType string `pulumi:"listType"`
 	// The name of the client list
-	Name *string `pulumi:"name"`
+	Name string `pulumi:"name"`
 	// The client list notes
 	Notes string `pulumi:"notes"`
 	// The activation status in production environment.
@@ -21044,7 +22165,7 @@ type GetClientlistListsList struct {
 	// The client list tags
 	Tags []string `pulumi:"tags"`
 	// The type of the client list
-	Type *string `pulumi:"type"`
+	Type string `pulumi:"type"`
 	// The date of last update.
 	UpdateDate string `pulumi:"updateDate"`
 	// The username of the user that updated the client list last.
@@ -21078,7 +22199,7 @@ type GetClientlistListsListArgs struct {
 	// The client list type.
 	ListType pulumi.StringInput `pulumi:"listType"`
 	// The name of the client list
-	Name pulumi.StringPtrInput `pulumi:"name"`
+	Name pulumi.StringInput `pulumi:"name"`
 	// The client list notes
 	Notes pulumi.StringInput `pulumi:"notes"`
 	// The activation status in production environment.
@@ -21092,7 +22213,7 @@ type GetClientlistListsListArgs struct {
 	// The client list tags
 	Tags pulumi.StringArrayInput `pulumi:"tags"`
 	// The type of the client list
-	Type pulumi.StringPtrInput `pulumi:"type"`
+	Type pulumi.StringInput `pulumi:"type"`
 	// The date of last update.
 	UpdateDate pulumi.StringInput `pulumi:"updateDate"`
 	// The username of the user that updated the client list last.
@@ -21183,8 +22304,8 @@ func (o GetClientlistListsListOutput) ListType() pulumi.StringOutput {
 }
 
 // The name of the client list
-func (o GetClientlistListsListOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetClientlistListsList) *string { return v.Name }).(pulumi.StringPtrOutput)
+func (o GetClientlistListsListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClientlistListsList) string { return v.Name }).(pulumi.StringOutput)
 }
 
 // The client list notes
@@ -21218,8 +22339,8 @@ func (o GetClientlistListsListOutput) Tags() pulumi.StringArrayOutput {
 }
 
 // The type of the client list
-func (o GetClientlistListsListOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetClientlistListsList) *string { return v.Type }).(pulumi.StringPtrOutput)
+func (o GetClientlistListsListOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClientlistListsList) string { return v.Type }).(pulumi.StringOutput)
 }
 
 // The date of last update.
@@ -59200,6 +60321,2822 @@ func (o GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput) Index(i pulumi
 	}).(GetImagingPolicyVideoPolicyVariableEnumOptionOutput)
 }
 
+type GetMtlskeystoreAccountCaCertificatesCertificate struct {
+	// The account the CA certificate is under.
+	AccountId string `pulumi:"accountId"`
+	// The certificate block of the CA certificate.
+	Certificate string `pulumi:"certificate"`
+	// The common name of the CA certificate.
+	CommonName string `pulumi:"commonName"`
+	// The user who created the CA certificate.
+	CreatedBy string `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the CA certificate's creation.
+	CreatedDate string `pulumi:"createdDate"`
+	// An ISO 8601 timestamp indicating when the CA certificate expires.
+	ExpiryDate string `pulumi:"expiryDate"`
+	// The unique identifier of the CA certificate.
+	Id int `pulumi:"id"`
+	// An ISO 8601 timestamp indicating the CA certificate's availability.
+	IssuedDate string `pulumi:"issuedDate"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	// The private key length of the CA certificate.
+	KeySizeInBytes int `pulumi:"keySizeInBytes"`
+	// An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.
+	QualificationDate string `pulumi:"qualificationDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	// The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.
+	Status string `pulumi:"status"`
+	// The public key's entity stored in the CA certificate's subject public key field.
+	Subject string `pulumi:"subject"`
+	// The version of the CA certificate.
+	Version int `pulumi:"version"`
+}
+
+// GetMtlskeystoreAccountCaCertificatesCertificateInput is an input type that accepts GetMtlskeystoreAccountCaCertificatesCertificateArgs and GetMtlskeystoreAccountCaCertificatesCertificateOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreAccountCaCertificatesCertificateInput` via:
+//
+//	GetMtlskeystoreAccountCaCertificatesCertificateArgs{...}
+type GetMtlskeystoreAccountCaCertificatesCertificateInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreAccountCaCertificatesCertificateOutput() GetMtlskeystoreAccountCaCertificatesCertificateOutput
+	ToGetMtlskeystoreAccountCaCertificatesCertificateOutputWithContext(context.Context) GetMtlskeystoreAccountCaCertificatesCertificateOutput
+}
+
+type GetMtlskeystoreAccountCaCertificatesCertificateArgs struct {
+	// The account the CA certificate is under.
+	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// The certificate block of the CA certificate.
+	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// The common name of the CA certificate.
+	CommonName pulumi.StringInput `pulumi:"commonName"`
+	// The user who created the CA certificate.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the CA certificate's creation.
+	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
+	// An ISO 8601 timestamp indicating when the CA certificate expires.
+	ExpiryDate pulumi.StringInput `pulumi:"expiryDate"`
+	// The unique identifier of the CA certificate.
+	Id pulumi.IntInput `pulumi:"id"`
+	// An ISO 8601 timestamp indicating the CA certificate's availability.
+	IssuedDate pulumi.StringInput `pulumi:"issuedDate"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	// The private key length of the CA certificate.
+	KeySizeInBytes pulumi.IntInput `pulumi:"keySizeInBytes"`
+	// An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.
+	QualificationDate pulumi.StringInput `pulumi:"qualificationDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	// The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The public key's entity stored in the CA certificate's subject public key field.
+	Subject pulumi.StringInput `pulumi:"subject"`
+	// The version of the CA certificate.
+	Version pulumi.IntInput `pulumi:"version"`
+}
+
+func (GetMtlskeystoreAccountCaCertificatesCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreAccountCaCertificatesCertificate)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreAccountCaCertificatesCertificateArgs) ToGetMtlskeystoreAccountCaCertificatesCertificateOutput() GetMtlskeystoreAccountCaCertificatesCertificateOutput {
+	return i.ToGetMtlskeystoreAccountCaCertificatesCertificateOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreAccountCaCertificatesCertificateArgs) ToGetMtlskeystoreAccountCaCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlskeystoreAccountCaCertificatesCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreAccountCaCertificatesCertificateOutput)
+}
+
+// GetMtlskeystoreAccountCaCertificatesCertificateArrayInput is an input type that accepts GetMtlskeystoreAccountCaCertificatesCertificateArray and GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreAccountCaCertificatesCertificateArrayInput` via:
+//
+//	GetMtlskeystoreAccountCaCertificatesCertificateArray{ GetMtlskeystoreAccountCaCertificatesCertificateArgs{...} }
+type GetMtlskeystoreAccountCaCertificatesCertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutput() GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput
+	ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutputWithContext(context.Context) GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput
+}
+
+type GetMtlskeystoreAccountCaCertificatesCertificateArray []GetMtlskeystoreAccountCaCertificatesCertificateInput
+
+func (GetMtlskeystoreAccountCaCertificatesCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreAccountCaCertificatesCertificate)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreAccountCaCertificatesCertificateArray) ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutput() GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput {
+	return i.ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreAccountCaCertificatesCertificateArray) ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput)
+}
+
+type GetMtlskeystoreAccountCaCertificatesCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreAccountCaCertificatesCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreAccountCaCertificatesCertificate)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) ToGetMtlskeystoreAccountCaCertificatesCertificateOutput() GetMtlskeystoreAccountCaCertificatesCertificateOutput {
+	return o
+}
+
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) ToGetMtlskeystoreAccountCaCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlskeystoreAccountCaCertificatesCertificateOutput {
+	return o
+}
+
+// The account the CA certificate is under.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.AccountId }).(pulumi.StringOutput)
+}
+
+// The certificate block of the CA certificate.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Certificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.Certificate }).(pulumi.StringOutput)
+}
+
+// The common name of the CA certificate.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) CommonName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.CommonName }).(pulumi.StringOutput)
+}
+
+// The user who created the CA certificate.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating the CA certificate's creation.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) CreatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.CreatedDate }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the CA certificate expires.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) ExpiryDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.ExpiryDate }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the CA certificate.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Id() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) int { return v.Id }).(pulumi.IntOutput)
+}
+
+// An ISO 8601 timestamp indicating the CA certificate's availability.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) IssuedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.IssuedDate }).(pulumi.StringOutput)
+}
+
+// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+// The private key length of the CA certificate.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) KeySizeInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) int { return v.KeySizeInBytes }).(pulumi.IntOutput)
+}
+
+// An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) QualificationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.QualificationDate }).(pulumi.StringOutput)
+}
+
+// Specifies the algorithm that secures the data exchange between the edge server and origin.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) SignatureAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+}
+
+// The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The public key's entity stored in the CA certificate's subject public key field.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Subject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.Subject }).(pulumi.StringOutput)
+}
+
+// The version of the CA certificate.
+func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) int { return v.Version }).(pulumi.IntOutput)
+}
+
+type GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreAccountCaCertificatesCertificate)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput) ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutput() GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput) ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreAccountCaCertificatesCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreAccountCaCertificatesCertificate {
+		return vs[0].([]GetMtlskeystoreAccountCaCertificatesCertificate)[vs[1].(int)]
+	}).(GetMtlskeystoreAccountCaCertificatesCertificateOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrent struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock GetMtlskeystoreClientCertificateCurrentCertificateBlock `pulumi:"certificateBlock"`
+	// The user who uploaded the `THIRD_PARTY` client certificate version.
+	CertificateSubmittedBy string `pulumi:"certificateSubmittedBy"`
+	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+	CertificateSubmittedDate string `pulumi:"certificateSubmittedDate"`
+	// The user who created the client certificate version.
+	CreatedBy string `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate string `pulumi:"createdDate"`
+	// Details of the Certificate Signing Request (CSR) for the client certificate version.
+	CsrBlock GetMtlskeystoreClientCertificateCurrentCsrBlock `pulumi:"csrBlock"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
+	DeleteRequestedDate string `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+	EllipticCurve string `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate string `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate string `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer string `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when the key algorithm `RSA` is used.
+	KeySizeInBytes string `pulumi:"keySizeInBytes"`
+	// A list of properties associated with the client certificate.
+	Properties []GetMtlskeystoreClientCertificateCurrentProperty `pulumi:"properties"`
+	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+	ScheduledDeleteDate string `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status string `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject string `pulumi:"subject"`
+	// Validation results for the client certificate version.
+	Validation GetMtlskeystoreClientCertificateCurrentValidation `pulumi:"validation"`
+	// The unique identifier of the client certificate version.
+	Version int `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid string `pulumi:"versionGuid"`
+}
+
+// GetMtlskeystoreClientCertificateCurrentInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentArgs and GetMtlskeystoreClientCertificateCurrentOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentArgs{...}
+type GetMtlskeystoreClientCertificateCurrentInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentOutput() GetMtlskeystoreClientCertificateCurrentOutput
+	ToGetMtlskeystoreClientCertificateCurrentOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentArgs struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock GetMtlskeystoreClientCertificateCurrentCertificateBlockInput `pulumi:"certificateBlock"`
+	// The user who uploaded the `THIRD_PARTY` client certificate version.
+	CertificateSubmittedBy pulumi.StringInput `pulumi:"certificateSubmittedBy"`
+	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+	CertificateSubmittedDate pulumi.StringInput `pulumi:"certificateSubmittedDate"`
+	// The user who created the client certificate version.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
+	// Details of the Certificate Signing Request (CSR) for the client certificate version.
+	CsrBlock GetMtlskeystoreClientCertificateCurrentCsrBlockInput `pulumi:"csrBlock"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
+	DeleteRequestedDate pulumi.StringInput `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+	EllipticCurve pulumi.StringInput `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate pulumi.StringInput `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate pulumi.StringInput `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer pulumi.StringInput `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when the key algorithm `RSA` is used.
+	KeySizeInBytes pulumi.StringInput `pulumi:"keySizeInBytes"`
+	// A list of properties associated with the client certificate.
+	Properties GetMtlskeystoreClientCertificateCurrentPropertyArrayInput `pulumi:"properties"`
+	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+	ScheduledDeleteDate pulumi.StringInput `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject pulumi.StringInput `pulumi:"subject"`
+	// Validation results for the client certificate version.
+	Validation GetMtlskeystoreClientCertificateCurrentValidationInput `pulumi:"validation"`
+	// The unique identifier of the client certificate version.
+	Version pulumi.IntInput `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid pulumi.StringInput `pulumi:"versionGuid"`
+}
+
+func (GetMtlskeystoreClientCertificateCurrentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrent)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentArgs) ToGetMtlskeystoreClientCertificateCurrentOutput() GetMtlskeystoreClientCertificateCurrentOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentArgs) ToGetMtlskeystoreClientCertificateCurrentOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrent)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentOutput) ToGetMtlskeystoreClientCertificateCurrentOutput() GetMtlskeystoreClientCertificateCurrentOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentOutput) ToGetMtlskeystoreClientCertificateCurrentOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentOutput {
+	return o
+}
+
+// Details of the certificate block for the client certificate version.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) CertificateBlock() GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) GetMtlskeystoreClientCertificateCurrentCertificateBlock {
+		return v.CertificateBlock
+	}).(GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput)
+}
+
+// The user who uploaded the `THIRD_PARTY` client certificate version.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) CertificateSubmittedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.CertificateSubmittedBy }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) CertificateSubmittedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.CertificateSubmittedDate }).(pulumi.StringOutput)
+}
+
+// The user who created the client certificate version.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's creation.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) CreatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.CreatedDate }).(pulumi.StringOutput)
+}
+
+// Details of the Certificate Signing Request (CSR) for the client certificate version.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) CsrBlock() GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) GetMtlskeystoreClientCertificateCurrentCsrBlock {
+		return v.CsrBlock
+	}).(GetMtlskeystoreClientCertificateCurrentCsrBlockOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's deletion request.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) DeleteRequestedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.DeleteRequestedDate }).(pulumi.StringOutput)
+}
+
+// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) EllipticCurve() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.EllipticCurve }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the client certificate version expires.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) ExpiryDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.ExpiryDate }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's availability.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) IssuedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.IssuedDate }).(pulumi.StringOutput)
+}
+
+// The signing entity of the client certificate version.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) Issuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.Issuer }).(pulumi.StringOutput)
+}
+
+// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+// The private key length of the client certificate version when the key algorithm `RSA` is used.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) KeySizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.KeySizeInBytes }).(pulumi.StringOutput)
+}
+
+// A list of properties associated with the client certificate.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) Properties() GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) []GetMtlskeystoreClientCertificateCurrentProperty {
+		return v.Properties
+	}).(GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) ScheduledDeleteDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.ScheduledDeleteDate }).(pulumi.StringOutput)
+}
+
+// Specifies the algorithm that secures the data exchange between the edge server and origin.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) SignatureAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+}
+
+// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The public key's entity stored in the client certificate version's subject public key field.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) Subject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.Subject }).(pulumi.StringOutput)
+}
+
+// Validation results for the client certificate version.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) Validation() GetMtlskeystoreClientCertificateCurrentValidationOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) GetMtlskeystoreClientCertificateCurrentValidation {
+		return v.Validation
+	}).(GetMtlskeystoreClientCertificateCurrentValidationOutput)
+}
+
+// The unique identifier of the client certificate version.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) int { return v.Version }).(pulumi.IntOutput)
+}
+
+// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+func (o GetMtlskeystoreClientCertificateCurrentOutput) VersionGuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.VersionGuid }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentCertificateBlock struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate string `pulumi:"certificate"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain string `pulumi:"trustChain"`
+}
+
+// GetMtlskeystoreClientCertificateCurrentCertificateBlockInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs and GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentCertificateBlockInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs{...}
+type GetMtlskeystoreClientCertificateCurrentCertificateBlockInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutput() GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput
+	ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain pulumi.StringInput `pulumi:"trustChain"`
+}
+
+func (GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCertificateBlock)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs) ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutput() GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs) ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCertificateBlock)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutput() GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
+	return o
+}
+
+// A text representation of the client certificate in PEM format.
+func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) Certificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCertificateBlock) string { return v.Certificate }).(pulumi.StringOutput)
+}
+
+// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCertificateBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+// A text representation of the trust chain in PEM format.
+func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) TrustChain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCertificateBlock) string { return v.TrustChain }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentCsrBlock struct {
+	// Text of the certificate signing request.
+	Csr string `pulumi:"csr"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+}
+
+// GetMtlskeystoreClientCertificateCurrentCsrBlockInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentCsrBlockArgs and GetMtlskeystoreClientCertificateCurrentCsrBlockOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentCsrBlockInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentCsrBlockArgs{...}
+type GetMtlskeystoreClientCertificateCurrentCsrBlockInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutput() GetMtlskeystoreClientCertificateCurrentCsrBlockOutput
+	ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentCsrBlockOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentCsrBlockArgs struct {
+	// Text of the certificate signing request.
+	Csr pulumi.StringInput `pulumi:"csr"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+}
+
+func (GetMtlskeystoreClientCertificateCurrentCsrBlockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCsrBlock)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentCsrBlockArgs) ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutput() GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentCsrBlockArgs) ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentCsrBlockOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentCsrBlockOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCsrBlock)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutput() GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
+	return o
+}
+
+// Text of the certificate signing request.
+func (o GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) Csr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCsrBlock) string { return v.Csr }).(pulumi.StringOutput)
+}
+
+// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+func (o GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCsrBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentProperty struct {
+	// The unique identifier of the asset.
+	AssetId int `pulumi:"assetId"`
+	// The unique identifier of the group.
+	GroupId int `pulumi:"groupId"`
+	// The name of the property.
+	PropertyName string `pulumi:"propertyName"`
+	// The version of the property.
+	PropertyVersion int `pulumi:"propertyVersion"`
+}
+
+// GetMtlskeystoreClientCertificateCurrentPropertyInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentPropertyArgs and GetMtlskeystoreClientCertificateCurrentPropertyOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentPropertyInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentPropertyArgs{...}
+type GetMtlskeystoreClientCertificateCurrentPropertyInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentPropertyOutput() GetMtlskeystoreClientCertificateCurrentPropertyOutput
+	ToGetMtlskeystoreClientCertificateCurrentPropertyOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentPropertyOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentPropertyArgs struct {
+	// The unique identifier of the asset.
+	AssetId pulumi.IntInput `pulumi:"assetId"`
+	// The unique identifier of the group.
+	GroupId pulumi.IntInput `pulumi:"groupId"`
+	// The name of the property.
+	PropertyName pulumi.StringInput `pulumi:"propertyName"`
+	// The version of the property.
+	PropertyVersion pulumi.IntInput `pulumi:"propertyVersion"`
+}
+
+func (GetMtlskeystoreClientCertificateCurrentPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentProperty)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentPropertyArgs) ToGetMtlskeystoreClientCertificateCurrentPropertyOutput() GetMtlskeystoreClientCertificateCurrentPropertyOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentPropertyArgs) ToGetMtlskeystoreClientCertificateCurrentPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentPropertyOutput)
+}
+
+// GetMtlskeystoreClientCertificateCurrentPropertyArrayInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentPropertyArray and GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentPropertyArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentPropertyArray{ GetMtlskeystoreClientCertificateCurrentPropertyArgs{...} }
+type GetMtlskeystoreClientCertificateCurrentPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutput() GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput
+	ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentPropertyArray []GetMtlskeystoreClientCertificateCurrentPropertyInput
+
+func (GetMtlskeystoreClientCertificateCurrentPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentProperty)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentPropertyArray) ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutput() GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentPropertyArray) ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentProperty)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) ToGetMtlskeystoreClientCertificateCurrentPropertyOutput() GetMtlskeystoreClientCertificateCurrentPropertyOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) ToGetMtlskeystoreClientCertificateCurrentPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentPropertyOutput {
+	return o
+}
+
+// The unique identifier of the asset.
+func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) AssetId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentProperty) int { return v.AssetId }).(pulumi.IntOutput)
+}
+
+// The unique identifier of the group.
+func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentProperty) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// The name of the property.
+func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) PropertyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentProperty) string { return v.PropertyName }).(pulumi.StringOutput)
+}
+
+// The version of the property.
+func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) PropertyVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentProperty) int { return v.PropertyVersion }).(pulumi.IntOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentProperty)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput) ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutput() GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput) ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateCurrentPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateCurrentProperty {
+		return vs[0].([]GetMtlskeystoreClientCertificateCurrentProperty)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificateCurrentPropertyOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidation struct {
+	// Validation errors that need to be resolved for the request to succeed.
+	Errors []GetMtlskeystoreClientCertificateCurrentValidationError `pulumi:"errors"`
+	// Validation warnings that can be resolved.
+	Warnings []GetMtlskeystoreClientCertificateCurrentValidationWarning `pulumi:"warnings"`
+}
+
+// GetMtlskeystoreClientCertificateCurrentValidationInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationArgs and GetMtlskeystoreClientCertificateCurrentValidationOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentValidationArgs{...}
+type GetMtlskeystoreClientCertificateCurrentValidationInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentValidationOutput() GetMtlskeystoreClientCertificateCurrentValidationOutput
+	ToGetMtlskeystoreClientCertificateCurrentValidationOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationArgs struct {
+	// Validation errors that need to be resolved for the request to succeed.
+	Errors GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput `pulumi:"errors"`
+	// Validation warnings that can be resolved.
+	Warnings GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput `pulumi:"warnings"`
+}
+
+func (GetMtlskeystoreClientCertificateCurrentValidationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidation)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationArgs) ToGetMtlskeystoreClientCertificateCurrentValidationOutput() GetMtlskeystoreClientCertificateCurrentValidationOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentValidationOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationArgs) ToGetMtlskeystoreClientCertificateCurrentValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentValidationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidation)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationOutput) ToGetMtlskeystoreClientCertificateCurrentValidationOutput() GetMtlskeystoreClientCertificateCurrentValidationOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationOutput) ToGetMtlskeystoreClientCertificateCurrentValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationOutput {
+	return o
+}
+
+// Validation errors that need to be resolved for the request to succeed.
+func (o GetMtlskeystoreClientCertificateCurrentValidationOutput) Errors() GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidation) []GetMtlskeystoreClientCertificateCurrentValidationError {
+		return v.Errors
+	}).(GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput)
+}
+
+// Validation warnings that can be resolved.
+func (o GetMtlskeystoreClientCertificateCurrentValidationOutput) Warnings() GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidation) []GetMtlskeystoreClientCertificateCurrentValidationWarning {
+		return v.Warnings
+	}).(GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationError struct {
+	// Specifies the error details.
+	Message string `pulumi:"message"`
+	// Specifies the error root cause.
+	Reason string `pulumi:"reason"`
+	// Specifies the error category.
+	Type string `pulumi:"type"`
+}
+
+// GetMtlskeystoreClientCertificateCurrentValidationErrorInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationErrorArgs and GetMtlskeystoreClientCertificateCurrentValidationErrorOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationErrorInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentValidationErrorArgs{...}
+type GetMtlskeystoreClientCertificateCurrentValidationErrorInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorOutput
+	ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationErrorArgs struct {
+	// Specifies the error details.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Specifies the error root cause.
+	Reason pulumi.StringInput `pulumi:"reason"`
+	// Specifies the error category.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMtlskeystoreClientCertificateCurrentValidationErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationError)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationErrorArgs) ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationErrorArgs) ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationErrorOutput)
+}
+
+// GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationErrorArray and GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentValidationErrorArray{ GetMtlskeystoreClientCertificateCurrentValidationErrorArgs{...} }
+type GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput
+	ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationErrorArray []GetMtlskeystoreClientCertificateCurrentValidationErrorInput
+
+func (GetMtlskeystoreClientCertificateCurrentValidationErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentValidationError)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationErrorArray) ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationErrorArray) ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationErrorOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationError)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
+	return o
+}
+
+// Specifies the error details.
+func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationError) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Specifies the error root cause.
+func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationError) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// Specifies the error category.
+func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationError) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentValidationError)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateCurrentValidationError {
+		return vs[0].([]GetMtlskeystoreClientCertificateCurrentValidationError)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificateCurrentValidationErrorOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationWarning struct {
+	// Specifies the warning details.
+	Message string `pulumi:"message"`
+	// Specifies the warning root cause.
+	Reason string `pulumi:"reason"`
+	// Specifies the warning category.
+	Type string `pulumi:"type"`
+}
+
+// GetMtlskeystoreClientCertificateCurrentValidationWarningInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationWarningArgs and GetMtlskeystoreClientCertificateCurrentValidationWarningOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationWarningInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentValidationWarningArgs{...}
+type GetMtlskeystoreClientCertificateCurrentValidationWarningInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningOutput
+	ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationWarningArgs struct {
+	// Specifies the warning details.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Specifies the warning root cause.
+	Reason pulumi.StringInput `pulumi:"reason"`
+	// Specifies the warning category.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMtlskeystoreClientCertificateCurrentValidationWarningArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationWarning)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationWarningArgs) ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationWarningArgs) ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationWarningOutput)
+}
+
+// GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationWarningArray and GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificateCurrentValidationWarningArray{ GetMtlskeystoreClientCertificateCurrentValidationWarningArgs{...} }
+type GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput
+	ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationWarningArray []GetMtlskeystoreClientCertificateCurrentValidationWarningInput
+
+func (GetMtlskeystoreClientCertificateCurrentValidationWarningArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentValidationWarning)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationWarningArray) ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateCurrentValidationWarningArray) ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationWarningOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationWarning)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
+	return o
+}
+
+// Specifies the warning details.
+func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationWarning) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Specifies the warning root cause.
+func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationWarning) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// Specifies the warning category.
+func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationWarning) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentValidationWarning)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateCurrentValidationWarning {
+		return vs[0].([]GetMtlskeystoreClientCertificateCurrentValidationWarning)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificateCurrentValidationWarningOutput)
+}
+
+type GetMtlskeystoreClientCertificatePrevious struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock GetMtlskeystoreClientCertificatePreviousCertificateBlock `pulumi:"certificateBlock"`
+	// The user who uploaded the `THIRD_PARTY` client certificate version.
+	CertificateSubmittedBy string `pulumi:"certificateSubmittedBy"`
+	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+	CertificateSubmittedDate string `pulumi:"certificateSubmittedDate"`
+	// The user who created the client certificate version.
+	CreatedBy string `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate string `pulumi:"createdDate"`
+	// Details of the Certificate Signing Request (CSR) for the client certificate version.
+	CsrBlock GetMtlskeystoreClientCertificatePreviousCsrBlock `pulumi:"csrBlock"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
+	DeleteRequestedDate string `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+	EllipticCurve string `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate string `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate string `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer string `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when the key algorithm `RSA` is used.
+	KeySizeInBytes string `pulumi:"keySizeInBytes"`
+	// A list of properties associated with the client certificate.
+	Properties []GetMtlskeystoreClientCertificatePreviousProperty `pulumi:"properties"`
+	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+	ScheduledDeleteDate string `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status string `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject string `pulumi:"subject"`
+	// Validation results for the client certificate version.
+	Validation GetMtlskeystoreClientCertificatePreviousValidation `pulumi:"validation"`
+	// The unique identifier of the client certificate version.
+	Version int `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid string `pulumi:"versionGuid"`
+}
+
+// GetMtlskeystoreClientCertificatePreviousInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousArgs and GetMtlskeystoreClientCertificatePreviousOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousArgs{...}
+type GetMtlskeystoreClientCertificatePreviousInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousOutput() GetMtlskeystoreClientCertificatePreviousOutput
+	ToGetMtlskeystoreClientCertificatePreviousOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousArgs struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock GetMtlskeystoreClientCertificatePreviousCertificateBlockInput `pulumi:"certificateBlock"`
+	// The user who uploaded the `THIRD_PARTY` client certificate version.
+	CertificateSubmittedBy pulumi.StringInput `pulumi:"certificateSubmittedBy"`
+	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+	CertificateSubmittedDate pulumi.StringInput `pulumi:"certificateSubmittedDate"`
+	// The user who created the client certificate version.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
+	// Details of the Certificate Signing Request (CSR) for the client certificate version.
+	CsrBlock GetMtlskeystoreClientCertificatePreviousCsrBlockInput `pulumi:"csrBlock"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
+	DeleteRequestedDate pulumi.StringInput `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+	EllipticCurve pulumi.StringInput `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate pulumi.StringInput `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate pulumi.StringInput `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer pulumi.StringInput `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when the key algorithm `RSA` is used.
+	KeySizeInBytes pulumi.StringInput `pulumi:"keySizeInBytes"`
+	// A list of properties associated with the client certificate.
+	Properties GetMtlskeystoreClientCertificatePreviousPropertyArrayInput `pulumi:"properties"`
+	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+	ScheduledDeleteDate pulumi.StringInput `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject pulumi.StringInput `pulumi:"subject"`
+	// Validation results for the client certificate version.
+	Validation GetMtlskeystoreClientCertificatePreviousValidationInput `pulumi:"validation"`
+	// The unique identifier of the client certificate version.
+	Version pulumi.IntInput `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid pulumi.StringInput `pulumi:"versionGuid"`
+}
+
+func (GetMtlskeystoreClientCertificatePreviousArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePrevious)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousArgs) ToGetMtlskeystoreClientCertificatePreviousOutput() GetMtlskeystoreClientCertificatePreviousOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousArgs) ToGetMtlskeystoreClientCertificatePreviousOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePrevious)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousOutput) ToGetMtlskeystoreClientCertificatePreviousOutput() GetMtlskeystoreClientCertificatePreviousOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousOutput) ToGetMtlskeystoreClientCertificatePreviousOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousOutput {
+	return o
+}
+
+// Details of the certificate block for the client certificate version.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) CertificateBlock() GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) GetMtlskeystoreClientCertificatePreviousCertificateBlock {
+		return v.CertificateBlock
+	}).(GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput)
+}
+
+// The user who uploaded the `THIRD_PARTY` client certificate version.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) CertificateSubmittedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.CertificateSubmittedBy }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) CertificateSubmittedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.CertificateSubmittedDate }).(pulumi.StringOutput)
+}
+
+// The user who created the client certificate version.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's creation.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) CreatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.CreatedDate }).(pulumi.StringOutput)
+}
+
+// Details of the Certificate Signing Request (CSR) for the client certificate version.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) CsrBlock() GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) GetMtlskeystoreClientCertificatePreviousCsrBlock {
+		return v.CsrBlock
+	}).(GetMtlskeystoreClientCertificatePreviousCsrBlockOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's deletion request.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) DeleteRequestedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.DeleteRequestedDate }).(pulumi.StringOutput)
+}
+
+// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) EllipticCurve() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.EllipticCurve }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the client certificate version expires.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) ExpiryDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.ExpiryDate }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's availability.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) IssuedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.IssuedDate }).(pulumi.StringOutput)
+}
+
+// The signing entity of the client certificate version.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) Issuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.Issuer }).(pulumi.StringOutput)
+}
+
+// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+// The private key length of the client certificate version when the key algorithm `RSA` is used.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) KeySizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.KeySizeInBytes }).(pulumi.StringOutput)
+}
+
+// A list of properties associated with the client certificate.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) Properties() GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) []GetMtlskeystoreClientCertificatePreviousProperty {
+		return v.Properties
+	}).(GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) ScheduledDeleteDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.ScheduledDeleteDate }).(pulumi.StringOutput)
+}
+
+// Specifies the algorithm that secures the data exchange between the edge server and origin.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) SignatureAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+}
+
+// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The public key's entity stored in the client certificate version's subject public key field.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) Subject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.Subject }).(pulumi.StringOutput)
+}
+
+// Validation results for the client certificate version.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) Validation() GetMtlskeystoreClientCertificatePreviousValidationOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) GetMtlskeystoreClientCertificatePreviousValidation {
+		return v.Validation
+	}).(GetMtlskeystoreClientCertificatePreviousValidationOutput)
+}
+
+// The unique identifier of the client certificate version.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) int { return v.Version }).(pulumi.IntOutput)
+}
+
+// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+func (o GetMtlskeystoreClientCertificatePreviousOutput) VersionGuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.VersionGuid }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousCertificateBlock struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate string `pulumi:"certificate"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain string `pulumi:"trustChain"`
+}
+
+// GetMtlskeystoreClientCertificatePreviousCertificateBlockInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs and GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousCertificateBlockInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs{...}
+type GetMtlskeystoreClientCertificatePreviousCertificateBlockInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutput() GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput
+	ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain pulumi.StringInput `pulumi:"trustChain"`
+}
+
+func (GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCertificateBlock)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs) ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutput() GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs) ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCertificateBlock)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutput() GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
+	return o
+}
+
+// A text representation of the client certificate in PEM format.
+func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) Certificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCertificateBlock) string { return v.Certificate }).(pulumi.StringOutput)
+}
+
+// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCertificateBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+// A text representation of the trust chain in PEM format.
+func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) TrustChain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCertificateBlock) string { return v.TrustChain }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousCsrBlock struct {
+	// Text of the certificate signing request.
+	Csr string `pulumi:"csr"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+}
+
+// GetMtlskeystoreClientCertificatePreviousCsrBlockInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousCsrBlockArgs and GetMtlskeystoreClientCertificatePreviousCsrBlockOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousCsrBlockInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousCsrBlockArgs{...}
+type GetMtlskeystoreClientCertificatePreviousCsrBlockInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutput() GetMtlskeystoreClientCertificatePreviousCsrBlockOutput
+	ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousCsrBlockOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousCsrBlockArgs struct {
+	// Text of the certificate signing request.
+	Csr pulumi.StringInput `pulumi:"csr"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+}
+
+func (GetMtlskeystoreClientCertificatePreviousCsrBlockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCsrBlock)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousCsrBlockArgs) ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutput() GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousCsrBlockArgs) ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousCsrBlockOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousCsrBlockOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCsrBlock)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutput() GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
+	return o
+}
+
+// Text of the certificate signing request.
+func (o GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) Csr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCsrBlock) string { return v.Csr }).(pulumi.StringOutput)
+}
+
+// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+func (o GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCsrBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousProperty struct {
+	// The unique identifier of the asset.
+	AssetId int `pulumi:"assetId"`
+	// The unique identifier of the group.
+	GroupId int `pulumi:"groupId"`
+	// The name of the property.
+	PropertyName string `pulumi:"propertyName"`
+	// The version of the property.
+	PropertyVersion int `pulumi:"propertyVersion"`
+}
+
+// GetMtlskeystoreClientCertificatePreviousPropertyInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousPropertyArgs and GetMtlskeystoreClientCertificatePreviousPropertyOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousPropertyInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousPropertyArgs{...}
+type GetMtlskeystoreClientCertificatePreviousPropertyInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousPropertyOutput() GetMtlskeystoreClientCertificatePreviousPropertyOutput
+	ToGetMtlskeystoreClientCertificatePreviousPropertyOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousPropertyOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousPropertyArgs struct {
+	// The unique identifier of the asset.
+	AssetId pulumi.IntInput `pulumi:"assetId"`
+	// The unique identifier of the group.
+	GroupId pulumi.IntInput `pulumi:"groupId"`
+	// The name of the property.
+	PropertyName pulumi.StringInput `pulumi:"propertyName"`
+	// The version of the property.
+	PropertyVersion pulumi.IntInput `pulumi:"propertyVersion"`
+}
+
+func (GetMtlskeystoreClientCertificatePreviousPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousProperty)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousPropertyArgs) ToGetMtlskeystoreClientCertificatePreviousPropertyOutput() GetMtlskeystoreClientCertificatePreviousPropertyOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousPropertyArgs) ToGetMtlskeystoreClientCertificatePreviousPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousPropertyOutput)
+}
+
+// GetMtlskeystoreClientCertificatePreviousPropertyArrayInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousPropertyArray and GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousPropertyArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousPropertyArray{ GetMtlskeystoreClientCertificatePreviousPropertyArgs{...} }
+type GetMtlskeystoreClientCertificatePreviousPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutput() GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput
+	ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousPropertyArray []GetMtlskeystoreClientCertificatePreviousPropertyInput
+
+func (GetMtlskeystoreClientCertificatePreviousPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousProperty)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousPropertyArray) ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutput() GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousPropertyArray) ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousProperty)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) ToGetMtlskeystoreClientCertificatePreviousPropertyOutput() GetMtlskeystoreClientCertificatePreviousPropertyOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) ToGetMtlskeystoreClientCertificatePreviousPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousPropertyOutput {
+	return o
+}
+
+// The unique identifier of the asset.
+func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) AssetId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousProperty) int { return v.AssetId }).(pulumi.IntOutput)
+}
+
+// The unique identifier of the group.
+func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousProperty) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// The name of the property.
+func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) PropertyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousProperty) string { return v.PropertyName }).(pulumi.StringOutput)
+}
+
+// The version of the property.
+func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) PropertyVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousProperty) int { return v.PropertyVersion }).(pulumi.IntOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousProperty)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput) ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutput() GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput) ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificatePreviousPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificatePreviousProperty {
+		return vs[0].([]GetMtlskeystoreClientCertificatePreviousProperty)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificatePreviousPropertyOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidation struct {
+	// Validation errors that need to be resolved for the request to succeed.
+	Errors []GetMtlskeystoreClientCertificatePreviousValidationError `pulumi:"errors"`
+	// Validation warnings that can be resolved.
+	Warnings []GetMtlskeystoreClientCertificatePreviousValidationWarning `pulumi:"warnings"`
+}
+
+// GetMtlskeystoreClientCertificatePreviousValidationInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationArgs and GetMtlskeystoreClientCertificatePreviousValidationOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousValidationArgs{...}
+type GetMtlskeystoreClientCertificatePreviousValidationInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousValidationOutput() GetMtlskeystoreClientCertificatePreviousValidationOutput
+	ToGetMtlskeystoreClientCertificatePreviousValidationOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationArgs struct {
+	// Validation errors that need to be resolved for the request to succeed.
+	Errors GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput `pulumi:"errors"`
+	// Validation warnings that can be resolved.
+	Warnings GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput `pulumi:"warnings"`
+}
+
+func (GetMtlskeystoreClientCertificatePreviousValidationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidation)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationArgs) ToGetMtlskeystoreClientCertificatePreviousValidationOutput() GetMtlskeystoreClientCertificatePreviousValidationOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousValidationOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationArgs) ToGetMtlskeystoreClientCertificatePreviousValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousValidationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidation)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationOutput) ToGetMtlskeystoreClientCertificatePreviousValidationOutput() GetMtlskeystoreClientCertificatePreviousValidationOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationOutput) ToGetMtlskeystoreClientCertificatePreviousValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationOutput {
+	return o
+}
+
+// Validation errors that need to be resolved for the request to succeed.
+func (o GetMtlskeystoreClientCertificatePreviousValidationOutput) Errors() GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidation) []GetMtlskeystoreClientCertificatePreviousValidationError {
+		return v.Errors
+	}).(GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput)
+}
+
+// Validation warnings that can be resolved.
+func (o GetMtlskeystoreClientCertificatePreviousValidationOutput) Warnings() GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidation) []GetMtlskeystoreClientCertificatePreviousValidationWarning {
+		return v.Warnings
+	}).(GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationError struct {
+	// Specifies the error details.
+	Message string `pulumi:"message"`
+	// Specifies the error root cause.
+	Reason string `pulumi:"reason"`
+	// Specifies the error category.
+	Type string `pulumi:"type"`
+}
+
+// GetMtlskeystoreClientCertificatePreviousValidationErrorInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationErrorArgs and GetMtlskeystoreClientCertificatePreviousValidationErrorOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationErrorInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousValidationErrorArgs{...}
+type GetMtlskeystoreClientCertificatePreviousValidationErrorInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorOutput
+	ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationErrorArgs struct {
+	// Specifies the error details.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Specifies the error root cause.
+	Reason pulumi.StringInput `pulumi:"reason"`
+	// Specifies the error category.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMtlskeystoreClientCertificatePreviousValidationErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationError)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationErrorArgs) ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationErrorArgs) ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationErrorOutput)
+}
+
+// GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationErrorArray and GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousValidationErrorArray{ GetMtlskeystoreClientCertificatePreviousValidationErrorArgs{...} }
+type GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput
+	ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationErrorArray []GetMtlskeystoreClientCertificatePreviousValidationErrorInput
+
+func (GetMtlskeystoreClientCertificatePreviousValidationErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousValidationError)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationErrorArray) ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationErrorArray) ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationErrorOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationError)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
+	return o
+}
+
+// Specifies the error details.
+func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationError) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Specifies the error root cause.
+func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationError) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// Specifies the error category.
+func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationError) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousValidationError)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificatePreviousValidationError {
+		return vs[0].([]GetMtlskeystoreClientCertificatePreviousValidationError)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificatePreviousValidationErrorOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationWarning struct {
+	// Specifies the warning details.
+	Message string `pulumi:"message"`
+	// Specifies the warning root cause.
+	Reason string `pulumi:"reason"`
+	// Specifies the warning category.
+	Type string `pulumi:"type"`
+}
+
+// GetMtlskeystoreClientCertificatePreviousValidationWarningInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationWarningArgs and GetMtlskeystoreClientCertificatePreviousValidationWarningOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationWarningInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousValidationWarningArgs{...}
+type GetMtlskeystoreClientCertificatePreviousValidationWarningInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningOutput
+	ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationWarningArgs struct {
+	// Specifies the warning details.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Specifies the warning root cause.
+	Reason pulumi.StringInput `pulumi:"reason"`
+	// Specifies the warning category.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMtlskeystoreClientCertificatePreviousValidationWarningArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationWarning)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationWarningArgs) ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationWarningArgs) ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationWarningOutput)
+}
+
+// GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationWarningArray and GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificatePreviousValidationWarningArray{ GetMtlskeystoreClientCertificatePreviousValidationWarningArgs{...} }
+type GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput
+	ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationWarningArray []GetMtlskeystoreClientCertificatePreviousValidationWarningInput
+
+func (GetMtlskeystoreClientCertificatePreviousValidationWarningArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousValidationWarning)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationWarningArray) ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatePreviousValidationWarningArray) ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationWarningOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationWarning)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
+	return o
+}
+
+// Specifies the warning details.
+func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationWarning) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Specifies the warning root cause.
+func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationWarning) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// Specifies the warning category.
+func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationWarning) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousValidationWarning)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificatePreviousValidationWarning {
+		return vs[0].([]GetMtlskeystoreClientCertificatePreviousValidationWarning)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificatePreviousValidationWarningOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersion struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock GetMtlskeystoreClientCertificateVersionCertificateBlock `pulumi:"certificateBlock"`
+	// The user who uploaded the `THIRD_PARTY` client certificate version.
+	CertificateSubmittedBy string `pulumi:"certificateSubmittedBy"`
+	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+	CertificateSubmittedDate string `pulumi:"certificateSubmittedDate"`
+	// The user who created the client certificate version.
+	CreatedBy string `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate string `pulumi:"createdDate"`
+	// Details of the Certificate Signing Request (CSR) for the client certificate version.
+	CsrBlock GetMtlskeystoreClientCertificateVersionCsrBlock `pulumi:"csrBlock"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
+	DeleteRequestedDate string `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+	EllipticCurve string `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate string `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate string `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer string `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when the key algorithm `RSA` is used.
+	KeySizeInBytes string `pulumi:"keySizeInBytes"`
+	// A list of properties associated with the client certificate.
+	Properties []GetMtlskeystoreClientCertificateVersionProperty `pulumi:"properties"`
+	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+	ScheduledDeleteDate string `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status string `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject string `pulumi:"subject"`
+	// Validation results for the client certificate version.
+	Validation GetMtlskeystoreClientCertificateVersionValidation `pulumi:"validation"`
+	// The unique identifier of the client certificate version.
+	Version int `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid string `pulumi:"versionGuid"`
+}
+
+// GetMtlskeystoreClientCertificateVersionInput is an input type that accepts GetMtlskeystoreClientCertificateVersionArgs and GetMtlskeystoreClientCertificateVersionOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionArgs{...}
+type GetMtlskeystoreClientCertificateVersionInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionOutput() GetMtlskeystoreClientCertificateVersionOutput
+	ToGetMtlskeystoreClientCertificateVersionOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionArgs struct {
+	// Details of the certificate block for the client certificate version.
+	CertificateBlock GetMtlskeystoreClientCertificateVersionCertificateBlockInput `pulumi:"certificateBlock"`
+	// The user who uploaded the `THIRD_PARTY` client certificate version.
+	CertificateSubmittedBy pulumi.StringInput `pulumi:"certificateSubmittedBy"`
+	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+	CertificateSubmittedDate pulumi.StringInput `pulumi:"certificateSubmittedDate"`
+	// The user who created the client certificate version.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the client certificate version's creation.
+	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
+	// Details of the Certificate Signing Request (CSR) for the client certificate version.
+	CsrBlock GetMtlskeystoreClientCertificateVersionCsrBlockInput `pulumi:"csrBlock"`
+	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
+	DeleteRequestedDate pulumi.StringInput `pulumi:"deleteRequestedDate"`
+	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+	EllipticCurve pulumi.StringInput `pulumi:"ellipticCurve"`
+	// An ISO 8601 timestamp indicating when the client certificate version expires.
+	ExpiryDate pulumi.StringInput `pulumi:"expiryDate"`
+	// An ISO 8601 timestamp indicating the client certificate version's availability.
+	IssuedDate pulumi.StringInput `pulumi:"issuedDate"`
+	// The signing entity of the client certificate version.
+	Issuer pulumi.StringInput `pulumi:"issuer"`
+	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	// The private key length of the client certificate version when the key algorithm `RSA` is used.
+	KeySizeInBytes pulumi.StringInput `pulumi:"keySizeInBytes"`
+	// A list of properties associated with the client certificate.
+	Properties GetMtlskeystoreClientCertificateVersionPropertyArrayInput `pulumi:"properties"`
+	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+	ScheduledDeleteDate pulumi.StringInput `pulumi:"scheduledDeleteDate"`
+	// Specifies the algorithm that secures the data exchange between the edge server and origin.
+	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The public key's entity stored in the client certificate version's subject public key field.
+	Subject pulumi.StringInput `pulumi:"subject"`
+	// Validation results for the client certificate version.
+	Validation GetMtlskeystoreClientCertificateVersionValidationInput `pulumi:"validation"`
+	// The unique identifier of the client certificate version.
+	Version pulumi.IntInput `pulumi:"version"`
+	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+	VersionGuid pulumi.StringInput `pulumi:"versionGuid"`
+}
+
+func (GetMtlskeystoreClientCertificateVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersion)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionArgs) ToGetMtlskeystoreClientCertificateVersionOutput() GetMtlskeystoreClientCertificateVersionOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionArgs) ToGetMtlskeystoreClientCertificateVersionOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionOutput)
+}
+
+// GetMtlskeystoreClientCertificateVersionArrayInput is an input type that accepts GetMtlskeystoreClientCertificateVersionArray and GetMtlskeystoreClientCertificateVersionArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionArray{ GetMtlskeystoreClientCertificateVersionArgs{...} }
+type GetMtlskeystoreClientCertificateVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionArrayOutput() GetMtlskeystoreClientCertificateVersionArrayOutput
+	ToGetMtlskeystoreClientCertificateVersionArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionArrayOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionArray []GetMtlskeystoreClientCertificateVersionInput
+
+func (GetMtlskeystoreClientCertificateVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersion)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionArray) ToGetMtlskeystoreClientCertificateVersionArrayOutput() GetMtlskeystoreClientCertificateVersionArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionArray) ToGetMtlskeystoreClientCertificateVersionArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersion)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionOutput) ToGetMtlskeystoreClientCertificateVersionOutput() GetMtlskeystoreClientCertificateVersionOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionOutput) ToGetMtlskeystoreClientCertificateVersionOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionOutput {
+	return o
+}
+
+// Details of the certificate block for the client certificate version.
+func (o GetMtlskeystoreClientCertificateVersionOutput) CertificateBlock() GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) GetMtlskeystoreClientCertificateVersionCertificateBlock {
+		return v.CertificateBlock
+	}).(GetMtlskeystoreClientCertificateVersionCertificateBlockOutput)
+}
+
+// The user who uploaded the `THIRD_PARTY` client certificate version.
+func (o GetMtlskeystoreClientCertificateVersionOutput) CertificateSubmittedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.CertificateSubmittedBy }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+func (o GetMtlskeystoreClientCertificateVersionOutput) CertificateSubmittedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.CertificateSubmittedDate }).(pulumi.StringOutput)
+}
+
+// The user who created the client certificate version.
+func (o GetMtlskeystoreClientCertificateVersionOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's creation.
+func (o GetMtlskeystoreClientCertificateVersionOutput) CreatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.CreatedDate }).(pulumi.StringOutput)
+}
+
+// Details of the Certificate Signing Request (CSR) for the client certificate version.
+func (o GetMtlskeystoreClientCertificateVersionOutput) CsrBlock() GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) GetMtlskeystoreClientCertificateVersionCsrBlock {
+		return v.CsrBlock
+	}).(GetMtlskeystoreClientCertificateVersionCsrBlockOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's deletion request.
+func (o GetMtlskeystoreClientCertificateVersionOutput) DeleteRequestedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.DeleteRequestedDate }).(pulumi.StringOutput)
+}
+
+// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+func (o GetMtlskeystoreClientCertificateVersionOutput) EllipticCurve() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.EllipticCurve }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the client certificate version expires.
+func (o GetMtlskeystoreClientCertificateVersionOutput) ExpiryDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.ExpiryDate }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's availability.
+func (o GetMtlskeystoreClientCertificateVersionOutput) IssuedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.IssuedDate }).(pulumi.StringOutput)
+}
+
+// The signing entity of the client certificate version.
+func (o GetMtlskeystoreClientCertificateVersionOutput) Issuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.Issuer }).(pulumi.StringOutput)
+}
+
+// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+func (o GetMtlskeystoreClientCertificateVersionOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+// The private key length of the client certificate version when the key algorithm `RSA` is used.
+func (o GetMtlskeystoreClientCertificateVersionOutput) KeySizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.KeySizeInBytes }).(pulumi.StringOutput)
+}
+
+// A list of properties associated with the client certificate.
+func (o GetMtlskeystoreClientCertificateVersionOutput) Properties() GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) []GetMtlskeystoreClientCertificateVersionProperty {
+		return v.Properties
+	}).(GetMtlskeystoreClientCertificateVersionPropertyArrayOutput)
+}
+
+// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+func (o GetMtlskeystoreClientCertificateVersionOutput) ScheduledDeleteDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.ScheduledDeleteDate }).(pulumi.StringOutput)
+}
+
+// Specifies the algorithm that secures the data exchange between the edge server and origin.
+func (o GetMtlskeystoreClientCertificateVersionOutput) SignatureAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+}
+
+// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+func (o GetMtlskeystoreClientCertificateVersionOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The public key's entity stored in the client certificate version's subject public key field.
+func (o GetMtlskeystoreClientCertificateVersionOutput) Subject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.Subject }).(pulumi.StringOutput)
+}
+
+// Validation results for the client certificate version.
+func (o GetMtlskeystoreClientCertificateVersionOutput) Validation() GetMtlskeystoreClientCertificateVersionValidationOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) GetMtlskeystoreClientCertificateVersionValidation {
+		return v.Validation
+	}).(GetMtlskeystoreClientCertificateVersionValidationOutput)
+}
+
+// The unique identifier of the client certificate version.
+func (o GetMtlskeystoreClientCertificateVersionOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) int { return v.Version }).(pulumi.IntOutput)
+}
+
+// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+func (o GetMtlskeystoreClientCertificateVersionOutput) VersionGuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.VersionGuid }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersion)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionArrayOutput) ToGetMtlskeystoreClientCertificateVersionArrayOutput() GetMtlskeystoreClientCertificateVersionArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionArrayOutput) ToGetMtlskeystoreClientCertificateVersionArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateVersion {
+		return vs[0].([]GetMtlskeystoreClientCertificateVersion)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificateVersionOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionCertificateBlock struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate string `pulumi:"certificate"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain string `pulumi:"trustChain"`
+}
+
+// GetMtlskeystoreClientCertificateVersionCertificateBlockInput is an input type that accepts GetMtlskeystoreClientCertificateVersionCertificateBlockArgs and GetMtlskeystoreClientCertificateVersionCertificateBlockOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionCertificateBlockInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionCertificateBlockArgs{...}
+type GetMtlskeystoreClientCertificateVersionCertificateBlockInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutput() GetMtlskeystoreClientCertificateVersionCertificateBlockOutput
+	ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionCertificateBlockOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionCertificateBlockArgs struct {
+	// A text representation of the client certificate in PEM format.
+	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	// A text representation of the trust chain in PEM format.
+	TrustChain pulumi.StringInput `pulumi:"trustChain"`
+}
+
+func (GetMtlskeystoreClientCertificateVersionCertificateBlockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCertificateBlock)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionCertificateBlockArgs) ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutput() GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionCertificateBlockArgs) ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionCertificateBlockOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionCertificateBlockOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCertificateBlock)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutput() GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
+	return o
+}
+
+// A text representation of the client certificate in PEM format.
+func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) Certificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCertificateBlock) string { return v.Certificate }).(pulumi.StringOutput)
+}
+
+// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCertificateBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+// A text representation of the trust chain in PEM format.
+func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) TrustChain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCertificateBlock) string { return v.TrustChain }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionCsrBlock struct {
+	// Text of the certificate signing request.
+	Csr string `pulumi:"csr"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+}
+
+// GetMtlskeystoreClientCertificateVersionCsrBlockInput is an input type that accepts GetMtlskeystoreClientCertificateVersionCsrBlockArgs and GetMtlskeystoreClientCertificateVersionCsrBlockOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionCsrBlockInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionCsrBlockArgs{...}
+type GetMtlskeystoreClientCertificateVersionCsrBlockInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionCsrBlockOutput() GetMtlskeystoreClientCertificateVersionCsrBlockOutput
+	ToGetMtlskeystoreClientCertificateVersionCsrBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionCsrBlockOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionCsrBlockArgs struct {
+	// Text of the certificate signing request.
+	Csr pulumi.StringInput `pulumi:"csr"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+}
+
+func (GetMtlskeystoreClientCertificateVersionCsrBlockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCsrBlock)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionCsrBlockArgs) ToGetMtlskeystoreClientCertificateVersionCsrBlockOutput() GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionCsrBlockOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionCsrBlockArgs) ToGetMtlskeystoreClientCertificateVersionCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionCsrBlockOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionCsrBlockOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionCsrBlockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCsrBlock)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionCsrBlockOutput) ToGetMtlskeystoreClientCertificateVersionCsrBlockOutput() GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionCsrBlockOutput) ToGetMtlskeystoreClientCertificateVersionCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
+	return o
+}
+
+// Text of the certificate signing request.
+func (o GetMtlskeystoreClientCertificateVersionCsrBlockOutput) Csr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCsrBlock) string { return v.Csr }).(pulumi.StringOutput)
+}
+
+// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+func (o GetMtlskeystoreClientCertificateVersionCsrBlockOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCsrBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionProperty struct {
+	// The unique identifier of the asset.
+	AssetId int `pulumi:"assetId"`
+	// The unique identifier of the group.
+	GroupId int `pulumi:"groupId"`
+	// The name of the property.
+	PropertyName string `pulumi:"propertyName"`
+	// The version of the property.
+	PropertyVersion int `pulumi:"propertyVersion"`
+}
+
+// GetMtlskeystoreClientCertificateVersionPropertyInput is an input type that accepts GetMtlskeystoreClientCertificateVersionPropertyArgs and GetMtlskeystoreClientCertificateVersionPropertyOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionPropertyInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionPropertyArgs{...}
+type GetMtlskeystoreClientCertificateVersionPropertyInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionPropertyOutput() GetMtlskeystoreClientCertificateVersionPropertyOutput
+	ToGetMtlskeystoreClientCertificateVersionPropertyOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionPropertyOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionPropertyArgs struct {
+	// The unique identifier of the asset.
+	AssetId pulumi.IntInput `pulumi:"assetId"`
+	// The unique identifier of the group.
+	GroupId pulumi.IntInput `pulumi:"groupId"`
+	// The name of the property.
+	PropertyName pulumi.StringInput `pulumi:"propertyName"`
+	// The version of the property.
+	PropertyVersion pulumi.IntInput `pulumi:"propertyVersion"`
+}
+
+func (GetMtlskeystoreClientCertificateVersionPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionProperty)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionPropertyArgs) ToGetMtlskeystoreClientCertificateVersionPropertyOutput() GetMtlskeystoreClientCertificateVersionPropertyOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionPropertyArgs) ToGetMtlskeystoreClientCertificateVersionPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionPropertyOutput)
+}
+
+// GetMtlskeystoreClientCertificateVersionPropertyArrayInput is an input type that accepts GetMtlskeystoreClientCertificateVersionPropertyArray and GetMtlskeystoreClientCertificateVersionPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionPropertyArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionPropertyArray{ GetMtlskeystoreClientCertificateVersionPropertyArgs{...} }
+type GetMtlskeystoreClientCertificateVersionPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutput() GetMtlskeystoreClientCertificateVersionPropertyArrayOutput
+	ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionPropertyArrayOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionPropertyArray []GetMtlskeystoreClientCertificateVersionPropertyInput
+
+func (GetMtlskeystoreClientCertificateVersionPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionProperty)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionPropertyArray) ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutput() GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionPropertyArray) ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionPropertyArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionProperty)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) ToGetMtlskeystoreClientCertificateVersionPropertyOutput() GetMtlskeystoreClientCertificateVersionPropertyOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) ToGetMtlskeystoreClientCertificateVersionPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionPropertyOutput {
+	return o
+}
+
+// The unique identifier of the asset.
+func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) AssetId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionProperty) int { return v.AssetId }).(pulumi.IntOutput)
+}
+
+// The unique identifier of the group.
+func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionProperty) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// The name of the property.
+func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) PropertyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionProperty) string { return v.PropertyName }).(pulumi.StringOutput)
+}
+
+// The version of the property.
+func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) PropertyVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionProperty) int { return v.PropertyVersion }).(pulumi.IntOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionProperty)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionPropertyArrayOutput) ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutput() GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionPropertyArrayOutput) ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionPropertyArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateVersionPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateVersionProperty {
+		return vs[0].([]GetMtlskeystoreClientCertificateVersionProperty)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificateVersionPropertyOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionValidation struct {
+	// Validation errors that need to be resolved for the request to succeed.
+	Errors []GetMtlskeystoreClientCertificateVersionValidationError `pulumi:"errors"`
+	// Validation warnings that can be resolved.
+	Warnings []GetMtlskeystoreClientCertificateVersionValidationWarning `pulumi:"warnings"`
+}
+
+// GetMtlskeystoreClientCertificateVersionValidationInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationArgs and GetMtlskeystoreClientCertificateVersionValidationOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionValidationArgs{...}
+type GetMtlskeystoreClientCertificateVersionValidationInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionValidationOutput() GetMtlskeystoreClientCertificateVersionValidationOutput
+	ToGetMtlskeystoreClientCertificateVersionValidationOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationArgs struct {
+	// Validation errors that need to be resolved for the request to succeed.
+	Errors GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput `pulumi:"errors"`
+	// Validation warnings that can be resolved.
+	Warnings GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput `pulumi:"warnings"`
+}
+
+func (GetMtlskeystoreClientCertificateVersionValidationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidation)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationArgs) ToGetMtlskeystoreClientCertificateVersionValidationOutput() GetMtlskeystoreClientCertificateVersionValidationOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionValidationOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationArgs) ToGetMtlskeystoreClientCertificateVersionValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionValidationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidation)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationOutput) ToGetMtlskeystoreClientCertificateVersionValidationOutput() GetMtlskeystoreClientCertificateVersionValidationOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationOutput) ToGetMtlskeystoreClientCertificateVersionValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationOutput {
+	return o
+}
+
+// Validation errors that need to be resolved for the request to succeed.
+func (o GetMtlskeystoreClientCertificateVersionValidationOutput) Errors() GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidation) []GetMtlskeystoreClientCertificateVersionValidationError {
+		return v.Errors
+	}).(GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput)
+}
+
+// Validation warnings that can be resolved.
+func (o GetMtlskeystoreClientCertificateVersionValidationOutput) Warnings() GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidation) []GetMtlskeystoreClientCertificateVersionValidationWarning {
+		return v.Warnings
+	}).(GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationError struct {
+	// Specifies the error details.
+	Message string `pulumi:"message"`
+	// Specifies the error root cause.
+	Reason string `pulumi:"reason"`
+	// Specifies the error category.
+	Type string `pulumi:"type"`
+}
+
+// GetMtlskeystoreClientCertificateVersionValidationErrorInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationErrorArgs and GetMtlskeystoreClientCertificateVersionValidationErrorOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationErrorInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionValidationErrorArgs{...}
+type GetMtlskeystoreClientCertificateVersionValidationErrorInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionValidationErrorOutput() GetMtlskeystoreClientCertificateVersionValidationErrorOutput
+	ToGetMtlskeystoreClientCertificateVersionValidationErrorOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationErrorArgs struct {
+	// Specifies the error details.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Specifies the error root cause.
+	Reason pulumi.StringInput `pulumi:"reason"`
+	// Specifies the error category.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMtlskeystoreClientCertificateVersionValidationErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationError)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationErrorArgs) ToGetMtlskeystoreClientCertificateVersionValidationErrorOutput() GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionValidationErrorOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationErrorArgs) ToGetMtlskeystoreClientCertificateVersionValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationErrorOutput)
+}
+
+// GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationErrorArray and GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionValidationErrorArray{ GetMtlskeystoreClientCertificateVersionValidationErrorArgs{...} }
+type GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput() GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput
+	ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationErrorArray []GetMtlskeystoreClientCertificateVersionValidationErrorInput
+
+func (GetMtlskeystoreClientCertificateVersionValidationErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionValidationError)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationErrorArray) ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput() GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationErrorArray) ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationErrorOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionValidationErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationError)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) ToGetMtlskeystoreClientCertificateVersionValidationErrorOutput() GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) ToGetMtlskeystoreClientCertificateVersionValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
+	return o
+}
+
+// Specifies the error details.
+func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationError) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Specifies the error root cause.
+func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationError) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// Specifies the error category.
+func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationError) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionValidationError)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput() GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateVersionValidationError {
+		return vs[0].([]GetMtlskeystoreClientCertificateVersionValidationError)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificateVersionValidationErrorOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationWarning struct {
+	// Specifies the warning details.
+	Message string `pulumi:"message"`
+	// Specifies the warning root cause.
+	Reason string `pulumi:"reason"`
+	// Specifies the warning category.
+	Type string `pulumi:"type"`
+}
+
+// GetMtlskeystoreClientCertificateVersionValidationWarningInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationWarningArgs and GetMtlskeystoreClientCertificateVersionValidationWarningOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationWarningInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionValidationWarningArgs{...}
+type GetMtlskeystoreClientCertificateVersionValidationWarningInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionValidationWarningOutput() GetMtlskeystoreClientCertificateVersionValidationWarningOutput
+	ToGetMtlskeystoreClientCertificateVersionValidationWarningOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationWarningArgs struct {
+	// Specifies the warning details.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Specifies the warning root cause.
+	Reason pulumi.StringInput `pulumi:"reason"`
+	// Specifies the warning category.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMtlskeystoreClientCertificateVersionValidationWarningArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationWarning)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationWarningArgs) ToGetMtlskeystoreClientCertificateVersionValidationWarningOutput() GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionValidationWarningOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationWarningArgs) ToGetMtlskeystoreClientCertificateVersionValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationWarningOutput)
+}
+
+// GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationWarningArray and GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificateVersionValidationWarningArray{ GetMtlskeystoreClientCertificateVersionValidationWarningArgs{...} }
+type GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput() GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput
+	ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationWarningArray []GetMtlskeystoreClientCertificateVersionValidationWarningInput
+
+func (GetMtlskeystoreClientCertificateVersionValidationWarningArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionValidationWarning)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationWarningArray) ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput() GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificateVersionValidationWarningArray) ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationWarningOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionValidationWarningOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationWarning)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) ToGetMtlskeystoreClientCertificateVersionValidationWarningOutput() GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) ToGetMtlskeystoreClientCertificateVersionValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
+	return o
+}
+
+// Specifies the warning details.
+func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationWarning) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Specifies the warning root cause.
+func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationWarning) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+// Specifies the warning category.
+func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationWarning) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionValidationWarning)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput() GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateVersionValidationWarning {
+		return vs[0].([]GetMtlskeystoreClientCertificateVersionValidationWarning)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificateVersionValidationWarningOutput)
+}
+
+type GetMtlskeystoreClientCertificatesCertificate struct {
+	// The unique identifier of the client certificate.
+	CertificateId int `pulumi:"certificateId"`
+	// The name of the client certificate.
+	CertificateName string `pulumi:"certificateName"`
+	// The user who created the CA certificate.
+	CreatedBy string `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the CA certificate's creation.
+	CreatedDate string `pulumi:"createdDate"`
+	// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
+	Geography string `pulumi:"geography"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	// The email addresses to notify for client certificate-related issues.
+	NotificationEmails []string `pulumi:"notificationEmails"`
+	// Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
+	SecureNetwork string `pulumi:"secureNetwork"`
+	// The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.
+	Signer string `pulumi:"signer"`
+	// The CA certificate’s key value details.
+	Subject string `pulumi:"subject"`
+}
+
+// GetMtlskeystoreClientCertificatesCertificateInput is an input type that accepts GetMtlskeystoreClientCertificatesCertificateArgs and GetMtlskeystoreClientCertificatesCertificateOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatesCertificateInput` via:
+//
+//	GetMtlskeystoreClientCertificatesCertificateArgs{...}
+type GetMtlskeystoreClientCertificatesCertificateInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatesCertificateOutput() GetMtlskeystoreClientCertificatesCertificateOutput
+	ToGetMtlskeystoreClientCertificatesCertificateOutputWithContext(context.Context) GetMtlskeystoreClientCertificatesCertificateOutput
+}
+
+type GetMtlskeystoreClientCertificatesCertificateArgs struct {
+	// The unique identifier of the client certificate.
+	CertificateId pulumi.IntInput `pulumi:"certificateId"`
+	// The name of the client certificate.
+	CertificateName pulumi.StringInput `pulumi:"certificateName"`
+	// The user who created the CA certificate.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating the CA certificate's creation.
+	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
+	// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
+	Geography pulumi.StringInput `pulumi:"geography"`
+	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	// The email addresses to notify for client certificate-related issues.
+	NotificationEmails pulumi.StringArrayInput `pulumi:"notificationEmails"`
+	// Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
+	SecureNetwork pulumi.StringInput `pulumi:"secureNetwork"`
+	// The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.
+	Signer pulumi.StringInput `pulumi:"signer"`
+	// The CA certificate’s key value details.
+	Subject pulumi.StringInput `pulumi:"subject"`
+}
+
+func (GetMtlskeystoreClientCertificatesCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatesCertificate)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatesCertificateArgs) ToGetMtlskeystoreClientCertificatesCertificateOutput() GetMtlskeystoreClientCertificatesCertificateOutput {
+	return i.ToGetMtlskeystoreClientCertificatesCertificateOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatesCertificateArgs) ToGetMtlskeystoreClientCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatesCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatesCertificateOutput)
+}
+
+// GetMtlskeystoreClientCertificatesCertificateArrayInput is an input type that accepts GetMtlskeystoreClientCertificatesCertificateArray and GetMtlskeystoreClientCertificatesCertificateArrayOutput values.
+// You can construct a concrete instance of `GetMtlskeystoreClientCertificatesCertificateArrayInput` via:
+//
+//	GetMtlskeystoreClientCertificatesCertificateArray{ GetMtlskeystoreClientCertificatesCertificateArgs{...} }
+type GetMtlskeystoreClientCertificatesCertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetMtlskeystoreClientCertificatesCertificateArrayOutput() GetMtlskeystoreClientCertificatesCertificateArrayOutput
+	ToGetMtlskeystoreClientCertificatesCertificateArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificatesCertificateArrayOutput
+}
+
+type GetMtlskeystoreClientCertificatesCertificateArray []GetMtlskeystoreClientCertificatesCertificateInput
+
+func (GetMtlskeystoreClientCertificatesCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatesCertificate)(nil)).Elem()
+}
+
+func (i GetMtlskeystoreClientCertificatesCertificateArray) ToGetMtlskeystoreClientCertificatesCertificateArrayOutput() GetMtlskeystoreClientCertificatesCertificateArrayOutput {
+	return i.ToGetMtlskeystoreClientCertificatesCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetMtlskeystoreClientCertificatesCertificateArray) ToGetMtlskeystoreClientCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatesCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatesCertificateArrayOutput)
+}
+
+type GetMtlskeystoreClientCertificatesCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatesCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMtlskeystoreClientCertificatesCertificate)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) ToGetMtlskeystoreClientCertificatesCertificateOutput() GetMtlskeystoreClientCertificatesCertificateOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) ToGetMtlskeystoreClientCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatesCertificateOutput {
+	return o
+}
+
+// The unique identifier of the client certificate.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) CertificateId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) int { return v.CertificateId }).(pulumi.IntOutput)
+}
+
+// The name of the client certificate.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) CertificateName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.CertificateName }).(pulumi.StringOutput)
+}
+
+// The user who created the CA certificate.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating the CA certificate's creation.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) CreatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.CreatedDate }).(pulumi.StringOutput)
+}
+
+// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) Geography() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.Geography }).(pulumi.StringOutput)
+}
+
+// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+// The email addresses to notify for client certificate-related issues.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) NotificationEmails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) []string { return v.NotificationEmails }).(pulumi.StringArrayOutput)
+}
+
+// Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) SecureNetwork() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.SecureNetwork }).(pulumi.StringOutput)
+}
+
+// The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) Signer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.Signer }).(pulumi.StringOutput)
+}
+
+// The CA certificate’s key value details.
+func (o GetMtlskeystoreClientCertificatesCertificateOutput) Subject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.Subject }).(pulumi.StringOutput)
+}
+
+type GetMtlskeystoreClientCertificatesCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMtlskeystoreClientCertificatesCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatesCertificate)(nil)).Elem()
+}
+
+func (o GetMtlskeystoreClientCertificatesCertificateArrayOutput) ToGetMtlskeystoreClientCertificatesCertificateArrayOutput() GetMtlskeystoreClientCertificatesCertificateArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatesCertificateArrayOutput) ToGetMtlskeystoreClientCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatesCertificateArrayOutput {
+	return o
+}
+
+func (o GetMtlskeystoreClientCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificatesCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificatesCertificate {
+		return vs[0].([]GetMtlskeystoreClientCertificatesCertificate)[vs[1].(int)]
+	}).(GetMtlskeystoreClientCertificatesCertificateOutput)
+}
+
 type GetPropertiesProperty struct {
 	ContractId        string `pulumi:"contractId"`
 	GroupId           string `pulumi:"groupId"`
@@ -61597,6 +65534,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamCidrBlockActionsPtrInput)(nil)).Elem(), IamCidrBlockActionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IamUserUserNotificationsInput)(nil)).Elem(), IamUserUserNotificationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IamUserUserNotificationsPtrInput)(nil)).Elem(), IamUserUserNotificationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateAkamaiVersionInput)(nil)).Elem(), MtlskeystoreClientCertificateAkamaiVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateAkamaiVersionArrayInput)(nil)).Elem(), MtlskeystoreClientCertificateAkamaiVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateAkamaiVersionCertificateBlockInput)(nil)).Elem(), MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrInput)(nil)).Elem(), MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsInput)(nil)).Elem(), MtlskeystoreClientCertificateThirdPartyVersionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsMapInput)(nil)).Elem(), MtlskeystoreClientCertificateThirdPartyVersionsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockInput)(nil)).Elem(), MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrInput)(nil)).Elem(), MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockInput)(nil)).Elem(), MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrInput)(nil)).Elem(), MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateUploadTimeoutsInput)(nil)).Elem(), MtlskeystoreClientCertificateUploadTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MtlskeystoreClientCertificateUploadTimeoutsPtrInput)(nil)).Elem(), MtlskeystoreClientCertificateUploadTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordInput)(nil)).Elem(), PropertyActivationComplianceRecordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordPtrInput)(nil)).Elem(), PropertyActivationComplianceRecordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonEmergencyInput)(nil)).Elem(), PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs{})
@@ -62162,6 +66111,41 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyVariableArrayInput)(nil)).Elem(), GetImagingPolicyVideoPolicyVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyVariableEnumOptionInput)(nil)).Elem(), GetImagingPolicyVideoPolicyVariableEnumOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyVariableEnumOptionArrayInput)(nil)).Elem(), GetImagingPolicyVideoPolicyVariableEnumOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreAccountCaCertificatesCertificateInput)(nil)).Elem(), GetMtlskeystoreAccountCaCertificatesCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreAccountCaCertificatesCertificateArrayInput)(nil)).Elem(), GetMtlskeystoreAccountCaCertificatesCertificateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCertificateBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCsrBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentCsrBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentPropertyInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentPropertyArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationErrorInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationWarningInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationWarningArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationWarningArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCertificateBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCsrBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousCsrBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousPropertyInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousPropertyArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationErrorInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationWarningInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationWarningArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationWarningArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCertificateBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionCertificateBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCsrBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionCsrBlockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionPropertyInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionPropertyArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationErrorInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationWarningInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationWarningArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationWarningArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatesCertificateInput)(nil)).Elem(), GetMtlskeystoreClientCertificatesCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatesCertificateArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificatesCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyInput)(nil)).Elem(), GetPropertiesPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyArrayInput)(nil)).Elem(), GetPropertiesPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesSearchPropertyInput)(nil)).Elem(), GetPropertiesSearchPropertyArgs{})
@@ -62352,6 +66336,18 @@ func init() {
 	pulumi.RegisterOutputType(IamCidrBlockActionsPtrOutput{})
 	pulumi.RegisterOutputType(IamUserUserNotificationsOutput{})
 	pulumi.RegisterOutputType(IamUserUserNotificationsPtrOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateAkamaiVersionOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateAkamaiVersionArrayOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateAkamaiVersionCertificateBlockOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateAkamaiVersionCertificateBlockPtrOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateThirdPartyVersionsOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateThirdPartyVersionsMapOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockPtrOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockPtrOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateUploadTimeoutsOutput{})
+	pulumi.RegisterOutputType(MtlskeystoreClientCertificateUploadTimeoutsPtrOutput{})
 	pulumi.RegisterOutputType(PropertyActivationComplianceRecordOutput{})
 	pulumi.RegisterOutputType(PropertyActivationComplianceRecordPtrOutput{})
 	pulumi.RegisterOutputType(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput{})
@@ -62917,6 +66913,41 @@ func init() {
 	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyVariableArrayOutput{})
 	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyVariableEnumOptionOutput{})
 	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreAccountCaCertificatesCertificateOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentCsrBlockOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentPropertyOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationErrorOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationWarningOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousCsrBlockOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousPropertyOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationErrorOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationWarningOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionCertificateBlockOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionCsrBlockOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionPropertyOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationErrorOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationWarningOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatesCertificateOutput{})
+	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatesCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertiesPropertyOutput{})
 	pulumi.RegisterOutputType(GetPropertiesPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertiesSearchPropertyOutput{})

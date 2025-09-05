@@ -10,8 +10,6 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClientlistListsList {
@@ -49,7 +47,7 @@ public final class GetClientlistListsList {
      * @return The name of the client list
      * 
      */
-    private @Nullable String name;
+    private String name;
     /**
      * @return The client list notes
      * 
@@ -84,7 +82,7 @@ public final class GetClientlistListsList {
      * @return The type of the client list
      * 
      */
-    private @Nullable String type;
+    private String type;
     /**
      * @return The date of last update.
      * 
@@ -148,8 +146,8 @@ public final class GetClientlistListsList {
      * @return The name of the client list
      * 
      */
-    public Optional<String> name() {
-        return Optional.ofNullable(this.name);
+    public String name() {
+        return this.name;
     }
     /**
      * @return The client list notes
@@ -197,8 +195,8 @@ public final class GetClientlistListsList {
      * @return The type of the client list
      * 
      */
-    public Optional<String> type() {
-        return Optional.ofNullable(this.type);
+    public String type() {
+        return this.type;
     }
     /**
      * @return The date of last update.
@@ -237,14 +235,14 @@ public final class GetClientlistListsList {
         private Integer itemsCount;
         private String listId;
         private String listType;
-        private @Nullable String name;
+        private String name;
         private String notes;
         private String productionActivationStatus;
         private Boolean readOnly;
         private Boolean shared;
         private String stagingActivationStatus;
         private List<String> tags;
-        private @Nullable String type;
+        private String type;
         private String updateDate;
         private String updatedBy;
         private Integer version;
@@ -319,8 +317,10 @@ public final class GetClientlistListsList {
             return this;
         }
         @CustomType.Setter
-        public Builder name(@Nullable String name) {
-
+        public Builder name(String name) {
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetClientlistListsList", "name");
+            }
             this.name = name;
             return this;
         }
@@ -376,8 +376,10 @@ public final class GetClientlistListsList {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder type(@Nullable String type) {
-
+        public Builder type(String type) {
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetClientlistListsList", "type");
+            }
             this.type = type;
             return this;
         }

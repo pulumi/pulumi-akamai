@@ -95,6 +95,12 @@ __all__ = [
     'IamApiClientPurgeOptionsCpCodeAccess',
     'IamCidrBlockActions',
     'IamUserUserNotifications',
+    'MtlskeystoreClientCertificateAkamaiVersion',
+    'MtlskeystoreClientCertificateAkamaiVersionCertificateBlock',
+    'MtlskeystoreClientCertificateThirdPartyVersions',
+    'MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock',
+    'MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock',
+    'MtlskeystoreClientCertificateUploadTimeouts',
     'PropertyActivationComplianceRecord',
     'PropertyActivationComplianceRecordNoncomplianceReasonEmergency',
     'PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic',
@@ -392,6 +398,29 @@ __all__ = [
     'GetImagingPolicyVideoPolicyOutputResult',
     'GetImagingPolicyVideoPolicyVariableResult',
     'GetImagingPolicyVideoPolicyVariableEnumOptionResult',
+    'GetMtlskeystoreAccountCaCertificatesCertificateResult',
+    'GetMtlskeystoreClientCertificateCurrentResult',
+    'GetMtlskeystoreClientCertificateCurrentCertificateBlockResult',
+    'GetMtlskeystoreClientCertificateCurrentCsrBlockResult',
+    'GetMtlskeystoreClientCertificateCurrentPropertyResult',
+    'GetMtlskeystoreClientCertificateCurrentValidationResult',
+    'GetMtlskeystoreClientCertificateCurrentValidationErrorResult',
+    'GetMtlskeystoreClientCertificateCurrentValidationWarningResult',
+    'GetMtlskeystoreClientCertificatePreviousResult',
+    'GetMtlskeystoreClientCertificatePreviousCertificateBlockResult',
+    'GetMtlskeystoreClientCertificatePreviousCsrBlockResult',
+    'GetMtlskeystoreClientCertificatePreviousPropertyResult',
+    'GetMtlskeystoreClientCertificatePreviousValidationResult',
+    'GetMtlskeystoreClientCertificatePreviousValidationErrorResult',
+    'GetMtlskeystoreClientCertificatePreviousValidationWarningResult',
+    'GetMtlskeystoreClientCertificateVersionResult',
+    'GetMtlskeystoreClientCertificateVersionCertificateBlockResult',
+    'GetMtlskeystoreClientCertificateVersionCsrBlockResult',
+    'GetMtlskeystoreClientCertificateVersionPropertyResult',
+    'GetMtlskeystoreClientCertificateVersionValidationResult',
+    'GetMtlskeystoreClientCertificateVersionValidationErrorResult',
+    'GetMtlskeystoreClientCertificateVersionValidationWarningResult',
+    'GetMtlskeystoreClientCertificatesCertificateResult',
     'GetPropertiesPropertyResult',
     'GetPropertiesSearchPropertyResult',
     'GetPropertyHostnameActivationHostnameResult',
@@ -6824,6 +6853,699 @@ class IamUserUserNotifications(dict):
 
 
 @pulumi.output_type
+class MtlskeystoreClientCertificateAkamaiVersion(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificateBlock":
+            suggest = "certificate_block"
+        elif key == "createdBy":
+            suggest = "created_by"
+        elif key == "createdDate":
+            suggest = "created_date"
+        elif key == "deleteRequestedDate":
+            suggest = "delete_requested_date"
+        elif key == "ellipticCurve":
+            suggest = "elliptic_curve"
+        elif key == "expiryDate":
+            suggest = "expiry_date"
+        elif key == "issuedDate":
+            suggest = "issued_date"
+        elif key == "keyAlgorithm":
+            suggest = "key_algorithm"
+        elif key == "keySizeInBytes":
+            suggest = "key_size_in_bytes"
+        elif key == "scheduledDeleteDate":
+            suggest = "scheduled_delete_date"
+        elif key == "signatureAlgorithm":
+            suggest = "signature_algorithm"
+        elif key == "versionGuid":
+            suggest = "version_guid"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MtlskeystoreClientCertificateAkamaiVersion. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MtlskeystoreClientCertificateAkamaiVersion.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MtlskeystoreClientCertificateAkamaiVersion.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate_block: Optional['outputs.MtlskeystoreClientCertificateAkamaiVersionCertificateBlock'] = None,
+                 created_by: Optional[_builtins.str] = None,
+                 created_date: Optional[_builtins.str] = None,
+                 delete_requested_date: Optional[_builtins.str] = None,
+                 elliptic_curve: Optional[_builtins.str] = None,
+                 expiry_date: Optional[_builtins.str] = None,
+                 issued_date: Optional[_builtins.str] = None,
+                 issuer: Optional[_builtins.str] = None,
+                 key_algorithm: Optional[_builtins.str] = None,
+                 key_size_in_bytes: Optional[_builtins.str] = None,
+                 scheduled_delete_date: Optional[_builtins.str] = None,
+                 signature_algorithm: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 subject: Optional[_builtins.str] = None,
+                 version: Optional[_builtins.int] = None,
+                 version_guid: Optional[_builtins.str] = None):
+        """
+        :param 'MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs' certificate_block: Details of the certificate block for the client certificate version.
+        :param _builtins.str created_by: The user who created the client certificate version.
+        :param _builtins.str created_date: An ISO 8601 timestamp indicating the client certificate version's creation.
+        :param _builtins.str delete_requested_date: An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+        :param _builtins.str elliptic_curve: Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+        :param _builtins.str expiry_date: An ISO 8601 timestamp indicating when the client certificate version expires.
+        :param _builtins.str issued_date: An ISO 8601 timestamp indicating the client certificate version's availability.
+        :param _builtins.str issuer: The signing entity of the client certificate version.
+        :param _builtins.str key_algorithm: Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        :param _builtins.str key_size_in_bytes: The private key length of the client certificate version when key algorithm `RSA` is used.
+        :param _builtins.str scheduled_delete_date: An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+        :param _builtins.str signature_algorithm: Specifies the algorithm that secures the data exchange between the edge server and origin.
+        :param _builtins.str status: The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        :param _builtins.str subject: The public key's entity stored in the client certificate version's subject public key field.
+        :param _builtins.int version: The unique identifier of the client certificate version.
+        :param _builtins.str version_guid: Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        if certificate_block is not None:
+            pulumi.set(__self__, "certificate_block", certificate_block)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_date is not None:
+            pulumi.set(__self__, "created_date", created_date)
+        if delete_requested_date is not None:
+            pulumi.set(__self__, "delete_requested_date", delete_requested_date)
+        if elliptic_curve is not None:
+            pulumi.set(__self__, "elliptic_curve", elliptic_curve)
+        if expiry_date is not None:
+            pulumi.set(__self__, "expiry_date", expiry_date)
+        if issued_date is not None:
+            pulumi.set(__self__, "issued_date", issued_date)
+        if issuer is not None:
+            pulumi.set(__self__, "issuer", issuer)
+        if key_algorithm is not None:
+            pulumi.set(__self__, "key_algorithm", key_algorithm)
+        if key_size_in_bytes is not None:
+            pulumi.set(__self__, "key_size_in_bytes", key_size_in_bytes)
+        if scheduled_delete_date is not None:
+            pulumi.set(__self__, "scheduled_delete_date", scheduled_delete_date)
+        if signature_algorithm is not None:
+            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if version_guid is not None:
+            pulumi.set(__self__, "version_guid", version_guid)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateBlock")
+    def certificate_block(self) -> Optional['outputs.MtlskeystoreClientCertificateAkamaiVersionCertificateBlock']:
+        """
+        Details of the certificate block for the client certificate version.
+        """
+        return pulumi.get(self, "certificate_block")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[_builtins.str]:
+        """
+        The user who created the client certificate version.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's creation.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter(name="deleteRequestedDate")
+    def delete_requested_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+        """
+        return pulumi.get(self, "delete_requested_date")
+
+    @_builtins.property
+    @pulumi.getter(name="ellipticCurve")
+    def elliptic_curve(self) -> Optional[_builtins.str]:
+        """
+        Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+        """
+        return pulumi.get(self, "elliptic_curve")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryDate")
+    def expiry_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating when the client certificate version expires.
+        """
+        return pulumi.get(self, "expiry_date")
+
+    @_builtins.property
+    @pulumi.getter(name="issuedDate")
+    def issued_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's availability.
+        """
+        return pulumi.get(self, "issued_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> Optional[_builtins.str]:
+        """
+        The signing entity of the client certificate version.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> Optional[_builtins.str]:
+        """
+        Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="keySizeInBytes")
+    def key_size_in_bytes(self) -> Optional[_builtins.str]:
+        """
+        The private key length of the client certificate version when key algorithm `RSA` is used.
+        """
+        return pulumi.get(self, "key_size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledDeleteDate")
+    def scheduled_delete_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+        """
+        return pulumi.get(self, "scheduled_delete_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> Optional[_builtins.str]:
+        """
+        Specifies the algorithm that secures the data exchange between the edge server and origin.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> Optional[_builtins.str]:
+        """
+        The public key's entity stored in the client certificate version's subject public key field.
+        """
+        return pulumi.get(self, "subject")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> Optional[_builtins.int]:
+        """
+        The unique identifier of the client certificate version.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="versionGuid")
+    def version_guid(self) -> Optional[_builtins.str]:
+        """
+        Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        return pulumi.get(self, "version_guid")
+
+
+@pulumi.output_type
+class MtlskeystoreClientCertificateAkamaiVersionCertificateBlock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "trustChain":
+            suggest = "trust_chain"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MtlskeystoreClientCertificateAkamaiVersionCertificateBlock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MtlskeystoreClientCertificateAkamaiVersionCertificateBlock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MtlskeystoreClientCertificateAkamaiVersionCertificateBlock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate: Optional[_builtins.str] = None,
+                 trust_chain: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str certificate: A text representation of the client certificate in PEM format.
+        :param _builtins.str trust_chain: A text representation of the trust chain in PEM format.
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if trust_chain is not None:
+            pulumi.set(__self__, "trust_chain", trust_chain)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> Optional[_builtins.str]:
+        """
+        A text representation of the client certificate in PEM format.
+        """
+        return pulumi.get(self, "certificate")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChain")
+    def trust_chain(self) -> Optional[_builtins.str]:
+        """
+        A text representation of the trust chain in PEM format.
+        """
+        return pulumi.get(self, "trust_chain")
+
+
+@pulumi.output_type
+class MtlskeystoreClientCertificateThirdPartyVersions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificateBlock":
+            suggest = "certificate_block"
+        elif key == "certificateSubmittedBy":
+            suggest = "certificate_submitted_by"
+        elif key == "certificateSubmittedDate":
+            suggest = "certificate_submitted_date"
+        elif key == "createdBy":
+            suggest = "created_by"
+        elif key == "createdDate":
+            suggest = "created_date"
+        elif key == "csrBlock":
+            suggest = "csr_block"
+        elif key == "deleteRequestedDate":
+            suggest = "delete_requested_date"
+        elif key == "ellipticCurve":
+            suggest = "elliptic_curve"
+        elif key == "expiryDate":
+            suggest = "expiry_date"
+        elif key == "issuedDate":
+            suggest = "issued_date"
+        elif key == "keyAlgorithm":
+            suggest = "key_algorithm"
+        elif key == "keySizeInBytes":
+            suggest = "key_size_in_bytes"
+        elif key == "scheduledDeleteDate":
+            suggest = "scheduled_delete_date"
+        elif key == "signatureAlgorithm":
+            suggest = "signature_algorithm"
+        elif key == "versionGuid":
+            suggest = "version_guid"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MtlskeystoreClientCertificateThirdPartyVersions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MtlskeystoreClientCertificateThirdPartyVersions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MtlskeystoreClientCertificateThirdPartyVersions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate_block: Optional['outputs.MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock'] = None,
+                 certificate_submitted_by: Optional[_builtins.str] = None,
+                 certificate_submitted_date: Optional[_builtins.str] = None,
+                 created_by: Optional[_builtins.str] = None,
+                 created_date: Optional[_builtins.str] = None,
+                 csr_block: Optional['outputs.MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock'] = None,
+                 delete_requested_date: Optional[_builtins.str] = None,
+                 elliptic_curve: Optional[_builtins.str] = None,
+                 expiry_date: Optional[_builtins.str] = None,
+                 issued_date: Optional[_builtins.str] = None,
+                 issuer: Optional[_builtins.str] = None,
+                 key_algorithm: Optional[_builtins.str] = None,
+                 key_size_in_bytes: Optional[_builtins.str] = None,
+                 scheduled_delete_date: Optional[_builtins.str] = None,
+                 signature_algorithm: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 subject: Optional[_builtins.str] = None,
+                 version: Optional[_builtins.int] = None,
+                 version_guid: Optional[_builtins.str] = None):
+        """
+        :param 'MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs' certificate_block: Details of the certificate block for the client certificate version.
+        :param _builtins.str certificate_submitted_by: The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
+        :param _builtins.str certificate_submitted_date: An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
+        :param _builtins.str created_by: The user who created the client certificate version.
+        :param _builtins.str created_date: An ISO 8601 timestamp indicating the client certificate version's creation.
+        :param 'MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs' csr_block: Details of the Certificate Signing Request (CSR) for the client certificate version.
+        :param _builtins.str delete_requested_date: An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+        :param _builtins.str elliptic_curve: Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+        :param _builtins.str expiry_date: An ISO 8601 timestamp indicating when the client certificate version expires.
+        :param _builtins.str issued_date: An ISO 8601 timestamp indicating the client certificate version's availability.
+        :param _builtins.str issuer: The signing entity of the client certificate version.
+        :param _builtins.str key_algorithm: Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        :param _builtins.str key_size_in_bytes: The private key length of the client certificate version when key algorithm `RSA` is used.
+        :param _builtins.str scheduled_delete_date: An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+        :param _builtins.str signature_algorithm: Specifies the algorithm that secures the data exchange between the edge server and origin.
+        :param _builtins.str status: The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        :param _builtins.str subject: The public key's entity stored in the client certificate version's subject public key field.
+        :param _builtins.int version: The unique identifier of the client certificate version.
+        :param _builtins.str version_guid: Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        if certificate_block is not None:
+            pulumi.set(__self__, "certificate_block", certificate_block)
+        if certificate_submitted_by is not None:
+            pulumi.set(__self__, "certificate_submitted_by", certificate_submitted_by)
+        if certificate_submitted_date is not None:
+            pulumi.set(__self__, "certificate_submitted_date", certificate_submitted_date)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_date is not None:
+            pulumi.set(__self__, "created_date", created_date)
+        if csr_block is not None:
+            pulumi.set(__self__, "csr_block", csr_block)
+        if delete_requested_date is not None:
+            pulumi.set(__self__, "delete_requested_date", delete_requested_date)
+        if elliptic_curve is not None:
+            pulumi.set(__self__, "elliptic_curve", elliptic_curve)
+        if expiry_date is not None:
+            pulumi.set(__self__, "expiry_date", expiry_date)
+        if issued_date is not None:
+            pulumi.set(__self__, "issued_date", issued_date)
+        if issuer is not None:
+            pulumi.set(__self__, "issuer", issuer)
+        if key_algorithm is not None:
+            pulumi.set(__self__, "key_algorithm", key_algorithm)
+        if key_size_in_bytes is not None:
+            pulumi.set(__self__, "key_size_in_bytes", key_size_in_bytes)
+        if scheduled_delete_date is not None:
+            pulumi.set(__self__, "scheduled_delete_date", scheduled_delete_date)
+        if signature_algorithm is not None:
+            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if version_guid is not None:
+            pulumi.set(__self__, "version_guid", version_guid)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateBlock")
+    def certificate_block(self) -> Optional['outputs.MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock']:
+        """
+        Details of the certificate block for the client certificate version.
+        """
+        return pulumi.get(self, "certificate_block")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateSubmittedBy")
+    def certificate_submitted_by(self) -> Optional[_builtins.str]:
+        """
+        The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
+        """
+        return pulumi.get(self, "certificate_submitted_by")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateSubmittedDate")
+    def certificate_submitted_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
+        """
+        return pulumi.get(self, "certificate_submitted_date")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[_builtins.str]:
+        """
+        The user who created the client certificate version.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's creation.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrBlock")
+    def csr_block(self) -> Optional['outputs.MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock']:
+        """
+        Details of the Certificate Signing Request (CSR) for the client certificate version.
+        """
+        return pulumi.get(self, "csr_block")
+
+    @_builtins.property
+    @pulumi.getter(name="deleteRequestedDate")
+    def delete_requested_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+        """
+        return pulumi.get(self, "delete_requested_date")
+
+    @_builtins.property
+    @pulumi.getter(name="ellipticCurve")
+    def elliptic_curve(self) -> Optional[_builtins.str]:
+        """
+        Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+        """
+        return pulumi.get(self, "elliptic_curve")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryDate")
+    def expiry_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating when the client certificate version expires.
+        """
+        return pulumi.get(self, "expiry_date")
+
+    @_builtins.property
+    @pulumi.getter(name="issuedDate")
+    def issued_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's availability.
+        """
+        return pulumi.get(self, "issued_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> Optional[_builtins.str]:
+        """
+        The signing entity of the client certificate version.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> Optional[_builtins.str]:
+        """
+        Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="keySizeInBytes")
+    def key_size_in_bytes(self) -> Optional[_builtins.str]:
+        """
+        The private key length of the client certificate version when key algorithm `RSA` is used.
+        """
+        return pulumi.get(self, "key_size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledDeleteDate")
+    def scheduled_delete_date(self) -> Optional[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+        """
+        return pulumi.get(self, "scheduled_delete_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> Optional[_builtins.str]:
+        """
+        Specifies the algorithm that secures the data exchange between the edge server and origin.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> Optional[_builtins.str]:
+        """
+        The public key's entity stored in the client certificate version's subject public key field.
+        """
+        return pulumi.get(self, "subject")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> Optional[_builtins.int]:
+        """
+        The unique identifier of the client certificate version.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="versionGuid")
+    def version_guid(self) -> Optional[_builtins.str]:
+        """
+        Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        return pulumi.get(self, "version_guid")
+
+
+@pulumi.output_type
+class MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "trustChain":
+            suggest = "trust_chain"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate: Optional[_builtins.str] = None,
+                 trust_chain: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str certificate: A text representation of the client certificate in PEM format.
+        :param _builtins.str trust_chain: A text representation of the trust chain in PEM format.
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if trust_chain is not None:
+            pulumi.set(__self__, "trust_chain", trust_chain)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> Optional[_builtins.str]:
+        """
+        A text representation of the client certificate in PEM format.
+        """
+        return pulumi.get(self, "certificate")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChain")
+    def trust_chain(self) -> Optional[_builtins.str]:
+        """
+        A text representation of the trust chain in PEM format.
+        """
+        return pulumi.get(self, "trust_chain")
+
+
+@pulumi.output_type
+class MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "keyAlgorithm":
+            suggest = "key_algorithm"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 csr: Optional[_builtins.str] = None,
+                 key_algorithm: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str csr: Text of the certificate signing request.
+        :param _builtins.str key_algorithm: Identifies the client certificate's encryption algorithm.
+        """
+        if csr is not None:
+            pulumi.set(__self__, "csr", csr)
+        if key_algorithm is not None:
+            pulumi.set(__self__, "key_algorithm", key_algorithm)
+
+    @_builtins.property
+    @pulumi.getter
+    def csr(self) -> Optional[_builtins.str]:
+        """
+        Text of the certificate signing request.
+        """
+        return pulumi.get(self, "csr")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> Optional[_builtins.str]:
+        """
+        Identifies the client certificate's encryption algorithm.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+
+@pulumi.output_type
+class MtlskeystoreClientCertificateUploadTimeouts(dict):
+    def __init__(__self__, *,
+                 create: Optional[_builtins.str] = None,
+                 update: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str create: Optional configurable resource create timeout. By default it's 30m.
+        :param _builtins.str update: Optional configurable resource update timeout. By default it's 30m.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable resource create timeout. By default it's 30m.
+        """
+        return pulumi.get(self, "create")
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable resource update timeout. By default it's 30m.
+        """
+        return pulumi.get(self, "update")
+
+
+@pulumi.output_type
 class PropertyActivationComplianceRecord(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -9469,17 +10191,17 @@ class GetClientlistListsListResult(dict):
                  items_count: _builtins.int,
                  list_id: _builtins.str,
                  list_type: _builtins.str,
+                 name: _builtins.str,
                  notes: _builtins.str,
                  production_activation_status: _builtins.str,
                  read_only: _builtins.bool,
                  shared: _builtins.bool,
                  staging_activation_status: _builtins.str,
                  tags: Sequence[_builtins.str],
+                 type: _builtins.str,
                  update_date: _builtins.str,
                  updated_by: _builtins.str,
-                 version: _builtins.int,
-                 name: Optional[_builtins.str] = None,
-                 type: Optional[_builtins.str] = None):
+                 version: _builtins.int):
         """
         :param _builtins.str create_date: The client list creation date.
         :param _builtins.str created_by: The username of the user who created the client list.
@@ -9487,17 +10209,17 @@ class GetClientlistListsListResult(dict):
         :param _builtins.int items_count: The number of items that a client list contains.
         :param _builtins.str list_id: The ID of the client list.
         :param _builtins.str list_type: The client list type.
+        :param _builtins.str name: The name of the client list
         :param _builtins.str notes: The client list notes
         :param _builtins.str production_activation_status: The activation status in production environment.
         :param _builtins.bool read_only: Whether the client is editable for the authenticated user.
         :param _builtins.bool shared: Whether the client list is shared.
         :param _builtins.str staging_activation_status: The activation status in staging environment.
         :param Sequence[_builtins.str] tags: The client list tags
+        :param _builtins.str type: The type of the client list
         :param _builtins.str update_date: The date of last update.
         :param _builtins.str updated_by: The username of the user that updated the client list last.
         :param _builtins.int version: The current version of the client list.
-        :param _builtins.str name: The name of the client list
-        :param _builtins.str type: The type of the client list
         """
         pulumi.set(__self__, "create_date", create_date)
         pulumi.set(__self__, "created_by", created_by)
@@ -9505,19 +10227,17 @@ class GetClientlistListsListResult(dict):
         pulumi.set(__self__, "items_count", items_count)
         pulumi.set(__self__, "list_id", list_id)
         pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "notes", notes)
         pulumi.set(__self__, "production_activation_status", production_activation_status)
         pulumi.set(__self__, "read_only", read_only)
         pulumi.set(__self__, "shared", shared)
         pulumi.set(__self__, "staging_activation_status", staging_activation_status)
         pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "update_date", update_date)
         pulumi.set(__self__, "updated_by", updated_by)
         pulumi.set(__self__, "version", version)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
-        if type is not None:
-            pulumi.set(__self__, "type", type)
 
     @_builtins.property
     @pulumi.getter(name="createDate")
@@ -9569,6 +10289,14 @@ class GetClientlistListsListResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the client list
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
     def notes(self) -> _builtins.str:
         """
         The client list notes
@@ -9616,6 +10344,14 @@ class GetClientlistListsListResult(dict):
         return pulumi.get(self, "tags")
 
     @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the client list
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
     @pulumi.getter(name="updateDate")
     def update_date(self) -> _builtins.str:
         """
@@ -9638,22 +10374,6 @@ class GetClientlistListsListResult(dict):
         The current version of the client list.
         """
         return pulumi.get(self, "version")
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> Optional[_builtins.str]:
-        """
-        The name of the client list
-        """
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def type(self) -> Optional[_builtins.str]:
-        """
-        The type of the client list
-        """
-        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -27775,6 +28495,1696 @@ class GetImagingPolicyVideoPolicyVariableEnumOptionResult(dict):
         The value of the variable when the `id` is provided.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMtlskeystoreAccountCaCertificatesCertificateResult(dict):
+    def __init__(__self__, *,
+                 account_id: _builtins.str,
+                 certificate: _builtins.str,
+                 common_name: _builtins.str,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 expiry_date: _builtins.str,
+                 id: _builtins.int,
+                 issued_date: _builtins.str,
+                 key_algorithm: _builtins.str,
+                 key_size_in_bytes: _builtins.int,
+                 qualification_date: _builtins.str,
+                 signature_algorithm: _builtins.str,
+                 status: _builtins.str,
+                 subject: _builtins.str,
+                 version: _builtins.int):
+        """
+        :param _builtins.str account_id: The account the CA certificate is under.
+        :param _builtins.str certificate: The certificate block of the CA certificate.
+        :param _builtins.str common_name: The common name of the CA certificate.
+        :param _builtins.str created_by: The user who created the CA certificate.
+        :param _builtins.str created_date: An ISO 8601 timestamp indicating the CA certificate's creation.
+        :param _builtins.str expiry_date: An ISO 8601 timestamp indicating when the CA certificate expires.
+        :param _builtins.int id: The unique identifier of the CA certificate.
+        :param _builtins.str issued_date: An ISO 8601 timestamp indicating the CA certificate's availability.
+        :param _builtins.str key_algorithm: Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        :param _builtins.int key_size_in_bytes: The private key length of the CA certificate.
+        :param _builtins.str qualification_date: An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.
+        :param _builtins.str signature_algorithm: Specifies the algorithm that secures the data exchange between the edge server and origin.
+        :param _builtins.str status: The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.
+        :param _builtins.str subject: The public key's entity stored in the CA certificate's subject public key field.
+        :param _builtins.int version: The version of the CA certificate.
+        """
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "common_name", common_name)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "expiry_date", expiry_date)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "issued_date", issued_date)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "key_size_in_bytes", key_size_in_bytes)
+        pulumi.set(__self__, "qualification_date", qualification_date)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "subject", subject)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> _builtins.str:
+        """
+        The account the CA certificate is under.
+        """
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> _builtins.str:
+        """
+        The certificate block of the CA certificate.
+        """
+        return pulumi.get(self, "certificate")
+
+    @_builtins.property
+    @pulumi.getter(name="commonName")
+    def common_name(self) -> _builtins.str:
+        """
+        The common name of the CA certificate.
+        """
+        return pulumi.get(self, "common_name")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created the CA certificate.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the CA certificate's creation.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryDate")
+    def expiry_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating when the CA certificate expires.
+        """
+        return pulumi.get(self, "expiry_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.int:
+        """
+        The unique identifier of the CA certificate.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="issuedDate")
+    def issued_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the CA certificate's availability.
+        """
+        return pulumi.get(self, "issued_date")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="keySizeInBytes")
+    def key_size_in_bytes(self) -> _builtins.int:
+        """
+        The private key length of the CA certificate.
+        """
+        return pulumi.get(self, "key_size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="qualificationDate")
+    def qualification_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.
+        """
+        return pulumi.get(self, "qualification_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> _builtins.str:
+        """
+        Specifies the algorithm that secures the data exchange between the edge server and origin.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> _builtins.str:
+        """
+        The public key's entity stored in the CA certificate's subject public key field.
+        """
+        return pulumi.get(self, "subject")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        The version of the CA certificate.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateCurrentResult(dict):
+    def __init__(__self__, *,
+                 certificate_block: 'outputs.GetMtlskeystoreClientCertificateCurrentCertificateBlockResult',
+                 certificate_submitted_by: _builtins.str,
+                 certificate_submitted_date: _builtins.str,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 csr_block: 'outputs.GetMtlskeystoreClientCertificateCurrentCsrBlockResult',
+                 delete_requested_date: _builtins.str,
+                 elliptic_curve: _builtins.str,
+                 expiry_date: _builtins.str,
+                 issued_date: _builtins.str,
+                 issuer: _builtins.str,
+                 key_algorithm: _builtins.str,
+                 key_size_in_bytes: _builtins.str,
+                 properties: Sequence['outputs.GetMtlskeystoreClientCertificateCurrentPropertyResult'],
+                 scheduled_delete_date: _builtins.str,
+                 signature_algorithm: _builtins.str,
+                 status: _builtins.str,
+                 subject: _builtins.str,
+                 validation: 'outputs.GetMtlskeystoreClientCertificateCurrentValidationResult',
+                 version: _builtins.int,
+                 version_guid: _builtins.str):
+        """
+        :param 'GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs' certificate_block: Details of the certificate block for the client certificate version.
+        :param _builtins.str certificate_submitted_by: The user who uploaded the `THIRD_PARTY` client certificate version.
+        :param _builtins.str certificate_submitted_date: An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+        :param _builtins.str created_by: The user who created the client certificate version.
+        :param _builtins.str created_date: An ISO 8601 timestamp indicating the client certificate version's creation.
+        :param 'GetMtlskeystoreClientCertificateCurrentCsrBlockArgs' csr_block: Details of the Certificate Signing Request (CSR) for the client certificate version.
+        :param _builtins.str delete_requested_date: An ISO 8601 timestamp indicating the client certificate version's deletion request.
+        :param _builtins.str elliptic_curve: Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+        :param _builtins.str expiry_date: An ISO 8601 timestamp indicating when the client certificate version expires.
+        :param _builtins.str issued_date: An ISO 8601 timestamp indicating the client certificate version's availability.
+        :param _builtins.str issuer: The signing entity of the client certificate version.
+        :param _builtins.str key_algorithm: Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        :param _builtins.str key_size_in_bytes: The private key length of the client certificate version when the key algorithm `RSA` is used.
+        :param Sequence['GetMtlskeystoreClientCertificateCurrentPropertyArgs'] properties: A list of properties associated with the client certificate.
+        :param _builtins.str scheduled_delete_date: An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+        :param _builtins.str signature_algorithm: Specifies the algorithm that secures the data exchange between the edge server and origin.
+        :param _builtins.str status: The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        :param _builtins.str subject: The public key's entity stored in the client certificate version's subject public key field.
+        :param 'GetMtlskeystoreClientCertificateCurrentValidationArgs' validation: Validation results for the client certificate version.
+        :param _builtins.int version: The unique identifier of the client certificate version.
+        :param _builtins.str version_guid: Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        pulumi.set(__self__, "certificate_block", certificate_block)
+        pulumi.set(__self__, "certificate_submitted_by", certificate_submitted_by)
+        pulumi.set(__self__, "certificate_submitted_date", certificate_submitted_date)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "csr_block", csr_block)
+        pulumi.set(__self__, "delete_requested_date", delete_requested_date)
+        pulumi.set(__self__, "elliptic_curve", elliptic_curve)
+        pulumi.set(__self__, "expiry_date", expiry_date)
+        pulumi.set(__self__, "issued_date", issued_date)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "key_size_in_bytes", key_size_in_bytes)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "scheduled_delete_date", scheduled_delete_date)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "subject", subject)
+        pulumi.set(__self__, "validation", validation)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "version_guid", version_guid)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateBlock")
+    def certificate_block(self) -> 'outputs.GetMtlskeystoreClientCertificateCurrentCertificateBlockResult':
+        """
+        Details of the certificate block for the client certificate version.
+        """
+        return pulumi.get(self, "certificate_block")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateSubmittedBy")
+    def certificate_submitted_by(self) -> _builtins.str:
+        """
+        The user who uploaded the `THIRD_PARTY` client certificate version.
+        """
+        return pulumi.get(self, "certificate_submitted_by")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateSubmittedDate")
+    def certificate_submitted_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+        """
+        return pulumi.get(self, "certificate_submitted_date")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created the client certificate version.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's creation.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrBlock")
+    def csr_block(self) -> 'outputs.GetMtlskeystoreClientCertificateCurrentCsrBlockResult':
+        """
+        Details of the Certificate Signing Request (CSR) for the client certificate version.
+        """
+        return pulumi.get(self, "csr_block")
+
+    @_builtins.property
+    @pulumi.getter(name="deleteRequestedDate")
+    def delete_requested_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's deletion request.
+        """
+        return pulumi.get(self, "delete_requested_date")
+
+    @_builtins.property
+    @pulumi.getter(name="ellipticCurve")
+    def elliptic_curve(self) -> _builtins.str:
+        """
+        Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+        """
+        return pulumi.get(self, "elliptic_curve")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryDate")
+    def expiry_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating when the client certificate version expires.
+        """
+        return pulumi.get(self, "expiry_date")
+
+    @_builtins.property
+    @pulumi.getter(name="issuedDate")
+    def issued_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's availability.
+        """
+        return pulumi.get(self, "issued_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> _builtins.str:
+        """
+        The signing entity of the client certificate version.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="keySizeInBytes")
+    def key_size_in_bytes(self) -> _builtins.str:
+        """
+        The private key length of the client certificate version when the key algorithm `RSA` is used.
+        """
+        return pulumi.get(self, "key_size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetMtlskeystoreClientCertificateCurrentPropertyResult']:
+        """
+        A list of properties associated with the client certificate.
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledDeleteDate")
+    def scheduled_delete_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+        """
+        return pulumi.get(self, "scheduled_delete_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> _builtins.str:
+        """
+        Specifies the algorithm that secures the data exchange between the edge server and origin.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> _builtins.str:
+        """
+        The public key's entity stored in the client certificate version's subject public key field.
+        """
+        return pulumi.get(self, "subject")
+
+    @_builtins.property
+    @pulumi.getter
+    def validation(self) -> 'outputs.GetMtlskeystoreClientCertificateCurrentValidationResult':
+        """
+        Validation results for the client certificate version.
+        """
+        return pulumi.get(self, "validation")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        The unique identifier of the client certificate version.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="versionGuid")
+    def version_guid(self) -> _builtins.str:
+        """
+        Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        return pulumi.get(self, "version_guid")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateCurrentCertificateBlockResult(dict):
+    def __init__(__self__, *,
+                 certificate: _builtins.str,
+                 key_algorithm: _builtins.str,
+                 trust_chain: _builtins.str):
+        """
+        :param _builtins.str certificate: A text representation of the client certificate in PEM format.
+        :param _builtins.str key_algorithm: Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        :param _builtins.str trust_chain: A text representation of the trust chain in PEM format.
+        """
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "trust_chain", trust_chain)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> _builtins.str:
+        """
+        A text representation of the client certificate in PEM format.
+        """
+        return pulumi.get(self, "certificate")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChain")
+    def trust_chain(self) -> _builtins.str:
+        """
+        A text representation of the trust chain in PEM format.
+        """
+        return pulumi.get(self, "trust_chain")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateCurrentCsrBlockResult(dict):
+    def __init__(__self__, *,
+                 csr: _builtins.str,
+                 key_algorithm: _builtins.str):
+        """
+        :param _builtins.str csr: Text of the certificate signing request.
+        :param _builtins.str key_algorithm: Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        pulumi.set(__self__, "csr", csr)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+
+    @_builtins.property
+    @pulumi.getter
+    def csr(self) -> _builtins.str:
+        """
+        Text of the certificate signing request.
+        """
+        return pulumi.get(self, "csr")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateCurrentPropertyResult(dict):
+    def __init__(__self__, *,
+                 asset_id: _builtins.int,
+                 group_id: _builtins.int,
+                 property_name: _builtins.str,
+                 property_version: _builtins.int):
+        """
+        :param _builtins.int asset_id: The unique identifier of the asset.
+        :param _builtins.int group_id: The unique identifier of the group.
+        :param _builtins.str property_name: The name of the property.
+        :param _builtins.int property_version: The version of the property.
+        """
+        pulumi.set(__self__, "asset_id", asset_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "property_name", property_name)
+        pulumi.set(__self__, "property_version", property_version)
+
+    @_builtins.property
+    @pulumi.getter(name="assetId")
+    def asset_id(self) -> _builtins.int:
+        """
+        The unique identifier of the asset.
+        """
+        return pulumi.get(self, "asset_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.int:
+        """
+        The unique identifier of the group.
+        """
+        return pulumi.get(self, "group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> _builtins.str:
+        """
+        The name of the property.
+        """
+        return pulumi.get(self, "property_name")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyVersion")
+    def property_version(self) -> _builtins.int:
+        """
+        The version of the property.
+        """
+        return pulumi.get(self, "property_version")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateCurrentValidationResult(dict):
+    def __init__(__self__, *,
+                 errors: Sequence['outputs.GetMtlskeystoreClientCertificateCurrentValidationErrorResult'],
+                 warnings: Sequence['outputs.GetMtlskeystoreClientCertificateCurrentValidationWarningResult']):
+        """
+        :param Sequence['GetMtlskeystoreClientCertificateCurrentValidationErrorArgs'] errors: Validation errors that need to be resolved for the request to succeed.
+        :param Sequence['GetMtlskeystoreClientCertificateCurrentValidationWarningArgs'] warnings: Validation warnings that can be resolved.
+        """
+        pulumi.set(__self__, "errors", errors)
+        pulumi.set(__self__, "warnings", warnings)
+
+    @_builtins.property
+    @pulumi.getter
+    def errors(self) -> Sequence['outputs.GetMtlskeystoreClientCertificateCurrentValidationErrorResult']:
+        """
+        Validation errors that need to be resolved for the request to succeed.
+        """
+        return pulumi.get(self, "errors")
+
+    @_builtins.property
+    @pulumi.getter
+    def warnings(self) -> Sequence['outputs.GetMtlskeystoreClientCertificateCurrentValidationWarningResult']:
+        """
+        Validation warnings that can be resolved.
+        """
+        return pulumi.get(self, "warnings")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateCurrentValidationErrorResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 reason: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: Specifies the error details.
+        :param _builtins.str reason: Specifies the error root cause.
+        :param _builtins.str type: Specifies the error category.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        Specifies the error details.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> _builtins.str:
+        """
+        Specifies the error root cause.
+        """
+        return pulumi.get(self, "reason")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Specifies the error category.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateCurrentValidationWarningResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 reason: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: Specifies the warning details.
+        :param _builtins.str reason: Specifies the warning root cause.
+        :param _builtins.str type: Specifies the warning category.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        Specifies the warning details.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> _builtins.str:
+        """
+        Specifies the warning root cause.
+        """
+        return pulumi.get(self, "reason")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Specifies the warning category.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificatePreviousResult(dict):
+    def __init__(__self__, *,
+                 certificate_block: 'outputs.GetMtlskeystoreClientCertificatePreviousCertificateBlockResult',
+                 certificate_submitted_by: _builtins.str,
+                 certificate_submitted_date: _builtins.str,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 csr_block: 'outputs.GetMtlskeystoreClientCertificatePreviousCsrBlockResult',
+                 delete_requested_date: _builtins.str,
+                 elliptic_curve: _builtins.str,
+                 expiry_date: _builtins.str,
+                 issued_date: _builtins.str,
+                 issuer: _builtins.str,
+                 key_algorithm: _builtins.str,
+                 key_size_in_bytes: _builtins.str,
+                 properties: Sequence['outputs.GetMtlskeystoreClientCertificatePreviousPropertyResult'],
+                 scheduled_delete_date: _builtins.str,
+                 signature_algorithm: _builtins.str,
+                 status: _builtins.str,
+                 subject: _builtins.str,
+                 validation: 'outputs.GetMtlskeystoreClientCertificatePreviousValidationResult',
+                 version: _builtins.int,
+                 version_guid: _builtins.str):
+        """
+        :param 'GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs' certificate_block: Details of the certificate block for the client certificate version.
+        :param _builtins.str certificate_submitted_by: The user who uploaded the `THIRD_PARTY` client certificate version.
+        :param _builtins.str certificate_submitted_date: An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+        :param _builtins.str created_by: The user who created the client certificate version.
+        :param _builtins.str created_date: An ISO 8601 timestamp indicating the client certificate version's creation.
+        :param 'GetMtlskeystoreClientCertificatePreviousCsrBlockArgs' csr_block: Details of the Certificate Signing Request (CSR) for the client certificate version.
+        :param _builtins.str delete_requested_date: An ISO 8601 timestamp indicating the client certificate version's deletion request.
+        :param _builtins.str elliptic_curve: Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+        :param _builtins.str expiry_date: An ISO 8601 timestamp indicating when the client certificate version expires.
+        :param _builtins.str issued_date: An ISO 8601 timestamp indicating the client certificate version's availability.
+        :param _builtins.str issuer: The signing entity of the client certificate version.
+        :param _builtins.str key_algorithm: Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        :param _builtins.str key_size_in_bytes: The private key length of the client certificate version when the key algorithm `RSA` is used.
+        :param Sequence['GetMtlskeystoreClientCertificatePreviousPropertyArgs'] properties: A list of properties associated with the client certificate.
+        :param _builtins.str scheduled_delete_date: An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+        :param _builtins.str signature_algorithm: Specifies the algorithm that secures the data exchange between the edge server and origin.
+        :param _builtins.str status: The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        :param _builtins.str subject: The public key's entity stored in the client certificate version's subject public key field.
+        :param 'GetMtlskeystoreClientCertificatePreviousValidationArgs' validation: Validation results for the client certificate version.
+        :param _builtins.int version: The unique identifier of the client certificate version.
+        :param _builtins.str version_guid: Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        pulumi.set(__self__, "certificate_block", certificate_block)
+        pulumi.set(__self__, "certificate_submitted_by", certificate_submitted_by)
+        pulumi.set(__self__, "certificate_submitted_date", certificate_submitted_date)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "csr_block", csr_block)
+        pulumi.set(__self__, "delete_requested_date", delete_requested_date)
+        pulumi.set(__self__, "elliptic_curve", elliptic_curve)
+        pulumi.set(__self__, "expiry_date", expiry_date)
+        pulumi.set(__self__, "issued_date", issued_date)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "key_size_in_bytes", key_size_in_bytes)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "scheduled_delete_date", scheduled_delete_date)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "subject", subject)
+        pulumi.set(__self__, "validation", validation)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "version_guid", version_guid)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateBlock")
+    def certificate_block(self) -> 'outputs.GetMtlskeystoreClientCertificatePreviousCertificateBlockResult':
+        """
+        Details of the certificate block for the client certificate version.
+        """
+        return pulumi.get(self, "certificate_block")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateSubmittedBy")
+    def certificate_submitted_by(self) -> _builtins.str:
+        """
+        The user who uploaded the `THIRD_PARTY` client certificate version.
+        """
+        return pulumi.get(self, "certificate_submitted_by")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateSubmittedDate")
+    def certificate_submitted_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+        """
+        return pulumi.get(self, "certificate_submitted_date")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created the client certificate version.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's creation.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrBlock")
+    def csr_block(self) -> 'outputs.GetMtlskeystoreClientCertificatePreviousCsrBlockResult':
+        """
+        Details of the Certificate Signing Request (CSR) for the client certificate version.
+        """
+        return pulumi.get(self, "csr_block")
+
+    @_builtins.property
+    @pulumi.getter(name="deleteRequestedDate")
+    def delete_requested_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's deletion request.
+        """
+        return pulumi.get(self, "delete_requested_date")
+
+    @_builtins.property
+    @pulumi.getter(name="ellipticCurve")
+    def elliptic_curve(self) -> _builtins.str:
+        """
+        Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+        """
+        return pulumi.get(self, "elliptic_curve")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryDate")
+    def expiry_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating when the client certificate version expires.
+        """
+        return pulumi.get(self, "expiry_date")
+
+    @_builtins.property
+    @pulumi.getter(name="issuedDate")
+    def issued_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's availability.
+        """
+        return pulumi.get(self, "issued_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> _builtins.str:
+        """
+        The signing entity of the client certificate version.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="keySizeInBytes")
+    def key_size_in_bytes(self) -> _builtins.str:
+        """
+        The private key length of the client certificate version when the key algorithm `RSA` is used.
+        """
+        return pulumi.get(self, "key_size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetMtlskeystoreClientCertificatePreviousPropertyResult']:
+        """
+        A list of properties associated with the client certificate.
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledDeleteDate")
+    def scheduled_delete_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+        """
+        return pulumi.get(self, "scheduled_delete_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> _builtins.str:
+        """
+        Specifies the algorithm that secures the data exchange between the edge server and origin.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> _builtins.str:
+        """
+        The public key's entity stored in the client certificate version's subject public key field.
+        """
+        return pulumi.get(self, "subject")
+
+    @_builtins.property
+    @pulumi.getter
+    def validation(self) -> 'outputs.GetMtlskeystoreClientCertificatePreviousValidationResult':
+        """
+        Validation results for the client certificate version.
+        """
+        return pulumi.get(self, "validation")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        The unique identifier of the client certificate version.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="versionGuid")
+    def version_guid(self) -> _builtins.str:
+        """
+        Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        return pulumi.get(self, "version_guid")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificatePreviousCertificateBlockResult(dict):
+    def __init__(__self__, *,
+                 certificate: _builtins.str,
+                 key_algorithm: _builtins.str,
+                 trust_chain: _builtins.str):
+        """
+        :param _builtins.str certificate: A text representation of the client certificate in PEM format.
+        :param _builtins.str key_algorithm: Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        :param _builtins.str trust_chain: A text representation of the trust chain in PEM format.
+        """
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "trust_chain", trust_chain)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> _builtins.str:
+        """
+        A text representation of the client certificate in PEM format.
+        """
+        return pulumi.get(self, "certificate")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChain")
+    def trust_chain(self) -> _builtins.str:
+        """
+        A text representation of the trust chain in PEM format.
+        """
+        return pulumi.get(self, "trust_chain")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificatePreviousCsrBlockResult(dict):
+    def __init__(__self__, *,
+                 csr: _builtins.str,
+                 key_algorithm: _builtins.str):
+        """
+        :param _builtins.str csr: Text of the certificate signing request.
+        :param _builtins.str key_algorithm: Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        pulumi.set(__self__, "csr", csr)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+
+    @_builtins.property
+    @pulumi.getter
+    def csr(self) -> _builtins.str:
+        """
+        Text of the certificate signing request.
+        """
+        return pulumi.get(self, "csr")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificatePreviousPropertyResult(dict):
+    def __init__(__self__, *,
+                 asset_id: _builtins.int,
+                 group_id: _builtins.int,
+                 property_name: _builtins.str,
+                 property_version: _builtins.int):
+        """
+        :param _builtins.int asset_id: The unique identifier of the asset.
+        :param _builtins.int group_id: The unique identifier of the group.
+        :param _builtins.str property_name: The name of the property.
+        :param _builtins.int property_version: The version of the property.
+        """
+        pulumi.set(__self__, "asset_id", asset_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "property_name", property_name)
+        pulumi.set(__self__, "property_version", property_version)
+
+    @_builtins.property
+    @pulumi.getter(name="assetId")
+    def asset_id(self) -> _builtins.int:
+        """
+        The unique identifier of the asset.
+        """
+        return pulumi.get(self, "asset_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.int:
+        """
+        The unique identifier of the group.
+        """
+        return pulumi.get(self, "group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> _builtins.str:
+        """
+        The name of the property.
+        """
+        return pulumi.get(self, "property_name")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyVersion")
+    def property_version(self) -> _builtins.int:
+        """
+        The version of the property.
+        """
+        return pulumi.get(self, "property_version")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificatePreviousValidationResult(dict):
+    def __init__(__self__, *,
+                 errors: Sequence['outputs.GetMtlskeystoreClientCertificatePreviousValidationErrorResult'],
+                 warnings: Sequence['outputs.GetMtlskeystoreClientCertificatePreviousValidationWarningResult']):
+        """
+        :param Sequence['GetMtlskeystoreClientCertificatePreviousValidationErrorArgs'] errors: Validation errors that need to be resolved for the request to succeed.
+        :param Sequence['GetMtlskeystoreClientCertificatePreviousValidationWarningArgs'] warnings: Validation warnings that can be resolved.
+        """
+        pulumi.set(__self__, "errors", errors)
+        pulumi.set(__self__, "warnings", warnings)
+
+    @_builtins.property
+    @pulumi.getter
+    def errors(self) -> Sequence['outputs.GetMtlskeystoreClientCertificatePreviousValidationErrorResult']:
+        """
+        Validation errors that need to be resolved for the request to succeed.
+        """
+        return pulumi.get(self, "errors")
+
+    @_builtins.property
+    @pulumi.getter
+    def warnings(self) -> Sequence['outputs.GetMtlskeystoreClientCertificatePreviousValidationWarningResult']:
+        """
+        Validation warnings that can be resolved.
+        """
+        return pulumi.get(self, "warnings")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificatePreviousValidationErrorResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 reason: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: Specifies the error details.
+        :param _builtins.str reason: Specifies the error root cause.
+        :param _builtins.str type: Specifies the error category.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        Specifies the error details.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> _builtins.str:
+        """
+        Specifies the error root cause.
+        """
+        return pulumi.get(self, "reason")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Specifies the error category.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificatePreviousValidationWarningResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 reason: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: Specifies the warning details.
+        :param _builtins.str reason: Specifies the warning root cause.
+        :param _builtins.str type: Specifies the warning category.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        Specifies the warning details.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> _builtins.str:
+        """
+        Specifies the warning root cause.
+        """
+        return pulumi.get(self, "reason")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Specifies the warning category.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateVersionResult(dict):
+    def __init__(__self__, *,
+                 certificate_block: 'outputs.GetMtlskeystoreClientCertificateVersionCertificateBlockResult',
+                 certificate_submitted_by: _builtins.str,
+                 certificate_submitted_date: _builtins.str,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 csr_block: 'outputs.GetMtlskeystoreClientCertificateVersionCsrBlockResult',
+                 delete_requested_date: _builtins.str,
+                 elliptic_curve: _builtins.str,
+                 expiry_date: _builtins.str,
+                 issued_date: _builtins.str,
+                 issuer: _builtins.str,
+                 key_algorithm: _builtins.str,
+                 key_size_in_bytes: _builtins.str,
+                 properties: Sequence['outputs.GetMtlskeystoreClientCertificateVersionPropertyResult'],
+                 scheduled_delete_date: _builtins.str,
+                 signature_algorithm: _builtins.str,
+                 status: _builtins.str,
+                 subject: _builtins.str,
+                 validation: 'outputs.GetMtlskeystoreClientCertificateVersionValidationResult',
+                 version: _builtins.int,
+                 version_guid: _builtins.str):
+        """
+        :param 'GetMtlskeystoreClientCertificateVersionCertificateBlockArgs' certificate_block: Details of the certificate block for the client certificate version.
+        :param _builtins.str certificate_submitted_by: The user who uploaded the `THIRD_PARTY` client certificate version.
+        :param _builtins.str certificate_submitted_date: An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+        :param _builtins.str created_by: The user who created the client certificate version.
+        :param _builtins.str created_date: An ISO 8601 timestamp indicating the client certificate version's creation.
+        :param 'GetMtlskeystoreClientCertificateVersionCsrBlockArgs' csr_block: Details of the Certificate Signing Request (CSR) for the client certificate version.
+        :param _builtins.str delete_requested_date: An ISO 8601 timestamp indicating the client certificate version's deletion request.
+        :param _builtins.str elliptic_curve: Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+        :param _builtins.str expiry_date: An ISO 8601 timestamp indicating when the client certificate version expires.
+        :param _builtins.str issued_date: An ISO 8601 timestamp indicating the client certificate version's availability.
+        :param _builtins.str issuer: The signing entity of the client certificate version.
+        :param _builtins.str key_algorithm: Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        :param _builtins.str key_size_in_bytes: The private key length of the client certificate version when the key algorithm `RSA` is used.
+        :param Sequence['GetMtlskeystoreClientCertificateVersionPropertyArgs'] properties: A list of properties associated with the client certificate.
+        :param _builtins.str scheduled_delete_date: An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+        :param _builtins.str signature_algorithm: Specifies the algorithm that secures the data exchange between the edge server and origin.
+        :param _builtins.str status: The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        :param _builtins.str subject: The public key's entity stored in the client certificate version's subject public key field.
+        :param 'GetMtlskeystoreClientCertificateVersionValidationArgs' validation: Validation results for the client certificate version.
+        :param _builtins.int version: The unique identifier of the client certificate version.
+        :param _builtins.str version_guid: Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        pulumi.set(__self__, "certificate_block", certificate_block)
+        pulumi.set(__self__, "certificate_submitted_by", certificate_submitted_by)
+        pulumi.set(__self__, "certificate_submitted_date", certificate_submitted_date)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "csr_block", csr_block)
+        pulumi.set(__self__, "delete_requested_date", delete_requested_date)
+        pulumi.set(__self__, "elliptic_curve", elliptic_curve)
+        pulumi.set(__self__, "expiry_date", expiry_date)
+        pulumi.set(__self__, "issued_date", issued_date)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "key_size_in_bytes", key_size_in_bytes)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "scheduled_delete_date", scheduled_delete_date)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "subject", subject)
+        pulumi.set(__self__, "validation", validation)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "version_guid", version_guid)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateBlock")
+    def certificate_block(self) -> 'outputs.GetMtlskeystoreClientCertificateVersionCertificateBlockResult':
+        """
+        Details of the certificate block for the client certificate version.
+        """
+        return pulumi.get(self, "certificate_block")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateSubmittedBy")
+    def certificate_submitted_by(self) -> _builtins.str:
+        """
+        The user who uploaded the `THIRD_PARTY` client certificate version.
+        """
+        return pulumi.get(self, "certificate_submitted_by")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateSubmittedDate")
+    def certificate_submitted_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+        """
+        return pulumi.get(self, "certificate_submitted_date")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created the client certificate version.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's creation.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrBlock")
+    def csr_block(self) -> 'outputs.GetMtlskeystoreClientCertificateVersionCsrBlockResult':
+        """
+        Details of the Certificate Signing Request (CSR) for the client certificate version.
+        """
+        return pulumi.get(self, "csr_block")
+
+    @_builtins.property
+    @pulumi.getter(name="deleteRequestedDate")
+    def delete_requested_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's deletion request.
+        """
+        return pulumi.get(self, "delete_requested_date")
+
+    @_builtins.property
+    @pulumi.getter(name="ellipticCurve")
+    def elliptic_curve(self) -> _builtins.str:
+        """
+        Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+        """
+        return pulumi.get(self, "elliptic_curve")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryDate")
+    def expiry_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating when the client certificate version expires.
+        """
+        return pulumi.get(self, "expiry_date")
+
+    @_builtins.property
+    @pulumi.getter(name="issuedDate")
+    def issued_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's availability.
+        """
+        return pulumi.get(self, "issued_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> _builtins.str:
+        """
+        The signing entity of the client certificate version.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="keySizeInBytes")
+    def key_size_in_bytes(self) -> _builtins.str:
+        """
+        The private key length of the client certificate version when the key algorithm `RSA` is used.
+        """
+        return pulumi.get(self, "key_size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetMtlskeystoreClientCertificateVersionPropertyResult']:
+        """
+        A list of properties associated with the client certificate.
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledDeleteDate")
+    def scheduled_delete_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+        """
+        return pulumi.get(self, "scheduled_delete_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> _builtins.str:
+        """
+        Specifies the algorithm that secures the data exchange between the edge server and origin.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> _builtins.str:
+        """
+        The public key's entity stored in the client certificate version's subject public key field.
+        """
+        return pulumi.get(self, "subject")
+
+    @_builtins.property
+    @pulumi.getter
+    def validation(self) -> 'outputs.GetMtlskeystoreClientCertificateVersionValidationResult':
+        """
+        Validation results for the client certificate version.
+        """
+        return pulumi.get(self, "validation")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        The unique identifier of the client certificate version.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="versionGuid")
+    def version_guid(self) -> _builtins.str:
+        """
+        Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+        """
+        return pulumi.get(self, "version_guid")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateVersionCertificateBlockResult(dict):
+    def __init__(__self__, *,
+                 certificate: _builtins.str,
+                 key_algorithm: _builtins.str,
+                 trust_chain: _builtins.str):
+        """
+        :param _builtins.str certificate: A text representation of the client certificate in PEM format.
+        :param _builtins.str key_algorithm: Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        :param _builtins.str trust_chain: A text representation of the trust chain in PEM format.
+        """
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "trust_chain", trust_chain)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> _builtins.str:
+        """
+        A text representation of the client certificate in PEM format.
+        """
+        return pulumi.get(self, "certificate")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChain")
+    def trust_chain(self) -> _builtins.str:
+        """
+        A text representation of the trust chain in PEM format.
+        """
+        return pulumi.get(self, "trust_chain")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateVersionCsrBlockResult(dict):
+    def __init__(__self__, *,
+                 csr: _builtins.str,
+                 key_algorithm: _builtins.str):
+        """
+        :param _builtins.str csr: Text of the certificate signing request.
+        :param _builtins.str key_algorithm: Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        pulumi.set(__self__, "csr", csr)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+
+    @_builtins.property
+    @pulumi.getter
+    def csr(self) -> _builtins.str:
+        """
+        Text of the certificate signing request.
+        """
+        return pulumi.get(self, "csr")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateVersionPropertyResult(dict):
+    def __init__(__self__, *,
+                 asset_id: _builtins.int,
+                 group_id: _builtins.int,
+                 property_name: _builtins.str,
+                 property_version: _builtins.int):
+        """
+        :param _builtins.int asset_id: The unique identifier of the asset.
+        :param _builtins.int group_id: The unique identifier of the group.
+        :param _builtins.str property_name: The name of the property.
+        :param _builtins.int property_version: The version of the property.
+        """
+        pulumi.set(__self__, "asset_id", asset_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "property_name", property_name)
+        pulumi.set(__self__, "property_version", property_version)
+
+    @_builtins.property
+    @pulumi.getter(name="assetId")
+    def asset_id(self) -> _builtins.int:
+        """
+        The unique identifier of the asset.
+        """
+        return pulumi.get(self, "asset_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.int:
+        """
+        The unique identifier of the group.
+        """
+        return pulumi.get(self, "group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> _builtins.str:
+        """
+        The name of the property.
+        """
+        return pulumi.get(self, "property_name")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyVersion")
+    def property_version(self) -> _builtins.int:
+        """
+        The version of the property.
+        """
+        return pulumi.get(self, "property_version")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateVersionValidationResult(dict):
+    def __init__(__self__, *,
+                 errors: Sequence['outputs.GetMtlskeystoreClientCertificateVersionValidationErrorResult'],
+                 warnings: Sequence['outputs.GetMtlskeystoreClientCertificateVersionValidationWarningResult']):
+        """
+        :param Sequence['GetMtlskeystoreClientCertificateVersionValidationErrorArgs'] errors: Validation errors that need to be resolved for the request to succeed.
+        :param Sequence['GetMtlskeystoreClientCertificateVersionValidationWarningArgs'] warnings: Validation warnings that can be resolved.
+        """
+        pulumi.set(__self__, "errors", errors)
+        pulumi.set(__self__, "warnings", warnings)
+
+    @_builtins.property
+    @pulumi.getter
+    def errors(self) -> Sequence['outputs.GetMtlskeystoreClientCertificateVersionValidationErrorResult']:
+        """
+        Validation errors that need to be resolved for the request to succeed.
+        """
+        return pulumi.get(self, "errors")
+
+    @_builtins.property
+    @pulumi.getter
+    def warnings(self) -> Sequence['outputs.GetMtlskeystoreClientCertificateVersionValidationWarningResult']:
+        """
+        Validation warnings that can be resolved.
+        """
+        return pulumi.get(self, "warnings")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateVersionValidationErrorResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 reason: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: Specifies the error details.
+        :param _builtins.str reason: Specifies the error root cause.
+        :param _builtins.str type: Specifies the error category.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        Specifies the error details.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> _builtins.str:
+        """
+        Specifies the error root cause.
+        """
+        return pulumi.get(self, "reason")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Specifies the error category.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificateVersionValidationWarningResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 reason: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: Specifies the warning details.
+        :param _builtins.str reason: Specifies the warning root cause.
+        :param _builtins.str type: Specifies the warning category.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        Specifies the warning details.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> _builtins.str:
+        """
+        Specifies the warning root cause.
+        """
+        return pulumi.get(self, "reason")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Specifies the warning category.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMtlskeystoreClientCertificatesCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate_id: _builtins.int,
+                 certificate_name: _builtins.str,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 geography: _builtins.str,
+                 key_algorithm: _builtins.str,
+                 notification_emails: Sequence[_builtins.str],
+                 secure_network: _builtins.str,
+                 signer: _builtins.str,
+                 subject: _builtins.str):
+        """
+        :param _builtins.int certificate_id: The unique identifier of the client certificate.
+        :param _builtins.str certificate_name: The name of the client certificate.
+        :param _builtins.str created_by: The user who created the CA certificate.
+        :param _builtins.str created_date: An ISO 8601 timestamp indicating the CA certificate's creation.
+        :param _builtins.str geography: Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
+        :param _builtins.str key_algorithm: Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        :param Sequence[_builtins.str] notification_emails: The email addresses to notify for client certificate-related issues.
+        :param _builtins.str secure_network: Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
+        :param _builtins.str signer: The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.
+        :param _builtins.str subject: The CA certificate’s key value details.
+        """
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "certificate_name", certificate_name)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "geography", geography)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "notification_emails", notification_emails)
+        pulumi.set(__self__, "secure_network", secure_network)
+        pulumi.set(__self__, "signer", signer)
+        pulumi.set(__self__, "subject", subject)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> _builtins.int:
+        """
+        The unique identifier of the client certificate.
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateName")
+    def certificate_name(self) -> _builtins.str:
+        """
+        The name of the client certificate.
+        """
+        return pulumi.get(self, "certificate_name")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created the CA certificate.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating the CA certificate's creation.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def geography(self) -> _builtins.str:
+        """
+        Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
+        """
+        return pulumi.get(self, "geography")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="notificationEmails")
+    def notification_emails(self) -> Sequence[_builtins.str]:
+        """
+        The email addresses to notify for client certificate-related issues.
+        """
+        return pulumi.get(self, "notification_emails")
+
+    @_builtins.property
+    @pulumi.getter(name="secureNetwork")
+    def secure_network(self) -> _builtins.str:
+        """
+        Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
+        """
+        return pulumi.get(self, "secure_network")
+
+    @_builtins.property
+    @pulumi.getter
+    def signer(self) -> _builtins.str:
+        """
+        The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.
+        """
+        return pulumi.get(self, "signer")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> _builtins.str:
+        """
+        The CA certificate’s key value details.
+        """
+        return pulumi.get(self, "subject")
 
 
 @pulumi.output_type

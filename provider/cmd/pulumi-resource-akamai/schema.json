@@ -2725,6 +2725,279 @@
                 "upgrades"
             ]
         },
+        "akamai:index/MtlskeystoreClientCertificateAkamaiVersion:MtlskeystoreClientCertificateAkamaiVersion": {
+            "properties": {
+                "certificateBlock": {
+                    "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateAkamaiVersionCertificateBlock:MtlskeystoreClientCertificateAkamaiVersionCertificateBlock",
+                    "description": "Details of the certificate block for the client certificate version.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the client certificate version.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's creation.\n"
+                },
+                "deleteRequestedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.\n"
+                },
+                "ellipticCurve": {
+                    "type": "string",
+                    "description": "Specifies the key elliptic curve when key algorithm `ECDSA` is used.\n"
+                },
+                "expiryDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the client certificate version expires.\n"
+                },
+                "issuedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's availability.\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "The signing entity of the client certificate version.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.\n"
+                },
+                "keySizeInBytes": {
+                    "type": "string",
+                    "description": "The private key length of the client certificate version when key algorithm `RSA` is used.\n"
+                },
+                "scheduledDeleteDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Specifies the algorithm that secures the data exchange between the edge server and origin.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The public key's entity stored in the client certificate version's subject public key field.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The unique identifier of the client certificate version.\n"
+                },
+                "versionGuid": {
+                    "type": "string",
+                    "description": "Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "certificateBlock",
+                        "createdBy",
+                        "createdDate",
+                        "deleteRequestedDate",
+                        "ellipticCurve",
+                        "expiryDate",
+                        "issuedDate",
+                        "issuer",
+                        "keyAlgorithm",
+                        "keySizeInBytes",
+                        "scheduledDeleteDate",
+                        "signatureAlgorithm",
+                        "status",
+                        "subject",
+                        "version",
+                        "versionGuid"
+                    ]
+                }
+            }
+        },
+        "akamai:index/MtlskeystoreClientCertificateAkamaiVersionCertificateBlock:MtlskeystoreClientCertificateAkamaiVersionCertificateBlock": {
+            "properties": {
+                "certificate": {
+                    "type": "string",
+                    "description": "A text representation of the client certificate in PEM format.\n"
+                },
+                "trustChain": {
+                    "type": "string",
+                    "description": "A text representation of the trust chain in PEM format.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "certificate",
+                        "trustChain"
+                    ]
+                }
+            }
+        },
+        "akamai:index/MtlskeystoreClientCertificateThirdPartyVersions:MtlskeystoreClientCertificateThirdPartyVersions": {
+            "properties": {
+                "certificateBlock": {
+                    "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock:MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock",
+                    "description": "Details of the certificate block for the client certificate version.\n"
+                },
+                "certificateSubmittedBy": {
+                    "type": "string",
+                    "description": "The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.\n"
+                },
+                "certificateSubmittedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the client certificate version.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's creation.\n"
+                },
+                "csrBlock": {
+                    "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock:MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock",
+                    "description": "Details of the Certificate Signing Request (CSR) for the client certificate version.\n"
+                },
+                "deleteRequestedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.\n"
+                },
+                "ellipticCurve": {
+                    "type": "string",
+                    "description": "Specifies the key elliptic curve when key algorithm `ECDSA` is used.\n"
+                },
+                "expiryDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the client certificate version expires.\n"
+                },
+                "issuedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's availability.\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "The signing entity of the client certificate version.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.\n"
+                },
+                "keySizeInBytes": {
+                    "type": "string",
+                    "description": "The private key length of the client certificate version when key algorithm `RSA` is used.\n"
+                },
+                "scheduledDeleteDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Specifies the algorithm that secures the data exchange between the edge server and origin.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The public key's entity stored in the client certificate version's subject public key field.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The unique identifier of the client certificate version.\n"
+                },
+                "versionGuid": {
+                    "type": "string",
+                    "description": "Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "certificateBlock",
+                        "certificateSubmittedBy",
+                        "certificateSubmittedDate",
+                        "createdBy",
+                        "createdDate",
+                        "csrBlock",
+                        "deleteRequestedDate",
+                        "ellipticCurve",
+                        "expiryDate",
+                        "issuedDate",
+                        "issuer",
+                        "keyAlgorithm",
+                        "keySizeInBytes",
+                        "scheduledDeleteDate",
+                        "signatureAlgorithm",
+                        "status",
+                        "subject",
+                        "version",
+                        "versionGuid"
+                    ]
+                }
+            }
+        },
+        "akamai:index/MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock:MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock": {
+            "properties": {
+                "certificate": {
+                    "type": "string",
+                    "description": "A text representation of the client certificate in PEM format.\n"
+                },
+                "trustChain": {
+                    "type": "string",
+                    "description": "A text representation of the trust chain in PEM format.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "certificate",
+                        "trustChain"
+                    ]
+                }
+            }
+        },
+        "akamai:index/MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock:MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock": {
+            "properties": {
+                "csr": {
+                    "type": "string",
+                    "description": "Text of the certificate signing request.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the client certificate's encryption algorithm.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "csr",
+                        "keyAlgorithm"
+                    ]
+                }
+            }
+        },
+        "akamai:index/MtlskeystoreClientCertificateUploadTimeouts:MtlskeystoreClientCertificateUploadTimeouts": {
+            "properties": {
+                "create": {
+                    "type": "string",
+                    "description": "Optional configurable resource create timeout. By default it's 30m.\n"
+                },
+                "update": {
+                    "type": "string",
+                    "description": "Optional configurable resource update timeout. By default it's 30m.\n"
+                }
+            },
+            "type": "object"
+        },
         "akamai:index/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord": {
             "properties": {
                 "noncomplianceReasonEmergency": {
@@ -4044,12 +4317,14 @@
                 "itemsCount",
                 "listId",
                 "listType",
+                "name",
                 "notes",
                 "productionActivationStatus",
                 "readOnly",
                 "shared",
                 "stagingActivationStatus",
                 "tags",
+                "type",
                 "updateDate",
                 "updatedBy",
                 "version"
@@ -13295,6 +13570,1007 @@
                 "id",
                 "value"
             ]
+        },
+        "akamai:index/getMtlskeystoreAccountCaCertificatesCertificate:getMtlskeystoreAccountCaCertificatesCertificate": {
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "The account the CA certificate is under.\n"
+                },
+                "certificate": {
+                    "type": "string",
+                    "description": "The certificate block of the CA certificate.\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "The common name of the CA certificate.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the CA certificate.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the CA certificate's creation.\n"
+                },
+                "expiryDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the CA certificate expires.\n"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "The unique identifier of the CA certificate.\n"
+                },
+                "issuedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the CA certificate's availability.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.\n"
+                },
+                "keySizeInBytes": {
+                    "type": "integer",
+                    "description": "The private key length of the CA certificate.\n"
+                },
+                "qualificationDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Specifies the algorithm that secures the data exchange between the edge server and origin.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The public key's entity stored in the CA certificate's subject public key field.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the CA certificate.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accountId",
+                "certificate",
+                "commonName",
+                "createdBy",
+                "createdDate",
+                "expiryDate",
+                "id",
+                "issuedDate",
+                "keyAlgorithm",
+                "keySizeInBytes",
+                "qualificationDate",
+                "signatureAlgorithm",
+                "status",
+                "subject",
+                "version"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateCurrent:getMtlskeystoreClientCertificateCurrent": {
+            "properties": {
+                "certificateBlock": {
+                    "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateCurrentCertificateBlock:getMtlskeystoreClientCertificateCurrentCertificateBlock",
+                    "description": "Details of the certificate block for the client certificate version.\n"
+                },
+                "certificateSubmittedBy": {
+                    "type": "string",
+                    "description": "The user who uploaded the `THIRD_PARTY` client certificate version.\n"
+                },
+                "certificateSubmittedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the client certificate version.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's creation.\n"
+                },
+                "csrBlock": {
+                    "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateCurrentCsrBlock:getMtlskeystoreClientCertificateCurrentCsrBlock",
+                    "description": "Details of the Certificate Signing Request (CSR) for the client certificate version.\n"
+                },
+                "deleteRequestedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's deletion request.\n"
+                },
+                "ellipticCurve": {
+                    "type": "string",
+                    "description": "Specifies the key elliptic curve when the key algorithm `ECDSA` is used.\n"
+                },
+                "expiryDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the client certificate version expires.\n"
+                },
+                "issuedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's availability.\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "The signing entity of the client certificate version.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.\n"
+                },
+                "keySizeInBytes": {
+                    "type": "string",
+                    "description": "The private key length of the client certificate version when the key algorithm `RSA` is used.\n"
+                },
+                "properties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateCurrentProperty:getMtlskeystoreClientCertificateCurrentProperty"
+                    },
+                    "description": "A list of properties associated with the client certificate.\n"
+                },
+                "scheduledDeleteDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Specifies the algorithm that secures the data exchange between the edge server and origin.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The public key's entity stored in the client certificate version's subject public key field.\n"
+                },
+                "validation": {
+                    "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateCurrentValidation:getMtlskeystoreClientCertificateCurrentValidation",
+                    "description": "Validation results for the client certificate version.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The unique identifier of the client certificate version.\n"
+                },
+                "versionGuid": {
+                    "type": "string",
+                    "description": "Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificateBlock",
+                "certificateSubmittedBy",
+                "certificateSubmittedDate",
+                "createdBy",
+                "createdDate",
+                "csrBlock",
+                "deleteRequestedDate",
+                "ellipticCurve",
+                "expiryDate",
+                "issuedDate",
+                "issuer",
+                "keyAlgorithm",
+                "keySizeInBytes",
+                "properties",
+                "scheduledDeleteDate",
+                "signatureAlgorithm",
+                "status",
+                "subject",
+                "validation",
+                "version",
+                "versionGuid"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateCurrentCertificateBlock:getMtlskeystoreClientCertificateCurrentCertificateBlock": {
+            "properties": {
+                "certificate": {
+                    "type": "string",
+                    "description": "A text representation of the client certificate in PEM format.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.\n"
+                },
+                "trustChain": {
+                    "type": "string",
+                    "description": "A text representation of the trust chain in PEM format.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificate",
+                "keyAlgorithm",
+                "trustChain"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateCurrentCsrBlock:getMtlskeystoreClientCertificateCurrentCsrBlock": {
+            "properties": {
+                "csr": {
+                    "type": "string",
+                    "description": "Text of the certificate signing request.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "csr",
+                "keyAlgorithm"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateCurrentProperty:getMtlskeystoreClientCertificateCurrentProperty": {
+            "properties": {
+                "assetId": {
+                    "type": "integer",
+                    "description": "The unique identifier of the asset.\n"
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The unique identifier of the group.\n"
+                },
+                "propertyName": {
+                    "type": "string",
+                    "description": "The name of the property.\n"
+                },
+                "propertyVersion": {
+                    "type": "integer",
+                    "description": "The version of the property.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "assetId",
+                "groupId",
+                "propertyName",
+                "propertyVersion"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateCurrentValidation:getMtlskeystoreClientCertificateCurrentValidation": {
+            "properties": {
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateCurrentValidationError:getMtlskeystoreClientCertificateCurrentValidationError"
+                    },
+                    "description": "Validation errors that need to be resolved for the request to succeed.\n"
+                },
+                "warnings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateCurrentValidationWarning:getMtlskeystoreClientCertificateCurrentValidationWarning"
+                    },
+                    "description": "Validation warnings that can be resolved.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "errors",
+                "warnings"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateCurrentValidationError:getMtlskeystoreClientCertificateCurrentValidationError": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "Specifies the error details.\n"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Specifies the error root cause.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Specifies the error category.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "reason",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateCurrentValidationWarning:getMtlskeystoreClientCertificateCurrentValidationWarning": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "Specifies the warning details.\n"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Specifies the warning root cause.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Specifies the warning category.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "reason",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificatePrevious:getMtlskeystoreClientCertificatePrevious": {
+            "properties": {
+                "certificateBlock": {
+                    "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificatePreviousCertificateBlock:getMtlskeystoreClientCertificatePreviousCertificateBlock",
+                    "description": "Details of the certificate block for the client certificate version.\n"
+                },
+                "certificateSubmittedBy": {
+                    "type": "string",
+                    "description": "The user who uploaded the `THIRD_PARTY` client certificate version.\n"
+                },
+                "certificateSubmittedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the client certificate version.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's creation.\n"
+                },
+                "csrBlock": {
+                    "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificatePreviousCsrBlock:getMtlskeystoreClientCertificatePreviousCsrBlock",
+                    "description": "Details of the Certificate Signing Request (CSR) for the client certificate version.\n"
+                },
+                "deleteRequestedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's deletion request.\n"
+                },
+                "ellipticCurve": {
+                    "type": "string",
+                    "description": "Specifies the key elliptic curve when the key algorithm `ECDSA` is used.\n"
+                },
+                "expiryDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the client certificate version expires.\n"
+                },
+                "issuedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's availability.\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "The signing entity of the client certificate version.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.\n"
+                },
+                "keySizeInBytes": {
+                    "type": "string",
+                    "description": "The private key length of the client certificate version when the key algorithm `RSA` is used.\n"
+                },
+                "properties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificatePreviousProperty:getMtlskeystoreClientCertificatePreviousProperty"
+                    },
+                    "description": "A list of properties associated with the client certificate.\n"
+                },
+                "scheduledDeleteDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Specifies the algorithm that secures the data exchange between the edge server and origin.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The public key's entity stored in the client certificate version's subject public key field.\n"
+                },
+                "validation": {
+                    "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificatePreviousValidation:getMtlskeystoreClientCertificatePreviousValidation",
+                    "description": "Validation results for the client certificate version.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The unique identifier of the client certificate version.\n"
+                },
+                "versionGuid": {
+                    "type": "string",
+                    "description": "Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificateBlock",
+                "certificateSubmittedBy",
+                "certificateSubmittedDate",
+                "createdBy",
+                "createdDate",
+                "csrBlock",
+                "deleteRequestedDate",
+                "ellipticCurve",
+                "expiryDate",
+                "issuedDate",
+                "issuer",
+                "keyAlgorithm",
+                "keySizeInBytes",
+                "properties",
+                "scheduledDeleteDate",
+                "signatureAlgorithm",
+                "status",
+                "subject",
+                "validation",
+                "version",
+                "versionGuid"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificatePreviousCertificateBlock:getMtlskeystoreClientCertificatePreviousCertificateBlock": {
+            "properties": {
+                "certificate": {
+                    "type": "string",
+                    "description": "A text representation of the client certificate in PEM format.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.\n"
+                },
+                "trustChain": {
+                    "type": "string",
+                    "description": "A text representation of the trust chain in PEM format.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificate",
+                "keyAlgorithm",
+                "trustChain"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificatePreviousCsrBlock:getMtlskeystoreClientCertificatePreviousCsrBlock": {
+            "properties": {
+                "csr": {
+                    "type": "string",
+                    "description": "Text of the certificate signing request.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "csr",
+                "keyAlgorithm"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificatePreviousProperty:getMtlskeystoreClientCertificatePreviousProperty": {
+            "properties": {
+                "assetId": {
+                    "type": "integer",
+                    "description": "The unique identifier of the asset.\n"
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The unique identifier of the group.\n"
+                },
+                "propertyName": {
+                    "type": "string",
+                    "description": "The name of the property.\n"
+                },
+                "propertyVersion": {
+                    "type": "integer",
+                    "description": "The version of the property.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "assetId",
+                "groupId",
+                "propertyName",
+                "propertyVersion"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificatePreviousValidation:getMtlskeystoreClientCertificatePreviousValidation": {
+            "properties": {
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificatePreviousValidationError:getMtlskeystoreClientCertificatePreviousValidationError"
+                    },
+                    "description": "Validation errors that need to be resolved for the request to succeed.\n"
+                },
+                "warnings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificatePreviousValidationWarning:getMtlskeystoreClientCertificatePreviousValidationWarning"
+                    },
+                    "description": "Validation warnings that can be resolved.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "errors",
+                "warnings"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificatePreviousValidationError:getMtlskeystoreClientCertificatePreviousValidationError": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "Specifies the error details.\n"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Specifies the error root cause.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Specifies the error category.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "reason",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificatePreviousValidationWarning:getMtlskeystoreClientCertificatePreviousValidationWarning": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "Specifies the warning details.\n"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Specifies the warning root cause.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Specifies the warning category.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "reason",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateVersion:getMtlskeystoreClientCertificateVersion": {
+            "properties": {
+                "certificateBlock": {
+                    "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateVersionCertificateBlock:getMtlskeystoreClientCertificateVersionCertificateBlock",
+                    "description": "Details of the certificate block for the client certificate version.\n"
+                },
+                "certificateSubmittedBy": {
+                    "type": "string",
+                    "description": "The user who uploaded the `THIRD_PARTY` client certificate version.\n"
+                },
+                "certificateSubmittedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the client certificate version.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's creation.\n"
+                },
+                "csrBlock": {
+                    "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateVersionCsrBlock:getMtlskeystoreClientCertificateVersionCsrBlock",
+                    "description": "Details of the Certificate Signing Request (CSR) for the client certificate version.\n"
+                },
+                "deleteRequestedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's deletion request.\n"
+                },
+                "ellipticCurve": {
+                    "type": "string",
+                    "description": "Specifies the key elliptic curve when the key algorithm `ECDSA` is used.\n"
+                },
+                "expiryDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the client certificate version expires.\n"
+                },
+                "issuedDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's availability.\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "The signing entity of the client certificate version.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.\n"
+                },
+                "keySizeInBytes": {
+                    "type": "string",
+                    "description": "The private key length of the client certificate version when the key algorithm `RSA` is used.\n"
+                },
+                "properties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateVersionProperty:getMtlskeystoreClientCertificateVersionProperty"
+                    },
+                    "description": "A list of properties associated with the client certificate.\n"
+                },
+                "scheduledDeleteDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Specifies the algorithm that secures the data exchange between the edge server and origin.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The public key's entity stored in the client certificate version's subject public key field.\n"
+                },
+                "validation": {
+                    "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateVersionValidation:getMtlskeystoreClientCertificateVersionValidation",
+                    "description": "Validation results for the client certificate version.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The unique identifier of the client certificate version.\n"
+                },
+                "versionGuid": {
+                    "type": "string",
+                    "description": "Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificateBlock",
+                "certificateSubmittedBy",
+                "certificateSubmittedDate",
+                "createdBy",
+                "createdDate",
+                "csrBlock",
+                "deleteRequestedDate",
+                "ellipticCurve",
+                "expiryDate",
+                "issuedDate",
+                "issuer",
+                "keyAlgorithm",
+                "keySizeInBytes",
+                "properties",
+                "scheduledDeleteDate",
+                "signatureAlgorithm",
+                "status",
+                "subject",
+                "validation",
+                "version",
+                "versionGuid"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateVersionCertificateBlock:getMtlskeystoreClientCertificateVersionCertificateBlock": {
+            "properties": {
+                "certificate": {
+                    "type": "string",
+                    "description": "A text representation of the client certificate in PEM format.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.\n"
+                },
+                "trustChain": {
+                    "type": "string",
+                    "description": "A text representation of the trust chain in PEM format.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificate",
+                "keyAlgorithm",
+                "trustChain"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateVersionCsrBlock:getMtlskeystoreClientCertificateVersionCsrBlock": {
+            "properties": {
+                "csr": {
+                    "type": "string",
+                    "description": "Text of the certificate signing request.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "csr",
+                "keyAlgorithm"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateVersionProperty:getMtlskeystoreClientCertificateVersionProperty": {
+            "properties": {
+                "assetId": {
+                    "type": "integer",
+                    "description": "The unique identifier of the asset.\n"
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The unique identifier of the group.\n"
+                },
+                "propertyName": {
+                    "type": "string",
+                    "description": "The name of the property.\n"
+                },
+                "propertyVersion": {
+                    "type": "integer",
+                    "description": "The version of the property.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "assetId",
+                "groupId",
+                "propertyName",
+                "propertyVersion"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateVersionValidation:getMtlskeystoreClientCertificateVersionValidation": {
+            "properties": {
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateVersionValidationError:getMtlskeystoreClientCertificateVersionValidationError"
+                    },
+                    "description": "Validation errors that need to be resolved for the request to succeed.\n"
+                },
+                "warnings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateVersionValidationWarning:getMtlskeystoreClientCertificateVersionValidationWarning"
+                    },
+                    "description": "Validation warnings that can be resolved.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "errors",
+                "warnings"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateVersionValidationError:getMtlskeystoreClientCertificateVersionValidationError": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "Specifies the error details.\n"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Specifies the error root cause.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Specifies the error category.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "reason",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificateVersionValidationWarning:getMtlskeystoreClientCertificateVersionValidationWarning": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "Specifies the warning details.\n"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Specifies the warning root cause.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Specifies the warning category.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "reason",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificatesCertificate:getMtlskeystoreClientCertificatesCertificate": {
+            "properties": {
+                "certificateId": {
+                    "type": "integer",
+                    "description": "The unique identifier of the client certificate.\n"
+                },
+                "certificateName": {
+                    "type": "string",
+                    "description": "The name of the client certificate.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the CA certificate.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the CA certificate's creation.\n"
+                },
+                "geography": {
+                    "type": "string",
+                    "description": "Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.\n"
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The email addresses to notify for client certificate-related issues.\n"
+                },
+                "secureNetwork": {
+                    "type": "string",
+                    "description": "Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.\n"
+                },
+                "signer": {
+                    "type": "string",
+                    "description": "The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The CA certificate’s key value details.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificateId",
+                "certificateName",
+                "createdBy",
+                "createdDate",
+                "geography",
+                "keyAlgorithm",
+                "notificationEmails",
+                "secureNetwork",
+                "signer",
+                "subject"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
         },
         "akamai:index/getPropertiesProperty:getPropertiesProperty": {
             "properties": {
@@ -25310,6 +26586,482 @@
                 "type": "object"
             }
         },
+        "akamai:index/mtlskeystoreClientCertificateAkamai:MtlskeystoreClientCertificateAkamai": {
+            "properties": {
+                "certificateId": {
+                    "type": "integer",
+                    "description": "The unique identifier of the client certificate."
+                },
+                "certificateName": {
+                    "type": "string",
+                    "description": "The name of the client certificate. Must be between 1 and 64 characters."
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract assigned to the client certificate. Must have a length of at least 1."
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the client certificate. Read-only."
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating the client certificate's creation. Read-only."
+                },
+                "currentGuid": {
+                    "type": "string",
+                    "description": "Unique identifier for the `current` client certificate version."
+                },
+                "geography": {
+                    "type": "string",
+                    "description": "Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`."
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The group assigned to the client certificate. Must be greater than or equal to 0."
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`."
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The email addresses to notify for client certificate-related issues. Must have at least one email address."
+                },
+                "previousGuid": {
+                    "type": "string",
+                    "description": "Unique identifier for the `previous` client certificate version."
+                },
+                "secureNetwork": {
+                    "type": "string",
+                    "description": "Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`."
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`."
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateAkamaiVersion:MtlskeystoreClientCertificateAkamaiVersion"
+                    },
+                    "description": "A list of client certificate versions. Each version represents a specific iteration of the client certificate."
+                }
+            },
+            "required": [
+                "certificateId",
+                "certificateName",
+                "contractId",
+                "createdBy",
+                "createdDate",
+                "currentGuid",
+                "geography",
+                "groupId",
+                "keyAlgorithm",
+                "notificationEmails",
+                "previousGuid",
+                "secureNetwork",
+                "subject",
+                "versions"
+            ],
+            "inputProperties": {
+                "certificateName": {
+                    "type": "string",
+                    "description": "The name of the client certificate. Must be between 1 and 64 characters."
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract assigned to the client certificate. Must have a length of at least 1."
+                },
+                "geography": {
+                    "type": "string",
+                    "description": "Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`."
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The group assigned to the client certificate. Must be greater than or equal to 0."
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`."
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The email addresses to notify for client certificate-related issues. Must have at least one email address."
+                },
+                "secureNetwork": {
+                    "type": "string",
+                    "description": "Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`."
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`."
+                }
+            },
+            "requiredInputs": [
+                "certificateName",
+                "contractId",
+                "geography",
+                "groupId",
+                "notificationEmails",
+                "secureNetwork"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering MtlskeystoreClientCertificateAkamai resources.\n",
+                "properties": {
+                    "certificateId": {
+                        "type": "integer",
+                        "description": "The unique identifier of the client certificate."
+                    },
+                    "certificateName": {
+                        "type": "string",
+                        "description": "The name of the client certificate. Must be between 1 and 64 characters."
+                    },
+                    "contractId": {
+                        "type": "string",
+                        "description": "The contract assigned to the client certificate. Must have a length of at least 1."
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "description": "The user who created the client certificate. Read-only."
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "An ISO 8601 timestamp indicating the client certificate's creation. Read-only."
+                    },
+                    "currentGuid": {
+                        "type": "string",
+                        "description": "Unique identifier for the `current` client certificate version."
+                    },
+                    "geography": {
+                        "type": "string",
+                        "description": "Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`."
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "The group assigned to the client certificate. Must be greater than or equal to 0."
+                    },
+                    "keyAlgorithm": {
+                        "type": "string",
+                        "description": "The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`."
+                    },
+                    "notificationEmails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The email addresses to notify for client certificate-related issues. Must have at least one email address."
+                    },
+                    "previousGuid": {
+                        "type": "string",
+                        "description": "Unique identifier for the `previous` client certificate version."
+                    },
+                    "secureNetwork": {
+                        "type": "string",
+                        "description": "Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`."
+                    },
+                    "subject": {
+                        "type": "string",
+                        "description": "The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`."
+                    },
+                    "versions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateAkamaiVersion:MtlskeystoreClientCertificateAkamaiVersion"
+                        },
+                        "description": "A list of client certificate versions. Each version represents a specific iteration of the client certificate."
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/mtlskeystoreClientCertificateThirdParty:MtlskeystoreClientCertificateThirdParty": {
+            "properties": {
+                "certificateId": {
+                    "type": "integer",
+                    "description": "The unique identifier of the client certificate."
+                },
+                "certificateName": {
+                    "type": "string",
+                    "description": "The name of the client certificate. Must be between 1 and 64 characters."
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract assigned to the client certificate. Must have a length of at least 1."
+                },
+                "geography": {
+                    "type": "string",
+                    "description": "Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`."
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The group assigned to the client certificate. Must be greater than or equal to 0."
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`. The default is `RSA`."
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The email addresses to notify for client certificate-related issues. Must have at least one email address."
+                },
+                "secureNetwork": {
+                    "type": "string",
+                    "description": "Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`."
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`."
+                },
+                "versions": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateThirdPartyVersions:MtlskeystoreClientCertificateThirdPartyVersions"
+                    },
+                    "description": "A map of client certificate versions as a value and user defined identifier as a key. Each version represents a specific iteration of the client certificate."
+                }
+            },
+            "required": [
+                "certificateId",
+                "certificateName",
+                "contractId",
+                "geography",
+                "groupId",
+                "keyAlgorithm",
+                "notificationEmails",
+                "secureNetwork",
+                "subject",
+                "versions"
+            ],
+            "inputProperties": {
+                "certificateName": {
+                    "type": "string",
+                    "description": "The name of the client certificate. Must be between 1 and 64 characters."
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract assigned to the client certificate. Must have a length of at least 1."
+                },
+                "geography": {
+                    "type": "string",
+                    "description": "Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`."
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The group assigned to the client certificate. Must be greater than or equal to 0."
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`. The default is `RSA`."
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The email addresses to notify for client certificate-related issues. Must have at least one email address."
+                },
+                "secureNetwork": {
+                    "type": "string",
+                    "description": "Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`."
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`."
+                },
+                "versions": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateThirdPartyVersions:MtlskeystoreClientCertificateThirdPartyVersions"
+                    },
+                    "description": "A map of client certificate versions as a value and user defined identifier as a key. Each version represents a specific iteration of the client certificate."
+                }
+            },
+            "requiredInputs": [
+                "certificateName",
+                "contractId",
+                "geography",
+                "groupId",
+                "notificationEmails",
+                "secureNetwork",
+                "versions"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering MtlskeystoreClientCertificateThirdParty resources.\n",
+                "properties": {
+                    "certificateId": {
+                        "type": "integer",
+                        "description": "The unique identifier of the client certificate."
+                    },
+                    "certificateName": {
+                        "type": "string",
+                        "description": "The name of the client certificate. Must be between 1 and 64 characters."
+                    },
+                    "contractId": {
+                        "type": "string",
+                        "description": "The contract assigned to the client certificate. Must have a length of at least 1."
+                    },
+                    "geography": {
+                        "type": "string",
+                        "description": "Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`."
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "The group assigned to the client certificate. Must be greater than or equal to 0."
+                    },
+                    "keyAlgorithm": {
+                        "type": "string",
+                        "description": "The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`. The default is `RSA`."
+                    },
+                    "notificationEmails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The email addresses to notify for client certificate-related issues. Must have at least one email address."
+                    },
+                    "secureNetwork": {
+                        "type": "string",
+                        "description": "Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`."
+                    },
+                    "subject": {
+                        "type": "string",
+                        "description": "The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`."
+                    },
+                    "versions": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateThirdPartyVersions:MtlskeystoreClientCertificateThirdPartyVersions"
+                        },
+                        "description": "A map of client certificate versions as a value and user defined identifier as a key. Each version represents a specific iteration of the client certificate."
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/mtlskeystoreClientCertificateUpload:MtlskeystoreClientCertificateUpload": {
+            "properties": {
+                "autoAcknowledgeWarnings": {
+                    "type": "boolean",
+                    "description": "If set to true, all warnings will be acknowledged automatically. Defaults to `false`."
+                },
+                "clientCertificateId": {
+                    "type": "integer",
+                    "description": "The ID of the client certificate to which the signed certificate will be uploaded."
+                },
+                "signedCertificate": {
+                    "type": "string",
+                    "description": "The signed certificate to upload."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateUploadTimeouts:MtlskeystoreClientCertificateUploadTimeouts"
+                },
+                "trustChain": {
+                    "type": "string",
+                    "description": "The optional trust chain associated with the signed certificate."
+                },
+                "versionGuid": {
+                    "type": "string",
+                    "description": "A unique identifier for the client certificate version."
+                },
+                "versionNumber": {
+                    "type": "integer",
+                    "description": "The version number of the client certificate to upload the signed certificate to."
+                },
+                "waitForDeployment": {
+                    "type": "boolean",
+                    "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`."
+                }
+            },
+            "required": [
+                "autoAcknowledgeWarnings",
+                "clientCertificateId",
+                "signedCertificate",
+                "versionGuid",
+                "versionNumber",
+                "waitForDeployment"
+            ],
+            "inputProperties": {
+                "autoAcknowledgeWarnings": {
+                    "type": "boolean",
+                    "description": "If set to true, all warnings will be acknowledged automatically. Defaults to `false`."
+                },
+                "clientCertificateId": {
+                    "type": "integer",
+                    "description": "The ID of the client certificate to which the signed certificate will be uploaded."
+                },
+                "signedCertificate": {
+                    "type": "string",
+                    "description": "The signed certificate to upload."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateUploadTimeouts:MtlskeystoreClientCertificateUploadTimeouts"
+                },
+                "trustChain": {
+                    "type": "string",
+                    "description": "The optional trust chain associated with the signed certificate."
+                },
+                "versionNumber": {
+                    "type": "integer",
+                    "description": "The version number of the client certificate to upload the signed certificate to."
+                },
+                "waitForDeployment": {
+                    "type": "boolean",
+                    "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`."
+                }
+            },
+            "requiredInputs": [
+                "clientCertificateId",
+                "signedCertificate",
+                "versionNumber"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering MtlskeystoreClientCertificateUpload resources.\n",
+                "properties": {
+                    "autoAcknowledgeWarnings": {
+                        "type": "boolean",
+                        "description": "If set to true, all warnings will be acknowledged automatically. Defaults to `false`."
+                    },
+                    "clientCertificateId": {
+                        "type": "integer",
+                        "description": "The ID of the client certificate to which the signed certificate will be uploaded."
+                    },
+                    "signedCertificate": {
+                        "type": "string",
+                        "description": "The signed certificate to upload."
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateUploadTimeouts:MtlskeystoreClientCertificateUploadTimeouts"
+                    },
+                    "trustChain": {
+                        "type": "string",
+                        "description": "The optional trust chain associated with the signed certificate."
+                    },
+                    "versionGuid": {
+                        "type": "string",
+                        "description": "A unique identifier for the client certificate version."
+                    },
+                    "versionNumber": {
+                        "type": "integer",
+                        "description": "The version number of the client certificate to upload the signed certificate to."
+                    },
+                    "waitForDeployment": {
+                        "type": "boolean",
+                        "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`."
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/networkList:NetworkList": {
             "properties": {
                 "contractId": {
@@ -30917,7 +32669,6 @@
                 "description": "A collection of values returned by getClientlistLists.\n",
                 "properties": {
                     "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
                     "json": {
@@ -30949,11 +32700,11 @@
                     }
                 },
                 "required": [
+                    "id",
                     "json",
                     "listIds",
                     "lists",
-                    "outputText",
-                    "id"
+                    "outputText"
                 ],
                 "type": "object"
             }
@@ -34539,6 +36290,159 @@
                 "required": [
                     "json",
                     "policy",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlskeystoreAccountCaCertificates:getMtlskeystoreAccountCaCertificates": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlskeystoreAccountCaCertificates.\n",
+                "properties": {
+                    "statuses": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlskeystoreAccountCaCertificates.\n",
+                "properties": {
+                    "certificates": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlskeystoreAccountCaCertificatesCertificate:getMtlskeystoreAccountCaCertificatesCertificate"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "statuses": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "certificates",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificate:getMtlskeystoreClientCertificate": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlskeystoreClientCertificate.\n",
+                "properties": {
+                    "certificateId": {
+                        "type": "integer"
+                    },
+                    "includeAssociatedProperties": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "certificateId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlskeystoreClientCertificate.\n",
+                "properties": {
+                    "certificateId": {
+                        "type": "integer"
+                    },
+                    "certificateName": {
+                        "type": "string"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "createdDate": {
+                        "type": "string"
+                    },
+                    "current": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateCurrent:getMtlskeystoreClientCertificateCurrent"
+                    },
+                    "geography": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "includeAssociatedProperties": {
+                        "type": "boolean"
+                    },
+                    "keyAlgorithm": {
+                        "type": "string"
+                    },
+                    "notificationEmails": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "previous": {
+                        "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificatePrevious:getMtlskeystoreClientCertificatePrevious"
+                    },
+                    "secureNetwork": {
+                        "type": "string"
+                    },
+                    "signer": {
+                        "type": "string"
+                    },
+                    "subject": {
+                        "type": "string"
+                    },
+                    "versions": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateVersion:getMtlskeystoreClientCertificateVersion"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "certificateId",
+                    "certificateName",
+                    "createdBy",
+                    "createdDate",
+                    "current",
+                    "geography",
+                    "keyAlgorithm",
+                    "notificationEmails",
+                    "previous",
+                    "secureNetwork",
+                    "signer",
+                    "subject",
+                    "versions",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlskeystoreClientCertificates:getMtlskeystoreClientCertificates": {
+            "outputs": {
+                "description": "A collection of values returned by getMtlskeystoreClientCertificates.\n",
+                "properties": {
+                    "certificates": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificatesCertificate:getMtlskeystoreClientCertificatesCertificate"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "certificates",
                     "id"
                 ],
                 "type": "object"

@@ -257,6 +257,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ImagingPolicySet{}
 	case "akamai:index/imagingPolicyVideo:ImagingPolicyVideo":
 		r = &ImagingPolicyVideo{}
+	case "akamai:index/mtlskeystoreClientCertificateAkamai:MtlskeystoreClientCertificateAkamai":
+		r = &MtlskeystoreClientCertificateAkamai{}
+	case "akamai:index/mtlskeystoreClientCertificateThirdParty:MtlskeystoreClientCertificateThirdParty":
+		r = &MtlskeystoreClientCertificateThirdParty{}
+	case "akamai:index/mtlskeystoreClientCertificateUpload:MtlskeystoreClientCertificateUpload":
+		r = &MtlskeystoreClientCertificateUpload{}
 	case "akamai:index/networkList:NetworkList":
 		r = &NetworkList{}
 	case "akamai:index/networkListActivations:NetworkListActivations":
@@ -896,6 +902,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/imagingPolicyVideo",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/mtlskeystoreClientCertificateAkamai",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/mtlskeystoreClientCertificateThirdParty",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/mtlskeystoreClientCertificateUpload",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

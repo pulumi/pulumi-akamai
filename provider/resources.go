@@ -223,6 +223,15 @@ func Provider() tfbridge.ProviderInfo {
 				Tok:       makeResource(mainMod, "CloudAccessKey"),
 				ComputeID: tfbridge.DelegateIDField("access_key_uid", "akamai", "https://github.com/pulumi/pulumi-akamai"),
 			},
+			"akamai_mtlskeystore_client_certificate_third_party": {
+				ComputeID: tfbridge.DelegateIDField("certificateId", "akamai", "https://github.com/pulumi/pulumi-akamai"),
+			},
+			"akamai_mtlskeystore_client_certificate_upload": {
+				ComputeID: tfbridge.DelegateIDField("clientCertificateId", "akamai", "https://github.com/pulumi/pulumi-akamai"),
+			},
+			"akamai_mtlskeystore_client_certificate_akamai": {
+				ComputeID: tfbridge.DelegateIDField("certificateId", "akamai", "https://github.com/pulumi/pulumi-akamai"),
+			},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"akamai_contract":  {Tok: makeDataSource(mainMod, "getContract")},

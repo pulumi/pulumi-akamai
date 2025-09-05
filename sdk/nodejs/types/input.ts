@@ -11764,6 +11764,196 @@ export interface IamUserUserNotifications {
     upgrades: pulumi.Input<pulumi.Input<string>[]>;
 }
 
+export interface MtlskeystoreClientCertificateAkamaiVersion {
+    /**
+     * Details of the certificate block for the client certificate version.
+     */
+    certificateBlock?: pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiVersionCertificateBlock>;
+    /**
+     * The user who created the client certificate version.
+     */
+    createdBy?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's creation.
+     */
+    createdDate?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+     */
+    deleteRequestedDate?: pulumi.Input<string>;
+    /**
+     * Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+     */
+    ellipticCurve?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate version expires.
+     */
+    expiryDate?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's availability.
+     */
+    issuedDate?: pulumi.Input<string>;
+    /**
+     * The signing entity of the client certificate version.
+     */
+    issuer?: pulumi.Input<string>;
+    /**
+     * Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+     */
+    keyAlgorithm?: pulumi.Input<string>;
+    /**
+     * The private key length of the client certificate version when key algorithm `RSA` is used.
+     */
+    keySizeInBytes?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+     */
+    scheduledDeleteDate?: pulumi.Input<string>;
+    /**
+     * Specifies the algorithm that secures the data exchange between the edge server and origin.
+     */
+    signatureAlgorithm?: pulumi.Input<string>;
+    /**
+     * The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * The public key's entity stored in the client certificate version's subject public key field.
+     */
+    subject?: pulumi.Input<string>;
+    /**
+     * The unique identifier of the client certificate version.
+     */
+    version?: pulumi.Input<number>;
+    /**
+     * Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+     */
+    versionGuid?: pulumi.Input<string>;
+}
+
+export interface MtlskeystoreClientCertificateAkamaiVersionCertificateBlock {
+    /**
+     * A text representation of the client certificate in PEM format.
+     */
+    certificate?: pulumi.Input<string>;
+    /**
+     * A text representation of the trust chain in PEM format.
+     */
+    trustChain?: pulumi.Input<string>;
+}
+
+export interface MtlskeystoreClientCertificateThirdPartyVersions {
+    /**
+     * Details of the certificate block for the client certificate version.
+     */
+    certificateBlock?: pulumi.Input<inputs.MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock>;
+    /**
+     * The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
+     */
+    certificateSubmittedBy?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
+     */
+    certificateSubmittedDate?: pulumi.Input<string>;
+    /**
+     * The user who created the client certificate version.
+     */
+    createdBy?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's creation.
+     */
+    createdDate?: pulumi.Input<string>;
+    /**
+     * Details of the Certificate Signing Request (CSR) for the client certificate version.
+     */
+    csrBlock?: pulumi.Input<inputs.MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock>;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+     */
+    deleteRequestedDate?: pulumi.Input<string>;
+    /**
+     * Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+     */
+    ellipticCurve?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate version expires.
+     */
+    expiryDate?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's availability.
+     */
+    issuedDate?: pulumi.Input<string>;
+    /**
+     * The signing entity of the client certificate version.
+     */
+    issuer?: pulumi.Input<string>;
+    /**
+     * Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+     */
+    keyAlgorithm?: pulumi.Input<string>;
+    /**
+     * The private key length of the client certificate version when key algorithm `RSA` is used.
+     */
+    keySizeInBytes?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+     */
+    scheduledDeleteDate?: pulumi.Input<string>;
+    /**
+     * Specifies the algorithm that secures the data exchange between the edge server and origin.
+     */
+    signatureAlgorithm?: pulumi.Input<string>;
+    /**
+     * The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * The public key's entity stored in the client certificate version's subject public key field.
+     */
+    subject?: pulumi.Input<string>;
+    /**
+     * The unique identifier of the client certificate version.
+     */
+    version?: pulumi.Input<number>;
+    /**
+     * Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+     */
+    versionGuid?: pulumi.Input<string>;
+}
+
+export interface MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock {
+    /**
+     * A text representation of the client certificate in PEM format.
+     */
+    certificate?: pulumi.Input<string>;
+    /**
+     * A text representation of the trust chain in PEM format.
+     */
+    trustChain?: pulumi.Input<string>;
+}
+
+export interface MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock {
+    /**
+     * Text of the certificate signing request.
+     */
+    csr?: pulumi.Input<string>;
+    /**
+     * Identifies the client certificate's encryption algorithm.
+     */
+    keyAlgorithm?: pulumi.Input<string>;
+}
+
+export interface MtlskeystoreClientCertificateUploadTimeouts {
+    /**
+     * Optional configurable resource create timeout. By default it's 30m.
+     */
+    create?: pulumi.Input<string>;
+    /**
+     * Optional configurable resource update timeout. By default it's 30m.
+     */
+    update?: pulumi.Input<string>;
+}
+
 export interface PropertyActivationComplianceRecord {
     /**
      * Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
