@@ -40,7 +40,7 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// The name of the client list
         /// </summary>
-        public readonly string? Name;
+        public readonly string Name;
         /// <summary>
         /// The client list notes
         /// </summary>
@@ -68,7 +68,7 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// The type of the client list
         /// </summary>
-        public readonly string? Type;
+        public readonly string Type;
         /// <summary>
         /// The date of last update.
         /// </summary>
@@ -96,7 +96,7 @@ namespace Pulumi.Akamai.Outputs
 
             string listType,
 
-            string? name,
+            string name,
 
             string notes,
 
@@ -110,7 +110,7 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<string> tags,
 
-            string? type,
+            string type,
 
             string updateDate,
 

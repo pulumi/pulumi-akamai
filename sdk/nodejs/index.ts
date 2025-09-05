@@ -1320,6 +1320,21 @@ export const getImagingPolicyVideo: typeof import("./getImagingPolicyVideo").get
 export const getImagingPolicyVideoOutput: typeof import("./getImagingPolicyVideo").getImagingPolicyVideoOutput = null as any;
 utilities.lazyLoad(exports, ["getImagingPolicyVideo","getImagingPolicyVideoOutput"], () => require("./getImagingPolicyVideo"));
 
+export { GetMtlskeystoreAccountCaCertificatesArgs, GetMtlskeystoreAccountCaCertificatesResult, GetMtlskeystoreAccountCaCertificatesOutputArgs } from "./getMtlskeystoreAccountCaCertificates";
+export const getMtlskeystoreAccountCaCertificates: typeof import("./getMtlskeystoreAccountCaCertificates").getMtlskeystoreAccountCaCertificates = null as any;
+export const getMtlskeystoreAccountCaCertificatesOutput: typeof import("./getMtlskeystoreAccountCaCertificates").getMtlskeystoreAccountCaCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlskeystoreAccountCaCertificates","getMtlskeystoreAccountCaCertificatesOutput"], () => require("./getMtlskeystoreAccountCaCertificates"));
+
+export { GetMtlskeystoreClientCertificateArgs, GetMtlskeystoreClientCertificateResult, GetMtlskeystoreClientCertificateOutputArgs } from "./getMtlskeystoreClientCertificate";
+export const getMtlskeystoreClientCertificate: typeof import("./getMtlskeystoreClientCertificate").getMtlskeystoreClientCertificate = null as any;
+export const getMtlskeystoreClientCertificateOutput: typeof import("./getMtlskeystoreClientCertificate").getMtlskeystoreClientCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlskeystoreClientCertificate","getMtlskeystoreClientCertificateOutput"], () => require("./getMtlskeystoreClientCertificate"));
+
+export { GetMtlskeystoreClientCertificatesResult } from "./getMtlskeystoreClientCertificates";
+export const getMtlskeystoreClientCertificates: typeof import("./getMtlskeystoreClientCertificates").getMtlskeystoreClientCertificates = null as any;
+export const getMtlskeystoreClientCertificatesOutput: typeof import("./getMtlskeystoreClientCertificates").getMtlskeystoreClientCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlskeystoreClientCertificates","getMtlskeystoreClientCertificatesOutput"], () => require("./getMtlskeystoreClientCertificates"));
+
 export { GetNetworkListsArgs, GetNetworkListsResult, GetNetworkListsOutputArgs } from "./getNetworkLists";
 export const getNetworkLists: typeof import("./getNetworkLists").getNetworkLists = null as any;
 export const getNetworkListsOutput: typeof import("./getNetworkLists").getNetworkListsOutput = null as any;
@@ -1499,6 +1514,21 @@ export { ImagingPolicyVideoArgs, ImagingPolicyVideoState } from "./imagingPolicy
 export type ImagingPolicyVideo = import("./imagingPolicyVideo").ImagingPolicyVideo;
 export const ImagingPolicyVideo: typeof import("./imagingPolicyVideo").ImagingPolicyVideo = null as any;
 utilities.lazyLoad(exports, ["ImagingPolicyVideo"], () => require("./imagingPolicyVideo"));
+
+export { MtlskeystoreClientCertificateAkamaiArgs, MtlskeystoreClientCertificateAkamaiState } from "./mtlskeystoreClientCertificateAkamai";
+export type MtlskeystoreClientCertificateAkamai = import("./mtlskeystoreClientCertificateAkamai").MtlskeystoreClientCertificateAkamai;
+export const MtlskeystoreClientCertificateAkamai: typeof import("./mtlskeystoreClientCertificateAkamai").MtlskeystoreClientCertificateAkamai = null as any;
+utilities.lazyLoad(exports, ["MtlskeystoreClientCertificateAkamai"], () => require("./mtlskeystoreClientCertificateAkamai"));
+
+export { MtlskeystoreClientCertificateThirdPartyArgs, MtlskeystoreClientCertificateThirdPartyState } from "./mtlskeystoreClientCertificateThirdParty";
+export type MtlskeystoreClientCertificateThirdParty = import("./mtlskeystoreClientCertificateThirdParty").MtlskeystoreClientCertificateThirdParty;
+export const MtlskeystoreClientCertificateThirdParty: typeof import("./mtlskeystoreClientCertificateThirdParty").MtlskeystoreClientCertificateThirdParty = null as any;
+utilities.lazyLoad(exports, ["MtlskeystoreClientCertificateThirdParty"], () => require("./mtlskeystoreClientCertificateThirdParty"));
+
+export { MtlskeystoreClientCertificateUploadArgs, MtlskeystoreClientCertificateUploadState } from "./mtlskeystoreClientCertificateUpload";
+export type MtlskeystoreClientCertificateUpload = import("./mtlskeystoreClientCertificateUpload").MtlskeystoreClientCertificateUpload;
+export const MtlskeystoreClientCertificateUpload: typeof import("./mtlskeystoreClientCertificateUpload").MtlskeystoreClientCertificateUpload = null as any;
+utilities.lazyLoad(exports, ["MtlskeystoreClientCertificateUpload"], () => require("./mtlskeystoreClientCertificateUpload"));
 
 export { NetworkListArgs, NetworkListState } from "./networkList";
 export type NetworkList = import("./networkList").NetworkList;
@@ -1803,6 +1833,12 @@ const _module = {
                 return new ImagingPolicySet(name, <any>undefined, { urn })
             case "akamai:index/imagingPolicyVideo:ImagingPolicyVideo":
                 return new ImagingPolicyVideo(name, <any>undefined, { urn })
+            case "akamai:index/mtlskeystoreClientCertificateAkamai:MtlskeystoreClientCertificateAkamai":
+                return new MtlskeystoreClientCertificateAkamai(name, <any>undefined, { urn })
+            case "akamai:index/mtlskeystoreClientCertificateThirdParty:MtlskeystoreClientCertificateThirdParty":
+                return new MtlskeystoreClientCertificateThirdParty(name, <any>undefined, { urn })
+            case "akamai:index/mtlskeystoreClientCertificateUpload:MtlskeystoreClientCertificateUpload":
+                return new MtlskeystoreClientCertificateUpload(name, <any>undefined, { urn })
             case "akamai:index/networkList:NetworkList":
                 return new NetworkList(name, <any>undefined, { urn })
             case "akamai:index/networkListActivations:NetworkListActivations":
@@ -1946,6 +1982,9 @@ pulumi.runtime.registerResourceModule("akamai", "index/iamUser", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/imagingPolicyImage", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/imagingPolicySet", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/imagingPolicyVideo", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/mtlskeystoreClientCertificateAkamai", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/mtlskeystoreClientCertificateThirdParty", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/mtlskeystoreClientCertificateUpload", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkList", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkListActivations", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkListDescription", _module)
