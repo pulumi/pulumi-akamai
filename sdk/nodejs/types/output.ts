@@ -1876,7 +1876,7 @@ export interface GetClientlistListsList {
     /**
      * The name of the client list
      */
-    name?: string;
+    name: string;
     /**
      * The client list notes
      */
@@ -1904,7 +1904,7 @@ export interface GetClientlistListsList {
     /**
      * The type of the client list
      */
-    type?: string;
+    type: string;
     /**
      * The date of last update.
      */
@@ -8253,6 +8253,631 @@ export interface GetImagingPolicyVideoPolicyVariableEnumOption {
     value: string;
 }
 
+export interface GetMtlskeystoreAccountCaCertificatesCertificate {
+    /**
+     * The account the CA certificate is under.
+     */
+    accountId: string;
+    /**
+     * The certificate block of the CA certificate.
+     */
+    certificate: string;
+    /**
+     * The common name of the CA certificate.
+     */
+    commonName: string;
+    /**
+     * The user who created the CA certificate.
+     */
+    createdBy: string;
+    /**
+     * An ISO 8601 timestamp indicating the CA certificate's creation.
+     */
+    createdDate: string;
+    /**
+     * An ISO 8601 timestamp indicating when the CA certificate expires.
+     */
+    expiryDate: string;
+    /**
+     * The unique identifier of the CA certificate.
+     */
+    id: number;
+    /**
+     * An ISO 8601 timestamp indicating the CA certificate's availability.
+     */
+    issuedDate: string;
+    /**
+     * Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * The private key length of the CA certificate.
+     */
+    keySizeInBytes: number;
+    /**
+     * An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.
+     */
+    qualificationDate: string;
+    /**
+     * Specifies the algorithm that secures the data exchange between the edge server and origin.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.
+     */
+    status: string;
+    /**
+     * The public key's entity stored in the CA certificate's subject public key field.
+     */
+    subject: string;
+    /**
+     * The version of the CA certificate.
+     */
+    version: number;
+}
+
+export interface GetMtlskeystoreClientCertificateCurrent {
+    /**
+     * Details of the certificate block for the client certificate version.
+     */
+    certificateBlock: outputs.GetMtlskeystoreClientCertificateCurrentCertificateBlock;
+    /**
+     * The user who uploaded the `THIRD_PARTY` client certificate version.
+     */
+    certificateSubmittedBy: string;
+    /**
+     * An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+     */
+    certificateSubmittedDate: string;
+    /**
+     * The user who created the client certificate version.
+     */
+    createdBy: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's creation.
+     */
+    createdDate: string;
+    /**
+     * Details of the Certificate Signing Request (CSR) for the client certificate version.
+     */
+    csrBlock: outputs.GetMtlskeystoreClientCertificateCurrentCsrBlock;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion request.
+     */
+    deleteRequestedDate: string;
+    /**
+     * Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+     */
+    ellipticCurve: string;
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate version expires.
+     */
+    expiryDate: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's availability.
+     */
+    issuedDate: string;
+    /**
+     * The signing entity of the client certificate version.
+     */
+    issuer: string;
+    /**
+     * Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * The private key length of the client certificate version when the key algorithm `RSA` is used.
+     */
+    keySizeInBytes: string;
+    /**
+     * A list of properties associated with the client certificate.
+     */
+    properties: outputs.GetMtlskeystoreClientCertificateCurrentProperty[];
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+     */
+    scheduledDeleteDate: string;
+    /**
+     * Specifies the algorithm that secures the data exchange between the edge server and origin.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+     */
+    status: string;
+    /**
+     * The public key's entity stored in the client certificate version's subject public key field.
+     */
+    subject: string;
+    /**
+     * Validation results for the client certificate version.
+     */
+    validation: outputs.GetMtlskeystoreClientCertificateCurrentValidation;
+    /**
+     * The unique identifier of the client certificate version.
+     */
+    version: number;
+    /**
+     * Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+     */
+    versionGuid: string;
+}
+
+export interface GetMtlskeystoreClientCertificateCurrentCertificateBlock {
+    /**
+     * A text representation of the client certificate in PEM format.
+     */
+    certificate: string;
+    /**
+     * Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * A text representation of the trust chain in PEM format.
+     */
+    trustChain: string;
+}
+
+export interface GetMtlskeystoreClientCertificateCurrentCsrBlock {
+    /**
+     * Text of the certificate signing request.
+     */
+    csr: string;
+    /**
+     * Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+     */
+    keyAlgorithm: string;
+}
+
+export interface GetMtlskeystoreClientCertificateCurrentProperty {
+    /**
+     * The unique identifier of the asset.
+     */
+    assetId: number;
+    /**
+     * The unique identifier of the group.
+     */
+    groupId: number;
+    /**
+     * The name of the property.
+     */
+    propertyName: string;
+    /**
+     * The version of the property.
+     */
+    propertyVersion: number;
+}
+
+export interface GetMtlskeystoreClientCertificateCurrentValidation {
+    /**
+     * Validation errors that need to be resolved for the request to succeed.
+     */
+    errors: outputs.GetMtlskeystoreClientCertificateCurrentValidationError[];
+    /**
+     * Validation warnings that can be resolved.
+     */
+    warnings: outputs.GetMtlskeystoreClientCertificateCurrentValidationWarning[];
+}
+
+export interface GetMtlskeystoreClientCertificateCurrentValidationError {
+    /**
+     * Specifies the error details.
+     */
+    message: string;
+    /**
+     * Specifies the error root cause.
+     */
+    reason: string;
+    /**
+     * Specifies the error category.
+     */
+    type: string;
+}
+
+export interface GetMtlskeystoreClientCertificateCurrentValidationWarning {
+    /**
+     * Specifies the warning details.
+     */
+    message: string;
+    /**
+     * Specifies the warning root cause.
+     */
+    reason: string;
+    /**
+     * Specifies the warning category.
+     */
+    type: string;
+}
+
+export interface GetMtlskeystoreClientCertificatePrevious {
+    /**
+     * Details of the certificate block for the client certificate version.
+     */
+    certificateBlock: outputs.GetMtlskeystoreClientCertificatePreviousCertificateBlock;
+    /**
+     * The user who uploaded the `THIRD_PARTY` client certificate version.
+     */
+    certificateSubmittedBy: string;
+    /**
+     * An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+     */
+    certificateSubmittedDate: string;
+    /**
+     * The user who created the client certificate version.
+     */
+    createdBy: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's creation.
+     */
+    createdDate: string;
+    /**
+     * Details of the Certificate Signing Request (CSR) for the client certificate version.
+     */
+    csrBlock: outputs.GetMtlskeystoreClientCertificatePreviousCsrBlock;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion request.
+     */
+    deleteRequestedDate: string;
+    /**
+     * Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+     */
+    ellipticCurve: string;
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate version expires.
+     */
+    expiryDate: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's availability.
+     */
+    issuedDate: string;
+    /**
+     * The signing entity of the client certificate version.
+     */
+    issuer: string;
+    /**
+     * Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * The private key length of the client certificate version when the key algorithm `RSA` is used.
+     */
+    keySizeInBytes: string;
+    /**
+     * A list of properties associated with the client certificate.
+     */
+    properties: outputs.GetMtlskeystoreClientCertificatePreviousProperty[];
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+     */
+    scheduledDeleteDate: string;
+    /**
+     * Specifies the algorithm that secures the data exchange between the edge server and origin.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+     */
+    status: string;
+    /**
+     * The public key's entity stored in the client certificate version's subject public key field.
+     */
+    subject: string;
+    /**
+     * Validation results for the client certificate version.
+     */
+    validation: outputs.GetMtlskeystoreClientCertificatePreviousValidation;
+    /**
+     * The unique identifier of the client certificate version.
+     */
+    version: number;
+    /**
+     * Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+     */
+    versionGuid: string;
+}
+
+export interface GetMtlskeystoreClientCertificatePreviousCertificateBlock {
+    /**
+     * A text representation of the client certificate in PEM format.
+     */
+    certificate: string;
+    /**
+     * Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * A text representation of the trust chain in PEM format.
+     */
+    trustChain: string;
+}
+
+export interface GetMtlskeystoreClientCertificatePreviousCsrBlock {
+    /**
+     * Text of the certificate signing request.
+     */
+    csr: string;
+    /**
+     * Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+     */
+    keyAlgorithm: string;
+}
+
+export interface GetMtlskeystoreClientCertificatePreviousProperty {
+    /**
+     * The unique identifier of the asset.
+     */
+    assetId: number;
+    /**
+     * The unique identifier of the group.
+     */
+    groupId: number;
+    /**
+     * The name of the property.
+     */
+    propertyName: string;
+    /**
+     * The version of the property.
+     */
+    propertyVersion: number;
+}
+
+export interface GetMtlskeystoreClientCertificatePreviousValidation {
+    /**
+     * Validation errors that need to be resolved for the request to succeed.
+     */
+    errors: outputs.GetMtlskeystoreClientCertificatePreviousValidationError[];
+    /**
+     * Validation warnings that can be resolved.
+     */
+    warnings: outputs.GetMtlskeystoreClientCertificatePreviousValidationWarning[];
+}
+
+export interface GetMtlskeystoreClientCertificatePreviousValidationError {
+    /**
+     * Specifies the error details.
+     */
+    message: string;
+    /**
+     * Specifies the error root cause.
+     */
+    reason: string;
+    /**
+     * Specifies the error category.
+     */
+    type: string;
+}
+
+export interface GetMtlskeystoreClientCertificatePreviousValidationWarning {
+    /**
+     * Specifies the warning details.
+     */
+    message: string;
+    /**
+     * Specifies the warning root cause.
+     */
+    reason: string;
+    /**
+     * Specifies the warning category.
+     */
+    type: string;
+}
+
+export interface GetMtlskeystoreClientCertificateVersion {
+    /**
+     * Details of the certificate block for the client certificate version.
+     */
+    certificateBlock: outputs.GetMtlskeystoreClientCertificateVersionCertificateBlock;
+    /**
+     * The user who uploaded the `THIRD_PARTY` client certificate version.
+     */
+    certificateSubmittedBy: string;
+    /**
+     * An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
+     */
+    certificateSubmittedDate: string;
+    /**
+     * The user who created the client certificate version.
+     */
+    createdBy: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's creation.
+     */
+    createdDate: string;
+    /**
+     * Details of the Certificate Signing Request (CSR) for the client certificate version.
+     */
+    csrBlock: outputs.GetMtlskeystoreClientCertificateVersionCsrBlock;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion request.
+     */
+    deleteRequestedDate: string;
+    /**
+     * Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
+     */
+    ellipticCurve: string;
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate version expires.
+     */
+    expiryDate: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's availability.
+     */
+    issuedDate: string;
+    /**
+     * The signing entity of the client certificate version.
+     */
+    issuer: string;
+    /**
+     * Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * The private key length of the client certificate version when the key algorithm `RSA` is used.
+     */
+    keySizeInBytes: string;
+    /**
+     * A list of properties associated with the client certificate.
+     */
+    properties: outputs.GetMtlskeystoreClientCertificateVersionProperty[];
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
+     */
+    scheduledDeleteDate: string;
+    /**
+     * Specifies the algorithm that secures the data exchange between the edge server and origin.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+     */
+    status: string;
+    /**
+     * The public key's entity stored in the client certificate version's subject public key field.
+     */
+    subject: string;
+    /**
+     * Validation results for the client certificate version.
+     */
+    validation: outputs.GetMtlskeystoreClientCertificateVersionValidation;
+    /**
+     * The unique identifier of the client certificate version.
+     */
+    version: number;
+    /**
+     * Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+     */
+    versionGuid: string;
+}
+
+export interface GetMtlskeystoreClientCertificateVersionCertificateBlock {
+    /**
+     * A text representation of the client certificate in PEM format.
+     */
+    certificate: string;
+    /**
+     * Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * A text representation of the trust chain in PEM format.
+     */
+    trustChain: string;
+}
+
+export interface GetMtlskeystoreClientCertificateVersionCsrBlock {
+    /**
+     * Text of the certificate signing request.
+     */
+    csr: string;
+    /**
+     * Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+     */
+    keyAlgorithm: string;
+}
+
+export interface GetMtlskeystoreClientCertificateVersionProperty {
+    /**
+     * The unique identifier of the asset.
+     */
+    assetId: number;
+    /**
+     * The unique identifier of the group.
+     */
+    groupId: number;
+    /**
+     * The name of the property.
+     */
+    propertyName: string;
+    /**
+     * The version of the property.
+     */
+    propertyVersion: number;
+}
+
+export interface GetMtlskeystoreClientCertificateVersionValidation {
+    /**
+     * Validation errors that need to be resolved for the request to succeed.
+     */
+    errors: outputs.GetMtlskeystoreClientCertificateVersionValidationError[];
+    /**
+     * Validation warnings that can be resolved.
+     */
+    warnings: outputs.GetMtlskeystoreClientCertificateVersionValidationWarning[];
+}
+
+export interface GetMtlskeystoreClientCertificateVersionValidationError {
+    /**
+     * Specifies the error details.
+     */
+    message: string;
+    /**
+     * Specifies the error root cause.
+     */
+    reason: string;
+    /**
+     * Specifies the error category.
+     */
+    type: string;
+}
+
+export interface GetMtlskeystoreClientCertificateVersionValidationWarning {
+    /**
+     * Specifies the warning details.
+     */
+    message: string;
+    /**
+     * Specifies the warning root cause.
+     */
+    reason: string;
+    /**
+     * Specifies the warning category.
+     */
+    type: string;
+}
+
+export interface GetMtlskeystoreClientCertificatesCertificate {
+    /**
+     * The unique identifier of the client certificate.
+     */
+    certificateId: number;
+    /**
+     * The name of the client certificate.
+     */
+    certificateName: string;
+    /**
+     * The user who created the CA certificate.
+     */
+    createdBy: string;
+    /**
+     * An ISO 8601 timestamp indicating the CA certificate's creation.
+     */
+    createdDate: string;
+    /**
+     * Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
+     */
+    geography: string;
+    /**
+     * Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * The email addresses to notify for client certificate-related issues.
+     */
+    notificationEmails: string[];
+    /**
+     * Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
+     */
+    secureNetwork: string;
+    /**
+     * The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.
+     */
+    signer: string;
+    /**
+     * The CA certificate’s key value details.
+     */
+    subject: string;
+}
+
 export interface GetPropertiesProperty {
     contractId: string;
     groupId: string;
@@ -9002,6 +9627,196 @@ export interface IamUserUserNotifications {
      * Products for which the user receives notifications for upgrades.
      */
     upgrades: string[];
+}
+
+export interface MtlskeystoreClientCertificateAkamaiVersion {
+    /**
+     * Details of the certificate block for the client certificate version.
+     */
+    certificateBlock: outputs.MtlskeystoreClientCertificateAkamaiVersionCertificateBlock;
+    /**
+     * The user who created the client certificate version.
+     */
+    createdBy: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's creation.
+     */
+    createdDate: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+     */
+    deleteRequestedDate: string;
+    /**
+     * Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+     */
+    ellipticCurve: string;
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate version expires.
+     */
+    expiryDate: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's availability.
+     */
+    issuedDate: string;
+    /**
+     * The signing entity of the client certificate version.
+     */
+    issuer: string;
+    /**
+     * Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * The private key length of the client certificate version when key algorithm `RSA` is used.
+     */
+    keySizeInBytes: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+     */
+    scheduledDeleteDate: string;
+    /**
+     * Specifies the algorithm that secures the data exchange between the edge server and origin.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+     */
+    status: string;
+    /**
+     * The public key's entity stored in the client certificate version's subject public key field.
+     */
+    subject: string;
+    /**
+     * The unique identifier of the client certificate version.
+     */
+    version: number;
+    /**
+     * Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+     */
+    versionGuid: string;
+}
+
+export interface MtlskeystoreClientCertificateAkamaiVersionCertificateBlock {
+    /**
+     * A text representation of the client certificate in PEM format.
+     */
+    certificate: string;
+    /**
+     * A text representation of the trust chain in PEM format.
+     */
+    trustChain: string;
+}
+
+export interface MtlskeystoreClientCertificateThirdPartyVersions {
+    /**
+     * Details of the certificate block for the client certificate version.
+     */
+    certificateBlock: outputs.MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock;
+    /**
+     * The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
+     */
+    certificateSubmittedBy: string;
+    /**
+     * An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
+     */
+    certificateSubmittedDate: string;
+    /**
+     * The user who created the client certificate version.
+     */
+    createdBy: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's creation.
+     */
+    createdDate: string;
+    /**
+     * Details of the Certificate Signing Request (CSR) for the client certificate version.
+     */
+    csrBlock: outputs.MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+     */
+    deleteRequestedDate: string;
+    /**
+     * Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+     */
+    ellipticCurve: string;
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate version expires.
+     */
+    expiryDate: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's availability.
+     */
+    issuedDate: string;
+    /**
+     * The signing entity of the client certificate version.
+     */
+    issuer: string;
+    /**
+     * Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+     */
+    keyAlgorithm: string;
+    /**
+     * The private key length of the client certificate version when key algorithm `RSA` is used.
+     */
+    keySizeInBytes: string;
+    /**
+     * An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+     */
+    scheduledDeleteDate: string;
+    /**
+     * Specifies the algorithm that secures the data exchange between the edge server and origin.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+     */
+    status: string;
+    /**
+     * The public key's entity stored in the client certificate version's subject public key field.
+     */
+    subject: string;
+    /**
+     * The unique identifier of the client certificate version.
+     */
+    version: number;
+    /**
+     * Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+     */
+    versionGuid: string;
+}
+
+export interface MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock {
+    /**
+     * A text representation of the client certificate in PEM format.
+     */
+    certificate: string;
+    /**
+     * A text representation of the trust chain in PEM format.
+     */
+    trustChain: string;
+}
+
+export interface MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock {
+    /**
+     * Text of the certificate signing request.
+     */
+    csr: string;
+    /**
+     * Identifies the client certificate's encryption algorithm.
+     */
+    keyAlgorithm: string;
+}
+
+export interface MtlskeystoreClientCertificateUploadTimeouts {
+    /**
+     * Optional configurable resource create timeout. By default it's 30m.
+     */
+    create?: string;
+    /**
+     * Optional configurable resource update timeout. By default it's 30m.
+     */
+    update?: string;
 }
 
 export interface PropertyActivationComplianceRecord {

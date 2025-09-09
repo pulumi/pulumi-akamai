@@ -269,6 +269,9 @@ from .get_iam_timezones import *
 from .get_iam_users_affected_by_moving_group import *
 from .get_imaging_policy_image import *
 from .get_imaging_policy_video import *
+from .get_mtlskeystore_account_ca_certificates import *
+from .get_mtlskeystore_client_certificate import *
+from .get_mtlskeystore_client_certificates import *
 from .get_network_lists import *
 from .get_properties import *
 from .get_properties_search import *
@@ -305,6 +308,9 @@ from .iam_user import *
 from .imaging_policy_image import *
 from .imaging_policy_set import *
 from .imaging_policy_video import *
+from .mtlskeystore_client_certificate_akamai import *
+from .mtlskeystore_client_certificate_third_party import *
+from .mtlskeystore_client_certificate_upload import *
 from .network_list import *
 from .network_list_activations import *
 from .network_list_description import *
@@ -1271,6 +1277,30 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/imagingPolicyVideo:ImagingPolicyVideo": "ImagingPolicyVideo"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/mtlskeystoreClientCertificateAkamai",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/mtlskeystoreClientCertificateAkamai:MtlskeystoreClientCertificateAkamai": "MtlskeystoreClientCertificateAkamai"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/mtlskeystoreClientCertificateThirdParty",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/mtlskeystoreClientCertificateThirdParty:MtlskeystoreClientCertificateThirdParty": "MtlskeystoreClientCertificateThirdParty"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/mtlskeystoreClientCertificateUpload",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/mtlskeystoreClientCertificateUpload:MtlskeystoreClientCertificateUpload": "MtlskeystoreClientCertificateUpload"
   }
  },
  {

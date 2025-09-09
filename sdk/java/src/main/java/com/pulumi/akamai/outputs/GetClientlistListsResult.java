@@ -14,10 +14,6 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClientlistListsResult {
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     private String id;
     private String json;
     private List<String> listIds;
@@ -27,10 +23,6 @@ public final class GetClientlistListsResult {
     private @Nullable List<String> types;
 
     private GetClientlistListsResult() {}
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     public String id() {
         return this.id;
     }

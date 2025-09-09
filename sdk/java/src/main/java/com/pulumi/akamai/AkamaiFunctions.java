@@ -296,6 +296,10 @@ import com.pulumi.akamai.inputs.GetImagingPolicyImageArgs;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePlainArgs;
 import com.pulumi.akamai.inputs.GetImagingPolicyVideoArgs;
 import com.pulumi.akamai.inputs.GetImagingPolicyVideoPlainArgs;
+import com.pulumi.akamai.inputs.GetMtlskeystoreAccountCaCertificatesArgs;
+import com.pulumi.akamai.inputs.GetMtlskeystoreAccountCaCertificatesPlainArgs;
+import com.pulumi.akamai.inputs.GetMtlskeystoreClientCertificateArgs;
+import com.pulumi.akamai.inputs.GetMtlskeystoreClientCertificatePlainArgs;
 import com.pulumi.akamai.inputs.GetNetworkListsArgs;
 import com.pulumi.akamai.inputs.GetNetworkListsPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertiesArgs;
@@ -494,6 +498,9 @@ import com.pulumi.akamai.outputs.GetIamTimezonesResult;
 import com.pulumi.akamai.outputs.GetIamUsersAffectedByMovingGroupResult;
 import com.pulumi.akamai.outputs.GetImagingPolicyImageResult;
 import com.pulumi.akamai.outputs.GetImagingPolicyVideoResult;
+import com.pulumi.akamai.outputs.GetMtlskeystoreAccountCaCertificatesResult;
+import com.pulumi.akamai.outputs.GetMtlskeystoreClientCertificateResult;
+import com.pulumi.akamai.outputs.GetMtlskeystoreClientCertificatesResult;
 import com.pulumi.akamai.outputs.GetNetworkListsResult;
 import com.pulumi.akamai.outputs.GetPropertiesResult;
 import com.pulumi.akamai.outputs.GetPropertiesSearchResult;
@@ -3215,6 +3222,63 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetImagingPolicyVideoResult> getImagingPolicyVideoPlain(GetImagingPolicyVideoPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", TypeShape.of(GetImagingPolicyVideoResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlskeystoreAccountCaCertificatesResult> getMtlskeystoreAccountCaCertificates() {
+        return getMtlskeystoreAccountCaCertificates(GetMtlskeystoreAccountCaCertificatesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlskeystoreAccountCaCertificatesResult> getMtlskeystoreAccountCaCertificatesPlain() {
+        return getMtlskeystoreAccountCaCertificatesPlain(GetMtlskeystoreAccountCaCertificatesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlskeystoreAccountCaCertificatesResult> getMtlskeystoreAccountCaCertificates(GetMtlskeystoreAccountCaCertificatesArgs args) {
+        return getMtlskeystoreAccountCaCertificates(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlskeystoreAccountCaCertificatesResult> getMtlskeystoreAccountCaCertificatesPlain(GetMtlskeystoreAccountCaCertificatesPlainArgs args) {
+        return getMtlskeystoreAccountCaCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlskeystoreAccountCaCertificatesResult> getMtlskeystoreAccountCaCertificates(GetMtlskeystoreAccountCaCertificatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlskeystoreAccountCaCertificates:getMtlskeystoreAccountCaCertificates", TypeShape.of(GetMtlskeystoreAccountCaCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlskeystoreAccountCaCertificatesResult> getMtlskeystoreAccountCaCertificates(GetMtlskeystoreAccountCaCertificatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlskeystoreAccountCaCertificates:getMtlskeystoreAccountCaCertificates", TypeShape.of(GetMtlskeystoreAccountCaCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlskeystoreAccountCaCertificatesResult> getMtlskeystoreAccountCaCertificatesPlain(GetMtlskeystoreAccountCaCertificatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlskeystoreAccountCaCertificates:getMtlskeystoreAccountCaCertificates", TypeShape.of(GetMtlskeystoreAccountCaCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlskeystoreClientCertificateResult> getMtlskeystoreClientCertificate(GetMtlskeystoreClientCertificateArgs args) {
+        return getMtlskeystoreClientCertificate(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlskeystoreClientCertificateResult> getMtlskeystoreClientCertificatePlain(GetMtlskeystoreClientCertificatePlainArgs args) {
+        return getMtlskeystoreClientCertificatePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlskeystoreClientCertificateResult> getMtlskeystoreClientCertificate(GetMtlskeystoreClientCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlskeystoreClientCertificate:getMtlskeystoreClientCertificate", TypeShape.of(GetMtlskeystoreClientCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlskeystoreClientCertificateResult> getMtlskeystoreClientCertificate(GetMtlskeystoreClientCertificateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlskeystoreClientCertificate:getMtlskeystoreClientCertificate", TypeShape.of(GetMtlskeystoreClientCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlskeystoreClientCertificateResult> getMtlskeystoreClientCertificatePlain(GetMtlskeystoreClientCertificatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlskeystoreClientCertificate:getMtlskeystoreClientCertificate", TypeShape.of(GetMtlskeystoreClientCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlskeystoreClientCertificatesResult> getMtlskeystoreClientCertificates() {
+        return getMtlskeystoreClientCertificates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlskeystoreClientCertificatesResult> getMtlskeystoreClientCertificatesPlain() {
+        return getMtlskeystoreClientCertificatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlskeystoreClientCertificatesResult> getMtlskeystoreClientCertificates(InvokeArgs args) {
+        return getMtlskeystoreClientCertificates(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlskeystoreClientCertificatesResult> getMtlskeystoreClientCertificatesPlain(InvokeArgs args) {
+        return getMtlskeystoreClientCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlskeystoreClientCertificatesResult> getMtlskeystoreClientCertificates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlskeystoreClientCertificates:getMtlskeystoreClientCertificates", TypeShape.of(GetMtlskeystoreClientCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlskeystoreClientCertificatesResult> getMtlskeystoreClientCertificates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlskeystoreClientCertificates:getMtlskeystoreClientCertificates", TypeShape.of(GetMtlskeystoreClientCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlskeystoreClientCertificatesResult> getMtlskeystoreClientCertificatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlskeystoreClientCertificates:getMtlskeystoreClientCertificates", TypeShape.of(GetMtlskeystoreClientCertificatesResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetNetworkListsResult> getNetworkLists() {
         return getNetworkLists(GetNetworkListsArgs.Empty, InvokeOptions.Empty);

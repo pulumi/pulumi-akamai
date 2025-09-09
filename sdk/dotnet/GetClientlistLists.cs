@@ -64,9 +64,6 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetClientlistListsResult
     {
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
         public readonly string Id;
         public readonly string Json;
         public readonly ImmutableArray<string> ListIds;
