@@ -25,7 +25,7 @@
             "respectSchemaVersion": true
         },
         "go": {
-            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v9/go/akamai",
+            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai",
             "generateResourceContainerTypes": true,
             "generateExtraInputTypes": true,
             "respectSchemaVersion": true

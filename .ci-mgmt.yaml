@@ -1,6 +1,6 @@
 provider: akamai
 lint: false
-major-version: 9
+major-version: 10
 esc:
     enabled: true
 env:
