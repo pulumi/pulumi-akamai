@@ -2241,15 +2241,15 @@
                 },
                 "editApis": {
                     "type": "boolean",
-                    "description": "Whether you can update the `apis` the API client can access, same as `edit_auth`.\n"
+                    "description": "Whether you can update the \u003cspan pulumi-lang-nodejs=\"`apis`\" pulumi-lang-dotnet=\"`Apis`\" pulumi-lang-go=\"`apis`\" pulumi-lang-python=\"`apis`\" pulumi-lang-yaml=\"`apis`\" pulumi-lang-java=\"`apis`\"\u003e`apis`\u003c/span\u003e the API client can access, same as \u003cspan pulumi-lang-nodejs=\"`editAuth`\" pulumi-lang-dotnet=\"`EditAuth`\" pulumi-lang-go=\"`editAuth`\" pulumi-lang-python=\"`edit_auth`\" pulumi-lang-yaml=\"`editAuth`\" pulumi-lang-java=\"`editAuth`\"\u003e`edit_auth`\u003c/span\u003e.\n"
                 },
                 "editAuth": {
                     "type": "boolean",
-                    "description": "Whether you can update the `apis` the API client can access, same as `edit_apis`.\n"
+                    "description": "Whether you can update the \u003cspan pulumi-lang-nodejs=\"`apis`\" pulumi-lang-dotnet=\"`Apis`\" pulumi-lang-go=\"`apis`\" pulumi-lang-python=\"`apis`\" pulumi-lang-yaml=\"`apis`\" pulumi-lang-java=\"`apis`\"\u003e`apis`\u003c/span\u003e the API client can access, same as \u003cspan pulumi-lang-nodejs=\"`editApis`\" pulumi-lang-dotnet=\"`EditApis`\" pulumi-lang-go=\"`editApis`\" pulumi-lang-python=\"`edit_apis`\" pulumi-lang-yaml=\"`editApis`\" pulumi-lang-java=\"`editApis`\"\u003e`edit_apis`\u003c/span\u003e.\n"
                 },
                 "editGroups": {
                     "type": "boolean",
-                    "description": "Whether you can update the `groups` the API client can access.\n"
+                    "description": "Whether you can update the \u003cspan pulumi-lang-nodejs=\"`groups`\" pulumi-lang-dotnet=\"`Groups`\" pulumi-lang-go=\"`groups`\" pulumi-lang-python=\"`groups`\" pulumi-lang-yaml=\"`groups`\" pulumi-lang-java=\"`groups`\"\u003e`groups`\u003c/span\u003e the API client can access.\n"
                 },
                 "editIpAcl": {
                     "type": "boolean",
@@ -2302,7 +2302,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/IamApiClientApiAccessApi:IamApiClientApiAccessApi"
                     },
-                    "description": "The set of APIs the API client can access when `all_accessible_apis` is `false`.\n"
+                    "description": "The set of APIs the API client can access when \u003cspan pulumi-lang-nodejs=\"`allAccessibleApis`\" pulumi-lang-dotnet=\"`AllAccessibleApis`\" pulumi-lang-go=\"`allAccessibleApis`\" pulumi-lang-python=\"`all_accessible_apis`\" pulumi-lang-yaml=\"`allAccessibleApis`\" pulumi-lang-java=\"`allAccessibleApis`\"\u003e`all_accessible_apis`\u003c/span\u003e is \u003cspan pulumi-lang-nodejs=\"`false`\" pulumi-lang-dotnet=\"`False`\" pulumi-lang-go=\"`false`\" pulumi-lang-python=\"`false`\" pulumi-lang-yaml=\"`false`\" pulumi-lang-java=\"`false`\"\u003e`false`\u003c/span\u003e.\n"
                 }
             },
             "type": "object",
@@ -5257,7 +5257,7 @@
                 },
                 "useRelativeUrl": {
                     "type": "string",
-                    "description": "If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL\n"
+                    "description": "If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the\u003cspan pulumi-lang-nodejs=\" redirectUrl \" pulumi-lang-dotnet=\" RedirectUrl \" pulumi-lang-go=\" redirectUrl \" pulumi-lang-python=\" redirect_url \" pulumi-lang-yaml=\" redirectUrl \" pulumi-lang-java=\" redirectUrl \"\u003e redirect_url \u003c/span\u003eshould be fully-qualified URL\n"
                 }
             },
             "type": "object",
@@ -8218,7 +8218,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "Specifies an array of two-letter ISO 3166 `country` codes.\n"
+                    "description": "Specifies an array of two-letter ISO 3166 \u003cspan pulumi-lang-nodejs=\"`country`\" pulumi-lang-dotnet=\"`Country`\" pulumi-lang-go=\"`country`\" pulumi-lang-python=\"`country`\" pulumi-lang-yaml=\"`country`\" pulumi-lang-java=\"`country`\"\u003e`country`\u003c/span\u003e codes.\n"
                 },
                 "datacenterId": {
                     "type": "integer",
@@ -8565,11 +8565,11 @@
                 },
                 "httpMethod": {
                     "type": "string",
-                    "description": "Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.\n"
+                    "description": "Contains HTTP method to send if the `testObjectProtocol` is \u003cspan pulumi-lang-nodejs=\"`http`\" pulumi-lang-dotnet=\"`Http`\" pulumi-lang-go=\"`http`\" pulumi-lang-python=\"`http`\" pulumi-lang-yaml=\"`http`\" pulumi-lang-java=\"`http`\"\u003e`http`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`https`\" pulumi-lang-dotnet=\"`Https`\" pulumi-lang-go=\"`https`\" pulumi-lang-python=\"`https`\" pulumi-lang-yaml=\"`https`\" pulumi-lang-java=\"`https`\"\u003e`https`\u003c/span\u003e. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or \u003cspan pulumi-lang-nodejs=\"`null`\" pulumi-lang-dotnet=\"`Null`\" pulumi-lang-go=\"`null`\" pulumi-lang-python=\"`null`\" pulumi-lang-yaml=\"`null`\" pulumi-lang-java=\"`null`\"\u003e`null`\u003c/span\u003e, this value defaults to `GET`.\n"
                 },
                 "httpRequestBody": {
                     "type": "string",
-                    "description": "Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.\n"
+                    "description": "Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is \u003cspan pulumi-lang-nodejs=\"`http`\" pulumi-lang-dotnet=\"`Http`\" pulumi-lang-go=\"`http`\" pulumi-lang-python=\"`http`\" pulumi-lang-yaml=\"`http`\" pulumi-lang-java=\"`http`\"\u003e`http`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`https`\" pulumi-lang-dotnet=\"`Https`\" pulumi-lang-go=\"`https`\" pulumi-lang-python=\"`https`\" pulumi-lang-yaml=\"`https`\" pulumi-lang-java=\"`https`\"\u003e`https`\u003c/span\u003e. When omitted or \u003cspan pulumi-lang-nodejs=\"`null`\" pulumi-lang-dotnet=\"`Null`\" pulumi-lang-go=\"`null`\" pulumi-lang-python=\"`null`\" pulumi-lang-yaml=\"`null`\" pulumi-lang-java=\"`null`\"\u003e`null`\u003c/span\u003e, omits the request body from the request.\n"
                 },
                 "name": {
                     "type": "string",
@@ -9579,19 +9579,19 @@
                 },
                 "editApis": {
                     "type": "boolean",
-                    "description": "Whether you can update the `apis` the API client can access, same as `edit_auth`.\n"
+                    "description": "Whether you can update the \u003cspan pulumi-lang-nodejs=\"`apis`\" pulumi-lang-dotnet=\"`Apis`\" pulumi-lang-go=\"`apis`\" pulumi-lang-python=\"`apis`\" pulumi-lang-yaml=\"`apis`\" pulumi-lang-java=\"`apis`\"\u003e`apis`\u003c/span\u003e the API client can access, same as \u003cspan pulumi-lang-nodejs=\"`editAuth`\" pulumi-lang-dotnet=\"`EditAuth`\" pulumi-lang-go=\"`editAuth`\" pulumi-lang-python=\"`edit_auth`\" pulumi-lang-yaml=\"`editAuth`\" pulumi-lang-java=\"`editAuth`\"\u003e`edit_auth`\u003c/span\u003e.\n"
                 },
                 "editAuth": {
                     "type": "boolean",
-                    "description": "Whether you can update the `apis` the API client can access, same as `edit_apis`.\n"
+                    "description": "Whether you can update the \u003cspan pulumi-lang-nodejs=\"`apis`\" pulumi-lang-dotnet=\"`Apis`\" pulumi-lang-go=\"`apis`\" pulumi-lang-python=\"`apis`\" pulumi-lang-yaml=\"`apis`\" pulumi-lang-java=\"`apis`\"\u003e`apis`\u003c/span\u003e the API client can access, same as \u003cspan pulumi-lang-nodejs=\"`editApis`\" pulumi-lang-dotnet=\"`EditApis`\" pulumi-lang-go=\"`editApis`\" pulumi-lang-python=\"`edit_apis`\" pulumi-lang-yaml=\"`editApis`\" pulumi-lang-java=\"`editApis`\"\u003e`edit_apis`\u003c/span\u003e.\n"
                 },
                 "editGroups": {
                     "type": "boolean",
-                    "description": "Whether you can update the `groups` the API client can access.\n"
+                    "description": "Whether you can update the \u003cspan pulumi-lang-nodejs=\"`groups`\" pulumi-lang-dotnet=\"`Groups`\" pulumi-lang-go=\"`groups`\" pulumi-lang-python=\"`groups`\" pulumi-lang-yaml=\"`groups`\" pulumi-lang-java=\"`groups`\"\u003e`groups`\u003c/span\u003e the API client can access.\n"
                 },
                 "editIpAcl": {
                     "type": "boolean",
-                    "description": "Whether you can update the `ip_acl` the API client can access.\n"
+                    "description": "Whether you can update the \u003cspan pulumi-lang-nodejs=\"`ipAcl`\" pulumi-lang-dotnet=\"`IpAcl`\" pulumi-lang-go=\"`ipAcl`\" pulumi-lang-python=\"`ip_acl`\" pulumi-lang-yaml=\"`ipAcl`\" pulumi-lang-java=\"`ipAcl`\"\u003e`ip_acl`\u003c/span\u003e the API client can access.\n"
                 },
                 "editSwitchAccount": {
                     "type": "boolean",
@@ -9641,7 +9641,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getIamApiClientApiAccessApi:getIamApiClientApiAccessApi"
                     },
-                    "description": "The set of APIs the API client can access when `all_accessible_apis` is disabled.\n"
+                    "description": "The set of APIs the API client can access when \u003cspan pulumi-lang-nodejs=\"`allAccessibleApis`\" pulumi-lang-dotnet=\"`AllAccessibleApis`\" pulumi-lang-go=\"`allAccessibleApis`\" pulumi-lang-python=\"`all_accessible_apis`\" pulumi-lang-yaml=\"`allAccessibleApis`\" pulumi-lang-java=\"`allAccessibleApis`\"\u003e`all_accessible_apis`\u003c/span\u003e is disabled.\n"
                 }
             },
             "type": "object",
@@ -10553,7 +10553,7 @@
                 },
                 "output": {
                     "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyOutput:getImagingPolicyImagePolicyOutput",
-                    "description": "Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.\n"
+                    "description": "Dictates the output quality (either \u003cspan pulumi-lang-nodejs=\"`quality`\" pulumi-lang-dotnet=\"`Quality`\" pulumi-lang-go=\"`quality`\" pulumi-lang-python=\"`quality`\" pulumi-lang-yaml=\"`quality`\" pulumi-lang-java=\"`quality`\"\u003e`quality`\u003c/span\u003e or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (\u003cspan pulumi-lang-nodejs=\"`85`\" pulumi-lang-dotnet=\"`85`\" pulumi-lang-go=\"`85`\" pulumi-lang-python=\"`85`\" pulumi-lang-yaml=\"`85`\" pulumi-lang-java=\"`85`\"\u003e`85`\u003c/span\u003e), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.\n"
                 },
                 "postBreakpointTransformations": {
                     "type": "array",
@@ -10624,7 +10624,7 @@
                 },
                 "perceptualQuality": {
                     "type": "string",
-                    "description": "Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.\n"
+                    "description": "Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the \u003cspan pulumi-lang-nodejs=\"`quality`\" pulumi-lang-dotnet=\"`Quality`\" pulumi-lang-go=\"`quality`\" pulumi-lang-python=\"`quality`\" pulumi-lang-yaml=\"`quality`\" pulumi-lang-java=\"`quality`\"\u003e`quality`\u003c/span\u003e setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered \u003cspan pulumi-lang-nodejs=\"`high`\" pulumi-lang-dotnet=\"`High`\" pulumi-lang-go=\"`high`\" pulumi-lang-python=\"`high`\" pulumi-lang-yaml=\"`high`\" pulumi-lang-java=\"`high`\"\u003e`high`\u003c/span\u003e, `mediumHigh`, \u003cspan pulumi-lang-nodejs=\"`medium`\" pulumi-lang-dotnet=\"`Medium`\" pulumi-lang-go=\"`medium`\" pulumi-lang-python=\"`medium`\" pulumi-lang-yaml=\"`medium`\" pulumi-lang-java=\"`medium`\"\u003e`medium`\u003c/span\u003e, `mediumLow`, or \u003cspan pulumi-lang-nodejs=\"`low`\" pulumi-lang-dotnet=\"`Low`\" pulumi-lang-go=\"`low`\" pulumi-lang-python=\"`low`\" pulumi-lang-yaml=\"`low`\" pulumi-lang-java=\"`low`\"\u003e`low`\u003c/span\u003e.\n"
                 },
                 "perceptualQualityFloor": {
                     "type": "string",
@@ -10632,7 +10632,7 @@
                 },
                 "perceptualQualityVar": {
                     "type": "string",
-                    "description": "Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.\n"
+                    "description": "Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the \u003cspan pulumi-lang-nodejs=\"`quality`\" pulumi-lang-dotnet=\"`Quality`\" pulumi-lang-go=\"`quality`\" pulumi-lang-python=\"`quality`\" pulumi-lang-yaml=\"`quality`\" pulumi-lang-java=\"`quality`\"\u003e`quality`\u003c/span\u003e setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered \u003cspan pulumi-lang-nodejs=\"`high`\" pulumi-lang-dotnet=\"`High`\" pulumi-lang-go=\"`high`\" pulumi-lang-python=\"`high`\" pulumi-lang-yaml=\"`high`\" pulumi-lang-java=\"`high`\"\u003e`high`\u003c/span\u003e, `mediumHigh`, \u003cspan pulumi-lang-nodejs=\"`medium`\" pulumi-lang-dotnet=\"`Medium`\" pulumi-lang-go=\"`medium`\" pulumi-lang-python=\"`medium`\" pulumi-lang-yaml=\"`medium`\" pulumi-lang-java=\"`medium`\"\u003e`medium`\u003c/span\u003e, `mediumLow`, or \u003cspan pulumi-lang-nodejs=\"`low`\" pulumi-lang-dotnet=\"`Low`\" pulumi-lang-go=\"`low`\" pulumi-lang-python=\"`low`\" pulumi-lang-yaml=\"`low`\" pulumi-lang-java=\"`low`\"\u003e`low`\u003c/span\u003e.\n"
                 },
                 "preferModernFormats": {
                     "type": "string",
@@ -10718,7 +10718,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyPostBreakpointTransformationHsv:getImagingPolicyImagePolicyPostBreakpointTransformationHsv"
                     },
-                    "description": "Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.\n"
+                    "description": "Identical to HSL except it replaces \u003cspan pulumi-lang-nodejs=\"`lightness`\" pulumi-lang-dotnet=\"`Lightness`\" pulumi-lang-go=\"`lightness`\" pulumi-lang-python=\"`lightness`\" pulumi-lang-yaml=\"`lightness`\" pulumi-lang-java=\"`lightness`\"\u003e`lightness`\u003c/span\u003e with \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e. For example, if you reduce the \u003cspan pulumi-lang-nodejs=\"`lightness`\" pulumi-lang-dotnet=\"`Lightness`\" pulumi-lang-go=\"`lightness`\" pulumi-lang-python=\"`lightness`\" pulumi-lang-yaml=\"`lightness`\" pulumi-lang-java=\"`lightness`\"\u003e`lightness`\u003c/span\u003e of a light green, almost white, image, the color turns a vibrant green. Reducing the \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e turns the image a darker color, close to grey. This happens because the original image color is very close to white.\n"
                 },
                 "ifDimensions": {
                     "type": "array",
@@ -10887,19 +10887,19 @@
                 },
                 "scale": {
                     "type": "string",
-                    "description": "A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.\n"
+                    "description": "A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the \u003cspan pulumi-lang-nodejs=\"`scale`\" pulumi-lang-dotnet=\"`Scale`\" pulumi-lang-go=\"`scale`\" pulumi-lang-python=\"`scale`\" pulumi-lang-yaml=\"`scale`\" pulumi-lang-java=\"`scale`\"\u003e`scale`\u003c/span\u003e from the source image's width or height.\n"
                 },
                 "scaleDimension": {
                     "type": "string",
-                    "description": "The dimension, either `width` or `height`, of the source image to scale.\n"
+                    "description": "The dimension, either \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e, of the source image to scale.\n"
                 },
                 "scaleDimensionVar": {
                     "type": "string",
-                    "description": "The dimension, either `width` or `height`, of the source image to scale.\n"
+                    "description": "The dimension, either \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e, of the source image to scale.\n"
                 },
                 "scaleVar": {
                     "type": "string",
-                    "description": "A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.\n"
+                    "description": "A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the \u003cspan pulumi-lang-nodejs=\"`scale`\" pulumi-lang-dotnet=\"`Scale`\" pulumi-lang-go=\"`scale`\" pulumi-lang-python=\"`scale`\" pulumi-lang-yaml=\"`scale`\" pulumi-lang-java=\"`scale`\"\u003e`scale`\u003c/span\u003e from the source image's width or height.\n"
                 },
                 "xPosition": {
                     "type": "string",
@@ -11107,19 +11107,19 @@
             "properties": {
                 "brightness": {
                     "type": "string",
-                    "description": "Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.\n"
+                    "description": "Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e produces a white image. A value of  `-1` produces a black image. The default value is \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.\n"
                 },
                 "brightnessVar": {
                     "type": "string",
-                    "description": "Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.\n"
+                    "description": "Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e produces a white image. A value of  `-1` produces a black image. The default value is \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.\n"
                 },
                 "contrast": {
                     "type": "string",
-                    "description": "Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.\n"
+                    "description": "Adjusts the contrast of the image. Expressed as a range from `-1` to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e, positive values increase contrast, negative values decrease it, while \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e leaves the image unchanged. Values outside of the `-1` to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e range clamp to this range.\n"
                 },
                 "contrastVar": {
                     "type": "string",
-                    "description": "Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.\n"
+                    "description": "Adjusts the contrast of the image. Expressed as a range from `-1` to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e, positive values increase contrast, negative values decrease it, while \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e leaves the image unchanged. Values outside of the `-1` to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e range clamp to this range.\n"
                 }
             },
             "type": "object"
@@ -11152,11 +11152,11 @@
                 },
                 "seed": {
                     "type": "string",
-                    "description": "Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.\n"
+                    "description": "Specifies your own \u003cspan pulumi-lang-nodejs=\"`seed`\" pulumi-lang-dotnet=\"`Seed`\" pulumi-lang-go=\"`seed`\" pulumi-lang-python=\"`seed`\" pulumi-lang-yaml=\"`seed`\" pulumi-lang-java=\"`seed`\"\u003e`seed`\u003c/span\u003e value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.\n"
                 },
                 "seedVar": {
                     "type": "string",
-                    "description": "Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.\n"
+                    "description": "Specifies your own \u003cspan pulumi-lang-nodejs=\"`seed`\" pulumi-lang-dotnet=\"`Seed`\" pulumi-lang-go=\"`seed`\" pulumi-lang-python=\"`seed`\" pulumi-lang-yaml=\"`seed`\" pulumi-lang-java=\"`seed`\"\u003e`seed`\u003c/span\u003e value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.\n"
                 }
             },
             "type": "object"
@@ -11178,11 +11178,11 @@
             "properties": {
                 "hue": {
                     "type": "string",
-                    "description": "The number of degrees to rotate colors around the color wheel, `0` by default.\n"
+                    "description": "The number of degrees to rotate colors around the color wheel, \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e by default.\n"
                 },
                 "hueVar": {
                     "type": "string",
-                    "description": "The number of degrees to rotate colors around the color wheel, `0` by default.\n"
+                    "description": "The number of degrees to rotate colors around the color wheel, \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e by default.\n"
                 },
                 "lightness": {
                     "type": "string",
@@ -11239,11 +11239,11 @@
                 },
                 "dimension": {
                     "type": "string",
-                    "description": "The dimension to use to select the transformation, either `height`, `width`, or `both`.\n"
+                    "description": "The dimension to use to select the transformation, either \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e, \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e, or \u003cspan pulumi-lang-nodejs=\"`both`\" pulumi-lang-dotnet=\"`Both`\" pulumi-lang-go=\"`both`\" pulumi-lang-python=\"`both`\" pulumi-lang-yaml=\"`both`\" pulumi-lang-java=\"`both`\"\u003e`both`\u003c/span\u003e.\n"
                 },
                 "dimensionVar": {
                     "type": "string",
-                    "description": "The dimension to use to select the transformation, either `height`, `width`, or `both`.\n"
+                    "description": "The dimension to use to select the transformation, either \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e, \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e, or \u003cspan pulumi-lang-nodejs=\"`both`\" pulumi-lang-dotnet=\"`Both`\" pulumi-lang-go=\"`both`\" pulumi-lang-python=\"`both`\" pulumi-lang-yaml=\"`both`\" pulumi-lang-java=\"`both`\"\u003e`both`\u003c/span\u003e.\n"
                 },
                 "equal": {
                     "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyPostBreakpointTransformation:getImagingPolicyImagePolicyPostBreakpointTransformation"
@@ -11333,11 +11333,11 @@
             "properties": {
                 "opacity": {
                     "type": "string",
-                    "description": "Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.\n"
+                    "description": "Represents alpha values on a scale of \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e. Values below \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase transparency, and \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e is invisible. For images that have some transparency, values above \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase the opacity of the transparent portions.\n"
                 },
                 "opacityVar": {
                     "type": "string",
-                    "description": "Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.\n"
+                    "description": "Represents alpha values on a scale of \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e. Values below \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase transparency, and \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e is invisible. For images that have some transparency, values above \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase the opacity of the transparent portions.\n"
                 }
             },
             "type": "object"
@@ -11407,7 +11407,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationAppend:getImagingPolicyImagePolicyTransformationAppend"
                     },
-                    "description": "Places a specified `image` beside the source image. The API places the `image` on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.\n"
+                    "description": "Places a specified \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e beside the source image. The API places the \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.\n"
                 },
                 "aspectCrops": {
                     "type": "array",
@@ -11469,14 +11469,14 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationFaceCrop:getImagingPolicyImagePolicyTransformationFaceCrop"
                     },
-                    "description": "Applies a method to detect faces in the source image and applies the rectangular crop on either the `biggest` face or `all` of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.\n"
+                    "description": "Applies a method to detect faces in the source image and applies the rectangular crop on either the \u003cspan pulumi-lang-nodejs=\"`biggest`\" pulumi-lang-dotnet=\"`Biggest`\" pulumi-lang-go=\"`biggest`\" pulumi-lang-python=\"`biggest`\" pulumi-lang-yaml=\"`biggest`\" pulumi-lang-java=\"`biggest`\"\u003e`biggest`\u003c/span\u003e face or \u003cspan pulumi-lang-nodejs=\"`all`\" pulumi-lang-dotnet=\"`All`\" pulumi-lang-go=\"`all`\" pulumi-lang-python=\"`all`\" pulumi-lang-yaml=\"`all`\" pulumi-lang-java=\"`all`\"\u003e`all`\u003c/span\u003e of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.\n"
                 },
                 "featureCrops": {
                     "type": "array",
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationFeatureCrop:getImagingPolicyImagePolicyTransformationFeatureCrop"
                     },
-                    "description": "Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified `width` and `height` values.\n"
+                    "description": "Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values.\n"
                 },
                 "fitAndFills": {
                     "type": "array",
@@ -11511,7 +11511,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationHsv:getImagingPolicyImagePolicyTransformationHsv"
                     },
-                    "description": "Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.\n"
+                    "description": "Identical to HSL except it replaces \u003cspan pulumi-lang-nodejs=\"`lightness`\" pulumi-lang-dotnet=\"`Lightness`\" pulumi-lang-go=\"`lightness`\" pulumi-lang-python=\"`lightness`\" pulumi-lang-yaml=\"`lightness`\" pulumi-lang-java=\"`lightness`\"\u003e`lightness`\u003c/span\u003e with \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e. For example, if you reduce the \u003cspan pulumi-lang-nodejs=\"`lightness`\" pulumi-lang-dotnet=\"`Lightness`\" pulumi-lang-go=\"`lightness`\" pulumi-lang-python=\"`lightness`\" pulumi-lang-yaml=\"`lightness`\" pulumi-lang-java=\"`lightness`\"\u003e`lightness`\u003c/span\u003e of a light green, almost white, image, the color turns a vibrant green. Reducing the \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e turns the image a darker color, close to grey. This happens because the original image color is very close to white.\n"
                 },
                 "ifDimensions": {
                     "type": "array",
@@ -11565,7 +11565,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationRegionOfInterestCrop:getImagingPolicyImagePolicyTransformationRegionOfInterestCrop"
                     },
-                    "description": "Crops to a region around a specified area of interest relative to the specified `width` and `height` values.\n"
+                    "description": "Crops to a region around a specified area of interest relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values.\n"
                 },
                 "relativeCrops": {
                     "type": "array",
@@ -11586,7 +11586,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationResize:getImagingPolicyImagePolicyTransformationResize"
                     },
-                    "description": "Resizes an image to a particular, absolute dimension. If you don't enter a `width` or a `height`, the image is resized with the `fit` aspect preservation mode, which selects a value for the missing dimension that preserves the image's aspect.\n"
+                    "description": "Resizes an image to a particular, absolute dimension. If you don't enter a \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e or a \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e, the image is resized with the \u003cspan pulumi-lang-nodejs=\"`fit`\" pulumi-lang-dotnet=\"`Fit`\" pulumi-lang-go=\"`fit`\" pulumi-lang-python=\"`fit`\" pulumi-lang-yaml=\"`fit`\" pulumi-lang-java=\"`fit`\"\u003e`fit`\u003c/span\u003e aspect preservation mode, which selects a value for the missing dimension that preserves the image's aspect.\n"
                 },
                 "rotates": {
                     "type": "array",
@@ -11614,7 +11614,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationSmartCrop:getImagingPolicyImagePolicyTransformationSmartCrop"
                     },
-                    "description": "Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.\n"
+                    "description": "Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. The crop detects any faces present, otherwise features.\n"
                 },
                 "trims": {
                     "type": "array",
@@ -11637,30 +11637,30 @@
             "properties": {
                 "gravity": {
                     "type": "string",
-                    "description": "Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.\n"
+                    "description": "Specifies where to place the \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.\n"
                 },
                 "gravityPriority": {
                     "type": "string",
-                    "description": "Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.\n"
+                    "description": "Determines the exact placement of the \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e when \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e is `Center` or a diagonal. The value is either \u003cspan pulumi-lang-nodejs=\"`horizontal`\" pulumi-lang-dotnet=\"`Horizontal`\" pulumi-lang-go=\"`horizontal`\" pulumi-lang-python=\"`horizontal`\" pulumi-lang-yaml=\"`horizontal`\" pulumi-lang-java=\"`horizontal`\"\u003e`horizontal`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`vertical`\" pulumi-lang-dotnet=\"`Vertical`\" pulumi-lang-go=\"`vertical`\" pulumi-lang-python=\"`vertical`\" pulumi-lang-yaml=\"`vertical`\" pulumi-lang-java=\"`vertical`\"\u003e`vertical`\u003c/span\u003e. Use \u003cspan pulumi-lang-nodejs=\"`horizontal`\" pulumi-lang-dotnet=\"`Horizontal`\" pulumi-lang-go=\"`horizontal`\" pulumi-lang-python=\"`horizontal`\" pulumi-lang-yaml=\"`horizontal`\" pulumi-lang-java=\"`horizontal`\"\u003e`horizontal`\u003c/span\u003e to append an \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e east or west of the source image. This aligns the \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e on the vertical gravity component, placing `Center` gravity east. Use \u003cspan pulumi-lang-nodejs=\"`vertical`\" pulumi-lang-dotnet=\"`Vertical`\" pulumi-lang-go=\"`vertical`\" pulumi-lang-python=\"`vertical`\" pulumi-lang-yaml=\"`vertical`\" pulumi-lang-java=\"`vertical`\"\u003e`vertical`\u003c/span\u003e to append an \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e north or south of the source image. This aligns the \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e on the horizontal gravity component, placing `Center` gravity south.\n"
                 },
                 "gravityPriorityVar": {
                     "type": "string",
-                    "description": "Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.\n"
+                    "description": "Determines the exact placement of the \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e when \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e is `Center` or a diagonal. The value is either \u003cspan pulumi-lang-nodejs=\"`horizontal`\" pulumi-lang-dotnet=\"`Horizontal`\" pulumi-lang-go=\"`horizontal`\" pulumi-lang-python=\"`horizontal`\" pulumi-lang-yaml=\"`horizontal`\" pulumi-lang-java=\"`horizontal`\"\u003e`horizontal`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`vertical`\" pulumi-lang-dotnet=\"`Vertical`\" pulumi-lang-go=\"`vertical`\" pulumi-lang-python=\"`vertical`\" pulumi-lang-yaml=\"`vertical`\" pulumi-lang-java=\"`vertical`\"\u003e`vertical`\u003c/span\u003e. Use \u003cspan pulumi-lang-nodejs=\"`horizontal`\" pulumi-lang-dotnet=\"`Horizontal`\" pulumi-lang-go=\"`horizontal`\" pulumi-lang-python=\"`horizontal`\" pulumi-lang-yaml=\"`horizontal`\" pulumi-lang-java=\"`horizontal`\"\u003e`horizontal`\u003c/span\u003e to append an \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e east or west of the source image. This aligns the \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e on the vertical gravity component, placing `Center` gravity east. Use \u003cspan pulumi-lang-nodejs=\"`vertical`\" pulumi-lang-dotnet=\"`Vertical`\" pulumi-lang-go=\"`vertical`\" pulumi-lang-python=\"`vertical`\" pulumi-lang-yaml=\"`vertical`\" pulumi-lang-java=\"`vertical`\"\u003e`vertical`\u003c/span\u003e to append an \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e north or south of the source image. This aligns the \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e on the horizontal gravity component, placing `Center` gravity south.\n"
                 },
                 "gravityVar": {
                     "type": "string",
-                    "description": "Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.\n"
+                    "description": "Specifies where to place the \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.\n"
                 },
                 "image": {
                     "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationAppendImage:getImagingPolicyImagePolicyTransformationAppendImage"
                 },
                 "preserveMinorDimension": {
                     "type": "string",
-                    "description": "Whether to preserve the source image's minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 \u0026times; 100 pixels. The dimensions of the appending `image` are 50 \u0026times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 \u0026times; 100 pixels.\n"
+                    "description": "Whether to preserve the source image's minor dimension, \u003cspan pulumi-lang-nodejs=\"`false`\" pulumi-lang-dotnet=\"`False`\" pulumi-lang-go=\"`false`\" pulumi-lang-python=\"`false`\" pulumi-lang-yaml=\"`false`\" pulumi-lang-java=\"`false`\"\u003e`false`\u003c/span\u003e by default. The minor dimension is the dimension opposite the dimension that the appending \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e is placed. For example, the dimensions of the source image are 100 \u0026times; 100 pixels. The dimensions of the appending \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e are 50 \u0026times; 150 pixels. The \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to \u003cspan pulumi-lang-nodejs=\"`true`\" pulumi-lang-dotnet=\"`True`\" pulumi-lang-go=\"`true`\" pulumi-lang-python=\"`true`\" pulumi-lang-yaml=\"`true`\" pulumi-lang-java=\"`true`\"\u003e`true`\u003c/span\u003e. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 \u0026times; 100 pixels.\n"
                 },
                 "preserveMinorDimensionVar": {
                     "type": "string",
-                    "description": "Whether to preserve the source image's minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 \u0026times; 100 pixels. The dimensions of the appending `image` are 50 \u0026times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 \u0026times; 100 pixels.\n"
+                    "description": "Whether to preserve the source image's minor dimension, \u003cspan pulumi-lang-nodejs=\"`false`\" pulumi-lang-dotnet=\"`False`\" pulumi-lang-go=\"`false`\" pulumi-lang-python=\"`false`\" pulumi-lang-yaml=\"`false`\" pulumi-lang-java=\"`false`\"\u003e`false`\u003c/span\u003e by default. The minor dimension is the dimension opposite the dimension that the appending \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e is placed. For example, the dimensions of the source image are 100 \u0026times; 100 pixels. The dimensions of the appending \u003cspan pulumi-lang-nodejs=\"`image`\" pulumi-lang-dotnet=\"`Image`\" pulumi-lang-go=\"`image`\" pulumi-lang-python=\"`image`\" pulumi-lang-yaml=\"`image`\" pulumi-lang-java=\"`image`\"\u003e`image`\u003c/span\u003e are 50 \u0026times; 150 pixels. The \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to \u003cspan pulumi-lang-nodejs=\"`true`\" pulumi-lang-dotnet=\"`True`\" pulumi-lang-go=\"`true`\" pulumi-lang-python=\"`true`\" pulumi-lang-yaml=\"`true`\" pulumi-lang-java=\"`true`\"\u003e`true`\u003c/span\u003e. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 \u0026times; 100 pixels.\n"
                 }
             },
             "type": "object",
@@ -11992,19 +11992,19 @@
                 },
                 "scale": {
                     "type": "string",
-                    "description": "A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.\n"
+                    "description": "A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the \u003cspan pulumi-lang-nodejs=\"`scale`\" pulumi-lang-dotnet=\"`Scale`\" pulumi-lang-go=\"`scale`\" pulumi-lang-python=\"`scale`\" pulumi-lang-yaml=\"`scale`\" pulumi-lang-java=\"`scale`\"\u003e`scale`\u003c/span\u003e from the source image's width or height.\n"
                 },
                 "scaleDimension": {
                     "type": "string",
-                    "description": "The dimension, either `width` or `height`, of the source image to scale.\n"
+                    "description": "The dimension, either \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e, of the source image to scale.\n"
                 },
                 "scaleDimensionVar": {
                     "type": "string",
-                    "description": "The dimension, either `width` or `height`, of the source image to scale.\n"
+                    "description": "The dimension, either \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e, of the source image to scale.\n"
                 },
                 "scaleVar": {
                     "type": "string",
-                    "description": "A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.\n"
+                    "description": "A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the \u003cspan pulumi-lang-nodejs=\"`scale`\" pulumi-lang-dotnet=\"`Scale`\" pulumi-lang-go=\"`scale`\" pulumi-lang-python=\"`scale`\" pulumi-lang-yaml=\"`scale`\" pulumi-lang-java=\"`scale`\"\u003e`scale`\u003c/span\u003e from the source image's width or height.\n"
                 },
                 "xPosition": {
                     "type": "string",
@@ -12212,19 +12212,19 @@
             "properties": {
                 "brightness": {
                     "type": "string",
-                    "description": "Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.\n"
+                    "description": "Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e produces a white image. A value of  `-1` produces a black image. The default value is \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.\n"
                 },
                 "brightnessVar": {
                     "type": "string",
-                    "description": "Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.\n"
+                    "description": "Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e produces a white image. A value of  `-1` produces a black image. The default value is \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.\n"
                 },
                 "contrast": {
                     "type": "string",
-                    "description": "Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.\n"
+                    "description": "Adjusts the contrast of the image. Expressed as a range from `-1` to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e, positive values increase contrast, negative values decrease it, while \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e leaves the image unchanged. Values outside of the `-1` to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e range clamp to this range.\n"
                 },
                 "contrastVar": {
                     "type": "string",
-                    "description": "Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.\n"
+                    "description": "Adjusts the contrast of the image. Expressed as a range from `-1` to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e, positive values increase contrast, negative values decrease it, while \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e leaves the image unchanged. Values outside of the `-1` to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e range clamp to this range.\n"
                 }
             },
             "type": "object"
@@ -12286,19 +12286,19 @@
             "properties": {
                 "algorithm": {
                     "type": "string",
-                    "description": "Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.\n"
+                    "description": "Specifies the type of algorithm used to detect faces in the image, either \u003cspan pulumi-lang-nodejs=\"`cascade`\" pulumi-lang-dotnet=\"`Cascade`\" pulumi-lang-go=\"`cascade`\" pulumi-lang-python=\"`cascade`\" pulumi-lang-yaml=\"`cascade`\" pulumi-lang-java=\"`cascade`\"\u003e`cascade`\u003c/span\u003e for the cascade classifier algorithm or \u003cspan pulumi-lang-nodejs=\"`dnn`\" pulumi-lang-dotnet=\"`Dnn`\" pulumi-lang-go=\"`dnn`\" pulumi-lang-python=\"`dnn`\" pulumi-lang-yaml=\"`dnn`\" pulumi-lang-java=\"`dnn`\"\u003e`dnn`\u003c/span\u003e for the deep neural network algorithm, \u003cspan pulumi-lang-nodejs=\"`cascade`\" pulumi-lang-dotnet=\"`Cascade`\" pulumi-lang-go=\"`cascade`\" pulumi-lang-python=\"`cascade`\" pulumi-lang-yaml=\"`cascade`\" pulumi-lang-java=\"`cascade`\"\u003e`cascade`\u003c/span\u003e by default.\n"
                 },
                 "algorithmVar": {
                     "type": "string",
-                    "description": "Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.\n"
+                    "description": "Specifies the type of algorithm used to detect faces in the image, either \u003cspan pulumi-lang-nodejs=\"`cascade`\" pulumi-lang-dotnet=\"`Cascade`\" pulumi-lang-go=\"`cascade`\" pulumi-lang-python=\"`cascade`\" pulumi-lang-yaml=\"`cascade`\" pulumi-lang-java=\"`cascade`\"\u003e`cascade`\u003c/span\u003e for the cascade classifier algorithm or \u003cspan pulumi-lang-nodejs=\"`dnn`\" pulumi-lang-dotnet=\"`Dnn`\" pulumi-lang-go=\"`dnn`\" pulumi-lang-python=\"`dnn`\" pulumi-lang-yaml=\"`dnn`\" pulumi-lang-java=\"`dnn`\"\u003e`dnn`\u003c/span\u003e for the deep neural network algorithm, \u003cspan pulumi-lang-nodejs=\"`cascade`\" pulumi-lang-dotnet=\"`Cascade`\" pulumi-lang-go=\"`cascade`\" pulumi-lang-python=\"`cascade`\" pulumi-lang-yaml=\"`cascade`\" pulumi-lang-java=\"`cascade`\"\u003e`cascade`\u003c/span\u003e by default.\n"
                 },
                 "confidence": {
                     "type": "string",
-                    "description": "With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.\n"
+                    "description": "With \u003cspan pulumi-lang-nodejs=\"`algorithm`\" pulumi-lang-dotnet=\"`Algorithm`\" pulumi-lang-go=\"`algorithm`\" pulumi-lang-python=\"`algorithm`\" pulumi-lang-yaml=\"`algorithm`\" pulumi-lang-java=\"`algorithm`\"\u003e`algorithm`\u003c/span\u003e set to \u003cspan pulumi-lang-nodejs=\"`dnn`\" pulumi-lang-dotnet=\"`Dnn`\" pulumi-lang-go=\"`dnn`\" pulumi-lang-python=\"`dnn`\" pulumi-lang-yaml=\"`dnn`\" pulumi-lang-java=\"`dnn`\"\u003e`dnn`\u003c/span\u003e, specifies the minimum confidence needed to detect faces in the image. Values range from \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e for increased confidence, and possibly fewer faces detected.\n"
                 },
                 "confidenceVar": {
                     "type": "string",
-                    "description": "With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.\n"
+                    "description": "With \u003cspan pulumi-lang-nodejs=\"`algorithm`\" pulumi-lang-dotnet=\"`Algorithm`\" pulumi-lang-go=\"`algorithm`\" pulumi-lang-python=\"`algorithm`\" pulumi-lang-yaml=\"`algorithm`\" pulumi-lang-java=\"`algorithm`\"\u003e`algorithm`\u003c/span\u003e set to \u003cspan pulumi-lang-nodejs=\"`dnn`\" pulumi-lang-dotnet=\"`Dnn`\" pulumi-lang-go=\"`dnn`\" pulumi-lang-python=\"`dnn`\" pulumi-lang-yaml=\"`dnn`\" pulumi-lang-java=\"`dnn`\"\u003e`dnn`\u003c/span\u003e, specifies the minimum confidence needed to detect faces in the image. Values range from \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e for increased confidence, and possibly fewer faces detected.\n"
                 },
                 "failGravity": {
                     "type": "string",
@@ -12310,11 +12310,11 @@
                 },
                 "focus": {
                     "type": "string",
-                    "description": "Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.\n"
+                    "description": "Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, \u003cspan pulumi-lang-nodejs=\"`all`\" pulumi-lang-dotnet=\"`All`\" pulumi-lang-go=\"`all`\" pulumi-lang-python=\"`all`\" pulumi-lang-yaml=\"`all`\" pulumi-lang-java=\"`all`\"\u003e`all`\u003c/span\u003e by default.\n"
                 },
                 "focusVar": {
                     "type": "string",
-                    "description": "Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.\n"
+                    "description": "Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, \u003cspan pulumi-lang-nodejs=\"`all`\" pulumi-lang-dotnet=\"`All`\" pulumi-lang-go=\"`all`\" pulumi-lang-python=\"`all`\" pulumi-lang-yaml=\"`all`\" pulumi-lang-java=\"`all`\"\u003e`all`\u003c/span\u003e by default.\n"
                 },
                 "gravity": {
                     "type": "string",
@@ -12326,11 +12326,11 @@
                 },
                 "height": {
                     "type": "string",
-                    "description": "The height of the output image in pixels relative to the specified `style` value.\n"
+                    "description": "The height of the output image in pixels relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "heightVar": {
                     "type": "string",
-                    "description": "The height of the output image in pixels relative to the specified `style` value.\n"
+                    "description": "The height of the output image in pixels relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "padding": {
                     "type": "string",
@@ -12342,19 +12342,19 @@
                 },
                 "style": {
                     "type": "string",
-                    "description": "Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.\n"
+                    "description": "Specifies how to crop or scale a crop area for the faces detected in the source image, \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e by default. The output image resizes to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`crop`\" pulumi-lang-dotnet=\"`Crop`\" pulumi-lang-go=\"`crop`\" pulumi-lang-python=\"`crop`\" pulumi-lang-yaml=\"`crop`\" pulumi-lang-java=\"`crop`\"\u003e`crop`\u003c/span\u003e places a raw crop around the faces, relative to the specified \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e value.  A value of \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e scales the crop area to include as much of the image and faces as possible, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e scales the crop area as small as possible to fit the faces, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. Allows Variable substitution.\n"
                 },
                 "styleVar": {
                     "type": "string",
-                    "description": "Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.\n"
+                    "description": "Specifies how to crop or scale a crop area for the faces detected in the source image, \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e by default. The output image resizes to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`crop`\" pulumi-lang-dotnet=\"`Crop`\" pulumi-lang-go=\"`crop`\" pulumi-lang-python=\"`crop`\" pulumi-lang-yaml=\"`crop`\" pulumi-lang-java=\"`crop`\"\u003e`crop`\u003c/span\u003e places a raw crop around the faces, relative to the specified \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e value.  A value of \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e scales the crop area to include as much of the image and faces as possible, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e scales the crop area as small as possible to fit the faces, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. Allows Variable substitution.\n"
                 },
                 "width": {
                     "type": "string",
-                    "description": "The width of the output image in pixels relative to the specified `style` value.\n"
+                    "description": "The width of the output image in pixels relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "widthVar": {
                     "type": "string",
-                    "description": "The width of the output image in pixels relative to the specified `style` value.\n"
+                    "description": "The width of the output image in pixels relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 }
             },
             "type": "object"
@@ -12387,27 +12387,27 @@
                 },
                 "height": {
                     "type": "string",
-                    "description": "The height in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The height in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "heightVar": {
                     "type": "string",
-                    "description": "The height in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The height in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "maxFeatures": {
                     "type": "string",
-                    "description": "The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.\n"
+                    "description": "The maximum number of features to identify as important features, \u003cspan pulumi-lang-nodejs=\"`32`\" pulumi-lang-dotnet=\"`32`\" pulumi-lang-go=\"`32`\" pulumi-lang-python=\"`32`\" pulumi-lang-yaml=\"`32`\" pulumi-lang-java=\"`32`\"\u003e`32`\u003c/span\u003e by default. The strongest features are always chosen.\n"
                 },
                 "maxFeaturesVar": {
                     "type": "string",
-                    "description": "The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.\n"
+                    "description": "The maximum number of features to identify as important features, \u003cspan pulumi-lang-nodejs=\"`32`\" pulumi-lang-dotnet=\"`32`\" pulumi-lang-go=\"`32`\" pulumi-lang-python=\"`32`\" pulumi-lang-yaml=\"`32`\" pulumi-lang-java=\"`32`\"\u003e`32`\u003c/span\u003e by default. The strongest features are always chosen.\n"
                 },
                 "minFeatureQuality": {
                     "type": "string",
-                    "description": "Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.\n"
+                    "description": "Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e for the lowest quality to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e for the highest quality, `.1` by default.\n"
                 },
                 "minFeatureQualityVar": {
                     "type": "string",
-                    "description": "Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.\n"
+                    "description": "Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e for the lowest quality to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e for the highest quality, `.1` by default.\n"
                 },
                 "padding": {
                     "type": "string",
@@ -12419,19 +12419,19 @@
                 },
                 "style": {
                     "type": "string",
-                    "description": "Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.\n"
+                    "description": "Specifies how to crop or scale a crop area for the features identified in the source image, \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e by default. The output image resizes to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`crop`\" pulumi-lang-dotnet=\"`Crop`\" pulumi-lang-go=\"`crop`\" pulumi-lang-python=\"`crop`\" pulumi-lang-yaml=\"`crop`\" pulumi-lang-java=\"`crop`\"\u003e`crop`\u003c/span\u003e performs a raw crop around the features, relative to the specified \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e value.  A value of \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e scales the crop area to include as much of the image and features as possible, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e scales the crop area as small as possible to fit the features, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. Allows Variable substitution.\n"
                 },
                 "styleVar": {
                     "type": "string",
-                    "description": "Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.\n"
+                    "description": "Specifies how to crop or scale a crop area for the features identified in the source image, \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e by default. The output image resizes to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`crop`\" pulumi-lang-dotnet=\"`Crop`\" pulumi-lang-go=\"`crop`\" pulumi-lang-python=\"`crop`\" pulumi-lang-yaml=\"`crop`\" pulumi-lang-java=\"`crop`\"\u003e`crop`\u003c/span\u003e performs a raw crop around the features, relative to the specified \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e value.  A value of \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e scales the crop area to include as much of the image and features as possible, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e scales the crop area as small as possible to fit the features, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. Allows Variable substitution.\n"
                 },
                 "width": {
                     "type": "string",
-                    "description": "The width in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The width in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "widthVar": {
                     "type": "string",
-                    "description": "The width in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The width in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 }
             },
             "type": "object"
@@ -12488,11 +12488,11 @@
                 },
                 "seed": {
                     "type": "string",
-                    "description": "Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.\n"
+                    "description": "Specifies your own \u003cspan pulumi-lang-nodejs=\"`seed`\" pulumi-lang-dotnet=\"`Seed`\" pulumi-lang-go=\"`seed`\" pulumi-lang-python=\"`seed`\" pulumi-lang-yaml=\"`seed`\" pulumi-lang-java=\"`seed`\"\u003e`seed`\u003c/span\u003e value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.\n"
                 },
                 "seedVar": {
                     "type": "string",
-                    "description": "Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.\n"
+                    "description": "Specifies your own \u003cspan pulumi-lang-nodejs=\"`seed`\" pulumi-lang-dotnet=\"`Seed`\" pulumi-lang-go=\"`seed`\" pulumi-lang-python=\"`seed`\" pulumi-lang-yaml=\"`seed`\" pulumi-lang-java=\"`seed`\"\u003e`seed`\u003c/span\u003e value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.\n"
                 }
             },
             "type": "object"
@@ -12514,11 +12514,11 @@
             "properties": {
                 "hue": {
                     "type": "string",
-                    "description": "The number of degrees to rotate colors around the color wheel, `0` by default.\n"
+                    "description": "The number of degrees to rotate colors around the color wheel, \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e by default.\n"
                 },
                 "hueVar": {
                     "type": "string",
-                    "description": "The number of degrees to rotate colors around the color wheel, `0` by default.\n"
+                    "description": "The number of degrees to rotate colors around the color wheel, \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e by default.\n"
                 },
                 "lightness": {
                     "type": "string",
@@ -12575,11 +12575,11 @@
                 },
                 "dimension": {
                     "type": "string",
-                    "description": "The dimension to use to select the transformation, either `height`, `width`, or `both`.\n"
+                    "description": "The dimension to use to select the transformation, either \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e, \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e, or \u003cspan pulumi-lang-nodejs=\"`both`\" pulumi-lang-dotnet=\"`Both`\" pulumi-lang-go=\"`both`\" pulumi-lang-python=\"`both`\" pulumi-lang-yaml=\"`both`\" pulumi-lang-java=\"`both`\"\u003e`both`\u003c/span\u003e.\n"
                 },
                 "dimensionVar": {
                     "type": "string",
-                    "description": "The dimension to use to select the transformation, either `height`, `width`, or `both`.\n"
+                    "description": "The dimension to use to select the transformation, either \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e, \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e, or \u003cspan pulumi-lang-nodejs=\"`both`\" pulumi-lang-dotnet=\"`Both`\" pulumi-lang-go=\"`both`\" pulumi-lang-python=\"`both`\" pulumi-lang-yaml=\"`both`\" pulumi-lang-java=\"`both`\"\u003e`both`\u003c/span\u003e.\n"
                 },
                 "equal": {
                     "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformation:getImagingPolicyImagePolicyTransformation"
@@ -12688,11 +12688,11 @@
             "properties": {
                 "opacity": {
                     "type": "string",
-                    "description": "Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.\n"
+                    "description": "Represents alpha values on a scale of \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e. Values below \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase transparency, and \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e is invisible. For images that have some transparency, values above \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase the opacity of the transparent portions.\n"
                 },
                 "opacityVar": {
                     "type": "string",
-                    "description": "Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.\n"
+                    "description": "Represents alpha values on a scale of \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e to \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e. Values below \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase transparency, and \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e is invisible. For images that have some transparency, values above \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase the opacity of the transparent portions.\n"
                 }
             },
             "type": "object"
@@ -12709,30 +12709,30 @@
                 },
                 "height": {
                     "type": "string",
-                    "description": "The height in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The height in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "heightVar": {
                     "type": "string",
-                    "description": "The height in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The height in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "regionOfInterest": {
                     "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest:getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest"
                 },
                 "style": {
                     "type": "string",
-                    "description": "Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.\n"
+                    "description": "Specifies how to crop or scale a crop area for the specified area of interest in the source image, \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e by default. The output image resizes to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`crop`\" pulumi-lang-dotnet=\"`Crop`\" pulumi-lang-go=\"`crop`\" pulumi-lang-python=\"`crop`\" pulumi-lang-yaml=\"`crop`\" pulumi-lang-java=\"`crop`\"\u003e`crop`\u003c/span\u003e places raw crop around the point of interest, relative to the specified \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e value.  A value of \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e scales the crop area to include as much of the image and point of interest as possible, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e scales the crop area as small as possible to fit the point of interest, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values.\n"
                 },
                 "styleVar": {
                     "type": "string",
-                    "description": "Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.\n"
+                    "description": "Specifies how to crop or scale a crop area for the specified area of interest in the source image, \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e by default. The output image resizes to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`crop`\" pulumi-lang-dotnet=\"`Crop`\" pulumi-lang-go=\"`crop`\" pulumi-lang-python=\"`crop`\" pulumi-lang-yaml=\"`crop`\" pulumi-lang-java=\"`crop`\"\u003e`crop`\u003c/span\u003e places raw crop around the point of interest, relative to the specified \u003cspan pulumi-lang-nodejs=\"`gravity`\" pulumi-lang-dotnet=\"`Gravity`\" pulumi-lang-go=\"`gravity`\" pulumi-lang-python=\"`gravity`\" pulumi-lang-yaml=\"`gravity`\" pulumi-lang-java=\"`gravity`\"\u003e`gravity`\u003c/span\u003e value.  A value of \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e scales the crop area to include as much of the image and point of interest as possible, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e scales the crop area as small as possible to fit the point of interest, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values.\n"
                 },
                 "width": {
                     "type": "string",
-                    "description": "The width in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The width in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "widthVar": {
                     "type": "string",
-                    "description": "The width in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The width in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 }
             },
             "type": "object",
@@ -12747,7 +12747,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape:getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape"
                     },
-                    "description": "Defines a circle with a specified `radius` from its `center` point.\n"
+                    "description": "Defines a circle with a specified \u003cspan pulumi-lang-nodejs=\"`radius`\" pulumi-lang-dotnet=\"`Radius`\" pulumi-lang-go=\"`radius`\" pulumi-lang-python=\"`radius`\" pulumi-lang-yaml=\"`radius`\" pulumi-lang-java=\"`radius`\"\u003e`radius`\u003c/span\u003e from its \u003cspan pulumi-lang-nodejs=\"`center`\" pulumi-lang-dotnet=\"`Center`\" pulumi-lang-go=\"`center`\" pulumi-lang-python=\"`center`\" pulumi-lang-yaml=\"`center`\" pulumi-lang-java=\"`center`\"\u003e`center`\u003c/span\u003e point.\n"
                 },
                 "pointShapes": {
                     "type": "array",
@@ -12767,7 +12767,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShape:getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShape"
                     },
-                    "description": "Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.\n"
+                    "description": "Defines a rectangle's \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e relative to an \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point at the top left corner.\n"
                 },
                 "unionShapes": {
                     "type": "array",
@@ -12783,7 +12783,7 @@
             "properties": {
                 "center": {
                     "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter:getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter",
-                    "description": "Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.\n"
+                    "description": "Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with \u003cspan pulumi-lang-nodejs=\"`x`\" pulumi-lang-dotnet=\"`X`\" pulumi-lang-go=\"`x`\" pulumi-lang-python=\"`x`\" pulumi-lang-yaml=\"`x`\" pulumi-lang-java=\"`x`\"\u003e`x`\u003c/span\u003eand \u003cspan pulumi-lang-nodejs=\"`y`\" pulumi-lang-dotnet=\"`Y`\" pulumi-lang-go=\"`y`\" pulumi-lang-python=\"`y`\" pulumi-lang-yaml=\"`y`\" pulumi-lang-java=\"`y`\"\u003e`y`\u003c/span\u003e members, or a two-element array.\n"
                 },
                 "radius": {
                     "type": "string",
@@ -12884,19 +12884,19 @@
                 },
                 "height": {
                     "type": "string",
-                    "description": "Extends the rectangle down from the `anchor` point.\n"
+                    "description": "Extends the rectangle down from the \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point.\n"
                 },
                 "heightVar": {
                     "type": "string",
-                    "description": "Extends the rectangle down from the `anchor` point.\n"
+                    "description": "Extends the rectangle down from the \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point.\n"
                 },
                 "width": {
                     "type": "string",
-                    "description": "Extends the rectangle right from the `anchor` point.\n"
+                    "description": "Extends the rectangle right from the \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point.\n"
                 },
                 "widthVar": {
                     "type": "string",
-                    "description": "Extends the rectangle right from the `anchor` point.\n"
+                    "description": "Extends the rectangle right from the \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point.\n"
                 }
             },
             "type": "object",
@@ -12946,7 +12946,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShape:getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShape"
                     },
-                    "description": "Defines a circle with a specified `radius` from its `center` point.\n"
+                    "description": "Defines a circle with a specified \u003cspan pulumi-lang-nodejs=\"`radius`\" pulumi-lang-dotnet=\"`Radius`\" pulumi-lang-go=\"`radius`\" pulumi-lang-python=\"`radius`\" pulumi-lang-yaml=\"`radius`\" pulumi-lang-java=\"`radius`\"\u003e`radius`\u003c/span\u003e from its \u003cspan pulumi-lang-nodejs=\"`center`\" pulumi-lang-dotnet=\"`Center`\" pulumi-lang-go=\"`center`\" pulumi-lang-python=\"`center`\" pulumi-lang-yaml=\"`center`\" pulumi-lang-java=\"`center`\"\u003e`center`\u003c/span\u003e point.\n"
                 },
                 "pointShapes": {
                     "type": "array",
@@ -12966,7 +12966,7 @@
                     "items": {
                         "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShape:getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShape"
                     },
-                    "description": "Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.\n"
+                    "description": "Defines a rectangle's \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e relative to an \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point at the top left corner.\n"
                 },
                 "unionShapes": {
                     "type": "array",
@@ -12982,7 +12982,7 @@
             "properties": {
                 "center": {
                     "$ref": "#/types/akamai:index/getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenter:getImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenter",
-                    "description": "Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.\n"
+                    "description": "Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with \u003cspan pulumi-lang-nodejs=\"`x`\" pulumi-lang-dotnet=\"`X`\" pulumi-lang-go=\"`x`\" pulumi-lang-python=\"`x`\" pulumi-lang-yaml=\"`x`\" pulumi-lang-java=\"`x`\"\u003e`x`\u003c/span\u003eand \u003cspan pulumi-lang-nodejs=\"`y`\" pulumi-lang-dotnet=\"`Y`\" pulumi-lang-go=\"`y`\" pulumi-lang-python=\"`y`\" pulumi-lang-yaml=\"`y`\" pulumi-lang-java=\"`y`\"\u003e`y`\u003c/span\u003e members, or a two-element array.\n"
                 },
                 "radius": {
                     "type": "string",
@@ -13083,19 +13083,19 @@
                 },
                 "height": {
                     "type": "string",
-                    "description": "Extends the rectangle down from the `anchor` point.\n"
+                    "description": "Extends the rectangle down from the \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point.\n"
                 },
                 "heightVar": {
                     "type": "string",
-                    "description": "Extends the rectangle down from the `anchor` point.\n"
+                    "description": "Extends the rectangle down from the \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point.\n"
                 },
                 "width": {
                     "type": "string",
-                    "description": "Extends the rectangle right from the `anchor` point.\n"
+                    "description": "Extends the rectangle right from the \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point.\n"
                 },
                 "widthVar": {
                     "type": "string",
-                    "description": "Extends the rectangle right from the `anchor` point.\n"
+                    "description": "Extends the rectangle right from the \u003cspan pulumi-lang-nodejs=\"`anchor`\" pulumi-lang-dotnet=\"`Anchor`\" pulumi-lang-go=\"`anchor`\" pulumi-lang-python=\"`anchor`\" pulumi-lang-yaml=\"`anchor`\" pulumi-lang-java=\"`anchor`\"\u003e`anchor`\u003c/span\u003e point.\n"
                 }
             },
             "type": "object",
@@ -13211,11 +13211,11 @@
             "properties": {
                 "aspect": {
                     "type": "string",
-                    "description": "Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.\n"
+                    "description": "Preserves the aspect ratio. Select \u003cspan pulumi-lang-nodejs=\"`fit`\" pulumi-lang-dotnet=\"`Fit`\" pulumi-lang-go=\"`fit`\" pulumi-lang-python=\"`fit`\" pulumi-lang-yaml=\"`fit`\" pulumi-lang-java=\"`fit`\"\u003e`fit`\u003c/span\u003e to make the image fit entirely within the selected width and height. When using \u003cspan pulumi-lang-nodejs=\"`fit`\" pulumi-lang-dotnet=\"`Fit`\" pulumi-lang-go=\"`fit`\" pulumi-lang-python=\"`fit`\" pulumi-lang-yaml=\"`fit`\" pulumi-lang-java=\"`fit`\"\u003e`fit`\u003c/span\u003e, the resulting image has the largest possible size for the specified dimensions. Select \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise \u003cspan pulumi-lang-nodejs=\"`ignore`\" pulumi-lang-dotnet=\"`Ignore`\" pulumi-lang-go=\"`ignore`\" pulumi-lang-python=\"`ignore`\" pulumi-lang-yaml=\"`ignore`\" pulumi-lang-java=\"`ignore`\"\u003e`ignore`\u003c/span\u003e changes the original aspect ratio to fit within an arbitrarily shaped rectangle.\n"
                 },
                 "aspectVar": {
                     "type": "string",
-                    "description": "Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.\n"
+                    "description": "Preserves the aspect ratio. Select \u003cspan pulumi-lang-nodejs=\"`fit`\" pulumi-lang-dotnet=\"`Fit`\" pulumi-lang-go=\"`fit`\" pulumi-lang-python=\"`fit`\" pulumi-lang-yaml=\"`fit`\" pulumi-lang-java=\"`fit`\"\u003e`fit`\u003c/span\u003e to make the image fit entirely within the selected width and height. When using \u003cspan pulumi-lang-nodejs=\"`fit`\" pulumi-lang-dotnet=\"`Fit`\" pulumi-lang-go=\"`fit`\" pulumi-lang-python=\"`fit`\" pulumi-lang-yaml=\"`fit`\" pulumi-lang-java=\"`fit`\"\u003e`fit`\u003c/span\u003e, the resulting image has the largest possible size for the specified dimensions. Select \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise \u003cspan pulumi-lang-nodejs=\"`ignore`\" pulumi-lang-dotnet=\"`Ignore`\" pulumi-lang-go=\"`ignore`\" pulumi-lang-python=\"`ignore`\" pulumi-lang-yaml=\"`ignore`\" pulumi-lang-java=\"`ignore`\"\u003e`ignore`\u003c/span\u003e changes the original aspect ratio to fit within an arbitrarily shaped rectangle.\n"
                 },
                 "height": {
                     "type": "string",
@@ -13227,11 +13227,11 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.\n"
+                    "description": "Sets constraints for the image resize. Select \u003cspan pulumi-lang-nodejs=\"`normal`\" pulumi-lang-dotnet=\"`Normal`\" pulumi-lang-go=\"`normal`\" pulumi-lang-python=\"`normal`\" pulumi-lang-yaml=\"`normal`\" pulumi-lang-java=\"`normal`\"\u003e`normal`\u003c/span\u003e to resize in all cases, either increasing or decreasing the dimensions. Select \u003cspan pulumi-lang-nodejs=\"`downsize`\" pulumi-lang-dotnet=\"`Downsize`\" pulumi-lang-go=\"`downsize`\" pulumi-lang-python=\"`downsize`\" pulumi-lang-yaml=\"`downsize`\" pulumi-lang-java=\"`downsize`\"\u003e`downsize`\u003c/span\u003e to ignore this transformation if the result would be larger than the original. Select \u003cspan pulumi-lang-nodejs=\"`upsize`\" pulumi-lang-dotnet=\"`Upsize`\" pulumi-lang-go=\"`upsize`\" pulumi-lang-python=\"`upsize`\" pulumi-lang-yaml=\"`upsize`\" pulumi-lang-java=\"`upsize`\"\u003e`upsize`\u003c/span\u003e to ignore this transformation if the result would be smaller.\n"
                 },
                 "typeVar": {
                     "type": "string",
-                    "description": "Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.\n"
+                    "description": "Sets constraints for the image resize. Select \u003cspan pulumi-lang-nodejs=\"`normal`\" pulumi-lang-dotnet=\"`Normal`\" pulumi-lang-go=\"`normal`\" pulumi-lang-python=\"`normal`\" pulumi-lang-yaml=\"`normal`\" pulumi-lang-java=\"`normal`\"\u003e`normal`\u003c/span\u003e to resize in all cases, either increasing or decreasing the dimensions. Select \u003cspan pulumi-lang-nodejs=\"`downsize`\" pulumi-lang-dotnet=\"`Downsize`\" pulumi-lang-go=\"`downsize`\" pulumi-lang-python=\"`downsize`\" pulumi-lang-yaml=\"`downsize`\" pulumi-lang-java=\"`downsize`\"\u003e`downsize`\u003c/span\u003e to ignore this transformation if the result would be larger than the original. Select \u003cspan pulumi-lang-nodejs=\"`upsize`\" pulumi-lang-dotnet=\"`Upsize`\" pulumi-lang-go=\"`upsize`\" pulumi-lang-python=\"`upsize`\" pulumi-lang-yaml=\"`upsize`\" pulumi-lang-java=\"`upsize`\"\u003e`upsize`\u003c/span\u003e to ignore this transformation if the result would be smaller.\n"
                 },
                 "width": {
                     "type": "string",
@@ -13261,19 +13261,19 @@
             "properties": {
                 "height": {
                     "type": "string",
-                    "description": "Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.\n"
+                    "description": "Scaling factor for the input height to determine the output height of the image, where values between \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e decrease size. Image dimensions need to be non-zero positive numbers.\n"
                 },
                 "heightVar": {
                     "type": "string",
-                    "description": "Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.\n"
+                    "description": "Scaling factor for the input height to determine the output height of the image, where values between \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e decrease size. Image dimensions need to be non-zero positive numbers.\n"
                 },
                 "width": {
                     "type": "string",
-                    "description": "Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.\n"
+                    "description": "Scaling factor for the input width to determine the output width of the image, where \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e leaves the width unchanged. Values greater than \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase the image size. Image dimensions need to be non-zero positive numbers.\n"
                 },
                 "widthVar": {
                     "type": "string",
-                    "description": "Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.\n"
+                    "description": "Scaling factor for the input width to determine the output width of the image, where \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e leaves the width unchanged. Values greater than \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e increase the image size. Image dimensions need to be non-zero positive numbers.\n"
                 }
             },
             "type": "object"
@@ -13311,11 +13311,11 @@
                 },
                 "height": {
                     "type": "string",
-                    "description": "The height in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The height in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "heightVar": {
                     "type": "string",
-                    "description": "The height in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The height in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "sloppy": {
                     "type": "string",
@@ -13327,19 +13327,19 @@
                 },
                 "style": {
                     "type": "string",
-                    "description": "Specifies how to crop or scale a crop area for the specified area of interest in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.\n"
+                    "description": "Specifies how to crop or scale a crop area for the specified area of interest in the source image, \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e by default. The output image resizes to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`crop`\" pulumi-lang-dotnet=\"`Crop`\" pulumi-lang-go=\"`crop`\" pulumi-lang-python=\"`crop`\" pulumi-lang-yaml=\"`crop`\" pulumi-lang-java=\"`crop`\"\u003e`crop`\u003c/span\u003e places raw crop around the point of interest.  A value of \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e scales the crop area to include as much of the image and point of interest as possible, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e scales the crop area as small as possible to fit the point of interest, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values.\n"
                 },
                 "styleVar": {
                     "type": "string",
-                    "description": "Specifies how to crop or scale a crop area for the specified area of interest in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.\n"
+                    "description": "Specifies how to crop or scale a crop area for the specified area of interest in the source image, \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e by default. The output image resizes to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`crop`\" pulumi-lang-dotnet=\"`Crop`\" pulumi-lang-go=\"`crop`\" pulumi-lang-python=\"`crop`\" pulumi-lang-yaml=\"`crop`\" pulumi-lang-java=\"`crop`\"\u003e`crop`\u003c/span\u003e places raw crop around the point of interest.  A value of \u003cspan pulumi-lang-nodejs=\"`fill`\" pulumi-lang-dotnet=\"`Fill`\" pulumi-lang-go=\"`fill`\" pulumi-lang-python=\"`fill`\" pulumi-lang-yaml=\"`fill`\" pulumi-lang-java=\"`fill`\"\u003e`fill`\u003c/span\u003e scales the crop area to include as much of the image and point of interest as possible, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values. A value of \u003cspan pulumi-lang-nodejs=\"`zoom`\" pulumi-lang-dotnet=\"`Zoom`\" pulumi-lang-go=\"`zoom`\" pulumi-lang-python=\"`zoom`\" pulumi-lang-yaml=\"`zoom`\" pulumi-lang-java=\"`zoom`\"\u003e`zoom`\u003c/span\u003e scales the crop area as small as possible to fit the point of interest, relative to the specified \u003cspan pulumi-lang-nodejs=\"`width`\" pulumi-lang-dotnet=\"`Width`\" pulumi-lang-go=\"`width`\" pulumi-lang-python=\"`width`\" pulumi-lang-yaml=\"`width`\" pulumi-lang-java=\"`width`\"\u003e`width`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`height`\" pulumi-lang-dotnet=\"`Height`\" pulumi-lang-go=\"`height`\" pulumi-lang-python=\"`height`\" pulumi-lang-yaml=\"`height`\" pulumi-lang-java=\"`height`\"\u003e`height`\u003c/span\u003e values.\n"
                 },
                 "width": {
                     "type": "string",
-                    "description": "The width in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The width in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 },
                 "widthVar": {
                     "type": "string",
-                    "description": "The width in pixels of the output image relative to the specified `style` value.\n"
+                    "description": "The width in pixels of the output image relative to the specified \u003cspan pulumi-lang-nodejs=\"`style`\" pulumi-lang-dotnet=\"`Style`\" pulumi-lang-go=\"`style`\" pulumi-lang-python=\"`style`\" pulumi-lang-yaml=\"`style`\" pulumi-lang-java=\"`style`\"\u003e`style`\u003c/span\u003e value.\n"
                 }
             },
             "type": "object"
@@ -13348,11 +13348,11 @@
             "properties": {
                 "fuzz": {
                     "type": "string",
-                    "description": "The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.\n"
+                    "description": "The fuzz tolerance of the trim, a value between \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e that determines the acceptable amount of background variation before trimming stops.\n"
                 },
                 "fuzzVar": {
                     "type": "string",
-                    "description": "The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.\n"
+                    "description": "The fuzz tolerance of the trim, a value between \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\"\u003e`0`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`1`\" pulumi-lang-dotnet=\"`1`\" pulumi-lang-go=\"`1`\" pulumi-lang-python=\"`1`\" pulumi-lang-yaml=\"`1`\" pulumi-lang-java=\"`1`\"\u003e`1`\u003c/span\u003e that determines the acceptable amount of background variation before trimming stops.\n"
                 },
                 "padding": {
                     "type": "string",
@@ -13438,7 +13438,7 @@
                 },
                 "value": {
                     "type": "string",
-                    "description": "The value of the variable when the `id` is provided.\n"
+                    "description": "The value of the variable when the \u003cspan pulumi-lang-nodejs=\"`id`\" pulumi-lang-dotnet=\"`Id`\" pulumi-lang-go=\"`id`\" pulumi-lang-python=\"`id`\" pulumi-lang-yaml=\"`id`\" pulumi-lang-java=\"`id`\"\u003e`id`\u003c/span\u003e is provided.\n"
                 }
             },
             "type": "object",
@@ -13562,7 +13562,7 @@
                 },
                 "value": {
                     "type": "string",
-                    "description": "The value of the variable when the `id` is provided.\n"
+                    "description": "The value of the variable when the \u003cspan pulumi-lang-nodejs=\"`id`\" pulumi-lang-dotnet=\"`Id`\" pulumi-lang-go=\"`id`\" pulumi-lang-python=\"`id`\" pulumi-lang-yaml=\"`id`\" pulumi-lang-java=\"`id`\"\u003e`id`\u003c/span\u003e is provided.\n"
                 }
             },
             "type": "object",
@@ -14749,7 +14749,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "The activation's status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `activation_type` is `DEACTIVATE` to no longer serve traffic.\n"
+                    "description": "The activation's status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the \u003cspan pulumi-lang-nodejs=\"`activationType`\" pulumi-lang-dotnet=\"`ActivationType`\" pulumi-lang-go=\"`activationType`\" pulumi-lang-python=\"`activation_type`\" pulumi-lang-yaml=\"`activationType`\" pulumi-lang-java=\"`activationType`\"\u003e`activation_type`\u003c/span\u003e is `DEACTIVATE` to no longer serve traffic.\n"
                 },
                 "submitDate": {
                     "type": "string",
@@ -20770,11 +20770,11 @@
                 },
                 "credentialsA": {
                     "$ref": "#/types/akamai:index/CloudAccessKeyCredentialsA:CloudAccessKeyCredentialsA",
-                    "description": "The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
+                    "description": "The combination of a \u003cspan pulumi-lang-nodejs=\"`cloudAccessKeyId`\" pulumi-lang-dotnet=\"`CloudAccessKeyId`\" pulumi-lang-go=\"`cloudAccessKeyId`\" pulumi-lang-python=\"`cloud_access_key_id`\" pulumi-lang-yaml=\"`cloudAccessKeyId`\" pulumi-lang-java=\"`cloudAccessKeyId`\"\u003e`cloud_access_key_id`\u003c/span\u003e and a \u003cspan pulumi-lang-nodejs=\"`cloudSecretAccessKey`\" pulumi-lang-dotnet=\"`CloudSecretAccessKey`\" pulumi-lang-go=\"`cloudSecretAccessKey`\" pulumi-lang-python=\"`cloud_secret_access_key`\" pulumi-lang-yaml=\"`cloudSecretAccessKey`\" pulumi-lang-java=\"`cloudSecretAccessKey`\"\u003e`cloud_secret_access_key`\u003c/span\u003e used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
                 },
                 "credentialsB": {
                     "$ref": "#/types/akamai:index/CloudAccessKeyCredentialsB:CloudAccessKeyCredentialsB",
-                    "description": "The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
+                    "description": "The combination of a \u003cspan pulumi-lang-nodejs=\"`cloudAccessKeyId`\" pulumi-lang-dotnet=\"`CloudAccessKeyId`\" pulumi-lang-go=\"`cloudAccessKeyId`\" pulumi-lang-python=\"`cloud_access_key_id`\" pulumi-lang-yaml=\"`cloudAccessKeyId`\" pulumi-lang-java=\"`cloudAccessKeyId`\"\u003e`cloud_access_key_id`\u003c/span\u003e and a \u003cspan pulumi-lang-nodejs=\"`cloudSecretAccessKey`\" pulumi-lang-dotnet=\"`CloudSecretAccessKey`\" pulumi-lang-go=\"`cloudSecretAccessKey`\" pulumi-lang-python=\"`cloud_secret_access_key`\" pulumi-lang-yaml=\"`cloudSecretAccessKey`\" pulumi-lang-java=\"`cloudSecretAccessKey`\"\u003e`cloud_secret_access_key`\u003c/span\u003e used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
                 },
                 "groupId": {
                     "type": "integer",
@@ -20786,7 +20786,7 @@
                 },
                 "primaryGuid": {
                     "type": "string",
-                    "description": "Value of `version_guid` field for credentials marked as primary"
+                    "description": "Value of \u003cspan pulumi-lang-nodejs=\"`versionGuid`\" pulumi-lang-dotnet=\"`VersionGuid`\" pulumi-lang-go=\"`versionGuid`\" pulumi-lang-python=\"`version_guid`\" pulumi-lang-yaml=\"`versionGuid`\" pulumi-lang-java=\"`versionGuid`\"\u003e`version_guid`\u003c/span\u003e field for credentials marked as primary"
                 },
                 "timeouts": {
                     "$ref": "#/types/akamai:index/CloudAccessKeyTimeouts:CloudAccessKeyTimeouts"
@@ -20816,11 +20816,11 @@
                 },
                 "credentialsA": {
                     "$ref": "#/types/akamai:index/CloudAccessKeyCredentialsA:CloudAccessKeyCredentialsA",
-                    "description": "The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
+                    "description": "The combination of a \u003cspan pulumi-lang-nodejs=\"`cloudAccessKeyId`\" pulumi-lang-dotnet=\"`CloudAccessKeyId`\" pulumi-lang-go=\"`cloudAccessKeyId`\" pulumi-lang-python=\"`cloud_access_key_id`\" pulumi-lang-yaml=\"`cloudAccessKeyId`\" pulumi-lang-java=\"`cloudAccessKeyId`\"\u003e`cloud_access_key_id`\u003c/span\u003e and a \u003cspan pulumi-lang-nodejs=\"`cloudSecretAccessKey`\" pulumi-lang-dotnet=\"`CloudSecretAccessKey`\" pulumi-lang-go=\"`cloudSecretAccessKey`\" pulumi-lang-python=\"`cloud_secret_access_key`\" pulumi-lang-yaml=\"`cloudSecretAccessKey`\" pulumi-lang-java=\"`cloudSecretAccessKey`\"\u003e`cloud_secret_access_key`\u003c/span\u003e used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
                 },
                 "credentialsB": {
                     "$ref": "#/types/akamai:index/CloudAccessKeyCredentialsB:CloudAccessKeyCredentialsB",
-                    "description": "The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
+                    "description": "The combination of a \u003cspan pulumi-lang-nodejs=\"`cloudAccessKeyId`\" pulumi-lang-dotnet=\"`CloudAccessKeyId`\" pulumi-lang-go=\"`cloudAccessKeyId`\" pulumi-lang-python=\"`cloud_access_key_id`\" pulumi-lang-yaml=\"`cloudAccessKeyId`\" pulumi-lang-java=\"`cloudAccessKeyId`\"\u003e`cloud_access_key_id`\u003c/span\u003e and a \u003cspan pulumi-lang-nodejs=\"`cloudSecretAccessKey`\" pulumi-lang-dotnet=\"`CloudSecretAccessKey`\" pulumi-lang-go=\"`cloudSecretAccessKey`\" pulumi-lang-python=\"`cloud_secret_access_key`\" pulumi-lang-yaml=\"`cloudSecretAccessKey`\" pulumi-lang-java=\"`cloudSecretAccessKey`\"\u003e`cloud_secret_access_key`\u003c/span\u003e used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
                 },
                 "groupId": {
                     "type": "integer",
@@ -20862,11 +20862,11 @@
                     },
                     "credentialsA": {
                         "$ref": "#/types/akamai:index/CloudAccessKeyCredentialsA:CloudAccessKeyCredentialsA",
-                        "description": "The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
+                        "description": "The combination of a \u003cspan pulumi-lang-nodejs=\"`cloudAccessKeyId`\" pulumi-lang-dotnet=\"`CloudAccessKeyId`\" pulumi-lang-go=\"`cloudAccessKeyId`\" pulumi-lang-python=\"`cloud_access_key_id`\" pulumi-lang-yaml=\"`cloudAccessKeyId`\" pulumi-lang-java=\"`cloudAccessKeyId`\"\u003e`cloud_access_key_id`\u003c/span\u003e and a \u003cspan pulumi-lang-nodejs=\"`cloudSecretAccessKey`\" pulumi-lang-dotnet=\"`CloudSecretAccessKey`\" pulumi-lang-go=\"`cloudSecretAccessKey`\" pulumi-lang-python=\"`cloud_secret_access_key`\" pulumi-lang-yaml=\"`cloudSecretAccessKey`\" pulumi-lang-java=\"`cloudSecretAccessKey`\"\u003e`cloud_secret_access_key`\u003c/span\u003e used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
                     },
                     "credentialsB": {
                         "$ref": "#/types/akamai:index/CloudAccessKeyCredentialsB:CloudAccessKeyCredentialsB",
-                        "description": "The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
+                        "description": "The combination of a \u003cspan pulumi-lang-nodejs=\"`cloudAccessKeyId`\" pulumi-lang-dotnet=\"`CloudAccessKeyId`\" pulumi-lang-go=\"`cloudAccessKeyId`\" pulumi-lang-python=\"`cloud_access_key_id`\" pulumi-lang-yaml=\"`cloudAccessKeyId`\" pulumi-lang-java=\"`cloudAccessKeyId`\"\u003e`cloud_access_key_id`\u003c/span\u003e and a \u003cspan pulumi-lang-nodejs=\"`cloudSecretAccessKey`\" pulumi-lang-dotnet=\"`CloudSecretAccessKey`\" pulumi-lang-go=\"`cloudSecretAccessKey`\" pulumi-lang-python=\"`cloud_secret_access_key`\" pulumi-lang-yaml=\"`cloudSecretAccessKey`\" pulumi-lang-java=\"`cloudSecretAccessKey`\"\u003e`cloud_secret_access_key`\u003c/span\u003e used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB)."
                     },
                     "groupId": {
                         "type": "integer",
@@ -20878,7 +20878,7 @@
                     },
                     "primaryGuid": {
                         "type": "string",
-                        "description": "Value of `version_guid` field for credentials marked as primary"
+                        "description": "Value of \u003cspan pulumi-lang-nodejs=\"`versionGuid`\" pulumi-lang-dotnet=\"`VersionGuid`\" pulumi-lang-go=\"`versionGuid`\" pulumi-lang-python=\"`version_guid`\" pulumi-lang-yaml=\"`versionGuid`\" pulumi-lang-java=\"`versionGuid`\"\u003e`version_guid`\u003c/span\u003e field for credentials marked as primary"
                     },
                     "timeouts": {
                         "$ref": "#/types/akamai:index/CloudAccessKeyTimeouts:CloudAccessKeyTimeouts"
@@ -25439,7 +25439,7 @@
                 },
                 "purgeOptions": {
                     "$ref": "#/types/akamai:index/IamApiClientPurgeOptions:IamApiClientPurgeOptions",
-                    "description": "Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`."
+                    "description": "Configures the API client to access the Fast Purge API. Provide it only if the \u003cspan pulumi-lang-nodejs=\"`apis`\" pulumi-lang-dotnet=\"`Apis`\" pulumi-lang-go=\"`apis`\" pulumi-lang-python=\"`apis`\" pulumi-lang-yaml=\"`apis`\" pulumi-lang-java=\"`apis`\"\u003e`apis`\u003c/span\u003e attribute includes an \u003cspan pulumi-lang-nodejs=\"`apiName`\" pulumi-lang-dotnet=\"`ApiName`\" pulumi-lang-go=\"`apiName`\" pulumi-lang-python=\"`api_name`\" pulumi-lang-yaml=\"`apiName`\" pulumi-lang-java=\"`apiName`\"\u003e`api_name`\u003c/span\u003e of `CCU API`."
                 }
             },
             "required": [
@@ -25518,7 +25518,7 @@
                 },
                 "purgeOptions": {
                     "$ref": "#/types/akamai:index/IamApiClientPurgeOptions:IamApiClientPurgeOptions",
-                    "description": "Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`."
+                    "description": "Configures the API client to access the Fast Purge API. Provide it only if the \u003cspan pulumi-lang-nodejs=\"`apis`\" pulumi-lang-dotnet=\"`Apis`\" pulumi-lang-go=\"`apis`\" pulumi-lang-python=\"`apis`\" pulumi-lang-yaml=\"`apis`\" pulumi-lang-java=\"`apis`\"\u003e`apis`\u003c/span\u003e attribute includes an \u003cspan pulumi-lang-nodejs=\"`apiName`\" pulumi-lang-dotnet=\"`ApiName`\" pulumi-lang-go=\"`apiName`\" pulumi-lang-python=\"`api_name`\" pulumi-lang-yaml=\"`apiName`\" pulumi-lang-java=\"`apiName`\"\u003e`api_name`\u003c/span\u003e of `CCU API`."
                 }
             },
             "requiredInputs": [
@@ -25617,7 +25617,7 @@
                     },
                     "purgeOptions": {
                         "$ref": "#/types/akamai:index/IamApiClientPurgeOptions:IamApiClientPurgeOptions",
-                        "description": "Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`."
+                        "description": "Configures the API client to access the Fast Purge API. Provide it only if the \u003cspan pulumi-lang-nodejs=\"`apis`\" pulumi-lang-dotnet=\"`Apis`\" pulumi-lang-go=\"`apis`\" pulumi-lang-python=\"`apis`\" pulumi-lang-yaml=\"`apis`\" pulumi-lang-java=\"`apis`\"\u003e`apis`\u003c/span\u003e attribute includes an \u003cspan pulumi-lang-nodejs=\"`apiName`\" pulumi-lang-dotnet=\"`ApiName`\" pulumi-lang-go=\"`apiName`\" pulumi-lang-python=\"`api_name`\" pulumi-lang-yaml=\"`apiName`\" pulumi-lang-java=\"`apiName`\"\u003e`api_name`\u003c/span\u003e of `CCU API`."
                     }
                 },
                 "type": "object"
@@ -26610,7 +26610,7 @@
                 },
                 "currentGuid": {
                     "type": "string",
-                    "description": "Unique identifier for the `current` client certificate version."
+                    "description": "Unique identifier for the \u003cspan pulumi-lang-nodejs=\"`current`\" pulumi-lang-dotnet=\"`Current`\" pulumi-lang-go=\"`current`\" pulumi-lang-python=\"`current`\" pulumi-lang-yaml=\"`current`\" pulumi-lang-java=\"`current`\"\u003e`current`\u003c/span\u003e client certificate version."
                 },
                 "geography": {
                     "type": "string",
@@ -26633,7 +26633,7 @@
                 },
                 "previousGuid": {
                     "type": "string",
-                    "description": "Unique identifier for the `previous` client certificate version."
+                    "description": "Unique identifier for the \u003cspan pulumi-lang-nodejs=\"`previous`\" pulumi-lang-dotnet=\"`Previous`\" pulumi-lang-go=\"`previous`\" pulumi-lang-python=\"`previous`\" pulumi-lang-yaml=\"`previous`\" pulumi-lang-java=\"`previous`\"\u003e`previous`\u003c/span\u003e client certificate version."
                 },
                 "secureNetwork": {
                     "type": "string",
@@ -26737,7 +26737,7 @@
                     },
                     "currentGuid": {
                         "type": "string",
-                        "description": "Unique identifier for the `current` client certificate version."
+                        "description": "Unique identifier for the \u003cspan pulumi-lang-nodejs=\"`current`\" pulumi-lang-dotnet=\"`Current`\" pulumi-lang-go=\"`current`\" pulumi-lang-python=\"`current`\" pulumi-lang-yaml=\"`current`\" pulumi-lang-java=\"`current`\"\u003e`current`\u003c/span\u003e client certificate version."
                     },
                     "geography": {
                         "type": "string",
@@ -26760,7 +26760,7 @@
                     },
                     "previousGuid": {
                         "type": "string",
-                        "description": "Unique identifier for the `previous` client certificate version."
+                        "description": "Unique identifier for the \u003cspan pulumi-lang-nodejs=\"`previous`\" pulumi-lang-dotnet=\"`Previous`\" pulumi-lang-go=\"`previous`\" pulumi-lang-python=\"`previous`\" pulumi-lang-yaml=\"`previous`\" pulumi-lang-java=\"`previous`\"\u003e`previous`\u003c/span\u003e client certificate version."
                     },
                     "secureNetwork": {
                         "type": "string",
@@ -26952,7 +26952,7 @@
             "properties": {
                 "autoAcknowledgeWarnings": {
                     "type": "boolean",
-                    "description": "If set to true, all warnings will be acknowledged automatically. Defaults to `false`."
+                    "description": "If set to true, all warnings will be acknowledged automatically. Defaults to \u003cspan pulumi-lang-nodejs=\"`false`\" pulumi-lang-dotnet=\"`False`\" pulumi-lang-go=\"`false`\" pulumi-lang-python=\"`false`\" pulumi-lang-yaml=\"`false`\" pulumi-lang-java=\"`false`\"\u003e`false`\u003c/span\u003e."
                 },
                 "clientCertificateId": {
                     "type": "integer",
@@ -26979,7 +26979,7 @@
                 },
                 "waitForDeployment": {
                     "type": "boolean",
-                    "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`."
+                    "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to \u003cspan pulumi-lang-nodejs=\"`true`\" pulumi-lang-dotnet=\"`True`\" pulumi-lang-go=\"`true`\" pulumi-lang-python=\"`true`\" pulumi-lang-yaml=\"`true`\" pulumi-lang-java=\"`true`\"\u003e`true`\u003c/span\u003e."
                 }
             },
             "required": [
@@ -26993,7 +26993,7 @@
             "inputProperties": {
                 "autoAcknowledgeWarnings": {
                     "type": "boolean",
-                    "description": "If set to true, all warnings will be acknowledged automatically. Defaults to `false`."
+                    "description": "If set to true, all warnings will be acknowledged automatically. Defaults to \u003cspan pulumi-lang-nodejs=\"`false`\" pulumi-lang-dotnet=\"`False`\" pulumi-lang-go=\"`false`\" pulumi-lang-python=\"`false`\" pulumi-lang-yaml=\"`false`\" pulumi-lang-java=\"`false`\"\u003e`false`\u003c/span\u003e."
                 },
                 "clientCertificateId": {
                     "type": "integer",
@@ -27016,7 +27016,7 @@
                 },
                 "waitForDeployment": {
                     "type": "boolean",
-                    "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`."
+                    "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to \u003cspan pulumi-lang-nodejs=\"`true`\" pulumi-lang-dotnet=\"`True`\" pulumi-lang-go=\"`true`\" pulumi-lang-python=\"`true`\" pulumi-lang-yaml=\"`true`\" pulumi-lang-java=\"`true`\"\u003e`true`\u003c/span\u003e."
                 }
             },
             "requiredInputs": [
@@ -27029,7 +27029,7 @@
                 "properties": {
                     "autoAcknowledgeWarnings": {
                         "type": "boolean",
-                        "description": "If set to true, all warnings will be acknowledged automatically. Defaults to `false`."
+                        "description": "If set to true, all warnings will be acknowledged automatically. Defaults to \u003cspan pulumi-lang-nodejs=\"`false`\" pulumi-lang-dotnet=\"`False`\" pulumi-lang-go=\"`false`\" pulumi-lang-python=\"`false`\" pulumi-lang-yaml=\"`false`\" pulumi-lang-java=\"`false`\"\u003e`false`\u003c/span\u003e."
                     },
                     "clientCertificateId": {
                         "type": "integer",
@@ -27056,7 +27056,7 @@
                     },
                     "waitForDeployment": {
                         "type": "boolean",
-                        "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`."
+                        "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to \u003cspan pulumi-lang-nodejs=\"`true`\" pulumi-lang-dotnet=\"`True`\" pulumi-lang-go=\"`true`\" pulumi-lang-python=\"`true`\" pulumi-lang-yaml=\"`true`\" pulumi-lang-java=\"`true`\"\u003e`true`\u003c/span\u003e."
                     }
                 },
                 "type": "object"
@@ -27085,7 +27085,7 @@
                 },
                 "mode": {
                     "type": "string",
-                    "description": "A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'"
+                    "description": "A string specifying the interpretation of the \u003cspan pulumi-lang-nodejs=\"`list`\" pulumi-lang-dotnet=\"`List`\" pulumi-lang-go=\"`list`\" pulumi-lang-python=\"`list`\" pulumi-lang-yaml=\"`list`\" pulumi-lang-java=\"`list`\"\u003e`list`\u003c/span\u003e parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'"
                 },
                 "name": {
                     "type": "string",
@@ -27139,7 +27139,7 @@
                 },
                 "mode": {
                     "type": "string",
-                    "description": "A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'"
+                    "description": "A string specifying the interpretation of the \u003cspan pulumi-lang-nodejs=\"`list`\" pulumi-lang-dotnet=\"`List`\" pulumi-lang-go=\"`list`\" pulumi-lang-python=\"`list`\" pulumi-lang-yaml=\"`list`\" pulumi-lang-java=\"`list`\"\u003e`list`\u003c/span\u003e parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'"
                 },
                 "name": {
                     "type": "string",
@@ -27179,7 +27179,7 @@
                     },
                     "mode": {
                         "type": "string",
-                        "description": "A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'"
+                        "description": "A string specifying the interpretation of the \u003cspan pulumi-lang-nodejs=\"`list`\" pulumi-lang-dotnet=\"`List`\" pulumi-lang-go=\"`list`\" pulumi-lang-python=\"`list`\" pulumi-lang-yaml=\"`list`\" pulumi-lang-java=\"`list`\"\u003e`list`\u003c/span\u003e parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'"
                     },
                     "name": {
                         "type": "string",
