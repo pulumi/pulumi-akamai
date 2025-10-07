@@ -49,13 +49,13 @@ namespace Pulumi.Akamai.Inputs
         public string? GravityVar { get; set; }
 
         /// <summary>
-        /// The height in pixels of the output image relative to the specified `style` value.
+        /// The height in pixels of the output image relative to the specified `Style` value.
         /// </summary>
         [Input("height")]
         public string? Height { get; set; }
 
         /// <summary>
-        /// The height in pixels of the output image relative to the specified `style` value.
+        /// The height in pixels of the output image relative to the specified `Style` value.
         /// </summary>
         [Input("heightVar")]
         public string? HeightVar { get; set; }
@@ -97,25 +97,25 @@ namespace Pulumi.Akamai.Inputs
         public string? PaddingVar { get; set; }
 
         /// <summary>
-        /// Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
+        /// Specifies how to crop or scale a crop area for the features identified in the source image, `Fill` by default. The output image resizes to the specified `Width` and `Height` values. A value of `Crop` performs a raw crop around the features, relative to the specified `Gravity` value.  A value of `Fill` scales the crop area to include as much of the image and features as possible, relative to the specified `Width` and `Height` values. A value of `Zoom` scales the crop area as small as possible to fit the features, relative to the specified `Width` and `Height` values. Allows Variable substitution.
         /// </summary>
         [Input("style")]
         public string? Style { get; set; }
 
         /// <summary>
-        /// Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
+        /// Specifies how to crop or scale a crop area for the features identified in the source image, `Fill` by default. The output image resizes to the specified `Width` and `Height` values. A value of `Crop` performs a raw crop around the features, relative to the specified `Gravity` value.  A value of `Fill` scales the crop area to include as much of the image and features as possible, relative to the specified `Width` and `Height` values. A value of `Zoom` scales the crop area as small as possible to fit the features, relative to the specified `Width` and `Height` values. Allows Variable substitution.
         /// </summary>
         [Input("styleVar")]
         public string? StyleVar { get; set; }
 
         /// <summary>
-        /// The width in pixels of the output image relative to the specified `style` value.
+        /// The width in pixels of the output image relative to the specified `Style` value.
         /// </summary>
         [Input("width")]
         public string? Width { get; set; }
 
         /// <summary>
-        /// The width in pixels of the output image relative to the specified `style` value.
+        /// The width in pixels of the output image relative to the specified `Style` value.
         /// </summary>
         [Input("widthVar")]
         public string? WidthVar { get; set; }

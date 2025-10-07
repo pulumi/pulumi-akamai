@@ -15,19 +15,19 @@ namespace Pulumi.Akamai.Outputs
     {
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchorResult Anchor;
         /// <summary>
-        /// Extends the rectangle down from the `anchor` point.
+        /// Extends the rectangle down from the `Anchor` point.
         /// </summary>
         public readonly string? Height;
         /// <summary>
-        /// Extends the rectangle down from the `anchor` point.
+        /// Extends the rectangle down from the `Anchor` point.
         /// </summary>
         public readonly string? HeightVar;
         /// <summary>
-        /// Extends the rectangle right from the `anchor` point.
+        /// Extends the rectangle right from the `Anchor` point.
         /// </summary>
         public readonly string? Width;
         /// <summary>
-        /// Extends the rectangle right from the `anchor` point.
+        /// Extends the rectangle right from the `Anchor` point.
         /// </summary>
         public readonly string? WidthVar;
 

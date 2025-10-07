@@ -27,12 +27,12 @@ public final class IamApiClientActions {
      */
     private @Nullable Boolean edit;
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_auth`.
+     * @return Whether you can update the `apis` the API client can access, same as `editAuth`.
      * 
      */
     private @Nullable Boolean editApis;
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_apis`.
+     * @return Whether you can update the `apis` the API client can access, same as `editApis`.
      * 
      */
     private @Nullable Boolean editAuth;
@@ -90,14 +90,14 @@ public final class IamApiClientActions {
         return Optional.ofNullable(this.edit);
     }
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_auth`.
+     * @return Whether you can update the `apis` the API client can access, same as `editAuth`.
      * 
      */
     public Optional<Boolean> editApis() {
         return Optional.ofNullable(this.editApis);
     }
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_apis`.
+     * @return Whether you can update the `apis` the API client can access, same as `editApis`.
      * 
      */
     public Optional<Boolean> editAuth() {
