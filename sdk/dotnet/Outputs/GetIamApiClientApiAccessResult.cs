@@ -18,7 +18,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly bool AllAccessibleApis;
         /// <summary>
-        /// The set of APIs the API client can access when `all_accessible_apis` is disabled.
+        /// The set of APIs the API client can access when `AllAccessibleApis` is disabled.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIamApiClientApiAccessApiResult> Apis;
 

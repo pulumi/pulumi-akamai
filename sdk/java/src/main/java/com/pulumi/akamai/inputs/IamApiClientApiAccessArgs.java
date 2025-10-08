@@ -34,14 +34,14 @@ public final class IamApiClientApiAccessArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The set of APIs the API client can access when `all_accessible_apis` is `false`.
+     * The set of APIs the API client can access when `allAccessibleApis` is `false`.
      * 
      */
     @Import(name="apis")
     private @Nullable Output<List<IamApiClientApiAccessApiArgs>> apis;
 
     /**
-     * @return The set of APIs the API client can access when `all_accessible_apis` is `false`.
+     * @return The set of APIs the API client can access when `allAccessibleApis` is `false`.
      * 
      */
     public Optional<Output<List<IamApiClientApiAccessApiArgs>>> apis() {
@@ -95,7 +95,7 @@ public final class IamApiClientApiAccessArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param apis The set of APIs the API client can access when `all_accessible_apis` is `false`.
+         * @param apis The set of APIs the API client can access when `allAccessibleApis` is `false`.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class IamApiClientApiAccessArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param apis The set of APIs the API client can access when `all_accessible_apis` is `false`.
+         * @param apis The set of APIs the API client can access when `allAccessibleApis` is `false`.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class IamApiClientApiAccessArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param apis The set of APIs the API client can access when `all_accessible_apis` is `false`.
+         * @param apis The set of APIs the API client can access when `allAccessibleApis` is `false`.
          * 
          * @return builder
          * 
