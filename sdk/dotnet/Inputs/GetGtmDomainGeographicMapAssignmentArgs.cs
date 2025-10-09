@@ -16,7 +16,7 @@ namespace Pulumi.Akamai.Inputs
         private InputList<string>? _countries;
 
         /// <summary>
-        /// Specifies an array of two-letter ISO 3166 `country` codes.
+        /// Specifies an array of two-letter ISO 3166 `Country` codes.
         /// </summary>
         public InputList<string> Countries
         {

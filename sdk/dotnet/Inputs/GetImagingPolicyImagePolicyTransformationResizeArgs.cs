@@ -13,13 +13,13 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyTransformationResizeInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+        /// Preserves the aspect ratio. Select `Fit` to make the image fit entirely within the selected width and height. When using `Fit`, the resulting image has the largest possible size for the specified dimensions. Select `Fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `Ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
         /// </summary>
         [Input("aspect")]
         public Input<string>? Aspect { get; set; }
 
         /// <summary>
-        /// Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+        /// Preserves the aspect ratio. Select `Fit` to make the image fit entirely within the selected width and height. When using `Fit`, the resulting image has the largest possible size for the specified dimensions. Select `Fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `Ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
         /// </summary>
         [Input("aspectVar")]
         public Input<string>? AspectVar { get; set; }
@@ -37,13 +37,13 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? HeightVar { get; set; }
 
         /// <summary>
-        /// Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+        /// Sets constraints for the image resize. Select `Normal` to resize in all cases, either increasing or decreasing the dimensions. Select `Downsize` to ignore this transformation if the result would be larger than the original. Select `Upsize` to ignore this transformation if the result would be smaller.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+        /// Sets constraints for the image resize. Select `Normal` to resize in all cases, either increasing or decreasing the dimensions. Select `Downsize` to ignore this transformation if the result would be larger than the original. Select `Upsize` to ignore this transformation if the result would be smaller.
         /// </summary>
         [Input("typeVar")]
         public Input<string>? TypeVar { get; set; }

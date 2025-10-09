@@ -284,14 +284,14 @@ public class IamApiClient extends com.pulumi.resources.CustomResource {
         return this.notificationEmails;
     }
     /**
-     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
      * 
      */
     @Export(name="purgeOptions", refs={IamApiClientPurgeOptions.class}, tree="[0]")
     private Output</* @Nullable */ IamApiClientPurgeOptions> purgeOptions;
 
     /**
-     * @return Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+     * @return Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
      * 
      */
     public Output<Optional<IamApiClientPurgeOptions>> purgeOptions() {

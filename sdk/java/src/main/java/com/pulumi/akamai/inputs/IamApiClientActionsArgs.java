@@ -61,14 +61,14 @@ public final class IamApiClientActionsArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Whether you can update the `apis` the API client can access, same as `edit_auth`.
+     * Whether you can update the `apis` the API client can access, same as `editAuth`.
      * 
      */
     @Import(name="editApis")
     private @Nullable Output<Boolean> editApis;
 
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_auth`.
+     * @return Whether you can update the `apis` the API client can access, same as `editAuth`.
      * 
      */
     public Optional<Output<Boolean>> editApis() {
@@ -76,14 +76,14 @@ public final class IamApiClientActionsArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Whether you can update the `apis` the API client can access, same as `edit_apis`.
+     * Whether you can update the `apis` the API client can access, same as `editApis`.
      * 
      */
     @Import(name="editAuth")
     private @Nullable Output<Boolean> editAuth;
 
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_apis`.
+     * @return Whether you can update the `apis` the API client can access, same as `editApis`.
      * 
      */
     public Optional<Output<Boolean>> editAuth() {
@@ -278,7 +278,7 @@ public final class IamApiClientActionsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param editApis Whether you can update the `apis` the API client can access, same as `edit_auth`.
+         * @param editApis Whether you can update the `apis` the API client can access, same as `editAuth`.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class IamApiClientActionsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param editApis Whether you can update the `apis` the API client can access, same as `edit_auth`.
+         * @param editApis Whether you can update the `apis` the API client can access, same as `editAuth`.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class IamApiClientActionsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param editAuth Whether you can update the `apis` the API client can access, same as `edit_apis`.
+         * @param editAuth Whether you can update the `apis` the API client can access, same as `editApis`.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class IamApiClientActionsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param editAuth Whether you can update the `apis` the API client can access, same as `edit_apis`.
+         * @param editAuth Whether you can update the `apis` the API client can access, same as `editApis`.
          * 
          * @return builder
          * 

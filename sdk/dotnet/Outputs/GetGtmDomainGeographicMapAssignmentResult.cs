@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetGtmDomainGeographicMapAssignmentResult
     {
         /// <summary>
-        /// Specifies an array of two-letter ISO 3166 `country` codes.
+        /// Specifies an array of two-letter ISO 3166 `Country` codes.
         /// </summary>
         public readonly ImmutableArray<string> Countries;
         /// <summary>

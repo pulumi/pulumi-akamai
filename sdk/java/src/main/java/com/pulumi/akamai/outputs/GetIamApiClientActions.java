@@ -26,12 +26,12 @@ public final class GetIamApiClientActions {
      */
     private Boolean edit;
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_auth`.
+     * @return Whether you can update the `apis` the API client can access, same as `editAuth`.
      * 
      */
     private Boolean editApis;
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_apis`.
+     * @return Whether you can update the `apis` the API client can access, same as `editApis`.
      * 
      */
     private Boolean editAuth;
@@ -41,7 +41,7 @@ public final class GetIamApiClientActions {
      */
     private Boolean editGroups;
     /**
-     * @return Whether you can update the `ip_acl` the API client can access.
+     * @return Whether you can update the `ipAcl` the API client can access.
      * 
      */
     private Boolean editIpAcl;
@@ -89,14 +89,14 @@ public final class GetIamApiClientActions {
         return this.edit;
     }
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_auth`.
+     * @return Whether you can update the `apis` the API client can access, same as `editAuth`.
      * 
      */
     public Boolean editApis() {
         return this.editApis;
     }
     /**
-     * @return Whether you can update the `apis` the API client can access, same as `edit_apis`.
+     * @return Whether you can update the `apis` the API client can access, same as `editApis`.
      * 
      */
     public Boolean editAuth() {
@@ -110,7 +110,7 @@ public final class GetIamApiClientActions {
         return this.editGroups;
     }
     /**
-     * @return Whether you can update the `ip_acl` the API client can access.
+     * @return Whether you can update the `ipAcl` the API client can access.
      * 
      */
     public Boolean editIpAcl() {
