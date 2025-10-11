@@ -22,7 +22,7 @@ namespace Pulumi.Akamai.Inputs
         private InputList<Inputs.IamApiClientApiAccessApiArgs>? _apis;
 
         /// <summary>
-        /// The set of APIs the API client can access when `all_accessible_apis` is `false`.
+        /// The set of APIs the API client can access when `AllAccessibleApis` is `False`.
         /// </summary>
         public InputList<Inputs.IamApiClientApiAccessApiArgs> Apis
         {

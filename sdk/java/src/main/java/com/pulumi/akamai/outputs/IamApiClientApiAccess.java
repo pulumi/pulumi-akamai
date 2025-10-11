@@ -19,7 +19,7 @@ public final class IamApiClientApiAccess {
      */
     private Boolean allAccessibleApis;
     /**
-     * @return The set of APIs the API client can access when `all_accessible_apis` is `false`.
+     * @return The set of APIs the API client can access when `allAccessibleApis` is `false`.
      * 
      */
     private @Nullable List<IamApiClientApiAccessApi> apis;
@@ -33,7 +33,7 @@ public final class IamApiClientApiAccess {
         return this.allAccessibleApis;
     }
     /**
-     * @return The set of APIs the API client can access when `all_accessible_apis` is `false`.
+     * @return The set of APIs the API client can access when `allAccessibleApis` is `false`.
      * 
      */
     public List<IamApiClientApiAccessApi> apis() {

@@ -31,7 +31,7 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
-        /// Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
+        /// Dictates the output quality (either `Quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
         /// </summary>
         [Input("output")]
         public Inputs.GetImagingPolicyImagePolicyOutputArgs? Output { get; set; }

@@ -302,14 +302,14 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+     * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
      * 
      */
     @Import(name="purgeOptions")
     private @Nullable Output<IamApiClientPurgeOptionsArgs> purgeOptions;
 
     /**
-     * @return Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+     * @return Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
      * 
      */
     public Optional<Output<IamApiClientPurgeOptionsArgs>> purgeOptions() {
@@ -767,7 +767,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param purgeOptions Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+         * @param purgeOptions Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
          * 
          * @return builder
          * 
@@ -778,7 +778,7 @@ public final class IamApiClientState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param purgeOptions Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+         * @param purgeOptions Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
          * 
          * @return builder
          * 
