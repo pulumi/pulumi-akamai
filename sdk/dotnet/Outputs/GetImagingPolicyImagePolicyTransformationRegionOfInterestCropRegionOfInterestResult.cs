@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestResult
     {
         /// <summary>
-        /// Defines a circle with a specified `radius` from its `center` point.
+        /// Defines a circle with a specified `Radius` from its `Center` point.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeResult> CircleShapes;
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShapeResult> PointShapes;
@@ -23,7 +23,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeResult> PolygonShapes;
         /// <summary>
-        /// Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
+        /// Defines a rectangle's `Width` and `Height` relative to an `Anchor` point at the top left corner.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeResult> RectangleShapes;
         /// <summary>

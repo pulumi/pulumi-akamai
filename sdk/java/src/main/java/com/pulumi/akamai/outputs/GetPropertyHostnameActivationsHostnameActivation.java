@@ -37,7 +37,7 @@ public final class GetPropertyHostnameActivationsHostnameActivation {
      */
     private List<String> notifyEmails;
     /**
-     * @return The activation&#39;s status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `activation_type` is `DEACTIVATE` to no longer serve traffic.
+     * @return The activation&#39;s status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `activationType` is `DEACTIVATE` to no longer serve traffic.
      * 
      */
     private String status;
@@ -89,7 +89,7 @@ public final class GetPropertyHostnameActivationsHostnameActivation {
         return this.notifyEmails;
     }
     /**
-     * @return The activation&#39;s status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `activation_type` is `DEACTIVATE` to no longer serve traffic.
+     * @return The activation&#39;s status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `activationType` is `DEACTIVATE` to no longer serve traffic.
      * 
      */
     public String status() {

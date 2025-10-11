@@ -37,7 +37,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> Lists { get; private set; } = null!;
 
         /// <summary>
-        /// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
+        /// A string specifying the interpretation of the `List` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
@@ -149,7 +149,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
+        /// A string specifying the interpretation of the `List` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         /// </summary>
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
@@ -205,7 +205,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
+        /// A string specifying the interpretation of the `List` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }

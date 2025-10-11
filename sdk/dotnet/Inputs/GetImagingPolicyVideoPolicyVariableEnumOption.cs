@@ -19,7 +19,7 @@ namespace Pulumi.Akamai.Inputs
         public string Id { get; set; } = null!;
 
         /// <summary>
-        /// The value of the variable when the `id` is provided.
+        /// The value of the variable when the `Id` is provided.
         /// </summary>
         [Input("value", required: true)]
         public string Value { get; set; } = null!;

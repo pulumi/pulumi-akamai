@@ -16,7 +16,7 @@ namespace Pulumi.Akamai.Inputs
         private List<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs>? _circleShapes;
 
         /// <summary>
-        /// Defines a circle with a specified `radius` from its `center` point.
+        /// Defines a circle with a specified `Radius` from its `Center` point.
         /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs> CircleShapes
         {
@@ -48,7 +48,7 @@ namespace Pulumi.Akamai.Inputs
         private List<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs>? _rectangleShapes;
 
         /// <summary>
-        /// Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
+        /// Defines a rectangle's `Width` and `Height` relative to an `Anchor` point at the top left corner.
         /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs> RectangleShapes
         {

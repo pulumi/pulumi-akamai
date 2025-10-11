@@ -16,13 +16,13 @@ namespace Pulumi.Akamai.Inputs
         public Input<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? Default { get; set; }
 
         /// <summary>
-        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// The dimension to use to select the transformation, either `Height`, `Width`, or `Both`.
         /// </summary>
         [Input("dimension")]
         public Input<string>? Dimension { get; set; }
 
         /// <summary>
-        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// The dimension to use to select the transformation, either `Height`, `Width`, or `Both`.
         /// </summary>
         [Input("dimensionVar")]
         public Input<string>? DimensionVar { get; set; }

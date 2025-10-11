@@ -13,7 +13,7 @@ namespace Pulumi.Akamai
     public partial class MtlskeystoreClientCertificateUpload : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
+        /// If set to true, all warnings will be acknowledged automatically. Defaults to `False`.
         /// </summary>
         [Output("autoAcknowledgeWarnings")]
         public Output<bool> AutoAcknowledgeWarnings { get; private set; } = null!;
@@ -52,7 +52,7 @@ namespace Pulumi.Akamai
         public Output<int> VersionNumber { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`.
+        /// Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `True`.
         /// </summary>
         [Output("waitForDeployment")]
         public Output<bool> WaitForDeployment { get; private set; } = null!;
@@ -104,7 +104,7 @@ namespace Pulumi.Akamai
     public sealed class MtlskeystoreClientCertificateUploadArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
+        /// If set to true, all warnings will be acknowledged automatically. Defaults to `False`.
         /// </summary>
         [Input("autoAcknowledgeWarnings")]
         public Input<bool>? AutoAcknowledgeWarnings { get; set; }
@@ -137,7 +137,7 @@ namespace Pulumi.Akamai
         public Input<int> VersionNumber { get; set; } = null!;
 
         /// <summary>
-        /// Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`.
+        /// Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `True`.
         /// </summary>
         [Input("waitForDeployment")]
         public Input<bool>? WaitForDeployment { get; set; }
@@ -151,7 +151,7 @@ namespace Pulumi.Akamai
     public sealed class MtlskeystoreClientCertificateUploadState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
+        /// If set to true, all warnings will be acknowledged automatically. Defaults to `False`.
         /// </summary>
         [Input("autoAcknowledgeWarnings")]
         public Input<bool>? AutoAcknowledgeWarnings { get; set; }
@@ -190,7 +190,7 @@ namespace Pulumi.Akamai
         public Input<int>? VersionNumber { get; set; }
 
         /// <summary>
-        /// Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`.
+        /// Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `True`.
         /// </summary>
         [Input("waitForDeployment")]
         public Input<bool>? WaitForDeployment { get; set; }

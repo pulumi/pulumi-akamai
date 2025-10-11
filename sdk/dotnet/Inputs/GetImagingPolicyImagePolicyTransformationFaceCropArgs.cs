@@ -13,25 +13,25 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyTransformationFaceCropInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+        /// Specifies the type of algorithm used to detect faces in the image, either `Cascade` for the cascade classifier algorithm or `Dnn` for the deep neural network algorithm, `Cascade` by default.
         /// </summary>
         [Input("algorithm")]
         public Input<string>? Algorithm { get; set; }
 
         /// <summary>
-        /// Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+        /// Specifies the type of algorithm used to detect faces in the image, either `Cascade` for the cascade classifier algorithm or `Dnn` for the deep neural network algorithm, `Cascade` by default.
         /// </summary>
         [Input("algorithmVar")]
         public Input<string>? AlgorithmVar { get; set; }
 
         /// <summary>
-        /// With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+        /// With `Algorithm` set to `Dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
         /// </summary>
         [Input("confidence")]
         public Input<string>? Confidence { get; set; }
 
         /// <summary>
-        /// With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+        /// With `Algorithm` set to `Dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
         /// </summary>
         [Input("confidenceVar")]
         public Input<string>? ConfidenceVar { get; set; }
@@ -49,13 +49,13 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? FailGravityVar { get; set; }
 
         /// <summary>
-        /// Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+        /// Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `All` by default.
         /// </summary>
         [Input("focus")]
         public Input<string>? Focus { get; set; }
 
         /// <summary>
-        /// Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+        /// Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `All` by default.
         /// </summary>
         [Input("focusVar")]
         public Input<string>? FocusVar { get; set; }
@@ -73,13 +73,13 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? GravityVar { get; set; }
 
         /// <summary>
-        /// The height of the output image in pixels relative to the specified `style` value.
+        /// The height of the output image in pixels relative to the specified `Style` value.
         /// </summary>
         [Input("height")]
         public Input<string>? Height { get; set; }
 
         /// <summary>
-        /// The height of the output image in pixels relative to the specified `style` value.
+        /// The height of the output image in pixels relative to the specified `Style` value.
         /// </summary>
         [Input("heightVar")]
         public Input<string>? HeightVar { get; set; }
@@ -97,25 +97,25 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? PaddingVar { get; set; }
 
         /// <summary>
-        /// Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+        /// Specifies how to crop or scale a crop area for the faces detected in the source image, `Zoom` by default. The output image resizes to the specified `Width` and `Height` values. A value of `Crop` places a raw crop around the faces, relative to the specified `Gravity` value.  A value of `Fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `Width` and `Height` values. A value of `Zoom` scales the crop area as small as possible to fit the faces, relative to the specified `Width` and `Height` values. Allows Variable substitution.
         /// </summary>
         [Input("style")]
         public Input<string>? Style { get; set; }
 
         /// <summary>
-        /// Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+        /// Specifies how to crop or scale a crop area for the faces detected in the source image, `Zoom` by default. The output image resizes to the specified `Width` and `Height` values. A value of `Crop` places a raw crop around the faces, relative to the specified `Gravity` value.  A value of `Fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `Width` and `Height` values. A value of `Zoom` scales the crop area as small as possible to fit the faces, relative to the specified `Width` and `Height` values. Allows Variable substitution.
         /// </summary>
         [Input("styleVar")]
         public Input<string>? StyleVar { get; set; }
 
         /// <summary>
-        /// The width of the output image in pixels relative to the specified `style` value.
+        /// The width of the output image in pixels relative to the specified `Style` value.
         /// </summary>
         [Input("width")]
         public Input<string>? Width { get; set; }
 
         /// <summary>
-        /// The width of the output image in pixels relative to the specified `style` value.
+        /// The width of the output image in pixels relative to the specified `Style` value.
         /// </summary>
         [Input("widthVar")]
         public Input<string>? WidthVar { get; set; }

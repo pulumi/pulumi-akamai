@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetImagingPolicyImagePolicyTransformationResult
     {
         /// <summary>
-        /// Places a specified `image` beside the source image. The API places the `image` on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.
+        /// Places a specified `Image` beside the source image. The API places the `Image` on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationAppendResult> Appends;
         /// <summary>
@@ -47,11 +47,11 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationCropResult> Crops;
         /// <summary>
-        /// Applies a method to detect faces in the source image and applies the rectangular crop on either the `biggest` face or `all` of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.
+        /// Applies a method to detect faces in the source image and applies the rectangular crop on either the `Biggest` face or `All` of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationFaceCropResult> FaceCrops;
         /// <summary>
-        /// Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified `width` and `height` values.
+        /// Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified `Width` and `Height` values.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationFeatureCropResult> FeatureCrops;
         /// <summary>
@@ -71,7 +71,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationHslResult> Hsls;
         /// <summary>
-        /// Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+        /// Identical to HSL except it replaces `Lightness` with `Value`. For example, if you reduce the `Lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `Value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationHsvResult> Hsvs;
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationIfDimensionResult> IfDimensions;
@@ -97,7 +97,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationOpacityResult> Opacities;
         /// <summary>
-        /// Crops to a region around a specified area of interest relative to the specified `width` and `height` values.
+        /// Crops to a region around a specified area of interest relative to the specified `Width` and `Height` values.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropResult> RegionOfInterestCrops;
         /// <summary>
@@ -109,7 +109,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRemoveColorResult> RemoveColors;
         /// <summary>
-        /// Resizes an image to a particular, absolute dimension. If you don't enter a `width` or a `height`, the image is resized with the `fit` aspect preservation mode, which selects a value for the missing dimension that preserves the image's aspect.
+        /// Resizes an image to a particular, absolute dimension. If you don't enter a `Width` or a `Height`, the image is resized with the `Fit` aspect preservation mode, which selects a value for the missing dimension that preserves the image's aspect.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationResizeResult> Resizes;
         /// <summary>
@@ -125,7 +125,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationShearsResult> Shears;
         /// <summary>
-        /// Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+        /// Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `Width` and `Height` values. The crop detects any faces present, otherwise features.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationSmartCropResult> SmartCrops;
         /// <summary>

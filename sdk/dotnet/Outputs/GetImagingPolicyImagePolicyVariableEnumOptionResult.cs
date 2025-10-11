@@ -18,7 +18,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The value of the variable when the `id` is provided.
+        /// The value of the variable when the `Id` is provided.
         /// </summary>
         public readonly string Value;
 

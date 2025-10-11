@@ -185,14 +185,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule extends com.pulu
     }
 
     /**
-     * If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+     * If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirectUrl should be fully-qualified URL
      * 
      */
     @Import(name="useRelativeUrl")
     private @Nullable String useRelativeUrl;
 
     /**
-     * @return If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+     * @return If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirectUrl should be fully-qualified URL
      * 
      */
     public Optional<String> useRelativeUrl() {
@@ -366,7 +366,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule extends com.pulu
         }
 
         /**
-         * @param useRelativeUrl If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+         * @param useRelativeUrl If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirectUrl should be fully-qualified URL
          * 
          * @return builder
          * 

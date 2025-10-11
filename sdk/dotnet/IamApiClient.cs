@@ -124,7 +124,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> NotificationEmails { get; private set; } = null!;
 
         /// <summary>
-        /// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+        /// Configures the API client to access the Fast Purge API. Provide it only if the `Apis` attribute includes an `ApiName` of `CCU API`.
         /// </summary>
         [Output("purgeOptions")]
         public Output<Outputs.IamApiClientPurgeOptions?> PurgeOptions { get; private set; } = null!;
@@ -262,7 +262,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+        /// Configures the API client to access the Fast Purge API. Provide it only if the `Apis` attribute includes an `ApiName` of `CCU API`.
         /// </summary>
         [Input("purgeOptions")]
         public Input<Inputs.IamApiClientPurgeOptionsArgs>? PurgeOptions { get; set; }
@@ -419,7 +419,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+        /// Configures the API client to access the Fast Purge API. Provide it only if the `Apis` attribute includes an `ApiName` of `CCU API`.
         /// </summary>
         [Input("purgeOptions")]
         public Input<Inputs.IamApiClientPurgeOptionsGetArgs>? PurgeOptions { get; set; }

@@ -31,19 +31,19 @@ namespace Pulumi.Akamai.Inputs
         public Input<bool>? Edit { get; set; }
 
         /// <summary>
-        /// Whether you can update the `apis` the API client can access, same as `edit_auth`.
+        /// Whether you can update the `Apis` the API client can access, same as `EditAuth`.
         /// </summary>
         [Input("editApis")]
         public Input<bool>? EditApis { get; set; }
 
         /// <summary>
-        /// Whether you can update the `apis` the API client can access, same as `edit_apis`.
+        /// Whether you can update the `Apis` the API client can access, same as `EditApis`.
         /// </summary>
         [Input("editAuth")]
         public Input<bool>? EditAuth { get; set; }
 
         /// <summary>
-        /// Whether you can update the `groups` the API client can access.
+        /// Whether you can update the `Groups` the API client can access.
         /// </summary>
         [Input("editGroups")]
         public Input<bool>? EditGroups { get; set; }

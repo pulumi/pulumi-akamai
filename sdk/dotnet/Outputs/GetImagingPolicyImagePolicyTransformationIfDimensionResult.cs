@@ -15,11 +15,11 @@ namespace Pulumi.Akamai.Outputs
     {
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Default;
         /// <summary>
-        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// The dimension to use to select the transformation, either `Height`, `Width`, or `Both`.
         /// </summary>
         public readonly string? Dimension;
         /// <summary>
-        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// The dimension to use to select the transformation, either `Height`, `Width`, or `Both`.
         /// </summary>
         public readonly string? DimensionVar;
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Equal;

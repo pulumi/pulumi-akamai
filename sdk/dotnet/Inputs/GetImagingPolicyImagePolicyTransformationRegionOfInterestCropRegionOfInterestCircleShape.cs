@@ -13,7 +13,7 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+        /// Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `X`and `Y` members, or a two-element array.
         /// </summary>
         [Input("center", required: true)]
         public Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgs Center { get; set; } = null!;

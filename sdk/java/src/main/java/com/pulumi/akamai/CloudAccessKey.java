@@ -78,28 +78,28 @@ public class CloudAccessKey extends com.pulumi.resources.CustomResource {
         return this.contractId;
     }
     /**
-     * The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      * 
      */
     @Export(name="credentialsA", refs={CloudAccessKeyCredentialsA.class}, tree="[0]")
     private Output</* @Nullable */ CloudAccessKeyCredentialsA> credentialsA;
 
     /**
-     * @return The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+     * @return The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      * 
      */
     public Output<Optional<CloudAccessKeyCredentialsA>> credentialsA() {
         return Codegen.optional(this.credentialsA);
     }
     /**
-     * The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+     * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      * 
      */
     @Export(name="credentialsB", refs={CloudAccessKeyCredentialsB.class}, tree="[0]")
     private Output</* @Nullable */ CloudAccessKeyCredentialsB> credentialsB;
 
     /**
-     * @return The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+     * @return The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      * 
      */
     public Output<Optional<CloudAccessKeyCredentialsB>> credentialsB() {
@@ -134,14 +134,14 @@ public class CloudAccessKey extends com.pulumi.resources.CustomResource {
         return this.networkConfiguration;
     }
     /**
-     * Value of `version_guid` field for credentials marked as primary
+     * Value of `versionGuid` field for credentials marked as primary
      * 
      */
     @Export(name="primaryGuid", refs={String.class}, tree="[0]")
     private Output<String> primaryGuid;
 
     /**
-     * @return Value of `version_guid` field for credentials marked as primary
+     * @return Value of `versionGuid` field for credentials marked as primary
      * 
      */
     public Output<String> primaryGuid() {

@@ -43,7 +43,7 @@ namespace Pulumi.Akamai
         public Output<string> CreatedDate { get; private set; } = null!;
 
         /// <summary>
-        /// Unique identifier for the `current` client certificate version.
+        /// Unique identifier for the `Current` client certificate version.
         /// </summary>
         [Output("currentGuid")]
         public Output<string> CurrentGuid { get; private set; } = null!;
@@ -73,7 +73,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> NotificationEmails { get; private set; } = null!;
 
         /// <summary>
-        /// Unique identifier for the `previous` client certificate version.
+        /// Unique identifier for the `Previous` client certificate version.
         /// </summary>
         [Output("previousGuid")]
         public Output<string> PreviousGuid { get; private set; } = null!;
@@ -235,7 +235,7 @@ namespace Pulumi.Akamai
         public Input<string>? CreatedDate { get; set; }
 
         /// <summary>
-        /// Unique identifier for the `current` client certificate version.
+        /// Unique identifier for the `Current` client certificate version.
         /// </summary>
         [Input("currentGuid")]
         public Input<string>? CurrentGuid { get; set; }
@@ -271,7 +271,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Unique identifier for the `previous` client certificate version.
+        /// Unique identifier for the `Previous` client certificate version.
         /// </summary>
         [Input("previousGuid")]
         public Input<string>? PreviousGuid { get; set; }

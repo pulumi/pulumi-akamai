@@ -31,19 +31,19 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? PlacementVar;
         /// <summary>
-        /// A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+        /// A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `Scale` from the source image's width or height.
         /// </summary>
         public readonly string? Scale;
         /// <summary>
-        /// The dimension, either `width` or `height`, of the source image to scale.
+        /// The dimension, either `Width` or `Height`, of the source image to scale.
         /// </summary>
         public readonly string? ScaleDimension;
         /// <summary>
-        /// The dimension, either `width` or `height`, of the source image to scale.
+        /// The dimension, either `Width` or `Height`, of the source image to scale.
         /// </summary>
         public readonly string? ScaleDimensionVar;
         /// <summary>
-        /// A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+        /// A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `Scale` from the source image's width or height.
         /// </summary>
         public readonly string? ScaleVar;
         /// <summary>

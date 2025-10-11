@@ -22,28 +22,28 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? GravityVar;
         /// <summary>
-        /// The height in pixels of the output image relative to the specified `style` value.
+        /// The height in pixels of the output image relative to the specified `Style` value.
         /// </summary>
         public readonly string? Height;
         /// <summary>
-        /// The height in pixels of the output image relative to the specified `style` value.
+        /// The height in pixels of the output image relative to the specified `Style` value.
         /// </summary>
         public readonly string? HeightVar;
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestResult RegionOfInterest;
         /// <summary>
-        /// Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+        /// Specifies how to crop or scale a crop area for the specified area of interest in the source image, `Zoom` by default. The output image resizes to the specified `Width` and `Height` values. A value of `Crop` places raw crop around the point of interest, relative to the specified `Gravity` value.  A value of `Fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `Width` and `Height` values. A value of `Zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `Width` and `Height` values.
         /// </summary>
         public readonly string? Style;
         /// <summary>
-        /// Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+        /// Specifies how to crop or scale a crop area for the specified area of interest in the source image, `Zoom` by default. The output image resizes to the specified `Width` and `Height` values. A value of `Crop` places raw crop around the point of interest, relative to the specified `Gravity` value.  A value of `Fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `Width` and `Height` values. A value of `Zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `Width` and `Height` values.
         /// </summary>
         public readonly string? StyleVar;
         /// <summary>
-        /// The width in pixels of the output image relative to the specified `style` value.
+        /// The width in pixels of the output image relative to the specified `Style` value.
         /// </summary>
         public readonly string? Width;
         /// <summary>
-        /// The width in pixels of the output image relative to the specified `style` value.
+        /// The width in pixels of the output image relative to the specified `Style` value.
         /// </summary>
         public readonly string? WidthVar;
 

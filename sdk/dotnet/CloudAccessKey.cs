@@ -37,13 +37,13 @@ namespace Pulumi.Akamai
         public Output<string> ContractId { get; private set; } = null!;
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+        /// The combination of a `CloudAccessKeyId` and a `CloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Output("credentialsA")]
         public Output<Outputs.CloudAccessKeyCredentialsA?> CredentialsA { get; private set; } = null!;
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+        /// The combination of a `CloudAccessKeyId` and a `CloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Output("credentialsB")]
         public Output<Outputs.CloudAccessKeyCredentialsB?> CredentialsB { get; private set; } = null!;
@@ -61,7 +61,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.CloudAccessKeyNetworkConfiguration> NetworkConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// Value of `version_guid` field for credentials marked as primary
+        /// Value of `VersionGuid` field for credentials marked as primary
         /// </summary>
         [Output("primaryGuid")]
         public Output<string> PrimaryGuid { get; private set; } = null!;
@@ -134,13 +134,13 @@ namespace Pulumi.Akamai
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+        /// The combination of a `CloudAccessKeyId` and a `CloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Input("credentialsA")]
         public Input<Inputs.CloudAccessKeyCredentialsAArgs>? CredentialsA { get; set; }
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+        /// The combination of a `CloudAccessKeyId` and a `CloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Input("credentialsB")]
         public Input<Inputs.CloudAccessKeyCredentialsBArgs>? CredentialsB { get; set; }
@@ -193,13 +193,13 @@ namespace Pulumi.Akamai
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+        /// The combination of a `CloudAccessKeyId` and a `CloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Input("credentialsA")]
         public Input<Inputs.CloudAccessKeyCredentialsAGetArgs>? CredentialsA { get; set; }
 
         /// <summary>
-        /// The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
+        /// The combination of a `CloudAccessKeyId` and a `CloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         /// </summary>
         [Input("credentialsB")]
         public Input<Inputs.CloudAccessKeyCredentialsBGetArgs>? CredentialsB { get; set; }
@@ -217,7 +217,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.CloudAccessKeyNetworkConfigurationGetArgs>? NetworkConfiguration { get; set; }
 
         /// <summary>
-        /// Value of `version_guid` field for credentials marked as primary
+        /// Value of `VersionGuid` field for credentials marked as primary
         /// </summary>
         [Input("primaryGuid")]
         public Input<string>? PrimaryGuid { get; set; }

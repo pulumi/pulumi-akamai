@@ -49,7 +49,7 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
-        /// Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
+        /// Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `Quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `High`, `mediumHigh`, `Medium`, `mediumLow`, or `Low`.
         /// </summary>
         [Input("perceptualQuality")]
         public string? PerceptualQuality { get; set; }
@@ -61,7 +61,7 @@ namespace Pulumi.Akamai.Inputs
         public string? PerceptualQualityFloor { get; set; }
 
         /// <summary>
-        /// Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
+        /// Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `Quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `High`, `mediumHigh`, `Medium`, `mediumLow`, or `Low`.
         /// </summary>
         [Input("perceptualQualityVar")]
         public string? PerceptualQualityVar { get; set; }

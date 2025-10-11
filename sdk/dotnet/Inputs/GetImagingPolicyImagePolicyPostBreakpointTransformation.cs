@@ -120,7 +120,7 @@ namespace Pulumi.Akamai.Inputs
         private List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs>? _hsvs;
 
         /// <summary>
-        /// Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+        /// Identical to HSL except it replaces `Lightness` with `Value`. For example, if you reduce the `Lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `Value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
         /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs> Hsvs
         {
