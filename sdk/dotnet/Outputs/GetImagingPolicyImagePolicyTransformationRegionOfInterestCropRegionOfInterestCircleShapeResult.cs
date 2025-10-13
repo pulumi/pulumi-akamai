@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeResult
     {
         /// <summary>
-        /// Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+        /// Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `X`and `Y` members, or a two-element array.
         /// </summary>
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterResult Center;
         /// <summary>
