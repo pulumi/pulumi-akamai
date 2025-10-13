@@ -26,19 +26,19 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly bool Edit;
         /// <summary>
-        /// Whether you can update the `apis` the API client can access, same as `edit_auth`.
+        /// Whether you can update the `Apis` the API client can access, same as `EditAuth`.
         /// </summary>
         public readonly bool EditApis;
         /// <summary>
-        /// Whether you can update the `apis` the API client can access, same as `edit_apis`.
+        /// Whether you can update the `Apis` the API client can access, same as `EditApis`.
         /// </summary>
         public readonly bool EditAuth;
         /// <summary>
-        /// Whether you can update the `groups` the API client can access.
+        /// Whether you can update the `Groups` the API client can access.
         /// </summary>
         public readonly bool EditGroups;
         /// <summary>
-        /// Whether you can update the `ip_acl` the API client can access.
+        /// Whether you can update the `IpAcl` the API client can access.
         /// </summary>
         public readonly bool EditIpAcl;
         /// <summary>

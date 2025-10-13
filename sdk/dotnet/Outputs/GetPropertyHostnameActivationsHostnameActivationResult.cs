@@ -34,7 +34,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NotifyEmails;
         /// <summary>
-        /// The activation's status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `activation_type` is `DEACTIVATE` to no longer serve traffic.
+        /// The activation's status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `ActivationType` is `DEACTIVATE` to no longer serve traffic.
         /// </summary>
         public readonly string Status;
         /// <summary>

@@ -18,7 +18,7 @@ public final class GetIamApiClientApiAccess {
      */
     private Boolean allAccessibleApis;
     /**
-     * @return The set of APIs the API client can access when `all_accessible_apis` is disabled.
+     * @return The set of APIs the API client can access when `allAccessibleApis` is disabled.
      * 
      */
     private List<GetIamApiClientApiAccessApi> apis;
@@ -32,7 +32,7 @@ public final class GetIamApiClientApiAccess {
         return this.allAccessibleApis;
     }
     /**
-     * @return The set of APIs the API client can access when `all_accessible_apis` is disabled.
+     * @return The set of APIs the API client can access when `allAccessibleApis` is disabled.
      * 
      */
     public List<GetIamApiClientApiAccessApi> apis() {
