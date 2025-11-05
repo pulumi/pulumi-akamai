@@ -30,6 +30,14 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string ConditionException;
         /// <summary>
+        /// Number of days remaining before the rule expires. This field is present only if the rule has not yet expired.
+        /// </summary>
+        public readonly int ExpireInDays;
+        /// <summary>
+        /// Whether the rule has already expired.
+        /// </summary>
+        public readonly bool Expired;
+        /// <summary>
         /// The unique identifier of rapid rule.
         /// </summary>
         public readonly int Id;
@@ -52,6 +60,10 @@ namespace Pulumi.Akamai.Outputs
 
             string conditionException,
 
+            int expireInDays,
+
+            bool expired,
+
             int id,
 
             bool @lock,
@@ -62,6 +74,8 @@ namespace Pulumi.Akamai.Outputs
             AttackGroup = attackGroup;
             AttackGroupException = attackGroupException;
             ConditionException = conditionException;
+            ExpireInDays = expireInDays;
+            Expired = expired;
             Id = id;
             Lock = @lock;
             Name = name;

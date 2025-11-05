@@ -15,8 +15,16 @@ else:
 from . import _utilities
 
 __all__ = [
+    'AppSecIPGeoAsnControlsArgs',
+    'AppSecIPGeoAsnControlsArgsDict',
+    'AppSecIPGeoGeoControlsArgs',
+    'AppSecIPGeoGeoControlsArgsDict',
+    'AppSecIPGeoIpControlsArgs',
+    'AppSecIPGeoIpControlsArgsDict',
     'AppSecSiemSettingsExceptionsArgs',
     'AppSecSiemSettingsExceptionsArgsDict',
+    'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs',
+    'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict',
     'ClientlistListItemArgs',
     'ClientlistListItemArgsDict',
     'CloudAccessKeyCredentialsAArgs',
@@ -173,6 +181,8 @@ __all__ = [
     'IamCidrBlockActionsArgsDict',
     'IamUserUserNotificationsArgs',
     'IamUserUserNotificationsArgsDict',
+    'MtlskeystoreClientCertificateAkamaiTimeoutsArgs',
+    'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict',
     'MtlskeystoreClientCertificateAkamaiVersionArgs',
     'MtlskeystoreClientCertificateAkamaiVersionArgsDict',
     'MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs',
@@ -185,6 +195,12 @@ __all__ = [
     'MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgsDict',
     'MtlskeystoreClientCertificateUploadTimeoutsArgs',
     'MtlskeystoreClientCertificateUploadTimeoutsArgsDict',
+    'MtlstruststoreCaSetActivationTimeoutsArgs',
+    'MtlstruststoreCaSetActivationTimeoutsArgsDict',
+    'MtlstruststoreCaSetCertificateArgs',
+    'MtlstruststoreCaSetCertificateArgsDict',
+    'MtlstruststoreCaSetTimeoutsArgs',
+    'MtlstruststoreCaSetTimeoutsArgsDict',
     'PropertyActivationComplianceRecordArgs',
     'PropertyActivationComplianceRecordArgsDict',
     'PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs',
@@ -642,6 +658,162 @@ __all__ = [
 MYPY = False
 
 if not MYPY:
+    class AppSecIPGeoAsnControlsArgsDict(TypedDict):
+        action: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Action set for ASN Controls
+        """
+        asn_network_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of IDs of ASN network list to be blocked.
+        """
+elif False:
+    AppSecIPGeoAsnControlsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AppSecIPGeoAsnControlsArgs:
+    def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
+                 asn_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: Action set for ASN Controls
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] asn_network_lists: List of IDs of ASN network list to be blocked.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if asn_network_lists is not None:
+            pulumi.set(__self__, "asn_network_lists", asn_network_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Action set for ASN Controls
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="asnNetworkLists")
+    def asn_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of IDs of ASN network list to be blocked.
+        """
+        return pulumi.get(self, "asn_network_lists")
+
+    @asn_network_lists.setter
+    def asn_network_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "asn_network_lists", value)
+
+
+if not MYPY:
+    class AppSecIPGeoGeoControlsArgsDict(TypedDict):
+        action: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Action set for GEO Controls.
+        """
+        geo_network_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of IDs of geographic network list to be blocked.
+        """
+elif False:
+    AppSecIPGeoGeoControlsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AppSecIPGeoGeoControlsArgs:
+    def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
+                 geo_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: Action set for GEO Controls.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] geo_network_lists: List of IDs of geographic network list to be blocked.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if geo_network_lists is not None:
+            pulumi.set(__self__, "geo_network_lists", geo_network_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Action set for GEO Controls.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="geoNetworkLists")
+    def geo_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of IDs of geographic network list to be blocked.
+        """
+        return pulumi.get(self, "geo_network_lists")
+
+    @geo_network_lists.setter
+    def geo_network_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "geo_network_lists", value)
+
+
+if not MYPY:
+    class AppSecIPGeoIpControlsArgsDict(TypedDict):
+        action: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Action set for IP Controls.
+        """
+        ip_network_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of IDs of IP network list to be blocked.
+        """
+elif False:
+    AppSecIPGeoIpControlsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AppSecIPGeoIpControlsArgs:
+    def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: Action set for IP Controls.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_network_lists: List of IDs of IP network list to be blocked.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if ip_network_lists is not None:
+            pulumi.set(__self__, "ip_network_lists", ip_network_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Action set for IP Controls.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipNetworkLists")
+    def ip_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of IDs of IP network list to be blocked.
+        """
+        return pulumi.get(self, "ip_network_lists")
+
+    @ip_network_lists.setter
+    def ip_network_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ip_network_lists", value)
+
+
+if not MYPY:
     class AppSecSiemSettingsExceptionsArgsDict(TypedDict):
         api_request_constraints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
@@ -871,6 +1043,58 @@ class AppSecSiemSettingsExceptionsArgs:
     @wafs.setter
     def wafs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "wafs", value)
+
+
+if not MYPY:
+    class AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict(TypedDict):
+        attack_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of attack group names.
+        """
+        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+        """
+        List of rule IDs.
+        """
+elif False:
+    AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs:
+    def __init__(__self__, *,
+                 attack_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attack_groups: List of attack group names.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] rules: List of rule IDs.
+        """
+        if attack_groups is not None:
+            pulumi.set(__self__, "attack_groups", attack_groups)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+
+    @_builtins.property
+    @pulumi.getter(name="attackGroups")
+    def attack_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of attack group names.
+        """
+        return pulumi.get(self, "attack_groups")
+
+    @attack_groups.setter
+    def attack_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "attack_groups", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        List of rule IDs.
+        """
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "rules", value)
 
 
 if not MYPY:
@@ -9170,6 +9394,58 @@ class IamUserUserNotificationsArgs:
 
 
 if not MYPY:
+    class MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict(TypedDict):
+        create: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable resource create timeout. By default it's 30m.
+        """
+        update: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable resource update timeout. By default it's 30m.
+        """
+elif False:
+    MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MtlskeystoreClientCertificateAkamaiTimeoutsArgs:
+    def __init__(__self__, *,
+                 create: Optional[pulumi.Input[_builtins.str]] = None,
+                 update: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] create: Optional configurable resource create timeout. By default it's 30m.
+        :param pulumi.Input[_builtins.str] update: Optional configurable resource update timeout. By default it's 30m.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable resource create timeout. By default it's 30m.
+        """
+        return pulumi.get(self, "create")
+
+    @create.setter
+    def create(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "create", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable resource update timeout. By default it's 30m.
+        """
+        return pulumi.get(self, "update")
+
+    @update.setter
+    def update(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "update", value)
+
+
+if not MYPY:
     class MtlskeystoreClientCertificateAkamaiVersionArgsDict(TypedDict):
         certificate_block: NotRequired[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgsDict']]
         """
@@ -10099,6 +10375,341 @@ class MtlskeystoreClientCertificateUploadTimeoutsArgs:
     @update.setter
     def update(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "update", value)
+
+
+if not MYPY:
+    class MtlstruststoreCaSetActivationTimeoutsArgsDict(TypedDict):
+        create: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable resource create timeout. By default it's 1h.
+        """
+        delete: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable resource delete timeout. By default it's 1h.
+        """
+        update: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable resource update timeout. By default it's 1h.
+        """
+elif False:
+    MtlstruststoreCaSetActivationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MtlstruststoreCaSetActivationTimeoutsArgs:
+    def __init__(__self__, *,
+                 create: Optional[pulumi.Input[_builtins.str]] = None,
+                 delete: Optional[pulumi.Input[_builtins.str]] = None,
+                 update: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] create: Optional configurable resource create timeout. By default it's 1h.
+        :param pulumi.Input[_builtins.str] delete: Optional configurable resource delete timeout. By default it's 1h.
+        :param pulumi.Input[_builtins.str] update: Optional configurable resource update timeout. By default it's 1h.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if delete is not None:
+            pulumi.set(__self__, "delete", delete)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable resource create timeout. By default it's 1h.
+        """
+        return pulumi.get(self, "create")
+
+    @create.setter
+    def create(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "create", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def delete(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable resource delete timeout. By default it's 1h.
+        """
+        return pulumi.get(self, "delete")
+
+    @delete.setter
+    def delete(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "delete", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable resource update timeout. By default it's 1h.
+        """
+        return pulumi.get(self, "update")
+
+    @update.setter
+    def update(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "update", value)
+
+
+if not MYPY:
+    class MtlstruststoreCaSetCertificateArgsDict(TypedDict):
+        certificate_pem: pulumi.Input[_builtins.str]
+        """
+        The certificate in PEM format, as found in a Base64 ASCII encoded file.
+        """
+        created_by: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The user who created this CA certificate.
+        """
+        created_date: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        When the CA certificate was created.
+        """
+        description: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional description for the certificate.
+        """
+        end_date: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The certificate's ISO 8601 formatted expiration date.
+        """
+        fingerprint: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The fingerprint of the certificate.
+        """
+        issuer: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The certificate's issuer.
+        """
+        serial_number: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique serial number of the certificate.
+        """
+        signature_algorithm: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The signature algorithm of the CA certificate.
+        """
+        start_date: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The start date of the certificate.
+        """
+        subject: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The certificate's subject field.
+        """
+elif False:
+    MtlstruststoreCaSetCertificateArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MtlstruststoreCaSetCertificateArgs:
+    def __init__(__self__, *,
+                 certificate_pem: pulumi.Input[_builtins.str],
+                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_date: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
+                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
+                 issuer: Optional[pulumi.Input[_builtins.str]] = None,
+                 serial_number: Optional[pulumi.Input[_builtins.str]] = None,
+                 signature_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
+                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
+                 subject: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] certificate_pem: The certificate in PEM format, as found in a Base64 ASCII encoded file.
+        :param pulumi.Input[_builtins.str] created_by: The user who created this CA certificate.
+        :param pulumi.Input[_builtins.str] created_date: When the CA certificate was created.
+        :param pulumi.Input[_builtins.str] description: Optional description for the certificate.
+        :param pulumi.Input[_builtins.str] end_date: The certificate's ISO 8601 formatted expiration date.
+        :param pulumi.Input[_builtins.str] fingerprint: The fingerprint of the certificate.
+        :param pulumi.Input[_builtins.str] issuer: The certificate's issuer.
+        :param pulumi.Input[_builtins.str] serial_number: The unique serial number of the certificate.
+        :param pulumi.Input[_builtins.str] signature_algorithm: The signature algorithm of the CA certificate.
+        :param pulumi.Input[_builtins.str] start_date: The start date of the certificate.
+        :param pulumi.Input[_builtins.str] subject: The certificate's subject field.
+        """
+        pulumi.set(__self__, "certificate_pem", certificate_pem)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_date is not None:
+            pulumi.set(__self__, "created_date", created_date)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if end_date is not None:
+            pulumi.set(__self__, "end_date", end_date)
+        if fingerprint is not None:
+            pulumi.set(__self__, "fingerprint", fingerprint)
+        if issuer is not None:
+            pulumi.set(__self__, "issuer", issuer)
+        if serial_number is not None:
+            pulumi.set(__self__, "serial_number", serial_number)
+        if signature_algorithm is not None:
+            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        if start_date is not None:
+            pulumi.set(__self__, "start_date", start_date)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> pulumi.Input[_builtins.str]:
+        """
+        The certificate in PEM format, as found in a Base64 ASCII encoded file.
+        """
+        return pulumi.get(self, "certificate_pem")
+
+    @certificate_pem.setter
+    def certificate_pem(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "certificate_pem", value)
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The user who created this CA certificate.
+        """
+        return pulumi.get(self, "created_by")
+
+    @created_by.setter
+    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "created_by", value)
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        When the CA certificate was created.
+        """
+        return pulumi.get(self, "created_date")
+
+    @created_date.setter
+    def created_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "created_date", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional description for the certificate.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The certificate's ISO 8601 formatted expiration date.
+        """
+        return pulumi.get(self, "end_date")
+
+    @end_date.setter
+    def end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "end_date", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The fingerprint of the certificate.
+        """
+        return pulumi.get(self, "fingerprint")
+
+    @fingerprint.setter
+    def fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "fingerprint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The certificate's issuer.
+        """
+        return pulumi.get(self, "issuer")
+
+    @issuer.setter
+    def issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "issuer", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique serial number of the certificate.
+        """
+        return pulumi.get(self, "serial_number")
+
+    @serial_number.setter
+    def serial_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "serial_number", value)
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The signature algorithm of the CA certificate.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @signature_algorithm.setter
+    def signature_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "signature_algorithm", value)
+
+    @_builtins.property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The start date of the certificate.
+        """
+        return pulumi.get(self, "start_date")
+
+    @start_date.setter
+    def start_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "start_date", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The certificate's subject field.
+        """
+        return pulumi.get(self, "subject")
+
+    @subject.setter
+    def subject(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subject", value)
+
+
+if not MYPY:
+    class MtlstruststoreCaSetTimeoutsArgsDict(TypedDict):
+        delete: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable resource delete timeout. By default it's 1h.
+        """
+elif False:
+    MtlstruststoreCaSetTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MtlstruststoreCaSetTimeoutsArgs:
+    def __init__(__self__, *,
+                 delete: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] delete: Optional configurable resource delete timeout. By default it's 1h.
+        """
+        if delete is not None:
+            pulumi.set(__self__, "delete", delete)
+
+    @_builtins.property
+    @pulumi.getter
+    def delete(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable resource delete timeout. By default it's 1h.
+        """
+        return pulumi.get(self, "delete")
+
+    @delete.setter
+    def delete(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "delete", value)
 
 
 if not MYPY:

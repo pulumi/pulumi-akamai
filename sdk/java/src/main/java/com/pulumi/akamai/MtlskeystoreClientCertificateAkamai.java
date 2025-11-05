@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.MtlskeystoreClientCertificateAkamaiArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.MtlskeystoreClientCertificateAkamaiState;
+import com.pulumi.akamai.outputs.MtlskeystoreClientCertificateAkamaiTimeouts;
 import com.pulumi.akamai.outputs.MtlskeystoreClientCertificateAkamaiVersion;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
@@ -14,6 +15,7 @@ import com.pulumi.core.internal.Codegen;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/mtlskeystoreClientCertificateAkamai:MtlskeystoreClientCertificateAkamai")
@@ -159,6 +161,20 @@ public class MtlskeystoreClientCertificateAkamai extends com.pulumi.resources.Cu
         return this.notificationEmails;
     }
     /**
+     * The common name of the account CA certificate selected to sign the client certificate.
+     * 
+     */
+    @Export(name="preferredCa", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> preferredCa;
+
+    /**
+     * @return The common name of the account CA certificate selected to sign the client certificate.
+     * 
+     */
+    public Output<Optional<String>> preferredCa() {
+        return Codegen.optional(this.preferredCa);
+    }
+    /**
      * Unique identifier for the `previous` client certificate version.
      * 
      */
@@ -171,6 +187,20 @@ public class MtlskeystoreClientCertificateAkamai extends com.pulumi.resources.Cu
      */
     public Output<String> previousGuid() {
         return this.previousGuid;
+    }
+    /**
+     * A set of client certificate versions that should be revoked.
+     * 
+     */
+    @Export(name="revokedVersions", refs={List.class,Integer.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<Integer>> revokedVersions;
+
+    /**
+     * @return A set of client certificate versions that should be revoked.
+     * 
+     */
+    public Output<Optional<List<Integer>>> revokedVersions() {
+        return Codegen.optional(this.revokedVersions);
     }
     /**
      * Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
@@ -199,6 +229,12 @@ public class MtlskeystoreClientCertificateAkamai extends com.pulumi.resources.Cu
      */
     public Output<String> subject() {
         return this.subject;
+    }
+    @Export(name="timeouts", refs={MtlskeystoreClientCertificateAkamaiTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ MtlskeystoreClientCertificateAkamaiTimeouts> timeouts;
+
+    public Output<Optional<MtlskeystoreClientCertificateAkamaiTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * A list of client certificate versions. Each version represents a specific iteration of the client certificate.

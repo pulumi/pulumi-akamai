@@ -19,7 +19,7 @@ type CloudAccessKey struct {
 	AccessKeyName pulumi.StringOutput `pulumi:"accessKeyName"`
 	// The unique identifier Akamai assigns to an access key.
 	AccessKeyUid pulumi.IntOutput `pulumi:"accessKeyUid"`
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
 	AuthenticationMethod pulumi.StringOutput `pulumi:"authenticationMethod"`
 	// The unique identifier for the contract assigned to the access key
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
@@ -85,7 +85,7 @@ type cloudAccessKeyState struct {
 	AccessKeyName *string `pulumi:"accessKeyName"`
 	// The unique identifier Akamai assigns to an access key.
 	AccessKeyUid *int `pulumi:"accessKeyUid"`
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
 	AuthenticationMethod *string `pulumi:"authenticationMethod"`
 	// The unique identifier for the contract assigned to the access key
 	ContractId *string `pulumi:"contractId"`
@@ -107,7 +107,7 @@ type CloudAccessKeyState struct {
 	AccessKeyName pulumi.StringPtrInput
 	// The unique identifier Akamai assigns to an access key.
 	AccessKeyUid pulumi.IntPtrInput
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
 	AuthenticationMethod pulumi.StringPtrInput
 	// The unique identifier for the contract assigned to the access key
 	ContractId pulumi.StringPtrInput
@@ -131,7 +131,7 @@ func (CloudAccessKeyState) ElementType() reflect.Type {
 type cloudAccessKeyArgs struct {
 	// Name of the access key.
 	AccessKeyName string `pulumi:"accessKeyName"`
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
 	AuthenticationMethod string `pulumi:"authenticationMethod"`
 	// The unique identifier for the contract assigned to the access key
 	ContractId string `pulumi:"contractId"`
@@ -150,7 +150,7 @@ type cloudAccessKeyArgs struct {
 type CloudAccessKeyArgs struct {
 	// Name of the access key.
 	AccessKeyName pulumi.StringInput
-	// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+	// The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
 	AuthenticationMethod pulumi.StringInput
 	// The unique identifier for the contract assigned to the access key
 	ContractId pulumi.StringInput
@@ -262,7 +262,7 @@ func (o CloudAccessKeyOutput) AccessKeyUid() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAccessKey) pulumi.IntOutput { return v.AccessKeyUid }).(pulumi.IntOutput)
 }
 
-// The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+// The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
 func (o CloudAccessKeyOutput) AuthenticationMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAccessKey) pulumi.StringOutput { return v.AuthenticationMethod }).(pulumi.StringOutput)
 }

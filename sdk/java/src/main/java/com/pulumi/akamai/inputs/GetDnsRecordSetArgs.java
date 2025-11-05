@@ -14,11 +14,11 @@ public final class GetDnsRecordSetArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetDnsRecordSetArgs Empty = new GetDnsRecordSetArgs();
 
-    @Import(name="host", required=true)
-    private Output<String> host;
+    @Import(name="name", required=true)
+    private Output<String> name;
 
-    public Output<String> host() {
-        return this.host;
+    public Output<String> name() {
+        return this.name;
     }
 
     @Import(name="recordType", required=true)
@@ -38,7 +38,7 @@ public final class GetDnsRecordSetArgs extends com.pulumi.resources.InvokeArgs {
     private GetDnsRecordSetArgs() {}
 
     private GetDnsRecordSetArgs(GetDnsRecordSetArgs $) {
-        this.host = $.host;
+        this.name = $.name;
         this.recordType = $.recordType;
         this.zone = $.zone;
     }
@@ -61,13 +61,13 @@ public final class GetDnsRecordSetArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetDnsRecordSetArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder host(Output<String> host) {
-            $.host = host;
+        public Builder name(Output<String> name) {
+            $.name = name;
             return this;
         }
 
-        public Builder host(String host) {
-            return host(Output.of(host));
+        public Builder name(String name) {
+            return name(Output.of(name));
         }
 
         public Builder recordType(Output<String> recordType) {
@@ -89,8 +89,8 @@ public final class GetDnsRecordSetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetDnsRecordSetArgs build() {
-            if ($.host == null) {
-                throw new MissingRequiredPropertyException("GetDnsRecordSetArgs", "host");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("GetDnsRecordSetArgs", "name");
             }
             if ($.recordType == null) {
                 throw new MissingRequiredPropertyException("GetDnsRecordSetArgs", "recordType");

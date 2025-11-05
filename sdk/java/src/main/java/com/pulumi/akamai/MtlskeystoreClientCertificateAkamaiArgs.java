@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.MtlskeystoreClientCertificateAkamaiTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -109,6 +110,36 @@ public final class MtlskeystoreClientCertificateAkamaiArgs extends com.pulumi.re
     }
 
     /**
+     * The common name of the account CA certificate selected to sign the client certificate.
+     * 
+     */
+    @Import(name="preferredCa")
+    private @Nullable Output<String> preferredCa;
+
+    /**
+     * @return The common name of the account CA certificate selected to sign the client certificate.
+     * 
+     */
+    public Optional<Output<String>> preferredCa() {
+        return Optional.ofNullable(this.preferredCa);
+    }
+
+    /**
+     * A set of client certificate versions that should be revoked.
+     * 
+     */
+    @Import(name="revokedVersions")
+    private @Nullable Output<List<Integer>> revokedVersions;
+
+    /**
+     * @return A set of client certificate versions that should be revoked.
+     * 
+     */
+    public Optional<Output<List<Integer>>> revokedVersions() {
+        return Optional.ofNullable(this.revokedVersions);
+    }
+
+    /**
      * Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
      * 
      */
@@ -138,6 +169,13 @@ public final class MtlskeystoreClientCertificateAkamaiArgs extends com.pulumi.re
         return Optional.ofNullable(this.subject);
     }
 
+    @Import(name="timeouts")
+    private @Nullable Output<MtlskeystoreClientCertificateAkamaiTimeoutsArgs> timeouts;
+
+    public Optional<Output<MtlskeystoreClientCertificateAkamaiTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private MtlskeystoreClientCertificateAkamaiArgs() {}
 
     private MtlskeystoreClientCertificateAkamaiArgs(MtlskeystoreClientCertificateAkamaiArgs $) {
@@ -147,8 +185,11 @@ public final class MtlskeystoreClientCertificateAkamaiArgs extends com.pulumi.re
         this.groupId = $.groupId;
         this.keyAlgorithm = $.keyAlgorithm;
         this.notificationEmails = $.notificationEmails;
+        this.preferredCa = $.preferredCa;
+        this.revokedVersions = $.revokedVersions;
         this.secureNetwork = $.secureNetwork;
         this.subject = $.subject;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -306,6 +347,58 @@ public final class MtlskeystoreClientCertificateAkamaiArgs extends com.pulumi.re
         }
 
         /**
+         * @param preferredCa The common name of the account CA certificate selected to sign the client certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredCa(@Nullable Output<String> preferredCa) {
+            $.preferredCa = preferredCa;
+            return this;
+        }
+
+        /**
+         * @param preferredCa The common name of the account CA certificate selected to sign the client certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredCa(String preferredCa) {
+            return preferredCa(Output.of(preferredCa));
+        }
+
+        /**
+         * @param revokedVersions A set of client certificate versions that should be revoked.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder revokedVersions(@Nullable Output<List<Integer>> revokedVersions) {
+            $.revokedVersions = revokedVersions;
+            return this;
+        }
+
+        /**
+         * @param revokedVersions A set of client certificate versions that should be revoked.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder revokedVersions(List<Integer> revokedVersions) {
+            return revokedVersions(Output.of(revokedVersions));
+        }
+
+        /**
+         * @param revokedVersions A set of client certificate versions that should be revoked.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder revokedVersions(Integer... revokedVersions) {
+            return revokedVersions(List.of(revokedVersions));
+        }
+
+        /**
          * @param secureNetwork Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
          * 
          * @return builder
@@ -345,6 +438,15 @@ public final class MtlskeystoreClientCertificateAkamaiArgs extends com.pulumi.re
          */
         public Builder subject(String subject) {
             return subject(Output.of(subject));
+        }
+
+        public Builder timeouts(@Nullable Output<MtlskeystoreClientCertificateAkamaiTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        public Builder timeouts(MtlskeystoreClientCertificateAkamaiTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public MtlskeystoreClientCertificateAkamaiArgs build() {

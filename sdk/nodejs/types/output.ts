@@ -5,6 +5,39 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export interface AppSecIPGeoAsnControls {
+    /**
+     * Action set for ASN Controls
+     */
+    action?: string;
+    /**
+     * List of IDs of ASN network list to be blocked.
+     */
+    asnNetworkLists?: string[];
+}
+
+export interface AppSecIPGeoGeoControls {
+    /**
+     * Action set for GEO Controls.
+     */
+    action?: string;
+    /**
+     * List of IDs of geographic network list to be blocked.
+     */
+    geoNetworkLists?: string[];
+}
+
+export interface AppSecIPGeoIpControls {
+    /**
+     * Action set for IP Controls.
+     */
+    action?: string;
+    /**
+     * List of IDs of IP network list to be blocked.
+     */
+    ipNetworkLists?: string[];
+}
+
 export interface AppSecSiemSettingsExceptions {
     /**
      * Whether there should be an exception to include api request constraints events in SIEM
@@ -50,6 +83,17 @@ export interface AppSecSiemSettingsExceptions {
      * Whether there should be an exception to include waf events in SIEM
      */
     wafs?: string[];
+}
+
+export interface AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions {
+    /**
+     * List of attack group names.
+     */
+    attackGroups?: string[];
+    /**
+     * List of rule IDs.
+     */
+    rules?: number[];
 }
 
 export interface ClientlistListItem {
@@ -1272,6 +1316,61 @@ export interface EdgekvGroupItemsTimeouts {
     default?: string;
 }
 
+export interface GetAppSecIPGeoAsnControl {
+    /**
+     * Action set for ASN Controls
+     */
+    action: string;
+    /**
+     * List of IDs of ASN network list to be blocked.
+     */
+    asnNetworkLists: string[];
+}
+
+export interface GetAppSecIPGeoGeoControl {
+    /**
+     * Action set for GEO Controls.
+     */
+    action: string;
+    /**
+     * List of IDs of geographic network list to be blocked.
+     */
+    geoNetworkLists: string[];
+}
+
+export interface GetAppSecIPGeoIpControl {
+    /**
+     * Action set for IP Controls.
+     */
+    action: string;
+    /**
+     * List of IDs of IP network list to be blocked.
+     */
+    ipNetworkLists: string[];
+}
+
+export interface GetAppsecCustomRulesUsageRule {
+    /**
+     * A set of security policies in which a custom rule is used.
+     */
+    policies: outputs.GetAppsecCustomRulesUsageRulePolicy[];
+    /**
+     * The ID of the custom rule.
+     */
+    ruleId: number;
+}
+
+export interface GetAppsecCustomRulesUsageRulePolicy {
+    /**
+     * The security policy ID.
+     */
+    policyId: string;
+    /**
+     * The security policy name.
+     */
+    policyName: string;
+}
+
 export interface GetAppsecRapidRulesRapidRule {
     /**
      * The rapid rule action.
@@ -1289,6 +1388,14 @@ export interface GetAppsecRapidRulesRapidRule {
      * The rapid rule exception.
      */
     conditionException: string;
+    /**
+     * Number of days remaining before the rule expires. This field is present only if the rule has not yet expired.
+     */
+    expireInDays: number;
+    /**
+     * Whether the rule has already expired.
+     */
+    expired: boolean;
     /**
      * The unique identifier of rapid rule.
      */
@@ -1846,6 +1953,132 @@ export interface GetCPSEnrollmentsEnrollmentTechContact {
      * Title of the the contact
      */
     title?: string;
+}
+
+export interface GetClientlistListList {
+    /**
+     * The client list creation date.
+     */
+    createDate: string;
+    /**
+     * The username of the user who created the client list.
+     */
+    createdBy: string;
+    /**
+     * Whether the client list was removed.
+     */
+    deprecated: boolean;
+    /**
+     * A set of client list values.
+     */
+    items: outputs.GetClientlistListListItem[];
+    /**
+     * The number of items that a client list contains.
+     */
+    itemsCount: number;
+    /**
+     * The ID of the client list.
+     */
+    listId: string;
+    /**
+     * The client list type.
+     */
+    listType: string;
+    /**
+     * The name of the client list.
+     */
+    name: string;
+    /**
+     * The client list notes.
+     */
+    notes: string;
+    /**
+     * The activation status in production environment.
+     */
+    productionActivationStatus: string;
+    /**
+     * Whether the client is editable for the authenticated user.
+     */
+    readOnly: boolean;
+    /**
+     * Whether the client list is shared.
+     */
+    shared: boolean;
+    /**
+     * The activation status in staging environment.
+     */
+    stagingActivationStatus: string;
+    /**
+     * The client list tags.
+     */
+    tags: string[];
+    /**
+     * The type of the client list.
+     */
+    type: string;
+    /**
+     * The date of last update.
+     */
+    updateDate: string;
+    /**
+     * The username of the user that updated the client list last.
+     */
+    updatedBy: string;
+    /**
+     * The current version of the client list.
+     */
+    version: number;
+}
+
+export interface GetClientlistListListItem {
+    /**
+     * The client list item creation date.
+     */
+    createDate: string;
+    /**
+     * The username of the person who created the client list item.
+     */
+    createdBy: string;
+    /**
+     * The version of the client list when item was created.
+     */
+    createdVersion: number;
+    /**
+     * The description of the client list item.
+     */
+    description?: string;
+    /**
+     * The client list item expiration date.
+     */
+    expirationDate: string;
+    /**
+     * The client list activation status in production environment.
+     */
+    productionActivationStatus: string;
+    /**
+     * The client list activation status in staging environment.
+     */
+    stagingActivationStatus: string;
+    /**
+     * A list of tags associated with the client list item.
+     */
+    tags: string[];
+    /**
+     * Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.
+     */
+    type: string;
+    /**
+     * The date of last update.
+     */
+    updateDate: string;
+    /**
+     * The username of the person that updated the client list item last.
+     */
+    updatedBy: string;
+    /**
+     * Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.
+     */
+    value: string;
 }
 
 export interface GetClientlistListsList {
@@ -8878,6 +9111,360 @@ export interface GetMtlskeystoreClientCertificatesCertificate {
     subject: string;
 }
 
+export interface GetMtlstruststoreCaSetActivationsActivation {
+    /**
+     * The user who requested the activity.
+     */
+    createdBy: string;
+    /**
+     * When the activity was requested.
+     */
+    createdDate: string;
+    /**
+     * Uniquely identifies the activation.
+     */
+    id: number;
+    /**
+     * The user who completed the activity.
+     */
+    modifiedBy: string;
+    /**
+     * When the request was last modified, or null` if not yet modified.
+     */
+    modifiedDate: string;
+    /**
+     * Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
+     */
+    network: string;
+    /**
+     * Status of the current activity, either 'IN_PROGRESS', 'COMPLETE', or 'FAILED'.
+     */
+    status: string;
+    /**
+     * Type of requested activity, either 'ACTIVATE', 'DEACTIVATE', or 'DELETE'.
+     */
+    type: string;
+    /**
+     * CA set version identifier.
+     */
+    version: number;
+}
+
+export interface GetMtlstruststoreCaSetActivitiesActivity {
+    /**
+     * The user who initiated this CA set activity.
+     */
+    activityBy: string;
+    /**
+     * When this CA set activity occurred.
+     */
+    activityDate: string;
+    /**
+     * Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
+     */
+    network: string;
+    /**
+     * The type of CA set activity. 'CREATE_CA_SET' indicates creating a CA set, or 'CREATE_CA_SET_VERSION' for creating a version. 'ACTIVATE_CA_SET_VERSION' indicates activating a CA set version, while 'DEACTIVATE_CA_SET_VERSION' indicates deactivation. 'DELETE_CA_SET' indicates deleting a CA set.
+     */
+    type: string;
+    /**
+     * The CA set's incremental version number.
+     */
+    version: number;
+}
+
+export interface GetMtlstruststoreCaSetAssociationsEnrollment {
+    /**
+     * The domain name to use for the certificate, also known as the common name.
+     */
+    cn: string;
+    /**
+     * A unique identifier for the enrollment.
+     */
+    enrollmentId: number;
+    /**
+     * Slots where the certificate is deployed on the production network.
+     */
+    productionSlots: number[];
+    /**
+     * Slots where the certificate is deployed on the staging network.
+     */
+    stagingSlots: number[];
+}
+
+export interface GetMtlstruststoreCaSetAssociationsProperty {
+    /**
+     * An alternative identifier for the property.
+     */
+    assetId: number;
+    /**
+     * Identifies the group to which the property is assigned.
+     */
+    groupId: number;
+    /**
+     * Contains details about associated hostnames.
+     */
+    hostnames: outputs.GetMtlstruststoreCaSetAssociationsPropertyHostname[];
+    /**
+     * A unique identifier for the property.
+     */
+    propertyId: string;
+    /**
+     * A unique, descriptive name for the property.
+     */
+    propertyName: string;
+}
+
+export interface GetMtlstruststoreCaSetAssociationsPropertyHostname {
+    /**
+     * The name of the device.
+     */
+    hostname: string;
+    /**
+     * The network on which CA set to hostname association is formed/removed/in progress. The values for this are 'STAGING', 'PRODUCTION'.
+     */
+    network: string;
+    /**
+     * The status of CA set to hostname association. The values for it are - 'ATTACHING', 'DETACHING', 'ATTACHED'.
+     */
+    status: string;
+}
+
+export interface GetMtlstruststoreCaSetCertificate {
+    /**
+     * The certificate in PEM format, as found in a Base64 ASCII encoded file.
+     */
+    certificatePem: string;
+    /**
+     * The user who created this CA certificate.
+     */
+    createdBy: string;
+    /**
+     * When the CA certificate was created.
+     */
+    createdDate: string;
+    /**
+     * Optional description for the certificate.
+     */
+    description: string;
+    /**
+     * The certificate's ISO 8601 formatted expiration date.
+     */
+    endDate: string;
+    /**
+     * The fingerprint of the certificate.
+     */
+    fingerprint: string;
+    /**
+     * The certificate's issuer.
+     */
+    issuer: string;
+    /**
+     * The unique serial number of the certificate.
+     */
+    serialNumber: string;
+    /**
+     * The signature algorithm of the CA certificate.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The start date of the certificate.
+     */
+    startDate: string;
+    /**
+     * The certificate's subject field.
+     */
+    subject: string;
+}
+
+export interface GetMtlstruststoreCaSetCertificatesCertificate {
+    /**
+     * The certificate in PEM format (Base64 ASCII encoded).
+     */
+    certificatePem: string;
+    /**
+     * The user who created this CA certificate.
+     */
+    createdBy: string;
+    /**
+     * When the CA certificate was created.
+     */
+    createdDate: string;
+    /**
+     * The description of the CA certificate.
+     */
+    description: string;
+    /**
+     * The ISO 8601 formatted expiration date of the certificate.
+     */
+    endDate: string;
+    /**
+     * The fingerprint of the certificate.
+     */
+    fingerprint: string;
+    /**
+     * The certificate's issuer.
+     */
+    issuer: string;
+    /**
+     * The unique serial number of the certificate.
+     */
+    serialNumber: string;
+    /**
+     * The signature algorithm of the CA certificate.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The start date of the certificate.
+     */
+    startDate: string;
+    /**
+     * The subject field of the certificate.
+     */
+    subject: string;
+}
+
+export interface GetMtlstruststoreCaSetVersionsVersion {
+    /**
+     * By default, all certificates in the version need a signature algorithm of SHA-256 or better. Enabling this allows certificates with SHA-1 signatures.
+     */
+    allowInsecureSha1: boolean;
+    /**
+     * List of certificate objects in the version, with each element corresponding to one root or intermediate certificate.
+     */
+    certificates: outputs.GetMtlstruststoreCaSetVersionsVersionCertificate[];
+    /**
+     * The user who created the CA set version.
+     */
+    createdBy: string;
+    /**
+     * When the CA set version was created.
+     */
+    createdDate: string;
+    /**
+     * The user who last modified the CA set version.
+     */
+    modifiedBy: string;
+    /**
+     * When the CA set version was last modified.
+     */
+    modifiedDate: string;
+    /**
+     * The CA set version's status on the production network, either 'ACTIVE' or 'INACTIVE'.
+     */
+    productionStatus: string;
+    /**
+     * The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
+     */
+    stagingStatus: string;
+    /**
+     * Version identifier on which to perform the desired operation.
+     */
+    version: number;
+    /**
+     * Any additional description you can provide while creating or updating the CA set version.
+     */
+    versionDescription: string;
+}
+
+export interface GetMtlstruststoreCaSetVersionsVersionCertificate {
+    /**
+     * The certificate in PEM format, as found in a Base64 ASCII encoded file.
+     */
+    certificatePem: string;
+    /**
+     * The user who created this CA certificate.
+     */
+    createdBy: string;
+    /**
+     * When the CA certificate was created.
+     */
+    createdDate: string;
+    /**
+     * Description for the certificate.
+     */
+    description: string;
+    /**
+     * The certificate's ISO 8601 formatted expiration date.
+     */
+    endDate: string;
+    /**
+     * The fingerprint of the certificate.
+     */
+    fingerprint: string;
+    /**
+     * The certificate's issuer.
+     */
+    issuer: string;
+    /**
+     * The unique serial number of the certificate.
+     */
+    serialNumber: string;
+    /**
+     * The signature algorithm of the CA certificate.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The start date of the certificate.
+     */
+    startDate: string;
+    /**
+     * The certificate's subject field.
+     */
+    subject: string;
+}
+
+export interface GetMtlstruststoreCaSetsCaSet {
+    /**
+     * Identifies the account the CA set belongs to.
+     */
+    accountId: string;
+    /**
+     * The user who created the CA set.
+     */
+    createdBy: string;
+    /**
+     * When the CA set was created.
+     */
+    createdDate: string;
+    /**
+     * The user who requested the CA set be deleted, or null if there's no request.
+     */
+    deletedBy: string;
+    /**
+     * When the CA set was deleted, or null if there's no request.
+     */
+    deletedDate: string;
+    /**
+     * Any additional comments you can add to the CA set.
+     */
+    description: string;
+    /**
+     * Identifies each CA set.
+     */
+    id: string;
+    /**
+     * The most recent version based on the updated version.
+     */
+    latestVersion: number;
+    /**
+     * The name of the CA set.
+     */
+    name: string;
+    /**
+     * The CA set version activated on the 'PRODUCTION' network.
+     */
+    productionVersion: number;
+    /**
+     * The CA set version activated on the 'STAGING' network.
+     */
+    stagingVersion: number;
+    /**
+     * Indicates if the CA set was deleted, either 'NOT_DELETED', 'DELETING', or 'DELETED'.
+     */
+    status: string;
+}
+
 export interface GetPropertiesProperty {
     contractId: string;
     groupId: string;
@@ -9629,6 +10216,17 @@ export interface IamUserUserNotifications {
     upgrades: string[];
 }
 
+export interface MtlskeystoreClientCertificateAkamaiTimeouts {
+    /**
+     * Optional configurable resource create timeout. By default it's 30m.
+     */
+    create?: string;
+    /**
+     * Optional configurable resource update timeout. By default it's 30m.
+     */
+    update?: string;
+}
+
 export interface MtlskeystoreClientCertificateAkamaiVersion {
     /**
      * Details of the certificate block for the client certificate version.
@@ -9817,6 +10415,75 @@ export interface MtlskeystoreClientCertificateUploadTimeouts {
      * Optional configurable resource update timeout. By default it's 30m.
      */
     update?: string;
+}
+
+export interface MtlstruststoreCaSetActivationTimeouts {
+    /**
+     * Optional configurable resource create timeout. By default it's 1h.
+     */
+    create?: string;
+    /**
+     * Optional configurable resource delete timeout. By default it's 1h.
+     */
+    delete?: string;
+    /**
+     * Optional configurable resource update timeout. By default it's 1h.
+     */
+    update?: string;
+}
+
+export interface MtlstruststoreCaSetCertificate {
+    /**
+     * The certificate in PEM format, as found in a Base64 ASCII encoded file.
+     */
+    certificatePem: string;
+    /**
+     * The user who created this CA certificate.
+     */
+    createdBy: string;
+    /**
+     * When the CA certificate was created.
+     */
+    createdDate: string;
+    /**
+     * Optional description for the certificate.
+     */
+    description?: string;
+    /**
+     * The certificate's ISO 8601 formatted expiration date.
+     */
+    endDate: string;
+    /**
+     * The fingerprint of the certificate.
+     */
+    fingerprint: string;
+    /**
+     * The certificate's issuer.
+     */
+    issuer: string;
+    /**
+     * The unique serial number of the certificate.
+     */
+    serialNumber: string;
+    /**
+     * The signature algorithm of the CA certificate.
+     */
+    signatureAlgorithm: string;
+    /**
+     * The start date of the certificate.
+     */
+    startDate: string;
+    /**
+     * The certificate's subject field.
+     */
+    subject: string;
+}
+
+export interface MtlstruststoreCaSetTimeouts {
+    /**
+     * Optional configurable resource delete timeout. By default it's 1h.
+     */
+    delete?: string;
 }
 
 export interface PropertyActivationComplianceRecord {

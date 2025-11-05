@@ -15,22 +15,24 @@ import (
 type AppSecIPGeo struct {
 	pulumi.CustomResourceState
 
-	// List of IDs of ASN network list to be blocked
-	AsnNetworkLists pulumi.StringArrayOutput `pulumi:"asnNetworkLists"`
+	// An Object containing List of ASN network lists to be blocked with specified action
+	AsnControls AppSecIPGeoAsnControlsPtrOutput `pulumi:"asnControls"`
+	// Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+	BlockAction pulumi.StringPtrOutput `pulumi:"blockAction"`
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// List of IDs of network list that are always allowed
+	// List of unique identifiers of ipNetworkLists allowed through the firewall.
 	ExceptionIpNetworkLists pulumi.StringArrayOutput `pulumi:"exceptionIpNetworkLists"`
-	// List of IDs of geographic network list to be blocked
-	GeoNetworkLists pulumi.StringArrayOutput `pulumi:"geoNetworkLists"`
-	// List of IDs of IP network list to be blocked
-	IpNetworkLists pulumi.StringArrayOutput `pulumi:"ipNetworkLists"`
+	// An Object containing List of geographic network lists to be blocked with specified action
+	GeoControls AppSecIPGeoGeoControlsPtrOutput `pulumi:"geoControls"`
+	// An Object containing List of IP network lists to be blocked with specified action
+	IpControls AppSecIPGeoIpControlsPtrOutput `pulumi:"ipControls"`
 	// Protection mode (block or allow)
 	Mode pulumi.StringOutput `pulumi:"mode"`
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 	// Action set for Ukraine geo control
-	UkraineGeoControlAction pulumi.StringPtrOutput `pulumi:"ukraineGeoControlAction"`
+	UkraineGeoControlAction pulumi.StringOutput `pulumi:"ukraineGeoControlAction"`
 }
 
 // NewAppSecIPGeo registers a new resource with the given unique name, arguments, and options.
@@ -72,16 +74,18 @@ func GetAppSecIPGeo(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecIPGeo resources.
 type appSecIPGeoState struct {
-	// List of IDs of ASN network list to be blocked
-	AsnNetworkLists []string `pulumi:"asnNetworkLists"`
+	// An Object containing List of ASN network lists to be blocked with specified action
+	AsnControls *AppSecIPGeoAsnControls `pulumi:"asnControls"`
+	// Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+	BlockAction *string `pulumi:"blockAction"`
 	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// List of IDs of network list that are always allowed
+	// List of unique identifiers of ipNetworkLists allowed through the firewall.
 	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
-	// List of IDs of geographic network list to be blocked
-	GeoNetworkLists []string `pulumi:"geoNetworkLists"`
-	// List of IDs of IP network list to be blocked
-	IpNetworkLists []string `pulumi:"ipNetworkLists"`
+	// An Object containing List of geographic network lists to be blocked with specified action
+	GeoControls *AppSecIPGeoGeoControls `pulumi:"geoControls"`
+	// An Object containing List of IP network lists to be blocked with specified action
+	IpControls *AppSecIPGeoIpControls `pulumi:"ipControls"`
 	// Protection mode (block or allow)
 	Mode *string `pulumi:"mode"`
 	// Unique identifier of the security policy
@@ -91,16 +95,18 @@ type appSecIPGeoState struct {
 }
 
 type AppSecIPGeoState struct {
-	// List of IDs of ASN network list to be blocked
-	AsnNetworkLists pulumi.StringArrayInput
+	// An Object containing List of ASN network lists to be blocked with specified action
+	AsnControls AppSecIPGeoAsnControlsPtrInput
+	// Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+	BlockAction pulumi.StringPtrInput
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// List of IDs of network list that are always allowed
+	// List of unique identifiers of ipNetworkLists allowed through the firewall.
 	ExceptionIpNetworkLists pulumi.StringArrayInput
-	// List of IDs of geographic network list to be blocked
-	GeoNetworkLists pulumi.StringArrayInput
-	// List of IDs of IP network list to be blocked
-	IpNetworkLists pulumi.StringArrayInput
+	// An Object containing List of geographic network lists to be blocked with specified action
+	GeoControls AppSecIPGeoGeoControlsPtrInput
+	// An Object containing List of IP network lists to be blocked with specified action
+	IpControls AppSecIPGeoIpControlsPtrInput
 	// Protection mode (block or allow)
 	Mode pulumi.StringPtrInput
 	// Unique identifier of the security policy
@@ -114,16 +120,18 @@ func (AppSecIPGeoState) ElementType() reflect.Type {
 }
 
 type appSecIPGeoArgs struct {
-	// List of IDs of ASN network list to be blocked
-	AsnNetworkLists []string `pulumi:"asnNetworkLists"`
+	// An Object containing List of ASN network lists to be blocked with specified action
+	AsnControls *AppSecIPGeoAsnControls `pulumi:"asnControls"`
+	// Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+	BlockAction *string `pulumi:"blockAction"`
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// List of IDs of network list that are always allowed
+	// List of unique identifiers of ipNetworkLists allowed through the firewall.
 	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
-	// List of IDs of geographic network list to be blocked
-	GeoNetworkLists []string `pulumi:"geoNetworkLists"`
-	// List of IDs of IP network list to be blocked
-	IpNetworkLists []string `pulumi:"ipNetworkLists"`
+	// An Object containing List of geographic network lists to be blocked with specified action
+	GeoControls *AppSecIPGeoGeoControls `pulumi:"geoControls"`
+	// An Object containing List of IP network lists to be blocked with specified action
+	IpControls *AppSecIPGeoIpControls `pulumi:"ipControls"`
 	// Protection mode (block or allow)
 	Mode string `pulumi:"mode"`
 	// Unique identifier of the security policy
@@ -134,16 +142,18 @@ type appSecIPGeoArgs struct {
 
 // The set of arguments for constructing a AppSecIPGeo resource.
 type AppSecIPGeoArgs struct {
-	// List of IDs of ASN network list to be blocked
-	AsnNetworkLists pulumi.StringArrayInput
+	// An Object containing List of ASN network lists to be blocked with specified action
+	AsnControls AppSecIPGeoAsnControlsPtrInput
+	// Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+	BlockAction pulumi.StringPtrInput
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// List of IDs of network list that are always allowed
+	// List of unique identifiers of ipNetworkLists allowed through the firewall.
 	ExceptionIpNetworkLists pulumi.StringArrayInput
-	// List of IDs of geographic network list to be blocked
-	GeoNetworkLists pulumi.StringArrayInput
-	// List of IDs of IP network list to be blocked
-	IpNetworkLists pulumi.StringArrayInput
+	// An Object containing List of geographic network lists to be blocked with specified action
+	GeoControls AppSecIPGeoGeoControlsPtrInput
+	// An Object containing List of IP network lists to be blocked with specified action
+	IpControls AppSecIPGeoIpControlsPtrInput
 	// Protection mode (block or allow)
 	Mode pulumi.StringInput
 	// Unique identifier of the security policy
@@ -239,9 +249,14 @@ func (o AppSecIPGeoOutput) ToAppSecIPGeoOutputWithContext(ctx context.Context) A
 	return o
 }
 
-// List of IDs of ASN network list to be blocked
-func (o AppSecIPGeoOutput) AsnNetworkLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.AsnNetworkLists }).(pulumi.StringArrayOutput)
+// An Object containing List of ASN network lists to be blocked with specified action
+func (o AppSecIPGeoOutput) AsnControls() AppSecIPGeoAsnControlsPtrOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) AppSecIPGeoAsnControlsPtrOutput { return v.AsnControls }).(AppSecIPGeoAsnControlsPtrOutput)
+}
+
+// Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+func (o AppSecIPGeoOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringPtrOutput { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier of the security configuration
@@ -249,19 +264,19 @@ func (o AppSecIPGeoOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecIPGeo) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// List of IDs of network list that are always allowed
+// List of unique identifiers of ipNetworkLists allowed through the firewall.
 func (o AppSecIPGeoOutput) ExceptionIpNetworkLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.ExceptionIpNetworkLists }).(pulumi.StringArrayOutput)
 }
 
-// List of IDs of geographic network list to be blocked
-func (o AppSecIPGeoOutput) GeoNetworkLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.GeoNetworkLists }).(pulumi.StringArrayOutput)
+// An Object containing List of geographic network lists to be blocked with specified action
+func (o AppSecIPGeoOutput) GeoControls() AppSecIPGeoGeoControlsPtrOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) AppSecIPGeoGeoControlsPtrOutput { return v.GeoControls }).(AppSecIPGeoGeoControlsPtrOutput)
 }
 
-// List of IDs of IP network list to be blocked
-func (o AppSecIPGeoOutput) IpNetworkLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.IpNetworkLists }).(pulumi.StringArrayOutput)
+// An Object containing List of IP network lists to be blocked with specified action
+func (o AppSecIPGeoOutput) IpControls() AppSecIPGeoIpControlsPtrOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) AppSecIPGeoIpControlsPtrOutput { return v.IpControls }).(AppSecIPGeoIpControlsPtrOutput)
 }
 
 // Protection mode (block or allow)
@@ -275,8 +290,8 @@ func (o AppSecIPGeoOutput) SecurityPolicyId() pulumi.StringOutput {
 }
 
 // Action set for Ukraine geo control
-func (o AppSecIPGeoOutput) UkraineGeoControlAction() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringPtrOutput { return v.UkraineGeoControlAction }).(pulumi.StringPtrOutput)
+func (o AppSecIPGeoOutput) UkraineGeoControlAction() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringOutput { return v.UkraineGeoControlAction }).(pulumi.StringOutput)
 }
 
 type AppSecIPGeoArrayOutput struct{ *pulumi.OutputState }

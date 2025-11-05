@@ -65,6 +65,36 @@ public final class MtlskeystoreClientCertificateThirdPartyState extends com.pulu
     }
 
     /**
+     * The user who created the client certificate.
+     * 
+     */
+    @Import(name="createdBy")
+    private @Nullable Output<String> createdBy;
+
+    /**
+     * @return The user who created the client certificate.
+     * 
+     */
+    public Optional<Output<String>> createdBy() {
+        return Optional.ofNullable(this.createdBy);
+    }
+
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate was created.
+     * 
+     */
+    @Import(name="createdDate")
+    private @Nullable Output<String> createdDate;
+
+    /**
+     * @return An ISO 8601 timestamp indicating when the client certificate was created.
+     * 
+     */
+    public Optional<Output<String>> createdDate() {
+        return Optional.ofNullable(this.createdDate);
+    }
+
+    /**
      * Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
      * 
      */
@@ -175,6 +205,8 @@ public final class MtlskeystoreClientCertificateThirdPartyState extends com.pulu
         this.certificateId = $.certificateId;
         this.certificateName = $.certificateName;
         this.contractId = $.contractId;
+        this.createdBy = $.createdBy;
+        this.createdDate = $.createdDate;
         this.geography = $.geography;
         this.groupId = $.groupId;
         this.keyAlgorithm = $.keyAlgorithm;
@@ -263,6 +295,48 @@ public final class MtlskeystoreClientCertificateThirdPartyState extends com.pulu
          */
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
+        }
+
+        /**
+         * @param createdBy The user who created the client certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdBy(@Nullable Output<String> createdBy) {
+            $.createdBy = createdBy;
+            return this;
+        }
+
+        /**
+         * @param createdBy The user who created the client certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdBy(String createdBy) {
+            return createdBy(Output.of(createdBy));
+        }
+
+        /**
+         * @param createdDate An ISO 8601 timestamp indicating when the client certificate was created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdDate(@Nullable Output<String> createdDate) {
+            $.createdDate = createdDate;
+            return this;
+        }
+
+        /**
+         * @param createdDate An ISO 8601 timestamp indicating when the client certificate was created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdDate(String createdDate) {
+            return createdDate(Output.of(createdDate));
         }
 
         /**

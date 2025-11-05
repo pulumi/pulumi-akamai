@@ -31,6 +31,18 @@ namespace Pulumi.Akamai
         public Output<string> ContractId { get; private set; } = null!;
 
         /// <summary>
+        /// The user who created the client certificate.
+        /// </summary>
+        [Output("createdBy")]
+        public Output<string> CreatedBy { get; private set; } = null!;
+
+        /// <summary>
+        /// An ISO 8601 timestamp indicating when the client certificate was created.
+        /// </summary>
+        [Output("createdDate")]
+        public Output<string> CreatedDate { get; private set; } = null!;
+
+        /// <summary>
         /// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
         /// </summary>
         [Output("geography")]
@@ -209,6 +221,18 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
+
+        /// <summary>
+        /// The user who created the client certificate.
+        /// </summary>
+        [Input("createdBy")]
+        public Input<string>? CreatedBy { get; set; }
+
+        /// <summary>
+        /// An ISO 8601 timestamp indicating when the client certificate was created.
+        /// </summary>
+        [Input("createdDate")]
+        public Input<string>? CreatedDate { get; set; }
 
         /// <summary>
         /// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.

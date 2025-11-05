@@ -5,6 +5,39 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export interface AppSecIPGeoAsnControls {
+    /**
+     * Action set for ASN Controls
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * List of IDs of ASN network list to be blocked.
+     */
+    asnNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface AppSecIPGeoGeoControls {
+    /**
+     * Action set for GEO Controls.
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * List of IDs of geographic network list to be blocked.
+     */
+    geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface AppSecIPGeoIpControls {
+    /**
+     * Action set for IP Controls.
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * List of IDs of IP network list to be blocked.
+     */
+    ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
 export interface AppSecSiemSettingsExceptions {
     /**
      * Whether there should be an exception to include api request constraints events in SIEM
@@ -50,6 +83,17 @@ export interface AppSecSiemSettingsExceptions {
      * Whether there should be an exception to include waf events in SIEM
      */
     wafs?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions {
+    /**
+     * List of attack group names.
+     */
+    attackGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of rule IDs.
+     */
+    rules?: pulumi.Input<pulumi.Input<number>[]>;
 }
 
 export interface ClientlistListItem {
@@ -11764,6 +11808,17 @@ export interface IamUserUserNotifications {
     upgrades: pulumi.Input<pulumi.Input<string>[]>;
 }
 
+export interface MtlskeystoreClientCertificateAkamaiTimeouts {
+    /**
+     * Optional configurable resource create timeout. By default it's 30m.
+     */
+    create?: pulumi.Input<string>;
+    /**
+     * Optional configurable resource update timeout. By default it's 30m.
+     */
+    update?: pulumi.Input<string>;
+}
+
 export interface MtlskeystoreClientCertificateAkamaiVersion {
     /**
      * Details of the certificate block for the client certificate version.
@@ -11952,6 +12007,75 @@ export interface MtlskeystoreClientCertificateUploadTimeouts {
      * Optional configurable resource update timeout. By default it's 30m.
      */
     update?: pulumi.Input<string>;
+}
+
+export interface MtlstruststoreCaSetActivationTimeouts {
+    /**
+     * Optional configurable resource create timeout. By default it's 1h.
+     */
+    create?: pulumi.Input<string>;
+    /**
+     * Optional configurable resource delete timeout. By default it's 1h.
+     */
+    delete?: pulumi.Input<string>;
+    /**
+     * Optional configurable resource update timeout. By default it's 1h.
+     */
+    update?: pulumi.Input<string>;
+}
+
+export interface MtlstruststoreCaSetCertificate {
+    /**
+     * The certificate in PEM format, as found in a Base64 ASCII encoded file.
+     */
+    certificatePem: pulumi.Input<string>;
+    /**
+     * The user who created this CA certificate.
+     */
+    createdBy?: pulumi.Input<string>;
+    /**
+     * When the CA certificate was created.
+     */
+    createdDate?: pulumi.Input<string>;
+    /**
+     * Optional description for the certificate.
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * The certificate's ISO 8601 formatted expiration date.
+     */
+    endDate?: pulumi.Input<string>;
+    /**
+     * The fingerprint of the certificate.
+     */
+    fingerprint?: pulumi.Input<string>;
+    /**
+     * The certificate's issuer.
+     */
+    issuer?: pulumi.Input<string>;
+    /**
+     * The unique serial number of the certificate.
+     */
+    serialNumber?: pulumi.Input<string>;
+    /**
+     * The signature algorithm of the CA certificate.
+     */
+    signatureAlgorithm?: pulumi.Input<string>;
+    /**
+     * The start date of the certificate.
+     */
+    startDate?: pulumi.Input<string>;
+    /**
+     * The certificate's subject field.
+     */
+    subject?: pulumi.Input<string>;
+}
+
+export interface MtlstruststoreCaSetTimeouts {
+    /**
+     * Optional configurable resource delete timeout. By default it's 1h.
+     */
+    delete?: pulumi.Input<string>;
 }
 
 export interface PropertyActivationComplianceRecord {

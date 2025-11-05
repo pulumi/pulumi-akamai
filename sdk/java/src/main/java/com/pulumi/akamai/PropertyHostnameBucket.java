@@ -160,14 +160,14 @@ public class PropertyHostnameBucket extends com.pulumi.resources.CustomResource 
         return this.propertyId;
     }
     /**
-     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
      * 
      */
     @Export(name="timeoutForActivation", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeoutForActivation;
 
     /**
-     * @return The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+     * @return The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
      * 
      */
     public Output<Integer> timeoutForActivation() {

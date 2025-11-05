@@ -132,14 +132,14 @@ public class ClientlistList extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.tags);
     }
     /**
-     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+     * @return The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
      * 
      */
     public Output<String> type() {

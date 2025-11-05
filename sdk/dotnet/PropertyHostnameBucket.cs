@@ -73,7 +73,7 @@ namespace Pulumi.Akamai
         public Output<string> PropertyId { get; private set; } = null!;
 
         /// <summary>
-        /// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        /// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         /// </summary>
         [Output("timeoutForActivation")]
         public Output<int> TimeoutForActivation { get; private set; } = null!;
@@ -185,7 +185,7 @@ namespace Pulumi.Akamai
         public Input<string> PropertyId { get; set; } = null!;
 
         /// <summary>
-        /// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        /// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         /// </summary>
         [Input("timeoutForActivation")]
         public Input<int>? TimeoutForActivation { get; set; }
@@ -271,7 +271,7 @@ namespace Pulumi.Akamai
         public Input<string>? PropertyId { get; set; }
 
         /// <summary>
-        /// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        /// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         /// </summary>
         [Input("timeoutForActivation")]
         public Input<int>? TimeoutForActivation { get; set; }

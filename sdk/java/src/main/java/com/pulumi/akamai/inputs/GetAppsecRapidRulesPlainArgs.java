@@ -5,6 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -21,6 +22,13 @@ public final class GetAppsecRapidRulesPlainArgs extends com.pulumi.resources.Inv
 
     public Integer configId() {
         return this.configId;
+    }
+
+    @Import(name="includeExpiryDetails")
+    private @Nullable Boolean includeExpiryDetails;
+
+    public Optional<Boolean> includeExpiryDetails() {
+        return Optional.ofNullable(this.includeExpiryDetails);
     }
 
     @Import(name="ruleId")
@@ -41,6 +49,7 @@ public final class GetAppsecRapidRulesPlainArgs extends com.pulumi.resources.Inv
 
     private GetAppsecRapidRulesPlainArgs(GetAppsecRapidRulesPlainArgs $) {
         this.configId = $.configId;
+        this.includeExpiryDetails = $.includeExpiryDetails;
         this.ruleId = $.ruleId;
         this.securityPolicyId = $.securityPolicyId;
     }
@@ -65,6 +74,11 @@ public final class GetAppsecRapidRulesPlainArgs extends com.pulumi.resources.Inv
 
         public Builder configId(Integer configId) {
             $.configId = configId;
+            return this;
+        }
+
+        public Builder includeExpiryDetails(@Nullable Boolean includeExpiryDetails) {
+            $.includeExpiryDetails = includeExpiryDetails;
             return this;
         }
 

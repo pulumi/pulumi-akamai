@@ -6,6 +6,9 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.AppSecIPGeoArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.AppSecIPGeoState;
+import com.pulumi.akamai.outputs.AppSecIPGeoAsnControls;
+import com.pulumi.akamai.outputs.AppSecIPGeoGeoControls;
+import com.pulumi.akamai.outputs.AppSecIPGeoIpControls;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -19,18 +22,32 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/appSecIPGeo:AppSecIPGeo")
 public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
     /**
-     * List of IDs of ASN network list to be blocked
+     * An Object containing List of ASN network lists to be blocked with specified action
      * 
      */
-    @Export(name="asnNetworkLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output</* @Nullable */ List<String>> asnNetworkLists;
+    @Export(name="asnControls", refs={AppSecIPGeoAsnControls.class}, tree="[0]")
+    private Output</* @Nullable */ AppSecIPGeoAsnControls> asnControls;
 
     /**
-     * @return List of IDs of ASN network list to be blocked
+     * @return An Object containing List of ASN network lists to be blocked with specified action
      * 
      */
-    public Output<Optional<List<String>>> asnNetworkLists() {
-        return Codegen.optional(this.asnNetworkLists);
+    public Output<Optional<AppSecIPGeoAsnControls>> asnControls() {
+        return Codegen.optional(this.asnControls);
+    }
+    /**
+     * Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+     * 
+     */
+    @Export(name="blockAction", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> blockAction;
+
+    /**
+     * @return Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+     * 
+     */
+    public Output<Optional<String>> blockAction() {
+        return Codegen.optional(this.blockAction);
     }
     /**
      * Unique identifier of the security configuration
@@ -47,46 +64,46 @@ public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
         return this.configId;
     }
     /**
-     * List of IDs of network list that are always allowed
+     * List of unique identifiers of ipNetworkLists allowed through the firewall.
      * 
      */
     @Export(name="exceptionIpNetworkLists", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> exceptionIpNetworkLists;
 
     /**
-     * @return List of IDs of network list that are always allowed
+     * @return List of unique identifiers of ipNetworkLists allowed through the firewall.
      * 
      */
     public Output<Optional<List<String>>> exceptionIpNetworkLists() {
         return Codegen.optional(this.exceptionIpNetworkLists);
     }
     /**
-     * List of IDs of geographic network list to be blocked
+     * An Object containing List of geographic network lists to be blocked with specified action
      * 
      */
-    @Export(name="geoNetworkLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output</* @Nullable */ List<String>> geoNetworkLists;
+    @Export(name="geoControls", refs={AppSecIPGeoGeoControls.class}, tree="[0]")
+    private Output</* @Nullable */ AppSecIPGeoGeoControls> geoControls;
 
     /**
-     * @return List of IDs of geographic network list to be blocked
+     * @return An Object containing List of geographic network lists to be blocked with specified action
      * 
      */
-    public Output<Optional<List<String>>> geoNetworkLists() {
-        return Codegen.optional(this.geoNetworkLists);
+    public Output<Optional<AppSecIPGeoGeoControls>> geoControls() {
+        return Codegen.optional(this.geoControls);
     }
     /**
-     * List of IDs of IP network list to be blocked
+     * An Object containing List of IP network lists to be blocked with specified action
      * 
      */
-    @Export(name="ipNetworkLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output</* @Nullable */ List<String>> ipNetworkLists;
+    @Export(name="ipControls", refs={AppSecIPGeoIpControls.class}, tree="[0]")
+    private Output</* @Nullable */ AppSecIPGeoIpControls> ipControls;
 
     /**
-     * @return List of IDs of IP network list to be blocked
+     * @return An Object containing List of IP network lists to be blocked with specified action
      * 
      */
-    public Output<Optional<List<String>>> ipNetworkLists() {
-        return Codegen.optional(this.ipNetworkLists);
+    public Output<Optional<AppSecIPGeoIpControls>> ipControls() {
+        return Codegen.optional(this.ipControls);
     }
     /**
      * Protection mode (block or allow)
@@ -121,14 +138,14 @@ public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ukraineGeoControlAction", refs={String.class}, tree="[0]")
-    private Output</* @Nullable */ String> ukraineGeoControlAction;
+    private Output<String> ukraineGeoControlAction;
 
     /**
      * @return Action set for Ukraine geo control
      * 
      */
-    public Output<Optional<String>> ukraineGeoControlAction() {
-        return Codegen.optional(this.ukraineGeoControlAction);
+    public Output<String> ukraineGeoControlAction() {
+        return this.ukraineGeoControlAction;
     }
 
     /**

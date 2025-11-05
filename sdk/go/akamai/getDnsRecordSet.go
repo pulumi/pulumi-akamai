@@ -23,16 +23,16 @@ func GetDnsRecordSet(ctx *pulumi.Context, args *GetDnsRecordSetArgs, opts ...pul
 
 // A collection of arguments for invoking getDnsRecordSet.
 type GetDnsRecordSetArgs struct {
-	Host       string `pulumi:"host"`
+	Name       string `pulumi:"name"`
 	RecordType string `pulumi:"recordType"`
 	Zone       string `pulumi:"zone"`
 }
 
 // A collection of values returned by getDnsRecordSet.
 type GetDnsRecordSetResult struct {
-	Host string `pulumi:"host"`
 	// The provider-assigned unique ID for this managed resource.
 	Id         string   `pulumi:"id"`
+	Name       string   `pulumi:"name"`
 	Rdatas     []string `pulumi:"rdatas"`
 	RecordType string   `pulumi:"recordType"`
 	Zone       string   `pulumi:"zone"`
@@ -49,7 +49,7 @@ func GetDnsRecordSetOutput(ctx *pulumi.Context, args GetDnsRecordSetOutputArgs, 
 
 // A collection of arguments for invoking getDnsRecordSet.
 type GetDnsRecordSetOutputArgs struct {
-	Host       pulumi.StringInput `pulumi:"host"`
+	Name       pulumi.StringInput `pulumi:"name"`
 	RecordType pulumi.StringInput `pulumi:"recordType"`
 	Zone       pulumi.StringInput `pulumi:"zone"`
 }
@@ -73,13 +73,13 @@ func (o GetDnsRecordSetResultOutput) ToGetDnsRecordSetResultOutputWithContext(ct
 	return o
 }
 
-func (o GetDnsRecordSetResultOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsRecordSetResult) string { return v.Host }).(pulumi.StringOutput)
-}
-
 // The provider-assigned unique ID for this managed resource.
 func (o GetDnsRecordSetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDnsRecordSetResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDnsRecordSetResultOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDnsRecordSetResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
 func (o GetDnsRecordSetResultOutput) Rdatas() pulumi.StringArrayOutput {

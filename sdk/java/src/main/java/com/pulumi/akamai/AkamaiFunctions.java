@@ -4,6 +4,12 @@
 package com.pulumi.akamai;
 
 import com.pulumi.akamai.Utilities;
+import com.pulumi.akamai.inputs.GetApidefinitionsApiArgs;
+import com.pulumi.akamai.inputs.GetApidefinitionsApiPlainArgs;
+import com.pulumi.akamai.inputs.GetApidefinitionsOpenapiArgs;
+import com.pulumi.akamai.inputs.GetApidefinitionsOpenapiPlainArgs;
+import com.pulumi.akamai.inputs.GetApidefinitionsResourceOperationsArgs;
+import com.pulumi.akamai.inputs.GetApidefinitionsResourceOperationsPlainArgs;
 import com.pulumi.akamai.inputs.GetAppSecAdvancedSettingsEvasivePathMatchArgs;
 import com.pulumi.akamai.inputs.GetAppSecAdvancedSettingsEvasivePathMatchPlainArgs;
 import com.pulumi.akamai.inputs.GetAppSecAdvancedSettingsLoggingArgs;
@@ -96,18 +102,32 @@ import com.pulumi.akamai.inputs.GetAppSecWafModeArgs;
 import com.pulumi.akamai.inputs.GetAppSecWafModePlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecAapSelectedHostnamesArgs;
 import com.pulumi.akamai.inputs.GetAppsecAapSelectedHostnamesPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAsePenaltyBoxArgs;
+import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAsePenaltyBoxPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAttackPayloadLoggingArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAttackPayloadLoggingPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsJa4FingerprintArgs;
+import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsJa4FingerprintPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsPiiLearningArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsPiiLearningPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsRequestBodyArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsRequestBodyPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecCustomRulesUsageArgs;
+import com.pulumi.akamai.inputs.GetAppsecCustomRulesUsagePlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecEvalPenaltyBoxConditionsArgs;
 import com.pulumi.akamai.inputs.GetAppsecEvalPenaltyBoxConditionsPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecPenaltyBoxConditionsArgs;
 import com.pulumi.akamai.inputs.GetAppsecPenaltyBoxConditionsPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecRapidRulesArgs;
 import com.pulumi.akamai.inputs.GetAppsecRapidRulesPlainArgs;
+import com.pulumi.akamai.inputs.GetAprGeneralSettingsArgs;
+import com.pulumi.akamai.inputs.GetAprGeneralSettingsPlainArgs;
+import com.pulumi.akamai.inputs.GetAprProtectedOperationsArgs;
+import com.pulumi.akamai.inputs.GetAprProtectedOperationsPlainArgs;
+import com.pulumi.akamai.inputs.GetAprUserAllowListArgs;
+import com.pulumi.akamai.inputs.GetAprUserAllowListPlainArgs;
+import com.pulumi.akamai.inputs.GetAprUserRiskResponseStrategyArgs;
+import com.pulumi.akamai.inputs.GetAprUserRiskResponseStrategyPlainArgs;
 import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
 import com.pulumi.akamai.inputs.GetAuthoritiesSetPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanAkamaiBotCategoryActionArgs;
@@ -176,6 +196,8 @@ import com.pulumi.akamai.inputs.GetCPSEnrollmentArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentPlainArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentsArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentsPlainArgs;
+import com.pulumi.akamai.inputs.GetClientlistListArgs;
+import com.pulumi.akamai.inputs.GetClientlistListPlainArgs;
 import com.pulumi.akamai.inputs.GetClientlistListsArgs;
 import com.pulumi.akamai.inputs.GetClientlistListsPlainArgs;
 import com.pulumi.akamai.inputs.GetCloudaccessKeyArgs;
@@ -300,6 +322,22 @@ import com.pulumi.akamai.inputs.GetMtlskeystoreAccountCaCertificatesArgs;
 import com.pulumi.akamai.inputs.GetMtlskeystoreAccountCaCertificatesPlainArgs;
 import com.pulumi.akamai.inputs.GetMtlskeystoreClientCertificateArgs;
 import com.pulumi.akamai.inputs.GetMtlskeystoreClientCertificatePlainArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetActivationArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetActivationPlainArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetActivationsArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetActivationsPlainArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetActivitiesArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetActivitiesPlainArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetAssociationsArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetAssociationsPlainArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetCertificatesArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetCertificatesPlainArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetPlainArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetVersionsArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetVersionsPlainArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetsArgs;
+import com.pulumi.akamai.inputs.GetMtlstruststoreCaSetsPlainArgs;
 import com.pulumi.akamai.inputs.GetNetworkListsArgs;
 import com.pulumi.akamai.inputs.GetNetworkListsPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertiesArgs;
@@ -336,6 +374,9 @@ import com.pulumi.akamai.inputs.GetPropertyRulesTemplateArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesTemplatePlainArgs;
 import com.pulumi.akamai.inputs.GetZoneDnssecStatusArgs;
 import com.pulumi.akamai.inputs.GetZoneDnssecStatusPlainArgs;
+import com.pulumi.akamai.outputs.GetApidefinitionsApiResult;
+import com.pulumi.akamai.outputs.GetApidefinitionsOpenapiResult;
+import com.pulumi.akamai.outputs.GetApidefinitionsResourceOperationsResult;
 import com.pulumi.akamai.outputs.GetAppSecAdvancedSettingsEvasivePathMatchResult;
 import com.pulumi.akamai.outputs.GetAppSecAdvancedSettingsLoggingResult;
 import com.pulumi.akamai.outputs.GetAppSecAdvancedSettingsPragmaHeaderResult;
@@ -383,12 +424,19 @@ import com.pulumi.akamai.outputs.GetAppSecTuningRecommendationsResult;
 import com.pulumi.akamai.outputs.GetAppSecVersionNotesResult;
 import com.pulumi.akamai.outputs.GetAppSecWafModeResult;
 import com.pulumi.akamai.outputs.GetAppsecAapSelectedHostnamesResult;
+import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsAsePenaltyBoxResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsAttackPayloadLoggingResult;
+import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsJa4FingerprintResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsPiiLearningResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsRequestBodyResult;
+import com.pulumi.akamai.outputs.GetAppsecCustomRulesUsageResult;
 import com.pulumi.akamai.outputs.GetAppsecEvalPenaltyBoxConditionsResult;
 import com.pulumi.akamai.outputs.GetAppsecPenaltyBoxConditionsResult;
 import com.pulumi.akamai.outputs.GetAppsecRapidRulesResult;
+import com.pulumi.akamai.outputs.GetAprGeneralSettingsResult;
+import com.pulumi.akamai.outputs.GetAprProtectedOperationsResult;
+import com.pulumi.akamai.outputs.GetAprUserAllowListResult;
+import com.pulumi.akamai.outputs.GetAprUserRiskResponseStrategyResult;
 import com.pulumi.akamai.outputs.GetAuthoritiesSetResult;
 import com.pulumi.akamai.outputs.GetBotmanAkamaiBotCategoryActionResult;
 import com.pulumi.akamai.outputs.GetBotmanAkamaiBotCategoryResult;
@@ -424,6 +472,7 @@ import com.pulumi.akamai.outputs.GetBotmanTransactionalEndpointProtectionResult;
 import com.pulumi.akamai.outputs.GetBotmanTransactionalEndpointResult;
 import com.pulumi.akamai.outputs.GetCPSEnrollmentResult;
 import com.pulumi.akamai.outputs.GetCPSEnrollmentsResult;
+import com.pulumi.akamai.outputs.GetClientlistListResult;
 import com.pulumi.akamai.outputs.GetClientlistListsResult;
 import com.pulumi.akamai.outputs.GetCloudaccessKeyPropertiesResult;
 import com.pulumi.akamai.outputs.GetCloudaccessKeyResult;
@@ -501,6 +550,14 @@ import com.pulumi.akamai.outputs.GetImagingPolicyVideoResult;
 import com.pulumi.akamai.outputs.GetMtlskeystoreAccountCaCertificatesResult;
 import com.pulumi.akamai.outputs.GetMtlskeystoreClientCertificateResult;
 import com.pulumi.akamai.outputs.GetMtlskeystoreClientCertificatesResult;
+import com.pulumi.akamai.outputs.GetMtlstruststoreCaSetActivationResult;
+import com.pulumi.akamai.outputs.GetMtlstruststoreCaSetActivationsResult;
+import com.pulumi.akamai.outputs.GetMtlstruststoreCaSetActivitiesResult;
+import com.pulumi.akamai.outputs.GetMtlstruststoreCaSetAssociationsResult;
+import com.pulumi.akamai.outputs.GetMtlstruststoreCaSetCertificatesResult;
+import com.pulumi.akamai.outputs.GetMtlstruststoreCaSetResult;
+import com.pulumi.akamai.outputs.GetMtlstruststoreCaSetVersionsResult;
+import com.pulumi.akamai.outputs.GetMtlstruststoreCaSetsResult;
 import com.pulumi.akamai.outputs.GetNetworkListsResult;
 import com.pulumi.akamai.outputs.GetPropertiesResult;
 import com.pulumi.akamai.outputs.GetPropertiesSearchResult;
@@ -529,6 +586,57 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class AkamaiFunctions {
+    public static Output<GetApidefinitionsApiResult> getApidefinitionsApi() {
+        return getApidefinitionsApi(GetApidefinitionsApiArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetApidefinitionsApiResult> getApidefinitionsApiPlain() {
+        return getApidefinitionsApiPlain(GetApidefinitionsApiPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetApidefinitionsApiResult> getApidefinitionsApi(GetApidefinitionsApiArgs args) {
+        return getApidefinitionsApi(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetApidefinitionsApiResult> getApidefinitionsApiPlain(GetApidefinitionsApiPlainArgs args) {
+        return getApidefinitionsApiPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetApidefinitionsApiResult> getApidefinitionsApi(GetApidefinitionsApiArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getApidefinitionsApi:getApidefinitionsApi", TypeShape.of(GetApidefinitionsApiResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetApidefinitionsApiResult> getApidefinitionsApi(GetApidefinitionsApiArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getApidefinitionsApi:getApidefinitionsApi", TypeShape.of(GetApidefinitionsApiResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetApidefinitionsApiResult> getApidefinitionsApiPlain(GetApidefinitionsApiPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getApidefinitionsApi:getApidefinitionsApi", TypeShape.of(GetApidefinitionsApiResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetApidefinitionsOpenapiResult> getApidefinitionsOpenapi(GetApidefinitionsOpenapiArgs args) {
+        return getApidefinitionsOpenapi(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetApidefinitionsOpenapiResult> getApidefinitionsOpenapiPlain(GetApidefinitionsOpenapiPlainArgs args) {
+        return getApidefinitionsOpenapiPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetApidefinitionsOpenapiResult> getApidefinitionsOpenapi(GetApidefinitionsOpenapiArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getApidefinitionsOpenapi:getApidefinitionsOpenapi", TypeShape.of(GetApidefinitionsOpenapiResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetApidefinitionsOpenapiResult> getApidefinitionsOpenapi(GetApidefinitionsOpenapiArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getApidefinitionsOpenapi:getApidefinitionsOpenapi", TypeShape.of(GetApidefinitionsOpenapiResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetApidefinitionsOpenapiResult> getApidefinitionsOpenapiPlain(GetApidefinitionsOpenapiPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getApidefinitionsOpenapi:getApidefinitionsOpenapi", TypeShape.of(GetApidefinitionsOpenapiResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetApidefinitionsResourceOperationsResult> getApidefinitionsResourceOperations(GetApidefinitionsResourceOperationsArgs args) {
+        return getApidefinitionsResourceOperations(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetApidefinitionsResourceOperationsResult> getApidefinitionsResourceOperationsPlain(GetApidefinitionsResourceOperationsPlainArgs args) {
+        return getApidefinitionsResourceOperationsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetApidefinitionsResourceOperationsResult> getApidefinitionsResourceOperations(GetApidefinitionsResourceOperationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getApidefinitionsResourceOperations:getApidefinitionsResourceOperations", TypeShape.of(GetApidefinitionsResourceOperationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetApidefinitionsResourceOperationsResult> getApidefinitionsResourceOperations(GetApidefinitionsResourceOperationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getApidefinitionsResourceOperations:getApidefinitionsResourceOperations", TypeShape.of(GetApidefinitionsResourceOperationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetApidefinitionsResourceOperationsResult> getApidefinitionsResourceOperationsPlain(GetApidefinitionsResourceOperationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getApidefinitionsResourceOperations:getApidefinitionsResourceOperations", TypeShape.of(GetApidefinitionsResourceOperationsResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> getAppSecAdvancedSettingsEvasivePathMatch(GetAppSecAdvancedSettingsEvasivePathMatchArgs args) {
         return getAppSecAdvancedSettingsEvasivePathMatch(args, InvokeOptions.Empty);
     }
@@ -1264,6 +1372,21 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetAppsecAapSelectedHostnamesResult> getAppsecAapSelectedHostnamesPlain(GetAppsecAapSelectedHostnamesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getAppsecAapSelectedHostnames:getAppsecAapSelectedHostnames", TypeShape.of(GetAppsecAapSelectedHostnamesResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetAppsecAdvancedSettingsAsePenaltyBoxResult> getAppsecAdvancedSettingsAsePenaltyBox(GetAppsecAdvancedSettingsAsePenaltyBoxArgs args) {
+        return getAppsecAdvancedSettingsAsePenaltyBox(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecAdvancedSettingsAsePenaltyBoxResult> getAppsecAdvancedSettingsAsePenaltyBoxPlain(GetAppsecAdvancedSettingsAsePenaltyBoxPlainArgs args) {
+        return getAppsecAdvancedSettingsAsePenaltyBoxPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecAdvancedSettingsAsePenaltyBoxResult> getAppsecAdvancedSettingsAsePenaltyBox(GetAppsecAdvancedSettingsAsePenaltyBoxArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecAdvancedSettingsAsePenaltyBox:getAppsecAdvancedSettingsAsePenaltyBox", TypeShape.of(GetAppsecAdvancedSettingsAsePenaltyBoxResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecAdvancedSettingsAsePenaltyBoxResult> getAppsecAdvancedSettingsAsePenaltyBox(GetAppsecAdvancedSettingsAsePenaltyBoxArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecAdvancedSettingsAsePenaltyBox:getAppsecAdvancedSettingsAsePenaltyBox", TypeShape.of(GetAppsecAdvancedSettingsAsePenaltyBoxResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecAdvancedSettingsAsePenaltyBoxResult> getAppsecAdvancedSettingsAsePenaltyBoxPlain(GetAppsecAdvancedSettingsAsePenaltyBoxPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecAdvancedSettingsAsePenaltyBox:getAppsecAdvancedSettingsAsePenaltyBox", TypeShape.of(GetAppsecAdvancedSettingsAsePenaltyBoxResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs args) {
         return getAppsecAdvancedSettingsAttackPayloadLogging(args, InvokeOptions.Empty);
     }
@@ -1278,6 +1401,21 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> getAppsecAdvancedSettingsAttackPayloadLoggingPlain(GetAppsecAdvancedSettingsAttackPayloadLoggingPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", TypeShape.of(GetAppsecAdvancedSettingsAttackPayloadLoggingResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecAdvancedSettingsJa4FingerprintResult> getAppsecAdvancedSettingsJa4Fingerprint(GetAppsecAdvancedSettingsJa4FingerprintArgs args) {
+        return getAppsecAdvancedSettingsJa4Fingerprint(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecAdvancedSettingsJa4FingerprintResult> getAppsecAdvancedSettingsJa4FingerprintPlain(GetAppsecAdvancedSettingsJa4FingerprintPlainArgs args) {
+        return getAppsecAdvancedSettingsJa4FingerprintPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecAdvancedSettingsJa4FingerprintResult> getAppsecAdvancedSettingsJa4Fingerprint(GetAppsecAdvancedSettingsJa4FingerprintArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecAdvancedSettingsJa4Fingerprint:getAppsecAdvancedSettingsJa4Fingerprint", TypeShape.of(GetAppsecAdvancedSettingsJa4FingerprintResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecAdvancedSettingsJa4FingerprintResult> getAppsecAdvancedSettingsJa4Fingerprint(GetAppsecAdvancedSettingsJa4FingerprintArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecAdvancedSettingsJa4Fingerprint:getAppsecAdvancedSettingsJa4Fingerprint", TypeShape.of(GetAppsecAdvancedSettingsJa4FingerprintResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecAdvancedSettingsJa4FingerprintResult> getAppsecAdvancedSettingsJa4FingerprintPlain(GetAppsecAdvancedSettingsJa4FingerprintPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecAdvancedSettingsJa4Fingerprint:getAppsecAdvancedSettingsJa4Fingerprint", TypeShape.of(GetAppsecAdvancedSettingsJa4FingerprintResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetAppsecAdvancedSettingsPiiLearningResult> getAppsecAdvancedSettingsPiiLearning(GetAppsecAdvancedSettingsPiiLearningArgs args) {
         return getAppsecAdvancedSettingsPiiLearning(args, InvokeOptions.Empty);
@@ -1308,6 +1446,21 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetAppsecAdvancedSettingsRequestBodyResult> getAppsecAdvancedSettingsRequestBodyPlain(GetAppsecAdvancedSettingsRequestBodyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getAppsecAdvancedSettingsRequestBody:getAppsecAdvancedSettingsRequestBody", TypeShape.of(GetAppsecAdvancedSettingsRequestBodyResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecCustomRulesUsageResult> getAppsecCustomRulesUsage(GetAppsecCustomRulesUsageArgs args) {
+        return getAppsecCustomRulesUsage(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecCustomRulesUsageResult> getAppsecCustomRulesUsagePlain(GetAppsecCustomRulesUsagePlainArgs args) {
+        return getAppsecCustomRulesUsagePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecCustomRulesUsageResult> getAppsecCustomRulesUsage(GetAppsecCustomRulesUsageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecCustomRulesUsage:getAppsecCustomRulesUsage", TypeShape.of(GetAppsecCustomRulesUsageResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecCustomRulesUsageResult> getAppsecCustomRulesUsage(GetAppsecCustomRulesUsageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecCustomRulesUsage:getAppsecCustomRulesUsage", TypeShape.of(GetAppsecCustomRulesUsageResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecCustomRulesUsageResult> getAppsecCustomRulesUsagePlain(GetAppsecCustomRulesUsagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecCustomRulesUsage:getAppsecCustomRulesUsage", TypeShape.of(GetAppsecCustomRulesUsageResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetAppsecEvalPenaltyBoxConditionsResult> getAppsecEvalPenaltyBoxConditions(GetAppsecEvalPenaltyBoxConditionsArgs args) {
         return getAppsecEvalPenaltyBoxConditions(args, InvokeOptions.Empty);
@@ -1353,6 +1506,66 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetAppsecRapidRulesResult> getAppsecRapidRulesPlain(GetAppsecRapidRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getAppsecRapidRules:getAppsecRapidRules", TypeShape.of(GetAppsecRapidRulesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAprGeneralSettingsResult> getAprGeneralSettings(GetAprGeneralSettingsArgs args) {
+        return getAprGeneralSettings(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAprGeneralSettingsResult> getAprGeneralSettingsPlain(GetAprGeneralSettingsPlainArgs args) {
+        return getAprGeneralSettingsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAprGeneralSettingsResult> getAprGeneralSettings(GetAprGeneralSettingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAprGeneralSettings:getAprGeneralSettings", TypeShape.of(GetAprGeneralSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAprGeneralSettingsResult> getAprGeneralSettings(GetAprGeneralSettingsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAprGeneralSettings:getAprGeneralSettings", TypeShape.of(GetAprGeneralSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAprGeneralSettingsResult> getAprGeneralSettingsPlain(GetAprGeneralSettingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAprGeneralSettings:getAprGeneralSettings", TypeShape.of(GetAprGeneralSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAprProtectedOperationsResult> getAprProtectedOperations(GetAprProtectedOperationsArgs args) {
+        return getAprProtectedOperations(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAprProtectedOperationsResult> getAprProtectedOperationsPlain(GetAprProtectedOperationsPlainArgs args) {
+        return getAprProtectedOperationsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAprProtectedOperationsResult> getAprProtectedOperations(GetAprProtectedOperationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAprProtectedOperations:getAprProtectedOperations", TypeShape.of(GetAprProtectedOperationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAprProtectedOperationsResult> getAprProtectedOperations(GetAprProtectedOperationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAprProtectedOperations:getAprProtectedOperations", TypeShape.of(GetAprProtectedOperationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAprProtectedOperationsResult> getAprProtectedOperationsPlain(GetAprProtectedOperationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAprProtectedOperations:getAprProtectedOperations", TypeShape.of(GetAprProtectedOperationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAprUserAllowListResult> getAprUserAllowList(GetAprUserAllowListArgs args) {
+        return getAprUserAllowList(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAprUserAllowListResult> getAprUserAllowListPlain(GetAprUserAllowListPlainArgs args) {
+        return getAprUserAllowListPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAprUserAllowListResult> getAprUserAllowList(GetAprUserAllowListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAprUserAllowList:getAprUserAllowList", TypeShape.of(GetAprUserAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAprUserAllowListResult> getAprUserAllowList(GetAprUserAllowListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAprUserAllowList:getAprUserAllowList", TypeShape.of(GetAprUserAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAprUserAllowListResult> getAprUserAllowListPlain(GetAprUserAllowListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAprUserAllowList:getAprUserAllowList", TypeShape.of(GetAprUserAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAprUserRiskResponseStrategyResult> getAprUserRiskResponseStrategy(GetAprUserRiskResponseStrategyArgs args) {
+        return getAprUserRiskResponseStrategy(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAprUserRiskResponseStrategyResult> getAprUserRiskResponseStrategyPlain(GetAprUserRiskResponseStrategyPlainArgs args) {
+        return getAprUserRiskResponseStrategyPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAprUserRiskResponseStrategyResult> getAprUserRiskResponseStrategy(GetAprUserRiskResponseStrategyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAprUserRiskResponseStrategy:getAprUserRiskResponseStrategy", TypeShape.of(GetAprUserRiskResponseStrategyResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAprUserRiskResponseStrategyResult> getAprUserRiskResponseStrategy(GetAprUserRiskResponseStrategyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAprUserRiskResponseStrategy:getAprUserRiskResponseStrategy", TypeShape.of(GetAprUserRiskResponseStrategyResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAprUserRiskResponseStrategyResult> getAprUserRiskResponseStrategyPlain(GetAprUserRiskResponseStrategyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAprUserRiskResponseStrategy:getAprUserRiskResponseStrategy", TypeShape.of(GetAprUserRiskResponseStrategyResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetAuthoritiesSetResult> getAuthoritiesSet(GetAuthoritiesSetArgs args) {
         return getAuthoritiesSet(args, InvokeOptions.Empty);
@@ -1908,6 +2121,21 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetCPSEnrollmentsResult> getCPSEnrollmentsPlain(GetCPSEnrollmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCPSEnrollments:getCPSEnrollments", TypeShape.of(GetCPSEnrollmentsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetClientlistListResult> getClientlistList(GetClientlistListArgs args) {
+        return getClientlistList(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetClientlistListResult> getClientlistListPlain(GetClientlistListPlainArgs args) {
+        return getClientlistListPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetClientlistListResult> getClientlistList(GetClientlistListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getClientlistList:getClientlistList", TypeShape.of(GetClientlistListResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetClientlistListResult> getClientlistList(GetClientlistListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getClientlistList:getClientlistList", TypeShape.of(GetClientlistListResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetClientlistListResult> getClientlistListPlain(GetClientlistListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getClientlistList:getClientlistList", TypeShape.of(GetClientlistListResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetClientlistListsResult> getClientlistLists() {
         return getClientlistLists(GetClientlistListsArgs.Empty, InvokeOptions.Empty);
@@ -3279,6 +3507,168 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetMtlskeystoreClientCertificatesResult> getMtlskeystoreClientCertificatesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getMtlskeystoreClientCertificates:getMtlskeystoreClientCertificates", TypeShape.of(GetMtlskeystoreClientCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetResult> getMtlstruststoreCaSet() {
+        return getMtlstruststoreCaSet(GetMtlstruststoreCaSetArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetResult> getMtlstruststoreCaSetPlain() {
+        return getMtlstruststoreCaSetPlain(GetMtlstruststoreCaSetPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetResult> getMtlstruststoreCaSet(GetMtlstruststoreCaSetArgs args) {
+        return getMtlstruststoreCaSet(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetResult> getMtlstruststoreCaSetPlain(GetMtlstruststoreCaSetPlainArgs args) {
+        return getMtlstruststoreCaSetPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetResult> getMtlstruststoreCaSet(GetMtlstruststoreCaSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSet:getMtlstruststoreCaSet", TypeShape.of(GetMtlstruststoreCaSetResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetResult> getMtlstruststoreCaSet(GetMtlstruststoreCaSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSet:getMtlstruststoreCaSet", TypeShape.of(GetMtlstruststoreCaSetResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetResult> getMtlstruststoreCaSetPlain(GetMtlstruststoreCaSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlstruststoreCaSet:getMtlstruststoreCaSet", TypeShape.of(GetMtlstruststoreCaSetResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetActivationResult> getMtlstruststoreCaSetActivation(GetMtlstruststoreCaSetActivationArgs args) {
+        return getMtlstruststoreCaSetActivation(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetActivationResult> getMtlstruststoreCaSetActivationPlain(GetMtlstruststoreCaSetActivationPlainArgs args) {
+        return getMtlstruststoreCaSetActivationPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetActivationResult> getMtlstruststoreCaSetActivation(GetMtlstruststoreCaSetActivationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetActivation:getMtlstruststoreCaSetActivation", TypeShape.of(GetMtlstruststoreCaSetActivationResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetActivationResult> getMtlstruststoreCaSetActivation(GetMtlstruststoreCaSetActivationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetActivation:getMtlstruststoreCaSetActivation", TypeShape.of(GetMtlstruststoreCaSetActivationResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetActivationResult> getMtlstruststoreCaSetActivationPlain(GetMtlstruststoreCaSetActivationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlstruststoreCaSetActivation:getMtlstruststoreCaSetActivation", TypeShape.of(GetMtlstruststoreCaSetActivationResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetActivationsResult> getMtlstruststoreCaSetActivations() {
+        return getMtlstruststoreCaSetActivations(GetMtlstruststoreCaSetActivationsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetActivationsResult> getMtlstruststoreCaSetActivationsPlain() {
+        return getMtlstruststoreCaSetActivationsPlain(GetMtlstruststoreCaSetActivationsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetActivationsResult> getMtlstruststoreCaSetActivations(GetMtlstruststoreCaSetActivationsArgs args) {
+        return getMtlstruststoreCaSetActivations(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetActivationsResult> getMtlstruststoreCaSetActivationsPlain(GetMtlstruststoreCaSetActivationsPlainArgs args) {
+        return getMtlstruststoreCaSetActivationsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetActivationsResult> getMtlstruststoreCaSetActivations(GetMtlstruststoreCaSetActivationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetActivations:getMtlstruststoreCaSetActivations", TypeShape.of(GetMtlstruststoreCaSetActivationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetActivationsResult> getMtlstruststoreCaSetActivations(GetMtlstruststoreCaSetActivationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetActivations:getMtlstruststoreCaSetActivations", TypeShape.of(GetMtlstruststoreCaSetActivationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetActivationsResult> getMtlstruststoreCaSetActivationsPlain(GetMtlstruststoreCaSetActivationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlstruststoreCaSetActivations:getMtlstruststoreCaSetActivations", TypeShape.of(GetMtlstruststoreCaSetActivationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetActivitiesResult> getMtlstruststoreCaSetActivities() {
+        return getMtlstruststoreCaSetActivities(GetMtlstruststoreCaSetActivitiesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetActivitiesResult> getMtlstruststoreCaSetActivitiesPlain() {
+        return getMtlstruststoreCaSetActivitiesPlain(GetMtlstruststoreCaSetActivitiesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetActivitiesResult> getMtlstruststoreCaSetActivities(GetMtlstruststoreCaSetActivitiesArgs args) {
+        return getMtlstruststoreCaSetActivities(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetActivitiesResult> getMtlstruststoreCaSetActivitiesPlain(GetMtlstruststoreCaSetActivitiesPlainArgs args) {
+        return getMtlstruststoreCaSetActivitiesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetActivitiesResult> getMtlstruststoreCaSetActivities(GetMtlstruststoreCaSetActivitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetActivities:getMtlstruststoreCaSetActivities", TypeShape.of(GetMtlstruststoreCaSetActivitiesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetActivitiesResult> getMtlstruststoreCaSetActivities(GetMtlstruststoreCaSetActivitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetActivities:getMtlstruststoreCaSetActivities", TypeShape.of(GetMtlstruststoreCaSetActivitiesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetActivitiesResult> getMtlstruststoreCaSetActivitiesPlain(GetMtlstruststoreCaSetActivitiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlstruststoreCaSetActivities:getMtlstruststoreCaSetActivities", TypeShape.of(GetMtlstruststoreCaSetActivitiesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetAssociationsResult> getMtlstruststoreCaSetAssociations() {
+        return getMtlstruststoreCaSetAssociations(GetMtlstruststoreCaSetAssociationsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetAssociationsResult> getMtlstruststoreCaSetAssociationsPlain() {
+        return getMtlstruststoreCaSetAssociationsPlain(GetMtlstruststoreCaSetAssociationsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetAssociationsResult> getMtlstruststoreCaSetAssociations(GetMtlstruststoreCaSetAssociationsArgs args) {
+        return getMtlstruststoreCaSetAssociations(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetAssociationsResult> getMtlstruststoreCaSetAssociationsPlain(GetMtlstruststoreCaSetAssociationsPlainArgs args) {
+        return getMtlstruststoreCaSetAssociationsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetAssociationsResult> getMtlstruststoreCaSetAssociations(GetMtlstruststoreCaSetAssociationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetAssociations:getMtlstruststoreCaSetAssociations", TypeShape.of(GetMtlstruststoreCaSetAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetAssociationsResult> getMtlstruststoreCaSetAssociations(GetMtlstruststoreCaSetAssociationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetAssociations:getMtlstruststoreCaSetAssociations", TypeShape.of(GetMtlstruststoreCaSetAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetAssociationsResult> getMtlstruststoreCaSetAssociationsPlain(GetMtlstruststoreCaSetAssociationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlstruststoreCaSetAssociations:getMtlstruststoreCaSetAssociations", TypeShape.of(GetMtlstruststoreCaSetAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetCertificatesResult> getMtlstruststoreCaSetCertificates() {
+        return getMtlstruststoreCaSetCertificates(GetMtlstruststoreCaSetCertificatesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetCertificatesResult> getMtlstruststoreCaSetCertificatesPlain() {
+        return getMtlstruststoreCaSetCertificatesPlain(GetMtlstruststoreCaSetCertificatesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetCertificatesResult> getMtlstruststoreCaSetCertificates(GetMtlstruststoreCaSetCertificatesArgs args) {
+        return getMtlstruststoreCaSetCertificates(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetCertificatesResult> getMtlstruststoreCaSetCertificatesPlain(GetMtlstruststoreCaSetCertificatesPlainArgs args) {
+        return getMtlstruststoreCaSetCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetCertificatesResult> getMtlstruststoreCaSetCertificates(GetMtlstruststoreCaSetCertificatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetCertificates:getMtlstruststoreCaSetCertificates", TypeShape.of(GetMtlstruststoreCaSetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetCertificatesResult> getMtlstruststoreCaSetCertificates(GetMtlstruststoreCaSetCertificatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetCertificates:getMtlstruststoreCaSetCertificates", TypeShape.of(GetMtlstruststoreCaSetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetCertificatesResult> getMtlstruststoreCaSetCertificatesPlain(GetMtlstruststoreCaSetCertificatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlstruststoreCaSetCertificates:getMtlstruststoreCaSetCertificates", TypeShape.of(GetMtlstruststoreCaSetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetVersionsResult> getMtlstruststoreCaSetVersions() {
+        return getMtlstruststoreCaSetVersions(GetMtlstruststoreCaSetVersionsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetVersionsResult> getMtlstruststoreCaSetVersionsPlain() {
+        return getMtlstruststoreCaSetVersionsPlain(GetMtlstruststoreCaSetVersionsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetVersionsResult> getMtlstruststoreCaSetVersions(GetMtlstruststoreCaSetVersionsArgs args) {
+        return getMtlstruststoreCaSetVersions(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetVersionsResult> getMtlstruststoreCaSetVersionsPlain(GetMtlstruststoreCaSetVersionsPlainArgs args) {
+        return getMtlstruststoreCaSetVersionsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetVersionsResult> getMtlstruststoreCaSetVersions(GetMtlstruststoreCaSetVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetVersions:getMtlstruststoreCaSetVersions", TypeShape.of(GetMtlstruststoreCaSetVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetVersionsResult> getMtlstruststoreCaSetVersions(GetMtlstruststoreCaSetVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSetVersions:getMtlstruststoreCaSetVersions", TypeShape.of(GetMtlstruststoreCaSetVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetVersionsResult> getMtlstruststoreCaSetVersionsPlain(GetMtlstruststoreCaSetVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlstruststoreCaSetVersions:getMtlstruststoreCaSetVersions", TypeShape.of(GetMtlstruststoreCaSetVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetsResult> getMtlstruststoreCaSets() {
+        return getMtlstruststoreCaSets(GetMtlstruststoreCaSetsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetsResult> getMtlstruststoreCaSetsPlain() {
+        return getMtlstruststoreCaSetsPlain(GetMtlstruststoreCaSetsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetsResult> getMtlstruststoreCaSets(GetMtlstruststoreCaSetsArgs args) {
+        return getMtlstruststoreCaSets(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetsResult> getMtlstruststoreCaSetsPlain(GetMtlstruststoreCaSetsPlainArgs args) {
+        return getMtlstruststoreCaSetsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetMtlstruststoreCaSetsResult> getMtlstruststoreCaSets(GetMtlstruststoreCaSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSets:getMtlstruststoreCaSets", TypeShape.of(GetMtlstruststoreCaSetsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMtlstruststoreCaSetsResult> getMtlstruststoreCaSets(GetMtlstruststoreCaSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getMtlstruststoreCaSets:getMtlstruststoreCaSets", TypeShape.of(GetMtlstruststoreCaSetsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetMtlstruststoreCaSetsResult> getMtlstruststoreCaSetsPlain(GetMtlstruststoreCaSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getMtlstruststoreCaSets:getMtlstruststoreCaSets", TypeShape.of(GetMtlstruststoreCaSetsResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetNetworkListsResult> getNetworkLists() {
         return getNetworkLists(GetNetworkListsArgs.Empty, InvokeOptions.Empty);

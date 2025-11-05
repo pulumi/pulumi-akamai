@@ -3,6 +3,9 @@
 
 package com.pulumi.akamai.outputs;
 
+import com.pulumi.akamai.outputs.GetAppSecIPGeoAsnControl;
+import com.pulumi.akamai.outputs.GetAppSecIPGeoGeoControl;
+import com.pulumi.akamai.outputs.GetAppSecIPGeoIpControl;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
@@ -12,24 +15,28 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAppSecIPGeoResult {
-    private List<String> asnNetworkLists;
+    private List<GetAppSecIPGeoAsnControl> asnControls;
+    private String blockAction;
     private Integer configId;
     private List<String> exceptionIpNetworkLists;
-    private List<String> geoNetworkLists;
+    private List<GetAppSecIPGeoGeoControl> geoControls;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
     private String id;
-    private List<String> ipNetworkLists;
+    private List<GetAppSecIPGeoIpControl> ipControls;
     private String mode;
     private String outputText;
     private String securityPolicyId;
     private String ukraineGeoControlAction;
 
     private GetAppSecIPGeoResult() {}
-    public List<String> asnNetworkLists() {
-        return this.asnNetworkLists;
+    public List<GetAppSecIPGeoAsnControl> asnControls() {
+        return this.asnControls;
+    }
+    public String blockAction() {
+        return this.blockAction;
     }
     public Integer configId() {
         return this.configId;
@@ -37,8 +44,8 @@ public final class GetAppSecIPGeoResult {
     public List<String> exceptionIpNetworkLists() {
         return this.exceptionIpNetworkLists;
     }
-    public List<String> geoNetworkLists() {
-        return this.geoNetworkLists;
+    public List<GetAppSecIPGeoGeoControl> geoControls() {
+        return this.geoControls;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -47,8 +54,8 @@ public final class GetAppSecIPGeoResult {
     public String id() {
         return this.id;
     }
-    public List<String> ipNetworkLists() {
-        return this.ipNetworkLists;
+    public List<GetAppSecIPGeoIpControl> ipControls() {
+        return this.ipControls;
     }
     public String mode() {
         return this.mode;
@@ -72,12 +79,13 @@ public final class GetAppSecIPGeoResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> asnNetworkLists;
+        private List<GetAppSecIPGeoAsnControl> asnControls;
+        private String blockAction;
         private Integer configId;
         private List<String> exceptionIpNetworkLists;
-        private List<String> geoNetworkLists;
+        private List<GetAppSecIPGeoGeoControl> geoControls;
         private String id;
-        private List<String> ipNetworkLists;
+        private List<GetAppSecIPGeoIpControl> ipControls;
         private String mode;
         private String outputText;
         private String securityPolicyId;
@@ -85,12 +93,13 @@ public final class GetAppSecIPGeoResult {
         public Builder() {}
         public Builder(GetAppSecIPGeoResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.asnNetworkLists = defaults.asnNetworkLists;
+    	      this.asnControls = defaults.asnControls;
+    	      this.blockAction = defaults.blockAction;
     	      this.configId = defaults.configId;
     	      this.exceptionIpNetworkLists = defaults.exceptionIpNetworkLists;
-    	      this.geoNetworkLists = defaults.geoNetworkLists;
+    	      this.geoControls = defaults.geoControls;
     	      this.id = defaults.id;
-    	      this.ipNetworkLists = defaults.ipNetworkLists;
+    	      this.ipControls = defaults.ipControls;
     	      this.mode = defaults.mode;
     	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
@@ -98,15 +107,23 @@ public final class GetAppSecIPGeoResult {
         }
 
         @CustomType.Setter
-        public Builder asnNetworkLists(List<String> asnNetworkLists) {
-            if (asnNetworkLists == null) {
-              throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "asnNetworkLists");
+        public Builder asnControls(List<GetAppSecIPGeoAsnControl> asnControls) {
+            if (asnControls == null) {
+              throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "asnControls");
             }
-            this.asnNetworkLists = asnNetworkLists;
+            this.asnControls = asnControls;
             return this;
         }
-        public Builder asnNetworkLists(String... asnNetworkLists) {
-            return asnNetworkLists(List.of(asnNetworkLists));
+        public Builder asnControls(GetAppSecIPGeoAsnControl... asnControls) {
+            return asnControls(List.of(asnControls));
+        }
+        @CustomType.Setter
+        public Builder blockAction(String blockAction) {
+            if (blockAction == null) {
+              throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "blockAction");
+            }
+            this.blockAction = blockAction;
+            return this;
         }
         @CustomType.Setter
         public Builder configId(Integer configId) {
@@ -128,15 +145,15 @@ public final class GetAppSecIPGeoResult {
             return exceptionIpNetworkLists(List.of(exceptionIpNetworkLists));
         }
         @CustomType.Setter
-        public Builder geoNetworkLists(List<String> geoNetworkLists) {
-            if (geoNetworkLists == null) {
-              throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "geoNetworkLists");
+        public Builder geoControls(List<GetAppSecIPGeoGeoControl> geoControls) {
+            if (geoControls == null) {
+              throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "geoControls");
             }
-            this.geoNetworkLists = geoNetworkLists;
+            this.geoControls = geoControls;
             return this;
         }
-        public Builder geoNetworkLists(String... geoNetworkLists) {
-            return geoNetworkLists(List.of(geoNetworkLists));
+        public Builder geoControls(GetAppSecIPGeoGeoControl... geoControls) {
+            return geoControls(List.of(geoControls));
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -147,15 +164,15 @@ public final class GetAppSecIPGeoResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ipNetworkLists(List<String> ipNetworkLists) {
-            if (ipNetworkLists == null) {
-              throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "ipNetworkLists");
+        public Builder ipControls(List<GetAppSecIPGeoIpControl> ipControls) {
+            if (ipControls == null) {
+              throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "ipControls");
             }
-            this.ipNetworkLists = ipNetworkLists;
+            this.ipControls = ipControls;
             return this;
         }
-        public Builder ipNetworkLists(String... ipNetworkLists) {
-            return ipNetworkLists(List.of(ipNetworkLists));
+        public Builder ipControls(GetAppSecIPGeoIpControl... ipControls) {
+            return ipControls(List.of(ipControls));
         }
         @CustomType.Setter
         public Builder mode(String mode) {
@@ -191,12 +208,13 @@ public final class GetAppSecIPGeoResult {
         }
         public GetAppSecIPGeoResult build() {
             final var _resultValue = new GetAppSecIPGeoResult();
-            _resultValue.asnNetworkLists = asnNetworkLists;
+            _resultValue.asnControls = asnControls;
+            _resultValue.blockAction = blockAction;
             _resultValue.configId = configId;
             _resultValue.exceptionIpNetworkLists = exceptionIpNetworkLists;
-            _resultValue.geoNetworkLists = geoNetworkLists;
+            _resultValue.geoControls = geoControls;
             _resultValue.id = id;
-            _resultValue.ipNetworkLists = ipNetworkLists;
+            _resultValue.ipControls = ipControls;
             _resultValue.mode = mode;
             _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;

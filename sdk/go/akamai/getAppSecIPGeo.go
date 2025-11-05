@@ -29,17 +29,18 @@ type LookupAppSecIPGeoArgs struct {
 
 // A collection of values returned by getAppSecIPGeo.
 type LookupAppSecIPGeoResult struct {
-	AsnNetworkLists         []string `pulumi:"asnNetworkLists"`
-	ConfigId                int      `pulumi:"configId"`
-	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
-	GeoNetworkLists         []string `pulumi:"geoNetworkLists"`
+	AsnControls             []GetAppSecIPGeoAsnControl `pulumi:"asnControls"`
+	BlockAction             string                     `pulumi:"blockAction"`
+	ConfigId                int                        `pulumi:"configId"`
+	ExceptionIpNetworkLists []string                   `pulumi:"exceptionIpNetworkLists"`
+	GeoControls             []GetAppSecIPGeoGeoControl `pulumi:"geoControls"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                      string   `pulumi:"id"`
-	IpNetworkLists          []string `pulumi:"ipNetworkLists"`
-	Mode                    string   `pulumi:"mode"`
-	OutputText              string   `pulumi:"outputText"`
-	SecurityPolicyId        string   `pulumi:"securityPolicyId"`
-	UkraineGeoControlAction string   `pulumi:"ukraineGeoControlAction"`
+	Id                      string                    `pulumi:"id"`
+	IpControls              []GetAppSecIPGeoIpControl `pulumi:"ipControls"`
+	Mode                    string                    `pulumi:"mode"`
+	OutputText              string                    `pulumi:"outputText"`
+	SecurityPolicyId        string                    `pulumi:"securityPolicyId"`
+	UkraineGeoControlAction string                    `pulumi:"ukraineGeoControlAction"`
 }
 
 func LookupAppSecIPGeoOutput(ctx *pulumi.Context, args LookupAppSecIPGeoOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecIPGeoResultOutput {
@@ -76,8 +77,12 @@ func (o LookupAppSecIPGeoResultOutput) ToLookupAppSecIPGeoResultOutputWithContex
 	return o
 }
 
-func (o LookupAppSecIPGeoResultOutput) AsnNetworkLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.AsnNetworkLists }).(pulumi.StringArrayOutput)
+func (o LookupAppSecIPGeoResultOutput) AsnControls() GetAppSecIPGeoAsnControlArrayOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) []GetAppSecIPGeoAsnControl { return v.AsnControls }).(GetAppSecIPGeoAsnControlArrayOutput)
+}
+
+func (o LookupAppSecIPGeoResultOutput) BlockAction() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.BlockAction }).(pulumi.StringOutput)
 }
 
 func (o LookupAppSecIPGeoResultOutput) ConfigId() pulumi.IntOutput {
@@ -88,8 +93,8 @@ func (o LookupAppSecIPGeoResultOutput) ExceptionIpNetworkLists() pulumi.StringAr
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.ExceptionIpNetworkLists }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupAppSecIPGeoResultOutput) GeoNetworkLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.GeoNetworkLists }).(pulumi.StringArrayOutput)
+func (o LookupAppSecIPGeoResultOutput) GeoControls() GetAppSecIPGeoGeoControlArrayOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) []GetAppSecIPGeoGeoControl { return v.GeoControls }).(GetAppSecIPGeoGeoControlArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -97,8 +102,8 @@ func (o LookupAppSecIPGeoResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o LookupAppSecIPGeoResultOutput) IpNetworkLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.IpNetworkLists }).(pulumi.StringArrayOutput)
+func (o LookupAppSecIPGeoResultOutput) IpControls() GetAppSecIPGeoIpControlArrayOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) []GetAppSecIPGeoIpControl { return v.IpControls }).(GetAppSecIPGeoIpControlArrayOutput)
 }
 
 func (o LookupAppSecIPGeoResultOutput) Mode() pulumi.StringOutput {

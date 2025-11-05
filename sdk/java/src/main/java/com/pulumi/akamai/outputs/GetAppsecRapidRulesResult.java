@@ -20,6 +20,7 @@ public final class GetAppsecRapidRulesResult {
     private String defaultAction;
     private Boolean enabled;
     private String id;
+    private @Nullable Boolean includeExpiryDetails;
     private String outputText;
     private List<GetAppsecRapidRulesRapidRule> rapidRules;
     private @Nullable Integer ruleId;
@@ -37,6 +38,9 @@ public final class GetAppsecRapidRulesResult {
     }
     public String id() {
         return this.id;
+    }
+    public Optional<Boolean> includeExpiryDetails() {
+        return Optional.ofNullable(this.includeExpiryDetails);
     }
     public String outputText() {
         return this.outputText;
@@ -64,6 +68,7 @@ public final class GetAppsecRapidRulesResult {
         private String defaultAction;
         private Boolean enabled;
         private String id;
+        private @Nullable Boolean includeExpiryDetails;
         private String outputText;
         private List<GetAppsecRapidRulesRapidRule> rapidRules;
         private @Nullable Integer ruleId;
@@ -75,6 +80,7 @@ public final class GetAppsecRapidRulesResult {
     	      this.defaultAction = defaults.defaultAction;
     	      this.enabled = defaults.enabled;
     	      this.id = defaults.id;
+    	      this.includeExpiryDetails = defaults.includeExpiryDetails;
     	      this.outputText = defaults.outputText;
     	      this.rapidRules = defaults.rapidRules;
     	      this.ruleId = defaults.ruleId;
@@ -111,6 +117,12 @@ public final class GetAppsecRapidRulesResult {
               throw new MissingRequiredPropertyException("GetAppsecRapidRulesResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder includeExpiryDetails(@Nullable Boolean includeExpiryDetails) {
+
+            this.includeExpiryDetails = includeExpiryDetails;
             return this;
         }
         @CustomType.Setter
@@ -152,6 +164,7 @@ public final class GetAppsecRapidRulesResult {
             _resultValue.defaultAction = defaultAction;
             _resultValue.enabled = enabled;
             _resultValue.id = id;
+            _resultValue.includeExpiryDetails = includeExpiryDetails;
             _resultValue.outputText = outputText;
             _resultValue.rapidRules = rapidRules;
             _resultValue.ruleId = ruleId;

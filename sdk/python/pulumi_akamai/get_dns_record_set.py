@@ -26,13 +26,13 @@ class GetDnsRecordSetResult:
     """
     A collection of values returned by getDnsRecordSet.
     """
-    def __init__(__self__, host=None, id=None, rdatas=None, record_type=None, zone=None):
-        if host and not isinstance(host, str):
-            raise TypeError("Expected argument 'host' to be a str")
-        pulumi.set(__self__, "host", host)
+    def __init__(__self__, id=None, name=None, rdatas=None, record_type=None, zone=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if name and not isinstance(name, str):
+            raise TypeError("Expected argument 'name' to be a str")
+        pulumi.set(__self__, "name", name)
         if rdatas and not isinstance(rdatas, list):
             raise TypeError("Expected argument 'rdatas' to be a list")
         pulumi.set(__self__, "rdatas", rdatas)
@@ -45,16 +45,16 @@ class GetDnsRecordSetResult:
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> _builtins.str:
-        return pulumi.get(self, "host")
-
-    @_builtins.property
-    @pulumi.getter
     def id(self) -> _builtins.str:
         """
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
 
     @_builtins.property
     @pulumi.getter
@@ -78,14 +78,14 @@ class AwaitableGetDnsRecordSetResult(GetDnsRecordSetResult):
         if False:
             yield self
         return GetDnsRecordSetResult(
-            host=self.host,
             id=self.id,
+            name=self.name,
             rdatas=self.rdatas,
             record_type=self.record_type,
             zone=self.zone)
 
 
-def get_dns_record_set(host: Optional[_builtins.str] = None,
+def get_dns_record_set(name: Optional[_builtins.str] = None,
                        record_type: Optional[_builtins.str] = None,
                        zone: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDnsRecordSetResult:
@@ -93,19 +93,19 @@ def get_dns_record_set(host: Optional[_builtins.str] = None,
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    __args__['host'] = host
+    __args__['name'] = name
     __args__['recordType'] = record_type
     __args__['zone'] = zone
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getDnsRecordSet:getDnsRecordSet', __args__, opts=opts, typ=GetDnsRecordSetResult).value
 
     return AwaitableGetDnsRecordSetResult(
-        host=pulumi.get(__ret__, 'host'),
         id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
         rdatas=pulumi.get(__ret__, 'rdatas'),
         record_type=pulumi.get(__ret__, 'record_type'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_dns_record_set_output(host: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dns_record_set_output(name: Optional[pulumi.Input[_builtins.str]] = None,
                               record_type: Optional[pulumi.Input[_builtins.str]] = None,
                               zone: Optional[pulumi.Input[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDnsRecordSetResult]:
@@ -113,14 +113,14 @@ def get_dns_record_set_output(host: Optional[pulumi.Input[_builtins.str]] = None
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    __args__['host'] = host
+    __args__['name'] = name
     __args__['recordType'] = record_type
     __args__['zone'] = zone
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getDnsRecordSet:getDnsRecordSet', __args__, opts=opts, typ=GetDnsRecordSetResult)
     return __ret__.apply(lambda __response__: GetDnsRecordSetResult(
-        host=pulumi.get(__response__, 'host'),
         id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
         rdatas=pulumi.get(__response__, 'rdatas'),
         record_type=pulumi.get(__response__, 'record_type'),
         zone=pulumi.get(__response__, 'zone')))

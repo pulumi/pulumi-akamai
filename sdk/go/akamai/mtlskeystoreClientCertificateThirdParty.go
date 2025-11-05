@@ -21,6 +21,10 @@ type MtlskeystoreClientCertificateThirdParty struct {
 	CertificateName pulumi.StringOutput `pulumi:"certificateName"`
 	// The contract assigned to the client certificate. Must have a length of at least 1.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
+	// The user who created the client certificate.
+	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating when the client certificate was created.
+	CreatedDate pulumi.StringOutput `pulumi:"createdDate"`
 	// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
 	Geography pulumi.StringOutput `pulumi:"geography"`
 	// The group assigned to the client certificate. Must be greater than or equal to 0.
@@ -94,6 +98,10 @@ type mtlskeystoreClientCertificateThirdPartyState struct {
 	CertificateName *string `pulumi:"certificateName"`
 	// The contract assigned to the client certificate. Must have a length of at least 1.
 	ContractId *string `pulumi:"contractId"`
+	// The user who created the client certificate.
+	CreatedBy *string `pulumi:"createdBy"`
+	// An ISO 8601 timestamp indicating when the client certificate was created.
+	CreatedDate *string `pulumi:"createdDate"`
 	// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
 	Geography *string `pulumi:"geography"`
 	// The group assigned to the client certificate. Must be greater than or equal to 0.
@@ -117,6 +125,10 @@ type MtlskeystoreClientCertificateThirdPartyState struct {
 	CertificateName pulumi.StringPtrInput
 	// The contract assigned to the client certificate. Must have a length of at least 1.
 	ContractId pulumi.StringPtrInput
+	// The user who created the client certificate.
+	CreatedBy pulumi.StringPtrInput
+	// An ISO 8601 timestamp indicating when the client certificate was created.
+	CreatedDate pulumi.StringPtrInput
 	// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
 	Geography pulumi.StringPtrInput
 	// The group assigned to the client certificate. Must be greater than or equal to 0.
@@ -280,6 +292,16 @@ func (o MtlskeystoreClientCertificateThirdPartyOutput) CertificateName() pulumi.
 // The contract assigned to the client certificate. Must have a length of at least 1.
 func (o MtlskeystoreClientCertificateThirdPartyOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MtlskeystoreClientCertificateThirdParty) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// The user who created the client certificate.
+func (o MtlskeystoreClientCertificateThirdPartyOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateThirdParty) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the client certificate was created.
+func (o MtlskeystoreClientCertificateThirdPartyOutput) CreatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v *MtlskeystoreClientCertificateThirdParty) pulumi.StringOutput { return v.CreatedDate }).(pulumi.StringOutput)
 }
 
 // Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.

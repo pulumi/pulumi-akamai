@@ -35,7 +35,7 @@ type PropertyHostnameBucket struct {
 	PendingDefaultCerts pulumi.IntOutput `pulumi:"pendingDefaultCerts"`
 	// The unique identifier for the property.
 	PropertyId pulumi.StringOutput `pulumi:"propertyId"`
-	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
 	TimeoutForActivation pulumi.IntOutput `pulumi:"timeoutForActivation"`
 }
 
@@ -98,7 +98,7 @@ type propertyHostnameBucketState struct {
 	PendingDefaultCerts *int `pulumi:"pendingDefaultCerts"`
 	// The unique identifier for the property.
 	PropertyId *string `pulumi:"propertyId"`
-	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
 	TimeoutForActivation *int `pulumi:"timeoutForActivation"`
 }
 
@@ -123,7 +123,7 @@ type PropertyHostnameBucketState struct {
 	PendingDefaultCerts pulumi.IntPtrInput
 	// The unique identifier for the property.
 	PropertyId pulumi.StringPtrInput
-	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
 	TimeoutForActivation pulumi.IntPtrInput
 }
 
@@ -148,7 +148,7 @@ type propertyHostnameBucketArgs struct {
 	NotifyEmails []string `pulumi:"notifyEmails"`
 	// The unique identifier for the property.
 	PropertyId string `pulumi:"propertyId"`
-	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
 	TimeoutForActivation *int `pulumi:"timeoutForActivation"`
 }
 
@@ -170,7 +170,7 @@ type PropertyHostnameBucketArgs struct {
 	NotifyEmails pulumi.StringArrayInput
 	// The unique identifier for the property.
 	PropertyId pulumi.StringInput
-	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+	// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
 	TimeoutForActivation pulumi.IntPtrInput
 }
 
@@ -311,7 +311,7 @@ func (o PropertyHostnameBucketOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyHostnameBucket) pulumi.StringOutput { return v.PropertyId }).(pulumi.StringOutput)
 }
 
-// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+// The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
 func (o PropertyHostnameBucketOutput) TimeoutForActivation() pulumi.IntOutput {
 	return o.ApplyT(func(v *PropertyHostnameBucket) pulumi.IntOutput { return v.TimeoutForActivation }).(pulumi.IntOutput)
 }

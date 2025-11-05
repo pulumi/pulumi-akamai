@@ -11,26 +11,26 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDnsRecordSetResult {
-    private String host;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
     private String id;
+    private String name;
     private List<String> rdatas;
     private String recordType;
     private String zone;
 
     private GetDnsRecordSetResult() {}
-    public String host() {
-        return this.host;
-    }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
     public String id() {
         return this.id;
+    }
+    public String name() {
+        return this.name;
     }
     public List<String> rdatas() {
         return this.rdatas;
@@ -51,35 +51,35 @@ public final class GetDnsRecordSetResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String host;
         private String id;
+        private String name;
         private List<String> rdatas;
         private String recordType;
         private String zone;
         public Builder() {}
         public Builder(GetDnsRecordSetResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.host = defaults.host;
     	      this.id = defaults.id;
+    	      this.name = defaults.name;
     	      this.rdatas = defaults.rdatas;
     	      this.recordType = defaults.recordType;
     	      this.zone = defaults.zone;
         }
 
         @CustomType.Setter
-        public Builder host(String host) {
-            if (host == null) {
-              throw new MissingRequiredPropertyException("GetDnsRecordSetResult", "host");
-            }
-            this.host = host;
-            return this;
-        }
-        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetDnsRecordSetResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder name(String name) {
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDnsRecordSetResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -111,8 +111,8 @@ public final class GetDnsRecordSetResult {
         }
         public GetDnsRecordSetResult build() {
             final var _resultValue = new GetDnsRecordSetResult();
-            _resultValue.host = host;
             _resultValue.id = id;
+            _resultValue.name = name;
             _resultValue.rdatas = rdatas;
             _resultValue.recordType = recordType;
             _resultValue.zone = zone;

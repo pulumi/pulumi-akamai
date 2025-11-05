@@ -75,9 +75,17 @@ export class MtlskeystoreClientCertificateAkamai extends pulumi.CustomResource {
      */
     declare public readonly notificationEmails: pulumi.Output<string[]>;
     /**
+     * The common name of the account CA certificate selected to sign the client certificate.
+     */
+    declare public readonly preferredCa: pulumi.Output<string | undefined>;
+    /**
      * Unique identifier for the `previous` client certificate version.
      */
     declare public /*out*/ readonly previousGuid: pulumi.Output<string>;
+    /**
+     * A set of client certificate versions that should be revoked.
+     */
+    declare public readonly revokedVersions: pulumi.Output<number[] | undefined>;
     /**
      * Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
      */
@@ -86,6 +94,7 @@ export class MtlskeystoreClientCertificateAkamai extends pulumi.CustomResource {
      * The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
      */
     declare public readonly subject: pulumi.Output<string>;
+    declare public readonly timeouts: pulumi.Output<outputs.MtlskeystoreClientCertificateAkamaiTimeouts | undefined>;
     /**
      * A list of client certificate versions. Each version represents a specific iteration of the client certificate.
      */
@@ -114,9 +123,12 @@ export class MtlskeystoreClientCertificateAkamai extends pulumi.CustomResource {
             resourceInputs["groupId"] = state?.groupId;
             resourceInputs["keyAlgorithm"] = state?.keyAlgorithm;
             resourceInputs["notificationEmails"] = state?.notificationEmails;
+            resourceInputs["preferredCa"] = state?.preferredCa;
             resourceInputs["previousGuid"] = state?.previousGuid;
+            resourceInputs["revokedVersions"] = state?.revokedVersions;
             resourceInputs["secureNetwork"] = state?.secureNetwork;
             resourceInputs["subject"] = state?.subject;
+            resourceInputs["timeouts"] = state?.timeouts;
             resourceInputs["versions"] = state?.versions;
         } else {
             const args = argsOrState as MtlskeystoreClientCertificateAkamaiArgs | undefined;
@@ -144,8 +156,11 @@ export class MtlskeystoreClientCertificateAkamai extends pulumi.CustomResource {
             resourceInputs["groupId"] = args?.groupId;
             resourceInputs["keyAlgorithm"] = args?.keyAlgorithm;
             resourceInputs["notificationEmails"] = args?.notificationEmails;
+            resourceInputs["preferredCa"] = args?.preferredCa;
+            resourceInputs["revokedVersions"] = args?.revokedVersions;
             resourceInputs["secureNetwork"] = args?.secureNetwork;
             resourceInputs["subject"] = args?.subject;
+            resourceInputs["timeouts"] = args?.timeouts;
             resourceInputs["certificateId"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["createdDate"] = undefined /*out*/;
@@ -203,9 +218,17 @@ export interface MtlskeystoreClientCertificateAkamaiState {
      */
     notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * The common name of the account CA certificate selected to sign the client certificate.
+     */
+    preferredCa?: pulumi.Input<string>;
+    /**
      * Unique identifier for the `previous` client certificate version.
      */
     previousGuid?: pulumi.Input<string>;
+    /**
+     * A set of client certificate versions that should be revoked.
+     */
+    revokedVersions?: pulumi.Input<pulumi.Input<number>[]>;
     /**
      * Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
      */
@@ -214,6 +237,7 @@ export interface MtlskeystoreClientCertificateAkamaiState {
      * The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
      */
     subject?: pulumi.Input<string>;
+    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiTimeouts>;
     /**
      * A list of client certificate versions. Each version represents a specific iteration of the client certificate.
      */
@@ -249,6 +273,14 @@ export interface MtlskeystoreClientCertificateAkamaiArgs {
      */
     notificationEmails: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * The common name of the account CA certificate selected to sign the client certificate.
+     */
+    preferredCa?: pulumi.Input<string>;
+    /**
+     * A set of client certificate versions that should be revoked.
+     */
+    revokedVersions?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
      * Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
      */
     secureNetwork: pulumi.Input<string>;
@@ -256,4 +288,5 @@ export interface MtlskeystoreClientCertificateAkamaiArgs {
      * The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
      */
     subject?: pulumi.Input<string>;
+    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiTimeouts>;
 }

@@ -73,10 +73,22 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> NotificationEmails { get; private set; } = null!;
 
         /// <summary>
+        /// The common name of the account CA certificate selected to sign the client certificate.
+        /// </summary>
+        [Output("preferredCa")]
+        public Output<string?> PreferredCa { get; private set; } = null!;
+
+        /// <summary>
         /// Unique identifier for the `Previous` client certificate version.
         /// </summary>
         [Output("previousGuid")]
         public Output<string> PreviousGuid { get; private set; } = null!;
+
+        /// <summary>
+        /// A set of client certificate versions that should be revoked.
+        /// </summary>
+        [Output("revokedVersions")]
+        public Output<ImmutableArray<int>> RevokedVersions { get; private set; } = null!;
 
         /// <summary>
         /// Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
@@ -89,6 +101,9 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("subject")]
         public Output<string> Subject { get; private set; } = null!;
+
+        [Output("timeouts")]
+        public Output<Outputs.MtlskeystoreClientCertificateAkamaiTimeouts?> Timeouts { get; private set; } = null!;
 
         /// <summary>
         /// A list of client certificate versions. Each version represents a specific iteration of the client certificate.
@@ -185,6 +200,24 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
+        /// The common name of the account CA certificate selected to sign the client certificate.
+        /// </summary>
+        [Input("preferredCa")]
+        public Input<string>? PreferredCa { get; set; }
+
+        [Input("revokedVersions")]
+        private InputList<int>? _revokedVersions;
+
+        /// <summary>
+        /// A set of client certificate versions that should be revoked.
+        /// </summary>
+        public InputList<int> RevokedVersions
+        {
+            get => _revokedVersions ?? (_revokedVersions = new InputList<int>());
+            set => _revokedVersions = value;
+        }
+
+        /// <summary>
         /// Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
         /// </summary>
         [Input("secureNetwork", required: true)]
@@ -195,6 +228,9 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("subject")]
         public Input<string>? Subject { get; set; }
+
+        [Input("timeouts")]
+        public Input<Inputs.MtlskeystoreClientCertificateAkamaiTimeoutsArgs>? Timeouts { get; set; }
 
         public MtlskeystoreClientCertificateAkamaiArgs()
         {
@@ -271,10 +307,28 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
+        /// The common name of the account CA certificate selected to sign the client certificate.
+        /// </summary>
+        [Input("preferredCa")]
+        public Input<string>? PreferredCa { get; set; }
+
+        /// <summary>
         /// Unique identifier for the `Previous` client certificate version.
         /// </summary>
         [Input("previousGuid")]
         public Input<string>? PreviousGuid { get; set; }
+
+        [Input("revokedVersions")]
+        private InputList<int>? _revokedVersions;
+
+        /// <summary>
+        /// A set of client certificate versions that should be revoked.
+        /// </summary>
+        public InputList<int> RevokedVersions
+        {
+            get => _revokedVersions ?? (_revokedVersions = new InputList<int>());
+            set => _revokedVersions = value;
+        }
 
         /// <summary>
         /// Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
@@ -287,6 +341,9 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("subject")]
         public Input<string>? Subject { get; set; }
+
+        [Input("timeouts")]
+        public Input<Inputs.MtlskeystoreClientCertificateAkamaiTimeoutsGetArgs>? Timeouts { get; set; }
 
         [Input("versions")]
         private InputList<Inputs.MtlskeystoreClientCertificateAkamaiVersionGetArgs>? _versions;

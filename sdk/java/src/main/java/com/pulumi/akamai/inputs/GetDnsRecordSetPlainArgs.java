@@ -13,11 +13,11 @@ public final class GetDnsRecordSetPlainArgs extends com.pulumi.resources.InvokeA
 
     public static final GetDnsRecordSetPlainArgs Empty = new GetDnsRecordSetPlainArgs();
 
-    @Import(name="host", required=true)
-    private String host;
+    @Import(name="name", required=true)
+    private String name;
 
-    public String host() {
-        return this.host;
+    public String name() {
+        return this.name;
     }
 
     @Import(name="recordType", required=true)
@@ -37,7 +37,7 @@ public final class GetDnsRecordSetPlainArgs extends com.pulumi.resources.InvokeA
     private GetDnsRecordSetPlainArgs() {}
 
     private GetDnsRecordSetPlainArgs(GetDnsRecordSetPlainArgs $) {
-        this.host = $.host;
+        this.name = $.name;
         this.recordType = $.recordType;
         this.zone = $.zone;
     }
@@ -60,8 +60,8 @@ public final class GetDnsRecordSetPlainArgs extends com.pulumi.resources.InvokeA
             $ = new GetDnsRecordSetPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder host(String host) {
-            $.host = host;
+        public Builder name(String name) {
+            $.name = name;
             return this;
         }
 
@@ -76,8 +76,8 @@ public final class GetDnsRecordSetPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetDnsRecordSetPlainArgs build() {
-            if ($.host == null) {
-                throw new MissingRequiredPropertyException("GetDnsRecordSetPlainArgs", "host");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("GetDnsRecordSetPlainArgs", "name");
             }
             if ($.recordType == null) {
                 throw new MissingRequiredPropertyException("GetDnsRecordSetPlainArgs", "recordType");

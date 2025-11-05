@@ -43,6 +43,12 @@ namespace Pulumi.Akamai
         public Output<Outputs.AppSecSiemSettingsExceptions?> Exceptions { get; private set; } = null!;
 
         /// <summary>
+        /// Whether JA4 Fingerprint should be included in SIEM events
+        /// </summary>
+        [Output("includeJa4FingerprintToSiem")]
+        public Output<bool?> IncludeJa4FingerprintToSiem { get; private set; } = null!;
+
+        /// <summary>
         /// List of IDs of security policy for which SIEM integration is to be enabled
         /// </summary>
         [Output("securityPolicyIds")]
@@ -130,6 +136,12 @@ namespace Pulumi.Akamai
         [Input("exceptions")]
         public Input<Inputs.AppSecSiemSettingsExceptionsArgs>? Exceptions { get; set; }
 
+        /// <summary>
+        /// Whether JA4 Fingerprint should be included in SIEM events
+        /// </summary>
+        [Input("includeJa4FingerprintToSiem")]
+        public Input<bool>? IncludeJa4FingerprintToSiem { get; set; }
+
         [Input("securityPolicyIds")]
         private InputList<string>? _securityPolicyIds;
 
@@ -185,6 +197,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("exceptions")]
         public Input<Inputs.AppSecSiemSettingsExceptionsGetArgs>? Exceptions { get; set; }
+
+        /// <summary>
+        /// Whether JA4 Fingerprint should be included in SIEM events
+        /// </summary>
+        [Input("includeJa4FingerprintToSiem")]
+        public Input<bool>? IncludeJa4FingerprintToSiem { get; set; }
 
         [Input("securityPolicyIds")]
         private InputList<string>? _securityPolicyIds;

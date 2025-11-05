@@ -62,6 +62,34 @@ public class MtlskeystoreClientCertificateThirdParty extends com.pulumi.resource
         return this.contractId;
     }
     /**
+     * The user who created the client certificate.
+     * 
+     */
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
+    private Output<String> createdBy;
+
+    /**
+     * @return The user who created the client certificate.
+     * 
+     */
+    public Output<String> createdBy() {
+        return this.createdBy;
+    }
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate was created.
+     * 
+     */
+    @Export(name="createdDate", refs={String.class}, tree="[0]")
+    private Output<String> createdDate;
+
+    /**
+     * @return An ISO 8601 timestamp indicating when the client certificate was created.
+     * 
+     */
+    public Output<String> createdDate() {
+        return this.createdDate;
+    }
+    /**
      * Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
      * 
      */

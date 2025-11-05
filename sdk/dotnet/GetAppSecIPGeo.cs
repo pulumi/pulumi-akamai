@@ -54,15 +54,16 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetAppSecIPGeoResult
     {
-        public readonly ImmutableArray<string> AsnNetworkLists;
+        public readonly ImmutableArray<Outputs.GetAppSecIPGeoAsnControlResult> AsnControls;
+        public readonly string BlockAction;
         public readonly int ConfigId;
         public readonly ImmutableArray<string> ExceptionIpNetworkLists;
-        public readonly ImmutableArray<string> GeoNetworkLists;
+        public readonly ImmutableArray<Outputs.GetAppSecIPGeoGeoControlResult> GeoControls;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly ImmutableArray<string> IpNetworkLists;
+        public readonly ImmutableArray<Outputs.GetAppSecIPGeoIpControlResult> IpControls;
         public readonly string Mode;
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
@@ -70,17 +71,19 @@ namespace Pulumi.Akamai
 
         [OutputConstructor]
         private GetAppSecIPGeoResult(
-            ImmutableArray<string> asnNetworkLists,
+            ImmutableArray<Outputs.GetAppSecIPGeoAsnControlResult> asnControls,
+
+            string blockAction,
 
             int configId,
 
             ImmutableArray<string> exceptionIpNetworkLists,
 
-            ImmutableArray<string> geoNetworkLists,
+            ImmutableArray<Outputs.GetAppSecIPGeoGeoControlResult> geoControls,
 
             string id,
 
-            ImmutableArray<string> ipNetworkLists,
+            ImmutableArray<Outputs.GetAppSecIPGeoIpControlResult> ipControls,
 
             string mode,
 
@@ -90,12 +93,13 @@ namespace Pulumi.Akamai
 
             string ukraineGeoControlAction)
         {
-            AsnNetworkLists = asnNetworkLists;
+            AsnControls = asnControls;
+            BlockAction = blockAction;
             ConfigId = configId;
             ExceptionIpNetworkLists = exceptionIpNetworkLists;
-            GeoNetworkLists = geoNetworkLists;
+            GeoControls = geoControls;
             Id = id;
-            IpNetworkLists = ipNetworkLists;
+            IpControls = ipControls;
             Mode = mode;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;

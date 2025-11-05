@@ -40,7 +40,7 @@ class PropertyHostnameBucketArgs:
         :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the request.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.
-        :param pulumi.Input[_builtins.int] timeout_for_activation: The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        :param pulumi.Input[_builtins.int] timeout_for_activation: The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         """
         pulumi.set(__self__, "hostnames", hostnames)
         pulumi.set(__self__, "network", network)
@@ -158,7 +158,7 @@ class PropertyHostnameBucketArgs:
     @pulumi.getter(name="timeoutForActivation")
     def timeout_for_activation(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         """
         return pulumi.get(self, "timeout_for_activation")
 
@@ -193,7 +193,7 @@ class _PropertyHostnameBucketState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.
         :param pulumi.Input[_builtins.int] pending_default_certs: The number of hostnames with a `DEFAULT` certificate type that are still in the `PENDING` state.
         :param pulumi.Input[_builtins.str] property_id: The unique identifier for the property.
-        :param pulumi.Input[_builtins.int] timeout_for_activation: The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        :param pulumi.Input[_builtins.int] timeout_for_activation: The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         """
         if activation_id is not None:
             pulumi.set(__self__, "activation_id", activation_id)
@@ -342,7 +342,7 @@ class _PropertyHostnameBucketState:
     @pulumi.getter(name="timeoutForActivation")
     def timeout_for_activation(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         """
         return pulumi.get(self, "timeout_for_activation")
 
@@ -379,7 +379,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the request.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.
         :param pulumi.Input[_builtins.str] property_id: The unique identifier for the property.
-        :param pulumi.Input[_builtins.int] timeout_for_activation: The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        :param pulumi.Input[_builtins.int] timeout_for_activation: The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         """
         ...
     @overload
@@ -477,7 +477,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.
         :param pulumi.Input[_builtins.int] pending_default_certs: The number of hostnames with a `DEFAULT` certificate type that are still in the `PENDING` state.
         :param pulumi.Input[_builtins.str] property_id: The unique identifier for the property.
-        :param pulumi.Input[_builtins.int] timeout_for_activation: The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        :param pulumi.Input[_builtins.int] timeout_for_activation: The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -580,7 +580,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
     @pulumi.getter(name="timeoutForActivation")
     def timeout_for_activation(self) -> pulumi.Output[_builtins.int]:
         """
-        The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+        The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         """
         return pulumi.get(self, "timeout_for_activation")
 

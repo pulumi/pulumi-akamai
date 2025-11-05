@@ -47,6 +47,14 @@ export class MtlskeystoreClientCertificateThirdParty extends pulumi.CustomResour
      */
     declare public readonly contractId: pulumi.Output<string>;
     /**
+     * The user who created the client certificate.
+     */
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate was created.
+     */
+    declare public /*out*/ readonly createdDate: pulumi.Output<string>;
+    /**
      * Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
      */
     declare public readonly geography: pulumi.Output<string>;
@@ -91,6 +99,8 @@ export class MtlskeystoreClientCertificateThirdParty extends pulumi.CustomResour
             resourceInputs["certificateId"] = state?.certificateId;
             resourceInputs["certificateName"] = state?.certificateName;
             resourceInputs["contractId"] = state?.contractId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["createdDate"] = state?.createdDate;
             resourceInputs["geography"] = state?.geography;
             resourceInputs["groupId"] = state?.groupId;
             resourceInputs["keyAlgorithm"] = state?.keyAlgorithm;
@@ -131,6 +141,8 @@ export class MtlskeystoreClientCertificateThirdParty extends pulumi.CustomResour
             resourceInputs["subject"] = args?.subject;
             resourceInputs["versions"] = args?.versions;
             resourceInputs["certificateId"] = undefined /*out*/;
+            resourceInputs["createdBy"] = undefined /*out*/;
+            resourceInputs["createdDate"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MtlskeystoreClientCertificateThirdParty.__pulumiType, name, resourceInputs, opts);
@@ -153,6 +165,14 @@ export interface MtlskeystoreClientCertificateThirdPartyState {
      * The contract assigned to the client certificate. Must have a length of at least 1.
      */
     contractId?: pulumi.Input<string>;
+    /**
+     * The user who created the client certificate.
+     */
+    createdBy?: pulumi.Input<string>;
+    /**
+     * An ISO 8601 timestamp indicating when the client certificate was created.
+     */
+    createdDate?: pulumi.Input<string>;
     /**
      * Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
      */

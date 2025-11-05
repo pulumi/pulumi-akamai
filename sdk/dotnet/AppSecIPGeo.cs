@@ -13,10 +13,16 @@ namespace Pulumi.Akamai
     public partial class AppSecIPGeo : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// List of IDs of ASN network list to be blocked
+        /// An Object containing List of ASN network lists to be blocked with specified action
         /// </summary>
-        [Output("asnNetworkLists")]
-        public Output<ImmutableArray<string>> AsnNetworkLists { get; private set; } = null!;
+        [Output("asnControls")]
+        public Output<Outputs.AppSecIPGeoAsnControls?> AsnControls { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+        /// </summary>
+        [Output("blockAction")]
+        public Output<string?> BlockAction { get; private set; } = null!;
 
         /// <summary>
         /// Unique identifier of the security configuration
@@ -25,22 +31,22 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// List of IDs of network list that are always allowed
+        /// List of unique identifiers of IpNetworkLists allowed through the firewall.
         /// </summary>
         [Output("exceptionIpNetworkLists")]
         public Output<ImmutableArray<string>> ExceptionIpNetworkLists { get; private set; } = null!;
 
         /// <summary>
-        /// List of IDs of geographic network list to be blocked
+        /// An Object containing List of geographic network lists to be blocked with specified action
         /// </summary>
-        [Output("geoNetworkLists")]
-        public Output<ImmutableArray<string>> GeoNetworkLists { get; private set; } = null!;
+        [Output("geoControls")]
+        public Output<Outputs.AppSecIPGeoGeoControls?> GeoControls { get; private set; } = null!;
 
         /// <summary>
-        /// List of IDs of IP network list to be blocked
+        /// An Object containing List of IP network lists to be blocked with specified action
         /// </summary>
-        [Output("ipNetworkLists")]
-        public Output<ImmutableArray<string>> IpNetworkLists { get; private set; } = null!;
+        [Output("ipControls")]
+        public Output<Outputs.AppSecIPGeoIpControls?> IpControls { get; private set; } = null!;
 
         /// <summary>
         /// Protection mode (block or allow)
@@ -58,7 +64,7 @@ namespace Pulumi.Akamai
         /// Action set for Ukraine geo control
         /// </summary>
         [Output("ukraineGeoControlAction")]
-        public Output<string?> UkraineGeoControlAction { get; private set; } = null!;
+        public Output<string> UkraineGeoControlAction { get; private set; } = null!;
 
 
         /// <summary>
@@ -106,17 +112,17 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecIPGeoArgs : global::Pulumi.ResourceArgs
     {
-        [Input("asnNetworkLists")]
-        private InputList<string>? _asnNetworkLists;
+        /// <summary>
+        /// An Object containing List of ASN network lists to be blocked with specified action
+        /// </summary>
+        [Input("asnControls")]
+        public Input<Inputs.AppSecIPGeoAsnControlsArgs>? AsnControls { get; set; }
 
         /// <summary>
-        /// List of IDs of ASN network list to be blocked
+        /// Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
         /// </summary>
-        public InputList<string> AsnNetworkLists
-        {
-            get => _asnNetworkLists ?? (_asnNetworkLists = new InputList<string>());
-            set => _asnNetworkLists = value;
-        }
+        [Input("blockAction")]
+        public Input<string>? BlockAction { get; set; }
 
         /// <summary>
         /// Unique identifier of the security configuration
@@ -128,7 +134,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _exceptionIpNetworkLists;
 
         /// <summary>
-        /// List of IDs of network list that are always allowed
+        /// List of unique identifiers of IpNetworkLists allowed through the firewall.
         /// </summary>
         public InputList<string> ExceptionIpNetworkLists
         {
@@ -136,29 +142,17 @@ namespace Pulumi.Akamai
             set => _exceptionIpNetworkLists = value;
         }
 
-        [Input("geoNetworkLists")]
-        private InputList<string>? _geoNetworkLists;
+        /// <summary>
+        /// An Object containing List of geographic network lists to be blocked with specified action
+        /// </summary>
+        [Input("geoControls")]
+        public Input<Inputs.AppSecIPGeoGeoControlsArgs>? GeoControls { get; set; }
 
         /// <summary>
-        /// List of IDs of geographic network list to be blocked
+        /// An Object containing List of IP network lists to be blocked with specified action
         /// </summary>
-        public InputList<string> GeoNetworkLists
-        {
-            get => _geoNetworkLists ?? (_geoNetworkLists = new InputList<string>());
-            set => _geoNetworkLists = value;
-        }
-
-        [Input("ipNetworkLists")]
-        private InputList<string>? _ipNetworkLists;
-
-        /// <summary>
-        /// List of IDs of IP network list to be blocked
-        /// </summary>
-        public InputList<string> IpNetworkLists
-        {
-            get => _ipNetworkLists ?? (_ipNetworkLists = new InputList<string>());
-            set => _ipNetworkLists = value;
-        }
+        [Input("ipControls")]
+        public Input<Inputs.AppSecIPGeoIpControlsArgs>? IpControls { get; set; }
 
         /// <summary>
         /// Protection mode (block or allow)
@@ -186,17 +180,17 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecIPGeoState : global::Pulumi.ResourceArgs
     {
-        [Input("asnNetworkLists")]
-        private InputList<string>? _asnNetworkLists;
+        /// <summary>
+        /// An Object containing List of ASN network lists to be blocked with specified action
+        /// </summary>
+        [Input("asnControls")]
+        public Input<Inputs.AppSecIPGeoAsnControlsGetArgs>? AsnControls { get; set; }
 
         /// <summary>
-        /// List of IDs of ASN network list to be blocked
+        /// Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
         /// </summary>
-        public InputList<string> AsnNetworkLists
-        {
-            get => _asnNetworkLists ?? (_asnNetworkLists = new InputList<string>());
-            set => _asnNetworkLists = value;
-        }
+        [Input("blockAction")]
+        public Input<string>? BlockAction { get; set; }
 
         /// <summary>
         /// Unique identifier of the security configuration
@@ -208,7 +202,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _exceptionIpNetworkLists;
 
         /// <summary>
-        /// List of IDs of network list that are always allowed
+        /// List of unique identifiers of IpNetworkLists allowed through the firewall.
         /// </summary>
         public InputList<string> ExceptionIpNetworkLists
         {
@@ -216,29 +210,17 @@ namespace Pulumi.Akamai
             set => _exceptionIpNetworkLists = value;
         }
 
-        [Input("geoNetworkLists")]
-        private InputList<string>? _geoNetworkLists;
+        /// <summary>
+        /// An Object containing List of geographic network lists to be blocked with specified action
+        /// </summary>
+        [Input("geoControls")]
+        public Input<Inputs.AppSecIPGeoGeoControlsGetArgs>? GeoControls { get; set; }
 
         /// <summary>
-        /// List of IDs of geographic network list to be blocked
+        /// An Object containing List of IP network lists to be blocked with specified action
         /// </summary>
-        public InputList<string> GeoNetworkLists
-        {
-            get => _geoNetworkLists ?? (_geoNetworkLists = new InputList<string>());
-            set => _geoNetworkLists = value;
-        }
-
-        [Input("ipNetworkLists")]
-        private InputList<string>? _ipNetworkLists;
-
-        /// <summary>
-        /// List of IDs of IP network list to be blocked
-        /// </summary>
-        public InputList<string> IpNetworkLists
-        {
-            get => _ipNetworkLists ?? (_ipNetworkLists = new InputList<string>());
-            set => _ipNetworkLists = value;
-        }
+        [Input("ipControls")]
+        public Input<Inputs.AppSecIPGeoIpControlsGetArgs>? IpControls { get; set; }
 
         /// <summary>
         /// Protection mode (block or allow)
