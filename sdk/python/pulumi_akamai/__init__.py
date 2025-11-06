@@ -6,6 +6,9 @@ import builtins as _builtins
 from . import _utilities
 import typing
 # Export this package's modules as members:
+from .apidefinitions_activation import *
+from .apidefinitions_api import *
+from .apidefinitions_resource_operations import *
 from .app_sec_activations import *
 from .app_sec_advanced_settings_evasive_path_match import *
 from .app_sec_advanced_settings_logging import *
@@ -52,13 +55,19 @@ from .app_sec_version_nodes import *
 from .app_sec_waf_mode import *
 from .app_sec_waf_protection import *
 from .appsec_aap_selected_hostnames import *
+from .appsec_advanced_settings_ase_penalty_box import *
 from .appsec_advanced_settings_attack_payload_logging import *
+from .appsec_advanced_settings_ja4_fingerprint import *
 from .appsec_advanced_settings_pii_learning import *
 from .appsec_advanced_settings_request_body import *
 from .appsec_eval_penalty_box_conditions import *
 from .appsec_penalty_box_conditions import *
 from .appsec_rapid_rules import *
 from .appsec_security_policy_default_protections import *
+from .apr_general_settings import *
+from .apr_protected_operations import *
+from .apr_user_allow_list import *
+from .apr_user_risk_response_strategy import *
 from .botman_akamai_bot_category_action import *
 from .botman_bot_analytics_cookie import *
 from .botman_bot_category_exception import *
@@ -107,6 +116,9 @@ from .edge_kv import *
 from .edge_worker import *
 from .edge_workers_activation import *
 from .edgekv_group_items import *
+from .get_apidefinitions_api import *
+from .get_apidefinitions_openapi import *
+from .get_apidefinitions_resource_operations import *
 from .get_app_sec_advanced_settings_evasive_path_match import *
 from .get_app_sec_advanced_settings_logging import *
 from .get_app_sec_advanced_settings_pragma_header import *
@@ -154,12 +166,19 @@ from .get_app_sec_tuning_recommendations import *
 from .get_app_sec_version_notes import *
 from .get_app_sec_waf_mode import *
 from .get_appsec_aap_selected_hostnames import *
+from .get_appsec_advanced_settings_ase_penalty_box import *
 from .get_appsec_advanced_settings_attack_payload_logging import *
+from .get_appsec_advanced_settings_ja4_fingerprint import *
 from .get_appsec_advanced_settings_pii_learning import *
 from .get_appsec_advanced_settings_request_body import *
+from .get_appsec_custom_rules_usage import *
 from .get_appsec_eval_penalty_box_conditions import *
 from .get_appsec_penalty_box_conditions import *
 from .get_appsec_rapid_rules import *
+from .get_apr_general_settings import *
+from .get_apr_protected_operations import *
+from .get_apr_user_allow_list import *
+from .get_apr_user_risk_response_strategy import *
 from .get_authorities_set import *
 from .get_botman_akamai_bot_category import *
 from .get_botman_akamai_bot_category_action import *
@@ -193,6 +212,7 @@ from .get_botman_response_action import *
 from .get_botman_serve_alternate_action import *
 from .get_botman_transactional_endpoint import *
 from .get_botman_transactional_endpoint_protection import *
+from .get_clientlist_list import *
 from .get_clientlist_lists import *
 from .get_cloudaccess_key import *
 from .get_cloudaccess_key_properties import *
@@ -272,6 +292,14 @@ from .get_imaging_policy_video import *
 from .get_mtlskeystore_account_ca_certificates import *
 from .get_mtlskeystore_client_certificate import *
 from .get_mtlskeystore_client_certificates import *
+from .get_mtlstruststore_ca_set import *
+from .get_mtlstruststore_ca_set_activation import *
+from .get_mtlstruststore_ca_set_activations import *
+from .get_mtlstruststore_ca_set_activities import *
+from .get_mtlstruststore_ca_set_associations import *
+from .get_mtlstruststore_ca_set_certificates import *
+from .get_mtlstruststore_ca_set_versions import *
+from .get_mtlstruststore_ca_sets import *
 from .get_network_lists import *
 from .get_properties import *
 from .get_properties_search import *
@@ -311,6 +339,8 @@ from .imaging_policy_video import *
 from .mtlskeystore_client_certificate_akamai import *
 from .mtlskeystore_client_certificate_third_party import *
 from .mtlskeystore_client_certificate_upload import *
+from .mtlstruststore_ca_set import *
+from .mtlstruststore_ca_set_activation import *
 from .network_list import *
 from .network_list_activations import *
 from .network_list_description import *
@@ -335,6 +365,30 @@ else:
 _utilities.register(
     resource_modules="""
 [
+ {
+  "pkg": "akamai",
+  "mod": "index/apidefinitionsActivation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/apidefinitionsActivation:ApidefinitionsActivation": "ApidefinitionsActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/apidefinitionsApi",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/apidefinitionsApi:ApidefinitionsApi": "ApidefinitionsApi"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/apidefinitionsResourceOperations",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/apidefinitionsResourceOperations:ApidefinitionsResourceOperations": "ApidefinitionsResourceOperations"
+  }
+ },
  {
   "pkg": "akamai",
   "mod": "index/appSecActivations",
@@ -705,10 +759,26 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/appsecAdvancedSettingsAsePenaltyBox",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecAdvancedSettingsAsePenaltyBox:AppsecAdvancedSettingsAsePenaltyBox": "AppsecAdvancedSettingsAsePenaltyBox"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/appsecAdvancedSettingsAttackPayloadLogging",
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging": "AppsecAdvancedSettingsAttackPayloadLogging"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecAdvancedSettingsJa4Fingerprint",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecAdvancedSettingsJa4Fingerprint:AppsecAdvancedSettingsJa4Fingerprint": "AppsecAdvancedSettingsJa4Fingerprint"
   }
  },
  {
@@ -757,6 +827,38 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections": "AppsecSecurityPolicyDefaultProtections"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/aprGeneralSettings",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/aprGeneralSettings:AprGeneralSettings": "AprGeneralSettings"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/aprProtectedOperations",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/aprProtectedOperations:AprProtectedOperations": "AprProtectedOperations"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/aprUserAllowList",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/aprUserAllowList:AprUserAllowList": "AprUserAllowList"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/aprUserRiskResponseStrategy",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/aprUserRiskResponseStrategy:AprUserRiskResponseStrategy": "AprUserRiskResponseStrategy"
   }
  },
  {
@@ -1301,6 +1403,22 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/mtlskeystoreClientCertificateUpload:MtlskeystoreClientCertificateUpload": "MtlskeystoreClientCertificateUpload"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/mtlstruststoreCaSet",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/mtlstruststoreCaSet:MtlstruststoreCaSet": "MtlstruststoreCaSet"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/mtlstruststoreCaSetActivation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/mtlstruststoreCaSetActivation:MtlstruststoreCaSetActivation": "MtlstruststoreCaSetActivation"
   }
  },
  {

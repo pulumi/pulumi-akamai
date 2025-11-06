@@ -91,6 +91,20 @@ public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.exceptions);
     }
     /**
+     * Whether JA4 Fingerprint should be included in SIEM events
+     * 
+     */
+    @Export(name="includeJa4FingerprintToSiem", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> includeJa4FingerprintToSiem;
+
+    /**
+     * @return Whether JA4 Fingerprint should be included in SIEM events
+     * 
+     */
+    public Output<Optional<Boolean>> includeJa4FingerprintToSiem() {
+        return Codegen.optional(this.includeJa4FingerprintToSiem);
+    }
+    /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      * 
      */

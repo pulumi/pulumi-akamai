@@ -3,6 +3,9 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.AppSecIPGeoAsnControlsArgs;
+import com.pulumi.akamai.inputs.AppSecIPGeoGeoControlsArgs;
+import com.pulumi.akamai.inputs.AppSecIPGeoIpControlsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
@@ -18,18 +21,33 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
     public static final AppSecIPGeoState Empty = new AppSecIPGeoState();
 
     /**
-     * List of IDs of ASN network list to be blocked
+     * An Object containing List of ASN network lists to be blocked with specified action
      * 
      */
-    @Import(name="asnNetworkLists")
-    private @Nullable Output<List<String>> asnNetworkLists;
+    @Import(name="asnControls")
+    private @Nullable Output<AppSecIPGeoAsnControlsArgs> asnControls;
 
     /**
-     * @return List of IDs of ASN network list to be blocked
+     * @return An Object containing List of ASN network lists to be blocked with specified action
      * 
      */
-    public Optional<Output<List<String>>> asnNetworkLists() {
-        return Optional.ofNullable(this.asnNetworkLists);
+    public Optional<Output<AppSecIPGeoAsnControlsArgs>> asnControls() {
+        return Optional.ofNullable(this.asnControls);
+    }
+
+    /**
+     * Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+     * 
+     */
+    @Import(name="blockAction")
+    private @Nullable Output<String> blockAction;
+
+    /**
+     * @return Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+     * 
+     */
+    public Optional<Output<String>> blockAction() {
+        return Optional.ofNullable(this.blockAction);
     }
 
     /**
@@ -48,14 +66,14 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * List of IDs of network list that are always allowed
+     * List of unique identifiers of ipNetworkLists allowed through the firewall.
      * 
      */
     @Import(name="exceptionIpNetworkLists")
     private @Nullable Output<List<String>> exceptionIpNetworkLists;
 
     /**
-     * @return List of IDs of network list that are always allowed
+     * @return List of unique identifiers of ipNetworkLists allowed through the firewall.
      * 
      */
     public Optional<Output<List<String>>> exceptionIpNetworkLists() {
@@ -63,33 +81,33 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * List of IDs of geographic network list to be blocked
+     * An Object containing List of geographic network lists to be blocked with specified action
      * 
      */
-    @Import(name="geoNetworkLists")
-    private @Nullable Output<List<String>> geoNetworkLists;
+    @Import(name="geoControls")
+    private @Nullable Output<AppSecIPGeoGeoControlsArgs> geoControls;
 
     /**
-     * @return List of IDs of geographic network list to be blocked
+     * @return An Object containing List of geographic network lists to be blocked with specified action
      * 
      */
-    public Optional<Output<List<String>>> geoNetworkLists() {
-        return Optional.ofNullable(this.geoNetworkLists);
+    public Optional<Output<AppSecIPGeoGeoControlsArgs>> geoControls() {
+        return Optional.ofNullable(this.geoControls);
     }
 
     /**
-     * List of IDs of IP network list to be blocked
+     * An Object containing List of IP network lists to be blocked with specified action
      * 
      */
-    @Import(name="ipNetworkLists")
-    private @Nullable Output<List<String>> ipNetworkLists;
+    @Import(name="ipControls")
+    private @Nullable Output<AppSecIPGeoIpControlsArgs> ipControls;
 
     /**
-     * @return List of IDs of IP network list to be blocked
+     * @return An Object containing List of IP network lists to be blocked with specified action
      * 
      */
-    public Optional<Output<List<String>>> ipNetworkLists() {
-        return Optional.ofNullable(this.ipNetworkLists);
+    public Optional<Output<AppSecIPGeoIpControlsArgs>> ipControls() {
+        return Optional.ofNullable(this.ipControls);
     }
 
     /**
@@ -140,11 +158,12 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
     private AppSecIPGeoState() {}
 
     private AppSecIPGeoState(AppSecIPGeoState $) {
-        this.asnNetworkLists = $.asnNetworkLists;
+        this.asnControls = $.asnControls;
+        this.blockAction = $.blockAction;
         this.configId = $.configId;
         this.exceptionIpNetworkLists = $.exceptionIpNetworkLists;
-        this.geoNetworkLists = $.geoNetworkLists;
-        this.ipNetworkLists = $.ipNetworkLists;
+        this.geoControls = $.geoControls;
+        this.ipControls = $.ipControls;
         this.mode = $.mode;
         this.securityPolicyId = $.securityPolicyId;
         this.ukraineGeoControlAction = $.ukraineGeoControlAction;
@@ -169,34 +188,45 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param asnNetworkLists List of IDs of ASN network list to be blocked
+         * @param asnControls An Object containing List of ASN network lists to be blocked with specified action
          * 
          * @return builder
          * 
          */
-        public Builder asnNetworkLists(@Nullable Output<List<String>> asnNetworkLists) {
-            $.asnNetworkLists = asnNetworkLists;
+        public Builder asnControls(@Nullable Output<AppSecIPGeoAsnControlsArgs> asnControls) {
+            $.asnControls = asnControls;
             return this;
         }
 
         /**
-         * @param asnNetworkLists List of IDs of ASN network list to be blocked
+         * @param asnControls An Object containing List of ASN network lists to be blocked with specified action
          * 
          * @return builder
          * 
          */
-        public Builder asnNetworkLists(List<String> asnNetworkLists) {
-            return asnNetworkLists(Output.of(asnNetworkLists));
+        public Builder asnControls(AppSecIPGeoAsnControlsArgs asnControls) {
+            return asnControls(Output.of(asnControls));
         }
 
         /**
-         * @param asnNetworkLists List of IDs of ASN network list to be blocked
+         * @param blockAction Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
          * 
          * @return builder
          * 
          */
-        public Builder asnNetworkLists(String... asnNetworkLists) {
-            return asnNetworkLists(List.of(asnNetworkLists));
+        public Builder blockAction(@Nullable Output<String> blockAction) {
+            $.blockAction = blockAction;
+            return this;
+        }
+
+        /**
+         * @param blockAction Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockAction(String blockAction) {
+            return blockAction(Output.of(blockAction));
         }
 
         /**
@@ -221,7 +251,7 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exceptionIpNetworkLists List of IDs of network list that are always allowed
+         * @param exceptionIpNetworkLists List of unique identifiers of ipNetworkLists allowed through the firewall.
          * 
          * @return builder
          * 
@@ -232,7 +262,7 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exceptionIpNetworkLists List of IDs of network list that are always allowed
+         * @param exceptionIpNetworkLists List of unique identifiers of ipNetworkLists allowed through the firewall.
          * 
          * @return builder
          * 
@@ -242,7 +272,7 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exceptionIpNetworkLists List of IDs of network list that are always allowed
+         * @param exceptionIpNetworkLists List of unique identifiers of ipNetworkLists allowed through the firewall.
          * 
          * @return builder
          * 
@@ -252,65 +282,45 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param geoNetworkLists List of IDs of geographic network list to be blocked
+         * @param geoControls An Object containing List of geographic network lists to be blocked with specified action
          * 
          * @return builder
          * 
          */
-        public Builder geoNetworkLists(@Nullable Output<List<String>> geoNetworkLists) {
-            $.geoNetworkLists = geoNetworkLists;
+        public Builder geoControls(@Nullable Output<AppSecIPGeoGeoControlsArgs> geoControls) {
+            $.geoControls = geoControls;
             return this;
         }
 
         /**
-         * @param geoNetworkLists List of IDs of geographic network list to be blocked
+         * @param geoControls An Object containing List of geographic network lists to be blocked with specified action
          * 
          * @return builder
          * 
          */
-        public Builder geoNetworkLists(List<String> geoNetworkLists) {
-            return geoNetworkLists(Output.of(geoNetworkLists));
+        public Builder geoControls(AppSecIPGeoGeoControlsArgs geoControls) {
+            return geoControls(Output.of(geoControls));
         }
 
         /**
-         * @param geoNetworkLists List of IDs of geographic network list to be blocked
+         * @param ipControls An Object containing List of IP network lists to be blocked with specified action
          * 
          * @return builder
          * 
          */
-        public Builder geoNetworkLists(String... geoNetworkLists) {
-            return geoNetworkLists(List.of(geoNetworkLists));
-        }
-
-        /**
-         * @param ipNetworkLists List of IDs of IP network list to be blocked
-         * 
-         * @return builder
-         * 
-         */
-        public Builder ipNetworkLists(@Nullable Output<List<String>> ipNetworkLists) {
-            $.ipNetworkLists = ipNetworkLists;
+        public Builder ipControls(@Nullable Output<AppSecIPGeoIpControlsArgs> ipControls) {
+            $.ipControls = ipControls;
             return this;
         }
 
         /**
-         * @param ipNetworkLists List of IDs of IP network list to be blocked
+         * @param ipControls An Object containing List of IP network lists to be blocked with specified action
          * 
          * @return builder
          * 
          */
-        public Builder ipNetworkLists(List<String> ipNetworkLists) {
-            return ipNetworkLists(Output.of(ipNetworkLists));
-        }
-
-        /**
-         * @param ipNetworkLists List of IDs of IP network list to be blocked
-         * 
-         * @return builder
-         * 
-         */
-        public Builder ipNetworkLists(String... ipNetworkLists) {
-            return ipNetworkLists(List.of(ipNetworkLists));
+        public Builder ipControls(AppSecIPGeoIpControlsArgs ipControls) {
+            return ipControls(Output.of(ipControls));
         }
 
         /**

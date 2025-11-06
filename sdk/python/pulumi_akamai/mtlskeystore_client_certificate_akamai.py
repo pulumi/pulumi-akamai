@@ -28,7 +28,10 @@ class MtlskeystoreClientCertificateAkamaiArgs:
                  notification_emails: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  secure_network: pulumi.Input[_builtins.str],
                  key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None):
+                 preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
+                 revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 subject: Optional[pulumi.Input[_builtins.str]] = None,
+                 timeouts: Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a MtlskeystoreClientCertificateAkamai resource.
         :param pulumi.Input[_builtins.str] certificate_name: The name of the client certificate. Must be between 1 and 64 characters.
@@ -38,6 +41,8 @@ class MtlskeystoreClientCertificateAkamaiArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: The email addresses to notify for client certificate-related issues. Must have at least one email address.
         :param pulumi.Input[_builtins.str] secure_network: Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
         :param pulumi.Input[_builtins.str] key_algorithm: The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`.
+        :param pulumi.Input[_builtins.str] preferred_ca: The common name of the account CA certificate selected to sign the client certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] revoked_versions: A set of client certificate versions that should be revoked.
         :param pulumi.Input[_builtins.str] subject: The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
         """
         pulumi.set(__self__, "certificate_name", certificate_name)
@@ -48,8 +53,14 @@ class MtlskeystoreClientCertificateAkamaiArgs:
         pulumi.set(__self__, "secure_network", secure_network)
         if key_algorithm is not None:
             pulumi.set(__self__, "key_algorithm", key_algorithm)
+        if preferred_ca is not None:
+            pulumi.set(__self__, "preferred_ca", preferred_ca)
+        if revoked_versions is not None:
+            pulumi.set(__self__, "revoked_versions", revoked_versions)
         if subject is not None:
             pulumi.set(__self__, "subject", subject)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @_builtins.property
     @pulumi.getter(name="certificateName")
@@ -136,6 +147,30 @@ class MtlskeystoreClientCertificateAkamaiArgs:
         pulumi.set(self, "key_algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="preferredCa")
+    def preferred_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The common name of the account CA certificate selected to sign the client certificate.
+        """
+        return pulumi.get(self, "preferred_ca")
+
+    @preferred_ca.setter
+    def preferred_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "preferred_ca", value)
+
+    @_builtins.property
+    @pulumi.getter(name="revokedVersions")
+    def revoked_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        A set of client certificate versions that should be revoked.
+        """
+        return pulumi.get(self, "revoked_versions")
+
+    @revoked_versions.setter
+    def revoked_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "revoked_versions", value)
+
+    @_builtins.property
     @pulumi.getter
     def subject(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -146,6 +181,15 @@ class MtlskeystoreClientCertificateAkamaiArgs:
     @subject.setter
     def subject(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "subject", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]:
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
@@ -161,9 +205,12 @@ class _MtlskeystoreClientCertificateAkamaiState:
                  group_id: Optional[pulumi.Input[_builtins.int]] = None,
                  key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
                  previous_guid: Optional[pulumi.Input[_builtins.str]] = None,
+                 revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  secure_network: Optional[pulumi.Input[_builtins.str]] = None,
                  subject: Optional[pulumi.Input[_builtins.str]] = None,
+                 timeouts: Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']] = None,
                  versions: Optional[pulumi.Input[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]]] = None):
         """
         Input properties used for looking up and filtering MtlskeystoreClientCertificateAkamai resources.
@@ -177,7 +224,9 @@ class _MtlskeystoreClientCertificateAkamaiState:
         :param pulumi.Input[_builtins.int] group_id: The group assigned to the client certificate. Must be greater than or equal to 0.
         :param pulumi.Input[_builtins.str] key_algorithm: The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: The email addresses to notify for client certificate-related issues. Must have at least one email address.
+        :param pulumi.Input[_builtins.str] preferred_ca: The common name of the account CA certificate selected to sign the client certificate.
         :param pulumi.Input[_builtins.str] previous_guid: Unique identifier for the `previous` client certificate version.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] revoked_versions: A set of client certificate versions that should be revoked.
         :param pulumi.Input[_builtins.str] secure_network: Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
         :param pulumi.Input[_builtins.str] subject: The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
         :param pulumi.Input[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]] versions: A list of client certificate versions. Each version represents a specific iteration of the client certificate.
@@ -202,12 +251,18 @@ class _MtlskeystoreClientCertificateAkamaiState:
             pulumi.set(__self__, "key_algorithm", key_algorithm)
         if notification_emails is not None:
             pulumi.set(__self__, "notification_emails", notification_emails)
+        if preferred_ca is not None:
+            pulumi.set(__self__, "preferred_ca", preferred_ca)
         if previous_guid is not None:
             pulumi.set(__self__, "previous_guid", previous_guid)
+        if revoked_versions is not None:
+            pulumi.set(__self__, "revoked_versions", revoked_versions)
         if secure_network is not None:
             pulumi.set(__self__, "secure_network", secure_network)
         if subject is not None:
             pulumi.set(__self__, "subject", subject)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if versions is not None:
             pulumi.set(__self__, "versions", versions)
 
@@ -332,6 +387,18 @@ class _MtlskeystoreClientCertificateAkamaiState:
         pulumi.set(self, "notification_emails", value)
 
     @_builtins.property
+    @pulumi.getter(name="preferredCa")
+    def preferred_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The common name of the account CA certificate selected to sign the client certificate.
+        """
+        return pulumi.get(self, "preferred_ca")
+
+    @preferred_ca.setter
+    def preferred_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "preferred_ca", value)
+
+    @_builtins.property
     @pulumi.getter(name="previousGuid")
     def previous_guid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -342,6 +409,18 @@ class _MtlskeystoreClientCertificateAkamaiState:
     @previous_guid.setter
     def previous_guid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "previous_guid", value)
+
+    @_builtins.property
+    @pulumi.getter(name="revokedVersions")
+    def revoked_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        A set of client certificate versions that should be revoked.
+        """
+        return pulumi.get(self, "revoked_versions")
+
+    @revoked_versions.setter
+    def revoked_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "revoked_versions", value)
 
     @_builtins.property
     @pulumi.getter(name="secureNetwork")
@@ -369,6 +448,15 @@ class _MtlskeystoreClientCertificateAkamaiState:
 
     @_builtins.property
     @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]:
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @_builtins.property
+    @pulumi.getter
     def versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]]]:
         """
         A list of client certificate versions. Each version represents a specific iteration of the client certificate.
@@ -392,8 +480,11 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
                  group_id: Optional[pulumi.Input[_builtins.int]] = None,
                  key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
+                 revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  secure_network: Optional[pulumi.Input[_builtins.str]] = None,
                  subject: Optional[pulumi.Input[_builtins.str]] = None,
+                 timeouts: Optional[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a MtlskeystoreClientCertificateAkamai resource with the given unique name, props, and options.
@@ -405,6 +496,8 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] group_id: The group assigned to the client certificate. Must be greater than or equal to 0.
         :param pulumi.Input[_builtins.str] key_algorithm: The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: The email addresses to notify for client certificate-related issues. Must have at least one email address.
+        :param pulumi.Input[_builtins.str] preferred_ca: The common name of the account CA certificate selected to sign the client certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] revoked_versions: A set of client certificate versions that should be revoked.
         :param pulumi.Input[_builtins.str] secure_network: Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
         :param pulumi.Input[_builtins.str] subject: The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
         """
@@ -437,8 +530,11 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
                  group_id: Optional[pulumi.Input[_builtins.int]] = None,
                  key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
+                 revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  secure_network: Optional[pulumi.Input[_builtins.str]] = None,
                  subject: Optional[pulumi.Input[_builtins.str]] = None,
+                 timeouts: Optional[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -464,10 +560,13 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
             if notification_emails is None and not opts.urn:
                 raise TypeError("Missing required property 'notification_emails'")
             __props__.__dict__["notification_emails"] = notification_emails
+            __props__.__dict__["preferred_ca"] = preferred_ca
+            __props__.__dict__["revoked_versions"] = revoked_versions
             if secure_network is None and not opts.urn:
                 raise TypeError("Missing required property 'secure_network'")
             __props__.__dict__["secure_network"] = secure_network
             __props__.__dict__["subject"] = subject
+            __props__.__dict__["timeouts"] = timeouts
             __props__.__dict__["certificate_id"] = None
             __props__.__dict__["created_by"] = None
             __props__.__dict__["created_date"] = None
@@ -494,9 +593,12 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
             group_id: Optional[pulumi.Input[_builtins.int]] = None,
             key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
             previous_guid: Optional[pulumi.Input[_builtins.str]] = None,
+            revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
             secure_network: Optional[pulumi.Input[_builtins.str]] = None,
             subject: Optional[pulumi.Input[_builtins.str]] = None,
+            timeouts: Optional[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
             versions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiVersionArgs', 'MtlskeystoreClientCertificateAkamaiVersionArgsDict']]]]] = None) -> 'MtlskeystoreClientCertificateAkamai':
         """
         Get an existing MtlskeystoreClientCertificateAkamai resource's state with the given name, id, and optional extra
@@ -515,7 +617,9 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] group_id: The group assigned to the client certificate. Must be greater than or equal to 0.
         :param pulumi.Input[_builtins.str] key_algorithm: The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: The email addresses to notify for client certificate-related issues. Must have at least one email address.
+        :param pulumi.Input[_builtins.str] preferred_ca: The common name of the account CA certificate selected to sign the client certificate.
         :param pulumi.Input[_builtins.str] previous_guid: Unique identifier for the `previous` client certificate version.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] revoked_versions: A set of client certificate versions that should be revoked.
         :param pulumi.Input[_builtins.str] secure_network: Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
         :param pulumi.Input[_builtins.str] subject: The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiVersionArgs', 'MtlskeystoreClientCertificateAkamaiVersionArgsDict']]]] versions: A list of client certificate versions. Each version represents a specific iteration of the client certificate.
@@ -534,9 +638,12 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["key_algorithm"] = key_algorithm
         __props__.__dict__["notification_emails"] = notification_emails
+        __props__.__dict__["preferred_ca"] = preferred_ca
         __props__.__dict__["previous_guid"] = previous_guid
+        __props__.__dict__["revoked_versions"] = revoked_versions
         __props__.__dict__["secure_network"] = secure_network
         __props__.__dict__["subject"] = subject
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["versions"] = versions
         return MtlskeystoreClientCertificateAkamai(resource_name, opts=opts, __props__=__props__)
 
@@ -621,12 +728,28 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
         return pulumi.get(self, "notification_emails")
 
     @_builtins.property
+    @pulumi.getter(name="preferredCa")
+    def preferred_ca(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The common name of the account CA certificate selected to sign the client certificate.
+        """
+        return pulumi.get(self, "preferred_ca")
+
+    @_builtins.property
     @pulumi.getter(name="previousGuid")
     def previous_guid(self) -> pulumi.Output[_builtins.str]:
         """
         Unique identifier for the `previous` client certificate version.
         """
         return pulumi.get(self, "previous_guid")
+
+    @_builtins.property
+    @pulumi.getter(name="revokedVersions")
+    def revoked_versions(self) -> pulumi.Output[Optional[Sequence[_builtins.int]]]:
+        """
+        A set of client certificate versions that should be revoked.
+        """
+        return pulumi.get(self, "revoked_versions")
 
     @_builtins.property
     @pulumi.getter(name="secureNetwork")
@@ -643,6 +766,11 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
         The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
         """
         return pulumi.get(self, "subject")
+
+    @_builtins.property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.MtlskeystoreClientCertificateAkamaiTimeouts']]:
+        return pulumi.get(self, "timeouts")
 
     @_builtins.property
     @pulumi.getter

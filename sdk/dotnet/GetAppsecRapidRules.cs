@@ -27,6 +27,9 @@ namespace Pulumi.Akamai
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
+        [Input("includeExpiryDetails")]
+        public bool? IncludeExpiryDetails { get; set; }
+
         [Input("ruleId")]
         public int? RuleId { get; set; }
 
@@ -43,6 +46,9 @@ namespace Pulumi.Akamai
     {
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
+
+        [Input("includeExpiryDetails")]
+        public Input<bool>? IncludeExpiryDetails { get; set; }
 
         [Input("ruleId")]
         public Input<int>? RuleId { get; set; }
@@ -64,6 +70,7 @@ namespace Pulumi.Akamai
         public readonly string DefaultAction;
         public readonly bool Enabled;
         public readonly string Id;
+        public readonly bool? IncludeExpiryDetails;
         public readonly string OutputText;
         public readonly ImmutableArray<Outputs.GetAppsecRapidRulesRapidRuleResult> RapidRules;
         public readonly int? RuleId;
@@ -79,6 +86,8 @@ namespace Pulumi.Akamai
 
             string id,
 
+            bool? includeExpiryDetails,
+
             string outputText,
 
             ImmutableArray<Outputs.GetAppsecRapidRulesRapidRuleResult> rapidRules,
@@ -91,6 +100,7 @@ namespace Pulumi.Akamai
             DefaultAction = defaultAction;
             Enabled = enabled;
             Id = id;
+            IncludeExpiryDetails = includeExpiryDetails;
             OutputText = outputText;
             RapidRules = rapidRules;
             RuleId = ruleId;

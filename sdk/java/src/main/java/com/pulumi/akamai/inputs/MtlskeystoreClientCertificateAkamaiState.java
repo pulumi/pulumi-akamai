@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.MtlskeystoreClientCertificateAkamaiTimeoutsArgs;
 import com.pulumi.akamai.inputs.MtlskeystoreClientCertificateAkamaiVersionArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -169,6 +170,21 @@ public final class MtlskeystoreClientCertificateAkamaiState extends com.pulumi.r
     }
 
     /**
+     * The common name of the account CA certificate selected to sign the client certificate.
+     * 
+     */
+    @Import(name="preferredCa")
+    private @Nullable Output<String> preferredCa;
+
+    /**
+     * @return The common name of the account CA certificate selected to sign the client certificate.
+     * 
+     */
+    public Optional<Output<String>> preferredCa() {
+        return Optional.ofNullable(this.preferredCa);
+    }
+
+    /**
      * Unique identifier for the `previous` client certificate version.
      * 
      */
@@ -181,6 +197,21 @@ public final class MtlskeystoreClientCertificateAkamaiState extends com.pulumi.r
      */
     public Optional<Output<String>> previousGuid() {
         return Optional.ofNullable(this.previousGuid);
+    }
+
+    /**
+     * A set of client certificate versions that should be revoked.
+     * 
+     */
+    @Import(name="revokedVersions")
+    private @Nullable Output<List<Integer>> revokedVersions;
+
+    /**
+     * @return A set of client certificate versions that should be revoked.
+     * 
+     */
+    public Optional<Output<List<Integer>>> revokedVersions() {
+        return Optional.ofNullable(this.revokedVersions);
     }
 
     /**
@@ -213,6 +244,13 @@ public final class MtlskeystoreClientCertificateAkamaiState extends com.pulumi.r
         return Optional.ofNullable(this.subject);
     }
 
+    @Import(name="timeouts")
+    private @Nullable Output<MtlskeystoreClientCertificateAkamaiTimeoutsArgs> timeouts;
+
+    public Optional<Output<MtlskeystoreClientCertificateAkamaiTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     /**
      * A list of client certificate versions. Each version represents a specific iteration of the client certificate.
      * 
@@ -241,9 +279,12 @@ public final class MtlskeystoreClientCertificateAkamaiState extends com.pulumi.r
         this.groupId = $.groupId;
         this.keyAlgorithm = $.keyAlgorithm;
         this.notificationEmails = $.notificationEmails;
+        this.preferredCa = $.preferredCa;
         this.previousGuid = $.previousGuid;
+        this.revokedVersions = $.revokedVersions;
         this.secureNetwork = $.secureNetwork;
         this.subject = $.subject;
+        this.timeouts = $.timeouts;
         this.versions = $.versions;
     }
 
@@ -486,6 +527,27 @@ public final class MtlskeystoreClientCertificateAkamaiState extends com.pulumi.r
         }
 
         /**
+         * @param preferredCa The common name of the account CA certificate selected to sign the client certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredCa(@Nullable Output<String> preferredCa) {
+            $.preferredCa = preferredCa;
+            return this;
+        }
+
+        /**
+         * @param preferredCa The common name of the account CA certificate selected to sign the client certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredCa(String preferredCa) {
+            return preferredCa(Output.of(preferredCa));
+        }
+
+        /**
          * @param previousGuid Unique identifier for the `previous` client certificate version.
          * 
          * @return builder
@@ -504,6 +566,37 @@ public final class MtlskeystoreClientCertificateAkamaiState extends com.pulumi.r
          */
         public Builder previousGuid(String previousGuid) {
             return previousGuid(Output.of(previousGuid));
+        }
+
+        /**
+         * @param revokedVersions A set of client certificate versions that should be revoked.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder revokedVersions(@Nullable Output<List<Integer>> revokedVersions) {
+            $.revokedVersions = revokedVersions;
+            return this;
+        }
+
+        /**
+         * @param revokedVersions A set of client certificate versions that should be revoked.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder revokedVersions(List<Integer> revokedVersions) {
+            return revokedVersions(Output.of(revokedVersions));
+        }
+
+        /**
+         * @param revokedVersions A set of client certificate versions that should be revoked.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder revokedVersions(Integer... revokedVersions) {
+            return revokedVersions(List.of(revokedVersions));
         }
 
         /**
@@ -546,6 +639,15 @@ public final class MtlskeystoreClientCertificateAkamaiState extends com.pulumi.r
          */
         public Builder subject(String subject) {
             return subject(Output.of(subject));
+        }
+
+        public Builder timeouts(@Nullable Output<MtlskeystoreClientCertificateAkamaiTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        public Builder timeouts(MtlskeystoreClientCertificateAkamaiTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

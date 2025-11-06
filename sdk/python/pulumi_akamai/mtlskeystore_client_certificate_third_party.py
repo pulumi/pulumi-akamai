@@ -169,6 +169,8 @@ class _MtlskeystoreClientCertificateThirdPartyState:
                  certificate_id: Optional[pulumi.Input[_builtins.int]] = None,
                  certificate_name: Optional[pulumi.Input[_builtins.str]] = None,
                  contract_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_date: Optional[pulumi.Input[_builtins.str]] = None,
                  geography: Optional[pulumi.Input[_builtins.str]] = None,
                  group_id: Optional[pulumi.Input[_builtins.int]] = None,
                  key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
@@ -181,6 +183,8 @@ class _MtlskeystoreClientCertificateThirdPartyState:
         :param pulumi.Input[_builtins.int] certificate_id: The unique identifier of the client certificate.
         :param pulumi.Input[_builtins.str] certificate_name: The name of the client certificate. Must be between 1 and 64 characters.
         :param pulumi.Input[_builtins.str] contract_id: The contract assigned to the client certificate. Must have a length of at least 1.
+        :param pulumi.Input[_builtins.str] created_by: The user who created the client certificate.
+        :param pulumi.Input[_builtins.str] created_date: An ISO 8601 timestamp indicating when the client certificate was created.
         :param pulumi.Input[_builtins.str] geography: Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
         :param pulumi.Input[_builtins.int] group_id: The group assigned to the client certificate. Must be greater than or equal to 0.
         :param pulumi.Input[_builtins.str] key_algorithm: The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`. The default is `RSA`.
@@ -195,6 +199,10 @@ class _MtlskeystoreClientCertificateThirdPartyState:
             pulumi.set(__self__, "certificate_name", certificate_name)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_date is not None:
+            pulumi.set(__self__, "created_date", created_date)
         if geography is not None:
             pulumi.set(__self__, "geography", geography)
         if group_id is not None:
@@ -245,6 +253,30 @@ class _MtlskeystoreClientCertificateThirdPartyState:
     @contract_id.setter
     def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The user who created the client certificate.
+        """
+        return pulumi.get(self, "created_by")
+
+    @created_by.setter
+    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "created_by", value)
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        An ISO 8601 timestamp indicating when the client certificate was created.
+        """
+        return pulumi.get(self, "created_date")
+
+    @created_date.setter
+    def created_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "created_date", value)
 
     @_builtins.property
     @pulumi.getter
@@ -426,6 +458,8 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
                 raise TypeError("Missing required property 'versions'")
             __props__.__dict__["versions"] = versions
             __props__.__dict__["certificate_id"] = None
+            __props__.__dict__["created_by"] = None
+            __props__.__dict__["created_date"] = None
         super(MtlskeystoreClientCertificateThirdParty, __self__).__init__(
             'akamai:index/mtlskeystoreClientCertificateThirdParty:MtlskeystoreClientCertificateThirdParty',
             resource_name,
@@ -439,6 +473,8 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
             certificate_id: Optional[pulumi.Input[_builtins.int]] = None,
             certificate_name: Optional[pulumi.Input[_builtins.str]] = None,
             contract_id: Optional[pulumi.Input[_builtins.str]] = None,
+            created_by: Optional[pulumi.Input[_builtins.str]] = None,
+            created_date: Optional[pulumi.Input[_builtins.str]] = None,
             geography: Optional[pulumi.Input[_builtins.str]] = None,
             group_id: Optional[pulumi.Input[_builtins.int]] = None,
             key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
@@ -456,6 +492,8 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] certificate_id: The unique identifier of the client certificate.
         :param pulumi.Input[_builtins.str] certificate_name: The name of the client certificate. Must be between 1 and 64 characters.
         :param pulumi.Input[_builtins.str] contract_id: The contract assigned to the client certificate. Must have a length of at least 1.
+        :param pulumi.Input[_builtins.str] created_by: The user who created the client certificate.
+        :param pulumi.Input[_builtins.str] created_date: An ISO 8601 timestamp indicating when the client certificate was created.
         :param pulumi.Input[_builtins.str] geography: Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
         :param pulumi.Input[_builtins.int] group_id: The group assigned to the client certificate. Must be greater than or equal to 0.
         :param pulumi.Input[_builtins.str] key_algorithm: The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`. The default is `RSA`.
@@ -471,6 +509,8 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
         __props__.__dict__["certificate_id"] = certificate_id
         __props__.__dict__["certificate_name"] = certificate_name
         __props__.__dict__["contract_id"] = contract_id
+        __props__.__dict__["created_by"] = created_by
+        __props__.__dict__["created_date"] = created_date
         __props__.__dict__["geography"] = geography
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["key_algorithm"] = key_algorithm
@@ -503,6 +543,22 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
         The contract assigned to the client certificate. Must have a length of at least 1.
         """
         return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> pulumi.Output[_builtins.str]:
+        """
+        The user who created the client certificate.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> pulumi.Output[_builtins.str]:
+        """
+        An ISO 8601 timestamp indicating when the client certificate was created.
+        """
+        return pulumi.get(self, "created_date")
 
     @_builtins.property
     @pulumi.getter

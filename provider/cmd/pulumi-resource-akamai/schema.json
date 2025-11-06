@@ -127,6 +127,54 @@
                 }
             }
         },
+        "akamai:index/AppSecIPGeoAsnControls:AppSecIPGeoAsnControls": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action set for ASN Controls\n"
+                },
+                "asnNetworkLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of IDs of ASN network list to be blocked.\n"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/AppSecIPGeoGeoControls:AppSecIPGeoGeoControls": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action set for GEO Controls.\n"
+                },
+                "geoNetworkLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of IDs of geographic network list to be blocked.\n"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/AppSecIPGeoIpControls:AppSecIPGeoIpControls": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action set for IP Controls.\n"
+                },
+                "ipNetworkLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of IDs of IP network list to be blocked.\n"
+                }
+            },
+            "type": "object"
+        },
         "akamai:index/AppSecSiemSettingsExceptions:AppSecSiemSettingsExceptions": {
             "properties": {
                 "apiRequestConstraints": {
@@ -205,6 +253,25 @@
                         "type": "string"
                     },
                     "description": "Whether there should be an exception to include waf events in SIEM\n"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions:AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions": {
+            "properties": {
+                "attackGroups": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of attack group names.\n"
+                },
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "List of rule IDs.\n"
                 }
             },
             "type": "object"
@@ -2725,6 +2792,19 @@
                 "upgrades"
             ]
         },
+        "akamai:index/MtlskeystoreClientCertificateAkamaiTimeouts:MtlskeystoreClientCertificateAkamaiTimeouts": {
+            "properties": {
+                "create": {
+                    "type": "string",
+                    "description": "Optional configurable resource create timeout. By default it's 30m.\n"
+                },
+                "update": {
+                    "type": "string",
+                    "description": "Optional configurable resource update timeout. By default it's 30m.\n"
+                }
+            },
+            "type": "object"
+        },
         "akamai:index/MtlskeystoreClientCertificateAkamaiVersion:MtlskeystoreClientCertificateAkamaiVersion": {
             "properties": {
                 "certificateBlock": {
@@ -2994,6 +3074,100 @@
                 "update": {
                     "type": "string",
                     "description": "Optional configurable resource update timeout. By default it's 30m.\n"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/MtlstruststoreCaSetActivationTimeouts:MtlstruststoreCaSetActivationTimeouts": {
+            "properties": {
+                "create": {
+                    "type": "string",
+                    "description": "Optional configurable resource create timeout. By default it's 1h.\n"
+                },
+                "delete": {
+                    "type": "string",
+                    "description": "Optional configurable resource delete timeout. By default it's 1h.\n"
+                },
+                "update": {
+                    "type": "string",
+                    "description": "Optional configurable resource update timeout. By default it's 1h.\n"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/MtlstruststoreCaSetCertificate:MtlstruststoreCaSetCertificate": {
+            "properties": {
+                "certificatePem": {
+                    "type": "string",
+                    "description": "The certificate in PEM format, as found in a Base64 ASCII encoded file.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created this CA certificate.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "When the CA certificate was created.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Optional description for the certificate.\n"
+                },
+                "endDate": {
+                    "type": "string",
+                    "description": "The certificate's ISO 8601 formatted expiration date.\n"
+                },
+                "fingerprint": {
+                    "type": "string",
+                    "description": "The fingerprint of the certificate.\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "The certificate's issuer.\n"
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "description": "The unique serial number of the certificate.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "The signature algorithm of the CA certificate.\n"
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "The start date of the certificate.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The certificate's subject field.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificatePem"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "certificatePem",
+                        "createdBy",
+                        "createdDate",
+                        "endDate",
+                        "fingerprint",
+                        "issuer",
+                        "serialNumber",
+                        "signatureAlgorithm",
+                        "startDate",
+                        "subject"
+                    ]
+                }
+            }
+        },
+        "akamai:index/MtlstruststoreCaSetTimeouts:MtlstruststoreCaSetTimeouts": {
+            "properties": {
+                "delete": {
+                    "type": "string",
+                    "description": "Optional configurable resource delete timeout. By default it's 1h.\n"
                 }
             },
             "type": "object"
@@ -3376,6 +3550,128 @@
                 }
             }
         },
+        "akamai:index/getAppSecIPGeoAsnControl:getAppSecIPGeoAsnControl": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action set for ASN Controls\n"
+                },
+                "asnNetworkLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of IDs of ASN network list to be blocked.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "action",
+                "asnNetworkLists"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getAppSecIPGeoGeoControl:getAppSecIPGeoGeoControl": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action set for GEO Controls.\n"
+                },
+                "geoNetworkLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of IDs of geographic network list to be blocked.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "action",
+                "geoNetworkLists"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getAppSecIPGeoIpControl:getAppSecIPGeoIpControl": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action set for IP Controls.\n"
+                },
+                "ipNetworkLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of IDs of IP network list to be blocked.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "action",
+                "ipNetworkLists"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getAppsecCustomRulesUsageRule:getAppsecCustomRulesUsageRule": {
+            "properties": {
+                "policies": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getAppsecCustomRulesUsageRulePolicy:getAppsecCustomRulesUsageRulePolicy"
+                    },
+                    "description": "A set of security policies in which a custom rule is used.\n"
+                },
+                "ruleId": {
+                    "type": "integer",
+                    "description": "The ID of the custom rule.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "policies",
+                "ruleId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getAppsecCustomRulesUsageRulePolicy:getAppsecCustomRulesUsageRulePolicy": {
+            "properties": {
+                "policyId": {
+                    "type": "string",
+                    "description": "The security policy ID.\n"
+                },
+                "policyName": {
+                    "type": "string",
+                    "description": "The security policy name.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "policyId",
+                "policyName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getAppsecRapidRulesRapidRule:getAppsecRapidRulesRapidRule": {
             "properties": {
                 "action": {
@@ -3393,6 +3689,14 @@
                 "conditionException": {
                     "type": "string",
                     "description": "The rapid rule exception.\n"
+                },
+                "expireInDays": {
+                    "type": "integer",
+                    "description": "Number of days remaining before the rule expires. This field is present only if the rule has not yet expired.\n"
+                },
+                "expired": {
+                    "type": "boolean",
+                    "description": "Whether the rule has already expired.\n"
                 },
                 "id": {
                     "type": "integer",
@@ -3413,6 +3717,8 @@
                 "attackGroup",
                 "attackGroupException",
                 "conditionException",
+                "expireInDays",
+                "expired",
                 "id",
                 "lock",
                 "name"
@@ -4228,6 +4534,188 @@
                 "firstName",
                 "lastName",
                 "phone"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getClientlistListList:getClientlistListList": {
+            "properties": {
+                "createDate": {
+                    "type": "string",
+                    "description": "The client list creation date.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The username of the user who created the client list.\n"
+                },
+                "deprecated": {
+                    "type": "boolean",
+                    "description": "Whether the client list was removed.\n"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getClientlistListListItem:getClientlistListListItem"
+                    },
+                    "description": "A set of client list values.\n"
+                },
+                "itemsCount": {
+                    "type": "integer",
+                    "description": "The number of items that a client list contains.\n"
+                },
+                "listId": {
+                    "type": "string",
+                    "description": "The ID of the client list.\n"
+                },
+                "listType": {
+                    "type": "string",
+                    "description": "The client list type.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the client list.\n"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "The client list notes.\n"
+                },
+                "productionActivationStatus": {
+                    "type": "string",
+                    "description": "The activation status in production environment.\n"
+                },
+                "readOnly": {
+                    "type": "boolean",
+                    "description": "Whether the client is editable for the authenticated user.\n"
+                },
+                "shared": {
+                    "type": "boolean",
+                    "description": "Whether the client list is shared.\n"
+                },
+                "stagingActivationStatus": {
+                    "type": "string",
+                    "description": "The activation status in staging environment.\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The client list tags.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of the client list.\n"
+                },
+                "updateDate": {
+                    "type": "string",
+                    "description": "The date of last update.\n"
+                },
+                "updatedBy": {
+                    "type": "string",
+                    "description": "The username of the user that updated the client list last.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The current version of the client list.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "createDate",
+                "createdBy",
+                "deprecated",
+                "items",
+                "itemsCount",
+                "listId",
+                "listType",
+                "name",
+                "notes",
+                "productionActivationStatus",
+                "readOnly",
+                "shared",
+                "stagingActivationStatus",
+                "tags",
+                "type",
+                "updateDate",
+                "updatedBy",
+                "version"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getClientlistListListItem:getClientlistListListItem": {
+            "properties": {
+                "createDate": {
+                    "type": "string",
+                    "description": "The client list item creation date.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The username of the person who created the client list item.\n"
+                },
+                "createdVersion": {
+                    "type": "integer",
+                    "description": "The version of the client list when item was created.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the client list item.\n"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "description": "The client list item expiration date.\n"
+                },
+                "productionActivationStatus": {
+                    "type": "string",
+                    "description": "The client list activation status in production environment.\n"
+                },
+                "stagingActivationStatus": {
+                    "type": "string",
+                    "description": "The client list activation status in staging environment.\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of tags associated with the client list item.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.\n"
+                },
+                "updateDate": {
+                    "type": "string",
+                    "description": "The date of last update.\n"
+                },
+                "updatedBy": {
+                    "type": "string",
+                    "description": "The username of the person that updated the client list item last.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "createDate",
+                "createdBy",
+                "createdVersion",
+                "expirationDate",
+                "productionActivationStatus",
+                "stagingActivationStatus",
+                "tags",
+                "type",
+                "updateDate",
+                "updatedBy",
+                "value"
             ],
             "language": {
                 "nodejs": {
@@ -14572,6 +15060,543 @@
                 }
             }
         },
+        "akamai:index/getMtlstruststoreCaSetActivationsActivation:getMtlstruststoreCaSetActivationsActivation": {
+            "properties": {
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who requested the activity.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "When the activity was requested.\n"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the activation.\n"
+                },
+                "modifiedBy": {
+                    "type": "string",
+                    "description": "The user who completed the activity.\n"
+                },
+                "modifiedDate": {
+                    "type": "string",
+                    "description": "When the request was last modified, or null` if not yet modified.\n"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the current activity, either 'IN_PROGRESS', 'COMPLETE', or 'FAILED'.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of requested activity, either 'ACTIVATE', 'DEACTIVATE', or 'DELETE'.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "CA set version identifier.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "createdBy",
+                "createdDate",
+                "id",
+                "modifiedBy",
+                "modifiedDate",
+                "network",
+                "status",
+                "type",
+                "version"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetActivitiesActivity:getMtlstruststoreCaSetActivitiesActivity": {
+            "properties": {
+                "activityBy": {
+                    "type": "string",
+                    "description": "The user who initiated this CA set activity.\n"
+                },
+                "activityDate": {
+                    "type": "string",
+                    "description": "When this CA set activity occurred.\n"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of CA set activity. 'CREATE_CA_SET' indicates creating a CA set, or 'CREATE_CA_SET_VERSION' for creating a version. 'ACTIVATE_CA_SET_VERSION' indicates activating a CA set version, while 'DEACTIVATE_CA_SET_VERSION' indicates deactivation. 'DELETE_CA_SET' indicates deleting a CA set.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The CA set's incremental version number.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "activityBy",
+                "activityDate",
+                "network",
+                "type",
+                "version"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetAssociationsEnrollment:getMtlstruststoreCaSetAssociationsEnrollment": {
+            "properties": {
+                "cn": {
+                    "type": "string",
+                    "description": "The domain name to use for the certificate, also known as the common name.\n"
+                },
+                "enrollmentId": {
+                    "type": "integer",
+                    "description": "A unique identifier for the enrollment.\n"
+                },
+                "productionSlots": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Slots where the certificate is deployed on the production network.\n"
+                },
+                "stagingSlots": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Slots where the certificate is deployed on the staging network.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cn",
+                "enrollmentId",
+                "productionSlots",
+                "stagingSlots"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetAssociationsProperty:getMtlstruststoreCaSetAssociationsProperty": {
+            "properties": {
+                "assetId": {
+                    "type": "integer",
+                    "description": "An alternative identifier for the property.\n"
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "Identifies the group to which the property is assigned.\n"
+                },
+                "hostnames": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlstruststoreCaSetAssociationsPropertyHostname:getMtlstruststoreCaSetAssociationsPropertyHostname"
+                    },
+                    "description": "Contains details about associated hostnames.\n"
+                },
+                "propertyId": {
+                    "type": "string",
+                    "description": "A unique identifier for the property.\n"
+                },
+                "propertyName": {
+                    "type": "string",
+                    "description": "A unique, descriptive name for the property.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "assetId",
+                "groupId",
+                "hostnames",
+                "propertyId",
+                "propertyName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetAssociationsPropertyHostname:getMtlstruststoreCaSetAssociationsPropertyHostname": {
+            "properties": {
+                "hostname": {
+                    "type": "string",
+                    "description": "The name of the device.\n"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "The network on which CA set to hostname association is formed/removed/in progress. The values for this are 'STAGING', 'PRODUCTION'.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of CA set to hostname association. The values for it are - 'ATTACHING', 'DETACHING', 'ATTACHED'.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "hostname",
+                "network",
+                "status"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetCertificate:getMtlstruststoreCaSetCertificate": {
+            "properties": {
+                "certificatePem": {
+                    "type": "string",
+                    "description": "The certificate in PEM format, as found in a Base64 ASCII encoded file.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created this CA certificate.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "When the CA certificate was created.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Optional description for the certificate.\n"
+                },
+                "endDate": {
+                    "type": "string",
+                    "description": "The certificate's ISO 8601 formatted expiration date.\n"
+                },
+                "fingerprint": {
+                    "type": "string",
+                    "description": "The fingerprint of the certificate.\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "The certificate's issuer.\n"
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "description": "The unique serial number of the certificate.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "The signature algorithm of the CA certificate.\n"
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "The start date of the certificate.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The certificate's subject field.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificatePem",
+                "createdBy",
+                "createdDate",
+                "description",
+                "endDate",
+                "fingerprint",
+                "issuer",
+                "serialNumber",
+                "signatureAlgorithm",
+                "startDate",
+                "subject"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetCertificatesCertificate:getMtlstruststoreCaSetCertificatesCertificate": {
+            "properties": {
+                "certificatePem": {
+                    "type": "string",
+                    "description": "The certificate in PEM format (Base64 ASCII encoded).\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created this CA certificate.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "When the CA certificate was created.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the CA certificate.\n"
+                },
+                "endDate": {
+                    "type": "string",
+                    "description": "The ISO 8601 formatted expiration date of the certificate.\n"
+                },
+                "fingerprint": {
+                    "type": "string",
+                    "description": "The fingerprint of the certificate.\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "The certificate's issuer.\n"
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "description": "The unique serial number of the certificate.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "The signature algorithm of the CA certificate.\n"
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "The start date of the certificate.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The subject field of the certificate.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificatePem",
+                "createdBy",
+                "createdDate",
+                "description",
+                "endDate",
+                "fingerprint",
+                "issuer",
+                "serialNumber",
+                "signatureAlgorithm",
+                "startDate",
+                "subject"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetVersionsVersion:getMtlstruststoreCaSetVersionsVersion": {
+            "properties": {
+                "allowInsecureSha1": {
+                    "type": "boolean",
+                    "description": "By default, all certificates in the version need a signature algorithm of SHA-256 or better. Enabling this allows certificates with SHA-1 signatures.\n"
+                },
+                "certificates": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getMtlstruststoreCaSetVersionsVersionCertificate:getMtlstruststoreCaSetVersionsVersionCertificate"
+                    },
+                    "description": "List of certificate objects in the version, with each element corresponding to one root or intermediate certificate.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the CA set version.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "When the CA set version was created.\n"
+                },
+                "modifiedBy": {
+                    "type": "string",
+                    "description": "The user who last modified the CA set version.\n"
+                },
+                "modifiedDate": {
+                    "type": "string",
+                    "description": "When the CA set version was last modified.\n"
+                },
+                "productionStatus": {
+                    "type": "string",
+                    "description": "The CA set version's status on the production network, either 'ACTIVE' or 'INACTIVE'.\n"
+                },
+                "stagingStatus": {
+                    "type": "string",
+                    "description": "The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "Version identifier on which to perform the desired operation.\n"
+                },
+                "versionDescription": {
+                    "type": "string",
+                    "description": "Any additional description you can provide while creating or updating the CA set version.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "allowInsecureSha1",
+                "certificates",
+                "createdBy",
+                "createdDate",
+                "modifiedBy",
+                "modifiedDate",
+                "productionStatus",
+                "stagingStatus",
+                "version",
+                "versionDescription"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetVersionsVersionCertificate:getMtlstruststoreCaSetVersionsVersionCertificate": {
+            "properties": {
+                "certificatePem": {
+                    "type": "string",
+                    "description": "The certificate in PEM format, as found in a Base64 ASCII encoded file.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created this CA certificate.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "When the CA certificate was created.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description for the certificate.\n"
+                },
+                "endDate": {
+                    "type": "string",
+                    "description": "The certificate's ISO 8601 formatted expiration date.\n"
+                },
+                "fingerprint": {
+                    "type": "string",
+                    "description": "The fingerprint of the certificate.\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "The certificate's issuer.\n"
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "description": "The unique serial number of the certificate.\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "The signature algorithm of the CA certificate.\n"
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "The start date of the certificate.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The certificate's subject field.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificatePem",
+                "createdBy",
+                "createdDate",
+                "description",
+                "endDate",
+                "fingerprint",
+                "issuer",
+                "serialNumber",
+                "signatureAlgorithm",
+                "startDate",
+                "subject"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetsCaSet:getMtlstruststoreCaSetsCaSet": {
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Identifies the account the CA set belongs to.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the CA set.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "When the CA set was created.\n"
+                },
+                "deletedBy": {
+                    "type": "string",
+                    "description": "The user who requested the CA set be deleted, or null if there's no request.\n"
+                },
+                "deletedDate": {
+                    "type": "string",
+                    "description": "When the CA set was deleted, or null if there's no request.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Any additional comments you can add to the CA set.\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifies each CA set.\n"
+                },
+                "latestVersion": {
+                    "type": "integer",
+                    "description": "The most recent version based on the updated version.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the CA set.\n"
+                },
+                "productionVersion": {
+                    "type": "integer",
+                    "description": "The CA set version activated on the 'PRODUCTION' network.\n"
+                },
+                "stagingVersion": {
+                    "type": "integer",
+                    "description": "The CA set version activated on the 'STAGING' network.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Indicates if the CA set was deleted, either 'NOT_DELETED', 'DELETING', or 'DELETED'.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accountId",
+                "createdBy",
+                "createdDate",
+                "deletedBy",
+                "deletedDate",
+                "description",
+                "id",
+                "latestVersion",
+                "name",
+                "productionVersion",
+                "stagingVersion",
+                "status"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getPropertiesProperty:getPropertiesProperty": {
             "properties": {
                 "contractId": {
@@ -15309,6 +16334,265 @@
         }
     },
     "resources": {
+        "akamai:index/apidefinitionsActivation:ApidefinitionsActivation": {
+            "properties": {
+                "apiId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the API"
+                },
+                "autoAcknowledgeWarnings": {
+                    "type": "boolean",
+                    "description": "Automatically acknowledge all warnings for activation to continue. Default is false"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "Network on which to activate the API version (STAGING or PRODUCTION)"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "Notes describing the activation"
+                },
+                "notificationRecipients": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of email addresses to be notified with the results of the activation"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The results of the activation"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "Version of the API to be activated"
+                }
+            },
+            "required": [
+                "apiId",
+                "autoAcknowledgeWarnings",
+                "network",
+                "status",
+                "version"
+            ],
+            "inputProperties": {
+                "apiId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the API"
+                },
+                "autoAcknowledgeWarnings": {
+                    "type": "boolean",
+                    "description": "Automatically acknowledge all warnings for activation to continue. Default is false"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "Network on which to activate the API version (STAGING or PRODUCTION)"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "Notes describing the activation"
+                },
+                "notificationRecipients": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of email addresses to be notified with the results of the activation"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "Version of the API to be activated"
+                }
+            },
+            "requiredInputs": [
+                "apiId",
+                "network",
+                "version"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ApidefinitionsActivation resources.\n",
+                "properties": {
+                    "apiId": {
+                        "type": "integer",
+                        "description": "Unique identifier of the API"
+                    },
+                    "autoAcknowledgeWarnings": {
+                        "type": "boolean",
+                        "description": "Automatically acknowledge all warnings for activation to continue. Default is false"
+                    },
+                    "network": {
+                        "type": "string",
+                        "description": "Network on which to activate the API version (STAGING or PRODUCTION)"
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Notes describing the activation"
+                    },
+                    "notificationRecipients": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of email addresses to be notified with the results of the activation"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The results of the activation"
+                    },
+                    "version": {
+                        "type": "integer",
+                        "description": "Version of the API to be activated"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/apidefinitionsApi:ApidefinitionsApi": {
+            "properties": {
+                "api": {
+                    "type": "string",
+                    "description": "JSON-formatted information about the API configuration"
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "The unique identifier for the contract (without the 'ctr_' prefix) assigned to the API."
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The unique identifier for the group (without the 'grp_' prefix) assigned to the API."
+                },
+                "latestVersion": {
+                    "type": "integer",
+                    "description": "Latest version of the API"
+                },
+                "productionVersion": {
+                    "type": "integer",
+                    "description": "Version of the API currently deployed in production"
+                },
+                "stagingVersion": {
+                    "type": "integer",
+                    "description": "Version of the API currently deployed in staging"
+                }
+            },
+            "required": [
+                "api",
+                "contractId",
+                "groupId",
+                "latestVersion",
+                "productionVersion",
+                "stagingVersion"
+            ],
+            "inputProperties": {
+                "api": {
+                    "type": "string",
+                    "description": "JSON-formatted information about the API configuration"
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "The unique identifier for the contract (without the 'ctr_' prefix) assigned to the API."
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The unique identifier for the group (without the 'grp_' prefix) assigned to the API."
+                },
+                "productionVersion": {
+                    "type": "integer",
+                    "description": "Version of the API currently deployed in production"
+                },
+                "stagingVersion": {
+                    "type": "integer",
+                    "description": "Version of the API currently deployed in staging"
+                }
+            },
+            "requiredInputs": [
+                "api",
+                "contractId",
+                "groupId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ApidefinitionsApi resources.\n",
+                "properties": {
+                    "api": {
+                        "type": "string",
+                        "description": "JSON-formatted information about the API configuration"
+                    },
+                    "contractId": {
+                        "type": "string",
+                        "description": "The unique identifier for the contract (without the 'ctr_' prefix) assigned to the API."
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "The unique identifier for the group (without the 'grp_' prefix) assigned to the API."
+                    },
+                    "latestVersion": {
+                        "type": "integer",
+                        "description": "Latest version of the API"
+                    },
+                    "productionVersion": {
+                        "type": "integer",
+                        "description": "Version of the API currently deployed in production"
+                    },
+                    "stagingVersion": {
+                        "type": "integer",
+                        "description": "Version of the API currently deployed in staging"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/apidefinitionsResourceOperations:ApidefinitionsResourceOperations": {
+            "properties": {
+                "apiId": {
+                    "type": "integer",
+                    "description": "The unique identifier for the endpoint"
+                },
+                "resourceOperations": {
+                    "type": "string",
+                    "description": "JSON-formatted information about the API configuration"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "Version of the endpoint"
+                }
+            },
+            "required": [
+                "apiId",
+                "resourceOperations",
+                "version"
+            ],
+            "inputProperties": {
+                "apiId": {
+                    "type": "integer",
+                    "description": "The unique identifier for the endpoint"
+                },
+                "resourceOperations": {
+                    "type": "string",
+                    "description": "JSON-formatted information about the API configuration"
+                }
+            },
+            "requiredInputs": [
+                "apiId",
+                "resourceOperations"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ApidefinitionsResourceOperations resources.\n",
+                "properties": {
+                    "apiId": {
+                        "type": "integer",
+                        "description": "The unique identifier for the endpoint"
+                    },
+                    "resourceOperations": {
+                        "type": "string",
+                        "description": "JSON-formatted information about the API configuration"
+                    },
+                    "version": {
+                        "type": "integer",
+                        "description": "Version of the endpoint"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/appSecActivations:AppSecActivations": {
             "properties": {
                 "configId": {
@@ -16668,12 +17952,13 @@
         },
         "akamai:index/appSecIPGeo:AppSecIPGeo": {
             "properties": {
-                "asnNetworkLists": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "List of IDs of ASN network list to be blocked"
+                "asnControls": {
+                    "$ref": "#/types/akamai:index/AppSecIPGeoAsnControls:AppSecIPGeoAsnControls",
+                    "description": "An Object containing List of ASN network lists to be blocked with specified action"
+                },
+                "blockAction": {
+                    "type": "string",
+                    "description": "Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists"
                 },
                 "configId": {
                     "type": "integer",
@@ -16684,21 +17969,15 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "List of IDs of network list that are always allowed"
+                    "description": "List of unique identifiers of\u003cspan pulumi-lang-nodejs=\" ipNetworkLists \" pulumi-lang-dotnet=\" IpNetworkLists \" pulumi-lang-go=\" ipNetworkLists \" pulumi-lang-python=\" ip_network_lists \" pulumi-lang-yaml=\" ipNetworkLists \" pulumi-lang-java=\" ipNetworkLists \"\u003e ip_network_lists \u003c/span\u003eallowed through the firewall."
                 },
-                "geoNetworkLists": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "List of IDs of geographic network list to be blocked"
+                "geoControls": {
+                    "$ref": "#/types/akamai:index/AppSecIPGeoGeoControls:AppSecIPGeoGeoControls",
+                    "description": "An Object containing List of geographic network lists to be blocked with specified action"
                 },
-                "ipNetworkLists": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "List of IDs of IP network list to be blocked"
+                "ipControls": {
+                    "$ref": "#/types/akamai:index/AppSecIPGeoIpControls:AppSecIPGeoIpControls",
+                    "description": "An Object containing List of IP network lists to be blocked with specified action"
                 },
                 "mode": {
                     "type": "string",
@@ -16716,15 +17995,17 @@
             "required": [
                 "configId",
                 "mode",
-                "securityPolicyId"
+                "securityPolicyId",
+                "ukraineGeoControlAction"
             ],
             "inputProperties": {
-                "asnNetworkLists": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "List of IDs of ASN network list to be blocked"
+                "asnControls": {
+                    "$ref": "#/types/akamai:index/AppSecIPGeoAsnControls:AppSecIPGeoAsnControls",
+                    "description": "An Object containing List of ASN network lists to be blocked with specified action"
+                },
+                "blockAction": {
+                    "type": "string",
+                    "description": "Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists"
                 },
                 "configId": {
                     "type": "integer",
@@ -16735,21 +18016,15 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "List of IDs of network list that are always allowed"
+                    "description": "List of unique identifiers of\u003cspan pulumi-lang-nodejs=\" ipNetworkLists \" pulumi-lang-dotnet=\" IpNetworkLists \" pulumi-lang-go=\" ipNetworkLists \" pulumi-lang-python=\" ip_network_lists \" pulumi-lang-yaml=\" ipNetworkLists \" pulumi-lang-java=\" ipNetworkLists \"\u003e ip_network_lists \u003c/span\u003eallowed through the firewall."
                 },
-                "geoNetworkLists": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "List of IDs of geographic network list to be blocked"
+                "geoControls": {
+                    "$ref": "#/types/akamai:index/AppSecIPGeoGeoControls:AppSecIPGeoGeoControls",
+                    "description": "An Object containing List of geographic network lists to be blocked with specified action"
                 },
-                "ipNetworkLists": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "List of IDs of IP network list to be blocked"
+                "ipControls": {
+                    "$ref": "#/types/akamai:index/AppSecIPGeoIpControls:AppSecIPGeoIpControls",
+                    "description": "An Object containing List of IP network lists to be blocked with specified action"
                 },
                 "mode": {
                     "type": "string",
@@ -16772,12 +18047,13 @@
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering AppSecIPGeo resources.\n",
                 "properties": {
-                    "asnNetworkLists": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "List of IDs of ASN network list to be blocked"
+                    "asnControls": {
+                        "$ref": "#/types/akamai:index/AppSecIPGeoAsnControls:AppSecIPGeoAsnControls",
+                        "description": "An Object containing List of ASN network lists to be blocked with specified action"
+                    },
+                    "blockAction": {
+                        "type": "string",
+                        "description": "Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists"
                     },
                     "configId": {
                         "type": "integer",
@@ -16788,21 +18064,15 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "List of IDs of network list that are always allowed"
+                        "description": "List of unique identifiers of\u003cspan pulumi-lang-nodejs=\" ipNetworkLists \" pulumi-lang-dotnet=\" IpNetworkLists \" pulumi-lang-go=\" ipNetworkLists \" pulumi-lang-python=\" ip_network_lists \" pulumi-lang-yaml=\" ipNetworkLists \" pulumi-lang-java=\" ipNetworkLists \"\u003e ip_network_lists \u003c/span\u003eallowed through the firewall."
                     },
-                    "geoNetworkLists": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "List of IDs of geographic network list to be blocked"
+                    "geoControls": {
+                        "$ref": "#/types/akamai:index/AppSecIPGeoGeoControls:AppSecIPGeoGeoControls",
+                        "description": "An Object containing List of geographic network lists to be blocked with specified action"
                     },
-                    "ipNetworkLists": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "List of IDs of IP network list to be blocked"
+                    "ipControls": {
+                        "$ref": "#/types/akamai:index/AppSecIPGeoIpControls:AppSecIPGeoIpControls",
+                        "description": "An Object containing List of IP network lists to be blocked with specified action"
                     },
                     "mode": {
                         "type": "string",
@@ -18124,6 +19394,10 @@
                     "$ref": "#/types/akamai:index/AppSecSiemSettingsExceptions:AppSecSiemSettingsExceptions",
                     "description": "Describes all the protections and actions to be excluded from SIEM events"
                 },
+                "includeJa4FingerprintToSiem": {
+                    "type": "boolean",
+                    "description": "Whether JA4 Fingerprint should be included in SIEM events"
+                },
                 "securityPolicyIds": {
                     "type": "array",
                     "items": {
@@ -18162,6 +19436,10 @@
                 "exceptions": {
                     "$ref": "#/types/akamai:index/AppSecSiemSettingsExceptions:AppSecSiemSettingsExceptions",
                     "description": "Describes all the protections and actions to be excluded from SIEM events"
+                },
+                "includeJa4FingerprintToSiem": {
+                    "type": "boolean",
+                    "description": "Whether JA4 Fingerprint should be included in SIEM events"
                 },
                 "securityPolicyIds": {
                     "type": "array",
@@ -18203,6 +19481,10 @@
                     "exceptions": {
                         "$ref": "#/types/akamai:index/AppSecSiemSettingsExceptions:AppSecSiemSettingsExceptions",
                         "description": "Describes all the protections and actions to be excluded from SIEM events"
+                    },
+                    "includeJa4FingerprintToSiem": {
+                        "type": "boolean",
+                        "description": "Whether JA4 Fingerprint should be included in SIEM events"
                     },
                     "securityPolicyIds": {
                         "type": "array",
@@ -18747,6 +20029,64 @@
                 "type": "object"
             }
         },
+        "akamai:index/appsecAdvancedSettingsAsePenaltyBox:AppsecAdvancedSettingsAsePenaltyBox": {
+            "properties": {
+                "blockDuration": {
+                    "type": "integer",
+                    "description": "Block duration for ASE Penalty Box in minutes."
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration."
+                },
+                "qualificationExclusions": {
+                    "$ref": "#/types/akamai:index/AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions:AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions",
+                    "description": "Qualification exclusions for ASE Penalty Box. Contains attack groups and rules."
+                }
+            },
+            "required": [
+                "blockDuration",
+                "configId",
+                "qualificationExclusions"
+            ],
+            "inputProperties": {
+                "blockDuration": {
+                    "type": "integer",
+                    "description": "Block duration for ASE Penalty Box in minutes."
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration."
+                },
+                "qualificationExclusions": {
+                    "$ref": "#/types/akamai:index/AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions:AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions",
+                    "description": "Qualification exclusions for ASE Penalty Box. Contains attack groups and rules."
+                }
+            },
+            "requiredInputs": [
+                "blockDuration",
+                "configId",
+                "qualificationExclusions"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AppsecAdvancedSettingsAsePenaltyBox resources.\n",
+                "properties": {
+                    "blockDuration": {
+                        "type": "integer",
+                        "description": "Block duration for ASE Penalty Box in minutes."
+                    },
+                    "configId": {
+                        "type": "integer",
+                        "description": "Unique identifier of the security configuration."
+                    },
+                    "qualificationExclusions": {
+                        "$ref": "#/types/akamai:index/AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions:AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions",
+                        "description": "Qualification exclusions for ASE Penalty Box. Contains attack groups and rules."
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging": {
             "properties": {
                 "attackPayloadLogging": {
@@ -18798,6 +20138,57 @@
                     "securityPolicyId": {
                         "type": "string",
                         "description": "Unique identifier of the security policy"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/appsecAdvancedSettingsJa4Fingerprint:AppsecAdvancedSettingsJa4Fingerprint": {
+            "properties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration"
+                },
+                "headerNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "JA4 TLS Header Names to be included in the header"
+                }
+            },
+            "required": [
+                "configId"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration"
+                },
+                "headerNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "JA4 TLS Header Names to be included in the header"
+                }
+            },
+            "requiredInputs": [
+                "configId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AppsecAdvancedSettingsJa4Fingerprint resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "Unique identifier of the security configuration"
+                    },
+                    "headerNames": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "JA4 TLS Header Names to be included in the header"
                     }
                 },
                 "type": "object"
@@ -19172,6 +20563,210 @@
                     "securityPolicyPrefix": {
                         "type": "string",
                         "description": "Four-character alphanumeric string prefix used in creating the security policy ID"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/aprGeneralSettings:AprGeneralSettings": {
+            "properties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Identifies a security configuration."
+                },
+                "generalSettings": {
+                    "type": "string"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "Identifies a security policy."
+                }
+            },
+            "required": [
+                "configId",
+                "generalSettings",
+                "securityPolicyId"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Identifies a security configuration."
+                },
+                "generalSettings": {
+                    "type": "string"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "Identifies a security policy."
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "generalSettings",
+                "securityPolicyId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AprGeneralSettings resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "Identifies a security configuration."
+                    },
+                    "generalSettings": {
+                        "type": "string"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "Identifies a security policy."
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/aprProtectedOperations:AprProtectedOperations": {
+            "properties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Identifies a security configuration."
+                },
+                "operationId": {
+                    "type": "string",
+                    "description": "Identifies a protected operation"
+                },
+                "protectedOperation": {
+                    "type": "string"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "Identifies a security policy."
+                }
+            },
+            "required": [
+                "configId",
+                "operationId",
+                "protectedOperation",
+                "securityPolicyId"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Identifies a security configuration."
+                },
+                "operationId": {
+                    "type": "string",
+                    "description": "Identifies a protected operation"
+                },
+                "protectedOperation": {
+                    "type": "string"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "Identifies a security policy."
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "operationId",
+                "protectedOperation",
+                "securityPolicyId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AprProtectedOperations resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "Identifies a security configuration."
+                    },
+                    "operationId": {
+                        "type": "string",
+                        "description": "Identifies a protected operation"
+                    },
+                    "protectedOperation": {
+                        "type": "string"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "Identifies a security policy."
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/aprUserAllowList:AprUserAllowList": {
+            "properties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Identifies a security configuration."
+                },
+                "userAllowList": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "configId"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Identifies a security configuration."
+                },
+                "userAllowList": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "configId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AprUserAllowList resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "Identifies a security configuration."
+                    },
+                    "userAllowList": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/aprUserRiskResponseStrategy:AprUserRiskResponseStrategy": {
+            "properties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Identifies a security configuration."
+                },
+                "userRiskResponseStrategy": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "configId",
+                "userRiskResponseStrategy"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Identifies a security configuration."
+                },
+                "userRiskResponseStrategy": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "userRiskResponseStrategy"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AprUserRiskResponseStrategy resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "Identifies a security configuration."
+                    },
+                    "userRiskResponseStrategy": {
+                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -20634,7 +22229,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]"
+                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]"
                 },
                 "version": {
                     "type": "integer",
@@ -20685,7 +22280,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]",
+                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]",
                     "willReplaceOnChanges": true
                 }
             },
@@ -20739,7 +22334,7 @@
                     },
                     "type": {
                         "type": "string",
-                        "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]",
+                        "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]",
                         "willReplaceOnChanges": true
                     },
                     "version": {
@@ -20762,7 +22357,7 @@
                 },
                 "authenticationMethod": {
                     "type": "string",
-                    "description": "The type of cloud provider signing process used to authenticate API requests. Two options are available: \"AWS4_HMAC_SHA256\" or \"GOOG4_HMAC_SHA256\"."
+                    "description": "The type of cloud provider signing process used to authenticate API requests. Three options are available: \"AWS4_HMAC_SHA256\", \"GOOG4_HMAC_SHA256\" or \"AOS4_HMAC_SHA256\"."
                 },
                 "contractId": {
                     "type": "string",
@@ -20808,7 +22403,7 @@
                 },
                 "authenticationMethod": {
                     "type": "string",
-                    "description": "The type of cloud provider signing process used to authenticate API requests. Two options are available: \"AWS4_HMAC_SHA256\" or \"GOOG4_HMAC_SHA256\"."
+                    "description": "The type of cloud provider signing process used to authenticate API requests. Three options are available: \"AWS4_HMAC_SHA256\", \"GOOG4_HMAC_SHA256\" or \"AOS4_HMAC_SHA256\"."
                 },
                 "contractId": {
                     "type": "string",
@@ -20854,7 +22449,7 @@
                     },
                     "authenticationMethod": {
                         "type": "string",
-                        "description": "The type of cloud provider signing process used to authenticate API requests. Two options are available: \"AWS4_HMAC_SHA256\" or \"GOOG4_HMAC_SHA256\"."
+                        "description": "The type of cloud provider signing process used to authenticate API requests. Three options are available: \"AWS4_HMAC_SHA256\", \"GOOG4_HMAC_SHA256\" or \"AOS4_HMAC_SHA256\"."
                     },
                     "contractId": {
                         "type": "string",
@@ -26631,9 +28226,20 @@
                     },
                     "description": "The email addresses to notify for client certificate-related issues. Must have at least one email address."
                 },
+                "preferredCa": {
+                    "type": "string",
+                    "description": "The common name of the account CA certificate selected to sign the client certificate."
+                },
                 "previousGuid": {
                     "type": "string",
                     "description": "Unique identifier for the \u003cspan pulumi-lang-nodejs=\"`previous`\" pulumi-lang-dotnet=\"`Previous`\" pulumi-lang-go=\"`previous`\" pulumi-lang-python=\"`previous`\" pulumi-lang-yaml=\"`previous`\" pulumi-lang-java=\"`previous`\"\u003e`previous`\u003c/span\u003e client certificate version."
+                },
+                "revokedVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "A set of client certificate versions that should be revoked."
                 },
                 "secureNetwork": {
                     "type": "string",
@@ -26642,6 +28248,9 @@
                 "subject": {
                     "type": "string",
                     "description": "The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateAkamaiTimeouts:MtlskeystoreClientCertificateAkamaiTimeouts"
                 },
                 "versions": {
                     "type": "array",
@@ -26695,6 +28304,17 @@
                     },
                     "description": "The email addresses to notify for client certificate-related issues. Must have at least one email address."
                 },
+                "preferredCa": {
+                    "type": "string",
+                    "description": "The common name of the account CA certificate selected to sign the client certificate."
+                },
+                "revokedVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "A set of client certificate versions that should be revoked."
+                },
                 "secureNetwork": {
                     "type": "string",
                     "description": "Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`."
@@ -26702,6 +28322,9 @@
                 "subject": {
                     "type": "string",
                     "description": "The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateAkamaiTimeouts:MtlskeystoreClientCertificateAkamaiTimeouts"
                 }
             },
             "requiredInputs": [
@@ -26758,9 +28381,20 @@
                         },
                         "description": "The email addresses to notify for client certificate-related issues. Must have at least one email address."
                     },
+                    "preferredCa": {
+                        "type": "string",
+                        "description": "The common name of the account CA certificate selected to sign the client certificate."
+                    },
                     "previousGuid": {
                         "type": "string",
                         "description": "Unique identifier for the \u003cspan pulumi-lang-nodejs=\"`previous`\" pulumi-lang-dotnet=\"`Previous`\" pulumi-lang-go=\"`previous`\" pulumi-lang-python=\"`previous`\" pulumi-lang-yaml=\"`previous`\" pulumi-lang-java=\"`previous`\"\u003e`previous`\u003c/span\u003e client certificate version."
+                    },
+                    "revokedVersions": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "A set of client certificate versions that should be revoked."
                     },
                     "secureNetwork": {
                         "type": "string",
@@ -26769,6 +28403,9 @@
                     "subject": {
                         "type": "string",
                         "description": "The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`."
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/akamai:index/MtlskeystoreClientCertificateAkamaiTimeouts:MtlskeystoreClientCertificateAkamaiTimeouts"
                     },
                     "versions": {
                         "type": "array",
@@ -26794,6 +28431,14 @@
                 "contractId": {
                     "type": "string",
                     "description": "The contract assigned to the client certificate. Must have a length of at least 1."
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the client certificate."
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the client certificate was created."
                 },
                 "geography": {
                     "type": "string",
@@ -26834,6 +28479,8 @@
                 "certificateId",
                 "certificateName",
                 "contractId",
+                "createdBy",
+                "createdDate",
                 "geography",
                 "groupId",
                 "keyAlgorithm",
@@ -26909,6 +28556,14 @@
                     "contractId": {
                         "type": "string",
                         "description": "The contract assigned to the client certificate. Must have a length of at least 1."
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "description": "The user who created the client certificate."
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "An ISO 8601 timestamp indicating when the client certificate was created."
                     },
                     "geography": {
                         "type": "string",
@@ -27057,6 +28712,299 @@
                     "waitForDeployment": {
                         "type": "boolean",
                         "description": "Indicates whether to wait for the deployment of the uploaded certificate. Defaults to \u003cspan pulumi-lang-nodejs=\"`true`\" pulumi-lang-dotnet=\"`True`\" pulumi-lang-go=\"`true`\" pulumi-lang-python=\"`true`\" pulumi-lang-yaml=\"`true`\" pulumi-lang-java=\"`true`\"\u003e`true`\u003c/span\u003e."
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/mtlstruststoreCaSet:MtlstruststoreCaSet": {
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Identifies the account the CA set belongs to."
+                },
+                "allowInsecureSha1": {
+                    "type": "boolean",
+                    "description": "Allows certificates with SHA-1 signatures if enabled."
+                },
+                "certificates": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/MtlstruststoreCaSetCertificate:MtlstruststoreCaSetCertificate"
+                    },
+                    "description": "The certificates that are valid, non-expired, root, or intermediate."
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the CA set."
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "When the CA set was created."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Any additional comments you can add to the CA set."
+                },
+                "latestVersion": {
+                    "type": "integer",
+                    "description": "Version number for newly created or cloned version in a CA set."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the CA set."
+                },
+                "productionVersion": {
+                    "type": "integer",
+                    "description": "Version of the CA set that is active on production."
+                },
+                "stagingVersion": {
+                    "type": "integer",
+                    "description": "Version number of the CA set that is active on staging."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/MtlstruststoreCaSetTimeouts:MtlstruststoreCaSetTimeouts"
+                },
+                "versionCreatedBy": {
+                    "type": "string",
+                    "description": "The user who created the CA set version."
+                },
+                "versionCreatedDate": {
+                    "type": "string",
+                    "description": "When the CA set version was created."
+                },
+                "versionDescription": {
+                    "type": "string",
+                    "description": "Additional description for the CA set version."
+                },
+                "versionModifiedBy": {
+                    "type": "string",
+                    "description": "The user who modified the CA set version."
+                },
+                "versionModifiedDate": {
+                    "type": "string",
+                    "description": "When the CA set version was modified."
+                }
+            },
+            "required": [
+                "accountId",
+                "allowInsecureSha1",
+                "certificates",
+                "createdBy",
+                "createdDate",
+                "description",
+                "latestVersion",
+                "name",
+                "productionVersion",
+                "stagingVersion",
+                "versionCreatedBy",
+                "versionCreatedDate",
+                "versionDescription",
+                "versionModifiedBy",
+                "versionModifiedDate"
+            ],
+            "inputProperties": {
+                "allowInsecureSha1": {
+                    "type": "boolean",
+                    "description": "Allows certificates with SHA-1 signatures if enabled."
+                },
+                "certificates": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/MtlstruststoreCaSetCertificate:MtlstruststoreCaSetCertificate"
+                    },
+                    "description": "The certificates that are valid, non-expired, root, or intermediate."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Any additional comments you can add to the CA set."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the CA set."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/MtlstruststoreCaSetTimeouts:MtlstruststoreCaSetTimeouts"
+                },
+                "versionDescription": {
+                    "type": "string",
+                    "description": "Additional description for the CA set version."
+                }
+            },
+            "requiredInputs": [
+                "certificates"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering MtlstruststoreCaSet resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Identifies the account the CA set belongs to."
+                    },
+                    "allowInsecureSha1": {
+                        "type": "boolean",
+                        "description": "Allows certificates with SHA-1 signatures if enabled."
+                    },
+                    "certificates": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/MtlstruststoreCaSetCertificate:MtlstruststoreCaSetCertificate"
+                        },
+                        "description": "The certificates that are valid, non-expired, root, or intermediate."
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "description": "The user who created the CA set."
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "When the CA set was created."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Any additional comments you can add to the CA set."
+                    },
+                    "latestVersion": {
+                        "type": "integer",
+                        "description": "Version number for newly created or cloned version in a CA set."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the CA set."
+                    },
+                    "productionVersion": {
+                        "type": "integer",
+                        "description": "Version of the CA set that is active on production."
+                    },
+                    "stagingVersion": {
+                        "type": "integer",
+                        "description": "Version number of the CA set that is active on staging."
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/akamai:index/MtlstruststoreCaSetTimeouts:MtlstruststoreCaSetTimeouts"
+                    },
+                    "versionCreatedBy": {
+                        "type": "string",
+                        "description": "The user who created the CA set version."
+                    },
+                    "versionCreatedDate": {
+                        "type": "string",
+                        "description": "When the CA set version was created."
+                    },
+                    "versionDescription": {
+                        "type": "string",
+                        "description": "Additional description for the CA set version."
+                    },
+                    "versionModifiedBy": {
+                        "type": "string",
+                        "description": "The user who modified the CA set version."
+                    },
+                    "versionModifiedDate": {
+                        "type": "string",
+                        "description": "When the CA set version was modified."
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/mtlstruststoreCaSetActivation:MtlstruststoreCaSetActivation": {
+            "properties": {
+                "caSetId": {
+                    "type": "string",
+                    "description": "Uniquely Identifies a CA set."
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "User who submitted the activation request."
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "Date the activation request was submitted in ISO-8601 format."
+                },
+                "modifiedBy": {
+                    "type": "string",
+                    "description": "The user who completed the activation."
+                },
+                "modifiedDate": {
+                    "type": "string",
+                    "description": "Date the activation request was modified in ISO-8601 format."
+                },
+                "network": {
+                    "type": "string",
+                    "description": "Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/MtlstruststoreCaSetActivationTimeouts:MtlstruststoreCaSetActivationTimeouts"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "Identifies the version of the CA set."
+                }
+            },
+            "required": [
+                "caSetId",
+                "createdBy",
+                "createdDate",
+                "modifiedBy",
+                "modifiedDate",
+                "network",
+                "version"
+            ],
+            "inputProperties": {
+                "caSetId": {
+                    "type": "string",
+                    "description": "Uniquely Identifies a CA set."
+                },
+                "network": {
+                    "type": "string",
+                    "description": "Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/MtlstruststoreCaSetActivationTimeouts:MtlstruststoreCaSetActivationTimeouts"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "Identifies the version of the CA set."
+                }
+            },
+            "requiredInputs": [
+                "caSetId",
+                "network",
+                "version"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering MtlstruststoreCaSetActivation resources.\n",
+                "properties": {
+                    "caSetId": {
+                        "type": "string",
+                        "description": "Uniquely Identifies a CA set."
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "description": "User who submitted the activation request."
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "Date the activation request was submitted in ISO-8601 format."
+                    },
+                    "modifiedBy": {
+                        "type": "string",
+                        "description": "The user who completed the activation."
+                    },
+                    "modifiedDate": {
+                        "type": "string",
+                        "description": "Date the activation request was modified in ISO-8601 format."
+                    },
+                    "network": {
+                        "type": "string",
+                        "description": "Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'."
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/akamai:index/MtlstruststoreCaSetActivationTimeouts:MtlstruststoreCaSetActivationTimeouts"
+                    },
+                    "version": {
+                        "type": "integer",
+                        "description": "Identifies the version of the CA set."
                     }
                 },
                 "type": "object"
@@ -27973,7 +29921,7 @@
                 },
                 "timeoutForActivation": {
                     "type": "integer",
-                    "description": "The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes."
+                    "description": "The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes."
                 }
             },
             "required": [
@@ -28030,7 +29978,7 @@
                 },
                 "timeoutForActivation": {
                     "type": "integer",
-                    "description": "The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes."
+                    "description": "The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes."
                 }
             },
             "requiredInputs": [
@@ -28089,7 +30037,7 @@
                     },
                     "timeoutForActivation": {
                         "type": "integer",
-                        "description": "The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes."
+                        "description": "The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes."
                     }
                 },
                 "type": "object"
@@ -28445,6 +30393,152 @@
         }
     },
     "functions": {
+        "akamai:index/getApidefinitionsApi:getApidefinitionsApi": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getApidefinitionsApi.\n",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getApidefinitionsApi.\n",
+                "properties": {
+                    "api": {
+                        "type": "string"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "latestVersion": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "productionVersion": {
+                        "type": "integer"
+                    },
+                    "stagingVersion": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "api",
+                    "contractId",
+                    "groupId",
+                    "latestVersion",
+                    "productionVersion",
+                    "stagingVersion"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getApidefinitionsOpenapi:getApidefinitionsOpenapi": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getApidefinitionsOpenapi.\n",
+                "properties": {
+                    "api": {
+                        "type": "string"
+                    },
+                    "apiFileName": {
+                        "type": "string"
+                    },
+                    "filePath": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "filePath"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getApidefinitionsOpenapi.\n",
+                "properties": {
+                    "api": {
+                        "type": "string"
+                    },
+                    "apiFileName": {
+                        "type": "string"
+                    },
+                    "filePath": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "filePath",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getApidefinitionsResourceOperations:getApidefinitionsResourceOperations": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getApidefinitionsResourceOperations.\n",
+                "properties": {
+                    "apiId": {
+                        "type": "integer"
+                    },
+                    "resourceName": {
+                        "type": "string"
+                    },
+                    "resourcePath": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "apiId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getApidefinitionsResourceOperations.\n",
+                "properties": {
+                    "apiId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "resourceName": {
+                        "type": "string"
+                    },
+                    "resourceOperations": {
+                        "type": "string"
+                    },
+                    "resourcePath": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "apiId",
+                    "resourceOperations",
+                    "version",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
         "akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch": {
             "inputs": {
                 "description": "A collection of arguments for invoking getAppSecAdvancedSettingsEvasivePathMatch.\n",
@@ -29598,11 +31692,14 @@
             "outputs": {
                 "description": "A collection of values returned by getAppSecIPGeo.\n",
                 "properties": {
-                    "asnNetworkLists": {
+                    "asnControls": {
                         "items": {
-                            "type": "string"
+                            "$ref": "#/types/akamai:index/getAppSecIPGeoAsnControl:getAppSecIPGeoAsnControl"
                         },
                         "type": "array"
+                    },
+                    "blockAction": {
+                        "type": "string"
                     },
                     "configId": {
                         "type": "integer"
@@ -29613,9 +31710,9 @@
                         },
                         "type": "array"
                     },
-                    "geoNetworkLists": {
+                    "geoControls": {
                         "items": {
-                            "type": "string"
+                            "$ref": "#/types/akamai:index/getAppSecIPGeoGeoControl:getAppSecIPGeoGeoControl"
                         },
                         "type": "array"
                     },
@@ -29623,9 +31720,9 @@
                         "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
-                    "ipNetworkLists": {
+                    "ipControls": {
                         "items": {
-                            "type": "string"
+                            "$ref": "#/types/akamai:index/getAppSecIPGeoIpControl:getAppSecIPGeoIpControl"
                         },
                         "type": "array"
                     },
@@ -29643,11 +31740,12 @@
                     }
                 },
                 "required": [
-                    "asnNetworkLists",
+                    "asnControls",
+                    "blockAction",
                     "configId",
                     "exceptionIpNetworkLists",
-                    "geoNetworkLists",
-                    "ipNetworkLists",
+                    "geoControls",
+                    "ipControls",
                     "mode",
                     "outputText",
                     "securityPolicyId",
@@ -30847,6 +32945,45 @@
                 "type": "object"
             }
         },
+        "akamai:index/getAppsecAdvancedSettingsAsePenaltyBox:getAppsecAdvancedSettingsAsePenaltyBox": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAppsecAdvancedSettingsAsePenaltyBox.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAppsecAdvancedSettingsAsePenaltyBox.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    },
+                    "outputText": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "configId",
+                    "json",
+                    "outputText",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
         "akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging": {
             "inputs": {
                 "description": "A collection of arguments for invoking getAppsecAdvancedSettingsAttackPayloadLogging.\n",
@@ -30880,6 +33017,45 @@
                         "type": "string"
                     },
                     "securityPolicyId": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "configId",
+                    "json",
+                    "outputText",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getAppsecAdvancedSettingsJa4Fingerprint:getAppsecAdvancedSettingsJa4Fingerprint": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAppsecAdvancedSettingsJa4Fingerprint.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAppsecAdvancedSettingsJa4Fingerprint.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    },
+                    "outputText": {
                         "type": "string"
                     }
                 },
@@ -30971,6 +33147,66 @@
                     "configId",
                     "json",
                     "outputText",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getAppsecCustomRulesUsage:getAppsecCustomRulesUsage": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAppsecCustomRulesUsage.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "ruleIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "ruleIds"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAppsecCustomRulesUsage.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    },
+                    "outputText": {
+                        "type": "string"
+                    },
+                    "ruleIds": {
+                        "items": {
+                            "type": "integer"
+                        },
+                        "type": "array"
+                    },
+                    "rules": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getAppsecCustomRulesUsageRule:getAppsecCustomRulesUsageRule"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "configId",
+                    "json",
+                    "outputText",
+                    "ruleIds",
+                    "rules",
                     "id"
                 ],
                 "type": "object"
@@ -31077,6 +33313,9 @@
                     "configId": {
                         "type": "integer"
                     },
+                    "includeExpiryDetails": {
+                        "type": "boolean"
+                    },
                     "ruleId": {
                         "type": "integer"
                     },
@@ -31105,6 +33344,9 @@
                     "id": {
                         "type": "string"
                     },
+                    "includeExpiryDetails": {
+                        "type": "boolean"
+                    },
                     "outputText": {
                         "type": "string"
                     },
@@ -31129,6 +33371,168 @@
                     "outputText",
                     "rapidRules",
                     "securityPolicyId"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getAprGeneralSettings:getAprGeneralSettings": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAprGeneralSettings.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "securityPolicyId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAprGeneralSettings.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "configId",
+                    "json",
+                    "securityPolicyId",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getAprProtectedOperations:getAprProtectedOperations": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAprProtectedOperations.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "operationId": {
+                        "type": "string"
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "securityPolicyId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAprProtectedOperations.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    },
+                    "operationId": {
+                        "type": "string"
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "configId",
+                    "json",
+                    "securityPolicyId",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getAprUserAllowList:getAprUserAllowList": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAprUserAllowList.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAprUserAllowList.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "configId",
+                    "json",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getAprUserRiskResponseStrategy:getAprUserRiskResponseStrategy": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAprUserRiskResponseStrategy.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAprUserRiskResponseStrategy.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "configId",
+                    "json",
+                    "id"
                 ],
                 "type": "object"
             }
@@ -32644,6 +35048,49 @@
                 "required": [
                     "contractId",
                     "enrollments",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getClientlistList:getClientlistList": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getClientlistList.\n",
+                "properties": {
+                    "listId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "listId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getClientlistList.\n",
+                "properties": {
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    },
+                    "list": {
+                        "$ref": "#/types/akamai:index/getClientlistListList:getClientlistListList"
+                    },
+                    "listId": {
+                        "type": "string"
+                    },
+                    "outputText": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "json",
+                    "list",
+                    "listId",
+                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34198,7 +36645,7 @@
             "inputs": {
                 "description": "A collection of arguments for invoking getDnsRecordSet.\n",
                 "properties": {
-                    "host": {
+                    "name": {
                         "type": "string"
                     },
                     "recordType": {
@@ -34210,7 +36657,7 @@
                 },
                 "type": "object",
                 "required": [
-                    "host",
+                    "name",
                     "recordType",
                     "zone"
                 ]
@@ -34218,11 +36665,11 @@
             "outputs": {
                 "description": "A collection of values returned by getDnsRecordSet.\n",
                 "properties": {
-                    "host": {
-                        "type": "string"
-                    },
                     "id": {
                         "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "name": {
                         "type": "string"
                     },
                     "rdatas": {
@@ -34239,7 +36686,7 @@
                     }
                 },
                 "required": [
-                    "host",
+                    "name",
                     "rdatas",
                     "recordType",
                     "zone",
@@ -36443,6 +38890,520 @@
                 },
                 "required": [
                     "certificates",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSet:getMtlstruststoreCaSet": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlstruststoreCaSet.\n",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlstruststoreCaSet.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string"
+                    },
+                    "allowInsecureSha1": {
+                        "type": "boolean"
+                    },
+                    "certificates": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlstruststoreCaSetCertificate:getMtlstruststoreCaSetCertificate"
+                        },
+                        "type": "array"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "createdDate": {
+                        "type": "string"
+                    },
+                    "deletedBy": {
+                        "type": "string"
+                    },
+                    "deletedDate": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "productionVersion": {
+                        "type": "integer"
+                    },
+                    "stagingVersion": {
+                        "type": "integer"
+                    },
+                    "version": {
+                        "type": "integer"
+                    },
+                    "versionCreatedBy": {
+                        "type": "string"
+                    },
+                    "versionCreatedDate": {
+                        "type": "string"
+                    },
+                    "versionDescription": {
+                        "type": "string"
+                    },
+                    "versionModifiedBy": {
+                        "type": "string"
+                    },
+                    "versionModifiedDate": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "allowInsecureSha1",
+                    "certificates",
+                    "createdBy",
+                    "createdDate",
+                    "deletedBy",
+                    "deletedDate",
+                    "description",
+                    "id",
+                    "name",
+                    "productionVersion",
+                    "stagingVersion",
+                    "version",
+                    "versionCreatedBy",
+                    "versionCreatedDate",
+                    "versionDescription",
+                    "versionModifiedBy",
+                    "versionModifiedDate"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetActivation:getMtlstruststoreCaSetActivation": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlstruststoreCaSetActivation.\n",
+                "properties": {
+                    "caSetId": {
+                        "type": "string"
+                    },
+                    "caSetName": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlstruststoreCaSetActivation.\n",
+                "properties": {
+                    "caSetId": {
+                        "type": "string"
+                    },
+                    "caSetName": {
+                        "type": "string"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "createdDate": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "modifiedBy": {
+                        "type": "string"
+                    },
+                    "modifiedDate": {
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "caSetId",
+                    "caSetName",
+                    "createdBy",
+                    "createdDate",
+                    "id",
+                    "modifiedBy",
+                    "modifiedDate",
+                    "network",
+                    "status",
+                    "type",
+                    "version"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetActivations:getMtlstruststoreCaSetActivations": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlstruststoreCaSetActivations.\n",
+                "properties": {
+                    "caSetId": {
+                        "type": "string"
+                    },
+                    "caSetName": {
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlstruststoreCaSetActivations.\n",
+                "properties": {
+                    "activations": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlstruststoreCaSetActivationsActivation:getMtlstruststoreCaSetActivationsActivation"
+                        },
+                        "type": "array"
+                    },
+                    "caSetId": {
+                        "type": "string"
+                    },
+                    "caSetName": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "activations",
+                    "caSetId",
+                    "caSetName",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetActivities:getMtlstruststoreCaSetActivities": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlstruststoreCaSetActivities.\n",
+                "properties": {
+                    "end": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "start": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlstruststoreCaSetActivities.\n",
+                "properties": {
+                    "activities": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlstruststoreCaSetActivitiesActivity:getMtlstruststoreCaSetActivitiesActivity"
+                        },
+                        "type": "array"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "createdDate": {
+                        "type": "string"
+                    },
+                    "deletedBy": {
+                        "type": "string"
+                    },
+                    "deletedDate": {
+                        "type": "string"
+                    },
+                    "end": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "start": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "activities",
+                    "createdBy",
+                    "createdDate",
+                    "deletedBy",
+                    "deletedDate",
+                    "id",
+                    "name",
+                    "status"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetAssociations:getMtlstruststoreCaSetAssociations": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlstruststoreCaSetAssociations.\n",
+                "properties": {
+                    "associationType": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlstruststoreCaSetAssociations.\n",
+                "properties": {
+                    "associationType": {
+                        "type": "string"
+                    },
+                    "enrollments": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlstruststoreCaSetAssociationsEnrollment:getMtlstruststoreCaSetAssociationsEnrollment"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "properties": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlstruststoreCaSetAssociationsProperty:getMtlstruststoreCaSetAssociationsProperty"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "enrollments",
+                    "id",
+                    "name",
+                    "properties"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetCertificates:getMtlstruststoreCaSetCertificates": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlstruststoreCaSetCertificates.\n",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "includeActive": {
+                        "type": "boolean"
+                    },
+                    "includeExpired": {
+                        "type": "boolean"
+                    },
+                    "includeExpiringByDate": {
+                        "type": "string"
+                    },
+                    "includeExpiringInDays": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlstruststoreCaSetCertificates.\n",
+                "properties": {
+                    "certificates": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlstruststoreCaSetCertificatesCertificate:getMtlstruststoreCaSetCertificatesCertificate"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "includeActive": {
+                        "type": "boolean"
+                    },
+                    "includeExpired": {
+                        "type": "boolean"
+                    },
+                    "includeExpiringByDate": {
+                        "type": "string"
+                    },
+                    "includeExpiringInDays": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "certificates",
+                    "id",
+                    "name",
+                    "version"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSetVersions:getMtlstruststoreCaSetVersions": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlstruststoreCaSetVersions.\n",
+                "properties": {
+                    "activeVersionsOnly": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "includeCertificates": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlstruststoreCaSetVersions.\n",
+                "properties": {
+                    "activeVersionsOnly": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "includeCertificates": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "versions": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlstruststoreCaSetVersionsVersion:getMtlstruststoreCaSetVersionsVersion"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "versions"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getMtlstruststoreCaSets:getMtlstruststoreCaSets": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getMtlstruststoreCaSets.\n",
+                "properties": {
+                    "activatedOn": {
+                        "type": "string"
+                    },
+                    "namePrefix": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMtlstruststoreCaSets.\n",
+                "properties": {
+                    "activatedOn": {
+                        "type": "string"
+                    },
+                    "caSets": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getMtlstruststoreCaSetsCaSet:getMtlstruststoreCaSetsCaSet"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "namePrefix": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "caSets",
                     "id"
                 ],
                 "type": "object"

@@ -24,8 +24,8 @@ namespace Pulumi.Akamai
 
     public sealed class GetDnsRecordSetArgs : global::Pulumi.InvokeArgs
     {
-        [Input("host", required: true)]
-        public string Host { get; set; } = null!;
+        [Input("name", required: true)]
+        public string Name { get; set; } = null!;
 
         [Input("recordType", required: true)]
         public string RecordType { get; set; } = null!;
@@ -41,8 +41,8 @@ namespace Pulumi.Akamai
 
     public sealed class GetDnsRecordSetInvokeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("host", required: true)]
-        public Input<string> Host { get; set; } = null!;
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         [Input("recordType", required: true)]
         public Input<string> RecordType { get; set; } = null!;
@@ -60,20 +60,20 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetDnsRecordSetResult
     {
-        public readonly string Host;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string Name;
         public readonly ImmutableArray<string> Rdatas;
         public readonly string RecordType;
         public readonly string Zone;
 
         [OutputConstructor]
         private GetDnsRecordSetResult(
-            string host,
-
             string id,
+
+            string name,
 
             ImmutableArray<string> rdatas,
 
@@ -81,8 +81,8 @@ namespace Pulumi.Akamai
 
             string zone)
         {
-            Host = host;
             Id = id;
+            Name = name;
             Rdatas = rdatas;
             RecordType = recordType;
             Zone = zone;

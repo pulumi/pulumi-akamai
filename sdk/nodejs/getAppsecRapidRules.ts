@@ -10,6 +10,7 @@ export function getAppsecRapidRules(args: GetAppsecRapidRulesArgs, opts?: pulumi
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppsecRapidRules:getAppsecRapidRules", {
         "configId": args.configId,
+        "includeExpiryDetails": args.includeExpiryDetails,
         "ruleId": args.ruleId,
         "securityPolicyId": args.securityPolicyId,
     }, opts);
@@ -20,6 +21,7 @@ export function getAppsecRapidRules(args: GetAppsecRapidRulesArgs, opts?: pulumi
  */
 export interface GetAppsecRapidRulesArgs {
     configId: number;
+    includeExpiryDetails?: boolean;
     ruleId?: number;
     securityPolicyId: string;
 }
@@ -32,6 +34,7 @@ export interface GetAppsecRapidRulesResult {
     readonly defaultAction: string;
     readonly enabled: boolean;
     readonly id: string;
+    readonly includeExpiryDetails?: boolean;
     readonly outputText: string;
     readonly rapidRules: outputs.GetAppsecRapidRulesRapidRule[];
     readonly ruleId?: number;
@@ -41,6 +44,7 @@ export function getAppsecRapidRulesOutput(args: GetAppsecRapidRulesOutputArgs, o
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppsecRapidRules:getAppsecRapidRules", {
         "configId": args.configId,
+        "includeExpiryDetails": args.includeExpiryDetails,
         "ruleId": args.ruleId,
         "securityPolicyId": args.securityPolicyId,
     }, opts);
@@ -51,6 +55,7 @@ export function getAppsecRapidRulesOutput(args: GetAppsecRapidRulesOutputArgs, o
  */
 export interface GetAppsecRapidRulesOutputArgs {
     configId: pulumi.Input<number>;
+    includeExpiryDetails?: pulumi.Input<boolean>;
     ruleId?: pulumi.Input<number>;
     securityPolicyId: pulumi.Input<string>;
 }

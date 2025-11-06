@@ -7,7 +7,7 @@ import * as utilities from "./utilities";
 export function getDnsRecordSet(args: GetDnsRecordSetArgs, opts?: pulumi.InvokeOptions): Promise<GetDnsRecordSetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDnsRecordSet:getDnsRecordSet", {
-        "host": args.host,
+        "name": args.name,
         "recordType": args.recordType,
         "zone": args.zone,
     }, opts);
@@ -17,7 +17,7 @@ export function getDnsRecordSet(args: GetDnsRecordSetArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getDnsRecordSet.
  */
 export interface GetDnsRecordSetArgs {
-    host: string;
+    name: string;
     recordType: string;
     zone: string;
 }
@@ -26,11 +26,11 @@ export interface GetDnsRecordSetArgs {
  * A collection of values returned by getDnsRecordSet.
  */
 export interface GetDnsRecordSetResult {
-    readonly host: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly name: string;
     readonly rdatas: string[];
     readonly recordType: string;
     readonly zone: string;
@@ -38,7 +38,7 @@ export interface GetDnsRecordSetResult {
 export function getDnsRecordSetOutput(args: GetDnsRecordSetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDnsRecordSetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getDnsRecordSet:getDnsRecordSet", {
-        "host": args.host,
+        "name": args.name,
         "recordType": args.recordType,
         "zone": args.zone,
     }, opts);
@@ -48,7 +48,7 @@ export function getDnsRecordSetOutput(args: GetDnsRecordSetOutputArgs, opts?: pu
  * A collection of arguments for invoking getDnsRecordSet.
  */
 export interface GetDnsRecordSetOutputArgs {
-    host: pulumi.Input<string>;
+    name: pulumi.Input<string>;
     recordType: pulumi.Input<string>;
     zone: pulumi.Input<string>;
 }

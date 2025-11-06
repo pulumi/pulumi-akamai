@@ -16,7 +16,11 @@ from . import _utilities
 from . import outputs
 
 __all__ = [
+    'AppSecIPGeoAsnControls',
+    'AppSecIPGeoGeoControls',
+    'AppSecIPGeoIpControls',
     'AppSecSiemSettingsExceptions',
+    'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions',
     'ClientlistListItem',
     'CloudAccessKeyCredentialsA',
     'CloudAccessKeyCredentialsB',
@@ -95,12 +99,16 @@ __all__ = [
     'IamApiClientPurgeOptionsCpCodeAccess',
     'IamCidrBlockActions',
     'IamUserUserNotifications',
+    'MtlskeystoreClientCertificateAkamaiTimeouts',
     'MtlskeystoreClientCertificateAkamaiVersion',
     'MtlskeystoreClientCertificateAkamaiVersionCertificateBlock',
     'MtlskeystoreClientCertificateThirdPartyVersions',
     'MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock',
     'MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock',
     'MtlskeystoreClientCertificateUploadTimeouts',
+    'MtlstruststoreCaSetActivationTimeouts',
+    'MtlstruststoreCaSetCertificate',
+    'MtlstruststoreCaSetTimeouts',
     'PropertyActivationComplianceRecord',
     'PropertyActivationComplianceRecordNoncomplianceReasonEmergency',
     'PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic',
@@ -119,6 +127,11 @@ __all__ = [
     'PropertyIncludeActivationTimeouts',
     'PropertyRuleError',
     'PropertyRuleWarning',
+    'GetAppSecIPGeoAsnControlResult',
+    'GetAppSecIPGeoGeoControlResult',
+    'GetAppSecIPGeoIpControlResult',
+    'GetAppsecCustomRulesUsageRuleResult',
+    'GetAppsecCustomRulesUsageRulePolicyResult',
     'GetAppsecRapidRulesRapidRuleResult',
     'GetCPSEnrollmentAdminContactResult',
     'GetCPSEnrollmentCsrResult',
@@ -135,6 +148,8 @@ __all__ = [
     'GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationResult',
     'GetCPSEnrollmentsEnrollmentOrganizationResult',
     'GetCPSEnrollmentsEnrollmentTechContactResult',
+    'GetClientlistListListResult',
+    'GetClientlistListListItemResult',
     'GetClientlistListsListResult',
     'GetCloudaccessKeyGroupResult',
     'GetCloudaccessKeyNetworkConfigurationResult',
@@ -421,6 +436,16 @@ __all__ = [
     'GetMtlskeystoreClientCertificateVersionValidationErrorResult',
     'GetMtlskeystoreClientCertificateVersionValidationWarningResult',
     'GetMtlskeystoreClientCertificatesCertificateResult',
+    'GetMtlstruststoreCaSetActivationsActivationResult',
+    'GetMtlstruststoreCaSetActivitiesActivityResult',
+    'GetMtlstruststoreCaSetAssociationsEnrollmentResult',
+    'GetMtlstruststoreCaSetAssociationsPropertyResult',
+    'GetMtlstruststoreCaSetAssociationsPropertyHostnameResult',
+    'GetMtlstruststoreCaSetCertificateResult',
+    'GetMtlstruststoreCaSetCertificatesCertificateResult',
+    'GetMtlstruststoreCaSetVersionsVersionResult',
+    'GetMtlstruststoreCaSetVersionsVersionCertificateResult',
+    'GetMtlstruststoreCaSetsCaSetResult',
     'GetPropertiesPropertyResult',
     'GetPropertiesSearchPropertyResult',
     'GetPropertyHostnameActivationHostnameResult',
@@ -439,6 +464,150 @@ __all__ = [
     'GetZoneDnssecStatusCurrentRecordsResult',
     'GetZoneDnssecStatusNewRecordsResult',
 ]
+
+@pulumi.output_type
+class AppSecIPGeoAsnControls(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "asnNetworkLists":
+            suggest = "asn_network_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppSecIPGeoAsnControls. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppSecIPGeoAsnControls.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppSecIPGeoAsnControls.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[_builtins.str] = None,
+                 asn_network_lists: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str action: Action set for ASN Controls
+        :param Sequence[_builtins.str] asn_network_lists: List of IDs of ASN network list to be blocked.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if asn_network_lists is not None:
+            pulumi.set(__self__, "asn_network_lists", asn_network_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[_builtins.str]:
+        """
+        Action set for ASN Controls
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="asnNetworkLists")
+    def asn_network_lists(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of IDs of ASN network list to be blocked.
+        """
+        return pulumi.get(self, "asn_network_lists")
+
+
+@pulumi.output_type
+class AppSecIPGeoGeoControls(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "geoNetworkLists":
+            suggest = "geo_network_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppSecIPGeoGeoControls. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppSecIPGeoGeoControls.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppSecIPGeoGeoControls.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[_builtins.str] = None,
+                 geo_network_lists: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str action: Action set for GEO Controls.
+        :param Sequence[_builtins.str] geo_network_lists: List of IDs of geographic network list to be blocked.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if geo_network_lists is not None:
+            pulumi.set(__self__, "geo_network_lists", geo_network_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[_builtins.str]:
+        """
+        Action set for GEO Controls.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="geoNetworkLists")
+    def geo_network_lists(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of IDs of geographic network list to be blocked.
+        """
+        return pulumi.get(self, "geo_network_lists")
+
+
+@pulumi.output_type
+class AppSecIPGeoIpControls(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipNetworkLists":
+            suggest = "ip_network_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppSecIPGeoIpControls. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppSecIPGeoIpControls.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppSecIPGeoIpControls.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[_builtins.str] = None,
+                 ip_network_lists: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str action: Action set for IP Controls.
+        :param Sequence[_builtins.str] ip_network_lists: List of IDs of IP network list to be blocked.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if ip_network_lists is not None:
+            pulumi.set(__self__, "ip_network_lists", ip_network_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[_builtins.str]:
+        """
+        Action set for IP Controls.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="ipNetworkLists")
+    def ip_network_lists(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of IDs of IP network list to be blocked.
+        """
+        return pulumi.get(self, "ip_network_lists")
+
 
 @pulumi.output_type
 class AppSecSiemSettingsExceptions(dict):
@@ -610,6 +779,54 @@ class AppSecSiemSettingsExceptions(dict):
         Whether there should be an exception to include waf events in SIEM
         """
         return pulumi.get(self, "wafs")
+
+
+@pulumi.output_type
+class AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attackGroups":
+            suggest = "attack_groups"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attack_groups: Optional[Sequence[_builtins.str]] = None,
+                 rules: Optional[Sequence[_builtins.int]] = None):
+        """
+        :param Sequence[_builtins.str] attack_groups: List of attack group names.
+        :param Sequence[_builtins.int] rules: List of rule IDs.
+        """
+        if attack_groups is not None:
+            pulumi.set(__self__, "attack_groups", attack_groups)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+
+    @_builtins.property
+    @pulumi.getter(name="attackGroups")
+    def attack_groups(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of attack group names.
+        """
+        return pulumi.get(self, "attack_groups")
+
+    @_builtins.property
+    @pulumi.getter
+    def rules(self) -> Optional[Sequence[_builtins.int]]:
+        """
+        List of rule IDs.
+        """
+        return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
@@ -6853,6 +7070,37 @@ class IamUserUserNotifications(dict):
 
 
 @pulumi.output_type
+class MtlskeystoreClientCertificateAkamaiTimeouts(dict):
+    def __init__(__self__, *,
+                 create: Optional[_builtins.str] = None,
+                 update: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str create: Optional configurable resource create timeout. By default it's 30m.
+        :param _builtins.str update: Optional configurable resource update timeout. By default it's 30m.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable resource create timeout. By default it's 30m.
+        """
+        return pulumi.get(self, "create")
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable resource update timeout. By default it's 30m.
+        """
+        return pulumi.get(self, "update")
+
+
+@pulumi.output_type
 class MtlskeystoreClientCertificateAkamaiVersion(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -7543,6 +7791,235 @@ class MtlskeystoreClientCertificateUploadTimeouts(dict):
         Optional configurable resource update timeout. By default it's 30m.
         """
         return pulumi.get(self, "update")
+
+
+@pulumi.output_type
+class MtlstruststoreCaSetActivationTimeouts(dict):
+    def __init__(__self__, *,
+                 create: Optional[_builtins.str] = None,
+                 delete: Optional[_builtins.str] = None,
+                 update: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str create: Optional configurable resource create timeout. By default it's 1h.
+        :param _builtins.str delete: Optional configurable resource delete timeout. By default it's 1h.
+        :param _builtins.str update: Optional configurable resource update timeout. By default it's 1h.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if delete is not None:
+            pulumi.set(__self__, "delete", delete)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable resource create timeout. By default it's 1h.
+        """
+        return pulumi.get(self, "create")
+
+    @_builtins.property
+    @pulumi.getter
+    def delete(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable resource delete timeout. By default it's 1h.
+        """
+        return pulumi.get(self, "delete")
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable resource update timeout. By default it's 1h.
+        """
+        return pulumi.get(self, "update")
+
+
+@pulumi.output_type
+class MtlstruststoreCaSetCertificate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificatePem":
+            suggest = "certificate_pem"
+        elif key == "createdBy":
+            suggest = "created_by"
+        elif key == "createdDate":
+            suggest = "created_date"
+        elif key == "endDate":
+            suggest = "end_date"
+        elif key == "serialNumber":
+            suggest = "serial_number"
+        elif key == "signatureAlgorithm":
+            suggest = "signature_algorithm"
+        elif key == "startDate":
+            suggest = "start_date"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MtlstruststoreCaSetCertificate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MtlstruststoreCaSetCertificate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MtlstruststoreCaSetCertificate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate_pem: _builtins.str,
+                 created_by: Optional[_builtins.str] = None,
+                 created_date: Optional[_builtins.str] = None,
+                 description: Optional[_builtins.str] = None,
+                 end_date: Optional[_builtins.str] = None,
+                 fingerprint: Optional[_builtins.str] = None,
+                 issuer: Optional[_builtins.str] = None,
+                 serial_number: Optional[_builtins.str] = None,
+                 signature_algorithm: Optional[_builtins.str] = None,
+                 start_date: Optional[_builtins.str] = None,
+                 subject: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str certificate_pem: The certificate in PEM format, as found in a Base64 ASCII encoded file.
+        :param _builtins.str created_by: The user who created this CA certificate.
+        :param _builtins.str created_date: When the CA certificate was created.
+        :param _builtins.str description: Optional description for the certificate.
+        :param _builtins.str end_date: The certificate's ISO 8601 formatted expiration date.
+        :param _builtins.str fingerprint: The fingerprint of the certificate.
+        :param _builtins.str issuer: The certificate's issuer.
+        :param _builtins.str serial_number: The unique serial number of the certificate.
+        :param _builtins.str signature_algorithm: The signature algorithm of the CA certificate.
+        :param _builtins.str start_date: The start date of the certificate.
+        :param _builtins.str subject: The certificate's subject field.
+        """
+        pulumi.set(__self__, "certificate_pem", certificate_pem)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_date is not None:
+            pulumi.set(__self__, "created_date", created_date)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if end_date is not None:
+            pulumi.set(__self__, "end_date", end_date)
+        if fingerprint is not None:
+            pulumi.set(__self__, "fingerprint", fingerprint)
+        if issuer is not None:
+            pulumi.set(__self__, "issuer", issuer)
+        if serial_number is not None:
+            pulumi.set(__self__, "serial_number", serial_number)
+        if signature_algorithm is not None:
+            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        if start_date is not None:
+            pulumi.set(__self__, "start_date", start_date)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> _builtins.str:
+        """
+        The certificate in PEM format, as found in a Base64 ASCII encoded file.
+        """
+        return pulumi.get(self, "certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[_builtins.str]:
+        """
+        The user who created this CA certificate.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> Optional[_builtins.str]:
+        """
+        When the CA certificate was created.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        Optional description for the certificate.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> Optional[_builtins.str]:
+        """
+        The certificate's ISO 8601 formatted expiration date.
+        """
+        return pulumi.get(self, "end_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def fingerprint(self) -> Optional[_builtins.str]:
+        """
+        The fingerprint of the certificate.
+        """
+        return pulumi.get(self, "fingerprint")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> Optional[_builtins.str]:
+        """
+        The certificate's issuer.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> Optional[_builtins.str]:
+        """
+        The unique serial number of the certificate.
+        """
+        return pulumi.get(self, "serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> Optional[_builtins.str]:
+        """
+        The signature algorithm of the CA certificate.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> Optional[_builtins.str]:
+        """
+        The start date of the certificate.
+        """
+        return pulumi.get(self, "start_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> Optional[_builtins.str]:
+        """
+        The certificate's subject field.
+        """
+        return pulumi.get(self, "subject")
+
+
+@pulumi.output_type
+class MtlstruststoreCaSetTimeouts(dict):
+    def __init__(__self__, *,
+                 delete: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str delete: Optional configurable resource delete timeout. By default it's 1h.
+        """
+        if delete is not None:
+            pulumi.set(__self__, "delete", delete)
+
+    @_builtins.property
+    @pulumi.getter
+    def delete(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable resource delete timeout. By default it's 1h.
+        """
+        return pulumi.get(self, "delete")
 
 
 @pulumi.output_type
@@ -8587,12 +9064,159 @@ class PropertyRuleWarning(dict):
 
 
 @pulumi.output_type
+class GetAppSecIPGeoAsnControlResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 asn_network_lists: Sequence[_builtins.str]):
+        """
+        :param _builtins.str action: Action set for ASN Controls
+        :param Sequence[_builtins.str] asn_network_lists: List of IDs of ASN network list to be blocked.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "asn_network_lists", asn_network_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        Action set for ASN Controls
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="asnNetworkLists")
+    def asn_network_lists(self) -> Sequence[_builtins.str]:
+        """
+        List of IDs of ASN network list to be blocked.
+        """
+        return pulumi.get(self, "asn_network_lists")
+
+
+@pulumi.output_type
+class GetAppSecIPGeoGeoControlResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 geo_network_lists: Sequence[_builtins.str]):
+        """
+        :param _builtins.str action: Action set for GEO Controls.
+        :param Sequence[_builtins.str] geo_network_lists: List of IDs of geographic network list to be blocked.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "geo_network_lists", geo_network_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        Action set for GEO Controls.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="geoNetworkLists")
+    def geo_network_lists(self) -> Sequence[_builtins.str]:
+        """
+        List of IDs of geographic network list to be blocked.
+        """
+        return pulumi.get(self, "geo_network_lists")
+
+
+@pulumi.output_type
+class GetAppSecIPGeoIpControlResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 ip_network_lists: Sequence[_builtins.str]):
+        """
+        :param _builtins.str action: Action set for IP Controls.
+        :param Sequence[_builtins.str] ip_network_lists: List of IDs of IP network list to be blocked.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "ip_network_lists", ip_network_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        Action set for IP Controls.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="ipNetworkLists")
+    def ip_network_lists(self) -> Sequence[_builtins.str]:
+        """
+        List of IDs of IP network list to be blocked.
+        """
+        return pulumi.get(self, "ip_network_lists")
+
+
+@pulumi.output_type
+class GetAppsecCustomRulesUsageRuleResult(dict):
+    def __init__(__self__, *,
+                 policies: Sequence['outputs.GetAppsecCustomRulesUsageRulePolicyResult'],
+                 rule_id: _builtins.int):
+        """
+        :param Sequence['GetAppsecCustomRulesUsageRulePolicyArgs'] policies: A set of security policies in which a custom rule is used.
+        :param _builtins.int rule_id: The ID of the custom rule.
+        """
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "rule_id", rule_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def policies(self) -> Sequence['outputs.GetAppsecCustomRulesUsageRulePolicyResult']:
+        """
+        A set of security policies in which a custom rule is used.
+        """
+        return pulumi.get(self, "policies")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleId")
+    def rule_id(self) -> _builtins.int:
+        """
+        The ID of the custom rule.
+        """
+        return pulumi.get(self, "rule_id")
+
+
+@pulumi.output_type
+class GetAppsecCustomRulesUsageRulePolicyResult(dict):
+    def __init__(__self__, *,
+                 policy_id: _builtins.str,
+                 policy_name: _builtins.str):
+        """
+        :param _builtins.str policy_id: The security policy ID.
+        :param _builtins.str policy_name: The security policy name.
+        """
+        pulumi.set(__self__, "policy_id", policy_id)
+        pulumi.set(__self__, "policy_name", policy_name)
+
+    @_builtins.property
+    @pulumi.getter(name="policyId")
+    def policy_id(self) -> _builtins.str:
+        """
+        The security policy ID.
+        """
+        return pulumi.get(self, "policy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="policyName")
+    def policy_name(self) -> _builtins.str:
+        """
+        The security policy name.
+        """
+        return pulumi.get(self, "policy_name")
+
+
+@pulumi.output_type
 class GetAppsecRapidRulesRapidRuleResult(dict):
     def __init__(__self__, *,
                  action: _builtins.str,
                  attack_group: _builtins.str,
                  attack_group_exception: _builtins.str,
                  condition_exception: _builtins.str,
+                 expire_in_days: _builtins.int,
+                 expired: _builtins.bool,
                  id: _builtins.int,
                  lock: _builtins.bool,
                  name: _builtins.str):
@@ -8601,6 +9225,8 @@ class GetAppsecRapidRulesRapidRuleResult(dict):
         :param _builtins.str attack_group: The unique identifier of attack group, rapid rule belongs to.
         :param _builtins.str attack_group_exception: The attack group exception.
         :param _builtins.str condition_exception: The rapid rule exception.
+        :param _builtins.int expire_in_days: Number of days remaining before the rule expires. This field is present only if the rule has not yet expired.
+        :param _builtins.bool expired: Whether the rule has already expired.
         :param _builtins.int id: The unique identifier of rapid rule.
         :param _builtins.bool lock: The the rapid rule action lock.
         :param _builtins.str name: The rapid rule name.
@@ -8609,6 +9235,8 @@ class GetAppsecRapidRulesRapidRuleResult(dict):
         pulumi.set(__self__, "attack_group", attack_group)
         pulumi.set(__self__, "attack_group_exception", attack_group_exception)
         pulumi.set(__self__, "condition_exception", condition_exception)
+        pulumi.set(__self__, "expire_in_days", expire_in_days)
+        pulumi.set(__self__, "expired", expired)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lock", lock)
         pulumi.set(__self__, "name", name)
@@ -8644,6 +9272,22 @@ class GetAppsecRapidRulesRapidRuleResult(dict):
         The rapid rule exception.
         """
         return pulumi.get(self, "condition_exception")
+
+    @_builtins.property
+    @pulumi.getter(name="expireInDays")
+    def expire_in_days(self) -> _builtins.int:
+        """
+        Number of days remaining before the rule expires. This field is present only if the rule has not yet expired.
+        """
+        return pulumi.get(self, "expire_in_days")
+
+    @_builtins.property
+    @pulumi.getter
+    def expired(self) -> _builtins.bool:
+        """
+        Whether the rule has already expired.
+        """
+        return pulumi.get(self, "expired")
 
     @_builtins.property
     @pulumi.getter
@@ -10180,6 +10824,351 @@ class GetCPSEnrollmentsEnrollmentTechContactResult(dict):
         Title of the the contact
         """
         return pulumi.get(self, "title")
+
+
+@pulumi.output_type
+class GetClientlistListListResult(dict):
+    def __init__(__self__, *,
+                 create_date: _builtins.str,
+                 created_by: _builtins.str,
+                 deprecated: _builtins.bool,
+                 items: Sequence['outputs.GetClientlistListListItemResult'],
+                 items_count: _builtins.int,
+                 list_id: _builtins.str,
+                 list_type: _builtins.str,
+                 name: _builtins.str,
+                 notes: _builtins.str,
+                 production_activation_status: _builtins.str,
+                 read_only: _builtins.bool,
+                 shared: _builtins.bool,
+                 staging_activation_status: _builtins.str,
+                 tags: Sequence[_builtins.str],
+                 type: _builtins.str,
+                 update_date: _builtins.str,
+                 updated_by: _builtins.str,
+                 version: _builtins.int):
+        """
+        :param _builtins.str create_date: The client list creation date.
+        :param _builtins.str created_by: The username of the user who created the client list.
+        :param _builtins.bool deprecated: Whether the client list was removed.
+        :param Sequence['GetClientlistListListItemArgs'] items: A set of client list values.
+        :param _builtins.int items_count: The number of items that a client list contains.
+        :param _builtins.str list_id: The ID of the client list.
+        :param _builtins.str list_type: The client list type.
+        :param _builtins.str name: The name of the client list.
+        :param _builtins.str notes: The client list notes.
+        :param _builtins.str production_activation_status: The activation status in production environment.
+        :param _builtins.bool read_only: Whether the client is editable for the authenticated user.
+        :param _builtins.bool shared: Whether the client list is shared.
+        :param _builtins.str staging_activation_status: The activation status in staging environment.
+        :param Sequence[_builtins.str] tags: The client list tags.
+        :param _builtins.str type: The type of the client list.
+        :param _builtins.str update_date: The date of last update.
+        :param _builtins.str updated_by: The username of the user that updated the client list last.
+        :param _builtins.int version: The current version of the client list.
+        """
+        pulumi.set(__self__, "create_date", create_date)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "deprecated", deprecated)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "items_count", items_count)
+        pulumi.set(__self__, "list_id", list_id)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "notes", notes)
+        pulumi.set(__self__, "production_activation_status", production_activation_status)
+        pulumi.set(__self__, "read_only", read_only)
+        pulumi.set(__self__, "shared", shared)
+        pulumi.set(__self__, "staging_activation_status", staging_activation_status)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "update_date", update_date)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="createDate")
+    def create_date(self) -> _builtins.str:
+        """
+        The client list creation date.
+        """
+        return pulumi.get(self, "create_date")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The username of the user who created the client list.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter
+    def deprecated(self) -> _builtins.bool:
+        """
+        Whether the client list was removed.
+        """
+        return pulumi.get(self, "deprecated")
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetClientlistListListItemResult']:
+        """
+        A set of client list values.
+        """
+        return pulumi.get(self, "items")
+
+    @_builtins.property
+    @pulumi.getter(name="itemsCount")
+    def items_count(self) -> _builtins.int:
+        """
+        The number of items that a client list contains.
+        """
+        return pulumi.get(self, "items_count")
+
+    @_builtins.property
+    @pulumi.getter(name="listId")
+    def list_id(self) -> _builtins.str:
+        """
+        The ID of the client list.
+        """
+        return pulumi.get(self, "list_id")
+
+    @_builtins.property
+    @pulumi.getter(name="listType")
+    def list_type(self) -> _builtins.str:
+        """
+        The client list type.
+        """
+        return pulumi.get(self, "list_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the client list.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def notes(self) -> _builtins.str:
+        """
+        The client list notes.
+        """
+        return pulumi.get(self, "notes")
+
+    @_builtins.property
+    @pulumi.getter(name="productionActivationStatus")
+    def production_activation_status(self) -> _builtins.str:
+        """
+        The activation status in production environment.
+        """
+        return pulumi.get(self, "production_activation_status")
+
+    @_builtins.property
+    @pulumi.getter(name="readOnly")
+    def read_only(self) -> _builtins.bool:
+        """
+        Whether the client is editable for the authenticated user.
+        """
+        return pulumi.get(self, "read_only")
+
+    @_builtins.property
+    @pulumi.getter
+    def shared(self) -> _builtins.bool:
+        """
+        Whether the client list is shared.
+        """
+        return pulumi.get(self, "shared")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingActivationStatus")
+    def staging_activation_status(self) -> _builtins.str:
+        """
+        The activation status in staging environment.
+        """
+        return pulumi.get(self, "staging_activation_status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Sequence[_builtins.str]:
+        """
+        The client list tags.
+        """
+        return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the client list.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="updateDate")
+    def update_date(self) -> _builtins.str:
+        """
+        The date of last update.
+        """
+        return pulumi.get(self, "update_date")
+
+    @_builtins.property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> _builtins.str:
+        """
+        The username of the user that updated the client list last.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        The current version of the client list.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetClientlistListListItemResult(dict):
+    def __init__(__self__, *,
+                 create_date: _builtins.str,
+                 created_by: _builtins.str,
+                 created_version: _builtins.int,
+                 expiration_date: _builtins.str,
+                 production_activation_status: _builtins.str,
+                 staging_activation_status: _builtins.str,
+                 tags: Sequence[_builtins.str],
+                 type: _builtins.str,
+                 update_date: _builtins.str,
+                 updated_by: _builtins.str,
+                 value: _builtins.str,
+                 description: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str create_date: The client list item creation date.
+        :param _builtins.str created_by: The username of the person who created the client list item.
+        :param _builtins.int created_version: The version of the client list when item was created.
+        :param _builtins.str expiration_date: The client list item expiration date.
+        :param _builtins.str production_activation_status: The client list activation status in production environment.
+        :param _builtins.str staging_activation_status: The client list activation status in staging environment.
+        :param Sequence[_builtins.str] tags: A list of tags associated with the client list item.
+        :param _builtins.str type: Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.
+        :param _builtins.str update_date: The date of last update.
+        :param _builtins.str updated_by: The username of the person that updated the client list item last.
+        :param _builtins.str value: Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.
+        :param _builtins.str description: The description of the client list item.
+        """
+        pulumi.set(__self__, "create_date", create_date)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_version", created_version)
+        pulumi.set(__self__, "expiration_date", expiration_date)
+        pulumi.set(__self__, "production_activation_status", production_activation_status)
+        pulumi.set(__self__, "staging_activation_status", staging_activation_status)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "update_date", update_date)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "value", value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="createDate")
+    def create_date(self) -> _builtins.str:
+        """
+        The client list item creation date.
+        """
+        return pulumi.get(self, "create_date")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The username of the person who created the client list item.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdVersion")
+    def created_version(self) -> _builtins.int:
+        """
+        The version of the client list when item was created.
+        """
+        return pulumi.get(self, "created_version")
+
+    @_builtins.property
+    @pulumi.getter(name="expirationDate")
+    def expiration_date(self) -> _builtins.str:
+        """
+        The client list item expiration date.
+        """
+        return pulumi.get(self, "expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="productionActivationStatus")
+    def production_activation_status(self) -> _builtins.str:
+        """
+        The client list activation status in production environment.
+        """
+        return pulumi.get(self, "production_activation_status")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingActivationStatus")
+    def staging_activation_status(self) -> _builtins.str:
+        """
+        The client list activation status in staging environment.
+        """
+        return pulumi.get(self, "staging_activation_status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Sequence[_builtins.str]:
+        """
+        A list of tags associated with the client list item.
+        """
+        return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="updateDate")
+    def update_date(self) -> _builtins.str:
+        """
+        The date of last update.
+        """
+        return pulumi.get(self, "update_date")
+
+    @_builtins.property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> _builtins.str:
+        """
+        The username of the person that updated the client list item last.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.
+        """
+        return pulumi.get(self, "value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the client list item.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -30185,6 +31174,967 @@ class GetMtlskeystoreClientCertificatesCertificateResult(dict):
         The CA certificate’s key value details.
         """
         return pulumi.get(self, "subject")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetActivationsActivationResult(dict):
+    def __init__(__self__, *,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 id: _builtins.int,
+                 modified_by: _builtins.str,
+                 modified_date: _builtins.str,
+                 network: _builtins.str,
+                 status: _builtins.str,
+                 type: _builtins.str,
+                 version: _builtins.int):
+        """
+        :param _builtins.str created_by: The user who requested the activity.
+        :param _builtins.str created_date: When the activity was requested.
+        :param _builtins.int id: Uniquely identifies the activation.
+        :param _builtins.str modified_by: The user who completed the activity.
+        :param _builtins.str modified_date: When the request was last modified, or null` if not yet modified.
+        :param _builtins.str network: Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
+        :param _builtins.str status: Status of the current activity, either 'IN_PROGRESS', 'COMPLETE', or 'FAILED'.
+        :param _builtins.str type: Type of requested activity, either 'ACTIVATE', 'DEACTIVATE', or 'DELETE'.
+        :param _builtins.int version: CA set version identifier.
+        """
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "modified_by", modified_by)
+        pulumi.set(__self__, "modified_date", modified_date)
+        pulumi.set(__self__, "network", network)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who requested the activity.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        When the activity was requested.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.int:
+        """
+        Uniquely identifies the activation.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="modifiedBy")
+    def modified_by(self) -> _builtins.str:
+        """
+        The user who completed the activity.
+        """
+        return pulumi.get(self, "modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="modifiedDate")
+    def modified_date(self) -> _builtins.str:
+        """
+        When the request was last modified, or null` if not yet modified.
+        """
+        return pulumi.get(self, "modified_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def network(self) -> _builtins.str:
+        """
+        Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
+        """
+        return pulumi.get(self, "network")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Status of the current activity, either 'IN_PROGRESS', 'COMPLETE', or 'FAILED'.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of requested activity, either 'ACTIVATE', 'DEACTIVATE', or 'DELETE'.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        CA set version identifier.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetActivitiesActivityResult(dict):
+    def __init__(__self__, *,
+                 activity_by: _builtins.str,
+                 activity_date: _builtins.str,
+                 network: _builtins.str,
+                 type: _builtins.str,
+                 version: _builtins.int):
+        """
+        :param _builtins.str activity_by: The user who initiated this CA set activity.
+        :param _builtins.str activity_date: When this CA set activity occurred.
+        :param _builtins.str network: Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
+        :param _builtins.str type: The type of CA set activity. 'CREATE_CA_SET' indicates creating a CA set, or 'CREATE_CA_SET_VERSION' for creating a version. 'ACTIVATE_CA_SET_VERSION' indicates activating a CA set version, while 'DEACTIVATE_CA_SET_VERSION' indicates deactivation. 'DELETE_CA_SET' indicates deleting a CA set.
+        :param _builtins.int version: The CA set's incremental version number.
+        """
+        pulumi.set(__self__, "activity_by", activity_by)
+        pulumi.set(__self__, "activity_date", activity_date)
+        pulumi.set(__self__, "network", network)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="activityBy")
+    def activity_by(self) -> _builtins.str:
+        """
+        The user who initiated this CA set activity.
+        """
+        return pulumi.get(self, "activity_by")
+
+    @_builtins.property
+    @pulumi.getter(name="activityDate")
+    def activity_date(self) -> _builtins.str:
+        """
+        When this CA set activity occurred.
+        """
+        return pulumi.get(self, "activity_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def network(self) -> _builtins.str:
+        """
+        Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
+        """
+        return pulumi.get(self, "network")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of CA set activity. 'CREATE_CA_SET' indicates creating a CA set, or 'CREATE_CA_SET_VERSION' for creating a version. 'ACTIVATE_CA_SET_VERSION' indicates activating a CA set version, while 'DEACTIVATE_CA_SET_VERSION' indicates deactivation. 'DELETE_CA_SET' indicates deleting a CA set.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        The CA set's incremental version number.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetAssociationsEnrollmentResult(dict):
+    def __init__(__self__, *,
+                 cn: _builtins.str,
+                 enrollment_id: _builtins.int,
+                 production_slots: Sequence[_builtins.int],
+                 staging_slots: Sequence[_builtins.int]):
+        """
+        :param _builtins.str cn: The domain name to use for the certificate, also known as the common name.
+        :param _builtins.int enrollment_id: A unique identifier for the enrollment.
+        :param Sequence[_builtins.int] production_slots: Slots where the certificate is deployed on the production network.
+        :param Sequence[_builtins.int] staging_slots: Slots where the certificate is deployed on the staging network.
+        """
+        pulumi.set(__self__, "cn", cn)
+        pulumi.set(__self__, "enrollment_id", enrollment_id)
+        pulumi.set(__self__, "production_slots", production_slots)
+        pulumi.set(__self__, "staging_slots", staging_slots)
+
+    @_builtins.property
+    @pulumi.getter
+    def cn(self) -> _builtins.str:
+        """
+        The domain name to use for the certificate, also known as the common name.
+        """
+        return pulumi.get(self, "cn")
+
+    @_builtins.property
+    @pulumi.getter(name="enrollmentId")
+    def enrollment_id(self) -> _builtins.int:
+        """
+        A unique identifier for the enrollment.
+        """
+        return pulumi.get(self, "enrollment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="productionSlots")
+    def production_slots(self) -> Sequence[_builtins.int]:
+        """
+        Slots where the certificate is deployed on the production network.
+        """
+        return pulumi.get(self, "production_slots")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingSlots")
+    def staging_slots(self) -> Sequence[_builtins.int]:
+        """
+        Slots where the certificate is deployed on the staging network.
+        """
+        return pulumi.get(self, "staging_slots")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetAssociationsPropertyResult(dict):
+    def __init__(__self__, *,
+                 asset_id: _builtins.int,
+                 group_id: _builtins.int,
+                 hostnames: Sequence['outputs.GetMtlstruststoreCaSetAssociationsPropertyHostnameResult'],
+                 property_id: _builtins.str,
+                 property_name: _builtins.str):
+        """
+        :param _builtins.int asset_id: An alternative identifier for the property.
+        :param _builtins.int group_id: Identifies the group to which the property is assigned.
+        :param Sequence['GetMtlstruststoreCaSetAssociationsPropertyHostnameArgs'] hostnames: Contains details about associated hostnames.
+        :param _builtins.str property_id: A unique identifier for the property.
+        :param _builtins.str property_name: A unique, descriptive name for the property.
+        """
+        pulumi.set(__self__, "asset_id", asset_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "hostnames", hostnames)
+        pulumi.set(__self__, "property_id", property_id)
+        pulumi.set(__self__, "property_name", property_name)
+
+    @_builtins.property
+    @pulumi.getter(name="assetId")
+    def asset_id(self) -> _builtins.int:
+        """
+        An alternative identifier for the property.
+        """
+        return pulumi.get(self, "asset_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.int:
+        """
+        Identifies the group to which the property is assigned.
+        """
+        return pulumi.get(self, "group_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def hostnames(self) -> Sequence['outputs.GetMtlstruststoreCaSetAssociationsPropertyHostnameResult']:
+        """
+        Contains details about associated hostnames.
+        """
+        return pulumi.get(self, "hostnames")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> _builtins.str:
+        """
+        A unique identifier for the property.
+        """
+        return pulumi.get(self, "property_id")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> _builtins.str:
+        """
+        A unique, descriptive name for the property.
+        """
+        return pulumi.get(self, "property_name")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetAssociationsPropertyHostnameResult(dict):
+    def __init__(__self__, *,
+                 hostname: _builtins.str,
+                 network: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param _builtins.str hostname: The name of the device.
+        :param _builtins.str network: The network on which CA set to hostname association is formed/removed/in progress. The values for this are 'STAGING', 'PRODUCTION'.
+        :param _builtins.str status: The status of CA set to hostname association. The values for it are - 'ATTACHING', 'DETACHING', 'ATTACHED'.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "network", network)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> _builtins.str:
+        """
+        The name of the device.
+        """
+        return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter
+    def network(self) -> _builtins.str:
+        """
+        The network on which CA set to hostname association is formed/removed/in progress. The values for this are 'STAGING', 'PRODUCTION'.
+        """
+        return pulumi.get(self, "network")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The status of CA set to hostname association. The values for it are - 'ATTACHING', 'DETACHING', 'ATTACHED'.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate_pem: _builtins.str,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 description: _builtins.str,
+                 end_date: _builtins.str,
+                 fingerprint: _builtins.str,
+                 issuer: _builtins.str,
+                 serial_number: _builtins.str,
+                 signature_algorithm: _builtins.str,
+                 start_date: _builtins.str,
+                 subject: _builtins.str):
+        """
+        :param _builtins.str certificate_pem: The certificate in PEM format, as found in a Base64 ASCII encoded file.
+        :param _builtins.str created_by: The user who created this CA certificate.
+        :param _builtins.str created_date: When the CA certificate was created.
+        :param _builtins.str description: Optional description for the certificate.
+        :param _builtins.str end_date: The certificate's ISO 8601 formatted expiration date.
+        :param _builtins.str fingerprint: The fingerprint of the certificate.
+        :param _builtins.str issuer: The certificate's issuer.
+        :param _builtins.str serial_number: The unique serial number of the certificate.
+        :param _builtins.str signature_algorithm: The signature algorithm of the CA certificate.
+        :param _builtins.str start_date: The start date of the certificate.
+        :param _builtins.str subject: The certificate's subject field.
+        """
+        pulumi.set(__self__, "certificate_pem", certificate_pem)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "fingerprint", fingerprint)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "serial_number", serial_number)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "start_date", start_date)
+        pulumi.set(__self__, "subject", subject)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> _builtins.str:
+        """
+        The certificate in PEM format, as found in a Base64 ASCII encoded file.
+        """
+        return pulumi.get(self, "certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created this CA certificate.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        When the CA certificate was created.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Optional description for the certificate.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> _builtins.str:
+        """
+        The certificate's ISO 8601 formatted expiration date.
+        """
+        return pulumi.get(self, "end_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def fingerprint(self) -> _builtins.str:
+        """
+        The fingerprint of the certificate.
+        """
+        return pulumi.get(self, "fingerprint")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> _builtins.str:
+        """
+        The certificate's issuer.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> _builtins.str:
+        """
+        The unique serial number of the certificate.
+        """
+        return pulumi.get(self, "serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> _builtins.str:
+        """
+        The signature algorithm of the CA certificate.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> _builtins.str:
+        """
+        The start date of the certificate.
+        """
+        return pulumi.get(self, "start_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> _builtins.str:
+        """
+        The certificate's subject field.
+        """
+        return pulumi.get(self, "subject")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetCertificatesCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate_pem: _builtins.str,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 description: _builtins.str,
+                 end_date: _builtins.str,
+                 fingerprint: _builtins.str,
+                 issuer: _builtins.str,
+                 serial_number: _builtins.str,
+                 signature_algorithm: _builtins.str,
+                 start_date: _builtins.str,
+                 subject: _builtins.str):
+        """
+        :param _builtins.str certificate_pem: The certificate in PEM format (Base64 ASCII encoded).
+        :param _builtins.str created_by: The user who created this CA certificate.
+        :param _builtins.str created_date: When the CA certificate was created.
+        :param _builtins.str description: The description of the CA certificate.
+        :param _builtins.str end_date: The ISO 8601 formatted expiration date of the certificate.
+        :param _builtins.str fingerprint: The fingerprint of the certificate.
+        :param _builtins.str issuer: The certificate's issuer.
+        :param _builtins.str serial_number: The unique serial number of the certificate.
+        :param _builtins.str signature_algorithm: The signature algorithm of the CA certificate.
+        :param _builtins.str start_date: The start date of the certificate.
+        :param _builtins.str subject: The subject field of the certificate.
+        """
+        pulumi.set(__self__, "certificate_pem", certificate_pem)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "fingerprint", fingerprint)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "serial_number", serial_number)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "start_date", start_date)
+        pulumi.set(__self__, "subject", subject)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> _builtins.str:
+        """
+        The certificate in PEM format (Base64 ASCII encoded).
+        """
+        return pulumi.get(self, "certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created this CA certificate.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        When the CA certificate was created.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the CA certificate.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> _builtins.str:
+        """
+        The ISO 8601 formatted expiration date of the certificate.
+        """
+        return pulumi.get(self, "end_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def fingerprint(self) -> _builtins.str:
+        """
+        The fingerprint of the certificate.
+        """
+        return pulumi.get(self, "fingerprint")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> _builtins.str:
+        """
+        The certificate's issuer.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> _builtins.str:
+        """
+        The unique serial number of the certificate.
+        """
+        return pulumi.get(self, "serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> _builtins.str:
+        """
+        The signature algorithm of the CA certificate.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> _builtins.str:
+        """
+        The start date of the certificate.
+        """
+        return pulumi.get(self, "start_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> _builtins.str:
+        """
+        The subject field of the certificate.
+        """
+        return pulumi.get(self, "subject")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetVersionsVersionResult(dict):
+    def __init__(__self__, *,
+                 allow_insecure_sha1: _builtins.bool,
+                 certificates: Sequence['outputs.GetMtlstruststoreCaSetVersionsVersionCertificateResult'],
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 modified_by: _builtins.str,
+                 modified_date: _builtins.str,
+                 production_status: _builtins.str,
+                 staging_status: _builtins.str,
+                 version: _builtins.int,
+                 version_description: _builtins.str):
+        """
+        :param _builtins.bool allow_insecure_sha1: By default, all certificates in the version need a signature algorithm of SHA-256 or better. Enabling this allows certificates with SHA-1 signatures.
+        :param Sequence['GetMtlstruststoreCaSetVersionsVersionCertificateArgs'] certificates: List of certificate objects in the version, with each element corresponding to one root or intermediate certificate.
+        :param _builtins.str created_by: The user who created the CA set version.
+        :param _builtins.str created_date: When the CA set version was created.
+        :param _builtins.str modified_by: The user who last modified the CA set version.
+        :param _builtins.str modified_date: When the CA set version was last modified.
+        :param _builtins.str production_status: The CA set version's status on the production network, either 'ACTIVE' or 'INACTIVE'.
+        :param _builtins.str staging_status: The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
+        :param _builtins.int version: Version identifier on which to perform the desired operation.
+        :param _builtins.str version_description: Any additional description you can provide while creating or updating the CA set version.
+        """
+        pulumi.set(__self__, "allow_insecure_sha1", allow_insecure_sha1)
+        pulumi.set(__self__, "certificates", certificates)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "modified_by", modified_by)
+        pulumi.set(__self__, "modified_date", modified_date)
+        pulumi.set(__self__, "production_status", production_status)
+        pulumi.set(__self__, "staging_status", staging_status)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "version_description", version_description)
+
+    @_builtins.property
+    @pulumi.getter(name="allowInsecureSha1")
+    def allow_insecure_sha1(self) -> _builtins.bool:
+        """
+        By default, all certificates in the version need a signature algorithm of SHA-256 or better. Enabling this allows certificates with SHA-1 signatures.
+        """
+        return pulumi.get(self, "allow_insecure_sha1")
+
+    @_builtins.property
+    @pulumi.getter
+    def certificates(self) -> Sequence['outputs.GetMtlstruststoreCaSetVersionsVersionCertificateResult']:
+        """
+        List of certificate objects in the version, with each element corresponding to one root or intermediate certificate.
+        """
+        return pulumi.get(self, "certificates")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created the CA set version.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        When the CA set version was created.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter(name="modifiedBy")
+    def modified_by(self) -> _builtins.str:
+        """
+        The user who last modified the CA set version.
+        """
+        return pulumi.get(self, "modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="modifiedDate")
+    def modified_date(self) -> _builtins.str:
+        """
+        When the CA set version was last modified.
+        """
+        return pulumi.get(self, "modified_date")
+
+    @_builtins.property
+    @pulumi.getter(name="productionStatus")
+    def production_status(self) -> _builtins.str:
+        """
+        The CA set version's status on the production network, either 'ACTIVE' or 'INACTIVE'.
+        """
+        return pulumi.get(self, "production_status")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingStatus")
+    def staging_status(self) -> _builtins.str:
+        """
+        The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
+        """
+        return pulumi.get(self, "staging_status")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        Version identifier on which to perform the desired operation.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="versionDescription")
+    def version_description(self) -> _builtins.str:
+        """
+        Any additional description you can provide while creating or updating the CA set version.
+        """
+        return pulumi.get(self, "version_description")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetVersionsVersionCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate_pem: _builtins.str,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 description: _builtins.str,
+                 end_date: _builtins.str,
+                 fingerprint: _builtins.str,
+                 issuer: _builtins.str,
+                 serial_number: _builtins.str,
+                 signature_algorithm: _builtins.str,
+                 start_date: _builtins.str,
+                 subject: _builtins.str):
+        """
+        :param _builtins.str certificate_pem: The certificate in PEM format, as found in a Base64 ASCII encoded file.
+        :param _builtins.str created_by: The user who created this CA certificate.
+        :param _builtins.str created_date: When the CA certificate was created.
+        :param _builtins.str description: Description for the certificate.
+        :param _builtins.str end_date: The certificate's ISO 8601 formatted expiration date.
+        :param _builtins.str fingerprint: The fingerprint of the certificate.
+        :param _builtins.str issuer: The certificate's issuer.
+        :param _builtins.str serial_number: The unique serial number of the certificate.
+        :param _builtins.str signature_algorithm: The signature algorithm of the CA certificate.
+        :param _builtins.str start_date: The start date of the certificate.
+        :param _builtins.str subject: The certificate's subject field.
+        """
+        pulumi.set(__self__, "certificate_pem", certificate_pem)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "fingerprint", fingerprint)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "serial_number", serial_number)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "start_date", start_date)
+        pulumi.set(__self__, "subject", subject)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> _builtins.str:
+        """
+        The certificate in PEM format, as found in a Base64 ASCII encoded file.
+        """
+        return pulumi.get(self, "certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created this CA certificate.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        When the CA certificate was created.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description for the certificate.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> _builtins.str:
+        """
+        The certificate's ISO 8601 formatted expiration date.
+        """
+        return pulumi.get(self, "end_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def fingerprint(self) -> _builtins.str:
+        """
+        The fingerprint of the certificate.
+        """
+        return pulumi.get(self, "fingerprint")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> _builtins.str:
+        """
+        The certificate's issuer.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> _builtins.str:
+        """
+        The unique serial number of the certificate.
+        """
+        return pulumi.get(self, "serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> _builtins.str:
+        """
+        The signature algorithm of the CA certificate.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> _builtins.str:
+        """
+        The start date of the certificate.
+        """
+        return pulumi.get(self, "start_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> _builtins.str:
+        """
+        The certificate's subject field.
+        """
+        return pulumi.get(self, "subject")
+
+
+@pulumi.output_type
+class GetMtlstruststoreCaSetsCaSetResult(dict):
+    def __init__(__self__, *,
+                 account_id: _builtins.str,
+                 created_by: _builtins.str,
+                 created_date: _builtins.str,
+                 deleted_by: _builtins.str,
+                 deleted_date: _builtins.str,
+                 description: _builtins.str,
+                 id: _builtins.str,
+                 latest_version: _builtins.int,
+                 name: _builtins.str,
+                 production_version: _builtins.int,
+                 staging_version: _builtins.int,
+                 status: _builtins.str):
+        """
+        :param _builtins.str account_id: Identifies the account the CA set belongs to.
+        :param _builtins.str created_by: The user who created the CA set.
+        :param _builtins.str created_date: When the CA set was created.
+        :param _builtins.str deleted_by: The user who requested the CA set be deleted, or null if there's no request.
+        :param _builtins.str deleted_date: When the CA set was deleted, or null if there's no request.
+        :param _builtins.str description: Any additional comments you can add to the CA set.
+        :param _builtins.str id: Identifies each CA set.
+        :param _builtins.int latest_version: The most recent version based on the updated version.
+        :param _builtins.str name: The name of the CA set.
+        :param _builtins.int production_version: The CA set version activated on the 'PRODUCTION' network.
+        :param _builtins.int staging_version: The CA set version activated on the 'STAGING' network.
+        :param _builtins.str status: Indicates if the CA set was deleted, either 'NOT_DELETED', 'DELETING', or 'DELETED'.
+        """
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "deleted_by", deleted_by)
+        pulumi.set(__self__, "deleted_date", deleted_date)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "latest_version", latest_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "production_version", production_version)
+        pulumi.set(__self__, "staging_version", staging_version)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> _builtins.str:
+        """
+        Identifies the account the CA set belongs to.
+        """
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created the CA set.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> _builtins.str:
+        """
+        When the CA set was created.
+        """
+        return pulumi.get(self, "created_date")
+
+    @_builtins.property
+    @pulumi.getter(name="deletedBy")
+    def deleted_by(self) -> _builtins.str:
+        """
+        The user who requested the CA set be deleted, or null if there's no request.
+        """
+        return pulumi.get(self, "deleted_by")
+
+    @_builtins.property
+    @pulumi.getter(name="deletedDate")
+    def deleted_date(self) -> _builtins.str:
+        """
+        When the CA set was deleted, or null if there's no request.
+        """
+        return pulumi.get(self, "deleted_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Any additional comments you can add to the CA set.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Identifies each CA set.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> _builtins.int:
+        """
+        The most recent version based on the updated version.
+        """
+        return pulumi.get(self, "latest_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the CA set.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="productionVersion")
+    def production_version(self) -> _builtins.int:
+        """
+        The CA set version activated on the 'PRODUCTION' network.
+        """
+        return pulumi.get(self, "production_version")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingVersion")
+    def staging_version(self) -> _builtins.int:
+        """
+        The CA set version activated on the 'STAGING' network.
+        """
+        return pulumi.get(self, "staging_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Indicates if the CA set was deleted, either 'NOT_DELETED', 'DELETING', or 'DELETED'.
+        """
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type

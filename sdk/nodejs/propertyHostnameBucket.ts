@@ -75,7 +75,7 @@ export class PropertyHostnameBucket extends pulumi.CustomResource {
      */
     declare public readonly propertyId: pulumi.Output<string>;
     /**
-     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
      */
     declare public readonly timeoutForActivation: pulumi.Output<number>;
 
@@ -176,7 +176,7 @@ export interface PropertyHostnameBucketState {
      */
     propertyId?: pulumi.Input<string>;
     /**
-     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
      */
     timeoutForActivation?: pulumi.Input<number>;
 }
@@ -218,7 +218,7 @@ export interface PropertyHostnameBucketArgs {
      */
     propertyId: pulumi.Input<string>;
     /**
-     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
      */
     timeoutForActivation?: pulumi.Input<number>;
 }

@@ -31,7 +31,7 @@ type ClientlistList struct {
 	Notes pulumi.StringPtrOutput `pulumi:"notes"`
 	// The client list tags.
 	Tags pulumi.StringArrayOutput `pulumi:"tags"`
-	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
 	Type pulumi.StringOutput `pulumi:"type"`
 	// The current version of the client list.
 	Version pulumi.IntOutput `pulumi:"version"`
@@ -92,7 +92,7 @@ type clientlistListState struct {
 	Notes *string `pulumi:"notes"`
 	// The client list tags.
 	Tags []string `pulumi:"tags"`
-	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
 	Type *string `pulumi:"type"`
 	// The current version of the client list.
 	Version *int `pulumi:"version"`
@@ -115,7 +115,7 @@ type ClientlistListState struct {
 	Notes pulumi.StringPtrInput
 	// The client list tags.
 	Tags pulumi.StringArrayInput
-	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
 	Type pulumi.StringPtrInput
 	// The current version of the client list.
 	Version pulumi.IntPtrInput
@@ -138,7 +138,7 @@ type clientlistListArgs struct {
 	Notes *string `pulumi:"notes"`
 	// The client list tags.
 	Tags []string `pulumi:"tags"`
-	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
 	Type string `pulumi:"type"`
 }
 
@@ -156,7 +156,7 @@ type ClientlistListArgs struct {
 	Notes pulumi.StringPtrInput
 	// The client list tags.
 	Tags pulumi.StringArrayInput
-	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+	// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
 	Type pulumi.StringInput
 }
 
@@ -287,7 +287,7 @@ func (o ClientlistListOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClientlistList) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
-// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
 func (o ClientlistListOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClientlistList) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

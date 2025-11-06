@@ -27,6 +27,7 @@ class AppSecSiemSettingsArgs:
                  siem_id: pulumi.Input[_builtins.int],
                  enable_botman_siem: Optional[pulumi.Input[_builtins.bool]] = None,
                  exceptions: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']] = None,
+                 include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AppSecSiemSettings resource.
@@ -36,6 +37,7 @@ class AppSecSiemSettingsArgs:
         :param pulumi.Input[_builtins.int] siem_id: Unique identifier of the SIEM settings being modified
         :param pulumi.Input[_builtins.bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
         :param pulumi.Input['AppSecSiemSettingsExceptionsArgs'] exceptions: Describes all the protections and actions to be excluded from SIEM events
+        :param pulumi.Input[_builtins.bool] include_ja4_fingerprint_to_siem: Whether JA4 Fingerprint should be included in SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         """
         pulumi.set(__self__, "config_id", config_id)
@@ -46,6 +48,8 @@ class AppSecSiemSettingsArgs:
             pulumi.set(__self__, "enable_botman_siem", enable_botman_siem)
         if exceptions is not None:
             pulumi.set(__self__, "exceptions", exceptions)
+        if include_ja4_fingerprint_to_siem is not None:
+            pulumi.set(__self__, "include_ja4_fingerprint_to_siem", include_ja4_fingerprint_to_siem)
         if security_policy_ids is not None:
             pulumi.set(__self__, "security_policy_ids", security_policy_ids)
 
@@ -122,6 +126,18 @@ class AppSecSiemSettingsArgs:
         pulumi.set(self, "exceptions", value)
 
     @_builtins.property
+    @pulumi.getter(name="includeJa4FingerprintToSiem")
+    def include_ja4_fingerprint_to_siem(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether JA4 Fingerprint should be included in SIEM events
+        """
+        return pulumi.get(self, "include_ja4_fingerprint_to_siem")
+
+    @include_ja4_fingerprint_to_siem.setter
+    def include_ja4_fingerprint_to_siem(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "include_ja4_fingerprint_to_siem", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityPolicyIds")
     def security_policy_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -142,6 +158,7 @@ class _AppSecSiemSettingsState:
                  enable_for_all_policies: Optional[pulumi.Input[_builtins.bool]] = None,
                  enable_siem: Optional[pulumi.Input[_builtins.bool]] = None,
                  exceptions: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']] = None,
+                 include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  siem_id: Optional[pulumi.Input[_builtins.int]] = None):
         """
@@ -151,6 +168,7 @@ class _AppSecSiemSettingsState:
         :param pulumi.Input[_builtins.bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[_builtins.bool] enable_siem: Whether to enable SIEM
         :param pulumi.Input['AppSecSiemSettingsExceptionsArgs'] exceptions: Describes all the protections and actions to be excluded from SIEM events
+        :param pulumi.Input[_builtins.bool] include_ja4_fingerprint_to_siem: Whether JA4 Fingerprint should be included in SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         :param pulumi.Input[_builtins.int] siem_id: Unique identifier of the SIEM settings being modified
         """
@@ -164,6 +182,8 @@ class _AppSecSiemSettingsState:
             pulumi.set(__self__, "enable_siem", enable_siem)
         if exceptions is not None:
             pulumi.set(__self__, "exceptions", exceptions)
+        if include_ja4_fingerprint_to_siem is not None:
+            pulumi.set(__self__, "include_ja4_fingerprint_to_siem", include_ja4_fingerprint_to_siem)
         if security_policy_ids is not None:
             pulumi.set(__self__, "security_policy_ids", security_policy_ids)
         if siem_id is not None:
@@ -230,6 +250,18 @@ class _AppSecSiemSettingsState:
         pulumi.set(self, "exceptions", value)
 
     @_builtins.property
+    @pulumi.getter(name="includeJa4FingerprintToSiem")
+    def include_ja4_fingerprint_to_siem(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether JA4 Fingerprint should be included in SIEM events
+        """
+        return pulumi.get(self, "include_ja4_fingerprint_to_siem")
+
+    @include_ja4_fingerprint_to_siem.setter
+    def include_ja4_fingerprint_to_siem(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "include_ja4_fingerprint_to_siem", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityPolicyIds")
     def security_policy_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -265,6 +297,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  enable_for_all_policies: Optional[pulumi.Input[_builtins.bool]] = None,
                  enable_siem: Optional[pulumi.Input[_builtins.bool]] = None,
                  exceptions: Optional[pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
+                 include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  siem_id: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
@@ -277,6 +310,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[_builtins.bool] enable_siem: Whether to enable SIEM
         :param pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']] exceptions: Describes all the protections and actions to be excluded from SIEM events
+        :param pulumi.Input[_builtins.bool] include_ja4_fingerprint_to_siem: Whether JA4 Fingerprint should be included in SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         :param pulumi.Input[_builtins.int] siem_id: Unique identifier of the SIEM settings being modified
         """
@@ -308,6 +342,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  enable_for_all_policies: Optional[pulumi.Input[_builtins.bool]] = None,
                  enable_siem: Optional[pulumi.Input[_builtins.bool]] = None,
                  exceptions: Optional[pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
+                 include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  siem_id: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
@@ -330,6 +365,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                 raise TypeError("Missing required property 'enable_siem'")
             __props__.__dict__["enable_siem"] = enable_siem
             __props__.__dict__["exceptions"] = exceptions
+            __props__.__dict__["include_ja4_fingerprint_to_siem"] = include_ja4_fingerprint_to_siem
             __props__.__dict__["security_policy_ids"] = security_policy_ids
             if siem_id is None and not opts.urn:
                 raise TypeError("Missing required property 'siem_id'")
@@ -349,6 +385,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
             enable_for_all_policies: Optional[pulumi.Input[_builtins.bool]] = None,
             enable_siem: Optional[pulumi.Input[_builtins.bool]] = None,
             exceptions: Optional[pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
+            include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
             security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             siem_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'AppSecSiemSettings':
         """
@@ -363,6 +400,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[_builtins.bool] enable_siem: Whether to enable SIEM
         :param pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']] exceptions: Describes all the protections and actions to be excluded from SIEM events
+        :param pulumi.Input[_builtins.bool] include_ja4_fingerprint_to_siem: Whether JA4 Fingerprint should be included in SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         :param pulumi.Input[_builtins.int] siem_id: Unique identifier of the SIEM settings being modified
         """
@@ -375,6 +413,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
         __props__.__dict__["enable_for_all_policies"] = enable_for_all_policies
         __props__.__dict__["enable_siem"] = enable_siem
         __props__.__dict__["exceptions"] = exceptions
+        __props__.__dict__["include_ja4_fingerprint_to_siem"] = include_ja4_fingerprint_to_siem
         __props__.__dict__["security_policy_ids"] = security_policy_ids
         __props__.__dict__["siem_id"] = siem_id
         return AppSecSiemSettings(resource_name, opts=opts, __props__=__props__)
@@ -418,6 +457,14 @@ class AppSecSiemSettings(pulumi.CustomResource):
         Describes all the protections and actions to be excluded from SIEM events
         """
         return pulumi.get(self, "exceptions")
+
+    @_builtins.property
+    @pulumi.getter(name="includeJa4FingerprintToSiem")
+    def include_ja4_fingerprint_to_siem(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Whether JA4 Fingerprint should be included in SIEM events
+        """
+        return pulumi.get(self, "include_ja4_fingerprint_to_siem")
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyIds")

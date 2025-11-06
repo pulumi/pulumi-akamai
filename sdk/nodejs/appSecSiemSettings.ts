@@ -55,6 +55,10 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
      */
     declare public readonly exceptions: pulumi.Output<outputs.AppSecSiemSettingsExceptions | undefined>;
     /**
+     * Whether JA4 Fingerprint should be included in SIEM events
+     */
+    declare public readonly includeJa4FingerprintToSiem: pulumi.Output<boolean | undefined>;
+    /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      */
     declare public readonly securityPolicyIds: pulumi.Output<string[] | undefined>;
@@ -81,6 +85,7 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
             resourceInputs["enableForAllPolicies"] = state?.enableForAllPolicies;
             resourceInputs["enableSiem"] = state?.enableSiem;
             resourceInputs["exceptions"] = state?.exceptions;
+            resourceInputs["includeJa4FingerprintToSiem"] = state?.includeJa4FingerprintToSiem;
             resourceInputs["securityPolicyIds"] = state?.securityPolicyIds;
             resourceInputs["siemId"] = state?.siemId;
         } else {
@@ -102,6 +107,7 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
             resourceInputs["enableForAllPolicies"] = args?.enableForAllPolicies;
             resourceInputs["enableSiem"] = args?.enableSiem;
             resourceInputs["exceptions"] = args?.exceptions;
+            resourceInputs["includeJa4FingerprintToSiem"] = args?.includeJa4FingerprintToSiem;
             resourceInputs["securityPolicyIds"] = args?.securityPolicyIds;
             resourceInputs["siemId"] = args?.siemId;
         }
@@ -134,6 +140,10 @@ export interface AppSecSiemSettingsState {
      * Describes all the protections and actions to be excluded from SIEM events
      */
     exceptions?: pulumi.Input<inputs.AppSecSiemSettingsExceptions>;
+    /**
+     * Whether JA4 Fingerprint should be included in SIEM events
+     */
+    includeJa4FingerprintToSiem?: pulumi.Input<boolean>;
     /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      */
@@ -168,6 +178,10 @@ export interface AppSecSiemSettingsArgs {
      * Describes all the protections and actions to be excluded from SIEM events
      */
     exceptions?: pulumi.Input<inputs.AppSecSiemSettingsExceptions>;
+    /**
+     * Whether JA4 Fingerprint should be included in SIEM events
+     */
+    includeJa4FingerprintToSiem?: pulumi.Input<boolean>;
     /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      */

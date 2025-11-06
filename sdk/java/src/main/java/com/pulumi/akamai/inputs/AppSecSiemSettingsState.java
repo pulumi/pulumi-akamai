@@ -95,6 +95,21 @@ public final class AppSecSiemSettingsState extends com.pulumi.resources.Resource
     }
 
     /**
+     * Whether JA4 Fingerprint should be included in SIEM events
+     * 
+     */
+    @Import(name="includeJa4FingerprintToSiem")
+    private @Nullable Output<Boolean> includeJa4FingerprintToSiem;
+
+    /**
+     * @return Whether JA4 Fingerprint should be included in SIEM events
+     * 
+     */
+    public Optional<Output<Boolean>> includeJa4FingerprintToSiem() {
+        return Optional.ofNullable(this.includeJa4FingerprintToSiem);
+    }
+
+    /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      * 
      */
@@ -132,6 +147,7 @@ public final class AppSecSiemSettingsState extends com.pulumi.resources.Resource
         this.enableForAllPolicies = $.enableForAllPolicies;
         this.enableSiem = $.enableSiem;
         this.exceptions = $.exceptions;
+        this.includeJa4FingerprintToSiem = $.includeJa4FingerprintToSiem;
         this.securityPolicyIds = $.securityPolicyIds;
         this.siemId = $.siemId;
     }
@@ -257,6 +273,27 @@ public final class AppSecSiemSettingsState extends com.pulumi.resources.Resource
          */
         public Builder exceptions(AppSecSiemSettingsExceptionsArgs exceptions) {
             return exceptions(Output.of(exceptions));
+        }
+
+        /**
+         * @param includeJa4FingerprintToSiem Whether JA4 Fingerprint should be included in SIEM events
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeJa4FingerprintToSiem(@Nullable Output<Boolean> includeJa4FingerprintToSiem) {
+            $.includeJa4FingerprintToSiem = includeJa4FingerprintToSiem;
+            return this;
+        }
+
+        /**
+         * @param includeJa4FingerprintToSiem Whether JA4 Fingerprint should be included in SIEM events
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeJa4FingerprintToSiem(Boolean includeJa4FingerprintToSiem) {
+            return includeJa4FingerprintToSiem(Output.of(includeJa4FingerprintToSiem));
         }
 
         /**

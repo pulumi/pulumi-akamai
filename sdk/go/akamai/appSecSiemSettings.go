@@ -25,6 +25,8 @@ type AppSecSiemSettings struct {
 	EnableSiem pulumi.BoolOutput `pulumi:"enableSiem"`
 	// Describes all the protections and actions to be excluded from SIEM events
 	Exceptions AppSecSiemSettingsExceptionsPtrOutput `pulumi:"exceptions"`
+	// Whether JA4 Fingerprint should be included in SIEM events
+	IncludeJa4FingerprintToSiem pulumi.BoolPtrOutput `pulumi:"includeJa4FingerprintToSiem"`
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds pulumi.StringArrayOutput `pulumi:"securityPolicyIds"`
 	// Unique identifier of the SIEM settings being modified
@@ -83,6 +85,8 @@ type appSecSiemSettingsState struct {
 	EnableSiem *bool `pulumi:"enableSiem"`
 	// Describes all the protections and actions to be excluded from SIEM events
 	Exceptions *AppSecSiemSettingsExceptions `pulumi:"exceptions"`
+	// Whether JA4 Fingerprint should be included in SIEM events
+	IncludeJa4FingerprintToSiem *bool `pulumi:"includeJa4FingerprintToSiem"`
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds []string `pulumi:"securityPolicyIds"`
 	// Unique identifier of the SIEM settings being modified
@@ -100,6 +104,8 @@ type AppSecSiemSettingsState struct {
 	EnableSiem pulumi.BoolPtrInput
 	// Describes all the protections and actions to be excluded from SIEM events
 	Exceptions AppSecSiemSettingsExceptionsPtrInput
+	// Whether JA4 Fingerprint should be included in SIEM events
+	IncludeJa4FingerprintToSiem pulumi.BoolPtrInput
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds pulumi.StringArrayInput
 	// Unique identifier of the SIEM settings being modified
@@ -121,6 +127,8 @@ type appSecSiemSettingsArgs struct {
 	EnableSiem bool `pulumi:"enableSiem"`
 	// Describes all the protections and actions to be excluded from SIEM events
 	Exceptions *AppSecSiemSettingsExceptions `pulumi:"exceptions"`
+	// Whether JA4 Fingerprint should be included in SIEM events
+	IncludeJa4FingerprintToSiem *bool `pulumi:"includeJa4FingerprintToSiem"`
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds []string `pulumi:"securityPolicyIds"`
 	// Unique identifier of the SIEM settings being modified
@@ -139,6 +147,8 @@ type AppSecSiemSettingsArgs struct {
 	EnableSiem pulumi.BoolInput
 	// Describes all the protections and actions to be excluded from SIEM events
 	Exceptions AppSecSiemSettingsExceptionsPtrInput
+	// Whether JA4 Fingerprint should be included in SIEM events
+	IncludeJa4FingerprintToSiem pulumi.BoolPtrInput
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds pulumi.StringArrayInput
 	// Unique identifier of the SIEM settings being modified
@@ -255,6 +265,11 @@ func (o AppSecSiemSettingsOutput) EnableSiem() pulumi.BoolOutput {
 // Describes all the protections and actions to be excluded from SIEM events
 func (o AppSecSiemSettingsOutput) Exceptions() AppSecSiemSettingsExceptionsPtrOutput {
 	return o.ApplyT(func(v *AppSecSiemSettings) AppSecSiemSettingsExceptionsPtrOutput { return v.Exceptions }).(AppSecSiemSettingsExceptionsPtrOutput)
+}
+
+// Whether JA4 Fingerprint should be included in SIEM events
+func (o AppSecSiemSettingsOutput) IncludeJa4FingerprintToSiem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AppSecSiemSettings) pulumi.BoolPtrOutput { return v.IncludeJa4FingerprintToSiem }).(pulumi.BoolPtrOutput)
 }
 
 // List of IDs of security policy for which SIEM integration is to be enabled

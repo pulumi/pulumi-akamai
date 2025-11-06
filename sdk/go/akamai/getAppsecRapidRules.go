@@ -23,21 +23,23 @@ func LookupAppsecRapidRules(ctx *pulumi.Context, args *LookupAppsecRapidRulesArg
 
 // A collection of arguments for invoking getAppsecRapidRules.
 type LookupAppsecRapidRulesArgs struct {
-	ConfigId         int    `pulumi:"configId"`
-	RuleId           *int   `pulumi:"ruleId"`
-	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	ConfigId             int    `pulumi:"configId"`
+	IncludeExpiryDetails *bool  `pulumi:"includeExpiryDetails"`
+	RuleId               *int   `pulumi:"ruleId"`
+	SecurityPolicyId     string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppsecRapidRules.
 type LookupAppsecRapidRulesResult struct {
-	ConfigId         int                            `pulumi:"configId"`
-	DefaultAction    string                         `pulumi:"defaultAction"`
-	Enabled          bool                           `pulumi:"enabled"`
-	Id               string                         `pulumi:"id"`
-	OutputText       string                         `pulumi:"outputText"`
-	RapidRules       []GetAppsecRapidRulesRapidRule `pulumi:"rapidRules"`
-	RuleId           *int                           `pulumi:"ruleId"`
-	SecurityPolicyId string                         `pulumi:"securityPolicyId"`
+	ConfigId             int                            `pulumi:"configId"`
+	DefaultAction        string                         `pulumi:"defaultAction"`
+	Enabled              bool                           `pulumi:"enabled"`
+	Id                   string                         `pulumi:"id"`
+	IncludeExpiryDetails *bool                          `pulumi:"includeExpiryDetails"`
+	OutputText           string                         `pulumi:"outputText"`
+	RapidRules           []GetAppsecRapidRulesRapidRule `pulumi:"rapidRules"`
+	RuleId               *int                           `pulumi:"ruleId"`
+	SecurityPolicyId     string                         `pulumi:"securityPolicyId"`
 }
 
 func LookupAppsecRapidRulesOutput(ctx *pulumi.Context, args LookupAppsecRapidRulesOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecRapidRulesResultOutput {
@@ -51,9 +53,10 @@ func LookupAppsecRapidRulesOutput(ctx *pulumi.Context, args LookupAppsecRapidRul
 
 // A collection of arguments for invoking getAppsecRapidRules.
 type LookupAppsecRapidRulesOutputArgs struct {
-	ConfigId         pulumi.IntInput    `pulumi:"configId"`
-	RuleId           pulumi.IntPtrInput `pulumi:"ruleId"`
-	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	ConfigId             pulumi.IntInput     `pulumi:"configId"`
+	IncludeExpiryDetails pulumi.BoolPtrInput `pulumi:"includeExpiryDetails"`
+	RuleId               pulumi.IntPtrInput  `pulumi:"ruleId"`
+	SecurityPolicyId     pulumi.StringInput  `pulumi:"securityPolicyId"`
 }
 
 func (LookupAppsecRapidRulesOutputArgs) ElementType() reflect.Type {
@@ -89,6 +92,10 @@ func (o LookupAppsecRapidRulesResultOutput) Enabled() pulumi.BoolOutput {
 
 func (o LookupAppsecRapidRulesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppsecRapidRulesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupAppsecRapidRulesResultOutput) IncludeExpiryDetails() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAppsecRapidRulesResult) *bool { return v.IncludeExpiryDetails }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupAppsecRapidRulesResultOutput) OutputText() pulumi.StringOutput {

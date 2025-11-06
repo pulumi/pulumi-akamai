@@ -33,6 +33,16 @@ public final class GetAppsecRapidRulesRapidRule {
      */
     private String conditionException;
     /**
+     * @return Number of days remaining before the rule expires. This field is present only if the rule has not yet expired.
+     * 
+     */
+    private Integer expireInDays;
+    /**
+     * @return Whether the rule has already expired.
+     * 
+     */
+    private Boolean expired;
+    /**
      * @return The unique identifier of rapid rule.
      * 
      */
@@ -78,6 +88,20 @@ public final class GetAppsecRapidRulesRapidRule {
         return this.conditionException;
     }
     /**
+     * @return Number of days remaining before the rule expires. This field is present only if the rule has not yet expired.
+     * 
+     */
+    public Integer expireInDays() {
+        return this.expireInDays;
+    }
+    /**
+     * @return Whether the rule has already expired.
+     * 
+     */
+    public Boolean expired() {
+        return this.expired;
+    }
+    /**
      * @return The unique identifier of rapid rule.
      * 
      */
@@ -112,6 +136,8 @@ public final class GetAppsecRapidRulesRapidRule {
         private String attackGroup;
         private String attackGroupException;
         private String conditionException;
+        private Integer expireInDays;
+        private Boolean expired;
         private Integer id;
         private Boolean lock;
         private String name;
@@ -122,6 +148,8 @@ public final class GetAppsecRapidRulesRapidRule {
     	      this.attackGroup = defaults.attackGroup;
     	      this.attackGroupException = defaults.attackGroupException;
     	      this.conditionException = defaults.conditionException;
+    	      this.expireInDays = defaults.expireInDays;
+    	      this.expired = defaults.expired;
     	      this.id = defaults.id;
     	      this.lock = defaults.lock;
     	      this.name = defaults.name;
@@ -160,6 +188,22 @@ public final class GetAppsecRapidRulesRapidRule {
             return this;
         }
         @CustomType.Setter
+        public Builder expireInDays(Integer expireInDays) {
+            if (expireInDays == null) {
+              throw new MissingRequiredPropertyException("GetAppsecRapidRulesRapidRule", "expireInDays");
+            }
+            this.expireInDays = expireInDays;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder expired(Boolean expired) {
+            if (expired == null) {
+              throw new MissingRequiredPropertyException("GetAppsecRapidRulesRapidRule", "expired");
+            }
+            this.expired = expired;
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(Integer id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetAppsecRapidRulesRapidRule", "id");
@@ -189,6 +233,8 @@ public final class GetAppsecRapidRulesRapidRule {
             _resultValue.attackGroup = attackGroup;
             _resultValue.attackGroupException = attackGroupException;
             _resultValue.conditionException = conditionException;
+            _resultValue.expireInDays = expireInDays;
+            _resultValue.expired = expired;
             _resultValue.id = id;
             _resultValue.lock = lock;
             _resultValue.name = name;

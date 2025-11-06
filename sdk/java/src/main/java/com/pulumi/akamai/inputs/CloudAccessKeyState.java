@@ -51,14 +51,14 @@ public final class CloudAccessKeyState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Two options are available: &#34;AWS4_HMAC_SHA256&#34; or &#34;GOOG4_HMAC_SHA256&#34;.
+     * The type of cloud provider signing process used to authenticate API requests. Three options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34; or &#34;AOS4_HMAC_SHA256&#34;.
      * 
      */
     @Import(name="authenticationMethod")
     private @Nullable Output<String> authenticationMethod;
 
     /**
-     * @return The type of cloud provider signing process used to authenticate API requests. Two options are available: &#34;AWS4_HMAC_SHA256&#34; or &#34;GOOG4_HMAC_SHA256&#34;.
+     * @return The type of cloud provider signing process used to authenticate API requests. Three options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34; or &#34;AOS4_HMAC_SHA256&#34;.
      * 
      */
     public Optional<Output<String>> authenticationMethod() {
@@ -238,7 +238,7 @@ public final class CloudAccessKeyState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param authenticationMethod The type of cloud provider signing process used to authenticate API requests. Two options are available: &#34;AWS4_HMAC_SHA256&#34; or &#34;GOOG4_HMAC_SHA256&#34;.
+         * @param authenticationMethod The type of cloud provider signing process used to authenticate API requests. Three options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34; or &#34;AOS4_HMAC_SHA256&#34;.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class CloudAccessKeyState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param authenticationMethod The type of cloud provider signing process used to authenticate API requests. Two options are available: &#34;AWS4_HMAC_SHA256&#34; or &#34;GOOG4_HMAC_SHA256&#34;.
+         * @param authenticationMethod The type of cloud provider signing process used to authenticate API requests. Three options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34; or &#34;AOS4_HMAC_SHA256&#34;.
          * 
          * @return builder
          * 

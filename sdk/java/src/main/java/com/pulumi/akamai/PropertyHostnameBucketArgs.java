@@ -141,14 +141,14 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+     * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
      * 
      */
     @Import(name="timeoutForActivation")
     private @Nullable Output<Integer> timeoutForActivation;
 
     /**
-     * @return The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+     * @return The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
      * 
      */
     public Optional<Output<Integer>> timeoutForActivation() {
@@ -366,7 +366,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeoutForActivation The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+         * @param timeoutForActivation The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class PropertyHostnameBucketArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeoutForActivation The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 50 minutes.
+         * @param timeoutForActivation The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
          * 
          * @return builder
          * 

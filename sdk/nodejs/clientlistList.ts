@@ -67,7 +67,7 @@ export class ClientlistList extends pulumi.CustomResource {
      */
     declare public readonly tags: pulumi.Output<string[] | undefined>;
     /**
-     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
      */
     declare public readonly type: pulumi.Output<string>;
     /**
@@ -162,7 +162,7 @@ export interface ClientlistListState {
      */
     tags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
      */
     type?: pulumi.Input<string>;
     /**
@@ -200,7 +200,7 @@ export interface ClientlistListArgs {
      */
     tags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
+     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
      */
     type: pulumi.Input<string>;
 }

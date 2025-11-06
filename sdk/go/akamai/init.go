@@ -21,6 +21,12 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "akamai:index/apidefinitionsActivation:ApidefinitionsActivation":
+		r = &ApidefinitionsActivation{}
+	case "akamai:index/apidefinitionsApi:ApidefinitionsApi":
+		r = &ApidefinitionsApi{}
+	case "akamai:index/apidefinitionsResourceOperations:ApidefinitionsResourceOperations":
+		r = &ApidefinitionsResourceOperations{}
 	case "akamai:index/appSecActivations:AppSecActivations":
 		r = &AppSecActivations{}
 	case "akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch":
@@ -113,8 +119,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecWafProtection{}
 	case "akamai:index/appsecAapSelectedHostnames:AppsecAapSelectedHostnames":
 		r = &AppsecAapSelectedHostnames{}
+	case "akamai:index/appsecAdvancedSettingsAsePenaltyBox:AppsecAdvancedSettingsAsePenaltyBox":
+		r = &AppsecAdvancedSettingsAsePenaltyBox{}
 	case "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging":
 		r = &AppsecAdvancedSettingsAttackPayloadLogging{}
+	case "akamai:index/appsecAdvancedSettingsJa4Fingerprint:AppsecAdvancedSettingsJa4Fingerprint":
+		r = &AppsecAdvancedSettingsJa4Fingerprint{}
 	case "akamai:index/appsecAdvancedSettingsPiiLearning:AppsecAdvancedSettingsPiiLearning":
 		r = &AppsecAdvancedSettingsPiiLearning{}
 	case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
@@ -127,6 +137,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppsecRapidRules{}
 	case "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections":
 		r = &AppsecSecurityPolicyDefaultProtections{}
+	case "akamai:index/aprGeneralSettings:AprGeneralSettings":
+		r = &AprGeneralSettings{}
+	case "akamai:index/aprProtectedOperations:AprProtectedOperations":
+		r = &AprProtectedOperations{}
+	case "akamai:index/aprUserAllowList:AprUserAllowList":
+		r = &AprUserAllowList{}
+	case "akamai:index/aprUserRiskResponseStrategy:AprUserRiskResponseStrategy":
+		r = &AprUserRiskResponseStrategy{}
 	case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
 		r = &BotmanAkamaiBotCategoryAction{}
 	case "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie":
@@ -263,6 +281,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MtlskeystoreClientCertificateThirdParty{}
 	case "akamai:index/mtlskeystoreClientCertificateUpload:MtlskeystoreClientCertificateUpload":
 		r = &MtlskeystoreClientCertificateUpload{}
+	case "akamai:index/mtlstruststoreCaSet:MtlstruststoreCaSet":
+		r = &MtlstruststoreCaSet{}
+	case "akamai:index/mtlstruststoreCaSetActivation:MtlstruststoreCaSetActivation":
+		r = &MtlstruststoreCaSetActivation{}
 	case "akamai:index/networkList:NetworkList":
 		r = &NetworkList{}
 	case "akamai:index/networkListActivations:NetworkListActivations":
@@ -314,6 +336,21 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/apidefinitionsActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/apidefinitionsApi",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/apidefinitionsResourceOperations",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appSecActivations",
@@ -546,7 +583,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/appsecAdvancedSettingsAsePenaltyBox",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/appsecAdvancedSettingsAttackPayloadLogging",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appsecAdvancedSettingsJa4Fingerprint",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -577,6 +624,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appsecSecurityPolicyDefaultProtections",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/aprGeneralSettings",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/aprProtectedOperations",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/aprUserAllowList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/aprUserRiskResponseStrategy",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -917,6 +984,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/mtlskeystoreClientCertificateUpload",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/mtlstruststoreCaSet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/mtlstruststoreCaSetActivation",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

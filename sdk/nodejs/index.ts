@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
+export { ApidefinitionsActivationArgs, ApidefinitionsActivationState } from "./apidefinitionsActivation";
+export type ApidefinitionsActivation = import("./apidefinitionsActivation").ApidefinitionsActivation;
+export const ApidefinitionsActivation: typeof import("./apidefinitionsActivation").ApidefinitionsActivation = null as any;
+utilities.lazyLoad(exports, ["ApidefinitionsActivation"], () => require("./apidefinitionsActivation"));
+
+export { ApidefinitionsApiArgs, ApidefinitionsApiState } from "./apidefinitionsApi";
+export type ApidefinitionsApi = import("./apidefinitionsApi").ApidefinitionsApi;
+export const ApidefinitionsApi: typeof import("./apidefinitionsApi").ApidefinitionsApi = null as any;
+utilities.lazyLoad(exports, ["ApidefinitionsApi"], () => require("./apidefinitionsApi"));
+
+export { ApidefinitionsResourceOperationsArgs, ApidefinitionsResourceOperationsState } from "./apidefinitionsResourceOperations";
+export type ApidefinitionsResourceOperations = import("./apidefinitionsResourceOperations").ApidefinitionsResourceOperations;
+export const ApidefinitionsResourceOperations: typeof import("./apidefinitionsResourceOperations").ApidefinitionsResourceOperations = null as any;
+utilities.lazyLoad(exports, ["ApidefinitionsResourceOperations"], () => require("./apidefinitionsResourceOperations"));
+
 export { AppSecActivationsArgs, AppSecActivationsState } from "./appSecActivations";
 export type AppSecActivations = import("./appSecActivations").AppSecActivations;
 export const AppSecActivations: typeof import("./appSecActivations").AppSecActivations = null as any;
@@ -235,10 +250,20 @@ export type AppsecAapSelectedHostnames = import("./appsecAapSelectedHostnames").
 export const AppsecAapSelectedHostnames: typeof import("./appsecAapSelectedHostnames").AppsecAapSelectedHostnames = null as any;
 utilities.lazyLoad(exports, ["AppsecAapSelectedHostnames"], () => require("./appsecAapSelectedHostnames"));
 
+export { AppsecAdvancedSettingsAsePenaltyBoxArgs, AppsecAdvancedSettingsAsePenaltyBoxState } from "./appsecAdvancedSettingsAsePenaltyBox";
+export type AppsecAdvancedSettingsAsePenaltyBox = import("./appsecAdvancedSettingsAsePenaltyBox").AppsecAdvancedSettingsAsePenaltyBox;
+export const AppsecAdvancedSettingsAsePenaltyBox: typeof import("./appsecAdvancedSettingsAsePenaltyBox").AppsecAdvancedSettingsAsePenaltyBox = null as any;
+utilities.lazyLoad(exports, ["AppsecAdvancedSettingsAsePenaltyBox"], () => require("./appsecAdvancedSettingsAsePenaltyBox"));
+
 export { AppsecAdvancedSettingsAttackPayloadLoggingArgs, AppsecAdvancedSettingsAttackPayloadLoggingState } from "./appsecAdvancedSettingsAttackPayloadLogging";
 export type AppsecAdvancedSettingsAttackPayloadLogging = import("./appsecAdvancedSettingsAttackPayloadLogging").AppsecAdvancedSettingsAttackPayloadLogging;
 export const AppsecAdvancedSettingsAttackPayloadLogging: typeof import("./appsecAdvancedSettingsAttackPayloadLogging").AppsecAdvancedSettingsAttackPayloadLogging = null as any;
 utilities.lazyLoad(exports, ["AppsecAdvancedSettingsAttackPayloadLogging"], () => require("./appsecAdvancedSettingsAttackPayloadLogging"));
+
+export { AppsecAdvancedSettingsJa4FingerprintArgs, AppsecAdvancedSettingsJa4FingerprintState } from "./appsecAdvancedSettingsJa4Fingerprint";
+export type AppsecAdvancedSettingsJa4Fingerprint = import("./appsecAdvancedSettingsJa4Fingerprint").AppsecAdvancedSettingsJa4Fingerprint;
+export const AppsecAdvancedSettingsJa4Fingerprint: typeof import("./appsecAdvancedSettingsJa4Fingerprint").AppsecAdvancedSettingsJa4Fingerprint = null as any;
+utilities.lazyLoad(exports, ["AppsecAdvancedSettingsJa4Fingerprint"], () => require("./appsecAdvancedSettingsJa4Fingerprint"));
 
 export { AppsecAdvancedSettingsPiiLearningArgs, AppsecAdvancedSettingsPiiLearningState } from "./appsecAdvancedSettingsPiiLearning";
 export type AppsecAdvancedSettingsPiiLearning = import("./appsecAdvancedSettingsPiiLearning").AppsecAdvancedSettingsPiiLearning;
@@ -269,6 +294,26 @@ export { AppsecSecurityPolicyDefaultProtectionsArgs, AppsecSecurityPolicyDefault
 export type AppsecSecurityPolicyDefaultProtections = import("./appsecSecurityPolicyDefaultProtections").AppsecSecurityPolicyDefaultProtections;
 export const AppsecSecurityPolicyDefaultProtections: typeof import("./appsecSecurityPolicyDefaultProtections").AppsecSecurityPolicyDefaultProtections = null as any;
 utilities.lazyLoad(exports, ["AppsecSecurityPolicyDefaultProtections"], () => require("./appsecSecurityPolicyDefaultProtections"));
+
+export { AprGeneralSettingsArgs, AprGeneralSettingsState } from "./aprGeneralSettings";
+export type AprGeneralSettings = import("./aprGeneralSettings").AprGeneralSettings;
+export const AprGeneralSettings: typeof import("./aprGeneralSettings").AprGeneralSettings = null as any;
+utilities.lazyLoad(exports, ["AprGeneralSettings"], () => require("./aprGeneralSettings"));
+
+export { AprProtectedOperationsArgs, AprProtectedOperationsState } from "./aprProtectedOperations";
+export type AprProtectedOperations = import("./aprProtectedOperations").AprProtectedOperations;
+export const AprProtectedOperations: typeof import("./aprProtectedOperations").AprProtectedOperations = null as any;
+utilities.lazyLoad(exports, ["AprProtectedOperations"], () => require("./aprProtectedOperations"));
+
+export { AprUserAllowListArgs, AprUserAllowListState } from "./aprUserAllowList";
+export type AprUserAllowList = import("./aprUserAllowList").AprUserAllowList;
+export const AprUserAllowList: typeof import("./aprUserAllowList").AprUserAllowList = null as any;
+utilities.lazyLoad(exports, ["AprUserAllowList"], () => require("./aprUserAllowList"));
+
+export { AprUserRiskResponseStrategyArgs, AprUserRiskResponseStrategyState } from "./aprUserRiskResponseStrategy";
+export type AprUserRiskResponseStrategy = import("./aprUserRiskResponseStrategy").AprUserRiskResponseStrategy;
+export const AprUserRiskResponseStrategy: typeof import("./aprUserRiskResponseStrategy").AprUserRiskResponseStrategy = null as any;
+utilities.lazyLoad(exports, ["AprUserRiskResponseStrategy"], () => require("./aprUserRiskResponseStrategy"));
 
 export { BotmanAkamaiBotCategoryActionArgs, BotmanAkamaiBotCategoryActionState } from "./botmanAkamaiBotCategoryAction";
 export type BotmanAkamaiBotCategoryAction = import("./botmanAkamaiBotCategoryAction").BotmanAkamaiBotCategoryAction;
@@ -510,6 +555,21 @@ export type EdgekvGroupItems = import("./edgekvGroupItems").EdgekvGroupItems;
 export const EdgekvGroupItems: typeof import("./edgekvGroupItems").EdgekvGroupItems = null as any;
 utilities.lazyLoad(exports, ["EdgekvGroupItems"], () => require("./edgekvGroupItems"));
 
+export { GetApidefinitionsApiArgs, GetApidefinitionsApiResult, GetApidefinitionsApiOutputArgs } from "./getApidefinitionsApi";
+export const getApidefinitionsApi: typeof import("./getApidefinitionsApi").getApidefinitionsApi = null as any;
+export const getApidefinitionsApiOutput: typeof import("./getApidefinitionsApi").getApidefinitionsApiOutput = null as any;
+utilities.lazyLoad(exports, ["getApidefinitionsApi","getApidefinitionsApiOutput"], () => require("./getApidefinitionsApi"));
+
+export { GetApidefinitionsOpenapiArgs, GetApidefinitionsOpenapiResult, GetApidefinitionsOpenapiOutputArgs } from "./getApidefinitionsOpenapi";
+export const getApidefinitionsOpenapi: typeof import("./getApidefinitionsOpenapi").getApidefinitionsOpenapi = null as any;
+export const getApidefinitionsOpenapiOutput: typeof import("./getApidefinitionsOpenapi").getApidefinitionsOpenapiOutput = null as any;
+utilities.lazyLoad(exports, ["getApidefinitionsOpenapi","getApidefinitionsOpenapiOutput"], () => require("./getApidefinitionsOpenapi"));
+
+export { GetApidefinitionsResourceOperationsArgs, GetApidefinitionsResourceOperationsResult, GetApidefinitionsResourceOperationsOutputArgs } from "./getApidefinitionsResourceOperations";
+export const getApidefinitionsResourceOperations: typeof import("./getApidefinitionsResourceOperations").getApidefinitionsResourceOperations = null as any;
+export const getApidefinitionsResourceOperationsOutput: typeof import("./getApidefinitionsResourceOperations").getApidefinitionsResourceOperationsOutput = null as any;
+utilities.lazyLoad(exports, ["getApidefinitionsResourceOperations","getApidefinitionsResourceOperationsOutput"], () => require("./getApidefinitionsResourceOperations"));
+
 export { GetAppSecAdvancedSettingsEvasivePathMatchArgs, GetAppSecAdvancedSettingsEvasivePathMatchResult, GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs } from "./getAppSecAdvancedSettingsEvasivePathMatch";
 export const getAppSecAdvancedSettingsEvasivePathMatch: typeof import("./getAppSecAdvancedSettingsEvasivePathMatch").getAppSecAdvancedSettingsEvasivePathMatch = null as any;
 export const getAppSecAdvancedSettingsEvasivePathMatchOutput: typeof import("./getAppSecAdvancedSettingsEvasivePathMatch").getAppSecAdvancedSettingsEvasivePathMatchOutput = null as any;
@@ -745,10 +805,20 @@ export const getAppsecAapSelectedHostnames: typeof import("./getAppsecAapSelecte
 export const getAppsecAapSelectedHostnamesOutput: typeof import("./getAppsecAapSelectedHostnames").getAppsecAapSelectedHostnamesOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecAapSelectedHostnames","getAppsecAapSelectedHostnamesOutput"], () => require("./getAppsecAapSelectedHostnames"));
 
+export { GetAppsecAdvancedSettingsAsePenaltyBoxArgs, GetAppsecAdvancedSettingsAsePenaltyBoxResult, GetAppsecAdvancedSettingsAsePenaltyBoxOutputArgs } from "./getAppsecAdvancedSettingsAsePenaltyBox";
+export const getAppsecAdvancedSettingsAsePenaltyBox: typeof import("./getAppsecAdvancedSettingsAsePenaltyBox").getAppsecAdvancedSettingsAsePenaltyBox = null as any;
+export const getAppsecAdvancedSettingsAsePenaltyBoxOutput: typeof import("./getAppsecAdvancedSettingsAsePenaltyBox").getAppsecAdvancedSettingsAsePenaltyBoxOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsAsePenaltyBox","getAppsecAdvancedSettingsAsePenaltyBoxOutput"], () => require("./getAppsecAdvancedSettingsAsePenaltyBox"));
+
 export { GetAppsecAdvancedSettingsAttackPayloadLoggingArgs, GetAppsecAdvancedSettingsAttackPayloadLoggingResult, GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs } from "./getAppsecAdvancedSettingsAttackPayloadLogging";
 export const getAppsecAdvancedSettingsAttackPayloadLogging: typeof import("./getAppsecAdvancedSettingsAttackPayloadLogging").getAppsecAdvancedSettingsAttackPayloadLogging = null as any;
 export const getAppsecAdvancedSettingsAttackPayloadLoggingOutput: typeof import("./getAppsecAdvancedSettingsAttackPayloadLogging").getAppsecAdvancedSettingsAttackPayloadLoggingOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsAttackPayloadLogging","getAppsecAdvancedSettingsAttackPayloadLoggingOutput"], () => require("./getAppsecAdvancedSettingsAttackPayloadLogging"));
+
+export { GetAppsecAdvancedSettingsJa4FingerprintArgs, GetAppsecAdvancedSettingsJa4FingerprintResult, GetAppsecAdvancedSettingsJa4FingerprintOutputArgs } from "./getAppsecAdvancedSettingsJa4Fingerprint";
+export const getAppsecAdvancedSettingsJa4Fingerprint: typeof import("./getAppsecAdvancedSettingsJa4Fingerprint").getAppsecAdvancedSettingsJa4Fingerprint = null as any;
+export const getAppsecAdvancedSettingsJa4FingerprintOutput: typeof import("./getAppsecAdvancedSettingsJa4Fingerprint").getAppsecAdvancedSettingsJa4FingerprintOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsJa4Fingerprint","getAppsecAdvancedSettingsJa4FingerprintOutput"], () => require("./getAppsecAdvancedSettingsJa4Fingerprint"));
 
 export { GetAppsecAdvancedSettingsPiiLearningArgs, GetAppsecAdvancedSettingsPiiLearningResult, GetAppsecAdvancedSettingsPiiLearningOutputArgs } from "./getAppsecAdvancedSettingsPiiLearning";
 export const getAppsecAdvancedSettingsPiiLearning: typeof import("./getAppsecAdvancedSettingsPiiLearning").getAppsecAdvancedSettingsPiiLearning = null as any;
@@ -759,6 +829,11 @@ export { GetAppsecAdvancedSettingsRequestBodyArgs, GetAppsecAdvancedSettingsRequ
 export const getAppsecAdvancedSettingsRequestBody: typeof import("./getAppsecAdvancedSettingsRequestBody").getAppsecAdvancedSettingsRequestBody = null as any;
 export const getAppsecAdvancedSettingsRequestBodyOutput: typeof import("./getAppsecAdvancedSettingsRequestBody").getAppsecAdvancedSettingsRequestBodyOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsRequestBody","getAppsecAdvancedSettingsRequestBodyOutput"], () => require("./getAppsecAdvancedSettingsRequestBody"));
+
+export { GetAppsecCustomRulesUsageArgs, GetAppsecCustomRulesUsageResult, GetAppsecCustomRulesUsageOutputArgs } from "./getAppsecCustomRulesUsage";
+export const getAppsecCustomRulesUsage: typeof import("./getAppsecCustomRulesUsage").getAppsecCustomRulesUsage = null as any;
+export const getAppsecCustomRulesUsageOutput: typeof import("./getAppsecCustomRulesUsage").getAppsecCustomRulesUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecCustomRulesUsage","getAppsecCustomRulesUsageOutput"], () => require("./getAppsecCustomRulesUsage"));
 
 export { GetAppsecEvalPenaltyBoxConditionsArgs, GetAppsecEvalPenaltyBoxConditionsResult, GetAppsecEvalPenaltyBoxConditionsOutputArgs } from "./getAppsecEvalPenaltyBoxConditions";
 export const getAppsecEvalPenaltyBoxConditions: typeof import("./getAppsecEvalPenaltyBoxConditions").getAppsecEvalPenaltyBoxConditions = null as any;
@@ -774,6 +849,26 @@ export { GetAppsecRapidRulesArgs, GetAppsecRapidRulesResult, GetAppsecRapidRules
 export const getAppsecRapidRules: typeof import("./getAppsecRapidRules").getAppsecRapidRules = null as any;
 export const getAppsecRapidRulesOutput: typeof import("./getAppsecRapidRules").getAppsecRapidRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecRapidRules","getAppsecRapidRulesOutput"], () => require("./getAppsecRapidRules"));
+
+export { GetAprGeneralSettingsArgs, GetAprGeneralSettingsResult, GetAprGeneralSettingsOutputArgs } from "./getAprGeneralSettings";
+export const getAprGeneralSettings: typeof import("./getAprGeneralSettings").getAprGeneralSettings = null as any;
+export const getAprGeneralSettingsOutput: typeof import("./getAprGeneralSettings").getAprGeneralSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getAprGeneralSettings","getAprGeneralSettingsOutput"], () => require("./getAprGeneralSettings"));
+
+export { GetAprProtectedOperationsArgs, GetAprProtectedOperationsResult, GetAprProtectedOperationsOutputArgs } from "./getAprProtectedOperations";
+export const getAprProtectedOperations: typeof import("./getAprProtectedOperations").getAprProtectedOperations = null as any;
+export const getAprProtectedOperationsOutput: typeof import("./getAprProtectedOperations").getAprProtectedOperationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAprProtectedOperations","getAprProtectedOperationsOutput"], () => require("./getAprProtectedOperations"));
+
+export { GetAprUserAllowListArgs, GetAprUserAllowListResult, GetAprUserAllowListOutputArgs } from "./getAprUserAllowList";
+export const getAprUserAllowList: typeof import("./getAprUserAllowList").getAprUserAllowList = null as any;
+export const getAprUserAllowListOutput: typeof import("./getAprUserAllowList").getAprUserAllowListOutput = null as any;
+utilities.lazyLoad(exports, ["getAprUserAllowList","getAprUserAllowListOutput"], () => require("./getAprUserAllowList"));
+
+export { GetAprUserRiskResponseStrategyArgs, GetAprUserRiskResponseStrategyResult, GetAprUserRiskResponseStrategyOutputArgs } from "./getAprUserRiskResponseStrategy";
+export const getAprUserRiskResponseStrategy: typeof import("./getAprUserRiskResponseStrategy").getAprUserRiskResponseStrategy = null as any;
+export const getAprUserRiskResponseStrategyOutput: typeof import("./getAprUserRiskResponseStrategy").getAprUserRiskResponseStrategyOutput = null as any;
+utilities.lazyLoad(exports, ["getAprUserRiskResponseStrategy","getAprUserRiskResponseStrategyOutput"], () => require("./getAprUserRiskResponseStrategy"));
 
 export { GetAuthoritiesSetArgs, GetAuthoritiesSetResult, GetAuthoritiesSetOutputArgs } from "./getAuthoritiesSet";
 export const getAuthoritiesSet: typeof import("./getAuthoritiesSet").getAuthoritiesSet = null as any;
@@ -949,6 +1044,11 @@ export { GetCPSEnrollmentsArgs, GetCPSEnrollmentsResult, GetCPSEnrollmentsOutput
 export const getCPSEnrollments: typeof import("./getCPSEnrollments").getCPSEnrollments = null as any;
 export const getCPSEnrollmentsOutput: typeof import("./getCPSEnrollments").getCPSEnrollmentsOutput = null as any;
 utilities.lazyLoad(exports, ["getCPSEnrollments","getCPSEnrollmentsOutput"], () => require("./getCPSEnrollments"));
+
+export { GetClientlistListArgs, GetClientlistListResult, GetClientlistListOutputArgs } from "./getClientlistList";
+export const getClientlistList: typeof import("./getClientlistList").getClientlistList = null as any;
+export const getClientlistListOutput: typeof import("./getClientlistList").getClientlistListOutput = null as any;
+utilities.lazyLoad(exports, ["getClientlistList","getClientlistListOutput"], () => require("./getClientlistList"));
 
 export { GetClientlistListsArgs, GetClientlistListsResult, GetClientlistListsOutputArgs } from "./getClientlistLists";
 export const getClientlistLists: typeof import("./getClientlistLists").getClientlistLists = null as any;
@@ -1335,6 +1435,46 @@ export const getMtlskeystoreClientCertificates: typeof import("./getMtlskeystore
 export const getMtlskeystoreClientCertificatesOutput: typeof import("./getMtlskeystoreClientCertificates").getMtlskeystoreClientCertificatesOutput = null as any;
 utilities.lazyLoad(exports, ["getMtlskeystoreClientCertificates","getMtlskeystoreClientCertificatesOutput"], () => require("./getMtlskeystoreClientCertificates"));
 
+export { GetMtlstruststoreCaSetArgs, GetMtlstruststoreCaSetResult, GetMtlstruststoreCaSetOutputArgs } from "./getMtlstruststoreCaSet";
+export const getMtlstruststoreCaSet: typeof import("./getMtlstruststoreCaSet").getMtlstruststoreCaSet = null as any;
+export const getMtlstruststoreCaSetOutput: typeof import("./getMtlstruststoreCaSet").getMtlstruststoreCaSetOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlstruststoreCaSet","getMtlstruststoreCaSetOutput"], () => require("./getMtlstruststoreCaSet"));
+
+export { GetMtlstruststoreCaSetActivationArgs, GetMtlstruststoreCaSetActivationResult, GetMtlstruststoreCaSetActivationOutputArgs } from "./getMtlstruststoreCaSetActivation";
+export const getMtlstruststoreCaSetActivation: typeof import("./getMtlstruststoreCaSetActivation").getMtlstruststoreCaSetActivation = null as any;
+export const getMtlstruststoreCaSetActivationOutput: typeof import("./getMtlstruststoreCaSetActivation").getMtlstruststoreCaSetActivationOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlstruststoreCaSetActivation","getMtlstruststoreCaSetActivationOutput"], () => require("./getMtlstruststoreCaSetActivation"));
+
+export { GetMtlstruststoreCaSetActivationsArgs, GetMtlstruststoreCaSetActivationsResult, GetMtlstruststoreCaSetActivationsOutputArgs } from "./getMtlstruststoreCaSetActivations";
+export const getMtlstruststoreCaSetActivations: typeof import("./getMtlstruststoreCaSetActivations").getMtlstruststoreCaSetActivations = null as any;
+export const getMtlstruststoreCaSetActivationsOutput: typeof import("./getMtlstruststoreCaSetActivations").getMtlstruststoreCaSetActivationsOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlstruststoreCaSetActivations","getMtlstruststoreCaSetActivationsOutput"], () => require("./getMtlstruststoreCaSetActivations"));
+
+export { GetMtlstruststoreCaSetActivitiesArgs, GetMtlstruststoreCaSetActivitiesResult, GetMtlstruststoreCaSetActivitiesOutputArgs } from "./getMtlstruststoreCaSetActivities";
+export const getMtlstruststoreCaSetActivities: typeof import("./getMtlstruststoreCaSetActivities").getMtlstruststoreCaSetActivities = null as any;
+export const getMtlstruststoreCaSetActivitiesOutput: typeof import("./getMtlstruststoreCaSetActivities").getMtlstruststoreCaSetActivitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlstruststoreCaSetActivities","getMtlstruststoreCaSetActivitiesOutput"], () => require("./getMtlstruststoreCaSetActivities"));
+
+export { GetMtlstruststoreCaSetAssociationsArgs, GetMtlstruststoreCaSetAssociationsResult, GetMtlstruststoreCaSetAssociationsOutputArgs } from "./getMtlstruststoreCaSetAssociations";
+export const getMtlstruststoreCaSetAssociations: typeof import("./getMtlstruststoreCaSetAssociations").getMtlstruststoreCaSetAssociations = null as any;
+export const getMtlstruststoreCaSetAssociationsOutput: typeof import("./getMtlstruststoreCaSetAssociations").getMtlstruststoreCaSetAssociationsOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlstruststoreCaSetAssociations","getMtlstruststoreCaSetAssociationsOutput"], () => require("./getMtlstruststoreCaSetAssociations"));
+
+export { GetMtlstruststoreCaSetCertificatesArgs, GetMtlstruststoreCaSetCertificatesResult, GetMtlstruststoreCaSetCertificatesOutputArgs } from "./getMtlstruststoreCaSetCertificates";
+export const getMtlstruststoreCaSetCertificates: typeof import("./getMtlstruststoreCaSetCertificates").getMtlstruststoreCaSetCertificates = null as any;
+export const getMtlstruststoreCaSetCertificatesOutput: typeof import("./getMtlstruststoreCaSetCertificates").getMtlstruststoreCaSetCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlstruststoreCaSetCertificates","getMtlstruststoreCaSetCertificatesOutput"], () => require("./getMtlstruststoreCaSetCertificates"));
+
+export { GetMtlstruststoreCaSetVersionsArgs, GetMtlstruststoreCaSetVersionsResult, GetMtlstruststoreCaSetVersionsOutputArgs } from "./getMtlstruststoreCaSetVersions";
+export const getMtlstruststoreCaSetVersions: typeof import("./getMtlstruststoreCaSetVersions").getMtlstruststoreCaSetVersions = null as any;
+export const getMtlstruststoreCaSetVersionsOutput: typeof import("./getMtlstruststoreCaSetVersions").getMtlstruststoreCaSetVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlstruststoreCaSetVersions","getMtlstruststoreCaSetVersionsOutput"], () => require("./getMtlstruststoreCaSetVersions"));
+
+export { GetMtlstruststoreCaSetsArgs, GetMtlstruststoreCaSetsResult, GetMtlstruststoreCaSetsOutputArgs } from "./getMtlstruststoreCaSets";
+export const getMtlstruststoreCaSets: typeof import("./getMtlstruststoreCaSets").getMtlstruststoreCaSets = null as any;
+export const getMtlstruststoreCaSetsOutput: typeof import("./getMtlstruststoreCaSets").getMtlstruststoreCaSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getMtlstruststoreCaSets","getMtlstruststoreCaSetsOutput"], () => require("./getMtlstruststoreCaSets"));
+
 export { GetNetworkListsArgs, GetNetworkListsResult, GetNetworkListsOutputArgs } from "./getNetworkLists";
 export const getNetworkLists: typeof import("./getNetworkLists").getNetworkLists = null as any;
 export const getNetworkListsOutput: typeof import("./getNetworkLists").getNetworkListsOutput = null as any;
@@ -1530,6 +1670,16 @@ export type MtlskeystoreClientCertificateUpload = import("./mtlskeystoreClientCe
 export const MtlskeystoreClientCertificateUpload: typeof import("./mtlskeystoreClientCertificateUpload").MtlskeystoreClientCertificateUpload = null as any;
 utilities.lazyLoad(exports, ["MtlskeystoreClientCertificateUpload"], () => require("./mtlskeystoreClientCertificateUpload"));
 
+export { MtlstruststoreCaSetArgs, MtlstruststoreCaSetState } from "./mtlstruststoreCaSet";
+export type MtlstruststoreCaSet = import("./mtlstruststoreCaSet").MtlstruststoreCaSet;
+export const MtlstruststoreCaSet: typeof import("./mtlstruststoreCaSet").MtlstruststoreCaSet = null as any;
+utilities.lazyLoad(exports, ["MtlstruststoreCaSet"], () => require("./mtlstruststoreCaSet"));
+
+export { MtlstruststoreCaSetActivationArgs, MtlstruststoreCaSetActivationState } from "./mtlstruststoreCaSetActivation";
+export type MtlstruststoreCaSetActivation = import("./mtlstruststoreCaSetActivation").MtlstruststoreCaSetActivation;
+export const MtlstruststoreCaSetActivation: typeof import("./mtlstruststoreCaSetActivation").MtlstruststoreCaSetActivation = null as any;
+utilities.lazyLoad(exports, ["MtlstruststoreCaSetActivation"], () => require("./mtlstruststoreCaSetActivation"));
+
 export { NetworkListArgs, NetworkListState } from "./networkList";
 export type NetworkList = import("./networkList").NetworkList;
 export const NetworkList: typeof import("./networkList").NetworkList = null as any;
@@ -1597,6 +1747,12 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "akamai:index/apidefinitionsActivation:ApidefinitionsActivation":
+                return new ApidefinitionsActivation(name, <any>undefined, { urn })
+            case "akamai:index/apidefinitionsApi:ApidefinitionsApi":
+                return new ApidefinitionsApi(name, <any>undefined, { urn })
+            case "akamai:index/apidefinitionsResourceOperations:ApidefinitionsResourceOperations":
+                return new ApidefinitionsResourceOperations(name, <any>undefined, { urn })
             case "akamai:index/appSecActivations:AppSecActivations":
                 return new AppSecActivations(name, <any>undefined, { urn })
             case "akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch":
@@ -1689,8 +1845,12 @@ const _module = {
                 return new AppSecWafProtection(name, <any>undefined, { urn })
             case "akamai:index/appsecAapSelectedHostnames:AppsecAapSelectedHostnames":
                 return new AppsecAapSelectedHostnames(name, <any>undefined, { urn })
+            case "akamai:index/appsecAdvancedSettingsAsePenaltyBox:AppsecAdvancedSettingsAsePenaltyBox":
+                return new AppsecAdvancedSettingsAsePenaltyBox(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging":
                 return new AppsecAdvancedSettingsAttackPayloadLogging(name, <any>undefined, { urn })
+            case "akamai:index/appsecAdvancedSettingsJa4Fingerprint:AppsecAdvancedSettingsJa4Fingerprint":
+                return new AppsecAdvancedSettingsJa4Fingerprint(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsPiiLearning:AppsecAdvancedSettingsPiiLearning":
                 return new AppsecAdvancedSettingsPiiLearning(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
@@ -1703,6 +1863,14 @@ const _module = {
                 return new AppsecRapidRules(name, <any>undefined, { urn })
             case "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections":
                 return new AppsecSecurityPolicyDefaultProtections(name, <any>undefined, { urn })
+            case "akamai:index/aprGeneralSettings:AprGeneralSettings":
+                return new AprGeneralSettings(name, <any>undefined, { urn })
+            case "akamai:index/aprProtectedOperations:AprProtectedOperations":
+                return new AprProtectedOperations(name, <any>undefined, { urn })
+            case "akamai:index/aprUserAllowList:AprUserAllowList":
+                return new AprUserAllowList(name, <any>undefined, { urn })
+            case "akamai:index/aprUserRiskResponseStrategy:AprUserRiskResponseStrategy":
+                return new AprUserRiskResponseStrategy(name, <any>undefined, { urn })
             case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
                 return new BotmanAkamaiBotCategoryAction(name, <any>undefined, { urn })
             case "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie":
@@ -1839,6 +2007,10 @@ const _module = {
                 return new MtlskeystoreClientCertificateThirdParty(name, <any>undefined, { urn })
             case "akamai:index/mtlskeystoreClientCertificateUpload:MtlskeystoreClientCertificateUpload":
                 return new MtlskeystoreClientCertificateUpload(name, <any>undefined, { urn })
+            case "akamai:index/mtlstruststoreCaSet:MtlstruststoreCaSet":
+                return new MtlstruststoreCaSet(name, <any>undefined, { urn })
+            case "akamai:index/mtlstruststoreCaSetActivation:MtlstruststoreCaSetActivation":
+                return new MtlstruststoreCaSetActivation(name, <any>undefined, { urn })
             case "akamai:index/networkList:NetworkList":
                 return new NetworkList(name, <any>undefined, { urn })
             case "akamai:index/networkListActivations:NetworkListActivations":
@@ -1864,6 +2036,9 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("akamai", "index/apidefinitionsActivation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/apidefinitionsApi", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/apidefinitionsResourceOperations", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecActivations", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecAdvancedSettingsEvasivePathMatch", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecAdvancedSettingsLogging", _module)
@@ -1910,13 +2085,19 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecVersionNodes", _mod
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafMode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafProtection", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAapSelectedHostnames", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsAsePenaltyBox", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsAttackPayloadLogging", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsJa4Fingerprint", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsPiiLearning", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsRequestBody", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecEvalPenaltyBoxConditions", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecPenaltyBoxConditions", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecRapidRules", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecSecurityPolicyDefaultProtections", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/aprGeneralSettings", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/aprProtectedOperations", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/aprUserAllowList", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/aprUserRiskResponseStrategy", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanAkamaiBotCategoryAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotAnalyticsCookie", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotCategoryException", _module)
@@ -1985,6 +2166,8 @@ pulumi.runtime.registerResourceModule("akamai", "index/imagingPolicyVideo", _mod
 pulumi.runtime.registerResourceModule("akamai", "index/mtlskeystoreClientCertificateAkamai", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/mtlskeystoreClientCertificateThirdParty", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/mtlskeystoreClientCertificateUpload", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/mtlstruststoreCaSet", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/mtlstruststoreCaSetActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkList", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkListActivations", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkListDescription", _module)

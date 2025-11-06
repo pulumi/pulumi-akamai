@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class AppSecIPGeo extends pulumi.CustomResource {
@@ -33,25 +35,29 @@ export class AppSecIPGeo extends pulumi.CustomResource {
     }
 
     /**
-     * List of IDs of ASN network list to be blocked
+     * An Object containing List of ASN network lists to be blocked with specified action
      */
-    declare public readonly asnNetworkLists: pulumi.Output<string[] | undefined>;
+    declare public readonly asnControls: pulumi.Output<outputs.AppSecIPGeoAsnControls | undefined>;
+    /**
+     * Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+     */
+    declare public readonly blockAction: pulumi.Output<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
     declare public readonly configId: pulumi.Output<number>;
     /**
-     * List of IDs of network list that are always allowed
+     * List of unique identifiers of ipNetworkLists allowed through the firewall.
      */
     declare public readonly exceptionIpNetworkLists: pulumi.Output<string[] | undefined>;
     /**
-     * List of IDs of geographic network list to be blocked
+     * An Object containing List of geographic network lists to be blocked with specified action
      */
-    declare public readonly geoNetworkLists: pulumi.Output<string[] | undefined>;
+    declare public readonly geoControls: pulumi.Output<outputs.AppSecIPGeoGeoControls | undefined>;
     /**
-     * List of IDs of IP network list to be blocked
+     * An Object containing List of IP network lists to be blocked with specified action
      */
-    declare public readonly ipNetworkLists: pulumi.Output<string[] | undefined>;
+    declare public readonly ipControls: pulumi.Output<outputs.AppSecIPGeoIpControls | undefined>;
     /**
      * Protection mode (block or allow)
      */
@@ -63,7 +69,7 @@ export class AppSecIPGeo extends pulumi.CustomResource {
     /**
      * Action set for Ukraine geo control
      */
-    declare public readonly ukraineGeoControlAction: pulumi.Output<string | undefined>;
+    declare public readonly ukraineGeoControlAction: pulumi.Output<string>;
 
     /**
      * Create a AppSecIPGeo resource with the given unique name, arguments, and options.
@@ -78,11 +84,12 @@ export class AppSecIPGeo extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecIPGeoState | undefined;
-            resourceInputs["asnNetworkLists"] = state?.asnNetworkLists;
+            resourceInputs["asnControls"] = state?.asnControls;
+            resourceInputs["blockAction"] = state?.blockAction;
             resourceInputs["configId"] = state?.configId;
             resourceInputs["exceptionIpNetworkLists"] = state?.exceptionIpNetworkLists;
-            resourceInputs["geoNetworkLists"] = state?.geoNetworkLists;
-            resourceInputs["ipNetworkLists"] = state?.ipNetworkLists;
+            resourceInputs["geoControls"] = state?.geoControls;
+            resourceInputs["ipControls"] = state?.ipControls;
             resourceInputs["mode"] = state?.mode;
             resourceInputs["securityPolicyId"] = state?.securityPolicyId;
             resourceInputs["ukraineGeoControlAction"] = state?.ukraineGeoControlAction;
@@ -97,11 +104,12 @@ export class AppSecIPGeo extends pulumi.CustomResource {
             if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            resourceInputs["asnNetworkLists"] = args?.asnNetworkLists;
+            resourceInputs["asnControls"] = args?.asnControls;
+            resourceInputs["blockAction"] = args?.blockAction;
             resourceInputs["configId"] = args?.configId;
             resourceInputs["exceptionIpNetworkLists"] = args?.exceptionIpNetworkLists;
-            resourceInputs["geoNetworkLists"] = args?.geoNetworkLists;
-            resourceInputs["ipNetworkLists"] = args?.ipNetworkLists;
+            resourceInputs["geoControls"] = args?.geoControls;
+            resourceInputs["ipControls"] = args?.ipControls;
             resourceInputs["mode"] = args?.mode;
             resourceInputs["securityPolicyId"] = args?.securityPolicyId;
             resourceInputs["ukraineGeoControlAction"] = args?.ukraineGeoControlAction;
@@ -116,25 +124,29 @@ export class AppSecIPGeo extends pulumi.CustomResource {
  */
 export interface AppSecIPGeoState {
     /**
-     * List of IDs of ASN network list to be blocked
+     * An Object containing List of ASN network lists to be blocked with specified action
      */
-    asnNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    asnControls?: pulumi.Input<inputs.AppSecIPGeoAsnControls>;
+    /**
+     * Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+     */
+    blockAction?: pulumi.Input<string>;
     /**
      * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * List of IDs of network list that are always allowed
+     * List of unique identifiers of ipNetworkLists allowed through the firewall.
      */
     exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of IDs of geographic network list to be blocked
+     * An Object containing List of geographic network lists to be blocked with specified action
      */
-    geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    geoControls?: pulumi.Input<inputs.AppSecIPGeoGeoControls>;
     /**
-     * List of IDs of IP network list to be blocked
+     * An Object containing List of IP network lists to be blocked with specified action
      */
-    ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    ipControls?: pulumi.Input<inputs.AppSecIPGeoIpControls>;
     /**
      * Protection mode (block or allow)
      */
@@ -154,25 +166,29 @@ export interface AppSecIPGeoState {
  */
 export interface AppSecIPGeoArgs {
     /**
-     * List of IDs of ASN network list to be blocked
+     * An Object containing List of ASN network lists to be blocked with specified action
      */
-    asnNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    asnControls?: pulumi.Input<inputs.AppSecIPGeoAsnControls>;
+    /**
+     * Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
+     */
+    blockAction?: pulumi.Input<string>;
     /**
      * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * List of IDs of network list that are always allowed
+     * List of unique identifiers of ipNetworkLists allowed through the firewall.
      */
     exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of IDs of geographic network list to be blocked
+     * An Object containing List of geographic network lists to be blocked with specified action
      */
-    geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    geoControls?: pulumi.Input<inputs.AppSecIPGeoGeoControls>;
     /**
-     * List of IDs of IP network list to be blocked
+     * An Object containing List of IP network lists to be blocked with specified action
      */
-    ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    ipControls?: pulumi.Input<inputs.AppSecIPGeoIpControls>;
     /**
      * Protection mode (block or allow)
      */

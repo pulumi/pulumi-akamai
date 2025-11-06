@@ -43,7 +43,7 @@ export class CloudAccessKey extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly accessKeyUid: pulumi.Output<number>;
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+     * The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
      */
     declare public readonly authenticationMethod: pulumi.Output<string>;
     /**
@@ -141,7 +141,7 @@ export interface CloudAccessKeyState {
      */
     accessKeyUid?: pulumi.Input<number>;
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+     * The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
      */
     authenticationMethod?: pulumi.Input<string>;
     /**
@@ -180,7 +180,7 @@ export interface CloudAccessKeyArgs {
      */
     accessKeyName: pulumi.Input<string>;
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Two options are available: "AWS4_HMAC_SHA256" or "GOOG4_HMAC_SHA256".
+     * The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
      */
     authenticationMethod: pulumi.Input<string>;
     /**
