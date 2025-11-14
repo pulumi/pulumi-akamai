@@ -123,6 +123,7 @@ class AwaitableGetEdgeWorkerResult(GetEdgeWorkerResult):
 
 def get_edge_worker(edgeworker_id: Optional[_builtins.int] = None,
                     local_bundle: Optional[_builtins.str] = None,
+                    name: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEdgeWorkerResult:
     """
     Use this data source to access information about an existing resource.
@@ -130,6 +131,7 @@ def get_edge_worker(edgeworker_id: Optional[_builtins.int] = None,
     __args__ = dict()
     __args__['edgeworkerId'] = edgeworker_id
     __args__['localBundle'] = local_bundle
+    __args__['name'] = name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getEdgeWorker:getEdgeWorker', __args__, opts=opts, typ=GetEdgeWorkerResult).value
 
@@ -143,8 +145,9 @@ def get_edge_worker(edgeworker_id: Optional[_builtins.int] = None,
         resource_tier_id=pulumi.get(__ret__, 'resource_tier_id'),
         version=pulumi.get(__ret__, 'version'),
         warnings=pulumi.get(__ret__, 'warnings'))
-def get_edge_worker_output(edgeworker_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_edge_worker_output(edgeworker_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                            local_bundle: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                           name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgeWorkerResult]:
     """
     Use this data source to access information about an existing resource.
@@ -152,6 +155,7 @@ def get_edge_worker_output(edgeworker_id: Optional[pulumi.Input[_builtins.int]] 
     __args__ = dict()
     __args__['edgeworkerId'] = edgeworker_id
     __args__['localBundle'] = local_bundle
+    __args__['name'] = name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getEdgeWorker:getEdgeWorker', __args__, opts=opts, typ=GetEdgeWorkerResult)
     return __ret__.apply(lambda __response__: GetEdgeWorkerResult(

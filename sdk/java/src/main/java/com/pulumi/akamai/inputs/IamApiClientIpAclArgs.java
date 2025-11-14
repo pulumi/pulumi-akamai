@@ -10,8 +10,6 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class IamApiClientIpAclArgs extends com.pulumi.resources.ResourceArgs {
@@ -22,15 +20,15 @@ public final class IamApiClientIpAclArgs extends com.pulumi.resources.ResourceAr
      * IP addresses or CIDR blocks the API client can access.
      * 
      */
-    @Import(name="cidrs")
-    private @Nullable Output<List<String>> cidrs;
+    @Import(name="cidrs", required=true)
+    private Output<List<String>> cidrs;
 
     /**
      * @return IP addresses or CIDR blocks the API client can access.
      * 
      */
-    public Optional<Output<List<String>>> cidrs() {
-        return Optional.ofNullable(this.cidrs);
+    public Output<List<String>> cidrs() {
+        return this.cidrs;
     }
 
     /**
@@ -79,7 +77,7 @@ public final class IamApiClientIpAclArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder cidrs(@Nullable Output<List<String>> cidrs) {
+        public Builder cidrs(Output<List<String>> cidrs) {
             $.cidrs = cidrs;
             return this;
         }
@@ -126,6 +124,9 @@ public final class IamApiClientIpAclArgs extends com.pulumi.resources.ResourceAr
         }
 
         public IamApiClientIpAclArgs build() {
+            if ($.cidrs == null) {
+                throw new MissingRequiredPropertyException("IamApiClientIpAclArgs", "cidrs");
+            }
             if ($.enable == null) {
                 throw new MissingRequiredPropertyException("IamApiClientIpAclArgs", "enable");
             }

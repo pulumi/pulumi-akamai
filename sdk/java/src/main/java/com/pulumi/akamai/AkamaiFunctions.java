@@ -206,6 +206,12 @@ import com.pulumi.akamai.inputs.GetCloudaccessKeyPropertiesArgs;
 import com.pulumi.akamai.inputs.GetCloudaccessKeyPropertiesPlainArgs;
 import com.pulumi.akamai.inputs.GetCloudaccessKeyVersionsArgs;
 import com.pulumi.akamai.inputs.GetCloudaccessKeyVersionsPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesCertificateArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesCertificatePlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesCertificatesArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesCertificatesPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesHostnameBindingsArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesHostnameBindingsPlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsApiPrioritizationMatchRuleArgs;
 import com.pulumi.akamai.inputs.GetCloudletsApiPrioritizationMatchRulePlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsApplicationLoadBalancerArgs;
@@ -347,6 +353,10 @@ import com.pulumi.akamai.inputs.GetPropertiesSearchPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyActivationArgs;
 import com.pulumi.akamai.inputs.GetPropertyActivationPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyArgs;
+import com.pulumi.akamai.inputs.GetPropertyDomainownershipDomainArgs;
+import com.pulumi.akamai.inputs.GetPropertyDomainownershipDomainPlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyDomainownershipSearchDomainsArgs;
+import com.pulumi.akamai.inputs.GetPropertyDomainownershipSearchDomainsPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnameActivationArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnameActivationPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnameActivationsArgs;
@@ -478,6 +488,9 @@ import com.pulumi.akamai.outputs.GetCloudaccessKeyPropertiesResult;
 import com.pulumi.akamai.outputs.GetCloudaccessKeyResult;
 import com.pulumi.akamai.outputs.GetCloudaccessKeyVersionsResult;
 import com.pulumi.akamai.outputs.GetCloudaccessKeysResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesCertificateResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesCertificatesResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesHostnameBindingsResult;
 import com.pulumi.akamai.outputs.GetCloudletsApiPrioritizationMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsApplicationLoadBalancerMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsApplicationLoadBalancerResult;
@@ -562,6 +575,9 @@ import com.pulumi.akamai.outputs.GetNetworkListsResult;
 import com.pulumi.akamai.outputs.GetPropertiesResult;
 import com.pulumi.akamai.outputs.GetPropertiesSearchResult;
 import com.pulumi.akamai.outputs.GetPropertyActivationResult;
+import com.pulumi.akamai.outputs.GetPropertyDomainownershipDomainResult;
+import com.pulumi.akamai.outputs.GetPropertyDomainownershipDomainsResult;
+import com.pulumi.akamai.outputs.GetPropertyDomainownershipSearchDomainsResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnameActivationResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnameActivationsResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnamesDiffResult;
@@ -2224,6 +2240,63 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetCloudaccessKeysResult> getCloudaccessKeysPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCloudaccessKeys:getCloudaccessKeys", TypeShape.of(GetCloudaccessKeysResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificate(GetCloudcertificatesCertificateArgs args) {
+        return getCloudcertificatesCertificate(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificatePlain(GetCloudcertificatesCertificatePlainArgs args) {
+        return getCloudcertificatesCertificatePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificate(GetCloudcertificatesCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate", TypeShape.of(GetCloudcertificatesCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificate(GetCloudcertificatesCertificateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate", TypeShape.of(GetCloudcertificatesCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificatePlain(GetCloudcertificatesCertificatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate", TypeShape.of(GetCloudcertificatesCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificates() {
+        return getCloudcertificatesCertificates(GetCloudcertificatesCertificatesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificatesPlain() {
+        return getCloudcertificatesCertificatesPlain(GetCloudcertificatesCertificatesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificates(GetCloudcertificatesCertificatesArgs args) {
+        return getCloudcertificatesCertificates(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificatesPlain(GetCloudcertificatesCertificatesPlainArgs args) {
+        return getCloudcertificatesCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificates(GetCloudcertificatesCertificatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesCertificates:getCloudcertificatesCertificates", TypeShape.of(GetCloudcertificatesCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificates(GetCloudcertificatesCertificatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesCertificates:getCloudcertificatesCertificates", TypeShape.of(GetCloudcertificatesCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificatesPlain(GetCloudcertificatesCertificatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesCertificates:getCloudcertificatesCertificates", TypeShape.of(GetCloudcertificatesCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindings() {
+        return getCloudcertificatesHostnameBindings(GetCloudcertificatesHostnameBindingsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindingsPlain() {
+        return getCloudcertificatesHostnameBindingsPlain(GetCloudcertificatesHostnameBindingsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindings(GetCloudcertificatesHostnameBindingsArgs args) {
+        return getCloudcertificatesHostnameBindings(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindingsPlain(GetCloudcertificatesHostnameBindingsPlainArgs args) {
+        return getCloudcertificatesHostnameBindingsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindings(GetCloudcertificatesHostnameBindingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings", TypeShape.of(GetCloudcertificatesHostnameBindingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindings(GetCloudcertificatesHostnameBindingsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings", TypeShape.of(GetCloudcertificatesHostnameBindingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindingsPlain(GetCloudcertificatesHostnameBindingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings", TypeShape.of(GetCloudcertificatesHostnameBindingsResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetCloudletsApiPrioritizationMatchRuleResult> getCloudletsApiPrioritizationMatchRule() {
         return getCloudletsApiPrioritizationMatchRule(GetCloudletsApiPrioritizationMatchRuleArgs.Empty, InvokeOptions.Empty);
     }
@@ -2766,6 +2839,12 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetDnsRecordSetResult> getDnsRecordSetPlain(GetDnsRecordSetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getDnsRecordSet:getDnsRecordSet", TypeShape.of(GetDnsRecordSetResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetEdgeWorkerResult> getEdgeWorker() {
+        return getEdgeWorker(GetEdgeWorkerArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetEdgeWorkerResult> getEdgeWorkerPlain() {
+        return getEdgeWorkerPlain(GetEdgeWorkerPlainArgs.Empty, InvokeOptions.Empty);
     }
     public static Output<GetEdgeWorkerResult> getEdgeWorker(GetEdgeWorkerArgs args) {
         return getEdgeWorker(args, InvokeOptions.Empty);
@@ -3750,6 +3829,57 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetPropertyActivationResult> getPropertyActivationPlain(GetPropertyActivationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getPropertyActivation:getPropertyActivation", TypeShape.of(GetPropertyActivationResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyDomainownershipDomainResult> getPropertyDomainownershipDomain(GetPropertyDomainownershipDomainArgs args) {
+        return getPropertyDomainownershipDomain(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyDomainownershipDomainResult> getPropertyDomainownershipDomainPlain(GetPropertyDomainownershipDomainPlainArgs args) {
+        return getPropertyDomainownershipDomainPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyDomainownershipDomainResult> getPropertyDomainownershipDomain(GetPropertyDomainownershipDomainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyDomainownershipDomain:getPropertyDomainownershipDomain", TypeShape.of(GetPropertyDomainownershipDomainResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyDomainownershipDomainResult> getPropertyDomainownershipDomain(GetPropertyDomainownershipDomainArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyDomainownershipDomain:getPropertyDomainownershipDomain", TypeShape.of(GetPropertyDomainownershipDomainResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPropertyDomainownershipDomainResult> getPropertyDomainownershipDomainPlain(GetPropertyDomainownershipDomainPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyDomainownershipDomain:getPropertyDomainownershipDomain", TypeShape.of(GetPropertyDomainownershipDomainResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyDomainownershipDomainsResult> getPropertyDomainownershipDomains() {
+        return getPropertyDomainownershipDomains(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyDomainownershipDomainsResult> getPropertyDomainownershipDomainsPlain() {
+        return getPropertyDomainownershipDomainsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyDomainownershipDomainsResult> getPropertyDomainownershipDomains(InvokeArgs args) {
+        return getPropertyDomainownershipDomains(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyDomainownershipDomainsResult> getPropertyDomainownershipDomainsPlain(InvokeArgs args) {
+        return getPropertyDomainownershipDomainsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyDomainownershipDomainsResult> getPropertyDomainownershipDomains(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyDomainownershipDomains:getPropertyDomainownershipDomains", TypeShape.of(GetPropertyDomainownershipDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyDomainownershipDomainsResult> getPropertyDomainownershipDomains(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyDomainownershipDomains:getPropertyDomainownershipDomains", TypeShape.of(GetPropertyDomainownershipDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPropertyDomainownershipDomainsResult> getPropertyDomainownershipDomainsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyDomainownershipDomains:getPropertyDomainownershipDomains", TypeShape.of(GetPropertyDomainownershipDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyDomainownershipSearchDomainsResult> getPropertyDomainownershipSearchDomains(GetPropertyDomainownershipSearchDomainsArgs args) {
+        return getPropertyDomainownershipSearchDomains(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyDomainownershipSearchDomainsResult> getPropertyDomainownershipSearchDomainsPlain(GetPropertyDomainownershipSearchDomainsPlainArgs args) {
+        return getPropertyDomainownershipSearchDomainsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyDomainownershipSearchDomainsResult> getPropertyDomainownershipSearchDomains(GetPropertyDomainownershipSearchDomainsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyDomainownershipSearchDomains:getPropertyDomainownershipSearchDomains", TypeShape.of(GetPropertyDomainownershipSearchDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyDomainownershipSearchDomainsResult> getPropertyDomainownershipSearchDomains(GetPropertyDomainownershipSearchDomainsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyDomainownershipSearchDomains:getPropertyDomainownershipSearchDomains", TypeShape.of(GetPropertyDomainownershipSearchDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPropertyDomainownershipSearchDomainsResult> getPropertyDomainownershipSearchDomainsPlain(GetPropertyDomainownershipSearchDomainsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyDomainownershipSearchDomains:getPropertyDomainownershipSearchDomains", TypeShape.of(GetPropertyDomainownershipSearchDomainsResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetPropertyHostnameActivationResult> getPropertyHostnameActivation(GetPropertyHostnameActivationArgs args) {
         return getPropertyHostnameActivation(args, InvokeOptions.Empty);

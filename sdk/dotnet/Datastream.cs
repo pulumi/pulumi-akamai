@@ -60,6 +60,9 @@ namespace Pulumi.Akamai
         [Output("deliveryConfiguration")]
         public Output<Outputs.DatastreamDeliveryConfiguration> DeliveryConfiguration { get; private set; } = null!;
 
+        [Output("dynatraceConnector")]
+        public Output<Outputs.DatastreamDynatraceConnector?> DynatraceConnector { get; private set; } = null!;
+
         [Output("elasticsearchConnector")]
         public Output<Outputs.DatastreamElasticsearchConnector?> ElasticsearchConnector { get; private set; } = null!;
 
@@ -126,6 +129,9 @@ namespace Pulumi.Akamai
         [Output("properties")]
         public Output<ImmutableArray<string>> Properties { get; private set; } = null!;
 
+        [Output("s3CompatibleConnector")]
+        public Output<Outputs.DatastreamS3CompatibleConnector?> S3CompatibleConnector { get; private set; } = null!;
+
         [Output("s3Connector")]
         public Output<Outputs.DatastreamS3Connector?> S3Connector { get; private set; } = null!;
 
@@ -146,6 +152,9 @@ namespace Pulumi.Akamai
 
         [Output("sumologicConnector")]
         public Output<Outputs.DatastreamSumologicConnector?> SumologicConnector { get; private set; } = null!;
+
+        [Output("trafficpeakConnector")]
+        public Output<Outputs.DatastreamTrafficpeakConnector?> TrafficpeakConnector { get; private set; } = null!;
 
 
         /// <summary>
@@ -235,6 +244,9 @@ namespace Pulumi.Akamai
         [Input("deliveryConfiguration", required: true)]
         public Input<Inputs.DatastreamDeliveryConfigurationArgs> DeliveryConfiguration { get; set; } = null!;
 
+        [Input("dynatraceConnector")]
+        public Input<Inputs.DatastreamDynatraceConnectorArgs>? DynatraceConnector { get; set; }
+
         [Input("elasticsearchConnector")]
         public Input<Inputs.DatastreamElasticsearchConnectorArgs>? ElasticsearchConnector { get; set; }
 
@@ -283,6 +295,9 @@ namespace Pulumi.Akamai
             set => _properties = value;
         }
 
+        [Input("s3CompatibleConnector")]
+        public Input<Inputs.DatastreamS3CompatibleConnectorArgs>? S3CompatibleConnector { get; set; }
+
         [Input("s3Connector")]
         public Input<Inputs.DatastreamS3ConnectorArgs>? S3Connector { get; set; }
 
@@ -297,6 +312,9 @@ namespace Pulumi.Akamai
 
         [Input("sumologicConnector")]
         public Input<Inputs.DatastreamSumologicConnectorArgs>? SumologicConnector { get; set; }
+
+        [Input("trafficpeakConnector")]
+        public Input<Inputs.DatastreamTrafficpeakConnectorArgs>? TrafficpeakConnector { get; set; }
 
         public DatastreamArgs()
         {
@@ -359,6 +377,9 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("deliveryConfiguration")]
         public Input<Inputs.DatastreamDeliveryConfigurationGetArgs>? DeliveryConfiguration { get; set; }
+
+        [Input("dynatraceConnector")]
+        public Input<Inputs.DatastreamDynatraceConnectorGetArgs>? DynatraceConnector { get; set; }
 
         [Input("elasticsearchConnector")]
         public Input<Inputs.DatastreamElasticsearchConnectorGetArgs>? ElasticsearchConnector { get; set; }
@@ -438,6 +459,9 @@ namespace Pulumi.Akamai
             set => _properties = value;
         }
 
+        [Input("s3CompatibleConnector")]
+        public Input<Inputs.DatastreamS3CompatibleConnectorGetArgs>? S3CompatibleConnector { get; set; }
+
         [Input("s3Connector")]
         public Input<Inputs.DatastreamS3ConnectorGetArgs>? S3Connector { get; set; }
 
@@ -458,6 +482,9 @@ namespace Pulumi.Akamai
 
         [Input("sumologicConnector")]
         public Input<Inputs.DatastreamSumologicConnectorGetArgs>? SumologicConnector { get; set; }
+
+        [Input("trafficpeakConnector")]
+        public Input<Inputs.DatastreamTrafficpeakConnectorGetArgs>? TrafficpeakConnector { get; set; }
 
         public DatastreamState()
         {

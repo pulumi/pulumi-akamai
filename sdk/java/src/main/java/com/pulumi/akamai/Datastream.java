@@ -9,15 +9,18 @@ import com.pulumi.akamai.inputs.DatastreamState;
 import com.pulumi.akamai.outputs.DatastreamAzureConnector;
 import com.pulumi.akamai.outputs.DatastreamDatadogConnector;
 import com.pulumi.akamai.outputs.DatastreamDeliveryConfiguration;
+import com.pulumi.akamai.outputs.DatastreamDynatraceConnector;
 import com.pulumi.akamai.outputs.DatastreamElasticsearchConnector;
 import com.pulumi.akamai.outputs.DatastreamGcsConnector;
 import com.pulumi.akamai.outputs.DatastreamHttpsConnector;
 import com.pulumi.akamai.outputs.DatastreamLogglyConnector;
 import com.pulumi.akamai.outputs.DatastreamNewRelicConnector;
 import com.pulumi.akamai.outputs.DatastreamOracleConnector;
+import com.pulumi.akamai.outputs.DatastreamS3CompatibleConnector;
 import com.pulumi.akamai.outputs.DatastreamS3Connector;
 import com.pulumi.akamai.outputs.DatastreamSplunkConnector;
 import com.pulumi.akamai.outputs.DatastreamSumologicConnector;
+import com.pulumi.akamai.outputs.DatastreamTrafficpeakConnector;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -140,6 +143,12 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      */
     public Output<DatastreamDeliveryConfiguration> deliveryConfiguration() {
         return this.deliveryConfiguration;
+    }
+    @Export(name="dynatraceConnector", refs={DatastreamDynatraceConnector.class}, tree="[0]")
+    private Output</* @Nullable */ DatastreamDynatraceConnector> dynatraceConnector;
+
+    public Output<Optional<DatastreamDynatraceConnector>> dynatraceConnector() {
+        return Codegen.optional(this.dynatraceConnector);
     }
     @Export(name="elasticsearchConnector", refs={DatastreamElasticsearchConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamElasticsearchConnector> elasticsearchConnector;
@@ -289,6 +298,12 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<List<String>> properties() {
         return this.properties;
     }
+    @Export(name="s3CompatibleConnector", refs={DatastreamS3CompatibleConnector.class}, tree="[0]")
+    private Output</* @Nullable */ DatastreamS3CompatibleConnector> s3CompatibleConnector;
+
+    public Output<Optional<DatastreamS3CompatibleConnector>> s3CompatibleConnector() {
+        return Codegen.optional(this.s3CompatibleConnector);
+    }
     @Export(name="s3Connector", refs={DatastreamS3Connector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamS3Connector> s3Connector;
 
@@ -334,6 +349,12 @@ public class Datastream extends com.pulumi.resources.CustomResource {
 
     public Output<Optional<DatastreamSumologicConnector>> sumologicConnector() {
         return Codegen.optional(this.sumologicConnector);
+    }
+    @Export(name="trafficpeakConnector", refs={DatastreamTrafficpeakConnector.class}, tree="[0]")
+    private Output</* @Nullable */ DatastreamTrafficpeakConnector> trafficpeakConnector;
+
+    public Output<Optional<DatastreamTrafficpeakConnector>> trafficpeakConnector() {
+        return Codegen.optional(this.trafficpeakConnector);
     }
 
     /**

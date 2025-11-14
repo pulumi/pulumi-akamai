@@ -64,6 +64,7 @@ export class Datastream extends pulumi.CustomResource {
      * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
     declare public readonly deliveryConfiguration: pulumi.Output<outputs.DatastreamDeliveryConfiguration>;
+    declare public readonly dynatraceConnector: pulumi.Output<outputs.DatastreamDynatraceConnector | undefined>;
     declare public readonly elasticsearchConnector: pulumi.Output<outputs.DatastreamElasticsearchConnector | undefined>;
     declare public readonly gcsConnector: pulumi.Output<outputs.DatastreamGcsConnector | undefined>;
     /**
@@ -102,6 +103,7 @@ export class Datastream extends pulumi.CustomResource {
      * Identifies the properties monitored in the stream
      */
     declare public readonly properties: pulumi.Output<string[]>;
+    declare public readonly s3CompatibleConnector: pulumi.Output<outputs.DatastreamS3CompatibleConnector | undefined>;
     declare public readonly s3Connector: pulumi.Output<outputs.DatastreamS3Connector | undefined>;
     declare public readonly splunkConnector: pulumi.Output<outputs.DatastreamSplunkConnector | undefined>;
     /**
@@ -113,6 +115,7 @@ export class Datastream extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly streamVersion: pulumi.Output<number>;
     declare public readonly sumologicConnector: pulumi.Output<outputs.DatastreamSumologicConnector | undefined>;
+    declare public readonly trafficpeakConnector: pulumi.Output<outputs.DatastreamTrafficpeakConnector | undefined>;
 
     /**
      * Create a Datastream resource with the given unique name, arguments, and options.
@@ -136,6 +139,7 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["datadogConnector"] = state?.datadogConnector;
             resourceInputs["datasetFields"] = state?.datasetFields;
             resourceInputs["deliveryConfiguration"] = state?.deliveryConfiguration;
+            resourceInputs["dynatraceConnector"] = state?.dynatraceConnector;
             resourceInputs["elasticsearchConnector"] = state?.elasticsearchConnector;
             resourceInputs["gcsConnector"] = state?.gcsConnector;
             resourceInputs["groupId"] = state?.groupId;
@@ -150,11 +154,13 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["papiJson"] = state?.papiJson;
             resourceInputs["productId"] = state?.productId;
             resourceInputs["properties"] = state?.properties;
+            resourceInputs["s3CompatibleConnector"] = state?.s3CompatibleConnector;
             resourceInputs["s3Connector"] = state?.s3Connector;
             resourceInputs["splunkConnector"] = state?.splunkConnector;
             resourceInputs["streamName"] = state?.streamName;
             resourceInputs["streamVersion"] = state?.streamVersion;
             resourceInputs["sumologicConnector"] = state?.sumologicConnector;
+            resourceInputs["trafficpeakConnector"] = state?.trafficpeakConnector;
         } else {
             const args = argsOrState as DatastreamArgs | undefined;
             if (args?.active === undefined && !opts.urn) {
@@ -185,6 +191,7 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["datadogConnector"] = args?.datadogConnector;
             resourceInputs["datasetFields"] = args?.datasetFields;
             resourceInputs["deliveryConfiguration"] = args?.deliveryConfiguration;
+            resourceInputs["dynatraceConnector"] = args?.dynatraceConnector;
             resourceInputs["elasticsearchConnector"] = args?.elasticsearchConnector;
             resourceInputs["gcsConnector"] = args?.gcsConnector;
             resourceInputs["groupId"] = args?.groupId;
@@ -194,10 +201,12 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["notificationEmails"] = args?.notificationEmails;
             resourceInputs["oracleConnector"] = args?.oracleConnector;
             resourceInputs["properties"] = args?.properties;
+            resourceInputs["s3CompatibleConnector"] = args?.s3CompatibleConnector;
             resourceInputs["s3Connector"] = args?.s3Connector;
             resourceInputs["splunkConnector"] = args?.splunkConnector;
             resourceInputs["streamName"] = args?.streamName;
             resourceInputs["sumologicConnector"] = args?.sumologicConnector;
+            resourceInputs["trafficpeakConnector"] = args?.trafficpeakConnector;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["createdDate"] = undefined /*out*/;
             resourceInputs["latestVersion"] = undefined /*out*/;
@@ -246,6 +255,7 @@ export interface DatastreamState {
      * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
     deliveryConfiguration?: pulumi.Input<inputs.DatastreamDeliveryConfiguration>;
+    dynatraceConnector?: pulumi.Input<inputs.DatastreamDynatraceConnector>;
     elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
     gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector>;
     /**
@@ -284,6 +294,7 @@ export interface DatastreamState {
      * Identifies the properties monitored in the stream
      */
     properties?: pulumi.Input<pulumi.Input<string>[]>;
+    s3CompatibleConnector?: pulumi.Input<inputs.DatastreamS3CompatibleConnector>;
     s3Connector?: pulumi.Input<inputs.DatastreamS3Connector>;
     splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector>;
     /**
@@ -295,6 +306,7 @@ export interface DatastreamState {
      */
     streamVersion?: pulumi.Input<number>;
     sumologicConnector?: pulumi.Input<inputs.DatastreamSumologicConnector>;
+    trafficpeakConnector?: pulumi.Input<inputs.DatastreamTrafficpeakConnector>;
 }
 
 /**
@@ -323,6 +335,7 @@ export interface DatastreamArgs {
      * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
     deliveryConfiguration: pulumi.Input<inputs.DatastreamDeliveryConfiguration>;
+    dynatraceConnector?: pulumi.Input<inputs.DatastreamDynatraceConnector>;
     elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
     gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector>;
     /**
@@ -341,6 +354,7 @@ export interface DatastreamArgs {
      * Identifies the properties monitored in the stream
      */
     properties: pulumi.Input<pulumi.Input<string>[]>;
+    s3CompatibleConnector?: pulumi.Input<inputs.DatastreamS3CompatibleConnector>;
     s3Connector?: pulumi.Input<inputs.DatastreamS3Connector>;
     splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector>;
     /**
@@ -348,4 +362,5 @@ export interface DatastreamArgs {
      */
     streamName: pulumi.Input<string>;
     sumologicConnector?: pulumi.Input<inputs.DatastreamSumologicConnector>;
+    trafficpeakConnector?: pulumi.Input<inputs.DatastreamTrafficpeakConnector>;
 }

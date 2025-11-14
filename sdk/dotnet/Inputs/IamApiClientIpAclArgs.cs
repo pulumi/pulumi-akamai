@@ -12,7 +12,7 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class IamApiClientIpAclArgs : global::Pulumi.ResourceArgs
     {
-        [Input("cidrs")]
+        [Input("cidrs", required: true)]
         private InputList<string>? _cidrs;
 
         /// <summary>

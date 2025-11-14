@@ -13,6 +13,14 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class PropertyHostname
     {
+        /// <summary>
+        /// Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        /// </summary>
+        public readonly ImmutableArray<Outputs.PropertyHostnameCcmCertStatus> CcmCertStatuses;
+        /// <summary>
+        /// Certificate identifiers and links for the CCM-managed certificates.
+        /// </summary>
+        public readonly Outputs.PropertyHostnameCcmCertificates? CcmCertificates;
         public readonly string CertProvisioningType;
         public readonly ImmutableArray<Outputs.PropertyHostnameCertStatus> CertStatuses;
         public readonly string CnameFrom;
@@ -22,6 +30,10 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private PropertyHostname(
+            ImmutableArray<Outputs.PropertyHostnameCcmCertStatus> ccmCertStatuses,
+
+            Outputs.PropertyHostnameCcmCertificates? ccmCertificates,
+
             string certProvisioningType,
 
             ImmutableArray<Outputs.PropertyHostnameCertStatus> certStatuses,
@@ -34,6 +46,8 @@ namespace Pulumi.Akamai.Outputs
 
             string? edgeHostnameId)
         {
+            CcmCertStatuses = ccmCertStatuses;
+            CcmCertificates = ccmCertificates;
             CertProvisioningType = certProvisioningType;
             CertStatuses = certStatuses;
             CnameFrom = cnameFrom;

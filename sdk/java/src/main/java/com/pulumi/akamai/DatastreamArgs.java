@@ -6,15 +6,18 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.inputs.DatastreamAzureConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamDatadogConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamDeliveryConfigurationArgs;
+import com.pulumi.akamai.inputs.DatastreamDynatraceConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamElasticsearchConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamGcsConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamHttpsConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamLogglyConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamNewRelicConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamOracleConnectorArgs;
+import com.pulumi.akamai.inputs.DatastreamS3CompatibleConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamS3ConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamSplunkConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamSumologicConnectorArgs;
+import com.pulumi.akamai.inputs.DatastreamTrafficpeakConnectorArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -120,6 +123,13 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         return this.deliveryConfiguration;
     }
 
+    @Import(name="dynatraceConnector")
+    private @Nullable Output<DatastreamDynatraceConnectorArgs> dynatraceConnector;
+
+    public Optional<Output<DatastreamDynatraceConnectorArgs>> dynatraceConnector() {
+        return Optional.ofNullable(this.dynatraceConnector);
+    }
+
     @Import(name="elasticsearchConnector")
     private @Nullable Output<DatastreamElasticsearchConnectorArgs> elasticsearchConnector;
 
@@ -207,6 +217,13 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         return this.properties;
     }
 
+    @Import(name="s3CompatibleConnector")
+    private @Nullable Output<DatastreamS3CompatibleConnectorArgs> s3CompatibleConnector;
+
+    public Optional<Output<DatastreamS3CompatibleConnectorArgs>> s3CompatibleConnector() {
+        return Optional.ofNullable(this.s3CompatibleConnector);
+    }
+
     @Import(name="s3Connector")
     private @Nullable Output<DatastreamS3ConnectorArgs> s3Connector;
 
@@ -243,6 +260,13 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.sumologicConnector);
     }
 
+    @Import(name="trafficpeakConnector")
+    private @Nullable Output<DatastreamTrafficpeakConnectorArgs> trafficpeakConnector;
+
+    public Optional<Output<DatastreamTrafficpeakConnectorArgs>> trafficpeakConnector() {
+        return Optional.ofNullable(this.trafficpeakConnector);
+    }
+
     private DatastreamArgs() {}
 
     private DatastreamArgs(DatastreamArgs $) {
@@ -253,6 +277,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         this.datadogConnector = $.datadogConnector;
         this.datasetFields = $.datasetFields;
         this.deliveryConfiguration = $.deliveryConfiguration;
+        this.dynatraceConnector = $.dynatraceConnector;
         this.elasticsearchConnector = $.elasticsearchConnector;
         this.gcsConnector = $.gcsConnector;
         this.groupId = $.groupId;
@@ -262,10 +287,12 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         this.notificationEmails = $.notificationEmails;
         this.oracleConnector = $.oracleConnector;
         this.properties = $.properties;
+        this.s3CompatibleConnector = $.s3CompatibleConnector;
         this.s3Connector = $.s3Connector;
         this.splunkConnector = $.splunkConnector;
         this.streamName = $.streamName;
         this.sumologicConnector = $.sumologicConnector;
+        this.trafficpeakConnector = $.trafficpeakConnector;
     }
 
     public static Builder builder() {
@@ -419,6 +446,15 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
             return deliveryConfiguration(Output.of(deliveryConfiguration));
         }
 
+        public Builder dynatraceConnector(@Nullable Output<DatastreamDynatraceConnectorArgs> dynatraceConnector) {
+            $.dynatraceConnector = dynatraceConnector;
+            return this;
+        }
+
+        public Builder dynatraceConnector(DatastreamDynatraceConnectorArgs dynatraceConnector) {
+            return dynatraceConnector(Output.of(dynatraceConnector));
+        }
+
         public Builder elasticsearchConnector(@Nullable Output<DatastreamElasticsearchConnectorArgs> elasticsearchConnector) {
             $.elasticsearchConnector = elasticsearchConnector;
             return this;
@@ -556,6 +592,15 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
             return properties(List.of(properties));
         }
 
+        public Builder s3CompatibleConnector(@Nullable Output<DatastreamS3CompatibleConnectorArgs> s3CompatibleConnector) {
+            $.s3CompatibleConnector = s3CompatibleConnector;
+            return this;
+        }
+
+        public Builder s3CompatibleConnector(DatastreamS3CompatibleConnectorArgs s3CompatibleConnector) {
+            return s3CompatibleConnector(Output.of(s3CompatibleConnector));
+        }
+
         public Builder s3Connector(@Nullable Output<DatastreamS3ConnectorArgs> s3Connector) {
             $.s3Connector = s3Connector;
             return this;
@@ -602,6 +647,15 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder sumologicConnector(DatastreamSumologicConnectorArgs sumologicConnector) {
             return sumologicConnector(Output.of(sumologicConnector));
+        }
+
+        public Builder trafficpeakConnector(@Nullable Output<DatastreamTrafficpeakConnectorArgs> trafficpeakConnector) {
+            $.trafficpeakConnector = trafficpeakConnector;
+            return this;
+        }
+
+        public Builder trafficpeakConnector(DatastreamTrafficpeakConnectorArgs trafficpeakConnector) {
+            return trafficpeakConnector(Output.of(trafficpeakConnector));
         }
 
         public DatastreamArgs build() {

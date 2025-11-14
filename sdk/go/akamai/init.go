@@ -203,6 +203,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ClientlistList{}
 	case "akamai:index/cloudAccessKey:CloudAccessKey":
 		r = &CloudAccessKey{}
+	case "akamai:index/cloudcertificatesCertificate:CloudcertificatesCertificate":
+		r = &CloudcertificatesCertificate{}
+	case "akamai:index/cloudcertificatesUploadSignedCertificate:CloudcertificatesUploadSignedCertificate":
+		r = &CloudcertificatesUploadSignedCertificate{}
 	case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
 		r = &CloudletsApplicationLoadBalancer{}
 	case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -299,6 +303,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &PropertyActivation{}
 	case "akamai:index/propertyBootstrap:PropertyBootstrap":
 		r = &PropertyBootstrap{}
+	case "akamai:index/propertyDomainownershipDomains:PropertyDomainownershipDomains":
+		r = &PropertyDomainownershipDomains{}
+	case "akamai:index/propertyDomainownershipValidation:PropertyDomainownershipValidation":
+		r = &PropertyDomainownershipValidation{}
 	case "akamai:index/propertyHostnameBucket:PropertyHostnameBucket":
 		r = &PropertyHostnameBucket{}
 	case "akamai:index/propertyInclude:PropertyInclude":
@@ -793,6 +801,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/cloudcertificatesCertificate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cloudcertificatesUploadSignedCertificate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/cloudletsApplicationLoadBalancer",
 		&module{version},
 	)
@@ -1029,6 +1047,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/propertyBootstrap",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/propertyDomainownershipDomains",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/propertyDomainownershipValidation",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

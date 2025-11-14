@@ -35,6 +35,8 @@ __all__ = [
     'CloudAccessKeyNetworkConfigurationArgsDict',
     'CloudAccessKeyTimeoutsArgs',
     'CloudAccessKeyTimeoutsArgsDict',
+    'CloudcertificatesCertificateSubjectArgs',
+    'CloudcertificatesCertificateSubjectArgsDict',
     'CloudletsApplicationLoadBalancerActivationTimeoutsArgs',
     'CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict',
     'CloudletsApplicationLoadBalancerDataCenterArgs',
@@ -99,6 +101,8 @@ __all__ = [
     'DatastreamDeliveryConfigurationArgsDict',
     'DatastreamDeliveryConfigurationFrequencyArgs',
     'DatastreamDeliveryConfigurationFrequencyArgsDict',
+    'DatastreamDynatraceConnectorArgs',
+    'DatastreamDynatraceConnectorArgsDict',
     'DatastreamElasticsearchConnectorArgs',
     'DatastreamElasticsearchConnectorArgsDict',
     'DatastreamGcsConnectorArgs',
@@ -111,12 +115,16 @@ __all__ = [
     'DatastreamNewRelicConnectorArgsDict',
     'DatastreamOracleConnectorArgs',
     'DatastreamOracleConnectorArgsDict',
+    'DatastreamS3CompatibleConnectorArgs',
+    'DatastreamS3CompatibleConnectorArgsDict',
     'DatastreamS3ConnectorArgs',
     'DatastreamS3ConnectorArgsDict',
     'DatastreamSplunkConnectorArgs',
     'DatastreamSplunkConnectorArgsDict',
     'DatastreamSumologicConnectorArgs',
     'DatastreamSumologicConnectorArgsDict',
+    'DatastreamTrafficpeakConnectorArgs',
+    'DatastreamTrafficpeakConnectorArgsDict',
     'DnsZoneOutboundZoneTransferArgs',
     'DnsZoneOutboundZoneTransferArgsDict',
     'DnsZoneOutboundZoneTransferTsigKeyArgs',
@@ -215,10 +223,30 @@ __all__ = [
     'PropertyActivationRuleErrorArgsDict',
     'PropertyActivationTimeoutsArgs',
     'PropertyActivationTimeoutsArgsDict',
+    'PropertyDomainownershipDomainsDomainArgs',
+    'PropertyDomainownershipDomainsDomainArgsDict',
+    'PropertyDomainownershipDomainsDomainValidationChallengeArgs',
+    'PropertyDomainownershipDomainsDomainValidationChallengeArgsDict',
+    'PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs',
+    'PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict',
+    'PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs',
+    'PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict',
+    'PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs',
+    'PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict',
+    'PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs',
+    'PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict',
+    'PropertyDomainownershipValidationDomainArgs',
+    'PropertyDomainownershipValidationDomainArgsDict',
+    'PropertyDomainownershipValidationTimeoutsArgs',
+    'PropertyDomainownershipValidationTimeoutsArgsDict',
     'PropertyHostnameArgs',
     'PropertyHostnameArgsDict',
     'PropertyHostnameBucketHostnamesArgs',
     'PropertyHostnameBucketHostnamesArgsDict',
+    'PropertyHostnameCcmCertStatusArgs',
+    'PropertyHostnameCcmCertStatusArgsDict',
+    'PropertyHostnameCcmCertificatesArgs',
+    'PropertyHostnameCcmCertificatesArgsDict',
     'PropertyHostnameCertStatusArgs',
     'PropertyHostnameCertStatusArgsDict',
     'PropertyIncludeActivationComplianceRecordArgs',
@@ -647,6 +675,18 @@ __all__ = [
     'GetImagingPolicyVideoPolicyVariableArgsDict',
     'GetImagingPolicyVideoPolicyVariableEnumOptionArgs',
     'GetImagingPolicyVideoPolicyVariableEnumOptionArgsDict',
+    'GetPropertyDomainownershipSearchDomainsDomainArgs',
+    'GetPropertyDomainownershipSearchDomainsDomainArgsDict',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgsDict',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgsDict',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgsDict',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgsDict',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs',
+    'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgsDict',
     'GetPropertyIncludesParentPropertyArgs',
     'GetPropertyIncludesParentPropertyArgsDict',
     'GetPropertyRulesTemplateTemplateArgs',
@@ -1527,6 +1567,118 @@ class CloudAccessKeyTimeoutsArgs:
     @update.setter
     def update(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "update", value)
+
+
+if not MYPY:
+    class CloudcertificatesCertificateSubjectArgsDict(TypedDict):
+        common_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
+        """
+        country: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Two-letter ISO 3166 country code.
+        """
+        locality: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        City or locality name.
+        """
+        organization: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Legal name of the organization.
+        """
+        state: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Full name of the state or province.
+        """
+elif False:
+    CloudcertificatesCertificateSubjectArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CloudcertificatesCertificateSubjectArgs:
+    def __init__(__self__, *,
+                 common_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 country: Optional[pulumi.Input[_builtins.str]] = None,
+                 locality: Optional[pulumi.Input[_builtins.str]] = None,
+                 organization: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] common_name: Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
+        :param pulumi.Input[_builtins.str] country: Two-letter ISO 3166 country code.
+        :param pulumi.Input[_builtins.str] locality: City or locality name.
+        :param pulumi.Input[_builtins.str] organization: Legal name of the organization.
+        :param pulumi.Input[_builtins.str] state: Full name of the state or province.
+        """
+        if common_name is not None:
+            pulumi.set(__self__, "common_name", common_name)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if locality is not None:
+            pulumi.set(__self__, "locality", locality)
+        if organization is not None:
+            pulumi.set(__self__, "organization", organization)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="commonName")
+    def common_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
+        """
+        return pulumi.get(self, "common_name")
+
+    @common_name.setter
+    def common_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "common_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Two-letter ISO 3166 country code.
+        """
+        return pulumi.get(self, "country")
+
+    @country.setter
+    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "country", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locality(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        City or locality name.
+        """
+        return pulumi.get(self, "locality")
+
+    @locality.setter
+    def locality(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "locality", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def organization(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Legal name of the organization.
+        """
+        return pulumi.get(self, "organization")
+
+    @organization.setter
+    def organization(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "organization", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Full name of the state or province.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "state", value)
 
 
 if not MYPY:
@@ -5053,6 +5205,115 @@ class DatastreamDeliveryConfigurationFrequencyArgs:
 
 
 if not MYPY:
+    class DatastreamDynatraceConnectorArgsDict(TypedDict):
+        api_token: pulumi.Input[_builtins.str]
+        """
+        The Dynatrace Log Ingest access token.
+        """
+        display_name: pulumi.Input[_builtins.str]
+        """
+        The destination's name.
+        """
+        endpoint: pulumi.Input[_builtins.str]
+        """
+        The Dynatrace Ingestion API endpoint URL in the https://{dynatrace-environment-id}.live.dynatrace.com/api/v2/logs/ingest format.
+        """
+        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+        """
+        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+        """
+elif False:
+    DatastreamDynatraceConnectorArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatastreamDynatraceConnectorArgs:
+    def __init__(__self__, *,
+                 api_token: pulumi.Input[_builtins.str],
+                 display_name: pulumi.Input[_builtins.str],
+                 endpoint: pulumi.Input[_builtins.str],
+                 custom_header_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_header_value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] api_token: The Dynatrace Log Ingest access token.
+        :param pulumi.Input[_builtins.str] display_name: The destination's name.
+        :param pulumi.Input[_builtins.str] endpoint: The Dynatrace Ingestion API endpoint URL in the https://{dynatrace-environment-id}.live.dynatrace.com/api/v2/logs/ingest format.
+        :param pulumi.Input[_builtins.str] custom_header_name: A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+        :param pulumi.Input[_builtins.str] custom_header_value: The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+        """
+        pulumi.set(__self__, "api_token", api_token)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "endpoint", endpoint)
+        if custom_header_name is not None:
+            pulumi.set(__self__, "custom_header_name", custom_header_name)
+        if custom_header_value is not None:
+            pulumi.set(__self__, "custom_header_value", custom_header_value)
+
+    @_builtins.property
+    @pulumi.getter(name="apiToken")
+    def api_token(self) -> pulumi.Input[_builtins.str]:
+        """
+        The Dynatrace Log Ingest access token.
+        """
+        return pulumi.get(self, "api_token")
+
+    @api_token.setter
+    def api_token(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "api_token", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The destination's name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> pulumi.Input[_builtins.str]:
+        """
+        The Dynatrace Ingestion API endpoint URL in the https://{dynatrace-environment-id}.live.dynatrace.com/api/v2/logs/ingest format.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @endpoint.setter
+    def endpoint(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customHeaderName")
+    def custom_header_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+        """
+        return pulumi.get(self, "custom_header_name")
+
+    @custom_header_name.setter
+    def custom_header_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "custom_header_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customHeaderValue")
+    def custom_header_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+        """
+        return pulumi.get(self, "custom_header_value")
+
+    @custom_header_value.setter
+    def custom_header_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "custom_header_value", value)
+
+
+if not MYPY:
     class DatastreamElasticsearchConnectorArgsDict(TypedDict):
         display_name: pulumi.Input[_builtins.str]
         """
@@ -6199,6 +6460,172 @@ class DatastreamOracleConnectorArgs:
 
 
 if not MYPY:
+    class DatastreamS3CompatibleConnectorArgsDict(TypedDict):
+        access_key: pulumi.Input[_builtins.str]
+        """
+        The access key identifier of the S3-compatible object storage bucket.
+        """
+        bucket: pulumi.Input[_builtins.str]
+        """
+        The name of the S3-compatible object storage bucket.
+        """
+        display_name: pulumi.Input[_builtins.str]
+        """
+        The name of the destination.
+        """
+        endpoint: pulumi.Input[_builtins.str]
+        """
+        The scheme-qualified host of your S3-compatible object storage bucket.
+        """
+        region: pulumi.Input[_builtins.str]
+        """
+        The physical storage location of your S3-compatible object storage bucket.
+        """
+        secret_access_key: pulumi.Input[_builtins.str]
+        """
+        The secret access key identifier of the S3-compatible object storage bucket.
+        """
+        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Enables gzip compression for a log file sent to a destination. This value is always true for this destination type.
+        """
+        path: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The path to the folder within your S3-compatible object storage bucket where you want to store logs. Optional field.
+        """
+elif False:
+    DatastreamS3CompatibleConnectorArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatastreamS3CompatibleConnectorArgs:
+    def __init__(__self__, *,
+                 access_key: pulumi.Input[_builtins.str],
+                 bucket: pulumi.Input[_builtins.str],
+                 display_name: pulumi.Input[_builtins.str],
+                 endpoint: pulumi.Input[_builtins.str],
+                 region: pulumi.Input[_builtins.str],
+                 secret_access_key: pulumi.Input[_builtins.str],
+                 compress_logs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 path: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] access_key: The access key identifier of the S3-compatible object storage bucket.
+        :param pulumi.Input[_builtins.str] bucket: The name of the S3-compatible object storage bucket.
+        :param pulumi.Input[_builtins.str] display_name: The name of the destination.
+        :param pulumi.Input[_builtins.str] endpoint: The scheme-qualified host of your S3-compatible object storage bucket.
+        :param pulumi.Input[_builtins.str] region: The physical storage location of your S3-compatible object storage bucket.
+        :param pulumi.Input[_builtins.str] secret_access_key: The secret access key identifier of the S3-compatible object storage bucket.
+        :param pulumi.Input[_builtins.bool] compress_logs: Enables gzip compression for a log file sent to a destination. This value is always true for this destination type.
+        :param pulumi.Input[_builtins.str] path: The path to the folder within your S3-compatible object storage bucket where you want to store logs. Optional field.
+        """
+        pulumi.set(__self__, "access_key", access_key)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @_builtins.property
+    @pulumi.getter(name="accessKey")
+    def access_key(self) -> pulumi.Input[_builtins.str]:
+        """
+        The access key identifier of the S3-compatible object storage bucket.
+        """
+        return pulumi.get(self, "access_key")
+
+    @access_key.setter
+    def access_key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "access_key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the S3-compatible object storage bucket.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "bucket", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the destination.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> pulumi.Input[_builtins.str]:
+        """
+        The scheme-qualified host of your S3-compatible object storage bucket.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @endpoint.setter
+    def endpoint(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[_builtins.str]:
+        """
+        The physical storage location of your S3-compatible object storage bucket.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> pulumi.Input[_builtins.str]:
+        """
+        The secret access key identifier of the S3-compatible object storage bucket.
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @secret_access_key.setter
+    def secret_access_key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "secret_access_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Enables gzip compression for a log file sent to a destination. This value is always true for this destination type.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @compress_logs.setter
+    def compress_logs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "compress_logs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The path to the folder within your S3-compatible object storage bucket where you want to store logs. Optional field.
+        """
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "path", value)
+
+
+if not MYPY:
     class DatastreamS3ConnectorArgsDict(TypedDict):
         access_key: pulumi.Input[_builtins.str]
         """
@@ -6714,6 +7141,192 @@ class DatastreamSumologicConnectorArgs:
     def custom_header_value(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The custom header's contents passed with the request to the destination
+        """
+        return pulumi.get(self, "custom_header_value")
+
+    @custom_header_value.setter
+    def custom_header_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "custom_header_value", value)
+
+
+if not MYPY:
+    class DatastreamTrafficpeakConnectorArgsDict(TypedDict):
+        authentication_type: pulumi.Input[_builtins.str]
+        """
+        Only BASIC authentication is supported for TrafficPeak destination.
+        """
+        content_type: pulumi.Input[_builtins.str]
+        """
+        The type of the resource passed in the request's custom header. - Supported headers: `application/json` or `application/json; charset=utf-8`.
+        """
+        display_name: pulumi.Input[_builtins.str]
+        """
+        The destination's name.
+        """
+        endpoint: pulumi.Input[_builtins.str]
+        """
+        Enter the Hydrolix endpoint URL in the https://<host>/ingest/event?table=<tablename>&token=<token> format, where the token is the HTTP streaming ingest token, and the tablename is the Hydrolix data set table name.
+        """
+        password: pulumi.Input[_builtins.str]
+        """
+        Enter the password you set in your TrafficPeak endpoint for authentication.
+        """
+        user_name: pulumi.Input[_builtins.str]
+        """
+        Enter the valid username you set in your TrafficPeak endpoint for authentication.
+        """
+        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Enables gzip compression for a log file sent to a destination. The value is true by default.
+        """
+        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. Optional field.
+        """
+        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The custom header's contents passed with the request that contains information about the client connection. Optional field.
+        """
+elif False:
+    DatastreamTrafficpeakConnectorArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatastreamTrafficpeakConnectorArgs:
+    def __init__(__self__, *,
+                 authentication_type: pulumi.Input[_builtins.str],
+                 content_type: pulumi.Input[_builtins.str],
+                 display_name: pulumi.Input[_builtins.str],
+                 endpoint: pulumi.Input[_builtins.str],
+                 password: pulumi.Input[_builtins.str],
+                 user_name: pulumi.Input[_builtins.str],
+                 compress_logs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 custom_header_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_header_value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] authentication_type: Only BASIC authentication is supported for TrafficPeak destination.
+        :param pulumi.Input[_builtins.str] content_type: The type of the resource passed in the request's custom header. - Supported headers: `application/json` or `application/json; charset=utf-8`.
+        :param pulumi.Input[_builtins.str] display_name: The destination's name.
+        :param pulumi.Input[_builtins.str] endpoint: Enter the Hydrolix endpoint URL in the https://<host>/ingest/event?table=<tablename>&token=<token> format, where the token is the HTTP streaming ingest token, and the tablename is the Hydrolix data set table name.
+        :param pulumi.Input[_builtins.str] password: Enter the password you set in your TrafficPeak endpoint for authentication.
+        :param pulumi.Input[_builtins.str] user_name: Enter the valid username you set in your TrafficPeak endpoint for authentication.
+        :param pulumi.Input[_builtins.bool] compress_logs: Enables gzip compression for a log file sent to a destination. The value is true by default.
+        :param pulumi.Input[_builtins.str] custom_header_name: A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. Optional field.
+        :param pulumi.Input[_builtins.str] custom_header_value: The custom header's contents passed with the request that contains information about the client connection. Optional field.
+        """
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "content_type", content_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if custom_header_name is not None:
+            pulumi.set(__self__, "custom_header_name", custom_header_name)
+        if custom_header_value is not None:
+            pulumi.set(__self__, "custom_header_value", custom_header_value)
+
+    @_builtins.property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Only BASIC authentication is supported for TrafficPeak destination.
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @authentication_type.setter
+    def authentication_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "authentication_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The type of the resource passed in the request's custom header. - Supported headers: `application/json` or `application/json; charset=utf-8`.
+        """
+        return pulumi.get(self, "content_type")
+
+    @content_type.setter
+    def content_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "content_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The destination's name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> pulumi.Input[_builtins.str]:
+        """
+        Enter the Hydrolix endpoint URL in the https://<host>/ingest/event?table=<tablename>&token=<token> format, where the token is the HTTP streaming ingest token, and the tablename is the Hydrolix data set table name.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @endpoint.setter
+    def endpoint(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[_builtins.str]:
+        """
+        Enter the password you set in your TrafficPeak endpoint for authentication.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Enter the valid username you set in your TrafficPeak endpoint for authentication.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "user_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Enables gzip compression for a log file sent to a destination. The value is true by default.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @compress_logs.setter
+    def compress_logs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "compress_logs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customHeaderName")
+    def custom_header_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. Optional field.
+        """
+        return pulumi.get(self, "custom_header_name")
+
+    @custom_header_name.setter
+    def custom_header_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "custom_header_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customHeaderValue")
+    def custom_header_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The custom header's contents passed with the request that contains information about the client connection. Optional field.
         """
         return pulumi.get(self, "custom_header_value")
 
@@ -9044,13 +9657,13 @@ class IamApiClientGroupAccessGroupSubGroupArgs:
 
 if not MYPY:
     class IamApiClientIpAclArgsDict(TypedDict):
+        cidrs: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+        """
+        IP addresses or CIDR blocks the API client can access.
+        """
         enable: pulumi.Input[_builtins.bool]
         """
         Enables the API client to access the IP access control list (ACL).
-        """
-        cidrs: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        IP addresses or CIDR blocks the API client can access.
         """
 elif False:
     IamApiClientIpAclArgsDict: TypeAlias = Mapping[str, Any]
@@ -9058,15 +9671,26 @@ elif False:
 @pulumi.input_type
 class IamApiClientIpAclArgs:
     def __init__(__self__, *,
-                 enable: pulumi.Input[_builtins.bool],
-                 cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 cidrs: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 enable: pulumi.Input[_builtins.bool]):
         """
-        :param pulumi.Input[_builtins.bool] enable: Enables the API client to access the IP access control list (ACL).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cidrs: IP addresses or CIDR blocks the API client can access.
+        :param pulumi.Input[_builtins.bool] enable: Enables the API client to access the IP access control list (ACL).
         """
+        pulumi.set(__self__, "cidrs", cidrs)
         pulumi.set(__self__, "enable", enable)
-        if cidrs is not None:
-            pulumi.set(__self__, "cidrs", cidrs)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        IP addresses or CIDR blocks the API client can access.
+        """
+        return pulumi.get(self, "cidrs")
+
+    @cidrs.setter
+    def cidrs(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "cidrs", value)
 
     @_builtins.property
     @pulumi.getter
@@ -9079,18 +9703,6 @@ class IamApiClientIpAclArgs:
     @enable.setter
     def enable(self, value: pulumi.Input[_builtins.bool]):
         pulumi.set(self, "enable", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def cidrs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
-        """
-        IP addresses or CIDR blocks the API client can access.
-        """
-        return pulumi.get(self, "cidrs")
-
-    @cidrs.setter
-    def cidrs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
-        pulumi.set(self, "cidrs", value)
 
 
 if not MYPY:
@@ -11137,10 +11749,727 @@ class PropertyActivationTimeoutsArgs:
 
 
 if not MYPY:
+    class PropertyDomainownershipDomainsDomainArgsDict(TypedDict):
+        domain_name: pulumi.Input[_builtins.str]
+        """
+        Your domain's name.
+        """
+        validation_scope: pulumi.Input[_builtins.str]
+        """
+        Your domain's validation scope. Possible values are: 
+        * `HOST` - The scope is only the exactly specified domain.
+        * `WILDCARD` - The scope covers any hostname within one subdomain level.
+        * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+        """
+        account_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Your account's ID.
+        """
+        domain_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The domain's validation status. Possible values are: 
+        * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+        * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+        * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+        * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+        * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+        """
+        validation_challenge: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeArgsDict']]
+        """
+        The domain's validation challenge details.
+        """
+        validation_completed_date: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The timestamp indicating when the domain validation was completed.
+        """
+        validation_method: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The method used to validate the domain. Possible values are: 
+        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+        * `MANUAL` - For this method, the DOM team manually performed the validation.
+        """
+        validation_requested_by: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The name of the user who requested the domain validation.
+        """
+        validation_requested_date: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The timestamp indicating when the domain validation was requested.
+        """
+elif False:
+    PropertyDomainownershipDomainsDomainArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyDomainownershipDomainsDomainArgs:
+    def __init__(__self__, *,
+                 domain_name: pulumi.Input[_builtins.str],
+                 validation_scope: pulumi.Input[_builtins.str],
+                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain_status: Optional[pulumi.Input[_builtins.str]] = None,
+                 validation_challenge: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeArgs']] = None,
+                 validation_completed_date: Optional[pulumi.Input[_builtins.str]] = None,
+                 validation_method: Optional[pulumi.Input[_builtins.str]] = None,
+                 validation_requested_by: Optional[pulumi.Input[_builtins.str]] = None,
+                 validation_requested_date: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] domain_name: Your domain's name.
+        :param pulumi.Input[_builtins.str] validation_scope: Your domain's validation scope. Possible values are: 
+               * `HOST` - The scope is only the exactly specified domain.
+               * `WILDCARD` - The scope covers any hostname within one subdomain level.
+               * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+        :param pulumi.Input[_builtins.str] account_id: Your account's ID.
+        :param pulumi.Input[_builtins.str] domain_status: The domain's validation status. Possible values are: 
+               * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+               * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+               * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+               * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+               * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+        :param pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeArgs'] validation_challenge: The domain's validation challenge details.
+        :param pulumi.Input[_builtins.str] validation_completed_date: The timestamp indicating when the domain validation was completed.
+        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are: 
+               * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+               * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+               * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+               * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+               * `MANUAL` - For this method, the DOM team manually performed the validation.
+        :param pulumi.Input[_builtins.str] validation_requested_by: The name of the user who requested the domain validation.
+        :param pulumi.Input[_builtins.str] validation_requested_date: The timestamp indicating when the domain validation was requested.
+        """
+        pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "validation_scope", validation_scope)
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if domain_status is not None:
+            pulumi.set(__self__, "domain_status", domain_status)
+        if validation_challenge is not None:
+            pulumi.set(__self__, "validation_challenge", validation_challenge)
+        if validation_completed_date is not None:
+            pulumi.set(__self__, "validation_completed_date", validation_completed_date)
+        if validation_method is not None:
+            pulumi.set(__self__, "validation_method", validation_method)
+        if validation_requested_by is not None:
+            pulumi.set(__self__, "validation_requested_by", validation_requested_by)
+        if validation_requested_date is not None:
+            pulumi.set(__self__, "validation_requested_date", validation_requested_date)
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Your domain's name.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationScope")
+    def validation_scope(self) -> pulumi.Input[_builtins.str]:
+        """
+        Your domain's validation scope. Possible values are: 
+        * `HOST` - The scope is only the exactly specified domain.
+        * `WILDCARD` - The scope covers any hostname within one subdomain level.
+        * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+        """
+        return pulumi.get(self, "validation_scope")
+
+    @validation_scope.setter
+    def validation_scope(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "validation_scope", value)
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Your account's ID.
+        """
+        return pulumi.get(self, "account_id")
+
+    @account_id.setter
+    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "account_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="domainStatus")
+    def domain_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The domain's validation status. Possible values are: 
+        * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+        * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+        * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+        * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+        * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+        """
+        return pulumi.get(self, "domain_status")
+
+    @domain_status.setter
+    def domain_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "domain_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationChallenge")
+    def validation_challenge(self) -> Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeArgs']]:
+        """
+        The domain's validation challenge details.
+        """
+        return pulumi.get(self, "validation_challenge")
+
+    @validation_challenge.setter
+    def validation_challenge(self, value: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeArgs']]):
+        pulumi.set(self, "validation_challenge", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationCompletedDate")
+    def validation_completed_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The timestamp indicating when the domain validation was completed.
+        """
+        return pulumi.get(self, "validation_completed_date")
+
+    @validation_completed_date.setter
+    def validation_completed_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "validation_completed_date", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationMethod")
+    def validation_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The method used to validate the domain. Possible values are: 
+        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+        * `MANUAL` - For this method, the DOM team manually performed the validation.
+        """
+        return pulumi.get(self, "validation_method")
+
+    @validation_method.setter
+    def validation_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "validation_method", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationRequestedBy")
+    def validation_requested_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the user who requested the domain validation.
+        """
+        return pulumi.get(self, "validation_requested_by")
+
+    @validation_requested_by.setter
+    def validation_requested_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "validation_requested_by", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationRequestedDate")
+    def validation_requested_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The timestamp indicating when the domain validation was requested.
+        """
+        return pulumi.get(self, "validation_requested_date")
+
+    @validation_requested_date.setter
+    def validation_requested_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "validation_requested_date", value)
+
+
+if not MYPY:
+    class PropertyDomainownershipDomainsDomainValidationChallengeArgsDict(TypedDict):
+        cname_record: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict']]
+        """
+        The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+        """
+        expiration_date: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The timestamp indicating when the challenge data expires.
+        """
+        http_file: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict']]
+        """
+        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+        """
+        http_redirect: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict']]
+        """
+        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+        """
+        txt_record: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict']]
+        """
+        The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+        """
+elif False:
+    PropertyDomainownershipDomainsDomainValidationChallengeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyDomainownershipDomainsDomainValidationChallengeArgs:
+    def __init__(__self__, *,
+                 cname_record: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs']] = None,
+                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
+                 http_file: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs']] = None,
+                 http_redirect: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs']] = None,
+                 txt_record: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs']] = None):
+        """
+        :param pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs'] cname_record: The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+        :param pulumi.Input[_builtins.str] expiration_date: The timestamp indicating when the challenge data expires.
+        :param pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs'] http_file: Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+        :param pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs'] http_redirect: Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+        :param pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs'] txt_record: The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+        """
+        if cname_record is not None:
+            pulumi.set(__self__, "cname_record", cname_record)
+        if expiration_date is not None:
+            pulumi.set(__self__, "expiration_date", expiration_date)
+        if http_file is not None:
+            pulumi.set(__self__, "http_file", http_file)
+        if http_redirect is not None:
+            pulumi.set(__self__, "http_redirect", http_redirect)
+        if txt_record is not None:
+            pulumi.set(__self__, "txt_record", txt_record)
+
+    @_builtins.property
+    @pulumi.getter(name="cnameRecord")
+    def cname_record(self) -> Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs']]:
+        """
+        The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+        """
+        return pulumi.get(self, "cname_record")
+
+    @cname_record.setter
+    def cname_record(self, value: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs']]):
+        pulumi.set(self, "cname_record", value)
+
+    @_builtins.property
+    @pulumi.getter(name="expirationDate")
+    def expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The timestamp indicating when the challenge data expires.
+        """
+        return pulumi.get(self, "expiration_date")
+
+    @expiration_date.setter
+    def expiration_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "expiration_date", value)
+
+    @_builtins.property
+    @pulumi.getter(name="httpFile")
+    def http_file(self) -> Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs']]:
+        """
+        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+        """
+        return pulumi.get(self, "http_file")
+
+    @http_file.setter
+    def http_file(self, value: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs']]):
+        pulumi.set(self, "http_file", value)
+
+    @_builtins.property
+    @pulumi.getter(name="httpRedirect")
+    def http_redirect(self) -> Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs']]:
+        """
+        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+        """
+        return pulumi.get(self, "http_redirect")
+
+    @http_redirect.setter
+    def http_redirect(self, value: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs']]):
+        pulumi.set(self, "http_redirect", value)
+
+    @_builtins.property
+    @pulumi.getter(name="txtRecord")
+    def txt_record(self) -> Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs']]:
+        """
+        The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+        """
+        return pulumi.get(self, "txt_record")
+
+    @txt_record.setter
+    def txt_record(self, value: Optional[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs']]):
+        pulumi.set(self, "txt_record", value)
+
+
+if not MYPY:
+    class PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The 'CNAME' record for your domain that you add to the DNS configuration.
+        """
+        target: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+        """
+elif False:
+    PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 target: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: The 'CNAME' record for your domain that you add to the DNS configuration.
+        :param pulumi.Input[_builtins.str] target: The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The 'CNAME' record for your domain that you add to the DNS configuration.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target", value)
+
+
+if not MYPY:
+    class PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict(TypedDict):
+        content: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The content of the file that you should place at the specified URL.
+        """
+        content_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The content type of the file containing the token.
+        """
+        path: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The URL where you should place the file containing the challenge token.
+        """
+elif False:
+    PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs:
+    def __init__(__self__, *,
+                 content: Optional[pulumi.Input[_builtins.str]] = None,
+                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 path: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] content: The content of the file that you should place at the specified URL.
+        :param pulumi.Input[_builtins.str] content_type: The content type of the file containing the token.
+        :param pulumi.Input[_builtins.str] path: The URL where you should place the file containing the challenge token.
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The content of the file that you should place at the specified URL.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "content", value)
+
+    @_builtins.property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The content type of the file containing the token.
+        """
+        return pulumi.get(self, "content_type")
+
+    @content_type.setter
+    def content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "content_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The URL where you should place the file containing the challenge token.
+        """
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "path", value)
+
+
+if not MYPY:
+    class PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict(TypedDict):
+        from_: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The location on your HTTP server where you set up the redirect.
+        """
+        to: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The redirect URL with the token that you place on your HTTP server.
+        """
+elif False:
+    PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs:
+    def __init__(__self__, *,
+                 from_: Optional[pulumi.Input[_builtins.str]] = None,
+                 to: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] from_: The location on your HTTP server where you set up the redirect.
+        :param pulumi.Input[_builtins.str] to: The redirect URL with the token that you place on your HTTP server.
+        """
+        if from_ is not None:
+            pulumi.set(__self__, "from_", from_)
+        if to is not None:
+            pulumi.set(__self__, "to", to)
+
+    @_builtins.property
+    @pulumi.getter(name="from")
+    def from_(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The location on your HTTP server where you set up the redirect.
+        """
+        return pulumi.get(self, "from_")
+
+    @from_.setter
+    def from_(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "from_", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def to(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The redirect URL with the token that you place on your HTTP server.
+        """
+        return pulumi.get(self, "to")
+
+    @to.setter
+    def to(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "to", value)
+
+
+if not MYPY:
+    class PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The hostname where you should add the 'TXT' record to validate the domain ownership.
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+        """
+elif False:
+    PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: The hostname where you should add the 'TXT' record to validate the domain ownership.
+        :param pulumi.Input[_builtins.str] value: The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The hostname where you should add the 'TXT' record to validate the domain ownership.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class PropertyDomainownershipValidationDomainArgsDict(TypedDict):
+        domain_name: pulumi.Input[_builtins.str]
+        """
+        Your domain's name.
+        """
+        validation_scope: pulumi.Input[_builtins.str]
+        """
+        Your domain's validation scope. Possible values are: 
+        * `HOST` - The scope is only the exactly specified domain.
+        * `WILDCARD` - The scope covers any hostname within one subdomain level.
+        * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+        """
+        validation_method: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The method used to validate the domain. Possible values are: 
+        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        """
+elif False:
+    PropertyDomainownershipValidationDomainArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyDomainownershipValidationDomainArgs:
+    def __init__(__self__, *,
+                 domain_name: pulumi.Input[_builtins.str],
+                 validation_scope: pulumi.Input[_builtins.str],
+                 validation_method: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] domain_name: Your domain's name.
+        :param pulumi.Input[_builtins.str] validation_scope: Your domain's validation scope. Possible values are: 
+               * `HOST` - The scope is only the exactly specified domain.
+               * `WILDCARD` - The scope covers any hostname within one subdomain level.
+               * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are: 
+               * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+               * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+               * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        """
+        pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "validation_scope", validation_scope)
+        if validation_method is not None:
+            pulumi.set(__self__, "validation_method", validation_method)
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Your domain's name.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationScope")
+    def validation_scope(self) -> pulumi.Input[_builtins.str]:
+        """
+        Your domain's validation scope. Possible values are: 
+        * `HOST` - The scope is only the exactly specified domain.
+        * `WILDCARD` - The scope covers any hostname within one subdomain level.
+        * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+        """
+        return pulumi.get(self, "validation_scope")
+
+    @validation_scope.setter
+    def validation_scope(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "validation_scope", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationMethod")
+    def validation_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The method used to validate the domain. Possible values are: 
+        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        """
+        return pulumi.get(self, "validation_method")
+
+    @validation_method.setter
+    def validation_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "validation_method", value)
+
+
+if not MYPY:
+    class PropertyDomainownershipValidationTimeoutsArgsDict(TypedDict):
+        create: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+        """
+        update: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+        """
+elif False:
+    PropertyDomainownershipValidationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyDomainownershipValidationTimeoutsArgs:
+    def __init__(__self__, *,
+                 create: Optional[pulumi.Input[_builtins.str]] = None,
+                 update: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] create: Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+        :param pulumi.Input[_builtins.str] update: Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+        """
+        return pulumi.get(self, "create")
+
+    @create.setter
+    def create(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "create", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+        """
+        return pulumi.get(self, "update")
+
+    @update.setter
+    def update(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "update", value)
+
+
+if not MYPY:
     class PropertyHostnameArgsDict(TypedDict):
         cert_provisioning_type: pulumi.Input[_builtins.str]
         cname_from: pulumi.Input[_builtins.str]
         cname_to: pulumi.Input[_builtins.str]
+        ccm_cert_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgsDict']]]]
+        """
+        Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        """
+        ccm_certificates: NotRequired[pulumi.Input['PropertyHostnameCcmCertificatesArgsDict']]
+        """
+        Certificate identifiers and links for the CCM-managed certificates.
+        """
         cert_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgsDict']]]]
         cname_type: NotRequired[pulumi.Input[_builtins.str]]
         edge_hostname_id: NotRequired[pulumi.Input[_builtins.str]]
@@ -11153,12 +12482,22 @@ class PropertyHostnameArgs:
                  cert_provisioning_type: pulumi.Input[_builtins.str],
                  cname_from: pulumi.Input[_builtins.str],
                  cname_to: pulumi.Input[_builtins.str],
+                 ccm_cert_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgs']]]] = None,
+                 ccm_certificates: Optional[pulumi.Input['PropertyHostnameCcmCertificatesArgs']] = None,
                  cert_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]] = None,
                  cname_type: Optional[pulumi.Input[_builtins.str]] = None,
                  edge_hostname_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgs']]] ccm_cert_statuses: Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        :param pulumi.Input['PropertyHostnameCcmCertificatesArgs'] ccm_certificates: Certificate identifiers and links for the CCM-managed certificates.
+        """
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cname_from", cname_from)
         pulumi.set(__self__, "cname_to", cname_to)
+        if ccm_cert_statuses is not None:
+            pulumi.set(__self__, "ccm_cert_statuses", ccm_cert_statuses)
+        if ccm_certificates is not None:
+            pulumi.set(__self__, "ccm_certificates", ccm_certificates)
         if cert_statuses is not None:
             pulumi.set(__self__, "cert_statuses", cert_statuses)
         if cname_type is not None:
@@ -11192,6 +12531,30 @@ class PropertyHostnameArgs:
     @cname_to.setter
     def cname_to(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "cname_to", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ccmCertStatuses")
+    def ccm_cert_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgs']]]]:
+        """
+        Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        """
+        return pulumi.get(self, "ccm_cert_statuses")
+
+    @ccm_cert_statuses.setter
+    def ccm_cert_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgs']]]]):
+        pulumi.set(self, "ccm_cert_statuses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ccmCertificates")
+    def ccm_certificates(self) -> Optional[pulumi.Input['PropertyHostnameCcmCertificatesArgs']]:
+        """
+        Certificate identifiers and links for the CCM-managed certificates.
+        """
+        return pulumi.get(self, "ccm_certificates")
+
+    @ccm_certificates.setter
+    def ccm_certificates(self, value: Optional[pulumi.Input['PropertyHostnameCcmCertificatesArgs']]):
+        pulumi.set(self, "ccm_certificates", value)
 
     @_builtins.property
     @pulumi.getter(name="certStatuses")
@@ -11289,6 +12652,150 @@ class PropertyHostnameBucketHostnamesArgs:
     @cname_to.setter
     def cname_to(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cname_to", value)
+
+
+if not MYPY:
+    class PropertyHostnameCcmCertStatusArgsDict(TypedDict):
+        ecdsa_production_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Status of the ECDSA certificate on production network.
+        """
+        ecdsa_staging_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Status of the ECDSA certificate on staging network.
+        """
+        rsa_production_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Status of the RSA certificate on production network.
+        """
+        rsa_staging_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Status of the RSA certificate on staging network.
+        """
+elif False:
+    PropertyHostnameCcmCertStatusArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyHostnameCcmCertStatusArgs:
+    def __init__(__self__, *,
+                 ecdsa_production_status: Optional[pulumi.Input[_builtins.str]] = None,
+                 ecdsa_staging_status: Optional[pulumi.Input[_builtins.str]] = None,
+                 rsa_production_status: Optional[pulumi.Input[_builtins.str]] = None,
+                 rsa_staging_status: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ecdsa_production_status: Status of the ECDSA certificate on production network.
+        :param pulumi.Input[_builtins.str] ecdsa_staging_status: Status of the ECDSA certificate on staging network.
+        :param pulumi.Input[_builtins.str] rsa_production_status: Status of the RSA certificate on production network.
+        :param pulumi.Input[_builtins.str] rsa_staging_status: Status of the RSA certificate on staging network.
+        """
+        if ecdsa_production_status is not None:
+            pulumi.set(__self__, "ecdsa_production_status", ecdsa_production_status)
+        if ecdsa_staging_status is not None:
+            pulumi.set(__self__, "ecdsa_staging_status", ecdsa_staging_status)
+        if rsa_production_status is not None:
+            pulumi.set(__self__, "rsa_production_status", rsa_production_status)
+        if rsa_staging_status is not None:
+            pulumi.set(__self__, "rsa_staging_status", rsa_staging_status)
+
+    @_builtins.property
+    @pulumi.getter(name="ecdsaProductionStatus")
+    def ecdsa_production_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of the ECDSA certificate on production network.
+        """
+        return pulumi.get(self, "ecdsa_production_status")
+
+    @ecdsa_production_status.setter
+    def ecdsa_production_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ecdsa_production_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ecdsaStagingStatus")
+    def ecdsa_staging_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of the ECDSA certificate on staging network.
+        """
+        return pulumi.get(self, "ecdsa_staging_status")
+
+    @ecdsa_staging_status.setter
+    def ecdsa_staging_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ecdsa_staging_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rsaProductionStatus")
+    def rsa_production_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of the RSA certificate on production network.
+        """
+        return pulumi.get(self, "rsa_production_status")
+
+    @rsa_production_status.setter
+    def rsa_production_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "rsa_production_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rsaStagingStatus")
+    def rsa_staging_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of the RSA certificate on staging network.
+        """
+        return pulumi.get(self, "rsa_staging_status")
+
+    @rsa_staging_status.setter
+    def rsa_staging_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "rsa_staging_status", value)
+
+
+if not MYPY:
+    class PropertyHostnameCcmCertificatesArgsDict(TypedDict):
+        ecdsa_cert_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Certificate ID for ECDSA.
+        """
+        rsa_cert_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Certificate ID for RSA.
+        """
+elif False:
+    PropertyHostnameCcmCertificatesArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyHostnameCcmCertificatesArgs:
+    def __init__(__self__, *,
+                 ecdsa_cert_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 rsa_cert_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ecdsa_cert_id: Certificate ID for ECDSA.
+        :param pulumi.Input[_builtins.str] rsa_cert_id: Certificate ID for RSA.
+        """
+        if ecdsa_cert_id is not None:
+            pulumi.set(__self__, "ecdsa_cert_id", ecdsa_cert_id)
+        if rsa_cert_id is not None:
+            pulumi.set(__self__, "rsa_cert_id", rsa_cert_id)
+
+    @_builtins.property
+    @pulumi.getter(name="ecdsaCertId")
+    def ecdsa_cert_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Certificate ID for ECDSA.
+        """
+        return pulumi.get(self, "ecdsa_cert_id")
+
+    @ecdsa_cert_id.setter
+    def ecdsa_cert_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ecdsa_cert_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rsaCertId")
+    def rsa_cert_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Certificate ID for RSA.
+        """
+        return pulumi.get(self, "rsa_cert_id")
+
+    @rsa_cert_id.setter
+    def rsa_cert_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "rsa_cert_id", value)
 
 
 if not MYPY:
@@ -36556,6 +38063,573 @@ class GetImagingPolicyVideoPolicyVariableEnumOptionArgs:
     def value(self) -> _builtins.str:
         """
         The value of the variable when the `id` is provided.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: _builtins.str):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class GetPropertyDomainownershipSearchDomainsDomainArgsDict(TypedDict):
+        account_id: _builtins.str
+        """
+        Your account's ID.
+        """
+        domain_name: _builtins.str
+        """
+        Your domain's name.
+        """
+        domain_status: _builtins.str
+        """
+        The domain's validation status. Possible values are: 
+        * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+        * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+        * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+        * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+        * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+        """
+        validation_challenge: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgsDict'
+        """
+        The domain's validation challenge details.
+        """
+        validation_completed_date: _builtins.str
+        """
+        The timestamp indicating when the domain validation was completed.
+        """
+        validation_level: _builtins.str
+        """
+        The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
+        """
+        validation_method: _builtins.str
+        """
+        The method used to validate the domain. Possible values are: 
+        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+        * `MANUAL` - For this method, the DOM team manually performed the validation.
+        """
+        validation_requested_by: _builtins.str
+        """
+        The name of the user who requested the domain validation.
+        """
+        validation_requested_date: _builtins.str
+        """
+        The timestamp indicating when the domain validation was requested.
+        """
+        validation_scope: _builtins.str
+        """
+        Your domain's validation scope. Possible values are: 
+        * `HOST` - The scope is only the exactly specified domain.
+        * `WILDCARD` - The scope covers any hostname within one subdomain level.
+        * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+        """
+elif False:
+    GetPropertyDomainownershipSearchDomainsDomainArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPropertyDomainownershipSearchDomainsDomainArgs:
+    def __init__(__self__, *,
+                 account_id: _builtins.str,
+                 domain_name: _builtins.str,
+                 domain_status: _builtins.str,
+                 validation_challenge: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs',
+                 validation_completed_date: _builtins.str,
+                 validation_level: _builtins.str,
+                 validation_method: _builtins.str,
+                 validation_requested_by: _builtins.str,
+                 validation_requested_date: _builtins.str,
+                 validation_scope: _builtins.str):
+        """
+        :param _builtins.str account_id: Your account's ID.
+        :param _builtins.str domain_name: Your domain's name.
+        :param _builtins.str domain_status: The domain's validation status. Possible values are: 
+               * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+               * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+               * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+               * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+               * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+        :param 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs' validation_challenge: The domain's validation challenge details.
+        :param _builtins.str validation_completed_date: The timestamp indicating when the domain validation was completed.
+        :param _builtins.str validation_level: The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
+        :param _builtins.str validation_method: The method used to validate the domain. Possible values are: 
+               * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+               * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+               * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+               * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+               * `MANUAL` - For this method, the DOM team manually performed the validation.
+        :param _builtins.str validation_requested_by: The name of the user who requested the domain validation.
+        :param _builtins.str validation_requested_date: The timestamp indicating when the domain validation was requested.
+        :param _builtins.str validation_scope: Your domain's validation scope. Possible values are: 
+               * `HOST` - The scope is only the exactly specified domain.
+               * `WILDCARD` - The scope covers any hostname within one subdomain level.
+               * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+        """
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "domain_status", domain_status)
+        pulumi.set(__self__, "validation_challenge", validation_challenge)
+        pulumi.set(__self__, "validation_completed_date", validation_completed_date)
+        pulumi.set(__self__, "validation_level", validation_level)
+        pulumi.set(__self__, "validation_method", validation_method)
+        pulumi.set(__self__, "validation_requested_by", validation_requested_by)
+        pulumi.set(__self__, "validation_requested_date", validation_requested_date)
+        pulumi.set(__self__, "validation_scope", validation_scope)
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> _builtins.str:
+        """
+        Your account's ID.
+        """
+        return pulumi.get(self, "account_id")
+
+    @account_id.setter
+    def account_id(self, value: _builtins.str):
+        pulumi.set(self, "account_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> _builtins.str:
+        """
+        Your domain's name.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: _builtins.str):
+        pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="domainStatus")
+    def domain_status(self) -> _builtins.str:
+        """
+        The domain's validation status. Possible values are: 
+        * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+        * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+        * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+        * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+        * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+        """
+        return pulumi.get(self, "domain_status")
+
+    @domain_status.setter
+    def domain_status(self, value: _builtins.str):
+        pulumi.set(self, "domain_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationChallenge")
+    def validation_challenge(self) -> 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs':
+        """
+        The domain's validation challenge details.
+        """
+        return pulumi.get(self, "validation_challenge")
+
+    @validation_challenge.setter
+    def validation_challenge(self, value: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs'):
+        pulumi.set(self, "validation_challenge", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationCompletedDate")
+    def validation_completed_date(self) -> _builtins.str:
+        """
+        The timestamp indicating when the domain validation was completed.
+        """
+        return pulumi.get(self, "validation_completed_date")
+
+    @validation_completed_date.setter
+    def validation_completed_date(self, value: _builtins.str):
+        pulumi.set(self, "validation_completed_date", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationLevel")
+    def validation_level(self) -> _builtins.str:
+        """
+        The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
+        """
+        return pulumi.get(self, "validation_level")
+
+    @validation_level.setter
+    def validation_level(self, value: _builtins.str):
+        pulumi.set(self, "validation_level", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationMethod")
+    def validation_method(self) -> _builtins.str:
+        """
+        The method used to validate the domain. Possible values are: 
+        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+        * `MANUAL` - For this method, the DOM team manually performed the validation.
+        """
+        return pulumi.get(self, "validation_method")
+
+    @validation_method.setter
+    def validation_method(self, value: _builtins.str):
+        pulumi.set(self, "validation_method", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationRequestedBy")
+    def validation_requested_by(self) -> _builtins.str:
+        """
+        The name of the user who requested the domain validation.
+        """
+        return pulumi.get(self, "validation_requested_by")
+
+    @validation_requested_by.setter
+    def validation_requested_by(self, value: _builtins.str):
+        pulumi.set(self, "validation_requested_by", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationRequestedDate")
+    def validation_requested_date(self) -> _builtins.str:
+        """
+        The timestamp indicating when the domain validation was requested.
+        """
+        return pulumi.get(self, "validation_requested_date")
+
+    @validation_requested_date.setter
+    def validation_requested_date(self, value: _builtins.str):
+        pulumi.set(self, "validation_requested_date", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationScope")
+    def validation_scope(self) -> _builtins.str:
+        """
+        Your domain's validation scope. Possible values are: 
+        * `HOST` - The scope is only the exactly specified domain.
+        * `WILDCARD` - The scope covers any hostname within one subdomain level.
+        * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+        """
+        return pulumi.get(self, "validation_scope")
+
+    @validation_scope.setter
+    def validation_scope(self, value: _builtins.str):
+        pulumi.set(self, "validation_scope", value)
+
+
+if not MYPY:
+    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgsDict(TypedDict):
+        cname_record: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgsDict'
+        """
+        The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+        """
+        expiration_date: _builtins.str
+        """
+        The timestamp indicating when the challenge data expires.
+        """
+        http_file: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgsDict'
+        """
+        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+        """
+        http_redirect: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgsDict'
+        """
+        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+        """
+        txt_record: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgsDict'
+        """
+        The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+        """
+elif False:
+    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs:
+    def __init__(__self__, *,
+                 cname_record: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs',
+                 expiration_date: _builtins.str,
+                 http_file: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs',
+                 http_redirect: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs',
+                 txt_record: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs'):
+        """
+        :param 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs' cname_record: The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+        :param _builtins.str expiration_date: The timestamp indicating when the challenge data expires.
+        :param 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs' http_file: Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+        :param 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs' http_redirect: Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+        :param 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs' txt_record: The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+        """
+        pulumi.set(__self__, "cname_record", cname_record)
+        pulumi.set(__self__, "expiration_date", expiration_date)
+        pulumi.set(__self__, "http_file", http_file)
+        pulumi.set(__self__, "http_redirect", http_redirect)
+        pulumi.set(__self__, "txt_record", txt_record)
+
+    @_builtins.property
+    @pulumi.getter(name="cnameRecord")
+    def cname_record(self) -> 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs':
+        """
+        The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+        """
+        return pulumi.get(self, "cname_record")
+
+    @cname_record.setter
+    def cname_record(self, value: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs'):
+        pulumi.set(self, "cname_record", value)
+
+    @_builtins.property
+    @pulumi.getter(name="expirationDate")
+    def expiration_date(self) -> _builtins.str:
+        """
+        The timestamp indicating when the challenge data expires.
+        """
+        return pulumi.get(self, "expiration_date")
+
+    @expiration_date.setter
+    def expiration_date(self, value: _builtins.str):
+        pulumi.set(self, "expiration_date", value)
+
+    @_builtins.property
+    @pulumi.getter(name="httpFile")
+    def http_file(self) -> 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs':
+        """
+        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+        """
+        return pulumi.get(self, "http_file")
+
+    @http_file.setter
+    def http_file(self, value: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs'):
+        pulumi.set(self, "http_file", value)
+
+    @_builtins.property
+    @pulumi.getter(name="httpRedirect")
+    def http_redirect(self) -> 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs':
+        """
+        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+        """
+        return pulumi.get(self, "http_redirect")
+
+    @http_redirect.setter
+    def http_redirect(self, value: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs'):
+        pulumi.set(self, "http_redirect", value)
+
+    @_builtins.property
+    @pulumi.getter(name="txtRecord")
+    def txt_record(self) -> 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs':
+        """
+        The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+        """
+        return pulumi.get(self, "txt_record")
+
+    @txt_record.setter
+    def txt_record(self, value: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs'):
+        pulumi.set(self, "txt_record", value)
+
+
+if not MYPY:
+    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        The 'CNAME' record for your domain that you add to the DNS configuration.
+        """
+        target: _builtins.str
+        """
+        The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+        """
+elif False:
+    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 target: _builtins.str):
+        """
+        :param _builtins.str name: The 'CNAME' record for your domain that you add to the DNS configuration.
+        :param _builtins.str target: The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "target", target)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The 'CNAME' record for your domain that you add to the DNS configuration.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> _builtins.str:
+        """
+        The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: _builtins.str):
+        pulumi.set(self, "target", value)
+
+
+if not MYPY:
+    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgsDict(TypedDict):
+        content: _builtins.str
+        """
+        The content of the file that you should place at the specified URL.
+        """
+        content_type: _builtins.str
+        """
+        The content type of the file containing the token.
+        """
+        path: _builtins.str
+        """
+        The URL where you should place the file containing the challenge token.
+        """
+elif False:
+    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs:
+    def __init__(__self__, *,
+                 content: _builtins.str,
+                 content_type: _builtins.str,
+                 path: _builtins.str):
+        """
+        :param _builtins.str content: The content of the file that you should place at the specified URL.
+        :param _builtins.str content_type: The content type of the file containing the token.
+        :param _builtins.str path: The URL where you should place the file containing the challenge token.
+        """
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "content_type", content_type)
+        pulumi.set(__self__, "path", path)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> _builtins.str:
+        """
+        The content of the file that you should place at the specified URL.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: _builtins.str):
+        pulumi.set(self, "content", value)
+
+    @_builtins.property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> _builtins.str:
+        """
+        The content type of the file containing the token.
+        """
+        return pulumi.get(self, "content_type")
+
+    @content_type.setter
+    def content_type(self, value: _builtins.str):
+        pulumi.set(self, "content_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> _builtins.str:
+        """
+        The URL where you should place the file containing the challenge token.
+        """
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: _builtins.str):
+        pulumi.set(self, "path", value)
+
+
+if not MYPY:
+    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgsDict(TypedDict):
+        from_: _builtins.str
+        """
+        The location on your HTTP server where you set up the redirect.
+        """
+        to: _builtins.str
+        """
+        The redirect URL with the token that you place on your HTTP server.
+        """
+elif False:
+    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs:
+    def __init__(__self__, *,
+                 from_: _builtins.str,
+                 to: _builtins.str):
+        """
+        :param _builtins.str from_: The location on your HTTP server where you set up the redirect.
+        :param _builtins.str to: The redirect URL with the token that you place on your HTTP server.
+        """
+        pulumi.set(__self__, "from_", from_)
+        pulumi.set(__self__, "to", to)
+
+    @_builtins.property
+    @pulumi.getter(name="from")
+    def from_(self) -> _builtins.str:
+        """
+        The location on your HTTP server where you set up the redirect.
+        """
+        return pulumi.get(self, "from_")
+
+    @from_.setter
+    def from_(self, value: _builtins.str):
+        pulumi.set(self, "from_", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def to(self) -> _builtins.str:
+        """
+        The redirect URL with the token that you place on your HTTP server.
+        """
+        return pulumi.get(self, "to")
+
+    @to.setter
+    def to(self, value: _builtins.str):
+        pulumi.set(self, "to", value)
+
+
+if not MYPY:
+    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        The hostname where you should add the 'TXT' record to validate the domain ownership.
+        """
+        value: _builtins.str
+        """
+        The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+        """
+elif False:
+    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str name: The hostname where you should add the 'TXT' record to validate the domain ownership.
+        :param _builtins.str value: The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The hostname where you should add the 'TXT' record to validate the domain ownership.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
         """
         return pulumi.get(self, "value")
 

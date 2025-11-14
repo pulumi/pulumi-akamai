@@ -9,7 +9,6 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class IamApiClientIpAcl {
@@ -17,7 +16,7 @@ public final class IamApiClientIpAcl {
      * @return IP addresses or CIDR blocks the API client can access.
      * 
      */
-    private @Nullable List<String> cidrs;
+    private List<String> cidrs;
     /**
      * @return Enables the API client to access the IP access control list (ACL).
      * 
@@ -30,7 +29,7 @@ public final class IamApiClientIpAcl {
      * 
      */
     public List<String> cidrs() {
-        return this.cidrs == null ? List.of() : this.cidrs;
+        return this.cidrs;
     }
     /**
      * @return Enables the API client to access the IP access control list (ACL).
@@ -49,7 +48,7 @@ public final class IamApiClientIpAcl {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable List<String> cidrs;
+        private List<String> cidrs;
         private Boolean enable;
         public Builder() {}
         public Builder(IamApiClientIpAcl defaults) {
@@ -59,8 +58,10 @@ public final class IamApiClientIpAcl {
         }
 
         @CustomType.Setter
-        public Builder cidrs(@Nullable List<String> cidrs) {
-
+        public Builder cidrs(List<String> cidrs) {
+            if (cidrs == null) {
+              throw new MissingRequiredPropertyException("IamApiClientIpAcl", "cidrs");
+            }
             this.cidrs = cidrs;
             return this;
         }

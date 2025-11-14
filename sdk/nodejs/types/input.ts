@@ -187,6 +187,29 @@ export interface CloudAccessKeyTimeouts {
     update?: pulumi.Input<string>;
 }
 
+export interface CloudcertificatesCertificateSubject {
+    /**
+     * Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
+     */
+    commonName?: pulumi.Input<string>;
+    /**
+     * Two-letter ISO 3166 country code.
+     */
+    country?: pulumi.Input<string>;
+    /**
+     * City or locality name.
+     */
+    locality?: pulumi.Input<string>;
+    /**
+     * Legal name of the organization.
+     */
+    organization?: pulumi.Input<string>;
+    /**
+     * Full name of the state or province.
+     */
+    state?: pulumi.Input<string>;
+}
+
 export interface CloudletsApplicationLoadBalancerActivationTimeouts {
     default?: pulumi.Input<string>;
 }
@@ -912,6 +935,29 @@ export interface DatastreamDeliveryConfigurationFrequency {
     intervalInSecs: pulumi.Input<number>;
 }
 
+export interface DatastreamDynatraceConnector {
+    /**
+     * The Dynatrace Log Ingest access token.
+     */
+    apiToken: pulumi.Input<string>;
+    /**
+     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+     */
+    customHeaderName?: pulumi.Input<string>;
+    /**
+     * The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+     */
+    customHeaderValue?: pulumi.Input<string>;
+    /**
+     * The destination's name.
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * The Dynatrace Ingestion API endpoint URL in the https://{dynatrace-environment-id}.live.dynatrace.com/api/v2/logs/ingest format.
+     */
+    endpoint: pulumi.Input<string>;
+}
+
 export interface DatastreamElasticsearchConnector {
     /**
      * The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
@@ -1150,6 +1196,41 @@ export interface DatastreamOracleConnector {
     secretAccessKey: pulumi.Input<string>;
 }
 
+export interface DatastreamS3CompatibleConnector {
+    /**
+     * The access key identifier of the S3-compatible object storage bucket.
+     */
+    accessKey: pulumi.Input<string>;
+    /**
+     * The name of the S3-compatible object storage bucket.
+     */
+    bucket: pulumi.Input<string>;
+    /**
+     * Enables gzip compression for a log file sent to a destination. This value is always true for this destination type.
+     */
+    compressLogs?: pulumi.Input<boolean>;
+    /**
+     * The name of the destination.
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * The scheme-qualified host of your S3-compatible object storage bucket.
+     */
+    endpoint: pulumi.Input<string>;
+    /**
+     * The path to the folder within your S3-compatible object storage bucket where you want to store logs. Optional field.
+     */
+    path?: pulumi.Input<string>;
+    /**
+     * The physical storage location of your S3-compatible object storage bucket.
+     */
+    region: pulumi.Input<string>;
+    /**
+     * The secret access key identifier of the S3-compatible object storage bucket.
+     */
+    secretAccessKey: pulumi.Input<string>;
+}
+
 export interface DatastreamS3Connector {
     /**
      * The access key identifier used to authenticate requests to the Amazon S3 account
@@ -1257,6 +1338,45 @@ export interface DatastreamSumologicConnector {
      * The Sumo Logic collection endpoint where logs will be stored
      */
     endpoint: pulumi.Input<string>;
+}
+
+export interface DatastreamTrafficpeakConnector {
+    /**
+     * Only BASIC authentication is supported for TrafficPeak destination.
+     */
+    authenticationType: pulumi.Input<string>;
+    /**
+     * Enables gzip compression for a log file sent to a destination. The value is true by default.
+     */
+    compressLogs?: pulumi.Input<boolean>;
+    /**
+     * The type of the resource passed in the request's custom header. - Supported headers: `application/json` or `application/json; charset=utf-8`.
+     */
+    contentType: pulumi.Input<string>;
+    /**
+     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. Optional field.
+     */
+    customHeaderName?: pulumi.Input<string>;
+    /**
+     * The custom header's contents passed with the request that contains information about the client connection. Optional field.
+     */
+    customHeaderValue?: pulumi.Input<string>;
+    /**
+     * The destination's name.
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * Enter the Hydrolix endpoint URL in the https://<host>/ingest/event?table=<tablename>&token=<token> format, where the token is the HTTP streaming ingest token, and the tablename is the Hydrolix data set table name.
+     */
+    endpoint: pulumi.Input<string>;
+    /**
+     * Enter the password you set in your TrafficPeak endpoint for authentication.
+     */
+    password: pulumi.Input<string>;
+    /**
+     * Enter the valid username you set in your TrafficPeak endpoint for authentication.
+     */
+    userName: pulumi.Input<string>;
 }
 
 export interface DnsZoneOutboundZoneTransfer {
@@ -11352,6 +11472,260 @@ export interface GetImagingPolicyVideoPolicyVariableEnumOptionArgs {
     value: pulumi.Input<string>;
 }
 
+export interface GetPropertyDomainownershipSearchDomainsDomain {
+    /**
+     * Your account's ID.
+     */
+    accountId?: string;
+    /**
+     * Your domain's name.
+     */
+    domainName: string;
+    /**
+     * The domain's validation status. Possible values are: 
+     * * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+     * * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+     * * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+     * * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+     * * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+     */
+    domainStatus?: string;
+    /**
+     * The domain's validation challenge details.
+     */
+    validationChallenge?: inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallenge;
+    /**
+     * The timestamp indicating when the domain validation was completed.
+     */
+    validationCompletedDate?: string;
+    /**
+     * The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
+     */
+    validationLevel?: string;
+    /**
+     * The method used to validate the domain. Possible values are: 
+     * * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+     * * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+     * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+     * * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+     * * `MANUAL` - For this method, the DOM team manually performed the validation.
+     */
+    validationMethod?: string;
+    /**
+     * The name of the user who requested the domain validation.
+     */
+    validationRequestedBy?: string;
+    /**
+     * The timestamp indicating when the domain validation was requested.
+     */
+    validationRequestedDate?: string;
+    /**
+     * Your domain's validation scope. Possible values are: 
+     * * `HOST` - The scope is only the exactly specified domain.
+     * * `WILDCARD` - The scope covers any hostname within one subdomain level.
+     * * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+     */
+    validationScope: string;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainArgs {
+    /**
+     * Your account's ID.
+     */
+    accountId?: pulumi.Input<string>;
+    /**
+     * Your domain's name.
+     */
+    domainName: pulumi.Input<string>;
+    /**
+     * The domain's validation status. Possible values are: 
+     * * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+     * * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+     * * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+     * * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+     * * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+     */
+    domainStatus?: pulumi.Input<string>;
+    /**
+     * The domain's validation challenge details.
+     */
+    validationChallenge?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs>;
+    /**
+     * The timestamp indicating when the domain validation was completed.
+     */
+    validationCompletedDate?: pulumi.Input<string>;
+    /**
+     * The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
+     */
+    validationLevel?: pulumi.Input<string>;
+    /**
+     * The method used to validate the domain. Possible values are: 
+     * * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+     * * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+     * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+     * * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+     * * `MANUAL` - For this method, the DOM team manually performed the validation.
+     */
+    validationMethod?: pulumi.Input<string>;
+    /**
+     * The name of the user who requested the domain validation.
+     */
+    validationRequestedBy?: pulumi.Input<string>;
+    /**
+     * The timestamp indicating when the domain validation was requested.
+     */
+    validationRequestedDate?: pulumi.Input<string>;
+    /**
+     * Your domain's validation scope. Possible values are: 
+     * * `HOST` - The scope is only the exactly specified domain.
+     * * `WILDCARD` - The scope covers any hostname within one subdomain level.
+     * * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+     */
+    validationScope: pulumi.Input<string>;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallenge {
+    /**
+     * The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+     */
+    cnameRecord?: inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord;
+    /**
+     * The timestamp indicating when the challenge data expires.
+     */
+    expirationDate?: string;
+    /**
+     * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+     */
+    httpFile?: inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile;
+    /**
+     * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+     */
+    httpRedirect?: inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect;
+    /**
+     * The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+     */
+    txtRecord?: inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs {
+    /**
+     * The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+     */
+    cnameRecord?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs>;
+    /**
+     * The timestamp indicating when the challenge data expires.
+     */
+    expirationDate?: pulumi.Input<string>;
+    /**
+     * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+     */
+    httpFile?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs>;
+    /**
+     * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+     */
+    httpRedirect?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs>;
+    /**
+     * The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+     */
+    txtRecord?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs>;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord {
+    /**
+     * The 'CNAME' record for your domain that you add to the DNS configuration.
+     */
+    name?: string;
+    /**
+     * The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+     */
+    target?: string;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs {
+    /**
+     * The 'CNAME' record for your domain that you add to the DNS configuration.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+     */
+    target?: pulumi.Input<string>;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile {
+    /**
+     * The content of the file that you should place at the specified URL.
+     */
+    content?: string;
+    /**
+     * The content type of the file containing the token.
+     */
+    contentType?: string;
+    /**
+     * The URL where you should place the file containing the challenge token.
+     */
+    path?: string;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs {
+    /**
+     * The content of the file that you should place at the specified URL.
+     */
+    content?: pulumi.Input<string>;
+    /**
+     * The content type of the file containing the token.
+     */
+    contentType?: pulumi.Input<string>;
+    /**
+     * The URL where you should place the file containing the challenge token.
+     */
+    path?: pulumi.Input<string>;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect {
+    /**
+     * The location on your HTTP server where you set up the redirect.
+     */
+    from?: string;
+    /**
+     * The redirect URL with the token that you place on your HTTP server.
+     */
+    to?: string;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs {
+    /**
+     * The location on your HTTP server where you set up the redirect.
+     */
+    from?: pulumi.Input<string>;
+    /**
+     * The redirect URL with the token that you place on your HTTP server.
+     */
+    to?: pulumi.Input<string>;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord {
+    /**
+     * The hostname where you should add the 'TXT' record to validate the domain ownership.
+     */
+    name?: string;
+    /**
+     * The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+     */
+    value?: string;
+}
+
+export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs {
+    /**
+     * The hostname where you should add the 'TXT' record to validate the domain ownership.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+     */
+    value?: pulumi.Input<string>;
+}
+
 export interface GetPropertyIncludesParentProperty {
     /**
      * The property's unique identifier
@@ -11737,7 +12111,7 @@ export interface IamApiClientIpAcl {
     /**
      * IP addresses or CIDR blocks the API client can access.
      */
-    cidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    cidrs: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Enables the API client to access the IP access control list (ACL).
      */
@@ -12155,7 +12529,170 @@ export interface PropertyActivationTimeouts {
     default?: pulumi.Input<string>;
 }
 
+export interface PropertyDomainownershipDomainsDomain {
+    /**
+     * Your account's ID.
+     */
+    accountId?: pulumi.Input<string>;
+    /**
+     * Your domain's name.
+     */
+    domainName: pulumi.Input<string>;
+    /**
+     * The domain's validation status. Possible values are: 
+     * * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+     * * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+     * * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+     * * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+     * * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+     */
+    domainStatus?: pulumi.Input<string>;
+    /**
+     * The domain's validation challenge details.
+     */
+    validationChallenge?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallenge>;
+    /**
+     * The timestamp indicating when the domain validation was completed.
+     */
+    validationCompletedDate?: pulumi.Input<string>;
+    /**
+     * The method used to validate the domain. Possible values are: 
+     * * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+     * * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+     * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+     * * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+     * * `MANUAL` - For this method, the DOM team manually performed the validation.
+     */
+    validationMethod?: pulumi.Input<string>;
+    /**
+     * The name of the user who requested the domain validation.
+     */
+    validationRequestedBy?: pulumi.Input<string>;
+    /**
+     * The timestamp indicating when the domain validation was requested.
+     */
+    validationRequestedDate?: pulumi.Input<string>;
+    /**
+     * Your domain's validation scope. Possible values are: 
+     * * `HOST` - The scope is only the exactly specified domain.
+     * * `WILDCARD` - The scope covers any hostname within one subdomain level.
+     * * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+     */
+    validationScope: pulumi.Input<string>;
+}
+
+export interface PropertyDomainownershipDomainsDomainValidationChallenge {
+    /**
+     * The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+     */
+    cnameRecord?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeCnameRecord>;
+    /**
+     * The timestamp indicating when the challenge data expires.
+     */
+    expirationDate?: pulumi.Input<string>;
+    /**
+     * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+     */
+    httpFile?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeHttpFile>;
+    /**
+     * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+     */
+    httpRedirect?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect>;
+    /**
+     * The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+     */
+    txtRecord?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord>;
+}
+
+export interface PropertyDomainownershipDomainsDomainValidationChallengeCnameRecord {
+    /**
+     * The 'CNAME' record for your domain that you add to the DNS configuration.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+     */
+    target?: pulumi.Input<string>;
+}
+
+export interface PropertyDomainownershipDomainsDomainValidationChallengeHttpFile {
+    /**
+     * The content of the file that you should place at the specified URL.
+     */
+    content?: pulumi.Input<string>;
+    /**
+     * The content type of the file containing the token.
+     */
+    contentType?: pulumi.Input<string>;
+    /**
+     * The URL where you should place the file containing the challenge token.
+     */
+    path?: pulumi.Input<string>;
+}
+
+export interface PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect {
+    /**
+     * The location on your HTTP server where you set up the redirect.
+     */
+    from?: pulumi.Input<string>;
+    /**
+     * The redirect URL with the token that you place on your HTTP server.
+     */
+    to?: pulumi.Input<string>;
+}
+
+export interface PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord {
+    /**
+     * The hostname where you should add the 'TXT' record to validate the domain ownership.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface PropertyDomainownershipValidationDomain {
+    /**
+     * Your domain's name.
+     */
+    domainName: pulumi.Input<string>;
+    /**
+     * The method used to validate the domain. Possible values are: 
+     * * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+     * * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+     * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+     */
+    validationMethod?: pulumi.Input<string>;
+    /**
+     * Your domain's validation scope. Possible values are: 
+     * * `HOST` - The scope is only the exactly specified domain.
+     * * `WILDCARD` - The scope covers any hostname within one subdomain level.
+     * * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+     */
+    validationScope: pulumi.Input<string>;
+}
+
+export interface PropertyDomainownershipValidationTimeouts {
+    /**
+     * Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+     */
+    create?: pulumi.Input<string>;
+    /**
+     * Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+     */
+    update?: pulumi.Input<string>;
+}
+
 export interface PropertyHostname {
+    /**
+     * Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     */
+    ccmCertStatuses?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCcmCertStatus>[]>;
+    /**
+     * Certificate identifiers and links for the CCM-managed certificates.
+     */
+    ccmCertificates?: pulumi.Input<inputs.PropertyHostnameCcmCertificates>;
     certProvisioningType: pulumi.Input<string>;
     certStatuses?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatus>[]>;
     cnameFrom: pulumi.Input<string>;
@@ -12177,6 +12714,36 @@ export interface PropertyHostnameBucketHostnames {
      * Identifies the edge hostname you mapped your traffic to on the production network.
      */
     edgeHostnameId: pulumi.Input<string>;
+}
+
+export interface PropertyHostnameCcmCertStatus {
+    /**
+     * Status of the ECDSA certificate on production network.
+     */
+    ecdsaProductionStatus?: pulumi.Input<string>;
+    /**
+     * Status of the ECDSA certificate on staging network.
+     */
+    ecdsaStagingStatus?: pulumi.Input<string>;
+    /**
+     * Status of the RSA certificate on production network.
+     */
+    rsaProductionStatus?: pulumi.Input<string>;
+    /**
+     * Status of the RSA certificate on staging network.
+     */
+    rsaStagingStatus?: pulumi.Input<string>;
+}
+
+export interface PropertyHostnameCcmCertificates {
+    /**
+     * Certificate ID for ECDSA.
+     */
+    ecdsaCertId?: pulumi.Input<string>;
+    /**
+     * Certificate ID for RSA.
+     */
+    rsaCertId?: pulumi.Input<string>;
 }
 
 export interface PropertyHostnameCertStatus {

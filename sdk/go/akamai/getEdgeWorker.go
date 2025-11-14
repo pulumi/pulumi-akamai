@@ -23,8 +23,9 @@ func LookupEdgeWorker(ctx *pulumi.Context, args *LookupEdgeWorkerArgs, opts ...p
 
 // A collection of arguments for invoking getEdgeWorker.
 type LookupEdgeWorkerArgs struct {
-	EdgeworkerId int     `pulumi:"edgeworkerId"`
+	EdgeworkerId *int    `pulumi:"edgeworkerId"`
 	LocalBundle  *string `pulumi:"localBundle"`
+	Name         *string `pulumi:"name"`
 }
 
 // A collection of values returned by getEdgeWorker.
@@ -52,8 +53,9 @@ func LookupEdgeWorkerOutput(ctx *pulumi.Context, args LookupEdgeWorkerOutputArgs
 
 // A collection of arguments for invoking getEdgeWorker.
 type LookupEdgeWorkerOutputArgs struct {
-	EdgeworkerId pulumi.IntInput       `pulumi:"edgeworkerId"`
+	EdgeworkerId pulumi.IntPtrInput    `pulumi:"edgeworkerId"`
 	LocalBundle  pulumi.StringPtrInput `pulumi:"localBundle"`
+	Name         pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (LookupEdgeWorkerOutputArgs) ElementType() reflect.Type {
