@@ -420,6 +420,31 @@
             },
             "type": "object"
         },
+        "akamai:index/CloudcertificatesCertificateSubject:CloudcertificatesCertificateSubject": {
+            "properties": {
+                "commonName": {
+                    "type": "string",
+                    "description": "Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Two-letter ISO 3166 country code.\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City or locality name.\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Legal name of the organization.\n"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "Full name of the state or province.\n"
+                }
+            },
+            "type": "object"
+        },
         "akamai:index/CloudletsApplicationLoadBalancerActivationTimeouts:CloudletsApplicationLoadBalancerActivationTimeouts": {
             "properties": {
                 "default": {
@@ -1369,6 +1394,37 @@
                 "intervalInSecs"
             ]
         },
+        "akamai:index/DatastreamDynatraceConnector:DatastreamDynatraceConnector": {
+            "properties": {
+                "apiToken": {
+                    "type": "string",
+                    "description": "The Dynatrace Log Ingest access token.\n",
+                    "secret": true
+                },
+                "customHeaderName": {
+                    "type": "string",
+                    "description": "A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.\n"
+                },
+                "customHeaderValue": {
+                    "type": "string",
+                    "description": "The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "The destination's name.\n"
+                },
+                "endpoint": {
+                    "type": "string",
+                    "description": "The Dynatrace Ingestion API endpoint URL in the https://{dynatrace-environment-id}.live.dynatrace.com/api/v2/logs/ingest format.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "apiToken",
+                "displayName",
+                "endpoint"
+            ]
+        },
         "akamai:index/DatastreamElasticsearchConnector:DatastreamElasticsearchConnector": {
             "properties": {
                 "caCert": {
@@ -1721,6 +1777,66 @@
                 }
             }
         },
+        "akamai:index/DatastreamS3CompatibleConnector:DatastreamS3CompatibleConnector": {
+            "properties": {
+                "accessKey": {
+                    "type": "string",
+                    "description": "The access key identifier of the S3-compatible object storage bucket.\n",
+                    "secret": true
+                },
+                "bucket": {
+                    "type": "string",
+                    "description": "The name of the S3-compatible object storage bucket.\n"
+                },
+                "compressLogs": {
+                    "type": "boolean",
+                    "description": "Enables gzip compression for a log file sent to a destination. This value is always true for this destination type.\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "The name of the destination.\n"
+                },
+                "endpoint": {
+                    "type": "string",
+                    "description": "The scheme-qualified host of your S3-compatible object storage bucket.\n"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "The path to the folder within your S3-compatible object storage bucket where you want to store logs. Optional field.\n"
+                },
+                "region": {
+                    "type": "string",
+                    "description": "The physical storage location of your S3-compatible object storage bucket.\n"
+                },
+                "secretAccessKey": {
+                    "type": "string",
+                    "description": "The secret access key identifier of the S3-compatible object storage bucket.\n",
+                    "secret": true
+                }
+            },
+            "type": "object",
+            "required": [
+                "accessKey",
+                "bucket",
+                "displayName",
+                "endpoint",
+                "region",
+                "secretAccessKey"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "accessKey",
+                        "bucket",
+                        "compressLogs",
+                        "displayName",
+                        "endpoint",
+                        "region",
+                        "secretAccessKey"
+                    ]
+                }
+            }
+        },
         "akamai:index/DatastreamS3Connector:DatastreamS3Connector": {
             "properties": {
                 "accessKey": {
@@ -1882,6 +1998,57 @@
                 "collectorCode",
                 "displayName",
                 "endpoint"
+            ]
+        },
+        "akamai:index/DatastreamTrafficpeakConnector:DatastreamTrafficpeakConnector": {
+            "properties": {
+                "authenticationType": {
+                    "type": "string",
+                    "description": "Only BASIC authentication is supported for TrafficPeak destination.\n"
+                },
+                "compressLogs": {
+                    "type": "boolean",
+                    "description": "Enables gzip compression for a log file sent to a destination. The value is true by default.\n"
+                },
+                "contentType": {
+                    "type": "string",
+                    "description": "The type of the resource passed in the request's custom header. - Supported headers: `application/json` or `application/json; charset=utf-8`.\n"
+                },
+                "customHeaderName": {
+                    "type": "string",
+                    "description": "A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. Optional field.\n"
+                },
+                "customHeaderValue": {
+                    "type": "string",
+                    "description": "The custom header's contents passed with the request that contains information about the client connection. Optional field.\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "The destination's name.\n"
+                },
+                "endpoint": {
+                    "type": "string",
+                    "description": "Enter the Hydrolix endpoint URL in the https://\u003chost\u003e/ingest/event?table=\u003ctablename\u003e\u0026token=\u003ctoken\u003e format, where the token is the HTTP streaming ingest token, and the tablename is the Hydrolix data set table name.\n"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "Enter the password you set in your TrafficPeak endpoint for authentication.\n",
+                    "secret": true
+                },
+                "userName": {
+                    "type": "string",
+                    "description": "Enter the valid username you set in your TrafficPeak endpoint for authentication.\n",
+                    "secret": true
+                }
+            },
+            "type": "object",
+            "required": [
+                "authenticationType",
+                "contentType",
+                "displayName",
+                "endpoint",
+                "password",
+                "userName"
             ]
         },
         "akamai:index/DnsZoneOutboundZoneTransfer:DnsZoneOutboundZoneTransfer": {
@@ -2678,6 +2845,7 @@
             },
             "type": "object",
             "required": [
+                "cidrs",
                 "enable"
             ]
         },
@@ -3279,8 +3447,238 @@
             },
             "type": "object"
         },
+        "akamai:index/PropertyDomainownershipDomainsDomain:PropertyDomainownershipDomainsDomain": {
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Your account's ID.\n"
+                },
+                "domainName": {
+                    "type": "string",
+                    "description": "Your domain's name.\n"
+                },
+                "domainStatus": {
+                    "type": "string",
+                    "description": "The domain's validation status. Possible values are: \n* `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.\n* `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.\n* `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.\n* `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.\n* `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.\n"
+                },
+                "validationChallenge": {
+                    "$ref": "#/types/akamai:index/PropertyDomainownershipDomainsDomainValidationChallenge:PropertyDomainownershipDomainsDomainValidationChallenge",
+                    "description": "The domain's validation challenge details.\n"
+                },
+                "validationCompletedDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the domain validation was completed.\n"
+                },
+                "validationMethod": {
+                    "type": "string",
+                    "description": "The method used to validate the domain. Possible values are: \n* `DNS_CNAME` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`cnameRecord`\" pulumi-lang-dotnet=\"`CnameRecord`\" pulumi-lang-go=\"`cnameRecord`\" pulumi-lang-python=\"`cname_record`\" pulumi-lang-yaml=\"`cnameRecord`\" pulumi-lang-java=\"`cnameRecord`\"\u003e`cname_record`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.\n* `DNS_TXT` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`txtRecord`\" pulumi-lang-dotnet=\"`TxtRecord`\" pulumi-lang-go=\"`txtRecord`\" pulumi-lang-python=\"`txt_record`\" pulumi-lang-yaml=\"`txtRecord`\" pulumi-lang-java=\"`txtRecord`\"\u003e`txt_record`\u003c/span\u003e with a token \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.\n* `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.\n* `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.\n* `MANUAL` - For this method, the DOM team manually performed the validation.\n"
+                },
+                "validationRequestedBy": {
+                    "type": "string",
+                    "description": "The name of the user who requested the domain validation.\n"
+                },
+                "validationRequestedDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the domain validation was requested.\n"
+                },
+                "validationScope": {
+                    "type": "string",
+                    "description": "Your domain's validation scope. Possible values are: \n* `HOST` - The scope is only the exactly specified domain.\n* `WILDCARD` - The scope covers any hostname within one subdomain level.\n* `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "domainName",
+                "validationScope"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "accountId",
+                        "domainName",
+                        "domainStatus",
+                        "validationChallenge",
+                        "validationCompletedDate",
+                        "validationMethod",
+                        "validationRequestedBy",
+                        "validationRequestedDate",
+                        "validationScope"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyDomainownershipDomainsDomainValidationChallenge:PropertyDomainownershipDomainsDomainValidationChallenge": {
+            "properties": {
+                "cnameRecord": {
+                    "$ref": "#/types/akamai:index/PropertyDomainownershipDomainsDomainValidationChallengeCnameRecord:PropertyDomainownershipDomainsDomainValidationChallengeCnameRecord",
+                    "description": "The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.\n"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the challenge data expires.\n"
+                },
+                "httpFile": {
+                    "$ref": "#/types/akamai:index/PropertyDomainownershipDomainsDomainValidationChallengeHttpFile:PropertyDomainownershipDomainsDomainValidationChallengeHttpFile",
+                    "description": "Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.\n"
+                },
+                "httpRedirect": {
+                    "$ref": "#/types/akamai:index/PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect:PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect",
+                    "description": "Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.\n"
+                },
+                "txtRecord": {
+                    "$ref": "#/types/akamai:index/PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord:PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord",
+                    "description": "The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "cnameRecord",
+                        "expirationDate",
+                        "httpFile",
+                        "httpRedirect",
+                        "txtRecord"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyDomainownershipDomainsDomainValidationChallengeCnameRecord:PropertyDomainownershipDomainsDomainValidationChallengeCnameRecord": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The 'CNAME' record for your domain that you add to the DNS configuration.\n"
+                },
+                "target": {
+                    "type": "string",
+                    "description": "The 'target' value you set in the 'CNAME' record that validates the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "name",
+                        "target"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyDomainownershipDomainsDomainValidationChallengeHttpFile:PropertyDomainownershipDomainsDomainValidationChallengeHttpFile": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "The content of the file that you should place at the specified URL.\n"
+                },
+                "contentType": {
+                    "type": "string",
+                    "description": "The content type of the file containing the token.\n"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "The URL where you should place the file containing the challenge token.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "content",
+                        "contentType",
+                        "path"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect:PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect": {
+            "properties": {
+                "from": {
+                    "type": "string",
+                    "description": "The location on your HTTP server where you set up the redirect.\n"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "The redirect URL with the token that you place on your HTTP server.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "from",
+                        "to"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord:PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The hostname where you should add the 'TXT' record to validate the domain ownership.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The token you need to copy to the DNS 'TXT' record that validates the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "name",
+                        "value"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyDomainownershipValidationDomain:PropertyDomainownershipValidationDomain": {
+            "properties": {
+                "domainName": {
+                    "type": "string",
+                    "description": "Your domain's name.\n"
+                },
+                "validationMethod": {
+                    "type": "string",
+                    "description": "The method used to validate the domain. Possible values are: \n* `DNS_CNAME` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`cnameRecord`\" pulumi-lang-dotnet=\"`CnameRecord`\" pulumi-lang-go=\"`cnameRecord`\" pulumi-lang-python=\"`cname_record`\" pulumi-lang-yaml=\"`cnameRecord`\" pulumi-lang-java=\"`cnameRecord`\"\u003e`cname_record`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.\n* `DNS_TXT` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`txtRecord`\" pulumi-lang-dotnet=\"`TxtRecord`\" pulumi-lang-go=\"`txtRecord`\" pulumi-lang-python=\"`txt_record`\" pulumi-lang-yaml=\"`txtRecord`\" pulumi-lang-java=\"`txtRecord`\"\u003e`txt_record`\u003c/span\u003e with a token \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.\n* `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.\n"
+                },
+                "validationScope": {
+                    "type": "string",
+                    "description": "Your domain's validation scope. Possible values are: \n* `HOST` - The scope is only the exactly specified domain.\n* `WILDCARD` - The scope covers any hostname within one subdomain level.\n* `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "domainName",
+                "validationScope"
+            ]
+        },
+        "akamai:index/PropertyDomainownershipValidationTimeouts:PropertyDomainownershipValidationTimeouts": {
+            "properties": {
+                "create": {
+                    "type": "string",
+                    "description": "Optional configurable domains validation timeout to be used on resource create. By default it's 30m.\n"
+                },
+                "update": {
+                    "type": "string",
+                    "description": "Optional configurable domains validation timeout to be used on resource update. By default it's 30m.\n"
+                }
+            },
+            "type": "object"
+        },
         "akamai:index/PropertyHostname:PropertyHostname": {
             "properties": {
+                "ccmCertStatuses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyHostnameCcmCertStatus:PropertyHostnameCcmCertStatus"
+                    },
+                    "description": "Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).\n"
+                },
+                "ccmCertificates": {
+                    "$ref": "#/types/akamai:index/PropertyHostnameCcmCertificates:PropertyHostnameCcmCertificates",
+                    "description": "Certificate identifiers and links for the CCM-managed certificates.\n"
+                },
                 "certProvisioningType": {
                     "type": "string"
                 },
@@ -3312,6 +3710,7 @@
             "language": {
                 "nodejs": {
                     "requiredOutputs": [
+                        "ccmCertStatuses",
                         "certProvisioningType",
                         "certStatuses",
                         "cnameFrom",
@@ -3351,6 +3750,50 @@
                     ]
                 }
             }
+        },
+        "akamai:index/PropertyHostnameCcmCertStatus:PropertyHostnameCcmCertStatus": {
+            "properties": {
+                "ecdsaProductionStatus": {
+                    "type": "string",
+                    "description": "Status of the ECDSA certificate on production network.\n"
+                },
+                "ecdsaStagingStatus": {
+                    "type": "string",
+                    "description": "Status of the ECDSA certificate on staging network.\n"
+                },
+                "rsaProductionStatus": {
+                    "type": "string",
+                    "description": "Status of the RSA certificate on production network.\n"
+                },
+                "rsaStagingStatus": {
+                    "type": "string",
+                    "description": "Status of the RSA certificate on staging network.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "ecdsaProductionStatus",
+                        "ecdsaStagingStatus",
+                        "rsaProductionStatus",
+                        "rsaStagingStatus"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyHostnameCcmCertificates:PropertyHostnameCcmCertificates": {
+            "properties": {
+                "ecdsaCertId": {
+                    "type": "string",
+                    "description": "Certificate ID for ECDSA.\n"
+                },
+                "rsaCertId": {
+                    "type": "string",
+                    "description": "Certificate ID for RSA.\n"
+                }
+            },
+            "type": "object"
         },
         "akamai:index/PropertyHostnameCertStatus:PropertyHostnameCertStatus": {
             "properties": {
@@ -5054,6 +5497,279 @@
             "required": [
                 "additionalCdn",
                 "securityNetwork"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudcertificatesCertificateBinding:getCloudcertificatesCertificateBinding": {
+            "properties": {
+                "certificateId": {
+                    "type": "string",
+                    "description": "Unique identifier for the third-party certificate.\n"
+                },
+                "hostname": {
+                    "type": "string",
+                    "description": "Hostname on the Akamai CDN the certificate applies to.\n"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "The deployment network, either STAGING or PRODUCTION, on which the certificate is active for a property version.\n"
+                },
+                "resourceType": {
+                    "type": "string",
+                    "description": "Resource type this binding applies to. Currently, only CDN_HOSTNAME is available.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificateId",
+                "hostname",
+                "network",
+                "resourceType"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudcertificatesCertificateSubject:getCloudcertificatesCertificateSubject": {
+            "properties": {
+                "commonName": {
+                    "type": "string",
+                    "description": "Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Two-letter ISO 3166 country code.\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City or locality name.\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Legal name of the organization.\n"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "Full name of the state or province.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "commonName",
+                "country",
+                "locality",
+                "organization",
+                "state"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudcertificatesCertificatesCertificate:getCloudcertificatesCertificatesCertificate": {
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "The account identifier associated with the certificate.\n"
+                },
+                "certificateId": {
+                    "type": "string",
+                    "description": "The unique identifier for the certificate.\n"
+                },
+                "certificateName": {
+                    "type": "string",
+                    "description": "The name of the certificate.\n"
+                },
+                "certificateStatus": {
+                    "type": "string",
+                    "description": "The status of the certificate.\n"
+                },
+                "certificateType": {
+                    "type": "string",
+                    "description": "The type of the certificate.\n"
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract identifier associated with the certificate.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The user who created the certificate.\n"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "The date when the certificate was created.\n"
+                },
+                "csrExpirationDate": {
+                    "type": "string",
+                    "description": "The expiration date of the CSR.\n"
+                },
+                "csrPem": {
+                    "type": "string",
+                    "description": "PEM-encoded certificate signing request (CSR) generated by Akamai for your selected key type.\n"
+                },
+                "keySize": {
+                    "type": "string",
+                    "description": "Size of the key used in the certificate signing request (CSR) in bits.\n"
+                },
+                "keyType": {
+                    "type": "string",
+                    "description": "The key type of the algorithm used in the certificate signing request (CSR).\n"
+                },
+                "modifiedBy": {
+                    "type": "string",
+                    "description": "The user who last modified the certificate.\n"
+                },
+                "modifiedDate": {
+                    "type": "string",
+                    "description": "The date when the certificate was last modified.\n"
+                },
+                "sans": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of SAN (Subject Alternative Name) domains included in the certificate.\n"
+                },
+                "secureNetwork": {
+                    "type": "string",
+                    "description": "The secure network associated with the certificate.\n"
+                },
+                "signedCertificateIssuer": {
+                    "type": "string",
+                    "description": "The issuer of the signed certificate.\n"
+                },
+                "signedCertificateNotValidAfterDate": {
+                    "type": "string",
+                    "description": "The date after which the signed certificate is no longer valid.\n"
+                },
+                "signedCertificateNotValidBeforeDate": {
+                    "type": "string",
+                    "description": "The date before which the signed certificate is not valid.\n"
+                },
+                "signedCertificatePem": {
+                    "type": "string",
+                    "description": "PEM-encoded signed certificate you uploaded for your selected key type.\n"
+                },
+                "signedCertificateSerialNumber": {
+                    "type": "string",
+                    "description": "Signed certificate serial number in hex format.\n"
+                },
+                "signedCertificateSha256Fingerprint": {
+                    "type": "string",
+                    "description": "The SHA256 fingerprint of the signed certificate.\n"
+                },
+                "subject": {
+                    "$ref": "#/types/akamai:index/getCloudcertificatesCertificatesCertificateSubject:getCloudcertificatesCertificatesCertificateSubject",
+                    "description": "Subject fields as defined in X.509 certificates (RFC 5280).\n"
+                },
+                "trustChainPem": {
+                    "type": "string",
+                    "description": "The trust chain PEM content uploaded by end user.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accountId",
+                "certificateId",
+                "certificateName",
+                "certificateStatus",
+                "certificateType",
+                "contractId",
+                "createdBy",
+                "createdDate",
+                "csrExpirationDate",
+                "csrPem",
+                "keySize",
+                "keyType",
+                "modifiedBy",
+                "modifiedDate",
+                "sans",
+                "secureNetwork",
+                "signedCertificateIssuer",
+                "signedCertificateNotValidAfterDate",
+                "signedCertificateNotValidBeforeDate",
+                "signedCertificatePem",
+                "signedCertificateSerialNumber",
+                "signedCertificateSha256Fingerprint",
+                "subject",
+                "trustChainPem"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudcertificatesCertificatesCertificateSubject:getCloudcertificatesCertificatesCertificateSubject": {
+            "properties": {
+                "commonName": {
+                    "type": "string",
+                    "description": "Fully qualified domain name (FQDN) or other name associated with the subject.\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Two-letter ISO 3166 country code.\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City or locality name.\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Legal name of the organization.\n"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "Full name of the state or province.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "commonName",
+                "country",
+                "locality",
+                "organization",
+                "state"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudcertificatesHostnameBindingsBinding:getCloudcertificatesHostnameBindingsBinding": {
+            "properties": {
+                "certificateId": {
+                    "type": "string",
+                    "description": "Unique identifier for the third-party certificate.\n"
+                },
+                "hostname": {
+                    "type": "string",
+                    "description": "Hostname on the Akamai CDN the certificate applies to.\n"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "The deployment network, either 'STAGING' or 'PRODUCTION', on which the certificate is active for a property version.\n"
+                },
+                "resourceType": {
+                    "type": "string",
+                    "description": "Resource type this binding applies to. Currently, only 'CDN_HOSTNAME' is available.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificateId",
+                "hostname",
+                "network",
+                "resourceType"
             ],
             "language": {
                 "nodejs": {
@@ -15710,6 +16426,550 @@
                 }
             }
         },
+        "akamai:index/getPropertyDomainownershipDomainDomainStatusHistory:getPropertyDomainownershipDomainDomainStatusHistory": {
+            "properties": {
+                "domainStatus": {
+                    "type": "string",
+                    "description": "The domain's validation status. Possible values are: `REQUEST_ACCEPTED`, `VALIDATION_IN_PROGRESS`, `VALIDATED`, `TOKEN_EXPIRED`, or `INVALIDATED`.\n"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Additional information about the status change.\n"
+                },
+                "modifiedDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the domain status changed.\n"
+                },
+                "modifiedUser": {
+                    "type": "string",
+                    "description": "The name of the user who requested the status change.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "domainStatus",
+                "message",
+                "modifiedDate",
+                "modifiedUser"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainValidationChallenge:getPropertyDomainownershipDomainValidationChallenge": {
+            "properties": {
+                "cnameRecord": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainValidationChallengeCnameRecord:getPropertyDomainownershipDomainValidationChallengeCnameRecord",
+                    "description": "The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.\n"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the challenge data expires.\n"
+                },
+                "httpFile": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainValidationChallengeHttpFile:getPropertyDomainownershipDomainValidationChallengeHttpFile",
+                    "description": "Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.\n"
+                },
+                "httpRedirect": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainValidationChallengeHttpRedirect:getPropertyDomainownershipDomainValidationChallengeHttpRedirect",
+                    "description": "Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.\n"
+                },
+                "txtRecord": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainValidationChallengeTxtRecord:getPropertyDomainownershipDomainValidationChallengeTxtRecord",
+                    "description": "The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cnameRecord",
+                "expirationDate",
+                "httpFile",
+                "httpRedirect",
+                "txtRecord"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainValidationChallengeCnameRecord:getPropertyDomainownershipDomainValidationChallengeCnameRecord": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The 'CNAME' record for your domain that you add to the DNS configuration.\n"
+                },
+                "target": {
+                    "type": "string",
+                    "description": "The 'target' value you set in the 'CNAME' record that validates the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "target"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainValidationChallengeHttpFile:getPropertyDomainownershipDomainValidationChallengeHttpFile": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "The content of the file that you should place at the specified URL.\n"
+                },
+                "contentType": {
+                    "type": "string",
+                    "description": "The content type of the file containing the token.\n"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "The URL where you should place the file containing the challenge token.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content",
+                "contentType",
+                "path"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainValidationChallengeHttpRedirect:getPropertyDomainownershipDomainValidationChallengeHttpRedirect": {
+            "properties": {
+                "from": {
+                    "type": "string",
+                    "description": "The location on your HTTP server where you set up the redirect.\n"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "The redirect URL with the token that you place on your HTTP server.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "from",
+                "to"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainValidationChallengeTxtRecord:getPropertyDomainownershipDomainValidationChallengeTxtRecord": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The hostname where you should add the 'TXT' record to validate the domain ownership.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The token you need to copy to the DNS 'TXT' record that validates the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainsDomain:getPropertyDomainownershipDomainsDomain": {
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "The account's ID.\n"
+                },
+                "domainName": {
+                    "type": "string",
+                    "description": "The domain's name.\n"
+                },
+                "domainStatus": {
+                    "type": "string",
+                    "description": "The domain's validation status. Possible values are: \n* `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.\n* `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.\n* `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.\n* `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.\n* `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.\n"
+                },
+                "validationChallenge": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainsDomainValidationChallenge:getPropertyDomainownershipDomainsDomainValidationChallenge",
+                    "description": "The domain's validation challenge details.\n"
+                },
+                "validationCompletedDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the domain validation was completed.\n"
+                },
+                "validationMethod": {
+                    "type": "string",
+                    "description": "The method used to validate the domain. Possible values are: \n* `DNS_CNAME` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`cnameRecord`\" pulumi-lang-dotnet=\"`CnameRecord`\" pulumi-lang-go=\"`cnameRecord`\" pulumi-lang-python=\"`cname_record`\" pulumi-lang-yaml=\"`cnameRecord`\" pulumi-lang-java=\"`cnameRecord`\"\u003e`cname_record`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.\n* `DNS_TXT` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`txtRecord`\" pulumi-lang-dotnet=\"`TxtRecord`\" pulumi-lang-go=\"`txtRecord`\" pulumi-lang-python=\"`txt_record`\" pulumi-lang-yaml=\"`txtRecord`\" pulumi-lang-java=\"`txtRecord`\"\u003e`txt_record`\u003c/span\u003e with a token \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.\n* `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.\n* `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.\n* `MANUAL` - For this method, the DOM team manually performed the validation.\n"
+                },
+                "validationRequestedBy": {
+                    "type": "string",
+                    "description": "The name of the user who requested the domain validation.\n"
+                },
+                "validationRequestedDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the domain validation was requested.\n"
+                },
+                "validationScope": {
+                    "type": "string",
+                    "description": "Your domain's validation scope. Possible values are: \n* `HOST` - The scope is only the exactly specified domain.\n* `WILDCARD` - The scope covers any hostname within one subdomain level.\n* `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accountId",
+                "domainName",
+                "domainStatus",
+                "validationChallenge",
+                "validationCompletedDate",
+                "validationMethod",
+                "validationRequestedBy",
+                "validationRequestedDate",
+                "validationScope"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainsDomainValidationChallenge:getPropertyDomainownershipDomainsDomainValidationChallenge": {
+            "properties": {
+                "cnameRecord": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord:getPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord",
+                    "description": "The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.\n"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the challenge data expires.\n"
+                },
+                "httpFile": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainsDomainValidationChallengeHttpFile:getPropertyDomainownershipDomainsDomainValidationChallengeHttpFile",
+                    "description": "Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.\n"
+                },
+                "httpRedirect": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect:getPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect",
+                    "description": "Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.\n"
+                },
+                "txtRecord": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord:getPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord",
+                    "description": "The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cnameRecord",
+                "expirationDate",
+                "httpFile",
+                "httpRedirect",
+                "txtRecord"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord:getPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The 'CNAME' record for your domain that you add to the DNS configuration.\n"
+                },
+                "target": {
+                    "type": "string",
+                    "description": "The 'target' value you set in the 'CNAME' record that validates the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "target"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainsDomainValidationChallengeHttpFile:getPropertyDomainownershipDomainsDomainValidationChallengeHttpFile": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "The content of the file that you should place at the specified URL.\n"
+                },
+                "contentType": {
+                    "type": "string",
+                    "description": "The content type of the file containing the token.\n"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "The URL where you should place the file containing the challenge token.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content",
+                "contentType",
+                "path"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect:getPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect": {
+            "properties": {
+                "from": {
+                    "type": "string",
+                    "description": "The location on your HTTP server where you set up the redirect.\n"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "The redirect URL with the token that you place on your HTTP server.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "from",
+                "to"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord:getPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The hostname where you should add the 'TXT' record to validate the domain ownership.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The token you need to copy to the DNS 'TXT' record that validates the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipSearchDomainsDomain:getPropertyDomainownershipSearchDomainsDomain": {
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Your account's ID.\n"
+                },
+                "domainName": {
+                    "type": "string",
+                    "description": "Your domain's name.\n"
+                },
+                "domainStatus": {
+                    "type": "string",
+                    "description": "The domain's validation status. Possible values are: \n* `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.\n* `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.\n* `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.\n* `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.\n* `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.\n"
+                },
+                "validationChallenge": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallenge:getPropertyDomainownershipSearchDomainsDomainValidationChallenge",
+                    "description": "The domain's validation challenge details.\n"
+                },
+                "validationCompletedDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the domain validation was completed.\n"
+                },
+                "validationLevel": {
+                    "type": "string",
+                    "description": "The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.\n"
+                },
+                "validationMethod": {
+                    "type": "string",
+                    "description": "The method used to validate the domain. Possible values are: \n* `DNS_CNAME` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`cnameRecord`\" pulumi-lang-dotnet=\"`CnameRecord`\" pulumi-lang-go=\"`cnameRecord`\" pulumi-lang-python=\"`cname_record`\" pulumi-lang-yaml=\"`cnameRecord`\" pulumi-lang-java=\"`cnameRecord`\"\u003e`cname_record`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.\n* `DNS_TXT` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`txtRecord`\" pulumi-lang-dotnet=\"`TxtRecord`\" pulumi-lang-go=\"`txtRecord`\" pulumi-lang-python=\"`txt_record`\" pulumi-lang-yaml=\"`txtRecord`\" pulumi-lang-java=\"`txtRecord`\"\u003e`txt_record`\u003c/span\u003e with a token \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.\n* `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.\n* `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.\n* `MANUAL` - For this method, the DOM team manually performed the validation.\n"
+                },
+                "validationRequestedBy": {
+                    "type": "string",
+                    "description": "The name of the user who requested the domain validation.\n"
+                },
+                "validationRequestedDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the domain validation was requested.\n"
+                },
+                "validationScope": {
+                    "type": "string",
+                    "description": "Your domain's validation scope. Possible values are: \n* `HOST` - The scope is only the exactly specified domain.\n* `WILDCARD` - The scope covers any hostname within one subdomain level.\n* `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accountId",
+                "domainName",
+                "domainStatus",
+                "validationChallenge",
+                "validationCompletedDate",
+                "validationLevel",
+                "validationMethod",
+                "validationRequestedBy",
+                "validationRequestedDate",
+                "validationScope"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": [
+                        "domainName",
+                        "validationScope"
+                    ]
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallenge:getPropertyDomainownershipSearchDomainsDomainValidationChallenge": {
+            "properties": {
+                "cnameRecord": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord:getPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord",
+                    "description": "The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.\n"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "description": "The timestamp indicating when the challenge data expires.\n"
+                },
+                "httpFile": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile:getPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile",
+                    "description": "Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.\n"
+                },
+                "httpRedirect": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect:getPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect",
+                    "description": "Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.\n"
+                },
+                "txtRecord": {
+                    "$ref": "#/types/akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord:getPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord",
+                    "description": "The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cnameRecord",
+                "expirationDate",
+                "httpFile",
+                "httpRedirect",
+                "txtRecord"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord:getPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The 'CNAME' record for your domain that you add to the DNS configuration.\n"
+                },
+                "target": {
+                    "type": "string",
+                    "description": "The 'target' value you set in the 'CNAME' record that validates the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "target"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile:getPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "The content of the file that you should place at the specified URL.\n"
+                },
+                "contentType": {
+                    "type": "string",
+                    "description": "The content type of the file containing the token.\n"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "The URL where you should place the file containing the challenge token.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content",
+                "contentType",
+                "path"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect:getPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect": {
+            "properties": {
+                "from": {
+                    "type": "string",
+                    "description": "The location on your HTTP server where you set up the redirect.\n"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "The redirect URL with the token that you place on your HTTP server.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "from",
+                "to"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord:getPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The hostname where you should add the 'TXT' record to validate the domain ownership.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The token you need to copy to the DNS 'TXT' record that validates the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getPropertyHostnameActivationHostname:getPropertyHostnameActivationHostname": {
             "properties": {
                 "action": {
@@ -22482,6 +23742,377 @@
                 "type": "object"
             }
         },
+        "akamai:index/cloudcertificatesCertificate:CloudcertificatesCertificate": {
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account associated with 'contract_id'."
+                },
+                "baseName": {
+                    "type": "string",
+                    "description": "The base name for the certificate. If not provided, the name will be auto-generated by the CCM API."
+                },
+                "certificateId": {
+                    "type": "string",
+                    "description": "Unique identifier assigned to the newly created CCM certificate."
+                },
+                "certificateStatus": {
+                    "type": "string",
+                    "description": "The status of the certificate. Can be one of 'ACTIVE', 'CSR_READY', 'READY_FOR_USE'."
+                },
+                "certificateType": {
+                    "type": "string",
+                    "description": "Certificate type. Defaults to 'THIRD_PARTY'."
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID under which this certificate will be created."
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "User who created the certificate."
+                },
+                "createdDate": {
+                    "type": "string",
+                    "description": "Date the certificate was created in UTC."
+                },
+                "csrExpirationDate": {
+                    "type": "string",
+                    "description": "Date when CSR will expire and a signed certificate uploaded based on that CSR will NOT be accepted beyond this date."
+                },
+                "csrPem": {
+                    "type": "string",
+                    "description": "CSR PEM content generated by Akamai."
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Group that will be associated with the new certificate when it gets created. Required for creation."
+                },
+                "keySize": {
+                    "type": "string",
+                    "description": "The key size for a certificate. Valid value for key type RSA: '2048'. Valid value for key type ECDSA: 'P-256'."
+                },
+                "keyType": {
+                    "type": "string",
+                    "description": "The key type for a certificate. Valid values are 'RSA' or 'ECDSA'"
+                },
+                "modifiedBy": {
+                    "type": "string",
+                    "description": "User who last modified the certificate."
+                },
+                "modifiedDate": {
+                    "type": "string",
+                    "description": "Date the certificate was last updated."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The certificate name."
+                },
+                "sans": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of Subject Alternative Names (SANs) for the certificate."
+                },
+                "secureNetwork": {
+                    "type": "string",
+                    "description": "Secure network type to use for the certificate. The only valid value is 'ENHANCED_TLS'"
+                },
+                "subject": {
+                    "$ref": "#/types/akamai:index/CloudcertificatesCertificateSubject:CloudcertificatesCertificateSubject",
+                    "description": "Subject fields as defined in X.509 certificates (RFC 5280). At least one of the inner fields must be specified."
+                }
+            },
+            "required": [
+                "accountId",
+                "certificateId",
+                "certificateStatus",
+                "certificateType",
+                "contractId",
+                "createdBy",
+                "createdDate",
+                "csrExpirationDate",
+                "csrPem",
+                "keySize",
+                "keyType",
+                "modifiedBy",
+                "modifiedDate",
+                "name",
+                "sans",
+                "secureNetwork"
+            ],
+            "inputProperties": {
+                "baseName": {
+                    "type": "string",
+                    "description": "The base name for the certificate. If not provided, the name will be auto-generated by the CCM API."
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID under which this certificate will be created."
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Group that will be associated with the new certificate when it gets created. Required for creation."
+                },
+                "keySize": {
+                    "type": "string",
+                    "description": "The key size for a certificate. Valid value for key type RSA: '2048'. Valid value for key type ECDSA: 'P-256'."
+                },
+                "keyType": {
+                    "type": "string",
+                    "description": "The key type for a certificate. Valid values are 'RSA' or 'ECDSA'"
+                },
+                "sans": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of Subject Alternative Names (SANs) for the certificate."
+                },
+                "secureNetwork": {
+                    "type": "string",
+                    "description": "Secure network type to use for the certificate. The only valid value is 'ENHANCED_TLS'"
+                },
+                "subject": {
+                    "$ref": "#/types/akamai:index/CloudcertificatesCertificateSubject:CloudcertificatesCertificateSubject",
+                    "description": "Subject fields as defined in X.509 certificates (RFC 5280). At least one of the inner fields must be specified."
+                }
+            },
+            "requiredInputs": [
+                "contractId",
+                "keySize",
+                "keyType",
+                "sans",
+                "secureNetwork"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CloudcertificatesCertificate resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account associated with 'contract_id'."
+                    },
+                    "baseName": {
+                        "type": "string",
+                        "description": "The base name for the certificate. If not provided, the name will be auto-generated by the CCM API."
+                    },
+                    "certificateId": {
+                        "type": "string",
+                        "description": "Unique identifier assigned to the newly created CCM certificate."
+                    },
+                    "certificateStatus": {
+                        "type": "string",
+                        "description": "The status of the certificate. Can be one of 'ACTIVE', 'CSR_READY', 'READY_FOR_USE'."
+                    },
+                    "certificateType": {
+                        "type": "string",
+                        "description": "Certificate type. Defaults to 'THIRD_PARTY'."
+                    },
+                    "contractId": {
+                        "type": "string",
+                        "description": "Contract ID under which this certificate will be created."
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "description": "User who created the certificate."
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "Date the certificate was created in UTC."
+                    },
+                    "csrExpirationDate": {
+                        "type": "string",
+                        "description": "Date when CSR will expire and a signed certificate uploaded based on that CSR will NOT be accepted beyond this date."
+                    },
+                    "csrPem": {
+                        "type": "string",
+                        "description": "CSR PEM content generated by Akamai."
+                    },
+                    "groupId": {
+                        "type": "string",
+                        "description": "Group that will be associated with the new certificate when it gets created. Required for creation."
+                    },
+                    "keySize": {
+                        "type": "string",
+                        "description": "The key size for a certificate. Valid value for key type RSA: '2048'. Valid value for key type ECDSA: 'P-256'."
+                    },
+                    "keyType": {
+                        "type": "string",
+                        "description": "The key type for a certificate. Valid values are 'RSA' or 'ECDSA'"
+                    },
+                    "modifiedBy": {
+                        "type": "string",
+                        "description": "User who last modified the certificate."
+                    },
+                    "modifiedDate": {
+                        "type": "string",
+                        "description": "Date the certificate was last updated."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The certificate name."
+                    },
+                    "sans": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The list of Subject Alternative Names (SANs) for the certificate."
+                    },
+                    "secureNetwork": {
+                        "type": "string",
+                        "description": "Secure network type to use for the certificate. The only valid value is 'ENHANCED_TLS'"
+                    },
+                    "subject": {
+                        "$ref": "#/types/akamai:index/CloudcertificatesCertificateSubject:CloudcertificatesCertificateSubject",
+                        "description": "Subject fields as defined in X.509 certificates (RFC 5280). At least one of the inner fields must be specified."
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/cloudcertificatesUploadSignedCertificate:CloudcertificatesUploadSignedCertificate": {
+            "properties": {
+                "acknowledgeWarnings": {
+                    "type": "boolean",
+                    "description": "Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate."
+                },
+                "certificateId": {
+                    "type": "string",
+                    "description": "Certificate identifier on which to perform the upload operation."
+                },
+                "certificateStatus": {
+                    "type": "string",
+                    "description": "The status of the certificate. Can be one of 'CSR_READY', 'READY_FOR_USE', 'ACTIVE'."
+                },
+                "modifiedBy": {
+                    "type": "string",
+                    "description": "User who last modified the certificate."
+                },
+                "modifiedDate": {
+                    "type": "string",
+                    "description": "Date the certificate was last updated."
+                },
+                "signedCertificateIssuer": {
+                    "type": "string",
+                    "description": "Issuer field of the signed certificate."
+                },
+                "signedCertificateNotValidAfterDate": {
+                    "type": "string",
+                    "description": "This marks the end of the signed certificate's valid period."
+                },
+                "signedCertificateNotValidBeforeDate": {
+                    "type": "string",
+                    "description": "This marks the start of the signed certificate's valid period."
+                },
+                "signedCertificatePem": {
+                    "type": "string",
+                    "description": "PEM-encoded signed certificate to upload."
+                },
+                "signedCertificateSerialNumber": {
+                    "type": "string",
+                    "description": "Signed certificate serial number in hex format."
+                },
+                "signedCertificateSha256Fingerprint": {
+                    "type": "string",
+                    "description": "SHA-256 fingerprint of the signed certificate."
+                },
+                "trustChainPem": {
+                    "type": "string",
+                    "description": "PEM-encoded trust chain for the signed certificate to upload."
+                }
+            },
+            "required": [
+                "acknowledgeWarnings",
+                "certificateId",
+                "certificateStatus",
+                "modifiedBy",
+                "modifiedDate",
+                "signedCertificateIssuer",
+                "signedCertificateNotValidAfterDate",
+                "signedCertificateNotValidBeforeDate",
+                "signedCertificatePem",
+                "signedCertificateSerialNumber",
+                "signedCertificateSha256Fingerprint"
+            ],
+            "inputProperties": {
+                "acknowledgeWarnings": {
+                    "type": "boolean",
+                    "description": "Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate."
+                },
+                "certificateId": {
+                    "type": "string",
+                    "description": "Certificate identifier on which to perform the upload operation."
+                },
+                "signedCertificatePem": {
+                    "type": "string",
+                    "description": "PEM-encoded signed certificate to upload."
+                },
+                "trustChainPem": {
+                    "type": "string",
+                    "description": "PEM-encoded trust chain for the signed certificate to upload."
+                }
+            },
+            "requiredInputs": [
+                "certificateId",
+                "signedCertificatePem"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CloudcertificatesUploadSignedCertificate resources.\n",
+                "properties": {
+                    "acknowledgeWarnings": {
+                        "type": "boolean",
+                        "description": "Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate."
+                    },
+                    "certificateId": {
+                        "type": "string",
+                        "description": "Certificate identifier on which to perform the upload operation."
+                    },
+                    "certificateStatus": {
+                        "type": "string",
+                        "description": "The status of the certificate. Can be one of 'CSR_READY', 'READY_FOR_USE', 'ACTIVE'."
+                    },
+                    "modifiedBy": {
+                        "type": "string",
+                        "description": "User who last modified the certificate."
+                    },
+                    "modifiedDate": {
+                        "type": "string",
+                        "description": "Date the certificate was last updated."
+                    },
+                    "signedCertificateIssuer": {
+                        "type": "string",
+                        "description": "Issuer field of the signed certificate."
+                    },
+                    "signedCertificateNotValidAfterDate": {
+                        "type": "string",
+                        "description": "This marks the end of the signed certificate's valid period."
+                    },
+                    "signedCertificateNotValidBeforeDate": {
+                        "type": "string",
+                        "description": "This marks the start of the signed certificate's valid period."
+                    },
+                    "signedCertificatePem": {
+                        "type": "string",
+                        "description": "PEM-encoded signed certificate to upload."
+                    },
+                    "signedCertificateSerialNumber": {
+                        "type": "string",
+                        "description": "Signed certificate serial number in hex format."
+                    },
+                    "signedCertificateSha256Fingerprint": {
+                        "type": "string",
+                        "description": "SHA-256 fingerprint of the signed certificate."
+                    },
+                    "trustChainPem": {
+                        "type": "string",
+                        "description": "PEM-encoded trust chain for the signed certificate to upload."
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer": {
             "properties": {
                 "balancingType": {
@@ -24071,6 +25702,9 @@
                     "$ref": "#/types/akamai:index/DatastreamDeliveryConfiguration:DatastreamDeliveryConfiguration",
                     "description": "Provides information about the configuration related to logs (format, file names, delivery frequency)"
                 },
+                "dynatraceConnector": {
+                    "$ref": "#/types/akamai:index/DatastreamDynatraceConnector:DatastreamDynatraceConnector"
+                },
                 "elasticsearchConnector": {
                     "$ref": "#/types/akamai:index/DatastreamElasticsearchConnector:DatastreamElasticsearchConnector"
                 },
@@ -24127,6 +25761,9 @@
                     },
                     "description": "Identifies the properties monitored in the stream"
                 },
+                "s3CompatibleConnector": {
+                    "$ref": "#/types/akamai:index/DatastreamS3CompatibleConnector:DatastreamS3CompatibleConnector"
+                },
                 "s3Connector": {
                     "$ref": "#/types/akamai:index/DatastreamS3Connector:DatastreamS3Connector"
                 },
@@ -24143,6 +25780,9 @@
                 },
                 "sumologicConnector": {
                     "$ref": "#/types/akamai:index/DatastreamSumologicConnector:DatastreamSumologicConnector"
+                },
+                "trafficpeakConnector": {
+                    "$ref": "#/types/akamai:index/DatastreamTrafficpeakConnector:DatastreamTrafficpeakConnector"
                 }
             },
             "required": [
@@ -24192,6 +25832,9 @@
                     "$ref": "#/types/akamai:index/DatastreamDeliveryConfiguration:DatastreamDeliveryConfiguration",
                     "description": "Provides information about the configuration related to logs (format, file names, delivery frequency)"
                 },
+                "dynatraceConnector": {
+                    "$ref": "#/types/akamai:index/DatastreamDynatraceConnector:DatastreamDynatraceConnector"
+                },
                 "elasticsearchConnector": {
                     "$ref": "#/types/akamai:index/DatastreamElasticsearchConnector:DatastreamElasticsearchConnector"
                 },
@@ -24228,6 +25871,9 @@
                     },
                     "description": "Identifies the properties monitored in the stream"
                 },
+                "s3CompatibleConnector": {
+                    "$ref": "#/types/akamai:index/DatastreamS3CompatibleConnector:DatastreamS3CompatibleConnector"
+                },
                 "s3Connector": {
                     "$ref": "#/types/akamai:index/DatastreamS3Connector:DatastreamS3Connector"
                 },
@@ -24240,6 +25886,9 @@
                 },
                 "sumologicConnector": {
                     "$ref": "#/types/akamai:index/DatastreamSumologicConnector:DatastreamSumologicConnector"
+                },
+                "trafficpeakConnector": {
+                    "$ref": "#/types/akamai:index/DatastreamTrafficpeakConnector:DatastreamTrafficpeakConnector"
                 }
             },
             "requiredInputs": [
@@ -24290,6 +25939,9 @@
                     "deliveryConfiguration": {
                         "$ref": "#/types/akamai:index/DatastreamDeliveryConfiguration:DatastreamDeliveryConfiguration",
                         "description": "Provides information about the configuration related to logs (format, file names, delivery frequency)"
+                    },
+                    "dynatraceConnector": {
+                        "$ref": "#/types/akamai:index/DatastreamDynatraceConnector:DatastreamDynatraceConnector"
                     },
                     "elasticsearchConnector": {
                         "$ref": "#/types/akamai:index/DatastreamElasticsearchConnector:DatastreamElasticsearchConnector"
@@ -24347,6 +25999,9 @@
                         },
                         "description": "Identifies the properties monitored in the stream"
                     },
+                    "s3CompatibleConnector": {
+                        "$ref": "#/types/akamai:index/DatastreamS3CompatibleConnector:DatastreamS3CompatibleConnector"
+                    },
                     "s3Connector": {
                         "$ref": "#/types/akamai:index/DatastreamS3Connector:DatastreamS3Connector"
                     },
@@ -24363,6 +26018,9 @@
                     },
                     "sumologicConnector": {
                         "$ref": "#/types/akamai:index/DatastreamSumologicConnector:DatastreamSumologicConnector"
+                    },
+                    "trafficpeakConnector": {
+                        "$ref": "#/types/akamai:index/DatastreamTrafficpeakConnector:DatastreamTrafficpeakConnector"
                     }
                 },
                 "type": "object"
@@ -29871,6 +31529,93 @@
                 "type": "object"
             }
         },
+        "akamai:index/propertyDomainownershipDomains:PropertyDomainownershipDomains": {
+            "properties": {
+                "domains": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyDomainownershipDomainsDomain:PropertyDomainownershipDomainsDomain"
+                    },
+                    "description": "List of domains."
+                }
+            },
+            "required": [
+                "domains"
+            ],
+            "inputProperties": {
+                "domains": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyDomainownershipDomainsDomain:PropertyDomainownershipDomainsDomain"
+                    },
+                    "description": "List of domains."
+                }
+            },
+            "requiredInputs": [
+                "domains"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering PropertyDomainownershipDomains resources.\n",
+                "properties": {
+                    "domains": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/PropertyDomainownershipDomainsDomain:PropertyDomainownershipDomainsDomain"
+                        },
+                        "description": "List of domains."
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/propertyDomainownershipValidation:PropertyDomainownershipValidation": {
+            "properties": {
+                "domains": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyDomainownershipValidationDomain:PropertyDomainownershipValidationDomain"
+                    },
+                    "description": "List of domains to be validated."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/PropertyDomainownershipValidationTimeouts:PropertyDomainownershipValidationTimeouts"
+                }
+            },
+            "required": [
+                "domains"
+            ],
+            "inputProperties": {
+                "domains": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyDomainownershipValidationDomain:PropertyDomainownershipValidationDomain"
+                    },
+                    "description": "List of domains to be validated."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/PropertyDomainownershipValidationTimeouts:PropertyDomainownershipValidationTimeouts"
+                }
+            },
+            "requiredInputs": [
+                "domains"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering PropertyDomainownershipValidation resources.\n",
+                "properties": {
+                    "domains": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/PropertyDomainownershipValidationDomain:PropertyDomainownershipValidationDomain"
+                        },
+                        "description": "List of domains to be validated."
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/akamai:index/PropertyDomainownershipValidationTimeouts:PropertyDomainownershipValidationTimeouts"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/propertyHostnameBucket:PropertyHostnameBucket": {
             "properties": {
                 "activationId": {
@@ -35324,6 +37069,297 @@
                 "type": "object"
             }
         },
+        "akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudcertificatesCertificate.\n",
+                "properties": {
+                    "certificateId": {
+                        "type": "string"
+                    },
+                    "includeHostnameBindings": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "certificateId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudcertificatesCertificate.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string"
+                    },
+                    "bindings": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudcertificatesCertificateBinding:getCloudcertificatesCertificateBinding"
+                        },
+                        "type": "array"
+                    },
+                    "certificateId": {
+                        "type": "string"
+                    },
+                    "certificateName": {
+                        "type": "string"
+                    },
+                    "certificateStatus": {
+                        "type": "string"
+                    },
+                    "certificateType": {
+                        "type": "string"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "createdDate": {
+                        "type": "string"
+                    },
+                    "csrExpirationDate": {
+                        "type": "string"
+                    },
+                    "csrPem": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "includeHostnameBindings": {
+                        "type": "boolean"
+                    },
+                    "keySize": {
+                        "type": "string"
+                    },
+                    "keyType": {
+                        "type": "string"
+                    },
+                    "modifiedBy": {
+                        "type": "string"
+                    },
+                    "modifiedDate": {
+                        "type": "string"
+                    },
+                    "sans": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "secureNetwork": {
+                        "type": "string"
+                    },
+                    "signedCertificateIssuer": {
+                        "type": "string"
+                    },
+                    "signedCertificateNotValidAfterDate": {
+                        "type": "string"
+                    },
+                    "signedCertificateNotValidBeforeDate": {
+                        "type": "string"
+                    },
+                    "signedCertificatePem": {
+                        "type": "string"
+                    },
+                    "signedCertificateSerialNumber": {
+                        "type": "string"
+                    },
+                    "signedCertificateSha256Fingerprint": {
+                        "type": "string"
+                    },
+                    "subject": {
+                        "$ref": "#/types/akamai:index/getCloudcertificatesCertificateSubject:getCloudcertificatesCertificateSubject"
+                    },
+                    "trustChainPem": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "bindings",
+                    "certificateId",
+                    "certificateName",
+                    "certificateStatus",
+                    "certificateType",
+                    "contractId",
+                    "createdBy",
+                    "createdDate",
+                    "csrExpirationDate",
+                    "csrPem",
+                    "keySize",
+                    "keyType",
+                    "modifiedBy",
+                    "modifiedDate",
+                    "sans",
+                    "secureNetwork",
+                    "signedCertificateIssuer",
+                    "signedCertificateNotValidAfterDate",
+                    "signedCertificateNotValidBeforeDate",
+                    "signedCertificatePem",
+                    "signedCertificateSerialNumber",
+                    "signedCertificateSha256Fingerprint",
+                    "subject",
+                    "trustChainPem",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getCloudcertificatesCertificates:getCloudcertificatesCertificates": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudcertificatesCertificates.\n",
+                "properties": {
+                    "certificateName": {
+                        "type": "string"
+                    },
+                    "certificateStatuses": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "expiringInDays": {
+                        "type": "integer"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "includeCertificateMaterials": {
+                        "type": "boolean"
+                    },
+                    "issuer": {
+                        "type": "string"
+                    },
+                    "keyType": {
+                        "type": "string"
+                    },
+                    "sort": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudcertificatesCertificates.\n",
+                "properties": {
+                    "certificateName": {
+                        "type": "string"
+                    },
+                    "certificateStatuses": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "certificates": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudcertificatesCertificatesCertificate:getCloudcertificatesCertificatesCertificate"
+                        },
+                        "type": "array"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "expiringInDays": {
+                        "type": "integer"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "includeCertificateMaterials": {
+                        "type": "boolean"
+                    },
+                    "issuer": {
+                        "type": "string"
+                    },
+                    "keyType": {
+                        "type": "string"
+                    },
+                    "sort": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "certificates",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudcertificatesHostnameBindings.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "expiringInDays": {
+                        "type": "integer"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudcertificatesHostnameBindings.\n",
+                "properties": {
+                    "bindings": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudcertificatesHostnameBindingsBinding:getCloudcertificatesHostnameBindingsBinding"
+                        },
+                        "type": "array"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "expiringInDays": {
+                        "type": "integer"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "bindings",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
         "akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule": {
             "inputs": {
                 "description": "A collection of arguments for invoking getCloudletsApiPrioritizationMatchRule.\n",
@@ -36704,12 +38740,12 @@
                     },
                     "localBundle": {
                         "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
                     }
                 },
-                "type": "object",
-                "required": [
-                    "edgeworkerId"
-                ]
+                "type": "object"
             },
             "outputs": {
                 "description": "A collection of values returned by getEdgeWorker.\n",
@@ -39718,6 +41754,139 @@
                     "propertyId",
                     "status",
                     "warnings",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomain:getPropertyDomainownershipDomain": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getPropertyDomainownershipDomain.\n",
+                "properties": {
+                    "domainName": {
+                        "type": "string"
+                    },
+                    "validationScope": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "domainName",
+                    "validationScope"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPropertyDomainownershipDomain.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string"
+                    },
+                    "domainName": {
+                        "type": "string"
+                    },
+                    "domainStatus": {
+                        "type": "string"
+                    },
+                    "domainStatusHistories": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainDomainStatusHistory:getPropertyDomainownershipDomainDomainStatusHistory"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "validationChallenge": {
+                        "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainValidationChallenge:getPropertyDomainownershipDomainValidationChallenge"
+                    },
+                    "validationCompletedDate": {
+                        "type": "string"
+                    },
+                    "validationMethod": {
+                        "type": "string"
+                    },
+                    "validationRequestedBy": {
+                        "type": "string"
+                    },
+                    "validationRequestedDate": {
+                        "type": "string"
+                    },
+                    "validationScope": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "domainName",
+                    "domainStatus",
+                    "domainStatusHistories",
+                    "validationChallenge",
+                    "validationCompletedDate",
+                    "validationMethod",
+                    "validationRequestedBy",
+                    "validationRequestedDate",
+                    "validationScope",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getPropertyDomainownershipDomains:getPropertyDomainownershipDomains": {
+            "outputs": {
+                "description": "A collection of values returned by getPropertyDomainownershipDomains.\n",
+                "properties": {
+                    "domains": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainsDomain:getPropertyDomainownershipDomainsDomain"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "domains",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getPropertyDomainownershipSearchDomains:getPropertyDomainownershipSearchDomains": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getPropertyDomainownershipSearchDomains.\n",
+                "properties": {
+                    "domains": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getPropertyDomainownershipSearchDomainsDomain:getPropertyDomainownershipSearchDomainsDomain"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "domains"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPropertyDomainownershipSearchDomains.\n",
+                "properties": {
+                    "domains": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getPropertyDomainownershipSearchDomainsDomain:getPropertyDomainownershipSearchDomainsDomain"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "domains",
                     "id"
                 ],
                 "type": "object"
