@@ -3,6 +3,8 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.PropertyHostnameCcmCertStatusArgs;
+import com.pulumi.akamai.inputs.PropertyHostnameCcmCertificatesArgs;
 import com.pulumi.akamai.inputs.PropertyHostnameCertStatusArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -17,6 +19,36 @@ import javax.annotation.Nullable;
 public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final PropertyHostnameArgs Empty = new PropertyHostnameArgs();
+
+    /**
+     * Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     */
+    @Import(name="ccmCertStatuses")
+    private @Nullable Output<List<PropertyHostnameCcmCertStatusArgs>> ccmCertStatuses;
+
+    /**
+     * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     */
+    public Optional<Output<List<PropertyHostnameCcmCertStatusArgs>>> ccmCertStatuses() {
+        return Optional.ofNullable(this.ccmCertStatuses);
+    }
+
+    /**
+     * Certificate identifiers and links for the CCM-managed certificates.
+     * 
+     */
+    @Import(name="ccmCertificates")
+    private @Nullable Output<PropertyHostnameCcmCertificatesArgs> ccmCertificates;
+
+    /**
+     * @return Certificate identifiers and links for the CCM-managed certificates.
+     * 
+     */
+    public Optional<Output<PropertyHostnameCcmCertificatesArgs>> ccmCertificates() {
+        return Optional.ofNullable(this.ccmCertificates);
+    }
 
     @Import(name="certProvisioningType", required=true)
     private Output<String> certProvisioningType;
@@ -63,6 +95,8 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
     private PropertyHostnameArgs() {}
 
     private PropertyHostnameArgs(PropertyHostnameArgs $) {
+        this.ccmCertStatuses = $.ccmCertStatuses;
+        this.ccmCertificates = $.ccmCertificates;
         this.certProvisioningType = $.certProvisioningType;
         this.certStatuses = $.certStatuses;
         this.cnameFrom = $.cnameFrom;
@@ -87,6 +121,58 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
 
         public Builder(PropertyHostnameArgs defaults) {
             $ = new PropertyHostnameArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param ccmCertStatuses Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ccmCertStatuses(@Nullable Output<List<PropertyHostnameCcmCertStatusArgs>> ccmCertStatuses) {
+            $.ccmCertStatuses = ccmCertStatuses;
+            return this;
+        }
+
+        /**
+         * @param ccmCertStatuses Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ccmCertStatuses(List<PropertyHostnameCcmCertStatusArgs> ccmCertStatuses) {
+            return ccmCertStatuses(Output.of(ccmCertStatuses));
+        }
+
+        /**
+         * @param ccmCertStatuses Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ccmCertStatuses(PropertyHostnameCcmCertStatusArgs... ccmCertStatuses) {
+            return ccmCertStatuses(List.of(ccmCertStatuses));
+        }
+
+        /**
+         * @param ccmCertificates Certificate identifiers and links for the CCM-managed certificates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ccmCertificates(@Nullable Output<PropertyHostnameCcmCertificatesArgs> ccmCertificates) {
+            $.ccmCertificates = ccmCertificates;
+            return this;
+        }
+
+        /**
+         * @param ccmCertificates Certificate identifiers and links for the CCM-managed certificates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ccmCertificates(PropertyHostnameCcmCertificatesArgs ccmCertificates) {
+            return ccmCertificates(Output.of(ccmCertificates));
         }
 
         public Builder certProvisioningType(Output<String> certProvisioningType) {

@@ -3,6 +3,8 @@
 
 package com.pulumi.akamai.outputs;
 
+import com.pulumi.akamai.outputs.PropertyHostnameCcmCertStatus;
+import com.pulumi.akamai.outputs.PropertyHostnameCcmCertificates;
 import com.pulumi.akamai.outputs.PropertyHostnameCertStatus;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -14,6 +16,16 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyHostname {
+    /**
+     * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     */
+    private @Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatuses;
+    /**
+     * @return Certificate identifiers and links for the CCM-managed certificates.
+     * 
+     */
+    private @Nullable PropertyHostnameCcmCertificates ccmCertificates;
     private String certProvisioningType;
     private @Nullable List<PropertyHostnameCertStatus> certStatuses;
     private String cnameFrom;
@@ -22,6 +34,20 @@ public final class PropertyHostname {
     private @Nullable String edgeHostnameId;
 
     private PropertyHostname() {}
+    /**
+     * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     */
+    public List<PropertyHostnameCcmCertStatus> ccmCertStatuses() {
+        return this.ccmCertStatuses == null ? List.of() : this.ccmCertStatuses;
+    }
+    /**
+     * @return Certificate identifiers and links for the CCM-managed certificates.
+     * 
+     */
+    public Optional<PropertyHostnameCcmCertificates> ccmCertificates() {
+        return Optional.ofNullable(this.ccmCertificates);
+    }
     public String certProvisioningType() {
         return this.certProvisioningType;
     }
@@ -50,6 +76,8 @@ public final class PropertyHostname {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatuses;
+        private @Nullable PropertyHostnameCcmCertificates ccmCertificates;
         private String certProvisioningType;
         private @Nullable List<PropertyHostnameCertStatus> certStatuses;
         private String cnameFrom;
@@ -59,6 +87,8 @@ public final class PropertyHostname {
         public Builder() {}
         public Builder(PropertyHostname defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.ccmCertStatuses = defaults.ccmCertStatuses;
+    	      this.ccmCertificates = defaults.ccmCertificates;
     	      this.certProvisioningType = defaults.certProvisioningType;
     	      this.certStatuses = defaults.certStatuses;
     	      this.cnameFrom = defaults.cnameFrom;
@@ -67,6 +97,21 @@ public final class PropertyHostname {
     	      this.edgeHostnameId = defaults.edgeHostnameId;
         }
 
+        @CustomType.Setter
+        public Builder ccmCertStatuses(@Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatuses) {
+
+            this.ccmCertStatuses = ccmCertStatuses;
+            return this;
+        }
+        public Builder ccmCertStatuses(PropertyHostnameCcmCertStatus... ccmCertStatuses) {
+            return ccmCertStatuses(List.of(ccmCertStatuses));
+        }
+        @CustomType.Setter
+        public Builder ccmCertificates(@Nullable PropertyHostnameCcmCertificates ccmCertificates) {
+
+            this.ccmCertificates = ccmCertificates;
+            return this;
+        }
         @CustomType.Setter
         public Builder certProvisioningType(String certProvisioningType) {
             if (certProvisioningType == null) {
@@ -114,6 +159,8 @@ public final class PropertyHostname {
         }
         public PropertyHostname build() {
             final var _resultValue = new PropertyHostname();
+            _resultValue.ccmCertStatuses = ccmCertStatuses;
+            _resultValue.ccmCertificates = ccmCertificates;
             _resultValue.certProvisioningType = certProvisioningType;
             _resultValue.certStatuses = certStatuses;
             _resultValue.cnameFrom = cnameFrom;

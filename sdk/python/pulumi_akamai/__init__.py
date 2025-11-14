@@ -97,6 +97,8 @@ from .botman_transactional_endpoint_protection import *
 from .clientlist_activation import *
 from .clientlist_list import *
 from .cloud_access_key import *
+from .cloudcertificates_certificate import *
+from .cloudcertificates_upload_signed_certificate import *
 from .cloudlets_application_load_balancer import *
 from .cloudlets_application_load_balancer_activation import *
 from .cloudlets_policy import *
@@ -218,6 +220,9 @@ from .get_cloudaccess_key import *
 from .get_cloudaccess_key_properties import *
 from .get_cloudaccess_key_versions import *
 from .get_cloudaccess_keys import *
+from .get_cloudcertificates_certificate import *
+from .get_cloudcertificates_certificates import *
+from .get_cloudcertificates_hostname_bindings import *
 from .get_cloudlets_api_prioritization_match_rule import *
 from .get_cloudlets_application_load_balancer import *
 from .get_cloudlets_application_load_balancer_match_rule import *
@@ -305,6 +310,9 @@ from .get_properties import *
 from .get_properties_search import *
 from .get_property import *
 from .get_property_activation import *
+from .get_property_domainownership_domain import *
+from .get_property_domainownership_domains import *
+from .get_property_domainownership_search_domains import *
 from .get_property_hostname_activation import *
 from .get_property_hostname_activations import *
 from .get_property_hostnames import *
@@ -348,6 +356,8 @@ from .network_list_subscription import *
 from .property import *
 from .property_activation import *
 from .property_bootstrap import *
+from .property_domainownership_domains import *
+from .property_domainownership_validation import *
 from .property_hostname_bucket import *
 from .property_include import *
 from .property_include_activation import *
@@ -1095,6 +1105,22 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/cloudcertificatesCertificate",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cloudcertificatesCertificate:CloudcertificatesCertificate": "CloudcertificatesCertificate"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cloudcertificatesUploadSignedCertificate",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cloudcertificatesUploadSignedCertificate:CloudcertificatesUploadSignedCertificate": "CloudcertificatesUploadSignedCertificate"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/cloudletsApplicationLoadBalancer",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -1475,6 +1501,22 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/propertyBootstrap:PropertyBootstrap": "PropertyBootstrap"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/propertyDomainownershipDomains",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/propertyDomainownershipDomains:PropertyDomainownershipDomains": "PropertyDomainownershipDomains"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/propertyDomainownershipValidation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/propertyDomainownershipValidation:PropertyDomainownershipValidation": "PropertyDomainownershipValidation"
   }
  },
  {

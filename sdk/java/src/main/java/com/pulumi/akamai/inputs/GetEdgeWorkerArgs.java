@@ -5,7 +5,6 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -17,11 +16,11 @@ public final class GetEdgeWorkerArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetEdgeWorkerArgs Empty = new GetEdgeWorkerArgs();
 
-    @Import(name="edgeworkerId", required=true)
-    private Output<Integer> edgeworkerId;
+    @Import(name="edgeworkerId")
+    private @Nullable Output<Integer> edgeworkerId;
 
-    public Output<Integer> edgeworkerId() {
-        return this.edgeworkerId;
+    public Optional<Output<Integer>> edgeworkerId() {
+        return Optional.ofNullable(this.edgeworkerId);
     }
 
     @Import(name="localBundle")
@@ -31,11 +30,19 @@ public final class GetEdgeWorkerArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.localBundle);
     }
 
+    @Import(name="name")
+    private @Nullable Output<String> name;
+
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
+    }
+
     private GetEdgeWorkerArgs() {}
 
     private GetEdgeWorkerArgs(GetEdgeWorkerArgs $) {
         this.edgeworkerId = $.edgeworkerId;
         this.localBundle = $.localBundle;
+        this.name = $.name;
     }
 
     public static Builder builder() {
@@ -56,7 +63,7 @@ public final class GetEdgeWorkerArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetEdgeWorkerArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder edgeworkerId(Output<Integer> edgeworkerId) {
+        public Builder edgeworkerId(@Nullable Output<Integer> edgeworkerId) {
             $.edgeworkerId = edgeworkerId;
             return this;
         }
@@ -74,10 +81,16 @@ public final class GetEdgeWorkerArgs extends com.pulumi.resources.InvokeArgs {
             return localBundle(Output.of(localBundle));
         }
 
+        public Builder name(@Nullable Output<String> name) {
+            $.name = name;
+            return this;
+        }
+
+        public Builder name(String name) {
+            return name(Output.of(name));
+        }
+
         public GetEdgeWorkerArgs build() {
-            if ($.edgeworkerId == null) {
-                throw new MissingRequiredPropertyException("GetEdgeWorkerArgs", "edgeworkerId");
-            }
             return $;
         }
     }

@@ -460,6 +460,16 @@ export type CloudAccessKey = import("./cloudAccessKey").CloudAccessKey;
 export const CloudAccessKey: typeof import("./cloudAccessKey").CloudAccessKey = null as any;
 utilities.lazyLoad(exports, ["CloudAccessKey"], () => require("./cloudAccessKey"));
 
+export { CloudcertificatesCertificateArgs, CloudcertificatesCertificateState } from "./cloudcertificatesCertificate";
+export type CloudcertificatesCertificate = import("./cloudcertificatesCertificate").CloudcertificatesCertificate;
+export const CloudcertificatesCertificate: typeof import("./cloudcertificatesCertificate").CloudcertificatesCertificate = null as any;
+utilities.lazyLoad(exports, ["CloudcertificatesCertificate"], () => require("./cloudcertificatesCertificate"));
+
+export { CloudcertificatesUploadSignedCertificateArgs, CloudcertificatesUploadSignedCertificateState } from "./cloudcertificatesUploadSignedCertificate";
+export type CloudcertificatesUploadSignedCertificate = import("./cloudcertificatesUploadSignedCertificate").CloudcertificatesUploadSignedCertificate;
+export const CloudcertificatesUploadSignedCertificate: typeof import("./cloudcertificatesUploadSignedCertificate").CloudcertificatesUploadSignedCertificate = null as any;
+utilities.lazyLoad(exports, ["CloudcertificatesUploadSignedCertificate"], () => require("./cloudcertificatesUploadSignedCertificate"));
+
 export { CloudletsApplicationLoadBalancerArgs, CloudletsApplicationLoadBalancerState } from "./cloudletsApplicationLoadBalancer";
 export type CloudletsApplicationLoadBalancer = import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer;
 export const CloudletsApplicationLoadBalancer: typeof import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer = null as any;
@@ -1075,6 +1085,21 @@ export const getCloudaccessKeys: typeof import("./getCloudaccessKeys").getClouda
 export const getCloudaccessKeysOutput: typeof import("./getCloudaccessKeys").getCloudaccessKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getCloudaccessKeys","getCloudaccessKeysOutput"], () => require("./getCloudaccessKeys"));
 
+export { GetCloudcertificatesCertificateArgs, GetCloudcertificatesCertificateResult, GetCloudcertificatesCertificateOutputArgs } from "./getCloudcertificatesCertificate";
+export const getCloudcertificatesCertificate: typeof import("./getCloudcertificatesCertificate").getCloudcertificatesCertificate = null as any;
+export const getCloudcertificatesCertificateOutput: typeof import("./getCloudcertificatesCertificate").getCloudcertificatesCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesCertificate","getCloudcertificatesCertificateOutput"], () => require("./getCloudcertificatesCertificate"));
+
+export { GetCloudcertificatesCertificatesArgs, GetCloudcertificatesCertificatesResult, GetCloudcertificatesCertificatesOutputArgs } from "./getCloudcertificatesCertificates";
+export const getCloudcertificatesCertificates: typeof import("./getCloudcertificatesCertificates").getCloudcertificatesCertificates = null as any;
+export const getCloudcertificatesCertificatesOutput: typeof import("./getCloudcertificatesCertificates").getCloudcertificatesCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesCertificates","getCloudcertificatesCertificatesOutput"], () => require("./getCloudcertificatesCertificates"));
+
+export { GetCloudcertificatesHostnameBindingsArgs, GetCloudcertificatesHostnameBindingsResult, GetCloudcertificatesHostnameBindingsOutputArgs } from "./getCloudcertificatesHostnameBindings";
+export const getCloudcertificatesHostnameBindings: typeof import("./getCloudcertificatesHostnameBindings").getCloudcertificatesHostnameBindings = null as any;
+export const getCloudcertificatesHostnameBindingsOutput: typeof import("./getCloudcertificatesHostnameBindings").getCloudcertificatesHostnameBindingsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesHostnameBindings","getCloudcertificatesHostnameBindingsOutput"], () => require("./getCloudcertificatesHostnameBindings"));
+
 export { GetCloudletsApiPrioritizationMatchRuleArgs, GetCloudletsApiPrioritizationMatchRuleResult, GetCloudletsApiPrioritizationMatchRuleOutputArgs } from "./getCloudletsApiPrioritizationMatchRule";
 export const getCloudletsApiPrioritizationMatchRule: typeof import("./getCloudletsApiPrioritizationMatchRule").getCloudletsApiPrioritizationMatchRule = null as any;
 export const getCloudletsApiPrioritizationMatchRuleOutput: typeof import("./getCloudletsApiPrioritizationMatchRule").getCloudletsApiPrioritizationMatchRuleOutput = null as any;
@@ -1500,6 +1525,21 @@ export const getPropertyActivation: typeof import("./getPropertyActivation").get
 export const getPropertyActivationOutput: typeof import("./getPropertyActivation").getPropertyActivationOutput = null as any;
 utilities.lazyLoad(exports, ["getPropertyActivation","getPropertyActivationOutput"], () => require("./getPropertyActivation"));
 
+export { GetPropertyDomainownershipDomainArgs, GetPropertyDomainownershipDomainResult, GetPropertyDomainownershipDomainOutputArgs } from "./getPropertyDomainownershipDomain";
+export const getPropertyDomainownershipDomain: typeof import("./getPropertyDomainownershipDomain").getPropertyDomainownershipDomain = null as any;
+export const getPropertyDomainownershipDomainOutput: typeof import("./getPropertyDomainownershipDomain").getPropertyDomainownershipDomainOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyDomainownershipDomain","getPropertyDomainownershipDomainOutput"], () => require("./getPropertyDomainownershipDomain"));
+
+export { GetPropertyDomainownershipDomainsResult } from "./getPropertyDomainownershipDomains";
+export const getPropertyDomainownershipDomains: typeof import("./getPropertyDomainownershipDomains").getPropertyDomainownershipDomains = null as any;
+export const getPropertyDomainownershipDomainsOutput: typeof import("./getPropertyDomainownershipDomains").getPropertyDomainownershipDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyDomainownershipDomains","getPropertyDomainownershipDomainsOutput"], () => require("./getPropertyDomainownershipDomains"));
+
+export { GetPropertyDomainownershipSearchDomainsArgs, GetPropertyDomainownershipSearchDomainsResult, GetPropertyDomainownershipSearchDomainsOutputArgs } from "./getPropertyDomainownershipSearchDomains";
+export const getPropertyDomainownershipSearchDomains: typeof import("./getPropertyDomainownershipSearchDomains").getPropertyDomainownershipSearchDomains = null as any;
+export const getPropertyDomainownershipSearchDomainsOutput: typeof import("./getPropertyDomainownershipSearchDomains").getPropertyDomainownershipSearchDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyDomainownershipSearchDomains","getPropertyDomainownershipSearchDomainsOutput"], () => require("./getPropertyDomainownershipSearchDomains"));
+
 export { GetPropertyHostnameActivationArgs, GetPropertyHostnameActivationResult, GetPropertyHostnameActivationOutputArgs } from "./getPropertyHostnameActivation";
 export const getPropertyHostnameActivation: typeof import("./getPropertyHostnameActivation").getPropertyHostnameActivation = null as any;
 export const getPropertyHostnameActivationOutput: typeof import("./getPropertyHostnameActivation").getPropertyHostnameActivationOutput = null as any;
@@ -1715,6 +1755,16 @@ export type PropertyBootstrap = import("./propertyBootstrap").PropertyBootstrap;
 export const PropertyBootstrap: typeof import("./propertyBootstrap").PropertyBootstrap = null as any;
 utilities.lazyLoad(exports, ["PropertyBootstrap"], () => require("./propertyBootstrap"));
 
+export { PropertyDomainownershipDomainsArgs, PropertyDomainownershipDomainsState } from "./propertyDomainownershipDomains";
+export type PropertyDomainownershipDomains = import("./propertyDomainownershipDomains").PropertyDomainownershipDomains;
+export const PropertyDomainownershipDomains: typeof import("./propertyDomainownershipDomains").PropertyDomainownershipDomains = null as any;
+utilities.lazyLoad(exports, ["PropertyDomainownershipDomains"], () => require("./propertyDomainownershipDomains"));
+
+export { PropertyDomainownershipValidationArgs, PropertyDomainownershipValidationState } from "./propertyDomainownershipValidation";
+export type PropertyDomainownershipValidation = import("./propertyDomainownershipValidation").PropertyDomainownershipValidation;
+export const PropertyDomainownershipValidation: typeof import("./propertyDomainownershipValidation").PropertyDomainownershipValidation = null as any;
+utilities.lazyLoad(exports, ["PropertyDomainownershipValidation"], () => require("./propertyDomainownershipValidation"));
+
 export { PropertyHostnameBucketArgs, PropertyHostnameBucketState } from "./propertyHostnameBucket";
 export type PropertyHostnameBucket = import("./propertyHostnameBucket").PropertyHostnameBucket;
 export const PropertyHostnameBucket: typeof import("./propertyHostnameBucket").PropertyHostnameBucket = null as any;
@@ -1929,6 +1979,10 @@ const _module = {
                 return new ClientlistList(name, <any>undefined, { urn })
             case "akamai:index/cloudAccessKey:CloudAccessKey":
                 return new CloudAccessKey(name, <any>undefined, { urn })
+            case "akamai:index/cloudcertificatesCertificate:CloudcertificatesCertificate":
+                return new CloudcertificatesCertificate(name, <any>undefined, { urn })
+            case "akamai:index/cloudcertificatesUploadSignedCertificate:CloudcertificatesUploadSignedCertificate":
+                return new CloudcertificatesUploadSignedCertificate(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
                 return new CloudletsApplicationLoadBalancer(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -2025,6 +2079,10 @@ const _module = {
                 return new PropertyActivation(name, <any>undefined, { urn })
             case "akamai:index/propertyBootstrap:PropertyBootstrap":
                 return new PropertyBootstrap(name, <any>undefined, { urn })
+            case "akamai:index/propertyDomainownershipDomains:PropertyDomainownershipDomains":
+                return new PropertyDomainownershipDomains(name, <any>undefined, { urn })
+            case "akamai:index/propertyDomainownershipValidation:PropertyDomainownershipValidation":
+                return new PropertyDomainownershipValidation(name, <any>undefined, { urn })
             case "akamai:index/propertyHostnameBucket:PropertyHostnameBucket":
                 return new PropertyHostnameBucket(name, <any>undefined, { urn })
             case "akamai:index/propertyInclude:PropertyInclude":
@@ -2127,6 +2185,8 @@ pulumi.runtime.registerResourceModule("akamai", "index/botmanTransactionalEndpoi
 pulumi.runtime.registerResourceModule("akamai", "index/clientlistActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/clientlistList", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudAccessKey", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudcertificatesCertificate", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudcertificatesUploadSignedCertificate", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancer", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancerActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicy", _module)
@@ -2175,6 +2235,8 @@ pulumi.runtime.registerResourceModule("akamai", "index/networkListSubscription",
 pulumi.runtime.registerResourceModule("akamai", "index/property", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyBootstrap", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/propertyDomainownershipDomains", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/propertyDomainownershipValidation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyHostnameBucket", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyInclude", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyIncludeActivation", _module)

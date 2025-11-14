@@ -11,10 +11,10 @@ namespace Pulumi.Akamai
 {
     public static class GetEdgeWorker
     {
-        public static Task<GetEdgeWorkerResult> InvokeAsync(GetEdgeWorkerArgs args, InvokeOptions? options = null)
+        public static Task<GetEdgeWorkerResult> InvokeAsync(GetEdgeWorkerArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerArgs(), options.WithDefaults());
 
-        public static Output<GetEdgeWorkerResult> Invoke(GetEdgeWorkerInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetEdgeWorkerResult> Invoke(GetEdgeWorkerInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerInvokeArgs(), options.WithDefaults());
 
         public static Output<GetEdgeWorkerResult> Invoke(GetEdgeWorkerInvokeArgs args, InvokeOutputOptions options)
@@ -24,11 +24,14 @@ namespace Pulumi.Akamai
 
     public sealed class GetEdgeWorkerArgs : global::Pulumi.InvokeArgs
     {
-        [Input("edgeworkerId", required: true)]
-        public int EdgeworkerId { get; set; }
+        [Input("edgeworkerId")]
+        public int? EdgeworkerId { get; set; }
 
         [Input("localBundle")]
         public string? LocalBundle { get; set; }
+
+        [Input("name")]
+        public string? Name { get; set; }
 
         public GetEdgeWorkerArgs()
         {
@@ -38,11 +41,14 @@ namespace Pulumi.Akamai
 
     public sealed class GetEdgeWorkerInvokeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("edgeworkerId", required: true)]
-        public Input<int> EdgeworkerId { get; set; } = null!;
+        [Input("edgeworkerId")]
+        public Input<int>? EdgeworkerId { get; set; }
 
         [Input("localBundle")]
         public Input<string>? LocalBundle { get; set; }
+
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public GetEdgeWorkerInvokeArgs()
         {

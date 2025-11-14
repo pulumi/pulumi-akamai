@@ -12,6 +12,24 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class PropertyHostnameGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("ccmCertStatuses")]
+        private InputList<Inputs.PropertyHostnameCcmCertStatusGetArgs>? _ccmCertStatuses;
+
+        /// <summary>
+        /// Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        /// </summary>
+        public InputList<Inputs.PropertyHostnameCcmCertStatusGetArgs> CcmCertStatuses
+        {
+            get => _ccmCertStatuses ?? (_ccmCertStatuses = new InputList<Inputs.PropertyHostnameCcmCertStatusGetArgs>());
+            set => _ccmCertStatuses = value;
+        }
+
+        /// <summary>
+        /// Certificate identifiers and links for the CCM-managed certificates.
+        /// </summary>
+        [Input("ccmCertificates")]
+        public Input<Inputs.PropertyHostnameCcmCertificatesGetArgs>? CcmCertificates { get; set; }
+
         [Input("certProvisioningType", required: true)]
         public Input<string> CertProvisioningType { get; set; } = null!;
 

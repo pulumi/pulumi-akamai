@@ -31,6 +31,7 @@ type Datastream struct {
 	DatasetFields pulumi.IntArrayOutput `pulumi:"datasetFields"`
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  DatastreamDeliveryConfigurationOutput     `pulumi:"deliveryConfiguration"`
+	DynatraceConnector     DatastreamDynatraceConnectorPtrOutput     `pulumi:"dynatraceConnector"`
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrOutput `pulumi:"elasticsearchConnector"`
 	GcsConnector           DatastreamGcsConnectorPtrOutput           `pulumi:"gcsConnector"`
 	// Identifies the group that has access to the product and for which the stream configuration was created
@@ -52,14 +53,16 @@ type Datastream struct {
 	// The ID of the product for which the stream was created
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 	// Identifies the properties monitored in the stream
-	Properties      pulumi.StringArrayOutput           `pulumi:"properties"`
-	S3Connector     DatastreamS3ConnectorPtrOutput     `pulumi:"s3Connector"`
-	SplunkConnector DatastreamSplunkConnectorPtrOutput `pulumi:"splunkConnector"`
+	Properties            pulumi.StringArrayOutput                 `pulumi:"properties"`
+	S3CompatibleConnector DatastreamS3CompatibleConnectorPtrOutput `pulumi:"s3CompatibleConnector"`
+	S3Connector           DatastreamS3ConnectorPtrOutput           `pulumi:"s3Connector"`
+	SplunkConnector       DatastreamSplunkConnectorPtrOutput       `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName pulumi.StringOutput `pulumi:"streamName"`
 	// Identifies the configuration version of the stream
-	StreamVersion      pulumi.IntOutput                      `pulumi:"streamVersion"`
-	SumologicConnector DatastreamSumologicConnectorPtrOutput `pulumi:"sumologicConnector"`
+	StreamVersion        pulumi.IntOutput                        `pulumi:"streamVersion"`
+	SumologicConnector   DatastreamSumologicConnectorPtrOutput   `pulumi:"sumologicConnector"`
+	TrafficpeakConnector DatastreamTrafficpeakConnectorPtrOutput `pulumi:"trafficpeakConnector"`
 }
 
 // NewDatastream registers a new resource with the given unique name, arguments, and options.
@@ -129,6 +132,7 @@ type datastreamState struct {
 	DatasetFields []int `pulumi:"datasetFields"`
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  *DatastreamDeliveryConfiguration  `pulumi:"deliveryConfiguration"`
+	DynatraceConnector     *DatastreamDynatraceConnector     `pulumi:"dynatraceConnector"`
 	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
 	GcsConnector           *DatastreamGcsConnector           `pulumi:"gcsConnector"`
 	// Identifies the group that has access to the product and for which the stream configuration was created
@@ -150,14 +154,16 @@ type datastreamState struct {
 	// The ID of the product for which the stream was created
 	ProductId *string `pulumi:"productId"`
 	// Identifies the properties monitored in the stream
-	Properties      []string                   `pulumi:"properties"`
-	S3Connector     *DatastreamS3Connector     `pulumi:"s3Connector"`
-	SplunkConnector *DatastreamSplunkConnector `pulumi:"splunkConnector"`
+	Properties            []string                         `pulumi:"properties"`
+	S3CompatibleConnector *DatastreamS3CompatibleConnector `pulumi:"s3CompatibleConnector"`
+	S3Connector           *DatastreamS3Connector           `pulumi:"s3Connector"`
+	SplunkConnector       *DatastreamSplunkConnector       `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName *string `pulumi:"streamName"`
 	// Identifies the configuration version of the stream
-	StreamVersion      *int                          `pulumi:"streamVersion"`
-	SumologicConnector *DatastreamSumologicConnector `pulumi:"sumologicConnector"`
+	StreamVersion        *int                            `pulumi:"streamVersion"`
+	SumologicConnector   *DatastreamSumologicConnector   `pulumi:"sumologicConnector"`
+	TrafficpeakConnector *DatastreamTrafficpeakConnector `pulumi:"trafficpeakConnector"`
 }
 
 type DatastreamState struct {
@@ -177,6 +183,7 @@ type DatastreamState struct {
 	DatasetFields pulumi.IntArrayInput
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  DatastreamDeliveryConfigurationPtrInput
+	DynatraceConnector     DatastreamDynatraceConnectorPtrInput
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
 	GcsConnector           DatastreamGcsConnectorPtrInput
 	// Identifies the group that has access to the product and for which the stream configuration was created
@@ -198,14 +205,16 @@ type DatastreamState struct {
 	// The ID of the product for which the stream was created
 	ProductId pulumi.StringPtrInput
 	// Identifies the properties monitored in the stream
-	Properties      pulumi.StringArrayInput
-	S3Connector     DatastreamS3ConnectorPtrInput
-	SplunkConnector DatastreamSplunkConnectorPtrInput
+	Properties            pulumi.StringArrayInput
+	S3CompatibleConnector DatastreamS3CompatibleConnectorPtrInput
+	S3Connector           DatastreamS3ConnectorPtrInput
+	SplunkConnector       DatastreamSplunkConnectorPtrInput
 	// The name of the stream
 	StreamName pulumi.StringPtrInput
 	// Identifies the configuration version of the stream
-	StreamVersion      pulumi.IntPtrInput
-	SumologicConnector DatastreamSumologicConnectorPtrInput
+	StreamVersion        pulumi.IntPtrInput
+	SumologicConnector   DatastreamSumologicConnectorPtrInput
+	TrafficpeakConnector DatastreamTrafficpeakConnectorPtrInput
 }
 
 func (DatastreamState) ElementType() reflect.Type {
@@ -225,6 +234,7 @@ type datastreamArgs struct {
 	DatasetFields []int `pulumi:"datasetFields"`
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  DatastreamDeliveryConfiguration   `pulumi:"deliveryConfiguration"`
+	DynatraceConnector     *DatastreamDynatraceConnector     `pulumi:"dynatraceConnector"`
 	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
 	GcsConnector           *DatastreamGcsConnector           `pulumi:"gcsConnector"`
 	// Identifies the group that has access to the product and for which the stream configuration was created
@@ -236,12 +246,14 @@ type datastreamArgs struct {
 	NotificationEmails []string                   `pulumi:"notificationEmails"`
 	OracleConnector    *DatastreamOracleConnector `pulumi:"oracleConnector"`
 	// Identifies the properties monitored in the stream
-	Properties      []string                   `pulumi:"properties"`
-	S3Connector     *DatastreamS3Connector     `pulumi:"s3Connector"`
-	SplunkConnector *DatastreamSplunkConnector `pulumi:"splunkConnector"`
+	Properties            []string                         `pulumi:"properties"`
+	S3CompatibleConnector *DatastreamS3CompatibleConnector `pulumi:"s3CompatibleConnector"`
+	S3Connector           *DatastreamS3Connector           `pulumi:"s3Connector"`
+	SplunkConnector       *DatastreamSplunkConnector       `pulumi:"splunkConnector"`
 	// The name of the stream
-	StreamName         string                        `pulumi:"streamName"`
-	SumologicConnector *DatastreamSumologicConnector `pulumi:"sumologicConnector"`
+	StreamName           string                          `pulumi:"streamName"`
+	SumologicConnector   *DatastreamSumologicConnector   `pulumi:"sumologicConnector"`
+	TrafficpeakConnector *DatastreamTrafficpeakConnector `pulumi:"trafficpeakConnector"`
 }
 
 // The set of arguments for constructing a Datastream resource.
@@ -258,6 +270,7 @@ type DatastreamArgs struct {
 	DatasetFields pulumi.IntArrayInput
 	// Provides information about the configuration related to logs (format, file names, delivery frequency)
 	DeliveryConfiguration  DatastreamDeliveryConfigurationInput
+	DynatraceConnector     DatastreamDynatraceConnectorPtrInput
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
 	GcsConnector           DatastreamGcsConnectorPtrInput
 	// Identifies the group that has access to the product and for which the stream configuration was created
@@ -269,12 +282,14 @@ type DatastreamArgs struct {
 	NotificationEmails pulumi.StringArrayInput
 	OracleConnector    DatastreamOracleConnectorPtrInput
 	// Identifies the properties monitored in the stream
-	Properties      pulumi.StringArrayInput
-	S3Connector     DatastreamS3ConnectorPtrInput
-	SplunkConnector DatastreamSplunkConnectorPtrInput
+	Properties            pulumi.StringArrayInput
+	S3CompatibleConnector DatastreamS3CompatibleConnectorPtrInput
+	S3Connector           DatastreamS3ConnectorPtrInput
+	SplunkConnector       DatastreamSplunkConnectorPtrInput
 	// The name of the stream
-	StreamName         pulumi.StringInput
-	SumologicConnector DatastreamSumologicConnectorPtrInput
+	StreamName           pulumi.StringInput
+	SumologicConnector   DatastreamSumologicConnectorPtrInput
+	TrafficpeakConnector DatastreamTrafficpeakConnectorPtrInput
 }
 
 func (DatastreamArgs) ElementType() reflect.Type {
@@ -407,6 +422,10 @@ func (o DatastreamOutput) DeliveryConfiguration() DatastreamDeliveryConfiguratio
 	return o.ApplyT(func(v *Datastream) DatastreamDeliveryConfigurationOutput { return v.DeliveryConfiguration }).(DatastreamDeliveryConfigurationOutput)
 }
 
+func (o DatastreamOutput) DynatraceConnector() DatastreamDynatraceConnectorPtrOutput {
+	return o.ApplyT(func(v *Datastream) DatastreamDynatraceConnectorPtrOutput { return v.DynatraceConnector }).(DatastreamDynatraceConnectorPtrOutput)
+}
+
 func (o DatastreamOutput) ElasticsearchConnector() DatastreamElasticsearchConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamElasticsearchConnectorPtrOutput { return v.ElasticsearchConnector }).(DatastreamElasticsearchConnectorPtrOutput)
 }
@@ -471,6 +490,10 @@ func (o DatastreamOutput) Properties() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringArrayOutput { return v.Properties }).(pulumi.StringArrayOutput)
 }
 
+func (o DatastreamOutput) S3CompatibleConnector() DatastreamS3CompatibleConnectorPtrOutput {
+	return o.ApplyT(func(v *Datastream) DatastreamS3CompatibleConnectorPtrOutput { return v.S3CompatibleConnector }).(DatastreamS3CompatibleConnectorPtrOutput)
+}
+
 func (o DatastreamOutput) S3Connector() DatastreamS3ConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamS3ConnectorPtrOutput { return v.S3Connector }).(DatastreamS3ConnectorPtrOutput)
 }
@@ -491,6 +514,10 @@ func (o DatastreamOutput) StreamVersion() pulumi.IntOutput {
 
 func (o DatastreamOutput) SumologicConnector() DatastreamSumologicConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamSumologicConnectorPtrOutput { return v.SumologicConnector }).(DatastreamSumologicConnectorPtrOutput)
+}
+
+func (o DatastreamOutput) TrafficpeakConnector() DatastreamTrafficpeakConnectorPtrOutput {
+	return o.ApplyT(func(v *Datastream) DatastreamTrafficpeakConnectorPtrOutput { return v.TrafficpeakConnector }).(DatastreamTrafficpeakConnectorPtrOutput)
 }
 
 type DatastreamArrayOutput struct{ *pulumi.OutputState }

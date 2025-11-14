@@ -31,6 +31,7 @@ class DatastreamArgs:
                  azure_connector: Optional[pulumi.Input['DatastreamAzureConnectorArgs']] = None,
                  collect_midgress: Optional[pulumi.Input[_builtins.bool]] = None,
                  datadog_connector: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']] = None,
+                 dynatrace_connector: Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']] = None,
                  elasticsearch_connector: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']] = None,
                  gcs_connector: Optional[pulumi.Input['DatastreamGcsConnectorArgs']] = None,
                  https_connector: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']] = None,
@@ -38,9 +39,11 @@ class DatastreamArgs:
                  new_relic_connector: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oracle_connector: Optional[pulumi.Input['DatastreamOracleConnectorArgs']] = None,
+                 s3_compatible_connector: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']] = None,
                  s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
                  splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
-                 sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None):
+                 sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
+                 trafficpeak_connector: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']] = None):
         """
         The set of arguments for constructing a Datastream resource.
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
@@ -66,6 +69,8 @@ class DatastreamArgs:
             pulumi.set(__self__, "collect_midgress", collect_midgress)
         if datadog_connector is not None:
             pulumi.set(__self__, "datadog_connector", datadog_connector)
+        if dynatrace_connector is not None:
+            pulumi.set(__self__, "dynatrace_connector", dynatrace_connector)
         if elasticsearch_connector is not None:
             pulumi.set(__self__, "elasticsearch_connector", elasticsearch_connector)
         if gcs_connector is not None:
@@ -80,12 +85,16 @@ class DatastreamArgs:
             pulumi.set(__self__, "notification_emails", notification_emails)
         if oracle_connector is not None:
             pulumi.set(__self__, "oracle_connector", oracle_connector)
+        if s3_compatible_connector is not None:
+            pulumi.set(__self__, "s3_compatible_connector", s3_compatible_connector)
         if s3_connector is not None:
             pulumi.set(__self__, "s3_connector", s3_connector)
         if splunk_connector is not None:
             pulumi.set(__self__, "splunk_connector", splunk_connector)
         if sumologic_connector is not None:
             pulumi.set(__self__, "sumologic_connector", sumologic_connector)
+        if trafficpeak_connector is not None:
+            pulumi.set(__self__, "trafficpeak_connector", trafficpeak_connector)
 
     @_builtins.property
     @pulumi.getter
@@ -202,6 +211,15 @@ class DatastreamArgs:
         pulumi.set(self, "datadog_connector", value)
 
     @_builtins.property
+    @pulumi.getter(name="dynatraceConnector")
+    def dynatrace_connector(self) -> Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']]:
+        return pulumi.get(self, "dynatrace_connector")
+
+    @dynatrace_connector.setter
+    def dynatrace_connector(self, value: Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']]):
+        pulumi.set(self, "dynatrace_connector", value)
+
+    @_builtins.property
     @pulumi.getter(name="elasticsearchConnector")
     def elasticsearch_connector(self) -> Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]:
         return pulumi.get(self, "elasticsearch_connector")
@@ -268,6 +286,15 @@ class DatastreamArgs:
         pulumi.set(self, "oracle_connector", value)
 
     @_builtins.property
+    @pulumi.getter(name="s3CompatibleConnector")
+    def s3_compatible_connector(self) -> Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']]:
+        return pulumi.get(self, "s3_compatible_connector")
+
+    @s3_compatible_connector.setter
+    def s3_compatible_connector(self, value: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']]):
+        pulumi.set(self, "s3_compatible_connector", value)
+
+    @_builtins.property
     @pulumi.getter(name="s3Connector")
     def s3_connector(self) -> Optional[pulumi.Input['DatastreamS3ConnectorArgs']]:
         return pulumi.get(self, "s3_connector")
@@ -294,6 +321,15 @@ class DatastreamArgs:
     def sumologic_connector(self, value: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']]):
         pulumi.set(self, "sumologic_connector", value)
 
+    @_builtins.property
+    @pulumi.getter(name="trafficpeakConnector")
+    def trafficpeak_connector(self) -> Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']]:
+        return pulumi.get(self, "trafficpeak_connector")
+
+    @trafficpeak_connector.setter
+    def trafficpeak_connector(self, value: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']]):
+        pulumi.set(self, "trafficpeak_connector", value)
+
 
 @pulumi.input_type
 class _DatastreamState:
@@ -307,6 +343,7 @@ class _DatastreamState:
                  datadog_connector: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']] = None,
                  dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  delivery_configuration: Optional[pulumi.Input['DatastreamDeliveryConfigurationArgs']] = None,
+                 dynatrace_connector: Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']] = None,
                  elasticsearch_connector: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']] = None,
                  gcs_connector: Optional[pulumi.Input['DatastreamGcsConnectorArgs']] = None,
                  group_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -321,11 +358,13 @@ class _DatastreamState:
                  papi_json: Optional[pulumi.Input[_builtins.str]] = None,
                  product_id: Optional[pulumi.Input[_builtins.str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 s3_compatible_connector: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']] = None,
                  s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
                  splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
                  stream_name: Optional[pulumi.Input[_builtins.str]] = None,
                  stream_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None):
+                 sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
+                 trafficpeak_connector: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']] = None):
         """
         Input properties used for looking up and filtering Datastream resources.
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
@@ -364,6 +403,8 @@ class _DatastreamState:
             pulumi.set(__self__, "dataset_fields", dataset_fields)
         if delivery_configuration is not None:
             pulumi.set(__self__, "delivery_configuration", delivery_configuration)
+        if dynatrace_connector is not None:
+            pulumi.set(__self__, "dynatrace_connector", dynatrace_connector)
         if elasticsearch_connector is not None:
             pulumi.set(__self__, "elasticsearch_connector", elasticsearch_connector)
         if gcs_connector is not None:
@@ -392,6 +433,8 @@ class _DatastreamState:
             pulumi.set(__self__, "product_id", product_id)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
+        if s3_compatible_connector is not None:
+            pulumi.set(__self__, "s3_compatible_connector", s3_compatible_connector)
         if s3_connector is not None:
             pulumi.set(__self__, "s3_connector", s3_connector)
         if splunk_connector is not None:
@@ -402,6 +445,8 @@ class _DatastreamState:
             pulumi.set(__self__, "stream_version", stream_version)
         if sumologic_connector is not None:
             pulumi.set(__self__, "sumologic_connector", sumologic_connector)
+        if trafficpeak_connector is not None:
+            pulumi.set(__self__, "trafficpeak_connector", trafficpeak_connector)
 
     @_builtins.property
     @pulumi.getter
@@ -504,6 +549,15 @@ class _DatastreamState:
     @delivery_configuration.setter
     def delivery_configuration(self, value: Optional[pulumi.Input['DatastreamDeliveryConfigurationArgs']]):
         pulumi.set(self, "delivery_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dynatraceConnector")
+    def dynatrace_connector(self) -> Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']]:
+        return pulumi.get(self, "dynatrace_connector")
+
+    @dynatrace_connector.setter
+    def dynatrace_connector(self, value: Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']]):
+        pulumi.set(self, "dynatrace_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="elasticsearchConnector")
@@ -656,6 +710,15 @@ class _DatastreamState:
         pulumi.set(self, "properties", value)
 
     @_builtins.property
+    @pulumi.getter(name="s3CompatibleConnector")
+    def s3_compatible_connector(self) -> Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']]:
+        return pulumi.get(self, "s3_compatible_connector")
+
+    @s3_compatible_connector.setter
+    def s3_compatible_connector(self, value: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']]):
+        pulumi.set(self, "s3_compatible_connector", value)
+
+    @_builtins.property
     @pulumi.getter(name="s3Connector")
     def s3_connector(self) -> Optional[pulumi.Input['DatastreamS3ConnectorArgs']]:
         return pulumi.get(self, "s3_connector")
@@ -706,6 +769,15 @@ class _DatastreamState:
     def sumologic_connector(self, value: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']]):
         pulumi.set(self, "sumologic_connector", value)
 
+    @_builtins.property
+    @pulumi.getter(name="trafficpeakConnector")
+    def trafficpeak_connector(self) -> Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']]:
+        return pulumi.get(self, "trafficpeak_connector")
+
+    @trafficpeak_connector.setter
+    def trafficpeak_connector(self, value: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']]):
+        pulumi.set(self, "trafficpeak_connector", value)
+
 
 @pulumi.type_token("akamai:index/datastream:Datastream")
 class Datastream(pulumi.CustomResource):
@@ -720,6 +792,7 @@ class Datastream(pulumi.CustomResource):
                  datadog_connector: Optional[pulumi.Input[Union['DatastreamDatadogConnectorArgs', 'DatastreamDatadogConnectorArgsDict']]] = None,
                  dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  delivery_configuration: Optional[pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']]] = None,
+                 dynatrace_connector: Optional[pulumi.Input[Union['DatastreamDynatraceConnectorArgs', 'DatastreamDynatraceConnectorArgsDict']]] = None,
                  elasticsearch_connector: Optional[pulumi.Input[Union['DatastreamElasticsearchConnectorArgs', 'DatastreamElasticsearchConnectorArgsDict']]] = None,
                  gcs_connector: Optional[pulumi.Input[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
                  group_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -729,10 +802,12 @@ class Datastream(pulumi.CustomResource):
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oracle_connector: Optional[pulumi.Input[Union['DatastreamOracleConnectorArgs', 'DatastreamOracleConnectorArgsDict']]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 s3_compatible_connector: Optional[pulumi.Input[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
                  s3_connector: Optional[pulumi.Input[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
                  splunk_connector: Optional[pulumi.Input[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
                  stream_name: Optional[pulumi.Input[_builtins.str]] = None,
                  sumologic_connector: Optional[pulumi.Input[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
+                 trafficpeak_connector: Optional[pulumi.Input[Union['DatastreamTrafficpeakConnectorArgs', 'DatastreamTrafficpeakConnectorArgsDict']]] = None,
                  __props__=None):
         """
         Create a Datastream resource with the given unique name, props, and options.
@@ -778,6 +853,7 @@ class Datastream(pulumi.CustomResource):
                  datadog_connector: Optional[pulumi.Input[Union['DatastreamDatadogConnectorArgs', 'DatastreamDatadogConnectorArgsDict']]] = None,
                  dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  delivery_configuration: Optional[pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']]] = None,
+                 dynatrace_connector: Optional[pulumi.Input[Union['DatastreamDynatraceConnectorArgs', 'DatastreamDynatraceConnectorArgsDict']]] = None,
                  elasticsearch_connector: Optional[pulumi.Input[Union['DatastreamElasticsearchConnectorArgs', 'DatastreamElasticsearchConnectorArgsDict']]] = None,
                  gcs_connector: Optional[pulumi.Input[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
                  group_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -787,10 +863,12 @@ class Datastream(pulumi.CustomResource):
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oracle_connector: Optional[pulumi.Input[Union['DatastreamOracleConnectorArgs', 'DatastreamOracleConnectorArgsDict']]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 s3_compatible_connector: Optional[pulumi.Input[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
                  s3_connector: Optional[pulumi.Input[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
                  splunk_connector: Optional[pulumi.Input[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
                  stream_name: Optional[pulumi.Input[_builtins.str]] = None,
                  sumologic_connector: Optional[pulumi.Input[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
+                 trafficpeak_connector: Optional[pulumi.Input[Union['DatastreamTrafficpeakConnectorArgs', 'DatastreamTrafficpeakConnectorArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -815,6 +893,7 @@ class Datastream(pulumi.CustomResource):
             if delivery_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'delivery_configuration'")
             __props__.__dict__["delivery_configuration"] = delivery_configuration
+            __props__.__dict__["dynatrace_connector"] = dynatrace_connector
             __props__.__dict__["elasticsearch_connector"] = elasticsearch_connector
             __props__.__dict__["gcs_connector"] = gcs_connector
             if group_id is None and not opts.urn:
@@ -828,12 +907,14 @@ class Datastream(pulumi.CustomResource):
             if properties is None and not opts.urn:
                 raise TypeError("Missing required property 'properties'")
             __props__.__dict__["properties"] = properties
+            __props__.__dict__["s3_compatible_connector"] = s3_compatible_connector
             __props__.__dict__["s3_connector"] = s3_connector
             __props__.__dict__["splunk_connector"] = splunk_connector
             if stream_name is None and not opts.urn:
                 raise TypeError("Missing required property 'stream_name'")
             __props__.__dict__["stream_name"] = stream_name
             __props__.__dict__["sumologic_connector"] = sumologic_connector
+            __props__.__dict__["trafficpeak_connector"] = trafficpeak_connector
             __props__.__dict__["created_by"] = None
             __props__.__dict__["created_date"] = None
             __props__.__dict__["latest_version"] = None
@@ -861,6 +942,7 @@ class Datastream(pulumi.CustomResource):
             datadog_connector: Optional[pulumi.Input[Union['DatastreamDatadogConnectorArgs', 'DatastreamDatadogConnectorArgsDict']]] = None,
             dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
             delivery_configuration: Optional[pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']]] = None,
+            dynatrace_connector: Optional[pulumi.Input[Union['DatastreamDynatraceConnectorArgs', 'DatastreamDynatraceConnectorArgsDict']]] = None,
             elasticsearch_connector: Optional[pulumi.Input[Union['DatastreamElasticsearchConnectorArgs', 'DatastreamElasticsearchConnectorArgsDict']]] = None,
             gcs_connector: Optional[pulumi.Input[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
             group_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -875,11 +957,13 @@ class Datastream(pulumi.CustomResource):
             papi_json: Optional[pulumi.Input[_builtins.str]] = None,
             product_id: Optional[pulumi.Input[_builtins.str]] = None,
             properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            s3_compatible_connector: Optional[pulumi.Input[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
             s3_connector: Optional[pulumi.Input[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
             splunk_connector: Optional[pulumi.Input[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
             stream_name: Optional[pulumi.Input[_builtins.str]] = None,
             stream_version: Optional[pulumi.Input[_builtins.int]] = None,
-            sumologic_connector: Optional[pulumi.Input[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None) -> 'Datastream':
+            sumologic_connector: Optional[pulumi.Input[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
+            trafficpeak_connector: Optional[pulumi.Input[Union['DatastreamTrafficpeakConnectorArgs', 'DatastreamTrafficpeakConnectorArgsDict']]] = None) -> 'Datastream':
         """
         Get an existing Datastream resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -918,6 +1002,7 @@ class Datastream(pulumi.CustomResource):
         __props__.__dict__["datadog_connector"] = datadog_connector
         __props__.__dict__["dataset_fields"] = dataset_fields
         __props__.__dict__["delivery_configuration"] = delivery_configuration
+        __props__.__dict__["dynatrace_connector"] = dynatrace_connector
         __props__.__dict__["elasticsearch_connector"] = elasticsearch_connector
         __props__.__dict__["gcs_connector"] = gcs_connector
         __props__.__dict__["group_id"] = group_id
@@ -932,11 +1017,13 @@ class Datastream(pulumi.CustomResource):
         __props__.__dict__["papi_json"] = papi_json
         __props__.__dict__["product_id"] = product_id
         __props__.__dict__["properties"] = properties
+        __props__.__dict__["s3_compatible_connector"] = s3_compatible_connector
         __props__.__dict__["s3_connector"] = s3_connector
         __props__.__dict__["splunk_connector"] = splunk_connector
         __props__.__dict__["stream_name"] = stream_name
         __props__.__dict__["stream_version"] = stream_version
         __props__.__dict__["sumologic_connector"] = sumologic_connector
+        __props__.__dict__["trafficpeak_connector"] = trafficpeak_connector
         return Datastream(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -1004,6 +1091,11 @@ class Datastream(pulumi.CustomResource):
         Provides information about the configuration related to logs (format, file names, delivery frequency)
         """
         return pulumi.get(self, "delivery_configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="dynatraceConnector")
+    def dynatrace_connector(self) -> pulumi.Output[Optional['outputs.DatastreamDynatraceConnector']]:
+        return pulumi.get(self, "dynatrace_connector")
 
     @_builtins.property
     @pulumi.getter(name="elasticsearchConnector")
@@ -1100,6 +1192,11 @@ class Datastream(pulumi.CustomResource):
         return pulumi.get(self, "properties")
 
     @_builtins.property
+    @pulumi.getter(name="s3CompatibleConnector")
+    def s3_compatible_connector(self) -> pulumi.Output[Optional['outputs.DatastreamS3CompatibleConnector']]:
+        return pulumi.get(self, "s3_compatible_connector")
+
+    @_builtins.property
     @pulumi.getter(name="s3Connector")
     def s3_connector(self) -> pulumi.Output[Optional['outputs.DatastreamS3Connector']]:
         return pulumi.get(self, "s3_connector")
@@ -1129,4 +1226,9 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="sumologicConnector")
     def sumologic_connector(self) -> pulumi.Output[Optional['outputs.DatastreamSumologicConnector']]:
         return pulumi.get(self, "sumologic_connector")
+
+    @_builtins.property
+    @pulumi.getter(name="trafficpeakConnector")
+    def trafficpeak_connector(self) -> pulumi.Output[Optional['outputs.DatastreamTrafficpeakConnector']]:
+        return pulumi.get(self, "trafficpeak_connector")
 
