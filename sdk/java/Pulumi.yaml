@@ -1,0 +1,3 @@
+name: akamai
+description: A Pulumi resource provider for akamai.
+language: java
