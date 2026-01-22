@@ -24,8 +24,8 @@ namespace Pulumi.Akamai.Inputs
         /// * `DNS_TXT` - For this method, Akamai generates a `TxtRecord` with a token `Value` that you copy as the `Target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
         /// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
         /// </summary>
-        [Input("validationMethod")]
-        public Input<string>? ValidationMethod { get; set; }
+        [Input("validationMethod", required: true)]
+        public Input<string> ValidationMethod { get; set; } = null!;
 
         /// <summary>
         /// Your domain's validation scope. Possible values are: 

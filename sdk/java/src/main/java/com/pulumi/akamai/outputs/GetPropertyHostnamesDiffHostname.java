@@ -16,7 +16,7 @@ public final class GetPropertyHostnamesDiffHostname {
      */
     private String cnameFrom;
     /**
-     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
      * 
      */
     private String productionCertProvisioningType;
@@ -36,7 +36,7 @@ public final class GetPropertyHostnamesDiffHostname {
      */
     private String productionEdgeHostnameId;
     /**
-     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
      * 
      */
     private String stagingCertProvisioningType;
@@ -65,7 +65,7 @@ public final class GetPropertyHostnamesDiffHostname {
         return this.cnameFrom;
     }
     /**
-     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
      * 
      */
     public String productionCertProvisioningType() {
@@ -93,7 +93,7 @@ public final class GetPropertyHostnamesDiffHostname {
         return this.productionEdgeHostnameId;
     }
     /**
-     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
      * 
      */
     public String stagingCertProvisioningType() {

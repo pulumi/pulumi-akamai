@@ -7,8 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyDomainownershipValidationDomain {
@@ -24,7 +22,7 @@ public final class PropertyDomainownershipValidationDomain {
      * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
      * 
      */
-    private @Nullable String validationMethod;
+    private String validationMethod;
     /**
      * @return Your domain&#39;s validation scope. Possible values are:
      * * `HOST` - The scope is only the exactly specified domain.
@@ -49,8 +47,8 @@ public final class PropertyDomainownershipValidationDomain {
      * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
      * 
      */
-    public Optional<String> validationMethod() {
-        return Optional.ofNullable(this.validationMethod);
+    public String validationMethod() {
+        return this.validationMethod;
     }
     /**
      * @return Your domain&#39;s validation scope. Possible values are:
@@ -73,7 +71,7 @@ public final class PropertyDomainownershipValidationDomain {
     @CustomType.Builder
     public static final class Builder {
         private String domainName;
-        private @Nullable String validationMethod;
+        private String validationMethod;
         private String validationScope;
         public Builder() {}
         public Builder(PropertyDomainownershipValidationDomain defaults) {
@@ -92,8 +90,10 @@ public final class PropertyDomainownershipValidationDomain {
             return this;
         }
         @CustomType.Setter
-        public Builder validationMethod(@Nullable String validationMethod) {
-
+        public Builder validationMethod(String validationMethod) {
+            if (validationMethod == null) {
+              throw new MissingRequiredPropertyException("PropertyDomainownershipValidationDomain", "validationMethod");
+            }
             this.validationMethod = validationMethod;
             return this;
         }

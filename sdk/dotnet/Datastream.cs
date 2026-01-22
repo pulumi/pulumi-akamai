@@ -79,6 +79,12 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamHttpsConnector?> HttpsConnector { get; private set; } = null!;
 
         /// <summary>
+        /// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+        /// </summary>
+        [Output("integrationType")]
+        public Output<string> IntegrationType { get; private set; } = null!;
+
+        /// <summary>
         /// Identifies the latest active configuration version of the stream
         /// </summary>
         [Output("latestVersion")]
@@ -134,6 +140,12 @@ namespace Pulumi.Akamai
 
         [Output("s3Connector")]
         public Output<Outputs.DatastreamS3Connector?> S3Connector { get; private set; } = null!;
+
+        /// <summary>
+        /// The sample percentage of data that your stream will send to the destination
+        /// </summary>
+        [Output("samplingPercentage")]
+        public Output<int?> SamplingPercentage { get; private set; } = null!;
 
         [Output("splunkConnector")]
         public Output<Outputs.DatastreamSplunkConnector?> SplunkConnector { get; private set; } = null!;
@@ -301,6 +313,12 @@ namespace Pulumi.Akamai
         [Input("s3Connector")]
         public Input<Inputs.DatastreamS3ConnectorArgs>? S3Connector { get; set; }
 
+        /// <summary>
+        /// The sample percentage of data that your stream will send to the destination
+        /// </summary>
+        [Input("samplingPercentage")]
+        public Input<int>? SamplingPercentage { get; set; }
+
         [Input("splunkConnector")]
         public Input<Inputs.DatastreamSplunkConnectorArgs>? SplunkConnector { get; set; }
 
@@ -397,6 +415,12 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamHttpsConnectorGetArgs>? HttpsConnector { get; set; }
 
         /// <summary>
+        /// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+        /// </summary>
+        [Input("integrationType")]
+        public Input<string>? IntegrationType { get; set; }
+
+        /// <summary>
         /// Identifies the latest active configuration version of the stream
         /// </summary>
         [Input("latestVersion")]
@@ -464,6 +488,12 @@ namespace Pulumi.Akamai
 
         [Input("s3Connector")]
         public Input<Inputs.DatastreamS3ConnectorGetArgs>? S3Connector { get; set; }
+
+        /// <summary>
+        /// The sample percentage of data that your stream will send to the destination
+        /// </summary>
+        [Input("samplingPercentage")]
+        public Input<int>? SamplingPercentage { get; set; }
 
         [Input("splunkConnector")]
         public Input<Inputs.DatastreamSplunkConnectorGetArgs>? SplunkConnector { get; set; }

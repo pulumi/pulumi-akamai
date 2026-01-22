@@ -61,7 +61,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        /// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -167,7 +167,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        /// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -241,7 +241,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        /// The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

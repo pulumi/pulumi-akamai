@@ -350,6 +350,8 @@ import com.pulumi.akamai.inputs.GetPropertiesArgs;
 import com.pulumi.akamai.inputs.GetPropertiesPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertiesSearchArgs;
 import com.pulumi.akamai.inputs.GetPropertiesSearchPlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyAccountHostnamesArgs;
+import com.pulumi.akamai.inputs.GetPropertyAccountHostnamesPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyActivationArgs;
 import com.pulumi.akamai.inputs.GetPropertyActivationPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyArgs;
@@ -361,6 +363,8 @@ import com.pulumi.akamai.inputs.GetPropertyHostnameActivationArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnameActivationPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnameActivationsArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnameActivationsPlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyHostnameAuditHistoryArgs;
+import com.pulumi.akamai.inputs.GetPropertyHostnameAuditHistoryPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnamesArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnamesDiffArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnamesDiffPlainArgs;
@@ -574,12 +578,14 @@ import com.pulumi.akamai.outputs.GetMtlstruststoreCaSetsResult;
 import com.pulumi.akamai.outputs.GetNetworkListsResult;
 import com.pulumi.akamai.outputs.GetPropertiesResult;
 import com.pulumi.akamai.outputs.GetPropertiesSearchResult;
+import com.pulumi.akamai.outputs.GetPropertyAccountHostnamesResult;
 import com.pulumi.akamai.outputs.GetPropertyActivationResult;
 import com.pulumi.akamai.outputs.GetPropertyDomainownershipDomainResult;
 import com.pulumi.akamai.outputs.GetPropertyDomainownershipDomainsResult;
 import com.pulumi.akamai.outputs.GetPropertyDomainownershipSearchDomainsResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnameActivationResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnameActivationsResult;
+import com.pulumi.akamai.outputs.GetPropertyHostnameAuditHistoryResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnamesDiffResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnamesResult;
 import com.pulumi.akamai.outputs.GetPropertyIncludeActivationResult;
@@ -3815,6 +3821,27 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetPropertyResult> getPropertyPlain(GetPropertyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getProperty:getProperty", TypeShape.of(GetPropertyResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetPropertyAccountHostnamesResult> getPropertyAccountHostnames() {
+        return getPropertyAccountHostnames(GetPropertyAccountHostnamesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyAccountHostnamesResult> getPropertyAccountHostnamesPlain() {
+        return getPropertyAccountHostnamesPlain(GetPropertyAccountHostnamesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyAccountHostnamesResult> getPropertyAccountHostnames(GetPropertyAccountHostnamesArgs args) {
+        return getPropertyAccountHostnames(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyAccountHostnamesResult> getPropertyAccountHostnamesPlain(GetPropertyAccountHostnamesPlainArgs args) {
+        return getPropertyAccountHostnamesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyAccountHostnamesResult> getPropertyAccountHostnames(GetPropertyAccountHostnamesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyAccountHostnames:getPropertyAccountHostnames", TypeShape.of(GetPropertyAccountHostnamesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyAccountHostnamesResult> getPropertyAccountHostnames(GetPropertyAccountHostnamesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyAccountHostnames:getPropertyAccountHostnames", TypeShape.of(GetPropertyAccountHostnamesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPropertyAccountHostnamesResult> getPropertyAccountHostnamesPlain(GetPropertyAccountHostnamesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyAccountHostnames:getPropertyAccountHostnames", TypeShape.of(GetPropertyAccountHostnamesResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetPropertyActivationResult> getPropertyActivation(GetPropertyActivationArgs args) {
         return getPropertyActivation(args, InvokeOptions.Empty);
     }
@@ -3910,6 +3937,21 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetPropertyHostnameActivationsResult> getPropertyHostnameActivationsPlain(GetPropertyHostnameActivationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getPropertyHostnameActivations:getPropertyHostnameActivations", TypeShape.of(GetPropertyHostnameActivationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyHostnameAuditHistoryResult> getPropertyHostnameAuditHistory(GetPropertyHostnameAuditHistoryArgs args) {
+        return getPropertyHostnameAuditHistory(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyHostnameAuditHistoryResult> getPropertyHostnameAuditHistoryPlain(GetPropertyHostnameAuditHistoryPlainArgs args) {
+        return getPropertyHostnameAuditHistoryPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyHostnameAuditHistoryResult> getPropertyHostnameAuditHistory(GetPropertyHostnameAuditHistoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyHostnameAuditHistory:getPropertyHostnameAuditHistory", TypeShape.of(GetPropertyHostnameAuditHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyHostnameAuditHistoryResult> getPropertyHostnameAuditHistory(GetPropertyHostnameAuditHistoryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyHostnameAuditHistory:getPropertyHostnameAuditHistory", TypeShape.of(GetPropertyHostnameAuditHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPropertyHostnameAuditHistoryResult> getPropertyHostnameAuditHistoryPlain(GetPropertyHostnameAuditHistoryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyHostnameAuditHistory:getPropertyHostnameAuditHistory", TypeShape.of(GetPropertyHostnameAuditHistoryResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetPropertyHostnamesResult> getPropertyHostnames(GetPropertyHostnamesArgs args) {
         return getPropertyHostnames(args, InvokeOptions.Empty);

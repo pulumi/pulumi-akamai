@@ -4490,6 +4490,10 @@ export interface GetDatastreamsStreamsDetail {
      */
     groupId: number;
     /**
+     * The integration mode for the stream in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+     */
+    integrationType: string;
+    /**
      * Identifies the latestVersion version of the stream.
      */
     latestVersion: number;
@@ -4528,6 +4532,10 @@ export interface GetDatastreamsStreamsDetail {
 }
 
 export interface GetDatastreamsStreamsDetailProperty {
+    /**
+     * The integration mode for the property in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED).
+     */
+    integrationType: string;
     /**
      * The identifier of the property.
      */
@@ -9799,6 +9807,77 @@ export interface GetPropertiesSearchProperty {
     updatedDate: string;
 }
 
+export interface GetPropertyAccountHostnamesHostname {
+    /**
+     * The hostname that your end users see, indicated by the Host header in end user requests.
+     */
+    cnameFrom: string;
+    /**
+     * Identifies the prevailing contract under which you requested the data.
+     */
+    contractId: string;
+    /**
+     * Identifies the prevailing group under which you requested the data.
+     */
+    groupId: string;
+    /**
+     * Specifies the most recent version of the property.
+     */
+    latestVersion: number;
+    /**
+     * Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     */
+    productionCertType: string;
+    /**
+     * The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
+     */
+    productionCnameTo: string;
+    /**
+     * Indicates the type of CNAME you used in the production network, either `EDGE_HOSTNAME` or `CUSTOM`.
+     */
+    productionCnameType: string;
+    /**
+     * Identifies the edge hostname you mapped your traffic to on the production network.
+     */
+    productionEdgeHostnameId: string;
+    /**
+     * Identifies the product association on the network.
+     */
+    productionProductId: string;
+    /**
+     * Unique identifier for the property.
+     */
+    propertyId: string;
+    /**
+     * A unique, descriptive name for the property.
+     */
+    propertyName: string;
+    /**
+     * Specifies the type of the property. Either `TRADITIONAL` for properties where you pair property hostnames with the property version, or `HOSTNAME_BUCKET` where you manage property hostnames independently of the property version.
+     */
+    propertyType: string;
+    /**
+     * Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     */
+    stagingCertType: string;
+    /**
+     * The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
+     */
+    stagingCnameTo: string;
+    /**
+     * Indicates the type of CNAME you used in the staging network, either `EDGE_HOSTNAME` or `CUSTOM`.
+     */
+    stagingCnameType: string;
+    /**
+     * Identifies the edge hostname you mapped your traffic to on the staging network.
+     */
+    stagingEdgeHostnameId: string;
+    /**
+     * Identifies the product association on the network.
+     */
+    stagingProductId: string;
+}
+
 export interface GetPropertyDomainownershipDomainDomainStatusHistory {
     /**
      * The domain's validation status. Possible values are: `REQUEST_ACCEPTED`, `VALIDATION_IN_PROGRESS`, `VALIDATED`, `TOKEN_EXPIRED`, or `INVALIDATED`.
@@ -10197,13 +10276,69 @@ export interface GetPropertyHostnameActivationsHostnameActivation {
     updateDate: string;
 }
 
+export interface GetPropertyHostnameAuditHistoryHistory {
+    /**
+     * The type of action performed to the property hostname. Possible values are: 
+     * * `ACTIVATE` - When the hostname is currently serving traffic.
+     * * `DEACTIVATE` - When the hostname isn't serving traffic.
+     * * `ADD` - When the user requested to add the hostname to a property.
+     * * `REMOVE` - When the user requested to remove the hostname from a property.
+     * * `MOVE` - When the hostname was moved from one property to another.
+     * * `MODIFY` - When the user changed the edgeHostnameId or certProvisioningType values for an already-activated hostname.
+     * * `ABORTED` - When the user request to cancel the hostname activation.
+     * * `ERROR` - When the hostname activation failed.
+     */
+    action: string;
+    /**
+     * The type of certificate used in the property hostname. Possible values are: 
+     * * `CPS_MANAGED` - For certificates you create with the Certificate Provisioning System API (CPS).
+     * * `DEFAULT` - For Default Domain Validation (DV) certificates deployed automatically.
+     * * `CCM` - For the third party certificates created with the Cloud Certificate Manager.
+     */
+    certProvisioningType: string;
+    /**
+     * The edge hostname that the hostname points to.
+     */
+    cnameTo: string;
+    /**
+     * Identifies the prevailing contract under which the data was requested.
+     */
+    contractId: string;
+    /**
+     * Id of the edge hostname the hostname points to.
+     */
+    edgeHostnameId: string;
+    /**
+     * Identifies the group under which the property is activated.
+     */
+    groupId: string;
+    /**
+     * The network of activated hostnames. Possible values are: 
+     * * `STAGING` - Staging network.
+     * * `PRODUCTION` - Production network.
+     */
+    network: string;
+    /**
+     * Unique identifier for the property.
+     */
+    propertyId: string;
+    /**
+     * Indicates when the action occurred.
+     */
+    timestamp: string;
+    /**
+     * The user who initiated the action.
+     */
+    user: string;
+}
+
 export interface GetPropertyHostnamesDiffHostname {
     /**
      * The hostname that your end users see, indicated by the Host header in end user requests.
      */
     cnameFrom: string;
     /**
-     * Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
      */
     productionCertProvisioningType: string;
     /**
@@ -10219,7 +10354,7 @@ export interface GetPropertyHostnamesDiffHostname {
      */
     productionEdgeHostnameId: string;
     /**
-     * Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
      */
     stagingCertProvisioningType: string;
     /**
@@ -10238,7 +10373,15 @@ export interface GetPropertyHostnamesDiffHostname {
 
 export interface GetPropertyHostnamesHostname {
     /**
-     * Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * CCM certificate deployment status for RSA and ECDSA certificates.
+     */
+    ccmCertStatuses: outputs.GetPropertyHostnamesHostnameCcmCertStatus[];
+    /**
+     * Identifiers for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     */
+    ccmCertificates: outputs.GetPropertyHostnamesHostnameCcmCertificate[];
+    /**
+     * Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
      */
     certProvisioningType: string;
     certStatuses: outputs.GetPropertyHostnamesHostnameCertStatus[];
@@ -10255,9 +10398,21 @@ export interface GetPropertyHostnamesHostname {
      */
     cnameType: string;
     /**
+     * Domain ownership verification details for the hostname.
+     */
+    domainOwnershipVerifications: outputs.GetPropertyHostnamesHostnameDomainOwnershipVerification[];
+    /**
      * The unique identifier for the edge hostname.
      */
     edgeHostnameId: string;
+    /**
+     * Mutual TLS configuration for the hostnames created with Cloud Certificate Manager (CCM).
+     */
+    mtls: outputs.GetPropertyHostnamesHostnameMtl[];
+    /**
+     * TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+     */
+    tlsConfigurations: outputs.GetPropertyHostnamesHostnameTlsConfiguration[];
 }
 
 export interface GetPropertyHostnamesHostnameBucket {
@@ -10315,6 +10470,36 @@ export interface GetPropertyHostnamesHostnameBucketCertStatus {
     target: string;
 }
 
+export interface GetPropertyHostnamesHostnameCcmCertStatus {
+    /**
+     * Status of the ECDSA certificate on production network.
+     */
+    ecdsaProductionStatus: string;
+    /**
+     * Status of the ECDSA certificate on staging network.
+     */
+    ecdsaStagingStatus: string;
+    /**
+     * Status of the RSA certificate on production network.
+     */
+    rsaProductionStatus: string;
+    /**
+     * Status of the RSA certificate on staging network.
+     */
+    rsaStagingStatus: string;
+}
+
+export interface GetPropertyHostnamesHostnameCcmCertificate {
+    /**
+     * Certificate ID for ECDSA.
+     */
+    ecdsaCertId: string;
+    /**
+     * Certificate ID for RSA.
+     */
+    rsaCertId: string;
+}
+
 export interface GetPropertyHostnamesHostnameCertStatus {
     /**
      * The hostname part of the CNAME record used to validate the certificate's domain.
@@ -10332,6 +10517,118 @@ export interface GetPropertyHostnamesHostnameCertStatus {
      * The destination part of the CNAME record used to validate the certificate's domain.
      */
     target: string;
+}
+
+export interface GetPropertyHostnamesHostnameDomainOwnershipVerification {
+    /**
+     * An ISO 8601 timestamp indicating when the domain validation challenge expires.
+     */
+    challengeTokenExpiryDate: string;
+    /**
+     * The status of the domain ownership verification. 'NOT_VALIDATED' means that the domain hasn't been validated yet. When you submit the domain for validation, the initial status is 'REQUEST_ACCEPTED', and then 'PENDING', when the domain is waiting for the validation to start. When it starts, the status changes to 'VALIDATION_IN_PROGRESS', and then to 'VALIDATED', when the validation is completed successfully. 'TOKEN_EXPIRED' means you haven't completed the validation in the requested time frame and you need to generate new validation challenges for the domain. If you no longer want a domain to be owned within Akamai, you can change the status to 'INVALIDATED'.
+     */
+    status: string;
+    /**
+     * The CNAME record you copy to your DNS to prove you own the domain.
+     */
+    validationCnames: outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCname[];
+    /**
+     * In the HTTP validation method, you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use a redirect URL with the token.
+     */
+    validationHttps: outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttp[];
+    /**
+     * The TXT record with the challenge token that you add to your hostname's DNS zone to prove you own the domain.
+     */
+    validationTxts: outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxt[];
+}
+
+export interface GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCname {
+    /**
+     * The hostname part of the CNAME record that validates the domain ownership.
+     */
+    hostname: string;
+    /**
+     * The destination part of the CNAME record that validates the domain ownership.
+     */
+    target: string;
+}
+
+export interface GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttp {
+    /**
+     * Details for the file content method of validation.
+     */
+    fileContentMethods: outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethod[];
+    /**
+     * Details for the HTTP redirect method of validation.
+     */
+    redirectMethods: outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethod[];
+}
+
+export interface GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethod {
+    /**
+     * The content of the file that you should place at the specified URL.
+     */
+    body: string;
+    /**
+     * The URL where you should place the file containing the challenge token.
+     */
+    url: string;
+}
+
+export interface GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethod {
+    /**
+     * The location on your HTTP server where you set up the redirect.
+     */
+    httpRedirectFrom: string;
+    /**
+     * The redirect URL with the token that you place on your HTTP server.
+     */
+    httpRedirectTo: string;
+}
+
+export interface GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxt {
+    /**
+     * A token you need to copy to the DNS TXT record that validates the domain ownership.
+     */
+    challengeToken: string;
+    /**
+     * The hostname where you should add the TXT record to validate the domain ownership.
+     */
+    hostname: string;
+}
+
+export interface GetPropertyHostnamesHostnameMtl {
+    /**
+     * ID of the Client CA set used for mutual TLS.
+     */
+    caSetId: string;
+    /**
+     * Whether to check the OCSP status of the client certificate.
+     */
+    checkClientOcsp: boolean;
+    /**
+     * Whether to send the CA set to the client during the TLS handshake.
+     */
+    sendCaSetClient: boolean;
+}
+
+export interface GetPropertyHostnamesHostnameTlsConfiguration {
+    /**
+     * Cipher profile name.
+     */
+    cipherProfile: string;
+    /**
+     * List of TLS versions that are disallowed.
+     */
+    disallowedTlsVersions: string[];
+    /**
+     * Enable FIPS mode.
+     */
+    fipsMode: boolean;
+    /**
+     * Staple the OCSP response for the server certificate.
+     */
+    stapleServerOcspResponse: boolean;
 }
 
 export interface GetPropertyIncludeParentsParent {
@@ -11329,6 +11626,17 @@ export interface PropertyDomainownershipDomainsDomainValidationChallengeTxtRecor
     value: string;
 }
 
+export interface PropertyDomainownershipLateValidationTimeouts {
+    /**
+     * Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+     */
+    create?: string;
+    /**
+     * Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+     */
+    update?: string;
+}
+
 export interface PropertyDomainownershipValidationDomain {
     /**
      * Your domain's name.
@@ -11340,7 +11648,7 @@ export interface PropertyDomainownershipValidationDomain {
      * * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
      * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
      */
-    validationMethod?: string;
+    validationMethod: string;
     /**
      * Your domain's validation scope. Possible values are: 
      * * `HOST` - The scope is only the exactly specified domain.
@@ -11376,6 +11684,14 @@ export interface PropertyHostname {
     cnameTo: string;
     cnameType: string;
     edgeHostnameId: string;
+    /**
+     * Optional mutual TLS settings for the CCM hostnames.
+     */
+    mtls?: outputs.PropertyHostnameMtls;
+    /**
+     * Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+     */
+    tlsConfiguration?: outputs.PropertyHostnameTlsConfiguration;
 }
 
 export interface PropertyHostnameBucketHostnames {
@@ -11440,6 +11756,40 @@ export interface PropertyHostnameCertStatus {
      * The destination part of the CNAME record used to validate the certificate's domain.
      */
     target: string;
+}
+
+export interface PropertyHostnameMtls {
+    /**
+     * The ID of the Certificate Authority (CA) set to use for mTLS.
+     */
+    caSetId: string;
+    /**
+     * Indicates whether to check the client OCSP.
+     */
+    checkClientOcsp?: boolean;
+    /**
+     * Indicates whether to send the CA set to the client.
+     */
+    sendCaSetClient?: boolean;
+}
+
+export interface PropertyHostnameTlsConfiguration {
+    /**
+     * The cipher profile to use for TLS connections.
+     */
+    cipherProfile: string;
+    /**
+     * A list of TLS versions that are disallowed.
+     */
+    disallowedTlsVersions?: string[];
+    /**
+     * Indicates whether FIPS mode is enabled.
+     */
+    fipsMode?: boolean;
+    /**
+     * Indicates whether to staple the server OCSP response.
+     */
+    stapleServerOcspResponse?: boolean;
 }
 
 export interface PropertyIncludeActivationComplianceRecord {

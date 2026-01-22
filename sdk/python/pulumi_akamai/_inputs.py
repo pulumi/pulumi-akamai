@@ -235,6 +235,8 @@ __all__ = [
     'PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict',
     'PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs',
     'PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict',
+    'PropertyDomainownershipLateValidationTimeoutsArgs',
+    'PropertyDomainownershipLateValidationTimeoutsArgsDict',
     'PropertyDomainownershipValidationDomainArgs',
     'PropertyDomainownershipValidationDomainArgsDict',
     'PropertyDomainownershipValidationTimeoutsArgs',
@@ -249,6 +251,10 @@ __all__ = [
     'PropertyHostnameCcmCertificatesArgsDict',
     'PropertyHostnameCertStatusArgs',
     'PropertyHostnameCertStatusArgsDict',
+    'PropertyHostnameMtlsArgs',
+    'PropertyHostnameMtlsArgsDict',
+    'PropertyHostnameTlsConfigurationArgs',
+    'PropertyHostnameTlsConfigurationArgsDict',
     'PropertyIncludeActivationComplianceRecordArgs',
     'PropertyIncludeActivationComplianceRecordArgsDict',
     'PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgs',
@@ -12318,10 +12324,69 @@ class PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs:
 
 
 if not MYPY:
+    class PropertyDomainownershipLateValidationTimeoutsArgsDict(TypedDict):
+        create: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+        """
+        update: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+        """
+elif False:
+    PropertyDomainownershipLateValidationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyDomainownershipLateValidationTimeoutsArgs:
+    def __init__(__self__, *,
+                 create: Optional[pulumi.Input[_builtins.str]] = None,
+                 update: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] create: Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+        :param pulumi.Input[_builtins.str] update: Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+        """
+        return pulumi.get(self, "create")
+
+    @create.setter
+    def create(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "create", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+        """
+        return pulumi.get(self, "update")
+
+    @update.setter
+    def update(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "update", value)
+
+
+if not MYPY:
     class PropertyDomainownershipValidationDomainArgsDict(TypedDict):
         domain_name: pulumi.Input[_builtins.str]
         """
         Your domain's name.
+        """
+        validation_method: pulumi.Input[_builtins.str]
+        """
+        The method used to validate the domain. Possible values are: 
+        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
         """
         validation_scope: pulumi.Input[_builtins.str]
         """
@@ -12330,13 +12395,6 @@ if not MYPY:
         * `WILDCARD` - The scope covers any hostname within one subdomain level.
         * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
         """
-        validation_method: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The method used to validate the domain. Possible values are: 
-        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-        """
 elif False:
     PropertyDomainownershipValidationDomainArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -12344,23 +12402,22 @@ elif False:
 class PropertyDomainownershipValidationDomainArgs:
     def __init__(__self__, *,
                  domain_name: pulumi.Input[_builtins.str],
-                 validation_scope: pulumi.Input[_builtins.str],
-                 validation_method: Optional[pulumi.Input[_builtins.str]] = None):
+                 validation_method: pulumi.Input[_builtins.str],
+                 validation_scope: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] domain_name: Your domain's name.
-        :param pulumi.Input[_builtins.str] validation_scope: Your domain's validation scope. Possible values are: 
-               * `HOST` - The scope is only the exactly specified domain.
-               * `WILDCARD` - The scope covers any hostname within one subdomain level.
-               * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
         :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are: 
                * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
                * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
                * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        :param pulumi.Input[_builtins.str] validation_scope: Your domain's validation scope. Possible values are: 
+               * `HOST` - The scope is only the exactly specified domain.
+               * `WILDCARD` - The scope covers any hostname within one subdomain level.
+               * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
         """
         pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "validation_method", validation_method)
         pulumi.set(__self__, "validation_scope", validation_scope)
-        if validation_method is not None:
-            pulumi.set(__self__, "validation_method", validation_method)
 
     @_builtins.property
     @pulumi.getter(name="domainName")
@@ -12373,6 +12430,21 @@ class PropertyDomainownershipValidationDomainArgs:
     @domain_name.setter
     def domain_name(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationMethod")
+    def validation_method(self) -> pulumi.Input[_builtins.str]:
+        """
+        The method used to validate the domain. Possible values are: 
+        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        """
+        return pulumi.get(self, "validation_method")
+
+    @validation_method.setter
+    def validation_method(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "validation_method", value)
 
     @_builtins.property
     @pulumi.getter(name="validationScope")
@@ -12388,21 +12460,6 @@ class PropertyDomainownershipValidationDomainArgs:
     @validation_scope.setter
     def validation_scope(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "validation_scope", value)
-
-    @_builtins.property
-    @pulumi.getter(name="validationMethod")
-    def validation_method(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The method used to validate the domain. Possible values are: 
-        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-        """
-        return pulumi.get(self, "validation_method")
-
-    @validation_method.setter
-    def validation_method(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "validation_method", value)
 
 
 if not MYPY:
@@ -12473,6 +12530,14 @@ if not MYPY:
         cert_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgsDict']]]]
         cname_type: NotRequired[pulumi.Input[_builtins.str]]
         edge_hostname_id: NotRequired[pulumi.Input[_builtins.str]]
+        mtls: NotRequired[pulumi.Input['PropertyHostnameMtlsArgsDict']]
+        """
+        Optional mutual TLS settings for the CCM hostnames.
+        """
+        tls_configuration: NotRequired[pulumi.Input['PropertyHostnameTlsConfigurationArgsDict']]
+        """
+        Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+        """
 elif False:
     PropertyHostnameArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -12486,10 +12551,14 @@ class PropertyHostnameArgs:
                  ccm_certificates: Optional[pulumi.Input['PropertyHostnameCcmCertificatesArgs']] = None,
                  cert_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]] = None,
                  cname_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 edge_hostname_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 edge_hostname_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 mtls: Optional[pulumi.Input['PropertyHostnameMtlsArgs']] = None,
+                 tls_configuration: Optional[pulumi.Input['PropertyHostnameTlsConfigurationArgs']] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgs']]] ccm_cert_statuses: Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
         :param pulumi.Input['PropertyHostnameCcmCertificatesArgs'] ccm_certificates: Certificate identifiers and links for the CCM-managed certificates.
+        :param pulumi.Input['PropertyHostnameMtlsArgs'] mtls: Optional mutual TLS settings for the CCM hostnames.
+        :param pulumi.Input['PropertyHostnameTlsConfigurationArgs'] tls_configuration: Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
         """
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cname_from", cname_from)
@@ -12504,6 +12573,10 @@ class PropertyHostnameArgs:
             pulumi.set(__self__, "cname_type", cname_type)
         if edge_hostname_id is not None:
             pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+        if mtls is not None:
+            pulumi.set(__self__, "mtls", mtls)
+        if tls_configuration is not None:
+            pulumi.set(__self__, "tls_configuration", tls_configuration)
 
     @_builtins.property
     @pulumi.getter(name="certProvisioningType")
@@ -12582,6 +12655,30 @@ class PropertyHostnameArgs:
     @edge_hostname_id.setter
     def edge_hostname_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "edge_hostname_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def mtls(self) -> Optional[pulumi.Input['PropertyHostnameMtlsArgs']]:
+        """
+        Optional mutual TLS settings for the CCM hostnames.
+        """
+        return pulumi.get(self, "mtls")
+
+    @mtls.setter
+    def mtls(self, value: Optional[pulumi.Input['PropertyHostnameMtlsArgs']]):
+        pulumi.set(self, "mtls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tlsConfiguration")
+    def tls_configuration(self) -> Optional[pulumi.Input['PropertyHostnameTlsConfigurationArgs']]:
+        """
+        Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+        """
+        return pulumi.get(self, "tls_configuration")
+
+    @tls_configuration.setter
+    def tls_configuration(self, value: Optional[pulumi.Input['PropertyHostnameTlsConfigurationArgs']]):
+        pulumi.set(self, "tls_configuration", value)
 
 
 if not MYPY:
@@ -12888,6 +12985,168 @@ class PropertyHostnameCertStatusArgs:
     @target.setter
     def target(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "target", value)
+
+
+if not MYPY:
+    class PropertyHostnameMtlsArgsDict(TypedDict):
+        ca_set_id: pulumi.Input[_builtins.str]
+        """
+        The ID of the Certificate Authority (CA) set to use for mTLS.
+        """
+        check_client_ocsp: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates whether to check the client OCSP.
+        """
+        send_ca_set_client: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates whether to send the CA set to the client.
+        """
+elif False:
+    PropertyHostnameMtlsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyHostnameMtlsArgs:
+    def __init__(__self__, *,
+                 ca_set_id: pulumi.Input[_builtins.str],
+                 check_client_ocsp: Optional[pulumi.Input[_builtins.bool]] = None,
+                 send_ca_set_client: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ca_set_id: The ID of the Certificate Authority (CA) set to use for mTLS.
+        :param pulumi.Input[_builtins.bool] check_client_ocsp: Indicates whether to check the client OCSP.
+        :param pulumi.Input[_builtins.bool] send_ca_set_client: Indicates whether to send the CA set to the client.
+        """
+        pulumi.set(__self__, "ca_set_id", ca_set_id)
+        if check_client_ocsp is not None:
+            pulumi.set(__self__, "check_client_ocsp", check_client_ocsp)
+        if send_ca_set_client is not None:
+            pulumi.set(__self__, "send_ca_set_client", send_ca_set_client)
+
+    @_builtins.property
+    @pulumi.getter(name="caSetId")
+    def ca_set_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The ID of the Certificate Authority (CA) set to use for mTLS.
+        """
+        return pulumi.get(self, "ca_set_id")
+
+    @ca_set_id.setter
+    def ca_set_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "ca_set_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="checkClientOcsp")
+    def check_client_ocsp(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether to check the client OCSP.
+        """
+        return pulumi.get(self, "check_client_ocsp")
+
+    @check_client_ocsp.setter
+    def check_client_ocsp(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "check_client_ocsp", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sendCaSetClient")
+    def send_ca_set_client(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether to send the CA set to the client.
+        """
+        return pulumi.get(self, "send_ca_set_client")
+
+    @send_ca_set_client.setter
+    def send_ca_set_client(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "send_ca_set_client", value)
+
+
+if not MYPY:
+    class PropertyHostnameTlsConfigurationArgsDict(TypedDict):
+        cipher_profile: pulumi.Input[_builtins.str]
+        """
+        The cipher profile to use for TLS connections.
+        """
+        disallowed_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        A list of TLS versions that are disallowed.
+        """
+        fips_mode: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates whether FIPS mode is enabled.
+        """
+        staple_server_ocsp_response: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates whether to staple the server OCSP response.
+        """
+elif False:
+    PropertyHostnameTlsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PropertyHostnameTlsConfigurationArgs:
+    def __init__(__self__, *,
+                 cipher_profile: pulumi.Input[_builtins.str],
+                 disallowed_tls_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 fips_mode: Optional[pulumi.Input[_builtins.bool]] = None,
+                 staple_server_ocsp_response: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cipher_profile: The cipher profile to use for TLS connections.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disallowed_tls_versions: A list of TLS versions that are disallowed.
+        :param pulumi.Input[_builtins.bool] fips_mode: Indicates whether FIPS mode is enabled.
+        :param pulumi.Input[_builtins.bool] staple_server_ocsp_response: Indicates whether to staple the server OCSP response.
+        """
+        pulumi.set(__self__, "cipher_profile", cipher_profile)
+        if disallowed_tls_versions is not None:
+            pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        if fips_mode is not None:
+            pulumi.set(__self__, "fips_mode", fips_mode)
+        if staple_server_ocsp_response is not None:
+            pulumi.set(__self__, "staple_server_ocsp_response", staple_server_ocsp_response)
+
+    @_builtins.property
+    @pulumi.getter(name="cipherProfile")
+    def cipher_profile(self) -> pulumi.Input[_builtins.str]:
+        """
+        The cipher profile to use for TLS connections.
+        """
+        return pulumi.get(self, "cipher_profile")
+
+    @cipher_profile.setter
+    def cipher_profile(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cipher_profile", value)
+
+    @_builtins.property
+    @pulumi.getter(name="disallowedTlsVersions")
+    def disallowed_tls_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of TLS versions that are disallowed.
+        """
+        return pulumi.get(self, "disallowed_tls_versions")
+
+    @disallowed_tls_versions.setter
+    def disallowed_tls_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "disallowed_tls_versions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsMode")
+    def fips_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether FIPS mode is enabled.
+        """
+        return pulumi.get(self, "fips_mode")
+
+    @fips_mode.setter
+    def fips_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "fips_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="stapleServerOcspResponse")
+    def staple_server_ocsp_response(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether to staple the server OCSP response.
+        """
+        return pulumi.get(self, "staple_server_ocsp_response")
+
+    @staple_server_ocsp_response.setter
+    def staple_server_ocsp_response(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "staple_server_ocsp_response", value)
 
 
 if not MYPY:

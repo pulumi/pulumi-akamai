@@ -126,6 +126,7 @@ __all__ = [
     'PropertyDomainownershipDomainsDomainValidationChallengeHttpFile',
     'PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect',
     'PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord',
+    'PropertyDomainownershipLateValidationTimeouts',
     'PropertyDomainownershipValidationDomain',
     'PropertyDomainownershipValidationTimeouts',
     'PropertyHostname',
@@ -133,6 +134,8 @@ __all__ = [
     'PropertyHostnameCcmCertStatus',
     'PropertyHostnameCcmCertificates',
     'PropertyHostnameCertStatus',
+    'PropertyHostnameMtls',
+    'PropertyHostnameTlsConfiguration',
     'PropertyIncludeActivationComplianceRecord',
     'PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency',
     'PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic',
@@ -467,6 +470,7 @@ __all__ = [
     'GetMtlstruststoreCaSetsCaSetResult',
     'GetPropertiesPropertyResult',
     'GetPropertiesSearchPropertyResult',
+    'GetPropertyAccountHostnamesHostnameResult',
     'GetPropertyDomainownershipDomainDomainStatusHistoryResult',
     'GetPropertyDomainownershipDomainValidationChallengeResult',
     'GetPropertyDomainownershipDomainValidationChallengeCnameRecordResult',
@@ -487,11 +491,22 @@ __all__ = [
     'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordResult',
     'GetPropertyHostnameActivationHostnameResult',
     'GetPropertyHostnameActivationsHostnameActivationResult',
+    'GetPropertyHostnameAuditHistoryHistoryResult',
     'GetPropertyHostnamesDiffHostnameResult',
     'GetPropertyHostnamesHostnameResult',
     'GetPropertyHostnamesHostnameBucketResult',
     'GetPropertyHostnamesHostnameBucketCertStatusResult',
+    'GetPropertyHostnamesHostnameCcmCertStatusResult',
+    'GetPropertyHostnamesHostnameCcmCertificateResult',
     'GetPropertyHostnamesHostnameCertStatusResult',
+    'GetPropertyHostnamesHostnameDomainOwnershipVerificationResult',
+    'GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCnameResult',
+    'GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpResult',
+    'GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethodResult',
+    'GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethodResult',
+    'GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxtResult',
+    'GetPropertyHostnamesHostnameMtlResult',
+    'GetPropertyHostnamesHostnameTlsConfigurationResult',
     'GetPropertyIncludeParentsParentResult',
     'GetPropertyIncludesIncludeResult',
     'GetPropertyIncludesParentPropertyResult',
@@ -9295,16 +9310,47 @@ class PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord(dict):
 
 
 @pulumi.output_type
+class PropertyDomainownershipLateValidationTimeouts(dict):
+    def __init__(__self__, *,
+                 create: Optional[_builtins.str] = None,
+                 update: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str create: Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+        :param _builtins.str update: Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+        """
+        return pulumi.get(self, "create")
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+        """
+        return pulumi.get(self, "update")
+
+
+@pulumi.output_type
 class PropertyDomainownershipValidationDomain(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
         if key == "domainName":
             suggest = "domain_name"
-        elif key == "validationScope":
-            suggest = "validation_scope"
         elif key == "validationMethod":
             suggest = "validation_method"
+        elif key == "validationScope":
+            suggest = "validation_scope"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PropertyDomainownershipValidationDomain. Access the value via the '{suggest}' property getter instead.")
@@ -9319,23 +9365,22 @@ class PropertyDomainownershipValidationDomain(dict):
 
     def __init__(__self__, *,
                  domain_name: _builtins.str,
-                 validation_scope: _builtins.str,
-                 validation_method: Optional[_builtins.str] = None):
+                 validation_method: _builtins.str,
+                 validation_scope: _builtins.str):
         """
         :param _builtins.str domain_name: Your domain's name.
-        :param _builtins.str validation_scope: Your domain's validation scope. Possible values are: 
-               * `HOST` - The scope is only the exactly specified domain.
-               * `WILDCARD` - The scope covers any hostname within one subdomain level.
-               * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
         :param _builtins.str validation_method: The method used to validate the domain. Possible values are: 
                * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
                * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
                * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        :param _builtins.str validation_scope: Your domain's validation scope. Possible values are: 
+               * `HOST` - The scope is only the exactly specified domain.
+               * `WILDCARD` - The scope covers any hostname within one subdomain level.
+               * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
         """
         pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "validation_method", validation_method)
         pulumi.set(__self__, "validation_scope", validation_scope)
-        if validation_method is not None:
-            pulumi.set(__self__, "validation_method", validation_method)
 
     @_builtins.property
     @pulumi.getter(name="domainName")
@@ -9344,6 +9389,17 @@ class PropertyDomainownershipValidationDomain(dict):
         Your domain's name.
         """
         return pulumi.get(self, "domain_name")
+
+    @_builtins.property
+    @pulumi.getter(name="validationMethod")
+    def validation_method(self) -> _builtins.str:
+        """
+        The method used to validate the domain. Possible values are: 
+        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        """
+        return pulumi.get(self, "validation_method")
 
     @_builtins.property
     @pulumi.getter(name="validationScope")
@@ -9355,17 +9411,6 @@ class PropertyDomainownershipValidationDomain(dict):
         * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
         """
         return pulumi.get(self, "validation_scope")
-
-    @_builtins.property
-    @pulumi.getter(name="validationMethod")
-    def validation_method(self) -> Optional[_builtins.str]:
-        """
-        The method used to validate the domain. Possible values are: 
-        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-        """
-        return pulumi.get(self, "validation_method")
 
 
 @pulumi.output_type
@@ -9420,6 +9465,8 @@ class PropertyHostname(dict):
             suggest = "cname_type"
         elif key == "edgeHostnameId":
             suggest = "edge_hostname_id"
+        elif key == "tlsConfiguration":
+            suggest = "tls_configuration"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PropertyHostname. Access the value via the '{suggest}' property getter instead.")
@@ -9440,10 +9487,14 @@ class PropertyHostname(dict):
                  ccm_certificates: Optional['outputs.PropertyHostnameCcmCertificates'] = None,
                  cert_statuses: Optional[Sequence['outputs.PropertyHostnameCertStatus']] = None,
                  cname_type: Optional[_builtins.str] = None,
-                 edge_hostname_id: Optional[_builtins.str] = None):
+                 edge_hostname_id: Optional[_builtins.str] = None,
+                 mtls: Optional['outputs.PropertyHostnameMtls'] = None,
+                 tls_configuration: Optional['outputs.PropertyHostnameTlsConfiguration'] = None):
         """
         :param Sequence['PropertyHostnameCcmCertStatusArgs'] ccm_cert_statuses: Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
         :param 'PropertyHostnameCcmCertificatesArgs' ccm_certificates: Certificate identifiers and links for the CCM-managed certificates.
+        :param 'PropertyHostnameMtlsArgs' mtls: Optional mutual TLS settings for the CCM hostnames.
+        :param 'PropertyHostnameTlsConfigurationArgs' tls_configuration: Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
         """
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cname_from", cname_from)
@@ -9458,6 +9509,10 @@ class PropertyHostname(dict):
             pulumi.set(__self__, "cname_type", cname_type)
         if edge_hostname_id is not None:
             pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+        if mtls is not None:
+            pulumi.set(__self__, "mtls", mtls)
+        if tls_configuration is not None:
+            pulumi.set(__self__, "tls_configuration", tls_configuration)
 
     @_builtins.property
     @pulumi.getter(name="certProvisioningType")
@@ -9504,6 +9559,22 @@ class PropertyHostname(dict):
     @pulumi.getter(name="edgeHostnameId")
     def edge_hostname_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "edge_hostname_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def mtls(self) -> Optional['outputs.PropertyHostnameMtls']:
+        """
+        Optional mutual TLS settings for the CCM hostnames.
+        """
+        return pulumi.get(self, "mtls")
+
+    @_builtins.property
+    @pulumi.getter(name="tlsConfiguration")
+    def tls_configuration(self) -> Optional['outputs.PropertyHostnameTlsConfiguration']:
+        """
+        Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+        """
+        return pulumi.get(self, "tls_configuration")
 
 
 @pulumi.output_type
@@ -9768,6 +9839,146 @@ class PropertyHostnameCertStatus(dict):
         The destination part of the CNAME record used to validate the certificate's domain.
         """
         return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class PropertyHostnameMtls(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "caSetId":
+            suggest = "ca_set_id"
+        elif key == "checkClientOcsp":
+            suggest = "check_client_ocsp"
+        elif key == "sendCaSetClient":
+            suggest = "send_ca_set_client"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyHostnameMtls. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyHostnameMtls.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyHostnameMtls.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ca_set_id: _builtins.str,
+                 check_client_ocsp: Optional[_builtins.bool] = None,
+                 send_ca_set_client: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str ca_set_id: The ID of the Certificate Authority (CA) set to use for mTLS.
+        :param _builtins.bool check_client_ocsp: Indicates whether to check the client OCSP.
+        :param _builtins.bool send_ca_set_client: Indicates whether to send the CA set to the client.
+        """
+        pulumi.set(__self__, "ca_set_id", ca_set_id)
+        if check_client_ocsp is not None:
+            pulumi.set(__self__, "check_client_ocsp", check_client_ocsp)
+        if send_ca_set_client is not None:
+            pulumi.set(__self__, "send_ca_set_client", send_ca_set_client)
+
+    @_builtins.property
+    @pulumi.getter(name="caSetId")
+    def ca_set_id(self) -> _builtins.str:
+        """
+        The ID of the Certificate Authority (CA) set to use for mTLS.
+        """
+        return pulumi.get(self, "ca_set_id")
+
+    @_builtins.property
+    @pulumi.getter(name="checkClientOcsp")
+    def check_client_ocsp(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether to check the client OCSP.
+        """
+        return pulumi.get(self, "check_client_ocsp")
+
+    @_builtins.property
+    @pulumi.getter(name="sendCaSetClient")
+    def send_ca_set_client(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether to send the CA set to the client.
+        """
+        return pulumi.get(self, "send_ca_set_client")
+
+
+@pulumi.output_type
+class PropertyHostnameTlsConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cipherProfile":
+            suggest = "cipher_profile"
+        elif key == "disallowedTlsVersions":
+            suggest = "disallowed_tls_versions"
+        elif key == "fipsMode":
+            suggest = "fips_mode"
+        elif key == "stapleServerOcspResponse":
+            suggest = "staple_server_ocsp_response"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyHostnameTlsConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyHostnameTlsConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyHostnameTlsConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cipher_profile: _builtins.str,
+                 disallowed_tls_versions: Optional[Sequence[_builtins.str]] = None,
+                 fips_mode: Optional[_builtins.bool] = None,
+                 staple_server_ocsp_response: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str cipher_profile: The cipher profile to use for TLS connections.
+        :param Sequence[_builtins.str] disallowed_tls_versions: A list of TLS versions that are disallowed.
+        :param _builtins.bool fips_mode: Indicates whether FIPS mode is enabled.
+        :param _builtins.bool staple_server_ocsp_response: Indicates whether to staple the server OCSP response.
+        """
+        pulumi.set(__self__, "cipher_profile", cipher_profile)
+        if disallowed_tls_versions is not None:
+            pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        if fips_mode is not None:
+            pulumi.set(__self__, "fips_mode", fips_mode)
+        if staple_server_ocsp_response is not None:
+            pulumi.set(__self__, "staple_server_ocsp_response", staple_server_ocsp_response)
+
+    @_builtins.property
+    @pulumi.getter(name="cipherProfile")
+    def cipher_profile(self) -> _builtins.str:
+        """
+        The cipher profile to use for TLS connections.
+        """
+        return pulumi.get(self, "cipher_profile")
+
+    @_builtins.property
+    @pulumi.getter(name="disallowedTlsVersions")
+    def disallowed_tls_versions(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        A list of TLS versions that are disallowed.
+        """
+        return pulumi.get(self, "disallowed_tls_versions")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsMode")
+    def fips_mode(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether FIPS mode is enabled.
+        """
+        return pulumi.get(self, "fips_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="stapleServerOcspResponse")
+    def staple_server_ocsp_response(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether to staple the server OCSP response.
+        """
+        return pulumi.get(self, "staple_server_ocsp_response")
 
 
 @pulumi.output_type
@@ -18720,6 +18931,7 @@ class GetDatastreamsStreamsDetailResult(dict):
                  created_by: _builtins.str,
                  created_date: _builtins.str,
                  group_id: _builtins.int,
+                 integration_type: _builtins.str,
                  latest_version: _builtins.int,
                  modified_by: _builtins.str,
                  modified_date: _builtins.str,
@@ -18734,6 +18946,7 @@ class GetDatastreamsStreamsDetailResult(dict):
         :param _builtins.str created_by: The username who created the stream.
         :param _builtins.str created_date: The date and time when the stream was created.
         :param _builtins.int group_id: Identifies the group where the stream is created.
+        :param _builtins.str integration_type: The integration mode for the stream in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param _builtins.int latest_version: Identifies the latestVersion version of the stream.
         :param _builtins.str modified_by: The username who activated or deactivated the stream
         :param _builtins.str modified_date: The date and time when activation status was modified
@@ -18748,6 +18961,7 @@ class GetDatastreamsStreamsDetailResult(dict):
         pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "created_date", created_date)
         pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "integration_type", integration_type)
         pulumi.set(__self__, "latest_version", latest_version)
         pulumi.set(__self__, "modified_by", modified_by)
         pulumi.set(__self__, "modified_date", modified_date)
@@ -18789,6 +19003,14 @@ class GetDatastreamsStreamsDetailResult(dict):
         Identifies the group where the stream is created.
         """
         return pulumi.get(self, "group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="integrationType")
+    def integration_type(self) -> _builtins.str:
+        """
+        The integration mode for the stream in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+        """
+        return pulumi.get(self, "integration_type")
 
     @_builtins.property
     @pulumi.getter(name="latestVersion")
@@ -18866,14 +19088,25 @@ class GetDatastreamsStreamsDetailResult(dict):
 @pulumi.output_type
 class GetDatastreamsStreamsDetailPropertyResult(dict):
     def __init__(__self__, *,
+                 integration_type: _builtins.str,
                  property_id: _builtins.int,
                  property_name: _builtins.str):
         """
+        :param _builtins.str integration_type: The integration mode for the property in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED).
         :param _builtins.int property_id: The identifier of the property.
         :param _builtins.str property_name: The descriptive label for the property.
         """
+        pulumi.set(__self__, "integration_type", integration_type)
         pulumi.set(__self__, "property_id", property_id)
         pulumi.set(__self__, "property_name", property_name)
+
+    @_builtins.property
+    @pulumi.getter(name="integrationType")
+    def integration_type(self) -> _builtins.str:
+        """
+        The integration mode for the property in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED).
+        """
+        return pulumi.get(self, "integration_type")
 
     @_builtins.property
     @pulumi.getter(name="propertyId")
@@ -33967,6 +34200,200 @@ class GetPropertiesSearchPropertyResult(dict):
 
 
 @pulumi.output_type
+class GetPropertyAccountHostnamesHostnameResult(dict):
+    def __init__(__self__, *,
+                 cname_from: _builtins.str,
+                 contract_id: _builtins.str,
+                 group_id: _builtins.str,
+                 latest_version: _builtins.int,
+                 production_cert_type: _builtins.str,
+                 production_cname_to: _builtins.str,
+                 production_cname_type: _builtins.str,
+                 production_edge_hostname_id: _builtins.str,
+                 production_product_id: _builtins.str,
+                 property_id: _builtins.str,
+                 property_name: _builtins.str,
+                 property_type: _builtins.str,
+                 staging_cert_type: _builtins.str,
+                 staging_cname_to: _builtins.str,
+                 staging_cname_type: _builtins.str,
+                 staging_edge_hostname_id: _builtins.str,
+                 staging_product_id: _builtins.str):
+        """
+        :param _builtins.str cname_from: The hostname that your end users see, indicated by the Host header in end user requests.
+        :param _builtins.str contract_id: Identifies the prevailing contract under which you requested the data.
+        :param _builtins.str group_id: Identifies the prevailing group under which you requested the data.
+        :param _builtins.int latest_version: Specifies the most recent version of the property.
+        :param _builtins.str production_cert_type: Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        :param _builtins.str production_cname_to: The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
+        :param _builtins.str production_cname_type: Indicates the type of CNAME you used in the production network, either `EDGE_HOSTNAME` or `CUSTOM`.
+        :param _builtins.str production_edge_hostname_id: Identifies the edge hostname you mapped your traffic to on the production network.
+        :param _builtins.str production_product_id: Identifies the product association on the network.
+        :param _builtins.str property_id: Unique identifier for the property.
+        :param _builtins.str property_name: A unique, descriptive name for the property.
+        :param _builtins.str property_type: Specifies the type of the property. Either `TRADITIONAL` for properties where you pair property hostnames with the property version, or `HOSTNAME_BUCKET` where you manage property hostnames independently of the property version.
+        :param _builtins.str staging_cert_type: Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        :param _builtins.str staging_cname_to: The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
+        :param _builtins.str staging_cname_type: Indicates the type of CNAME you used in the staging network, either `EDGE_HOSTNAME` or `CUSTOM`.
+        :param _builtins.str staging_edge_hostname_id: Identifies the edge hostname you mapped your traffic to on the staging network.
+        :param _builtins.str staging_product_id: Identifies the product association on the network.
+        """
+        pulumi.set(__self__, "cname_from", cname_from)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "latest_version", latest_version)
+        pulumi.set(__self__, "production_cert_type", production_cert_type)
+        pulumi.set(__self__, "production_cname_to", production_cname_to)
+        pulumi.set(__self__, "production_cname_type", production_cname_type)
+        pulumi.set(__self__, "production_edge_hostname_id", production_edge_hostname_id)
+        pulumi.set(__self__, "production_product_id", production_product_id)
+        pulumi.set(__self__, "property_id", property_id)
+        pulumi.set(__self__, "property_name", property_name)
+        pulumi.set(__self__, "property_type", property_type)
+        pulumi.set(__self__, "staging_cert_type", staging_cert_type)
+        pulumi.set(__self__, "staging_cname_to", staging_cname_to)
+        pulumi.set(__self__, "staging_cname_type", staging_cname_type)
+        pulumi.set(__self__, "staging_edge_hostname_id", staging_edge_hostname_id)
+        pulumi.set(__self__, "staging_product_id", staging_product_id)
+
+    @_builtins.property
+    @pulumi.getter(name="cnameFrom")
+    def cname_from(self) -> _builtins.str:
+        """
+        The hostname that your end users see, indicated by the Host header in end user requests.
+        """
+        return pulumi.get(self, "cname_from")
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        Identifies the prevailing contract under which you requested the data.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.str:
+        """
+        Identifies the prevailing group under which you requested the data.
+        """
+        return pulumi.get(self, "group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> _builtins.int:
+        """
+        Specifies the most recent version of the property.
+        """
+        return pulumi.get(self, "latest_version")
+
+    @_builtins.property
+    @pulumi.getter(name="productionCertType")
+    def production_cert_type(self) -> _builtins.str:
+        """
+        Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        """
+        return pulumi.get(self, "production_cert_type")
+
+    @_builtins.property
+    @pulumi.getter(name="productionCnameTo")
+    def production_cname_to(self) -> _builtins.str:
+        """
+        The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
+        """
+        return pulumi.get(self, "production_cname_to")
+
+    @_builtins.property
+    @pulumi.getter(name="productionCnameType")
+    def production_cname_type(self) -> _builtins.str:
+        """
+        Indicates the type of CNAME you used in the production network, either `EDGE_HOSTNAME` or `CUSTOM`.
+        """
+        return pulumi.get(self, "production_cname_type")
+
+    @_builtins.property
+    @pulumi.getter(name="productionEdgeHostnameId")
+    def production_edge_hostname_id(self) -> _builtins.str:
+        """
+        Identifies the edge hostname you mapped your traffic to on the production network.
+        """
+        return pulumi.get(self, "production_edge_hostname_id")
+
+    @_builtins.property
+    @pulumi.getter(name="productionProductId")
+    def production_product_id(self) -> _builtins.str:
+        """
+        Identifies the product association on the network.
+        """
+        return pulumi.get(self, "production_product_id")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> _builtins.str:
+        """
+        Unique identifier for the property.
+        """
+        return pulumi.get(self, "property_id")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> _builtins.str:
+        """
+        A unique, descriptive name for the property.
+        """
+        return pulumi.get(self, "property_name")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> _builtins.str:
+        """
+        Specifies the type of the property. Either `TRADITIONAL` for properties where you pair property hostnames with the property version, or `HOSTNAME_BUCKET` where you manage property hostnames independently of the property version.
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingCertType")
+    def staging_cert_type(self) -> _builtins.str:
+        """
+        Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        """
+        return pulumi.get(self, "staging_cert_type")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingCnameTo")
+    def staging_cname_to(self) -> _builtins.str:
+        """
+        The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
+        """
+        return pulumi.get(self, "staging_cname_to")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingCnameType")
+    def staging_cname_type(self) -> _builtins.str:
+        """
+        Indicates the type of CNAME you used in the staging network, either `EDGE_HOSTNAME` or `CUSTOM`.
+        """
+        return pulumi.get(self, "staging_cname_type")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingEdgeHostnameId")
+    def staging_edge_hostname_id(self) -> _builtins.str:
+        """
+        Identifies the edge hostname you mapped your traffic to on the staging network.
+        """
+        return pulumi.get(self, "staging_edge_hostname_id")
+
+    @_builtins.property
+    @pulumi.getter(name="stagingProductId")
+    def staging_product_id(self) -> _builtins.str:
+        """
+        Identifies the product association on the network.
+        """
+        return pulumi.get(self, "staging_product_id")
+
+
+@pulumi.output_type
 class GetPropertyDomainownershipDomainDomainStatusHistoryResult(dict):
     def __init__(__self__, *,
                  domain_status: _builtins.str,
@@ -35017,6 +35444,149 @@ class GetPropertyHostnameActivationsHostnameActivationResult(dict):
 
 
 @pulumi.output_type
+class GetPropertyHostnameAuditHistoryHistoryResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 cert_provisioning_type: _builtins.str,
+                 cname_to: _builtins.str,
+                 contract_id: _builtins.str,
+                 edge_hostname_id: _builtins.str,
+                 group_id: _builtins.str,
+                 network: _builtins.str,
+                 property_id: _builtins.str,
+                 timestamp: _builtins.str,
+                 user: _builtins.str):
+        """
+        :param _builtins.str action: The type of action performed to the property hostname. Possible values are: 
+               * `ACTIVATE` - When the hostname is currently serving traffic.
+               * `DEACTIVATE` - When the hostname isn't serving traffic.
+               * `ADD` - When the user requested to add the hostname to a property.
+               * `REMOVE` - When the user requested to remove the hostname from a property.
+               * `MOVE` - When the hostname was moved from one property to another.
+               * `MODIFY` - When the user changed the edgeHostnameId or certProvisioningType values for an already-activated hostname.
+               * `ABORTED` - When the user request to cancel the hostname activation.
+               * `ERROR` - When the hostname activation failed.
+        :param _builtins.str cert_provisioning_type: The type of certificate used in the property hostname. Possible values are: 
+               * `CPS_MANAGED` - For certificates you create with the Certificate Provisioning System API (CPS).
+               * `DEFAULT` - For Default Domain Validation (DV) certificates deployed automatically.
+               * `CCM` - For the third party certificates created with the Cloud Certificate Manager.
+        :param _builtins.str cname_to: The edge hostname that the hostname points to.
+        :param _builtins.str contract_id: Identifies the prevailing contract under which the data was requested.
+        :param _builtins.str edge_hostname_id: Id of the edge hostname the hostname points to.
+        :param _builtins.str group_id: Identifies the group under which the property is activated.
+        :param _builtins.str network: The network of activated hostnames. Possible values are: 
+               * `STAGING` - Staging network.
+               * `PRODUCTION` - Production network.
+        :param _builtins.str property_id: Unique identifier for the property.
+        :param _builtins.str timestamp: Indicates when the action occurred.
+        :param _builtins.str user: The user who initiated the action.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
+        pulumi.set(__self__, "cname_to", cname_to)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "network", network)
+        pulumi.set(__self__, "property_id", property_id)
+        pulumi.set(__self__, "timestamp", timestamp)
+        pulumi.set(__self__, "user", user)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        The type of action performed to the property hostname. Possible values are: 
+        * `ACTIVATE` - When the hostname is currently serving traffic.
+        * `DEACTIVATE` - When the hostname isn't serving traffic.
+        * `ADD` - When the user requested to add the hostname to a property.
+        * `REMOVE` - When the user requested to remove the hostname from a property.
+        * `MOVE` - When the hostname was moved from one property to another.
+        * `MODIFY` - When the user changed the edgeHostnameId or certProvisioningType values for an already-activated hostname.
+        * `ABORTED` - When the user request to cancel the hostname activation.
+        * `ERROR` - When the hostname activation failed.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="certProvisioningType")
+    def cert_provisioning_type(self) -> _builtins.str:
+        """
+        The type of certificate used in the property hostname. Possible values are: 
+        * `CPS_MANAGED` - For certificates you create with the Certificate Provisioning System API (CPS).
+        * `DEFAULT` - For Default Domain Validation (DV) certificates deployed automatically.
+        * `CCM` - For the third party certificates created with the Cloud Certificate Manager.
+        """
+        return pulumi.get(self, "cert_provisioning_type")
+
+    @_builtins.property
+    @pulumi.getter(name="cnameTo")
+    def cname_to(self) -> _builtins.str:
+        """
+        The edge hostname that the hostname points to.
+        """
+        return pulumi.get(self, "cname_to")
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        Identifies the prevailing contract under which the data was requested.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="edgeHostnameId")
+    def edge_hostname_id(self) -> _builtins.str:
+        """
+        Id of the edge hostname the hostname points to.
+        """
+        return pulumi.get(self, "edge_hostname_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.str:
+        """
+        Identifies the group under which the property is activated.
+        """
+        return pulumi.get(self, "group_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def network(self) -> _builtins.str:
+        """
+        The network of activated hostnames. Possible values are: 
+        * `STAGING` - Staging network.
+        * `PRODUCTION` - Production network.
+        """
+        return pulumi.get(self, "network")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> _builtins.str:
+        """
+        Unique identifier for the property.
+        """
+        return pulumi.get(self, "property_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def timestamp(self) -> _builtins.str:
+        """
+        Indicates when the action occurred.
+        """
+        return pulumi.get(self, "timestamp")
+
+    @_builtins.property
+    @pulumi.getter
+    def user(self) -> _builtins.str:
+        """
+        The user who initiated the action.
+        """
+        return pulumi.get(self, "user")
+
+
+@pulumi.output_type
 class GetPropertyHostnamesDiffHostnameResult(dict):
     def __init__(__self__, *,
                  cname_from: _builtins.str,
@@ -35030,11 +35600,11 @@ class GetPropertyHostnamesDiffHostnameResult(dict):
                  staging_edge_hostname_id: _builtins.str):
         """
         :param _builtins.str cname_from: The hostname that your end users see, indicated by the Host header in end user requests.
-        :param _builtins.str production_cert_provisioning_type: Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        :param _builtins.str production_cert_provisioning_type: Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
         :param _builtins.str production_cname_to: The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
         :param _builtins.str production_cname_type: A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
         :param _builtins.str production_edge_hostname_id: The unique identifier for the edge hostname.
-        :param _builtins.str staging_cert_provisioning_type: Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        :param _builtins.str staging_cert_provisioning_type: Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
         :param _builtins.str staging_cname_to: The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
         :param _builtins.str staging_cname_type: A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
         :param _builtins.str staging_edge_hostname_id: The unique identifier for the edge hostname.
@@ -35061,7 +35631,7 @@ class GetPropertyHostnamesDiffHostnameResult(dict):
     @pulumi.getter(name="productionCertProvisioningType")
     def production_cert_provisioning_type(self) -> _builtins.str:
         """
-        Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
         """
         return pulumi.get(self, "production_cert_provisioning_type")
 
@@ -35093,7 +35663,7 @@ class GetPropertyHostnamesDiffHostnameResult(dict):
     @pulumi.getter(name="stagingCertProvisioningType")
     def staging_cert_provisioning_type(self) -> _builtins.str:
         """
-        Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
         """
         return pulumi.get(self, "staging_cert_provisioning_type")
 
@@ -35125,31 +35695,62 @@ class GetPropertyHostnamesDiffHostnameResult(dict):
 @pulumi.output_type
 class GetPropertyHostnamesHostnameResult(dict):
     def __init__(__self__, *,
+                 ccm_cert_statuses: Sequence['outputs.GetPropertyHostnamesHostnameCcmCertStatusResult'],
+                 ccm_certificates: Sequence['outputs.GetPropertyHostnamesHostnameCcmCertificateResult'],
                  cert_provisioning_type: _builtins.str,
                  cert_statuses: Sequence['outputs.GetPropertyHostnamesHostnameCertStatusResult'],
                  cname_from: _builtins.str,
                  cname_to: _builtins.str,
                  cname_type: _builtins.str,
-                 edge_hostname_id: _builtins.str):
+                 domain_ownership_verifications: Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationResult'],
+                 edge_hostname_id: _builtins.str,
+                 mtls: Sequence['outputs.GetPropertyHostnamesHostnameMtlResult'],
+                 tls_configurations: Sequence['outputs.GetPropertyHostnamesHostnameTlsConfigurationResult']):
         """
-        :param _builtins.str cert_provisioning_type: Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        :param Sequence['GetPropertyHostnamesHostnameCcmCertStatusArgs'] ccm_cert_statuses: CCM certificate deployment status for RSA and ECDSA certificates.
+        :param Sequence['GetPropertyHostnamesHostnameCcmCertificateArgs'] ccm_certificates: Identifiers for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        :param _builtins.str cert_provisioning_type: Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
         :param _builtins.str cname_from: The hostname that your end users see, indicated by the Host header in end user requests.
         :param _builtins.str cname_to: The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
         :param _builtins.str cname_type: A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
+        :param Sequence['GetPropertyHostnamesHostnameDomainOwnershipVerificationArgs'] domain_ownership_verifications: Domain ownership verification details for the hostname.
         :param _builtins.str edge_hostname_id: The unique identifier for the edge hostname.
+        :param Sequence['GetPropertyHostnamesHostnameMtlArgs'] mtls: Mutual TLS configuration for the hostnames created with Cloud Certificate Manager (CCM).
+        :param Sequence['GetPropertyHostnamesHostnameTlsConfigurationArgs'] tls_configurations: TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
         """
+        pulumi.set(__self__, "ccm_cert_statuses", ccm_cert_statuses)
+        pulumi.set(__self__, "ccm_certificates", ccm_certificates)
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cert_statuses", cert_statuses)
         pulumi.set(__self__, "cname_from", cname_from)
         pulumi.set(__self__, "cname_to", cname_to)
         pulumi.set(__self__, "cname_type", cname_type)
+        pulumi.set(__self__, "domain_ownership_verifications", domain_ownership_verifications)
         pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+        pulumi.set(__self__, "mtls", mtls)
+        pulumi.set(__self__, "tls_configurations", tls_configurations)
+
+    @_builtins.property
+    @pulumi.getter(name="ccmCertStatuses")
+    def ccm_cert_statuses(self) -> Sequence['outputs.GetPropertyHostnamesHostnameCcmCertStatusResult']:
+        """
+        CCM certificate deployment status for RSA and ECDSA certificates.
+        """
+        return pulumi.get(self, "ccm_cert_statuses")
+
+    @_builtins.property
+    @pulumi.getter(name="ccmCertificates")
+    def ccm_certificates(self) -> Sequence['outputs.GetPropertyHostnamesHostnameCcmCertificateResult']:
+        """
+        Identifiers for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        """
+        return pulumi.get(self, "ccm_certificates")
 
     @_builtins.property
     @pulumi.getter(name="certProvisioningType")
     def cert_provisioning_type(self) -> _builtins.str:
         """
-        Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
         """
         return pulumi.get(self, "cert_provisioning_type")
 
@@ -35183,12 +35784,36 @@ class GetPropertyHostnamesHostnameResult(dict):
         return pulumi.get(self, "cname_type")
 
     @_builtins.property
+    @pulumi.getter(name="domainOwnershipVerifications")
+    def domain_ownership_verifications(self) -> Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationResult']:
+        """
+        Domain ownership verification details for the hostname.
+        """
+        return pulumi.get(self, "domain_ownership_verifications")
+
+    @_builtins.property
     @pulumi.getter(name="edgeHostnameId")
     def edge_hostname_id(self) -> _builtins.str:
         """
         The unique identifier for the edge hostname.
         """
         return pulumi.get(self, "edge_hostname_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def mtls(self) -> Sequence['outputs.GetPropertyHostnamesHostnameMtlResult']:
+        """
+        Mutual TLS configuration for the hostnames created with Cloud Certificate Manager (CCM).
+        """
+        return pulumi.get(self, "mtls")
+
+    @_builtins.property
+    @pulumi.getter(name="tlsConfigurations")
+    def tls_configurations(self) -> Sequence['outputs.GetPropertyHostnamesHostnameTlsConfigurationResult']:
+        """
+        TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+        """
+        return pulumi.get(self, "tls_configurations")
 
 
 @pulumi.output_type
@@ -35345,6 +35970,86 @@ class GetPropertyHostnamesHostnameBucketCertStatusResult(dict):
 
 
 @pulumi.output_type
+class GetPropertyHostnamesHostnameCcmCertStatusResult(dict):
+    def __init__(__self__, *,
+                 ecdsa_production_status: _builtins.str,
+                 ecdsa_staging_status: _builtins.str,
+                 rsa_production_status: _builtins.str,
+                 rsa_staging_status: _builtins.str):
+        """
+        :param _builtins.str ecdsa_production_status: Status of the ECDSA certificate on production network.
+        :param _builtins.str ecdsa_staging_status: Status of the ECDSA certificate on staging network.
+        :param _builtins.str rsa_production_status: Status of the RSA certificate on production network.
+        :param _builtins.str rsa_staging_status: Status of the RSA certificate on staging network.
+        """
+        pulumi.set(__self__, "ecdsa_production_status", ecdsa_production_status)
+        pulumi.set(__self__, "ecdsa_staging_status", ecdsa_staging_status)
+        pulumi.set(__self__, "rsa_production_status", rsa_production_status)
+        pulumi.set(__self__, "rsa_staging_status", rsa_staging_status)
+
+    @_builtins.property
+    @pulumi.getter(name="ecdsaProductionStatus")
+    def ecdsa_production_status(self) -> _builtins.str:
+        """
+        Status of the ECDSA certificate on production network.
+        """
+        return pulumi.get(self, "ecdsa_production_status")
+
+    @_builtins.property
+    @pulumi.getter(name="ecdsaStagingStatus")
+    def ecdsa_staging_status(self) -> _builtins.str:
+        """
+        Status of the ECDSA certificate on staging network.
+        """
+        return pulumi.get(self, "ecdsa_staging_status")
+
+    @_builtins.property
+    @pulumi.getter(name="rsaProductionStatus")
+    def rsa_production_status(self) -> _builtins.str:
+        """
+        Status of the RSA certificate on production network.
+        """
+        return pulumi.get(self, "rsa_production_status")
+
+    @_builtins.property
+    @pulumi.getter(name="rsaStagingStatus")
+    def rsa_staging_status(self) -> _builtins.str:
+        """
+        Status of the RSA certificate on staging network.
+        """
+        return pulumi.get(self, "rsa_staging_status")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameCcmCertificateResult(dict):
+    def __init__(__self__, *,
+                 ecdsa_cert_id: _builtins.str,
+                 rsa_cert_id: _builtins.str):
+        """
+        :param _builtins.str ecdsa_cert_id: Certificate ID for ECDSA.
+        :param _builtins.str rsa_cert_id: Certificate ID for RSA.
+        """
+        pulumi.set(__self__, "ecdsa_cert_id", ecdsa_cert_id)
+        pulumi.set(__self__, "rsa_cert_id", rsa_cert_id)
+
+    @_builtins.property
+    @pulumi.getter(name="ecdsaCertId")
+    def ecdsa_cert_id(self) -> _builtins.str:
+        """
+        Certificate ID for ECDSA.
+        """
+        return pulumi.get(self, "ecdsa_cert_id")
+
+    @_builtins.property
+    @pulumi.getter(name="rsaCertId")
+    def rsa_cert_id(self) -> _builtins.str:
+        """
+        Certificate ID for RSA.
+        """
+        return pulumi.get(self, "rsa_cert_id")
+
+
+@pulumi.output_type
 class GetPropertyHostnamesHostnameCertStatusResult(dict):
     def __init__(__self__, *,
                  hostname: _builtins.str,
@@ -35393,6 +36098,304 @@ class GetPropertyHostnamesHostnameCertStatusResult(dict):
         The destination part of the CNAME record used to validate the certificate's domain.
         """
         return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameDomainOwnershipVerificationResult(dict):
+    def __init__(__self__, *,
+                 challenge_token_expiry_date: _builtins.str,
+                 status: _builtins.str,
+                 validation_cnames: Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCnameResult'],
+                 validation_https: Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpResult'],
+                 validation_txts: Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxtResult']):
+        """
+        :param _builtins.str challenge_token_expiry_date: An ISO 8601 timestamp indicating when the domain validation challenge expires.
+        :param _builtins.str status: The status of the domain ownership verification. 'NOT_VALIDATED' means that the domain hasn't been validated yet. When you submit the domain for validation, the initial status is 'REQUEST_ACCEPTED', and then 'PENDING', when the domain is waiting for the validation to start. When it starts, the status changes to 'VALIDATION_IN_PROGRESS', and then to 'VALIDATED', when the validation is completed successfully. 'TOKEN_EXPIRED' means you haven't completed the validation in the requested time frame and you need to generate new validation challenges for the domain. If you no longer want a domain to be owned within Akamai, you can change the status to 'INVALIDATED'.
+        :param Sequence['GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCnameArgs'] validation_cnames: The CNAME record you copy to your DNS to prove you own the domain.
+        :param Sequence['GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpArgs'] validation_https: In the HTTP validation method, you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use a redirect URL with the token.
+        :param Sequence['GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxtArgs'] validation_txts: The TXT record with the challenge token that you add to your hostname's DNS zone to prove you own the domain.
+        """
+        pulumi.set(__self__, "challenge_token_expiry_date", challenge_token_expiry_date)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "validation_cnames", validation_cnames)
+        pulumi.set(__self__, "validation_https", validation_https)
+        pulumi.set(__self__, "validation_txts", validation_txts)
+
+    @_builtins.property
+    @pulumi.getter(name="challengeTokenExpiryDate")
+    def challenge_token_expiry_date(self) -> _builtins.str:
+        """
+        An ISO 8601 timestamp indicating when the domain validation challenge expires.
+        """
+        return pulumi.get(self, "challenge_token_expiry_date")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The status of the domain ownership verification. 'NOT_VALIDATED' means that the domain hasn't been validated yet. When you submit the domain for validation, the initial status is 'REQUEST_ACCEPTED', and then 'PENDING', when the domain is waiting for the validation to start. When it starts, the status changes to 'VALIDATION_IN_PROGRESS', and then to 'VALIDATED', when the validation is completed successfully. 'TOKEN_EXPIRED' means you haven't completed the validation in the requested time frame and you need to generate new validation challenges for the domain. If you no longer want a domain to be owned within Akamai, you can change the status to 'INVALIDATED'.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="validationCnames")
+    def validation_cnames(self) -> Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCnameResult']:
+        """
+        The CNAME record you copy to your DNS to prove you own the domain.
+        """
+        return pulumi.get(self, "validation_cnames")
+
+    @_builtins.property
+    @pulumi.getter(name="validationHttps")
+    def validation_https(self) -> Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpResult']:
+        """
+        In the HTTP validation method, you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use a redirect URL with the token.
+        """
+        return pulumi.get(self, "validation_https")
+
+    @_builtins.property
+    @pulumi.getter(name="validationTxts")
+    def validation_txts(self) -> Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxtResult']:
+        """
+        The TXT record with the challenge token that you add to your hostname's DNS zone to prove you own the domain.
+        """
+        return pulumi.get(self, "validation_txts")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCnameResult(dict):
+    def __init__(__self__, *,
+                 hostname: _builtins.str,
+                 target: _builtins.str):
+        """
+        :param _builtins.str hostname: The hostname part of the CNAME record that validates the domain ownership.
+        :param _builtins.str target: The destination part of the CNAME record that validates the domain ownership.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "target", target)
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> _builtins.str:
+        """
+        The hostname part of the CNAME record that validates the domain ownership.
+        """
+        return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> _builtins.str:
+        """
+        The destination part of the CNAME record that validates the domain ownership.
+        """
+        return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpResult(dict):
+    def __init__(__self__, *,
+                 file_content_methods: Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethodResult'],
+                 redirect_methods: Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethodResult']):
+        """
+        :param Sequence['GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethodArgs'] file_content_methods: Details for the file content method of validation.
+        :param Sequence['GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethodArgs'] redirect_methods: Details for the HTTP redirect method of validation.
+        """
+        pulumi.set(__self__, "file_content_methods", file_content_methods)
+        pulumi.set(__self__, "redirect_methods", redirect_methods)
+
+    @_builtins.property
+    @pulumi.getter(name="fileContentMethods")
+    def file_content_methods(self) -> Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethodResult']:
+        """
+        Details for the file content method of validation.
+        """
+        return pulumi.get(self, "file_content_methods")
+
+    @_builtins.property
+    @pulumi.getter(name="redirectMethods")
+    def redirect_methods(self) -> Sequence['outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethodResult']:
+        """
+        Details for the HTTP redirect method of validation.
+        """
+        return pulumi.get(self, "redirect_methods")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethodResult(dict):
+    def __init__(__self__, *,
+                 body: _builtins.str,
+                 url: _builtins.str):
+        """
+        :param _builtins.str body: The content of the file that you should place at the specified URL.
+        :param _builtins.str url: The URL where you should place the file containing the challenge token.
+        """
+        pulumi.set(__self__, "body", body)
+        pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def body(self) -> _builtins.str:
+        """
+        The content of the file that you should place at the specified URL.
+        """
+        return pulumi.get(self, "body")
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> _builtins.str:
+        """
+        The URL where you should place the file containing the challenge token.
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethodResult(dict):
+    def __init__(__self__, *,
+                 http_redirect_from: _builtins.str,
+                 http_redirect_to: _builtins.str):
+        """
+        :param _builtins.str http_redirect_from: The location on your HTTP server where you set up the redirect.
+        :param _builtins.str http_redirect_to: The redirect URL with the token that you place on your HTTP server.
+        """
+        pulumi.set(__self__, "http_redirect_from", http_redirect_from)
+        pulumi.set(__self__, "http_redirect_to", http_redirect_to)
+
+    @_builtins.property
+    @pulumi.getter(name="httpRedirectFrom")
+    def http_redirect_from(self) -> _builtins.str:
+        """
+        The location on your HTTP server where you set up the redirect.
+        """
+        return pulumi.get(self, "http_redirect_from")
+
+    @_builtins.property
+    @pulumi.getter(name="httpRedirectTo")
+    def http_redirect_to(self) -> _builtins.str:
+        """
+        The redirect URL with the token that you place on your HTTP server.
+        """
+        return pulumi.get(self, "http_redirect_to")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxtResult(dict):
+    def __init__(__self__, *,
+                 challenge_token: _builtins.str,
+                 hostname: _builtins.str):
+        """
+        :param _builtins.str challenge_token: A token you need to copy to the DNS TXT record that validates the domain ownership.
+        :param _builtins.str hostname: The hostname where you should add the TXT record to validate the domain ownership.
+        """
+        pulumi.set(__self__, "challenge_token", challenge_token)
+        pulumi.set(__self__, "hostname", hostname)
+
+    @_builtins.property
+    @pulumi.getter(name="challengeToken")
+    def challenge_token(self) -> _builtins.str:
+        """
+        A token you need to copy to the DNS TXT record that validates the domain ownership.
+        """
+        return pulumi.get(self, "challenge_token")
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> _builtins.str:
+        """
+        The hostname where you should add the TXT record to validate the domain ownership.
+        """
+        return pulumi.get(self, "hostname")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameMtlResult(dict):
+    def __init__(__self__, *,
+                 ca_set_id: _builtins.str,
+                 check_client_ocsp: _builtins.bool,
+                 send_ca_set_client: _builtins.bool):
+        """
+        :param _builtins.str ca_set_id: ID of the Client CA set used for mutual TLS.
+        :param _builtins.bool check_client_ocsp: Whether to check the OCSP status of the client certificate.
+        :param _builtins.bool send_ca_set_client: Whether to send the CA set to the client during the TLS handshake.
+        """
+        pulumi.set(__self__, "ca_set_id", ca_set_id)
+        pulumi.set(__self__, "check_client_ocsp", check_client_ocsp)
+        pulumi.set(__self__, "send_ca_set_client", send_ca_set_client)
+
+    @_builtins.property
+    @pulumi.getter(name="caSetId")
+    def ca_set_id(self) -> _builtins.str:
+        """
+        ID of the Client CA set used for mutual TLS.
+        """
+        return pulumi.get(self, "ca_set_id")
+
+    @_builtins.property
+    @pulumi.getter(name="checkClientOcsp")
+    def check_client_ocsp(self) -> _builtins.bool:
+        """
+        Whether to check the OCSP status of the client certificate.
+        """
+        return pulumi.get(self, "check_client_ocsp")
+
+    @_builtins.property
+    @pulumi.getter(name="sendCaSetClient")
+    def send_ca_set_client(self) -> _builtins.bool:
+        """
+        Whether to send the CA set to the client during the TLS handshake.
+        """
+        return pulumi.get(self, "send_ca_set_client")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameTlsConfigurationResult(dict):
+    def __init__(__self__, *,
+                 cipher_profile: _builtins.str,
+                 disallowed_tls_versions: Sequence[_builtins.str],
+                 fips_mode: _builtins.bool,
+                 staple_server_ocsp_response: _builtins.bool):
+        """
+        :param _builtins.str cipher_profile: Cipher profile name.
+        :param Sequence[_builtins.str] disallowed_tls_versions: List of TLS versions that are disallowed.
+        :param _builtins.bool fips_mode: Enable FIPS mode.
+        :param _builtins.bool staple_server_ocsp_response: Staple the OCSP response for the server certificate.
+        """
+        pulumi.set(__self__, "cipher_profile", cipher_profile)
+        pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        pulumi.set(__self__, "fips_mode", fips_mode)
+        pulumi.set(__self__, "staple_server_ocsp_response", staple_server_ocsp_response)
+
+    @_builtins.property
+    @pulumi.getter(name="cipherProfile")
+    def cipher_profile(self) -> _builtins.str:
+        """
+        Cipher profile name.
+        """
+        return pulumi.get(self, "cipher_profile")
+
+    @_builtins.property
+    @pulumi.getter(name="disallowedTlsVersions")
+    def disallowed_tls_versions(self) -> Sequence[_builtins.str]:
+        """
+        List of TLS versions that are disallowed.
+        """
+        return pulumi.get(self, "disallowed_tls_versions")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsMode")
+    def fips_mode(self) -> _builtins.bool:
+        """
+        Enable FIPS mode.
+        """
+        return pulumi.get(self, "fips_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="stapleServerOcspResponse")
+    def staple_server_ocsp_response(self) -> _builtins.bool:
+        """
+        Staple the OCSP response for the server certificate.
+        """
+        return pulumi.get(self, "staple_server_ocsp_response")
 
 
 @pulumi.output_type

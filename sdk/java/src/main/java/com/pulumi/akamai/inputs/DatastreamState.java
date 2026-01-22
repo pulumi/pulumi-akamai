@@ -196,6 +196,21 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+     * 
+     */
+    @Import(name="integrationType")
+    private @Nullable Output<String> integrationType;
+
+    /**
+     * @return The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+     * 
+     */
+    public Optional<Output<String>> integrationType() {
+        return Optional.ofNullable(this.integrationType);
+    }
+
+    /**
      * Identifies the latest active configuration version of the stream
      * 
      */
@@ -335,6 +350,21 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.s3Connector);
     }
 
+    /**
+     * The sample percentage of data that your stream will send to the destination
+     * 
+     */
+    @Import(name="samplingPercentage")
+    private @Nullable Output<Integer> samplingPercentage;
+
+    /**
+     * @return The sample percentage of data that your stream will send to the destination
+     * 
+     */
+    public Optional<Output<Integer>> samplingPercentage() {
+        return Optional.ofNullable(this.samplingPercentage);
+    }
+
     @Import(name="splunkConnector")
     private @Nullable Output<DatastreamSplunkConnectorArgs> splunkConnector;
 
@@ -403,6 +433,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         this.gcsConnector = $.gcsConnector;
         this.groupId = $.groupId;
         this.httpsConnector = $.httpsConnector;
+        this.integrationType = $.integrationType;
         this.latestVersion = $.latestVersion;
         this.logglyConnector = $.logglyConnector;
         this.modifiedBy = $.modifiedBy;
@@ -415,6 +446,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         this.properties = $.properties;
         this.s3CompatibleConnector = $.s3CompatibleConnector;
         this.s3Connector = $.s3Connector;
+        this.samplingPercentage = $.samplingPercentage;
         this.splunkConnector = $.splunkConnector;
         this.streamName = $.streamName;
         this.streamVersion = $.streamVersion;
@@ -673,6 +705,27 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param integrationType The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder integrationType(@Nullable Output<String> integrationType) {
+            $.integrationType = integrationType;
+            return this;
+        }
+
+        /**
+         * @param integrationType The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder integrationType(String integrationType) {
+            return integrationType(Output.of(integrationType));
+        }
+
+        /**
          * @param latestVersion Identifies the latest active configuration version of the stream
          * 
          * @return builder
@@ -882,6 +935,27 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
 
         public Builder s3Connector(DatastreamS3ConnectorArgs s3Connector) {
             return s3Connector(Output.of(s3Connector));
+        }
+
+        /**
+         * @param samplingPercentage The sample percentage of data that your stream will send to the destination
+         * 
+         * @return builder
+         * 
+         */
+        public Builder samplingPercentage(@Nullable Output<Integer> samplingPercentage) {
+            $.samplingPercentage = samplingPercentage;
+            return this;
+        }
+
+        /**
+         * @param samplingPercentage The sample percentage of data that your stream will send to the destination
+         * 
+         * @return builder
+         * 
+         */
+        public Builder samplingPercentage(Integer samplingPercentage) {
+            return samplingPercentage(Output.of(samplingPercentage));
         }
 
         public Builder splunkConnector(@Nullable Output<DatastreamSplunkConnectorArgs> splunkConnector) {

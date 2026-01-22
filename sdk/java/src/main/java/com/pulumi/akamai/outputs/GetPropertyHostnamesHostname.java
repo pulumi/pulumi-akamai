@@ -3,7 +3,12 @@
 
 package com.pulumi.akamai.outputs;
 
+import com.pulumi.akamai.outputs.GetPropertyHostnamesHostnameCcmCertStatus;
+import com.pulumi.akamai.outputs.GetPropertyHostnamesHostnameCcmCertificate;
 import com.pulumi.akamai.outputs.GetPropertyHostnamesHostnameCertStatus;
+import com.pulumi.akamai.outputs.GetPropertyHostnamesHostnameDomainOwnershipVerification;
+import com.pulumi.akamai.outputs.GetPropertyHostnamesHostnameMtl;
+import com.pulumi.akamai.outputs.GetPropertyHostnamesHostnameTlsConfiguration;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
@@ -13,7 +18,17 @@ import java.util.Objects;
 @CustomType
 public final class GetPropertyHostnamesHostname {
     /**
-     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * @return CCM certificate deployment status for RSA and ECDSA certificates.
+     * 
+     */
+    private List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatuses;
+    /**
+     * @return Identifiers for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     */
+    private List<GetPropertyHostnamesHostnameCcmCertificate> ccmCertificates;
+    /**
+     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
      * 
      */
     private String certProvisioningType;
@@ -34,14 +49,43 @@ public final class GetPropertyHostnamesHostname {
      */
     private String cnameType;
     /**
+     * @return Domain ownership verification details for the hostname.
+     * 
+     */
+    private List<GetPropertyHostnamesHostnameDomainOwnershipVerification> domainOwnershipVerifications;
+    /**
      * @return The unique identifier for the edge hostname.
      * 
      */
     private String edgeHostnameId;
+    /**
+     * @return Mutual TLS configuration for the hostnames created with Cloud Certificate Manager (CCM).
+     * 
+     */
+    private List<GetPropertyHostnamesHostnameMtl> mtls;
+    /**
+     * @return TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+     * 
+     */
+    private List<GetPropertyHostnamesHostnameTlsConfiguration> tlsConfigurations;
 
     private GetPropertyHostnamesHostname() {}
     /**
-     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+     * @return CCM certificate deployment status for RSA and ECDSA certificates.
+     * 
+     */
+    public List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatuses() {
+        return this.ccmCertStatuses;
+    }
+    /**
+     * @return Identifiers for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     */
+    public List<GetPropertyHostnamesHostnameCcmCertificate> ccmCertificates() {
+        return this.ccmCertificates;
+    }
+    /**
+     * @return Indicates the certificate&#39;s provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can&#39;t specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
      * 
      */
     public String certProvisioningType() {
@@ -72,11 +116,32 @@ public final class GetPropertyHostnamesHostname {
         return this.cnameType;
     }
     /**
+     * @return Domain ownership verification details for the hostname.
+     * 
+     */
+    public List<GetPropertyHostnamesHostnameDomainOwnershipVerification> domainOwnershipVerifications() {
+        return this.domainOwnershipVerifications;
+    }
+    /**
      * @return The unique identifier for the edge hostname.
      * 
      */
     public String edgeHostnameId() {
         return this.edgeHostnameId;
+    }
+    /**
+     * @return Mutual TLS configuration for the hostnames created with Cloud Certificate Manager (CCM).
+     * 
+     */
+    public List<GetPropertyHostnamesHostnameMtl> mtls() {
+        return this.mtls;
+    }
+    /**
+     * @return TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+     * 
+     */
+    public List<GetPropertyHostnamesHostnameTlsConfiguration> tlsConfigurations() {
+        return this.tlsConfigurations;
     }
 
     public static Builder builder() {
@@ -88,23 +153,55 @@ public final class GetPropertyHostnamesHostname {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatuses;
+        private List<GetPropertyHostnamesHostnameCcmCertificate> ccmCertificates;
         private String certProvisioningType;
         private List<GetPropertyHostnamesHostnameCertStatus> certStatuses;
         private String cnameFrom;
         private String cnameTo;
         private String cnameType;
+        private List<GetPropertyHostnamesHostnameDomainOwnershipVerification> domainOwnershipVerifications;
         private String edgeHostnameId;
+        private List<GetPropertyHostnamesHostnameMtl> mtls;
+        private List<GetPropertyHostnamesHostnameTlsConfiguration> tlsConfigurations;
         public Builder() {}
         public Builder(GetPropertyHostnamesHostname defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.ccmCertStatuses = defaults.ccmCertStatuses;
+    	      this.ccmCertificates = defaults.ccmCertificates;
     	      this.certProvisioningType = defaults.certProvisioningType;
     	      this.certStatuses = defaults.certStatuses;
     	      this.cnameFrom = defaults.cnameFrom;
     	      this.cnameTo = defaults.cnameTo;
     	      this.cnameType = defaults.cnameType;
+    	      this.domainOwnershipVerifications = defaults.domainOwnershipVerifications;
     	      this.edgeHostnameId = defaults.edgeHostnameId;
+    	      this.mtls = defaults.mtls;
+    	      this.tlsConfigurations = defaults.tlsConfigurations;
         }
 
+        @CustomType.Setter
+        public Builder ccmCertStatuses(List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatuses) {
+            if (ccmCertStatuses == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostname", "ccmCertStatuses");
+            }
+            this.ccmCertStatuses = ccmCertStatuses;
+            return this;
+        }
+        public Builder ccmCertStatuses(GetPropertyHostnamesHostnameCcmCertStatus... ccmCertStatuses) {
+            return ccmCertStatuses(List.of(ccmCertStatuses));
+        }
+        @CustomType.Setter
+        public Builder ccmCertificates(List<GetPropertyHostnamesHostnameCcmCertificate> ccmCertificates) {
+            if (ccmCertificates == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostname", "ccmCertificates");
+            }
+            this.ccmCertificates = ccmCertificates;
+            return this;
+        }
+        public Builder ccmCertificates(GetPropertyHostnamesHostnameCcmCertificate... ccmCertificates) {
+            return ccmCertificates(List.of(ccmCertificates));
+        }
         @CustomType.Setter
         public Builder certProvisioningType(String certProvisioningType) {
             if (certProvisioningType == null) {
@@ -149,6 +246,17 @@ public final class GetPropertyHostnamesHostname {
             return this;
         }
         @CustomType.Setter
+        public Builder domainOwnershipVerifications(List<GetPropertyHostnamesHostnameDomainOwnershipVerification> domainOwnershipVerifications) {
+            if (domainOwnershipVerifications == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostname", "domainOwnershipVerifications");
+            }
+            this.domainOwnershipVerifications = domainOwnershipVerifications;
+            return this;
+        }
+        public Builder domainOwnershipVerifications(GetPropertyHostnamesHostnameDomainOwnershipVerification... domainOwnershipVerifications) {
+            return domainOwnershipVerifications(List.of(domainOwnershipVerifications));
+        }
+        @CustomType.Setter
         public Builder edgeHostnameId(String edgeHostnameId) {
             if (edgeHostnameId == null) {
               throw new MissingRequiredPropertyException("GetPropertyHostnamesHostname", "edgeHostnameId");
@@ -156,14 +264,41 @@ public final class GetPropertyHostnamesHostname {
             this.edgeHostnameId = edgeHostnameId;
             return this;
         }
+        @CustomType.Setter
+        public Builder mtls(List<GetPropertyHostnamesHostnameMtl> mtls) {
+            if (mtls == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostname", "mtls");
+            }
+            this.mtls = mtls;
+            return this;
+        }
+        public Builder mtls(GetPropertyHostnamesHostnameMtl... mtls) {
+            return mtls(List.of(mtls));
+        }
+        @CustomType.Setter
+        public Builder tlsConfigurations(List<GetPropertyHostnamesHostnameTlsConfiguration> tlsConfigurations) {
+            if (tlsConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostname", "tlsConfigurations");
+            }
+            this.tlsConfigurations = tlsConfigurations;
+            return this;
+        }
+        public Builder tlsConfigurations(GetPropertyHostnamesHostnameTlsConfiguration... tlsConfigurations) {
+            return tlsConfigurations(List.of(tlsConfigurations));
+        }
         public GetPropertyHostnamesHostname build() {
             final var _resultValue = new GetPropertyHostnamesHostname();
+            _resultValue.ccmCertStatuses = ccmCertStatuses;
+            _resultValue.ccmCertificates = ccmCertificates;
             _resultValue.certProvisioningType = certProvisioningType;
             _resultValue.certStatuses = certStatuses;
             _resultValue.cnameFrom = cnameFrom;
             _resultValue.cnameTo = cnameTo;
             _resultValue.cnameType = cnameType;
+            _resultValue.domainOwnershipVerifications = domainOwnershipVerifications;
             _resultValue.edgeHostnameId = edgeHostnameId;
+            _resultValue.mtls = mtls;
+            _resultValue.tlsConfigurations = tlsConfigurations;
             return _resultValue;
         }
     }

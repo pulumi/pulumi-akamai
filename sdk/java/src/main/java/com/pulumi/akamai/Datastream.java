@@ -183,6 +183,20 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.httpsConnector);
     }
     /**
+     * The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+     * 
+     */
+    @Export(name="integrationType", refs={String.class}, tree="[0]")
+    private Output<String> integrationType;
+
+    /**
+     * @return The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+     * 
+     */
+    public Output<String> integrationType() {
+        return this.integrationType;
+    }
+    /**
      * Identifies the latest active configuration version of the stream
      * 
      */
@@ -309,6 +323,20 @@ public class Datastream extends com.pulumi.resources.CustomResource {
 
     public Output<Optional<DatastreamS3Connector>> s3Connector() {
         return Codegen.optional(this.s3Connector);
+    }
+    /**
+     * The sample percentage of data that your stream will send to the destination
+     * 
+     */
+    @Export(name="samplingPercentage", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> samplingPercentage;
+
+    /**
+     * @return The sample percentage of data that your stream will send to the destination
+     * 
+     */
+    public Output<Optional<Integer>> samplingPercentage() {
+        return Codegen.optional(this.samplingPercentage);
     }
     @Export(name="splunkConnector", refs={DatastreamSplunkConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamSplunkConnector> splunkConnector;

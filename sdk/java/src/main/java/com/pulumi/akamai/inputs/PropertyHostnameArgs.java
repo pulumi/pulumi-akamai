@@ -6,6 +6,8 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.akamai.inputs.PropertyHostnameCcmCertStatusArgs;
 import com.pulumi.akamai.inputs.PropertyHostnameCcmCertificatesArgs;
 import com.pulumi.akamai.inputs.PropertyHostnameCertStatusArgs;
+import com.pulumi.akamai.inputs.PropertyHostnameMtlsArgs;
+import com.pulumi.akamai.inputs.PropertyHostnameTlsConfigurationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -92,6 +94,36 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.edgeHostnameId);
     }
 
+    /**
+     * Optional mutual TLS settings for the CCM hostnames.
+     * 
+     */
+    @Import(name="mtls")
+    private @Nullable Output<PropertyHostnameMtlsArgs> mtls;
+
+    /**
+     * @return Optional mutual TLS settings for the CCM hostnames.
+     * 
+     */
+    public Optional<Output<PropertyHostnameMtlsArgs>> mtls() {
+        return Optional.ofNullable(this.mtls);
+    }
+
+    /**
+     * Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+     * 
+     */
+    @Import(name="tlsConfiguration")
+    private @Nullable Output<PropertyHostnameTlsConfigurationArgs> tlsConfiguration;
+
+    /**
+     * @return Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+     * 
+     */
+    public Optional<Output<PropertyHostnameTlsConfigurationArgs>> tlsConfiguration() {
+        return Optional.ofNullable(this.tlsConfiguration);
+    }
+
     private PropertyHostnameArgs() {}
 
     private PropertyHostnameArgs(PropertyHostnameArgs $) {
@@ -103,6 +135,8 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
         this.cnameTo = $.cnameTo;
         this.cnameType = $.cnameType;
         this.edgeHostnameId = $.edgeHostnameId;
+        this.mtls = $.mtls;
+        this.tlsConfiguration = $.tlsConfiguration;
     }
 
     public static Builder builder() {
@@ -231,6 +265,48 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
 
         public Builder edgeHostnameId(String edgeHostnameId) {
             return edgeHostnameId(Output.of(edgeHostnameId));
+        }
+
+        /**
+         * @param mtls Optional mutual TLS settings for the CCM hostnames.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mtls(@Nullable Output<PropertyHostnameMtlsArgs> mtls) {
+            $.mtls = mtls;
+            return this;
+        }
+
+        /**
+         * @param mtls Optional mutual TLS settings for the CCM hostnames.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mtls(PropertyHostnameMtlsArgs mtls) {
+            return mtls(Output.of(mtls));
+        }
+
+        /**
+         * @param tlsConfiguration Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsConfiguration(@Nullable Output<PropertyHostnameTlsConfigurationArgs> tlsConfiguration) {
+            $.tlsConfiguration = tlsConfiguration;
+            return this;
+        }
+
+        /**
+         * @param tlsConfiguration Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsConfiguration(PropertyHostnameTlsConfigurationArgs tlsConfiguration) {
+            return tlsConfiguration(Output.of(tlsConfiguration));
         }
 
         public PropertyHostnameArgs build() {

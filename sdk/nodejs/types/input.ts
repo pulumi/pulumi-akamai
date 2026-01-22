@@ -12652,6 +12652,17 @@ export interface PropertyDomainownershipDomainsDomainValidationChallengeTxtRecor
     value?: pulumi.Input<string>;
 }
 
+export interface PropertyDomainownershipLateValidationTimeouts {
+    /**
+     * Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+     */
+    create?: pulumi.Input<string>;
+    /**
+     * Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+     */
+    update?: pulumi.Input<string>;
+}
+
 export interface PropertyDomainownershipValidationDomain {
     /**
      * Your domain's name.
@@ -12663,7 +12674,7 @@ export interface PropertyDomainownershipValidationDomain {
      * * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
      * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
      */
-    validationMethod?: pulumi.Input<string>;
+    validationMethod: pulumi.Input<string>;
     /**
      * Your domain's validation scope. Possible values are: 
      * * `HOST` - The scope is only the exactly specified domain.
@@ -12699,6 +12710,14 @@ export interface PropertyHostname {
     cnameTo: pulumi.Input<string>;
     cnameType?: pulumi.Input<string>;
     edgeHostnameId?: pulumi.Input<string>;
+    /**
+     * Optional mutual TLS settings for the CCM hostnames.
+     */
+    mtls?: pulumi.Input<inputs.PropertyHostnameMtls>;
+    /**
+     * Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+     */
+    tlsConfiguration?: pulumi.Input<inputs.PropertyHostnameTlsConfiguration>;
 }
 
 export interface PropertyHostnameBucketHostnames {
@@ -12763,6 +12782,40 @@ export interface PropertyHostnameCertStatus {
      * The destination part of the CNAME record used to validate the certificate's domain.
      */
     target?: pulumi.Input<string>;
+}
+
+export interface PropertyHostnameMtls {
+    /**
+     * The ID of the Certificate Authority (CA) set to use for mTLS.
+     */
+    caSetId: pulumi.Input<string>;
+    /**
+     * Indicates whether to check the client OCSP.
+     */
+    checkClientOcsp?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether to send the CA set to the client.
+     */
+    sendCaSetClient?: pulumi.Input<boolean>;
+}
+
+export interface PropertyHostnameTlsConfiguration {
+    /**
+     * The cipher profile to use for TLS connections.
+     */
+    cipherProfile: pulumi.Input<string>;
+    /**
+     * A list of TLS versions that are disallowed.
+     */
+    disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether FIPS mode is enabled.
+     */
+    fipsMode?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether to staple the server OCSP response.
+     */
+    stapleServerOcspResponse?: pulumi.Input<boolean>;
 }
 
 export interface PropertyIncludeActivationComplianceRecord {

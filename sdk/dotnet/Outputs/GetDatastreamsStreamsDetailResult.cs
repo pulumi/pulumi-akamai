@@ -30,6 +30,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly int GroupId;
         /// <summary>
+        /// The integration mode for the stream in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+        /// </summary>
+        public readonly string IntegrationType;
+        /// <summary>
         /// Identifies the latestVersion version of the stream.
         /// </summary>
         public readonly int LatestVersion;
@@ -76,6 +80,8 @@ namespace Pulumi.Akamai.Outputs
 
             int groupId,
 
+            string integrationType,
+
             int latestVersion,
 
             string modifiedBy,
@@ -98,6 +104,7 @@ namespace Pulumi.Akamai.Outputs
             CreatedBy = createdBy;
             CreatedDate = createdDate;
             GroupId = groupId;
+            IntegrationType = integrationType;
             LatestVersion = latestVersion;
             ModifiedBy = modifiedBy;
             ModifiedDate = modifiedDate;

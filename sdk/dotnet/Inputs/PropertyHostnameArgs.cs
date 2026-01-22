@@ -53,6 +53,18 @@ namespace Pulumi.Akamai.Inputs
         [Input("edgeHostnameId")]
         public Input<string>? EdgeHostnameId { get; set; }
 
+        /// <summary>
+        /// Optional mutual TLS settings for the CCM hostnames.
+        /// </summary>
+        [Input("mtls")]
+        public Input<Inputs.PropertyHostnameMtlsArgs>? Mtls { get; set; }
+
+        /// <summary>
+        /// Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+        /// </summary>
+        [Input("tlsConfiguration")]
+        public Input<Inputs.PropertyHostnameTlsConfigurationArgs>? TlsConfiguration { get; set; }
+
         public PropertyHostnameArgs()
         {
         }

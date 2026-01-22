@@ -50,14 +50,14 @@ public class CloudAccessKey extends com.pulumi.resources.CustomResource {
         return this.accessKeyUid;
     }
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Three options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34; or &#34;AOS4_HMAC_SHA256&#34;.
+     * The type of cloud provider signing process used to authenticate API requests. Four options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34;, &#34;AOS4_HMAC_SHA256&#34; or &#34;AVM_CLOUDINARY&#34;.
      * 
      */
     @Export(name="authenticationMethod", refs={String.class}, tree="[0]")
     private Output<String> authenticationMethod;
 
     /**
-     * @return The type of cloud provider signing process used to authenticate API requests. Three options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34; or &#34;AOS4_HMAC_SHA256&#34;.
+     * @return The type of cloud provider signing process used to authenticate API requests. Four options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34;, &#34;AOS4_HMAC_SHA256&#34; or &#34;AVM_CLOUDINARY&#34;.
      * 
      */
     public Output<String> authenticationMethod() {

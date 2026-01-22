@@ -231,6 +231,21 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.s3Connector);
     }
 
+    /**
+     * The sample percentage of data that your stream will send to the destination
+     * 
+     */
+    @Import(name="samplingPercentage")
+    private @Nullable Output<Integer> samplingPercentage;
+
+    /**
+     * @return The sample percentage of data that your stream will send to the destination
+     * 
+     */
+    public Optional<Output<Integer>> samplingPercentage() {
+        return Optional.ofNullable(this.samplingPercentage);
+    }
+
     @Import(name="splunkConnector")
     private @Nullable Output<DatastreamSplunkConnectorArgs> splunkConnector;
 
@@ -289,6 +304,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         this.properties = $.properties;
         this.s3CompatibleConnector = $.s3CompatibleConnector;
         this.s3Connector = $.s3Connector;
+        this.samplingPercentage = $.samplingPercentage;
         this.splunkConnector = $.splunkConnector;
         this.streamName = $.streamName;
         this.sumologicConnector = $.sumologicConnector;
@@ -608,6 +624,27 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder s3Connector(DatastreamS3ConnectorArgs s3Connector) {
             return s3Connector(Output.of(s3Connector));
+        }
+
+        /**
+         * @param samplingPercentage The sample percentage of data that your stream will send to the destination
+         * 
+         * @return builder
+         * 
+         */
+        public Builder samplingPercentage(@Nullable Output<Integer> samplingPercentage) {
+            $.samplingPercentage = samplingPercentage;
+            return this;
+        }
+
+        /**
+         * @param samplingPercentage The sample percentage of data that your stream will send to the destination
+         * 
+         * @return builder
+         * 
+         */
+        public Builder samplingPercentage(Integer samplingPercentage) {
+            return samplingPercentage(Output.of(samplingPercentage));
         }
 
         public Builder splunkConnector(@Nullable Output<DatastreamSplunkConnectorArgs> splunkConnector) {

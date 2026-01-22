@@ -32,7 +32,7 @@ class ClientlistListArgs:
         The set of arguments for constructing a ClientlistList resource.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID for which client list is assigned.
         :param pulumi.Input[_builtins.int] group_id: Group ID for which client list is assigned.
-        :param pulumi.Input[_builtins.str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        :param pulumi.Input[_builtins.str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         :param pulumi.Input[Sequence[pulumi.Input['ClientlistListItemArgs']]] items: Set of items containing item information.
         :param pulumi.Input[_builtins.str] name: The name of the client list.
         :param pulumi.Input[_builtins.str] notes: The client list notes.
@@ -78,7 +78,7 @@ class ClientlistListArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         """
         return pulumi.get(self, "type")
 
@@ -158,7 +158,7 @@ class _ClientlistListState:
         :param pulumi.Input[_builtins.str] name: The name of the client list.
         :param pulumi.Input[_builtins.str] notes: The client list notes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: The client list tags.
-        :param pulumi.Input[_builtins.str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        :param pulumi.Input[_builtins.str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         :param pulumi.Input[_builtins.int] version: The current version of the client list.
         """
         if contract_id is not None:
@@ -282,7 +282,7 @@ class _ClientlistListState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         """
         return pulumi.get(self, "type")
 
@@ -327,7 +327,7 @@ class ClientlistList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The name of the client list.
         :param pulumi.Input[_builtins.str] notes: The client list notes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: The client list tags.
-        :param pulumi.Input[_builtins.str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        :param pulumi.Input[_builtins.str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         """
         ...
     @overload
@@ -419,7 +419,7 @@ class ClientlistList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The name of the client list.
         :param pulumi.Input[_builtins.str] notes: The client list notes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: The client list tags.
-        :param pulumi.Input[_builtins.str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        :param pulumi.Input[_builtins.str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         :param pulumi.Input[_builtins.int] version: The current version of the client list.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -506,7 +506,7 @@ class ClientlistList(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+        The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
         """
         return pulumi.get(self, "type")
 
