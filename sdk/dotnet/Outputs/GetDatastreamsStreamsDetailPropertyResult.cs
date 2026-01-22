@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetDatastreamsStreamsDetailPropertyResult
     {
         /// <summary>
+        /// The integration mode for the property in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED).
+        /// </summary>
+        public readonly string IntegrationType;
+        /// <summary>
         /// The identifier of the property.
         /// </summary>
         public readonly int PropertyId;
@@ -24,10 +28,13 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private GetDatastreamsStreamsDetailPropertyResult(
+            string integrationType,
+
             int propertyId,
 
             string propertyName)
         {
+            IntegrationType = integrationType;
             PropertyId = propertyId;
             PropertyName = propertyName;
         }

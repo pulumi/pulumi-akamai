@@ -14,7 +14,15 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertyHostnamesHostnameResult
     {
         /// <summary>
-        /// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+        /// CCM certificate deployment status for RSA and ECDSA certificates.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameCcmCertStatusResult> CcmCertStatuses;
+        /// <summary>
+        /// Identifiers for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameCcmCertificateResult> CcmCertificates;
+        /// <summary>
+        /// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
         /// </summary>
         public readonly string CertProvisioningType;
         public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameCertStatusResult> CertStatuses;
@@ -31,12 +39,28 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string CnameType;
         /// <summary>
+        /// Domain ownership verification details for the hostname.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationResult> DomainOwnershipVerifications;
+        /// <summary>
         /// The unique identifier for the edge hostname.
         /// </summary>
         public readonly string EdgeHostnameId;
+        /// <summary>
+        /// Mutual TLS configuration for the hostnames created with Cloud Certificate Manager (CCM).
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameMtlResult> Mtls;
+        /// <summary>
+        /// TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameTlsConfigurationResult> TlsConfigurations;
 
         [OutputConstructor]
         private GetPropertyHostnamesHostnameResult(
+            ImmutableArray<Outputs.GetPropertyHostnamesHostnameCcmCertStatusResult> ccmCertStatuses,
+
+            ImmutableArray<Outputs.GetPropertyHostnamesHostnameCcmCertificateResult> ccmCertificates,
+
             string certProvisioningType,
 
             ImmutableArray<Outputs.GetPropertyHostnamesHostnameCertStatusResult> certStatuses,
@@ -47,14 +71,25 @@ namespace Pulumi.Akamai.Outputs
 
             string cnameType,
 
-            string edgeHostnameId)
+            ImmutableArray<Outputs.GetPropertyHostnamesHostnameDomainOwnershipVerificationResult> domainOwnershipVerifications,
+
+            string edgeHostnameId,
+
+            ImmutableArray<Outputs.GetPropertyHostnamesHostnameMtlResult> mtls,
+
+            ImmutableArray<Outputs.GetPropertyHostnamesHostnameTlsConfigurationResult> tlsConfigurations)
         {
+            CcmCertStatuses = ccmCertStatuses;
+            CcmCertificates = ccmCertificates;
             CertProvisioningType = certProvisioningType;
             CertStatuses = certStatuses;
             CnameFrom = cnameFrom;
             CnameTo = cnameTo;
             CnameType = cnameType;
+            DomainOwnershipVerifications = domainOwnershipVerifications;
             EdgeHostnameId = edgeHostnameId;
+            Mtls = mtls;
+            TlsConfigurations = tlsConfigurations;
         }
     }
 }

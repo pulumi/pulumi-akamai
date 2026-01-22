@@ -6,6 +6,8 @@ package com.pulumi.akamai.outputs;
 import com.pulumi.akamai.outputs.PropertyHostnameCcmCertStatus;
 import com.pulumi.akamai.outputs.PropertyHostnameCcmCertificates;
 import com.pulumi.akamai.outputs.PropertyHostnameCertStatus;
+import com.pulumi.akamai.outputs.PropertyHostnameMtls;
+import com.pulumi.akamai.outputs.PropertyHostnameTlsConfiguration;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
@@ -32,6 +34,16 @@ public final class PropertyHostname {
     private String cnameTo;
     private @Nullable String cnameType;
     private @Nullable String edgeHostnameId;
+    /**
+     * @return Optional mutual TLS settings for the CCM hostnames.
+     * 
+     */
+    private @Nullable PropertyHostnameMtls mtls;
+    /**
+     * @return Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+     * 
+     */
+    private @Nullable PropertyHostnameTlsConfiguration tlsConfiguration;
 
     private PropertyHostname() {}
     /**
@@ -66,6 +78,20 @@ public final class PropertyHostname {
     public Optional<String> edgeHostnameId() {
         return Optional.ofNullable(this.edgeHostnameId);
     }
+    /**
+     * @return Optional mutual TLS settings for the CCM hostnames.
+     * 
+     */
+    public Optional<PropertyHostnameMtls> mtls() {
+        return Optional.ofNullable(this.mtls);
+    }
+    /**
+     * @return Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+     * 
+     */
+    public Optional<PropertyHostnameTlsConfiguration> tlsConfiguration() {
+        return Optional.ofNullable(this.tlsConfiguration);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -84,6 +110,8 @@ public final class PropertyHostname {
         private String cnameTo;
         private @Nullable String cnameType;
         private @Nullable String edgeHostnameId;
+        private @Nullable PropertyHostnameMtls mtls;
+        private @Nullable PropertyHostnameTlsConfiguration tlsConfiguration;
         public Builder() {}
         public Builder(PropertyHostname defaults) {
     	      Objects.requireNonNull(defaults);
@@ -95,6 +123,8 @@ public final class PropertyHostname {
     	      this.cnameTo = defaults.cnameTo;
     	      this.cnameType = defaults.cnameType;
     	      this.edgeHostnameId = defaults.edgeHostnameId;
+    	      this.mtls = defaults.mtls;
+    	      this.tlsConfiguration = defaults.tlsConfiguration;
         }
 
         @CustomType.Setter
@@ -157,6 +187,18 @@ public final class PropertyHostname {
             this.edgeHostnameId = edgeHostnameId;
             return this;
         }
+        @CustomType.Setter
+        public Builder mtls(@Nullable PropertyHostnameMtls mtls) {
+
+            this.mtls = mtls;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tlsConfiguration(@Nullable PropertyHostnameTlsConfiguration tlsConfiguration) {
+
+            this.tlsConfiguration = tlsConfiguration;
+            return this;
+        }
         public PropertyHostname build() {
             final var _resultValue = new PropertyHostname();
             _resultValue.ccmCertStatuses = ccmCertStatuses;
@@ -167,6 +209,8 @@ public final class PropertyHostname {
             _resultValue.cnameTo = cnameTo;
             _resultValue.cnameType = cnameType;
             _resultValue.edgeHostnameId = edgeHostnameId;
+            _resultValue.mtls = mtls;
+            _resultValue.tlsConfiguration = tlsConfiguration;
             return _resultValue;
         }
     }

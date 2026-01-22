@@ -305,6 +305,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &PropertyBootstrap{}
 	case "akamai:index/propertyDomainownershipDomains:PropertyDomainownershipDomains":
 		r = &PropertyDomainownershipDomains{}
+	case "akamai:index/propertyDomainownershipLateValidation:PropertyDomainownershipLateValidation":
+		r = &PropertyDomainownershipLateValidation{}
 	case "akamai:index/propertyDomainownershipValidation:PropertyDomainownershipValidation":
 		r = &PropertyDomainownershipValidation{}
 	case "akamai:index/propertyHostnameBucket:PropertyHostnameBucket":
@@ -1052,6 +1054,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/propertyDomainownershipDomains",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/propertyDomainownershipLateValidation",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

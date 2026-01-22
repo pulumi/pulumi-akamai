@@ -139,14 +139,14 @@ public final class ClientlistListState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+     * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+     * @return The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
      * 
      */
     public Optional<Output<String>> type() {
@@ -390,7 +390,7 @@ public final class ClientlistListState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+         * @param type The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class ClientlistListState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]
+         * @param type The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
          * 
          * @return builder
          * 

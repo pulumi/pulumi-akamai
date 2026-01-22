@@ -309,12 +309,14 @@ from .get_network_lists import *
 from .get_properties import *
 from .get_properties_search import *
 from .get_property import *
+from .get_property_account_hostnames import *
 from .get_property_activation import *
 from .get_property_domainownership_domain import *
 from .get_property_domainownership_domains import *
 from .get_property_domainownership_search_domains import *
 from .get_property_hostname_activation import *
 from .get_property_hostname_activations import *
+from .get_property_hostname_audit_history import *
 from .get_property_hostnames import *
 from .get_property_hostnames_diff import *
 from .get_property_include import *
@@ -357,6 +359,7 @@ from .property import *
 from .property_activation import *
 from .property_bootstrap import *
 from .property_domainownership_domains import *
+from .property_domainownership_late_validation import *
 from .property_domainownership_validation import *
 from .property_hostname_bucket import *
 from .property_include import *
@@ -1509,6 +1512,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/propertyDomainownershipDomains:PropertyDomainownershipDomains": "PropertyDomainownershipDomains"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/propertyDomainownershipLateValidation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/propertyDomainownershipLateValidation:PropertyDomainownershipLateValidation": "PropertyDomainownershipLateValidation"
   }
  },
  {

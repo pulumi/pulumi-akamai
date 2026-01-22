@@ -41,6 +41,7 @@ class DatastreamArgs:
                  oracle_connector: Optional[pulumi.Input['DatastreamOracleConnectorArgs']] = None,
                  s3_compatible_connector: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']] = None,
                  s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
+                 sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
                  splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
                  sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
                  trafficpeak_connector: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']] = None):
@@ -55,6 +56,7 @@ class DatastreamArgs:
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
+        :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
         """
         pulumi.set(__self__, "active", active)
         pulumi.set(__self__, "contract_id", contract_id)
@@ -89,6 +91,8 @@ class DatastreamArgs:
             pulumi.set(__self__, "s3_compatible_connector", s3_compatible_connector)
         if s3_connector is not None:
             pulumi.set(__self__, "s3_connector", s3_connector)
+        if sampling_percentage is not None:
+            pulumi.set(__self__, "sampling_percentage", sampling_percentage)
         if splunk_connector is not None:
             pulumi.set(__self__, "splunk_connector", splunk_connector)
         if sumologic_connector is not None:
@@ -304,6 +308,18 @@ class DatastreamArgs:
         pulumi.set(self, "s3_connector", value)
 
     @_builtins.property
+    @pulumi.getter(name="samplingPercentage")
+    def sampling_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The sample percentage of data that your stream will send to the destination
+        """
+        return pulumi.get(self, "sampling_percentage")
+
+    @sampling_percentage.setter
+    def sampling_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "sampling_percentage", value)
+
+    @_builtins.property
     @pulumi.getter(name="splunkConnector")
     def splunk_connector(self) -> Optional[pulumi.Input['DatastreamSplunkConnectorArgs']]:
         return pulumi.get(self, "splunk_connector")
@@ -348,6 +364,7 @@ class _DatastreamState:
                  gcs_connector: Optional[pulumi.Input['DatastreamGcsConnectorArgs']] = None,
                  group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  https_connector: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']] = None,
+                 integration_type: Optional[pulumi.Input[_builtins.str]] = None,
                  latest_version: Optional[pulumi.Input[_builtins.int]] = None,
                  loggly_connector: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']] = None,
                  modified_by: Optional[pulumi.Input[_builtins.str]] = None,
@@ -360,6 +377,7 @@ class _DatastreamState:
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  s3_compatible_connector: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']] = None,
                  s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
+                 sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
                  splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
                  stream_name: Optional[pulumi.Input[_builtins.str]] = None,
                  stream_version: Optional[pulumi.Input[_builtins.int]] = None,
@@ -375,6 +393,7 @@ class _DatastreamState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input['DatastreamDeliveryConfigurationArgs'] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
+        :param pulumi.Input[_builtins.str] integration_type: The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
         :param pulumi.Input[_builtins.str] modified_by: The username who modified the stream
         :param pulumi.Input[_builtins.str] modified_date: The date and time when the stream was modified
@@ -382,6 +401,7 @@ class _DatastreamState:
         :param pulumi.Input[_builtins.str] papi_json: The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
         :param pulumi.Input[_builtins.str] product_id: The ID of the product for which the stream was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
+        :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
         :param pulumi.Input[_builtins.int] stream_version: Identifies the configuration version of the stream
         """
@@ -413,6 +433,8 @@ class _DatastreamState:
             pulumi.set(__self__, "group_id", group_id)
         if https_connector is not None:
             pulumi.set(__self__, "https_connector", https_connector)
+        if integration_type is not None:
+            pulumi.set(__self__, "integration_type", integration_type)
         if latest_version is not None:
             pulumi.set(__self__, "latest_version", latest_version)
         if loggly_connector is not None:
@@ -437,6 +459,8 @@ class _DatastreamState:
             pulumi.set(__self__, "s3_compatible_connector", s3_compatible_connector)
         if s3_connector is not None:
             pulumi.set(__self__, "s3_connector", s3_connector)
+        if sampling_percentage is not None:
+            pulumi.set(__self__, "sampling_percentage", sampling_percentage)
         if splunk_connector is not None:
             pulumi.set(__self__, "splunk_connector", splunk_connector)
         if stream_name is not None:
@@ -599,6 +623,18 @@ class _DatastreamState:
         pulumi.set(self, "https_connector", value)
 
     @_builtins.property
+    @pulumi.getter(name="integrationType")
+    def integration_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+        """
+        return pulumi.get(self, "integration_type")
+
+    @integration_type.setter
+    def integration_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "integration_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -728,6 +764,18 @@ class _DatastreamState:
         pulumi.set(self, "s3_connector", value)
 
     @_builtins.property
+    @pulumi.getter(name="samplingPercentage")
+    def sampling_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The sample percentage of data that your stream will send to the destination
+        """
+        return pulumi.get(self, "sampling_percentage")
+
+    @sampling_percentage.setter
+    def sampling_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "sampling_percentage", value)
+
+    @_builtins.property
     @pulumi.getter(name="splunkConnector")
     def splunk_connector(self) -> Optional[pulumi.Input['DatastreamSplunkConnectorArgs']]:
         return pulumi.get(self, "splunk_connector")
@@ -804,6 +852,7 @@ class Datastream(pulumi.CustomResource):
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  s3_compatible_connector: Optional[pulumi.Input[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
                  s3_connector: Optional[pulumi.Input[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
+                 sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
                  splunk_connector: Optional[pulumi.Input[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
                  stream_name: Optional[pulumi.Input[_builtins.str]] = None,
                  sumologic_connector: Optional[pulumi.Input[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
@@ -821,6 +870,7 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
+        :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
         """
         ...
@@ -865,6 +915,7 @@ class Datastream(pulumi.CustomResource):
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  s3_compatible_connector: Optional[pulumi.Input[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
                  s3_connector: Optional[pulumi.Input[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
+                 sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
                  splunk_connector: Optional[pulumi.Input[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
                  stream_name: Optional[pulumi.Input[_builtins.str]] = None,
                  sumologic_connector: Optional[pulumi.Input[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
@@ -909,6 +960,7 @@ class Datastream(pulumi.CustomResource):
             __props__.__dict__["properties"] = properties
             __props__.__dict__["s3_compatible_connector"] = s3_compatible_connector
             __props__.__dict__["s3_connector"] = s3_connector
+            __props__.__dict__["sampling_percentage"] = sampling_percentage
             __props__.__dict__["splunk_connector"] = splunk_connector
             if stream_name is None and not opts.urn:
                 raise TypeError("Missing required property 'stream_name'")
@@ -917,6 +969,7 @@ class Datastream(pulumi.CustomResource):
             __props__.__dict__["trafficpeak_connector"] = trafficpeak_connector
             __props__.__dict__["created_by"] = None
             __props__.__dict__["created_date"] = None
+            __props__.__dict__["integration_type"] = None
             __props__.__dict__["latest_version"] = None
             __props__.__dict__["modified_by"] = None
             __props__.__dict__["modified_date"] = None
@@ -947,6 +1000,7 @@ class Datastream(pulumi.CustomResource):
             gcs_connector: Optional[pulumi.Input[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
             group_id: Optional[pulumi.Input[_builtins.str]] = None,
             https_connector: Optional[pulumi.Input[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
+            integration_type: Optional[pulumi.Input[_builtins.str]] = None,
             latest_version: Optional[pulumi.Input[_builtins.int]] = None,
             loggly_connector: Optional[pulumi.Input[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
             modified_by: Optional[pulumi.Input[_builtins.str]] = None,
@@ -959,6 +1013,7 @@ class Datastream(pulumi.CustomResource):
             properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             s3_compatible_connector: Optional[pulumi.Input[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
             s3_connector: Optional[pulumi.Input[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
+            sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
             splunk_connector: Optional[pulumi.Input[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
             stream_name: Optional[pulumi.Input[_builtins.str]] = None,
             stream_version: Optional[pulumi.Input[_builtins.int]] = None,
@@ -979,6 +1034,7 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
+        :param pulumi.Input[_builtins.str] integration_type: The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
         :param pulumi.Input[_builtins.str] modified_by: The username who modified the stream
         :param pulumi.Input[_builtins.str] modified_date: The date and time when the stream was modified
@@ -986,6 +1042,7 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] papi_json: The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
         :param pulumi.Input[_builtins.str] product_id: The ID of the product for which the stream was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
+        :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
         :param pulumi.Input[_builtins.int] stream_version: Identifies the configuration version of the stream
         """
@@ -1007,6 +1064,7 @@ class Datastream(pulumi.CustomResource):
         __props__.__dict__["gcs_connector"] = gcs_connector
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["https_connector"] = https_connector
+        __props__.__dict__["integration_type"] = integration_type
         __props__.__dict__["latest_version"] = latest_version
         __props__.__dict__["loggly_connector"] = loggly_connector
         __props__.__dict__["modified_by"] = modified_by
@@ -1019,6 +1077,7 @@ class Datastream(pulumi.CustomResource):
         __props__.__dict__["properties"] = properties
         __props__.__dict__["s3_compatible_connector"] = s3_compatible_connector
         __props__.__dict__["s3_connector"] = s3_connector
+        __props__.__dict__["sampling_percentage"] = sampling_percentage
         __props__.__dict__["splunk_connector"] = splunk_connector
         __props__.__dict__["stream_name"] = stream_name
         __props__.__dict__["stream_version"] = stream_version
@@ -1121,6 +1180,14 @@ class Datastream(pulumi.CustomResource):
         return pulumi.get(self, "https_connector")
 
     @_builtins.property
+    @pulumi.getter(name="integrationType")
+    def integration_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+        """
+        return pulumi.get(self, "integration_type")
+
+    @_builtins.property
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> pulumi.Output[_builtins.int]:
         """
@@ -1200,6 +1267,14 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="s3Connector")
     def s3_connector(self) -> pulumi.Output[Optional['outputs.DatastreamS3Connector']]:
         return pulumi.get(self, "s3_connector")
+
+    @_builtins.property
+    @pulumi.getter(name="samplingPercentage")
+    def sampling_percentage(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        The sample percentage of data that your stream will send to the destination
+        """
+        return pulumi.get(self, "sampling_percentage")
 
     @_builtins.property
     @pulumi.getter(name="splunkConnector")

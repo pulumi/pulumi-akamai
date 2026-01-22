@@ -1520,6 +1520,11 @@ export const getProperty: typeof import("./getProperty").getProperty = null as a
 export const getPropertyOutput: typeof import("./getProperty").getPropertyOutput = null as any;
 utilities.lazyLoad(exports, ["getProperty","getPropertyOutput"], () => require("./getProperty"));
 
+export { GetPropertyAccountHostnamesArgs, GetPropertyAccountHostnamesResult, GetPropertyAccountHostnamesOutputArgs } from "./getPropertyAccountHostnames";
+export const getPropertyAccountHostnames: typeof import("./getPropertyAccountHostnames").getPropertyAccountHostnames = null as any;
+export const getPropertyAccountHostnamesOutput: typeof import("./getPropertyAccountHostnames").getPropertyAccountHostnamesOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyAccountHostnames","getPropertyAccountHostnamesOutput"], () => require("./getPropertyAccountHostnames"));
+
 export { GetPropertyActivationArgs, GetPropertyActivationResult, GetPropertyActivationOutputArgs } from "./getPropertyActivation";
 export const getPropertyActivation: typeof import("./getPropertyActivation").getPropertyActivation = null as any;
 export const getPropertyActivationOutput: typeof import("./getPropertyActivation").getPropertyActivationOutput = null as any;
@@ -1549,6 +1554,11 @@ export { GetPropertyHostnameActivationsArgs, GetPropertyHostnameActivationsResul
 export const getPropertyHostnameActivations: typeof import("./getPropertyHostnameActivations").getPropertyHostnameActivations = null as any;
 export const getPropertyHostnameActivationsOutput: typeof import("./getPropertyHostnameActivations").getPropertyHostnameActivationsOutput = null as any;
 utilities.lazyLoad(exports, ["getPropertyHostnameActivations","getPropertyHostnameActivationsOutput"], () => require("./getPropertyHostnameActivations"));
+
+export { GetPropertyHostnameAuditHistoryArgs, GetPropertyHostnameAuditHistoryResult, GetPropertyHostnameAuditHistoryOutputArgs } from "./getPropertyHostnameAuditHistory";
+export const getPropertyHostnameAuditHistory: typeof import("./getPropertyHostnameAuditHistory").getPropertyHostnameAuditHistory = null as any;
+export const getPropertyHostnameAuditHistoryOutput: typeof import("./getPropertyHostnameAuditHistory").getPropertyHostnameAuditHistoryOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyHostnameAuditHistory","getPropertyHostnameAuditHistoryOutput"], () => require("./getPropertyHostnameAuditHistory"));
 
 export { GetPropertyHostnamesArgs, GetPropertyHostnamesResult, GetPropertyHostnamesOutputArgs } from "./getPropertyHostnames";
 export const getPropertyHostnames: typeof import("./getPropertyHostnames").getPropertyHostnames = null as any;
@@ -1759,6 +1769,11 @@ export { PropertyDomainownershipDomainsArgs, PropertyDomainownershipDomainsState
 export type PropertyDomainownershipDomains = import("./propertyDomainownershipDomains").PropertyDomainownershipDomains;
 export const PropertyDomainownershipDomains: typeof import("./propertyDomainownershipDomains").PropertyDomainownershipDomains = null as any;
 utilities.lazyLoad(exports, ["PropertyDomainownershipDomains"], () => require("./propertyDomainownershipDomains"));
+
+export { PropertyDomainownershipLateValidationArgs, PropertyDomainownershipLateValidationState } from "./propertyDomainownershipLateValidation";
+export type PropertyDomainownershipLateValidation = import("./propertyDomainownershipLateValidation").PropertyDomainownershipLateValidation;
+export const PropertyDomainownershipLateValidation: typeof import("./propertyDomainownershipLateValidation").PropertyDomainownershipLateValidation = null as any;
+utilities.lazyLoad(exports, ["PropertyDomainownershipLateValidation"], () => require("./propertyDomainownershipLateValidation"));
 
 export { PropertyDomainownershipValidationArgs, PropertyDomainownershipValidationState } from "./propertyDomainownershipValidation";
 export type PropertyDomainownershipValidation = import("./propertyDomainownershipValidation").PropertyDomainownershipValidation;
@@ -2081,6 +2096,8 @@ const _module = {
                 return new PropertyBootstrap(name, <any>undefined, { urn })
             case "akamai:index/propertyDomainownershipDomains:PropertyDomainownershipDomains":
                 return new PropertyDomainownershipDomains(name, <any>undefined, { urn })
+            case "akamai:index/propertyDomainownershipLateValidation:PropertyDomainownershipLateValidation":
+                return new PropertyDomainownershipLateValidation(name, <any>undefined, { urn })
             case "akamai:index/propertyDomainownershipValidation:PropertyDomainownershipValidation":
                 return new PropertyDomainownershipValidation(name, <any>undefined, { urn })
             case "akamai:index/propertyHostnameBucket:PropertyHostnameBucket":
@@ -2236,6 +2253,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/property", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyBootstrap", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyDomainownershipDomains", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/propertyDomainownershipLateValidation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyDomainownershipValidation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyHostnameBucket", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyInclude", _module)

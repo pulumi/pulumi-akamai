@@ -27,6 +27,14 @@ namespace Pulumi.Akamai.Outputs
         public readonly string CnameTo;
         public readonly string? CnameType;
         public readonly string? EdgeHostnameId;
+        /// <summary>
+        /// Optional mutual TLS settings for the CCM hostnames.
+        /// </summary>
+        public readonly Outputs.PropertyHostnameMtls? Mtls;
+        /// <summary>
+        /// Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+        /// </summary>
+        public readonly Outputs.PropertyHostnameTlsConfiguration? TlsConfiguration;
 
         [OutputConstructor]
         private PropertyHostname(
@@ -44,7 +52,11 @@ namespace Pulumi.Akamai.Outputs
 
             string? cnameType,
 
-            string? edgeHostnameId)
+            string? edgeHostnameId,
+
+            Outputs.PropertyHostnameMtls? mtls,
+
+            Outputs.PropertyHostnameTlsConfiguration? tlsConfiguration)
         {
             CcmCertStatuses = ccmCertStatuses;
             CcmCertificates = ccmCertificates;
@@ -54,6 +66,8 @@ namespace Pulumi.Akamai.Outputs
             CnameTo = cnameTo;
             CnameType = cnameType;
             EdgeHostnameId = edgeHostnameId;
+            Mtls = mtls;
+            TlsConfiguration = tlsConfiguration;
         }
     }
 }

@@ -73,6 +73,10 @@ export class Datastream extends pulumi.CustomResource {
     declare public readonly groupId: pulumi.Output<string>;
     declare public readonly httpsConnector: pulumi.Output<outputs.DatastreamHttpsConnector | undefined>;
     /**
+     * The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+     */
+    declare public /*out*/ readonly integrationType: pulumi.Output<string>;
+    /**
      * Identifies the latest active configuration version of the stream
      */
     declare public /*out*/ readonly latestVersion: pulumi.Output<number>;
@@ -105,6 +109,10 @@ export class Datastream extends pulumi.CustomResource {
     declare public readonly properties: pulumi.Output<string[]>;
     declare public readonly s3CompatibleConnector: pulumi.Output<outputs.DatastreamS3CompatibleConnector | undefined>;
     declare public readonly s3Connector: pulumi.Output<outputs.DatastreamS3Connector | undefined>;
+    /**
+     * The sample percentage of data that your stream will send to the destination
+     */
+    declare public readonly samplingPercentage: pulumi.Output<number | undefined>;
     declare public readonly splunkConnector: pulumi.Output<outputs.DatastreamSplunkConnector | undefined>;
     /**
      * The name of the stream
@@ -144,6 +152,7 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["gcsConnector"] = state?.gcsConnector;
             resourceInputs["groupId"] = state?.groupId;
             resourceInputs["httpsConnector"] = state?.httpsConnector;
+            resourceInputs["integrationType"] = state?.integrationType;
             resourceInputs["latestVersion"] = state?.latestVersion;
             resourceInputs["logglyConnector"] = state?.logglyConnector;
             resourceInputs["modifiedBy"] = state?.modifiedBy;
@@ -156,6 +165,7 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["properties"] = state?.properties;
             resourceInputs["s3CompatibleConnector"] = state?.s3CompatibleConnector;
             resourceInputs["s3Connector"] = state?.s3Connector;
+            resourceInputs["samplingPercentage"] = state?.samplingPercentage;
             resourceInputs["splunkConnector"] = state?.splunkConnector;
             resourceInputs["streamName"] = state?.streamName;
             resourceInputs["streamVersion"] = state?.streamVersion;
@@ -203,12 +213,14 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["properties"] = args?.properties;
             resourceInputs["s3CompatibleConnector"] = args?.s3CompatibleConnector;
             resourceInputs["s3Connector"] = args?.s3Connector;
+            resourceInputs["samplingPercentage"] = args?.samplingPercentage;
             resourceInputs["splunkConnector"] = args?.splunkConnector;
             resourceInputs["streamName"] = args?.streamName;
             resourceInputs["sumologicConnector"] = args?.sumologicConnector;
             resourceInputs["trafficpeakConnector"] = args?.trafficpeakConnector;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["createdDate"] = undefined /*out*/;
+            resourceInputs["integrationType"] = undefined /*out*/;
             resourceInputs["latestVersion"] = undefined /*out*/;
             resourceInputs["modifiedBy"] = undefined /*out*/;
             resourceInputs["modifiedDate"] = undefined /*out*/;
@@ -264,6 +276,10 @@ export interface DatastreamState {
     groupId?: pulumi.Input<string>;
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector>;
     /**
+     * The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+     */
+    integrationType?: pulumi.Input<string>;
+    /**
      * Identifies the latest active configuration version of the stream
      */
     latestVersion?: pulumi.Input<number>;
@@ -296,6 +312,10 @@ export interface DatastreamState {
     properties?: pulumi.Input<pulumi.Input<string>[]>;
     s3CompatibleConnector?: pulumi.Input<inputs.DatastreamS3CompatibleConnector>;
     s3Connector?: pulumi.Input<inputs.DatastreamS3Connector>;
+    /**
+     * The sample percentage of data that your stream will send to the destination
+     */
+    samplingPercentage?: pulumi.Input<number>;
     splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector>;
     /**
      * The name of the stream
@@ -356,6 +376,10 @@ export interface DatastreamArgs {
     properties: pulumi.Input<pulumi.Input<string>[]>;
     s3CompatibleConnector?: pulumi.Input<inputs.DatastreamS3CompatibleConnector>;
     s3Connector?: pulumi.Input<inputs.DatastreamS3Connector>;
+    /**
+     * The sample percentage of data that your stream will send to the destination
+     */
+    samplingPercentage?: pulumi.Input<number>;
     splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector>;
     /**
      * The name of the stream

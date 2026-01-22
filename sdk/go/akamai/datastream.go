@@ -37,6 +37,8 @@ type Datastream struct {
 	// Identifies the group that has access to the product and for which the stream configuration was created
 	GroupId        pulumi.StringOutput               `pulumi:"groupId"`
 	HttpsConnector DatastreamHttpsConnectorPtrOutput `pulumi:"httpsConnector"`
+	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+	IntegrationType pulumi.StringOutput `pulumi:"integrationType"`
 	// Identifies the latest active configuration version of the stream
 	LatestVersion   pulumi.IntOutput                   `pulumi:"latestVersion"`
 	LogglyConnector DatastreamLogglyConnectorPtrOutput `pulumi:"logglyConnector"`
@@ -56,7 +58,9 @@ type Datastream struct {
 	Properties            pulumi.StringArrayOutput                 `pulumi:"properties"`
 	S3CompatibleConnector DatastreamS3CompatibleConnectorPtrOutput `pulumi:"s3CompatibleConnector"`
 	S3Connector           DatastreamS3ConnectorPtrOutput           `pulumi:"s3Connector"`
-	SplunkConnector       DatastreamSplunkConnectorPtrOutput       `pulumi:"splunkConnector"`
+	// The sample percentage of data that your stream will send to the destination
+	SamplingPercentage pulumi.IntPtrOutput                `pulumi:"samplingPercentage"`
+	SplunkConnector    DatastreamSplunkConnectorPtrOutput `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName pulumi.StringOutput `pulumi:"streamName"`
 	// Identifies the configuration version of the stream
@@ -138,6 +142,8 @@ type datastreamState struct {
 	// Identifies the group that has access to the product and for which the stream configuration was created
 	GroupId        *string                   `pulumi:"groupId"`
 	HttpsConnector *DatastreamHttpsConnector `pulumi:"httpsConnector"`
+	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+	IntegrationType *string `pulumi:"integrationType"`
 	// Identifies the latest active configuration version of the stream
 	LatestVersion   *int                       `pulumi:"latestVersion"`
 	LogglyConnector *DatastreamLogglyConnector `pulumi:"logglyConnector"`
@@ -157,7 +163,9 @@ type datastreamState struct {
 	Properties            []string                         `pulumi:"properties"`
 	S3CompatibleConnector *DatastreamS3CompatibleConnector `pulumi:"s3CompatibleConnector"`
 	S3Connector           *DatastreamS3Connector           `pulumi:"s3Connector"`
-	SplunkConnector       *DatastreamSplunkConnector       `pulumi:"splunkConnector"`
+	// The sample percentage of data that your stream will send to the destination
+	SamplingPercentage *int                       `pulumi:"samplingPercentage"`
+	SplunkConnector    *DatastreamSplunkConnector `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName *string `pulumi:"streamName"`
 	// Identifies the configuration version of the stream
@@ -189,6 +197,8 @@ type DatastreamState struct {
 	// Identifies the group that has access to the product and for which the stream configuration was created
 	GroupId        pulumi.StringPtrInput
 	HttpsConnector DatastreamHttpsConnectorPtrInput
+	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+	IntegrationType pulumi.StringPtrInput
 	// Identifies the latest active configuration version of the stream
 	LatestVersion   pulumi.IntPtrInput
 	LogglyConnector DatastreamLogglyConnectorPtrInput
@@ -208,7 +218,9 @@ type DatastreamState struct {
 	Properties            pulumi.StringArrayInput
 	S3CompatibleConnector DatastreamS3CompatibleConnectorPtrInput
 	S3Connector           DatastreamS3ConnectorPtrInput
-	SplunkConnector       DatastreamSplunkConnectorPtrInput
+	// The sample percentage of data that your stream will send to the destination
+	SamplingPercentage pulumi.IntPtrInput
+	SplunkConnector    DatastreamSplunkConnectorPtrInput
 	// The name of the stream
 	StreamName pulumi.StringPtrInput
 	// Identifies the configuration version of the stream
@@ -249,7 +261,9 @@ type datastreamArgs struct {
 	Properties            []string                         `pulumi:"properties"`
 	S3CompatibleConnector *DatastreamS3CompatibleConnector `pulumi:"s3CompatibleConnector"`
 	S3Connector           *DatastreamS3Connector           `pulumi:"s3Connector"`
-	SplunkConnector       *DatastreamSplunkConnector       `pulumi:"splunkConnector"`
+	// The sample percentage of data that your stream will send to the destination
+	SamplingPercentage *int                       `pulumi:"samplingPercentage"`
+	SplunkConnector    *DatastreamSplunkConnector `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName           string                          `pulumi:"streamName"`
 	SumologicConnector   *DatastreamSumologicConnector   `pulumi:"sumologicConnector"`
@@ -285,7 +299,9 @@ type DatastreamArgs struct {
 	Properties            pulumi.StringArrayInput
 	S3CompatibleConnector DatastreamS3CompatibleConnectorPtrInput
 	S3Connector           DatastreamS3ConnectorPtrInput
-	SplunkConnector       DatastreamSplunkConnectorPtrInput
+	// The sample percentage of data that your stream will send to the destination
+	SamplingPercentage pulumi.IntPtrInput
+	SplunkConnector    DatastreamSplunkConnectorPtrInput
 	// The name of the stream
 	StreamName           pulumi.StringInput
 	SumologicConnector   DatastreamSumologicConnectorPtrInput
@@ -443,6 +459,11 @@ func (o DatastreamOutput) HttpsConnector() DatastreamHttpsConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamHttpsConnectorPtrOutput { return v.HttpsConnector }).(DatastreamHttpsConnectorPtrOutput)
 }
 
+// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+func (o DatastreamOutput) IntegrationType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.IntegrationType }).(pulumi.StringOutput)
+}
+
 // Identifies the latest active configuration version of the stream
 func (o DatastreamOutput) LatestVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.IntOutput { return v.LatestVersion }).(pulumi.IntOutput)
@@ -496,6 +517,11 @@ func (o DatastreamOutput) S3CompatibleConnector() DatastreamS3CompatibleConnecto
 
 func (o DatastreamOutput) S3Connector() DatastreamS3ConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamS3ConnectorPtrOutput { return v.S3Connector }).(DatastreamS3ConnectorPtrOutput)
+}
+
+// The sample percentage of data that your stream will send to the destination
+func (o DatastreamOutput) SamplingPercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.IntPtrOutput { return v.SamplingPercentage }).(pulumi.IntPtrOutput)
 }
 
 func (o DatastreamOutput) SplunkConnector() DatastreamSplunkConnectorPtrOutput {

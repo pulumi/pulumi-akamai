@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDatastreamsStreamsDetailProperty {
     /**
+     * @return The integration mode for the property in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED).
+     * 
+     */
+    private String integrationType;
+    /**
      * @return The identifier of the property.
      * 
      */
@@ -23,6 +28,13 @@ public final class GetDatastreamsStreamsDetailProperty {
     private String propertyName;
 
     private GetDatastreamsStreamsDetailProperty() {}
+    /**
+     * @return The integration mode for the property in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED).
+     * 
+     */
+    public String integrationType() {
+        return this.integrationType;
+    }
     /**
      * @return The identifier of the property.
      * 
@@ -47,15 +59,25 @@ public final class GetDatastreamsStreamsDetailProperty {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String integrationType;
         private Integer propertyId;
         private String propertyName;
         public Builder() {}
         public Builder(GetDatastreamsStreamsDetailProperty defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.integrationType = defaults.integrationType;
     	      this.propertyId = defaults.propertyId;
     	      this.propertyName = defaults.propertyName;
         }
 
+        @CustomType.Setter
+        public Builder integrationType(String integrationType) {
+            if (integrationType == null) {
+              throw new MissingRequiredPropertyException("GetDatastreamsStreamsDetailProperty", "integrationType");
+            }
+            this.integrationType = integrationType;
+            return this;
+        }
         @CustomType.Setter
         public Builder propertyId(Integer propertyId) {
             if (propertyId == null) {
@@ -74,6 +96,7 @@ public final class GetDatastreamsStreamsDetailProperty {
         }
         public GetDatastreamsStreamsDetailProperty build() {
             final var _resultValue = new GetDatastreamsStreamsDetailProperty();
+            _resultValue.integrationType = integrationType;
             _resultValue.propertyId = propertyId;
             _resultValue.propertyName = propertyName;
             return _resultValue;

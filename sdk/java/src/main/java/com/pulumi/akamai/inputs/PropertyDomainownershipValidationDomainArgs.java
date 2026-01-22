@@ -8,8 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class PropertyDomainownershipValidationDomainArgs extends com.pulumi.resources.ResourceArgs {
@@ -38,8 +36,8 @@ public final class PropertyDomainownershipValidationDomainArgs extends com.pulum
      * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
      * 
      */
-    @Import(name="validationMethod")
-    private @Nullable Output<String> validationMethod;
+    @Import(name="validationMethod", required=true)
+    private Output<String> validationMethod;
 
     /**
      * @return The method used to validate the domain. Possible values are:
@@ -48,8 +46,8 @@ public final class PropertyDomainownershipValidationDomainArgs extends com.pulum
      * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
      * 
      */
-    public Optional<Output<String>> validationMethod() {
-        return Optional.ofNullable(this.validationMethod);
+    public Output<String> validationMethod() {
+        return this.validationMethod;
     }
 
     /**
@@ -129,7 +127,7 @@ public final class PropertyDomainownershipValidationDomainArgs extends com.pulum
          * @return builder
          * 
          */
-        public Builder validationMethod(@Nullable Output<String> validationMethod) {
+        public Builder validationMethod(Output<String> validationMethod) {
             $.validationMethod = validationMethod;
             return this;
         }
@@ -177,6 +175,9 @@ public final class PropertyDomainownershipValidationDomainArgs extends com.pulum
         public PropertyDomainownershipValidationDomainArgs build() {
             if ($.domainName == null) {
                 throw new MissingRequiredPropertyException("PropertyDomainownershipValidationDomainArgs", "domainName");
+            }
+            if ($.validationMethod == null) {
+                throw new MissingRequiredPropertyException("PropertyDomainownershipValidationDomainArgs", "validationMethod");
             }
             if ($.validationScope == null) {
                 throw new MissingRequiredPropertyException("PropertyDomainownershipValidationDomainArgs", "validationScope");

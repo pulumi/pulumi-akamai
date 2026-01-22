@@ -25,7 +25,7 @@ namespace Pulumi.Akamai
         public Output<int> AccessKeyUid { get; private set; } = null!;
 
         /// <summary>
-        /// The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
+        /// The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
         /// </summary>
         [Output("authenticationMethod")]
         public Output<string> AuthenticationMethod { get; private set; } = null!;
@@ -122,7 +122,7 @@ namespace Pulumi.Akamai
         public Input<string> AccessKeyName { get; set; } = null!;
 
         /// <summary>
-        /// The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
+        /// The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
         /// </summary>
         [Input("authenticationMethod", required: true)]
         public Input<string> AuthenticationMethod { get; set; } = null!;
@@ -181,7 +181,7 @@ namespace Pulumi.Akamai
         public Input<int>? AccessKeyUid { get; set; }
 
         /// <summary>
-        /// The type of cloud provider signing process used to authenticate API requests. Three options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256" or "AOS4_HMAC_SHA256".
+        /// The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
         /// </summary>
         [Input("authenticationMethod")]
         public Input<string>? AuthenticationMethod { get; set; }

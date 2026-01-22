@@ -34,6 +34,11 @@ public final class GetDatastreamsStreamsDetail {
      */
     private Integer groupId;
     /**
+     * @return The integration mode for the stream in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+     * 
+     */
+    private String integrationType;
+    /**
      * @return Identifies the latestVersion version of the stream.
      * 
      */
@@ -107,6 +112,13 @@ public final class GetDatastreamsStreamsDetail {
      */
     public Integer groupId() {
         return this.groupId;
+    }
+    /**
+     * @return The integration mode for the stream in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
+     * 
+     */
+    public String integrationType() {
+        return this.integrationType;
     }
     /**
      * @return Identifies the latestVersion version of the stream.
@@ -185,6 +197,7 @@ public final class GetDatastreamsStreamsDetail {
         private String createdBy;
         private String createdDate;
         private Integer groupId;
+        private String integrationType;
         private Integer latestVersion;
         private String modifiedBy;
         private String modifiedDate;
@@ -201,6 +214,7 @@ public final class GetDatastreamsStreamsDetail {
     	      this.createdBy = defaults.createdBy;
     	      this.createdDate = defaults.createdDate;
     	      this.groupId = defaults.groupId;
+    	      this.integrationType = defaults.integrationType;
     	      this.latestVersion = defaults.latestVersion;
     	      this.modifiedBy = defaults.modifiedBy;
     	      this.modifiedDate = defaults.modifiedDate;
@@ -242,6 +256,14 @@ public final class GetDatastreamsStreamsDetail {
               throw new MissingRequiredPropertyException("GetDatastreamsStreamsDetail", "groupId");
             }
             this.groupId = groupId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder integrationType(String integrationType) {
+            if (integrationType == null) {
+              throw new MissingRequiredPropertyException("GetDatastreamsStreamsDetail", "integrationType");
+            }
+            this.integrationType = integrationType;
             return this;
         }
         @CustomType.Setter
@@ -325,6 +347,7 @@ public final class GetDatastreamsStreamsDetail {
             _resultValue.createdBy = createdBy;
             _resultValue.createdDate = createdDate;
             _resultValue.groupId = groupId;
+            _resultValue.integrationType = integrationType;
             _resultValue.latestVersion = latestVersion;
             _resultValue.modifiedBy = modifiedBy;
             _resultValue.modifiedDate = modifiedDate;

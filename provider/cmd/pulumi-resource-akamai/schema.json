@@ -3632,6 +3632,19 @@
                 }
             }
         },
+        "akamai:index/PropertyDomainownershipLateValidationTimeouts:PropertyDomainownershipLateValidationTimeouts": {
+            "properties": {
+                "create": {
+                    "type": "string",
+                    "description": "Optional configurable domains validation timeout to be used on resource create. By default it's 30m.\n"
+                },
+                "update": {
+                    "type": "string",
+                    "description": "Optional configurable domains validation timeout to be used on resource update. By default it's 30m.\n"
+                }
+            },
+            "type": "object"
+        },
         "akamai:index/PropertyDomainownershipValidationDomain:PropertyDomainownershipValidationDomain": {
             "properties": {
                 "domainName": {
@@ -3650,6 +3663,7 @@
             "type": "object",
             "required": [
                 "domainName",
+                "validationMethod",
                 "validationScope"
             ]
         },
@@ -3699,6 +3713,14 @@
                 },
                 "edgeHostnameId": {
                     "type": "string"
+                },
+                "mtls": {
+                    "$ref": "#/types/akamai:index/PropertyHostnameMtls:PropertyHostnameMtls",
+                    "description": "Optional mutual TLS settings for the CCM hostnames.\n"
+                },
+                "tlsConfiguration": {
+                    "$ref": "#/types/akamai:index/PropertyHostnameTlsConfiguration:PropertyHostnameTlsConfiguration",
+                    "description": "Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.\n"
                 }
             },
             "type": "object",
@@ -3825,6 +3847,53 @@
                     ]
                 }
             }
+        },
+        "akamai:index/PropertyHostnameMtls:PropertyHostnameMtls": {
+            "properties": {
+                "caSetId": {
+                    "type": "string",
+                    "description": "The ID of the Certificate Authority (CA) set to use for mTLS.\n"
+                },
+                "checkClientOcsp": {
+                    "type": "boolean",
+                    "description": "Indicates whether to check the client OCSP.\n"
+                },
+                "sendCaSetClient": {
+                    "type": "boolean",
+                    "description": "Indicates whether to send the CA set to the client.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "caSetId"
+            ]
+        },
+        "akamai:index/PropertyHostnameTlsConfiguration:PropertyHostnameTlsConfiguration": {
+            "properties": {
+                "cipherProfile": {
+                    "type": "string",
+                    "description": "The cipher profile to use for TLS connections.\n"
+                },
+                "disallowedTlsVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of TLS versions that are disallowed.\n"
+                },
+                "fipsMode": {
+                    "type": "boolean",
+                    "description": "Indicates whether FIPS mode is enabled.\n"
+                },
+                "stapleServerOcspResponse": {
+                    "type": "boolean",
+                    "description": "Indicates whether to staple the server OCSP response.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cipherProfile"
+            ]
         },
         "akamai:index/PropertyIncludeActivationComplianceRecord:PropertyIncludeActivationComplianceRecord": {
             "properties": {
@@ -8549,6 +8618,10 @@
                     "type": "integer",
                     "description": "Identifies the group where the stream is created.\n"
                 },
+                "integrationType": {
+                    "type": "string",
+                    "description": "The integration mode for the stream in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)\n"
+                },
                 "latestVersion": {
                     "type": "integer",
                     "description": "Identifies the latestVersion version of the stream.\n"
@@ -8595,6 +8668,7 @@
                 "createdBy",
                 "createdDate",
                 "groupId",
+                "integrationType",
                 "latestVersion",
                 "modifiedBy",
                 "modifiedDate",
@@ -8613,6 +8687,10 @@
         },
         "akamai:index/getDatastreamsStreamsDetailProperty:getDatastreamsStreamsDetailProperty": {
             "properties": {
+                "integrationType": {
+                    "type": "string",
+                    "description": "The integration mode for the property in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED).\n"
+                },
                 "propertyId": {
                     "type": "integer",
                     "description": "The identifier of the property.\n"
@@ -8624,6 +8702,7 @@
             },
             "type": "object",
             "required": [
+                "integrationType",
                 "propertyId",
                 "propertyName"
             ],
@@ -16426,6 +16505,103 @@
                 }
             }
         },
+        "akamai:index/getPropertyAccountHostnamesHostname:getPropertyAccountHostnamesHostname": {
+            "properties": {
+                "cnameFrom": {
+                    "type": "string",
+                    "description": "The hostname that your end users see, indicated by the Host header in end user requests.\n"
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "Identifies the prevailing contract under which you requested the data.\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Identifies the prevailing group under which you requested the data.\n"
+                },
+                "latestVersion": {
+                    "type": "integer",
+                    "description": "Specifies the most recent version of the property.\n"
+                },
+                "productionCertType": {
+                    "type": "string",
+                    "description": "Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.\n"
+                },
+                "productionCnameTo": {
+                    "type": "string",
+                    "description": "The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.\n"
+                },
+                "productionCnameType": {
+                    "type": "string",
+                    "description": "Indicates the type of CNAME you used in the production network, either `EDGE_HOSTNAME` or `CUSTOM`.\n"
+                },
+                "productionEdgeHostnameId": {
+                    "type": "string",
+                    "description": "Identifies the edge hostname you mapped your traffic to on the production network.\n"
+                },
+                "productionProductId": {
+                    "type": "string",
+                    "description": "Identifies the product association on the network.\n"
+                },
+                "propertyId": {
+                    "type": "string",
+                    "description": "Unique identifier for the property.\n"
+                },
+                "propertyName": {
+                    "type": "string",
+                    "description": "A unique, descriptive name for the property.\n"
+                },
+                "propertyType": {
+                    "type": "string",
+                    "description": "Specifies the type of the property. Either `TRADITIONAL` for properties where you pair property hostnames with the property version, or `HOSTNAME_BUCKET` where you manage property hostnames independently of the property version.\n"
+                },
+                "stagingCertType": {
+                    "type": "string",
+                    "description": "Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.\n"
+                },
+                "stagingCnameTo": {
+                    "type": "string",
+                    "description": "The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.\n"
+                },
+                "stagingCnameType": {
+                    "type": "string",
+                    "description": "Indicates the type of CNAME you used in the staging network, either `EDGE_HOSTNAME` or `CUSTOM`.\n"
+                },
+                "stagingEdgeHostnameId": {
+                    "type": "string",
+                    "description": "Identifies the edge hostname you mapped your traffic to on the staging network.\n"
+                },
+                "stagingProductId": {
+                    "type": "string",
+                    "description": "Identifies the product association on the network.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cnameFrom",
+                "contractId",
+                "groupId",
+                "latestVersion",
+                "productionCertType",
+                "productionCnameTo",
+                "productionCnameType",
+                "productionEdgeHostnameId",
+                "productionProductId",
+                "propertyId",
+                "propertyName",
+                "propertyType",
+                "stagingCertType",
+                "stagingCnameTo",
+                "stagingCnameType",
+                "stagingEdgeHostnameId",
+                "stagingProductId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getPropertyDomainownershipDomainDomainStatusHistory:getPropertyDomainownershipDomainDomainStatusHistory": {
             "properties": {
                 "domainStatus": {
@@ -17062,6 +17238,68 @@
                 }
             }
         },
+        "akamai:index/getPropertyHostnameAuditHistoryHistory:getPropertyHostnameAuditHistoryHistory": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "The type of action performed to the property hostname. Possible values are: \n* `ACTIVATE` - When the hostname is currently serving traffic.\n* `DEACTIVATE` - When the hostname isn't serving traffic.\n* `ADD` - When the user requested to add the hostname to a property.\n* `REMOVE` - When the user requested to remove the hostname from a property.\n* `MOVE` - When the hostname was moved from one property to another.\n* `MODIFY` - When the user changed the edgeHostnameId or certProvisioningType values for an already-activated hostname.\n* `ABORTED` - When the user request to cancel the hostname activation.\n* `ERROR` - When the hostname activation failed.\n"
+                },
+                "certProvisioningType": {
+                    "type": "string",
+                    "description": "The type of certificate used in the property hostname. Possible values are: \n* `CPS_MANAGED` - For certificates you create with the Certificate Provisioning System API (CPS).\n* `DEFAULT` - For Default Domain Validation (DV) certificates deployed automatically.\n* `CCM` - For the third party certificates created with the Cloud Certificate Manager.\n"
+                },
+                "cnameTo": {
+                    "type": "string",
+                    "description": "The edge hostname that the hostname points to.\n"
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "Identifies the prevailing contract under which the data was requested.\n"
+                },
+                "edgeHostnameId": {
+                    "type": "string",
+                    "description": "Id of the edge hostname the hostname points to.\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Identifies the group under which the property is activated.\n"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "The network of activated hostnames. Possible values are: \n* `STAGING` - Staging network.\n* `PRODUCTION` - Production network.\n"
+                },
+                "propertyId": {
+                    "type": "string",
+                    "description": "Unique identifier for the property.\n"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "description": "Indicates when the action occurred.\n"
+                },
+                "user": {
+                    "type": "string",
+                    "description": "The user who initiated the action.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "action",
+                "certProvisioningType",
+                "cnameTo",
+                "contractId",
+                "edgeHostnameId",
+                "groupId",
+                "network",
+                "propertyId",
+                "timestamp",
+                "user"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getPropertyHostnamesDiffHostname:getPropertyHostnamesDiffHostname": {
             "properties": {
                 "cnameFrom": {
@@ -17070,7 +17308,7 @@
                 },
                 "productionCertProvisioningType": {
                     "type": "string",
-                    "description": "Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.\n"
+                    "description": "Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.\n"
                 },
                 "productionCnameTo": {
                     "type": "string",
@@ -17086,7 +17324,7 @@
                 },
                 "stagingCertProvisioningType": {
                     "type": "string",
-                    "description": "Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.\n"
+                    "description": "Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.\n"
                 },
                 "stagingCnameTo": {
                     "type": "string",
@@ -17121,9 +17359,23 @@
         },
         "akamai:index/getPropertyHostnamesHostname:getPropertyHostnamesHostname": {
             "properties": {
+                "ccmCertStatuses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameCcmCertStatus:getPropertyHostnamesHostnameCcmCertStatus"
+                    },
+                    "description": "CCM certificate deployment status for RSA and ECDSA certificates.\n"
+                },
+                "ccmCertificates": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameCcmCertificate:getPropertyHostnamesHostnameCcmCertificate"
+                    },
+                    "description": "Identifiers for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).\n"
+                },
                 "certProvisioningType": {
                     "type": "string",
-                    "description": "Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.\n"
+                    "description": "Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.\n"
                 },
                 "certStatuses": {
                     "type": "array",
@@ -17143,19 +17395,45 @@
                     "type": "string",
                     "description": "A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.\n"
                 },
+                "domainOwnershipVerifications": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerification:getPropertyHostnamesHostnameDomainOwnershipVerification"
+                    },
+                    "description": "Domain ownership verification details for the hostname.\n"
+                },
                 "edgeHostnameId": {
                     "type": "string",
                     "description": "The unique identifier for the edge hostname.\n"
+                },
+                "mtls": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameMtl:getPropertyHostnamesHostnameMtl"
+                    },
+                    "description": "Mutual TLS configuration for the hostnames created with Cloud Certificate Manager (CCM).\n"
+                },
+                "tlsConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameTlsConfiguration:getPropertyHostnamesHostnameTlsConfiguration"
+                    },
+                    "description": "TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.\n"
                 }
             },
             "type": "object",
             "required": [
+                "ccmCertStatuses",
+                "ccmCertificates",
                 "certProvisioningType",
                 "certStatuses",
                 "cnameFrom",
                 "cnameTo",
                 "cnameType",
-                "edgeHostnameId"
+                "domainOwnershipVerifications",
+                "edgeHostnameId",
+                "mtls",
+                "tlsConfigurations"
             ],
             "language": {
                 "nodejs": {
@@ -17254,6 +17532,60 @@
                 }
             }
         },
+        "akamai:index/getPropertyHostnamesHostnameCcmCertStatus:getPropertyHostnamesHostnameCcmCertStatus": {
+            "properties": {
+                "ecdsaProductionStatus": {
+                    "type": "string",
+                    "description": "Status of the ECDSA certificate on production network.\n"
+                },
+                "ecdsaStagingStatus": {
+                    "type": "string",
+                    "description": "Status of the ECDSA certificate on staging network.\n"
+                },
+                "rsaProductionStatus": {
+                    "type": "string",
+                    "description": "Status of the RSA certificate on production network.\n"
+                },
+                "rsaStagingStatus": {
+                    "type": "string",
+                    "description": "Status of the RSA certificate on staging network.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "ecdsaProductionStatus",
+                "ecdsaStagingStatus",
+                "rsaProductionStatus",
+                "rsaStagingStatus"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameCcmCertificate:getPropertyHostnamesHostnameCcmCertificate": {
+            "properties": {
+                "ecdsaCertId": {
+                    "type": "string",
+                    "description": "Certificate ID for ECDSA.\n"
+                },
+                "rsaCertId": {
+                    "type": "string",
+                    "description": "Certificate ID for RSA.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "ecdsaCertId",
+                "rsaCertId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getPropertyHostnamesHostnameCertStatus:getPropertyHostnamesHostnameCertStatus": {
             "properties": {
                 "hostname": {
@@ -17279,6 +17611,230 @@
                 "productionStatus",
                 "stagingStatus",
                 "target"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerification:getPropertyHostnamesHostnameDomainOwnershipVerification": {
+            "properties": {
+                "challengeTokenExpiryDate": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the domain validation challenge expires.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the domain ownership verification. 'NOT_VALIDATED' means that the domain hasn't been validated yet. When you submit the domain for validation, the initial status is 'REQUEST_ACCEPTED', and then 'PENDING', when the domain is waiting for the validation to start. When it starts, the status changes to 'VALIDATION_IN_PROGRESS', and then to 'VALIDATED', when the validation is completed successfully. 'TOKEN_EXPIRED' means you haven't completed the validation in the requested time frame and you need to generate new validation challenges for the domain. If you no longer want a domain to be owned within Akamai, you can change the status to 'INVALIDATED'.\n"
+                },
+                "validationCnames": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationCname:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationCname"
+                    },
+                    "description": "The CNAME record you copy to your DNS to prove you own the domain.\n"
+                },
+                "validationHttps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttp:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttp"
+                    },
+                    "description": "In the HTTP validation method, you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use a redirect URL with the token.\n"
+                },
+                "validationTxts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxt:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxt"
+                    },
+                    "description": "The TXT record with the challenge token that you add to your hostname's DNS zone to prove you own the domain.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "challengeTokenExpiryDate",
+                "status",
+                "validationCnames",
+                "validationHttps",
+                "validationTxts"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationCname:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationCname": {
+            "properties": {
+                "hostname": {
+                    "type": "string",
+                    "description": "The hostname part of the CNAME record that validates the domain ownership.\n"
+                },
+                "target": {
+                    "type": "string",
+                    "description": "The destination part of the CNAME record that validates the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "hostname",
+                "target"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttp:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttp": {
+            "properties": {
+                "fileContentMethods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethod:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethod"
+                    },
+                    "description": "Details for the file content method of validation.\n"
+                },
+                "redirectMethods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethod:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethod"
+                    },
+                    "description": "Details for the HTTP redirect method of validation.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "fileContentMethods",
+                "redirectMethods"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethod:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpFileContentMethod": {
+            "properties": {
+                "body": {
+                    "type": "string",
+                    "description": "The content of the file that you should place at the specified URL.\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL where you should place the file containing the challenge token.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "body",
+                "url"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethod:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationHttpRedirectMethod": {
+            "properties": {
+                "httpRedirectFrom": {
+                    "type": "string",
+                    "description": "The location on your HTTP server where you set up the redirect.\n"
+                },
+                "httpRedirectTo": {
+                    "type": "string",
+                    "description": "The redirect URL with the token that you place on your HTTP server.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "httpRedirectFrom",
+                "httpRedirectTo"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxt:getPropertyHostnamesHostnameDomainOwnershipVerificationValidationTxt": {
+            "properties": {
+                "challengeToken": {
+                    "type": "string",
+                    "description": "A token you need to copy to the DNS TXT record that validates the domain ownership.\n"
+                },
+                "hostname": {
+                    "type": "string",
+                    "description": "The hostname where you should add the TXT record to validate the domain ownership.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "challengeToken",
+                "hostname"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameMtl:getPropertyHostnamesHostnameMtl": {
+            "properties": {
+                "caSetId": {
+                    "type": "string",
+                    "description": "ID of the Client CA set used for mutual TLS.\n"
+                },
+                "checkClientOcsp": {
+                    "type": "boolean",
+                    "description": "Whether to check the OCSP status of the client certificate.\n"
+                },
+                "sendCaSetClient": {
+                    "type": "boolean",
+                    "description": "Whether to send the CA set to the client during the TLS handshake.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "caSetId",
+                "checkClientOcsp",
+                "sendCaSetClient"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameTlsConfiguration:getPropertyHostnamesHostnameTlsConfiguration": {
+            "properties": {
+                "cipherProfile": {
+                    "type": "string",
+                    "description": "Cipher profile name.\n"
+                },
+                "disallowedTlsVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of TLS versions that are disallowed.\n"
+                },
+                "fipsMode": {
+                    "type": "boolean",
+                    "description": "Enable FIPS mode.\n"
+                },
+                "stapleServerOcspResponse": {
+                    "type": "boolean",
+                    "description": "Staple the OCSP response for the server certificate.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cipherProfile",
+                "disallowedTlsVersions",
+                "fipsMode",
+                "stapleServerOcspResponse"
             ],
             "language": {
                 "nodejs": {
@@ -23489,7 +24045,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]"
+                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]"
                 },
                 "version": {
                     "type": "integer",
@@ -23540,7 +24096,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]",
+                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]",
                     "willReplaceOnChanges": true
                 }
             },
@@ -23594,7 +24150,7 @@
                     },
                     "type": {
                         "type": "string",
-                        "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID]",
+                        "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]",
                         "willReplaceOnChanges": true
                     },
                     "version": {
@@ -23617,7 +24173,7 @@
                 },
                 "authenticationMethod": {
                     "type": "string",
-                    "description": "The type of cloud provider signing process used to authenticate API requests. Three options are available: \"AWS4_HMAC_SHA256\", \"GOOG4_HMAC_SHA256\" or \"AOS4_HMAC_SHA256\"."
+                    "description": "The type of cloud provider signing process used to authenticate API requests. Four options are available: \"AWS4_HMAC_SHA256\", \"GOOG4_HMAC_SHA256\", \"AOS4_HMAC_SHA256\" or \"AVM_CLOUDINARY\"."
                 },
                 "contractId": {
                     "type": "string",
@@ -23663,7 +24219,7 @@
                 },
                 "authenticationMethod": {
                     "type": "string",
-                    "description": "The type of cloud provider signing process used to authenticate API requests. Three options are available: \"AWS4_HMAC_SHA256\", \"GOOG4_HMAC_SHA256\" or \"AOS4_HMAC_SHA256\"."
+                    "description": "The type of cloud provider signing process used to authenticate API requests. Four options are available: \"AWS4_HMAC_SHA256\", \"GOOG4_HMAC_SHA256\", \"AOS4_HMAC_SHA256\" or \"AVM_CLOUDINARY\"."
                 },
                 "contractId": {
                     "type": "string",
@@ -23709,7 +24265,7 @@
                     },
                     "authenticationMethod": {
                         "type": "string",
-                        "description": "The type of cloud provider signing process used to authenticate API requests. Three options are available: \"AWS4_HMAC_SHA256\", \"GOOG4_HMAC_SHA256\" or \"AOS4_HMAC_SHA256\"."
+                        "description": "The type of cloud provider signing process used to authenticate API requests. Four options are available: \"AWS4_HMAC_SHA256\", \"GOOG4_HMAC_SHA256\", \"AOS4_HMAC_SHA256\" or \"AVM_CLOUDINARY\"."
                     },
                     "contractId": {
                         "type": "string",
@@ -25718,6 +26274,10 @@
                 "httpsConnector": {
                     "$ref": "#/types/akamai:index/DatastreamHttpsConnector:DatastreamHttpsConnector"
                 },
+                "integrationType": {
+                    "type": "string",
+                    "description": "The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)"
+                },
                 "latestVersion": {
                     "type": "integer",
                     "description": "Identifies the latest active configuration version of the stream"
@@ -25767,6 +26327,10 @@
                 "s3Connector": {
                     "$ref": "#/types/akamai:index/DatastreamS3Connector:DatastreamS3Connector"
                 },
+                "samplingPercentage": {
+                    "type": "integer",
+                    "description": "The sample percentage of data that your stream will send to the destination"
+                },
                 "splunkConnector": {
                     "$ref": "#/types/akamai:index/DatastreamSplunkConnector:DatastreamSplunkConnector"
                 },
@@ -25793,6 +26357,7 @@
                 "datasetFields",
                 "deliveryConfiguration",
                 "groupId",
+                "integrationType",
                 "latestVersion",
                 "modifiedBy",
                 "modifiedDate",
@@ -25877,6 +26442,10 @@
                 "s3Connector": {
                     "$ref": "#/types/akamai:index/DatastreamS3Connector:DatastreamS3Connector"
                 },
+                "samplingPercentage": {
+                    "type": "integer",
+                    "description": "The sample percentage of data that your stream will send to the destination"
+                },
                 "splunkConnector": {
                     "$ref": "#/types/akamai:index/DatastreamSplunkConnector:DatastreamSplunkConnector"
                 },
@@ -25956,6 +26525,10 @@
                     "httpsConnector": {
                         "$ref": "#/types/akamai:index/DatastreamHttpsConnector:DatastreamHttpsConnector"
                     },
+                    "integrationType": {
+                        "type": "string",
+                        "description": "The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)"
+                    },
                     "latestVersion": {
                         "type": "integer",
                         "description": "Identifies the latest active configuration version of the stream"
@@ -26004,6 +26577,10 @@
                     },
                     "s3Connector": {
                         "$ref": "#/types/akamai:index/DatastreamS3Connector:DatastreamS3Connector"
+                    },
+                    "samplingPercentage": {
+                        "type": "integer",
+                        "description": "The sample percentage of data that your stream will send to the destination"
                     },
                     "splunkConnector": {
                         "$ref": "#/types/akamai:index/DatastreamSplunkConnector:DatastreamSplunkConnector"
@@ -31563,6 +32140,101 @@
                             "$ref": "#/types/akamai:index/PropertyDomainownershipDomainsDomain:PropertyDomainownershipDomainsDomain"
                         },
                         "description": "List of domains."
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/propertyDomainownershipLateValidation:PropertyDomainownershipLateValidation": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID of the Property."
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Group ID of the Property."
+                },
+                "propertyId": {
+                    "type": "string",
+                    "description": "Property ID of the Property which domains will be validated."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/PropertyDomainownershipLateValidationTimeouts:PropertyDomainownershipLateValidationTimeouts"
+                },
+                "validationMethod": {
+                    "type": "string",
+                    "description": "The method used to validate the domain. Possible values are: \n* `DNS_CNAME` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`cnameRecord`\" pulumi-lang-dotnet=\"`CnameRecord`\" pulumi-lang-go=\"`cnameRecord`\" pulumi-lang-python=\"`cname_record`\" pulumi-lang-yaml=\"`cnameRecord`\" pulumi-lang-java=\"`cnameRecord`\"\u003e`cname_record`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.\n* `DNS_TXT` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`txtRecord`\" pulumi-lang-dotnet=\"`TxtRecord`\" pulumi-lang-go=\"`txtRecord`\" pulumi-lang-python=\"`txt_record`\" pulumi-lang-yaml=\"`txtRecord`\" pulumi-lang-java=\"`txtRecord`\"\u003e`txt_record`\u003c/span\u003e with a token \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.\n* `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token."
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "Property version containing domains to be validated."
+                }
+            },
+            "required": [
+                "contractId",
+                "groupId",
+                "propertyId",
+                "validationMethod",
+                "version"
+            ],
+            "inputProperties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID of the Property."
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Group ID of the Property."
+                },
+                "propertyId": {
+                    "type": "string",
+                    "description": "Property ID of the Property which domains will be validated."
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/PropertyDomainownershipLateValidationTimeouts:PropertyDomainownershipLateValidationTimeouts"
+                },
+                "validationMethod": {
+                    "type": "string",
+                    "description": "The method used to validate the domain. Possible values are: \n* `DNS_CNAME` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`cnameRecord`\" pulumi-lang-dotnet=\"`CnameRecord`\" pulumi-lang-go=\"`cnameRecord`\" pulumi-lang-python=\"`cname_record`\" pulumi-lang-yaml=\"`cnameRecord`\" pulumi-lang-java=\"`cnameRecord`\"\u003e`cname_record`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.\n* `DNS_TXT` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`txtRecord`\" pulumi-lang-dotnet=\"`TxtRecord`\" pulumi-lang-go=\"`txtRecord`\" pulumi-lang-python=\"`txt_record`\" pulumi-lang-yaml=\"`txtRecord`\" pulumi-lang-java=\"`txtRecord`\"\u003e`txt_record`\u003c/span\u003e with a token \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.\n* `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token."
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "Property version containing domains to be validated."
+                }
+            },
+            "requiredInputs": [
+                "contractId",
+                "groupId",
+                "propertyId",
+                "validationMethod",
+                "version"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering PropertyDomainownershipLateValidation resources.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string",
+                        "description": "Contract ID of the Property."
+                    },
+                    "groupId": {
+                        "type": "string",
+                        "description": "Group ID of the Property."
+                    },
+                    "propertyId": {
+                        "type": "string",
+                        "description": "Property ID of the Property which domains will be validated."
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/akamai:index/PropertyDomainownershipLateValidationTimeouts:PropertyDomainownershipLateValidationTimeouts"
+                    },
+                    "validationMethod": {
+                        "type": "string",
+                        "description": "The method used to validate the domain. Possible values are: \n* `DNS_CNAME` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`cnameRecord`\" pulumi-lang-dotnet=\"`CnameRecord`\" pulumi-lang-go=\"`cnameRecord`\" pulumi-lang-python=\"`cname_record`\" pulumi-lang-yaml=\"`cnameRecord`\" pulumi-lang-java=\"`cnameRecord`\"\u003e`cname_record`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.\n* `DNS_TXT` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`txtRecord`\" pulumi-lang-dotnet=\"`TxtRecord`\" pulumi-lang-go=\"`txtRecord`\" pulumi-lang-python=\"`txt_record`\" pulumi-lang-yaml=\"`txtRecord`\" pulumi-lang-java=\"`txtRecord`\"\u003e`txt_record`\u003c/span\u003e with a token \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.\n* `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token."
+                    },
+                    "version": {
+                        "type": "integer",
+                        "description": "Property version containing domains to be validated."
                     }
                 },
                 "type": "object"
@@ -41689,6 +42361,91 @@
                 "type": "object"
             }
         },
+        "akamai:index/getPropertyAccountHostnames:getPropertyAccountHostnames": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getPropertyAccountHostnames.\n",
+                "properties": {
+                    "cnameTo": {
+                        "type": "string"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    },
+                    "sort": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPropertyAccountHostnames.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string"
+                    },
+                    "availableSorts": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "cnameTo": {
+                        "type": "string"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "currentSort": {
+                        "type": "string"
+                    },
+                    "defaultSort": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "hostnames": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getPropertyAccountHostnamesHostname:getPropertyAccountHostnamesHostname"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    },
+                    "sort": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "availableSorts",
+                    "contractId",
+                    "currentSort",
+                    "defaultSort",
+                    "groupId",
+                    "hostnames",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
         "akamai:index/getPropertyActivation:getPropertyActivation": {
             "inputs": {
                 "description": "A collection of arguments for invoking getPropertyActivation.\n",
@@ -42058,6 +42815,44 @@
                     "hostnameActivations",
                     "propertyId",
                     "propertyName",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getPropertyHostnameAuditHistory:getPropertyHostnameAuditHistory": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getPropertyHostnameAuditHistory.\n",
+                "properties": {
+                    "hostname": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "hostname"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPropertyHostnameAuditHistory.\n",
+                "properties": {
+                    "histories": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getPropertyHostnameAuditHistoryHistory:getPropertyHostnameAuditHistoryHistory"
+                        },
+                        "type": "array"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "histories",
+                    "hostname",
                     "id"
                 ],
                 "type": "object"
