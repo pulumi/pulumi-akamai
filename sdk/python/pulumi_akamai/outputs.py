@@ -1749,18 +1749,25 @@ class CloudwrapperConfigurationLocation(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 capacity: 'outputs.CloudwrapperConfigurationLocationCapacity',
                  comments: _builtins.str,
-                 traffic_type_id: _builtins.int,
-                 capacity: Optional['outputs.CloudwrapperConfigurationLocationCapacity'] = None):
+                 traffic_type_id: _builtins.int):
         """
+        :param 'CloudwrapperConfigurationLocationCapacityArgs' capacity: The capacity assigned to this configuration's location
         :param _builtins.str comments: Additional comments provided by the user.
         :param _builtins.int traffic_type_id: Unique identifier for the location and traffic type combination
-        :param 'CloudwrapperConfigurationLocationCapacityArgs' capacity: The capacity assigned to this configuration's location
         """
+        pulumi.set(__self__, "capacity", capacity)
         pulumi.set(__self__, "comments", comments)
         pulumi.set(__self__, "traffic_type_id", traffic_type_id)
-        if capacity is not None:
-            pulumi.set(__self__, "capacity", capacity)
+
+    @_builtins.property
+    @pulumi.getter
+    def capacity(self) -> 'outputs.CloudwrapperConfigurationLocationCapacity':
+        """
+        The capacity assigned to this configuration's location
+        """
+        return pulumi.get(self, "capacity")
 
     @_builtins.property
     @pulumi.getter
@@ -1777,14 +1784,6 @@ class CloudwrapperConfigurationLocation(dict):
         Unique identifier for the location and traffic type combination
         """
         return pulumi.get(self, "traffic_type_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def capacity(self) -> Optional['outputs.CloudwrapperConfigurationLocationCapacity']:
-        """
-        The capacity assigned to this configuration's location
-        """
-        return pulumi.get(self, "capacity")
 
 
 @pulumi.output_type

@@ -2318,6 +2318,10 @@ class CloudwrapperActivationTimeoutsArgs:
 
 if not MYPY:
     class CloudwrapperConfigurationLocationArgsDict(TypedDict):
+        capacity: pulumi.Input['CloudwrapperConfigurationLocationCapacityArgsDict']
+        """
+        The capacity assigned to this configuration's location
+        """
         comments: pulumi.Input[_builtins.str]
         """
         Additional comments provided by the user.
@@ -2326,28 +2330,35 @@ if not MYPY:
         """
         Unique identifier for the location and traffic type combination
         """
-        capacity: NotRequired[pulumi.Input['CloudwrapperConfigurationLocationCapacityArgsDict']]
-        """
-        The capacity assigned to this configuration's location
-        """
 elif False:
     CloudwrapperConfigurationLocationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CloudwrapperConfigurationLocationArgs:
     def __init__(__self__, *,
+                 capacity: pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs'],
                  comments: pulumi.Input[_builtins.str],
-                 traffic_type_id: pulumi.Input[_builtins.int],
-                 capacity: Optional[pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs']] = None):
+                 traffic_type_id: pulumi.Input[_builtins.int]):
         """
+        :param pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs'] capacity: The capacity assigned to this configuration's location
         :param pulumi.Input[_builtins.str] comments: Additional comments provided by the user.
         :param pulumi.Input[_builtins.int] traffic_type_id: Unique identifier for the location and traffic type combination
-        :param pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs'] capacity: The capacity assigned to this configuration's location
         """
+        pulumi.set(__self__, "capacity", capacity)
         pulumi.set(__self__, "comments", comments)
         pulumi.set(__self__, "traffic_type_id", traffic_type_id)
-        if capacity is not None:
-            pulumi.set(__self__, "capacity", capacity)
+
+    @_builtins.property
+    @pulumi.getter
+    def capacity(self) -> pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs']:
+        """
+        The capacity assigned to this configuration's location
+        """
+        return pulumi.get(self, "capacity")
+
+    @capacity.setter
+    def capacity(self, value: pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs']):
+        pulumi.set(self, "capacity", value)
 
     @_builtins.property
     @pulumi.getter
@@ -2372,18 +2383,6 @@ class CloudwrapperConfigurationLocationArgs:
     @traffic_type_id.setter
     def traffic_type_id(self, value: pulumi.Input[_builtins.int]):
         pulumi.set(self, "traffic_type_id", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs']]:
-        """
-        The capacity assigned to this configuration's location
-        """
-        return pulumi.get(self, "capacity")
-
-    @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs']]):
-        pulumi.set(self, "capacity", value)
 
 
 if not MYPY:

@@ -85,15 +85,15 @@ public final class CloudwrapperConfigurationArgs extends com.pulumi.resources.Re
      * List of locations to use with the configuration.
      * 
      */
-    @Import(name="locations")
-    private @Nullable Output<List<CloudwrapperConfigurationLocationArgs>> locations;
+    @Import(name="locations", required=true)
+    private Output<List<CloudwrapperConfigurationLocationArgs>> locations;
 
     /**
      * @return List of locations to use with the configuration.
      * 
      */
-    public Optional<Output<List<CloudwrapperConfigurationLocationArgs>>> locations() {
-        return Optional.ofNullable(this.locations);
+    public Output<List<CloudwrapperConfigurationLocationArgs>> locations() {
+        return this.locations;
     }
 
     /**
@@ -270,7 +270,7 @@ public final class CloudwrapperConfigurationArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder locations(@Nullable Output<List<CloudwrapperConfigurationLocationArgs>> locations) {
+        public Builder locations(Output<List<CloudwrapperConfigurationLocationArgs>> locations) {
             $.locations = locations;
             return this;
         }
@@ -396,6 +396,9 @@ public final class CloudwrapperConfigurationArgs extends com.pulumi.resources.Re
             }
             if ($.contractId == null) {
                 throw new MissingRequiredPropertyException("CloudwrapperConfigurationArgs", "contractId");
+            }
+            if ($.locations == null) {
+                throw new MissingRequiredPropertyException("CloudwrapperConfigurationArgs", "locations");
             }
             if ($.propertyIds == null) {
                 throw new MissingRequiredPropertyException("CloudwrapperConfigurationArgs", "propertyIds");
