@@ -340,7 +340,7 @@ export interface CloudwrapperConfigurationLocation {
     /**
      * The capacity assigned to this configuration's location
      */
-    capacity?: pulumi.Input<inputs.CloudwrapperConfigurationLocationCapacity>;
+    capacity: pulumi.Input<inputs.CloudwrapperConfigurationLocationCapacity>;
     /**
      * Additional comments provided by the user.
      */

@@ -16,7 +16,7 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// The capacity assigned to this configuration's location
         /// </summary>
-        public readonly Outputs.CloudwrapperConfigurationLocationCapacity? Capacity;
+        public readonly Outputs.CloudwrapperConfigurationLocationCapacity Capacity;
         /// <summary>
         /// Additional comments provided by the user.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private CloudwrapperConfigurationLocation(
-            Outputs.CloudwrapperConfigurationLocationCapacity? capacity,
+            Outputs.CloudwrapperConfigurationLocationCapacity capacity,
 
             string comments,
 

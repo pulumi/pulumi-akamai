@@ -52,6 +52,9 @@ func NewCloudwrapperConfiguration(ctx *pulumi.Context,
 	if args.ContractId == nil {
 		return nil, errors.New("invalid value for required argument 'ContractId'")
 	}
+	if args.Locations == nil {
+		return nil, errors.New("invalid value for required argument 'Locations'")
+	}
 	if args.PropertyIds == nil {
 		return nil, errors.New("invalid value for required argument 'PropertyIds'")
 	}

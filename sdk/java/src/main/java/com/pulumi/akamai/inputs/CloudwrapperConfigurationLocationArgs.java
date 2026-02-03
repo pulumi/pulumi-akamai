@@ -10,8 +10,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class CloudwrapperConfigurationLocationArgs extends com.pulumi.resources.ResourceArgs {
@@ -22,15 +20,15 @@ public final class CloudwrapperConfigurationLocationArgs extends com.pulumi.reso
      * The capacity assigned to this configuration&#39;s location
      * 
      */
-    @Import(name="capacity")
-    private @Nullable Output<CloudwrapperConfigurationLocationCapacityArgs> capacity;
+    @Import(name="capacity", required=true)
+    private Output<CloudwrapperConfigurationLocationCapacityArgs> capacity;
 
     /**
      * @return The capacity assigned to this configuration&#39;s location
      * 
      */
-    public Optional<Output<CloudwrapperConfigurationLocationCapacityArgs>> capacity() {
-        return Optional.ofNullable(this.capacity);
+    public Output<CloudwrapperConfigurationLocationCapacityArgs> capacity() {
+        return this.capacity;
     }
 
     /**
@@ -95,7 +93,7 @@ public final class CloudwrapperConfigurationLocationArgs extends com.pulumi.reso
          * @return builder
          * 
          */
-        public Builder capacity(@Nullable Output<CloudwrapperConfigurationLocationCapacityArgs> capacity) {
+        public Builder capacity(Output<CloudwrapperConfigurationLocationCapacityArgs> capacity) {
             $.capacity = capacity;
             return this;
         }
@@ -153,6 +151,9 @@ public final class CloudwrapperConfigurationLocationArgs extends com.pulumi.reso
         }
 
         public CloudwrapperConfigurationLocationArgs build() {
+            if ($.capacity == null) {
+                throw new MissingRequiredPropertyException("CloudwrapperConfigurationLocationArgs", "capacity");
+            }
             if ($.comments == null) {
                 throw new MissingRequiredPropertyException("CloudwrapperConfigurationLocationArgs", "comments");
             }

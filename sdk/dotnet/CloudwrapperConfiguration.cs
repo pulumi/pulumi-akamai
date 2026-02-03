@@ -139,7 +139,7 @@ namespace Pulumi.Akamai
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
-        [Input("locations")]
+        [Input("locations", required: true)]
         private InputList<Inputs.CloudwrapperConfigurationLocationArgs>? _locations;
 
         /// <summary>

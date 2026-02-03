@@ -9,8 +9,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class CloudwrapperConfigurationLocation {
@@ -18,7 +16,7 @@ public final class CloudwrapperConfigurationLocation {
      * @return The capacity assigned to this configuration&#39;s location
      * 
      */
-    private @Nullable CloudwrapperConfigurationLocationCapacity capacity;
+    private CloudwrapperConfigurationLocationCapacity capacity;
     /**
      * @return Additional comments provided by the user.
      * 
@@ -35,8 +33,8 @@ public final class CloudwrapperConfigurationLocation {
      * @return The capacity assigned to this configuration&#39;s location
      * 
      */
-    public Optional<CloudwrapperConfigurationLocationCapacity> capacity() {
-        return Optional.ofNullable(this.capacity);
+    public CloudwrapperConfigurationLocationCapacity capacity() {
+        return this.capacity;
     }
     /**
      * @return Additional comments provided by the user.
@@ -62,7 +60,7 @@ public final class CloudwrapperConfigurationLocation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable CloudwrapperConfigurationLocationCapacity capacity;
+        private CloudwrapperConfigurationLocationCapacity capacity;
         private String comments;
         private Integer trafficTypeId;
         public Builder() {}
@@ -74,8 +72,10 @@ public final class CloudwrapperConfigurationLocation {
         }
 
         @CustomType.Setter
-        public Builder capacity(@Nullable CloudwrapperConfigurationLocationCapacity capacity) {
-
+        public Builder capacity(CloudwrapperConfigurationLocationCapacity capacity) {
+            if (capacity == null) {
+              throw new MissingRequiredPropertyException("CloudwrapperConfigurationLocation", "capacity");
+            }
             this.capacity = capacity;
             return this;
         }
