@@ -15,8 +15,8 @@ namespace Pulumi.Akamai.Inputs
         /// <summary>
         /// The capacity assigned to this configuration's location
         /// </summary>
-        [Input("capacity")]
-        public Input<Inputs.CloudwrapperConfigurationLocationCapacityArgs>? Capacity { get; set; }
+        [Input("capacity", required: true)]
+        public Input<Inputs.CloudwrapperConfigurationLocationCapacityArgs> Capacity { get; set; } = null!;
 
         /// <summary>
         /// Additional comments provided by the user.

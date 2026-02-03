@@ -340,7 +340,7 @@ export interface CloudwrapperConfigurationLocation {
     /**
      * The capacity assigned to this configuration's location
      */
-    capacity?: outputs.CloudwrapperConfigurationLocationCapacity;
+    capacity: outputs.CloudwrapperConfigurationLocationCapacity;
     /**
      * Additional comments provided by the user.
      */

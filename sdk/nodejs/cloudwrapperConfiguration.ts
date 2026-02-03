@@ -53,7 +53,7 @@ export class CloudwrapperConfiguration extends pulumi.CustomResource {
     /**
      * List of locations to use with the configuration.
      */
-    declare public readonly locations: pulumi.Output<outputs.CloudwrapperConfigurationLocation[] | undefined>;
+    declare public readonly locations: pulumi.Output<outputs.CloudwrapperConfigurationLocation[]>;
     /**
      * Email addresses to use for notifications.
      */
@@ -105,6 +105,9 @@ export class CloudwrapperConfiguration extends pulumi.CustomResource {
             }
             if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
+            }
+            if (args?.locations === undefined && !opts.urn) {
+                throw new Error("Missing required property 'locations'");
             }
             if (args?.propertyIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'propertyIds'");
@@ -191,7 +194,7 @@ export interface CloudwrapperConfigurationArgs {
     /**
      * List of locations to use with the configuration.
      */
-    locations?: pulumi.Input<pulumi.Input<inputs.CloudwrapperConfigurationLocation>[]>;
+    locations: pulumi.Input<pulumi.Input<inputs.CloudwrapperConfigurationLocation>[]>;
     /**
      * Email addresses to use for notifications.
      */

@@ -82,14 +82,14 @@ public class CloudwrapperConfiguration extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="locations", refs={List.class,CloudwrapperConfigurationLocation.class}, tree="[0,1]")
-    private Output</* @Nullable */ List<CloudwrapperConfigurationLocation>> locations;
+    private Output<List<CloudwrapperConfigurationLocation>> locations;
 
     /**
      * @return List of locations to use with the configuration.
      * 
      */
-    public Output<Optional<List<CloudwrapperConfigurationLocation>>> locations() {
-        return Codegen.optional(this.locations);
+    public Output<List<CloudwrapperConfigurationLocation>> locations() {
+        return this.locations;
     }
     /**
      * Email addresses to use for notifications.

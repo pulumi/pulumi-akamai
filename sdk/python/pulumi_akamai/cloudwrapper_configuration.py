@@ -24,9 +24,9 @@ class CloudwrapperConfigurationArgs:
                  comments: pulumi.Input[_builtins.str],
                  config_name: pulumi.Input[_builtins.str],
                  contract_id: pulumi.Input[_builtins.str],
+                 locations: pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]],
                  property_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  capacity_alerts_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  retain_idle_objects: Optional[pulumi.Input[_builtins.bool]] = None,
                  timeouts: Optional[pulumi.Input['CloudwrapperConfigurationTimeoutsArgs']] = None):
@@ -35,20 +35,19 @@ class CloudwrapperConfigurationArgs:
         :param pulumi.Input[_builtins.str] comments: Additional information you provide to differentiate or track changes of the configuration.
         :param pulumi.Input[_builtins.str] config_name: Name of the configuration.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID having Cloud Wrapper entitlement.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]] locations: List of locations to use with the configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] property_ids: List of properties belonging to eligible products.
         :param pulumi.Input[_builtins.int] capacity_alerts_threshold: Capacity Alerts enablement information for the configuration. The Alert Threshold should be between 50 and 100.
-        :param pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]] locations: List of locations to use with the configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: Email addresses to use for notifications.
         :param pulumi.Input[_builtins.bool] retain_idle_objects: Retain idle objects beyond their max idle lifetime.
         """
         pulumi.set(__self__, "comments", comments)
         pulumi.set(__self__, "config_name", config_name)
         pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "locations", locations)
         pulumi.set(__self__, "property_ids", property_ids)
         if capacity_alerts_threshold is not None:
             pulumi.set(__self__, "capacity_alerts_threshold", capacity_alerts_threshold)
-        if locations is not None:
-            pulumi.set(__self__, "locations", locations)
         if notification_emails is not None:
             pulumi.set(__self__, "notification_emails", notification_emails)
         if retain_idle_objects is not None:
@@ -93,6 +92,18 @@ class CloudwrapperConfigurationArgs:
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
+    @pulumi.getter
+    def locations(self) -> pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]]:
+        """
+        List of locations to use with the configuration.
+        """
+        return pulumi.get(self, "locations")
+
+    @locations.setter
+    def locations(self, value: pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]]):
+        pulumi.set(self, "locations", value)
+
+    @_builtins.property
     @pulumi.getter(name="propertyIds")
     def property_ids(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
@@ -115,18 +126,6 @@ class CloudwrapperConfigurationArgs:
     @capacity_alerts_threshold.setter
     def capacity_alerts_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "capacity_alerts_threshold", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]]]:
-        """
-        List of locations to use with the configuration.
-        """
-        return pulumi.get(self, "locations")
-
-    @locations.setter
-    def locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]]]):
-        pulumi.set(self, "locations", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmails")
@@ -406,6 +405,8 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
             if contract_id is None and not opts.urn:
                 raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
+            if locations is None and not opts.urn:
+                raise TypeError("Missing required property 'locations'")
             __props__.__dict__["locations"] = locations
             __props__.__dict__["notification_emails"] = notification_emails
             if property_ids is None and not opts.urn:
@@ -501,7 +502,7 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def locations(self) -> pulumi.Output[Optional[Sequence['outputs.CloudwrapperConfigurationLocation']]]:
+    def locations(self) -> pulumi.Output[Sequence['outputs.CloudwrapperConfigurationLocation']]:
         """
         List of locations to use with the configuration.
         """
