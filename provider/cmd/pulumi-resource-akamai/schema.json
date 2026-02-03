@@ -627,6 +627,7 @@
             },
             "type": "object",
             "required": [
+                "capacity",
                 "comments",
                 "trafficTypeId"
             ]
@@ -25232,6 +25233,7 @@
                 "comments",
                 "configName",
                 "contractId",
+                "locations",
                 "notificationEmails",
                 "propertyIds",
                 "retainIdleObjects",
@@ -25287,6 +25289,7 @@
                 "comments",
                 "configName",
                 "contractId",
+                "locations",
                 "propertyIds"
             ],
             "stateInputs": {
