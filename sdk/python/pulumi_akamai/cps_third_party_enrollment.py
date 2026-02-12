@@ -57,6 +57,7 @@ class CpsThirdPartyEnrollmentArgs:
         :param pulumi.Input[_builtins.bool] change_management: When set to false, the certificate will be deployed to both staging and production networks
         :param pulumi.Input[_builtins.bool] exclude_sans: When true, SANs are excluded from the CSR
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: List of SANs
+        :param pulumi.Input[_builtins.str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
         :param pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "admin_contact", admin_contact)
@@ -282,6 +283,9 @@ class CpsThirdPartyEnrollmentArgs:
     @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
     def signature_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The SHA function. Changing this value may require running terraform destroy, terraform apply
+        """
         return pulumi.get(self, "signature_algorithm")
 
     @signature_algorithm.setter
@@ -338,6 +342,7 @@ class _CpsThirdPartyEnrollmentState:
         :param pulumi.Input['CpsThirdPartyEnrollmentOrganizationArgs'] organization: Organization information
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: List of SANs
         :param pulumi.Input[_builtins.str] secure_network: Type of TLS deployment network
+        :param pulumi.Input[_builtins.str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
         :param pulumi.Input[_builtins.bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs'] tech_contact: Contact information for an administrator at Akamai
         :param pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs'] timeouts: Enables to set timeout for processing
@@ -550,6 +555,9 @@ class _CpsThirdPartyEnrollmentState:
     @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
     def signature_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The SHA function. Changing this value may require running terraform destroy, terraform apply
+        """
         return pulumi.get(self, "signature_algorithm")
 
     @signature_algorithm.setter
@@ -636,6 +644,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         :param pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']] organization: Organization information
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: List of SANs
         :param pulumi.Input[_builtins.str] secure_network: Type of TLS deployment network
+        :param pulumi.Input[_builtins.str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
         :param pulumi.Input[_builtins.bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']] tech_contact: Contact information for an administrator at Akamai
         :param pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
@@ -775,6 +784,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         :param pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']] organization: Organization information
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: List of SANs
         :param pulumi.Input[_builtins.str] secure_network: Type of TLS deployment network
+        :param pulumi.Input[_builtins.str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
         :param pulumi.Input[_builtins.bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']] tech_contact: Contact information for an administrator at Akamai
         :param pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
@@ -918,6 +928,9 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
     def signature_algorithm(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The SHA function. Changing this value may require running terraform destroy, terraform apply
+        """
         return pulumi.get(self, "signature_algorithm")
 
     @_builtins.property

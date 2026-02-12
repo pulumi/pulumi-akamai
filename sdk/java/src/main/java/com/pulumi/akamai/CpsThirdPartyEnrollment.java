@@ -220,9 +220,17 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
     public Output<String> secureNetwork() {
         return this.secureNetwork;
     }
+    /**
+     * The SHA function. Changing this value may require running terraform destroy, terraform apply
+     * 
+     */
     @Export(name="signatureAlgorithm", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> signatureAlgorithm;
 
+    /**
+     * @return The SHA function. Changing this value may require running terraform destroy, terraform apply
+     * 
+     */
     public Output<Optional<String>> signatureAlgorithm() {
         return Codegen.optional(this.signatureAlgorithm);
     }

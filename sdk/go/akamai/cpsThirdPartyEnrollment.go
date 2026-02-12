@@ -42,7 +42,8 @@ type CpsThirdPartyEnrollment struct {
 	// List of SANs
 	Sans pulumi.StringArrayOutput `pulumi:"sans"`
 	// Type of TLS deployment network
-	SecureNetwork      pulumi.StringOutput    `pulumi:"secureNetwork"`
+	SecureNetwork pulumi.StringOutput `pulumi:"secureNetwork"`
+	// The SHA function. Changing this value may require running terraform destroy, terraform apply
 	SignatureAlgorithm pulumi.StringPtrOutput `pulumi:"signatureAlgorithm"`
 	// Whether Server Name Indication is used for enrollment
 	SniOnly pulumi.BoolOutput `pulumi:"sniOnly"`
@@ -136,7 +137,8 @@ type cpsThirdPartyEnrollmentState struct {
 	// List of SANs
 	Sans []string `pulumi:"sans"`
 	// Type of TLS deployment network
-	SecureNetwork      *string `pulumi:"secureNetwork"`
+	SecureNetwork *string `pulumi:"secureNetwork"`
+	// The SHA function. Changing this value may require running terraform destroy, terraform apply
 	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
 	// Whether Server Name Indication is used for enrollment
 	SniOnly *bool `pulumi:"sniOnly"`
@@ -174,7 +176,8 @@ type CpsThirdPartyEnrollmentState struct {
 	// List of SANs
 	Sans pulumi.StringArrayInput
 	// Type of TLS deployment network
-	SecureNetwork      pulumi.StringPtrInput
+	SecureNetwork pulumi.StringPtrInput
+	// The SHA function. Changing this value may require running terraform destroy, terraform apply
 	SignatureAlgorithm pulumi.StringPtrInput
 	// Whether Server Name Indication is used for enrollment
 	SniOnly pulumi.BoolPtrInput
@@ -216,7 +219,8 @@ type cpsThirdPartyEnrollmentArgs struct {
 	// List of SANs
 	Sans []string `pulumi:"sans"`
 	// Type of TLS deployment network
-	SecureNetwork      string  `pulumi:"secureNetwork"`
+	SecureNetwork string `pulumi:"secureNetwork"`
+	// The SHA function. Changing this value may require running terraform destroy, terraform apply
 	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
 	// Whether Server Name Indication is used for enrollment
 	SniOnly bool `pulumi:"sniOnly"`
@@ -255,7 +259,8 @@ type CpsThirdPartyEnrollmentArgs struct {
 	// List of SANs
 	Sans pulumi.StringArrayInput
 	// Type of TLS deployment network
-	SecureNetwork      pulumi.StringInput
+	SecureNetwork pulumi.StringInput
+	// The SHA function. Changing this value may require running terraform destroy, terraform apply
 	SignatureAlgorithm pulumi.StringPtrInput
 	// Whether Server Name Indication is used for enrollment
 	SniOnly pulumi.BoolInput
@@ -424,6 +429,7 @@ func (o CpsThirdPartyEnrollmentOutput) SecureNetwork() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.StringOutput { return v.SecureNetwork }).(pulumi.StringOutput)
 }
 
+// The SHA function. Changing this value may require running terraform destroy, terraform apply
 func (o CpsThirdPartyEnrollmentOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.StringPtrOutput { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
 }

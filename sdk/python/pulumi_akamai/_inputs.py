@@ -701,20 +701,15 @@ __all__ = [
     'GetPropertyRulesTemplateVariableArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AppSecIPGeoAsnControlsArgsDict(TypedDict):
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Action set for ASN Controls
-        """
-        asn_network_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of IDs of ASN network list to be blocked.
-        """
-elif False:
-    AppSecIPGeoAsnControlsArgsDict: TypeAlias = Mapping[str, Any]
+class AppSecIPGeoAsnControlsArgsDict(TypedDict):
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Action set for ASN Controls
+    """
+    asn_network_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of IDs of ASN network list to be blocked.
+    """
 
 @pulumi.input_type
 class AppSecIPGeoAsnControlsArgs:
@@ -755,18 +750,15 @@ class AppSecIPGeoAsnControlsArgs:
         pulumi.set(self, "asn_network_lists", value)
 
 
-if not MYPY:
-    class AppSecIPGeoGeoControlsArgsDict(TypedDict):
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Action set for GEO Controls.
-        """
-        geo_network_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of IDs of geographic network list to be blocked.
-        """
-elif False:
-    AppSecIPGeoGeoControlsArgsDict: TypeAlias = Mapping[str, Any]
+class AppSecIPGeoGeoControlsArgsDict(TypedDict):
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Action set for GEO Controls.
+    """
+    geo_network_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of IDs of geographic network list to be blocked.
+    """
 
 @pulumi.input_type
 class AppSecIPGeoGeoControlsArgs:
@@ -807,18 +799,15 @@ class AppSecIPGeoGeoControlsArgs:
         pulumi.set(self, "geo_network_lists", value)
 
 
-if not MYPY:
-    class AppSecIPGeoIpControlsArgsDict(TypedDict):
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Action set for IP Controls.
-        """
-        ip_network_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of IDs of IP network list to be blocked.
-        """
-elif False:
-    AppSecIPGeoIpControlsArgsDict: TypeAlias = Mapping[str, Any]
+class AppSecIPGeoIpControlsArgsDict(TypedDict):
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Action set for IP Controls.
+    """
+    ip_network_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of IDs of IP network list to be blocked.
+    """
 
 @pulumi.input_type
 class AppSecIPGeoIpControlsArgs:
@@ -859,54 +848,51 @@ class AppSecIPGeoIpControlsArgs:
         pulumi.set(self, "ip_network_lists", value)
 
 
-if not MYPY:
-    class AppSecSiemSettingsExceptionsArgsDict(TypedDict):
-        api_request_constraints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include api request constraints events in SIEM
-        """
-        apr_protections: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include apr protection events in SIEM
-        """
-        bot_managements: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include bot management events in SIEM
-        """
-        client_reps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include client reputation events in SIEM
-        """
-        custom_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include custom rules events in SIEM
-        """
-        ip_geos: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include ip geo events in SIEM
-        """
-        malware_protections: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include malware protection events in SIEM
-        """
-        rates: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include rate events in SIEM
-        """
-        slow_posts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include slow post events in SIEM
-        """
-        url_protections: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include url protection events in SIEM
-        """
-        wafs: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Whether there should be an exception to include waf events in SIEM
-        """
-elif False:
-    AppSecSiemSettingsExceptionsArgsDict: TypeAlias = Mapping[str, Any]
+class AppSecSiemSettingsExceptionsArgsDict(TypedDict):
+    api_request_constraints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include api request constraints events in SIEM
+    """
+    apr_protections: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include apr protection events in SIEM
+    """
+    bot_managements: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include bot management events in SIEM
+    """
+    client_reps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include client reputation events in SIEM
+    """
+    custom_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include custom rules events in SIEM
+    """
+    ip_geos: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include ip geo events in SIEM
+    """
+    malware_protections: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include malware protection events in SIEM
+    """
+    rates: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include rate events in SIEM
+    """
+    slow_posts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include slow post events in SIEM
+    """
+    url_protections: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include url protection events in SIEM
+    """
+    wafs: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Whether there should be an exception to include waf events in SIEM
+    """
 
 @pulumi.input_type
 class AppSecSiemSettingsExceptionsArgs:
@@ -1091,18 +1077,15 @@ class AppSecSiemSettingsExceptionsArgs:
         pulumi.set(self, "wafs", value)
 
 
-if not MYPY:
-    class AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict(TypedDict):
-        attack_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of attack group names.
-        """
-        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        List of rule IDs.
-        """
-elif False:
-    AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict: TypeAlias = Mapping[str, Any]
+class AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict(TypedDict):
+    attack_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of attack group names.
+    """
+    rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    List of rule IDs.
+    """
 
 @pulumi.input_type
 class AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs:
@@ -1143,26 +1126,23 @@ class AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs:
         pulumi.set(self, "rules", value)
 
 
-if not MYPY:
-    class ClientlistListItemArgsDict(TypedDict):
-        value: pulumi.Input[_builtins.str]
-        """
-        Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A description of the item.
-        """
-        expiration_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The item expiration date.
-        """
-        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The item tags.
-        """
-elif False:
-    ClientlistListItemArgsDict: TypeAlias = Mapping[str, Any]
+class ClientlistListItemArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    """
+    Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A description of the item.
+    """
+    expiration_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The item expiration date.
+    """
+    tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The item tags.
+    """
 
 @pulumi.input_type
 class ClientlistListItemArgs:
@@ -1234,30 +1214,27 @@ class ClientlistListItemArgs:
         pulumi.set(self, "tags", value)
 
 
-if not MYPY:
-    class CloudAccessKeyCredentialsAArgsDict(TypedDict):
-        cloud_access_key_id: pulumi.Input[_builtins.str]
-        """
-        Access key id from cloud provider which is used to sign API requests
-        """
-        cloud_secret_access_key: pulumi.Input[_builtins.str]
-        """
-        Cloud Access secret from cloud provider which is used to sign API requests
-        """
-        primary_key: pulumi.Input[_builtins.bool]
-        """
-        Boolean value which helps to define if credentials should be assigned to property
-        """
-        version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Numeric access key version associated with specific pair of cloud access credentials used to sign API requests
-        """
-        version_guid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier assigned to specific access key version
-        """
-elif False:
-    CloudAccessKeyCredentialsAArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAccessKeyCredentialsAArgsDict(TypedDict):
+    cloud_access_key_id: pulumi.Input[_builtins.str]
+    """
+    Access key id from cloud provider which is used to sign API requests
+    """
+    cloud_secret_access_key: pulumi.Input[_builtins.str]
+    """
+    Cloud Access secret from cloud provider which is used to sign API requests
+    """
+    primary_key: pulumi.Input[_builtins.bool]
+    """
+    Boolean value which helps to define if credentials should be assigned to property
+    """
+    version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Numeric access key version associated with specific pair of cloud access credentials used to sign API requests
+    """
+    version_guid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier assigned to specific access key version
+    """
 
 @pulumi.input_type
 class CloudAccessKeyCredentialsAArgs:
@@ -1343,30 +1320,27 @@ class CloudAccessKeyCredentialsAArgs:
         pulumi.set(self, "version_guid", value)
 
 
-if not MYPY:
-    class CloudAccessKeyCredentialsBArgsDict(TypedDict):
-        cloud_access_key_id: pulumi.Input[_builtins.str]
-        """
-        Access key id from cloud provider which is used to sign API requests
-        """
-        cloud_secret_access_key: pulumi.Input[_builtins.str]
-        """
-        Cloud Access secret from cloud provider which is used to sign API requests
-        """
-        primary_key: pulumi.Input[_builtins.bool]
-        """
-        Boolean value which helps to define if credentials should be assigned to property
-        """
-        version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Numeric access key version associated with specific pair of cloud access credentials used to sign API requests
-        """
-        version_guid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier assigned to specific access key version
-        """
-elif False:
-    CloudAccessKeyCredentialsBArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAccessKeyCredentialsBArgsDict(TypedDict):
+    cloud_access_key_id: pulumi.Input[_builtins.str]
+    """
+    Access key id from cloud provider which is used to sign API requests
+    """
+    cloud_secret_access_key: pulumi.Input[_builtins.str]
+    """
+    Cloud Access secret from cloud provider which is used to sign API requests
+    """
+    primary_key: pulumi.Input[_builtins.bool]
+    """
+    Boolean value which helps to define if credentials should be assigned to property
+    """
+    version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Numeric access key version associated with specific pair of cloud access credentials used to sign API requests
+    """
+    version_guid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier assigned to specific access key version
+    """
 
 @pulumi.input_type
 class CloudAccessKeyCredentialsBArgs:
@@ -1452,18 +1426,15 @@ class CloudAccessKeyCredentialsBArgs:
         pulumi.set(self, "version_guid", value)
 
 
-if not MYPY:
-    class CloudAccessKeyNetworkConfigurationArgsDict(TypedDict):
-        security_network: pulumi.Input[_builtins.str]
-        """
-        The API deploys the access key to this secure network
-        """
-        additional_cdn: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional type of the deployment network that the access key will be deployed to.
-        """
-elif False:
-    CloudAccessKeyNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAccessKeyNetworkConfigurationArgsDict(TypedDict):
+    security_network: pulumi.Input[_builtins.str]
+    """
+    The API deploys the access key to this secure network
+    """
+    additional_cdn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional type of the deployment network that the access key will be deployed to.
+    """
 
 @pulumi.input_type
 class CloudAccessKeyNetworkConfigurationArgs:
@@ -1503,22 +1474,19 @@ class CloudAccessKeyNetworkConfigurationArgs:
         pulumi.set(self, "additional_cdn", value)
 
 
-if not MYPY:
-    class CloudAccessKeyTimeoutsArgsDict(TypedDict):
-        create: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource create timeout. By default it's 60 minutes with 1 minute polling interval.
-        """
-        delete: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource delete timeout. By default it's 60 minutes with 1 minute polling interval.
-        """
-        update: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource update timeout. By default it's 60 minutes with 1 minute polling interval.
-        """
-elif False:
-    CloudAccessKeyTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAccessKeyTimeoutsArgsDict(TypedDict):
+    create: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource create timeout. By default it's 60 minutes with 1 minute polling interval.
+    """
+    delete: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource delete timeout. By default it's 60 minutes with 1 minute polling interval.
+    """
+    update: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource update timeout. By default it's 60 minutes with 1 minute polling interval.
+    """
 
 @pulumi.input_type
 class CloudAccessKeyTimeoutsArgs:
@@ -1575,30 +1543,27 @@ class CloudAccessKeyTimeoutsArgs:
         pulumi.set(self, "update", value)
 
 
-if not MYPY:
-    class CloudcertificatesCertificateSubjectArgsDict(TypedDict):
-        common_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-        """
-        country: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Two-letter ISO 3166 country code.
-        """
-        locality: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        City or locality name.
-        """
-        organization: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Legal name of the organization.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Full name of the state or province.
-        """
-elif False:
-    CloudcertificatesCertificateSubjectArgsDict: TypeAlias = Mapping[str, Any]
+class CloudcertificatesCertificateSubjectArgsDict(TypedDict):
+    common_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
+    """
+    country: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Two-letter ISO 3166 country code.
+    """
+    locality: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    City or locality name.
+    """
+    organization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Legal name of the organization.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Full name of the state or province.
+    """
 
 @pulumi.input_type
 class CloudcertificatesCertificateSubjectArgs:
@@ -1687,11 +1652,8 @@ class CloudcertificatesCertificateSubjectArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CloudletsApplicationLoadBalancerActivationTimeoutsArgs:
@@ -1710,58 +1672,55 @@ class CloudletsApplicationLoadBalancerActivationTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class CloudletsApplicationLoadBalancerDataCenterArgsDict(TypedDict):
-        continent: pulumi.Input[_builtins.str]
-        """
-        The continent on which the data center is located
-        """
-        country: pulumi.Input[_builtins.str]
-        """
-        The country in which the data center is located
-        """
-        latitude: pulumi.Input[_builtins.float]
-        """
-        The latitude value for the data center. This member supports six decimal places of precision.
-        """
-        longitude: pulumi.Input[_builtins.float]
-        """
-        The longitude value for the data center. This member supports six decimal places of precision.
-        """
-        origin_id: pulumi.Input[_builtins.str]
-        """
-        The ID of an origin that represents the data center. The conditional origin, which is defined in the Property Manager API, must have an originType of either CUSTOMER or NET_STORAGE
-        """
-        percent: pulumi.Input[_builtins.float]
-        """
-        The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
-        """
-        city: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The city in which the data center is located.
-        """
-        cloud_server_host_header_override: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Describes if cloud server host header is overridden
-        """
-        cloud_service: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Describes if this datacenter is a cloud service
-        """
-        hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This should match the 'hostname' value defined for this datacenter in Property Manager
-        """
-        liveness_hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        An array of strings that represent the origin servers used to poll the data centers in an application load balancer configuration. These servers support basic HTTP polling.
-        """
-        state_or_province: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The state, province, or region where the data center is located
-        """
-elif False:
-    CloudletsApplicationLoadBalancerDataCenterArgsDict: TypeAlias = Mapping[str, Any]
+class CloudletsApplicationLoadBalancerDataCenterArgsDict(TypedDict):
+    continent: pulumi.Input[_builtins.str]
+    """
+    The continent on which the data center is located
+    """
+    country: pulumi.Input[_builtins.str]
+    """
+    The country in which the data center is located
+    """
+    latitude: pulumi.Input[_builtins.float]
+    """
+    The latitude value for the data center. This member supports six decimal places of precision.
+    """
+    longitude: pulumi.Input[_builtins.float]
+    """
+    The longitude value for the data center. This member supports six decimal places of precision.
+    """
+    origin_id: pulumi.Input[_builtins.str]
+    """
+    The ID of an origin that represents the data center. The conditional origin, which is defined in the Property Manager API, must have an originType of either CUSTOMER or NET_STORAGE
+    """
+    percent: pulumi.Input[_builtins.float]
+    """
+    The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+    """
+    city: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The city in which the data center is located.
+    """
+    cloud_server_host_header_override: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Describes if cloud server host header is overridden
+    """
+    cloud_service: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Describes if this datacenter is a cloud service
+    """
+    hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This should match the 'hostname' value defined for this datacenter in Property Manager
+    """
+    liveness_hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    An array of strings that represent the origin servers used to poll the data centers in an application load balancer configuration. These servers support basic HTTP polling.
+    """
+    state_or_province: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The state, province, or region where the data center is located
+    """
 
 @pulumi.input_type
 class CloudletsApplicationLoadBalancerDataCenterArgs:
@@ -1956,59 +1915,56 @@ class CloudletsApplicationLoadBalancerDataCenterArgs:
         pulumi.set(self, "state_or_province", value)
 
 
-if not MYPY:
-    class CloudletsApplicationLoadBalancerLivenessSettingsArgsDict(TypedDict):
-        path: pulumi.Input[_builtins.str]
-        """
-        The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
-        """
-        port: pulumi.Input[_builtins.int]
-        """
-        The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
-        """
-        protocol: pulumi.Input[_builtins.str]
-        """
-        The protocol or scheme for the database, either HTTP or HTTPS.
-        """
-        additional_headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Maps additional case-insensitive HTTP header names included to the liveness testing requests
-        """
-        host_header: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Host header for the liveness HTTP request
-        """
-        interval: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Describes how often the liveness test will be performed. Optional defaults to 60 seconds, minimum is 10 seconds.
-        """
-        peer_certificate_verification: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Describes whether or not to validate the origin certificate for an HTTPS request
-        """
-        request_string: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The request which will be used for TCP(S) tests
-        """
-        response_string: NotRequired[pulumi.Input[_builtins.str]]
-        status3xx_failure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Set to true to mark the liveness test as failed when the request returns a 3xx (redirection) status code.
-        """
-        status4xx_failure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Set to true to mark the liveness test as failed when the request returns a 4xx (client error) status code.
-        """
-        status5xx_failure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Set to true to mark the liveness test as failed when the request returns a 5xx (server error) status code.
-        """
-        timeout: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The number of seconds the system waits before failing the liveness test. The default is 25 seconds.
-        """
-elif False:
-    CloudletsApplicationLoadBalancerLivenessSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudletsApplicationLoadBalancerLivenessSettingsArgsDict(TypedDict):
+    path: pulumi.Input[_builtins.str]
+    """
+    The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
+    """
+    port: pulumi.Input[_builtins.int]
+    """
+    The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
+    """
+    protocol: pulumi.Input[_builtins.str]
+    """
+    The protocol or scheme for the database, either HTTP or HTTPS.
+    """
+    additional_headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Maps additional case-insensitive HTTP header names included to the liveness testing requests
+    """
+    host_header: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Host header for the liveness HTTP request
+    """
+    interval: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Describes how often the liveness test will be performed. Optional defaults to 60 seconds, minimum is 10 seconds.
+    """
+    peer_certificate_verification: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Describes whether or not to validate the origin certificate for an HTTPS request
+    """
+    request_string: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The request which will be used for TCP(S) tests
+    """
+    response_string: NotRequired[pulumi.Input[_builtins.str]]
+    status3xx_failure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Set to true to mark the liveness test as failed when the request returns a 3xx (redirection) status code.
+    """
+    status4xx_failure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Set to true to mark the liveness test as failed when the request returns a 4xx (client error) status code.
+    """
+    status5xx_failure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Set to true to mark the liveness test as failed when the request returns a 5xx (server error) status code.
+    """
+    timeout: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The number of seconds the system waits before failing the liveness test. The default is 25 seconds.
+    """
 
 @pulumi.input_type
 class CloudletsApplicationLoadBalancerLivenessSettingsArgs:
@@ -2218,11 +2174,8 @@ class CloudletsApplicationLoadBalancerLivenessSettingsArgs:
         pulumi.set(self, "timeout", value)
 
 
-if not MYPY:
-    class CloudletsPolicyActivationTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CloudletsPolicyActivationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudletsPolicyActivationTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CloudletsPolicyActivationTimeoutsArgs:
@@ -2241,11 +2194,8 @@ class CloudletsPolicyActivationTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class CloudletsPolicyTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CloudletsPolicyTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudletsPolicyTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CloudletsPolicyTimeoutsArgs:
@@ -2264,18 +2214,15 @@ class CloudletsPolicyTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class CloudwrapperActivationTimeoutsArgsDict(TypedDict):
-        create: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable activation timeout to be used on resource create. By default it's 4h with 1m pooling interval.
-        """
-        update: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable activation timeout to be used on resource update. By default it's 4h with 1m pooling interval.
-        """
-elif False:
-    CloudwrapperActivationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudwrapperActivationTimeoutsArgsDict(TypedDict):
+    create: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable activation timeout to be used on resource create. By default it's 4h with 1m pooling interval.
+    """
+    update: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable activation timeout to be used on resource update. By default it's 4h with 1m pooling interval.
+    """
 
 @pulumi.input_type
 class CloudwrapperActivationTimeoutsArgs:
@@ -2316,22 +2263,19 @@ class CloudwrapperActivationTimeoutsArgs:
         pulumi.set(self, "update", value)
 
 
-if not MYPY:
-    class CloudwrapperConfigurationLocationArgsDict(TypedDict):
-        capacity: pulumi.Input['CloudwrapperConfigurationLocationCapacityArgsDict']
-        """
-        The capacity assigned to this configuration's location
-        """
-        comments: pulumi.Input[_builtins.str]
-        """
-        Additional comments provided by the user.
-        """
-        traffic_type_id: pulumi.Input[_builtins.int]
-        """
-        Unique identifier for the location and traffic type combination
-        """
-elif False:
-    CloudwrapperConfigurationLocationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudwrapperConfigurationLocationArgsDict(TypedDict):
+    capacity: pulumi.Input['CloudwrapperConfigurationLocationCapacityArgsDict']
+    """
+    The capacity assigned to this configuration's location
+    """
+    comments: pulumi.Input[_builtins.str]
+    """
+    Additional comments provided by the user.
+    """
+    traffic_type_id: pulumi.Input[_builtins.int]
+    """
+    Unique identifier for the location and traffic type combination
+    """
 
 @pulumi.input_type
 class CloudwrapperConfigurationLocationArgs:
@@ -2385,18 +2329,15 @@ class CloudwrapperConfigurationLocationArgs:
         pulumi.set(self, "traffic_type_id", value)
 
 
-if not MYPY:
-    class CloudwrapperConfigurationLocationCapacityArgsDict(TypedDict):
-        unit: pulumi.Input[_builtins.str]
-        """
-        Unit of capacity. Can be either 'GB' or 'TB'.
-        """
-        value: pulumi.Input[_builtins.int]
-        """
-        Value of capacity.
-        """
-elif False:
-    CloudwrapperConfigurationLocationCapacityArgsDict: TypeAlias = Mapping[str, Any]
+class CloudwrapperConfigurationLocationCapacityArgsDict(TypedDict):
+    unit: pulumi.Input[_builtins.str]
+    """
+    Unit of capacity. Can be either 'GB' or 'TB'.
+    """
+    value: pulumi.Input[_builtins.int]
+    """
+    Value of capacity.
+    """
 
 @pulumi.input_type
 class CloudwrapperConfigurationLocationCapacityArgs:
@@ -2435,14 +2376,11 @@ class CloudwrapperConfigurationLocationCapacityArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class CloudwrapperConfigurationTimeoutsArgsDict(TypedDict):
-        delete: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.
-        """
-elif False:
-    CloudwrapperConfigurationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudwrapperConfigurationTimeoutsArgsDict(TypedDict):
+    delete: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.
+    """
 
 @pulumi.input_type
 class CloudwrapperConfigurationTimeoutsArgs:
@@ -2467,11 +2405,8 @@ class CloudwrapperConfigurationTimeoutsArgs:
         pulumi.set(self, "delete", value)
 
 
-if not MYPY:
-    class CpCodeTimeoutsArgsDict(TypedDict):
-        update: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CpCodeTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CpCodeTimeoutsArgsDict(TypedDict):
+    update: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CpCodeTimeoutsArgs:
@@ -2490,58 +2425,55 @@ class CpCodeTimeoutsArgs:
         pulumi.set(self, "update", value)
 
 
-if not MYPY:
-    class CpsDvEnrollmentAdminContactArgsDict(TypedDict):
-        email: pulumi.Input[_builtins.str]
-        """
-        E-mail address of the contact
-        """
-        first_name: pulumi.Input[_builtins.str]
-        """
-        First name of the contact
-        """
-        last_name: pulumi.Input[_builtins.str]
-        """
-        Last name of the contact
-        """
-        phone: pulumi.Input[_builtins.str]
-        """
-        Phone number of the contact
-        """
-        address_line_one: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of the contact
-        """
-        address_line_two: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of the contact
-        """
-        city: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        City of residence of the contact
-        """
-        country_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Country code of the contact
-        """
-        organization: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Organization where contact is hired
-        """
-        postal_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Postal code of the contact
-        """
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The region of the contact
-        """
-        title: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Title of the the contact
-        """
-elif False:
-    CpsDvEnrollmentAdminContactArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvEnrollmentAdminContactArgsDict(TypedDict):
+    email: pulumi.Input[_builtins.str]
+    """
+    E-mail address of the contact
+    """
+    first_name: pulumi.Input[_builtins.str]
+    """
+    First name of the contact
+    """
+    last_name: pulumi.Input[_builtins.str]
+    """
+    Last name of the contact
+    """
+    phone: pulumi.Input[_builtins.str]
+    """
+    Phone number of the contact
+    """
+    address_line_one: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of the contact
+    """
+    address_line_two: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of the contact
+    """
+    city: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    City of residence of the contact
+    """
+    country_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Country code of the contact
+    """
+    organization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Organization where contact is hired
+    """
+    postal_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Postal code of the contact
+    """
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The region of the contact
+    """
+    title: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Title of the the contact
+    """
 
 @pulumi.input_type
 class CpsDvEnrollmentAdminContactArgs:
@@ -2738,34 +2670,31 @@ class CpsDvEnrollmentAdminContactArgs:
         pulumi.set(self, "title", value)
 
 
-if not MYPY:
-    class CpsDvEnrollmentCsrArgsDict(TypedDict):
-        city: pulumi.Input[_builtins.str]
-        """
-        City where organization is located
-        """
-        country_code: pulumi.Input[_builtins.str]
-        """
-        The code of the country where organization is located
-        """
-        organization: pulumi.Input[_builtins.str]
-        """
-        Name of organization used in all legal documents
-        """
-        organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Organizational unit of organization
-        """
-        preferred_trust_chain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        State or province of organization location
-        """
-elif False:
-    CpsDvEnrollmentCsrArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvEnrollmentCsrArgsDict(TypedDict):
+    city: pulumi.Input[_builtins.str]
+    """
+    City where organization is located
+    """
+    country_code: pulumi.Input[_builtins.str]
+    """
+    The code of the country where organization is located
+    """
+    organization: pulumi.Input[_builtins.str]
+    """
+    Name of organization used in all legal documents
+    """
+    organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Organizational unit of organization
+    """
+    preferred_trust_chain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    State or province of organization location
+    """
 
 @pulumi.input_type
 class CpsDvEnrollmentCsrArgs:
@@ -2867,22 +2796,19 @@ class CpsDvEnrollmentCsrArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class CpsDvEnrollmentDnsChallengeArgsDict(TypedDict):
-        domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Domain for which the challenges were completed
-        """
-        full_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The domain name where Akamai publishes the response body to validate
-        """
-        response_body: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique content of the challenge
-        """
-elif False:
-    CpsDvEnrollmentDnsChallengeArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvEnrollmentDnsChallengeArgsDict(TypedDict):
+    domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Domain for which the challenges were completed
+    """
+    full_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The domain name where Akamai publishes the response body to validate
+    """
+    response_body: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique content of the challenge
+    """
 
 @pulumi.input_type
 class CpsDvEnrollmentDnsChallengeArgs:
@@ -2939,22 +2865,19 @@ class CpsDvEnrollmentDnsChallengeArgs:
         pulumi.set(self, "response_body", value)
 
 
-if not MYPY:
-    class CpsDvEnrollmentHttpChallengeArgsDict(TypedDict):
-        domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Domain for which the challenges were completed
-        """
-        full_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL where Akamai publishes the response body to validate
-        """
-        response_body: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique content of the challenge
-        """
-elif False:
-    CpsDvEnrollmentHttpChallengeArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvEnrollmentHttpChallengeArgsDict(TypedDict):
+    domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Domain for which the challenges were completed
+    """
+    full_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL where Akamai publishes the response body to validate
+    """
+    response_body: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique content of the challenge
+    """
 
 @pulumi.input_type
 class CpsDvEnrollmentHttpChallengeArgs:
@@ -3011,42 +2934,39 @@ class CpsDvEnrollmentHttpChallengeArgs:
         pulumi.set(self, "response_body", value)
 
 
-if not MYPY:
-    class CpsDvEnrollmentNetworkConfigurationArgsDict(TypedDict):
-        geography: pulumi.Input[_builtins.str]
-        """
-        Geography type used for enrollment
-        """
-        client_mutual_authentication: NotRequired[pulumi.Input['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict']]
-        """
-        The trust chain configuration used for client mutual authentication
-        """
-        clone_dns_names: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
-        """
-        disallowed_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        TLS versions which are disallowed
-        """
-        must_have_ciphers: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
-        """
-        ocsp_stapling: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Enable OCSP stapling. Default is 'on'
-        """
-        preferred_ciphers: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
-        """
-        quic_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enable QUIC protocol. Default is false
-        """
-elif False:
-    CpsDvEnrollmentNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvEnrollmentNetworkConfigurationArgsDict(TypedDict):
+    geography: pulumi.Input[_builtins.str]
+    """
+    Geography type used for enrollment
+    """
+    client_mutual_authentication: NotRequired[pulumi.Input['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict']]
+    """
+    The trust chain configuration used for client mutual authentication
+    """
+    clone_dns_names: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+    """
+    disallowed_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    TLS versions which are disallowed
+    """
+    must_have_ciphers: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
+    """
+    ocsp_stapling: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Enable OCSP stapling. Default is 'on'
+    """
+    preferred_ciphers: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
+    """
+    quic_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enable QUIC protocol. Default is false
+    """
 
 @pulumi.input_type
 class CpsDvEnrollmentNetworkConfigurationArgs:
@@ -3182,22 +3102,19 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
         pulumi.set(self, "quic_enabled", value)
 
 
-if not MYPY:
-    class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict(TypedDict):
-        ocsp_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enable OCSP stapling
-        """
-        send_ca_list_to_client: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enable the server to send the certificate authority (CA) list to the client
-        """
-        set_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The identifier of the set of trust chains, created in the Trust Chain Manager
-        """
-elif False:
-    CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict(TypedDict):
+    ocsp_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enable OCSP stapling
+    """
+    send_ca_list_to_client: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enable the server to send the certificate authority (CA) list to the client
+    """
+    set_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifier of the set of trust chains, created in the Trust Chain Manager
+    """
 
 @pulumi.input_type
 class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs:
@@ -3254,42 +3171,39 @@ class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs:
         pulumi.set(self, "set_id", value)
 
 
-if not MYPY:
-    class CpsDvEnrollmentOrganizationArgsDict(TypedDict):
-        address_line_one: pulumi.Input[_builtins.str]
-        """
-        The address of organization
-        """
-        city: pulumi.Input[_builtins.str]
-        """
-        City of organization
-        """
-        country_code: pulumi.Input[_builtins.str]
-        """
-        Country code of organization
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        Name of organization
-        """
-        phone: pulumi.Input[_builtins.str]
-        """
-        Phone number of organization
-        """
-        postal_code: pulumi.Input[_builtins.str]
-        """
-        Postal code of organization
-        """
-        region: pulumi.Input[_builtins.str]
-        """
-        The region of organization
-        """
-        address_line_two: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of organization
-        """
-elif False:
-    CpsDvEnrollmentOrganizationArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvEnrollmentOrganizationArgsDict(TypedDict):
+    address_line_one: pulumi.Input[_builtins.str]
+    """
+    The address of organization
+    """
+    city: pulumi.Input[_builtins.str]
+    """
+    City of organization
+    """
+    country_code: pulumi.Input[_builtins.str]
+    """
+    Country code of organization
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    Name of organization
+    """
+    phone: pulumi.Input[_builtins.str]
+    """
+    Phone number of organization
+    """
+    postal_code: pulumi.Input[_builtins.str]
+    """
+    Postal code of organization
+    """
+    region: pulumi.Input[_builtins.str]
+    """
+    The region of organization
+    """
+    address_line_two: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of organization
+    """
 
 @pulumi.input_type
 class CpsDvEnrollmentOrganizationArgs:
@@ -3419,58 +3333,55 @@ class CpsDvEnrollmentOrganizationArgs:
         pulumi.set(self, "address_line_two", value)
 
 
-if not MYPY:
-    class CpsDvEnrollmentTechContactArgsDict(TypedDict):
-        email: pulumi.Input[_builtins.str]
-        """
-        E-mail address of the contact
-        """
-        first_name: pulumi.Input[_builtins.str]
-        """
-        First name of the contact
-        """
-        last_name: pulumi.Input[_builtins.str]
-        """
-        Last name of the contact
-        """
-        phone: pulumi.Input[_builtins.str]
-        """
-        Phone number of the contact
-        """
-        address_line_one: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of the contact
-        """
-        address_line_two: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of the contact
-        """
-        city: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        City of residence of the contact
-        """
-        country_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Country code of the contact
-        """
-        organization: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Organization where contact is hired
-        """
-        postal_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Postal code of the contact
-        """
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The region of the contact
-        """
-        title: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Title of the the contact
-        """
-elif False:
-    CpsDvEnrollmentTechContactArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvEnrollmentTechContactArgsDict(TypedDict):
+    email: pulumi.Input[_builtins.str]
+    """
+    E-mail address of the contact
+    """
+    first_name: pulumi.Input[_builtins.str]
+    """
+    First name of the contact
+    """
+    last_name: pulumi.Input[_builtins.str]
+    """
+    Last name of the contact
+    """
+    phone: pulumi.Input[_builtins.str]
+    """
+    Phone number of the contact
+    """
+    address_line_one: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of the contact
+    """
+    address_line_two: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of the contact
+    """
+    city: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    City of residence of the contact
+    """
+    country_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Country code of the contact
+    """
+    organization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Organization where contact is hired
+    """
+    postal_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Postal code of the contact
+    """
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The region of the contact
+    """
+    title: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Title of the the contact
+    """
 
 @pulumi.input_type
 class CpsDvEnrollmentTechContactArgs:
@@ -3667,11 +3578,8 @@ class CpsDvEnrollmentTechContactArgs:
         pulumi.set(self, "title", value)
 
 
-if not MYPY:
-    class CpsDvEnrollmentTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CpsDvEnrollmentTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvEnrollmentTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CpsDvEnrollmentTimeoutsArgs:
@@ -3690,11 +3598,8 @@ class CpsDvEnrollmentTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class CpsDvValidationTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CpsDvValidationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CpsDvValidationTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CpsDvValidationTimeoutsArgs:
@@ -3713,58 +3618,55 @@ class CpsDvValidationTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class CpsThirdPartyEnrollmentAdminContactArgsDict(TypedDict):
-        email: pulumi.Input[_builtins.str]
-        """
-        E-mail address of the contact
-        """
-        first_name: pulumi.Input[_builtins.str]
-        """
-        First name of the contact
-        """
-        last_name: pulumi.Input[_builtins.str]
-        """
-        Last name of the contact
-        """
-        phone: pulumi.Input[_builtins.str]
-        """
-        Phone number of the contact
-        """
-        address_line_one: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of the contact
-        """
-        address_line_two: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of the contact
-        """
-        city: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        City of residence of the contact
-        """
-        country_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Country code of the contact
-        """
-        organization: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Organization where contact is hired
-        """
-        postal_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Postal code of the contact
-        """
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The region of the contact
-        """
-        title: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Title of the the contact
-        """
-elif False:
-    CpsThirdPartyEnrollmentAdminContactArgsDict: TypeAlias = Mapping[str, Any]
+class CpsThirdPartyEnrollmentAdminContactArgsDict(TypedDict):
+    email: pulumi.Input[_builtins.str]
+    """
+    E-mail address of the contact
+    """
+    first_name: pulumi.Input[_builtins.str]
+    """
+    First name of the contact
+    """
+    last_name: pulumi.Input[_builtins.str]
+    """
+    Last name of the contact
+    """
+    phone: pulumi.Input[_builtins.str]
+    """
+    Phone number of the contact
+    """
+    address_line_one: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of the contact
+    """
+    address_line_two: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of the contact
+    """
+    city: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    City of residence of the contact
+    """
+    country_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Country code of the contact
+    """
+    organization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Organization where contact is hired
+    """
+    postal_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Postal code of the contact
+    """
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The region of the contact
+    """
+    title: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Title of the the contact
+    """
 
 @pulumi.input_type
 class CpsThirdPartyEnrollmentAdminContactArgs:
@@ -3961,34 +3863,31 @@ class CpsThirdPartyEnrollmentAdminContactArgs:
         pulumi.set(self, "title", value)
 
 
-if not MYPY:
-    class CpsThirdPartyEnrollmentCsrArgsDict(TypedDict):
-        city: pulumi.Input[_builtins.str]
-        """
-        City where organization is located
-        """
-        country_code: pulumi.Input[_builtins.str]
-        """
-        The code of the country where organization is located
-        """
-        organization: pulumi.Input[_builtins.str]
-        """
-        Name of organization used in all legal documents
-        """
-        organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Organizational unit of organization
-        """
-        preferred_trust_chain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        State or province of organization location
-        """
-elif False:
-    CpsThirdPartyEnrollmentCsrArgsDict: TypeAlias = Mapping[str, Any]
+class CpsThirdPartyEnrollmentCsrArgsDict(TypedDict):
+    city: pulumi.Input[_builtins.str]
+    """
+    City where organization is located
+    """
+    country_code: pulumi.Input[_builtins.str]
+    """
+    The code of the country where organization is located
+    """
+    organization: pulumi.Input[_builtins.str]
+    """
+    Name of organization used in all legal documents
+    """
+    organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Organizational unit of organization
+    """
+    preferred_trust_chain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    State or province of organization location
+    """
 
 @pulumi.input_type
 class CpsThirdPartyEnrollmentCsrArgs:
@@ -4090,42 +3989,39 @@ class CpsThirdPartyEnrollmentCsrArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class CpsThirdPartyEnrollmentNetworkConfigurationArgsDict(TypedDict):
-        geography: pulumi.Input[_builtins.str]
-        """
-        Geography type used for enrollment
-        """
-        client_mutual_authentication: NotRequired[pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict']]
-        """
-        The trust chain configuration used for client mutual authentication
-        """
-        clone_dns_names: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
-        """
-        disallowed_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        TLS versions which are disallowed
-        """
-        must_have_ciphers: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
-        """
-        ocsp_stapling: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Enable OCSP stapling. Default is 'on'
-        """
-        preferred_ciphers: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
-        """
-        quic_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enable QUIC protocol. Default is false
-        """
-elif False:
-    CpsThirdPartyEnrollmentNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CpsThirdPartyEnrollmentNetworkConfigurationArgsDict(TypedDict):
+    geography: pulumi.Input[_builtins.str]
+    """
+    Geography type used for enrollment
+    """
+    client_mutual_authentication: NotRequired[pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict']]
+    """
+    The trust chain configuration used for client mutual authentication
+    """
+    clone_dns_names: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+    """
+    disallowed_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    TLS versions which are disallowed
+    """
+    must_have_ciphers: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
+    """
+    ocsp_stapling: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Enable OCSP stapling. Default is 'on'
+    """
+    preferred_ciphers: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
+    """
+    quic_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enable QUIC protocol. Default is false
+    """
 
 @pulumi.input_type
 class CpsThirdPartyEnrollmentNetworkConfigurationArgs:
@@ -4261,22 +4157,19 @@ class CpsThirdPartyEnrollmentNetworkConfigurationArgs:
         pulumi.set(self, "quic_enabled", value)
 
 
-if not MYPY:
-    class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict(TypedDict):
-        ocsp_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enable OCSP stapling
-        """
-        send_ca_list_to_client: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enable the server to send the certificate authority (CA) list to the client
-        """
-        set_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The identifier of the set of trust chains, created in the Trust Chain Manager
-        """
-elif False:
-    CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict: TypeAlias = Mapping[str, Any]
+class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict(TypedDict):
+    ocsp_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enable OCSP stapling
+    """
+    send_ca_list_to_client: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enable the server to send the certificate authority (CA) list to the client
+    """
+    set_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifier of the set of trust chains, created in the Trust Chain Manager
+    """
 
 @pulumi.input_type
 class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs:
@@ -4333,42 +4226,39 @@ class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs:
         pulumi.set(self, "set_id", value)
 
 
-if not MYPY:
-    class CpsThirdPartyEnrollmentOrganizationArgsDict(TypedDict):
-        address_line_one: pulumi.Input[_builtins.str]
-        """
-        The address of organization
-        """
-        city: pulumi.Input[_builtins.str]
-        """
-        City of organization
-        """
-        country_code: pulumi.Input[_builtins.str]
-        """
-        Country code of organization
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        Name of organization
-        """
-        phone: pulumi.Input[_builtins.str]
-        """
-        Phone number of organization
-        """
-        postal_code: pulumi.Input[_builtins.str]
-        """
-        Postal code of organization
-        """
-        region: pulumi.Input[_builtins.str]
-        """
-        The region of organization
-        """
-        address_line_two: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of organization
-        """
-elif False:
-    CpsThirdPartyEnrollmentOrganizationArgsDict: TypeAlias = Mapping[str, Any]
+class CpsThirdPartyEnrollmentOrganizationArgsDict(TypedDict):
+    address_line_one: pulumi.Input[_builtins.str]
+    """
+    The address of organization
+    """
+    city: pulumi.Input[_builtins.str]
+    """
+    City of organization
+    """
+    country_code: pulumi.Input[_builtins.str]
+    """
+    Country code of organization
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    Name of organization
+    """
+    phone: pulumi.Input[_builtins.str]
+    """
+    Phone number of organization
+    """
+    postal_code: pulumi.Input[_builtins.str]
+    """
+    Postal code of organization
+    """
+    region: pulumi.Input[_builtins.str]
+    """
+    The region of organization
+    """
+    address_line_two: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of organization
+    """
 
 @pulumi.input_type
 class CpsThirdPartyEnrollmentOrganizationArgs:
@@ -4498,58 +4388,55 @@ class CpsThirdPartyEnrollmentOrganizationArgs:
         pulumi.set(self, "address_line_two", value)
 
 
-if not MYPY:
-    class CpsThirdPartyEnrollmentTechContactArgsDict(TypedDict):
-        email: pulumi.Input[_builtins.str]
-        """
-        E-mail address of the contact
-        """
-        first_name: pulumi.Input[_builtins.str]
-        """
-        First name of the contact
-        """
-        last_name: pulumi.Input[_builtins.str]
-        """
-        Last name of the contact
-        """
-        phone: pulumi.Input[_builtins.str]
-        """
-        Phone number of the contact
-        """
-        address_line_one: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of the contact
-        """
-        address_line_two: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The address of the contact
-        """
-        city: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        City of residence of the contact
-        """
-        country_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Country code of the contact
-        """
-        organization: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Organization where contact is hired
-        """
-        postal_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Postal code of the contact
-        """
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The region of the contact
-        """
-        title: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Title of the the contact
-        """
-elif False:
-    CpsThirdPartyEnrollmentTechContactArgsDict: TypeAlias = Mapping[str, Any]
+class CpsThirdPartyEnrollmentTechContactArgsDict(TypedDict):
+    email: pulumi.Input[_builtins.str]
+    """
+    E-mail address of the contact
+    """
+    first_name: pulumi.Input[_builtins.str]
+    """
+    First name of the contact
+    """
+    last_name: pulumi.Input[_builtins.str]
+    """
+    Last name of the contact
+    """
+    phone: pulumi.Input[_builtins.str]
+    """
+    Phone number of the contact
+    """
+    address_line_one: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of the contact
+    """
+    address_line_two: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The address of the contact
+    """
+    city: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    City of residence of the contact
+    """
+    country_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Country code of the contact
+    """
+    organization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Organization where contact is hired
+    """
+    postal_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Postal code of the contact
+    """
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The region of the contact
+    """
+    title: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Title of the the contact
+    """
 
 @pulumi.input_type
 class CpsThirdPartyEnrollmentTechContactArgs:
@@ -4746,11 +4633,8 @@ class CpsThirdPartyEnrollmentTechContactArgs:
         pulumi.set(self, "title", value)
 
 
-if not MYPY:
-    class CpsThirdPartyEnrollmentTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CpsThirdPartyEnrollmentTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CpsThirdPartyEnrollmentTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CpsThirdPartyEnrollmentTimeoutsArgs:
@@ -4769,11 +4653,8 @@ class CpsThirdPartyEnrollmentTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class CpsUploadCertificateTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CpsUploadCertificateTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class CpsUploadCertificateTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CpsUploadCertificateTimeoutsArgs:
@@ -4792,34 +4673,31 @@ class CpsUploadCertificateTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class DatastreamAzureConnectorArgsDict(TypedDict):
-        access_key: pulumi.Input[_builtins.str]
-        """
-        Access keys associated with Azure Storage account
-        """
-        account_name: pulumi.Input[_builtins.str]
-        """
-        Specifies the Azure Storage account name
-        """
-        container_name: pulumi.Input[_builtins.str]
-        """
-        Specifies the Azure Storage container name
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector
-        """
-        path: pulumi.Input[_builtins.str]
-        """
-        The path to the folder within Azure Storage container where logs will be stored
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the logs should be compressed
-        """
-elif False:
-    DatastreamAzureConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamAzureConnectorArgsDict(TypedDict):
+    access_key: pulumi.Input[_builtins.str]
+    """
+    Access keys associated with Azure Storage account
+    """
+    account_name: pulumi.Input[_builtins.str]
+    """
+    Specifies the Azure Storage account name
+    """
+    container_name: pulumi.Input[_builtins.str]
+    """
+    Specifies the Azure Storage container name
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector
+    """
+    path: pulumi.Input[_builtins.str]
+    """
+    The path to the folder within Azure Storage container where logs will be stored
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the logs should be compressed
+    """
 
 @pulumi.input_type
 class DatastreamAzureConnectorArgs:
@@ -4919,38 +4797,35 @@ class DatastreamAzureConnectorArgs:
         pulumi.set(self, "compress_logs", value)
 
 
-if not MYPY:
-    class DatastreamDatadogConnectorArgsDict(TypedDict):
-        auth_token: pulumi.Input[_builtins.str]
-        """
-        The API key associated with Datadog account
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        The Datadog endpoint where logs will be stored
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the logs should be compressed
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service of the Datadog connector
-        """
-        source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The source of the Datadog connector
-        """
-        tags: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The tags of the Datadog connector
-        """
-elif False:
-    DatastreamDatadogConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamDatadogConnectorArgsDict(TypedDict):
+    auth_token: pulumi.Input[_builtins.str]
+    """
+    The API key associated with Datadog account
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    The Datadog endpoint where logs will be stored
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the logs should be compressed
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service of the Datadog connector
+    """
+    source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The source of the Datadog connector
+    """
+    tags: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The tags of the Datadog connector
+    """
 
 @pulumi.input_type
 class DatastreamDatadogConnectorArgs:
@@ -5068,30 +4943,27 @@ class DatastreamDatadogConnectorArgs:
         pulumi.set(self, "tags", value)
 
 
-if not MYPY:
-    class DatastreamDeliveryConfigurationArgsDict(TypedDict):
-        format: pulumi.Input[_builtins.str]
-        """
-        The format in which logs will be received
-        """
-        frequency: pulumi.Input['DatastreamDeliveryConfigurationFrequencyArgsDict']
-        """
-        The frequency of collecting logs from each uploader and sending these logs to a destination
-        """
-        field_delimiter: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A delimiter that you use to separate data set fields in log lines
-        """
-        upload_file_prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The prefix of the log file that will be send to a destination
-        """
-        upload_file_suffix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The suffix of the log file that will be send to a destination
-        """
-elif False:
-    DatastreamDeliveryConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamDeliveryConfigurationArgsDict(TypedDict):
+    format: pulumi.Input[_builtins.str]
+    """
+    The format in which logs will be received
+    """
+    frequency: pulumi.Input['DatastreamDeliveryConfigurationFrequencyArgsDict']
+    """
+    The frequency of collecting logs from each uploader and sending these logs to a destination
+    """
+    field_delimiter: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A delimiter that you use to separate data set fields in log lines
+    """
+    upload_file_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The prefix of the log file that will be send to a destination
+    """
+    upload_file_suffix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The suffix of the log file that will be send to a destination
+    """
 
 @pulumi.input_type
 class DatastreamDeliveryConfigurationArgs:
@@ -5178,14 +5050,11 @@ class DatastreamDeliveryConfigurationArgs:
         pulumi.set(self, "upload_file_suffix", value)
 
 
-if not MYPY:
-    class DatastreamDeliveryConfigurationFrequencyArgsDict(TypedDict):
-        interval_in_secs: pulumi.Input[_builtins.int]
-        """
-        The time in seconds after which the system bundles log lines into a file and sends it to a destination
-        """
-elif False:
-    DatastreamDeliveryConfigurationFrequencyArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamDeliveryConfigurationFrequencyArgsDict(TypedDict):
+    interval_in_secs: pulumi.Input[_builtins.int]
+    """
+    The time in seconds after which the system bundles log lines into a file and sends it to a destination
+    """
 
 @pulumi.input_type
 class DatastreamDeliveryConfigurationFrequencyArgs:
@@ -5209,30 +5078,27 @@ class DatastreamDeliveryConfigurationFrequencyArgs:
         pulumi.set(self, "interval_in_secs", value)
 
 
-if not MYPY:
-    class DatastreamDynatraceConnectorArgsDict(TypedDict):
-        api_token: pulumi.Input[_builtins.str]
-        """
-        The Dynatrace Log Ingest access token.
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The destination's name.
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        The Dynatrace Ingestion API endpoint URL in the https://{dynatrace-environment-id}.live.dynatrace.com/api/v2/logs/ingest format.
-        """
-        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
-        """
-        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
-        """
-elif False:
-    DatastreamDynatraceConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamDynatraceConnectorArgsDict(TypedDict):
+    api_token: pulumi.Input[_builtins.str]
+    """
+    The Dynatrace Log Ingest access token.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The destination's name.
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    The Dynatrace Ingestion API endpoint URL in the https://{dynatrace-environment-id}.live.dynatrace.com/api/v2/logs/ingest format.
+    """
+    custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+    """
+    custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+    """
 
 @pulumi.input_type
 class DatastreamDynatraceConnectorArgs:
@@ -5318,62 +5184,59 @@ class DatastreamDynatraceConnectorArgs:
         pulumi.set(self, "custom_header_value", value)
 
 
-if not MYPY:
-    class DatastreamElasticsearchConnectorArgsDict(TypedDict):
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector.
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        The Elasticsearch bulk endpoint URL in the https://hostname.elastic-cloud.com:9243/_bulk/ format. Set indexName in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Elasticsearch.
-        """
-        index_name: pulumi.Input[_builtins.str]
-        """
-        The index name of the Elastic cloud where you want to store log files.
-        """
-        password: pulumi.Input[_builtins.str]
-        """
-        The Elasticsearch basic access authentication password.
-        """
-        user_name: pulumi.Input[_builtins.str]
-        """
-        The Elasticsearch basic access authentication username.
-        """
-        ca_cert: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-        """
-        client_cert: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-        """
-        client_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-        """
-        content_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
-        """
-        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
-        """
-        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
-        """
-        m_tls: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether mTLS is enabled or not.
-        """
-        tls_hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-        """
-elif False:
-    DatastreamElasticsearchConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamElasticsearchConnectorArgsDict(TypedDict):
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector.
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    The Elasticsearch bulk endpoint URL in the https://hostname.elastic-cloud.com:9243/_bulk/ format. Set indexName in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Elasticsearch.
+    """
+    index_name: pulumi.Input[_builtins.str]
+    """
+    The index name of the Elastic cloud where you want to store log files.
+    """
+    password: pulumi.Input[_builtins.str]
+    """
+    The Elasticsearch basic access authentication password.
+    """
+    user_name: pulumi.Input[_builtins.str]
+    """
+    The Elasticsearch basic access authentication username.
+    """
+    ca_cert: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+    """
+    client_cert: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+    """
+    client_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+    """
+    content_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
+    """
+    custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+    """
+    custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+    """
+    m_tls: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether mTLS is enabled or not.
+    """
+    tls_hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+    """
 
 @pulumi.input_type
 class DatastreamElasticsearchConnectorArgs:
@@ -5585,38 +5448,35 @@ class DatastreamElasticsearchConnectorArgs:
         pulumi.set(self, "tls_hostname", value)
 
 
-if not MYPY:
-    class DatastreamGcsConnectorArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        The name of the storage bucket created in Google Cloud account
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector
-        """
-        private_key: pulumi.Input[_builtins.str]
-        """
-        The contents of the JSON private key generated and downloaded in Google Cloud Storage account
-        """
-        project_id: pulumi.Input[_builtins.str]
-        """
-        The unique ID of Google Cloud project
-        """
-        service_account_name: pulumi.Input[_builtins.str]
-        """
-        The name of the service account with the storage.object.create permission or Storage Object Creator role
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the logs should be compressed
-        """
-        path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The path to the folder within Google Cloud bucket where logs will be stored
-        """
-elif False:
-    DatastreamGcsConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamGcsConnectorArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    The name of the storage bucket created in Google Cloud account
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector
+    """
+    private_key: pulumi.Input[_builtins.str]
+    """
+    The contents of the JSON private key generated and downloaded in Google Cloud Storage account
+    """
+    project_id: pulumi.Input[_builtins.str]
+    """
+    The unique ID of Google Cloud project
+    """
+    service_account_name: pulumi.Input[_builtins.str]
+    """
+    The name of the service account with the storage.object.create permission or Storage Object Creator role
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the logs should be compressed
+    """
+    path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The path to the folder within Google Cloud bucket where logs will be stored
+    """
 
 @pulumi.input_type
 class DatastreamGcsConnectorArgs:
@@ -5732,66 +5592,63 @@ class DatastreamGcsConnectorArgs:
         pulumi.set(self, "path", value)
 
 
-if not MYPY:
-    class DatastreamHttpsConnectorArgsDict(TypedDict):
-        authentication_type: pulumi.Input[_builtins.str]
-        """
-        Either NONE for no authentication, or BASIC for username and password authentication
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        URL where logs will be stored
-        """
-        ca_cert: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-        """
-        client_cert: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
-        """
-        client_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the logs should be compressed
-        """
-        content_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Content type to pass in the log file header
-        """
-        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of custom header passed with the request to the destination
-        """
-        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom header's contents passed with the request to the destination
-        """
-        m_tls: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether mTLS is enabled or not.
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Password set for custom HTTPS endpoint for authentication
-        """
-        tls_hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Username used for authentication
-        """
-elif False:
-    DatastreamHttpsConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamHttpsConnectorArgsDict(TypedDict):
+    authentication_type: pulumi.Input[_builtins.str]
+    """
+    Either NONE for no authentication, or BASIC for username and password authentication
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    URL where logs will be stored
+    """
+    ca_cert: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+    """
+    client_cert: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+    """
+    client_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the logs should be compressed
+    """
+    content_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Content type to pass in the log file header
+    """
+    custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of custom header passed with the request to the destination
+    """
+    custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom header's contents passed with the request to the destination
+    """
+    m_tls: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether mTLS is enabled or not.
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Password set for custom HTTPS endpoint for authentication
+    """
+    tls_hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Username used for authentication
+    """
 
 @pulumi.input_type
 class DatastreamHttpsConnectorArgs:
@@ -6021,38 +5878,35 @@ class DatastreamHttpsConnectorArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class DatastreamLogglyConnectorArgsDict(TypedDict):
-        auth_token: pulumi.Input[_builtins.str]
-        """
-        The unique HTTP code for your Loggly bulk endpoint.
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector.
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        The Loggly bulk endpoint URL in the https://hostname.loggly.com/bulk/ format. Set the endpoint code in the authToken field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Loggly.
-        """
-        content_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
-        """
-        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
-        """
-        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
-        """
-        tags: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The tags you can use to segment and filter log events in Loggly. See Tags in the Loggly documentation.
-        """
-elif False:
-    DatastreamLogglyConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamLogglyConnectorArgsDict(TypedDict):
+    auth_token: pulumi.Input[_builtins.str]
+    """
+    The unique HTTP code for your Loggly bulk endpoint.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector.
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    The Loggly bulk endpoint URL in the https://hostname.loggly.com/bulk/ format. Set the endpoint code in the authToken field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Loggly.
+    """
+    content_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
+    """
+    custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+    """
+    custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+    """
+    tags: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The tags you can use to segment and filter log events in Loggly. See Tags in the Loggly documentation.
+    """
 
 @pulumi.input_type
 class DatastreamLogglyConnectorArgs:
@@ -6170,34 +6024,31 @@ class DatastreamLogglyConnectorArgs:
         pulumi.set(self, "tags", value)
 
 
-if not MYPY:
-    class DatastreamNewRelicConnectorArgsDict(TypedDict):
-        auth_token: pulumi.Input[_builtins.str]
-        """
-        Your Log API token for your account in New Relic.
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector.
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        A New Relic endpoint URL you want to send your logs to. The endpoint URL should follow the https://<newrelic.com>/log/v1/ format format. See Introduction to the Log API https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/ if you want to retrieve your New Relic endpoint URL.
-        """
-        content_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
-        """
-        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
-        """
-        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
-        """
-elif False:
-    DatastreamNewRelicConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamNewRelicConnectorArgsDict(TypedDict):
+    auth_token: pulumi.Input[_builtins.str]
+    """
+    Your Log API token for your account in New Relic.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector.
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    A New Relic endpoint URL you want to send your logs to. The endpoint URL should follow the https://<newrelic.com>/log/v1/ format format. See Introduction to the Log API https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/ if you want to retrieve your New Relic endpoint URL.
+    """
+    content_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
+    """
+    custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+    """
+    custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+    """
 
 @pulumi.input_type
 class DatastreamNewRelicConnectorArgs:
@@ -6299,42 +6150,39 @@ class DatastreamNewRelicConnectorArgs:
         pulumi.set(self, "custom_header_value", value)
 
 
-if not MYPY:
-    class DatastreamOracleConnectorArgsDict(TypedDict):
-        access_key: pulumi.Input[_builtins.str]
-        """
-        The access key identifier used to authenticate requests to the Oracle Cloud account
-        """
-        bucket: pulumi.Input[_builtins.str]
-        """
-        The name of the Oracle Cloud Storage bucket
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        The namespace of Oracle Cloud Storage account
-        """
-        path: pulumi.Input[_builtins.str]
-        """
-        The path to the folder within your Oracle Cloud Storage bucket where logs will be stored
-        """
-        region: pulumi.Input[_builtins.str]
-        """
-        The Oracle Cloud Storage region where bucket resides
-        """
-        secret_access_key: pulumi.Input[_builtins.str]
-        """
-        The secret access key identifier used to authenticate requests to the Oracle Cloud account
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the logs should be compressed
-        """
-elif False:
-    DatastreamOracleConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamOracleConnectorArgsDict(TypedDict):
+    access_key: pulumi.Input[_builtins.str]
+    """
+    The access key identifier used to authenticate requests to the Oracle Cloud account
+    """
+    bucket: pulumi.Input[_builtins.str]
+    """
+    The name of the Oracle Cloud Storage bucket
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    The namespace of Oracle Cloud Storage account
+    """
+    path: pulumi.Input[_builtins.str]
+    """
+    The path to the folder within your Oracle Cloud Storage bucket where logs will be stored
+    """
+    region: pulumi.Input[_builtins.str]
+    """
+    The Oracle Cloud Storage region where bucket resides
+    """
+    secret_access_key: pulumi.Input[_builtins.str]
+    """
+    The secret access key identifier used to authenticate requests to the Oracle Cloud account
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the logs should be compressed
+    """
 
 @pulumi.input_type
 class DatastreamOracleConnectorArgs:
@@ -6464,42 +6312,39 @@ class DatastreamOracleConnectorArgs:
         pulumi.set(self, "compress_logs", value)
 
 
-if not MYPY:
-    class DatastreamS3CompatibleConnectorArgsDict(TypedDict):
-        access_key: pulumi.Input[_builtins.str]
-        """
-        The access key identifier of the S3-compatible object storage bucket.
-        """
-        bucket: pulumi.Input[_builtins.str]
-        """
-        The name of the S3-compatible object storage bucket.
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the destination.
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        The scheme-qualified host of your S3-compatible object storage bucket.
-        """
-        region: pulumi.Input[_builtins.str]
-        """
-        The physical storage location of your S3-compatible object storage bucket.
-        """
-        secret_access_key: pulumi.Input[_builtins.str]
-        """
-        The secret access key identifier of the S3-compatible object storage bucket.
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables gzip compression for a log file sent to a destination. This value is always true for this destination type.
-        """
-        path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The path to the folder within your S3-compatible object storage bucket where you want to store logs. Optional field.
-        """
-elif False:
-    DatastreamS3CompatibleConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamS3CompatibleConnectorArgsDict(TypedDict):
+    access_key: pulumi.Input[_builtins.str]
+    """
+    The access key identifier of the S3-compatible object storage bucket.
+    """
+    bucket: pulumi.Input[_builtins.str]
+    """
+    The name of the S3-compatible object storage bucket.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the destination.
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    The scheme-qualified host of your S3-compatible object storage bucket.
+    """
+    region: pulumi.Input[_builtins.str]
+    """
+    The physical storage location of your S3-compatible object storage bucket.
+    """
+    secret_access_key: pulumi.Input[_builtins.str]
+    """
+    The secret access key identifier of the S3-compatible object storage bucket.
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables gzip compression for a log file sent to a destination. This value is always true for this destination type.
+    """
+    path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The path to the folder within your S3-compatible object storage bucket where you want to store logs. Optional field.
+    """
 
 @pulumi.input_type
 class DatastreamS3CompatibleConnectorArgs:
@@ -6630,38 +6475,35 @@ class DatastreamS3CompatibleConnectorArgs:
         pulumi.set(self, "path", value)
 
 
-if not MYPY:
-    class DatastreamS3ConnectorArgsDict(TypedDict):
-        access_key: pulumi.Input[_builtins.str]
-        """
-        The access key identifier used to authenticate requests to the Amazon S3 account
-        """
-        bucket: pulumi.Input[_builtins.str]
-        """
-        The name of the Amazon S3 bucket
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector
-        """
-        path: pulumi.Input[_builtins.str]
-        """
-        The path to the folder within Amazon S3 bucket where logs will be stored
-        """
-        region: pulumi.Input[_builtins.str]
-        """
-        The AWS region where Amazon S3 bucket resides
-        """
-        secret_access_key: pulumi.Input[_builtins.str]
-        """
-        The secret access key identifier used to authenticate requests to the Amazon S3 account
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the logs should be compressed
-        """
-elif False:
-    DatastreamS3ConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamS3ConnectorArgsDict(TypedDict):
+    access_key: pulumi.Input[_builtins.str]
+    """
+    The access key identifier used to authenticate requests to the Amazon S3 account
+    """
+    bucket: pulumi.Input[_builtins.str]
+    """
+    The name of the Amazon S3 bucket
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector
+    """
+    path: pulumi.Input[_builtins.str]
+    """
+    The path to the folder within Amazon S3 bucket where logs will be stored
+    """
+    region: pulumi.Input[_builtins.str]
+    """
+    The AWS region where Amazon S3 bucket resides
+    """
+    secret_access_key: pulumi.Input[_builtins.str]
+    """
+    The secret access key identifier used to authenticate requests to the Amazon S3 account
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the logs should be compressed
+    """
 
 @pulumi.input_type
 class DatastreamS3ConnectorArgs:
@@ -6776,54 +6618,51 @@ class DatastreamS3ConnectorArgs:
         pulumi.set(self, "compress_logs", value)
 
 
-if not MYPY:
-    class DatastreamSplunkConnectorArgsDict(TypedDict):
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        The raw event Splunk URL where logs will be stored
-        """
-        event_collector_token: pulumi.Input[_builtins.str]
-        """
-        The Event Collector token associated with Splunk account
-        """
-        ca_cert: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-        """
-        client_cert: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
-        """
-        client_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the logs should be compressed
-        """
-        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of custom header passed with the request to the destination
-        """
-        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom header's contents passed with the request to the destination
-        """
-        m_tls: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether mTLS is enabled or not.
-        """
-        tls_hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-        """
-elif False:
-    DatastreamSplunkConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamSplunkConnectorArgsDict(TypedDict):
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    The raw event Splunk URL where logs will be stored
+    """
+    event_collector_token: pulumi.Input[_builtins.str]
+    """
+    The Event Collector token associated with Splunk account
+    """
+    ca_cert: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+    """
+    client_cert: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+    """
+    client_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the logs should be compressed
+    """
+    custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of custom header passed with the request to the destination
+    """
+    custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom header's contents passed with the request to the destination
+    """
+    m_tls: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether mTLS is enabled or not.
+    """
+    tls_hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+    """
 
 @pulumi.input_type
 class DatastreamSplunkConnectorArgs:
@@ -7005,38 +6844,35 @@ class DatastreamSplunkConnectorArgs:
         pulumi.set(self, "tls_hostname", value)
 
 
-if not MYPY:
-    class DatastreamSumologicConnectorArgsDict(TypedDict):
-        collector_code: pulumi.Input[_builtins.str]
-        """
-        The unique HTTP collector code of Sumo Logic endpoint
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The name of the connector
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        The Sumo Logic collection endpoint where logs will be stored
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the logs should be compressed
-        """
-        content_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Content type to pass in the log file header
-        """
-        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of custom header passed with the request to the destination
-        """
-        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom header's contents passed with the request to the destination
-        """
-elif False:
-    DatastreamSumologicConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamSumologicConnectorArgsDict(TypedDict):
+    collector_code: pulumi.Input[_builtins.str]
+    """
+    The unique HTTP collector code of Sumo Logic endpoint
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The name of the connector
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    The Sumo Logic collection endpoint where logs will be stored
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the logs should be compressed
+    """
+    content_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Content type to pass in the log file header
+    """
+    custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of custom header passed with the request to the destination
+    """
+    custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom header's contents passed with the request to the destination
+    """
 
 @pulumi.input_type
 class DatastreamSumologicConnectorArgs:
@@ -7154,46 +6990,43 @@ class DatastreamSumologicConnectorArgs:
         pulumi.set(self, "custom_header_value", value)
 
 
-if not MYPY:
-    class DatastreamTrafficpeakConnectorArgsDict(TypedDict):
-        authentication_type: pulumi.Input[_builtins.str]
-        """
-        Only BASIC authentication is supported for TrafficPeak destination.
-        """
-        content_type: pulumi.Input[_builtins.str]
-        """
-        The type of the resource passed in the request's custom header. - Supported headers: `application/json` or `application/json; charset=utf-8`.
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The destination's name.
-        """
-        endpoint: pulumi.Input[_builtins.str]
-        """
-        Enter the Hydrolix endpoint URL in the https://<host>/ingest/event?table=<tablename>&token=<token> format, where the token is the HTTP streaming ingest token, and the tablename is the Hydrolix data set table name.
-        """
-        password: pulumi.Input[_builtins.str]
-        """
-        Enter the password you set in your TrafficPeak endpoint for authentication.
-        """
-        user_name: pulumi.Input[_builtins.str]
-        """
-        Enter the valid username you set in your TrafficPeak endpoint for authentication.
-        """
-        compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables gzip compression for a log file sent to a destination. The value is true by default.
-        """
-        custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. Optional field.
-        """
-        custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom header's contents passed with the request that contains information about the client connection. Optional field.
-        """
-elif False:
-    DatastreamTrafficpeakConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class DatastreamTrafficpeakConnectorArgsDict(TypedDict):
+    authentication_type: pulumi.Input[_builtins.str]
+    """
+    Only BASIC authentication is supported for TrafficPeak destination.
+    """
+    content_type: pulumi.Input[_builtins.str]
+    """
+    The type of the resource passed in the request's custom header. - Supported headers: `application/json` or `application/json; charset=utf-8`.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The destination's name.
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    Enter the Hydrolix endpoint URL in the https://<host>/ingest/event?table=<tablename>&token=<token> format, where the token is the HTTP streaming ingest token, and the tablename is the Hydrolix data set table name.
+    """
+    password: pulumi.Input[_builtins.str]
+    """
+    Enter the password you set in your TrafficPeak endpoint for authentication.
+    """
+    user_name: pulumi.Input[_builtins.str]
+    """
+    Enter the valid username you set in your TrafficPeak endpoint for authentication.
+    """
+    compress_logs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables gzip compression for a log file sent to a destination. The value is true by default.
+    """
+    custom_header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. Optional field.
+    """
+    custom_header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom header's contents passed with the request that contains information about the client connection. Optional field.
+    """
 
 @pulumi.input_type
 class DatastreamTrafficpeakConnectorArgs:
@@ -7340,26 +7173,23 @@ class DatastreamTrafficpeakConnectorArgs:
         pulumi.set(self, "custom_header_value", value)
 
 
-if not MYPY:
-    class DnsZoneOutboundZoneTransferArgsDict(TypedDict):
-        acls: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The access control list, defined as IPv4 and IPv6 CIDR blocks.
-        """
-        enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables outbound zone transfer.
-        """
-        notify_targets: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Customer secondary nameservers to notify, if NOTIFY requests are desired. Up to 64 IPv4 or IPv6 addresses. If no targets are specified, you can manually request zone transfer updates as needed.
-        """
-        tsig_key: NotRequired[pulumi.Input['DnsZoneOutboundZoneTransferTsigKeyArgsDict']]
-        """
-        The TSIG key used for outbound zone transfers.
-        """
-elif False:
-    DnsZoneOutboundZoneTransferArgsDict: TypeAlias = Mapping[str, Any]
+class DnsZoneOutboundZoneTransferArgsDict(TypedDict):
+    acls: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The access control list, defined as IPv4 and IPv6 CIDR blocks.
+    """
+    enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables outbound zone transfer.
+    """
+    notify_targets: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Customer secondary nameservers to notify, if NOTIFY requests are desired. Up to 64 IPv4 or IPv6 addresses. If no targets are specified, you can manually request zone transfer updates as needed.
+    """
+    tsig_key: NotRequired[pulumi.Input['DnsZoneOutboundZoneTransferTsigKeyArgsDict']]
+    """
+    The TSIG key used for outbound zone transfers.
+    """
 
 @pulumi.input_type
 class DnsZoneOutboundZoneTransferArgs:
@@ -7432,22 +7262,19 @@ class DnsZoneOutboundZoneTransferArgs:
         pulumi.set(self, "tsig_key", value)
 
 
-if not MYPY:
-    class DnsZoneOutboundZoneTransferTsigKeyArgsDict(TypedDict):
-        algorithm: pulumi.Input[_builtins.str]
-        """
-        The algorithm used to encode the TSIG key's secret data. Possible values are: hmac-md5, hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha384, hmac-sha512, or HMAC-MD5.SIG-ALG.REG.INT.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        The zone name.
-        """
-        secret: pulumi.Input[_builtins.str]
-        """
-        A Base64-encoded string of data. When decoded, it needs to contain the correct number of bits for the chosen algorithm. If the input isn't correctly padded, the server applies the padding.
-        """
-elif False:
-    DnsZoneOutboundZoneTransferTsigKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DnsZoneOutboundZoneTransferTsigKeyArgsDict(TypedDict):
+    algorithm: pulumi.Input[_builtins.str]
+    """
+    The algorithm used to encode the TSIG key's secret data. Possible values are: hmac-md5, hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha384, hmac-sha512, or HMAC-MD5.SIG-ALG.REG.INT.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    The zone name.
+    """
+    secret: pulumi.Input[_builtins.str]
+    """
+    A Base64-encoded string of data. When decoded, it needs to contain the correct number of bits for the chosen algorithm. If the input isn't correctly padded, the server applies the padding.
+    """
 
 @pulumi.input_type
 class DnsZoneOutboundZoneTransferTsigKeyArgs:
@@ -7501,13 +7328,10 @@ class DnsZoneOutboundZoneTransferTsigKeyArgs:
         pulumi.set(self, "secret", value)
 
 
-if not MYPY:
-    class DnsZoneTsigKeyArgsDict(TypedDict):
-        algorithm: pulumi.Input[_builtins.str]
-        name: pulumi.Input[_builtins.str]
-        secret: pulumi.Input[_builtins.str]
-elif False:
-    DnsZoneTsigKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DnsZoneTsigKeyArgsDict(TypedDict):
+    algorithm: pulumi.Input[_builtins.str]
+    name: pulumi.Input[_builtins.str]
+    secret: pulumi.Input[_builtins.str]
 
 @pulumi.input_type
 class DnsZoneTsigKeyArgs:
@@ -7547,11 +7371,8 @@ class DnsZoneTsigKeyArgs:
         pulumi.set(self, "secret", value)
 
 
-if not MYPY:
-    class EdgeHostNameTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    EdgeHostNameTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class EdgeHostNameTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class EdgeHostNameTimeoutsArgs:
@@ -7570,11 +7391,8 @@ class EdgeHostNameTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class EdgeWorkerTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    EdgeWorkerTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class EdgeWorkerTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class EdgeWorkerTimeoutsArgs:
@@ -7593,12 +7411,9 @@ class EdgeWorkerTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class EdgeWorkersActivationTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-        delete: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    EdgeWorkersActivationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class EdgeWorkersActivationTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
+    delete: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class EdgeWorkersActivationTimeoutsArgs:
@@ -7629,11 +7444,8 @@ class EdgeWorkersActivationTimeoutsArgs:
         pulumi.set(self, "delete", value)
 
 
-if not MYPY:
-    class EdgekvGroupItemsTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    EdgekvGroupItemsTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class EdgekvGroupItemsTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class EdgekvGroupItemsTimeoutsArgs:
@@ -7652,13 +7464,10 @@ class EdgekvGroupItemsTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class GtmAsmapAssignmentArgsDict(TypedDict):
-        as_numbers: pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]
-        datacenter_id: pulumi.Input[_builtins.int]
-        nickname: pulumi.Input[_builtins.str]
-elif False:
-    GtmAsmapAssignmentArgsDict: TypeAlias = Mapping[str, Any]
+class GtmAsmapAssignmentArgsDict(TypedDict):
+    as_numbers: pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]
+    datacenter_id: pulumi.Input[_builtins.int]
+    nickname: pulumi.Input[_builtins.str]
 
 @pulumi.input_type
 class GtmAsmapAssignmentArgs:
@@ -7698,12 +7507,9 @@ class GtmAsmapAssignmentArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GtmAsmapDefaultDatacenterArgsDict(TypedDict):
-        datacenter_id: pulumi.Input[_builtins.int]
-        nickname: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    GtmAsmapDefaultDatacenterArgsDict: TypeAlias = Mapping[str, Any]
+class GtmAsmapDefaultDatacenterArgsDict(TypedDict):
+    datacenter_id: pulumi.Input[_builtins.int]
+    nickname: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class GtmAsmapDefaultDatacenterArgs:
@@ -7733,13 +7539,10 @@ class GtmAsmapDefaultDatacenterArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GtmCidrmapAssignmentArgsDict(TypedDict):
-        datacenter_id: pulumi.Input[_builtins.int]
-        nickname: pulumi.Input[_builtins.str]
-        blocks: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-elif False:
-    GtmCidrmapAssignmentArgsDict: TypeAlias = Mapping[str, Any]
+class GtmCidrmapAssignmentArgsDict(TypedDict):
+    datacenter_id: pulumi.Input[_builtins.int]
+    nickname: pulumi.Input[_builtins.str]
+    blocks: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
 
 @pulumi.input_type
 class GtmCidrmapAssignmentArgs:
@@ -7780,12 +7583,9 @@ class GtmCidrmapAssignmentArgs:
         pulumi.set(self, "blocks", value)
 
 
-if not MYPY:
-    class GtmCidrmapDefaultDatacenterArgsDict(TypedDict):
-        datacenter_id: pulumi.Input[_builtins.int]
-        nickname: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    GtmCidrmapDefaultDatacenterArgsDict: TypeAlias = Mapping[str, Any]
+class GtmCidrmapDefaultDatacenterArgsDict(TypedDict):
+    datacenter_id: pulumi.Input[_builtins.int]
+    nickname: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class GtmCidrmapDefaultDatacenterArgs:
@@ -7815,13 +7615,10 @@ class GtmCidrmapDefaultDatacenterArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GtmDatacenterDefaultLoadObjectArgsDict(TypedDict):
-        load_object: NotRequired[pulumi.Input[_builtins.str]]
-        load_object_port: NotRequired[pulumi.Input[_builtins.int]]
-        load_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-elif False:
-    GtmDatacenterDefaultLoadObjectArgsDict: TypeAlias = Mapping[str, Any]
+class GtmDatacenterDefaultLoadObjectArgsDict(TypedDict):
+    load_object: NotRequired[pulumi.Input[_builtins.str]]
+    load_object_port: NotRequired[pulumi.Input[_builtins.int]]
+    load_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
 
 @pulumi.input_type
 class GtmDatacenterDefaultLoadObjectArgs:
@@ -7864,13 +7661,10 @@ class GtmDatacenterDefaultLoadObjectArgs:
         pulumi.set(self, "load_servers", value)
 
 
-if not MYPY:
-    class GtmGeomapAssignmentArgsDict(TypedDict):
-        datacenter_id: pulumi.Input[_builtins.int]
-        nickname: pulumi.Input[_builtins.str]
-        countries: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-elif False:
-    GtmGeomapAssignmentArgsDict: TypeAlias = Mapping[str, Any]
+class GtmGeomapAssignmentArgsDict(TypedDict):
+    datacenter_id: pulumi.Input[_builtins.int]
+    nickname: pulumi.Input[_builtins.str]
+    countries: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
 
 @pulumi.input_type
 class GtmGeomapAssignmentArgs:
@@ -7911,12 +7705,9 @@ class GtmGeomapAssignmentArgs:
         pulumi.set(self, "countries", value)
 
 
-if not MYPY:
-    class GtmGeomapDefaultDatacenterArgsDict(TypedDict):
-        datacenter_id: pulumi.Input[_builtins.int]
-        nickname: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    GtmGeomapDefaultDatacenterArgsDict: TypeAlias = Mapping[str, Any]
+class GtmGeomapDefaultDatacenterArgsDict(TypedDict):
+    datacenter_id: pulumi.Input[_builtins.int]
+    nickname: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class GtmGeomapDefaultDatacenterArgs:
@@ -7946,41 +7737,38 @@ class GtmGeomapDefaultDatacenterArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GtmPropertyLivenessTestArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        test_interval: pulumi.Input[_builtins.int]
-        test_object_protocol: pulumi.Input[_builtins.str]
-        test_timeout: pulumi.Input[_builtins.float]
-        alternate_ca_certificates: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        answers_required: NotRequired[pulumi.Input[_builtins.bool]]
-        disable_nonstandard_port_warning: NotRequired[pulumi.Input[_builtins.bool]]
-        disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        error_penalty: NotRequired[pulumi.Input[_builtins.float]]
-        http_error3xx: NotRequired[pulumi.Input[_builtins.bool]]
-        http_error4xx: NotRequired[pulumi.Input[_builtins.bool]]
-        http_error5xx: NotRequired[pulumi.Input[_builtins.bool]]
-        http_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgsDict']]]]
-        http_method: NotRequired[pulumi.Input[_builtins.str]]
-        http_request_body: NotRequired[pulumi.Input[_builtins.str]]
-        peer_certificate_verification: NotRequired[pulumi.Input[_builtins.bool]]
-        pre2023_security_posture: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
-        """
-        recursion_requested: NotRequired[pulumi.Input[_builtins.bool]]
-        request_string: NotRequired[pulumi.Input[_builtins.str]]
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        response_string: NotRequired[pulumi.Input[_builtins.str]]
-        ssl_client_certificate: NotRequired[pulumi.Input[_builtins.str]]
-        ssl_client_private_key: NotRequired[pulumi.Input[_builtins.str]]
-        test_object: NotRequired[pulumi.Input[_builtins.str]]
-        test_object_password: NotRequired[pulumi.Input[_builtins.str]]
-        test_object_port: NotRequired[pulumi.Input[_builtins.int]]
-        test_object_username: NotRequired[pulumi.Input[_builtins.str]]
-        timeout_penalty: NotRequired[pulumi.Input[_builtins.float]]
-elif False:
-    GtmPropertyLivenessTestArgsDict: TypeAlias = Mapping[str, Any]
+class GtmPropertyLivenessTestArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    test_interval: pulumi.Input[_builtins.int]
+    test_object_protocol: pulumi.Input[_builtins.str]
+    test_timeout: pulumi.Input[_builtins.float]
+    alternate_ca_certificates: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    answers_required: NotRequired[pulumi.Input[_builtins.bool]]
+    disable_nonstandard_port_warning: NotRequired[pulumi.Input[_builtins.bool]]
+    disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    error_penalty: NotRequired[pulumi.Input[_builtins.float]]
+    http_error3xx: NotRequired[pulumi.Input[_builtins.bool]]
+    http_error4xx: NotRequired[pulumi.Input[_builtins.bool]]
+    http_error5xx: NotRequired[pulumi.Input[_builtins.bool]]
+    http_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgsDict']]]]
+    http_method: NotRequired[pulumi.Input[_builtins.str]]
+    http_request_body: NotRequired[pulumi.Input[_builtins.str]]
+    peer_certificate_verification: NotRequired[pulumi.Input[_builtins.bool]]
+    pre2023_security_posture: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+    """
+    recursion_requested: NotRequired[pulumi.Input[_builtins.bool]]
+    request_string: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    response_string: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_client_certificate: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_client_private_key: NotRequired[pulumi.Input[_builtins.str]]
+    test_object: NotRequired[pulumi.Input[_builtins.str]]
+    test_object_password: NotRequired[pulumi.Input[_builtins.str]]
+    test_object_port: NotRequired[pulumi.Input[_builtins.int]]
+    test_object_username: NotRequired[pulumi.Input[_builtins.str]]
+    timeout_penalty: NotRequired[pulumi.Input[_builtins.float]]
 
 @pulumi.input_type
 class GtmPropertyLivenessTestArgs:
@@ -8325,12 +8113,9 @@ class GtmPropertyLivenessTestArgs:
         pulumi.set(self, "timeout_penalty", value)
 
 
-if not MYPY:
-    class GtmPropertyLivenessTestHttpHeaderArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        value: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    GtmPropertyLivenessTestHttpHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class GtmPropertyLivenessTestHttpHeaderArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class GtmPropertyLivenessTestHttpHeaderArgs:
@@ -8361,13 +8146,10 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GtmPropertyStaticRrSetArgsDict(TypedDict):
-        rdatas: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        ttl: NotRequired[pulumi.Input[_builtins.int]]
-        type: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    GtmPropertyStaticRrSetArgsDict: TypeAlias = Mapping[str, Any]
+class GtmPropertyStaticRrSetArgsDict(TypedDict):
+    rdatas: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ttl: NotRequired[pulumi.Input[_builtins.int]]
+    type: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class GtmPropertyStaticRrSetArgs:
@@ -8410,16 +8192,13 @@ class GtmPropertyStaticRrSetArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class GtmPropertyTrafficTargetArgsDict(TypedDict):
-        datacenter_id: NotRequired[pulumi.Input[_builtins.int]]
-        enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        handout_cname: NotRequired[pulumi.Input[_builtins.str]]
-        precedence: NotRequired[pulumi.Input[_builtins.int]]
-        servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        weight: NotRequired[pulumi.Input[_builtins.float]]
-elif False:
-    GtmPropertyTrafficTargetArgsDict: TypeAlias = Mapping[str, Any]
+class GtmPropertyTrafficTargetArgsDict(TypedDict):
+    datacenter_id: NotRequired[pulumi.Input[_builtins.int]]
+    enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    handout_cname: NotRequired[pulumi.Input[_builtins.str]]
+    precedence: NotRequired[pulumi.Input[_builtins.int]]
+    servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    weight: NotRequired[pulumi.Input[_builtins.float]]
 
 @pulumi.input_type
 class GtmPropertyTrafficTargetArgs:
@@ -8498,15 +8277,12 @@ class GtmPropertyTrafficTargetArgs:
         pulumi.set(self, "weight", value)
 
 
-if not MYPY:
-    class GtmResourceResourceInstanceArgsDict(TypedDict):
-        datacenter_id: pulumi.Input[_builtins.int]
-        load_object: NotRequired[pulumi.Input[_builtins.str]]
-        load_object_port: NotRequired[pulumi.Input[_builtins.int]]
-        load_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        use_default_load_object: NotRequired[pulumi.Input[_builtins.bool]]
-elif False:
-    GtmResourceResourceInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class GtmResourceResourceInstanceArgsDict(TypedDict):
+    datacenter_id: pulumi.Input[_builtins.int]
+    load_object: NotRequired[pulumi.Input[_builtins.str]]
+    load_object_port: NotRequired[pulumi.Input[_builtins.int]]
+    load_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    use_default_load_object: NotRequired[pulumi.Input[_builtins.bool]]
 
 @pulumi.input_type
 class GtmResourceResourceInstanceArgs:
@@ -8572,54 +8348,51 @@ class GtmResourceResourceInstanceArgs:
         pulumi.set(self, "use_default_load_object", value)
 
 
-if not MYPY:
-    class IamApiClientActionsArgsDict(TypedDict):
-        deactivate_all: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can deactivate the API client's credentials.
-        """
-        delete: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can remove the API client.
-        """
-        edit: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can update the API client.
-        """
-        edit_apis: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can update the `apis` the API client can access, same as `edit_auth`.
-        """
-        edit_auth: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can update the `apis` the API client can access, same as `edit_apis`.
-        """
-        edit_groups: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can update the `groups` the API client can access.
-        """
-        edit_ip_acl: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can update the 'ip acl' the API client can access.
-        """
-        edit_switch_account: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can update the API client's option to manage many accounts.
-        """
-        lock: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can lock the API client.
-        """
-        transfer: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can transfer the API client to a new owner.
-        """
-        unlock: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can unlock the API client.
-        """
-elif False:
-    IamApiClientActionsArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientActionsArgsDict(TypedDict):
+    deactivate_all: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can deactivate the API client's credentials.
+    """
+    delete: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can remove the API client.
+    """
+    edit: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can update the API client.
+    """
+    edit_apis: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can update the `apis` the API client can access, same as `edit_auth`.
+    """
+    edit_auth: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can update the `apis` the API client can access, same as `edit_apis`.
+    """
+    edit_groups: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can update the `groups` the API client can access.
+    """
+    edit_ip_acl: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can update the 'ip acl' the API client can access.
+    """
+    edit_switch_account: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can update the API client's option to manage many accounts.
+    """
+    lock: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can lock the API client.
+    """
+    transfer: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can transfer the API client to a new owner.
+    """
+    unlock: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can unlock the API client.
+    """
 
 @pulumi.input_type
 class IamApiClientActionsArgs:
@@ -8804,18 +8577,15 @@ class IamApiClientActionsArgs:
         pulumi.set(self, "unlock", value)
 
 
-if not MYPY:
-    class IamApiClientApiAccessArgsDict(TypedDict):
-        all_accessible_apis: pulumi.Input[_builtins.bool]
-        """
-        Enables the API client to access a full set of available APIs.
-        """
-        apis: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientApiAccessApiArgsDict']]]]
-        """
-        The set of APIs the API client can access when `all_accessible_apis` is `false`.
-        """
-elif False:
-    IamApiClientApiAccessArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientApiAccessArgsDict(TypedDict):
+    all_accessible_apis: pulumi.Input[_builtins.bool]
+    """
+    Enables the API client to access a full set of available APIs.
+    """
+    apis: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientApiAccessApiArgsDict']]]]
+    """
+    The set of APIs the API client can access when `all_accessible_apis` is `false`.
+    """
 
 @pulumi.input_type
 class IamApiClientApiAccessArgs:
@@ -8855,34 +8625,31 @@ class IamApiClientApiAccessArgs:
         pulumi.set(self, "apis", value)
 
 
-if not MYPY:
-    class IamApiClientApiAccessApiArgsDict(TypedDict):
-        access_level: pulumi.Input[_builtins.str]
-        """
-        The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
-        """
-        api_id: pulumi.Input[_builtins.int]
-        """
-        A unique identifier of the API.
-        """
-        api_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the API.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable description for the API.
-        """
-        documentation_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A link to more information about the API.
-        """
-        endpoint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies where the API can access resources.
-        """
-elif False:
-    IamApiClientApiAccessApiArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientApiAccessApiArgsDict(TypedDict):
+    access_level: pulumi.Input[_builtins.str]
+    """
+    The API client's access level on an API basis, either 'READ-ONLY', 'READ-WRITE', 'CREDENTIAL-READ-ONLY', or 'CREDENTIAL-READ-WRITE'.
+    """
+    api_id: pulumi.Input[_builtins.int]
+    """
+    A unique identifier of the API.
+    """
+    api_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the API.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable description for the API.
+    """
+    documentation_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A link to more information about the API.
+    """
+    endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies where the API can access resources.
+    """
 
 @pulumi.input_type
 class IamApiClientApiAccessApiArgs:
@@ -8985,42 +8752,39 @@ class IamApiClientApiAccessApiArgs:
         pulumi.set(self, "endpoint", value)
 
 
-if not MYPY:
-    class IamApiClientCredentialArgsDict(TypedDict):
-        actions: NotRequired[pulumi.Input['IamApiClientCredentialActionsArgsDict']]
-        """
-        Actions available on the API client's credentials.
-        """
-        client_secret: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The client secret.
-        """
-        client_token: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The part of the credential that identifies the API client.
-        """
-        created_on: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ISO 8601 timestamp indicating when the credential was created.
-        """
-        credential_id: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        A unique identifier of the credential.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable description for the credential.
-        """
-        expires_on: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
-        """
-elif False:
-    IamApiClientCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientCredentialArgsDict(TypedDict):
+    actions: NotRequired[pulumi.Input['IamApiClientCredentialActionsArgsDict']]
+    """
+    Actions available on the API client's credentials.
+    """
+    client_secret: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The client secret.
+    """
+    client_token: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The part of the credential that identifies the API client.
+    """
+    created_on: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ISO 8601 timestamp indicating when the credential was created.
+    """
+    credential_id: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    A unique identifier of the credential.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable description for the credential.
+    """
+    expires_on: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
+    """
 
 @pulumi.input_type
 class IamApiClientCredentialArgs:
@@ -9157,30 +8921,27 @@ class IamApiClientCredentialArgs:
         pulumi.set(self, "status", value)
 
 
-if not MYPY:
-    class IamApiClientCredentialActionsArgsDict(TypedDict):
-        activate: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can activate the credential.
-        """
-        deactivate: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can deactivate the credential.
-        """
-        delete: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can remove the credential.
-        """
-        edit_description: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can modify the credential's description.
-        """
-        edit_expiration: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can modify the credential's expiration date.
-        """
-elif False:
-    IamApiClientCredentialActionsArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientCredentialActionsArgsDict(TypedDict):
+    activate: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can activate the credential.
+    """
+    deactivate: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can deactivate the credential.
+    """
+    delete: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can remove the credential.
+    """
+    edit_description: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can modify the credential's description.
+    """
+    edit_expiration: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can modify the credential's expiration date.
+    """
 
 @pulumi.input_type
 class IamApiClientCredentialActionsArgs:
@@ -9269,18 +9030,15 @@ class IamApiClientCredentialActionsArgs:
         pulumi.set(self, "edit_expiration", value)
 
 
-if not MYPY:
-    class IamApiClientGroupAccessArgsDict(TypedDict):
-        clone_authorized_user_groups: pulumi.Input[_builtins.bool]
-        """
-        Sets the API client's group access the same as the authorized user.
-        """
-        groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupArgsDict']]]]
-        """
-        Groups the API client can access.
-        """
-elif False:
-    IamApiClientGroupAccessArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientGroupAccessArgsDict(TypedDict):
+    clone_authorized_user_groups: pulumi.Input[_builtins.bool]
+    """
+    Sets the API client's group access the same as the authorized user.
+    """
+    groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupArgsDict']]]]
+    """
+    Groups the API client can access.
+    """
 
 @pulumi.input_type
 class IamApiClientGroupAccessArgs:
@@ -9320,42 +9078,39 @@ class IamApiClientGroupAccessArgs:
         pulumi.set(self, "groups", value)
 
 
-if not MYPY:
-    class IamApiClientGroupAccessGroupArgsDict(TypedDict):
-        group_id: pulumi.Input[_builtins.int]
-        """
-        A unique identifier for the group.
-        """
-        role_id: pulumi.Input[_builtins.int]
-        """
-        A unique identifier for the role.
-        """
-        group_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the group.
-        """
-        is_blocked: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Blocks the API client access to the group's child groups.
-        """
-        parent_group_id: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        A unique identifier for the parent group within the group tree.
-        """
-        role_description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable description for the role to convey its use.
-        """
-        role_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the role.
-        """
-        sub_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgsDict']]]]
-        """
-        Groups the API client can access.
-        """
-elif False:
-    IamApiClientGroupAccessGroupArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientGroupAccessGroupArgsDict(TypedDict):
+    group_id: pulumi.Input[_builtins.int]
+    """
+    A unique identifier for the group.
+    """
+    role_id: pulumi.Input[_builtins.int]
+    """
+    A unique identifier for the role.
+    """
+    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the group.
+    """
+    is_blocked: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Blocks the API client access to the group's child groups.
+    """
+    parent_group_id: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    A unique identifier for the parent group within the group tree.
+    """
+    role_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable description for the role to convey its use.
+    """
+    role_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the role.
+    """
+    sub_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgsDict']]]]
+    """
+    Groups the API client can access.
+    """
 
 @pulumi.input_type
 class IamApiClientGroupAccessGroupArgs:
@@ -9490,42 +9245,39 @@ class IamApiClientGroupAccessGroupArgs:
         pulumi.set(self, "sub_groups", value)
 
 
-if not MYPY:
-    class IamApiClientGroupAccessGroupSubGroupArgsDict(TypedDict):
-        group_id: pulumi.Input[_builtins.int]
-        """
-        A unique identifier for the group.
-        """
-        role_id: pulumi.Input[_builtins.int]
-        """
-        A unique identifier for the role.
-        """
-        group_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the group.
-        """
-        is_blocked: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Blocks the API client access to the group's child groups.
-        """
-        parent_group_id: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        A unique identifier for the parent group within the group tree.
-        """
-        role_description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable description for the role to convey its use.
-        """
-        role_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A human-readable name for the role.
-        """
-        sub_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgsDict']]]]
-        """
-        Groups the API client can access.
-        """
-elif False:
-    IamApiClientGroupAccessGroupSubGroupArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientGroupAccessGroupSubGroupArgsDict(TypedDict):
+    group_id: pulumi.Input[_builtins.int]
+    """
+    A unique identifier for the group.
+    """
+    role_id: pulumi.Input[_builtins.int]
+    """
+    A unique identifier for the role.
+    """
+    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the group.
+    """
+    is_blocked: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Blocks the API client access to the group's child groups.
+    """
+    parent_group_id: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    A unique identifier for the parent group within the group tree.
+    """
+    role_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable description for the role to convey its use.
+    """
+    role_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A human-readable name for the role.
+    """
+    sub_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgsDict']]]]
+    """
+    Groups the API client can access.
+    """
 
 @pulumi.input_type
 class IamApiClientGroupAccessGroupSubGroupArgs:
@@ -9660,18 +9412,15 @@ class IamApiClientGroupAccessGroupSubGroupArgs:
         pulumi.set(self, "sub_groups", value)
 
 
-if not MYPY:
-    class IamApiClientIpAclArgsDict(TypedDict):
-        cidrs: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        IP addresses or CIDR blocks the API client can access.
-        """
-        enable: pulumi.Input[_builtins.bool]
-        """
-        Enables the API client to access the IP access control list (ACL).
-        """
-elif False:
-    IamApiClientIpAclArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientIpAclArgsDict(TypedDict):
+    cidrs: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    IP addresses or CIDR blocks the API client can access.
+    """
+    enable: pulumi.Input[_builtins.bool]
+    """
+    Enables the API client to access the IP access control list (ACL).
+    """
 
 @pulumi.input_type
 class IamApiClientIpAclArgs:
@@ -9710,22 +9459,19 @@ class IamApiClientIpAclArgs:
         pulumi.set(self, "enable", value)
 
 
-if not MYPY:
-    class IamApiClientPurgeOptionsArgsDict(TypedDict):
-        can_purge_by_cache_tag: pulumi.Input[_builtins.bool]
-        """
-        Whether the API client can purge content by cache tag.
-        """
-        can_purge_by_cp_code: pulumi.Input[_builtins.bool]
-        """
-        Whether the API client can purge content by CP code.
-        """
-        cp_code_access: pulumi.Input['IamApiClientPurgeOptionsCpCodeAccessArgsDict']
-        """
-        CP codes the API client can purge.
-        """
-elif False:
-    IamApiClientPurgeOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientPurgeOptionsArgsDict(TypedDict):
+    can_purge_by_cache_tag: pulumi.Input[_builtins.bool]
+    """
+    Whether the API client can purge content by cache tag.
+    """
+    can_purge_by_cp_code: pulumi.Input[_builtins.bool]
+    """
+    Whether the API client can purge content by CP code.
+    """
+    cp_code_access: pulumi.Input['IamApiClientPurgeOptionsCpCodeAccessArgsDict']
+    """
+    CP codes the API client can purge.
+    """
 
 @pulumi.input_type
 class IamApiClientPurgeOptionsArgs:
@@ -9779,18 +9525,15 @@ class IamApiClientPurgeOptionsArgs:
         pulumi.set(self, "cp_code_access", value)
 
 
-if not MYPY:
-    class IamApiClientPurgeOptionsCpCodeAccessArgsDict(TypedDict):
-        all_current_and_new_cp_codes: pulumi.Input[_builtins.bool]
-        """
-        Whether the API can purge content by all current and new CP codes.
-        """
-        cp_codes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        CP codes the API client can purge.
-        """
-elif False:
-    IamApiClientPurgeOptionsCpCodeAccessArgsDict: TypeAlias = Mapping[str, Any]
+class IamApiClientPurgeOptionsCpCodeAccessArgsDict(TypedDict):
+    all_current_and_new_cp_codes: pulumi.Input[_builtins.bool]
+    """
+    Whether the API can purge content by all current and new CP codes.
+    """
+    cp_codes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    CP codes the API client can purge.
+    """
 
 @pulumi.input_type
 class IamApiClientPurgeOptionsCpCodeAccessArgs:
@@ -9830,18 +9573,15 @@ class IamApiClientPurgeOptionsCpCodeAccessArgs:
         pulumi.set(self, "cp_codes", value)
 
 
-if not MYPY:
-    class IamCidrBlockActionsArgsDict(TypedDict):
-        delete: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can delete this CIDR block. You can't delete a CIDR block from an IP address not on the allowlist, or if the CIDR block is the only one on the allowlist.
-        """
-        edit: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether you can edit this CIDR block. You can't edit CIDR block from an IP address not on the allowlist, or if the CIDR block is the only one on the allowlist.
-        """
-elif False:
-    IamCidrBlockActionsArgsDict: TypeAlias = Mapping[str, Any]
+class IamCidrBlockActionsArgsDict(TypedDict):
+    delete: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can delete this CIDR block. You can't delete a CIDR block from an IP address not on the allowlist, or if the CIDR block is the only one on the allowlist.
+    """
+    edit: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether you can edit this CIDR block. You can't edit CIDR block from an IP address not on the allowlist, or if the CIDR block is the only one on the allowlist.
+    """
 
 @pulumi.input_type
 class IamCidrBlockActionsArgs:
@@ -9882,34 +9622,31 @@ class IamCidrBlockActionsArgs:
         pulumi.set(self, "edit", value)
 
 
-if not MYPY:
-    class IamUserUserNotificationsArgsDict(TypedDict):
-        enable_email_notifications: pulumi.Input[_builtins.bool]
-        """
-        Enables email notifications.
-        """
-        password_expiry: pulumi.Input[_builtins.bool]
-        """
-        Enables notifications for expiring passwords.
-        """
-        proactives: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        Products for which the user gets notifications for service issues.
-        """
-        upgrades: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        Products for which the user receives notifications for upgrades.
-        """
-        api_client_credential_expiry_notification: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables notifications for expiring API client credentials.
-        """
-        new_user_notification: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables notifications for group administrators when the user creates other new users.
-        """
-elif False:
-    IamUserUserNotificationsArgsDict: TypeAlias = Mapping[str, Any]
+class IamUserUserNotificationsArgsDict(TypedDict):
+    enable_email_notifications: pulumi.Input[_builtins.bool]
+    """
+    Enables email notifications.
+    """
+    password_expiry: pulumi.Input[_builtins.bool]
+    """
+    Enables notifications for expiring passwords.
+    """
+    proactives: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    Products for which the user gets notifications for service issues.
+    """
+    upgrades: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    Products for which the user receives notifications for upgrades.
+    """
+    api_client_credential_expiry_notification: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables notifications for expiring API client credentials.
+    """
+    new_user_notification: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables notifications for group administrators when the user creates other new users.
+    """
 
 @pulumi.input_type
 class IamUserUserNotificationsArgs:
@@ -10010,18 +9747,15 @@ class IamUserUserNotificationsArgs:
         pulumi.set(self, "new_user_notification", value)
 
 
-if not MYPY:
-    class MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict(TypedDict):
-        create: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource create timeout. By default it's 30m.
-        """
-        update: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource update timeout. By default it's 30m.
-        """
-elif False:
-    MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict(TypedDict):
+    create: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource create timeout. By default it's 30m.
+    """
+    update: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource update timeout. By default it's 30m.
+    """
 
 @pulumi.input_type
 class MtlskeystoreClientCertificateAkamaiTimeoutsArgs:
@@ -10062,74 +9796,71 @@ class MtlskeystoreClientCertificateAkamaiTimeoutsArgs:
         pulumi.set(self, "update", value)
 
 
-if not MYPY:
-    class MtlskeystoreClientCertificateAkamaiVersionArgsDict(TypedDict):
-        certificate_block: NotRequired[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgsDict']]
-        """
-        Details of the certificate block for the client certificate version.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user who created the client certificate version.
-        """
-        created_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating the client certificate version's creation.
-        """
-        delete_requested_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
-        """
-        elliptic_curve: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies the key elliptic curve when key algorithm `ECDSA` is used.
-        """
-        expiry_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating when the client certificate version expires.
-        """
-        issued_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating the client certificate version's availability.
-        """
-        issuer: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The signing entity of the client certificate version.
-        """
-        key_algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-        """
-        key_size_in_bytes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The private key length of the client certificate version when key algorithm `RSA` is used.
-        """
-        scheduled_delete_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
-        """
-        signature_algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies the algorithm that secures the data exchange between the edge server and origin.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-        """
-        subject: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The public key's entity stored in the client certificate version's subject public key field.
-        """
-        version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The unique identifier of the client certificate version.
-        """
-        version_guid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-        """
-elif False:
-    MtlskeystoreClientCertificateAkamaiVersionArgsDict: TypeAlias = Mapping[str, Any]
+class MtlskeystoreClientCertificateAkamaiVersionArgsDict(TypedDict):
+    certificate_block: NotRequired[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgsDict']]
+    """
+    Details of the certificate block for the client certificate version.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user who created the client certificate version.
+    """
+    created_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating the client certificate version's creation.
+    """
+    delete_requested_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+    """
+    elliptic_curve: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+    """
+    expiry_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating when the client certificate version expires.
+    """
+    issued_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating the client certificate version's availability.
+    """
+    issuer: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The signing entity of the client certificate version.
+    """
+    key_algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+    """
+    key_size_in_bytes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private key length of the client certificate version when key algorithm `RSA` is used.
+    """
+    scheduled_delete_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+    """
+    signature_algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies the algorithm that secures the data exchange between the edge server and origin.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+    """
+    subject: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The public key's entity stored in the client certificate version's subject public key field.
+    """
+    version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The unique identifier of the client certificate version.
+    """
+    version_guid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+    """
 
 @pulumi.input_type
 class MtlskeystoreClientCertificateAkamaiVersionArgs:
@@ -10394,18 +10125,15 @@ class MtlskeystoreClientCertificateAkamaiVersionArgs:
         pulumi.set(self, "version_guid", value)
 
 
-if not MYPY:
-    class MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgsDict(TypedDict):
-        certificate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A text representation of the client certificate in PEM format.
-        """
-        trust_chain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A text representation of the trust chain in PEM format.
-        """
-elif False:
-    MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgsDict: TypeAlias = Mapping[str, Any]
+class MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgsDict(TypedDict):
+    certificate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A text representation of the client certificate in PEM format.
+    """
+    trust_chain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A text representation of the trust chain in PEM format.
+    """
 
 @pulumi.input_type
 class MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs:
@@ -10446,86 +10174,83 @@ class MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs:
         pulumi.set(self, "trust_chain", value)
 
 
-if not MYPY:
-    class MtlskeystoreClientCertificateThirdPartyVersionsArgsDict(TypedDict):
-        certificate_block: NotRequired[pulumi.Input['MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgsDict']]
-        """
-        Details of the certificate block for the client certificate version.
-        """
-        certificate_submitted_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
-        """
-        certificate_submitted_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user who created the client certificate version.
-        """
-        created_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating the client certificate version's creation.
-        """
-        csr_block: NotRequired[pulumi.Input['MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgsDict']]
-        """
-        Details of the Certificate Signing Request (CSR) for the client certificate version.
-        """
-        delete_requested_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
-        """
-        elliptic_curve: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies the key elliptic curve when key algorithm `ECDSA` is used.
-        """
-        expiry_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating when the client certificate version expires.
-        """
-        issued_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating the client certificate version's availability.
-        """
-        issuer: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The signing entity of the client certificate version.
-        """
-        key_algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-        """
-        key_size_in_bytes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The private key length of the client certificate version when key algorithm `RSA` is used.
-        """
-        scheduled_delete_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
-        """
-        signature_algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies the algorithm that secures the data exchange between the edge server and origin.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-        """
-        subject: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The public key's entity stored in the client certificate version's subject public key field.
-        """
-        version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The unique identifier of the client certificate version.
-        """
-        version_guid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-        """
-elif False:
-    MtlskeystoreClientCertificateThirdPartyVersionsArgsDict: TypeAlias = Mapping[str, Any]
+class MtlskeystoreClientCertificateThirdPartyVersionsArgsDict(TypedDict):
+    certificate_block: NotRequired[pulumi.Input['MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgsDict']]
+    """
+    Details of the certificate block for the client certificate version.
+    """
+    certificate_submitted_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
+    """
+    certificate_submitted_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user who created the client certificate version.
+    """
+    created_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating the client certificate version's creation.
+    """
+    csr_block: NotRequired[pulumi.Input['MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgsDict']]
+    """
+    Details of the Certificate Signing Request (CSR) for the client certificate version.
+    """
+    delete_requested_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
+    """
+    elliptic_curve: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies the key elliptic curve when key algorithm `ECDSA` is used.
+    """
+    expiry_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating when the client certificate version expires.
+    """
+    issued_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating the client certificate version's availability.
+    """
+    issuer: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The signing entity of the client certificate version.
+    """
+    key_algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
+    """
+    key_size_in_bytes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private key length of the client certificate version when key algorithm `RSA` is used.
+    """
+    scheduled_delete_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
+    """
+    signature_algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies the algorithm that secures the data exchange between the edge server and origin.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
+    """
+    subject: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The public key's entity stored in the client certificate version's subject public key field.
+    """
+    version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The unique identifier of the client certificate version.
+    """
+    version_guid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
+    """
 
 @pulumi.input_type
 class MtlskeystoreClientCertificateThirdPartyVersionsArgs:
@@ -10838,18 +10563,15 @@ class MtlskeystoreClientCertificateThirdPartyVersionsArgs:
         pulumi.set(self, "version_guid", value)
 
 
-if not MYPY:
-    class MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgsDict(TypedDict):
-        certificate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A text representation of the client certificate in PEM format.
-        """
-        trust_chain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A text representation of the trust chain in PEM format.
-        """
-elif False:
-    MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgsDict: TypeAlias = Mapping[str, Any]
+class MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgsDict(TypedDict):
+    certificate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A text representation of the client certificate in PEM format.
+    """
+    trust_chain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A text representation of the trust chain in PEM format.
+    """
 
 @pulumi.input_type
 class MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs:
@@ -10890,18 +10612,15 @@ class MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs:
         pulumi.set(self, "trust_chain", value)
 
 
-if not MYPY:
-    class MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgsDict(TypedDict):
-        csr: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Text of the certificate signing request.
-        """
-        key_algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the client certificate's encryption algorithm.
-        """
-elif False:
-    MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgsDict: TypeAlias = Mapping[str, Any]
+class MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgsDict(TypedDict):
+    csr: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Text of the certificate signing request.
+    """
+    key_algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the client certificate's encryption algorithm.
+    """
 
 @pulumi.input_type
 class MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs:
@@ -10942,18 +10661,15 @@ class MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs:
         pulumi.set(self, "key_algorithm", value)
 
 
-if not MYPY:
-    class MtlskeystoreClientCertificateUploadTimeoutsArgsDict(TypedDict):
-        create: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource create timeout. By default it's 30m.
-        """
-        update: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource update timeout. By default it's 30m.
-        """
-elif False:
-    MtlskeystoreClientCertificateUploadTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class MtlskeystoreClientCertificateUploadTimeoutsArgsDict(TypedDict):
+    create: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource create timeout. By default it's 30m.
+    """
+    update: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource update timeout. By default it's 30m.
+    """
 
 @pulumi.input_type
 class MtlskeystoreClientCertificateUploadTimeoutsArgs:
@@ -10994,22 +10710,19 @@ class MtlskeystoreClientCertificateUploadTimeoutsArgs:
         pulumi.set(self, "update", value)
 
 
-if not MYPY:
-    class MtlstruststoreCaSetActivationTimeoutsArgsDict(TypedDict):
-        create: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource create timeout. By default it's 1h.
-        """
-        delete: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource delete timeout. By default it's 1h.
-        """
-        update: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource update timeout. By default it's 1h.
-        """
-elif False:
-    MtlstruststoreCaSetActivationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class MtlstruststoreCaSetActivationTimeoutsArgsDict(TypedDict):
+    create: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource create timeout. By default it's 1h.
+    """
+    delete: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource delete timeout. By default it's 1h.
+    """
+    update: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource update timeout. By default it's 1h.
+    """
 
 @pulumi.input_type
 class MtlstruststoreCaSetActivationTimeoutsArgs:
@@ -11066,54 +10779,51 @@ class MtlstruststoreCaSetActivationTimeoutsArgs:
         pulumi.set(self, "update", value)
 
 
-if not MYPY:
-    class MtlstruststoreCaSetCertificateArgsDict(TypedDict):
-        certificate_pem: pulumi.Input[_builtins.str]
-        """
-        The certificate in PEM format, as found in a Base64 ASCII encoded file.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user who created this CA certificate.
-        """
-        created_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the CA certificate was created.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional description for the certificate.
-        """
-        end_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certificate's ISO 8601 formatted expiration date.
-        """
-        fingerprint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fingerprint of the certificate.
-        """
-        issuer: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certificate's issuer.
-        """
-        serial_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique serial number of the certificate.
-        """
-        signature_algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The signature algorithm of the CA certificate.
-        """
-        start_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The start date of the certificate.
-        """
-        subject: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certificate's subject field.
-        """
-elif False:
-    MtlstruststoreCaSetCertificateArgsDict: TypeAlias = Mapping[str, Any]
+class MtlstruststoreCaSetCertificateArgsDict(TypedDict):
+    certificate_pem: pulumi.Input[_builtins.str]
+    """
+    The certificate in PEM format, as found in a Base64 ASCII encoded file.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user who created this CA certificate.
+    """
+    created_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the CA certificate was created.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional description for the certificate.
+    """
+    end_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certificate's ISO 8601 formatted expiration date.
+    """
+    fingerprint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fingerprint of the certificate.
+    """
+    issuer: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certificate's issuer.
+    """
+    serial_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique serial number of the certificate.
+    """
+    signature_algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The signature algorithm of the CA certificate.
+    """
+    start_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The start date of the certificate.
+    """
+    subject: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certificate's subject field.
+    """
 
 @pulumi.input_type
 class MtlstruststoreCaSetCertificateArgs:
@@ -11297,14 +11007,11 @@ class MtlstruststoreCaSetCertificateArgs:
         pulumi.set(self, "subject", value)
 
 
-if not MYPY:
-    class MtlstruststoreCaSetTimeoutsArgsDict(TypedDict):
-        delete: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable resource delete timeout. By default it's 1h.
-        """
-elif False:
-    MtlstruststoreCaSetTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class MtlstruststoreCaSetTimeoutsArgsDict(TypedDict):
+    delete: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable resource delete timeout. By default it's 1h.
+    """
 
 @pulumi.input_type
 class MtlstruststoreCaSetTimeoutsArgs:
@@ -11329,26 +11036,23 @@ class MtlstruststoreCaSetTimeoutsArgs:
         pulumi.set(self, "delete", value)
 
 
-if not MYPY:
-    class PropertyActivationComplianceRecordArgsDict(TypedDict):
-        noncompliance_reason_emergency: NotRequired[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict']]
-        """
-        Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
-        """
-        noncompliance_reason_no_production_traffic: NotRequired[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict']]
-        """
-        Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
-        """
-        noncompliance_reason_none: NotRequired[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoneArgsDict']]
-        """
-        Provides an audit record when activating on a production network with noncompliance reason as `NONE`
-        """
-        noncompliance_reason_other: NotRequired[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonOtherArgsDict']]
-        """
-        Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
-        """
-elif False:
-    PropertyActivationComplianceRecordArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyActivationComplianceRecordArgsDict(TypedDict):
+    noncompliance_reason_emergency: NotRequired[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict']]
+    """
+    Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+    """
+    noncompliance_reason_no_production_traffic: NotRequired[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict']]
+    """
+    Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+    """
+    noncompliance_reason_none: NotRequired[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoneArgsDict']]
+    """
+    Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+    """
+    noncompliance_reason_other: NotRequired[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonOtherArgsDict']]
+    """
+    Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+    """
 
 @pulumi.input_type
 class PropertyActivationComplianceRecordArgs:
@@ -11421,14 +11125,11 @@ class PropertyActivationComplianceRecordArgs:
         pulumi.set(self, "noncompliance_reason_other", value)
 
 
-if not MYPY:
-    class PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict(TypedDict):
-        ticket_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the ticket that describes the need for the activation
-        """
-elif False:
-    PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict(TypedDict):
+    ticket_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the ticket that describes the need for the activation
+    """
 
 @pulumi.input_type
 class PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs:
@@ -11453,14 +11154,11 @@ class PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs:
         pulumi.set(self, "ticket_id", value)
 
 
-if not MYPY:
-    class PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict(TypedDict):
-        ticket_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the ticket that describes the need for the activation
-        """
-elif False:
-    PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict(TypedDict):
+    ticket_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the ticket that describes the need for the activation
+    """
 
 @pulumi.input_type
 class PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs:
@@ -11485,26 +11183,23 @@ class PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficAr
         pulumi.set(self, "ticket_id", value)
 
 
-if not MYPY:
-    class PropertyActivationComplianceRecordNoncomplianceReasonNoneArgsDict(TypedDict):
-        customer_email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the customer
-        """
-        peer_reviewed_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies person who has independently approved the activation request
-        """
-        ticket_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the ticket that describes the need for the activation
-        """
-        unit_tested: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether the metadata to activate has been fully tested
-        """
-elif False:
-    PropertyActivationComplianceRecordNoncomplianceReasonNoneArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyActivationComplianceRecordNoncomplianceReasonNoneArgsDict(TypedDict):
+    customer_email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the customer
+    """
+    peer_reviewed_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies person who has independently approved the activation request
+    """
+    ticket_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the ticket that describes the need for the activation
+    """
+    unit_tested: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether the metadata to activate has been fully tested
+    """
 
 @pulumi.input_type
 class PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs:
@@ -11577,18 +11272,15 @@ class PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs:
         pulumi.set(self, "unit_tested", value)
 
 
-if not MYPY:
-    class PropertyActivationComplianceRecordNoncomplianceReasonOtherArgsDict(TypedDict):
-        other_noncompliance_reason: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
-        """
-        ticket_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the ticket that describes the need for the activation
-        """
-elif False:
-    PropertyActivationComplianceRecordNoncomplianceReasonOtherArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyActivationComplianceRecordNoncomplianceReasonOtherArgsDict(TypedDict):
+    other_noncompliance_reason: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+    """
+    ticket_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the ticket that describes the need for the activation
+    """
 
 @pulumi.input_type
 class PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs:
@@ -11629,17 +11321,14 @@ class PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs:
         pulumi.set(self, "ticket_id", value)
 
 
-if not MYPY:
-    class PropertyActivationRuleErrorArgsDict(TypedDict):
-        behavior_name: NotRequired[pulumi.Input[_builtins.str]]
-        detail: NotRequired[pulumi.Input[_builtins.str]]
-        error_location: NotRequired[pulumi.Input[_builtins.str]]
-        instance: NotRequired[pulumi.Input[_builtins.str]]
-        status_code: NotRequired[pulumi.Input[_builtins.int]]
-        title: NotRequired[pulumi.Input[_builtins.str]]
-        type: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    PropertyActivationRuleErrorArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyActivationRuleErrorArgsDict(TypedDict):
+    behavior_name: NotRequired[pulumi.Input[_builtins.str]]
+    detail: NotRequired[pulumi.Input[_builtins.str]]
+    error_location: NotRequired[pulumi.Input[_builtins.str]]
+    instance: NotRequired[pulumi.Input[_builtins.str]]
+    status_code: NotRequired[pulumi.Input[_builtins.int]]
+    title: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class PropertyActivationRuleErrorArgs:
@@ -11730,11 +11419,8 @@ class PropertyActivationRuleErrorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class PropertyActivationTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    PropertyActivationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyActivationTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class PropertyActivationTimeoutsArgs:
@@ -11753,59 +11439,56 @@ class PropertyActivationTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class PropertyDomainownershipDomainsDomainArgsDict(TypedDict):
-        domain_name: pulumi.Input[_builtins.str]
-        """
-        Your domain's name.
-        """
-        validation_scope: pulumi.Input[_builtins.str]
-        """
-        Your domain's validation scope. Possible values are: 
-        * `HOST` - The scope is only the exactly specified domain.
-        * `WILDCARD` - The scope covers any hostname within one subdomain level.
-        * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
-        """
-        account_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Your account's ID.
-        """
-        domain_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The domain's validation status. Possible values are: 
-        * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
-        * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
-        * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
-        * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
-        * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
-        """
-        validation_challenge: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeArgsDict']]
-        """
-        The domain's validation challenge details.
-        """
-        validation_completed_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp indicating when the domain validation was completed.
-        """
-        validation_method: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The method used to validate the domain. Possible values are: 
-        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-        * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
-        * `MANUAL` - For this method, the DOM team manually performed the validation.
-        """
-        validation_requested_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the user who requested the domain validation.
-        """
-        validation_requested_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp indicating when the domain validation was requested.
-        """
-elif False:
-    PropertyDomainownershipDomainsDomainArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyDomainownershipDomainsDomainArgsDict(TypedDict):
+    domain_name: pulumi.Input[_builtins.str]
+    """
+    Your domain's name.
+    """
+    validation_scope: pulumi.Input[_builtins.str]
+    """
+    Your domain's validation scope. Possible values are: 
+    * `HOST` - The scope is only the exactly specified domain.
+    * `WILDCARD` - The scope covers any hostname within one subdomain level.
+    * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+    """
+    account_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Your account's ID.
+    """
+    domain_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The domain's validation status. Possible values are: 
+    * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+    * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+    * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+    * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+    * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+    """
+    validation_challenge: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeArgsDict']]
+    """
+    The domain's validation challenge details.
+    """
+    validation_completed_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp indicating when the domain validation was completed.
+    """
+    validation_method: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The method used to validate the domain. Possible values are: 
+    * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+    * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+    * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+    * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+    * `MANUAL` - For this method, the DOM team manually performed the validation.
+    """
+    validation_requested_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the user who requested the domain validation.
+    """
+    validation_requested_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp indicating when the domain validation was requested.
+    """
 
 @pulumi.input_type
 class PropertyDomainownershipDomainsDomainArgs:
@@ -11982,30 +11665,27 @@ class PropertyDomainownershipDomainsDomainArgs:
         pulumi.set(self, "validation_requested_date", value)
 
 
-if not MYPY:
-    class PropertyDomainownershipDomainsDomainValidationChallengeArgsDict(TypedDict):
-        cname_record: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict']]
-        """
-        The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
-        """
-        expiration_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp indicating when the challenge data expires.
-        """
-        http_file: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict']]
-        """
-        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
-        """
-        http_redirect: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict']]
-        """
-        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
-        """
-        txt_record: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict']]
-        """
-        The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
-        """
-elif False:
-    PropertyDomainownershipDomainsDomainValidationChallengeArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyDomainownershipDomainsDomainValidationChallengeArgsDict(TypedDict):
+    cname_record: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict']]
+    """
+    The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+    """
+    expiration_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp indicating when the challenge data expires.
+    """
+    http_file: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict']]
+    """
+    Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+    """
+    http_redirect: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict']]
+    """
+    Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+    """
+    txt_record: NotRequired[pulumi.Input['PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict']]
+    """
+    The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+    """
 
 @pulumi.input_type
 class PropertyDomainownershipDomainsDomainValidationChallengeArgs:
@@ -12094,18 +11774,15 @@ class PropertyDomainownershipDomainsDomainValidationChallengeArgs:
         pulumi.set(self, "txt_record", value)
 
 
-if not MYPY:
-    class PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The 'CNAME' record for your domain that you add to the DNS configuration.
-        """
-        target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The 'target' value you set in the 'CNAME' record that validates the domain ownership.
-        """
-elif False:
-    PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The 'CNAME' record for your domain that you add to the DNS configuration.
+    """
+    target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+    """
 
 @pulumi.input_type
 class PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs:
@@ -12146,22 +11823,19 @@ class PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs:
         pulumi.set(self, "target", value)
 
 
-if not MYPY:
-    class PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict(TypedDict):
-        content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The content of the file that you should place at the specified URL.
-        """
-        content_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The content type of the file containing the token.
-        """
-        path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL where you should place the file containing the challenge token.
-        """
-elif False:
-    PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The content of the file that you should place at the specified URL.
+    """
+    content_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The content type of the file containing the token.
+    """
+    path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL where you should place the file containing the challenge token.
+    """
 
 @pulumi.input_type
 class PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs:
@@ -12218,18 +11892,15 @@ class PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs:
         pulumi.set(self, "path", value)
 
 
-if not MYPY:
-    class PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict(TypedDict):
-        from_: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The location on your HTTP server where you set up the redirect.
-        """
-        to: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The redirect URL with the token that you place on your HTTP server.
-        """
-elif False:
-    PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict(TypedDict):
+    from_: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The location on your HTTP server where you set up the redirect.
+    """
+    to: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The redirect URL with the token that you place on your HTTP server.
+    """
 
 @pulumi.input_type
 class PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs:
@@ -12270,18 +11941,15 @@ class PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs:
         pulumi.set(self, "to", value)
 
 
-if not MYPY:
-    class PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The hostname where you should add the 'TXT' record to validate the domain ownership.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
-        """
-elif False:
-    PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hostname where you should add the 'TXT' record to validate the domain ownership.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+    """
 
 @pulumi.input_type
 class PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs:
@@ -12322,18 +11990,15 @@ class PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class PropertyDomainownershipLateValidationTimeoutsArgsDict(TypedDict):
-        create: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
-        """
-        update: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
-        """
-elif False:
-    PropertyDomainownershipLateValidationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyDomainownershipLateValidationTimeoutsArgsDict(TypedDict):
+    create: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+    """
+    update: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+    """
 
 @pulumi.input_type
 class PropertyDomainownershipLateValidationTimeoutsArgs:
@@ -12374,28 +12039,25 @@ class PropertyDomainownershipLateValidationTimeoutsArgs:
         pulumi.set(self, "update", value)
 
 
-if not MYPY:
-    class PropertyDomainownershipValidationDomainArgsDict(TypedDict):
-        domain_name: pulumi.Input[_builtins.str]
-        """
-        Your domain's name.
-        """
-        validation_method: pulumi.Input[_builtins.str]
-        """
-        The method used to validate the domain. Possible values are: 
-        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-        """
-        validation_scope: pulumi.Input[_builtins.str]
-        """
-        Your domain's validation scope. Possible values are: 
-        * `HOST` - The scope is only the exactly specified domain.
-        * `WILDCARD` - The scope covers any hostname within one subdomain level.
-        * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
-        """
-elif False:
-    PropertyDomainownershipValidationDomainArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyDomainownershipValidationDomainArgsDict(TypedDict):
+    domain_name: pulumi.Input[_builtins.str]
+    """
+    Your domain's name.
+    """
+    validation_method: pulumi.Input[_builtins.str]
+    """
+    The method used to validate the domain. Possible values are: 
+    * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+    * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+    * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+    """
+    validation_scope: pulumi.Input[_builtins.str]
+    """
+    Your domain's validation scope. Possible values are: 
+    * `HOST` - The scope is only the exactly specified domain.
+    * `WILDCARD` - The scope covers any hostname within one subdomain level.
+    * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+    """
 
 @pulumi.input_type
 class PropertyDomainownershipValidationDomainArgs:
@@ -12461,18 +12123,15 @@ class PropertyDomainownershipValidationDomainArgs:
         pulumi.set(self, "validation_scope", value)
 
 
-if not MYPY:
-    class PropertyDomainownershipValidationTimeoutsArgsDict(TypedDict):
-        create: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
-        """
-        update: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
-        """
-elif False:
-    PropertyDomainownershipValidationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyDomainownershipValidationTimeoutsArgsDict(TypedDict):
+    create: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
+    """
+    update: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
+    """
 
 @pulumi.input_type
 class PropertyDomainownershipValidationTimeoutsArgs:
@@ -12513,32 +12172,29 @@ class PropertyDomainownershipValidationTimeoutsArgs:
         pulumi.set(self, "update", value)
 
 
-if not MYPY:
-    class PropertyHostnameArgsDict(TypedDict):
-        cert_provisioning_type: pulumi.Input[_builtins.str]
-        cname_from: pulumi.Input[_builtins.str]
-        cname_to: pulumi.Input[_builtins.str]
-        ccm_cert_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgsDict']]]]
-        """
-        Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
-        """
-        ccm_certificates: NotRequired[pulumi.Input['PropertyHostnameCcmCertificatesArgsDict']]
-        """
-        Certificate identifiers and links for the CCM-managed certificates.
-        """
-        cert_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgsDict']]]]
-        cname_type: NotRequired[pulumi.Input[_builtins.str]]
-        edge_hostname_id: NotRequired[pulumi.Input[_builtins.str]]
-        mtls: NotRequired[pulumi.Input['PropertyHostnameMtlsArgsDict']]
-        """
-        Optional mutual TLS settings for the CCM hostnames.
-        """
-        tls_configuration: NotRequired[pulumi.Input['PropertyHostnameTlsConfigurationArgsDict']]
-        """
-        Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
-        """
-elif False:
-    PropertyHostnameArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyHostnameArgsDict(TypedDict):
+    cert_provisioning_type: pulumi.Input[_builtins.str]
+    cname_from: pulumi.Input[_builtins.str]
+    cname_to: pulumi.Input[_builtins.str]
+    ccm_cert_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgsDict']]]]
+    """
+    Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+    """
+    ccm_certificates: NotRequired[pulumi.Input['PropertyHostnameCcmCertificatesArgsDict']]
+    """
+    Certificate identifiers and links for the CCM-managed certificates.
+    """
+    cert_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgsDict']]]]
+    cname_type: NotRequired[pulumi.Input[_builtins.str]]
+    edge_hostname_id: NotRequired[pulumi.Input[_builtins.str]]
+    mtls: NotRequired[pulumi.Input['PropertyHostnameMtlsArgsDict']]
+    """
+    Optional mutual TLS settings for the CCM hostnames.
+    """
+    tls_configuration: NotRequired[pulumi.Input['PropertyHostnameTlsConfigurationArgsDict']]
+    """
+    Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
+    """
 
 @pulumi.input_type
 class PropertyHostnameArgs:
@@ -12680,22 +12336,19 @@ class PropertyHostnameArgs:
         pulumi.set(self, "tls_configuration", value)
 
 
-if not MYPY:
-    class PropertyHostnameBucketHostnamesArgsDict(TypedDict):
-        cert_provisioning_type: pulumi.Input[_builtins.str]
-        """
-        Indicates the type of the certificate used in the property hostname. Either `CPS_MANAGED` for certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for Domain Validation (DV) certificates deployed automatically.
-        """
-        edge_hostname_id: pulumi.Input[_builtins.str]
-        """
-        Identifies the edge hostname you mapped your traffic to on the production network.
-        """
-        cname_to: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
-        """
-elif False:
-    PropertyHostnameBucketHostnamesArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyHostnameBucketHostnamesArgsDict(TypedDict):
+    cert_provisioning_type: pulumi.Input[_builtins.str]
+    """
+    Indicates the type of the certificate used in the property hostname. Either `CPS_MANAGED` for certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for Domain Validation (DV) certificates deployed automatically.
+    """
+    edge_hostname_id: pulumi.Input[_builtins.str]
+    """
+    Identifies the edge hostname you mapped your traffic to on the production network.
+    """
+    cname_to: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
+    """
 
 @pulumi.input_type
 class PropertyHostnameBucketHostnamesArgs:
@@ -12750,26 +12403,23 @@ class PropertyHostnameBucketHostnamesArgs:
         pulumi.set(self, "cname_to", value)
 
 
-if not MYPY:
-    class PropertyHostnameCcmCertStatusArgsDict(TypedDict):
-        ecdsa_production_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Status of the ECDSA certificate on production network.
-        """
-        ecdsa_staging_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Status of the ECDSA certificate on staging network.
-        """
-        rsa_production_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Status of the RSA certificate on production network.
-        """
-        rsa_staging_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Status of the RSA certificate on staging network.
-        """
-elif False:
-    PropertyHostnameCcmCertStatusArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyHostnameCcmCertStatusArgsDict(TypedDict):
+    ecdsa_production_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of the ECDSA certificate on production network.
+    """
+    ecdsa_staging_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of the ECDSA certificate on staging network.
+    """
+    rsa_production_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of the RSA certificate on production network.
+    """
+    rsa_staging_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of the RSA certificate on staging network.
+    """
 
 @pulumi.input_type
 class PropertyHostnameCcmCertStatusArgs:
@@ -12842,18 +12492,15 @@ class PropertyHostnameCcmCertStatusArgs:
         pulumi.set(self, "rsa_staging_status", value)
 
 
-if not MYPY:
-    class PropertyHostnameCcmCertificatesArgsDict(TypedDict):
-        ecdsa_cert_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Certificate ID for ECDSA.
-        """
-        rsa_cert_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Certificate ID for RSA.
-        """
-elif False:
-    PropertyHostnameCcmCertificatesArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyHostnameCcmCertificatesArgsDict(TypedDict):
+    ecdsa_cert_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Certificate ID for ECDSA.
+    """
+    rsa_cert_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Certificate ID for RSA.
+    """
 
 @pulumi.input_type
 class PropertyHostnameCcmCertificatesArgs:
@@ -12894,26 +12541,23 @@ class PropertyHostnameCcmCertificatesArgs:
         pulumi.set(self, "rsa_cert_id", value)
 
 
-if not MYPY:
-    class PropertyHostnameCertStatusArgsDict(TypedDict):
-        hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The hostname part of the CNAME record used to validate the certificate's domain.
-        """
-        production_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certificate's deployment status on the production network.
-        """
-        staging_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certificate's deployment status on the staging network.
-        """
-        target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The destination part of the CNAME record used to validate the certificate's domain.
-        """
-elif False:
-    PropertyHostnameCertStatusArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyHostnameCertStatusArgsDict(TypedDict):
+    hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hostname part of the CNAME record used to validate the certificate's domain.
+    """
+    production_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certificate's deployment status on the production network.
+    """
+    staging_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certificate's deployment status on the staging network.
+    """
+    target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The destination part of the CNAME record used to validate the certificate's domain.
+    """
 
 @pulumi.input_type
 class PropertyHostnameCertStatusArgs:
@@ -12986,22 +12630,19 @@ class PropertyHostnameCertStatusArgs:
         pulumi.set(self, "target", value)
 
 
-if not MYPY:
-    class PropertyHostnameMtlsArgsDict(TypedDict):
-        ca_set_id: pulumi.Input[_builtins.str]
-        """
-        The ID of the Certificate Authority (CA) set to use for mTLS.
-        """
-        check_client_ocsp: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether to check the client OCSP.
-        """
-        send_ca_set_client: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether to send the CA set to the client.
-        """
-elif False:
-    PropertyHostnameMtlsArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyHostnameMtlsArgsDict(TypedDict):
+    ca_set_id: pulumi.Input[_builtins.str]
+    """
+    The ID of the Certificate Authority (CA) set to use for mTLS.
+    """
+    check_client_ocsp: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether to check the client OCSP.
+    """
+    send_ca_set_client: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether to send the CA set to the client.
+    """
 
 @pulumi.input_type
 class PropertyHostnameMtlsArgs:
@@ -13057,26 +12698,23 @@ class PropertyHostnameMtlsArgs:
         pulumi.set(self, "send_ca_set_client", value)
 
 
-if not MYPY:
-    class PropertyHostnameTlsConfigurationArgsDict(TypedDict):
-        cipher_profile: pulumi.Input[_builtins.str]
-        """
-        The cipher profile to use for TLS connections.
-        """
-        disallowed_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        A list of TLS versions that are disallowed.
-        """
-        fips_mode: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether FIPS mode is enabled.
-        """
-        staple_server_ocsp_response: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether to staple the server OCSP response.
-        """
-elif False:
-    PropertyHostnameTlsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyHostnameTlsConfigurationArgsDict(TypedDict):
+    cipher_profile: pulumi.Input[_builtins.str]
+    """
+    The cipher profile to use for TLS connections.
+    """
+    disallowed_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of TLS versions that are disallowed.
+    """
+    fips_mode: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether FIPS mode is enabled.
+    """
+    staple_server_ocsp_response: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether to staple the server OCSP response.
+    """
 
 @pulumi.input_type
 class PropertyHostnameTlsConfigurationArgs:
@@ -13148,26 +12786,23 @@ class PropertyHostnameTlsConfigurationArgs:
         pulumi.set(self, "staple_server_ocsp_response", value)
 
 
-if not MYPY:
-    class PropertyIncludeActivationComplianceRecordArgsDict(TypedDict):
-        noncompliance_reason_emergency: NotRequired[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict']]
-        """
-        Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
-        """
-        noncompliance_reason_no_production_traffic: NotRequired[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict']]
-        """
-        Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
-        """
-        noncompliance_reason_none: NotRequired[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgsDict']]
-        """
-        Provides an audit record when activating on a production network with noncompliance reason as `NONE`
-        """
-        noncompliance_reason_other: NotRequired[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgsDict']]
-        """
-        Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
-        """
-elif False:
-    PropertyIncludeActivationComplianceRecordArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyIncludeActivationComplianceRecordArgsDict(TypedDict):
+    noncompliance_reason_emergency: NotRequired[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict']]
+    """
+    Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+    """
+    noncompliance_reason_no_production_traffic: NotRequired[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict']]
+    """
+    Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+    """
+    noncompliance_reason_none: NotRequired[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgsDict']]
+    """
+    Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+    """
+    noncompliance_reason_other: NotRequired[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgsDict']]
+    """
+    Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+    """
 
 @pulumi.input_type
 class PropertyIncludeActivationComplianceRecordArgs:
@@ -13240,14 +12875,11 @@ class PropertyIncludeActivationComplianceRecordArgs:
         pulumi.set(self, "noncompliance_reason_other", value)
 
 
-if not MYPY:
-    class PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict(TypedDict):
-        ticket_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the ticket that describes the need for the activation
-        """
-elif False:
-    PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict(TypedDict):
+    ticket_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the ticket that describes the need for the activation
+    """
 
 @pulumi.input_type
 class PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgs:
@@ -13272,14 +12904,11 @@ class PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgs:
         pulumi.set(self, "ticket_id", value)
 
 
-if not MYPY:
-    class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict(TypedDict):
-        ticket_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the ticket that describes the need for the activation
-        """
-elif False:
-    PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict(TypedDict):
+    ticket_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the ticket that describes the need for the activation
+    """
 
 @pulumi.input_type
 class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs:
@@ -13304,26 +12933,23 @@ class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTr
         pulumi.set(self, "ticket_id", value)
 
 
-if not MYPY:
-    class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgsDict(TypedDict):
-        customer_email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the customer
-        """
-        peer_reviewed_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies person who has independently approved the activation request
-        """
-        ticket_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the ticket that describes the need for the activation
-        """
-        unit_tested: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether the metadata to activate has been fully tested
-        """
-elif False:
-    PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgsDict(TypedDict):
+    customer_email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the customer
+    """
+    peer_reviewed_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies person who has independently approved the activation request
+    """
+    ticket_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the ticket that describes the need for the activation
+    """
+    unit_tested: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether the metadata to activate has been fully tested
+    """
 
 @pulumi.input_type
 class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs:
@@ -13396,18 +13022,15 @@ class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs:
         pulumi.set(self, "unit_tested", value)
 
 
-if not MYPY:
-    class PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgsDict(TypedDict):
-        other_noncompliance_reason: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
-        """
-        ticket_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifies the ticket that describes the need for the activation
-        """
-elif False:
-    PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgsDict(TypedDict):
+    other_noncompliance_reason: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+    """
+    ticket_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifies the ticket that describes the need for the activation
+    """
 
 @pulumi.input_type
 class PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgs:
@@ -13448,11 +13071,8 @@ class PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgs:
         pulumi.set(self, "ticket_id", value)
 
 
-if not MYPY:
-    class PropertyIncludeActivationTimeoutsArgsDict(TypedDict):
-        default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    PropertyIncludeActivationTimeoutsArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyIncludeActivationTimeoutsArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class PropertyIncludeActivationTimeoutsArgs:
@@ -13471,17 +13091,14 @@ class PropertyIncludeActivationTimeoutsArgs:
         pulumi.set(self, "default", value)
 
 
-if not MYPY:
-    class PropertyRuleErrorArgsDict(TypedDict):
-        behavior_name: NotRequired[pulumi.Input[_builtins.str]]
-        detail: NotRequired[pulumi.Input[_builtins.str]]
-        error_location: NotRequired[pulumi.Input[_builtins.str]]
-        instance: NotRequired[pulumi.Input[_builtins.str]]
-        status_code: NotRequired[pulumi.Input[_builtins.int]]
-        title: NotRequired[pulumi.Input[_builtins.str]]
-        type: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    PropertyRuleErrorArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyRuleErrorArgsDict(TypedDict):
+    behavior_name: NotRequired[pulumi.Input[_builtins.str]]
+    detail: NotRequired[pulumi.Input[_builtins.str]]
+    error_location: NotRequired[pulumi.Input[_builtins.str]]
+    instance: NotRequired[pulumi.Input[_builtins.str]]
+    status_code: NotRequired[pulumi.Input[_builtins.int]]
+    title: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class PropertyRuleErrorArgs:
@@ -13572,17 +13189,14 @@ class PropertyRuleErrorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class PropertyRuleWarningArgsDict(TypedDict):
-        behavior_name: NotRequired[pulumi.Input[_builtins.str]]
-        detail: NotRequired[pulumi.Input[_builtins.str]]
-        error_location: NotRequired[pulumi.Input[_builtins.str]]
-        instance: NotRequired[pulumi.Input[_builtins.str]]
-        status_code: NotRequired[pulumi.Input[_builtins.int]]
-        title: NotRequired[pulumi.Input[_builtins.str]]
-        type: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    PropertyRuleWarningArgsDict: TypeAlias = Mapping[str, Any]
+class PropertyRuleWarningArgsDict(TypedDict):
+    behavior_name: NotRequired[pulumi.Input[_builtins.str]]
+    detail: NotRequired[pulumi.Input[_builtins.str]]
+    error_location: NotRequired[pulumi.Input[_builtins.str]]
+    instance: NotRequired[pulumi.Input[_builtins.str]]
+    status_code: NotRequired[pulumi.Input[_builtins.int]]
+    title: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class PropertyRuleWarningArgs:
@@ -13673,16 +13287,13 @@ class PropertyRuleWarningArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class ProviderConfigArgsDict(TypedDict):
-        access_token: pulumi.Input[_builtins.str]
-        client_secret: pulumi.Input[_builtins.str]
-        client_token: pulumi.Input[_builtins.str]
-        host: pulumi.Input[_builtins.str]
-        account_key: NotRequired[pulumi.Input[_builtins.str]]
-        max_body: NotRequired[pulumi.Input[_builtins.int]]
-elif False:
-    ProviderConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ProviderConfigArgsDict(TypedDict):
+    access_token: pulumi.Input[_builtins.str]
+    client_secret: pulumi.Input[_builtins.str]
+    client_token: pulumi.Input[_builtins.str]
+    host: pulumi.Input[_builtins.str]
+    account_key: NotRequired[pulumi.Input[_builtins.str]]
+    max_body: NotRequired[pulumi.Input[_builtins.int]]
 
 @pulumi.input_type
 class ProviderConfigArgs:
@@ -13757,42 +13368,39 @@ class ProviderConfigArgs:
         pulumi.set(self, "max_body", value)
 
 
-if not MYPY:
-    class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgsDict(TypedDict):
-        pass_through_percent: _builtins.float
-        """
-        The range 0.0: 99.0 specifies the percentage of requests that pass through to the origin. The value of 100 means the request always passes through to the origin. A value of -1 means send everyone to the waiting room.
-        """
-        type: _builtins.str
-        """
-        The type of Cloudlet the rule is for
-        """
-        disabled: NotRequired[_builtins.bool]
-        """
-        If set to true, disables a rule so it is not evaluated against incoming requests.
-        """
-        end: NotRequired[_builtins.int]
-        """
-        The end time for this match (in seconds since the epoch)
-        """
-        match_url: NotRequired[_builtins.str]
-        """
-        If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
-        """
-        matches: NotRequired[Sequence['GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgsDict']]
-        """
-        Defines a set of match objects
-        """
-        name: NotRequired[_builtins.str]
-        """
-        The name of the rule
-        """
-        start: NotRequired[_builtins.int]
-        """
-        The start time for this match (in seconds since the epoch)
-        """
-elif False:
-    GetCloudletsApiPrioritizationMatchRuleMatchRuleArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgsDict(TypedDict):
+    pass_through_percent: _builtins.float
+    """
+    The range 0.0: 99.0 specifies the percentage of requests that pass through to the origin. The value of 100 means the request always passes through to the origin. A value of -1 means send everyone to the waiting room.
+    """
+    type: _builtins.str
+    """
+    The type of Cloudlet the rule is for
+    """
+    disabled: NotRequired[_builtins.bool]
+    """
+    If set to true, disables a rule so it is not evaluated against incoming requests.
+    """
+    end: NotRequired[_builtins.int]
+    """
+    The end time for this match (in seconds since the epoch)
+    """
+    match_url: NotRequired[_builtins.str]
+    """
+    If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+    """
+    matches: NotRequired[Sequence['GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgsDict']]
+    """
+    Defines a set of match objects
+    """
+    name: NotRequired[_builtins.str]
+    """
+    The name of the rule
+    """
+    start: NotRequired[_builtins.int]
+    """
+    The start time for this match (in seconds since the epoch)
+    """
 
 @pulumi.input_type
 class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs:
@@ -13927,38 +13535,35 @@ class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs:
         pulumi.set(self, "start", value)
 
 
-if not MYPY:
-    class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgsDict(TypedDict):
-        case_sensitive: NotRequired[_builtins.bool]
-        """
-        If true, the match is case sensitive
-        """
-        check_ips: NotRequired[_builtins.str]
-        """
-        For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
-        """
-        match_operator: NotRequired[_builtins.str]
-        """
-        Valid entries for this property: contains, exists, and equals
-        """
-        match_type: NotRequired[_builtins.str]
-        """
-        The type of match used
-        """
-        match_value: NotRequired[_builtins.str]
-        """
-        Depends on the matchType
-        """
-        negate: NotRequired[_builtins.bool]
-        """
-        If true, negates the match
-        """
-        object_match_values: NotRequired[Sequence['GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
-        """
-        An object used when a rule either includes more complex match criteria, like multiple value attributes
-        """
-elif False:
-    GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgsDict(TypedDict):
+    case_sensitive: NotRequired[_builtins.bool]
+    """
+    If true, the match is case sensitive
+    """
+    check_ips: NotRequired[_builtins.str]
+    """
+    For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+    """
+    match_operator: NotRequired[_builtins.str]
+    """
+    Valid entries for this property: contains, exists, and equals
+    """
+    match_type: NotRequired[_builtins.str]
+    """
+    The type of match used
+    """
+    match_value: NotRequired[_builtins.str]
+    """
+    Depends on the matchType
+    """
+    negate: NotRequired[_builtins.bool]
+    """
+    If true, negates the match
+    """
+    object_match_values: NotRequired[Sequence['GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
+    """
+    An object used when a rule either includes more complex match criteria, like multiple value attributes
+    """
 
 @pulumi.input_type
 class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs:
@@ -14079,34 +13684,31 @@ class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs:
         pulumi.set(self, "object_match_values", value)
 
 
-if not MYPY:
-    class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
-        type: _builtins.str
-        """
-        The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
-        """
-        name: NotRequired[_builtins.str]
-        """
-        If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
-        """
-        name_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property should be evaluated based on case sensitivity
-        """
-        name_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property includes wildcards
-        """
-        options: NotRequired['GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
-        """
-        If using the object type, use this set to list the values to match on (use only with the object type)
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on (use only with simple type)
-        """
-elif False:
-    GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
+    type: _builtins.str
+    """
+    The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+    """
+    name: NotRequired[_builtins.str]
+    """
+    If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+    """
+    name_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property should be evaluated based on case sensitivity
+    """
+    name_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property includes wildcards
+    """
+    options: NotRequired['GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
+    """
+    If using the object type, use this set to list the values to match on (use only with the object type)
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on (use only with simple type)
+    """
 
 @pulumi.input_type
 class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs:
@@ -14210,26 +13812,23 @@ class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
-        value_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property should be evaluated based on case sensitivity
-        """
-        value_escaped: NotRequired[_builtins.bool]
-        """
-        Set to true if provided value should be compared in escaped form
-        """
-        value_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property include wildcards
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on
-        """
-elif False:
-    GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
+    value_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property should be evaluated based on case sensitivity
+    """
+    value_escaped: NotRequired[_builtins.bool]
+    """
+    Set to true if provided value should be compared in escaped form
+    """
+    value_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property include wildcards
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on
+    """
 
 @pulumi.input_type
 class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs:
@@ -14302,50 +13901,47 @@ class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOption
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgsDict(TypedDict):
-        forward_settings: Sequence['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgsDict']
-        """
-        This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
-        """
-        type: _builtins.str
-        """
-        The type of Cloudlet the rule is for
-        """
-        disabled: NotRequired[_builtins.bool]
-        """
-        If set to true, disables a rule so it is not evaluated against incoming requests.
-        """
-        end: NotRequired[_builtins.int]
-        """
-        The end time for this match (in seconds since the epoch)
-        """
-        id: NotRequired[_builtins.int]
-        """
-        Akamai internal use only
-        """
-        match_url: NotRequired[_builtins.str]
-        """
-        If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
-        """
-        matches: NotRequired[Sequence['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgsDict']]
-        """
-        Defines a set of match objects
-        """
-        matches_always: NotRequired[_builtins.bool]
-        """
-        Is used in some cloudlets to support default rules (rule that is always matched)
-        """
-        name: NotRequired[_builtins.str]
-        """
-        The name of the rule
-        """
-        start: NotRequired[_builtins.int]
-        """
-        The start time for this match (in seconds since the epoch)
-        """
-elif False:
-    GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgsDict(TypedDict):
+    forward_settings: Sequence['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgsDict']
+    """
+    This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+    """
+    type: _builtins.str
+    """
+    The type of Cloudlet the rule is for
+    """
+    disabled: NotRequired[_builtins.bool]
+    """
+    If set to true, disables a rule so it is not evaluated against incoming requests.
+    """
+    end: NotRequired[_builtins.int]
+    """
+    The end time for this match (in seconds since the epoch)
+    """
+    id: NotRequired[_builtins.int]
+    """
+    Akamai internal use only
+    """
+    match_url: NotRequired[_builtins.str]
+    """
+    If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+    """
+    matches: NotRequired[Sequence['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgsDict']]
+    """
+    Defines a set of match objects
+    """
+    matches_always: NotRequired[_builtins.bool]
+    """
+    Is used in some cloudlets to support default rules (rule that is always matched)
+    """
+    name: NotRequired[_builtins.str]
+    """
+    The name of the rule
+    """
+    start: NotRequired[_builtins.int]
+    """
+    The start time for this match (in seconds since the epoch)
+    """
 
 @pulumi.input_type
 class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs:
@@ -14512,14 +14108,11 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs:
         pulumi.set(self, "start", value)
 
 
-if not MYPY:
-    class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgsDict(TypedDict):
-        origin_id: _builtins.str
-        """
-        The ID of the Conditional Origin requests are forwarded to
-        """
-elif False:
-    GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgsDict(TypedDict):
+    origin_id: _builtins.str
+    """
+    The ID of the Conditional Origin requests are forwarded to
+    """
 
 @pulumi.input_type
 class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs:
@@ -14543,38 +14136,35 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs:
         pulumi.set(self, "origin_id", value)
 
 
-if not MYPY:
-    class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgsDict(TypedDict):
-        case_sensitive: NotRequired[_builtins.bool]
-        """
-        If true, the match is case sensitive
-        """
-        check_ips: NotRequired[_builtins.str]
-        """
-        For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
-        """
-        match_operator: NotRequired[_builtins.str]
-        """
-        Valid entries for this property: contains, exists, and equals
-        """
-        match_type: NotRequired[_builtins.str]
-        """
-        The type of match used
-        """
-        match_value: NotRequired[_builtins.str]
-        """
-        Depends on the matchType
-        """
-        negate: NotRequired[_builtins.bool]
-        """
-        If true, negates the match
-        """
-        object_match_values: NotRequired[Sequence['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
-        """
-        An object used when a rule either includes more complex match criteria, like multiple value attributes, or a range match
-        """
-elif False:
-    GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgsDict(TypedDict):
+    case_sensitive: NotRequired[_builtins.bool]
+    """
+    If true, the match is case sensitive
+    """
+    check_ips: NotRequired[_builtins.str]
+    """
+    For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+    """
+    match_operator: NotRequired[_builtins.str]
+    """
+    Valid entries for this property: contains, exists, and equals
+    """
+    match_type: NotRequired[_builtins.str]
+    """
+    The type of match used
+    """
+    match_value: NotRequired[_builtins.str]
+    """
+    Depends on the matchType
+    """
+    negate: NotRequired[_builtins.bool]
+    """
+    If true, negates the match
+    """
+    object_match_values: NotRequired[Sequence['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
+    """
+    An object used when a rule either includes more complex match criteria, like multiple value attributes, or a range match
+    """
 
 @pulumi.input_type
 class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs:
@@ -14695,34 +14285,31 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs:
         pulumi.set(self, "object_match_values", value)
 
 
-if not MYPY:
-    class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
-        type: _builtins.str
-        """
-        The array type, which can be one of the following: object, range, or simple. Use the simple option when adding only an array of string-based values
-        """
-        name: NotRequired[_builtins.str]
-        """
-        If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
-        """
-        name_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property should be evaluated based on case sensitivity
-        """
-        name_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property includes wildcards
-        """
-        options: NotRequired['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
-        """
-        If using the object type, use this set to list the values to match on (use only with the object type)
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on (use only with simple or range type)
-        """
-elif False:
-    GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
+    type: _builtins.str
+    """
+    The array type, which can be one of the following: object, range, or simple. Use the simple option when adding only an array of string-based values
+    """
+    name: NotRequired[_builtins.str]
+    """
+    If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+    """
+    name_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property should be evaluated based on case sensitivity
+    """
+    name_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property includes wildcards
+    """
+    options: NotRequired['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
+    """
+    If using the object type, use this set to list the values to match on (use only with the object type)
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on (use only with simple or range type)
+    """
 
 @pulumi.input_type
 class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs:
@@ -14826,26 +14413,23 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
-        value_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property should be evaluated based on case sensitivity
-        """
-        value_escaped: NotRequired[_builtins.bool]
-        """
-        Set to true if provided value should be compared in escaped form
-        """
-        value_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property include wildcards
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on
-        """
-elif False:
-    GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
+    value_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property should be evaluated based on case sensitivity
+    """
+    value_escaped: NotRequired[_builtins.bool]
+    """
+    Set to true if provided value should be compared in escaped form
+    """
+    value_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property include wildcards
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on
+    """
 
 @pulumi.input_type
 class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs:
@@ -14918,42 +14502,39 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgsDict(TypedDict):
-        forward_settings: 'GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgsDict'
-        """
-        This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
-        """
-        type: _builtins.str
-        """
-        The type of Cloudlet the rule is for
-        """
-        disabled: NotRequired[_builtins.bool]
-        """
-        If set to true, disables a rule so it is not evaluated against incoming requests.
-        """
-        end: NotRequired[_builtins.int]
-        """
-        The end time for this match (in seconds since the epoch)
-        """
-        match_url: NotRequired[_builtins.str]
-        """
-        If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
-        """
-        matches: NotRequired[Sequence['GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgsDict']]
-        """
-        Defines a set of match objects
-        """
-        name: NotRequired[_builtins.str]
-        """
-        The name of the rule
-        """
-        start: NotRequired[_builtins.int]
-        """
-        The start time for this match (in seconds since the epoch)
-        """
-elif False:
-    GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgsDict(TypedDict):
+    forward_settings: 'GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgsDict'
+    """
+    This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+    """
+    type: _builtins.str
+    """
+    The type of Cloudlet the rule is for
+    """
+    disabled: NotRequired[_builtins.bool]
+    """
+    If set to true, disables a rule so it is not evaluated against incoming requests.
+    """
+    end: NotRequired[_builtins.int]
+    """
+    The end time for this match (in seconds since the epoch)
+    """
+    match_url: NotRequired[_builtins.str]
+    """
+    If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+    """
+    matches: NotRequired[Sequence['GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgsDict']]
+    """
+    Defines a set of match objects
+    """
+    name: NotRequired[_builtins.str]
+    """
+    The name of the rule
+    """
+    start: NotRequired[_builtins.int]
+    """
+    The start time for this match (in seconds since the epoch)
+    """
 
 @pulumi.input_type
 class GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs:
@@ -15088,22 +14669,19 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs:
         pulumi.set(self, "start", value)
 
 
-if not MYPY:
-    class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgsDict(TypedDict):
-        origin_id: NotRequired[_builtins.str]
-        """
-        The ID of the Conditional Origin requests are forwarded to
-        """
-        path_and_qs: NotRequired[_builtins.str]
-        """
-        If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
-        """
-        use_incoming_query_string: NotRequired[_builtins.bool]
-        """
-        If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
-        """
-elif False:
-    GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgsDict(TypedDict):
+    origin_id: NotRequired[_builtins.str]
+    """
+    The ID of the Conditional Origin requests are forwarded to
+    """
+    path_and_qs: NotRequired[_builtins.str]
+    """
+    If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+    """
+    use_incoming_query_string: NotRequired[_builtins.bool]
+    """
+    If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+    """
 
 @pulumi.input_type
 class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs:
@@ -15160,38 +14738,35 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs:
         pulumi.set(self, "use_incoming_query_string", value)
 
 
-if not MYPY:
-    class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgsDict(TypedDict):
-        case_sensitive: NotRequired[_builtins.bool]
-        """
-        If true, the match is case sensitive
-        """
-        check_ips: NotRequired[_builtins.str]
-        """
-        For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
-        """
-        match_operator: NotRequired[_builtins.str]
-        """
-        Valid entries for this property: contains, exists, and equals
-        """
-        match_type: NotRequired[_builtins.str]
-        """
-        The type of match used
-        """
-        match_value: NotRequired[_builtins.str]
-        """
-        Depends on the matchType
-        """
-        negate: NotRequired[_builtins.bool]
-        """
-        If true, negates the match
-        """
-        object_match_values: NotRequired[Sequence['GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
-        """
-        An object used when a rule either includes more complex match criteria, like multiple value attributes
-        """
-elif False:
-    GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgsDict(TypedDict):
+    case_sensitive: NotRequired[_builtins.bool]
+    """
+    If true, the match is case sensitive
+    """
+    check_ips: NotRequired[_builtins.str]
+    """
+    For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+    """
+    match_operator: NotRequired[_builtins.str]
+    """
+    Valid entries for this property: contains, exists, and equals
+    """
+    match_type: NotRequired[_builtins.str]
+    """
+    The type of match used
+    """
+    match_value: NotRequired[_builtins.str]
+    """
+    Depends on the matchType
+    """
+    negate: NotRequired[_builtins.bool]
+    """
+    If true, negates the match
+    """
+    object_match_values: NotRequired[Sequence['GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
+    """
+    An object used when a rule either includes more complex match criteria, like multiple value attributes
+    """
 
 @pulumi.input_type
 class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs:
@@ -15312,34 +14887,31 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs:
         pulumi.set(self, "object_match_values", value)
 
 
-if not MYPY:
-    class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
-        type: _builtins.str
-        """
-        The array type, which can be one of the following: object or simple or range. Use the simple option when adding only an array of string-based values
-        """
-        name: NotRequired[_builtins.str]
-        """
-        If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
-        """
-        name_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property should be evaluated based on case sensitivity
-        """
-        name_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property includes wildcards
-        """
-        options: NotRequired['GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
-        """
-        If using the object type, use this set to list the values to match on (use only with the object type)
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on (use only with simple or range type)
-        """
-elif False:
-    GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
+    type: _builtins.str
+    """
+    The array type, which can be one of the following: object or simple or range. Use the simple option when adding only an array of string-based values
+    """
+    name: NotRequired[_builtins.str]
+    """
+    If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+    """
+    name_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property should be evaluated based on case sensitivity
+    """
+    name_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property includes wildcards
+    """
+    options: NotRequired['GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
+    """
+    If using the object type, use this set to list the values to match on (use only with the object type)
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on (use only with simple or range type)
+    """
 
 @pulumi.input_type
 class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs:
@@ -15443,26 +15015,23 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArg
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
-        value_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property should be evaluated based on case sensitivity
-        """
-        value_escaped: NotRequired[_builtins.bool]
-        """
-        Set to true if provided value should be compared in escaped form
-        """
-        value_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property include wildcards
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on
-        """
-elif False:
-    GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
+    value_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property should be evaluated based on case sensitivity
+    """
+    value_escaped: NotRequired[_builtins.bool]
+    """
+    Set to true if provided value should be compared in escaped form
+    """
+    value_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property include wildcards
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on
+    """
 
 @pulumi.input_type
 class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs:
@@ -15535,58 +15104,55 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOpt
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgsDict(TypedDict):
-        redirect_url: _builtins.str
-        """
-        The URL Edge Redirector redirects the request to. If using use_relative_url, you can enter a path for the value
-        """
-        status_code: _builtins.int
-        """
-        The HTTP response status code (allowed values: 301, 302, 303, 307, 308)
-        """
-        type: _builtins.str
-        """
-        The type of Cloudlet the rule is for
-        """
-        disabled: NotRequired[_builtins.bool]
-        """
-        If set to true, disables a rule so it is not evaluated against incoming requests.
-        """
-        end: NotRequired[_builtins.int]
-        """
-        The end time for this match (in seconds since the epoch)
-        """
-        match_url: NotRequired[_builtins.str]
-        """
-        If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
-        """
-        matches: NotRequired[Sequence['GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgsDict']]
-        """
-        Defines a set of match objects
-        """
-        matches_always: NotRequired[_builtins.bool]
-        """
-        Is used in some cloudlets to support default rules (rule that is always matched)
-        """
-        name: NotRequired[_builtins.str]
-        """
-        The name of the rule
-        """
-        start: NotRequired[_builtins.int]
-        """
-        The start time for this match (in seconds since the epoch)
-        """
-        use_incoming_query_string: NotRequired[_builtins.bool]
-        """
-        If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL
-        """
-        use_relative_url: NotRequired[_builtins.str]
-        """
-        If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
-        """
-elif False:
-    GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgsDict(TypedDict):
+    redirect_url: _builtins.str
+    """
+    The URL Edge Redirector redirects the request to. If using use_relative_url, you can enter a path for the value
+    """
+    status_code: _builtins.int
+    """
+    The HTTP response status code (allowed values: 301, 302, 303, 307, 308)
+    """
+    type: _builtins.str
+    """
+    The type of Cloudlet the rule is for
+    """
+    disabled: NotRequired[_builtins.bool]
+    """
+    If set to true, disables a rule so it is not evaluated against incoming requests.
+    """
+    end: NotRequired[_builtins.int]
+    """
+    The end time for this match (in seconds since the epoch)
+    """
+    match_url: NotRequired[_builtins.str]
+    """
+    If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+    """
+    matches: NotRequired[Sequence['GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgsDict']]
+    """
+    Defines a set of match objects
+    """
+    matches_always: NotRequired[_builtins.bool]
+    """
+    Is used in some cloudlets to support default rules (rule that is always matched)
+    """
+    name: NotRequired[_builtins.str]
+    """
+    The name of the rule
+    """
+    start: NotRequired[_builtins.int]
+    """
+    The start time for this match (in seconds since the epoch)
+    """
+    use_incoming_query_string: NotRequired[_builtins.bool]
+    """
+    If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL
+    """
+    use_relative_url: NotRequired[_builtins.str]
+    """
+    If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+    """
 
 @pulumi.input_type
 class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs:
@@ -15784,38 +15350,35 @@ class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs:
         pulumi.set(self, "use_relative_url", value)
 
 
-if not MYPY:
-    class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgsDict(TypedDict):
-        case_sensitive: NotRequired[_builtins.bool]
-        """
-        If true, the match is case sensitive
-        """
-        check_ips: NotRequired[_builtins.str]
-        """
-        For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
-        """
-        match_operator: NotRequired[_builtins.str]
-        """
-        Valid entries for this property: contains, exists, and equals
-        """
-        match_type: NotRequired[_builtins.str]
-        """
-        The type of match used
-        """
-        match_value: NotRequired[_builtins.str]
-        """
-        Depends on the matchType
-        """
-        negate: NotRequired[_builtins.bool]
-        """
-        If true, negates the match
-        """
-        object_match_values: NotRequired[Sequence['GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
-        """
-        An object used when a rule either includes more complex match criteria, like multiple value attributes
-        """
-elif False:
-    GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgsDict(TypedDict):
+    case_sensitive: NotRequired[_builtins.bool]
+    """
+    If true, the match is case sensitive
+    """
+    check_ips: NotRequired[_builtins.str]
+    """
+    For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+    """
+    match_operator: NotRequired[_builtins.str]
+    """
+    Valid entries for this property: contains, exists, and equals
+    """
+    match_type: NotRequired[_builtins.str]
+    """
+    The type of match used
+    """
+    match_value: NotRequired[_builtins.str]
+    """
+    Depends on the matchType
+    """
+    negate: NotRequired[_builtins.bool]
+    """
+    If true, negates the match
+    """
+    object_match_values: NotRequired[Sequence['GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
+    """
+    An object used when a rule either includes more complex match criteria, like multiple value attributes
+    """
 
 @pulumi.input_type
 class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs:
@@ -15936,34 +15499,31 @@ class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs:
         pulumi.set(self, "object_match_values", value)
 
 
-if not MYPY:
-    class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
-        type: _builtins.str
-        """
-        The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
-        """
-        name: NotRequired[_builtins.str]
-        """
-        If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
-        """
-        name_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property should be evaluated based on case sensitivity
-        """
-        name_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property includes wildcards
-        """
-        options: NotRequired['GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
-        """
-        If using the object type, use this set to list the values to match on (use only with the object type)
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on (use only with simple type)
-        """
-elif False:
-    GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
+    type: _builtins.str
+    """
+    The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+    """
+    name: NotRequired[_builtins.str]
+    """
+    If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+    """
+    name_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property should be evaluated based on case sensitivity
+    """
+    name_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property includes wildcards
+    """
+    options: NotRequired['GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
+    """
+    If using the object type, use this set to list the values to match on (use only with the object type)
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on (use only with simple type)
+    """
 
 @pulumi.input_type
 class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs:
@@ -16067,26 +15627,23 @@ class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
-        value_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property should be evaluated based on case sensitivity
-        """
-        value_escaped: NotRequired[_builtins.bool]
-        """
-        Set to true if provided value should be compared in escaped form
-        """
-        value_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property include wildcards
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on
-        """
-elif False:
-    GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
+    value_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property should be evaluated based on case sensitivity
+    """
+    value_escaped: NotRequired[_builtins.bool]
+    """
+    Set to true if provided value should be compared in escaped form
+    """
+    value_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property include wildcards
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on
+    """
 
 @pulumi.input_type
 class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs:
@@ -16159,42 +15716,39 @@ class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsAr
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsForwardRewriteMatchRuleMatchRuleArgsDict(TypedDict):
-        forward_settings: 'GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgsDict'
-        """
-        This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
-        """
-        type: _builtins.str
-        """
-        The type of Cloudlet the rule is for
-        """
-        disabled: NotRequired[_builtins.bool]
-        """
-        If set to true, disables a rule so it is not evaluated against incoming requests.
-        """
-        end: NotRequired[_builtins.int]
-        """
-        The end time for this match (in seconds since the epoch)
-        """
-        match_url: NotRequired[_builtins.str]
-        """
-        If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
-        """
-        matches: NotRequired[Sequence['GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgsDict']]
-        """
-        Defines a set of match objects
-        """
-        name: NotRequired[_builtins.str]
-        """
-        The name of the rule
-        """
-        start: NotRequired[_builtins.int]
-        """
-        The start time for this match (in seconds since the epoch)
-        """
-elif False:
-    GetCloudletsForwardRewriteMatchRuleMatchRuleArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsForwardRewriteMatchRuleMatchRuleArgsDict(TypedDict):
+    forward_settings: 'GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgsDict'
+    """
+    This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+    """
+    type: _builtins.str
+    """
+    The type of Cloudlet the rule is for
+    """
+    disabled: NotRequired[_builtins.bool]
+    """
+    If set to true, disables a rule so it is not evaluated against incoming requests.
+    """
+    end: NotRequired[_builtins.int]
+    """
+    The end time for this match (in seconds since the epoch)
+    """
+    match_url: NotRequired[_builtins.str]
+    """
+    If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+    """
+    matches: NotRequired[Sequence['GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgsDict']]
+    """
+    Defines a set of match objects
+    """
+    name: NotRequired[_builtins.str]
+    """
+    The name of the rule
+    """
+    start: NotRequired[_builtins.int]
+    """
+    The start time for this match (in seconds since the epoch)
+    """
 
 @pulumi.input_type
 class GetCloudletsForwardRewriteMatchRuleMatchRuleArgs:
@@ -16329,22 +15883,19 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleArgs:
         pulumi.set(self, "start", value)
 
 
-if not MYPY:
-    class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgsDict(TypedDict):
-        origin_id: NotRequired[_builtins.str]
-        """
-        The ID of the Conditional Origin requests are forwarded to
-        """
-        path_and_qs: NotRequired[_builtins.str]
-        """
-        If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
-        """
-        use_incoming_query_string: NotRequired[_builtins.bool]
-        """
-        If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
-        """
-elif False:
-    GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgsDict(TypedDict):
+    origin_id: NotRequired[_builtins.str]
+    """
+    The ID of the Conditional Origin requests are forwarded to
+    """
+    path_and_qs: NotRequired[_builtins.str]
+    """
+    If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+    """
+    use_incoming_query_string: NotRequired[_builtins.bool]
+    """
+    If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+    """
 
 @pulumi.input_type
 class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs:
@@ -16401,38 +15952,35 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs:
         pulumi.set(self, "use_incoming_query_string", value)
 
 
-if not MYPY:
-    class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgsDict(TypedDict):
-        case_sensitive: NotRequired[_builtins.bool]
-        """
-        If true, the match is case sensitive
-        """
-        check_ips: NotRequired[_builtins.str]
-        """
-        For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
-        """
-        match_operator: NotRequired[_builtins.str]
-        """
-        Valid entries for this property: contains, exists, and equals
-        """
-        match_type: NotRequired[_builtins.str]
-        """
-        The type of match used
-        """
-        match_value: NotRequired[_builtins.str]
-        """
-        Depends on the matchType
-        """
-        negate: NotRequired[_builtins.bool]
-        """
-        If true, negates the match
-        """
-        object_match_values: NotRequired[Sequence['GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
-        """
-        An object used when a rule either includes more complex match criteria, like multiple value attributes
-        """
-elif False:
-    GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgsDict(TypedDict):
+    case_sensitive: NotRequired[_builtins.bool]
+    """
+    If true, the match is case sensitive
+    """
+    check_ips: NotRequired[_builtins.str]
+    """
+    For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+    """
+    match_operator: NotRequired[_builtins.str]
+    """
+    Valid entries for this property: contains, exists, and equals
+    """
+    match_type: NotRequired[_builtins.str]
+    """
+    The type of match used
+    """
+    match_value: NotRequired[_builtins.str]
+    """
+    Depends on the matchType
+    """
+    negate: NotRequired[_builtins.bool]
+    """
+    If true, negates the match
+    """
+    object_match_values: NotRequired[Sequence['GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
+    """
+    An object used when a rule either includes more complex match criteria, like multiple value attributes
+    """
 
 @pulumi.input_type
 class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs:
@@ -16553,34 +16101,31 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs:
         pulumi.set(self, "object_match_values", value)
 
 
-if not MYPY:
-    class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
-        type: _builtins.str
-        """
-        The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
-        """
-        name: NotRequired[_builtins.str]
-        """
-        If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
-        """
-        name_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property should be evaluated based on case sensitivity
-        """
-        name_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property includes wildcards
-        """
-        options: NotRequired['GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
-        """
-        If using the object type, use this set to list the values to match on (use only with the object type)
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on (use only with simple or range type)
-        """
-elif False:
-    GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
+    type: _builtins.str
+    """
+    The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+    """
+    name: NotRequired[_builtins.str]
+    """
+    If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+    """
+    name_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property should be evaluated based on case sensitivity
+    """
+    name_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property includes wildcards
+    """
+    options: NotRequired['GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
+    """
+    If using the object type, use this set to list the values to match on (use only with the object type)
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on (use only with simple or range type)
+    """
 
 @pulumi.input_type
 class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs:
@@ -16684,26 +16229,23 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
-        value_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property should be evaluated based on case sensitivity
-        """
-        value_escaped: NotRequired[_builtins.bool]
-        """
-        Set to true if provided value should be compared in escaped form
-        """
-        value_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property include wildcards
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on
-        """
-elif False:
-    GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
+    value_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property should be evaluated based on case sensitivity
+    """
+    value_escaped: NotRequired[_builtins.bool]
+    """
+    Set to true if provided value should be compared in escaped form
+    """
+    value_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property include wildcards
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on
+    """
 
 @pulumi.input_type
 class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs:
@@ -16776,46 +16318,43 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsAr
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsPhasedReleaseMatchRuleMatchRuleArgsDict(TypedDict):
-        forward_settings: 'GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgsDict'
-        """
-        This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
-        """
-        type: _builtins.str
-        """
-        The type of Cloudlet the rule is for. It is known as Continuous Deployment (CD) too.
-        """
-        disabled: NotRequired[_builtins.bool]
-        """
-        If set to true, disables a rule so it is not evaluated against incoming requests.
-        """
-        end: NotRequired[_builtins.int]
-        """
-        The end time for this match (in seconds since the epoch)
-        """
-        match_url: NotRequired[_builtins.str]
-        """
-        If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
-        """
-        matches: NotRequired[Sequence['GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgsDict']]
-        """
-        Defines a set of match objects
-        """
-        matches_always: NotRequired[_builtins.bool]
-        """
-        Is used in some cloudlets to support default rules (rule that is always matched)
-        """
-        name: NotRequired[_builtins.str]
-        """
-        The name of the rule
-        """
-        start: NotRequired[_builtins.int]
-        """
-        The start time for this match (in seconds since the epoch)
-        """
-elif False:
-    GetCloudletsPhasedReleaseMatchRuleMatchRuleArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleArgsDict(TypedDict):
+    forward_settings: 'GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgsDict'
+    """
+    This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+    """
+    type: _builtins.str
+    """
+    The type of Cloudlet the rule is for. It is known as Continuous Deployment (CD) too.
+    """
+    disabled: NotRequired[_builtins.bool]
+    """
+    If set to true, disables a rule so it is not evaluated against incoming requests.
+    """
+    end: NotRequired[_builtins.int]
+    """
+    The end time for this match (in seconds since the epoch)
+    """
+    match_url: NotRequired[_builtins.str]
+    """
+    If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+    """
+    matches: NotRequired[Sequence['GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgsDict']]
+    """
+    Defines a set of match objects
+    """
+    matches_always: NotRequired[_builtins.bool]
+    """
+    Is used in some cloudlets to support default rules (rule that is always matched)
+    """
+    name: NotRequired[_builtins.str]
+    """
+    The name of the rule
+    """
+    start: NotRequired[_builtins.int]
+    """
+    The start time for this match (in seconds since the epoch)
+    """
 
 @pulumi.input_type
 class GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs:
@@ -16966,18 +16505,15 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs:
         pulumi.set(self, "start", value)
 
 
-if not MYPY:
-    class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgsDict(TypedDict):
-        origin_id: _builtins.str
-        """
-        The ID of the Conditional Origin requests are forwarded to
-        """
-        percent: _builtins.int
-        """
-        The percent of traffic that is sent to the data center.
-        """
-elif False:
-    GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgsDict(TypedDict):
+    origin_id: _builtins.str
+    """
+    The ID of the Conditional Origin requests are forwarded to
+    """
+    percent: _builtins.int
+    """
+    The percent of traffic that is sent to the data center.
+    """
 
 @pulumi.input_type
 class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs:
@@ -17016,38 +16552,35 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs:
         pulumi.set(self, "percent", value)
 
 
-if not MYPY:
-    class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgsDict(TypedDict):
-        case_sensitive: NotRequired[_builtins.bool]
-        """
-        If true, the match is case sensitive
-        """
-        check_ips: NotRequired[_builtins.str]
-        """
-        For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
-        """
-        match_operator: NotRequired[_builtins.str]
-        """
-        Valid entries for this property: contains, exists, and equals
-        """
-        match_type: NotRequired[_builtins.str]
-        """
-        The type of match used
-        """
-        match_value: NotRequired[_builtins.str]
-        """
-        Depends on the matchType
-        """
-        negate: NotRequired[_builtins.bool]
-        """
-        If true, negates the match
-        """
-        object_match_values: NotRequired[Sequence['GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
-        """
-        An object used when a rule either includes more complex match criteria, like multiple value attributes
-        """
-elif False:
-    GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgsDict(TypedDict):
+    case_sensitive: NotRequired[_builtins.bool]
+    """
+    If true, the match is case sensitive
+    """
+    check_ips: NotRequired[_builtins.str]
+    """
+    For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+    """
+    match_operator: NotRequired[_builtins.str]
+    """
+    Valid entries for this property: contains, exists, and equals
+    """
+    match_type: NotRequired[_builtins.str]
+    """
+    The type of match used
+    """
+    match_value: NotRequired[_builtins.str]
+    """
+    Depends on the matchType
+    """
+    negate: NotRequired[_builtins.bool]
+    """
+    If true, negates the match
+    """
+    object_match_values: NotRequired[Sequence['GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
+    """
+    An object used when a rule either includes more complex match criteria, like multiple value attributes
+    """
 
 @pulumi.input_type
 class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs:
@@ -17168,34 +16701,31 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs:
         pulumi.set(self, "object_match_values", value)
 
 
-if not MYPY:
-    class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
-        type: _builtins.str
-        """
-        The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
-        """
-        name: NotRequired[_builtins.str]
-        """
-        If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
-        """
-        name_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property should be evaluated based on case sensitivity
-        """
-        name_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property includes wildcards
-        """
-        options: NotRequired['GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
-        """
-        If using the object type, use this set to list the values to match on (use only with the object type)
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on (use only with simple or range type)
-        """
-elif False:
-    GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
+    type: _builtins.str
+    """
+    The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+    """
+    name: NotRequired[_builtins.str]
+    """
+    If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+    """
+    name_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property should be evaluated based on case sensitivity
+    """
+    name_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property includes wildcards
+    """
+    options: NotRequired['GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
+    """
+    If using the object type, use this set to list the values to match on (use only with the object type)
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on (use only with simple or range type)
+    """
 
 @pulumi.input_type
 class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs:
@@ -17299,26 +16829,23 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
-        value_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property should be evaluated based on case sensitivity
-        """
-        value_escaped: NotRequired[_builtins.bool]
-        """
-        Set to true if provided value should be compared in escaped form
-        """
-        value_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property include wildcards
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on
-        """
-elif False:
-    GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
+    value_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property should be evaluated based on case sensitivity
+    """
+    value_escaped: NotRequired[_builtins.bool]
+    """
+    Set to true if provided value should be compared in escaped form
+    """
+    value_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property include wildcards
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on
+    """
 
 @pulumi.input_type
 class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs:
@@ -17391,42 +16918,39 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArg
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsRequestControlMatchRuleMatchRuleArgsDict(TypedDict):
-        allow_deny: _builtins.str
-        """
-        If set to allow, the request is sent to origin when all conditions are true. If deny, the request is denied when all conditions are true. If denybranded, the request is denied and rerouted according to the configuration of the Request Control behavior
-        """
-        type: _builtins.str
-        """
-        The type of Cloudlet the rule is for
-        """
-        disabled: NotRequired[_builtins.bool]
-        """
-        If set to true, disables a rule so it is not evaluated against incoming requests.
-        """
-        end: NotRequired[_builtins.int]
-        """
-        The end time for this match (in seconds since the epoch)
-        """
-        matches: NotRequired[Sequence['GetCloudletsRequestControlMatchRuleMatchRuleMatchArgsDict']]
-        """
-        Defines a set of match objects
-        """
-        matches_always: NotRequired[_builtins.bool]
-        """
-        Is used in some cloudlets to support default rules (rule that is always matched)
-        """
-        name: NotRequired[_builtins.str]
-        """
-        The name of the rule
-        """
-        start: NotRequired[_builtins.int]
-        """
-        The start time for this match (in seconds since the epoch)
-        """
-elif False:
-    GetCloudletsRequestControlMatchRuleMatchRuleArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsRequestControlMatchRuleMatchRuleArgsDict(TypedDict):
+    allow_deny: _builtins.str
+    """
+    If set to allow, the request is sent to origin when all conditions are true. If deny, the request is denied when all conditions are true. If denybranded, the request is denied and rerouted according to the configuration of the Request Control behavior
+    """
+    type: _builtins.str
+    """
+    The type of Cloudlet the rule is for
+    """
+    disabled: NotRequired[_builtins.bool]
+    """
+    If set to true, disables a rule so it is not evaluated against incoming requests.
+    """
+    end: NotRequired[_builtins.int]
+    """
+    The end time for this match (in seconds since the epoch)
+    """
+    matches: NotRequired[Sequence['GetCloudletsRequestControlMatchRuleMatchRuleMatchArgsDict']]
+    """
+    Defines a set of match objects
+    """
+    matches_always: NotRequired[_builtins.bool]
+    """
+    Is used in some cloudlets to support default rules (rule that is always matched)
+    """
+    name: NotRequired[_builtins.str]
+    """
+    The name of the rule
+    """
+    start: NotRequired[_builtins.int]
+    """
+    The start time for this match (in seconds since the epoch)
+    """
 
 @pulumi.input_type
 class GetCloudletsRequestControlMatchRuleMatchRuleArgs:
@@ -17561,38 +17085,35 @@ class GetCloudletsRequestControlMatchRuleMatchRuleArgs:
         pulumi.set(self, "start", value)
 
 
-if not MYPY:
-    class GetCloudletsRequestControlMatchRuleMatchRuleMatchArgsDict(TypedDict):
-        case_sensitive: NotRequired[_builtins.bool]
-        """
-        If true, the match is case sensitive
-        """
-        check_ips: NotRequired[_builtins.str]
-        """
-        For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
-        """
-        match_operator: NotRequired[_builtins.str]
-        """
-        Valid entries for this property: contains, exists, and equals
-        """
-        match_type: NotRequired[_builtins.str]
-        """
-        The type of match used
-        """
-        match_value: NotRequired[_builtins.str]
-        """
-        Depends on the matchType
-        """
-        negate: NotRequired[_builtins.bool]
-        """
-        If true, negates the match
-        """
-        object_match_values: NotRequired[Sequence['GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
-        """
-        An object used when a rule either includes more complex match criteria, like multiple value attributes
-        """
-elif False:
-    GetCloudletsRequestControlMatchRuleMatchRuleMatchArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsRequestControlMatchRuleMatchRuleMatchArgsDict(TypedDict):
+    case_sensitive: NotRequired[_builtins.bool]
+    """
+    If true, the match is case sensitive
+    """
+    check_ips: NotRequired[_builtins.str]
+    """
+    For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+    """
+    match_operator: NotRequired[_builtins.str]
+    """
+    Valid entries for this property: contains, exists, and equals
+    """
+    match_type: NotRequired[_builtins.str]
+    """
+    The type of match used
+    """
+    match_value: NotRequired[_builtins.str]
+    """
+    Depends on the matchType
+    """
+    negate: NotRequired[_builtins.bool]
+    """
+    If true, negates the match
+    """
+    object_match_values: NotRequired[Sequence['GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
+    """
+    An object used when a rule either includes more complex match criteria, like multiple value attributes
+    """
 
 @pulumi.input_type
 class GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs:
@@ -17713,34 +17234,31 @@ class GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs:
         pulumi.set(self, "object_match_values", value)
 
 
-if not MYPY:
-    class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
-        type: _builtins.str
-        """
-        The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
-        """
-        name: NotRequired[_builtins.str]
-        """
-        If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
-        """
-        name_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property should be evaluated based on case sensitivity
-        """
-        name_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property includes wildcards
-        """
-        options: NotRequired['GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
-        """
-        If using the object type, use this set to list the values to match on (use only with the object type)
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on (use only with simple type)
-        """
-elif False:
-    GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
+    type: _builtins.str
+    """
+    The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+    """
+    name: NotRequired[_builtins.str]
+    """
+    If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+    """
+    name_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property should be evaluated based on case sensitivity
+    """
+    name_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property includes wildcards
+    """
+    options: NotRequired['GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
+    """
+    If using the object type, use this set to list the values to match on (use only with the object type)
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on (use only with simple type)
+    """
 
 @pulumi.input_type
 class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs:
@@ -17844,26 +17362,23 @@ class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
-        value_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property should be evaluated based on case sensitivity
-        """
-        value_escaped: NotRequired[_builtins.bool]
-        """
-        Set to true if provided value should be compared in escaped form
-        """
-        value_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property include wildcards
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on
-        """
-elif False:
-    GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
+    value_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property should be evaluated based on case sensitivity
+    """
+    value_escaped: NotRequired[_builtins.bool]
+    """
+    Set to true if provided value should be compared in escaped form
+    """
+    value_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property include wildcards
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on
+    """
 
 @pulumi.input_type
 class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs:
@@ -17936,18 +17451,15 @@ class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsAr
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsSharedPolicyActivationsArgsDict(TypedDict):
-        production: NotRequired['GetCloudletsSharedPolicyActivationsProductionArgsDict']
-        """
-        The policy version number that's currently in use on this network and the status of the most recent activation or deactivation operation for this policy's versions.
-        """
-        staging: NotRequired['GetCloudletsSharedPolicyActivationsStagingArgsDict']
-        """
-        The policy version number that's currently in use on this network and the status of the most recent activation or deactivation operation for this policy's versions.
-        """
-elif False:
-    GetCloudletsSharedPolicyActivationsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsSharedPolicyActivationsArgsDict(TypedDict):
+    production: NotRequired['GetCloudletsSharedPolicyActivationsProductionArgsDict']
+    """
+    The policy version number that's currently in use on this network and the status of the most recent activation or deactivation operation for this policy's versions.
+    """
+    staging: NotRequired['GetCloudletsSharedPolicyActivationsStagingArgsDict']
+    """
+    The policy version number that's currently in use on this network and the status of the most recent activation or deactivation operation for this policy's versions.
+    """
 
 @pulumi.input_type
 class GetCloudletsSharedPolicyActivationsArgs:
@@ -17988,18 +17500,15 @@ class GetCloudletsSharedPolicyActivationsArgs:
         pulumi.set(self, "staging", value)
 
 
-if not MYPY:
-    class GetCloudletsSharedPolicyActivationsProductionArgsDict(TypedDict):
-        effective: NotRequired['GetCloudletsSharedPolicyActivationsProductionEffectiveArgsDict']
-        """
-        The status of the activation that's currently in use on this network, or null if the policy has no activations.
-        """
-        latest: NotRequired['GetCloudletsSharedPolicyActivationsProductionLatestArgsDict']
-        """
-        The status of the latest activation or null if the policy has no activations.
-        """
-elif False:
-    GetCloudletsSharedPolicyActivationsProductionArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsSharedPolicyActivationsProductionArgsDict(TypedDict):
+    effective: NotRequired['GetCloudletsSharedPolicyActivationsProductionEffectiveArgsDict']
+    """
+    The status of the activation that's currently in use on this network, or null if the policy has no activations.
+    """
+    latest: NotRequired['GetCloudletsSharedPolicyActivationsProductionLatestArgsDict']
+    """
+    The status of the latest activation or null if the policy has no activations.
+    """
 
 @pulumi.input_type
 class GetCloudletsSharedPolicyActivationsProductionArgs:
@@ -18040,50 +17549,47 @@ class GetCloudletsSharedPolicyActivationsProductionArgs:
         pulumi.set(self, "latest", value)
 
 
-if not MYPY:
-    class GetCloudletsSharedPolicyActivationsProductionEffectiveArgsDict(TypedDict):
-        activation_id: _builtins.int
-        """
-        Identifies the activation.
-        """
-        created_by: _builtins.str
-        """
-        The username who created the activation.
-        """
-        created_date: _builtins.str
-        """
-        ISO 8601 timestamp indicating when the activation was created.
-        """
-        finish_date: _builtins.str
-        """
-        ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
-        """
-        network: _builtins.str
-        """
-        The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
-        """
-        operation: _builtins.str
-        """
-        The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
-        """
-        policy_id: _builtins.int
-        """
-        Identifies the shared policy.
-        """
-        policy_version: _builtins.int
-        """
-        The number of the policy version.
-        """
-        policy_version_deleted: _builtins.bool
-        """
-        Indicates if the policy version is deleted.
-        """
-        status: _builtins.str
-        """
-        The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
-        """
-elif False:
-    GetCloudletsSharedPolicyActivationsProductionEffectiveArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsSharedPolicyActivationsProductionEffectiveArgsDict(TypedDict):
+    activation_id: _builtins.int
+    """
+    Identifies the activation.
+    """
+    created_by: _builtins.str
+    """
+    The username who created the activation.
+    """
+    created_date: _builtins.str
+    """
+    ISO 8601 timestamp indicating when the activation was created.
+    """
+    finish_date: _builtins.str
+    """
+    ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
+    """
+    network: _builtins.str
+    """
+    The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
+    """
+    operation: _builtins.str
+    """
+    The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
+    """
+    policy_id: _builtins.int
+    """
+    Identifies the shared policy.
+    """
+    policy_version: _builtins.int
+    """
+    The number of the policy version.
+    """
+    policy_version_deleted: _builtins.bool
+    """
+    Indicates if the policy version is deleted.
+    """
+    status: _builtins.str
+    """
+    The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
+    """
 
 @pulumi.input_type
 class GetCloudletsSharedPolicyActivationsProductionEffectiveArgs:
@@ -18242,50 +17748,47 @@ class GetCloudletsSharedPolicyActivationsProductionEffectiveArgs:
         pulumi.set(self, "status", value)
 
 
-if not MYPY:
-    class GetCloudletsSharedPolicyActivationsProductionLatestArgsDict(TypedDict):
-        activation_id: _builtins.int
-        """
-        Identifies the activation.
-        """
-        created_by: _builtins.str
-        """
-        The username who created the activation.
-        """
-        created_date: _builtins.str
-        """
-        ISO 8601 timestamp indicating when the activation was created.
-        """
-        finish_date: _builtins.str
-        """
-        ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
-        """
-        network: _builtins.str
-        """
-        The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
-        """
-        operation: _builtins.str
-        """
-        The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
-        """
-        policy_id: _builtins.int
-        """
-        Identifies the shared policy.
-        """
-        policy_version: _builtins.int
-        """
-        The number of the policy version.
-        """
-        policy_version_deleted: _builtins.bool
-        """
-        Indicates if the policy version is deleted.
-        """
-        status: _builtins.str
-        """
-        The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
-        """
-elif False:
-    GetCloudletsSharedPolicyActivationsProductionLatestArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsSharedPolicyActivationsProductionLatestArgsDict(TypedDict):
+    activation_id: _builtins.int
+    """
+    Identifies the activation.
+    """
+    created_by: _builtins.str
+    """
+    The username who created the activation.
+    """
+    created_date: _builtins.str
+    """
+    ISO 8601 timestamp indicating when the activation was created.
+    """
+    finish_date: _builtins.str
+    """
+    ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
+    """
+    network: _builtins.str
+    """
+    The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
+    """
+    operation: _builtins.str
+    """
+    The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
+    """
+    policy_id: _builtins.int
+    """
+    Identifies the shared policy.
+    """
+    policy_version: _builtins.int
+    """
+    The number of the policy version.
+    """
+    policy_version_deleted: _builtins.bool
+    """
+    Indicates if the policy version is deleted.
+    """
+    status: _builtins.str
+    """
+    The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
+    """
 
 @pulumi.input_type
 class GetCloudletsSharedPolicyActivationsProductionLatestArgs:
@@ -18444,18 +17947,15 @@ class GetCloudletsSharedPolicyActivationsProductionLatestArgs:
         pulumi.set(self, "status", value)
 
 
-if not MYPY:
-    class GetCloudletsSharedPolicyActivationsStagingArgsDict(TypedDict):
-        effective: NotRequired['GetCloudletsSharedPolicyActivationsStagingEffectiveArgsDict']
-        """
-        The status of the activation that's currently in use on this network, or null if the policy has no activations.
-        """
-        latest: NotRequired['GetCloudletsSharedPolicyActivationsStagingLatestArgsDict']
-        """
-        The status of the latest activation or null if the policy has no activations.
-        """
-elif False:
-    GetCloudletsSharedPolicyActivationsStagingArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsSharedPolicyActivationsStagingArgsDict(TypedDict):
+    effective: NotRequired['GetCloudletsSharedPolicyActivationsStagingEffectiveArgsDict']
+    """
+    The status of the activation that's currently in use on this network, or null if the policy has no activations.
+    """
+    latest: NotRequired['GetCloudletsSharedPolicyActivationsStagingLatestArgsDict']
+    """
+    The status of the latest activation or null if the policy has no activations.
+    """
 
 @pulumi.input_type
 class GetCloudletsSharedPolicyActivationsStagingArgs:
@@ -18496,50 +17996,47 @@ class GetCloudletsSharedPolicyActivationsStagingArgs:
         pulumi.set(self, "latest", value)
 
 
-if not MYPY:
-    class GetCloudletsSharedPolicyActivationsStagingEffectiveArgsDict(TypedDict):
-        activation_id: _builtins.int
-        """
-        Identifies the activation.
-        """
-        created_by: _builtins.str
-        """
-        The username who created the activation.
-        """
-        created_date: _builtins.str
-        """
-        ISO 8601 timestamp indicating when the activation was created.
-        """
-        finish_date: _builtins.str
-        """
-        ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
-        """
-        network: _builtins.str
-        """
-        The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
-        """
-        operation: _builtins.str
-        """
-        The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
-        """
-        policy_id: _builtins.int
-        """
-        Identifies the shared policy.
-        """
-        policy_version: _builtins.int
-        """
-        The number of the policy version.
-        """
-        policy_version_deleted: _builtins.bool
-        """
-        Indicates if the policy version is deleted.
-        """
-        status: _builtins.str
-        """
-        The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
-        """
-elif False:
-    GetCloudletsSharedPolicyActivationsStagingEffectiveArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsSharedPolicyActivationsStagingEffectiveArgsDict(TypedDict):
+    activation_id: _builtins.int
+    """
+    Identifies the activation.
+    """
+    created_by: _builtins.str
+    """
+    The username who created the activation.
+    """
+    created_date: _builtins.str
+    """
+    ISO 8601 timestamp indicating when the activation was created.
+    """
+    finish_date: _builtins.str
+    """
+    ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
+    """
+    network: _builtins.str
+    """
+    The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
+    """
+    operation: _builtins.str
+    """
+    The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
+    """
+    policy_id: _builtins.int
+    """
+    Identifies the shared policy.
+    """
+    policy_version: _builtins.int
+    """
+    The number of the policy version.
+    """
+    policy_version_deleted: _builtins.bool
+    """
+    Indicates if the policy version is deleted.
+    """
+    status: _builtins.str
+    """
+    The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
+    """
 
 @pulumi.input_type
 class GetCloudletsSharedPolicyActivationsStagingEffectiveArgs:
@@ -18698,50 +18195,47 @@ class GetCloudletsSharedPolicyActivationsStagingEffectiveArgs:
         pulumi.set(self, "status", value)
 
 
-if not MYPY:
-    class GetCloudletsSharedPolicyActivationsStagingLatestArgsDict(TypedDict):
-        activation_id: _builtins.int
-        """
-        Identifies the activation.
-        """
-        created_by: _builtins.str
-        """
-        The username who created the activation.
-        """
-        created_date: _builtins.str
-        """
-        ISO 8601 timestamp indicating when the activation was created.
-        """
-        finish_date: _builtins.str
-        """
-        ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
-        """
-        network: _builtins.str
-        """
-        The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
-        """
-        operation: _builtins.str
-        """
-        The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
-        """
-        policy_id: _builtins.int
-        """
-        Identifies the shared policy.
-        """
-        policy_version: _builtins.int
-        """
-        The number of the policy version.
-        """
-        policy_version_deleted: _builtins.bool
-        """
-        Indicates if the policy version is deleted.
-        """
-        status: _builtins.str
-        """
-        The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
-        """
-elif False:
-    GetCloudletsSharedPolicyActivationsStagingLatestArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsSharedPolicyActivationsStagingLatestArgsDict(TypedDict):
+    activation_id: _builtins.int
+    """
+    Identifies the activation.
+    """
+    created_by: _builtins.str
+    """
+    The username who created the activation.
+    """
+    created_date: _builtins.str
+    """
+    ISO 8601 timestamp indicating when the activation was created.
+    """
+    finish_date: _builtins.str
+    """
+    ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
+    """
+    network: _builtins.str
+    """
+    The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
+    """
+    operation: _builtins.str
+    """
+    The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
+    """
+    policy_id: _builtins.int
+    """
+    Identifies the shared policy.
+    """
+    policy_version: _builtins.int
+    """
+    The number of the policy version.
+    """
+    policy_version_deleted: _builtins.bool
+    """
+    Indicates if the policy version is deleted.
+    """
+    status: _builtins.str
+    """
+    The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
+    """
 
 @pulumi.input_type
 class GetCloudletsSharedPolicyActivationsStagingLatestArgs:
@@ -18900,42 +18394,39 @@ class GetCloudletsSharedPolicyActivationsStagingLatestArgs:
         pulumi.set(self, "status", value)
 
 
-if not MYPY:
-    class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgsDict(TypedDict):
-        pass_through_percent: _builtins.float
-        """
-        The range 0.0: 99.0 specifies the percentage of requests that pass through to the origin. The value of 100 means the request always passes through to the origin. A value of -1 means send everyone to the waiting room.
-        """
-        type: _builtins.str
-        """
-        The type of Cloudlet the rule is for
-        """
-        disabled: NotRequired[_builtins.bool]
-        """
-        If set to true, disables a rule so it is not evaluated against incoming requests.
-        """
-        end: NotRequired[_builtins.int]
-        """
-        The end time for this match (in seconds since the epoch)
-        """
-        match_url: NotRequired[_builtins.str]
-        """
-        If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
-        """
-        matches: NotRequired[Sequence['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgsDict']]
-        """
-        Defines a set of match objects
-        """
-        name: NotRequired[_builtins.str]
-        """
-        The name of the rule
-        """
-        start: NotRequired[_builtins.int]
-        """
-        The start time for this match (in seconds since the epoch)
-        """
-elif False:
-    GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgsDict(TypedDict):
+    pass_through_percent: _builtins.float
+    """
+    The range 0.0: 99.0 specifies the percentage of requests that pass through to the origin. The value of 100 means the request always passes through to the origin. A value of -1 means send everyone to the waiting room.
+    """
+    type: _builtins.str
+    """
+    The type of Cloudlet the rule is for
+    """
+    disabled: NotRequired[_builtins.bool]
+    """
+    If set to true, disables a rule so it is not evaluated against incoming requests.
+    """
+    end: NotRequired[_builtins.int]
+    """
+    The end time for this match (in seconds since the epoch)
+    """
+    match_url: NotRequired[_builtins.str]
+    """
+    If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+    """
+    matches: NotRequired[Sequence['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgsDict']]
+    """
+    Defines a set of match objects
+    """
+    name: NotRequired[_builtins.str]
+    """
+    The name of the rule
+    """
+    start: NotRequired[_builtins.int]
+    """
+    The start time for this match (in seconds since the epoch)
+    """
 
 @pulumi.input_type
 class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs:
@@ -19070,38 +18561,35 @@ class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs:
         pulumi.set(self, "start", value)
 
 
-if not MYPY:
-    class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgsDict(TypedDict):
-        case_sensitive: NotRequired[_builtins.bool]
-        """
-        If true, the match is case sensitive
-        """
-        check_ips: NotRequired[_builtins.str]
-        """
-        For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
-        """
-        match_operator: NotRequired[_builtins.str]
-        """
-        Valid entries for this property: contains, exists, and equals
-        """
-        match_type: NotRequired[_builtins.str]
-        """
-        The type of match used
-        """
-        match_value: NotRequired[_builtins.str]
-        """
-        Depends on the matchType
-        """
-        negate: NotRequired[_builtins.bool]
-        """
-        If true, negates the match
-        """
-        object_match_values: NotRequired[Sequence['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
-        """
-        An object used when a rule either includes more complex match criteria, like multiple value attributes
-        """
-elif False:
-    GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgsDict(TypedDict):
+    case_sensitive: NotRequired[_builtins.bool]
+    """
+    If true, the match is case sensitive
+    """
+    check_ips: NotRequired[_builtins.str]
+    """
+    For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+    """
+    match_operator: NotRequired[_builtins.str]
+    """
+    Valid entries for this property: contains, exists, and equals
+    """
+    match_type: NotRequired[_builtins.str]
+    """
+    The type of match used
+    """
+    match_value: NotRequired[_builtins.str]
+    """
+    Depends on the matchType
+    """
+    negate: NotRequired[_builtins.bool]
+    """
+    If true, negates the match
+    """
+    object_match_values: NotRequired[Sequence['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict']]
+    """
+    An object used when a rule either includes more complex match criteria, like multiple value attributes
+    """
 
 @pulumi.input_type
 class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs:
@@ -19222,34 +18710,31 @@ class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs:
         pulumi.set(self, "object_match_values", value)
 
 
-if not MYPY:
-    class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
-        type: _builtins.str
-        """
-        The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
-        """
-        name: NotRequired[_builtins.str]
-        """
-        If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
-        """
-        name_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property should be evaluated based on case sensitivity
-        """
-        name_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entry for the name property includes wildcards
-        """
-        options: NotRequired['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
-        """
-        If using the object type, use this set to list the values to match on (use only with the object type)
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on (use only with simple type)
-        """
-elif False:
-    GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgsDict(TypedDict):
+    type: _builtins.str
+    """
+    The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+    """
+    name: NotRequired[_builtins.str]
+    """
+    If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+    """
+    name_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property should be evaluated based on case sensitivity
+    """
+    name_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entry for the name property includes wildcards
+    """
+    options: NotRequired['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict']
+    """
+    If using the object type, use this set to list the values to match on (use only with the object type)
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on (use only with simple type)
+    """
 
 @pulumi.input_type
 class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs:
@@ -19353,26 +18838,23 @@ class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueAr
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
-        value_case_sensitive: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property should be evaluated based on case sensitivity
-        """
-        value_escaped: NotRequired[_builtins.bool]
-        """
-        Set to true if provided value should be compared in escaped form
-        """
-        value_has_wildcard: NotRequired[_builtins.bool]
-        """
-        Set to true if the entries for the value property include wildcards
-        """
-        values: NotRequired[Sequence[_builtins.str]]
-        """
-        The value attributes in the incoming request to match on
-        """
-elif False:
-    GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgsDict(TypedDict):
+    value_case_sensitive: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property should be evaluated based on case sensitivity
+    """
+    value_escaped: NotRequired[_builtins.bool]
+    """
+    Set to true if provided value should be compared in escaped form
+    """
+    value_has_wildcard: NotRequired[_builtins.bool]
+    """
+    Set to true if the entries for the value property include wildcards
+    """
+    values: NotRequired[Sequence[_builtins.str]]
+    """
+    The value attributes in the incoming request to match on
+    """
 
 @pulumi.input_type
 class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs:
@@ -19445,38 +18927,35 @@ class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOp
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetCloudwrapperCapacitiesCapacityArgsDict(TypedDict):
-        approved: 'GetCloudwrapperCapacitiesCapacityApprovedArgsDict'
-        """
-        Capacity allocated for the location.
-        """
-        assigned: 'GetCloudwrapperCapacitiesCapacityAssignedArgsDict'
-        """
-        Capacity already assigned to Cloud Wrapper configurations.
-        """
-        contract_id: _builtins.str
-        """
-        Contract ID having Cloud Wrapper entitlement.
-        """
-        location_id: _builtins.int
-        """
-        Unique identifier of the configured location.
-        """
-        location_name: _builtins.str
-        """
-        Name of the location.
-        """
-        type: _builtins.str
-        """
-        The type of property this capacity is related to.
-        """
-        unassigned: 'GetCloudwrapperCapacitiesCapacityUnassignedArgsDict'
-        """
-        Capacity value that can be assigned to Cloud Wrapper configurations.
-        """
-elif False:
-    GetCloudwrapperCapacitiesCapacityArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperCapacitiesCapacityArgsDict(TypedDict):
+    approved: 'GetCloudwrapperCapacitiesCapacityApprovedArgsDict'
+    """
+    Capacity allocated for the location.
+    """
+    assigned: 'GetCloudwrapperCapacitiesCapacityAssignedArgsDict'
+    """
+    Capacity already assigned to Cloud Wrapper configurations.
+    """
+    contract_id: _builtins.str
+    """
+    Contract ID having Cloud Wrapper entitlement.
+    """
+    location_id: _builtins.int
+    """
+    Unique identifier of the configured location.
+    """
+    location_name: _builtins.str
+    """
+    Name of the location.
+    """
+    type: _builtins.str
+    """
+    The type of property this capacity is related to.
+    """
+    unassigned: 'GetCloudwrapperCapacitiesCapacityUnassignedArgsDict'
+    """
+    Capacity value that can be assigned to Cloud Wrapper configurations.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperCapacitiesCapacityArgs:
@@ -19590,12 +19069,9 @@ class GetCloudwrapperCapacitiesCapacityArgs:
         pulumi.set(self, "unassigned", value)
 
 
-if not MYPY:
-    class GetCloudwrapperCapacitiesCapacityApprovedArgsDict(TypedDict):
-        unit: _builtins.str
-        value: _builtins.int
-elif False:
-    GetCloudwrapperCapacitiesCapacityApprovedArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperCapacitiesCapacityApprovedArgsDict(TypedDict):
+    unit: _builtins.str
+    value: _builtins.int
 
 @pulumi.input_type
 class GetCloudwrapperCapacitiesCapacityApprovedArgs:
@@ -19624,12 +19100,9 @@ class GetCloudwrapperCapacitiesCapacityApprovedArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetCloudwrapperCapacitiesCapacityAssignedArgsDict(TypedDict):
-        unit: _builtins.str
-        value: _builtins.int
-elif False:
-    GetCloudwrapperCapacitiesCapacityAssignedArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperCapacitiesCapacityAssignedArgsDict(TypedDict):
+    unit: _builtins.str
+    value: _builtins.int
 
 @pulumi.input_type
 class GetCloudwrapperCapacitiesCapacityAssignedArgs:
@@ -19658,12 +19131,9 @@ class GetCloudwrapperCapacitiesCapacityAssignedArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetCloudwrapperCapacitiesCapacityUnassignedArgsDict(TypedDict):
-        unit: _builtins.str
-        value: _builtins.int
-elif False:
-    GetCloudwrapperCapacitiesCapacityUnassignedArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperCapacitiesCapacityUnassignedArgsDict(TypedDict):
+    unit: _builtins.str
+    value: _builtins.int
 
 @pulumi.input_type
 class GetCloudwrapperCapacitiesCapacityUnassignedArgs:
@@ -19692,26 +19162,23 @@ class GetCloudwrapperCapacitiesCapacityUnassignedArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationLocationArgsDict(TypedDict):
-        capacity: 'GetCloudwrapperConfigurationLocationCapacityArgsDict'
-        """
-        The capacity assigned to this configuration's location.
-        """
-        comments: _builtins.str
-        """
-        Additional comments provided by user.
-        """
-        map_name: _builtins.str
-        """
-        The name of the map.
-        """
-        traffic_type_id: _builtins.int
-        """
-        Unique identifier for the location and traffic type combination.
-        """
-elif False:
-    GetCloudwrapperConfigurationLocationArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationLocationArgsDict(TypedDict):
+    capacity: 'GetCloudwrapperConfigurationLocationCapacityArgsDict'
+    """
+    The capacity assigned to this configuration's location.
+    """
+    comments: _builtins.str
+    """
+    Additional comments provided by user.
+    """
+    map_name: _builtins.str
+    """
+    The name of the map.
+    """
+    traffic_type_id: _builtins.int
+    """
+    Unique identifier for the location and traffic type combination.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationLocationArgs:
@@ -19780,12 +19247,9 @@ class GetCloudwrapperConfigurationLocationArgs:
         pulumi.set(self, "traffic_type_id", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationLocationCapacityArgsDict(TypedDict):
-        unit: _builtins.str
-        value: _builtins.int
-elif False:
-    GetCloudwrapperConfigurationLocationCapacityArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationLocationCapacityArgsDict(TypedDict):
+    unit: _builtins.str
+    value: _builtins.int
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationLocationCapacityArgs:
@@ -19814,30 +19278,27 @@ class GetCloudwrapperConfigurationLocationCapacityArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationMultiCdnSettingsArgsDict(TypedDict):
-        enable_soft_alerts: _builtins.bool
-        """
-        Option to opt out of alerts based on soft limits of bandwidth usage.
-        """
-        bocc: NotRequired['GetCloudwrapperConfigurationMultiCdnSettingsBoccArgsDict']
-        """
-        Specify diagnostic data beacons details.
-        """
-        cdns: NotRequired[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnArgsDict']]
-        """
-        List of CDN added for the configuration.
-        """
-        data_streams: NotRequired['GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgsDict']
-        """
-        Specifies data streams details.
-        """
-        origins: NotRequired[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsOriginArgsDict']]
-        """
-        List of origins corresponding to the properties selected in the configuration.
-        """
-elif False:
-    GetCloudwrapperConfigurationMultiCdnSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationMultiCdnSettingsArgsDict(TypedDict):
+    enable_soft_alerts: _builtins.bool
+    """
+    Option to opt out of alerts based on soft limits of bandwidth usage.
+    """
+    bocc: NotRequired['GetCloudwrapperConfigurationMultiCdnSettingsBoccArgsDict']
+    """
+    Specify diagnostic data beacons details.
+    """
+    cdns: NotRequired[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnArgsDict']]
+    """
+    List of CDN added for the configuration.
+    """
+    data_streams: NotRequired['GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgsDict']
+    """
+    Specifies data streams details.
+    """
+    origins: NotRequired[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsOriginArgsDict']]
+    """
+    List of origins corresponding to the properties selected in the configuration.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationMultiCdnSettingsArgs:
@@ -19925,30 +19386,27 @@ class GetCloudwrapperConfigurationMultiCdnSettingsArgs:
         pulumi.set(self, "origins", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationMultiCdnSettingsBoccArgsDict(TypedDict):
-        conditional_sampling_frequency: _builtins.str
-        """
-        The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
-        """
-        enabled: _builtins.bool
-        """
-        Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
-        """
-        forward_type: _builtins.str
-        """
-        Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
-        """
-        request_type: _builtins.str
-        """
-        Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
-        """
-        sampling_frequency: _builtins.str
-        """
-        The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
-        """
-elif False:
-    GetCloudwrapperConfigurationMultiCdnSettingsBoccArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationMultiCdnSettingsBoccArgsDict(TypedDict):
+    conditional_sampling_frequency: _builtins.str
+    """
+    The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+    """
+    enabled: _builtins.bool
+    """
+    Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
+    """
+    forward_type: _builtins.str
+    """
+    Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
+    """
+    request_type: _builtins.str
+    """
+    Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
+    """
+    sampling_frequency: _builtins.str
+    """
+    The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs:
@@ -20032,30 +19490,27 @@ class GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs:
         pulumi.set(self, "sampling_frequency", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationMultiCdnSettingsCdnArgsDict(TypedDict):
-        cdn_code: _builtins.str
-        """
-        Unique identifier for the CDN.
-        """
-        enabled: _builtins.bool
-        """
-        Enable CDN.
-        """
-        https_only: _builtins.bool
-        """
-        Specify whether CDN communication is HTTPS only.
-        """
-        ip_acl_cidrs: Sequence[_builtins.str]
-        """
-        Configure an access control list using IP addresses in CIDR notation.
-        """
-        cdn_auth_keys: NotRequired[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict']]
-        """
-        List of auth keys configured for the CDN.
-        """
-elif False:
-    GetCloudwrapperConfigurationMultiCdnSettingsCdnArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationMultiCdnSettingsCdnArgsDict(TypedDict):
+    cdn_code: _builtins.str
+    """
+    Unique identifier for the CDN.
+    """
+    enabled: _builtins.bool
+    """
+    Enable CDN.
+    """
+    https_only: _builtins.bool
+    """
+    Specify whether CDN communication is HTTPS only.
+    """
+    ip_acl_cidrs: Sequence[_builtins.str]
+    """
+    Configure an access control list using IP addresses in CIDR notation.
+    """
+    cdn_auth_keys: NotRequired[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict']]
+    """
+    List of auth keys configured for the CDN.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs:
@@ -20140,26 +19595,23 @@ class GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs:
         pulumi.set(self, "cdn_auth_keys", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict(TypedDict):
-        auth_key_name: _builtins.str
-        """
-        The name of the auth key.
-        """
-        expiry_date: _builtins.str
-        """
-        The expirty date of an auth key.
-        """
-        header_name: _builtins.str
-        """
-        The header name of an auth key.
-        """
-        secret: _builtins.str
-        """
-        The secret of an auth key.
-        """
-elif False:
-    GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict(TypedDict):
+    auth_key_name: _builtins.str
+    """
+    The name of the auth key.
+    """
+    expiry_date: _builtins.str
+    """
+    The expirty date of an auth key.
+    """
+    header_name: _builtins.str
+    """
+    The header name of an auth key.
+    """
+    secret: _builtins.str
+    """
+    The secret of an auth key.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs:
@@ -20228,22 +19680,19 @@ class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs:
         pulumi.set(self, "secret", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgsDict(TypedDict):
-        data_stream_ids: Sequence[_builtins.int]
-        """
-        Unique identifiers of the Data Streams.
-        """
-        enabled: _builtins.bool
-        """
-        Enables DataStream reporting.
-        """
-        sampling_rate: _builtins.int
-        """
-        Specifies the percentage of log data you want to collect for this configuration.
-        """
-elif False:
-    GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgsDict(TypedDict):
+    data_stream_ids: Sequence[_builtins.int]
+    """
+    Unique identifiers of the Data Streams.
+    """
+    enabled: _builtins.bool
+    """
+    Enables DataStream reporting.
+    """
+    sampling_rate: _builtins.int
+    """
+    Specifies the percentage of log data you want to collect for this configuration.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs:
@@ -20297,22 +19746,19 @@ class GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs:
         pulumi.set(self, "sampling_rate", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationMultiCdnSettingsOriginArgsDict(TypedDict):
-        hostname: _builtins.str
-        """
-        Origins hostname corresponding to the Akamai Delivery Property.
-        """
-        origin_id: _builtins.str
-        """
-        Origin identifier and will be used to generated Multi CDN host names.
-        """
-        property_id: _builtins.int
-        """
-        Property ID of the property that origin belongs to.
-        """
-elif False:
-    GetCloudwrapperConfigurationMultiCdnSettingsOriginArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationMultiCdnSettingsOriginArgsDict(TypedDict):
+    hostname: _builtins.str
+    """
+    Origins hostname corresponding to the Akamai Delivery Property.
+    """
+    origin_id: _builtins.str
+    """
+    Origin identifier and will be used to generated Multi CDN host names.
+    """
+    property_id: _builtins.int
+    """
+    Property ID of the property that origin belongs to.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs:
@@ -20366,70 +19812,67 @@ class GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs:
         pulumi.set(self, "property_id", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationsConfigurationArgsDict(TypedDict):
-        capacity_alerts_threshold: _builtins.int
-        """
-        Represents the threshold for sending alerts.
-        """
-        comments: _builtins.str
-        """
-        Additional information provided by user which can help to differentiate or track changes of the configuration.
-        """
-        config_name: _builtins.str
-        """
-        Name of the configuration.
-        """
-        contract_id: _builtins.str
-        """
-        Contract ID with Cloud Wrapper entitlement.
-        """
-        id: _builtins.int
-        """
-        Unique identifier of a Cloud Wrapper configuration.
-        """
-        last_activated_by: _builtins.str
-        """
-        User to last activate the configuration.
-        """
-        last_activated_date: _builtins.str
-        """
-        ISO format date that represents when the configuration was last activated successfully.
-        """
-        last_updated_by: _builtins.str
-        """
-        User to last modify the configuration.
-        """
-        last_updated_date: _builtins.str
-        """
-        ISO format date that represents when the configuration was last edited.
-        """
-        notification_emails: Sequence[_builtins.str]
-        """
-        Email addresses to receive notifications.
-        """
-        property_ids: Sequence[_builtins.str]
-        """
-        List of properties belonging to media delivery products. Properties need to be unique across configurations.
-        """
-        retain_idle_objects: _builtins.bool
-        """
-        Retain idle objects beyond their max idle lifetime.
-        """
-        status: _builtins.str
-        """
-        Current state of the provisioning of the configuration, either SAVED, IN_PROGRESS, ACTIVE, DELETE_IN_PROGRESS, or FAILED.
-        """
-        locations: NotRequired[Sequence['GetCloudwrapperConfigurationsConfigurationLocationArgsDict']]
-        """
-        List of all unused properties.
-        """
-        multi_cdn_settings: NotRequired['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgsDict']
-        """
-        Specify details about the Multi CDN settings.
-        """
-elif False:
-    GetCloudwrapperConfigurationsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationsConfigurationArgsDict(TypedDict):
+    capacity_alerts_threshold: _builtins.int
+    """
+    Represents the threshold for sending alerts.
+    """
+    comments: _builtins.str
+    """
+    Additional information provided by user which can help to differentiate or track changes of the configuration.
+    """
+    config_name: _builtins.str
+    """
+    Name of the configuration.
+    """
+    contract_id: _builtins.str
+    """
+    Contract ID with Cloud Wrapper entitlement.
+    """
+    id: _builtins.int
+    """
+    Unique identifier of a Cloud Wrapper configuration.
+    """
+    last_activated_by: _builtins.str
+    """
+    User to last activate the configuration.
+    """
+    last_activated_date: _builtins.str
+    """
+    ISO format date that represents when the configuration was last activated successfully.
+    """
+    last_updated_by: _builtins.str
+    """
+    User to last modify the configuration.
+    """
+    last_updated_date: _builtins.str
+    """
+    ISO format date that represents when the configuration was last edited.
+    """
+    notification_emails: Sequence[_builtins.str]
+    """
+    Email addresses to receive notifications.
+    """
+    property_ids: Sequence[_builtins.str]
+    """
+    List of properties belonging to media delivery products. Properties need to be unique across configurations.
+    """
+    retain_idle_objects: _builtins.bool
+    """
+    Retain idle objects beyond their max idle lifetime.
+    """
+    status: _builtins.str
+    """
+    Current state of the provisioning of the configuration, either SAVED, IN_PROGRESS, ACTIVE, DELETE_IN_PROGRESS, or FAILED.
+    """
+    locations: NotRequired[Sequence['GetCloudwrapperConfigurationsConfigurationLocationArgsDict']]
+    """
+    List of all unused properties.
+    """
+    multi_cdn_settings: NotRequired['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgsDict']
+    """
+    Specify details about the Multi CDN settings.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationsConfigurationArgs:
@@ -20665,26 +20108,23 @@ class GetCloudwrapperConfigurationsConfigurationArgs:
         pulumi.set(self, "multi_cdn_settings", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationsConfigurationLocationArgsDict(TypedDict):
-        capacity: 'GetCloudwrapperConfigurationsConfigurationLocationCapacityArgsDict'
-        """
-        The capacity assigned to this configuration's location.
-        """
-        comments: _builtins.str
-        """
-        Additional comments provided by user.
-        """
-        map_name: _builtins.str
-        """
-        The name of the map.
-        """
-        traffic_type_id: _builtins.int
-        """
-        Unique identifier for the location and traffic type combination.
-        """
-elif False:
-    GetCloudwrapperConfigurationsConfigurationLocationArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationsConfigurationLocationArgsDict(TypedDict):
+    capacity: 'GetCloudwrapperConfigurationsConfigurationLocationCapacityArgsDict'
+    """
+    The capacity assigned to this configuration's location.
+    """
+    comments: _builtins.str
+    """
+    Additional comments provided by user.
+    """
+    map_name: _builtins.str
+    """
+    The name of the map.
+    """
+    traffic_type_id: _builtins.int
+    """
+    Unique identifier for the location and traffic type combination.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationsConfigurationLocationArgs:
@@ -20753,12 +20193,9 @@ class GetCloudwrapperConfigurationsConfigurationLocationArgs:
         pulumi.set(self, "traffic_type_id", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationsConfigurationLocationCapacityArgsDict(TypedDict):
-        unit: _builtins.str
-        value: _builtins.int
-elif False:
-    GetCloudwrapperConfigurationsConfigurationLocationCapacityArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationsConfigurationLocationCapacityArgsDict(TypedDict):
+    unit: _builtins.str
+    value: _builtins.int
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs:
@@ -20787,30 +20224,27 @@ class GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgsDict(TypedDict):
-        enable_soft_alerts: _builtins.bool
-        """
-        Option to opt out of alerts based on soft limits of bandwidth usage.
-        """
-        bocc: NotRequired['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgsDict']
-        """
-        Specify diagnostic data beacons details.
-        """
-        cdns: NotRequired[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgsDict']]
-        """
-        List of CDN added for the configuration.
-        """
-        data_streams: NotRequired['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgsDict']
-        """
-        Specifies data streams details.
-        """
-        origins: NotRequired[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgsDict']]
-        """
-        List of origins corresponding to the properties selected in the configuration.
-        """
-elif False:
-    GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgsDict(TypedDict):
+    enable_soft_alerts: _builtins.bool
+    """
+    Option to opt out of alerts based on soft limits of bandwidth usage.
+    """
+    bocc: NotRequired['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgsDict']
+    """
+    Specify diagnostic data beacons details.
+    """
+    cdns: NotRequired[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgsDict']]
+    """
+    List of CDN added for the configuration.
+    """
+    data_streams: NotRequired['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgsDict']
+    """
+    Specifies data streams details.
+    """
+    origins: NotRequired[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgsDict']]
+    """
+    List of origins corresponding to the properties selected in the configuration.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs:
@@ -20898,30 +20332,27 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs:
         pulumi.set(self, "origins", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgsDict(TypedDict):
-        conditional_sampling_frequency: _builtins.str
-        """
-        The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
-        """
-        enabled: _builtins.bool
-        """
-        Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
-        """
-        forward_type: _builtins.str
-        """
-        Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
-        """
-        request_type: _builtins.str
-        """
-        Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
-        """
-        sampling_frequency: _builtins.str
-        """
-        The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
-        """
-elif False:
-    GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgsDict(TypedDict):
+    conditional_sampling_frequency: _builtins.str
+    """
+    The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+    """
+    enabled: _builtins.bool
+    """
+    Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
+    """
+    forward_type: _builtins.str
+    """
+    Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
+    """
+    request_type: _builtins.str
+    """
+    Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
+    """
+    sampling_frequency: _builtins.str
+    """
+    The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs:
@@ -21005,30 +20436,27 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs:
         pulumi.set(self, "sampling_frequency", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgsDict(TypedDict):
-        cdn_code: _builtins.str
-        """
-        Unique identifier for the CDN.
-        """
-        enabled: _builtins.bool
-        """
-        Enable CDN.
-        """
-        https_only: _builtins.bool
-        """
-        Specify whether CDN communication is HTTPS only.
-        """
-        ip_acl_cidrs: Sequence[_builtins.str]
-        """
-        Configure an access control list using IP addresses in CIDR notation.
-        """
-        cdn_auth_keys: NotRequired[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict']]
-        """
-        List of auth keys configured for the CDN.
-        """
-elif False:
-    GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgsDict(TypedDict):
+    cdn_code: _builtins.str
+    """
+    Unique identifier for the CDN.
+    """
+    enabled: _builtins.bool
+    """
+    Enable CDN.
+    """
+    https_only: _builtins.bool
+    """
+    Specify whether CDN communication is HTTPS only.
+    """
+    ip_acl_cidrs: Sequence[_builtins.str]
+    """
+    Configure an access control list using IP addresses in CIDR notation.
+    """
+    cdn_auth_keys: NotRequired[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict']]
+    """
+    List of auth keys configured for the CDN.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs:
@@ -21113,26 +20541,23 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs:
         pulumi.set(self, "cdn_auth_keys", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict(TypedDict):
-        auth_key_name: _builtins.str
-        """
-        The name of the auth key.
-        """
-        expiry_date: _builtins.str
-        """
-        The expirty date of an auth key.
-        """
-        header_name: _builtins.str
-        """
-        The header name of an auth key.
-        """
-        secret: _builtins.str
-        """
-        The secret of an auth key.
-        """
-elif False:
-    GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgsDict(TypedDict):
+    auth_key_name: _builtins.str
+    """
+    The name of the auth key.
+    """
+    expiry_date: _builtins.str
+    """
+    The expirty date of an auth key.
+    """
+    header_name: _builtins.str
+    """
+    The header name of an auth key.
+    """
+    secret: _builtins.str
+    """
+    The secret of an auth key.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs:
@@ -21201,22 +20626,19 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArg
         pulumi.set(self, "secret", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgsDict(TypedDict):
-        data_stream_ids: Sequence[_builtins.int]
-        """
-        Unique identifiers of the Data Streams.
-        """
-        enabled: _builtins.bool
-        """
-        Enables DataStream reporting.
-        """
-        sampling_rate: _builtins.int
-        """
-        Specifies the percentage of log data you want to collect for this configuration.
-        """
-elif False:
-    GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgsDict(TypedDict):
+    data_stream_ids: Sequence[_builtins.int]
+    """
+    Unique identifiers of the Data Streams.
+    """
+    enabled: _builtins.bool
+    """
+    Enables DataStream reporting.
+    """
+    sampling_rate: _builtins.int
+    """
+    Specifies the percentage of log data you want to collect for this configuration.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs:
@@ -21270,22 +20692,19 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs:
         pulumi.set(self, "sampling_rate", value)
 
 
-if not MYPY:
-    class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgsDict(TypedDict):
-        hostname: _builtins.str
-        """
-        Origins hostname corresponding to the Akamai Delivery Property.
-        """
-        origin_id: _builtins.str
-        """
-        Origin identifier and will be used to generated Multi CDN host names.
-        """
-        property_id: _builtins.int
-        """
-        Property ID of the property that origin belongs to.
-        """
-elif False:
-    GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgsDict(TypedDict):
+    hostname: _builtins.str
+    """
+    Origins hostname corresponding to the Akamai Delivery Property.
+    """
+    origin_id: _builtins.str
+    """
+    Origin identifier and will be used to generated Multi CDN host names.
+    """
+    property_id: _builtins.int
+    """
+    Property ID of the property that origin belongs to.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs:
@@ -21339,26 +20758,23 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs:
         pulumi.set(self, "property_id", value)
 
 
-if not MYPY:
-    class GetCloudwrapperLocationsLocationArgsDict(TypedDict):
-        location_id: _builtins.int
-        """
-        Unique identifier of the location.
-        """
-        location_name: _builtins.str
-        """
-        Name of the location.
-        """
-        multi_cdn_location_id: _builtins.str
-        """
-        Unique identifier of the multi CDN location.
-        """
-        traffic_types: NotRequired[Sequence['GetCloudwrapperLocationsLocationTrafficTypeArgsDict']]
-        """
-        List of traffic types for the location.
-        """
-elif False:
-    GetCloudwrapperLocationsLocationArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperLocationsLocationArgsDict(TypedDict):
+    location_id: _builtins.int
+    """
+    Unique identifier of the location.
+    """
+    location_name: _builtins.str
+    """
+    Name of the location.
+    """
+    multi_cdn_location_id: _builtins.str
+    """
+    Unique identifier of the multi CDN location.
+    """
+    traffic_types: NotRequired[Sequence['GetCloudwrapperLocationsLocationTrafficTypeArgsDict']]
+    """
+    List of traffic types for the location.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperLocationsLocationArgs:
@@ -21428,22 +20844,19 @@ class GetCloudwrapperLocationsLocationArgs:
         pulumi.set(self, "traffic_types", value)
 
 
-if not MYPY:
-    class GetCloudwrapperLocationsLocationTrafficTypeArgsDict(TypedDict):
-        location_id: _builtins.str
-        """
-        Represents the failover map.
-        """
-        traffic_type: _builtins.str
-        """
-        Represents the traffic type. LIVE applies to low-latency media traffic, such as live streaming. LIVE_VOD applies to redundant media traffic, like video on demand content. WEB_STANDARD_TLS or WEB_ENHANCED_TLS applies to web content using Standard TLS security or Enhanced TLS security, respectively.
-        """
-        traffic_type_id: _builtins.int
-        """
-        Unique identifier for the location and traffic type combination.
-        """
-elif False:
-    GetCloudwrapperLocationsLocationTrafficTypeArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperLocationsLocationTrafficTypeArgsDict(TypedDict):
+    location_id: _builtins.str
+    """
+    Represents the failover map.
+    """
+    traffic_type: _builtins.str
+    """
+    Represents the traffic type. LIVE applies to low-latency media traffic, such as live streaming. LIVE_VOD applies to redundant media traffic, like video on demand content. WEB_STANDARD_TLS or WEB_ENHANCED_TLS applies to web content using Standard TLS security or Enhanced TLS security, respectively.
+    """
+    traffic_type_id: _builtins.int
+    """
+    Unique identifier for the location and traffic type combination.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperLocationsLocationTrafficTypeArgs:
@@ -21497,30 +20910,27 @@ class GetCloudwrapperLocationsLocationTrafficTypeArgs:
         pulumi.set(self, "traffic_type_id", value)
 
 
-if not MYPY:
-    class GetCloudwrapperPropertiesPropertyArgsDict(TypedDict):
-        contract_id: _builtins.str
-        """
-        Contract ID having Cloud Wrapper entitlement.
-        """
-        group_id: _builtins.int
-        """
-        ID of the group which the property belongs to.
-        """
-        property_id: _builtins.int
-        """
-        Property ID of the property.
-        """
-        property_name: _builtins.str
-        """
-        Name of the property belonging to the origin.
-        """
-        type: _builtins.str
-        """
-        The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
-        """
-elif False:
-    GetCloudwrapperPropertiesPropertyArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudwrapperPropertiesPropertyArgsDict(TypedDict):
+    contract_id: _builtins.str
+    """
+    Contract ID having Cloud Wrapper entitlement.
+    """
+    group_id: _builtins.int
+    """
+    ID of the group which the property belongs to.
+    """
+    property_id: _builtins.int
+    """
+    Property ID of the property.
+    """
+    property_name: _builtins.str
+    """
+    Name of the property belonging to the origin.
+    """
+    type: _builtins.str
+    """
+    The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
+    """
 
 @pulumi.input_type
 class GetCloudwrapperPropertiesPropertyArgs:
@@ -21604,22 +21014,19 @@ class GetCloudwrapperPropertiesPropertyArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class GetGtmAsmapAssignmentArgsDict(TypedDict):
-        as_numbers: Sequence[_builtins.int]
-        """
-        Specifies an array of AS numbers.
-        """
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for the group.
-        """
-elif False:
-    GetGtmAsmapAssignmentArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmAsmapAssignmentArgsDict(TypedDict):
+    as_numbers: Sequence[_builtins.int]
+    """
+    Specifies an array of AS numbers.
+    """
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for the group.
+    """
 
 @pulumi.input_type
 class GetGtmAsmapAssignmentArgs:
@@ -21673,18 +21080,15 @@ class GetGtmAsmapAssignmentArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmAsmapDefaultDatacenterArgsDict(TypedDict):
-        datacenter_id: _builtins.int
-        """
-        For each property, an identifier for all other AS zones
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for all other AS zones
-        """
-elif False:
-    GetGtmAsmapDefaultDatacenterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmAsmapDefaultDatacenterArgsDict(TypedDict):
+    datacenter_id: _builtins.int
+    """
+    For each property, an identifier for all other AS zones
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for all other AS zones
+    """
 
 @pulumi.input_type
 class GetGtmAsmapDefaultDatacenterArgs:
@@ -21723,18 +21127,15 @@ class GetGtmAsmapDefaultDatacenterArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmAsmapLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmAsmapLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmAsmapLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmAsmapLinkArgs:
@@ -21773,22 +21174,19 @@ class GetGtmAsmapLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmCidrmapAssignmentArgsDict(TypedDict):
-        blocks: Sequence[_builtins.str]
-        """
-        Specifies an array of CIDR blocks.
-        """
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for the CIDR zone group.
-        """
-elif False:
-    GetGtmCidrmapAssignmentArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmCidrmapAssignmentArgsDict(TypedDict):
+    blocks: Sequence[_builtins.str]
+    """
+    Specifies an array of CIDR blocks.
+    """
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for the CIDR zone group.
+    """
 
 @pulumi.input_type
 class GetGtmCidrmapAssignmentArgs:
@@ -21842,18 +21240,15 @@ class GetGtmCidrmapAssignmentArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmCidrmapDefaultDatacenterArgsDict(TypedDict):
-        datacenter_id: _builtins.int
-        """
-        For each property, an identifier for all other CIDR zones' CNAME.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for all other CIDR blocks.
-        """
-elif False:
-    GetGtmCidrmapDefaultDatacenterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmCidrmapDefaultDatacenterArgsDict(TypedDict):
+    datacenter_id: _builtins.int
+    """
+    For each property, an identifier for all other CIDR zones' CNAME.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for all other CIDR blocks.
+    """
 
 @pulumi.input_type
 class GetGtmCidrmapDefaultDatacenterArgs:
@@ -21892,18 +21287,15 @@ class GetGtmCidrmapDefaultDatacenterArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmCidrmapLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmCidrmapLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmCidrmapLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmCidrmapLinkArgs:
@@ -21942,26 +21334,23 @@ class GetGtmCidrmapLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmDomainAsMapArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A descriptive label for the AS map.
-        """
-        assignments: NotRequired[Sequence['GetGtmDomainAsMapAssignmentArgsDict']]
-        """
-        Contains information about the AS zone groupings of AS IDs.
-        """
-        default_datacenter: NotRequired['GetGtmDomainAsMapDefaultDatacenterArgsDict']
-        """
-        A placeholder for all other AS zones, AS IDs not found in these AS zones.
-        """
-        links: NotRequired[Sequence['GetGtmDomainAsMapLinkArgsDict']]
-        """
-        Specifies the URL path that allows direct navigation to the As map.
-        """
-elif False:
-    GetGtmDomainAsMapArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainAsMapArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A descriptive label for the AS map.
+    """
+    assignments: NotRequired[Sequence['GetGtmDomainAsMapAssignmentArgsDict']]
+    """
+    Contains information about the AS zone groupings of AS IDs.
+    """
+    default_datacenter: NotRequired['GetGtmDomainAsMapDefaultDatacenterArgsDict']
+    """
+    A placeholder for all other AS zones, AS IDs not found in these AS zones.
+    """
+    links: NotRequired[Sequence['GetGtmDomainAsMapLinkArgsDict']]
+    """
+    Specifies the URL path that allows direct navigation to the As map.
+    """
 
 @pulumi.input_type
 class GetGtmDomainAsMapArgs:
@@ -22033,22 +21422,19 @@ class GetGtmDomainAsMapArgs:
         pulumi.set(self, "links", value)
 
 
-if not MYPY:
-    class GetGtmDomainAsMapAssignmentArgsDict(TypedDict):
-        as_numbers: Sequence[_builtins.int]
-        """
-        Specifies an array of AS numbers.
-        """
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for all other AS zones.
-        """
-elif False:
-    GetGtmDomainAsMapAssignmentArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainAsMapAssignmentArgsDict(TypedDict):
+    as_numbers: Sequence[_builtins.int]
+    """
+    Specifies an array of AS numbers.
+    """
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for all other AS zones.
+    """
 
 @pulumi.input_type
 class GetGtmDomainAsMapAssignmentArgs:
@@ -22102,18 +21488,15 @@ class GetGtmDomainAsMapAssignmentArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmDomainAsMapDefaultDatacenterArgsDict(TypedDict):
-        datacenter_id: _builtins.int
-        """
-        For each property, an identifier for all other AS zones' CNAME.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for all other AS zones.
-        """
-elif False:
-    GetGtmDomainAsMapDefaultDatacenterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainAsMapDefaultDatacenterArgsDict(TypedDict):
+    datacenter_id: _builtins.int
+    """
+    For each property, an identifier for all other AS zones' CNAME.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for all other AS zones.
+    """
 
 @pulumi.input_type
 class GetGtmDomainAsMapDefaultDatacenterArgs:
@@ -22152,18 +21535,15 @@ class GetGtmDomainAsMapDefaultDatacenterArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmDomainAsMapLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmDomainAsMapLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainAsMapLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmDomainAsMapLinkArgs:
@@ -22202,26 +21582,23 @@ class GetGtmDomainAsMapLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmDomainCidrMapArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique name for the CIDR map.
-        """
-        assignments: NotRequired[Sequence['GetGtmDomainCidrMapAssignmentArgsDict']]
-        """
-        Contains information about the CIDR zone groupings of CIDR blocks.
-        """
-        default_datacenter: NotRequired['GetGtmDomainCidrMapDefaultDatacenterArgsDict']
-        """
-        A placeholder for all other CIDR zones, CIDR blocks not found in these CIDR zones.
-        """
-        links: NotRequired[Sequence['GetGtmDomainCidrMapLinkArgsDict']]
-        """
-        Specifies the URL path that allows direct navigation to the CIDR map.
-        """
-elif False:
-    GetGtmDomainCidrMapArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainCidrMapArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique name for the CIDR map.
+    """
+    assignments: NotRequired[Sequence['GetGtmDomainCidrMapAssignmentArgsDict']]
+    """
+    Contains information about the CIDR zone groupings of CIDR blocks.
+    """
+    default_datacenter: NotRequired['GetGtmDomainCidrMapDefaultDatacenterArgsDict']
+    """
+    A placeholder for all other CIDR zones, CIDR blocks not found in these CIDR zones.
+    """
+    links: NotRequired[Sequence['GetGtmDomainCidrMapLinkArgsDict']]
+    """
+    Specifies the URL path that allows direct navigation to the CIDR map.
+    """
 
 @pulumi.input_type
 class GetGtmDomainCidrMapArgs:
@@ -22293,22 +21670,19 @@ class GetGtmDomainCidrMapArgs:
         pulumi.set(self, "links", value)
 
 
-if not MYPY:
-    class GetGtmDomainCidrMapAssignmentArgsDict(TypedDict):
-        blocks: Sequence[_builtins.str]
-        """
-        Specifies an array of CIDR blocks.
-        """
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for all other AS zones.
-        """
-elif False:
-    GetGtmDomainCidrMapAssignmentArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainCidrMapAssignmentArgsDict(TypedDict):
+    blocks: Sequence[_builtins.str]
+    """
+    Specifies an array of CIDR blocks.
+    """
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for all other AS zones.
+    """
 
 @pulumi.input_type
 class GetGtmDomainCidrMapAssignmentArgs:
@@ -22362,18 +21736,15 @@ class GetGtmDomainCidrMapAssignmentArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmDomainCidrMapDefaultDatacenterArgsDict(TypedDict):
-        datacenter_id: _builtins.int
-        """
-        For each property, an identifier for all other CIDR zones' CNAME.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for all other CIDR blocks.
-        """
-elif False:
-    GetGtmDomainCidrMapDefaultDatacenterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainCidrMapDefaultDatacenterArgsDict(TypedDict):
+    datacenter_id: _builtins.int
+    """
+    For each property, an identifier for all other CIDR zones' CNAME.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for all other CIDR blocks.
+    """
 
 @pulumi.input_type
 class GetGtmDomainCidrMapDefaultDatacenterArgs:
@@ -22412,18 +21783,15 @@ class GetGtmDomainCidrMapDefaultDatacenterArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmDomainCidrMapLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmDomainCidrMapLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainCidrMapLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmDomainCidrMapLinkArgs:
@@ -22462,74 +21830,71 @@ class GetGtmDomainCidrMapLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmDomainDatacenterArgsDict(TypedDict):
-        city: _builtins.str
-        """
-        The name of the city where the data center is located.
-        """
-        clone_of: _builtins.int
-        """
-        Identifies the data center's ID of which this data center is a clone.
-        """
-        cloud_server_host_header_override: _builtins.bool
-        """
-        Balances load between two or more servers in a cloud environment.
-        """
-        cloud_server_targeting: _builtins.bool
-        """
-        Balances load between two or more servers in a cloud environment.
-        """
-        continent: _builtins.str
-        """
-        A two-letter code that specifies the continent where the data center maps to.
-        """
-        country: _builtins.str
-        """
-        A two-letter ISO 3166 country code that specifies the country where the data center is located.
-        """
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        latitude: _builtins.float
-        """
-        Specifies the geographic latitude of the data center's position.
-        """
-        longitude: _builtins.float
-        """
-        Specifies the geographic longitude of the data center's position.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for the datacenter.
-        """
-        score_penalty: _builtins.int
-        """
-        Influences the score for a datacenter.
-        """
-        server_monitor_pool: _builtins.str
-        """
-        The name of the pool from which servermonitors are drawn for liveness tests in this datacenter. If omitted (null), the domain-wide default is used. (If no domain-wide default is specified, the pool used is all servermonitors in the same continent as the datacenter.).
-        """
-        state_or_province: _builtins.str
-        """
-        Specifies a two-letter ISO 3166 country code for the state of province, where the data center is located.
-        """
-        virtual: _builtins.bool
-        """
-        Indicates whether or not the data center is virtual or physical.
-        """
-        default_load_objects: NotRequired[Sequence['GetGtmDomainDatacenterDefaultLoadObjectArgsDict']]
-        """
-        Specifies the load reporting interface between you and the GTM system.
-        """
-        links: NotRequired[Sequence['GetGtmDomainDatacenterLinkArgsDict']]
-        """
-        Provides a URL path that allows direct navigation to a data center.
-        """
-elif False:
-    GetGtmDomainDatacenterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainDatacenterArgsDict(TypedDict):
+    city: _builtins.str
+    """
+    The name of the city where the data center is located.
+    """
+    clone_of: _builtins.int
+    """
+    Identifies the data center's ID of which this data center is a clone.
+    """
+    cloud_server_host_header_override: _builtins.bool
+    """
+    Balances load between two or more servers in a cloud environment.
+    """
+    cloud_server_targeting: _builtins.bool
+    """
+    Balances load between two or more servers in a cloud environment.
+    """
+    continent: _builtins.str
+    """
+    A two-letter code that specifies the continent where the data center maps to.
+    """
+    country: _builtins.str
+    """
+    A two-letter ISO 3166 country code that specifies the country where the data center is located.
+    """
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    latitude: _builtins.float
+    """
+    Specifies the geographic latitude of the data center's position.
+    """
+    longitude: _builtins.float
+    """
+    Specifies the geographic longitude of the data center's position.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for the datacenter.
+    """
+    score_penalty: _builtins.int
+    """
+    Influences the score for a datacenter.
+    """
+    server_monitor_pool: _builtins.str
+    """
+    The name of the pool from which servermonitors are drawn for liveness tests in this datacenter. If omitted (null), the domain-wide default is used. (If no domain-wide default is specified, the pool used is all servermonitors in the same continent as the datacenter.).
+    """
+    state_or_province: _builtins.str
+    """
+    Specifies a two-letter ISO 3166 country code for the state of province, where the data center is located.
+    """
+    virtual: _builtins.bool
+    """
+    Indicates whether or not the data center is virtual or physical.
+    """
+    default_load_objects: NotRequired[Sequence['GetGtmDomainDatacenterDefaultLoadObjectArgsDict']]
+    """
+    Specifies the load reporting interface between you and the GTM system.
+    """
+    links: NotRequired[Sequence['GetGtmDomainDatacenterLinkArgsDict']]
+    """
+    Provides a URL path that allows direct navigation to a data center.
+    """
 
 @pulumi.input_type
 class GetGtmDomainDatacenterArgs:
@@ -22780,22 +22145,19 @@ class GetGtmDomainDatacenterArgs:
         pulumi.set(self, "links", value)
 
 
-if not MYPY:
-    class GetGtmDomainDatacenterDefaultLoadObjectArgsDict(TypedDict):
-        load_object: _builtins.str
-        """
-        Specifies the load object that GTM requests.
-        """
-        load_object_port: _builtins.int
-        """
-        Specifies the TCP port to connect to when requesting the load object.
-        """
-        load_servers: Sequence[_builtins.str]
-        """
-        Specifies the list of servers to requests the load object from.
-        """
-elif False:
-    GetGtmDomainDatacenterDefaultLoadObjectArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainDatacenterDefaultLoadObjectArgsDict(TypedDict):
+    load_object: _builtins.str
+    """
+    Specifies the load object that GTM requests.
+    """
+    load_object_port: _builtins.int
+    """
+    Specifies the TCP port to connect to when requesting the load object.
+    """
+    load_servers: Sequence[_builtins.str]
+    """
+    Specifies the list of servers to requests the load object from.
+    """
 
 @pulumi.input_type
 class GetGtmDomainDatacenterDefaultLoadObjectArgs:
@@ -22849,18 +22211,15 @@ class GetGtmDomainDatacenterDefaultLoadObjectArgs:
         pulumi.set(self, "load_servers", value)
 
 
-if not MYPY:
-    class GetGtmDomainDatacenterLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmDomainDatacenterLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainDatacenterLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmDomainDatacenterLinkArgs:
@@ -22899,26 +22258,23 @@ class GetGtmDomainDatacenterLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmDomainGeographicMapArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A descriptive label for the geographic map.
-        """
-        assignments: NotRequired[Sequence['GetGtmDomainGeographicMapAssignmentArgsDict']]
-        """
-        Contains information about the geographic zone groupings of countries.
-        """
-        default_datacenter: NotRequired['GetGtmDomainGeographicMapDefaultDatacenterArgsDict']
-        """
-        A placeholder for all other geographic zones, countries not found in these geographic zones.
-        """
-        links: NotRequired[Sequence['GetGtmDomainGeographicMapLinkArgsDict']]
-        """
-        Specifies the URL path that allows direct navigation to the geographic map.
-        """
-elif False:
-    GetGtmDomainGeographicMapArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainGeographicMapArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A descriptive label for the geographic map.
+    """
+    assignments: NotRequired[Sequence['GetGtmDomainGeographicMapAssignmentArgsDict']]
+    """
+    Contains information about the geographic zone groupings of countries.
+    """
+    default_datacenter: NotRequired['GetGtmDomainGeographicMapDefaultDatacenterArgsDict']
+    """
+    A placeholder for all other geographic zones, countries not found in these geographic zones.
+    """
+    links: NotRequired[Sequence['GetGtmDomainGeographicMapLinkArgsDict']]
+    """
+    Specifies the URL path that allows direct navigation to the geographic map.
+    """
 
 @pulumi.input_type
 class GetGtmDomainGeographicMapArgs:
@@ -22990,22 +22346,19 @@ class GetGtmDomainGeographicMapArgs:
         pulumi.set(self, "links", value)
 
 
-if not MYPY:
-    class GetGtmDomainGeographicMapAssignmentArgsDict(TypedDict):
-        countries: Sequence[_builtins.str]
-        """
-        Specifies an array of two-letter ISO 3166 `country` codes.
-        """
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for all other AS zones.
-        """
-elif False:
-    GetGtmDomainGeographicMapAssignmentArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainGeographicMapAssignmentArgsDict(TypedDict):
+    countries: Sequence[_builtins.str]
+    """
+    Specifies an array of two-letter ISO 3166 `country` codes.
+    """
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for all other AS zones.
+    """
 
 @pulumi.input_type
 class GetGtmDomainGeographicMapAssignmentArgs:
@@ -23059,18 +22412,15 @@ class GetGtmDomainGeographicMapAssignmentArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmDomainGeographicMapDefaultDatacenterArgsDict(TypedDict):
-        datacenter_id: _builtins.int
-        """
-        An identifier for all other geographic zones' CNAME.
-        """
-        nickname: _builtins.str
-        """
-        A descriptive label for all other geographic zones.
-        """
-elif False:
-    GetGtmDomainGeographicMapDefaultDatacenterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainGeographicMapDefaultDatacenterArgsDict(TypedDict):
+    datacenter_id: _builtins.int
+    """
+    An identifier for all other geographic zones' CNAME.
+    """
+    nickname: _builtins.str
+    """
+    A descriptive label for all other geographic zones.
+    """
 
 @pulumi.input_type
 class GetGtmDomainGeographicMapDefaultDatacenterArgs:
@@ -23109,18 +22459,15 @@ class GetGtmDomainGeographicMapDefaultDatacenterArgs:
         pulumi.set(self, "nickname", value)
 
 
-if not MYPY:
-    class GetGtmDomainGeographicMapLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmDomainGeographicMapLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainGeographicMapLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmDomainGeographicMapLinkArgs:
@@ -23159,18 +22506,15 @@ class GetGtmDomainGeographicMapLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmDomainLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmDomainLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmDomainLinkArgs:
@@ -23209,146 +22553,143 @@ class GetGtmDomainLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmDomainPropertyArgsDict(TypedDict):
-        backup_cname: _builtins.str
-        """
-        Specifies a backup CNAME.
-        """
-        backup_ip: _builtins.str
-        """
-        Specifies a backup IP.
-        """
-        balance_by_download_score: _builtins.bool
-        """
-        Indicates whether download score based load balancing is enabled.
-        """
-        cname: _builtins.str
-        """
-        Indicates the fully qualified name aliased to a particular property.
-        """
-        comments: _builtins.str
-        """
-        Descriptive comments for the property.
-        """
-        dynamic_ttl: _builtins.int
-        """
-        Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing.
-        """
-        failback_delay: _builtins.int
-        """
-        Specifies the failback delay in seconds.
-        """
-        failover_delay: _builtins.int
-        """
-        Specifies the failover delay in seconds.
-        """
-        ghost_demand_reporting: _builtins.bool
-        """
-        Whether an alternate way to collect load feedback from a GTM Performance domain is enabled.
-        """
-        handout_limit: _builtins.int
-        """
-        Indicates the limit for the number of live IPs handed out to a DNS request.
-        """
-        handout_mode: _builtins.str
-        """
-        Specifies how IPs are returned when more than one IP is alive and available.
-        """
-        health_max: _builtins.float
-        """
-        Defines the absolute limit beyond which IPs are declared unhealthy.
-        """
-        health_multiplier: _builtins.float
-        """
-        Configures a cutoff value that is computed from the median scores.
-        """
-        health_threshold: _builtins.float
-        """
-        Configures a cutoff value that is computed from the median scores.
-        """
-        ipv6: _builtins.bool
-        """
-        Indicates the type of IP address handed out by a property.
-        """
-        last_modified: _builtins.str
-        """
-        An ISO 8601 timestamp that indicates when the property was last changed.
-        """
-        load_imbalance_percentage: _builtins.float
-        """
-        Indicates the percent of load imbalance factor for the domain.
-        """
-        map_name: _builtins.str
-        """
-        A descriptive label for a geographic or a CIDR map that's required if the property is either geographic or cidrmapping.
-        """
-        max_unreachable_penalty: _builtins.int
-        """
-        For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
-        """
-        min_live_fraction: _builtins.float
-        """
-        Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
-        """
-        name: _builtins.str
-        """
-        A descriptive label for the property.
-        """
-        score_aggregation_type: _builtins.str
-        """
-        Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
-        """
-        static_ttl: _builtins.int
-        """
-        Specifies the TTL in seconds for static resource records that don't change based on the requesting name server IP.
-        """
-        stickness_bonus_constant: _builtins.int
-        """
-        Specifies a percentage used to configure data center affinity.
-        """
-        stickness_bonus_percentage: _builtins.int
-        """
-        Specifies a percentage used to configure data center affinity.
-        """
-        type: _builtins.str
-        """
-        Specifies the load balancing behvior for the property.
-        """
-        unreachable_threshold: _builtins.float
-        """
-        For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
-        """
-        use_computed_targets: _builtins.bool
-        """
-        For load-feedback domains only, this specifies that you want GTM to automatically compute target load.
-        """
-        weighted_hash_bits_for_ipv4: _builtins.int
-        """
-        For weighted hashed properties, how many leading bits of the client nameserver IP address to include when computing a hash for picking a datacenter for a client nameserver using IPv4; the default value is 32 (the entire address).
-        """
-        weighted_hash_bits_for_ipv6: _builtins.int
-        """
-        For weighted hashed properties, how many leading bits of the client nameserver IP address to include when computing a hash for picking a datacenter for a client nameserver using IPv6; the default value is 128 (the entire address).
-        """
-        links: NotRequired[Sequence['GetGtmDomainPropertyLinkArgsDict']]
-        """
-        Provides a URL path that allows direct navigation to the property.
-        """
-        liveness_tests: NotRequired[Sequence['GetGtmDomainPropertyLivenessTestArgsDict']]
-        """
-        Contains information about liveness tests.
-        """
-        static_rr_sets: NotRequired[Sequence['GetGtmDomainPropertyStaticRrSetArgsDict']]
-        """
-        Contains static recordsets.
-        """
-        traffic_targets: NotRequired[Sequence['GetGtmDomainPropertyTrafficTargetArgsDict']]
-        """
-        Traffic targets for the property.
-        """
-elif False:
-    GetGtmDomainPropertyArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainPropertyArgsDict(TypedDict):
+    backup_cname: _builtins.str
+    """
+    Specifies a backup CNAME.
+    """
+    backup_ip: _builtins.str
+    """
+    Specifies a backup IP.
+    """
+    balance_by_download_score: _builtins.bool
+    """
+    Indicates whether download score based load balancing is enabled.
+    """
+    cname: _builtins.str
+    """
+    Indicates the fully qualified name aliased to a particular property.
+    """
+    comments: _builtins.str
+    """
+    Descriptive comments for the property.
+    """
+    dynamic_ttl: _builtins.int
+    """
+    Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing.
+    """
+    failback_delay: _builtins.int
+    """
+    Specifies the failback delay in seconds.
+    """
+    failover_delay: _builtins.int
+    """
+    Specifies the failover delay in seconds.
+    """
+    ghost_demand_reporting: _builtins.bool
+    """
+    Whether an alternate way to collect load feedback from a GTM Performance domain is enabled.
+    """
+    handout_limit: _builtins.int
+    """
+    Indicates the limit for the number of live IPs handed out to a DNS request.
+    """
+    handout_mode: _builtins.str
+    """
+    Specifies how IPs are returned when more than one IP is alive and available.
+    """
+    health_max: _builtins.float
+    """
+    Defines the absolute limit beyond which IPs are declared unhealthy.
+    """
+    health_multiplier: _builtins.float
+    """
+    Configures a cutoff value that is computed from the median scores.
+    """
+    health_threshold: _builtins.float
+    """
+    Configures a cutoff value that is computed from the median scores.
+    """
+    ipv6: _builtins.bool
+    """
+    Indicates the type of IP address handed out by a property.
+    """
+    last_modified: _builtins.str
+    """
+    An ISO 8601 timestamp that indicates when the property was last changed.
+    """
+    load_imbalance_percentage: _builtins.float
+    """
+    Indicates the percent of load imbalance factor for the domain.
+    """
+    map_name: _builtins.str
+    """
+    A descriptive label for a geographic or a CIDR map that's required if the property is either geographic or cidrmapping.
+    """
+    max_unreachable_penalty: _builtins.int
+    """
+    For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+    """
+    min_live_fraction: _builtins.float
+    """
+    Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+    """
+    name: _builtins.str
+    """
+    A descriptive label for the property.
+    """
+    score_aggregation_type: _builtins.str
+    """
+    Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+    """
+    static_ttl: _builtins.int
+    """
+    Specifies the TTL in seconds for static resource records that don't change based on the requesting name server IP.
+    """
+    stickness_bonus_constant: _builtins.int
+    """
+    Specifies a percentage used to configure data center affinity.
+    """
+    stickness_bonus_percentage: _builtins.int
+    """
+    Specifies a percentage used to configure data center affinity.
+    """
+    type: _builtins.str
+    """
+    Specifies the load balancing behvior for the property.
+    """
+    unreachable_threshold: _builtins.float
+    """
+    For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+    """
+    use_computed_targets: _builtins.bool
+    """
+    For load-feedback domains only, this specifies that you want GTM to automatically compute target load.
+    """
+    weighted_hash_bits_for_ipv4: _builtins.int
+    """
+    For weighted hashed properties, how many leading bits of the client nameserver IP address to include when computing a hash for picking a datacenter for a client nameserver using IPv4; the default value is 32 (the entire address).
+    """
+    weighted_hash_bits_for_ipv6: _builtins.int
+    """
+    For weighted hashed properties, how many leading bits of the client nameserver IP address to include when computing a hash for picking a datacenter for a client nameserver using IPv6; the default value is 128 (the entire address).
+    """
+    links: NotRequired[Sequence['GetGtmDomainPropertyLinkArgsDict']]
+    """
+    Provides a URL path that allows direct navigation to the property.
+    """
+    liveness_tests: NotRequired[Sequence['GetGtmDomainPropertyLivenessTestArgsDict']]
+    """
+    Contains information about liveness tests.
+    """
+    static_rr_sets: NotRequired[Sequence['GetGtmDomainPropertyStaticRrSetArgsDict']]
+    """
+    Contains static recordsets.
+    """
+    traffic_targets: NotRequired[Sequence['GetGtmDomainPropertyTrafficTargetArgsDict']]
+    """
+    Traffic targets for the property.
+    """
 
 @pulumi.input_type
 class GetGtmDomainPropertyArgs:
@@ -23871,18 +23212,15 @@ class GetGtmDomainPropertyArgs:
         pulumi.set(self, "traffic_targets", value)
 
 
-if not MYPY:
-    class GetGtmDomainPropertyLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmDomainPropertyLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainPropertyLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmDomainPropertyLinkArgs:
@@ -23921,122 +23259,119 @@ class GetGtmDomainPropertyLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmDomainPropertyLivenessTestArgsDict(TypedDict):
-        alternate_ca_certificates: Sequence[_builtins.str]
-        """
-        List of alternate trust anchors (CA certificates)
-        """
-        answers_required: _builtins.bool
-        """
-        If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
-        """
-        disable_nonstandard_port_warning: _builtins.bool
-        """
-        Disables warnings when non-standard ports are used.
-        """
-        disabled: _builtins.bool
-        """
-        Disables the liveness test.
-        """
-        error_penalty: _builtins.float
-        """
-        Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
-        """
-        http_error3xx: _builtins.bool
-        """
-        Treats a 3xx HTTP response as a failure if the testObjectProtocol is http, https or ftp.
-        """
-        http_error4xx: _builtins.bool
-        """
-        Treats a 4xx HTTP response as a failure if the testObjectProtocol is http, https or ftp.
-        """
-        http_error5xx: _builtins.bool
-        """
-        Treats a 5xx HTTP response as a failure if the testObjectProtocol is http, https or ftp.
-        """
-        http_method: _builtins.str
-        """
-        Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
-        """
-        http_request_body: _builtins.str
-        """
-        Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
-        """
-        name: _builtins.str
-        """
-        A descriptive name for the liveness test.
-        """
-        peer_certificate_verification: _builtins.bool
-        """
-        Validates the origin certificate. Applies only to tests with testObjectProtocol of https.
-        """
-        pre2023_security_posture: _builtins.bool
-        """
-        Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
-        """
-        recursion_requested: _builtins.bool
-        """
-        Indicates that if testObjectProtocol is DNS, DOH or DOT, the DNS query is recursive.
-        """
-        request_string: _builtins.str
-        """
-        Specifies a request string.
-        """
-        resource_type: _builtins.str
-        """
-        Specifies the query type, if testObjectProtocol is DNS.
-        """
-        response_string: _builtins.str
-        """
-        Specifies a response string.
-        """
-        ssl_client_certificate: _builtins.str
-        """
-        Indicates a base64-encoded certificate.
-        """
-        ssl_client_private_key: _builtins.str
-        """
-        Indicates a base64-encoded private key.
-        """
-        test_interval: _builtins.int
-        """
-        Indicates the interval at which the liveness test is run, in seconds.
-        """
-        test_object: _builtins.str
-        """
-        Specifies the static text that acts as a stand-in for the data that you're sending on the network.
-        """
-        test_object_password: _builtins.str
-        """
-        Specifies the test object's password.
-        """
-        test_object_port: _builtins.int
-        """
-        Specifies the port number for the testObject.
-        """
-        test_object_protocol: _builtins.str
-        """
-        Specifies the test protocol.
-        """
-        test_object_username: _builtins.str
-        """
-        A descriptive name for the testObject.
-        """
-        test_timeout: _builtins.float
-        """
-        Specifies the duration of the liveness test before it fails.
-        """
-        timeout_penalty: _builtins.float
-        """
-        Specifies the timeout penalty score.
-        """
-        http_headers: NotRequired[Sequence['GetGtmDomainPropertyLivenessTestHttpHeaderArgsDict']]
-        """
-        List of HTTP headers for the liveness test.
-        """
-elif False:
-    GetGtmDomainPropertyLivenessTestArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainPropertyLivenessTestArgsDict(TypedDict):
+    alternate_ca_certificates: Sequence[_builtins.str]
+    """
+    List of alternate trust anchors (CA certificates)
+    """
+    answers_required: _builtins.bool
+    """
+    If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
+    """
+    disable_nonstandard_port_warning: _builtins.bool
+    """
+    Disables warnings when non-standard ports are used.
+    """
+    disabled: _builtins.bool
+    """
+    Disables the liveness test.
+    """
+    error_penalty: _builtins.float
+    """
+    Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+    """
+    http_error3xx: _builtins.bool
+    """
+    Treats a 3xx HTTP response as a failure if the testObjectProtocol is http, https or ftp.
+    """
+    http_error4xx: _builtins.bool
+    """
+    Treats a 4xx HTTP response as a failure if the testObjectProtocol is http, https or ftp.
+    """
+    http_error5xx: _builtins.bool
+    """
+    Treats a 5xx HTTP response as a failure if the testObjectProtocol is http, https or ftp.
+    """
+    http_method: _builtins.str
+    """
+    Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+    """
+    http_request_body: _builtins.str
+    """
+    Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+    """
+    name: _builtins.str
+    """
+    A descriptive name for the liveness test.
+    """
+    peer_certificate_verification: _builtins.bool
+    """
+    Validates the origin certificate. Applies only to tests with testObjectProtocol of https.
+    """
+    pre2023_security_posture: _builtins.bool
+    """
+    Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+    """
+    recursion_requested: _builtins.bool
+    """
+    Indicates that if testObjectProtocol is DNS, DOH or DOT, the DNS query is recursive.
+    """
+    request_string: _builtins.str
+    """
+    Specifies a request string.
+    """
+    resource_type: _builtins.str
+    """
+    Specifies the query type, if testObjectProtocol is DNS.
+    """
+    response_string: _builtins.str
+    """
+    Specifies a response string.
+    """
+    ssl_client_certificate: _builtins.str
+    """
+    Indicates a base64-encoded certificate.
+    """
+    ssl_client_private_key: _builtins.str
+    """
+    Indicates a base64-encoded private key.
+    """
+    test_interval: _builtins.int
+    """
+    Indicates the interval at which the liveness test is run, in seconds.
+    """
+    test_object: _builtins.str
+    """
+    Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+    """
+    test_object_password: _builtins.str
+    """
+    Specifies the test object's password.
+    """
+    test_object_port: _builtins.int
+    """
+    Specifies the port number for the testObject.
+    """
+    test_object_protocol: _builtins.str
+    """
+    Specifies the test protocol.
+    """
+    test_object_username: _builtins.str
+    """
+    A descriptive name for the testObject.
+    """
+    test_timeout: _builtins.float
+    """
+    Specifies the duration of the liveness test before it fails.
+    """
+    timeout_penalty: _builtins.float
+    """
+    Specifies the timeout penalty score.
+    """
+    http_headers: NotRequired[Sequence['GetGtmDomainPropertyLivenessTestHttpHeaderArgsDict']]
+    """
+    List of HTTP headers for the liveness test.
+    """
 
 @pulumi.input_type
 class GetGtmDomainPropertyLivenessTestArgs:
@@ -24466,18 +23801,15 @@ class GetGtmDomainPropertyLivenessTestArgs:
         pulumi.set(self, "http_headers", value)
 
 
-if not MYPY:
-    class GetGtmDomainPropertyLivenessTestHttpHeaderArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the HTTP header.
-        """
-        value: _builtins.str
-        """
-        Value of the HTTP header.
-        """
-elif False:
-    GetGtmDomainPropertyLivenessTestHttpHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainPropertyLivenessTestHttpHeaderArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the HTTP header.
+    """
+    value: _builtins.str
+    """
+    Value of the HTTP header.
+    """
 
 @pulumi.input_type
 class GetGtmDomainPropertyLivenessTestHttpHeaderArgs:
@@ -24516,22 +23848,19 @@ class GetGtmDomainPropertyLivenessTestHttpHeaderArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetGtmDomainPropertyStaticRrSetArgsDict(TypedDict):
-        rdatas: Sequence[_builtins.str]
-        """
-        An array of data strings, representing multiple records within a set.
-        """
-        ttl: _builtins.int
-        """
-        The number of seconds that this record should live in a resolver's cache before being refetched.
-        """
-        type: _builtins.str
-        """
-        The record type.
-        """
-elif False:
-    GetGtmDomainPropertyStaticRrSetArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainPropertyStaticRrSetArgsDict(TypedDict):
+    rdatas: Sequence[_builtins.str]
+    """
+    An array of data strings, representing multiple records within a set.
+    """
+    ttl: _builtins.int
+    """
+    The number of seconds that this record should live in a resolver's cache before being refetched.
+    """
+    type: _builtins.str
+    """
+    The record type.
+    """
 
 @pulumi.input_type
 class GetGtmDomainPropertyStaticRrSetArgs:
@@ -24585,38 +23914,35 @@ class GetGtmDomainPropertyStaticRrSetArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class GetGtmDomainPropertyTrafficTargetArgsDict(TypedDict):
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        enabled: _builtins.bool
-        """
-        Indicates whether the traffic target is used.
-        """
-        handout_cname: _builtins.str
-        """
-        Specifies an optional data center for the property.
-        """
-        name: _builtins.str
-        """
-        An alternative label for the traffic target.
-        """
-        precedence: _builtins.int
-        """
-        Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
-        """
-        servers: Sequence[_builtins.str]
-        """
-        Identifies the IP address or the hostnames of the servers.
-        """
-        weight: _builtins.float
-        """
-        Specifies the traffic target weight for the target.
-        """
-elif False:
-    GetGtmDomainPropertyTrafficTargetArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainPropertyTrafficTargetArgsDict(TypedDict):
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    enabled: _builtins.bool
+    """
+    Indicates whether the traffic target is used.
+    """
+    handout_cname: _builtins.str
+    """
+    Specifies an optional data center for the property.
+    """
+    name: _builtins.str
+    """
+    An alternative label for the traffic target.
+    """
+    precedence: _builtins.int
+    """
+    Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+    """
+    servers: Sequence[_builtins.str]
+    """
+    Identifies the IP address or the hostnames of the servers.
+    """
+    weight: _builtins.float
+    """
+    Specifies the traffic target weight for the target.
+    """
 
 @pulumi.input_type
 class GetGtmDomainPropertyTrafficTargetArgs:
@@ -24730,66 +24056,63 @@ class GetGtmDomainPropertyTrafficTargetArgs:
         pulumi.set(self, "weight", value)
 
 
-if not MYPY:
-    class GetGtmDomainResourceArgsDict(TypedDict):
-        aggregation_type: _builtins.str
-        """
-        Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
-        """
-        constrained_property: _builtins.str
-        """
-        Specifies the name of the property that this resource constraints.
-        """
-        decay_rate: _builtins.float
-        """
-        For internal use only.
-        """
-        description: _builtins.str
-        """
-        A descriptive note to help you track what the resource constraints.
-        """
-        host_header: _builtins.str
-        """
-        Specifies the host header used when fetching the load object.
-        """
-        leader_string: _builtins.str
-        """
-        Specifies the text that comes before the loadObject.
-        """
-        least_squares_decay: _builtins.float
-        """
-        For internal use only.
-        """
-        load_imbalance_percentage: _builtins.float
-        """
-        Indicates the percent of load imbalance factor for the domain.
-        """
-        max_u_multiplicative_increment: _builtins.float
-        """
-        For internal use only.
-        """
-        name: _builtins.str
-        """
-        A descriptive label for the resource.
-        """
-        type: _builtins.str
-        """
-        Indicates the kind of loadObject format used to determine the load on the resource.
-        """
-        upper_bound: _builtins.int
-        """
-        An optional sanity check that specifies the maximum allowed value for any component of the load object.
-        """
-        links: NotRequired[Sequence['GetGtmDomainResourceLinkArgsDict']]
-        """
-        Specifies the URL path that allows direct navigation to the resource.
-        """
-        resource_instances: NotRequired[Sequence['GetGtmDomainResourceResourceInstanceArgsDict']]
-        """
-        List of resource instances.
-        """
-elif False:
-    GetGtmDomainResourceArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainResourceArgsDict(TypedDict):
+    aggregation_type: _builtins.str
+    """
+    Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+    """
+    constrained_property: _builtins.str
+    """
+    Specifies the name of the property that this resource constraints.
+    """
+    decay_rate: _builtins.float
+    """
+    For internal use only.
+    """
+    description: _builtins.str
+    """
+    A descriptive note to help you track what the resource constraints.
+    """
+    host_header: _builtins.str
+    """
+    Specifies the host header used when fetching the load object.
+    """
+    leader_string: _builtins.str
+    """
+    Specifies the text that comes before the loadObject.
+    """
+    least_squares_decay: _builtins.float
+    """
+    For internal use only.
+    """
+    load_imbalance_percentage: _builtins.float
+    """
+    Indicates the percent of load imbalance factor for the domain.
+    """
+    max_u_multiplicative_increment: _builtins.float
+    """
+    For internal use only.
+    """
+    name: _builtins.str
+    """
+    A descriptive label for the resource.
+    """
+    type: _builtins.str
+    """
+    Indicates the kind of loadObject format used to determine the load on the resource.
+    """
+    upper_bound: _builtins.int
+    """
+    An optional sanity check that specifies the maximum allowed value for any component of the load object.
+    """
+    links: NotRequired[Sequence['GetGtmDomainResourceLinkArgsDict']]
+    """
+    Specifies the URL path that allows direct navigation to the resource.
+    """
+    resource_instances: NotRequired[Sequence['GetGtmDomainResourceResourceInstanceArgsDict']]
+    """
+    List of resource instances.
+    """
 
 @pulumi.input_type
 class GetGtmDomainResourceArgs:
@@ -25010,18 +24333,15 @@ class GetGtmDomainResourceArgs:
         pulumi.set(self, "resource_instances", value)
 
 
-if not MYPY:
-    class GetGtmDomainResourceLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmDomainResourceLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainResourceLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmDomainResourceLinkArgs:
@@ -25060,30 +24380,27 @@ class GetGtmDomainResourceLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmDomainResourceResourceInstanceArgsDict(TypedDict):
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        load_object: _builtins.str
-        """
-        Identifies the load object file used to report real-time information about the current load, maximum allowable load and target load on each resource.
-        """
-        load_object_port: _builtins.int
-        """
-        Specifies the TCP port of the loadObject.
-        """
-        load_servers: Sequence[_builtins.str]
-        """
-        Specifies the list of servers to requests the load object from.
-        """
-        use_default_load_object: _builtins.bool
-        """
-        Whether to use default loadObject.
-        """
-elif False:
-    GetGtmDomainResourceResourceInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainResourceResourceInstanceArgsDict(TypedDict):
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    load_object: _builtins.str
+    """
+    Identifies the load object file used to report real-time information about the current load, maximum allowable load and target load on each resource.
+    """
+    load_object_port: _builtins.int
+    """
+    Specifies the TCP port of the loadObject.
+    """
+    load_servers: Sequence[_builtins.str]
+    """
+    Specifies the list of servers to requests the load object from.
+    """
+    use_default_load_object: _builtins.bool
+    """
+    Whether to use default loadObject.
+    """
 
 @pulumi.input_type
 class GetGtmDomainResourceResourceInstanceArgs:
@@ -25167,34 +24484,31 @@ class GetGtmDomainResourceResourceInstanceArgs:
         pulumi.set(self, "use_default_load_object", value)
 
 
-if not MYPY:
-    class GetGtmDomainStatusArgsDict(TypedDict):
-        change_id: _builtins.str
-        """
-        A unique identifier generated when a change occurs to the domain.
-        """
-        message: _builtins.str
-        """
-        A notification generated when a change occurs to the domain.
-        """
-        passing_validation: _builtins.bool
-        """
-        Indicates if the domain validates.
-        """
-        propagation_status: _builtins.str
-        """
-        Tracks the status of the domain's propagation state.
-        """
-        propagation_status_date: _builtins.str
-        """
-        An ISO 8601 timestamp indicating when a change occurs to the domain.
-        """
-        links: NotRequired[Sequence['GetGtmDomainStatusLinkArgsDict']]
-        """
-        Specifies the URL path that allows direct navigation to the domain.
-        """
-elif False:
-    GetGtmDomainStatusArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainStatusArgsDict(TypedDict):
+    change_id: _builtins.str
+    """
+    A unique identifier generated when a change occurs to the domain.
+    """
+    message: _builtins.str
+    """
+    A notification generated when a change occurs to the domain.
+    """
+    passing_validation: _builtins.bool
+    """
+    Indicates if the domain validates.
+    """
+    propagation_status: _builtins.str
+    """
+    Tracks the status of the domain's propagation state.
+    """
+    propagation_status_date: _builtins.str
+    """
+    An ISO 8601 timestamp indicating when a change occurs to the domain.
+    """
+    links: NotRequired[Sequence['GetGtmDomainStatusLinkArgsDict']]
+    """
+    Specifies the URL path that allows direct navigation to the domain.
+    """
 
 @pulumi.input_type
 class GetGtmDomainStatusArgs:
@@ -25294,18 +24608,15 @@ class GetGtmDomainStatusArgs:
         pulumi.set(self, "links", value)
 
 
-if not MYPY:
-    class GetGtmDomainStatusLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmDomainStatusLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainStatusLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmDomainStatusLinkArgs:
@@ -25344,58 +24655,55 @@ class GetGtmDomainStatusLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmDomainsDomainArgsDict(TypedDict):
-        acg_id: _builtins.str
-        """
-        The contract's identifier, with which the domain is associated.
-        """
-        activation_state: _builtins.str
-        """
-        'PENDING' when a change has been made but not yet propagated; 'COMPLETE' when the last configuration change has propagated successfully; 'DENIED' if the domain configuration failed validation; 'DELETED' if the domain has been deleted.
-        """
-        change_id: _builtins.str
-        """
-        UUID that identifies a version of the domain configuration.
-        """
-        delete_request_id: _builtins.str
-        """
-        UUID for delete request during domain deletion. Null if the domain is not being deleted.
-        """
-        last_modified: _builtins.str
-        """
-        An ISO 8601 timestamp that indicates the time of the last domain change.
-        """
-        last_modified_by: _builtins.str
-        """
-        The email address of the administrator who made the last change to the domain.
-        """
-        modification_comments: _builtins.str
-        """
-        A descriptive note about changes to the domain.
-        """
-        name: _builtins.str
-        """
-        A unique domain name.
-        """
-        sign_and_serve: _builtins.bool
-        """
-        If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
-        """
-        sign_and_serve_algorithm: _builtins.str
-        """
-        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
-        """
-        status: _builtins.str
-        """
-        The current status of the domain.
-        """
-        links: NotRequired[Sequence['GetGtmDomainsDomainLinkArgsDict']]
-        """
-        Provides a URL path that allows direct navigation to the domain.
-        """
-elif False:
-    GetGtmDomainsDomainArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainsDomainArgsDict(TypedDict):
+    acg_id: _builtins.str
+    """
+    The contract's identifier, with which the domain is associated.
+    """
+    activation_state: _builtins.str
+    """
+    'PENDING' when a change has been made but not yet propagated; 'COMPLETE' when the last configuration change has propagated successfully; 'DENIED' if the domain configuration failed validation; 'DELETED' if the domain has been deleted.
+    """
+    change_id: _builtins.str
+    """
+    UUID that identifies a version of the domain configuration.
+    """
+    delete_request_id: _builtins.str
+    """
+    UUID for delete request during domain deletion. Null if the domain is not being deleted.
+    """
+    last_modified: _builtins.str
+    """
+    An ISO 8601 timestamp that indicates the time of the last domain change.
+    """
+    last_modified_by: _builtins.str
+    """
+    The email address of the administrator who made the last change to the domain.
+    """
+    modification_comments: _builtins.str
+    """
+    A descriptive note about changes to the domain.
+    """
+    name: _builtins.str
+    """
+    A unique domain name.
+    """
+    sign_and_serve: _builtins.bool
+    """
+    If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+    """
+    sign_and_serve_algorithm: _builtins.str
+    """
+    The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+    """
+    status: _builtins.str
+    """
+    The current status of the domain.
+    """
+    links: NotRequired[Sequence['GetGtmDomainsDomainLinkArgsDict']]
+    """
+    Provides a URL path that allows direct navigation to the domain.
+    """
 
 @pulumi.input_type
 class GetGtmDomainsDomainArgs:
@@ -25585,18 +24893,15 @@ class GetGtmDomainsDomainArgs:
         pulumi.set(self, "links", value)
 
 
-if not MYPY:
-    class GetGtmDomainsDomainLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmDomainsDomainLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmDomainsDomainLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmDomainsDomainLinkArgs:
@@ -25635,18 +24940,15 @@ class GetGtmDomainsDomainLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmResourceLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmResourceLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmResourceLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmResourceLinkArgs:
@@ -25685,30 +24987,27 @@ class GetGtmResourceLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmResourceResourceInstanceArgsDict(TypedDict):
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        load_object: _builtins.str
-        """
-        Identifies the load object file used to report real-time information about the current load, maximum allowable load and target load on each resource.
-        """
-        load_object_port: _builtins.int
-        """
-        Specifies the TCP port of the loadObject.
-        """
-        load_servers: Sequence[_builtins.str]
-        """
-        Specifies the list of servers to requests the load object from.
-        """
-        use_default_load_object: _builtins.bool
-        """
-        Whether to use default loadObject.
-        """
-elif False:
-    GetGtmResourceResourceInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmResourceResourceInstanceArgsDict(TypedDict):
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    load_object: _builtins.str
+    """
+    Identifies the load object file used to report real-time information about the current load, maximum allowable load and target load on each resource.
+    """
+    load_object_port: _builtins.int
+    """
+    Specifies the TCP port of the loadObject.
+    """
+    load_servers: Sequence[_builtins.str]
+    """
+    Specifies the list of servers to requests the load object from.
+    """
+    use_default_load_object: _builtins.bool
+    """
+    Whether to use default loadObject.
+    """
 
 @pulumi.input_type
 class GetGtmResourceResourceInstanceArgs:
@@ -25792,66 +25091,63 @@ class GetGtmResourceResourceInstanceArgs:
         pulumi.set(self, "use_default_load_object", value)
 
 
-if not MYPY:
-    class GetGtmResourcesResourceArgsDict(TypedDict):
-        aggregation_type: _builtins.str
-        """
-        Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
-        """
-        constrained_property: _builtins.str
-        """
-        Specifies the name of the property that this resource constraints.
-        """
-        decay_rate: _builtins.float
-        """
-        For internal use only.
-        """
-        description: _builtins.str
-        """
-        A descriptive note which allows to track what is constrained by this resource.
-        """
-        host_header: _builtins.str
-        """
-        Specifies the host header used when fetching the load object.
-        """
-        leader_string: _builtins.str
-        """
-        Specifies the text that comes before the load object.
-        """
-        least_squares_decay: _builtins.float
-        """
-        For internal use only.
-        """
-        load_imbalance_percentage: _builtins.float
-        """
-        Indicates the percentage of load imbalance for the domain.
-        """
-        max_u_multiplicative_increment: _builtins.float
-        """
-        For internal use only.
-        """
-        name: _builtins.str
-        """
-        A descriptive label for the resource.
-        """
-        type: _builtins.str
-        """
-        Indicates the type of load object used to determine the load on the resource.
-        """
-        upper_bound: _builtins.int
-        """
-        An optional sanity check that specifies the maximum allowed value for any component of the load object.
-        """
-        links: NotRequired[Sequence['GetGtmResourcesResourceLinkArgsDict']]
-        """
-        Specifies the URL path that allows direct navigation to the resource.
-        """
-        resource_instances: NotRequired[Sequence['GetGtmResourcesResourceResourceInstanceArgsDict']]
-        """
-        Instances of the resource.
-        """
-elif False:
-    GetGtmResourcesResourceArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmResourcesResourceArgsDict(TypedDict):
+    aggregation_type: _builtins.str
+    """
+    Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+    """
+    constrained_property: _builtins.str
+    """
+    Specifies the name of the property that this resource constraints.
+    """
+    decay_rate: _builtins.float
+    """
+    For internal use only.
+    """
+    description: _builtins.str
+    """
+    A descriptive note which allows to track what is constrained by this resource.
+    """
+    host_header: _builtins.str
+    """
+    Specifies the host header used when fetching the load object.
+    """
+    leader_string: _builtins.str
+    """
+    Specifies the text that comes before the load object.
+    """
+    least_squares_decay: _builtins.float
+    """
+    For internal use only.
+    """
+    load_imbalance_percentage: _builtins.float
+    """
+    Indicates the percentage of load imbalance for the domain.
+    """
+    max_u_multiplicative_increment: _builtins.float
+    """
+    For internal use only.
+    """
+    name: _builtins.str
+    """
+    A descriptive label for the resource.
+    """
+    type: _builtins.str
+    """
+    Indicates the type of load object used to determine the load on the resource.
+    """
+    upper_bound: _builtins.int
+    """
+    An optional sanity check that specifies the maximum allowed value for any component of the load object.
+    """
+    links: NotRequired[Sequence['GetGtmResourcesResourceLinkArgsDict']]
+    """
+    Specifies the URL path that allows direct navigation to the resource.
+    """
+    resource_instances: NotRequired[Sequence['GetGtmResourcesResourceResourceInstanceArgsDict']]
+    """
+    Instances of the resource.
+    """
 
 @pulumi.input_type
 class GetGtmResourcesResourceArgs:
@@ -26072,18 +25368,15 @@ class GetGtmResourcesResourceArgs:
         pulumi.set(self, "resource_instances", value)
 
 
-if not MYPY:
-    class GetGtmResourcesResourceLinkArgsDict(TypedDict):
-        href: _builtins.str
-        """
-        A hypermedia link to the complete URL that uniquely defines a resource.
-        """
-        rel: _builtins.str
-        """
-        Indicates the link relationship of the object.
-        """
-elif False:
-    GetGtmResourcesResourceLinkArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmResourcesResourceLinkArgsDict(TypedDict):
+    href: _builtins.str
+    """
+    A hypermedia link to the complete URL that uniquely defines a resource.
+    """
+    rel: _builtins.str
+    """
+    Indicates the link relationship of the object.
+    """
 
 @pulumi.input_type
 class GetGtmResourcesResourceLinkArgs:
@@ -26122,30 +25415,27 @@ class GetGtmResourcesResourceLinkArgs:
         pulumi.set(self, "rel", value)
 
 
-if not MYPY:
-    class GetGtmResourcesResourceResourceInstanceArgsDict(TypedDict):
-        datacenter_id: _builtins.int
-        """
-        A unique identifier for an existing data center in the domain.
-        """
-        load_object: _builtins.str
-        """
-        Identifies the load object file used to report real-time information about the current load, maximum allowable load and target load on each resource.
-        """
-        load_object_port: _builtins.int
-        """
-        Specifies the TCP port of the loadObject.
-        """
-        load_servers: Sequence[_builtins.str]
-        """
-        Specifies the list of servers to requests the load object from.
-        """
-        use_default_load_object: _builtins.bool
-        """
-        Whether to use default loadObject.
-        """
-elif False:
-    GetGtmResourcesResourceResourceInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class GetGtmResourcesResourceResourceInstanceArgsDict(TypedDict):
+    datacenter_id: _builtins.int
+    """
+    A unique identifier for an existing data center in the domain.
+    """
+    load_object: _builtins.str
+    """
+    Identifies the load object file used to report real-time information about the current load, maximum allowable load and target load on each resource.
+    """
+    load_object_port: _builtins.int
+    """
+    Specifies the TCP port of the loadObject.
+    """
+    load_servers: Sequence[_builtins.str]
+    """
+    Specifies the list of servers to requests the load object from.
+    """
+    use_default_load_object: _builtins.bool
+    """
+    Whether to use default loadObject.
+    """
 
 @pulumi.input_type
 class GetGtmResourcesResourceResourceInstanceArgs:
@@ -26229,42 +25519,39 @@ class GetGtmResourcesResourceResourceInstanceArgs:
         pulumi.set(self, "use_default_load_object", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyArgsDict(TypedDict):
-        breakpoints: NotRequired['GetImagingPolicyImagePolicyBreakpointsArgsDict']
-        """
-        The breakpoint widths (in pixels) to use to create derivative images/videos.
-        """
-        hosts: NotRequired[Sequence[_builtins.str]]
-        """
-        Hosts that are allowed for image/video URLs within transformations or variables.
-        """
-        output: NotRequired['GetImagingPolicyImagePolicyOutputArgsDict']
-        """
-        Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
-        """
-        post_breakpoint_transformations: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']]
-        """
-        Post-processing Transformations are applied to the image after image and quality settings have been applied.
-        """
-        rollout_duration: NotRequired[_builtins.str]
-        """
-        The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
-        """
-        serve_stale_duration: NotRequired[_builtins.str]
-        """
-        The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
-        """
-        transformations: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationArgsDict']]
-        """
-        Set of image transformations to apply to the source image. If unspecified, no operations are performed.
-        """
-        variables: NotRequired[Sequence['GetImagingPolicyImagePolicyVariableArgsDict']]
-        """
-        Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don't have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image's request URL.
-        """
-elif False:
-    GetImagingPolicyImagePolicyArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyArgsDict(TypedDict):
+    breakpoints: NotRequired['GetImagingPolicyImagePolicyBreakpointsArgsDict']
+    """
+    The breakpoint widths (in pixels) to use to create derivative images/videos.
+    """
+    hosts: NotRequired[Sequence[_builtins.str]]
+    """
+    Hosts that are allowed for image/video URLs within transformations or variables.
+    """
+    output: NotRequired['GetImagingPolicyImagePolicyOutputArgsDict']
+    """
+    Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
+    """
+    post_breakpoint_transformations: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']]
+    """
+    Post-processing Transformations are applied to the image after image and quality settings have been applied.
+    """
+    rollout_duration: NotRequired[_builtins.str]
+    """
+    The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+    """
+    serve_stale_duration: NotRequired[_builtins.str]
+    """
+    The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+    """
+    transformations: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationArgsDict']]
+    """
+    Set of image transformations to apply to the source image. If unspecified, no operations are performed.
+    """
+    variables: NotRequired[Sequence['GetImagingPolicyImagePolicyVariableArgsDict']]
+    """
+    Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don't have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image's request URL.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyArgs:
@@ -26401,11 +25688,8 @@ class GetImagingPolicyImagePolicyArgs:
         pulumi.set(self, "variables", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyBreakpointsArgsDict(TypedDict):
-        widths: NotRequired[Sequence[_builtins.int]]
-elif False:
-    GetImagingPolicyImagePolicyBreakpointsArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyBreakpointsArgsDict(TypedDict):
+    widths: NotRequired[Sequence[_builtins.int]]
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyBreakpointsArgs:
@@ -26424,50 +25708,47 @@ class GetImagingPolicyImagePolicyBreakpointsArgs:
         pulumi.set(self, "widths", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyOutputArgsDict(TypedDict):
-        adaptive_quality: NotRequired[_builtins.str]
-        """
-        Override the quality of image to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of images for users with faster connections.
-        """
-        allow_pristine_on_downsize: NotRequired[_builtins.str]
-        """
-        Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
-        """
-        allowed_formats: NotRequired[Sequence[_builtins.str]]
-        """
-        The graphics file formats allowed for browser specific results.
-        """
-        forced_formats: NotRequired[Sequence[_builtins.str]]
-        """
-        The forced extra formats for the `imFormat` query parameter, which requests a specific browser type. By default, Image and Video Manager detects the browser and returns the appropriate image.
-        """
-        perceptual_quality: NotRequired[_builtins.str]
-        """
-        Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
-        """
-        perceptual_quality_floor: NotRequired[_builtins.str]
-        """
-        Only applies with perceptualQuality set. Sets a minimum image quality to respect when using perceptual quality. Perceptual quality will not reduce the quality below this value even if it determines the compressed image to be acceptably visually similar.
-        """
-        perceptual_quality_var: NotRequired[_builtins.str]
-        """
-        Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
-        """
-        prefer_modern_formats: NotRequired[_builtins.str]
-        """
-        Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
-        """
-        quality: NotRequired[_builtins.str]
-        """
-        Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
-        """
-        quality_var: NotRequired[_builtins.str]
-        """
-        Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
-        """
-elif False:
-    GetImagingPolicyImagePolicyOutputArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyOutputArgsDict(TypedDict):
+    adaptive_quality: NotRequired[_builtins.str]
+    """
+    Override the quality of image to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of images for users with faster connections.
+    """
+    allow_pristine_on_downsize: NotRequired[_builtins.str]
+    """
+    Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
+    """
+    allowed_formats: NotRequired[Sequence[_builtins.str]]
+    """
+    The graphics file formats allowed for browser specific results.
+    """
+    forced_formats: NotRequired[Sequence[_builtins.str]]
+    """
+    The forced extra formats for the `imFormat` query parameter, which requests a specific browser type. By default, Image and Video Manager detects the browser and returns the appropriate image.
+    """
+    perceptual_quality: NotRequired[_builtins.str]
+    """
+    Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
+    """
+    perceptual_quality_floor: NotRequired[_builtins.str]
+    """
+    Only applies with perceptualQuality set. Sets a minimum image quality to respect when using perceptual quality. Perceptual quality will not reduce the quality below this value even if it determines the compressed image to be acceptably visually similar.
+    """
+    perceptual_quality_var: NotRequired[_builtins.str]
+    """
+    Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
+    """
+    prefer_modern_formats: NotRequired[_builtins.str]
+    """
+    Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
+    """
+    quality: NotRequired[_builtins.str]
+    """
+    Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
+    """
+    quality_var: NotRequired[_builtins.str]
+    """
+    Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyOutputArgs:
@@ -26636,73 +25917,70 @@ class GetImagingPolicyImagePolicyOutputArgs:
         pulumi.set(self, "quality_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict(TypedDict):
-        background_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgsDict']]
-        """
-        Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
-        """
-        blurs: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgsDict']]
-        """
-        Applies a Gaussian blur to the image.
-        """
-        chroma_keys: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgsDict']]
-        """
-        Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a 'green screen' technique commonly used to isolate and remove background colors.
-        """
-        composites: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgsDict']]
-        """
-        Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
-        """
-        compounds: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgsDict']]
-        contrasts: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgsDict']]
-        """
-        Adjusts both the contrast and brightness of an image.
-        """
-        goops: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgsDict']]
-        """
-        Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
-        """
-        grayscales: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgsDict']]
-        """
-        Restricts image color to shades of gray only.
-        """
-        hsls: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgsDict']]
-        """
-        Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
-        """
-        hsvs: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgsDict']]
-        """
-        Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
-        """
-        if_dimensions: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgsDict']]
-        if_orientations: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgsDict']]
-        max_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgsDict']]
-        """
-        Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
-        """
-        mirrors: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgsDict']]
-        """
-        Flips an image horizontally, vertically, or both.
-        """
-        mono_hues: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgsDict']]
-        """
-        Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
-        """
-        opacities: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgsDict']]
-        """
-        Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
-        """
-        remove_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgsDict']]
-        """
-        Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
-        """
-        unsharp_masks: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgsDict']]
-        """
-        Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict(TypedDict):
+    background_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgsDict']]
+    """
+    Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+    """
+    blurs: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgsDict']]
+    """
+    Applies a Gaussian blur to the image.
+    """
+    chroma_keys: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgsDict']]
+    """
+    Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a 'green screen' technique commonly used to isolate and remove background colors.
+    """
+    composites: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgsDict']]
+    """
+    Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+    """
+    compounds: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgsDict']]
+    contrasts: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgsDict']]
+    """
+    Adjusts both the contrast and brightness of an image.
+    """
+    goops: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgsDict']]
+    """
+    Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+    """
+    grayscales: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgsDict']]
+    """
+    Restricts image color to shades of gray only.
+    """
+    hsls: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgsDict']]
+    """
+    Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+    """
+    hsvs: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgsDict']]
+    """
+    Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+    """
+    if_dimensions: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgsDict']]
+    if_orientations: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgsDict']]
+    max_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgsDict']]
+    """
+    Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+    """
+    mirrors: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgsDict']]
+    """
+    Flips an image horizontally, vertically, or both.
+    """
+    mono_hues: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgsDict']]
+    """
+    Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+    """
+    opacities: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgsDict']]
+    """
+    Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+    """
+    remove_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgsDict']]
+    """
+    Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+    """
+    unsharp_masks: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgsDict']]
+    """
+    Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs:
@@ -26987,18 +26265,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs:
         pulumi.set(self, "unsharp_masks", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The hexadecimal CSS color value for the background.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The hexadecimal CSS color value for the background.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The hexadecimal CSS color value for the background.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The hexadecimal CSS color value for the background.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgs:
@@ -27039,18 +26314,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgs
         pulumi.set(self, "color_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgsDict(TypedDict):
-        sigma: NotRequired[_builtins.str]
-        """
-        The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
-        """
-        sigma_var: NotRequired[_builtins.str]
-        """
-        The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgsDict(TypedDict):
+    sigma: NotRequired[_builtins.str]
+    """
+    The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
+    """
+    sigma_var: NotRequired[_builtins.str]
+    """
+    The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs:
@@ -27091,66 +26363,63 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs:
         pulumi.set(self, "sigma_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgsDict(TypedDict):
-        hue: NotRequired[_builtins.str]
-        """
-        The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
-        """
-        hue_feather: NotRequired[_builtins.str]
-        """
-        How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
-        """
-        hue_feather_var: NotRequired[_builtins.str]
-        """
-        How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
-        """
-        hue_tolerance: NotRequired[_builtins.str]
-        """
-        How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
-        """
-        hue_tolerance_var: NotRequired[_builtins.str]
-        """
-        How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
-        """
-        hue_var: NotRequired[_builtins.str]
-        """
-        The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
-        """
-        lightness_feather: NotRequired[_builtins.str]
-        """
-        How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
-        """
-        lightness_feather_var: NotRequired[_builtins.str]
-        """
-        How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
-        """
-        lightness_tolerance: NotRequired[_builtins.str]
-        """
-        How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
-        """
-        lightness_tolerance_var: NotRequired[_builtins.str]
-        """
-        How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
-        """
-        saturation_feather: NotRequired[_builtins.str]
-        """
-        How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
-        """
-        saturation_feather_var: NotRequired[_builtins.str]
-        """
-        How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
-        """
-        saturation_tolerance: NotRequired[_builtins.str]
-        """
-        How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
-        """
-        saturation_tolerance_var: NotRequired[_builtins.str]
-        """
-        How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgsDict(TypedDict):
+    hue: NotRequired[_builtins.str]
+    """
+    The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
+    """
+    hue_feather: NotRequired[_builtins.str]
+    """
+    How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
+    """
+    hue_feather_var: NotRequired[_builtins.str]
+    """
+    How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
+    """
+    hue_tolerance: NotRequired[_builtins.str]
+    """
+    How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+    """
+    hue_tolerance_var: NotRequired[_builtins.str]
+    """
+    How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+    """
+    hue_var: NotRequired[_builtins.str]
+    """
+    The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
+    """
+    lightness_feather: NotRequired[_builtins.str]
+    """
+    How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+    """
+    lightness_feather_var: NotRequired[_builtins.str]
+    """
+    How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+    """
+    lightness_tolerance: NotRequired[_builtins.str]
+    """
+    How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+    """
+    lightness_tolerance_var: NotRequired[_builtins.str]
+    """
+    How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+    """
+    saturation_feather: NotRequired[_builtins.str]
+    """
+    How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+    """
+    saturation_feather_var: NotRequired[_builtins.str]
+    """
+    How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+    """
+    saturation_tolerance: NotRequired[_builtins.str]
+    """
+    How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+    """
+    saturation_tolerance_var: NotRequired[_builtins.str]
+    """
+    How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgs:
@@ -27383,59 +26652,56 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgs:
         pulumi.set(self, "saturation_tolerance_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgsDict(TypedDict):
-        image: 'GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageArgsDict'
-        gravity: NotRequired[_builtins.str]
-        """
-        Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
-        """
-        gravity_var: NotRequired[_builtins.str]
-        """
-        Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
-        """
-        placement: NotRequired[_builtins.str]
-        """
-        Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
-        """
-        placement_var: NotRequired[_builtins.str]
-        """
-        Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
-        """
-        scale: NotRequired[_builtins.str]
-        """
-        A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
-        """
-        scale_dimension: NotRequired[_builtins.str]
-        """
-        The dimension, either `width` or `height`, of the source image to scale.
-        """
-        scale_dimension_var: NotRequired[_builtins.str]
-        """
-        The dimension, either `width` or `height`, of the source image to scale.
-        """
-        scale_var: NotRequired[_builtins.str]
-        """
-        A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
-        """
-        x_position: NotRequired[_builtins.str]
-        """
-        The x-axis position of the image to apply.
-        """
-        x_position_var: NotRequired[_builtins.str]
-        """
-        The x-axis position of the image to apply.
-        """
-        y_position: NotRequired[_builtins.str]
-        """
-        The y-axis position of the image to apply.
-        """
-        y_position_var: NotRequired[_builtins.str]
-        """
-        The y-axis position of the image to apply.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgsDict(TypedDict):
+    image: 'GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageArgsDict'
+    gravity: NotRequired[_builtins.str]
+    """
+    Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
+    """
+    gravity_var: NotRequired[_builtins.str]
+    """
+    Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
+    """
+    placement: NotRequired[_builtins.str]
+    """
+    Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+    """
+    placement_var: NotRequired[_builtins.str]
+    """
+    Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+    """
+    scale: NotRequired[_builtins.str]
+    """
+    A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+    """
+    scale_dimension: NotRequired[_builtins.str]
+    """
+    The dimension, either `width` or `height`, of the source image to scale.
+    """
+    scale_dimension_var: NotRequired[_builtins.str]
+    """
+    The dimension, either `width` or `height`, of the source image to scale.
+    """
+    scale_var: NotRequired[_builtins.str]
+    """
+    A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+    """
+    x_position: NotRequired[_builtins.str]
+    """
+    The x-axis position of the image to apply.
+    """
+    x_position_var: NotRequired[_builtins.str]
+    """
+    The x-axis position of the image to apply.
+    """
+    y_position: NotRequired[_builtins.str]
+    """
+    The y-axis position of the image to apply.
+    """
+    y_position_var: NotRequired[_builtins.str]
+    """
+    The y-axis position of the image to apply.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs:
@@ -27647,26 +26913,23 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs:
         pulumi.set(self, "y_position_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageArgsDict(TypedDict):
-        box_images: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgsDict']]
-        """
-        A rectangular box, with a specified color and applied transformation.
-        """
-        circle_images: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgsDict']]
-        """
-        A rectangular box, with a specified color and applied transformation.
-        """
-        text_images: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgsDict']]
-        """
-        A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
-        """
-        url_images: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgsDict']]
-        """
-        An image loaded from a URL.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageArgsDict(TypedDict):
+    box_images: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgsDict']]
+    """
+    A rectangular box, with a specified color and applied transformation.
+    """
+    circle_images: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgsDict']]
+    """
+    A rectangular box, with a specified color and applied transformation.
+    """
+    text_images: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgsDict']]
+    """
+    A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+    """
+    url_images: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgsDict']]
+    """
+    An image loaded from a URL.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageArgs:
@@ -27739,35 +27002,32 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageArgs:
         pulumi.set(self, "url_images", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The height of the box in pixels.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height of the box in pixels.
-        """
-        transformation: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        width: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The height of the box in pixels.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height of the box in pixels.
+    """
+    transformation: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    width: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgs:
@@ -27884,35 +27144,32 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxIm
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        diameter: NotRequired[_builtins.str]
-        """
-        The diameter of the circle. The diameter will be the width and the height of the image in pixels.
-        """
-        diameter_var: NotRequired[_builtins.str]
-        """
-        The diameter of the circle. The diameter will be the width and the height of the image in pixels.
-        """
-        transformation: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        width: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    diameter: NotRequired[_builtins.str]
+    """
+    The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+    """
+    diameter_var: NotRequired[_builtins.str]
+    """
+    The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+    """
+    transformation: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    width: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgs:
@@ -28029,59 +27286,56 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircl
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgsDict(TypedDict):
-        fill: NotRequired[_builtins.str]
-        """
-        The main fill color of the text.
-        """
-        fill_var: NotRequired[_builtins.str]
-        """
-        The main fill color of the text.
-        """
-        size: NotRequired[_builtins.str]
-        """
-        The size in pixels to render the text.
-        """
-        size_var: NotRequired[_builtins.str]
-        """
-        The size in pixels to render the text.
-        """
-        stroke: NotRequired[_builtins.str]
-        """
-        The color for the outline of the text.
-        """
-        stroke_size: NotRequired[_builtins.str]
-        """
-        The thickness in points for the outline of the text.
-        """
-        stroke_size_var: NotRequired[_builtins.str]
-        """
-        The thickness in points for the outline of the text.
-        """
-        stroke_var: NotRequired[_builtins.str]
-        """
-        The color for the outline of the text.
-        """
-        text: NotRequired[_builtins.str]
-        """
-        The line of text to render.
-        """
-        text_var: NotRequired[_builtins.str]
-        """
-        The line of text to render.
-        """
-        transformation: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        typeface: NotRequired[_builtins.str]
-        """
-        The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
-        """
-        typeface_var: NotRequired[_builtins.str]
-        """
-        The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgsDict(TypedDict):
+    fill: NotRequired[_builtins.str]
+    """
+    The main fill color of the text.
+    """
+    fill_var: NotRequired[_builtins.str]
+    """
+    The main fill color of the text.
+    """
+    size: NotRequired[_builtins.str]
+    """
+    The size in pixels to render the text.
+    """
+    size_var: NotRequired[_builtins.str]
+    """
+    The size in pixels to render the text.
+    """
+    stroke: NotRequired[_builtins.str]
+    """
+    The color for the outline of the text.
+    """
+    stroke_size: NotRequired[_builtins.str]
+    """
+    The thickness in points for the outline of the text.
+    """
+    stroke_size_var: NotRequired[_builtins.str]
+    """
+    The thickness in points for the outline of the text.
+    """
+    stroke_var: NotRequired[_builtins.str]
+    """
+    The color for the outline of the text.
+    """
+    text: NotRequired[_builtins.str]
+    """
+    The line of text to render.
+    """
+    text_var: NotRequired[_builtins.str]
+    """
+    The line of text to render.
+    """
+    transformation: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    typeface: NotRequired[_builtins.str]
+    """
+    The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+    """
+    typeface_var: NotRequired[_builtins.str]
+    """
+    The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgs:
@@ -28294,19 +27548,16 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextI
         pulumi.set(self, "typeface_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgsDict(TypedDict):
-        transformation: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        url: NotRequired[_builtins.str]
-        """
-        The URL of the image.
-        """
-        url_var: NotRequired[_builtins.str]
-        """
-        The URL of the image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgsDict(TypedDict):
+    transformation: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    url: NotRequired[_builtins.str]
+    """
+    The URL of the image.
+    """
+    url_var: NotRequired[_builtins.str]
+    """
+    The URL of the image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs:
@@ -28359,11 +27610,8 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlIm
         pulumi.set(self, "url_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgsDict(TypedDict):
-        transformations: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']]
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgsDict(TypedDict):
+    transformations: NotRequired[Sequence['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']]
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgs:
@@ -28382,26 +27630,23 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgs:
         pulumi.set(self, "transformations", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgsDict(TypedDict):
-        brightness: NotRequired[_builtins.str]
-        """
-        Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
-        """
-        brightness_var: NotRequired[_builtins.str]
-        """
-        Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
-        """
-        contrast: NotRequired[_builtins.str]
-        """
-        Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
-        """
-        contrast_var: NotRequired[_builtins.str]
-        """
-        Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgsDict(TypedDict):
+    brightness: NotRequired[_builtins.str]
+    """
+    Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+    """
+    brightness_var: NotRequired[_builtins.str]
+    """
+    Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+    """
+    contrast: NotRequired[_builtins.str]
+    """
+    Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+    """
+    contrast_var: NotRequired[_builtins.str]
+    """
+    Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs:
@@ -28474,42 +27719,39 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs:
         pulumi.set(self, "contrast_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgsDict(TypedDict):
-        chaos: NotRequired[_builtins.str]
-        """
-        Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
-        """
-        chaos_var: NotRequired[_builtins.str]
-        """
-        Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
-        """
-        density: NotRequired[_builtins.str]
-        """
-        Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
-        """
-        density_var: NotRequired[_builtins.str]
-        """
-        Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
-        """
-        power: NotRequired[_builtins.str]
-        """
-        By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
-        """
-        power_var: NotRequired[_builtins.str]
-        """
-        By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
-        """
-        seed: NotRequired[_builtins.str]
-        """
-        Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
-        """
-        seed_var: NotRequired[_builtins.str]
-        """
-        Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgsDict(TypedDict):
+    chaos: NotRequired[_builtins.str]
+    """
+    Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
+    """
+    chaos_var: NotRequired[_builtins.str]
+    """
+    Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
+    """
+    density: NotRequired[_builtins.str]
+    """
+    Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
+    """
+    density_var: NotRequired[_builtins.str]
+    """
+    Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
+    """
+    power: NotRequired[_builtins.str]
+    """
+    By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
+    """
+    power_var: NotRequired[_builtins.str]
+    """
+    By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
+    """
+    seed: NotRequired[_builtins.str]
+    """
+    Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
+    """
+    seed_var: NotRequired[_builtins.str]
+    """
+    Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs:
@@ -28646,18 +27888,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs:
         pulumi.set(self, "seed_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgsDict(TypedDict):
-        type: NotRequired[_builtins.str]
-        """
-        The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
-        """
-        type_var: NotRequired[_builtins.str]
-        """
-        The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgsDict(TypedDict):
+    type: NotRequired[_builtins.str]
+    """
+    The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+    """
+    type_var: NotRequired[_builtins.str]
+    """
+    The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs:
@@ -28698,34 +27937,31 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs:
         pulumi.set(self, "type_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgsDict(TypedDict):
-        hue: NotRequired[_builtins.str]
-        """
-        The number of degrees to rotate colors around the color wheel, `0` by default.
-        """
-        hue_var: NotRequired[_builtins.str]
-        """
-        The number of degrees to rotate colors around the color wheel, `0` by default.
-        """
-        lightness: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
-        """
-        lightness_var: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
-        """
-        saturation: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
-        """
-        saturation_var: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgsDict(TypedDict):
+    hue: NotRequired[_builtins.str]
+    """
+    The number of degrees to rotate colors around the color wheel, `0` by default.
+    """
+    hue_var: NotRequired[_builtins.str]
+    """
+    The number of degrees to rotate colors around the color wheel, `0` by default.
+    """
+    lightness: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+    """
+    lightness_var: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+    """
+    saturation: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+    """
+    saturation_var: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs:
@@ -28830,34 +28066,31 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs:
         pulumi.set(self, "saturation_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgsDict(TypedDict):
-        hue: NotRequired[_builtins.str]
-        """
-        The number of degrees to rotate colors around the color wheel, `0.0` by default.
-        """
-        hue_var: NotRequired[_builtins.str]
-        """
-        The number of degrees to rotate colors around the color wheel, `0.0` by default.
-        """
-        saturation: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
-        """
-        saturation_var: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
-        """
-        value: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
-        """
-        value_var: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgsDict(TypedDict):
+    hue: NotRequired[_builtins.str]
+    """
+    The number of degrees to rotate colors around the color wheel, `0.0` by default.
+    """
+    hue_var: NotRequired[_builtins.str]
+    """
+    The number of degrees to rotate colors around the color wheel, `0.0` by default.
+    """
+    saturation: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+    """
+    saturation_var: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+    """
+    value: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+    """
+    value_var: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs:
@@ -28962,30 +28195,27 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs:
         pulumi.set(self, "value_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgsDict(TypedDict):
-        default: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        dimension: NotRequired[_builtins.str]
-        """
-        The dimension to use to select the transformation, either `height`, `width`, or `both`.
-        """
-        dimension_var: NotRequired[_builtins.str]
-        """
-        The dimension to use to select the transformation, either `height`, `width`, or `both`.
-        """
-        equal: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        greater_than: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        less_than: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        value: NotRequired[_builtins.str]
-        """
-        The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
-        """
-        value_var: NotRequired[_builtins.str]
-        """
-        The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgsDict(TypedDict):
+    default: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    dimension: NotRequired[_builtins.str]
+    """
+    The dimension to use to select the transformation, either `height`, `width`, or `both`.
+    """
+    dimension_var: NotRequired[_builtins.str]
+    """
+    The dimension to use to select the transformation, either `height`, `width`, or `both`.
+    """
+    equal: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    greater_than: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    less_than: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    value: NotRequired[_builtins.str]
+    """
+    The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+    """
+    value_var: NotRequired[_builtins.str]
+    """
+    The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgs:
@@ -29106,14 +28336,11 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgs:
         pulumi.set(self, "value_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgsDict(TypedDict):
-        default: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        landscape: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        portrait: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-        square: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgsDict(TypedDict):
+    default: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    landscape: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    portrait: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
+    square: NotRequired['GetImagingPolicyImagePolicyPostBreakpointTransformationArgsDict']
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgs:
@@ -29168,18 +28395,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgs:
         pulumi.set(self, "square", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgsDict(TypedDict):
-        colors: NotRequired[_builtins.str]
-        """
-        The value representing the maximum number of colors to use with the source image.
-        """
-        colors_var: NotRequired[_builtins.str]
-        """
-        The value representing the maximum number of colors to use with the source image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgsDict(TypedDict):
+    colors: NotRequired[_builtins.str]
+    """
+    The value representing the maximum number of colors to use with the source image.
+    """
+    colors_var: NotRequired[_builtins.str]
+    """
+    The value representing the maximum number of colors to use with the source image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs:
@@ -29220,26 +28444,23 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs:
         pulumi.set(self, "colors_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgsDict(TypedDict):
-        horizontal: NotRequired[_builtins.str]
-        """
-        Flips the image horizontally.
-        """
-        horizontal_var: NotRequired[_builtins.str]
-        """
-        Flips the image horizontally.
-        """
-        vertical: NotRequired[_builtins.str]
-        """
-        Flips the image vertically.
-        """
-        vertical_var: NotRequired[_builtins.str]
-        """
-        Flips the image vertically.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgsDict(TypedDict):
+    horizontal: NotRequired[_builtins.str]
+    """
+    Flips the image horizontally.
+    """
+    horizontal_var: NotRequired[_builtins.str]
+    """
+    Flips the image horizontally.
+    """
+    vertical: NotRequired[_builtins.str]
+    """
+    Flips the image vertically.
+    """
+    vertical_var: NotRequired[_builtins.str]
+    """
+    Flips the image vertically.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs:
@@ -29312,18 +28533,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs:
         pulumi.set(self, "vertical_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgsDict(TypedDict):
-        hue: NotRequired[_builtins.str]
-        """
-        Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
-        """
-        hue_var: NotRequired[_builtins.str]
-        """
-        Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgsDict(TypedDict):
+    hue: NotRequired[_builtins.str]
+    """
+    Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+    """
+    hue_var: NotRequired[_builtins.str]
+    """
+    Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs:
@@ -29364,18 +28582,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs:
         pulumi.set(self, "hue_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgsDict(TypedDict):
-        opacity: NotRequired[_builtins.str]
-        """
-        Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
-        """
-        opacity_var: NotRequired[_builtins.str]
-        """
-        Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgsDict(TypedDict):
+    opacity: NotRequired[_builtins.str]
+    """
+    Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+    """
+    opacity_var: NotRequired[_builtins.str]
+    """
+    Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgs:
@@ -29416,34 +28631,31 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgs:
         pulumi.set(self, "opacity_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The hexadecimal CSS color value to remove.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The hexadecimal CSS color value to remove.
-        """
-        feather: NotRequired[_builtins.str]
-        """
-        The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
-        """
-        feather_var: NotRequired[_builtins.str]
-        """
-        The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
-        """
-        tolerance: NotRequired[_builtins.str]
-        """
-        The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
-        """
-        tolerance_var: NotRequired[_builtins.str]
-        """
-        The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The hexadecimal CSS color value to remove.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The hexadecimal CSS color value to remove.
+    """
+    feather: NotRequired[_builtins.str]
+    """
+    The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+    """
+    feather_var: NotRequired[_builtins.str]
+    """
+    The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+    """
+    tolerance: NotRequired[_builtins.str]
+    """
+    The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+    """
+    tolerance_var: NotRequired[_builtins.str]
+    """
+    The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgs:
@@ -29548,34 +28760,31 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgs:
         pulumi.set(self, "tolerance_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgsDict(TypedDict):
-        gain: NotRequired[_builtins.str]
-        """
-        Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
-        """
-        gain_var: NotRequired[_builtins.str]
-        """
-        Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
-        """
-        sigma: NotRequired[_builtins.str]
-        """
-        The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
-        """
-        sigma_var: NotRequired[_builtins.str]
-        """
-        The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
-        """
-        threshold: NotRequired[_builtins.str]
-        """
-        Set the minimum change required to include a detail in the filter. Higher values discard more changes.
-        """
-        threshold_var: NotRequired[_builtins.str]
-        """
-        Set the minimum change required to include a detail in the filter. Higher values discard more changes.
-        """
-elif False:
-    GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgsDict(TypedDict):
+    gain: NotRequired[_builtins.str]
+    """
+    Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+    """
+    gain_var: NotRequired[_builtins.str]
+    """
+    Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+    """
+    sigma: NotRequired[_builtins.str]
+    """
+    The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+    """
+    sigma_var: NotRequired[_builtins.str]
+    """
+    The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+    """
+    threshold: NotRequired[_builtins.str]
+    """
+    Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+    """
+    threshold_var: NotRequired[_builtins.str]
+    """
+    Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgs:
@@ -29680,133 +28889,130 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgs:
         pulumi.set(self, "threshold_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationArgsDict(TypedDict):
-        appends: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendArgsDict']]
-        """
-        Places a specified `image` beside the source image. The API places the `image` on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.
-        """
-        aspect_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAspectCropArgsDict']]
-        """
-        Lets you change the height or width of an image (either by cropping or expanding the area) to an aspect ratio of your choosing.
-        """
-        background_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationBackgroundColorArgsDict']]
-        """
-        Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
-        """
-        blurs: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationBlurArgsDict']]
-        """
-        Applies a Gaussian blur to the image.
-        """
-        chroma_keys: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationChromaKeyArgsDict']]
-        """
-        Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a 'green screen' technique commonly used to isolate and remove background colors.
-        """
-        composites: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeArgsDict']]
-        """
-        Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
-        """
-        compounds: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompoundArgsDict']]
-        contrasts: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationContrastArgsDict']]
-        """
-        Adjusts both the contrast and brightness of an image.
-        """
-        crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCropArgsDict']]
-        """
-        Crops an image.
-        """
-        face_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationFaceCropArgsDict']]
-        """
-        Applies a method to detect faces in the source image and applies the rectangular crop on either the `biggest` face or `all` of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.
-        """
-        feature_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationFeatureCropArgsDict']]
-        """
-        Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified `width` and `height` values.
-        """
-        fit_and_fills: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationFitAndFillArgsDict']]
-        """
-        Resizes an image to fit within a specific size box and then uses a fill of that same image to cover any transparent space at the edges. By default the fill image has a Blur transformation with a sigma value of 8 applied, but the transformation can be customized using the fillTransformation parameter.
-        """
-        goops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationGoopArgsDict']]
-        """
-        Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
-        """
-        grayscales: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationGrayscaleArgsDict']]
-        """
-        Restricts image color to shades of gray only.
-        """
-        hsls: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationHslArgsDict']]
-        """
-        Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
-        """
-        hsvs: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationHsvArgsDict']]
-        """
-        Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
-        """
-        if_dimensions: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationIfDimensionArgsDict']]
-        if_orientations: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationIfOrientationArgsDict']]
-        im_queries: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationImQueryArgsDict']]
-        """
-        Apply artistic transformations to images quickly and dynamically by specifying transformations with a query string appendedto the image URL.
-        """
-        max_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationMaxColorArgsDict']]
-        """
-        Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
-        """
-        mirrors: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationMirrorArgsDict']]
-        """
-        Flips an image horizontally, vertically, or both.
-        """
-        mono_hues: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationMonoHueArgsDict']]
-        """
-        Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
-        """
-        opacities: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationOpacityArgsDict']]
-        """
-        Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
-        """
-        region_of_interest_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgsDict']]
-        """
-        Crops to a region around a specified area of interest relative to the specified `width` and `height` values.
-        """
-        relative_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRelativeCropArgsDict']]
-        """
-        Shrinks or expands an image relative to the image's specified dimensions. Image and Video Manager fills the expanded areas with transparency. Positive values shrink the side, while negative values expand it.
-        """
-        remove_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRemoveColorArgsDict']]
-        """
-        Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
-        """
-        resizes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationResizeArgsDict']]
-        """
-        Resizes an image to a particular, absolute dimension. If you don't enter a `width` or a `height`, the image is resized with the `fit` aspect preservation mode, which selects a value for the missing dimension that preserves the image's aspect.
-        """
-        rotates: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRotateArgsDict']]
-        """
-        Rotate the image around its center by indicating the degrees of rotation.
-        """
-        scales: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationScaleArgsDict']]
-        """
-        Changes the image's size to different dimensions relative to its starting size.
-        """
-        shears: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationShearsArgsDict']]
-        """
-        Slants an image into a parallelogram, as a percent of the starting dimension as represented in decimal format. You need to specify at least one axis property. Transparent pixels fill empty areas around the sheared image as needed, so it's often useful to use a `BackgroundColor` transformation for these areas.
-        """
-        smart_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationSmartCropArgsDict']]
-        """
-        Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
-        """
-        trims: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationTrimArgsDict']]
-        """
-        Automatically crops uniform backgrounds from the edges of an image.
-        """
-        unsharp_masks: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationUnsharpMaskArgsDict']]
-        """
-        Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationArgsDict(TypedDict):
+    appends: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendArgsDict']]
+    """
+    Places a specified `image` beside the source image. The API places the `image` on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.
+    """
+    aspect_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAspectCropArgsDict']]
+    """
+    Lets you change the height or width of an image (either by cropping or expanding the area) to an aspect ratio of your choosing.
+    """
+    background_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationBackgroundColorArgsDict']]
+    """
+    Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+    """
+    blurs: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationBlurArgsDict']]
+    """
+    Applies a Gaussian blur to the image.
+    """
+    chroma_keys: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationChromaKeyArgsDict']]
+    """
+    Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a 'green screen' technique commonly used to isolate and remove background colors.
+    """
+    composites: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeArgsDict']]
+    """
+    Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+    """
+    compounds: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompoundArgsDict']]
+    contrasts: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationContrastArgsDict']]
+    """
+    Adjusts both the contrast and brightness of an image.
+    """
+    crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCropArgsDict']]
+    """
+    Crops an image.
+    """
+    face_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationFaceCropArgsDict']]
+    """
+    Applies a method to detect faces in the source image and applies the rectangular crop on either the `biggest` face or `all` of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.
+    """
+    feature_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationFeatureCropArgsDict']]
+    """
+    Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified `width` and `height` values.
+    """
+    fit_and_fills: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationFitAndFillArgsDict']]
+    """
+    Resizes an image to fit within a specific size box and then uses a fill of that same image to cover any transparent space at the edges. By default the fill image has a Blur transformation with a sigma value of 8 applied, but the transformation can be customized using the fillTransformation parameter.
+    """
+    goops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationGoopArgsDict']]
+    """
+    Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+    """
+    grayscales: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationGrayscaleArgsDict']]
+    """
+    Restricts image color to shades of gray only.
+    """
+    hsls: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationHslArgsDict']]
+    """
+    Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+    """
+    hsvs: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationHsvArgsDict']]
+    """
+    Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+    """
+    if_dimensions: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationIfDimensionArgsDict']]
+    if_orientations: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationIfOrientationArgsDict']]
+    im_queries: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationImQueryArgsDict']]
+    """
+    Apply artistic transformations to images quickly and dynamically by specifying transformations with a query string appendedto the image URL.
+    """
+    max_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationMaxColorArgsDict']]
+    """
+    Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+    """
+    mirrors: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationMirrorArgsDict']]
+    """
+    Flips an image horizontally, vertically, or both.
+    """
+    mono_hues: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationMonoHueArgsDict']]
+    """
+    Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+    """
+    opacities: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationOpacityArgsDict']]
+    """
+    Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+    """
+    region_of_interest_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgsDict']]
+    """
+    Crops to a region around a specified area of interest relative to the specified `width` and `height` values.
+    """
+    relative_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRelativeCropArgsDict']]
+    """
+    Shrinks or expands an image relative to the image's specified dimensions. Image and Video Manager fills the expanded areas with transparency. Positive values shrink the side, while negative values expand it.
+    """
+    remove_colors: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRemoveColorArgsDict']]
+    """
+    Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+    """
+    resizes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationResizeArgsDict']]
+    """
+    Resizes an image to a particular, absolute dimension. If you don't enter a `width` or a `height`, the image is resized with the `fit` aspect preservation mode, which selects a value for the missing dimension that preserves the image's aspect.
+    """
+    rotates: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRotateArgsDict']]
+    """
+    Rotate the image around its center by indicating the degrees of rotation.
+    """
+    scales: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationScaleArgsDict']]
+    """
+    Changes the image's size to different dimensions relative to its starting size.
+    """
+    shears: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationShearsArgsDict']]
+    """
+    Slants an image into a parallelogram, as a percent of the starting dimension as represented in decimal format. You need to specify at least one axis property. Transparent pixels fill empty areas around the sheared image as needed, so it's often useful to use a `BackgroundColor` transformation for these areas.
+    """
+    smart_crops: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationSmartCropArgsDict']]
+    """
+    Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+    """
+    trims: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationTrimArgsDict']]
+    """
+    Automatically crops uniform backgrounds from the edges of an image.
+    """
+    unsharp_masks: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationUnsharpMaskArgsDict']]
+    """
+    Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationArgs:
@@ -30331,35 +29537,32 @@ class GetImagingPolicyImagePolicyTransformationArgs:
         pulumi.set(self, "unsharp_masks", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationAppendArgsDict(TypedDict):
-        image: 'GetImagingPolicyImagePolicyTransformationAppendImageArgsDict'
-        gravity: NotRequired[_builtins.str]
-        """
-        Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
-        """
-        gravity_priority: NotRequired[_builtins.str]
-        """
-        Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
-        """
-        gravity_priority_var: NotRequired[_builtins.str]
-        """
-        Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
-        """
-        gravity_var: NotRequired[_builtins.str]
-        """
-        Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
-        """
-        preserve_minor_dimension: NotRequired[_builtins.str]
-        """
-        Whether to preserve the source image's minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &times; 100 pixels. The dimensions of the appending `image` are 50 &times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &times; 100 pixels.
-        """
-        preserve_minor_dimension_var: NotRequired[_builtins.str]
-        """
-        Whether to preserve the source image's minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &times; 100 pixels. The dimensions of the appending `image` are 50 &times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &times; 100 pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationAppendArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationAppendArgsDict(TypedDict):
+    image: 'GetImagingPolicyImagePolicyTransformationAppendImageArgsDict'
+    gravity: NotRequired[_builtins.str]
+    """
+    Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
+    """
+    gravity_priority: NotRequired[_builtins.str]
+    """
+    Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
+    """
+    gravity_priority_var: NotRequired[_builtins.str]
+    """
+    Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
+    """
+    gravity_var: NotRequired[_builtins.str]
+    """
+    Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
+    """
+    preserve_minor_dimension: NotRequired[_builtins.str]
+    """
+    Whether to preserve the source image's minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &times; 100 pixels. The dimensions of the appending `image` are 50 &times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &times; 100 pixels.
+    """
+    preserve_minor_dimension_var: NotRequired[_builtins.str]
+    """
+    Whether to preserve the source image's minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &times; 100 pixels. The dimensions of the appending `image` are 50 &times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &times; 100 pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationAppendArgs:
@@ -30475,26 +29678,23 @@ class GetImagingPolicyImagePolicyTransformationAppendArgs:
         pulumi.set(self, "preserve_minor_dimension_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationAppendImageArgsDict(TypedDict):
-        box_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgsDict']]
-        """
-        A rectangular box, with a specified color and applied transformation.
-        """
-        circle_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgsDict']]
-        """
-        A rectangular box, with a specified color and applied transformation.
-        """
-        text_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgsDict']]
-        """
-        A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
-        """
-        url_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgsDict']]
-        """
-        An image loaded from a URL.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationAppendImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationAppendImageArgsDict(TypedDict):
+    box_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgsDict']]
+    """
+    A rectangular box, with a specified color and applied transformation.
+    """
+    circle_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgsDict']]
+    """
+    A rectangular box, with a specified color and applied transformation.
+    """
+    text_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgsDict']]
+    """
+    A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+    """
+    url_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgsDict']]
+    """
+    An image loaded from a URL.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationAppendImageArgs:
@@ -30567,35 +29767,32 @@ class GetImagingPolicyImagePolicyTransformationAppendImageArgs:
         pulumi.set(self, "url_images", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The height of the box in pixels.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height of the box in pixels.
-        """
-        transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        width: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The height of the box in pixels.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height of the box in pixels.
+    """
+    transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    width: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs:
@@ -30712,35 +29909,32 @@ class GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        diameter: NotRequired[_builtins.str]
-        """
-        The diameter of the circle. The diameter will be the width and the height of the image in pixels.
-        """
-        diameter_var: NotRequired[_builtins.str]
-        """
-        The diameter of the circle. The diameter will be the width and the height of the image in pixels.
-        """
-        transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        width: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    diameter: NotRequired[_builtins.str]
+    """
+    The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+    """
+    diameter_var: NotRequired[_builtins.str]
+    """
+    The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+    """
+    transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    width: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs:
@@ -30857,59 +30051,56 @@ class GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgsDict(TypedDict):
-        fill: NotRequired[_builtins.str]
-        """
-        The main fill color of the text.
-        """
-        fill_var: NotRequired[_builtins.str]
-        """
-        The main fill color of the text.
-        """
-        size: NotRequired[_builtins.str]
-        """
-        The size in pixels to render the text.
-        """
-        size_var: NotRequired[_builtins.str]
-        """
-        The size in pixels to render the text.
-        """
-        stroke: NotRequired[_builtins.str]
-        """
-        The color for the outline of the text.
-        """
-        stroke_size: NotRequired[_builtins.str]
-        """
-        The thickness in points for the outline of the text.
-        """
-        stroke_size_var: NotRequired[_builtins.str]
-        """
-        The thickness in points for the outline of the text.
-        """
-        stroke_var: NotRequired[_builtins.str]
-        """
-        The color for the outline of the text.
-        """
-        text: NotRequired[_builtins.str]
-        """
-        The line of text to render.
-        """
-        text_var: NotRequired[_builtins.str]
-        """
-        The line of text to render.
-        """
-        transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        typeface: NotRequired[_builtins.str]
-        """
-        The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
-        """
-        typeface_var: NotRequired[_builtins.str]
-        """
-        The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgsDict(TypedDict):
+    fill: NotRequired[_builtins.str]
+    """
+    The main fill color of the text.
+    """
+    fill_var: NotRequired[_builtins.str]
+    """
+    The main fill color of the text.
+    """
+    size: NotRequired[_builtins.str]
+    """
+    The size in pixels to render the text.
+    """
+    size_var: NotRequired[_builtins.str]
+    """
+    The size in pixels to render the text.
+    """
+    stroke: NotRequired[_builtins.str]
+    """
+    The color for the outline of the text.
+    """
+    stroke_size: NotRequired[_builtins.str]
+    """
+    The thickness in points for the outline of the text.
+    """
+    stroke_size_var: NotRequired[_builtins.str]
+    """
+    The thickness in points for the outline of the text.
+    """
+    stroke_var: NotRequired[_builtins.str]
+    """
+    The color for the outline of the text.
+    """
+    text: NotRequired[_builtins.str]
+    """
+    The line of text to render.
+    """
+    text_var: NotRequired[_builtins.str]
+    """
+    The line of text to render.
+    """
+    transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    typeface: NotRequired[_builtins.str]
+    """
+    The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+    """
+    typeface_var: NotRequired[_builtins.str]
+    """
+    The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs:
@@ -31122,19 +30313,16 @@ class GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs:
         pulumi.set(self, "typeface_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgsDict(TypedDict):
-        transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        url: NotRequired[_builtins.str]
-        """
-        The URL of the image.
-        """
-        url_var: NotRequired[_builtins.str]
-        """
-        The URL of the image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgsDict(TypedDict):
+    transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    url: NotRequired[_builtins.str]
+    """
+    The URL of the image.
+    """
+    url_var: NotRequired[_builtins.str]
+    """
+    The URL of the image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs:
@@ -31187,50 +30375,47 @@ class GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs:
         pulumi.set(self, "url_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationAspectCropArgsDict(TypedDict):
-        allow_expansion: NotRequired[_builtins.str]
-        """
-        Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
-        """
-        allow_expansion_var: NotRequired[_builtins.str]
-        """
-        Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The height term of the aspect ratio to crop.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height term of the aspect ratio to crop.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        The width term of the aspect ratio to crop.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width term of the aspect ratio to crop.
-        """
-        x_position: NotRequired[_builtins.str]
-        """
-        Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
-        """
-        x_position_var: NotRequired[_builtins.str]
-        """
-        Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
-        """
-        y_position: NotRequired[_builtins.str]
-        """
-        Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
-        """
-        y_position_var: NotRequired[_builtins.str]
-        """
-        Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationAspectCropArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationAspectCropArgsDict(TypedDict):
+    allow_expansion: NotRequired[_builtins.str]
+    """
+    Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+    """
+    allow_expansion_var: NotRequired[_builtins.str]
+    """
+    Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The height term of the aspect ratio to crop.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height term of the aspect ratio to crop.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    The width term of the aspect ratio to crop.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width term of the aspect ratio to crop.
+    """
+    x_position: NotRequired[_builtins.str]
+    """
+    Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+    """
+    x_position_var: NotRequired[_builtins.str]
+    """
+    Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+    """
+    y_position: NotRequired[_builtins.str]
+    """
+    Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+    """
+    y_position_var: NotRequired[_builtins.str]
+    """
+    Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationAspectCropArgs:
@@ -31399,18 +30584,15 @@ class GetImagingPolicyImagePolicyTransformationAspectCropArgs:
         pulumi.set(self, "y_position_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationBackgroundColorArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The hexadecimal CSS color value for the background.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The hexadecimal CSS color value for the background.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationBackgroundColorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationBackgroundColorArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The hexadecimal CSS color value for the background.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The hexadecimal CSS color value for the background.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationBackgroundColorArgs:
@@ -31451,18 +30633,15 @@ class GetImagingPolicyImagePolicyTransformationBackgroundColorArgs:
         pulumi.set(self, "color_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationBlurArgsDict(TypedDict):
-        sigma: NotRequired[_builtins.str]
-        """
-        The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
-        """
-        sigma_var: NotRequired[_builtins.str]
-        """
-        The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationBlurArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationBlurArgsDict(TypedDict):
+    sigma: NotRequired[_builtins.str]
+    """
+    The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
+    """
+    sigma_var: NotRequired[_builtins.str]
+    """
+    The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationBlurArgs:
@@ -31503,66 +30682,63 @@ class GetImagingPolicyImagePolicyTransformationBlurArgs:
         pulumi.set(self, "sigma_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationChromaKeyArgsDict(TypedDict):
-        hue: NotRequired[_builtins.str]
-        """
-        The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
-        """
-        hue_feather: NotRequired[_builtins.str]
-        """
-        How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
-        """
-        hue_feather_var: NotRequired[_builtins.str]
-        """
-        How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
-        """
-        hue_tolerance: NotRequired[_builtins.str]
-        """
-        How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
-        """
-        hue_tolerance_var: NotRequired[_builtins.str]
-        """
-        How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
-        """
-        hue_var: NotRequired[_builtins.str]
-        """
-        The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
-        """
-        lightness_feather: NotRequired[_builtins.str]
-        """
-        How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
-        """
-        lightness_feather_var: NotRequired[_builtins.str]
-        """
-        How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
-        """
-        lightness_tolerance: NotRequired[_builtins.str]
-        """
-        How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
-        """
-        lightness_tolerance_var: NotRequired[_builtins.str]
-        """
-        How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
-        """
-        saturation_feather: NotRequired[_builtins.str]
-        """
-        How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
-        """
-        saturation_feather_var: NotRequired[_builtins.str]
-        """
-        How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
-        """
-        saturation_tolerance: NotRequired[_builtins.str]
-        """
-        How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
-        """
-        saturation_tolerance_var: NotRequired[_builtins.str]
-        """
-        How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationChromaKeyArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationChromaKeyArgsDict(TypedDict):
+    hue: NotRequired[_builtins.str]
+    """
+    The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
+    """
+    hue_feather: NotRequired[_builtins.str]
+    """
+    How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
+    """
+    hue_feather_var: NotRequired[_builtins.str]
+    """
+    How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
+    """
+    hue_tolerance: NotRequired[_builtins.str]
+    """
+    How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+    """
+    hue_tolerance_var: NotRequired[_builtins.str]
+    """
+    How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+    """
+    hue_var: NotRequired[_builtins.str]
+    """
+    The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
+    """
+    lightness_feather: NotRequired[_builtins.str]
+    """
+    How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+    """
+    lightness_feather_var: NotRequired[_builtins.str]
+    """
+    How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+    """
+    lightness_tolerance: NotRequired[_builtins.str]
+    """
+    How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+    """
+    lightness_tolerance_var: NotRequired[_builtins.str]
+    """
+    How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+    """
+    saturation_feather: NotRequired[_builtins.str]
+    """
+    How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+    """
+    saturation_feather_var: NotRequired[_builtins.str]
+    """
+    How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+    """
+    saturation_tolerance: NotRequired[_builtins.str]
+    """
+    How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+    """
+    saturation_tolerance_var: NotRequired[_builtins.str]
+    """
+    How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationChromaKeyArgs:
@@ -31795,59 +30971,56 @@ class GetImagingPolicyImagePolicyTransformationChromaKeyArgs:
         pulumi.set(self, "saturation_tolerance_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationCompositeArgsDict(TypedDict):
-        image: 'GetImagingPolicyImagePolicyTransformationCompositeImageArgsDict'
-        gravity: NotRequired[_builtins.str]
-        """
-        Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
-        """
-        gravity_var: NotRequired[_builtins.str]
-        """
-        Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
-        """
-        placement: NotRequired[_builtins.str]
-        """
-        Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
-        """
-        placement_var: NotRequired[_builtins.str]
-        """
-        Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
-        """
-        scale: NotRequired[_builtins.str]
-        """
-        A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
-        """
-        scale_dimension: NotRequired[_builtins.str]
-        """
-        The dimension, either `width` or `height`, of the source image to scale.
-        """
-        scale_dimension_var: NotRequired[_builtins.str]
-        """
-        The dimension, either `width` or `height`, of the source image to scale.
-        """
-        scale_var: NotRequired[_builtins.str]
-        """
-        A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
-        """
-        x_position: NotRequired[_builtins.str]
-        """
-        The x-axis position of the image to apply.
-        """
-        x_position_var: NotRequired[_builtins.str]
-        """
-        The x-axis position of the image to apply.
-        """
-        y_position: NotRequired[_builtins.str]
-        """
-        The y-axis position of the image to apply.
-        """
-        y_position_var: NotRequired[_builtins.str]
-        """
-        The y-axis position of the image to apply.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationCompositeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationCompositeArgsDict(TypedDict):
+    image: 'GetImagingPolicyImagePolicyTransformationCompositeImageArgsDict'
+    gravity: NotRequired[_builtins.str]
+    """
+    Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
+    """
+    gravity_var: NotRequired[_builtins.str]
+    """
+    Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
+    """
+    placement: NotRequired[_builtins.str]
+    """
+    Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+    """
+    placement_var: NotRequired[_builtins.str]
+    """
+    Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+    """
+    scale: NotRequired[_builtins.str]
+    """
+    A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+    """
+    scale_dimension: NotRequired[_builtins.str]
+    """
+    The dimension, either `width` or `height`, of the source image to scale.
+    """
+    scale_dimension_var: NotRequired[_builtins.str]
+    """
+    The dimension, either `width` or `height`, of the source image to scale.
+    """
+    scale_var: NotRequired[_builtins.str]
+    """
+    A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+    """
+    x_position: NotRequired[_builtins.str]
+    """
+    The x-axis position of the image to apply.
+    """
+    x_position_var: NotRequired[_builtins.str]
+    """
+    The x-axis position of the image to apply.
+    """
+    y_position: NotRequired[_builtins.str]
+    """
+    The y-axis position of the image to apply.
+    """
+    y_position_var: NotRequired[_builtins.str]
+    """
+    The y-axis position of the image to apply.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationCompositeArgs:
@@ -32059,26 +31232,23 @@ class GetImagingPolicyImagePolicyTransformationCompositeArgs:
         pulumi.set(self, "y_position_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationCompositeImageArgsDict(TypedDict):
-        box_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageArgsDict']]
-        """
-        A rectangular box, with a specified color and applied transformation.
-        """
-        circle_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageArgsDict']]
-        """
-        A rectangular box, with a specified color and applied transformation.
-        """
-        text_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgsDict']]
-        """
-        A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
-        """
-        url_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgsDict']]
-        """
-        An image loaded from a URL.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationCompositeImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationCompositeImageArgsDict(TypedDict):
+    box_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageArgsDict']]
+    """
+    A rectangular box, with a specified color and applied transformation.
+    """
+    circle_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageArgsDict']]
+    """
+    A rectangular box, with a specified color and applied transformation.
+    """
+    text_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgsDict']]
+    """
+    A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+    """
+    url_images: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgsDict']]
+    """
+    An image loaded from a URL.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationCompositeImageArgs:
@@ -32151,35 +31321,32 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageArgs:
         pulumi.set(self, "url_images", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The height of the box in pixels.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height of the box in pixels.
-        """
-        transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        width: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The height of the box in pixels.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height of the box in pixels.
+    """
+    transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    width: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageArgs:
@@ -32296,35 +31463,32 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
-        """
-        diameter: NotRequired[_builtins.str]
-        """
-        The diameter of the circle. The diameter will be the width and the height of the image in pixels.
-        """
-        diameter_var: NotRequired[_builtins.str]
-        """
-        The diameter of the circle. The diameter will be the width and the height of the image in pixels.
-        """
-        transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        width: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width of the box in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+    """
+    diameter: NotRequired[_builtins.str]
+    """
+    The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+    """
+    diameter_var: NotRequired[_builtins.str]
+    """
+    The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+    """
+    transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    width: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width of the box in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageArgs:
@@ -32441,59 +31605,56 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgsDict(TypedDict):
-        fill: NotRequired[_builtins.str]
-        """
-        The main fill color of the text.
-        """
-        fill_var: NotRequired[_builtins.str]
-        """
-        The main fill color of the text.
-        """
-        size: NotRequired[_builtins.str]
-        """
-        The size in pixels to render the text.
-        """
-        size_var: NotRequired[_builtins.str]
-        """
-        The size in pixels to render the text.
-        """
-        stroke: NotRequired[_builtins.str]
-        """
-        The color for the outline of the text.
-        """
-        stroke_size: NotRequired[_builtins.str]
-        """
-        The thickness in points for the outline of the text.
-        """
-        stroke_size_var: NotRequired[_builtins.str]
-        """
-        The thickness in points for the outline of the text.
-        """
-        stroke_var: NotRequired[_builtins.str]
-        """
-        The color for the outline of the text.
-        """
-        text: NotRequired[_builtins.str]
-        """
-        The line of text to render.
-        """
-        text_var: NotRequired[_builtins.str]
-        """
-        The line of text to render.
-        """
-        transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        typeface: NotRequired[_builtins.str]
-        """
-        The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
-        """
-        typeface_var: NotRequired[_builtins.str]
-        """
-        The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgsDict(TypedDict):
+    fill: NotRequired[_builtins.str]
+    """
+    The main fill color of the text.
+    """
+    fill_var: NotRequired[_builtins.str]
+    """
+    The main fill color of the text.
+    """
+    size: NotRequired[_builtins.str]
+    """
+    The size in pixels to render the text.
+    """
+    size_var: NotRequired[_builtins.str]
+    """
+    The size in pixels to render the text.
+    """
+    stroke: NotRequired[_builtins.str]
+    """
+    The color for the outline of the text.
+    """
+    stroke_size: NotRequired[_builtins.str]
+    """
+    The thickness in points for the outline of the text.
+    """
+    stroke_size_var: NotRequired[_builtins.str]
+    """
+    The thickness in points for the outline of the text.
+    """
+    stroke_var: NotRequired[_builtins.str]
+    """
+    The color for the outline of the text.
+    """
+    text: NotRequired[_builtins.str]
+    """
+    The line of text to render.
+    """
+    text_var: NotRequired[_builtins.str]
+    """
+    The line of text to render.
+    """
+    transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    typeface: NotRequired[_builtins.str]
+    """
+    The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+    """
+    typeface_var: NotRequired[_builtins.str]
+    """
+    The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgs:
@@ -32706,19 +31867,16 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgs:
         pulumi.set(self, "typeface_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgsDict(TypedDict):
-        transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        url: NotRequired[_builtins.str]
-        """
-        The URL of the image.
-        """
-        url_var: NotRequired[_builtins.str]
-        """
-        The URL of the image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgsDict(TypedDict):
+    transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    url: NotRequired[_builtins.str]
+    """
+    The URL of the image.
+    """
+    url_var: NotRequired[_builtins.str]
+    """
+    The URL of the image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgs:
@@ -32771,11 +31929,8 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgs:
         pulumi.set(self, "url_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationCompoundArgsDict(TypedDict):
-        transformations: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationArgsDict']]
-elif False:
-    GetImagingPolicyImagePolicyTransformationCompoundArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationCompoundArgsDict(TypedDict):
+    transformations: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationArgsDict']]
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationCompoundArgs:
@@ -32794,26 +31949,23 @@ class GetImagingPolicyImagePolicyTransformationCompoundArgs:
         pulumi.set(self, "transformations", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationContrastArgsDict(TypedDict):
-        brightness: NotRequired[_builtins.str]
-        """
-        Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
-        """
-        brightness_var: NotRequired[_builtins.str]
-        """
-        Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
-        """
-        contrast: NotRequired[_builtins.str]
-        """
-        Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
-        """
-        contrast_var: NotRequired[_builtins.str]
-        """
-        Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationContrastArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationContrastArgsDict(TypedDict):
+    brightness: NotRequired[_builtins.str]
+    """
+    Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+    """
+    brightness_var: NotRequired[_builtins.str]
+    """
+    Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+    """
+    contrast: NotRequired[_builtins.str]
+    """
+    Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+    """
+    contrast_var: NotRequired[_builtins.str]
+    """
+    Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationContrastArgs:
@@ -32886,58 +32038,55 @@ class GetImagingPolicyImagePolicyTransformationContrastArgs:
         pulumi.set(self, "contrast_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationCropArgsDict(TypedDict):
-        allow_expansion: NotRequired[_builtins.str]
-        """
-        If cropping an area outside of the existing canvas, expands the image canvas.
-        """
-        allow_expansion_var: NotRequired[_builtins.str]
-        """
-        If cropping an area outside of the existing canvas, expands the image canvas.
-        """
-        gravity: NotRequired[_builtins.str]
-        """
-        Frame of reference for X and Y Positions.
-        """
-        gravity_var: NotRequired[_builtins.str]
-        """
-        Frame of reference for X and Y Positions.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The number of pixels to crop along the y-axis.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The number of pixels to crop along the y-axis.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        The number of pixels to crop along the x-axis.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The number of pixels to crop along the x-axis.
-        """
-        x_position: NotRequired[_builtins.str]
-        """
-        The x-axis position of the image to crop from.
-        """
-        x_position_var: NotRequired[_builtins.str]
-        """
-        The x-axis position of the image to crop from.
-        """
-        y_position: NotRequired[_builtins.str]
-        """
-        The y-axis position of the image to crop from.
-        """
-        y_position_var: NotRequired[_builtins.str]
-        """
-        The y-axis position of the image to crop from.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationCropArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationCropArgsDict(TypedDict):
+    allow_expansion: NotRequired[_builtins.str]
+    """
+    If cropping an area outside of the existing canvas, expands the image canvas.
+    """
+    allow_expansion_var: NotRequired[_builtins.str]
+    """
+    If cropping an area outside of the existing canvas, expands the image canvas.
+    """
+    gravity: NotRequired[_builtins.str]
+    """
+    Frame of reference for X and Y Positions.
+    """
+    gravity_var: NotRequired[_builtins.str]
+    """
+    Frame of reference for X and Y Positions.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The number of pixels to crop along the y-axis.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The number of pixels to crop along the y-axis.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    The number of pixels to crop along the x-axis.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The number of pixels to crop along the x-axis.
+    """
+    x_position: NotRequired[_builtins.str]
+    """
+    The x-axis position of the image to crop from.
+    """
+    x_position_var: NotRequired[_builtins.str]
+    """
+    The x-axis position of the image to crop from.
+    """
+    y_position: NotRequired[_builtins.str]
+    """
+    The y-axis position of the image to crop from.
+    """
+    y_position_var: NotRequired[_builtins.str]
+    """
+    The y-axis position of the image to crop from.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationCropArgs:
@@ -33138,82 +32287,79 @@ class GetImagingPolicyImagePolicyTransformationCropArgs:
         pulumi.set(self, "y_position_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationFaceCropArgsDict(TypedDict):
-        algorithm: NotRequired[_builtins.str]
-        """
-        Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
-        """
-        algorithm_var: NotRequired[_builtins.str]
-        """
-        Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
-        """
-        confidence: NotRequired[_builtins.str]
-        """
-        With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
-        """
-        confidence_var: NotRequired[_builtins.str]
-        """
-        With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
-        """
-        fail_gravity: NotRequired[_builtins.str]
-        """
-        Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
-        """
-        fail_gravity_var: NotRequired[_builtins.str]
-        """
-        Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
-        """
-        focus: NotRequired[_builtins.str]
-        """
-        Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
-        """
-        focus_var: NotRequired[_builtins.str]
-        """
-        Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
-        """
-        gravity: NotRequired[_builtins.str]
-        """
-        Controls placement of the crop. Directions are relative to the face(s) plus padding.
-        """
-        gravity_var: NotRequired[_builtins.str]
-        """
-        Controls placement of the crop. Directions are relative to the face(s) plus padding.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The height of the output image in pixels relative to the specified `style` value.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height of the output image in pixels relative to the specified `style` value.
-        """
-        padding: NotRequired[_builtins.str]
-        """
-        The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
-        """
-        padding_var: NotRequired[_builtins.str]
-        """
-        The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
-        """
-        style: NotRequired[_builtins.str]
-        """
-        Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
-        """
-        style_var: NotRequired[_builtins.str]
-        """
-        Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        The width of the output image in pixels relative to the specified `style` value.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width of the output image in pixels relative to the specified `style` value.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationFaceCropArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationFaceCropArgsDict(TypedDict):
+    algorithm: NotRequired[_builtins.str]
+    """
+    Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+    """
+    algorithm_var: NotRequired[_builtins.str]
+    """
+    Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+    """
+    confidence: NotRequired[_builtins.str]
+    """
+    With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+    """
+    confidence_var: NotRequired[_builtins.str]
+    """
+    With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+    """
+    fail_gravity: NotRequired[_builtins.str]
+    """
+    Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
+    """
+    fail_gravity_var: NotRequired[_builtins.str]
+    """
+    Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
+    """
+    focus: NotRequired[_builtins.str]
+    """
+    Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+    """
+    focus_var: NotRequired[_builtins.str]
+    """
+    Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+    """
+    gravity: NotRequired[_builtins.str]
+    """
+    Controls placement of the crop. Directions are relative to the face(s) plus padding.
+    """
+    gravity_var: NotRequired[_builtins.str]
+    """
+    Controls placement of the crop. Directions are relative to the face(s) plus padding.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The height of the output image in pixels relative to the specified `style` value.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height of the output image in pixels relative to the specified `style` value.
+    """
+    padding: NotRequired[_builtins.str]
+    """
+    The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
+    """
+    padding_var: NotRequired[_builtins.str]
+    """
+    The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
+    """
+    style: NotRequired[_builtins.str]
+    """
+    Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+    """
+    style_var: NotRequired[_builtins.str]
+    """
+    Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    The width of the output image in pixels relative to the specified `style` value.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width of the output image in pixels relative to the specified `style` value.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationFaceCropArgs:
@@ -33510,82 +32656,79 @@ class GetImagingPolicyImagePolicyTransformationFaceCropArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationFeatureCropArgsDict(TypedDict):
-        fail_gravity: NotRequired[_builtins.str]
-        """
-        Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
-        """
-        fail_gravity_var: NotRequired[_builtins.str]
-        """
-        Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
-        """
-        feature_radius: NotRequired[_builtins.str]
-        """
-        The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
-        """
-        feature_radius_var: NotRequired[_builtins.str]
-        """
-        The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
-        """
-        gravity: NotRequired[_builtins.str]
-        """
-        Controls placement of the crop. Directions are relative to the region of interest plus padding.
-        """
-        gravity_var: NotRequired[_builtins.str]
-        """
-        Controls placement of the crop. Directions are relative to the region of interest plus padding.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The height in pixels of the output image relative to the specified `style` value.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height in pixels of the output image relative to the specified `style` value.
-        """
-        max_features: NotRequired[_builtins.str]
-        """
-        The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
-        """
-        max_features_var: NotRequired[_builtins.str]
-        """
-        The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
-        """
-        min_feature_quality: NotRequired[_builtins.str]
-        """
-        Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
-        """
-        min_feature_quality_var: NotRequired[_builtins.str]
-        """
-        Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
-        """
-        padding: NotRequired[_builtins.str]
-        """
-        Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
-        """
-        padding_var: NotRequired[_builtins.str]
-        """
-        Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
-        """
-        style: NotRequired[_builtins.str]
-        """
-        Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
-        """
-        style_var: NotRequired[_builtins.str]
-        """
-        Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        The width in pixels of the output image relative to the specified `style` value.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width in pixels of the output image relative to the specified `style` value.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationFeatureCropArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationFeatureCropArgsDict(TypedDict):
+    fail_gravity: NotRequired[_builtins.str]
+    """
+    Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
+    """
+    fail_gravity_var: NotRequired[_builtins.str]
+    """
+    Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
+    """
+    feature_radius: NotRequired[_builtins.str]
+    """
+    The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
+    """
+    feature_radius_var: NotRequired[_builtins.str]
+    """
+    The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
+    """
+    gravity: NotRequired[_builtins.str]
+    """
+    Controls placement of the crop. Directions are relative to the region of interest plus padding.
+    """
+    gravity_var: NotRequired[_builtins.str]
+    """
+    Controls placement of the crop. Directions are relative to the region of interest plus padding.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The height in pixels of the output image relative to the specified `style` value.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height in pixels of the output image relative to the specified `style` value.
+    """
+    max_features: NotRequired[_builtins.str]
+    """
+    The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
+    """
+    max_features_var: NotRequired[_builtins.str]
+    """
+    The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
+    """
+    min_feature_quality: NotRequired[_builtins.str]
+    """
+    Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
+    """
+    min_feature_quality_var: NotRequired[_builtins.str]
+    """
+    Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
+    """
+    padding: NotRequired[_builtins.str]
+    """
+    Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
+    """
+    padding_var: NotRequired[_builtins.str]
+    """
+    Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
+    """
+    style: NotRequired[_builtins.str]
+    """
+    Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
+    """
+    style_var: NotRequired[_builtins.str]
+    """
+    Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    The width in pixels of the output image relative to the specified `style` value.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width in pixels of the output image relative to the specified `style` value.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationFeatureCropArgs:
@@ -33882,27 +33025,24 @@ class GetImagingPolicyImagePolicyTransformationFeatureCropArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationFitAndFillArgsDict(TypedDict):
-        fill_transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        height: NotRequired[_builtins.str]
-        """
-        The height value of the resized image.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height value of the resized image.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        The width value of the resized image.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width value of the resized image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationFitAndFillArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationFitAndFillArgsDict(TypedDict):
+    fill_transformation: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    height: NotRequired[_builtins.str]
+    """
+    The height value of the resized image.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height value of the resized image.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    The width value of the resized image.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width value of the resized image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationFitAndFillArgs:
@@ -33987,42 +33127,39 @@ class GetImagingPolicyImagePolicyTransformationFitAndFillArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationGoopArgsDict(TypedDict):
-        chaos: NotRequired[_builtins.str]
-        """
-        Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
-        """
-        chaos_var: NotRequired[_builtins.str]
-        """
-        Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
-        """
-        density: NotRequired[_builtins.str]
-        """
-        Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
-        """
-        density_var: NotRequired[_builtins.str]
-        """
-        Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
-        """
-        power: NotRequired[_builtins.str]
-        """
-        By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
-        """
-        power_var: NotRequired[_builtins.str]
-        """
-        By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
-        """
-        seed: NotRequired[_builtins.str]
-        """
-        Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
-        """
-        seed_var: NotRequired[_builtins.str]
-        """
-        Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationGoopArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationGoopArgsDict(TypedDict):
+    chaos: NotRequired[_builtins.str]
+    """
+    Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
+    """
+    chaos_var: NotRequired[_builtins.str]
+    """
+    Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
+    """
+    density: NotRequired[_builtins.str]
+    """
+    Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
+    """
+    density_var: NotRequired[_builtins.str]
+    """
+    Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
+    """
+    power: NotRequired[_builtins.str]
+    """
+    By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
+    """
+    power_var: NotRequired[_builtins.str]
+    """
+    By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
+    """
+    seed: NotRequired[_builtins.str]
+    """
+    Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
+    """
+    seed_var: NotRequired[_builtins.str]
+    """
+    Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationGoopArgs:
@@ -34159,18 +33296,15 @@ class GetImagingPolicyImagePolicyTransformationGoopArgs:
         pulumi.set(self, "seed_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationGrayscaleArgsDict(TypedDict):
-        type: NotRequired[_builtins.str]
-        """
-        The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
-        """
-        type_var: NotRequired[_builtins.str]
-        """
-        The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationGrayscaleArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationGrayscaleArgsDict(TypedDict):
+    type: NotRequired[_builtins.str]
+    """
+    The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+    """
+    type_var: NotRequired[_builtins.str]
+    """
+    The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationGrayscaleArgs:
@@ -34211,34 +33345,31 @@ class GetImagingPolicyImagePolicyTransformationGrayscaleArgs:
         pulumi.set(self, "type_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationHslArgsDict(TypedDict):
-        hue: NotRequired[_builtins.str]
-        """
-        The number of degrees to rotate colors around the color wheel, `0` by default.
-        """
-        hue_var: NotRequired[_builtins.str]
-        """
-        The number of degrees to rotate colors around the color wheel, `0` by default.
-        """
-        lightness: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
-        """
-        lightness_var: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
-        """
-        saturation: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
-        """
-        saturation_var: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationHslArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationHslArgsDict(TypedDict):
+    hue: NotRequired[_builtins.str]
+    """
+    The number of degrees to rotate colors around the color wheel, `0` by default.
+    """
+    hue_var: NotRequired[_builtins.str]
+    """
+    The number of degrees to rotate colors around the color wheel, `0` by default.
+    """
+    lightness: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+    """
+    lightness_var: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+    """
+    saturation: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+    """
+    saturation_var: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationHslArgs:
@@ -34343,34 +33474,31 @@ class GetImagingPolicyImagePolicyTransformationHslArgs:
         pulumi.set(self, "saturation_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationHsvArgsDict(TypedDict):
-        hue: NotRequired[_builtins.str]
-        """
-        The number of degrees to rotate colors around the color wheel, `0.0` by default.
-        """
-        hue_var: NotRequired[_builtins.str]
-        """
-        The number of degrees to rotate colors around the color wheel, `0.0` by default.
-        """
-        saturation: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
-        """
-        saturation_var: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
-        """
-        value: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
-        """
-        value_var: NotRequired[_builtins.str]
-        """
-        A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationHsvArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationHsvArgsDict(TypedDict):
+    hue: NotRequired[_builtins.str]
+    """
+    The number of degrees to rotate colors around the color wheel, `0.0` by default.
+    """
+    hue_var: NotRequired[_builtins.str]
+    """
+    The number of degrees to rotate colors around the color wheel, `0.0` by default.
+    """
+    saturation: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+    """
+    saturation_var: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+    """
+    value: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+    """
+    value_var: NotRequired[_builtins.str]
+    """
+    A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationHsvArgs:
@@ -34475,30 +33603,27 @@ class GetImagingPolicyImagePolicyTransformationHsvArgs:
         pulumi.set(self, "value_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationIfDimensionArgsDict(TypedDict):
-        default: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        dimension: NotRequired[_builtins.str]
-        """
-        The dimension to use to select the transformation, either `height`, `width`, or `both`.
-        """
-        dimension_var: NotRequired[_builtins.str]
-        """
-        The dimension to use to select the transformation, either `height`, `width`, or `both`.
-        """
-        equal: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        greater_than: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        less_than: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        value: NotRequired[_builtins.str]
-        """
-        The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
-        """
-        value_var: NotRequired[_builtins.str]
-        """
-        The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationIfDimensionArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationIfDimensionArgsDict(TypedDict):
+    default: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    dimension: NotRequired[_builtins.str]
+    """
+    The dimension to use to select the transformation, either `height`, `width`, or `both`.
+    """
+    dimension_var: NotRequired[_builtins.str]
+    """
+    The dimension to use to select the transformation, either `height`, `width`, or `both`.
+    """
+    equal: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    greater_than: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    less_than: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    value: NotRequired[_builtins.str]
+    """
+    The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+    """
+    value_var: NotRequired[_builtins.str]
+    """
+    The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationIfDimensionArgs:
@@ -34619,14 +33744,11 @@ class GetImagingPolicyImagePolicyTransformationIfDimensionArgs:
         pulumi.set(self, "value_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationIfOrientationArgsDict(TypedDict):
-        default: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        landscape: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        portrait: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-        square: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
-elif False:
-    GetImagingPolicyImagePolicyTransformationIfOrientationArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationIfOrientationArgsDict(TypedDict):
+    default: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    landscape: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    portrait: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
+    square: NotRequired['GetImagingPolicyImagePolicyTransformationArgsDict']
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationIfOrientationArgs:
@@ -34681,15 +33803,12 @@ class GetImagingPolicyImagePolicyTransformationIfOrientationArgs:
         pulumi.set(self, "square", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationImQueryArgsDict(TypedDict):
-        allowed_transformations: Sequence[_builtins.str]
-        """
-        Specifies the transformations that can be applied using the query string parameter.
-        """
-        query_var: _builtins.str
-elif False:
-    GetImagingPolicyImagePolicyTransformationImQueryArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationImQueryArgsDict(TypedDict):
+    allowed_transformations: Sequence[_builtins.str]
+    """
+    Specifies the transformations that can be applied using the query string parameter.
+    """
+    query_var: _builtins.str
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationImQueryArgs:
@@ -34724,18 +33843,15 @@ class GetImagingPolicyImagePolicyTransformationImQueryArgs:
         pulumi.set(self, "query_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationMaxColorArgsDict(TypedDict):
-        colors: NotRequired[_builtins.str]
-        """
-        The value representing the maximum number of colors to use with the source image.
-        """
-        colors_var: NotRequired[_builtins.str]
-        """
-        The value representing the maximum number of colors to use with the source image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationMaxColorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationMaxColorArgsDict(TypedDict):
+    colors: NotRequired[_builtins.str]
+    """
+    The value representing the maximum number of colors to use with the source image.
+    """
+    colors_var: NotRequired[_builtins.str]
+    """
+    The value representing the maximum number of colors to use with the source image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationMaxColorArgs:
@@ -34776,26 +33892,23 @@ class GetImagingPolicyImagePolicyTransformationMaxColorArgs:
         pulumi.set(self, "colors_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationMirrorArgsDict(TypedDict):
-        horizontal: NotRequired[_builtins.str]
-        """
-        Flips the image horizontally.
-        """
-        horizontal_var: NotRequired[_builtins.str]
-        """
-        Flips the image horizontally.
-        """
-        vertical: NotRequired[_builtins.str]
-        """
-        Flips the image vertically.
-        """
-        vertical_var: NotRequired[_builtins.str]
-        """
-        Flips the image vertically.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationMirrorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationMirrorArgsDict(TypedDict):
+    horizontal: NotRequired[_builtins.str]
+    """
+    Flips the image horizontally.
+    """
+    horizontal_var: NotRequired[_builtins.str]
+    """
+    Flips the image horizontally.
+    """
+    vertical: NotRequired[_builtins.str]
+    """
+    Flips the image vertically.
+    """
+    vertical_var: NotRequired[_builtins.str]
+    """
+    Flips the image vertically.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationMirrorArgs:
@@ -34868,18 +33981,15 @@ class GetImagingPolicyImagePolicyTransformationMirrorArgs:
         pulumi.set(self, "vertical_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationMonoHueArgsDict(TypedDict):
-        hue: NotRequired[_builtins.str]
-        """
-        Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
-        """
-        hue_var: NotRequired[_builtins.str]
-        """
-        Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationMonoHueArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationMonoHueArgsDict(TypedDict):
+    hue: NotRequired[_builtins.str]
+    """
+    Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+    """
+    hue_var: NotRequired[_builtins.str]
+    """
+    Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationMonoHueArgs:
@@ -34920,18 +34030,15 @@ class GetImagingPolicyImagePolicyTransformationMonoHueArgs:
         pulumi.set(self, "hue_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationOpacityArgsDict(TypedDict):
-        opacity: NotRequired[_builtins.str]
-        """
-        Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
-        """
-        opacity_var: NotRequired[_builtins.str]
-        """
-        Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationOpacityArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationOpacityArgsDict(TypedDict):
+    opacity: NotRequired[_builtins.str]
+    """
+    Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+    """
+    opacity_var: NotRequired[_builtins.str]
+    """
+    Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationOpacityArgs:
@@ -34972,43 +34079,40 @@ class GetImagingPolicyImagePolicyTransformationOpacityArgs:
         pulumi.set(self, "opacity_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgsDict(TypedDict):
-        region_of_interest: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgsDict'
-        gravity: NotRequired[_builtins.str]
-        """
-        The placement of the crop area relative to the specified area of interest.
-        """
-        gravity_var: NotRequired[_builtins.str]
-        """
-        The placement of the crop area relative to the specified area of interest.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The height in pixels of the output image relative to the specified `style` value.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height in pixels of the output image relative to the specified `style` value.
-        """
-        style: NotRequired[_builtins.str]
-        """
-        Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
-        """
-        style_var: NotRequired[_builtins.str]
-        """
-        Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        The width in pixels of the output image relative to the specified `style` value.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width in pixels of the output image relative to the specified `style` value.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgsDict(TypedDict):
+    region_of_interest: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgsDict'
+    gravity: NotRequired[_builtins.str]
+    """
+    The placement of the crop area relative to the specified area of interest.
+    """
+    gravity_var: NotRequired[_builtins.str]
+    """
+    The placement of the crop area relative to the specified area of interest.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The height in pixels of the output image relative to the specified `style` value.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height in pixels of the output image relative to the specified `style` value.
+    """
+    style: NotRequired[_builtins.str]
+    """
+    Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+    """
+    style_var: NotRequired[_builtins.str]
+    """
+    Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    The width in pixels of the output image relative to the specified `style` value.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width in pixels of the output image relative to the specified `style` value.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgs:
@@ -35156,27 +34260,24 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgsDict(TypedDict):
-        circle_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgsDict']]
-        """
-        Defines a circle with a specified `radius` from its `center` point.
-        """
-        point_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShapeArgsDict']]
-        polygon_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgsDict']]
-        """
-        Defines a polygon from a series of connected points.
-        """
-        rectangle_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgsDict']]
-        """
-        Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
-        """
-        union_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgsDict']]
-        """
-        Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgsDict(TypedDict):
+    circle_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgsDict']]
+    """
+    Defines a circle with a specified `radius` from its `center` point.
+    """
+    point_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShapeArgsDict']]
+    polygon_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgsDict']]
+    """
+    Defines a polygon from a series of connected points.
+    """
+    rectangle_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgsDict']]
+    """
+    Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
+    """
+    union_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgsDict']]
+    """
+    Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgs:
@@ -35261,22 +34362,19 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "union_shapes", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgsDict(TypedDict):
-        center: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgsDict'
-        """
-        Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
-        """
-        radius: NotRequired[_builtins.str]
-        """
-        The radius of the circle measured in pixels.
-        """
-        radius_var: NotRequired[_builtins.str]
-        """
-        The radius of the circle measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgsDict(TypedDict):
+    center: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgsDict'
+    """
+    Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+    """
+    radius: NotRequired[_builtins.str]
+    """
+    The radius of the circle measured in pixels.
+    """
+    radius_var: NotRequired[_builtins.str]
+    """
+    The radius of the circle measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs:
@@ -35332,26 +34430,23 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "radius_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgsDict(TypedDict):
-        x: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        x_var: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        y: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-        y_var: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgsDict(TypedDict):
+    x: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    x_var: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    y: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
+    y_var: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgs:
@@ -35424,26 +34519,23 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "y_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShapeArgsDict(TypedDict):
-        x: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        x_var: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        y: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-        y_var: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShapeArgsDict(TypedDict):
+    x: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    x_var: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    y: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
+    y_var: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShapeArgs:
@@ -35516,14 +34608,11 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "y_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgsDict(TypedDict):
-        points: Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgsDict']
-        """
-        Series of PointShapeType objects. The last and first points connect to close the shape automatically.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgsDict(TypedDict):
+    points: Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgsDict']
+    """
+    Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs:
@@ -35547,26 +34636,23 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "points", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgsDict(TypedDict):
-        x: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        x_var: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        y: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-        y_var: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgsDict(TypedDict):
+    x: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    x_var: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    y: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
+    y_var: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs:
@@ -35639,27 +34725,24 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "y_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgsDict(TypedDict):
-        anchor: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchorArgsDict'
-        height: NotRequired[_builtins.str]
-        """
-        Extends the rectangle down from the `anchor` point.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        Extends the rectangle down from the `anchor` point.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        Extends the rectangle right from the `anchor` point.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        Extends the rectangle right from the `anchor` point.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgsDict(TypedDict):
+    anchor: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchorArgsDict'
+    height: NotRequired[_builtins.str]
+    """
+    Extends the rectangle down from the `anchor` point.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    Extends the rectangle down from the `anchor` point.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    Extends the rectangle right from the `anchor` point.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    Extends the rectangle right from the `anchor` point.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs:
@@ -35743,26 +34826,23 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchorArgsDict(TypedDict):
-        x: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        x_var: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        y: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-        y_var: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchorArgsDict(TypedDict):
+    x: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    x_var: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    y: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
+    y_var: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchorArgs:
@@ -35835,11 +34915,8 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "y_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgsDict(TypedDict):
-        shapes: Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeArgsDict']
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgsDict(TypedDict):
+    shapes: Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeArgsDict']
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgs:
@@ -35857,27 +34934,24 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "shapes", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeArgsDict(TypedDict):
-        circle_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeArgsDict']]
-        """
-        Defines a circle with a specified `radius` from its `center` point.
-        """
-        point_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShapeArgsDict']]
-        polygon_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeArgsDict']]
-        """
-        Defines a polygon from a series of connected points.
-        """
-        rectangle_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeArgsDict']]
-        """
-        Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
-        """
-        union_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeArgsDict']]
-        """
-        Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeArgsDict(TypedDict):
+    circle_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeArgsDict']]
+    """
+    Defines a circle with a specified `radius` from its `center` point.
+    """
+    point_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShapeArgsDict']]
+    polygon_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeArgsDict']]
+    """
+    Defines a polygon from a series of connected points.
+    """
+    rectangle_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeArgsDict']]
+    """
+    Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
+    """
+    union_shapes: NotRequired[Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeArgsDict']]
+    """
+    Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeArgs:
@@ -35962,22 +35036,19 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "union_shapes", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeArgsDict(TypedDict):
-        center: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenterArgsDict'
-        """
-        Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
-        """
-        radius: NotRequired[_builtins.str]
-        """
-        The radius of the circle measured in pixels.
-        """
-        radius_var: NotRequired[_builtins.str]
-        """
-        The radius of the circle measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeArgsDict(TypedDict):
+    center: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenterArgsDict'
+    """
+    Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+    """
+    radius: NotRequired[_builtins.str]
+    """
+    The radius of the circle measured in pixels.
+    """
+    radius_var: NotRequired[_builtins.str]
+    """
+    The radius of the circle measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeArgs:
@@ -36033,26 +35104,23 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "radius_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenterArgsDict(TypedDict):
-        x: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        x_var: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        y: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-        y_var: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenterArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenterArgsDict(TypedDict):
+    x: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    x_var: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    y: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
+    y_var: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenterArgs:
@@ -36125,26 +35193,23 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "y_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShapeArgsDict(TypedDict):
-        x: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        x_var: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        y: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-        y_var: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShapeArgsDict(TypedDict):
+    x: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    x_var: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    y: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
+    y_var: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShapeArgs:
@@ -36217,14 +35282,11 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "y_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeArgsDict(TypedDict):
-        points: Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointArgsDict']
-        """
-        Series of PointShapeType objects. The last and first points connect to close the shape automatically.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeArgsDict(TypedDict):
+    points: Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointArgsDict']
+    """
+    Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeArgs:
@@ -36248,26 +35310,23 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "points", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointArgsDict(TypedDict):
-        x: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        x_var: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        y: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-        y_var: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointArgsDict(TypedDict):
+    x: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    x_var: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    y: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
+    y_var: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointArgs:
@@ -36340,27 +35399,24 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "y_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeArgsDict(TypedDict):
-        anchor: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchorArgsDict'
-        height: NotRequired[_builtins.str]
-        """
-        Extends the rectangle down from the `anchor` point.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        Extends the rectangle down from the `anchor` point.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        Extends the rectangle right from the `anchor` point.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        Extends the rectangle right from the `anchor` point.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeArgsDict(TypedDict):
+    anchor: 'GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchorArgsDict'
+    height: NotRequired[_builtins.str]
+    """
+    Extends the rectangle down from the `anchor` point.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    Extends the rectangle down from the `anchor` point.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    Extends the rectangle right from the `anchor` point.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    Extends the rectangle right from the `anchor` point.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeArgs:
@@ -36444,26 +35500,23 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchorArgsDict(TypedDict):
-        x: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        x_var: NotRequired[_builtins.str]
-        """
-        The horizontal position of the point, measured in pixels.
-        """
-        y: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-        y_var: NotRequired[_builtins.str]
-        """
-        The vertical position of the point, measured in pixels.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchorArgsDict(TypedDict):
+    x: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    x_var: NotRequired[_builtins.str]
+    """
+    The horizontal position of the point, measured in pixels.
+    """
+    y: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
+    y_var: NotRequired[_builtins.str]
+    """
+    The vertical position of the point, measured in pixels.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchorArgs:
@@ -36536,11 +35589,8 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "y_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeArgsDict(TypedDict):
-        shapes: Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShapeArgsDict']
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeArgsDict(TypedDict):
+    shapes: Sequence['GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShapeArgsDict']
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeArgs:
@@ -36558,11 +35608,8 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pulumi.set(self, "shapes", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShapeArgsDict(TypedDict):
-        pass
-elif False:
-    GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShapeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShapeArgsDict(TypedDict):
+    pass
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShapeArgs:
@@ -36570,42 +35617,39 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
         pass
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRelativeCropArgsDict(TypedDict):
-        east: NotRequired[_builtins.str]
-        """
-        The number of pixels to shrink or expand the right side of the image.
-        """
-        east_var: NotRequired[_builtins.str]
-        """
-        The number of pixels to shrink or expand the right side of the image.
-        """
-        north: NotRequired[_builtins.str]
-        """
-        The number of pixels to shrink or expand the top side of the image.
-        """
-        north_var: NotRequired[_builtins.str]
-        """
-        The number of pixels to shrink or expand the top side of the image.
-        """
-        south: NotRequired[_builtins.str]
-        """
-        The number of pixels to shrink or expand the bottom side of the image.
-        """
-        south_var: NotRequired[_builtins.str]
-        """
-        The number of pixels to shrink or expand the bottom side of the image.
-        """
-        west: NotRequired[_builtins.str]
-        """
-        The number of pixels to shrink or expand the left side of the image.
-        """
-        west_var: NotRequired[_builtins.str]
-        """
-        The number of pixels to shrink or expand the left side of the image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRelativeCropArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRelativeCropArgsDict(TypedDict):
+    east: NotRequired[_builtins.str]
+    """
+    The number of pixels to shrink or expand the right side of the image.
+    """
+    east_var: NotRequired[_builtins.str]
+    """
+    The number of pixels to shrink or expand the right side of the image.
+    """
+    north: NotRequired[_builtins.str]
+    """
+    The number of pixels to shrink or expand the top side of the image.
+    """
+    north_var: NotRequired[_builtins.str]
+    """
+    The number of pixels to shrink or expand the top side of the image.
+    """
+    south: NotRequired[_builtins.str]
+    """
+    The number of pixels to shrink or expand the bottom side of the image.
+    """
+    south_var: NotRequired[_builtins.str]
+    """
+    The number of pixels to shrink or expand the bottom side of the image.
+    """
+    west: NotRequired[_builtins.str]
+    """
+    The number of pixels to shrink or expand the left side of the image.
+    """
+    west_var: NotRequired[_builtins.str]
+    """
+    The number of pixels to shrink or expand the left side of the image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRelativeCropArgs:
@@ -36742,34 +35786,31 @@ class GetImagingPolicyImagePolicyTransformationRelativeCropArgs:
         pulumi.set(self, "west_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRemoveColorArgsDict(TypedDict):
-        color: NotRequired[_builtins.str]
-        """
-        The hexadecimal CSS color value to remove.
-        """
-        color_var: NotRequired[_builtins.str]
-        """
-        The hexadecimal CSS color value to remove.
-        """
-        feather: NotRequired[_builtins.str]
-        """
-        The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
-        """
-        feather_var: NotRequired[_builtins.str]
-        """
-        The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
-        """
-        tolerance: NotRequired[_builtins.str]
-        """
-        The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
-        """
-        tolerance_var: NotRequired[_builtins.str]
-        """
-        The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRemoveColorArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRemoveColorArgsDict(TypedDict):
+    color: NotRequired[_builtins.str]
+    """
+    The hexadecimal CSS color value to remove.
+    """
+    color_var: NotRequired[_builtins.str]
+    """
+    The hexadecimal CSS color value to remove.
+    """
+    feather: NotRequired[_builtins.str]
+    """
+    The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+    """
+    feather_var: NotRequired[_builtins.str]
+    """
+    The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+    """
+    tolerance: NotRequired[_builtins.str]
+    """
+    The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+    """
+    tolerance_var: NotRequired[_builtins.str]
+    """
+    The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRemoveColorArgs:
@@ -36874,42 +35915,39 @@ class GetImagingPolicyImagePolicyTransformationRemoveColorArgs:
         pulumi.set(self, "tolerance_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationResizeArgsDict(TypedDict):
-        aspect: NotRequired[_builtins.str]
-        """
-        Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
-        """
-        aspect_var: NotRequired[_builtins.str]
-        """
-        Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The height to resize the source image to. Must be set if height is not specified.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height to resize the source image to. Must be set if height is not specified.
-        """
-        type: NotRequired[_builtins.str]
-        """
-        Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
-        """
-        type_var: NotRequired[_builtins.str]
-        """
-        Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        The width to resize the source image to. Must be set if width is not specified.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width to resize the source image to. Must be set if width is not specified.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationResizeArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationResizeArgsDict(TypedDict):
+    aspect: NotRequired[_builtins.str]
+    """
+    Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+    """
+    aspect_var: NotRequired[_builtins.str]
+    """
+    Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The height to resize the source image to. Must be set if height is not specified.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height to resize the source image to. Must be set if height is not specified.
+    """
+    type: NotRequired[_builtins.str]
+    """
+    Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+    """
+    type_var: NotRequired[_builtins.str]
+    """
+    Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    The width to resize the source image to. Must be set if width is not specified.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width to resize the source image to. Must be set if width is not specified.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationResizeArgs:
@@ -37046,18 +36084,15 @@ class GetImagingPolicyImagePolicyTransformationResizeArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationRotateArgsDict(TypedDict):
-        degrees: NotRequired[_builtins.str]
-        """
-        The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
-        """
-        degrees_var: NotRequired[_builtins.str]
-        """
-        The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationRotateArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationRotateArgsDict(TypedDict):
+    degrees: NotRequired[_builtins.str]
+    """
+    The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+    """
+    degrees_var: NotRequired[_builtins.str]
+    """
+    The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationRotateArgs:
@@ -37098,26 +36133,23 @@ class GetImagingPolicyImagePolicyTransformationRotateArgs:
         pulumi.set(self, "degrees_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationScaleArgsDict(TypedDict):
-        height: NotRequired[_builtins.str]
-        """
-        Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationScaleArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationScaleArgsDict(TypedDict):
+    height: NotRequired[_builtins.str]
+    """
+    Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationScaleArgs:
@@ -37190,26 +36222,23 @@ class GetImagingPolicyImagePolicyTransformationScaleArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationShearsArgsDict(TypedDict):
-        x_shear: NotRequired[_builtins.str]
-        """
-        The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
-        """
-        x_shear_var: NotRequired[_builtins.str]
-        """
-        The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
-        """
-        y_shear: NotRequired[_builtins.str]
-        """
-        The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
-        """
-        y_shear_var: NotRequired[_builtins.str]
-        """
-        The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationShearsArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationShearsArgsDict(TypedDict):
+    x_shear: NotRequired[_builtins.str]
+    """
+    The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
+    """
+    x_shear_var: NotRequired[_builtins.str]
+    """
+    The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
+    """
+    y_shear: NotRequired[_builtins.str]
+    """
+    The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
+    """
+    y_shear_var: NotRequired[_builtins.str]
+    """
+    The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationShearsArgs:
@@ -37282,50 +36311,47 @@ class GetImagingPolicyImagePolicyTransformationShearsArgs:
         pulumi.set(self, "y_shear_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationSmartCropArgsDict(TypedDict):
-        debug: NotRequired[_builtins.str]
-        """
-        When enabled, the SmartCrop transformation doesn't actually execute. Instead, it outlines found faces or features, the region of interest, and the crop area.
-        """
-        debug_var: NotRequired[_builtins.str]
-        """
-        When enabled, the SmartCrop transformation doesn't actually execute. Instead, it outlines found faces or features, the region of interest, and the crop area.
-        """
-        height: NotRequired[_builtins.str]
-        """
-        The height in pixels of the output image relative to the specified `style` value.
-        """
-        height_var: NotRequired[_builtins.str]
-        """
-        The height in pixels of the output image relative to the specified `style` value.
-        """
-        sloppy: NotRequired[_builtins.str]
-        """
-        Whether to sacrifice any image fidelity for transformation performance.
-        """
-        sloppy_var: NotRequired[_builtins.str]
-        """
-        Whether to sacrifice any image fidelity for transformation performance.
-        """
-        style: NotRequired[_builtins.str]
-        """
-        Specifies how to crop or scale a crop area for the specified area of interest in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
-        """
-        style_var: NotRequired[_builtins.str]
-        """
-        Specifies how to crop or scale a crop area for the specified area of interest in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
-        """
-        width: NotRequired[_builtins.str]
-        """
-        The width in pixels of the output image relative to the specified `style` value.
-        """
-        width_var: NotRequired[_builtins.str]
-        """
-        The width in pixels of the output image relative to the specified `style` value.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationSmartCropArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationSmartCropArgsDict(TypedDict):
+    debug: NotRequired[_builtins.str]
+    """
+    When enabled, the SmartCrop transformation doesn't actually execute. Instead, it outlines found faces or features, the region of interest, and the crop area.
+    """
+    debug_var: NotRequired[_builtins.str]
+    """
+    When enabled, the SmartCrop transformation doesn't actually execute. Instead, it outlines found faces or features, the region of interest, and the crop area.
+    """
+    height: NotRequired[_builtins.str]
+    """
+    The height in pixels of the output image relative to the specified `style` value.
+    """
+    height_var: NotRequired[_builtins.str]
+    """
+    The height in pixels of the output image relative to the specified `style` value.
+    """
+    sloppy: NotRequired[_builtins.str]
+    """
+    Whether to sacrifice any image fidelity for transformation performance.
+    """
+    sloppy_var: NotRequired[_builtins.str]
+    """
+    Whether to sacrifice any image fidelity for transformation performance.
+    """
+    style: NotRequired[_builtins.str]
+    """
+    Specifies how to crop or scale a crop area for the specified area of interest in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+    """
+    style_var: NotRequired[_builtins.str]
+    """
+    Specifies how to crop or scale a crop area for the specified area of interest in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+    """
+    width: NotRequired[_builtins.str]
+    """
+    The width in pixels of the output image relative to the specified `style` value.
+    """
+    width_var: NotRequired[_builtins.str]
+    """
+    The width in pixels of the output image relative to the specified `style` value.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationSmartCropArgs:
@@ -37494,26 +36520,23 @@ class GetImagingPolicyImagePolicyTransformationSmartCropArgs:
         pulumi.set(self, "width_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationTrimArgsDict(TypedDict):
-        fuzz: NotRequired[_builtins.str]
-        """
-        The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
-        """
-        fuzz_var: NotRequired[_builtins.str]
-        """
-        The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
-        """
-        padding: NotRequired[_builtins.str]
-        """
-        The amount of padding in pixels to add to the trimmed image.
-        """
-        padding_var: NotRequired[_builtins.str]
-        """
-        The amount of padding in pixels to add to the trimmed image.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationTrimArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationTrimArgsDict(TypedDict):
+    fuzz: NotRequired[_builtins.str]
+    """
+    The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+    """
+    fuzz_var: NotRequired[_builtins.str]
+    """
+    The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+    """
+    padding: NotRequired[_builtins.str]
+    """
+    The amount of padding in pixels to add to the trimmed image.
+    """
+    padding_var: NotRequired[_builtins.str]
+    """
+    The amount of padding in pixels to add to the trimmed image.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationTrimArgs:
@@ -37586,34 +36609,31 @@ class GetImagingPolicyImagePolicyTransformationTrimArgs:
         pulumi.set(self, "padding_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyTransformationUnsharpMaskArgsDict(TypedDict):
-        gain: NotRequired[_builtins.str]
-        """
-        Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
-        """
-        gain_var: NotRequired[_builtins.str]
-        """
-        Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
-        """
-        sigma: NotRequired[_builtins.str]
-        """
-        The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
-        """
-        sigma_var: NotRequired[_builtins.str]
-        """
-        The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
-        """
-        threshold: NotRequired[_builtins.str]
-        """
-        Set the minimum change required to include a detail in the filter. Higher values discard more changes.
-        """
-        threshold_var: NotRequired[_builtins.str]
-        """
-        Set the minimum change required to include a detail in the filter. Higher values discard more changes.
-        """
-elif False:
-    GetImagingPolicyImagePolicyTransformationUnsharpMaskArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyTransformationUnsharpMaskArgsDict(TypedDict):
+    gain: NotRequired[_builtins.str]
+    """
+    Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+    """
+    gain_var: NotRequired[_builtins.str]
+    """
+    Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+    """
+    sigma: NotRequired[_builtins.str]
+    """
+    The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+    """
+    sigma_var: NotRequired[_builtins.str]
+    """
+    The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+    """
+    threshold: NotRequired[_builtins.str]
+    """
+    Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+    """
+    threshold_var: NotRequired[_builtins.str]
+    """
+    Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs:
@@ -37718,31 +36738,28 @@ class GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs:
         pulumi.set(self, "threshold_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyVariableArgsDict(TypedDict):
-        default_value: _builtins.str
-        """
-        The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
-        """
-        name: _builtins.str
-        """
-        The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
-        """
-        type: _builtins.str
-        """
-        The type of value for the variable.
-        """
-        enum_options: NotRequired[Sequence['GetImagingPolicyImagePolicyVariableEnumOptionArgsDict']]
-        postfix: NotRequired[_builtins.str]
-        """
-        A postfix added to the value provided for the variable, or to the default value.
-        """
-        prefix: NotRequired[_builtins.str]
-        """
-        A prefix added to the value provided for the variable, or to the default value.
-        """
-elif False:
-    GetImagingPolicyImagePolicyVariableArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyVariableArgsDict(TypedDict):
+    default_value: _builtins.str
+    """
+    The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
+    """
+    name: _builtins.str
+    """
+    The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
+    """
+    type: _builtins.str
+    """
+    The type of value for the variable.
+    """
+    enum_options: NotRequired[Sequence['GetImagingPolicyImagePolicyVariableEnumOptionArgsDict']]
+    postfix: NotRequired[_builtins.str]
+    """
+    A postfix added to the value provided for the variable, or to the default value.
+    """
+    prefix: NotRequired[_builtins.str]
+    """
+    A prefix added to the value provided for the variable, or to the default value.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyVariableArgs:
@@ -37840,18 +36857,15 @@ class GetImagingPolicyImagePolicyVariableArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class GetImagingPolicyImagePolicyVariableEnumOptionArgsDict(TypedDict):
-        id: _builtins.str
-        """
-        The unique identifier for each enum value, up to 50 alphanumeric characters.
-        """
-        value: _builtins.str
-        """
-        The value of the variable when the `id` is provided.
-        """
-elif False:
-    GetImagingPolicyImagePolicyVariableEnumOptionArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyImagePolicyVariableEnumOptionArgsDict(TypedDict):
+    id: _builtins.str
+    """
+    The unique identifier for each enum value, up to 50 alphanumeric characters.
+    """
+    value: _builtins.str
+    """
+    The value of the variable when the `id` is provided.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyImagePolicyVariableEnumOptionArgs:
@@ -37890,30 +36904,27 @@ class GetImagingPolicyImagePolicyVariableEnumOptionArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetImagingPolicyVideoPolicyArgsDict(TypedDict):
-        breakpoints: NotRequired['GetImagingPolicyVideoPolicyBreakpointsArgsDict']
-        """
-        The breakpoint widths (in pixels) to use to create derivative images/videos.
-        """
-        hosts: NotRequired[Sequence[_builtins.str]]
-        """
-        Hosts that are allowed for image/video URLs within transformations or variables.
-        """
-        output: NotRequired['GetImagingPolicyVideoPolicyOutputArgsDict']
-        """
-        Dictates the output quality that are created for each resized video.
-        """
-        rollout_duration: NotRequired[_builtins.str]
-        """
-        The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
-        """
-        variables: NotRequired[Sequence['GetImagingPolicyVideoPolicyVariableArgsDict']]
-        """
-        Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don't have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image's request URL.
-        """
-elif False:
-    GetImagingPolicyVideoPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyVideoPolicyArgsDict(TypedDict):
+    breakpoints: NotRequired['GetImagingPolicyVideoPolicyBreakpointsArgsDict']
+    """
+    The breakpoint widths (in pixels) to use to create derivative images/videos.
+    """
+    hosts: NotRequired[Sequence[_builtins.str]]
+    """
+    Hosts that are allowed for image/video URLs within transformations or variables.
+    """
+    output: NotRequired['GetImagingPolicyVideoPolicyOutputArgsDict']
+    """
+    Dictates the output quality that are created for each resized video.
+    """
+    rollout_duration: NotRequired[_builtins.str]
+    """
+    The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+    """
+    variables: NotRequired[Sequence['GetImagingPolicyVideoPolicyVariableArgsDict']]
+    """
+    Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don't have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image's request URL.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyVideoPolicyArgs:
@@ -38002,11 +37013,8 @@ class GetImagingPolicyVideoPolicyArgs:
         pulumi.set(self, "variables", value)
 
 
-if not MYPY:
-    class GetImagingPolicyVideoPolicyBreakpointsArgsDict(TypedDict):
-        widths: NotRequired[Sequence[_builtins.int]]
-elif False:
-    GetImagingPolicyVideoPolicyBreakpointsArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyVideoPolicyBreakpointsArgsDict(TypedDict):
+    widths: NotRequired[Sequence[_builtins.int]]
 
 @pulumi.input_type
 class GetImagingPolicyVideoPolicyBreakpointsArgs:
@@ -38025,34 +37033,31 @@ class GetImagingPolicyVideoPolicyBreakpointsArgs:
         pulumi.set(self, "widths", value)
 
 
-if not MYPY:
-    class GetImagingPolicyVideoPolicyOutputArgsDict(TypedDict):
-        perceptual_quality: NotRequired[_builtins.str]
-        """
-        The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-        """
-        perceptual_quality_var: NotRequired[_builtins.str]
-        """
-        The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-        """
-        placeholder_video_url: NotRequired[_builtins.str]
-        """
-        Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-        """
-        placeholder_video_url_var: NotRequired[_builtins.str]
-        """
-        Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-        """
-        video_adaptive_quality: NotRequired[_builtins.str]
-        """
-        Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-        """
-        video_adaptive_quality_var: NotRequired[_builtins.str]
-        """
-        Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-        """
-elif False:
-    GetImagingPolicyVideoPolicyOutputArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyVideoPolicyOutputArgsDict(TypedDict):
+    perceptual_quality: NotRequired[_builtins.str]
+    """
+    The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+    """
+    perceptual_quality_var: NotRequired[_builtins.str]
+    """
+    The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+    """
+    placeholder_video_url: NotRequired[_builtins.str]
+    """
+    Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
+    """
+    placeholder_video_url_var: NotRequired[_builtins.str]
+    """
+    Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
+    """
+    video_adaptive_quality: NotRequired[_builtins.str]
+    """
+    Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+    """
+    video_adaptive_quality_var: NotRequired[_builtins.str]
+    """
+    Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyVideoPolicyOutputArgs:
@@ -38157,31 +37162,28 @@ class GetImagingPolicyVideoPolicyOutputArgs:
         pulumi.set(self, "video_adaptive_quality_var", value)
 
 
-if not MYPY:
-    class GetImagingPolicyVideoPolicyVariableArgsDict(TypedDict):
-        default_value: _builtins.str
-        """
-        The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
-        """
-        name: _builtins.str
-        """
-        The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
-        """
-        type: _builtins.str
-        """
-        The type of value for the variable.
-        """
-        enum_options: NotRequired[Sequence['GetImagingPolicyVideoPolicyVariableEnumOptionArgsDict']]
-        postfix: NotRequired[_builtins.str]
-        """
-        A postfix added to the value provided for the variable, or to the default value.
-        """
-        prefix: NotRequired[_builtins.str]
-        """
-        A prefix added to the value provided for the variable, or to the default value.
-        """
-elif False:
-    GetImagingPolicyVideoPolicyVariableArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyVideoPolicyVariableArgsDict(TypedDict):
+    default_value: _builtins.str
+    """
+    The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
+    """
+    name: _builtins.str
+    """
+    The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
+    """
+    type: _builtins.str
+    """
+    The type of value for the variable.
+    """
+    enum_options: NotRequired[Sequence['GetImagingPolicyVideoPolicyVariableEnumOptionArgsDict']]
+    postfix: NotRequired[_builtins.str]
+    """
+    A postfix added to the value provided for the variable, or to the default value.
+    """
+    prefix: NotRequired[_builtins.str]
+    """
+    A prefix added to the value provided for the variable, or to the default value.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyVideoPolicyVariableArgs:
@@ -38279,18 +37281,15 @@ class GetImagingPolicyVideoPolicyVariableArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class GetImagingPolicyVideoPolicyVariableEnumOptionArgsDict(TypedDict):
-        id: _builtins.str
-        """
-        The unique identifier for each enum value, up to 50 alphanumeric characters.
-        """
-        value: _builtins.str
-        """
-        The value of the variable when the `id` is provided.
-        """
-elif False:
-    GetImagingPolicyVideoPolicyVariableEnumOptionArgsDict: TypeAlias = Mapping[str, Any]
+class GetImagingPolicyVideoPolicyVariableEnumOptionArgsDict(TypedDict):
+    id: _builtins.str
+    """
+    The unique identifier for each enum value, up to 50 alphanumeric characters.
+    """
+    value: _builtins.str
+    """
+    The value of the variable when the `id` is provided.
+    """
 
 @pulumi.input_type
 class GetImagingPolicyVideoPolicyVariableEnumOptionArgs:
@@ -38329,63 +37328,60 @@ class GetImagingPolicyVideoPolicyVariableEnumOptionArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetPropertyDomainownershipSearchDomainsDomainArgsDict(TypedDict):
-        account_id: _builtins.str
-        """
-        Your account's ID.
-        """
-        domain_name: _builtins.str
-        """
-        Your domain's name.
-        """
-        domain_status: _builtins.str
-        """
-        The domain's validation status. Possible values are: 
-        * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
-        * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
-        * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
-        * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
-        * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
-        """
-        validation_challenge: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgsDict'
-        """
-        The domain's validation challenge details.
-        """
-        validation_completed_date: _builtins.str
-        """
-        The timestamp indicating when the domain validation was completed.
-        """
-        validation_level: _builtins.str
-        """
-        The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
-        """
-        validation_method: _builtins.str
-        """
-        The method used to validate the domain. Possible values are: 
-        * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-        * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-        * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-        * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
-        * `MANUAL` - For this method, the DOM team manually performed the validation.
-        """
-        validation_requested_by: _builtins.str
-        """
-        The name of the user who requested the domain validation.
-        """
-        validation_requested_date: _builtins.str
-        """
-        The timestamp indicating when the domain validation was requested.
-        """
-        validation_scope: _builtins.str
-        """
-        Your domain's validation scope. Possible values are: 
-        * `HOST` - The scope is only the exactly specified domain.
-        * `WILDCARD` - The scope covers any hostname within one subdomain level.
-        * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
-        """
-elif False:
-    GetPropertyDomainownershipSearchDomainsDomainArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertyDomainownershipSearchDomainsDomainArgsDict(TypedDict):
+    account_id: _builtins.str
+    """
+    Your account's ID.
+    """
+    domain_name: _builtins.str
+    """
+    Your domain's name.
+    """
+    domain_status: _builtins.str
+    """
+    The domain's validation status. Possible values are: 
+    * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+    * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+    * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+    * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+    * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+    """
+    validation_challenge: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgsDict'
+    """
+    The domain's validation challenge details.
+    """
+    validation_completed_date: _builtins.str
+    """
+    The timestamp indicating when the domain validation was completed.
+    """
+    validation_level: _builtins.str
+    """
+    The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
+    """
+    validation_method: _builtins.str
+    """
+    The method used to validate the domain. Possible values are: 
+    * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+    * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+    * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+    * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+    * `MANUAL` - For this method, the DOM team manually performed the validation.
+    """
+    validation_requested_by: _builtins.str
+    """
+    The name of the user who requested the domain validation.
+    """
+    validation_requested_date: _builtins.str
+    """
+    The timestamp indicating when the domain validation was requested.
+    """
+    validation_scope: _builtins.str
+    """
+    Your domain's validation scope. Possible values are: 
+    * `HOST` - The scope is only the exactly specified domain.
+    * `WILDCARD` - The scope covers any hostname within one subdomain level.
+    * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+    """
 
 @pulumi.input_type
 class GetPropertyDomainownershipSearchDomainsDomainArgs:
@@ -38570,30 +37566,27 @@ class GetPropertyDomainownershipSearchDomainsDomainArgs:
         pulumi.set(self, "validation_scope", value)
 
 
-if not MYPY:
-    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgsDict(TypedDict):
-        cname_record: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgsDict'
-        """
-        The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
-        """
-        expiration_date: _builtins.str
-        """
-        The timestamp indicating when the challenge data expires.
-        """
-        http_file: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgsDict'
-        """
-        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
-        """
-        http_redirect: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgsDict'
-        """
-        Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
-        """
-        txt_record: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgsDict'
-        """
-        The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
-        """
-elif False:
-    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgsDict(TypedDict):
+    cname_record: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgsDict'
+    """
+    The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+    """
+    expiration_date: _builtins.str
+    """
+    The timestamp indicating when the challenge data expires.
+    """
+    http_file: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgsDict'
+    """
+    Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+    """
+    http_redirect: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgsDict'
+    """
+    Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+    """
+    txt_record: 'GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgsDict'
+    """
+    The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+    """
 
 @pulumi.input_type
 class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs:
@@ -38677,18 +37670,15 @@ class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs:
         pulumi.set(self, "txt_record", value)
 
 
-if not MYPY:
-    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The 'CNAME' record for your domain that you add to the DNS configuration.
-        """
-        target: _builtins.str
-        """
-        The 'target' value you set in the 'CNAME' record that validates the domain ownership.
-        """
-elif False:
-    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The 'CNAME' record for your domain that you add to the DNS configuration.
+    """
+    target: _builtins.str
+    """
+    The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+    """
 
 @pulumi.input_type
 class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs:
@@ -38727,22 +37717,19 @@ class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecor
         pulumi.set(self, "target", value)
 
 
-if not MYPY:
-    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgsDict(TypedDict):
-        content: _builtins.str
-        """
-        The content of the file that you should place at the specified URL.
-        """
-        content_type: _builtins.str
-        """
-        The content type of the file containing the token.
-        """
-        path: _builtins.str
-        """
-        The URL where you should place the file containing the challenge token.
-        """
-elif False:
-    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgsDict(TypedDict):
+    content: _builtins.str
+    """
+    The content of the file that you should place at the specified URL.
+    """
+    content_type: _builtins.str
+    """
+    The content type of the file containing the token.
+    """
+    path: _builtins.str
+    """
+    The URL where you should place the file containing the challenge token.
+    """
 
 @pulumi.input_type
 class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs:
@@ -38796,18 +37783,15 @@ class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileAr
         pulumi.set(self, "path", value)
 
 
-if not MYPY:
-    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgsDict(TypedDict):
-        from_: _builtins.str
-        """
-        The location on your HTTP server where you set up the redirect.
-        """
-        to: _builtins.str
-        """
-        The redirect URL with the token that you place on your HTTP server.
-        """
-elif False:
-    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgsDict(TypedDict):
+    from_: _builtins.str
+    """
+    The location on your HTTP server where you set up the redirect.
+    """
+    to: _builtins.str
+    """
+    The redirect URL with the token that you place on your HTTP server.
+    """
 
 @pulumi.input_type
 class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs:
@@ -38846,18 +37830,15 @@ class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedire
         pulumi.set(self, "to", value)
 
 
-if not MYPY:
-    class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The hostname where you should add the 'TXT' record to validate the domain ownership.
-        """
-        value: _builtins.str
-        """
-        The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
-        """
-elif False:
-    GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The hostname where you should add the 'TXT' record to validate the domain ownership.
+    """
+    value: _builtins.str
+    """
+    The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+    """
 
 @pulumi.input_type
 class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs:
@@ -38896,18 +37877,15 @@ class GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordA
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetPropertyIncludesParentPropertyArgsDict(TypedDict):
-        id: _builtins.str
-        """
-        The property's unique identifier
-        """
-        version: _builtins.int
-        """
-        The property's version for which the data is requested
-        """
-elif False:
-    GetPropertyIncludesParentPropertyArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertyIncludesParentPropertyArgsDict(TypedDict):
+    id: _builtins.str
+    """
+    The property's unique identifier
+    """
+    version: _builtins.int
+    """
+    The property's version for which the data is requested
+    """
 
 @pulumi.input_type
 class GetPropertyIncludesParentPropertyArgs:
@@ -38946,18 +37924,15 @@ class GetPropertyIncludesParentPropertyArgs:
         pulumi.set(self, "version", value)
 
 
-if not MYPY:
-    class GetPropertyRulesTemplateTemplateArgsDict(TypedDict):
-        template_data: _builtins.str
-        """
-        Content of the template as string
-        """
-        template_dir: _builtins.str
-        """
-        Directory points to a folder, which contains snippets to include into template.
-        """
-elif False:
-    GetPropertyRulesTemplateTemplateArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertyRulesTemplateTemplateArgsDict(TypedDict):
+    template_data: _builtins.str
+    """
+    Content of the template as string
+    """
+    template_dir: _builtins.str
+    """
+    Directory points to a folder, which contains snippets to include into template.
+    """
 
 @pulumi.input_type
 class GetPropertyRulesTemplateTemplateArgs:
@@ -38996,13 +37971,10 @@ class GetPropertyRulesTemplateTemplateArgs:
         pulumi.set(self, "template_dir", value)
 
 
-if not MYPY:
-    class GetPropertyRulesTemplateVariableArgsDict(TypedDict):
-        name: _builtins.str
-        value: _builtins.str
-        type: NotRequired[_builtins.str]
-elif False:
-    GetPropertyRulesTemplateVariableArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertyRulesTemplateVariableArgsDict(TypedDict):
+    name: _builtins.str
+    value: _builtins.str
+    type: NotRequired[_builtins.str]
 
 @pulumi.input_type
 class GetPropertyRulesTemplateVariableArgs:
