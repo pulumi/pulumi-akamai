@@ -25865,7 +25865,8 @@
                     "description": "Type of TLS deployment network"
                 },
                 "signatureAlgorithm": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The SHA function. Changing this value may require running terraform destroy, terraform apply"
                 },
                 "sniOnly": {
                     "type": "boolean",
@@ -25958,7 +25959,8 @@
                     "willReplaceOnChanges": true
                 },
                 "signatureAlgorithm": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The SHA function. Changing this value may require running terraform destroy, terraform apply"
                 },
                 "sniOnly": {
                     "type": "boolean",
@@ -26054,7 +26056,8 @@
                         "willReplaceOnChanges": true
                     },
                     "signatureAlgorithm": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The SHA function. Changing this value may require running terraform destroy, terraform apply"
                     },
                     "sniOnly": {
                         "type": "boolean",
