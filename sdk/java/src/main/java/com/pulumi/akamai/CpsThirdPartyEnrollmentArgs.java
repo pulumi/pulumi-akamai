@@ -234,9 +234,17 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
         return this.secureNetwork;
     }
 
+    /**
+     * The SHA function. Changing this value may require running terraform destroy, terraform apply
+     * 
+     */
     @Import(name="signatureAlgorithm")
     private @Nullable Output<String> signatureAlgorithm;
 
+    /**
+     * @return The SHA function. Changing this value may require running terraform destroy, terraform apply
+     * 
+     */
     public Optional<Output<String>> signatureAlgorithm() {
         return Optional.ofNullable(this.signatureAlgorithm);
     }
@@ -641,11 +649,23 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
             return secureNetwork(Output.of(secureNetwork));
         }
 
+        /**
+         * @param signatureAlgorithm The SHA function. Changing this value may require running terraform destroy, terraform apply
+         * 
+         * @return builder
+         * 
+         */
         public Builder signatureAlgorithm(@Nullable Output<String> signatureAlgorithm) {
             $.signatureAlgorithm = signatureAlgorithm;
             return this;
         }
 
+        /**
+         * @param signatureAlgorithm The SHA function. Changing this value may require running terraform destroy, terraform apply
+         * 
+         * @return builder
+         * 
+         */
         public Builder signatureAlgorithm(String signatureAlgorithm) {
             return signatureAlgorithm(Output.of(signatureAlgorithm));
         }

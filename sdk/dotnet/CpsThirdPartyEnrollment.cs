@@ -96,6 +96,9 @@ namespace Pulumi.Akamai
         [Output("secureNetwork")]
         public Output<string> SecureNetwork { get; private set; } = null!;
 
+        /// <summary>
+        /// The SHA function. Changing this value may require running terraform destroy, terraform apply
+        /// </summary>
         [Output("signatureAlgorithm")]
         public Output<string?> SignatureAlgorithm { get; private set; } = null!;
 
@@ -259,6 +262,9 @@ namespace Pulumi.Akamai
         [Input("secureNetwork", required: true)]
         public Input<string> SecureNetwork { get; set; } = null!;
 
+        /// <summary>
+        /// The SHA function. Changing this value may require running terraform destroy, terraform apply
+        /// </summary>
         [Input("signatureAlgorithm")]
         public Input<string>? SignatureAlgorithm { get; set; }
 
@@ -384,6 +390,9 @@ namespace Pulumi.Akamai
         [Input("secureNetwork")]
         public Input<string>? SecureNetwork { get; set; }
 
+        /// <summary>
+        /// The SHA function. Changing this value may require running terraform destroy, terraform apply
+        /// </summary>
         [Input("signatureAlgorithm")]
         public Input<string>? SignatureAlgorithm { get; set; }
 
