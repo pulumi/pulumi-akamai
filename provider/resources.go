@@ -21,8 +21,7 @@ import (
 	"path/filepath"
 	"unicode"
 
-	_ "embed"
-
+	_ "embed"                                                        // for embedding schema-embed.json
 	_ "github.com/akamai/terraform-provider-akamai/v9/pkg/providers" // Load the providers
 
 	"github.com/akamai/terraform-provider-akamai/v9/pkg/akamai"
@@ -116,7 +115,7 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_property_rules_builder",
 		},
 		Resources: map[string]*tfbridge.ResourceInfo{
-			"akamai_cloudwrapper_configuration": {ComputeID: tfbridge.DelegateIDField("configName", "akamai", "https://github.com/pulumi/pulumi-akamai")},
+			"akamai_cloudwrapper_configuration": {ComputeID: tfbridge.DelegateIDField("configName", "akamai", "https://github.com/pulumi/pulumi-akamai")}, //nolint:lll
 
 			"akamai_appsec_activations":                          {Tok: makeResource(mainMod, "AppSecActivations")},
 			"akamai_appsec_custom_rule":                          {Tok: makeResource(mainMod, "AppSecCustomRule")},
@@ -139,7 +138,7 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_rate_protection":                      {Tok: makeResource(mainMod, "AppSecRateProtection")},
 			"akamai_appsec_reputation_profile":                   {Tok: makeResource(mainMod, "AppSecReputationProfile")},
 			"akamai_appsec_reputation_profile_action":            {Tok: makeResource(mainMod, "AppSecReputationProfileAction")},
-			"akamai_appsec_reputation_profile_analysis":          {Tok: makeResource(mainMod, "AppSecReputationProfileAnalysis")},
+			"akamai_appsec_reputation_profile_analysis":          {Tok: makeResource(mainMod, "AppSecReputationProfileAnalysis")}, //nolint:lll
 			"akamai_appsec_reputation_protection":                {Tok: makeResource(mainMod, "AppSecReputationProtection")},
 			"akamai_appsec_rule_upgrade":                         {Tok: makeResource(mainMod, "AppSecRuleUpgrade")},
 			"akamai_appsec_security_policy":                      {Tok: makeResource(mainMod, "AppSecSecurityPolicy")},
@@ -150,7 +149,7 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_version_notes":                        {Tok: makeResource(mainMod, "AppSecVersionNodes")},
 			"akamai_appsec_waf_mode":                             {Tok: makeResource(mainMod, "AppSecWafMode")},
 			"akamai_appsec_waf_protection":                       {Tok: makeResource(mainMod, "AppSecWafProtection")},
-			"akamai_appsec_advanced_settings_pragma_header":      {Tok: makeResource(mainMod, "AppSecAdvancedSettingsPragmaHeader")},
+			"akamai_appsec_advanced_settings_pragma_header":      {Tok: makeResource(mainMod, "AppSecAdvancedSettingsPragmaHeader")}, //nolint:lll
 			"akamai_appsec_api_constraints_protection":           {Tok: makeResource(mainMod, "AppSecApiConstraintsProtection")},
 			"akamai_appsec_attack_group":                         {Tok: makeResource(mainMod, "AppSecAttackGroup")},
 			"akamai_appsec_eval_rule":                            {Tok: makeResource(mainMod, "AppSecEvalRule")},
@@ -162,7 +161,7 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_malware_protection":                   {Tok: makeResource(mainMod, "AppSecMalwareProtection")},
 			"akamai_appsec_rule":                                 {Tok: makeResource(mainMod, "AppSecRule")},
 			"akamai_appsec_threat_intel":                         {Tok: makeResource(mainMod, "AppSecThreatIntel")},
-			"akamai_appsec_advanced_settings_evasive_path_match": {Tok: makeResource(mainMod, "AppSecAdvancedSettingsEvasivePathMatch")},
+			"akamai_appsec_advanced_settings_evasive_path_match": {Tok: makeResource(mainMod, "AppSecAdvancedSettingsEvasivePathMatch")}, //nolint:lll
 
 			"akamai_edgekv": {Tok: makeResource(mainMod, "EdgeKv")},
 			"akamai_edgeworker": {
@@ -194,7 +193,7 @@ func Provider() tfbridge.ProviderInfo {
 			},
 			"akamai_iam_ip_allowlist": {
 				Tok: makeResource(mainMod, "IamIpAllowlist"),
-				ComputeID: func(ctx context.Context, state resource.PropertyMap) (resource.ID, error) {
+				ComputeID: func(_ context.Context, _ resource.PropertyMap) (resource.ID, error) {
 					// this resource only has one field called "enabled" which is a boolean
 					// so here we create a dummy ID field to satisfy engine requirements
 					return resource.ID("id"), nil
@@ -258,8 +257,8 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_eval":                            {Tok: makeDataSource(mainMod, "getAppSecEval")},
 			"akamai_appsec_failover_hostnames":              {Tok: makeDataSource(mainMod, "getAppSecFailoverHostnames")},
 			"akamai_appsec_hostname_coverage":               {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverage")},
-			"akamai_appsec_hostname_coverage_match_targets": {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageMatchTargets")},
-			"akamai_appsec_hostname_coverage_overlapping":   {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageOverlapping")},
+			"akamai_appsec_hostname_coverage_match_targets": {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageMatchTargets")}, //nolint:lll
+			"akamai_appsec_hostname_coverage_overlapping":   {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageOverlapping")},  //nolint:lll
 			"akamai_appsec_ip_geo":                          {Tok: makeDataSource(mainMod, "getAppSecIPGeo")},
 			"akamai_appsec_malware_content_types":           {Tok: makeDataSource(mainMod, "getAppSecMalwareContentTypes")},
 			"akamai_appsec_malware_policies":                {Tok: makeDataSource(mainMod, "getAppSecMalwarePolicies")},
@@ -269,39 +268,39 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_rate_policies":                   {Tok: makeDataSource(mainMod, "getAppSecRatePolicies")},
 			"akamai_appsec_rate_policy_actions":             {Tok: makeDataSource(mainMod, "getAppSecRatePolicyActions")},
 			"akamai_appsec_reputation_profile_actions":      {Tok: makeDataSource(mainMod, "getAppSecReputationProfileActions")},
-			"akamai_appsec_reputation_profile_analysis":     {Tok: makeDataSource(mainMod, "getAppSecReputationProfileAnalysis")},
+			"akamai_appsec_reputation_profile_analysis":     {Tok: makeDataSource(mainMod, "getAppSecReputationProfileAnalysis")}, //nolint:lll
 			"akamai_appsec_reputation_profiles":             {Tok: makeDataSource(mainMod, "getAppSecReputationProfiles")},
 			"akamai_appsec_rule_upgrade_details":            {Tok: makeDataSource(mainMod, "getAppSecRuleUpgradeDetails")},
-			"akamai_appsec_security_policy_protections":     {Tok: makeDataSource(mainMod, "getAppSecSecurityPolicyProtections")},
+			"akamai_appsec_security_policy_protections":     {Tok: makeDataSource(mainMod, "getAppSecSecurityPolicyProtections")}, //nolint:lll
 			"akamai_appsec_siem_definitions":                {Tok: makeDataSource(mainMod, "getAppSecSiemDefinitions")},
 			"akamai_appsec_siem_settings":                   {Tok: makeDataSource(mainMod, "getAppSecSiemSettings")},
 			"akamai_appsec_slow_post":                       {Tok: makeDataSource(mainMod, "getAppSecSlowPost")},
 			"akamai_appsec_version_notes":                   {Tok: makeDataSource(mainMod, "getAppSecVersionNotes")},
 			"akamai_appsec_waf_mode":                        {Tok: makeDataSource(mainMod, "getAppSecWafMode")},
-			"akamai_appsec_advanced_settings_pragma_header": {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsPragmaHeader")},
+			"akamai_appsec_advanced_settings_pragma_header": {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsPragmaHeader")}, //nolint:lll
 			"akamai_appsec_attack_groups":                   {Tok: makeDataSource(mainMod, "getAppSecAttackGroups")},
 			"akamai_appsec_eval_rules":                      {Tok: makeDataSource(mainMod, "getAppSecEvalRules")},
 			"akamai_appsec_rules":                           {Tok: makeDataSource(mainMod, "getAppSecRules")},
 			"akamai_appsec_eval_groups":                     {Tok: makeDataSource(mainMod, "getAppSecEvalGroups")},
 			"akamai_appsec_threat_intel":                    {Tok: makeDataSource(mainMod, "getAppSecThreatIntel")},
 
-			"akamai_appsec_advanced_settings_evasive_path_match": {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsEvasivePathMatch")},
-			"akamai_appsec_tuning_recommendations":               {Tok: makeDataSource(mainMod, "getAppSecTuningRecommendations")},
+			"akamai_appsec_advanced_settings_evasive_path_match": {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsEvasivePathMatch")}, //nolint:lll
+			"akamai_appsec_tuning_recommendations":               {Tok: makeDataSource(mainMod, "getAppSecTuningRecommendations")},            //nolint:lll
 			"akamai_cps_enrollment":                              {Tok: makeDataSource(mainMod, "getCPSEnrollment")},
 			"akamai_cps_enrollments":                             {Tok: makeDataSource(mainMod, "getCPSEnrollments")},
 			"akamai_cps_csr":                                     {Tok: makeDataSource(mainMod, "getCpsCsr")},
 			"akamai_cps_deployments":                             {Tok: makeDataSource(mainMod, "getCpsDeployments")},
 			"akamai_cps_warnings":                                {Tok: makeDataSource(mainMod, "getCpsWarnings")},
 
-			"akamai_cloudlets_api_prioritization_match_rule":        {Tok: makeDataSource(mainMod, "getCloudletsApiPrioritizationMatchRule")},
-			"akamai_cloudlets_application_load_balancer":            {Tok: makeDataSource(mainMod, "getCloudletsApplicationLoadBalancer")},
-			"akamai_cloudlets_application_load_balancer_match_rule": {Tok: makeDataSource(mainMod, "getCloudletsApplicationLoadBalancerMatchRule")},
-			"akamai_cloudlets_audience_segmentation_match_rule":     {Tok: makeDataSource(mainMod, "getCloudletsAudienceSegmentationMatchRule")},
-			"akamai_cloudlets_edge_redirector_match_rule":           {Tok: makeDataSource(mainMod, "getCloudletsEdgeRedirectorMatchRule")},
-			"akamai_cloudlets_forward_rewrite_match_rule":           {Tok: makeDataSource(mainMod, "getCloudletsForwardRewriteMatchRule")},
-			"akamai_cloudlets_phased_release_match_rule":            {Tok: makeDataSource(mainMod, "getCloudletsPhasedReleaseMatchRule")},
+			"akamai_cloudlets_api_prioritization_match_rule":        {Tok: makeDataSource(mainMod, "getCloudletsApiPrioritizationMatchRule")},       //nolint:lll
+			"akamai_cloudlets_application_load_balancer":            {Tok: makeDataSource(mainMod, "getCloudletsApplicationLoadBalancer")},          //nolint:lll
+			"akamai_cloudlets_application_load_balancer_match_rule": {Tok: makeDataSource(mainMod, "getCloudletsApplicationLoadBalancerMatchRule")}, //nolint:lll
+			"akamai_cloudlets_audience_segmentation_match_rule":     {Tok: makeDataSource(mainMod, "getCloudletsAudienceSegmentationMatchRule")},    //nolint:lll
+			"akamai_cloudlets_edge_redirector_match_rule":           {Tok: makeDataSource(mainMod, "getCloudletsEdgeRedirectorMatchRule")},          //nolint:lll
+			"akamai_cloudlets_forward_rewrite_match_rule":           {Tok: makeDataSource(mainMod, "getCloudletsForwardRewriteMatchRule")},          //nolint:lll
+			"akamai_cloudlets_phased_release_match_rule":            {Tok: makeDataSource(mainMod, "getCloudletsPhasedReleaseMatchRule")},           //nolint:lll
 			"akamai_cloudlets_policy":                               {Tok: makeDataSource(mainMod, "getCloudletsPolicy")},
-			"akamai_cloudlets_visitor_prioritization_match_rule":    {Tok: makeDataSource(mainMod, "getCloudletsVisitorPrioritizationMatchRule")},
+			"akamai_cloudlets_visitor_prioritization_match_rule":    {Tok: makeDataSource(mainMod, "getCloudletsVisitorPrioritizationMatchRule")}, //nolint:lll
 
 			"akamai_datastream_activation_history": {Tok: makeDataSource(mainMod, "getDatastreamActivationHistory")},
 			"akamai_datastream_dataset_fields":     {Tok: makeDataSource(mainMod, "getDatastreamDatasetFields")},

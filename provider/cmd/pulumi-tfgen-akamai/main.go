@@ -25,10 +25,10 @@ func main() {
 	// Modify the path to point to the new provider
 	providerInfo := akamai.Provider()
 	providerInfo.SchemaPostProcessor = func(spec *schema.PackageSpec) {
-		akamai.MakeTypeRecursive(spec, "akamai:index/getImagingPolicyImagePolicyPostBreakpointTransformation:getImagingPolicyImagePolicyPostBreakpointTransformation")
-		akamai.MakeTypeRecursive(spec, "akamai:index/getImagingPolicyImagePolicyTransformation:getImagingPolicyImagePolicyTransformation")
-		akamai.MakeTypeRecursive(spec, "akamai:index/IamApiClientGroupAccessGroupSubGroup:IamApiClientGroupAccessGroupSubGroup")
-		akamai.MakeTypeRecursive(spec, "akamai:index/getIamApiClientGroupAccessGroupSubGroup:getIamApiClientGroupAccessGroupSubGroup")
+		akamai.MakeTypeRecursive(spec, "akamai:index/getImagingPolicyImagePolicyPostBreakpointTransformation:getImagingPolicyImagePolicyPostBreakpointTransformation") //nolint:lll
+		akamai.MakeTypeRecursive(spec, "akamai:index/getImagingPolicyImagePolicyTransformation:getImagingPolicyImagePolicyTransformation")                             //nolint:lll
+		akamai.MakeTypeRecursive(spec, "akamai:index/IamApiClientGroupAccessGroupSubGroup:IamApiClientGroupAccessGroupSubGroup")                                       //nolint:lll
+		akamai.MakeTypeRecursive(spec, "akamai:index/getIamApiClientGroupAccessGroupSubGroup:getIamApiClientGroupAccessGroupSubGroup")                                 //nolint:lll
 	}
 	tfgen.MainWithMuxer("akamai", providerInfo)
 }
