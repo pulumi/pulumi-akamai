@@ -26,6 +26,7 @@ class ApidefinitionsApiArgs:
                  staging_version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ApidefinitionsApi resource.
+
         :param pulumi.Input[_builtins.str] api: JSON-formatted information about the API configuration
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract (without the 'ctr_' prefix) assigned to the API.
         :param pulumi.Input[_builtins.int] group_id: The unique identifier for the group (without the 'grp_' prefix) assigned to the API.
@@ -112,6 +113,7 @@ class _ApidefinitionsApiState:
                  staging_version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ApidefinitionsApi resources.
+
         :param pulumi.Input[_builtins.str] api: JSON-formatted information about the API configuration
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract (without the 'ctr_' prefix) assigned to the API.
         :param pulumi.Input[_builtins.int] group_id: The unique identifier for the group (without the 'grp_' prefix) assigned to the API.
@@ -219,6 +221,7 @@ class ApidefinitionsApi(pulumi.CustomResource):
                  __props__=None):
         """
         Create a ApidefinitionsApi resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api: JSON-formatted information about the API configuration
@@ -235,6 +238,7 @@ class ApidefinitionsApi(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ApidefinitionsApi resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ApidefinitionsApiArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -26,6 +26,7 @@ class AppSecEvalRuleArgs:
                  condition_exception: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecEvalRule resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] rule_action: Action to be taken when the evaluation rule is triggered
         :param pulumi.Input[_builtins.int] rule_id: Unique identifier of the evaluation rule being modified
@@ -110,6 +111,7 @@ class _AppSecEvalRuleState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecEvalRule resources.
+
         :param pulumi.Input[_builtins.str] condition_exception: JSON-formatted condition and exception information for the evaluation rule
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] rule_action: Action to be taken when the evaluation rule is triggered
@@ -202,6 +204,7 @@ class AppSecEvalRule(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecEvalRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] condition_exception: JSON-formatted condition and exception information for the evaluation rule
@@ -218,6 +221,7 @@ class AppSecEvalRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecEvalRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecEvalRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

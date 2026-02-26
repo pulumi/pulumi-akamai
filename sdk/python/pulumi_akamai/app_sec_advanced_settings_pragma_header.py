@@ -24,6 +24,7 @@ class AppSecAdvancedSettingsPragmaHeaderArgs:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecAdvancedSettingsPragmaHeader resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] pragma_header: JSON-formatted information describing the conditions to exclude from the default remove action
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -78,6 +79,7 @@ class _AppSecAdvancedSettingsPragmaHeaderState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecAdvancedSettingsPragmaHeader resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] pragma_header: JSON-formatted information describing the conditions to exclude from the default remove action
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -138,6 +140,7 @@ class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecAdvancedSettingsPragmaHeader resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -152,6 +155,7 @@ class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecAdvancedSettingsPragmaHeader resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecAdvancedSettingsPragmaHeaderArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

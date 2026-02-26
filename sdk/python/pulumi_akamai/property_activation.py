@@ -32,6 +32,7 @@ class PropertyActivationArgs:
                  timeouts: Optional[pulumi.Input['PropertyActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyActivation resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] contacts: One or more email addresses to which to send activation status changes.
         :param pulumi.Input[_builtins.str] property_id: Your property's ID, including the prp_ prefix.
         :param pulumi.Input[_builtins.int] version: Your property's version number.
@@ -185,6 +186,7 @@ class _PropertyActivationState:
                  warnings: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PropertyActivation resources.
+
         :param pulumi.Input[_builtins.str] activation_id: The ID given to the activation event while it's in progress.
         :param pulumi.Input[_builtins.bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
         :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network.
@@ -401,6 +403,7 @@ class PropertyActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a PropertyActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] activation_id: The ID given to the activation event while it's in progress.
@@ -421,6 +424,7 @@ class PropertyActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PropertyActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PropertyActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

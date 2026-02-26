@@ -101,6 +101,7 @@ class BotmanCustomDefinedBot(pulumi.CustomResource):
                  __props__=None):
         """
         Create a BotmanCustomDefinedBot resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
@@ -112,6 +113,7 @@ class BotmanCustomDefinedBot(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a BotmanCustomDefinedBot resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param BotmanCustomDefinedBotArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

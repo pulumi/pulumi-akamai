@@ -27,6 +27,7 @@ class CpsDvValidationArgs:
                  timeouts: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpsDvValidation resource.
+
         :param pulumi.Input[_builtins.int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[_builtins.bool] acknowledge_post_verification_warnings: Whether to acknowledge all post-verification warnings
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: List of SANs
@@ -99,6 +100,7 @@ class _CpsDvValidationState:
                  timeouts: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CpsDvValidation resources.
+
         :param pulumi.Input[_builtins.bool] acknowledge_post_verification_warnings: Whether to acknowledge all post-verification warnings
         :param pulumi.Input[_builtins.int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: List of SANs
@@ -190,6 +192,7 @@ class CpsDvValidation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CpsDvValidation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] acknowledge_post_verification_warnings: Whether to acknowledge all post-verification warnings
@@ -205,6 +208,7 @@ class CpsDvValidation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CpsDvValidation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CpsDvValidationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

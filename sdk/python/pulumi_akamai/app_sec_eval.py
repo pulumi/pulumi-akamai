@@ -25,6 +25,7 @@ class AppSecEvalArgs:
                  eval_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecEval resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] eval_operation: Evaluation mode operation (START, STOP, RESTART, UPDATE or COMPLETE)
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -98,6 +99,7 @@ class _AppSecEvalState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecEval resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] current_ruleset: Versioning information for the Kona Rule Set currently in use in production
         :param pulumi.Input[_builtins.str] eval_mode: Evaluation mode (ASE_AUTO or ASE_MANUAL)
@@ -234,6 +236,7 @@ class AppSecEval(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecEval resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -249,6 +252,7 @@ class AppSecEval(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecEval resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecEvalArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -26,6 +26,7 @@ class AppSecActivationsArgs:
                  note: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecActivations resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration to be activated
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses to be notified with the results of the activation
         :param pulumi.Input[_builtins.int] version: Version of the security configuration to be activated
@@ -112,6 +113,7 @@ class _AppSecActivationsState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecActivations resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration to be activated
         :param pulumi.Input[_builtins.str] network: Network on which to activate the configuration version (STAGING or PRODUCTION)
         :param pulumi.Input[_builtins.str] note: Note describing the activation. Will use timestamp if omitted.
@@ -219,6 +221,7 @@ class AppSecActivations(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecActivations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration to be activated
@@ -235,6 +238,7 @@ class AppSecActivations(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecActivations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecActivationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

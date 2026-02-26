@@ -25,6 +25,7 @@ class PropertyDomainownershipValidationArgs:
                  timeouts: Optional[pulumi.Input['PropertyDomainownershipValidationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyDomainownershipValidation resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipValidationDomainArgs']]] domains: List of domains to be validated.
         """
         pulumi.set(__self__, "domains", domains)
@@ -60,6 +61,7 @@ class _PropertyDomainownershipValidationState:
                  timeouts: Optional[pulumi.Input['PropertyDomainownershipValidationTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering PropertyDomainownershipValidation resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipValidationDomainArgs']]] domains: List of domains to be validated.
         """
         if domains is not None:
@@ -100,6 +102,7 @@ class PropertyDomainownershipValidation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a PropertyDomainownershipValidation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PropertyDomainownershipValidationDomainArgs', 'PropertyDomainownershipValidationDomainArgsDict']]]] domains: List of domains to be validated.
@@ -112,6 +115,7 @@ class PropertyDomainownershipValidation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PropertyDomainownershipValidation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PropertyDomainownershipValidationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -27,6 +27,7 @@ class ClientlistActivationArgs:
                  siebel_ticket_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ClientlistActivation resource.
+
         :param pulumi.Input[_builtins.str] list_id: The client list unique identifier.
         :param pulumi.Input[_builtins.str] network: The network environment where you activate your client list: either STAGING or PRODUCTION.
         :param pulumi.Input[_builtins.int] version: The client list version.
@@ -129,6 +130,7 @@ class _ClientlistActivationState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ClientlistActivation resources.
+
         :param pulumi.Input[_builtins.str] comments: A brief description for the activation.
         :param pulumi.Input[_builtins.str] list_id: The client list unique identifier.
         :param pulumi.Input[_builtins.str] network: The network environment where you activate your client list: either STAGING or PRODUCTION.
@@ -252,6 +254,7 @@ class ClientlistActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a ClientlistActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] comments: A brief description for the activation.
@@ -269,6 +272,7 @@ class ClientlistActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ClientlistActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ClientlistActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

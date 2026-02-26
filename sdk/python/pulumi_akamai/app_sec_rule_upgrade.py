@@ -24,6 +24,7 @@ class AppSecRuleUpgradeArgs:
                  upgrade_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecRuleUpgrade resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] upgrade_mode: Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
@@ -81,6 +82,7 @@ class _AppSecRuleUpgradeState:
                  upgrade_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecRuleUpgrade resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] current_ruleset: Versioning information for the current KRS rule set
         :param pulumi.Input[_builtins.str] eval_status: Whether an evaluation is currently in progress
@@ -186,6 +188,7 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecRuleUpgrade resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -200,6 +203,7 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecRuleUpgrade resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecRuleUpgradeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

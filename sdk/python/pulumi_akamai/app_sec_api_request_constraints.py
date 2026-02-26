@@ -25,6 +25,7 @@ class AppSecApiRequestConstraintsArgs:
                  api_endpoint_id: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AppSecApiRequestConstraints resource.
+
         :param pulumi.Input[_builtins.str] action: Action to be taken when the API request constraint is triggered
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -94,6 +95,7 @@ class _AppSecApiRequestConstraintsState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecApiRequestConstraints resources.
+
         :param pulumi.Input[_builtins.str] action: Action to be taken when the API request constraint is triggered
         :param pulumi.Input[_builtins.int] api_endpoint_id: Unique identifier of the API endpoint to which the constraint will be assigned
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -170,6 +172,7 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecApiRequestConstraints resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Action to be taken when the API request constraint is triggered
@@ -185,6 +188,7 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecApiRequestConstraints resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecApiRequestConstraintsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -30,6 +30,7 @@ class MtlskeystoreClientCertificateUploadArgs:
                  wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a MtlskeystoreClientCertificateUpload resource.
+
         :param pulumi.Input[_builtins.int] client_certificate_id: The ID of the client certificate to which the signed certificate will be uploaded.
         :param pulumi.Input[_builtins.str] signed_certificate: The signed certificate to upload.
         :param pulumi.Input[_builtins.int] version_number: The version number of the client certificate to upload the signed certificate to.
@@ -144,6 +145,7 @@ class _MtlskeystoreClientCertificateUploadState:
                  wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering MtlskeystoreClientCertificateUpload resources.
+
         :param pulumi.Input[_builtins.bool] auto_acknowledge_warnings: If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
         :param pulumi.Input[_builtins.int] client_certificate_id: The ID of the client certificate to which the signed certificate will be uploaded.
         :param pulumi.Input[_builtins.str] signed_certificate: The signed certificate to upload.
@@ -279,6 +281,7 @@ class MtlskeystoreClientCertificateUpload(pulumi.CustomResource):
                  __props__=None):
         """
         Create a MtlskeystoreClientCertificateUpload resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] auto_acknowledge_warnings: If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
@@ -296,6 +299,7 @@ class MtlskeystoreClientCertificateUpload(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a MtlskeystoreClientCertificateUpload resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param MtlskeystoreClientCertificateUploadArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

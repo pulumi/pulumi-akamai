@@ -26,6 +26,7 @@ class EdgeKvArgs:
                  geo_location: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a EdgeKv resource.
+
         :param pulumi.Input[_builtins.int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
         :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace
         :param pulumi.Input[_builtins.str] network: The network on which the namespace will be activated
@@ -110,6 +111,7 @@ class _EdgeKvState:
                  retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering EdgeKv resources.
+
         :param pulumi.Input[_builtins.str] geo_location: Storage location for data
         :param pulumi.Input[_builtins.int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
         :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace
@@ -202,6 +204,7 @@ class EdgeKv(pulumi.CustomResource):
                  __props__=None):
         """
         Create a EdgeKv resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] geo_location: Storage location for data
@@ -218,6 +221,7 @@ class EdgeKv(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a EdgeKv resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param EdgeKvArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -24,6 +24,7 @@ class AppsecSecurityPolicyDefaultProtectionsArgs:
                  security_policy_prefix: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppsecSecurityPolicyDefaultProtections resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_name: Name of the new security policy
         :param pulumi.Input[_builtins.str] security_policy_prefix: Four-character alphanumeric string prefix used in creating the security policy ID
@@ -78,6 +79,7 @@ class _AppsecSecurityPolicyDefaultProtectionsState:
                  security_policy_prefix: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppsecSecurityPolicyDefaultProtections resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the new security policy
         :param pulumi.Input[_builtins.str] security_policy_name: Name of the new security policy
@@ -153,6 +155,7 @@ class AppsecSecurityPolicyDefaultProtections(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppsecSecurityPolicyDefaultProtections resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -167,6 +170,7 @@ class AppsecSecurityPolicyDefaultProtections(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppsecSecurityPolicyDefaultProtections resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppsecSecurityPolicyDefaultProtectionsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

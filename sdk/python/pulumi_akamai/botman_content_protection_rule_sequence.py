@@ -24,6 +24,7 @@ class BotmanContentProtectionRuleSequenceArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a BotmanContentProtectionRuleSequence resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] content_protection_rule_ids: Unique identifiers of content protection rules, listed in the order of their evaluation
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -77,6 +78,7 @@ class _BotmanContentProtectionRuleSequenceState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BotmanContentProtectionRuleSequence resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] content_protection_rule_ids: Unique identifiers of content protection rules, listed in the order of their evaluation
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -137,6 +139,7 @@ class BotmanContentProtectionRuleSequence(pulumi.CustomResource):
                  __props__=None):
         """
         Create a BotmanContentProtectionRuleSequence resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -151,6 +154,7 @@ class BotmanContentProtectionRuleSequence(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a BotmanContentProtectionRuleSequence resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param BotmanContentProtectionRuleSequenceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -24,6 +24,7 @@ class AppSecByPassNetworkListArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecByPassNetworkList resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] bypass_network_lists: List of network list IDs that compose the bypass list
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: The unique identifier of the security policy governing the bypass network lists
@@ -77,6 +78,7 @@ class _AppSecByPassNetworkListState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecByPassNetworkList resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] bypass_network_lists: List of network list IDs that compose the bypass list
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: The unique identifier of the security policy governing the bypass network lists
@@ -137,6 +139,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecByPassNetworkList resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] bypass_network_lists: List of network list IDs that compose the bypass list
@@ -151,6 +154,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecByPassNetworkList resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecByPassNetworkListArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

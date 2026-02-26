@@ -28,6 +28,7 @@ class AppSecConfigurationArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecConfiguration resource.
+
         :param pulumi.Input[_builtins.str] contract_id: Unique identifier of the Akamai contract associated with the new configuration
         :param pulumi.Input[_builtins.str] description: Brief description of the new configuration
         :param pulumi.Input[_builtins.str] group_id: Unique identifier of the contract group associated with the new configuration
@@ -145,6 +146,7 @@ class _AppSecConfigurationState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecConfiguration resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the new security configuration
         :param pulumi.Input[_builtins.str] contract_id: Unique identifier of the Akamai contract associated with the new configuration
         :param pulumi.Input[_builtins.int] create_from_config_id: Unique identifier of the existing configuration being cloned to create the new configuration
@@ -284,6 +286,7 @@ class AppSecConfiguration(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecConfiguration resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: Unique identifier of the Akamai contract associated with the new configuration
@@ -302,6 +305,7 @@ class AppSecConfiguration(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecConfiguration resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

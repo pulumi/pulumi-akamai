@@ -23,6 +23,7 @@ class AprUserRiskResponseStrategyArgs:
                  user_risk_response_strategy: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AprUserRiskResponseStrategy resource.
+
         :param pulumi.Input[_builtins.int] config_id: Identifies a security configuration.
         """
         pulumi.set(__self__, "config_id", config_id)
@@ -57,6 +58,7 @@ class _AprUserRiskResponseStrategyState:
                  user_risk_response_strategy: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AprUserRiskResponseStrategy resources.
+
         :param pulumi.Input[_builtins.int] config_id: Identifies a security configuration.
         """
         if config_id is not None:
@@ -97,6 +99,7 @@ class AprUserRiskResponseStrategy(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AprUserRiskResponseStrategy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Identifies a security configuration.
@@ -109,6 +112,7 @@ class AprUserRiskResponseStrategy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AprUserRiskResponseStrategy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AprUserRiskResponseStrategyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -35,6 +35,7 @@ class DnsZoneArgs:
                  tsig_key: Optional[pulumi.Input['DnsZoneTsigKeyArgs']] = None):
         """
         The set of arguments for constructing a DnsZone resource.
+
         :param pulumi.Input['DnsZoneOutboundZoneTransferArgs'] outbound_zone_transfer: Outbound zone transfer properties.
         """
         pulumi.set(__self__, "contract", contract)
@@ -191,6 +192,7 @@ class _DnsZoneState:
                  zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DnsZone resources.
+
         :param pulumi.Input['DnsZoneOutboundZoneTransferArgs'] outbound_zone_transfer: Outbound zone transfer properties.
         """
         if activation_state is not None:
@@ -384,6 +386,7 @@ class DnsZone(pulumi.CustomResource):
                  __props__=None):
         """
         Create a DnsZone resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']] outbound_zone_transfer: Outbound zone transfer properties.
@@ -396,6 +399,7 @@ class DnsZone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a DnsZone resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param DnsZoneArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

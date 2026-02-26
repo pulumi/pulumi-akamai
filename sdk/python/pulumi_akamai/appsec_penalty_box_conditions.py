@@ -24,6 +24,7 @@ class AppsecPenaltyBoxConditionsArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppsecPenaltyBoxConditions resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] penalty_box_conditions: Describes the conditions and the operator to be applied for penalty box
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -77,6 +78,7 @@ class _AppsecPenaltyBoxConditionsState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppsecPenaltyBoxConditions resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] penalty_box_conditions: Describes the conditions and the operator to be applied for penalty box
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -137,6 +139,7 @@ class AppsecPenaltyBoxConditions(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppsecPenaltyBoxConditions resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -151,6 +154,7 @@ class AppsecPenaltyBoxConditions(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppsecPenaltyBoxConditions resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppsecPenaltyBoxConditionsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

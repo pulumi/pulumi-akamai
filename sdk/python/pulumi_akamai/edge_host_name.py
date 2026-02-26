@@ -33,6 +33,7 @@ class EdgeHostNameArgs:
                  use_cases: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a EdgeHostName resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input['EdgeHostNameTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
@@ -173,6 +174,7 @@ class _EdgeHostNameState:
                  use_cases: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EdgeHostName resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input['EdgeHostNameTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
@@ -321,6 +323,7 @@ class EdgeHostName(pulumi.CustomResource):
                  __props__=None):
         """
         Create a EdgeHostName resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
@@ -336,6 +339,7 @@ class EdgeHostName(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a EdgeHostName resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param EdgeHostNameArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

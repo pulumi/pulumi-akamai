@@ -28,6 +28,7 @@ class PropertyIncludeArgs:
                  rules: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PropertyInclude resource.
+
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract to which the include is assigned
         :param pulumi.Input[_builtins.str] group_id: Identifies the group to which the include is assigned
         :param pulumi.Input[_builtins.str] rule_format: Indicates the versioned set of features and criteria
@@ -150,6 +151,7 @@ class _PropertyIncludeState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PropertyInclude resources.
+
         :param pulumi.Input[_builtins.str] asset_id: ID of the include in the Identity and Access Management API.
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract to which the include is assigned
         :param pulumi.Input[_builtins.str] group_id: Identifies the group to which the include is assigned
@@ -364,6 +366,7 @@ class PropertyInclude(pulumi.CustomResource):
                  __props__=None):
         """
         Create a PropertyInclude resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract to which the include is assigned
@@ -382,6 +385,7 @@ class PropertyInclude(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PropertyInclude resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PropertyIncludeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -29,6 +29,7 @@ class MtlstruststoreCaSetArgs:
                  version_description: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MtlstruststoreCaSet resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['MtlstruststoreCaSetCertificateArgs']]] certificates: The certificates that are valid, non-expired, root, or intermediate.
         :param pulumi.Input[_builtins.bool] allow_insecure_sha1: Allows certificates with SHA-1 signatures if enabled.
         :param pulumi.Input[_builtins.str] description: Any additional comments you can add to the CA set.
@@ -138,6 +139,7 @@ class _MtlstruststoreCaSetState:
                  version_modified_date: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MtlstruststoreCaSet resources.
+
         :param pulumi.Input[_builtins.str] account_id: Identifies the account the CA set belongs to.
         :param pulumi.Input[_builtins.bool] allow_insecure_sha1: Allows certificates with SHA-1 signatures if enabled.
         :param pulumi.Input[Sequence[pulumi.Input['MtlstruststoreCaSetCertificateArgs']]] certificates: The certificates that are valid, non-expired, root, or intermediate.
@@ -392,6 +394,7 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
                  __props__=None):
         """
         Create a MtlstruststoreCaSet resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_insecure_sha1: Allows certificates with SHA-1 signatures if enabled.
@@ -408,6 +411,7 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a MtlstruststoreCaSet resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param MtlstruststoreCaSetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

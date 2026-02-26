@@ -26,6 +26,7 @@ class CloudwrapperActivationArgs:
                  timeouts: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudwrapperActivation resource.
+
         :param pulumi.Input[_builtins.int] config_id: The configuration you want to activate.
         :param pulumi.Input[_builtins.str] revision: Unique hash value of the configuration.
         """
@@ -76,6 +77,7 @@ class _CloudwrapperActivationState:
                  timeouts: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CloudwrapperActivation resources.
+
         :param pulumi.Input[_builtins.int] config_id: The configuration you want to activate.
         :param pulumi.Input[_builtins.str] revision: Unique hash value of the configuration.
         """
@@ -132,6 +134,7 @@ class CloudwrapperActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CloudwrapperActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: The configuration you want to activate.
@@ -145,6 +148,7 @@ class CloudwrapperActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CloudwrapperActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CloudwrapperActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

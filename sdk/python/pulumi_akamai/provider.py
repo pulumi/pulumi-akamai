@@ -31,6 +31,7 @@ class ProviderArgs:
                  retry_wait_min: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Provider resource.
+
         :param pulumi.Input[_builtins.str] config_section: The section of the edgerc file to use for configuration
         :param pulumi.Input[_builtins.int] request_limit: The maximum number of API requests to be made per second (0 for no limit)
         :param pulumi.Input[_builtins.bool] retry_disabled: Should the retries of API requests be disabled, default false
@@ -179,6 +180,7 @@ class Provider(pulumi.ProviderResource):
         construction to achieve fine-grained programmatic control over provider settings. See the
         [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] config_section: The section of the edgerc file to use for configuration
@@ -199,6 +201,7 @@ class Provider(pulumi.ProviderResource):
         settings, however an explicit `Provider` instance may be created and passed during resource
         construction to achieve fine-grained programmatic control over provider settings. See the
         [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
+
 
         :param str resource_name: The name of the resource.
         :param ProviderArgs args: The arguments to use to populate this resource's properties.

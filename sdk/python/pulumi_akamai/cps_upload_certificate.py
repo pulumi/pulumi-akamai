@@ -33,6 +33,7 @@ class CpsUploadCertificateArgs:
                  wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a CpsUploadCertificate resource.
+
         :param pulumi.Input[_builtins.int] enrollment_id: The unique identifier of the enrollment
         :param pulumi.Input[_builtins.bool] acknowledge_change_management: Whether to acknowledge change management
         :param pulumi.Input[_builtins.bool] acknowledge_post_verification_warnings: Whether to acknowledge post-verification warnings
@@ -200,6 +201,7 @@ class _CpsUploadCertificateState:
                  wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering CpsUploadCertificate resources.
+
         :param pulumi.Input[_builtins.bool] acknowledge_change_management: Whether to acknowledge change management
         :param pulumi.Input[_builtins.bool] acknowledge_post_verification_warnings: Whether to acknowledge post-verification warnings
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] auto_approve_warnings: List of post-verification warnings to be automatically acknowledged
@@ -372,6 +374,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CpsUploadCertificate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] acknowledge_change_management: Whether to acknowledge change management
@@ -393,6 +396,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CpsUploadCertificate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CpsUploadCertificateArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

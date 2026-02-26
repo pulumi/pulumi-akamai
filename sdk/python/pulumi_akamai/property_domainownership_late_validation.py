@@ -29,6 +29,7 @@ class PropertyDomainownershipLateValidationArgs:
                  timeouts: Optional[pulumi.Input['PropertyDomainownershipLateValidationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyDomainownershipLateValidation resource.
+
         :param pulumi.Input[_builtins.str] contract_id: Contract ID of the Property.
         :param pulumi.Input[_builtins.str] group_id: Group ID of the Property.
         :param pulumi.Input[_builtins.str] property_id: Property ID of the Property which domains will be validated.
@@ -130,6 +131,7 @@ class _PropertyDomainownershipLateValidationState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering PropertyDomainownershipLateValidation resources.
+
         :param pulumi.Input[_builtins.str] contract_id: Contract ID of the Property.
         :param pulumi.Input[_builtins.str] group_id: Group ID of the Property.
         :param pulumi.Input[_builtins.str] property_id: Property ID of the Property which domains will be validated.
@@ -240,6 +242,7 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a PropertyDomainownershipLateValidation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID of the Property.
@@ -259,6 +262,7 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PropertyDomainownershipLateValidation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PropertyDomainownershipLateValidationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

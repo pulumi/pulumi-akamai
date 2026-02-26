@@ -33,6 +33,7 @@ class PropertyArgs:
                  version_notes: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Property resource.
+
         :param pulumi.Input[_builtins.str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] product_id: Product ID to be assigned to the Property
@@ -201,6 +202,7 @@ class _PropertyState:
                  version_notes: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Property resources.
+
         :param pulumi.Input[_builtins.str] asset_id: ID of the property in the Identity and Access Management API.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] group_id: Group ID to be assigned to the Property
@@ -470,6 +472,7 @@ class Property(pulumi.CustomResource):
                  __props__=None):
         """
         Create a Property resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID to be assigned to the Property
@@ -490,6 +493,7 @@ class Property(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a Property resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PropertyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

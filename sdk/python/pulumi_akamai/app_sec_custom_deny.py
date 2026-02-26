@@ -23,6 +23,7 @@ class AppSecCustomDenyArgs:
                  custom_deny: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecCustomDeny resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] custom_deny: JSON-formatted information about the properties and property values for the custom deny
         """
@@ -62,6 +63,7 @@ class _AppSecCustomDenyState:
                  custom_deny_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecCustomDeny resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] custom_deny: JSON-formatted information about the properties and property values for the custom deny
         :param pulumi.Input[_builtins.str] custom_deny_id: custom_deny_id
@@ -121,6 +123,7 @@ class AppSecCustomDeny(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecCustomDeny resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -134,6 +137,7 @@ class AppSecCustomDeny(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecCustomDeny resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecCustomDenyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

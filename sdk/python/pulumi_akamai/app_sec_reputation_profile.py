@@ -23,6 +23,7 @@ class AppSecReputationProfileArgs:
                  reputation_profile: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecReputationProfile resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] reputation_profile: JSON-formatted definition of the reputation profile
         """
@@ -62,6 +63,7 @@ class _AppSecReputationProfileState:
                  reputation_profile_id: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecReputationProfile resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] reputation_profile: JSON-formatted definition of the reputation profile
         :param pulumi.Input[_builtins.int] reputation_profile_id: Unique identifier of the reputation profile
@@ -121,6 +123,7 @@ class AppSecReputationProfile(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecReputationProfile resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -134,6 +137,7 @@ class AppSecReputationProfile(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecReputationProfile resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecReputationProfileArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -26,6 +26,7 @@ class IamCidrBlockArgs:
                  comments: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamCidrBlock resource.
+
         :param pulumi.Input[_builtins.str] cidr_block: The value of an IP address or IP address range.
         :param pulumi.Input[_builtins.bool] enabled: Enables the CIDR block on the account.
         :param pulumi.Input[_builtins.str] comments: Descriptive label you provide for the CIDR block.
@@ -86,6 +87,7 @@ class _IamCidrBlockState:
                  modified_date: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamCidrBlock resources.
+
         :param pulumi.Input['IamCidrBlockActionsArgs'] actions: Specifies activities available for the CIDR block.
         :param pulumi.Input[_builtins.str] cidr_block: The value of an IP address or IP address range.
         :param pulumi.Input[_builtins.int] cidr_block_id: Unique identifier for each CIDR block.
@@ -236,6 +238,7 @@ class IamCidrBlock(pulumi.CustomResource):
                  __props__=None):
         """
         Create a IamCidrBlock resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cidr_block: The value of an IP address or IP address range.
@@ -250,6 +253,7 @@ class IamCidrBlock(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamCidrBlock resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamCidrBlockArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

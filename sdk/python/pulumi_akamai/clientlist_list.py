@@ -30,6 +30,7 @@ class ClientlistListArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ClientlistList resource.
+
         :param pulumi.Input[_builtins.str] contract_id: Contract ID for which client list is assigned.
         :param pulumi.Input[_builtins.int] group_id: Group ID for which client list is assigned.
         :param pulumi.Input[_builtins.str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
@@ -150,6 +151,7 @@ class _ClientlistListState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ClientlistList resources.
+
         :param pulumi.Input[_builtins.str] contract_id: Contract ID for which client list is assigned.
         :param pulumi.Input[_builtins.int] group_id: Group ID for which client list is assigned.
         :param pulumi.Input[Sequence[pulumi.Input['ClientlistListItemArgs']]] items: Set of items containing item information.
@@ -319,6 +321,7 @@ class ClientlistList(pulumi.CustomResource):
                  __props__=None):
         """
         Create a ClientlistList resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID for which client list is assigned.
@@ -337,6 +340,7 @@ class ClientlistList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ClientlistList resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ClientlistListArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

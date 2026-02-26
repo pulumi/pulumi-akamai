@@ -27,6 +27,7 @@ class CloudletsApplicationLoadBalancerActivationArgs:
                  timeouts: Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsApplicationLoadBalancerActivation resource.
+
         :param pulumi.Input[_builtins.str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
         :param pulumi.Input[_builtins.str] origin_id: The conditional origin’s unique identifier
         :param pulumi.Input[_builtins.int] version: Cloudlets application load balancer version you want to activate
@@ -97,6 +98,7 @@ class _CloudletsApplicationLoadBalancerActivationState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering CloudletsApplicationLoadBalancerActivation resources.
+
         :param pulumi.Input[_builtins.str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
         :param pulumi.Input[_builtins.str] origin_id: The conditional origin’s unique identifier
         :param pulumi.Input[_builtins.str] status: Activation status for this application load balancer
@@ -188,6 +190,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CloudletsApplicationLoadBalancerActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
@@ -203,6 +206,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CloudletsApplicationLoadBalancerActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CloudletsApplicationLoadBalancerActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

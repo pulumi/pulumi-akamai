@@ -24,6 +24,7 @@ class AppSecApiConstraintsProtectionArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecApiConstraintsProtection resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.bool] enabled: Whether to enable API constraints protection
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -78,6 +79,7 @@ class _AppSecApiConstraintsProtectionState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecApiConstraintsProtection resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.bool] enabled: Whether to enable API constraints protection
         :param pulumi.Input[_builtins.str] output_text: Text representation
@@ -153,6 +155,7 @@ class AppSecApiConstraintsProtection(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecApiConstraintsProtection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -167,6 +170,7 @@ class AppSecApiConstraintsProtection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecApiConstraintsProtection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecApiConstraintsProtectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

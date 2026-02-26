@@ -38,6 +38,7 @@ class GtmDomainArgs:
                  wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a GtmDomain resource.
+
         :param pulumi.Input[_builtins.bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
         :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
@@ -276,6 +277,7 @@ class _GtmDomainState:
                  wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering GtmDomain resources.
+
         :param pulumi.Input[_builtins.bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
         :param pulumi.Input[_builtins.str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
@@ -709,6 +711,7 @@ class GtmDomain(pulumi.CustomResource):
                  __props__=None):
         """
         Create a GtmDomain resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
@@ -722,6 +725,7 @@ class GtmDomain(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a GtmDomain resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param GtmDomainArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

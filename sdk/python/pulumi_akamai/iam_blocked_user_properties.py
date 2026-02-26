@@ -24,6 +24,7 @@ class IamBlockedUserPropertiesArgs:
                  identity_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IamBlockedUserProperties resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] blocked_properties: List of properties to block for a user.
         :param pulumi.Input[_builtins.int] group_id: A unique identifier for a group.
         :param pulumi.Input[_builtins.str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
@@ -77,6 +78,7 @@ class _IamBlockedUserPropertiesState:
                  identity_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamBlockedUserProperties resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] blocked_properties: List of properties to block for a user.
         :param pulumi.Input[_builtins.int] group_id: A unique identifier for a group.
         :param pulumi.Input[_builtins.str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
@@ -137,6 +139,7 @@ class IamBlockedUserProperties(pulumi.CustomResource):
                  __props__=None):
         """
         Create a IamBlockedUserProperties resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] blocked_properties: List of properties to block for a user.
@@ -151,6 +154,7 @@ class IamBlockedUserProperties(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamBlockedUserProperties resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamBlockedUserPropertiesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

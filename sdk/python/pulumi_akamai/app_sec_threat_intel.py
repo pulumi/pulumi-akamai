@@ -24,6 +24,7 @@ class AppSecThreatIntelArgs:
                  threat_intel: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecThreatIntel resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] threat_intel: Whether threat intelligence protection should be on or off
@@ -77,6 +78,7 @@ class _AppSecThreatIntelState:
                  threat_intel: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecThreatIntel resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] threat_intel: Whether threat intelligence protection should be on or off
@@ -137,6 +139,7 @@ class AppSecThreatIntel(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecThreatIntel resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -151,6 +154,7 @@ class AppSecThreatIntel(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecThreatIntel resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecThreatIntelArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

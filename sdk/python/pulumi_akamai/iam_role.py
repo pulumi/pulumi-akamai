@@ -25,6 +25,7 @@ class IamRoleArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamRole resource.
+
         :param pulumi.Input[_builtins.str] description: The description for a role.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] granted_roles: The list of existing unique identifiers for the granted roles.
         :param pulumi.Input[_builtins.str] name: The name you supply for a role.
@@ -95,6 +96,7 @@ class _IamRoleState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamRole resources.
+
         :param pulumi.Input[_builtins.str] description: The description for a role.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] granted_roles: The list of existing unique identifiers for the granted roles.
         :param pulumi.Input[_builtins.str] name: The name you supply for a role.
@@ -171,6 +173,7 @@ class IamRole(pulumi.CustomResource):
                  __props__=None):
         """
         Create a IamRole resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: The description for a role.
@@ -186,6 +189,7 @@ class IamRole(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamRole resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamRoleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

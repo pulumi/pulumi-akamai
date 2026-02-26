@@ -36,6 +36,7 @@ class IamApiClientArgs:
                  purge_options: Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']] = None):
         """
         The set of arguments for constructing a IamApiClient resource.
+
         :param pulumi.Input['IamApiClientApiAccessArgs'] api_access: The APIs the API client can access.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         :param pulumi.Input[_builtins.str] client_name: A human-readable name for the API client.
@@ -249,6 +250,7 @@ class _IamApiClientState:
                  purge_options: Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']] = None):
         """
         Input properties used for looking up and filtering IamApiClient resources.
+
         :param pulumi.Input[_builtins.str] access_token: The part of the client secret that identifies your API client and lets you access applications and resources.
         :param pulumi.Input['IamApiClientActionsArgs'] actions: Specifies activities available for the API client.
         :param pulumi.Input[_builtins.int] active_credential_count: The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
@@ -570,6 +572,7 @@ class IamApiClient(pulumi.CustomResource):
                  __props__=None):
         """
         Create a IamApiClient resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_account_switch: Enables the API client to manage more than one account.
@@ -593,6 +596,7 @@ class IamApiClient(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamApiClient resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamApiClientArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

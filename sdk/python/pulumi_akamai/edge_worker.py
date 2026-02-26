@@ -28,6 +28,7 @@ class EdgeWorkerArgs:
                  timeouts: Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a EdgeWorker resource.
+
         :param pulumi.Input[_builtins.int] group_id: Defines the group association for the EdgeWorker
         :param pulumi.Input[_builtins.int] resource_tier_id: The unique identifier of a resource tier
         :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle
@@ -118,6 +119,7 @@ class _EdgeWorkerState:
                  warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering EdgeWorker resources.
+
         :param pulumi.Input[_builtins.int] edgeworker_id: The unique identifier of the EdgeWorker
         :param pulumi.Input[_builtins.int] group_id: Defines the group association for the EdgeWorker
         :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle
@@ -270,6 +272,7 @@ class EdgeWorker(pulumi.CustomResource):
                  __props__=None):
         """
         Create a EdgeWorker resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] group_id: Defines the group association for the EdgeWorker
@@ -286,6 +289,7 @@ class EdgeWorker(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a EdgeWorker resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param EdgeWorkerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

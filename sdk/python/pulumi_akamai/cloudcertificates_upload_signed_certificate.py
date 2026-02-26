@@ -25,6 +25,7 @@ class CloudcertificatesUploadSignedCertificateArgs:
                  trust_chain_pem: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudcertificatesUploadSignedCertificate resource.
+
         :param pulumi.Input[_builtins.str] certificate_id: Certificate identifier on which to perform the upload operation.
         :param pulumi.Input[_builtins.str] signed_certificate_pem: PEM-encoded signed certificate to upload.
         :param pulumi.Input[_builtins.bool] acknowledge_warnings: Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate.
@@ -103,6 +104,7 @@ class _CloudcertificatesUploadSignedCertificateState:
                  trust_chain_pem: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudcertificatesUploadSignedCertificate resources.
+
         :param pulumi.Input[_builtins.bool] acknowledge_warnings: Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate.
         :param pulumi.Input[_builtins.str] certificate_id: Certificate identifier on which to perform the upload operation.
         :param pulumi.Input[_builtins.str] certificate_status: The status of the certificate. Can be one of 'CSR_READY', 'READY_FOR_USE', 'ACTIVE'.
@@ -299,6 +301,7 @@ class CloudcertificatesUploadSignedCertificate(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CloudcertificatesUploadSignedCertificate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] acknowledge_warnings: Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate.
@@ -314,6 +317,7 @@ class CloudcertificatesUploadSignedCertificate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CloudcertificatesUploadSignedCertificate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CloudcertificatesUploadSignedCertificateArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

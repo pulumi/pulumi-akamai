@@ -25,6 +25,7 @@ class AppSecReputationProfileActionArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecReputationProfileAction resource.
+
         :param pulumi.Input[_builtins.str] action: Action to be taken when the reputation profile is triggered
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.int] reputation_profile_id: Unique identifier of the reputation profile
@@ -93,6 +94,7 @@ class _AppSecReputationProfileActionState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecReputationProfileAction resources.
+
         :param pulumi.Input[_builtins.str] action: Action to be taken when the reputation profile is triggered
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.int] reputation_profile_id: Unique identifier of the reputation profile
@@ -169,6 +171,7 @@ class AppSecReputationProfileAction(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecReputationProfileAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Action to be taken when the reputation profile is triggered
@@ -184,6 +187,7 @@ class AppSecReputationProfileAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecReputationProfileAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecReputationProfileActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
