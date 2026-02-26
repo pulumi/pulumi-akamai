@@ -24,6 +24,7 @@ class AppSecSecurityPolicyRenameArgs:
                  security_policy_name: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecSecurityPolicyRename resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] security_policy_name: New name to be given to the security policy
@@ -77,6 +78,7 @@ class _AppSecSecurityPolicyRenameState:
                  security_policy_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecSecurityPolicyRename resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] security_policy_name: New name to be given to the security policy
@@ -137,6 +139,7 @@ class AppSecSecurityPolicyRename(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecSecurityPolicyRename resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -151,6 +154,7 @@ class AppSecSecurityPolicyRename(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecSecurityPolicyRename resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecSecurityPolicyRenameArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

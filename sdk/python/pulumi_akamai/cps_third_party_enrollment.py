@@ -41,6 +41,7 @@ class CpsThirdPartyEnrollmentArgs:
                  timeouts: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpsThirdPartyEnrollment resource.
+
         :param pulumi.Input['CpsThirdPartyEnrollmentAdminContactArgs'] admin_contact: Contact information for the certificate administrator to use at organization
         :param pulumi.Input[_builtins.str] common_name: Common name used for enrollment
         :param pulumi.Input[_builtins.str] contract_id: Contract ID for which enrollment is retrieved
@@ -328,6 +329,7 @@ class _CpsThirdPartyEnrollmentState:
                  timeouts: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CpsThirdPartyEnrollment resources.
+
         :param pulumi.Input[_builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification. Default is false
         :param pulumi.Input['CpsThirdPartyEnrollmentAdminContactArgs'] admin_contact: Contact information for the certificate administrator to use at organization
         :param pulumi.Input[_builtins.bool] allow_duplicate_common_name: Allow to duplicate common name. Default is false
@@ -628,6 +630,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CpsThirdPartyEnrollment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification. Default is false
@@ -657,6 +660,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CpsThirdPartyEnrollment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CpsThirdPartyEnrollmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

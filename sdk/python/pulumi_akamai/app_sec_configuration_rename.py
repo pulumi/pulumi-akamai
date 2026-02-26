@@ -24,6 +24,7 @@ class AppSecConfigurationRenameArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecConfigurationRename resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] description: Brief description of the security configuration
         :param pulumi.Input[_builtins.str] name: New name for the security configuration
@@ -78,6 +79,7 @@ class _AppSecConfigurationRenameState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecConfigurationRename resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] description: Brief description of the security configuration
         :param pulumi.Input[_builtins.str] name: New name for the security configuration
@@ -138,6 +140,7 @@ class AppSecConfigurationRename(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecConfigurationRename resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -152,6 +155,7 @@ class AppSecConfigurationRename(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecConfigurationRename resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecConfigurationRenameArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

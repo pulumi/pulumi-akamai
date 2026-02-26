@@ -22,6 +22,7 @@ class IamIpAllowlistArgs:
                  enable: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a IamIpAllowlist resource.
+
         :param pulumi.Input[_builtins.bool] enable: Whether to enable or disable the allowlist.
         """
         pulumi.set(__self__, "enable", enable)
@@ -45,6 +46,7 @@ class _IamIpAllowlistState:
                  enable: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering IamIpAllowlist resources.
+
         :param pulumi.Input[_builtins.bool] enable: Whether to enable or disable the allowlist.
         """
         if enable is not None:
@@ -73,6 +75,7 @@ class IamIpAllowlist(pulumi.CustomResource):
                  __props__=None):
         """
         Create a IamIpAllowlist resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable: Whether to enable or disable the allowlist.
@@ -85,6 +88,7 @@ class IamIpAllowlist(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamIpAllowlist resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamIpAllowlistArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

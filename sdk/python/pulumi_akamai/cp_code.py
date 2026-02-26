@@ -28,6 +28,7 @@ class CpCodeArgs:
                  timeouts: Optional[pulumi.Input['CpCodeTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpCode resource.
+
         :param pulumi.Input['CpCodeTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "contract_id", contract_id)
@@ -98,6 +99,7 @@ class _CpCodeState:
                  timeouts: Optional[pulumi.Input['CpCodeTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CpCode resources.
+
         :param pulumi.Input['CpCodeTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         if contract_id is not None:
@@ -174,6 +176,7 @@ class CpCode(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CpCode resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['CpCodeTimeoutsArgs', 'CpCodeTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
@@ -186,6 +189,7 @@ class CpCode(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CpCode resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CpCodeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -26,6 +26,7 @@ class AppsecAdvancedSettingsAsePenaltyBoxArgs:
                  qualification_exclusions: pulumi.Input['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs']):
         """
         The set of arguments for constructing a AppsecAdvancedSettingsAsePenaltyBox resource.
+
         :param pulumi.Input[_builtins.int] block_duration: Block duration for ASE Penalty Box in minutes.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration.
         :param pulumi.Input['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs'] qualification_exclusions: Qualification exclusions for ASE Penalty Box. Contains attack groups and rules.
@@ -79,6 +80,7 @@ class _AppsecAdvancedSettingsAsePenaltyBoxState:
                  qualification_exclusions: Optional[pulumi.Input['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs']] = None):
         """
         Input properties used for looking up and filtering AppsecAdvancedSettingsAsePenaltyBox resources.
+
         :param pulumi.Input[_builtins.int] block_duration: Block duration for ASE Penalty Box in minutes.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration.
         :param pulumi.Input['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs'] qualification_exclusions: Qualification exclusions for ASE Penalty Box. Contains attack groups and rules.
@@ -139,6 +141,7 @@ class AppsecAdvancedSettingsAsePenaltyBox(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppsecAdvancedSettingsAsePenaltyBox resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] block_duration: Block duration for ASE Penalty Box in minutes.
@@ -153,6 +156,7 @@ class AppsecAdvancedSettingsAsePenaltyBox(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppsecAdvancedSettingsAsePenaltyBox resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppsecAdvancedSettingsAsePenaltyBoxArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -31,6 +31,7 @@ class CloudletsPolicyArgs:
                  timeouts: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsPolicy resource.
+
         :param pulumi.Input[_builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
         :param pulumi.Input[_builtins.str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
         :param pulumi.Input[_builtins.str] description: The description of this specific policy.
@@ -168,6 +169,7 @@ class _CloudletsPolicyState:
                  warnings: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudletsPolicy resources.
+
         :param pulumi.Input[_builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
         :param pulumi.Input[_builtins.int] cloudlet_id: An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
         :param pulumi.Input[_builtins.str] description: The description of this specific policy.
@@ -353,6 +355,7 @@ class CloudletsPolicy(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CloudletsPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
@@ -372,6 +375,7 @@ class CloudletsPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CloudletsPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CloudletsPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

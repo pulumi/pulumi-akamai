@@ -28,6 +28,7 @@ class EdgekvGroupItemsArgs:
                  timeouts: Optional[pulumi.Input['EdgekvGroupItemsTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a EdgekvGroupItems resource.
+
         :param pulumi.Input[_builtins.str] group_name: The name of the EdgeKV group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] items: A map of items within the specified group. Each item consists of an item key and a value.
         :param pulumi.Input[_builtins.str] namespace_name: The name for the EdgeKV namespace.
@@ -112,6 +113,7 @@ class _EdgekvGroupItemsState:
                  timeouts: Optional[pulumi.Input['EdgekvGroupItemsTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering EdgekvGroupItems resources.
+
         :param pulumi.Input[_builtins.str] group_name: The name of the EdgeKV group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] items: A map of items within the specified group. Each item consists of an item key and a value.
         :param pulumi.Input[_builtins.str] namespace_name: The name for the EdgeKV namespace.
@@ -204,6 +206,7 @@ class EdgekvGroupItems(pulumi.CustomResource):
                  __props__=None):
         """
         Create a EdgekvGroupItems resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] group_name: The name of the EdgeKV group.
@@ -220,6 +223,7 @@ class EdgekvGroupItems(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a EdgekvGroupItems resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param EdgekvGroupItemsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -23,6 +23,7 @@ class IamGroupArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamGroup resource.
+
         :param pulumi.Input[_builtins.int] parent_group_id: Unique identifier for the parent group.
         :param pulumi.Input[_builtins.str] name: Human readable name for a group.
         """
@@ -63,6 +64,7 @@ class _IamGroupState:
                  sub_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None):
         """
         Input properties used for looking up and filtering IamGroup resources.
+
         :param pulumi.Input[_builtins.str] name: Human readable name for a group.
         :param pulumi.Input[_builtins.int] parent_group_id: Unique identifier for the parent group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] sub_groups: Subgroups IDs.
@@ -122,6 +124,7 @@ class IamGroup(pulumi.CustomResource):
                  __props__=None):
         """
         Create a IamGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: Human readable name for a group.
@@ -135,6 +138,7 @@ class IamGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

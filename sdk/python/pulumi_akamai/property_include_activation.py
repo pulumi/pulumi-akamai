@@ -33,6 +33,7 @@ class PropertyIncludeActivationArgs:
                  timeouts: Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyIncludeActivation resource.
+
         :param pulumi.Input[_builtins.str] contract_id: The contract under which the include is activated
         :param pulumi.Input[_builtins.str] group_id: The group under which the include is activated
         :param pulumi.Input[_builtins.str] include_id: The unique identifier of the include
@@ -196,6 +197,7 @@ class _PropertyIncludeActivationState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering PropertyIncludeActivation resources.
+
         :param pulumi.Input[_builtins.bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation and continue
         :param pulumi.Input['PropertyIncludeActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[_builtins.str] contract_id: The contract under which the include is activated
@@ -383,6 +385,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a PropertyIncludeActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation and continue
@@ -404,6 +407,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PropertyIncludeActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PropertyIncludeActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

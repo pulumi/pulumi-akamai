@@ -28,6 +28,7 @@ class CloudletsPolicyActivationArgs:
                  timeouts: Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsPolicyActivation resource.
+
         :param pulumi.Input[_builtins.str] network: The network you want to activate the policy version on (options are Staging and Production)
         :param pulumi.Input[_builtins.int] policy_id: ID of the Cloudlets policy you want to activate
         :param pulumi.Input[_builtins.int] version: Cloudlets policy version you want to activate
@@ -115,6 +116,7 @@ class _CloudletsPolicyActivationState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering CloudletsPolicyActivation resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] associated_properties: Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         :param pulumi.Input[_builtins.bool] is_shared: Indicates if policy that is being activated is a shared policy
         :param pulumi.Input[_builtins.str] network: The network you want to activate the policy version on (options are Staging and Production)
@@ -237,6 +239,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CloudletsPolicyActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] associated_properties: Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
@@ -253,6 +256,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CloudletsPolicyActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CloudletsPolicyActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

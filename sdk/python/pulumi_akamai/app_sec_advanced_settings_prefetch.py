@@ -26,6 +26,7 @@ class AppSecAdvancedSettingsPrefetchArgs:
                  extensions: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
         """
         The set of arguments for constructing a AppSecAdvancedSettingsPrefetch resource.
+
         :param pulumi.Input[_builtins.bool] all_extensions: Whether to enable prefetch requests for all file extensions
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.bool] enable_app_layer: Whether to enable or disable prefetch requests
@@ -109,6 +110,7 @@ class _AppSecAdvancedSettingsPrefetchState:
                  extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering AppSecAdvancedSettingsPrefetch resources.
+
         :param pulumi.Input[_builtins.bool] all_extensions: Whether to enable prefetch requests for all file extensions
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.bool] enable_app_layer: Whether to enable or disable prefetch requests
@@ -201,6 +203,7 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecAdvancedSettingsPrefetch resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] all_extensions: Whether to enable prefetch requests for all file extensions
@@ -217,6 +220,7 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecAdvancedSettingsPrefetch resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecAdvancedSettingsPrefetchArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

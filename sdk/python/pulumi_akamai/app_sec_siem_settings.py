@@ -31,6 +31,7 @@ class AppSecSiemSettingsArgs:
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AppSecSiemSettings resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[_builtins.bool] enable_siem: Whether to enable SIEM
@@ -163,6 +164,7 @@ class _AppSecSiemSettingsState:
                  siem_id: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecSiemSettings resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
         :param pulumi.Input[_builtins.bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
@@ -303,6 +305,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecSiemSettings resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -322,6 +325,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecSiemSettings resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecSiemSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

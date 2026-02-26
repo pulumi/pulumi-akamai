@@ -27,6 +27,7 @@ class MtlstruststoreCaSetActivationArgs:
                  timeouts: Optional[pulumi.Input['MtlstruststoreCaSetActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a MtlstruststoreCaSetActivation resource.
+
         :param pulumi.Input[_builtins.str] ca_set_id: Uniquely Identifies a CA set.
         :param pulumi.Input[_builtins.str] network: Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
         :param pulumi.Input[_builtins.int] version: Identifies the version of the CA set.
@@ -96,6 +97,7 @@ class _MtlstruststoreCaSetActivationState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering MtlstruststoreCaSetActivation resources.
+
         :param pulumi.Input[_builtins.str] ca_set_id: Uniquely Identifies a CA set.
         :param pulumi.Input[_builtins.str] created_by: User who submitted the activation request.
         :param pulumi.Input[_builtins.str] created_date: Date the activation request was submitted in ISO-8601 format.
@@ -228,6 +230,7 @@ class MtlstruststoreCaSetActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a MtlstruststoreCaSetActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ca_set_id: Uniquely Identifies a CA set.
@@ -242,6 +245,7 @@ class MtlstruststoreCaSetActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a MtlstruststoreCaSetActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param MtlstruststoreCaSetActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

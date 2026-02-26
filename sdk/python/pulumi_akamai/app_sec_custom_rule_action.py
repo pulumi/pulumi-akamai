@@ -25,6 +25,7 @@ class AppSecCustomRuleActionArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecCustomRuleAction resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] custom_rule_action: Action to be taken when the custom rule is invoked
         :param pulumi.Input[_builtins.int] custom_rule_id: Unique identifier of the custom rule whose action is being modified
@@ -93,6 +94,7 @@ class _AppSecCustomRuleActionState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecCustomRuleAction resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] custom_rule_action: Action to be taken when the custom rule is invoked
         :param pulumi.Input[_builtins.int] custom_rule_id: Unique identifier of the custom rule whose action is being modified
@@ -169,6 +171,7 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecCustomRuleAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -184,6 +187,7 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecCustomRuleAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecCustomRuleActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

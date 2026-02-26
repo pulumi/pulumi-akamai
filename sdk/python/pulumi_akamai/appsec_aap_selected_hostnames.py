@@ -25,6 +25,7 @@ class AppsecAapSelectedHostnamesArgs:
                  protected_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AppsecAapSelectedHostnames resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] evaluated_hosts: List of hostnames to be evaluated
@@ -95,6 +96,7 @@ class _AppsecAapSelectedHostnamesState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppsecAapSelectedHostnames resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] evaluated_hosts: List of hostnames to be evaluated
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] protected_hosts: List of hostnames to be protected
@@ -171,6 +173,7 @@ class AppsecAapSelectedHostnames(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppsecAapSelectedHostnames resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -186,6 +189,7 @@ class AppsecAapSelectedHostnames(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppsecAapSelectedHostnames resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppsecAapSelectedHostnamesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

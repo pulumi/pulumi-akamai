@@ -23,6 +23,7 @@ class AppsecAdvancedSettingsJa4FingerprintArgs:
                  header_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AppsecAdvancedSettingsJa4Fingerprint resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] header_names: JA4 TLS Header Names to be included in the header
         """
@@ -62,6 +63,7 @@ class _AppsecAdvancedSettingsJa4FingerprintState:
                  header_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering AppsecAdvancedSettingsJa4Fingerprint resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] header_names: JA4 TLS Header Names to be included in the header
         """
@@ -106,6 +108,7 @@ class AppsecAdvancedSettingsJa4Fingerprint(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppsecAdvancedSettingsJa4Fingerprint resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -119,6 +122,7 @@ class AppsecAdvancedSettingsJa4Fingerprint(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppsecAdvancedSettingsJa4Fingerprint resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppsecAdvancedSettingsJa4FingerprintArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

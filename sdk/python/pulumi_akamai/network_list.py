@@ -28,6 +28,7 @@ class NetworkListArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkList resource.
+
         :param pulumi.Input[_builtins.str] description: A description of the network list
         :param pulumi.Input[_builtins.str] mode: A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         :param pulumi.Input[_builtins.str] type: The type of the network list; must be either 'IP' or 'GEO'
@@ -148,6 +149,7 @@ class _NetworkListState:
                  uniqueid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkList resources.
+
         :param pulumi.Input[_builtins.str] contract_id: contract ID
         :param pulumi.Input[_builtins.str] description: A description of the network list
         :param pulumi.Input[_builtins.int] group_id: group ID
@@ -317,6 +319,7 @@ class NetworkList(pulumi.CustomResource):
                  __props__=None):
         """
         Create a NetworkList resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: contract ID
@@ -335,6 +338,7 @@ class NetworkList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a NetworkList resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param NetworkListArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

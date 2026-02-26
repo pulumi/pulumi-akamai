@@ -27,6 +27,7 @@ class AppSecSlowPostArgs:
                  slow_rate_threshold_rate: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AppSecSlowPost resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[_builtins.str] slow_rate_action: Action to be taken when slow POST protection is triggered
@@ -128,6 +129,7 @@ class _AppSecSlowPostState:
                  slow_rate_threshold_rate: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecSlowPost resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -236,6 +238,7 @@ class AppSecSlowPost(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecSlowPost resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -253,6 +256,7 @@ class AppSecSlowPost(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecSlowPost resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecSlowPostArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

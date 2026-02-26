@@ -26,6 +26,7 @@ class PropertyBootstrapArgs:
                  use_hostname_bucket: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a PropertyBootstrap resource.
+
         :param pulumi.Input[_builtins.str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] product_id: Product ID to be assigned to the Property
@@ -112,6 +113,7 @@ class _PropertyBootstrapState:
                  use_hostname_bucket: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering PropertyBootstrap resources.
+
         :param pulumi.Input[_builtins.str] asset_id: ID of the property in the Identity and Access Management API.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[_builtins.str] group_id: Group ID to be assigned to the Property
@@ -219,6 +221,7 @@ class PropertyBootstrap(pulumi.CustomResource):
                  __props__=None):
         """
         Create a PropertyBootstrap resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID to be assigned to the Property
@@ -235,6 +238,7 @@ class PropertyBootstrap(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PropertyBootstrap resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PropertyBootstrapArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

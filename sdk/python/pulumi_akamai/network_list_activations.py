@@ -26,6 +26,7 @@ class NetworkListActivationsArgs:
                  notes: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkListActivations resource.
+
         :param pulumi.Input[_builtins.str] network_list_id: Unique identifier of the network list
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses of Control Center users who receive an email when activation of this list is complete
         :param pulumi.Input[_builtins.int] sync_point: Identifies the sync point of the network list to be activated
@@ -112,6 +113,7 @@ class _NetworkListActivationsState:
                  sync_point: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkListActivations resources.
+
         :param pulumi.Input[_builtins.str] network: The Akamai network on which the list is activated: STAGING or PRODUCTION
         :param pulumi.Input[_builtins.str] network_list_id: Unique identifier of the network list
         :param pulumi.Input[_builtins.str] notes: Descriptive text to accompany the activation
@@ -219,6 +221,7 @@ class NetworkListActivations(pulumi.CustomResource):
                  __props__=None):
         """
         Create a NetworkListActivations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] network: The Akamai network on which the list is activated: STAGING or PRODUCTION
@@ -235,6 +238,7 @@ class NetworkListActivations(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a NetworkListActivations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param NetworkListActivationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

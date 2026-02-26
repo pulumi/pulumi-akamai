@@ -26,6 +26,7 @@ class AppSecAttackGroupArgs:
                  condition_exception: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecAttackGroup resource.
+
         :param pulumi.Input[_builtins.str] attack_group: Unique name of the attack group to be modified
         :param pulumi.Input[_builtins.str] attack_group_action: Action to be taken when the attack group is triggered
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -110,6 +111,7 @@ class _AppSecAttackGroupState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecAttackGroup resources.
+
         :param pulumi.Input[_builtins.str] attack_group: Unique name of the attack group to be modified
         :param pulumi.Input[_builtins.str] attack_group_action: Action to be taken when the attack group is triggered
         :param pulumi.Input[_builtins.str] condition_exception: JSON-formatted condition and exception information for the attack group
@@ -202,6 +204,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecAttackGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] attack_group: Unique name of the attack group to be modified
@@ -218,6 +221,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecAttackGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecAttackGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

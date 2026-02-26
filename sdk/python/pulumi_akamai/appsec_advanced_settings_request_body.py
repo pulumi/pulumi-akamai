@@ -25,6 +25,7 @@ class AppsecAdvancedSettingsRequestBodyArgs:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppsecAdvancedSettingsRequestBody resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] request_body_inspection_limit: Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
         :param pulumi.Input[_builtins.bool] request_body_inspection_limit_override: Indicates if the Request body inspection size should be overridden at policy
@@ -95,6 +96,7 @@ class _AppsecAdvancedSettingsRequestBodyState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppsecAdvancedSettingsRequestBody resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] request_body_inspection_limit: Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
         :param pulumi.Input[_builtins.bool] request_body_inspection_limit_override: Indicates if the Request body inspection size should be overridden at policy
@@ -171,6 +173,7 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppsecAdvancedSettingsRequestBody resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -186,6 +189,7 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppsecAdvancedSettingsRequestBody resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppsecAdvancedSettingsRequestBodyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

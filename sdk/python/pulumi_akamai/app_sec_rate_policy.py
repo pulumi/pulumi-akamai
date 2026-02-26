@@ -23,6 +23,7 @@ class AppSecRatePolicyArgs:
                  rate_policy: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecRatePolicy resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] rate_policy: JSON-formatted definition of the rate policy
         """
@@ -62,6 +63,7 @@ class _AppSecRatePolicyState:
                  rate_policy_id: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecRatePolicy resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] rate_policy: JSON-formatted definition of the rate policy
         :param pulumi.Input[_builtins.int] rate_policy_id: Unique identifier of the rate policy
@@ -121,6 +123,7 @@ class AppSecRatePolicy(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecRatePolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -134,6 +137,7 @@ class AppSecRatePolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecRatePolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecRatePolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

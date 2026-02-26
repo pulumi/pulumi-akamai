@@ -23,6 +23,7 @@ class AppSecCustomRuleArgs:
                  custom_rule: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecCustomRule resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] custom_rule: JSON-formatted definition of the custom rule
         """
@@ -62,6 +63,7 @@ class _AppSecCustomRuleState:
                  custom_rule_id: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecCustomRule resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] custom_rule: JSON-formatted definition of the custom rule
         """
@@ -117,6 +119,7 @@ class AppSecCustomRule(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecCustomRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -130,6 +133,7 @@ class AppSecCustomRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecCustomRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecCustomRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -27,6 +27,7 @@ class ApidefinitionsActivationArgs:
                  notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ApidefinitionsActivation resource.
+
         :param pulumi.Input[_builtins.int] api_id: Unique identifier of the API
         :param pulumi.Input[_builtins.str] network: Network on which to activate the API version (STAGING or PRODUCTION)
         :param pulumi.Input[_builtins.int] version: Version of the API to be activated
@@ -129,6 +130,7 @@ class _ApidefinitionsActivationState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ApidefinitionsActivation resources.
+
         :param pulumi.Input[_builtins.int] api_id: Unique identifier of the API
         :param pulumi.Input[_builtins.bool] auto_acknowledge_warnings: Automatically acknowledge all warnings for activation to continue. Default is false
         :param pulumi.Input[_builtins.str] network: Network on which to activate the API version (STAGING or PRODUCTION)
@@ -252,6 +254,7 @@ class ApidefinitionsActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a ApidefinitionsActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] api_id: Unique identifier of the API
@@ -269,6 +272,7 @@ class ApidefinitionsActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ApidefinitionsActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ApidefinitionsActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

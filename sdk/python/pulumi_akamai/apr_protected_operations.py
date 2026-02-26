@@ -25,6 +25,7 @@ class AprProtectedOperationsArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AprProtectedOperations resource.
+
         :param pulumi.Input[_builtins.int] config_id: Identifies a security configuration.
         :param pulumi.Input[_builtins.str] operation_id: Identifies a protected operation
         :param pulumi.Input[_builtins.str] security_policy_id: Identifies a security policy.
@@ -89,6 +90,7 @@ class _AprProtectedOperationsState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AprProtectedOperations resources.
+
         :param pulumi.Input[_builtins.int] config_id: Identifies a security configuration.
         :param pulumi.Input[_builtins.str] operation_id: Identifies a protected operation
         :param pulumi.Input[_builtins.str] security_policy_id: Identifies a security policy.
@@ -161,6 +163,7 @@ class AprProtectedOperations(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AprProtectedOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Identifies a security configuration.
@@ -175,6 +178,7 @@ class AprProtectedOperations(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AprProtectedOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AprProtectedOperationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

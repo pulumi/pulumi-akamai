@@ -23,6 +23,7 @@ class AppSecMatchTargetSequenceArgs:
                  match_target_sequence: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecMatchTargetSequence resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] match_target_sequence: JSON-formatted definition of the processing sequence for all defined match targets
         """
@@ -62,6 +63,7 @@ class _AppSecMatchTargetSequenceState:
                  match_target_sequence: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecMatchTargetSequence resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] match_target_sequence: JSON-formatted definition of the processing sequence for all defined match targets
         """
@@ -106,6 +108,7 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecMatchTargetSequence resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -119,6 +122,7 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecMatchTargetSequence resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecMatchTargetSequenceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

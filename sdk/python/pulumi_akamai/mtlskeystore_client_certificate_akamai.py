@@ -34,6 +34,7 @@ class MtlskeystoreClientCertificateAkamaiArgs:
                  timeouts: Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a MtlskeystoreClientCertificateAkamai resource.
+
         :param pulumi.Input[_builtins.str] certificate_name: The name of the client certificate. Must be between 1 and 64 characters.
         :param pulumi.Input[_builtins.str] contract_id: The contract assigned to the client certificate. Must have a length of at least 1.
         :param pulumi.Input[_builtins.str] geography: Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
@@ -214,6 +215,7 @@ class _MtlskeystoreClientCertificateAkamaiState:
                  versions: Optional[pulumi.Input[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]]] = None):
         """
         Input properties used for looking up and filtering MtlskeystoreClientCertificateAkamai resources.
+
         :param pulumi.Input[_builtins.int] certificate_id: The unique identifier of the client certificate.
         :param pulumi.Input[_builtins.str] certificate_name: The name of the client certificate. Must be between 1 and 64 characters.
         :param pulumi.Input[_builtins.str] contract_id: The contract assigned to the client certificate. Must have a length of at least 1.
@@ -488,6 +490,7 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
                  __props__=None):
         """
         Create a MtlskeystoreClientCertificateAkamai resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] certificate_name: The name of the client certificate. Must be between 1 and 64 characters.
@@ -509,6 +512,7 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a MtlskeystoreClientCertificateAkamai resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param MtlskeystoreClientCertificateAkamaiArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

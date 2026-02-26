@@ -32,6 +32,7 @@ class PropertyHostnameBucketArgs:
                  timeout_for_activation: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a PropertyHostnameBucket resource.
+
         :param pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         :param pulumi.Input[_builtins.str] network: The network to activate on, either `STAGING` or `PRODUCTION`.
         :param pulumi.Input[_builtins.str] property_id: The unique identifier for the property.
@@ -183,6 +184,7 @@ class _PropertyHostnameBucketState:
                  timeout_for_activation: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering PropertyHostnameBucket resources.
+
         :param pulumi.Input[_builtins.str] activation_id: The ID of the latest hostname bucket activation.
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
@@ -369,6 +371,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
                  __props__=None):
         """
         Create a PropertyHostnameBucket resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
@@ -389,6 +392,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PropertyHostnameBucket resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PropertyHostnameBucketArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

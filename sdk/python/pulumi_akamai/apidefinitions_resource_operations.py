@@ -23,6 +23,7 @@ class ApidefinitionsResourceOperationsArgs:
                  resource_operations: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ApidefinitionsResourceOperations resource.
+
         :param pulumi.Input[_builtins.int] api_id: The unique identifier for the endpoint
         :param pulumi.Input[_builtins.str] resource_operations: JSON-formatted information about the API configuration
         """
@@ -62,6 +63,7 @@ class _ApidefinitionsResourceOperationsState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ApidefinitionsResourceOperations resources.
+
         :param pulumi.Input[_builtins.int] api_id: The unique identifier for the endpoint
         :param pulumi.Input[_builtins.str] resource_operations: JSON-formatted information about the API configuration
         :param pulumi.Input[_builtins.int] version: Version of the endpoint
@@ -121,6 +123,7 @@ class ApidefinitionsResourceOperations(pulumi.CustomResource):
                  __props__=None):
         """
         Create a ApidefinitionsResourceOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] api_id: The unique identifier for the endpoint
@@ -134,6 +137,7 @@ class ApidefinitionsResourceOperations(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ApidefinitionsResourceOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ApidefinitionsResourceOperationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

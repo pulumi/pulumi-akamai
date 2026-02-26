@@ -47,6 +47,7 @@ class DatastreamArgs:
                  trafficpeak_connector: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']] = None):
         """
         The set of arguments for constructing a Datastream resource.
+
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
@@ -385,6 +386,7 @@ class _DatastreamState:
                  trafficpeak_connector: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']] = None):
         """
         Input properties used for looking up and filtering Datastream resources.
+
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
@@ -860,6 +862,7 @@ class Datastream(pulumi.CustomResource):
                  __props__=None):
         """
         Create a Datastream resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
@@ -881,6 +884,7 @@ class Datastream(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a Datastream resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param DatastreamArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

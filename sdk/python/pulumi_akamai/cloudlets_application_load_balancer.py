@@ -29,6 +29,7 @@ class CloudletsApplicationLoadBalancerArgs:
                  origin_description: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudletsApplicationLoadBalancer resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         :param pulumi.Input[_builtins.str] origin_id: The conditional origin's unique identifier
         :param pulumi.Input[_builtins.str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
@@ -129,6 +130,7 @@ class _CloudletsApplicationLoadBalancerState:
                  warnings: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudletsApplicationLoadBalancer resources.
+
         :param pulumi.Input[_builtins.str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
         :param pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         :param pulumi.Input[_builtins.str] description: The load balancer configuration version description
@@ -263,6 +265,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CloudletsApplicationLoadBalancer resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
@@ -279,6 +282,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CloudletsApplicationLoadBalancer resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CloudletsApplicationLoadBalancerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

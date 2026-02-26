@@ -25,6 +25,7 @@ class AppSecEvalPenaltyBoxArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecEvalPenaltyBox resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] penalty_box_action: Action applied to requests from clients in the penalty box
         :param pulumi.Input[_builtins.bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
@@ -93,6 +94,7 @@ class _AppSecEvalPenaltyBoxState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecEvalPenaltyBox resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] penalty_box_action: Action applied to requests from clients in the penalty box
         :param pulumi.Input[_builtins.bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
@@ -169,6 +171,7 @@ class AppSecEvalPenaltyBox(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecEvalPenaltyBox resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -184,6 +187,7 @@ class AppSecEvalPenaltyBox(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecEvalPenaltyBox resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecEvalPenaltyBoxArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

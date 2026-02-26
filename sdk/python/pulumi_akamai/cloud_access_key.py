@@ -31,6 +31,7 @@ class CloudAccessKeyArgs:
                  timeouts: Optional[pulumi.Input['CloudAccessKeyTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudAccessKey resource.
+
         :param pulumi.Input[_builtins.str] access_key_name: Name of the access key.
         :param pulumi.Input[_builtins.str] authentication_method: The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract assigned to the access key
@@ -160,6 +161,7 @@ class _CloudAccessKeyState:
                  timeouts: Optional[pulumi.Input['CloudAccessKeyTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CloudAccessKey resources.
+
         :param pulumi.Input[_builtins.str] access_key_name: Name of the access key.
         :param pulumi.Input[_builtins.int] access_key_uid: The unique identifier Akamai assigns to an access key.
         :param pulumi.Input[_builtins.str] authentication_method: The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
@@ -326,6 +328,7 @@ class CloudAccessKey(pulumi.CustomResource):
                  __props__=None):
         """
         Create a CloudAccessKey resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_key_name: Name of the access key.
@@ -344,6 +347,7 @@ class CloudAccessKey(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CloudAccessKey resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CloudAccessKeyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

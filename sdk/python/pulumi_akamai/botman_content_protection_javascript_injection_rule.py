@@ -24,6 +24,7 @@ class BotmanContentProtectionJavascriptInjectionRuleArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a BotmanContentProtectionJavascriptInjectionRule resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] content_protection_javascript_injection_rule: The content protection JavaScript injection rule
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -78,6 +79,7 @@ class _BotmanContentProtectionJavascriptInjectionRuleState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BotmanContentProtectionJavascriptInjectionRule resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] content_protection_javascript_injection_rule: The content protection JavaScript injection rule
         :param pulumi.Input[_builtins.str] content_protection_javascript_injection_rule_id: Unique identifier of a content protection JavaScript injection rule
@@ -153,6 +155,7 @@ class BotmanContentProtectionJavascriptInjectionRule(pulumi.CustomResource):
                  __props__=None):
         """
         Create a BotmanContentProtectionJavascriptInjectionRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -167,6 +170,7 @@ class BotmanContentProtectionJavascriptInjectionRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a BotmanContentProtectionJavascriptInjectionRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param BotmanContentProtectionJavascriptInjectionRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

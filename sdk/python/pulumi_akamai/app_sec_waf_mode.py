@@ -24,6 +24,7 @@ class AppSecWafModeArgs:
                  security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppSecWafMode resource.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] mode: How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
@@ -82,6 +83,7 @@ class _AppSecWafModeState:
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecWafMode resources.
+
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] current_ruleset: Versioning information for the current Kona Rule Set
         :param pulumi.Input[_builtins.str] eval_expiration_date: Date on which the evaluation period ends, if applicable
@@ -217,6 +219,7 @@ class AppSecWafMode(pulumi.CustomResource):
                  __props__=None):
         """
         Create a AppSecWafMode resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -231,6 +234,7 @@ class AppSecWafMode(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a AppSecWafMode resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param AppSecWafModeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

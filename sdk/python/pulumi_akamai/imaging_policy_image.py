@@ -26,6 +26,7 @@ class ImagingPolicyImageArgs:
                  activate_on_production: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ImagingPolicyImage resource.
+
         :param pulumi.Input[_builtins.str] contract_id: Unique identifier for the Akamai Contract containing the Policy Set(s)
         :param pulumi.Input[_builtins.str] json: A JSON encoded policy
         :param pulumi.Input[_builtins.str] policy_id: Unique identifier for a Policy. It is not possible to modify the id of the policy.
@@ -111,6 +112,7 @@ class _ImagingPolicyImageState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ImagingPolicyImage resources.
+
         :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         :param pulumi.Input[_builtins.str] contract_id: Unique identifier for the Akamai Contract containing the Policy Set(s)
         :param pulumi.Input[_builtins.str] json: A JSON encoded policy
@@ -218,6 +220,7 @@ class ImagingPolicyImage(pulumi.CustomResource):
                  __props__=None):
         """
         Create a ImagingPolicyImage resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] activate_on_production: With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
@@ -234,6 +237,7 @@ class ImagingPolicyImage(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ImagingPolicyImage resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ImagingPolicyImageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -32,6 +32,7 @@ class MtlskeystoreClientCertificateThirdPartyArgs:
                  subject: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MtlskeystoreClientCertificateThirdParty resource.
+
         :param pulumi.Input[_builtins.str] certificate_name: The name of the client certificate. Must be between 1 and 64 characters.
         :param pulumi.Input[_builtins.str] contract_id: The contract assigned to the client certificate. Must have a length of at least 1.
         :param pulumi.Input[_builtins.str] geography: Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
@@ -180,6 +181,7 @@ class _MtlskeystoreClientCertificateThirdPartyState:
                  versions: Optional[pulumi.Input[Mapping[str, pulumi.Input['MtlskeystoreClientCertificateThirdPartyVersionsArgs']]]] = None):
         """
         Input properties used for looking up and filtering MtlskeystoreClientCertificateThirdParty resources.
+
         :param pulumi.Input[_builtins.int] certificate_id: The unique identifier of the client certificate.
         :param pulumi.Input[_builtins.str] certificate_name: The name of the client certificate. Must be between 1 and 64 characters.
         :param pulumi.Input[_builtins.str] contract_id: The contract assigned to the client certificate. Must have a length of at least 1.
@@ -381,6 +383,7 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
                  __props__=None):
         """
         Create a MtlskeystoreClientCertificateThirdParty resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] certificate_name: The name of the client certificate. Must be between 1 and 64 characters.
@@ -401,6 +404,7 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a MtlskeystoreClientCertificateThirdParty resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param MtlskeystoreClientCertificateThirdPartyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

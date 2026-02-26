@@ -24,6 +24,7 @@ class PropertyDomainownershipDomainsArgs:
                  domains: pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]]):
         """
         The set of arguments for constructing a PropertyDomainownershipDomains resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]] domains: List of domains.
         """
         pulumi.set(__self__, "domains", domains)
@@ -47,6 +48,7 @@ class _PropertyDomainownershipDomainsState:
                  domains: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]]] = None):
         """
         Input properties used for looking up and filtering PropertyDomainownershipDomains resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]] domains: List of domains.
         """
         if domains is not None:
@@ -75,6 +77,7 @@ class PropertyDomainownershipDomains(pulumi.CustomResource):
                  __props__=None):
         """
         Create a PropertyDomainownershipDomains resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PropertyDomainownershipDomainsDomainArgs', 'PropertyDomainownershipDomainsDomainArgsDict']]]] domains: List of domains.
@@ -87,6 +90,7 @@ class PropertyDomainownershipDomains(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PropertyDomainownershipDomains resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PropertyDomainownershipDomainsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

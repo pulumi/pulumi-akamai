@@ -24,6 +24,7 @@ class BotmanCustomBotCategoryItemSequenceArgs:
                  config_id: pulumi.Input[_builtins.int]):
         """
         The set of arguments for constructing a BotmanCustomBotCategoryItemSequence resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] bot_ids: Unique identifiers of bots in this category, sorted in preferred order
         :param pulumi.Input[_builtins.str] category_id: Unique identifier of the bot category
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -77,6 +78,7 @@ class _BotmanCustomBotCategoryItemSequenceState:
                  config_id: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BotmanCustomBotCategoryItemSequence resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] bot_ids: Unique identifiers of bots in this category, sorted in preferred order
         :param pulumi.Input[_builtins.str] category_id: Unique identifier of the bot category
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
@@ -137,6 +139,7 @@ class BotmanCustomBotCategoryItemSequence(pulumi.CustomResource):
                  __props__=None):
         """
         Create a BotmanCustomBotCategoryItemSequence resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] bot_ids: Unique identifiers of bots in this category, sorted in preferred order
@@ -151,6 +154,7 @@ class BotmanCustomBotCategoryItemSequence(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a BotmanCustomBotCategoryItemSequence resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param BotmanCustomBotCategoryItemSequenceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

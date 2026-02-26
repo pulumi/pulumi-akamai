@@ -28,6 +28,7 @@ class EdgeWorkersActivationArgs:
                  timeouts: Optional[pulumi.Input['EdgeWorkersActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a EdgeWorkersActivation resource.
+
         :param pulumi.Input[_builtins.int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[_builtins.str] network: The network on which the version will be activated
         :param pulumi.Input[_builtins.str] version: The version of EdgeWorker to activate
@@ -114,6 +115,7 @@ class _EdgeWorkersActivationState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EdgeWorkersActivation resources.
+
         :param pulumi.Input[_builtins.int] activation_id: A unique identifier of the activation
         :param pulumi.Input[_builtins.int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[_builtins.str] network: The network on which the version will be activated
@@ -221,6 +223,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Create a EdgeWorkersActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] edgeworker_id: Id of the EdgeWorker to activate
@@ -237,6 +240,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a EdgeWorkersActivation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param EdgeWorkersActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
