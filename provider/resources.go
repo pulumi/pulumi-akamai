@@ -97,7 +97,8 @@ func Provider() tfbridge.ProviderInfo {
 		UpstreamRepoPath:        "./upstream",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"config": {
-				CSharpName: "ConfigDetails",
+				CSharpName:  "ConfigDetails",
+				MaxItemsOne: tfbridge.True(),
 			},
 		},
 		IgnoreMappings: []string{
