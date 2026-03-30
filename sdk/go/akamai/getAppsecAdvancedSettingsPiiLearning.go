@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -30,9 +30,8 @@ type LookupAppsecAdvancedSettingsPiiLearningArgs struct {
 type LookupAppsecAdvancedSettingsPiiLearningResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	Json       string `pulumi:"json"`
-	OutputText string `pulumi:"outputText"`
+	Id   string `pulumi:"id"`
+	Json string `pulumi:"json"`
 }
 
 func LookupAppsecAdvancedSettingsPiiLearningOutput(ctx *pulumi.Context, args LookupAppsecAdvancedSettingsPiiLearningOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAdvancedSettingsPiiLearningResultOutput {
@@ -79,10 +78,6 @@ func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) Id() pulumi.StringO
 
 func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppsecAdvancedSettingsPiiLearningResult) string { return v.Json }).(pulumi.StringOutput)
-}
-
-func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppsecAdvancedSettingsPiiLearningResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

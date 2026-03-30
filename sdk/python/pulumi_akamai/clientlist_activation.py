@@ -21,7 +21,6 @@ class ClientlistActivationArgs:
     def __init__(__self__, *,
                  list_id: pulumi.Input[_builtins.str],
                  network: pulumi.Input[_builtins.str],
-                 version: pulumi.Input[_builtins.int],
                  comments: Optional[pulumi.Input[_builtins.str]] = None,
                  notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  siebel_ticket_id: Optional[pulumi.Input[_builtins.str]] = None):
@@ -30,14 +29,12 @@ class ClientlistActivationArgs:
 
         :param pulumi.Input[_builtins.str] list_id: The client list unique identifier.
         :param pulumi.Input[_builtins.str] network: The network environment where you activate your client list: either STAGING or PRODUCTION.
-        :param pulumi.Input[_builtins.int] version: The client list version.
         :param pulumi.Input[_builtins.str] comments: A brief description for the activation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_recipients: Users to notify via email.
         :param pulumi.Input[_builtins.str] siebel_ticket_id: Identifies the Siebel ticket, if the activation is linked to one.
         """
         pulumi.set(__self__, "list_id", list_id)
         pulumi.set(__self__, "network", network)
-        pulumi.set(__self__, "version", version)
         if comments is not None:
             pulumi.set(__self__, "comments", comments)
         if notification_recipients is not None:
@@ -68,18 +65,6 @@ class ClientlistActivationArgs:
     @network.setter
     def network(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "network", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[_builtins.int]:
-        """
-        The client list version.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[_builtins.int]):
-        pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter
@@ -250,7 +235,6 @@ class ClientlistActivation(pulumi.CustomResource):
                  network: Optional[pulumi.Input[_builtins.str]] = None,
                  notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  siebel_ticket_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
         Create a ClientlistActivation resource with the given unique name, props, and options.
@@ -262,7 +246,6 @@ class ClientlistActivation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] network: The network environment where you activate your client list: either STAGING or PRODUCTION.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_recipients: Users to notify via email.
         :param pulumi.Input[_builtins.str] siebel_ticket_id: Identifies the Siebel ticket, if the activation is linked to one.
-        :param pulumi.Input[_builtins.int] version: The client list version.
         """
         ...
     @overload
@@ -293,7 +276,6 @@ class ClientlistActivation(pulumi.CustomResource):
                  network: Optional[pulumi.Input[_builtins.str]] = None,
                  notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  siebel_ticket_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -312,10 +294,8 @@ class ClientlistActivation(pulumi.CustomResource):
             __props__.__dict__["network"] = network
             __props__.__dict__["notification_recipients"] = notification_recipients
             __props__.__dict__["siebel_ticket_id"] = siebel_ticket_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
             __props__.__dict__["status"] = None
+            __props__.__dict__["version"] = None
         super(ClientlistActivation, __self__).__init__(
             'akamai:index/clientlistActivation:ClientlistActivation',
             resource_name,

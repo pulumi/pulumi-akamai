@@ -43,6 +43,8 @@ export interface GetCPSEnrollmentResult {
     readonly orgId: number;
     readonly organizations: outputs.GetCPSEnrollmentOrganization[];
     readonly pendingChanges: boolean;
+    readonly postVerificationWarnings: string;
+    readonly preVerificationWarnings: string;
     readonly productionSlots: number[];
     readonly registrationAuthority: string;
     readonly sans: string[];

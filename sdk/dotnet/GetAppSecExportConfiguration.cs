@@ -76,7 +76,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
-        public readonly string OutputText;
         public readonly ImmutableArray<string> Searches;
         public readonly int Version;
 
@@ -88,8 +87,6 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
             ImmutableArray<string> searches,
 
             int version)
@@ -97,7 +94,6 @@ namespace Pulumi.Akamai
             ConfigId = configId;
             Id = id;
             Json = json;
-            OutputText = outputText;
             Searches = searches;
             Version = version;
         }

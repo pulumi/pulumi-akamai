@@ -31,7 +31,6 @@ export interface GetAppSecRatePolicyActionsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly outputText: string;
     readonly ratePolicyId?: number;
     readonly securityPolicyId: string;
 }

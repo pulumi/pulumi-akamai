@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,8 +19,6 @@ type AppSecIPGeoProtection struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// Whether to enable IP/Geo protection
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Text representation
-	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
@@ -68,8 +66,6 @@ type appSecIPGeoProtectionState struct {
 	ConfigId *int `pulumi:"configId"`
 	// Whether to enable IP/Geo protection
 	Enabled *bool `pulumi:"enabled"`
-	// Text representation
-	OutputText *string `pulumi:"outputText"`
 	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
@@ -79,8 +75,6 @@ type AppSecIPGeoProtectionState struct {
 	ConfigId pulumi.IntPtrInput
 	// Whether to enable IP/Geo protection
 	Enabled pulumi.BoolPtrInput
-	// Text representation
-	OutputText pulumi.StringPtrInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
@@ -203,11 +197,6 @@ func (o AppSecIPGeoProtectionOutput) ConfigId() pulumi.IntOutput {
 // Whether to enable IP/Geo protection
 func (o AppSecIPGeoProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecIPGeoProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-// Text representation
-func (o AppSecIPGeoProtectionOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppSecIPGeoProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }
 
 // Unique identifier of the security policy

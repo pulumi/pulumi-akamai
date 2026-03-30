@@ -23,7 +23,6 @@ public final class GetAppSecContractsGroupsResult {
      */
     private String id;
     private String json;
-    private String outputText;
 
     private GetAppSecContractsGroupsResult() {}
     public Optional<String> contractid() {
@@ -48,9 +47,6 @@ public final class GetAppSecContractsGroupsResult {
     public String json() {
         return this.json;
     }
-    public String outputText() {
-        return this.outputText;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -67,7 +63,6 @@ public final class GetAppSecContractsGroupsResult {
         private @Nullable Integer groupid;
         private String id;
         private String json;
-        private String outputText;
         public Builder() {}
         public Builder(GetAppSecContractsGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -77,7 +72,6 @@ public final class GetAppSecContractsGroupsResult {
     	      this.groupid = defaults.groupid;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
-    	      this.outputText = defaults.outputText;
         }
 
         @CustomType.Setter
@@ -124,14 +118,6 @@ public final class GetAppSecContractsGroupsResult {
             this.json = json;
             return this;
         }
-        @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecContractsGroupsResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
         public GetAppSecContractsGroupsResult build() {
             final var _resultValue = new GetAppSecContractsGroupsResult();
             _resultValue.contractid = contractid;
@@ -140,7 +126,6 @@ public final class GetAppSecContractsGroupsResult {
             _resultValue.groupid = groupid;
             _resultValue.id = id;
             _resultValue.json = json;
-            _resultValue.outputText = outputText;
             return _resultValue;
         }
     }

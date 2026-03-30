@@ -31,20 +31,6 @@ public class AppSecVersionNodes extends com.pulumi.resources.CustomResource {
         return this.configId;
     }
     /**
-     * Text representation
-     * 
-     */
-    @Export(name="outputText", refs={String.class}, tree="[0]")
-    private Output<String> outputText;
-
-    /**
-     * @return Text representation
-     * 
-     */
-    public Output<String> outputText() {
-        return this.outputText;
-    }
-    /**
      * Brief description of the security configuration version
      * 
      */

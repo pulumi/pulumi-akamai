@@ -21,7 +21,6 @@ public final class GetAppSecRulesResult {
      */
     private String id;
     private String json;
-    private String outputText;
     private String ruleAction;
     private @Nullable Integer ruleId;
     private String securityPolicyId;
@@ -42,9 +41,6 @@ public final class GetAppSecRulesResult {
     }
     public String json() {
         return this.json;
-    }
-    public String outputText() {
-        return this.outputText;
     }
     public String ruleAction() {
         return this.ruleAction;
@@ -69,7 +65,6 @@ public final class GetAppSecRulesResult {
         private Integer configId;
         private String id;
         private String json;
-        private String outputText;
         private String ruleAction;
         private @Nullable Integer ruleId;
         private String securityPolicyId;
@@ -80,7 +75,6 @@ public final class GetAppSecRulesResult {
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
-    	      this.outputText = defaults.outputText;
     	      this.ruleAction = defaults.ruleAction;
     	      this.ruleId = defaults.ruleId;
     	      this.securityPolicyId = defaults.securityPolicyId;
@@ -119,14 +113,6 @@ public final class GetAppSecRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecRulesResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder ruleAction(String ruleAction) {
             if (ruleAction == null) {
               throw new MissingRequiredPropertyException("GetAppSecRulesResult", "ruleAction");
@@ -154,7 +140,6 @@ public final class GetAppSecRulesResult {
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
-            _resultValue.outputText = outputText;
             _resultValue.ruleAction = ruleAction;
             _resultValue.ruleId = ruleId;
             _resultValue.securityPolicyId = securityPolicyId;

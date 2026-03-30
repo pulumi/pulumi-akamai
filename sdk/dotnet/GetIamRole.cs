@@ -11,10 +11,10 @@ namespace Pulumi.Akamai
 {
     public static class GetIamRole
     {
-        public static Task<GetIamRoleResult> InvokeAsync(GetIamRoleArgs args, InvokeOptions? options = null)
+        public static Task<GetIamRoleResult> InvokeAsync(GetIamRoleArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamRoleResult>("akamai:index/getIamRole:getIamRole", args ?? new GetIamRoleArgs(), options.WithDefaults());
 
-        public static Output<GetIamRoleResult> Invoke(GetIamRoleInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetIamRoleResult> Invoke(GetIamRoleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamRoleResult>("akamai:index/getIamRole:getIamRole", args ?? new GetIamRoleInvokeArgs(), options.WithDefaults());
 
         public static Output<GetIamRoleResult> Invoke(GetIamRoleInvokeArgs args, InvokeOutputOptions options)
@@ -24,8 +24,11 @@ namespace Pulumi.Akamai
 
     public sealed class GetIamRoleArgs : global::Pulumi.InvokeArgs
     {
-        [Input("roleId", required: true)]
-        public int RoleId { get; set; }
+        [Input("roleId")]
+        public int? RoleId { get; set; }
+
+        [Input("roleName")]
+        public string? RoleName { get; set; }
 
         public GetIamRoleArgs()
         {
@@ -35,8 +38,11 @@ namespace Pulumi.Akamai
 
     public sealed class GetIamRoleInvokeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("roleId", required: true)]
-        public Input<int> RoleId { get; set; } = null!;
+        [Input("roleId")]
+        public Input<int>? RoleId { get; set; }
+
+        [Input("roleName")]
+        public Input<string>? RoleName { get; set; }
 
         public GetIamRoleInvokeArgs()
         {
@@ -59,7 +65,7 @@ namespace Pulumi.Akamai
         public readonly string ModifiedBy;
         public readonly string ModifiedDate;
         public readonly string RoleDescription;
-        public readonly int RoleId;
+        public readonly int? RoleId;
         public readonly string RoleName;
         public readonly string Type;
         public readonly ImmutableArray<Outputs.GetIamRoleUserResult> Users;
@@ -82,7 +88,7 @@ namespace Pulumi.Akamai
 
             string roleDescription,
 
-            int roleId,
+            int? roleId,
 
             string roleName,
 

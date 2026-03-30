@@ -28,7 +28,6 @@ export interface GetAppSecSiemSettingsResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
 }
 export function getAppSecSiemSettingsOutput(args: GetAppSecSiemSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSiemSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -28,7 +28,6 @@ export interface GetAppsecAdvancedSettingsPiiLearningResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
 }
 export function getAppsecAdvancedSettingsPiiLearningOutput(args: GetAppsecAdvancedSettingsPiiLearningOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecAdvancedSettingsPiiLearningResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -28,7 +28,6 @@ export interface GetAppSecAdvancedSettingsPrefetchResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
 }
 export function getAppSecAdvancedSettingsPrefetchOutput(args: GetAppSecAdvancedSettingsPrefetchOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecAdvancedSettingsPrefetchResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

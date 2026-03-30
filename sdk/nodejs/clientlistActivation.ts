@@ -59,7 +59,7 @@ export class ClientlistActivation extends pulumi.CustomResource {
     /**
      * The client list version.
      */
-    declare public readonly version: pulumi.Output<number>;
+    declare public /*out*/ readonly version: pulumi.Output<number>;
 
     /**
      * Create a ClientlistActivation resource with the given unique name, arguments, and options.
@@ -89,16 +89,13 @@ export class ClientlistActivation extends pulumi.CustomResource {
             if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            if (args?.version === undefined && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             resourceInputs["comments"] = args?.comments;
             resourceInputs["listId"] = args?.listId;
             resourceInputs["network"] = args?.network;
             resourceInputs["notificationRecipients"] = args?.notificationRecipients;
             resourceInputs["siebelTicketId"] = args?.siebelTicketId;
-            resourceInputs["version"] = args?.version;
             resourceInputs["status"] = undefined /*out*/;
+            resourceInputs["version"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ClientlistActivation.__pulumiType, name, resourceInputs, opts);
@@ -163,8 +160,4 @@ export interface ClientlistActivationArgs {
      * Identifies the Siebel ticket, if the activation is linked to one.
      */
     siebelTicketId?: pulumi.Input<string>;
-    /**
-     * The client list version.
-     */
-    version: pulumi.Input<number>;
 }

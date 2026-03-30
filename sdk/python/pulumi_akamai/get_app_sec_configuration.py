@@ -26,7 +26,7 @@ class GetAppSecConfigurationResult:
     """
     A collection of values returned by getAppSecConfiguration.
     """
-    def __init__(__self__, config_id=None, host_names=None, id=None, latest_version=None, name=None, output_text=None, production_version=None, staging_version=None):
+    def __init__(__self__, config_id=None, host_names=None, id=None, latest_version=None, name=None, production_version=None, staging_version=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -42,9 +42,6 @@ class GetAppSecConfigurationResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
-        if output_text and not isinstance(output_text, str):
-            raise TypeError("Expected argument 'output_text' to be a str")
-        pulumi.set(__self__, "output_text", output_text)
         if production_version and not isinstance(production_version, int):
             raise TypeError("Expected argument 'production_version' to be a int")
         pulumi.set(__self__, "production_version", production_version)
@@ -81,11 +78,6 @@ class GetAppSecConfigurationResult:
         return pulumi.get(self, "name")
 
     @_builtins.property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> _builtins.str:
-        return pulumi.get(self, "output_text")
-
-    @_builtins.property
     @pulumi.getter(name="productionVersion")
     def production_version(self) -> _builtins.int:
         return pulumi.get(self, "production_version")
@@ -107,7 +99,6 @@ class AwaitableGetAppSecConfigurationResult(GetAppSecConfigurationResult):
             id=self.id,
             latest_version=self.latest_version,
             name=self.name,
-            output_text=self.output_text,
             production_version=self.production_version,
             staging_version=self.staging_version)
 
@@ -128,7 +119,6 @@ def get_app_sec_configuration(name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         latest_version=pulumi.get(__ret__, 'latest_version'),
         name=pulumi.get(__ret__, 'name'),
-        output_text=pulumi.get(__ret__, 'output_text'),
         production_version=pulumi.get(__ret__, 'production_version'),
         staging_version=pulumi.get(__ret__, 'staging_version'))
 def get_app_sec_configuration_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -146,6 +136,5 @@ def get_app_sec_configuration_output(name: Optional[pulumi.Input[Optional[_built
         id=pulumi.get(__response__, 'id'),
         latest_version=pulumi.get(__response__, 'latest_version'),
         name=pulumi.get(__response__, 'name'),
-        output_text=pulumi.get(__response__, 'output_text'),
         production_version=pulumi.get(__response__, 'production_version'),
         staging_version=pulumi.get(__response__, 'staging_version')))

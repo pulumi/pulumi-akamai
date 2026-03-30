@@ -5,26 +5,36 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetIamRoleArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetIamRoleArgs Empty = new GetIamRoleArgs();
 
-    @Import(name="roleId", required=true)
-    private Output<Integer> roleId;
+    @Import(name="roleId")
+    private @Nullable Output<Integer> roleId;
 
-    public Output<Integer> roleId() {
-        return this.roleId;
+    public Optional<Output<Integer>> roleId() {
+        return Optional.ofNullable(this.roleId);
+    }
+
+    @Import(name="roleName")
+    private @Nullable Output<String> roleName;
+
+    public Optional<Output<String>> roleName() {
+        return Optional.ofNullable(this.roleName);
     }
 
     private GetIamRoleArgs() {}
 
     private GetIamRoleArgs(GetIamRoleArgs $) {
         this.roleId = $.roleId;
+        this.roleName = $.roleName;
     }
 
     public static Builder builder() {
@@ -45,7 +55,7 @@ public final class GetIamRoleArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetIamRoleArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder roleId(Output<Integer> roleId) {
+        public Builder roleId(@Nullable Output<Integer> roleId) {
             $.roleId = roleId;
             return this;
         }
@@ -54,10 +64,16 @@ public final class GetIamRoleArgs extends com.pulumi.resources.InvokeArgs {
             return roleId(Output.of(roleId));
         }
 
+        public Builder roleName(@Nullable Output<String> roleName) {
+            $.roleName = roleName;
+            return this;
+        }
+
+        public Builder roleName(String roleName) {
+            return roleName(Output.of(roleName));
+        }
+
         public GetIamRoleArgs build() {
-            if ($.roleId == null) {
-                throw new MissingRequiredPropertyException("GetIamRoleArgs", "roleId");
-            }
             return $;
         }
     }

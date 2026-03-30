@@ -35,7 +35,6 @@ export interface GetAppSecAttackGroupsResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecAttackGroupsOutput(args: GetAppSecAttackGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecAttackGroupsResult> {

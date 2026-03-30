@@ -68,7 +68,6 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly ImmutableArray<int> IdLists;
         public readonly string Json;
-        public readonly string OutputText;
         public readonly string? SecurityPolicyId;
 
         [OutputConstructor]
@@ -83,8 +82,6 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
             string? securityPolicyId)
         {
             ApiName = apiName;
@@ -92,7 +89,6 @@ namespace Pulumi.Akamai
             Id = id;
             IdLists = idLists;
             Json = json;
-            OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
         }
     }

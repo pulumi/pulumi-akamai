@@ -32,7 +32,6 @@ export interface GetAppSecCustomRuleActionsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecCustomRuleActionsOutput(args: GetAppSecCustomRuleActionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecCustomRuleActionsResult> {

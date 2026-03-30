@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -34,9 +34,8 @@ type GetAppSecContractsGroupsResult struct {
 	DefaultGroupid    int     `pulumi:"defaultGroupid"`
 	Groupid           *int    `pulumi:"groupid"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	Json       string `pulumi:"json"`
-	OutputText string `pulumi:"outputText"`
+	Id   string `pulumi:"id"`
+	Json string `pulumi:"json"`
 }
 
 func GetAppSecContractsGroupsOutput(ctx *pulumi.Context, args GetAppSecContractsGroupsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecContractsGroupsResultOutput {
@@ -96,10 +95,6 @@ func (o GetAppSecContractsGroupsResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecContractsGroupsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecContractsGroupsResult) string { return v.Json }).(pulumi.StringOutput)
-}
-
-func (o GetAppSecContractsGroupsResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppSecContractsGroupsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

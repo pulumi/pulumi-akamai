@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,9 +32,8 @@ type GetAppSecHostnameCoverageOverlappingResult struct {
 	ConfigId int    `pulumi:"configId"`
 	Hostname string `pulumi:"hostname"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	Json       string `pulumi:"json"`
-	OutputText string `pulumi:"outputText"`
+	Id   string `pulumi:"id"`
+	Json string `pulumi:"json"`
 }
 
 func GetAppSecHostnameCoverageOverlappingOutput(ctx *pulumi.Context, args GetAppSecHostnameCoverageOverlappingOutputArgs, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageOverlappingResultOutput {
@@ -86,10 +85,6 @@ func (o GetAppSecHostnameCoverageOverlappingResultOutput) Id() pulumi.StringOutp
 
 func (o GetAppSecHostnameCoverageOverlappingResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.Json }).(pulumi.StringOutput)
-}
-
-func (o GetAppSecHostnameCoverageOverlappingResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

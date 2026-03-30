@@ -30,7 +30,6 @@ export interface GetAppSecReputationProfileAnalysisResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecReputationProfileAnalysisOutput(args: GetAppSecReputationProfileAnalysisOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecReputationProfileAnalysisResult> {

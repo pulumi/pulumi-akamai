@@ -42,7 +42,6 @@ export interface GetAppSecSelectableHostnamesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly outputText: string;
 }
 export function getAppSecSelectableHostnamesOutput(args?: GetAppSecSelectableHostnamesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSelectableHostnamesResult> {
     args = args || {};

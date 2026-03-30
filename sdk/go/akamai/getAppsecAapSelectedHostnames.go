@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,7 +35,6 @@ type LookupAppsecAapSelectedHostnamesResult struct {
 	Id               string   `pulumi:"id"`
 	Json             string   `pulumi:"json"`
 	MatchTargets     string   `pulumi:"matchTargets"`
-	OutputText       string   `pulumi:"outputText"`
 	ProtectedHosts   []string `pulumi:"protectedHosts"`
 	SecurityPolicyId string   `pulumi:"securityPolicyId"`
 	SelectedHosts    []string `pulumi:"selectedHosts"`
@@ -94,10 +93,6 @@ func (o LookupAppsecAapSelectedHostnamesResultOutput) Json() pulumi.StringOutput
 
 func (o LookupAppsecAapSelectedHostnamesResultOutput) MatchTargets() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppsecAapSelectedHostnamesResult) string { return v.MatchTargets }).(pulumi.StringOutput)
-}
-
-func (o LookupAppsecAapSelectedHostnamesResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppsecAapSelectedHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o LookupAppsecAapSelectedHostnamesResultOutput) ProtectedHosts() pulumi.StringArrayOutput {

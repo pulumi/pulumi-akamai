@@ -21,7 +21,6 @@ public final class GetAppsecAapSelectedHostnamesResult {
     private String id;
     private String json;
     private String matchTargets;
-    private String outputText;
     private List<String> protectedHosts;
     private String securityPolicyId;
     private List<String> selectedHosts;
@@ -45,9 +44,6 @@ public final class GetAppsecAapSelectedHostnamesResult {
     }
     public String matchTargets() {
         return this.matchTargets;
-    }
-    public String outputText() {
-        return this.outputText;
     }
     public List<String> protectedHosts() {
         return this.protectedHosts;
@@ -73,7 +69,6 @@ public final class GetAppsecAapSelectedHostnamesResult {
         private String id;
         private String json;
         private String matchTargets;
-        private String outputText;
         private List<String> protectedHosts;
         private String securityPolicyId;
         private List<String> selectedHosts;
@@ -85,7 +80,6 @@ public final class GetAppsecAapSelectedHostnamesResult {
     	      this.id = defaults.id;
     	      this.json = defaults.json;
     	      this.matchTargets = defaults.matchTargets;
-    	      this.outputText = defaults.outputText;
     	      this.protectedHosts = defaults.protectedHosts;
     	      this.securityPolicyId = defaults.securityPolicyId;
     	      this.selectedHosts = defaults.selectedHosts;
@@ -135,14 +129,6 @@ public final class GetAppsecAapSelectedHostnamesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppsecAapSelectedHostnamesResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder protectedHosts(List<String> protectedHosts) {
             if (protectedHosts == null) {
               throw new MissingRequiredPropertyException("GetAppsecAapSelectedHostnamesResult", "protectedHosts");
@@ -179,7 +165,6 @@ public final class GetAppsecAapSelectedHostnamesResult {
             _resultValue.id = id;
             _resultValue.json = json;
             _resultValue.matchTargets = matchTargets;
-            _resultValue.outputText = outputText;
             _resultValue.protectedHosts = protectedHosts;
             _resultValue.securityPolicyId = securityPolicyId;
             _resultValue.selectedHosts = selectedHosts;

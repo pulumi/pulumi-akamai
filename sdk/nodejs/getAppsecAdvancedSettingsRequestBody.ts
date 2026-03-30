@@ -30,7 +30,6 @@ export interface GetAppsecAdvancedSettingsRequestBodyResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly securityPolicyId?: string;
 }
 export function getAppsecAdvancedSettingsRequestBodyOutput(args: GetAppsecAdvancedSettingsRequestBodyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecAdvancedSettingsRequestBodyResult> {

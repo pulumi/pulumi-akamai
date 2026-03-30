@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -33,7 +33,6 @@ type LookupAppSecAdvancedSettingsLoggingResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id               string  `pulumi:"id"`
 	Json             string  `pulumi:"json"`
-	OutputText       string  `pulumi:"outputText"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -82,10 +81,6 @@ func (o LookupAppSecAdvancedSettingsLoggingResultOutput) Id() pulumi.StringOutpu
 
 func (o LookupAppSecAdvancedSettingsLoggingResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecAdvancedSettingsLoggingResult) string { return v.Json }).(pulumi.StringOutput)
-}
-
-func (o LookupAppSecAdvancedSettingsLoggingResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppSecAdvancedSettingsLoggingResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o LookupAppSecAdvancedSettingsLoggingResultOutput) SecurityPolicyId() pulumi.StringPtrOutput {

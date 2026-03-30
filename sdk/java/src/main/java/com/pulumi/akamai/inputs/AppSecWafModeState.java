@@ -107,21 +107,6 @@ public final class AppSecWafModeState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Text representation
-     * 
-     */
-    @Import(name="outputText")
-    private @Nullable Output<String> outputText;
-
-    /**
-     * @return Text representation
-     * 
-     */
-    public Optional<Output<String>> outputText() {
-        return Optional.ofNullable(this.outputText);
-    }
-
-    /**
      * Unique identifier of the security policy
      * 
      */
@@ -145,7 +130,6 @@ public final class AppSecWafModeState extends com.pulumi.resources.ResourceArgs 
         this.evalRuleset = $.evalRuleset;
         this.evalStatus = $.evalStatus;
         this.mode = $.mode;
-        this.outputText = $.outputText;
         this.securityPolicyId = $.securityPolicyId;
     }
 
@@ -291,27 +275,6 @@ public final class AppSecWafModeState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder mode(String mode) {
             return mode(Output.of(mode));
-        }
-
-        /**
-         * @param outputText Text representation
-         * 
-         * @return builder
-         * 
-         */
-        public Builder outputText(@Nullable Output<String> outputText) {
-            $.outputText = outputText;
-            return this;
-        }
-
-        /**
-         * @param outputText Text representation
-         * 
-         * @return builder
-         * 
-         */
-        public Builder outputText(String outputText) {
-            return outputText(Output.of(outputText));
         }
 
         /**

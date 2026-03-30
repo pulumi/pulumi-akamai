@@ -27,7 +27,7 @@ class GetAppsecRapidRulesResult:
     """
     A collection of values returned by getAppsecRapidRules.
     """
-    def __init__(__self__, config_id=None, default_action=None, enabled=None, id=None, include_expiry_details=None, output_text=None, rapid_rules=None, rule_id=None, security_policy_id=None):
+    def __init__(__self__, config_id=None, default_action=None, enabled=None, id=None, include_expiry_details=None, rapid_rules=None, rule_id=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -43,9 +43,6 @@ class GetAppsecRapidRulesResult:
         if include_expiry_details and not isinstance(include_expiry_details, bool):
             raise TypeError("Expected argument 'include_expiry_details' to be a bool")
         pulumi.set(__self__, "include_expiry_details", include_expiry_details)
-        if output_text and not isinstance(output_text, str):
-            raise TypeError("Expected argument 'output_text' to be a str")
-        pulumi.set(__self__, "output_text", output_text)
         if rapid_rules and not isinstance(rapid_rules, list):
             raise TypeError("Expected argument 'rapid_rules' to be a list")
         pulumi.set(__self__, "rapid_rules", rapid_rules)
@@ -82,11 +79,6 @@ class GetAppsecRapidRulesResult:
         return pulumi.get(self, "include_expiry_details")
 
     @_builtins.property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> _builtins.str:
-        return pulumi.get(self, "output_text")
-
-    @_builtins.property
     @pulumi.getter(name="rapidRules")
     def rapid_rules(self) -> Sequence['outputs.GetAppsecRapidRulesRapidRuleResult']:
         return pulumi.get(self, "rapid_rules")
@@ -113,7 +105,6 @@ class AwaitableGetAppsecRapidRulesResult(GetAppsecRapidRulesResult):
             enabled=self.enabled,
             id=self.id,
             include_expiry_details=self.include_expiry_details,
-            output_text=self.output_text,
             rapid_rules=self.rapid_rules,
             rule_id=self.rule_id,
             security_policy_id=self.security_policy_id)
@@ -141,7 +132,6 @@ def get_appsec_rapid_rules(config_id: Optional[_builtins.int] = None,
         enabled=pulumi.get(__ret__, 'enabled'),
         id=pulumi.get(__ret__, 'id'),
         include_expiry_details=pulumi.get(__ret__, 'include_expiry_details'),
-        output_text=pulumi.get(__ret__, 'output_text'),
         rapid_rules=pulumi.get(__ret__, 'rapid_rules'),
         rule_id=pulumi.get(__ret__, 'rule_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
@@ -166,7 +156,6 @@ def get_appsec_rapid_rules_output(config_id: Optional[pulumi.Input[_builtins.int
         enabled=pulumi.get(__response__, 'enabled'),
         id=pulumi.get(__response__, 'id'),
         include_expiry_details=pulumi.get(__response__, 'include_expiry_details'),
-        output_text=pulumi.get(__response__, 'output_text'),
         rapid_rules=pulumi.get(__response__, 'rapid_rules'),
         rule_id=pulumi.get(__response__, 'rule_id'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

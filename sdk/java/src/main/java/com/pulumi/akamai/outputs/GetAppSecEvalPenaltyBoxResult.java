@@ -20,7 +20,6 @@ public final class GetAppSecEvalPenaltyBoxResult {
      * 
      */
     private String id;
-    private String outputText;
     private String securityPolicyId;
 
     private GetAppSecEvalPenaltyBoxResult() {}
@@ -40,9 +39,6 @@ public final class GetAppSecEvalPenaltyBoxResult {
     public String id() {
         return this.id;
     }
-    public String outputText() {
-        return this.outputText;
-    }
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -60,7 +56,6 @@ public final class GetAppSecEvalPenaltyBoxResult {
         private Integer configId;
         private Boolean enabled;
         private String id;
-        private String outputText;
         private String securityPolicyId;
         public Builder() {}
         public Builder(GetAppSecEvalPenaltyBoxResult defaults) {
@@ -69,7 +64,6 @@ public final class GetAppSecEvalPenaltyBoxResult {
     	      this.configId = defaults.configId;
     	      this.enabled = defaults.enabled;
     	      this.id = defaults.id;
-    	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
 
@@ -106,14 +100,6 @@ public final class GetAppSecEvalPenaltyBoxResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecEvalPenaltyBoxResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder securityPolicyId(String securityPolicyId) {
             if (securityPolicyId == null) {
               throw new MissingRequiredPropertyException("GetAppSecEvalPenaltyBoxResult", "securityPolicyId");
@@ -127,7 +113,6 @@ public final class GetAppSecEvalPenaltyBoxResult {
             _resultValue.configId = configId;
             _resultValue.enabled = enabled;
             _resultValue.id = id;
-            _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;
         }

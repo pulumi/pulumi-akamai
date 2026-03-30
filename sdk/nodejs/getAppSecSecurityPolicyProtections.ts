@@ -38,7 +38,6 @@ export interface GetAppSecSecurityPolicyProtectionsResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecSecurityPolicyProtectionsOutput(args: GetAppSecSecurityPolicyProtectionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSecurityPolicyProtectionsResult> {

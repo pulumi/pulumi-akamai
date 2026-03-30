@@ -26,7 +26,7 @@ class GetAppSecReputationProfileActionsResult:
     """
     A collection of values returned by getAppSecReputationProfileActions.
     """
-    def __init__(__self__, action=None, config_id=None, id=None, json=None, output_text=None, reputation_profile_id=None, security_policy_id=None):
+    def __init__(__self__, action=None, config_id=None, id=None, json=None, reputation_profile_id=None, security_policy_id=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -39,9 +39,6 @@ class GetAppSecReputationProfileActionsResult:
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
-        if output_text and not isinstance(output_text, str):
-            raise TypeError("Expected argument 'output_text' to be a str")
-        pulumi.set(__self__, "output_text", output_text)
         if reputation_profile_id and not isinstance(reputation_profile_id, int):
             raise TypeError("Expected argument 'reputation_profile_id' to be a int")
         pulumi.set(__self__, "reputation_profile_id", reputation_profile_id)
@@ -73,11 +70,6 @@ class GetAppSecReputationProfileActionsResult:
         return pulumi.get(self, "json")
 
     @_builtins.property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> _builtins.str:
-        return pulumi.get(self, "output_text")
-
-    @_builtins.property
     @pulumi.getter(name="reputationProfileId")
     def reputation_profile_id(self) -> Optional[_builtins.int]:
         return pulumi.get(self, "reputation_profile_id")
@@ -98,7 +90,6 @@ class AwaitableGetAppSecReputationProfileActionsResult(GetAppSecReputationProfil
             config_id=self.config_id,
             id=self.id,
             json=self.json,
-            output_text=self.output_text,
             reputation_profile_id=self.reputation_profile_id,
             security_policy_id=self.security_policy_id)
 
@@ -122,7 +113,6 @@ def get_app_sec_reputation_profile_actions(config_id: Optional[_builtins.int] = 
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
-        output_text=pulumi.get(__ret__, 'output_text'),
         reputation_profile_id=pulumi.get(__ret__, 'reputation_profile_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 def get_app_sec_reputation_profile_actions_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
@@ -143,6 +133,5 @@ def get_app_sec_reputation_profile_actions_output(config_id: Optional[pulumi.Inp
         config_id=pulumi.get(__response__, 'config_id'),
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
-        output_text=pulumi.get(__response__, 'output_text'),
         reputation_profile_id=pulumi.get(__response__, 'reputation_profile_id'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

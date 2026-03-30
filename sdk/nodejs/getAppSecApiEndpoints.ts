@@ -34,7 +34,6 @@ export interface GetAppSecApiEndpointsResult {
     readonly id: string;
     readonly idLists: number[];
     readonly json: string;
-    readonly outputText: string;
     readonly securityPolicyId?: string;
 }
 export function getAppSecApiEndpointsOutput(args: GetAppSecApiEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecApiEndpointsResult> {

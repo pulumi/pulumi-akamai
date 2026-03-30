@@ -56,7 +56,6 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly int LatestVersion;
         public readonly string? Name;
-        public readonly string OutputText;
         public readonly int ProductionVersion;
         public readonly int StagingVersion;
 
@@ -72,8 +71,6 @@ namespace Pulumi.Akamai
 
             string? name,
 
-            string outputText,
-
             int productionVersion,
 
             int stagingVersion)
@@ -83,7 +80,6 @@ namespace Pulumi.Akamai
             Id = id;
             LatestVersion = latestVersion;
             Name = name;
-            OutputText = outputText;
             ProductionVersion = productionVersion;
             StagingVersion = stagingVersion;
         }

@@ -30,7 +30,6 @@ export interface GetAppSecRatePoliciesResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly ratePolicyId?: number;
 }
 export function getAppSecRatePoliciesOutput(args: GetAppSecRatePoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecRatePoliciesResult> {

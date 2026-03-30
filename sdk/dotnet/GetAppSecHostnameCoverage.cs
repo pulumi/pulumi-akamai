@@ -30,19 +30,15 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
-        public readonly string OutputText;
 
         [OutputConstructor]
         private GetAppSecHostnameCoverageResult(
             string id,
 
-            string json,
-
-            string outputText)
+            string json)
         {
             Id = id;
             Json = json;
-            OutputText = outputText;
         }
     }
 }

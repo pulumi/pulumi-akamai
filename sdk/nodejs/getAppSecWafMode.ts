@@ -35,7 +35,6 @@ export interface GetAppSecWafModeResult {
     readonly id: string;
     readonly json: string;
     readonly mode: string;
-    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecWafModeOutput(args: GetAppSecWafModeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecWafModeResult> {

@@ -30,7 +30,6 @@ export interface GetAppsecEvalPenaltyBoxConditionsResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppsecEvalPenaltyBoxConditionsOutput(args: GetAppsecEvalPenaltyBoxConditionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecEvalPenaltyBoxConditionsResult> {

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,8 +40,7 @@ type GetAppSecSelectableHostnamesResult struct {
 	Hostnames          []string `pulumi:"hostnames"`
 	HostnamesJson      string   `pulumi:"hostnamesJson"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	OutputText string `pulumi:"outputText"`
+	Id string `pulumi:"id"`
 }
 
 func GetAppSecSelectableHostnamesOutput(ctx *pulumi.Context, args GetAppSecSelectableHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecSelectableHostnamesResultOutput {
@@ -112,10 +111,6 @@ func (o GetAppSecSelectableHostnamesResultOutput) HostnamesJson() pulumi.StringO
 // The provider-assigned unique ID for this managed resource.
 func (o GetAppSecSelectableHostnamesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetAppSecSelectableHostnamesResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

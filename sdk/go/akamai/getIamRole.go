@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,8 @@ func LookupIamRole(ctx *pulumi.Context, args *LookupIamRoleArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getIamRole.
 type LookupIamRoleArgs struct {
-	RoleId int `pulumi:"roleId"`
+	RoleId   *int    `pulumi:"roleId"`
+	RoleName *string `pulumi:"roleName"`
 }
 
 // A collection of values returned by getIamRole.
@@ -37,7 +38,7 @@ type LookupIamRoleResult struct {
 	ModifiedBy      string           `pulumi:"modifiedBy"`
 	ModifiedDate    string           `pulumi:"modifiedDate"`
 	RoleDescription string           `pulumi:"roleDescription"`
-	RoleId          int              `pulumi:"roleId"`
+	RoleId          *int             `pulumi:"roleId"`
 	RoleName        string           `pulumi:"roleName"`
 	Type            string           `pulumi:"type"`
 	Users           []GetIamRoleUser `pulumi:"users"`
@@ -54,7 +55,8 @@ func LookupIamRoleOutput(ctx *pulumi.Context, args LookupIamRoleOutputArgs, opts
 
 // A collection of arguments for invoking getIamRole.
 type LookupIamRoleOutputArgs struct {
-	RoleId pulumi.IntInput `pulumi:"roleId"`
+	RoleId   pulumi.IntPtrInput    `pulumi:"roleId"`
+	RoleName pulumi.StringPtrInput `pulumi:"roleName"`
 }
 
 func (LookupIamRoleOutputArgs) ElementType() reflect.Type {
@@ -109,8 +111,8 @@ func (o LookupIamRoleResultOutput) RoleDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIamRoleResult) string { return v.RoleDescription }).(pulumi.StringOutput)
 }
 
-func (o LookupIamRoleResultOutput) RoleId() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupIamRoleResult) int { return v.RoleId }).(pulumi.IntOutput)
+func (o LookupIamRoleResultOutput) RoleId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupIamRoleResult) *int { return v.RoleId }).(pulumi.IntPtrOutput)
 }
 
 func (o LookupIamRoleResultOutput) RoleName() pulumi.StringOutput {

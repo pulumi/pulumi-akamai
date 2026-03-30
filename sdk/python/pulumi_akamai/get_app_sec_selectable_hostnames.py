@@ -26,7 +26,7 @@ class GetAppSecSelectableHostnamesResult:
     """
     A collection of values returned by getAppSecSelectableHostnames.
     """
-    def __init__(__self__, active_in_production=None, active_in_staging=None, config_id=None, contractid=None, groupid=None, hostnames=None, hostnames_json=None, id=None, output_text=None):
+    def __init__(__self__, active_in_production=None, active_in_staging=None, config_id=None, contractid=None, groupid=None, hostnames=None, hostnames_json=None, id=None):
         if active_in_production and not isinstance(active_in_production, bool):
             raise TypeError("Expected argument 'active_in_production' to be a bool")
         pulumi.set(__self__, "active_in_production", active_in_production)
@@ -51,9 +51,6 @@ class GetAppSecSelectableHostnamesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
-        if output_text and not isinstance(output_text, str):
-            raise TypeError("Expected argument 'output_text' to be a str")
-        pulumi.set(__self__, "output_text", output_text)
 
     @_builtins.property
     @pulumi.getter(name="activeInProduction")
@@ -98,11 +95,6 @@ class GetAppSecSelectableHostnamesResult:
         """
         return pulumi.get(self, "id")
 
-    @_builtins.property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> _builtins.str:
-        return pulumi.get(self, "output_text")
-
 
 class AwaitableGetAppSecSelectableHostnamesResult(GetAppSecSelectableHostnamesResult):
     # pylint: disable=using-constant-test
@@ -117,8 +109,7 @@ class AwaitableGetAppSecSelectableHostnamesResult(GetAppSecSelectableHostnamesRe
             groupid=self.groupid,
             hostnames=self.hostnames,
             hostnames_json=self.hostnames_json,
-            id=self.id,
-            output_text=self.output_text)
+            id=self.id)
 
 
 def get_app_sec_selectable_hostnames(active_in_production: Optional[_builtins.bool] = None,
@@ -147,8 +138,7 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[_builtins.bo
         groupid=pulumi.get(__ret__, 'groupid'),
         hostnames=pulumi.get(__ret__, 'hostnames'),
         hostnames_json=pulumi.get(__ret__, 'hostnames_json'),
-        id=pulumi.get(__ret__, 'id'),
-        output_text=pulumi.get(__ret__, 'output_text'))
+        id=pulumi.get(__ret__, 'id'))
 def get_app_sec_selectable_hostnames_output(active_in_production: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                             active_in_staging: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                             config_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
@@ -174,5 +164,4 @@ def get_app_sec_selectable_hostnames_output(active_in_production: Optional[pulum
         groupid=pulumi.get(__response__, 'groupid'),
         hostnames=pulumi.get(__response__, 'hostnames'),
         hostnames_json=pulumi.get(__response__, 'hostnames_json'),
-        id=pulumi.get(__response__, 'id'),
-        output_text=pulumi.get(__response__, 'output_text')))
+        id=pulumi.get(__response__, 'id')))

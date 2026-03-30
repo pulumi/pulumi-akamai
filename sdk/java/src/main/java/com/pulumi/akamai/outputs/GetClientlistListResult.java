@@ -19,7 +19,6 @@ public final class GetClientlistListResult {
     private String json;
     private GetClientlistListList list;
     private String listId;
-    private String outputText;
 
     private GetClientlistListResult() {}
     /**
@@ -38,9 +37,6 @@ public final class GetClientlistListResult {
     public String listId() {
         return this.listId;
     }
-    public String outputText() {
-        return this.outputText;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -55,7 +51,6 @@ public final class GetClientlistListResult {
         private String json;
         private GetClientlistListList list;
         private String listId;
-        private String outputText;
         public Builder() {}
         public Builder(GetClientlistListResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -63,7 +58,6 @@ public final class GetClientlistListResult {
     	      this.json = defaults.json;
     	      this.list = defaults.list;
     	      this.listId = defaults.listId;
-    	      this.outputText = defaults.outputText;
         }
 
         @CustomType.Setter
@@ -98,21 +92,12 @@ public final class GetClientlistListResult {
             this.listId = listId;
             return this;
         }
-        @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetClientlistListResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
         public GetClientlistListResult build() {
             final var _resultValue = new GetClientlistListResult();
             _resultValue.id = id;
             _resultValue.json = json;
             _resultValue.list = list;
             _resultValue.listId = listId;
-            _resultValue.outputText = outputText;
             return _resultValue;
         }
     }

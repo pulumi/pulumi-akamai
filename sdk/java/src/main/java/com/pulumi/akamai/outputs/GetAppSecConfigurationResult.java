@@ -23,7 +23,6 @@ public final class GetAppSecConfigurationResult {
     private String id;
     private Integer latestVersion;
     private @Nullable String name;
-    private String outputText;
     private Integer productionVersion;
     private Integer stagingVersion;
 
@@ -47,9 +46,6 @@ public final class GetAppSecConfigurationResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
-    public String outputText() {
-        return this.outputText;
-    }
     public Integer productionVersion() {
         return this.productionVersion;
     }
@@ -71,7 +67,6 @@ public final class GetAppSecConfigurationResult {
         private String id;
         private Integer latestVersion;
         private @Nullable String name;
-        private String outputText;
         private Integer productionVersion;
         private Integer stagingVersion;
         public Builder() {}
@@ -82,7 +77,6 @@ public final class GetAppSecConfigurationResult {
     	      this.id = defaults.id;
     	      this.latestVersion = defaults.latestVersion;
     	      this.name = defaults.name;
-    	      this.outputText = defaults.outputText;
     	      this.productionVersion = defaults.productionVersion;
     	      this.stagingVersion = defaults.stagingVersion;
         }
@@ -129,14 +123,6 @@ public final class GetAppSecConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecConfigurationResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder productionVersion(Integer productionVersion) {
             if (productionVersion == null) {
               throw new MissingRequiredPropertyException("GetAppSecConfigurationResult", "productionVersion");
@@ -159,7 +145,6 @@ public final class GetAppSecConfigurationResult {
             _resultValue.id = id;
             _resultValue.latestVersion = latestVersion;
             _resultValue.name = name;
-            _resultValue.outputText = outputText;
             _resultValue.productionVersion = productionVersion;
             _resultValue.stagingVersion = stagingVersion;
             return _resultValue;

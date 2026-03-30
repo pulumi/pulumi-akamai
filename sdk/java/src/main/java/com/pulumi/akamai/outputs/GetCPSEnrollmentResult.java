@@ -40,6 +40,8 @@ public final class GetCPSEnrollmentResult {
     private Integer orgId;
     private List<GetCPSEnrollmentOrganization> organizations;
     private Boolean pendingChanges;
+    private String postVerificationWarnings;
+    private String preVerificationWarnings;
     private List<Integer> productionSlots;
     private String registrationAuthority;
     private List<String> sans;
@@ -103,6 +105,12 @@ public final class GetCPSEnrollmentResult {
     public Boolean pendingChanges() {
         return this.pendingChanges;
     }
+    public String postVerificationWarnings() {
+        return this.postVerificationWarnings;
+    }
+    public String preVerificationWarnings() {
+        return this.preVerificationWarnings;
+    }
     public List<Integer> productionSlots() {
         return this.productionSlots;
     }
@@ -156,6 +164,8 @@ public final class GetCPSEnrollmentResult {
         private Integer orgId;
         private List<GetCPSEnrollmentOrganization> organizations;
         private Boolean pendingChanges;
+        private String postVerificationWarnings;
+        private String preVerificationWarnings;
         private List<Integer> productionSlots;
         private String registrationAuthority;
         private List<String> sans;
@@ -184,6 +194,8 @@ public final class GetCPSEnrollmentResult {
     	      this.orgId = defaults.orgId;
     	      this.organizations = defaults.organizations;
     	      this.pendingChanges = defaults.pendingChanges;
+    	      this.postVerificationWarnings = defaults.postVerificationWarnings;
+    	      this.preVerificationWarnings = defaults.preVerificationWarnings;
     	      this.productionSlots = defaults.productionSlots;
     	      this.registrationAuthority = defaults.registrationAuthority;
     	      this.sans = defaults.sans;
@@ -345,6 +357,22 @@ public final class GetCPSEnrollmentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder postVerificationWarnings(String postVerificationWarnings) {
+            if (postVerificationWarnings == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentResult", "postVerificationWarnings");
+            }
+            this.postVerificationWarnings = postVerificationWarnings;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder preVerificationWarnings(String preVerificationWarnings) {
+            if (preVerificationWarnings == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentResult", "preVerificationWarnings");
+            }
+            this.preVerificationWarnings = preVerificationWarnings;
+            return this;
+        }
+        @CustomType.Setter
         public Builder productionSlots(List<Integer> productionSlots) {
             if (productionSlots == null) {
               throw new MissingRequiredPropertyException("GetCPSEnrollmentResult", "productionSlots");
@@ -446,6 +474,8 @@ public final class GetCPSEnrollmentResult {
             _resultValue.orgId = orgId;
             _resultValue.organizations = organizations;
             _resultValue.pendingChanges = pendingChanges;
+            _resultValue.postVerificationWarnings = postVerificationWarnings;
+            _resultValue.preVerificationWarnings = preVerificationWarnings;
             _resultValue.productionSlots = productionSlots;
             _resultValue.registrationAuthority = registrationAuthority;
             _resultValue.sans = sans;

@@ -62,7 +62,6 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly string Json;
         public readonly string MatchTargets;
-        public readonly string OutputText;
         public readonly ImmutableArray<string> ProtectedHosts;
         public readonly string SecurityPolicyId;
         public readonly ImmutableArray<string> SelectedHosts;
@@ -79,8 +78,6 @@ namespace Pulumi.Akamai
 
             string matchTargets,
 
-            string outputText,
-
             ImmutableArray<string> protectedHosts,
 
             string securityPolicyId,
@@ -92,7 +89,6 @@ namespace Pulumi.Akamai
             Id = id;
             Json = json;
             MatchTargets = matchTargets;
-            OutputText = outputText;
             ProtectedHosts = protectedHosts;
             SecurityPolicyId = securityPolicyId;
             SelectedHosts = selectedHosts;

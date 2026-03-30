@@ -34,7 +34,6 @@ export interface GetAppSecEvalRulesResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly ruleId?: number;
     readonly securityPolicyId: string;
 }

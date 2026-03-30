@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -34,7 +34,6 @@ type GetAppSecBypassNetworkListsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
 	Json             string `pulumi:"json"`
-	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -87,10 +86,6 @@ func (o GetAppSecBypassNetworkListsResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecBypassNetworkListsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) string { return v.Json }).(pulumi.StringOutput)
-}
-
-func (o GetAppSecBypassNetworkListsResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecBypassNetworkListsResultOutput) SecurityPolicyId() pulumi.StringOutput {

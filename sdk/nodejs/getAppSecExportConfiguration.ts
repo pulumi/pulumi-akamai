@@ -32,7 +32,6 @@ export interface GetAppSecExportConfigurationResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly searches?: string[];
     readonly version: number;
 }

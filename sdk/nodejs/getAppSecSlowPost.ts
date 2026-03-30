@@ -30,7 +30,6 @@ export interface GetAppSecSlowPostResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecSlowPostOutput(args: GetAppSecSlowPostOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSlowPostResult> {

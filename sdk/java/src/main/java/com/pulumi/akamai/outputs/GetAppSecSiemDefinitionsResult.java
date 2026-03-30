@@ -18,7 +18,6 @@ public final class GetAppSecSiemDefinitionsResult {
      */
     private String id;
     private String json;
-    private String outputText;
     private @Nullable String siemDefinitionName;
 
     private GetAppSecSiemDefinitionsResult() {}
@@ -31,9 +30,6 @@ public final class GetAppSecSiemDefinitionsResult {
     }
     public String json() {
         return this.json;
-    }
-    public String outputText() {
-        return this.outputText;
     }
     public Optional<String> siemDefinitionName() {
         return Optional.ofNullable(this.siemDefinitionName);
@@ -50,14 +46,12 @@ public final class GetAppSecSiemDefinitionsResult {
     public static final class Builder {
         private String id;
         private String json;
-        private String outputText;
         private @Nullable String siemDefinitionName;
         public Builder() {}
         public Builder(GetAppSecSiemDefinitionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.json = defaults.json;
-    	      this.outputText = defaults.outputText;
     	      this.siemDefinitionName = defaults.siemDefinitionName;
         }
 
@@ -78,14 +72,6 @@ public final class GetAppSecSiemDefinitionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecSiemDefinitionsResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder siemDefinitionName(@Nullable String siemDefinitionName) {
 
             this.siemDefinitionName = siemDefinitionName;
@@ -95,7 +81,6 @@ public final class GetAppSecSiemDefinitionsResult {
             final var _resultValue = new GetAppSecSiemDefinitionsResult();
             _resultValue.id = id;
             _resultValue.json = json;
-            _resultValue.outputText = outputText;
             _resultValue.siemDefinitionName = siemDefinitionName;
             return _resultValue;
         }

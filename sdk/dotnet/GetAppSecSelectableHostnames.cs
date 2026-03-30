@@ -83,7 +83,6 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string OutputText;
 
         [OutputConstructor]
         private GetAppSecSelectableHostnamesResult(
@@ -101,9 +100,7 @@ namespace Pulumi.Akamai
 
             string hostnamesJson,
 
-            string id,
-
-            string outputText)
+            string id)
         {
             ActiveInProduction = activeInProduction;
             ActiveInStaging = activeInStaging;
@@ -113,7 +110,6 @@ namespace Pulumi.Akamai
             Hostnames = hostnames;
             HostnamesJson = hostnamesJson;
             Id = id;
-            OutputText = outputText;
         }
     }
 }

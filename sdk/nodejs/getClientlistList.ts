@@ -31,7 +31,6 @@ export interface GetClientlistListResult {
     readonly json: string;
     readonly list: outputs.GetClientlistListList;
     readonly listId: string;
-    readonly outputText: string;
 }
 export function getClientlistListOutput(args: GetClientlistListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClientlistListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

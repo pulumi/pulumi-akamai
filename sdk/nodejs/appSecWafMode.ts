@@ -57,10 +57,6 @@ export class AppSecWafMode extends pulumi.CustomResource {
      */
     declare public readonly mode: pulumi.Output<string>;
     /**
-     * Text representation
-     */
-    declare public /*out*/ readonly outputText: pulumi.Output<string>;
-    /**
      * Unique identifier of the security policy
      */
     declare public readonly securityPolicyId: pulumi.Output<string>;
@@ -84,7 +80,6 @@ export class AppSecWafMode extends pulumi.CustomResource {
             resourceInputs["evalRuleset"] = state?.evalRuleset;
             resourceInputs["evalStatus"] = state?.evalStatus;
             resourceInputs["mode"] = state?.mode;
-            resourceInputs["outputText"] = state?.outputText;
             resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecWafModeArgs | undefined;
@@ -104,7 +99,6 @@ export class AppSecWafMode extends pulumi.CustomResource {
             resourceInputs["evalExpirationDate"] = undefined /*out*/;
             resourceInputs["evalRuleset"] = undefined /*out*/;
             resourceInputs["evalStatus"] = undefined /*out*/;
-            resourceInputs["outputText"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecWafMode.__pulumiType, name, resourceInputs, opts);
@@ -139,10 +133,6 @@ export interface AppSecWafModeState {
      * How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      */
     mode?: pulumi.Input<string>;
-    /**
-     * Text representation
-     */
-    outputText?: pulumi.Input<string>;
     /**
      * Unique identifier of the security policy
      */

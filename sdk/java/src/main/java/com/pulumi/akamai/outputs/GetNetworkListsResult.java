@@ -25,7 +25,6 @@ public final class GetNetworkListsResult {
     private List<String> lists;
     private @Nullable String name;
     private String networkListId;
-    private String outputText;
     private Integer syncPoint;
     private @Nullable String type;
 
@@ -55,9 +54,6 @@ public final class GetNetworkListsResult {
     public String networkListId() {
         return this.networkListId;
     }
-    public String outputText() {
-        return this.outputText;
-    }
     public Integer syncPoint() {
         return this.syncPoint;
     }
@@ -81,7 +77,6 @@ public final class GetNetworkListsResult {
         private List<String> lists;
         private @Nullable String name;
         private String networkListId;
-        private String outputText;
         private Integer syncPoint;
         private @Nullable String type;
         public Builder() {}
@@ -94,7 +89,6 @@ public final class GetNetworkListsResult {
     	      this.lists = defaults.lists;
     	      this.name = defaults.name;
     	      this.networkListId = defaults.networkListId;
-    	      this.outputText = defaults.outputText;
     	      this.syncPoint = defaults.syncPoint;
     	      this.type = defaults.type;
         }
@@ -157,14 +151,6 @@ public final class GetNetworkListsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetNetworkListsResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder syncPoint(Integer syncPoint) {
             if (syncPoint == null) {
               throw new MissingRequiredPropertyException("GetNetworkListsResult", "syncPoint");
@@ -187,7 +173,6 @@ public final class GetNetworkListsResult {
             _resultValue.lists = lists;
             _resultValue.name = name;
             _resultValue.networkListId = networkListId;
-            _resultValue.outputText = outputText;
             _resultValue.syncPoint = syncPoint;
             _resultValue.type = type;
             return _resultValue;

@@ -19,7 +19,6 @@ public final class GetAppSecRatePolicyActionsResult {
      * 
      */
     private String id;
-    private String outputText;
     private @Nullable Integer ratePolicyId;
     private String securityPolicyId;
 
@@ -33,9 +32,6 @@ public final class GetAppSecRatePolicyActionsResult {
      */
     public String id() {
         return this.id;
-    }
-    public String outputText() {
-        return this.outputText;
     }
     public Optional<Integer> ratePolicyId() {
         return Optional.ofNullable(this.ratePolicyId);
@@ -55,7 +51,6 @@ public final class GetAppSecRatePolicyActionsResult {
     public static final class Builder {
         private Integer configId;
         private String id;
-        private String outputText;
         private @Nullable Integer ratePolicyId;
         private String securityPolicyId;
         public Builder() {}
@@ -63,7 +58,6 @@ public final class GetAppSecRatePolicyActionsResult {
     	      Objects.requireNonNull(defaults);
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
-    	      this.outputText = defaults.outputText;
     	      this.ratePolicyId = defaults.ratePolicyId;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
@@ -85,14 +79,6 @@ public final class GetAppSecRatePolicyActionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecRatePolicyActionsResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder ratePolicyId(@Nullable Integer ratePolicyId) {
 
             this.ratePolicyId = ratePolicyId;
@@ -110,7 +96,6 @@ public final class GetAppSecRatePolicyActionsResult {
             final var _resultValue = new GetAppSecRatePolicyActionsResult();
             _resultValue.configId = configId;
             _resultValue.id = id;
-            _resultValue.outputText = outputText;
             _resultValue.ratePolicyId = ratePolicyId;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;
