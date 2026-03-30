@@ -22,10 +22,10 @@ import (
 	"unicode"
 
 	_ "embed"                                                        // for embedding schema-embed.json
-	_ "github.com/akamai/terraform-provider-akamai/v9/pkg/providers" // Load the providers
+	_ "github.com/akamai/terraform-provider-akamai/v10/pkg/providers" // Load the providers
 
-	"github.com/akamai/terraform-provider-akamai/v9/pkg/akamai"
-	"github.com/akamai/terraform-provider-akamai/v9/pkg/providers/registry"
+	"github.com/akamai/terraform-provider-akamai/v10/pkg/akamai"
+	"github.com/akamai/terraform-provider-akamai/v10/pkg/providers/registry"
 
 	pf "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/pf/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
@@ -35,7 +35,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 
-	"github.com/pulumi/pulumi-akamai/provider/v10/pkg/version"
+	"github.com/pulumi/pulumi-akamai/provider/v11/pkg/version"
 )
 
 // all of the token components used below.
@@ -92,7 +92,7 @@ func Provider() tfbridge.ProviderInfo {
 		Homepage:                "https://pulumi.io",
 		Repository:              "https://github.com/pulumi/pulumi-akamai",
 		GitHubOrg:               "akamai",
-		TFProviderModuleVersion: "v9",
+		TFProviderModuleVersion: "v10",
 		Version:                 version.Version,
 		UpstreamRepoPath:        "./upstream",
 		Config: map[string]*tfbridge.SchemaInfo{

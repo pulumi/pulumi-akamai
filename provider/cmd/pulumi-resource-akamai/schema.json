@@ -25,7 +25,7 @@
             "respectSchemaVersion": true
         },
         "go": {
-            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai",
+            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai",
             "generateResourceContainerTypes": true,
             "generateExtraInputTypes": true,
             "respectSchemaVersion": true
@@ -3654,7 +3654,7 @@
                 },
                 "validationMethod": {
                     "type": "string",
-                    "description": "The method used to validate the domain. Possible values are: \n* `DNS_CNAME` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`cnameRecord`\" pulumi-lang-dotnet=\"`CnameRecord`\" pulumi-lang-go=\"`cnameRecord`\" pulumi-lang-python=\"`cname_record`\" pulumi-lang-yaml=\"`cnameRecord`\" pulumi-lang-java=\"`cnameRecord`\"\u003e`cnameRecord`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.\n* `DNS_TXT` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`txtRecord`\" pulumi-lang-dotnet=\"`TxtRecord`\" pulumi-lang-go=\"`txtRecord`\" pulumi-lang-python=\"`txt_record`\" pulumi-lang-yaml=\"`txtRecord`\" pulumi-lang-java=\"`txtRecord`\"\u003e`txtRecord`\u003c/span\u003e with a token \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.\n* `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.\n"
+                    "description": "The method used to validate the domain. Possible values are: \n* `DNS_CNAME` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`cnameRecord`\" pulumi-lang-dotnet=\"`CnameRecord`\" pulumi-lang-go=\"`cnameRecord`\" pulumi-lang-python=\"`cname_record`\" pulumi-lang-yaml=\"`cnameRecord`\" pulumi-lang-java=\"`cnameRecord`\"\u003e`cnameRecord`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.\n* `DNS_TXT` - For this method, Akamai generates a \u003cspan pulumi-lang-nodejs=\"`txtRecord`\" pulumi-lang-dotnet=\"`TxtRecord`\" pulumi-lang-go=\"`txtRecord`\" pulumi-lang-python=\"`txt_record`\" pulumi-lang-yaml=\"`txtRecord`\" pulumi-lang-java=\"`txtRecord`\"\u003e`txtRecord`\u003c/span\u003e with a token \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\"\u003e`value`\u003c/span\u003e that you copy as the \u003cspan pulumi-lang-nodejs=\"`target`\" pulumi-lang-dotnet=\"`Target`\" pulumi-lang-go=\"`target`\" pulumi-lang-python=\"`target`\" pulumi-lang-yaml=\"`target`\" pulumi-lang-java=\"`target`\"\u003e`target`\u003c/span\u003e to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.\n* `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.\n* `SYSTEM` - no longer supported for new validations.\n* `MANUAL` - no longer supported for new validations.\n"
                 },
                 "validationScope": {
                     "type": "string",
@@ -18783,10 +18783,6 @@
                     "type": "boolean",
                     "description": "Whether to enable API constraints protection"
                 },
-                "outputText": {
-                    "type": "string",
-                    "description": "Text representation"
-                },
                 "securityPolicyId": {
                     "type": "string",
                     "description": "Unique identifier of the security policy"
@@ -18795,7 +18791,6 @@
             "required": [
                 "configId",
                 "enabled",
-                "outputText",
                 "securityPolicyId"
             ],
             "inputProperties": {
@@ -18827,10 +18822,6 @@
                     "enabled": {
                         "type": "boolean",
                         "description": "Whether to enable API constraints protection"
-                    },
-                    "outputText": {
-                        "type": "string",
-                        "description": "Text representation"
                     },
                     "securityPolicyId": {
                         "type": "string",
@@ -19917,10 +19908,6 @@
                     "type": "boolean",
                     "description": "Whether to enable IP/Geo protection"
                 },
-                "outputText": {
-                    "type": "string",
-                    "description": "Text representation"
-                },
                 "securityPolicyId": {
                     "type": "string",
                     "description": "Unique identifier of the security policy"
@@ -19929,7 +19916,6 @@
             "required": [
                 "configId",
                 "enabled",
-                "outputText",
                 "securityPolicyId"
             ],
             "inputProperties": {
@@ -19961,10 +19947,6 @@
                     "enabled": {
                         "type": "boolean",
                         "description": "Whether to enable IP/Geo protection"
-                    },
-                    "outputText": {
-                        "type": "string",
-                        "description": "Text representation"
                     },
                     "securityPolicyId": {
                         "type": "string",
@@ -20181,10 +20163,6 @@
                     "type": "boolean",
                     "description": "Whether to enable malware protection"
                 },
-                "outputText": {
-                    "type": "string",
-                    "description": "Text representation"
-                },
                 "securityPolicyId": {
                     "type": "string",
                     "description": "Unique identifier of the security policy"
@@ -20193,7 +20171,6 @@
             "required": [
                 "configId",
                 "enabled",
-                "outputText",
                 "securityPolicyId"
             ],
             "inputProperties": {
@@ -20225,10 +20202,6 @@
                     "enabled": {
                         "type": "boolean",
                         "description": "Whether to enable malware protection"
-                    },
-                    "outputText": {
-                        "type": "string",
-                        "description": "Text representation"
                     },
                     "securityPolicyId": {
                         "type": "string",
@@ -20555,10 +20528,6 @@
                 "enabled": {
                     "type": "boolean"
                 },
-                "outputText": {
-                    "type": "string",
-                    "description": "Text representation"
-                },
                 "securityPolicyId": {
                     "type": "string",
                     "description": "Unique identifier of the security policy"
@@ -20567,7 +20536,6 @@
             "required": [
                 "configId",
                 "enabled",
-                "outputText",
                 "securityPolicyId"
             ],
             "inputProperties": {
@@ -20597,10 +20565,6 @@
                     },
                     "enabled": {
                         "type": "boolean"
-                    },
-                    "outputText": {
-                        "type": "string",
-                        "description": "Text representation"
                     },
                     "securityPolicyId": {
                         "type": "string",
@@ -20817,10 +20781,6 @@
                     "type": "boolean",
                     "description": "Whether to enable reputation protection"
                 },
-                "outputText": {
-                    "type": "string",
-                    "description": "Text representation"
-                },
                 "securityPolicyId": {
                     "type": "string",
                     "description": "Unique identifier of the security policy"
@@ -20829,7 +20789,6 @@
             "required": [
                 "configId",
                 "enabled",
-                "outputText",
                 "securityPolicyId"
             ],
             "inputProperties": {
@@ -20861,10 +20820,6 @@
                     "enabled": {
                         "type": "boolean",
                         "description": "Whether to enable reputation protection"
-                    },
-                    "outputText": {
-                        "type": "string",
-                        "description": "Text representation"
                     },
                     "securityPolicyId": {
                         "type": "string",
@@ -21422,10 +21377,6 @@
                     "type": "boolean",
                     "description": "Whether to enable slow POST protection"
                 },
-                "outputText": {
-                    "type": "string",
-                    "description": "Text representation"
-                },
                 "securityPolicyId": {
                     "type": "string",
                     "description": "Unique identifier of the security policy"
@@ -21434,7 +21385,6 @@
             "required": [
                 "configId",
                 "enabled",
-                "outputText",
                 "securityPolicyId"
             ],
             "inputProperties": {
@@ -21466,10 +21416,6 @@
                     "enabled": {
                         "type": "boolean",
                         "description": "Whether to enable slow POST protection"
-                    },
-                    "outputText": {
-                        "type": "string",
-                        "description": "Text representation"
                     },
                     "securityPolicyId": {
                         "type": "string",
@@ -21543,10 +21489,6 @@
                     "type": "integer",
                     "description": "Unique identifier of the security configuration"
                 },
-                "outputText": {
-                    "type": "string",
-                    "description": "Text representation"
-                },
                 "versionNotes": {
                     "type": "string",
                     "description": "Brief description of the security configuration version"
@@ -21554,7 +21496,6 @@
             },
             "required": [
                 "configId",
-                "outputText",
                 "versionNotes"
             ],
             "inputProperties": {
@@ -21577,10 +21518,6 @@
                     "configId": {
                         "type": "integer",
                         "description": "Unique identifier of the security configuration"
-                    },
-                    "outputText": {
-                        "type": "string",
-                        "description": "Text representation"
                     },
                     "versionNotes": {
                         "type": "string",
@@ -21616,10 +21553,6 @@
                     "type": "string",
                     "description": "How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)"
                 },
-                "outputText": {
-                    "type": "string",
-                    "description": "Text representation"
-                },
                 "securityPolicyId": {
                     "type": "string",
                     "description": "Unique identifier of the security policy"
@@ -21632,7 +21565,6 @@
                 "evalRuleset",
                 "evalStatus",
                 "mode",
-                "outputText",
                 "securityPolicyId"
             ],
             "inputProperties": {
@@ -21681,10 +21613,6 @@
                         "type": "string",
                         "description": "How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)"
                     },
-                    "outputText": {
-                        "type": "string",
-                        "description": "Text representation"
-                    },
                     "securityPolicyId": {
                         "type": "string",
                         "description": "Unique identifier of the security policy"
@@ -21703,10 +21631,6 @@
                     "type": "boolean",
                     "description": "Whether to enable WAF protection"
                 },
-                "outputText": {
-                    "type": "string",
-                    "description": "Text representation"
-                },
                 "securityPolicyId": {
                     "type": "string",
                     "description": "Unique identifier of the security policy"
@@ -21715,7 +21639,6 @@
             "required": [
                 "configId",
                 "enabled",
-                "outputText",
                 "securityPolicyId"
             ],
             "inputProperties": {
@@ -21747,10 +21670,6 @@
                     "enabled": {
                         "type": "boolean",
                         "description": "Whether to enable WAF protection"
-                    },
-                    "outputText": {
-                        "type": "string",
-                        "description": "Text representation"
                     },
                     "securityPolicyId": {
                         "type": "string",
@@ -23955,16 +23874,11 @@
                 "siebelTicketId": {
                     "type": "string",
                     "description": "Identifies the Siebel ticket, if the activation is linked to one."
-                },
-                "version": {
-                    "type": "integer",
-                    "description": "The client list version."
                 }
             },
             "requiredInputs": [
                 "listId",
-                "network",
-                "version"
+                "network"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering ClientlistActivation resources.\n",
@@ -27938,7 +27852,8 @@
                     "$ref": "#/types/akamai:index/GtmAsmapDefaultDatacenter:GtmAsmapDefaultDatacenter"
                 },
                 "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "willReplaceOnChanges": true
                 },
                 "name": {
                     "type": "string"
@@ -27964,7 +27879,8 @@
                         "$ref": "#/types/akamai:index/GtmAsmapDefaultDatacenter:GtmAsmapDefaultDatacenter"
                     },
                     "domain": {
-                        "type": "string"
+                        "type": "string",
+                        "willReplaceOnChanges": true
                     },
                     "name": {
                         "type": "string"
@@ -28018,7 +27934,8 @@
                     "$ref": "#/types/akamai:index/GtmCidrmapDefaultDatacenter:GtmCidrmapDefaultDatacenter"
                 },
                 "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "willReplaceOnChanges": true
                 },
                 "name": {
                     "type": "string"
@@ -28044,7 +27961,8 @@
                         "$ref": "#/types/akamai:index/GtmCidrmapDefaultDatacenter:GtmCidrmapDefaultDatacenter"
                     },
                     "domain": {
-                        "type": "string"
+                        "type": "string",
+                        "willReplaceOnChanges": true
                     },
                     "name": {
                         "type": "string"
@@ -28161,7 +28079,8 @@
                     "$ref": "#/types/akamai:index/GtmDatacenterDefaultLoadObject:GtmDatacenterDefaultLoadObject"
                 },
                 "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "willReplaceOnChanges": true
                 },
                 "latitude": {
                     "type": "number"
@@ -28210,7 +28129,8 @@
                         "$ref": "#/types/akamai:index/GtmDatacenterDefaultLoadObject:GtmDatacenterDefaultLoadObject"
                     },
                     "domain": {
-                        "type": "string"
+                        "type": "string",
+                        "willReplaceOnChanges": true
                     },
                     "latitude": {
                         "type": "number"
@@ -28437,7 +28357,8 @@
                     "type": "number"
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "willReplaceOnChanges": true
                 },
                 "signAndServe": {
                     "type": "boolean",
@@ -28539,7 +28460,8 @@
                         "type": "integer"
                     },
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "willReplaceOnChanges": true
                     },
                     "pingInterval": {
                         "type": "integer"
@@ -28619,7 +28541,8 @@
                     "$ref": "#/types/akamai:index/GtmGeomapDefaultDatacenter:GtmGeomapDefaultDatacenter"
                 },
                 "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "willReplaceOnChanges": true
                 },
                 "name": {
                     "type": "string"
@@ -28645,7 +28568,8 @@
                         "$ref": "#/types/akamai:index/GtmGeomapDefaultDatacenter:GtmGeomapDefaultDatacenter"
                     },
                     "domain": {
-                        "type": "string"
+                        "type": "string",
+                        "willReplaceOnChanges": true
                     },
                     "name": {
                         "type": "string"
@@ -28800,7 +28724,8 @@
                     "type": "string"
                 },
                 "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "willReplaceOnChanges": true
                 },
                 "dynamicTtl": {
                     "type": "integer"
@@ -28914,7 +28839,8 @@
                         "type": "string"
                     },
                     "domain": {
-                        "type": "string"
+                        "type": "string",
+                        "willReplaceOnChanges": true
                     },
                     "dynamicTtl": {
                         "type": "integer"
@@ -29087,7 +29013,8 @@
                     "type": "string"
                 },
                 "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "willReplaceOnChanges": true
                 },
                 "hostHeader": {
                     "type": "string"
@@ -29144,7 +29071,8 @@
                         "type": "string"
                     },
                     "domain": {
-                        "type": "string"
+                        "type": "string",
+                        "willReplaceOnChanges": true
                     },
                     "hostHeader": {
                         "type": "string"
@@ -32991,9 +32919,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -33001,7 +32926,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -33036,9 +32960,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -33046,7 +32967,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -33081,9 +33001,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -33091,7 +33008,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -33122,15 +33038,11 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -33177,9 +33089,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -33188,7 +33097,6 @@
                     "configId",
                     "idLists",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -33230,9 +33138,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -33240,7 +33145,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -33289,9 +33193,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -33301,7 +33202,6 @@
                     "conditionException",
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -33344,9 +33244,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -33355,7 +33252,6 @@
                     "bypassNetworkLists",
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -33394,9 +33290,6 @@
                     "name": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "productionVersion": {
                         "type": "integer"
                     },
@@ -33408,7 +33301,6 @@
                     "configId",
                     "hostNames",
                     "latestVersion",
-                    "outputText",
                     "productionVersion",
                     "stagingVersion",
                     "id"
@@ -33445,9 +33337,6 @@
                     "latestVersion": {
                         "type": "integer"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "productionStatus": {
                         "type": "string"
                     },
@@ -33461,7 +33350,6 @@
                 "required": [
                     "configId",
                     "latestVersion",
-                    "outputText",
                     "productionStatus",
                     "stagingStatus",
                     "id"
@@ -33503,16 +33391,12 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "defaultContractid",
                     "defaultGroupid",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -33549,15 +33433,11 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -33596,16 +33476,12 @@
                         "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
                 },
                 "required": [
                     "configId",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -33643,15 +33519,11 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -33684,16 +33556,12 @@
                         "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
                 },
                 "required": [
                     "configId",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -33742,9 +33610,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -33754,7 +33619,6 @@
                     "conditionException",
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -33794,9 +33658,6 @@
                         "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -33805,7 +33666,6 @@
                     "action",
                     "configId",
                     "enabled",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -33851,9 +33711,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "ruleId": {
                         "type": "integer"
                     },
@@ -33866,7 +33723,6 @@
                     "configId",
                     "evalRuleAction",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -33909,9 +33765,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "searches": {
                         "items": {
                             "type": "string"
@@ -33925,7 +33778,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "version",
                     "id"
                 ],
@@ -33963,16 +33815,12 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "hostnames",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -33988,14 +33836,10 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34033,16 +33877,12 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "hostname",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34080,16 +33920,12 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "hostname",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34152,9 +33988,6 @@
                     "mode": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     },
@@ -34170,7 +34003,6 @@
                     "geoControls",
                     "ipControls",
                     "mode",
-                    "outputText",
                     "securityPolicyId",
                     "ukraineGeoControlAction",
                     "id"
@@ -34203,15 +34035,11 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34248,15 +34076,11 @@
                     },
                     "malwarePolicyId": {
                         "type": "integer"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34295,16 +34119,12 @@
                     "malwarePolicyId": {
                         "type": "integer"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
                 },
                 "required": [
                     "configId",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -34342,15 +34162,11 @@
                     },
                     "matchTargetId": {
                         "type": "integer"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34389,9 +34205,6 @@
                         "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -34400,7 +34213,6 @@
                     "action",
                     "configId",
                     "enabled",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -34436,9 +34248,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "ratePolicyId": {
                         "type": "integer"
                     }
@@ -34446,7 +34255,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34482,9 +34290,6 @@
                         "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "ratePolicyId": {
                         "type": "integer"
                     },
@@ -34494,7 +34299,6 @@
                 },
                 "required": [
                     "configId",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -34537,9 +34341,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "reputationProfileId": {
                         "type": "integer"
                     },
@@ -34551,7 +34352,6 @@
                     "action",
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -34588,9 +34388,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -34598,7 +34395,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -34634,9 +34430,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "reputationProfileId": {
                         "type": "integer"
                     }
@@ -34644,7 +34437,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34680,9 +34472,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -34690,7 +34479,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -34733,9 +34521,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "ruleAction": {
                         "type": "string"
                     },
@@ -34750,7 +34535,6 @@
                     "conditionException",
                     "configId",
                     "json",
-                    "outputText",
                     "ruleAction",
                     "securityPolicyId",
                     "id"
@@ -34787,9 +34571,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     },
@@ -34806,7 +34587,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "securityPolicyIdLists",
                     "id"
@@ -34868,9 +34648,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -34886,7 +34663,6 @@
                     "applySlowPostControls",
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -34945,15 +34721,11 @@
                     "id": {
                         "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "hostnames",
                     "hostnamesJson",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -34979,16 +34751,12 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "siemDefinitionName": {
                         "type": "string"
                     }
                 },
                 "required": [
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -35019,15 +34787,11 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -35063,9 +34827,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -35073,7 +34834,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -35110,9 +34870,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     },
@@ -35123,7 +34880,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "threatIntel",
                     "id"
@@ -35215,15 +34971,11 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -35274,9 +35026,6 @@
                     "mode": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -35289,7 +35038,6 @@
                     "evalStatus",
                     "json",
                     "mode",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -35335,9 +35083,6 @@
                     "matchTargets": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "protectedHosts": {
                         "items": {
                             "type": "string"
@@ -35359,7 +35104,6 @@
                     "evaluatedHosts",
                     "json",
                     "matchTargets",
-                    "outputText",
                     "protectedHosts",
                     "securityPolicyId",
                     "selectedHosts",
@@ -35393,15 +35137,11 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -35436,9 +35176,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -35446,7 +35183,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -35477,15 +35213,11 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -35516,15 +35248,11 @@
                     },
                     "json": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -35559,9 +35287,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -35569,7 +35294,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -35608,9 +35332,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "ruleIds": {
                         "items": {
                             "type": "integer"
@@ -35627,7 +35348,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "ruleIds",
                     "rules",
                     "id"
@@ -35665,9 +35385,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -35675,7 +35392,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -35712,9 +35428,6 @@
                     "json": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     }
@@ -35722,7 +35435,6 @@
                 "required": [
                     "configId",
                     "json",
-                    "outputText",
                     "securityPolicyId",
                     "id"
                 ],
@@ -35770,9 +35482,6 @@
                     "includeExpiryDetails": {
                         "type": "boolean"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "rapidRules": {
                         "items": {
                             "$ref": "#/types/akamai:index/getAppsecRapidRulesRapidRule:getAppsecRapidRulesRapidRule"
@@ -35791,7 +35500,6 @@
                     "defaultAction",
                     "enabled",
                     "id",
-                    "outputText",
                     "rapidRules",
                     "securityPolicyId"
                 ],
@@ -37368,6 +37076,12 @@
                     "pendingChanges": {
                         "type": "boolean"
                     },
+                    "postVerificationWarnings": {
+                        "type": "string"
+                    },
+                    "preVerificationWarnings": {
+                        "type": "string"
+                    },
                     "productionSlots": {
                         "items": {
                             "type": "integer"
@@ -37424,6 +37138,8 @@
                     "orgId",
                     "organizations",
                     "pendingChanges",
+                    "postVerificationWarnings",
+                    "preVerificationWarnings",
                     "productionSlots",
                     "registrationAuthority",
                     "sans",
@@ -37504,16 +37220,12 @@
                     },
                     "listId": {
                         "type": "string"
-                    },
-                    "outputText": {
-                        "type": "string"
                     }
                 },
                 "required": [
                     "json",
                     "list",
                     "listId",
-                    "outputText",
                     "id"
                 ],
                 "type": "object"
@@ -37559,9 +37271,6 @@
                     "name": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "types": {
                         "items": {
                             "type": "string"
@@ -37573,8 +37282,7 @@
                     "id",
                     "json",
                     "listIds",
-                    "lists",
-                    "outputText"
+                    "lists"
                 ],
                 "type": "object"
             }
@@ -41137,12 +40845,12 @@
                 "properties": {
                     "roleId": {
                         "type": "integer"
+                    },
+                    "roleName": {
+                        "type": "string"
                     }
                 },
-                "type": "object",
-                "required": [
-                    "roleId"
-                ]
+                "type": "object"
             },
             "outputs": {
                 "description": "A collection of values returned by getIamRole.\n",
@@ -41199,7 +40907,6 @@
                     "modifiedBy",
                     "modifiedDate",
                     "roleDescription",
-                    "roleId",
                     "roleName",
                     "type",
                     "users",
@@ -42167,9 +41874,6 @@
                     "networkListId": {
                         "type": "string"
                     },
-                    "outputText": {
-                        "type": "string"
-                    },
                     "syncPoint": {
                         "type": "integer"
                     },
@@ -42183,7 +41887,6 @@
                     "json",
                     "lists",
                     "networkListId",
-                    "outputText",
                     "syncPoint",
                     "id"
                 ],
