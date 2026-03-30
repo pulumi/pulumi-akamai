@@ -41,10 +41,6 @@ export class AppSecWafProtection extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * Text representation
-     */
-    declare public /*out*/ readonly outputText: pulumi.Output<string>;
-    /**
      * Unique identifier of the security policy
      */
     declare public readonly securityPolicyId: pulumi.Output<string>;
@@ -64,7 +60,6 @@ export class AppSecWafProtection extends pulumi.CustomResource {
             const state = argsOrState as AppSecWafProtectionState | undefined;
             resourceInputs["configId"] = state?.configId;
             resourceInputs["enabled"] = state?.enabled;
-            resourceInputs["outputText"] = state?.outputText;
             resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecWafProtectionArgs | undefined;
@@ -80,7 +75,6 @@ export class AppSecWafProtection extends pulumi.CustomResource {
             resourceInputs["configId"] = args?.configId;
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["securityPolicyId"] = args?.securityPolicyId;
-            resourceInputs["outputText"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecWafProtection.__pulumiType, name, resourceInputs, opts);
@@ -99,10 +93,6 @@ export interface AppSecWafProtectionState {
      * Whether to enable WAF protection
      */
     enabled?: pulumi.Input<boolean>;
-    /**
-     * Text representation
-     */
-    outputText?: pulumi.Input<string>;
     /**
      * Unique identifier of the security policy
      */

@@ -3377,6 +3377,12 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetIamPropertyUsersResult> getIamPropertyUsersPlain(GetIamPropertyUsersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getIamPropertyUsers:getIamPropertyUsers", TypeShape.of(GetIamPropertyUsersResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetIamRoleResult> getIamRole() {
+        return getIamRole(GetIamRoleArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetIamRoleResult> getIamRolePlain() {
+        return getIamRolePlain(GetIamRolePlainArgs.Empty, InvokeOptions.Empty);
+    }
     public static Output<GetIamRoleResult> getIamRole(GetIamRoleArgs args) {
         return getIamRole(args, InvokeOptions.Empty);
     }

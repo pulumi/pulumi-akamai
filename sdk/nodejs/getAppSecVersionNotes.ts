@@ -28,7 +28,6 @@ export interface GetAppSecVersionNotesResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
 }
 export function getAppSecVersionNotesOutput(args: GetAppSecVersionNotesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecVersionNotesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

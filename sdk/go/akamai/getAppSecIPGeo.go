@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,7 +38,6 @@ type LookupAppSecIPGeoResult struct {
 	Id                      string                    `pulumi:"id"`
 	IpControls              []GetAppSecIPGeoIpControl `pulumi:"ipControls"`
 	Mode                    string                    `pulumi:"mode"`
-	OutputText              string                    `pulumi:"outputText"`
 	SecurityPolicyId        string                    `pulumi:"securityPolicyId"`
 	UkraineGeoControlAction string                    `pulumi:"ukraineGeoControlAction"`
 }
@@ -108,10 +107,6 @@ func (o LookupAppSecIPGeoResultOutput) IpControls() GetAppSecIPGeoIpControlArray
 
 func (o LookupAppSecIPGeoResultOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.Mode }).(pulumi.StringOutput)
-}
-
-func (o LookupAppSecIPGeoResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o LookupAppSecIPGeoResultOutput) SecurityPolicyId() pulumi.StringOutput {

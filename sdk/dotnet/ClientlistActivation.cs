@@ -136,12 +136,6 @@ namespace Pulumi.Akamai
         [Input("siebelTicketId")]
         public Input<string>? SiebelTicketId { get; set; }
 
-        /// <summary>
-        /// The client list version.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public ClientlistActivationArgs()
         {
         }

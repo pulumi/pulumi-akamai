@@ -69,7 +69,6 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<string> ListIds;
         public readonly ImmutableArray<Outputs.GetClientlistListsListResult> Lists;
         public readonly string? Name;
-        public readonly string OutputText;
         public readonly ImmutableArray<string> Types;
 
         [OutputConstructor]
@@ -84,8 +83,6 @@ namespace Pulumi.Akamai
 
             string? name,
 
-            string outputText,
-
             ImmutableArray<string> types)
         {
             Id = id;
@@ -93,7 +90,6 @@ namespace Pulumi.Akamai
             ListIds = listIds;
             Lists = lists;
             Name = name;
-            OutputText = outputText;
             Types = types;
         }
     }

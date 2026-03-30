@@ -67,7 +67,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
-        public readonly string OutputText;
         public readonly int? ReputationProfileId;
         public readonly string SecurityPolicyId;
 
@@ -81,8 +80,6 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
             int? reputationProfileId,
 
             string securityPolicyId)
@@ -91,7 +88,6 @@ namespace Pulumi.Akamai
             ConfigId = configId;
             Id = id;
             Json = json;
-            OutputText = outputText;
             ReputationProfileId = reputationProfileId;
             SecurityPolicyId = securityPolicyId;
         }

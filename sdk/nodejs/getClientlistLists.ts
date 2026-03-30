@@ -32,7 +32,6 @@ export interface GetClientlistListsResult {
     readonly listIds: string[];
     readonly lists: outputs.GetClientlistListsList[];
     readonly name?: string;
-    readonly outputText: string;
     readonly types?: string[];
 }
 export function getClientlistListsOutput(args?: GetClientlistListsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClientlistListsResult> {

@@ -32,7 +32,6 @@ export interface GetAppsecCustomRulesUsageResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly ruleIds: number[];
     readonly rules: outputs.GetAppsecCustomRulesUsageRule[];
 }

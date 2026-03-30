@@ -20,7 +20,6 @@ public final class GetAppSecRatePoliciesResult {
      */
     private String id;
     private String json;
-    private String outputText;
     private @Nullable Integer ratePolicyId;
 
     private GetAppSecRatePoliciesResult() {}
@@ -36,9 +35,6 @@ public final class GetAppSecRatePoliciesResult {
     }
     public String json() {
         return this.json;
-    }
-    public String outputText() {
-        return this.outputText;
     }
     public Optional<Integer> ratePolicyId() {
         return Optional.ofNullable(this.ratePolicyId);
@@ -56,7 +52,6 @@ public final class GetAppSecRatePoliciesResult {
         private Integer configId;
         private String id;
         private String json;
-        private String outputText;
         private @Nullable Integer ratePolicyId;
         public Builder() {}
         public Builder(GetAppSecRatePoliciesResult defaults) {
@@ -64,7 +59,6 @@ public final class GetAppSecRatePoliciesResult {
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
-    	      this.outputText = defaults.outputText;
     	      this.ratePolicyId = defaults.ratePolicyId;
         }
 
@@ -93,14 +87,6 @@ public final class GetAppSecRatePoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecRatePoliciesResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder ratePolicyId(@Nullable Integer ratePolicyId) {
 
             this.ratePolicyId = ratePolicyId;
@@ -111,7 +97,6 @@ public final class GetAppSecRatePoliciesResult {
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
-            _resultValue.outputText = outputText;
             _resultValue.ratePolicyId = ratePolicyId;
             return _resultValue;
         }

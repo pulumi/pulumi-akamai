@@ -46,20 +46,6 @@ public class AppSecApiConstraintsProtection extends com.pulumi.resources.CustomR
         return this.enabled;
     }
     /**
-     * Text representation
-     * 
-     */
-    @Export(name="outputText", refs={String.class}, tree="[0]")
-    private Output<String> outputText;
-
-    /**
-     * @return Text representation
-     * 
-     */
-    public Output<String> outputText() {
-        return this.outputText;
-    }
-    /**
      * Unique identifier of the security policy
      * 
      */

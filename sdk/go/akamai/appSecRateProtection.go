@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -18,8 +18,6 @@ type AppSecRateProtection struct {
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput  `pulumi:"configId"`
 	Enabled  pulumi.BoolOutput `pulumi:"enabled"`
-	// Text representation
-	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
@@ -66,8 +64,6 @@ type appSecRateProtectionState struct {
 	// Unique identifier of the security configuration
 	ConfigId *int  `pulumi:"configId"`
 	Enabled  *bool `pulumi:"enabled"`
-	// Text representation
-	OutputText *string `pulumi:"outputText"`
 	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
@@ -76,8 +72,6 @@ type AppSecRateProtectionState struct {
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
 	Enabled  pulumi.BoolPtrInput
-	// Text representation
-	OutputText pulumi.StringPtrInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
@@ -197,11 +191,6 @@ func (o AppSecRateProtectionOutput) ConfigId() pulumi.IntOutput {
 
 func (o AppSecRateProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecRateProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-// Text representation
-func (o AppSecRateProtectionOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppSecRateProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }
 
 // Unique identifier of the security policy

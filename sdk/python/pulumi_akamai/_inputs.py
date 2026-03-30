@@ -12050,6 +12050,8 @@ class PropertyDomainownershipValidationDomainArgsDict(TypedDict):
     * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
     * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
     * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+    * `SYSTEM` - no longer supported for new validations.
+    * `MANUAL` - no longer supported for new validations.
     """
     validation_scope: pulumi.Input[_builtins.str]
     """
@@ -12071,6 +12073,8 @@ class PropertyDomainownershipValidationDomainArgs:
                * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
                * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
                * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+               * `SYSTEM` - no longer supported for new validations.
+               * `MANUAL` - no longer supported for new validations.
         :param pulumi.Input[_builtins.str] validation_scope: Your domain's validation scope. Possible values are: 
                * `HOST` - The scope is only the exactly specified domain.
                * `WILDCARD` - The scope covers any hostname within one subdomain level.
@@ -12100,6 +12104,8 @@ class PropertyDomainownershipValidationDomainArgs:
         * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
         * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
         * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+        * `SYSTEM` - no longer supported for new validations.
+        * `MANUAL` - no longer supported for new validations.
         """
         return pulumi.get(self, "validation_method")
 

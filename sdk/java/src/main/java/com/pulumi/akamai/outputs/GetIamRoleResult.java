@@ -12,6 +12,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIamRoleResult {
@@ -27,7 +29,7 @@ public final class GetIamRoleResult {
     private String modifiedBy;
     private String modifiedDate;
     private String roleDescription;
-    private Integer roleId;
+    private @Nullable Integer roleId;
     private String roleName;
     private String type;
     private List<GetIamRoleUser> users;
@@ -61,8 +63,8 @@ public final class GetIamRoleResult {
     public String roleDescription() {
         return this.roleDescription;
     }
-    public Integer roleId() {
-        return this.roleId;
+    public Optional<Integer> roleId() {
+        return Optional.ofNullable(this.roleId);
     }
     public String roleName() {
         return this.roleName;
@@ -91,7 +93,7 @@ public final class GetIamRoleResult {
         private String modifiedBy;
         private String modifiedDate;
         private String roleDescription;
-        private Integer roleId;
+        private @Nullable Integer roleId;
         private String roleName;
         private String type;
         private List<GetIamRoleUser> users;
@@ -180,10 +182,8 @@ public final class GetIamRoleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder roleId(Integer roleId) {
-            if (roleId == null) {
-              throw new MissingRequiredPropertyException("GetIamRoleResult", "roleId");
-            }
+        public Builder roleId(@Nullable Integer roleId) {
+
             this.roleId = roleId;
             return this;
         }

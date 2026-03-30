@@ -65,7 +65,6 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly string Json;
         public readonly string Mode;
-        public readonly string OutputText;
         public readonly string SecurityPolicyId;
 
         [OutputConstructor]
@@ -86,8 +85,6 @@ namespace Pulumi.Akamai
 
             string mode,
 
-            string outputText,
-
             string securityPolicyId)
         {
             ConfigId = configId;
@@ -98,7 +95,6 @@ namespace Pulumi.Akamai
             Id = id;
             Json = json;
             Mode = mode;
-            OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
         }
     }

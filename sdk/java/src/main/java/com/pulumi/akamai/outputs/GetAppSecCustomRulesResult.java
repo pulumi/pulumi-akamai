@@ -21,7 +21,6 @@ public final class GetAppSecCustomRulesResult {
      */
     private String id;
     private String json;
-    private String outputText;
 
     private GetAppSecCustomRulesResult() {}
     public Integer configId() {
@@ -40,9 +39,6 @@ public final class GetAppSecCustomRulesResult {
     public String json() {
         return this.json;
     }
-    public String outputText() {
-        return this.outputText;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -57,7 +53,6 @@ public final class GetAppSecCustomRulesResult {
         private @Nullable Integer customRuleId;
         private String id;
         private String json;
-        private String outputText;
         public Builder() {}
         public Builder(GetAppSecCustomRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -65,7 +60,6 @@ public final class GetAppSecCustomRulesResult {
     	      this.customRuleId = defaults.customRuleId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
-    	      this.outputText = defaults.outputText;
         }
 
         @CustomType.Setter
@@ -98,21 +92,12 @@ public final class GetAppSecCustomRulesResult {
             this.json = json;
             return this;
         }
-        @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecCustomRulesResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
         public GetAppSecCustomRulesResult build() {
             final var _resultValue = new GetAppSecCustomRulesResult();
             _resultValue.configId = configId;
             _resultValue.customRuleId = customRuleId;
             _resultValue.id = id;
             _resultValue.json = json;
-            _resultValue.outputText = outputText;
             return _resultValue;
         }
     }

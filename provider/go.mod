@@ -1,16 +1,16 @@
-module github.com/pulumi/pulumi-akamai/provider/v10
+module github.com/pulumi/pulumi-akamai/provider/v11
 
 go 1.25.6
 
 replace (
-	github.com/akamai/terraform-provider-akamai/v9 => ../upstream
+	github.com/akamai/terraform-provider-akamai/v10 => ../upstream
 	github.com/hashicorp/go-getter v1.5.0 => github.com/hashicorp/go-getter v1.4.0
 	github.com/hashicorp/terraform-exec => github.com/hashicorp/terraform-exec v0.15.0
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20260318212141-5525259d096b
 )
 
 require (
-	github.com/akamai/terraform-provider-akamai/v9 v9.1.0
+	github.com/akamai/terraform-provider-akamai/v10 v10.0.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.125.0
 	github.com/pulumi/pulumi/pkg/v3 v3.226.0
 	github.com/pulumi/pulumi/sdk/v3 v3.226.0
@@ -38,7 +38,7 @@ require (
 	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/ProtonMail/go-crypto v1.3.0 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
-	github.com/akamai/AkamaiOPEN-edgegrid-golang/v12 v12.3.0 // indirect
+	github.com/akamai/AkamaiOPEN-edgegrid-golang/v13 v13.0.0 // indirect
 	github.com/allegro/bigcache/v2 v2.2.5 // indirect
 	github.com/apparentlymart/go-cidr v1.1.0 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect

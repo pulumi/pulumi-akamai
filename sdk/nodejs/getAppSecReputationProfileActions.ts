@@ -33,7 +33,6 @@ export interface GetAppSecReputationProfileActionsResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly reputationProfileId?: number;
     readonly securityPolicyId: string;
 }

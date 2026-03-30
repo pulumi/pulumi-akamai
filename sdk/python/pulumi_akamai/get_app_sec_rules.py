@@ -26,7 +26,7 @@ class GetAppSecRulesResult:
     """
     A collection of values returned by getAppSecRules.
     """
-    def __init__(__self__, condition_exception=None, config_id=None, id=None, json=None, output_text=None, rule_action=None, rule_id=None, security_policy_id=None):
+    def __init__(__self__, condition_exception=None, config_id=None, id=None, json=None, rule_action=None, rule_id=None, security_policy_id=None):
         if condition_exception and not isinstance(condition_exception, str):
             raise TypeError("Expected argument 'condition_exception' to be a str")
         pulumi.set(__self__, "condition_exception", condition_exception)
@@ -39,9 +39,6 @@ class GetAppSecRulesResult:
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
-        if output_text and not isinstance(output_text, str):
-            raise TypeError("Expected argument 'output_text' to be a str")
-        pulumi.set(__self__, "output_text", output_text)
         if rule_action and not isinstance(rule_action, str):
             raise TypeError("Expected argument 'rule_action' to be a str")
         pulumi.set(__self__, "rule_action", rule_action)
@@ -76,11 +73,6 @@ class GetAppSecRulesResult:
         return pulumi.get(self, "json")
 
     @_builtins.property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> _builtins.str:
-        return pulumi.get(self, "output_text")
-
-    @_builtins.property
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> _builtins.str:
         return pulumi.get(self, "rule_action")
@@ -106,7 +98,6 @@ class AwaitableGetAppSecRulesResult(GetAppSecRulesResult):
             config_id=self.config_id,
             id=self.id,
             json=self.json,
-            output_text=self.output_text,
             rule_action=self.rule_action,
             rule_id=self.rule_id,
             security_policy_id=self.security_policy_id)
@@ -131,7 +122,6 @@ def get_app_sec_rules(config_id: Optional[_builtins.int] = None,
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
-        output_text=pulumi.get(__ret__, 'output_text'),
         rule_action=pulumi.get(__ret__, 'rule_action'),
         rule_id=pulumi.get(__ret__, 'rule_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
@@ -153,7 +143,6 @@ def get_app_sec_rules_output(config_id: Optional[pulumi.Input[_builtins.int]] = 
         config_id=pulumi.get(__response__, 'config_id'),
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
-        output_text=pulumi.get(__response__, 'output_text'),
         rule_action=pulumi.get(__response__, 'rule_action'),
         rule_id=pulumi.get(__response__, 'rule_id'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

@@ -110,7 +110,7 @@ class GetIamRoleResult:
 
     @_builtins.property
     @pulumi.getter(name="roleId")
-    def role_id(self) -> _builtins.int:
+    def role_id(self) -> Optional[_builtins.int]:
         return pulumi.get(self, "role_id")
 
     @_builtins.property
@@ -150,12 +150,14 @@ class AwaitableGetIamRoleResult(GetIamRoleResult):
 
 
 def get_iam_role(role_id: Optional[_builtins.int] = None,
+                 role_name: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamRoleResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['roleId'] = role_id
+    __args__['roleName'] = role_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamRole:getIamRole', __args__, opts=opts, typ=GetIamRoleResult).value
 
@@ -172,13 +174,15 @@ def get_iam_role(role_id: Optional[_builtins.int] = None,
         role_name=pulumi.get(__ret__, 'role_name'),
         type=pulumi.get(__ret__, 'type'),
         users=pulumi.get(__ret__, 'users'))
-def get_iam_role_output(role_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_iam_role_output(role_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                        role_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamRoleResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['roleId'] = role_id
+    __args__['roleName'] = role_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamRole:getIamRole', __args__, opts=opts, typ=GetIamRoleResult)
     return __ret__.apply(lambda __response__: GetIamRoleResult(

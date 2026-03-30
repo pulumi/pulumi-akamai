@@ -67,6 +67,8 @@ namespace Pulumi.Akamai
         public readonly int OrgId;
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentOrganizationResult> Organizations;
         public readonly bool PendingChanges;
+        public readonly string PostVerificationWarnings;
+        public readonly string PreVerificationWarnings;
         public readonly ImmutableArray<int> ProductionSlots;
         public readonly string RegistrationAuthority;
         public readonly ImmutableArray<string> Sans;
@@ -111,6 +113,10 @@ namespace Pulumi.Akamai
 
             bool pendingChanges,
 
+            string postVerificationWarnings,
+
+            string preVerificationWarnings,
+
             ImmutableArray<int> productionSlots,
 
             string registrationAuthority,
@@ -145,6 +151,8 @@ namespace Pulumi.Akamai
             OrgId = orgId;
             Organizations = organizations;
             PendingChanges = pendingChanges;
+            PostVerificationWarnings = postVerificationWarnings;
+            PreVerificationWarnings = preVerificationWarnings;
             ProductionSlots = productionSlots;
             RegistrationAuthority = registrationAuthority;
             Sans = sans;

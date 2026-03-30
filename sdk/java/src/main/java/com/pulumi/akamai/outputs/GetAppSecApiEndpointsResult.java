@@ -23,7 +23,6 @@ public final class GetAppSecApiEndpointsResult {
     private String id;
     private List<Integer> idLists;
     private String json;
-    private String outputText;
     private @Nullable String securityPolicyId;
 
     private GetAppSecApiEndpointsResult() {}
@@ -46,9 +45,6 @@ public final class GetAppSecApiEndpointsResult {
     public String json() {
         return this.json;
     }
-    public String outputText() {
-        return this.outputText;
-    }
     public Optional<String> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
     }
@@ -67,7 +63,6 @@ public final class GetAppSecApiEndpointsResult {
         private String id;
         private List<Integer> idLists;
         private String json;
-        private String outputText;
         private @Nullable String securityPolicyId;
         public Builder() {}
         public Builder(GetAppSecApiEndpointsResult defaults) {
@@ -77,7 +72,6 @@ public final class GetAppSecApiEndpointsResult {
     	      this.id = defaults.id;
     	      this.idLists = defaults.idLists;
     	      this.json = defaults.json;
-    	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
 
@@ -123,14 +117,6 @@ public final class GetAppSecApiEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecApiEndpointsResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder securityPolicyId(@Nullable String securityPolicyId) {
 
             this.securityPolicyId = securityPolicyId;
@@ -143,7 +129,6 @@ public final class GetAppSecApiEndpointsResult {
             _resultValue.id = id;
             _resultValue.idLists = idLists;
             _resultValue.json = json;
-            _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;
         }

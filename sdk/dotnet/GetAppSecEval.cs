@@ -59,7 +59,6 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string OutputText;
         public readonly string SecurityPolicyId;
 
         [OutputConstructor]
@@ -68,13 +67,10 @@ namespace Pulumi.Akamai
 
             string id,
 
-            string outputText,
-
             string securityPolicyId)
         {
             ConfigId = configId;
             Id = id;
-            OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
         }
     }

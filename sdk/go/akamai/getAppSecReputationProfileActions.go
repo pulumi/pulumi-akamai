@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,7 +35,6 @@ type GetAppSecReputationProfileActionsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                  string `pulumi:"id"`
 	Json                string `pulumi:"json"`
-	OutputText          string `pulumi:"outputText"`
 	ReputationProfileId *int   `pulumi:"reputationProfileId"`
 	SecurityPolicyId    string `pulumi:"securityPolicyId"`
 }
@@ -90,10 +89,6 @@ func (o GetAppSecReputationProfileActionsResultOutput) Id() pulumi.StringOutput 
 
 func (o GetAppSecReputationProfileActionsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecReputationProfileActionsResult) string { return v.Json }).(pulumi.StringOutput)
-}
-
-func (o GetAppSecReputationProfileActionsResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppSecReputationProfileActionsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecReputationProfileActionsResultOutput) ReputationProfileId() pulumi.IntPtrOutput {

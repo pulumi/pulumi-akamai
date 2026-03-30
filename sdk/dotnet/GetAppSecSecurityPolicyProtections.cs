@@ -68,7 +68,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
-        public readonly string OutputText;
         public readonly string SecurityPolicyId;
 
         [OutputConstructor]
@@ -95,8 +94,6 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
             string securityPolicyId)
         {
             ApplyApiConstraints = applyApiConstraints;
@@ -110,7 +107,6 @@ namespace Pulumi.Akamai
             ConfigId = configId;
             Id = id;
             Json = json;
-            OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
         }
     }

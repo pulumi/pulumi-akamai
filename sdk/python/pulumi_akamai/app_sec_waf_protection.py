@@ -75,22 +75,18 @@ class _AppSecWafProtectionState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[_builtins.int]] = None,
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 output_text: Optional[pulumi.Input[_builtins.str]] = None,
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecWafProtection resources.
 
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.bool] enabled: Whether to enable WAF protection
-        :param pulumi.Input[_builtins.str] output_text: Text representation
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
-        if output_text is not None:
-            pulumi.set(__self__, "output_text", output_text)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
 
@@ -117,18 +113,6 @@ class _AppSecWafProtectionState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
-
-    @_builtins.property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Text representation
-        """
-        return pulumi.get(self, "output_text")
-
-    @output_text.setter
-    def output_text(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "output_text", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
@@ -207,7 +191,6 @@ class AppSecWafProtection(pulumi.CustomResource):
             if security_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'security_policy_id'")
             __props__.__dict__["security_policy_id"] = security_policy_id
-            __props__.__dict__["output_text"] = None
         super(AppSecWafProtection, __self__).__init__(
             'akamai:index/appSecWafProtection:AppSecWafProtection',
             resource_name,
@@ -220,7 +203,6 @@ class AppSecWafProtection(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[_builtins.int]] = None,
             enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            output_text: Optional[pulumi.Input[_builtins.str]] = None,
             security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecWafProtection':
         """
         Get an existing AppSecWafProtection resource's state with the given name, id, and optional extra
@@ -231,7 +213,6 @@ class AppSecWafProtection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.bool] enabled: Whether to enable WAF protection
-        :param pulumi.Input[_builtins.str] output_text: Text representation
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -240,7 +221,6 @@ class AppSecWafProtection(pulumi.CustomResource):
 
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["enabled"] = enabled
-        __props__.__dict__["output_text"] = output_text
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppSecWafProtection(resource_name, opts=opts, __props__=__props__)
 
@@ -259,14 +239,6 @@ class AppSecWafProtection(pulumi.CustomResource):
         Whether to enable WAF protection
         """
         return pulumi.get(self, "enabled")
-
-    @_builtins.property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> pulumi.Output[_builtins.str]:
-        """
-        Text representation
-        """
-        return pulumi.get(self, "output_text")
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")

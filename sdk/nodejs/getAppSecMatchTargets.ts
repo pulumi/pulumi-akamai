@@ -31,7 +31,6 @@ export interface GetAppSecMatchTargetsResult {
     readonly id: string;
     readonly json: string;
     readonly matchTargetId?: number;
-    readonly outputText: string;
 }
 export function getAppSecMatchTargetsOutput(args: GetAppSecMatchTargetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecMatchTargetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -31,7 +31,6 @@ export interface GetAppSecConfigurationResult {
     readonly id: string;
     readonly latestVersion: number;
     readonly name?: string;
-    readonly outputText: string;
     readonly productionVersion: number;
     readonly stagingVersion: number;
 }

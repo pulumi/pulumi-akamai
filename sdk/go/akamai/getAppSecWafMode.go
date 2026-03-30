@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,7 +38,6 @@ type LookupAppSecWafModeResult struct {
 	Id               string `pulumi:"id"`
 	Json             string `pulumi:"json"`
 	Mode             string `pulumi:"mode"`
-	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -107,10 +106,6 @@ func (o LookupAppSecWafModeResultOutput) Json() pulumi.StringOutput {
 
 func (o LookupAppSecWafModeResultOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.Mode }).(pulumi.StringOutput)
-}
-
-func (o LookupAppSecWafModeResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o LookupAppSecWafModeResultOutput) SecurityPolicyId() pulumi.StringOutput {

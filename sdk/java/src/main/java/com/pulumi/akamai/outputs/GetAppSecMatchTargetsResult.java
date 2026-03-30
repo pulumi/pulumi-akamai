@@ -21,7 +21,6 @@ public final class GetAppSecMatchTargetsResult {
     private String id;
     private String json;
     private @Nullable Integer matchTargetId;
-    private String outputText;
 
     private GetAppSecMatchTargetsResult() {}
     public Integer configId() {
@@ -40,9 +39,6 @@ public final class GetAppSecMatchTargetsResult {
     public Optional<Integer> matchTargetId() {
         return Optional.ofNullable(this.matchTargetId);
     }
-    public String outputText() {
-        return this.outputText;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -57,7 +53,6 @@ public final class GetAppSecMatchTargetsResult {
         private String id;
         private String json;
         private @Nullable Integer matchTargetId;
-        private String outputText;
         public Builder() {}
         public Builder(GetAppSecMatchTargetsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -65,7 +60,6 @@ public final class GetAppSecMatchTargetsResult {
     	      this.id = defaults.id;
     	      this.json = defaults.json;
     	      this.matchTargetId = defaults.matchTargetId;
-    	      this.outputText = defaults.outputText;
         }
 
         @CustomType.Setter
@@ -98,21 +92,12 @@ public final class GetAppSecMatchTargetsResult {
             this.matchTargetId = matchTargetId;
             return this;
         }
-        @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecMatchTargetsResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
         public GetAppSecMatchTargetsResult build() {
             final var _resultValue = new GetAppSecMatchTargetsResult();
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
             _resultValue.matchTargetId = matchTargetId;
-            _resultValue.outputText = outputText;
             return _resultValue;
         }
     }

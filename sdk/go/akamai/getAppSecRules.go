@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,7 +35,6 @@ type GetAppSecRulesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
 	Json             string `pulumi:"json"`
-	OutputText       string `pulumi:"outputText"`
 	RuleAction       string `pulumi:"ruleAction"`
 	RuleId           *int   `pulumi:"ruleId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
@@ -91,10 +90,6 @@ func (o GetAppSecRulesResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecRulesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.Json }).(pulumi.StringOutput)
-}
-
-func (o GetAppSecRulesResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecRulesResultOutput) RuleAction() pulumi.StringOutput {

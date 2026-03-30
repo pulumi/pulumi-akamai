@@ -70,7 +70,6 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<string> Lists;
         public readonly string? Name;
         public readonly string NetworkListId;
-        public readonly string OutputText;
         public readonly int SyncPoint;
         public readonly string? Type;
 
@@ -90,8 +89,6 @@ namespace Pulumi.Akamai
 
             string networkListId,
 
-            string outputText,
-
             int syncPoint,
 
             string? type)
@@ -103,7 +100,6 @@ namespace Pulumi.Akamai
             Lists = lists;
             Name = name;
             NetworkListId = networkListId;
-            OutputText = outputText;
             SyncPoint = syncPoint;
             Type = type;
         }

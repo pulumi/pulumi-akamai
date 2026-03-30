@@ -20,7 +20,6 @@ public final class GetAppSecConfigurationVersionResult {
      */
     private String id;
     private Integer latestVersion;
-    private String outputText;
     private String productionStatus;
     private String stagingStatus;
     private @Nullable Integer version;
@@ -38,9 +37,6 @@ public final class GetAppSecConfigurationVersionResult {
     }
     public Integer latestVersion() {
         return this.latestVersion;
-    }
-    public String outputText() {
-        return this.outputText;
     }
     public String productionStatus() {
         return this.productionStatus;
@@ -64,7 +60,6 @@ public final class GetAppSecConfigurationVersionResult {
         private Integer configId;
         private String id;
         private Integer latestVersion;
-        private String outputText;
         private String productionStatus;
         private String stagingStatus;
         private @Nullable Integer version;
@@ -74,7 +69,6 @@ public final class GetAppSecConfigurationVersionResult {
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.latestVersion = defaults.latestVersion;
-    	      this.outputText = defaults.outputText;
     	      this.productionStatus = defaults.productionStatus;
     	      this.stagingStatus = defaults.stagingStatus;
     	      this.version = defaults.version;
@@ -105,14 +99,6 @@ public final class GetAppSecConfigurationVersionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecConfigurationVersionResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder productionStatus(String productionStatus) {
             if (productionStatus == null) {
               throw new MissingRequiredPropertyException("GetAppSecConfigurationVersionResult", "productionStatus");
@@ -139,7 +125,6 @@ public final class GetAppSecConfigurationVersionResult {
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.latestVersion = latestVersion;
-            _resultValue.outputText = outputText;
             _resultValue.productionStatus = productionStatus;
             _resultValue.stagingStatus = stagingStatus;
             _resultValue.version = version;

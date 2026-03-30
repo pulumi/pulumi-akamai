@@ -20,7 +20,6 @@ public final class GetAppSecExportConfigurationResult {
      */
     private String id;
     private String json;
-    private String outputText;
     private @Nullable List<String> searches;
     private Integer version;
 
@@ -37,9 +36,6 @@ public final class GetAppSecExportConfigurationResult {
     }
     public String json() {
         return this.json;
-    }
-    public String outputText() {
-        return this.outputText;
     }
     public List<String> searches() {
         return this.searches == null ? List.of() : this.searches;
@@ -60,7 +56,6 @@ public final class GetAppSecExportConfigurationResult {
         private Integer configId;
         private String id;
         private String json;
-        private String outputText;
         private @Nullable List<String> searches;
         private Integer version;
         public Builder() {}
@@ -69,7 +64,6 @@ public final class GetAppSecExportConfigurationResult {
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
-    	      this.outputText = defaults.outputText;
     	      this.searches = defaults.searches;
     	      this.version = defaults.version;
         }
@@ -99,14 +93,6 @@ public final class GetAppSecExportConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecExportConfigurationResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder searches(@Nullable List<String> searches) {
 
             this.searches = searches;
@@ -128,7 +114,6 @@ public final class GetAppSecExportConfigurationResult {
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
-            _resultValue.outputText = outputText;
             _resultValue.searches = searches;
             _resultValue.version = version;
             return _resultValue;

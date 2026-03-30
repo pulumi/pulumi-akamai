@@ -31,7 +31,6 @@ export interface GetAppSecCustomDenyResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
 }
 export function getAppSecCustomDenyOutput(args: GetAppSecCustomDenyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecCustomDenyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

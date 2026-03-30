@@ -30,7 +30,6 @@ export interface GetAppSecSecurityPolicyResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly securityPolicyId: string;
     readonly securityPolicyIdLists: string[];
     readonly securityPolicyName?: string;

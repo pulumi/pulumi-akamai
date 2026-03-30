@@ -27,7 +27,7 @@ class GetCPSEnrollmentResult:
     """
     A collection of values returned by getCPSEnrollment.
     """
-    def __init__(__self__, admin_contacts=None, assigned_slots=None, certificate_chain_type=None, certificate_type=None, common_name=None, contract_id=None, csrs=None, dns_challenges=None, enable_multi_stacked_certificates=None, enrollment_id=None, http_challenges=None, id=None, network_configurations=None, org_id=None, organizations=None, pending_changes=None, production_slots=None, registration_authority=None, sans=None, secure_network=None, signature_algorithm=None, sni_only=None, staging_slots=None, tech_contacts=None, validation_type=None):
+    def __init__(__self__, admin_contacts=None, assigned_slots=None, certificate_chain_type=None, certificate_type=None, common_name=None, contract_id=None, csrs=None, dns_challenges=None, enable_multi_stacked_certificates=None, enrollment_id=None, http_challenges=None, id=None, network_configurations=None, org_id=None, organizations=None, pending_changes=None, post_verification_warnings=None, pre_verification_warnings=None, production_slots=None, registration_authority=None, sans=None, secure_network=None, signature_algorithm=None, sni_only=None, staging_slots=None, tech_contacts=None, validation_type=None):
         if admin_contacts and not isinstance(admin_contacts, list):
             raise TypeError("Expected argument 'admin_contacts' to be a list")
         pulumi.set(__self__, "admin_contacts", admin_contacts)
@@ -76,6 +76,12 @@ class GetCPSEnrollmentResult:
         if pending_changes and not isinstance(pending_changes, bool):
             raise TypeError("Expected argument 'pending_changes' to be a bool")
         pulumi.set(__self__, "pending_changes", pending_changes)
+        if post_verification_warnings and not isinstance(post_verification_warnings, str):
+            raise TypeError("Expected argument 'post_verification_warnings' to be a str")
+        pulumi.set(__self__, "post_verification_warnings", post_verification_warnings)
+        if pre_verification_warnings and not isinstance(pre_verification_warnings, str):
+            raise TypeError("Expected argument 'pre_verification_warnings' to be a str")
+        pulumi.set(__self__, "pre_verification_warnings", pre_verification_warnings)
         if production_slots and not isinstance(production_slots, list):
             raise TypeError("Expected argument 'production_slots' to be a list")
         pulumi.set(__self__, "production_slots", production_slots)
@@ -188,6 +194,16 @@ class GetCPSEnrollmentResult:
         return pulumi.get(self, "pending_changes")
 
     @_builtins.property
+    @pulumi.getter(name="postVerificationWarnings")
+    def post_verification_warnings(self) -> _builtins.str:
+        return pulumi.get(self, "post_verification_warnings")
+
+    @_builtins.property
+    @pulumi.getter(name="preVerificationWarnings")
+    def pre_verification_warnings(self) -> _builtins.str:
+        return pulumi.get(self, "pre_verification_warnings")
+
+    @_builtins.property
     @pulumi.getter(name="productionSlots")
     def production_slots(self) -> Sequence[_builtins.int]:
         return pulumi.get(self, "production_slots")
@@ -255,6 +271,8 @@ class AwaitableGetCPSEnrollmentResult(GetCPSEnrollmentResult):
             org_id=self.org_id,
             organizations=self.organizations,
             pending_changes=self.pending_changes,
+            post_verification_warnings=self.post_verification_warnings,
+            pre_verification_warnings=self.pre_verification_warnings,
             production_slots=self.production_slots,
             registration_authority=self.registration_authority,
             sans=self.sans,
@@ -293,6 +311,8 @@ def get_cps_enrollment(enrollment_id: Optional[_builtins.int] = None,
         org_id=pulumi.get(__ret__, 'org_id'),
         organizations=pulumi.get(__ret__, 'organizations'),
         pending_changes=pulumi.get(__ret__, 'pending_changes'),
+        post_verification_warnings=pulumi.get(__ret__, 'post_verification_warnings'),
+        pre_verification_warnings=pulumi.get(__ret__, 'pre_verification_warnings'),
         production_slots=pulumi.get(__ret__, 'production_slots'),
         registration_authority=pulumi.get(__ret__, 'registration_authority'),
         sans=pulumi.get(__ret__, 'sans'),
@@ -328,6 +348,8 @@ def get_cps_enrollment_output(enrollment_id: Optional[pulumi.Input[_builtins.int
         org_id=pulumi.get(__response__, 'org_id'),
         organizations=pulumi.get(__response__, 'organizations'),
         pending_changes=pulumi.get(__response__, 'pending_changes'),
+        post_verification_warnings=pulumi.get(__response__, 'post_verification_warnings'),
+        pre_verification_warnings=pulumi.get(__response__, 'pre_verification_warnings'),
         production_slots=pulumi.get(__response__, 'production_slots'),
         registration_authority=pulumi.get(__response__, 'registration_authority'),
         sans=pulumi.get(__response__, 'sans'),

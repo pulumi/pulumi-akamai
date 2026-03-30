@@ -37,7 +37,6 @@ export interface GetNetworkListsResult {
     readonly lists: string[];
     readonly name?: string;
     readonly networkListId: string;
-    readonly outputText: string;
     readonly syncPoint: number;
     readonly type?: string;
 }

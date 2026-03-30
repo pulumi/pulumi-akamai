@@ -26,7 +26,7 @@ class GetAppSecPenaltyBoxResult:
     """
     A collection of values returned by getAppSecPenaltyBox.
     """
-    def __init__(__self__, action=None, config_id=None, enabled=None, id=None, output_text=None, security_policy_id=None):
+    def __init__(__self__, action=None, config_id=None, enabled=None, id=None, security_policy_id=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -39,9 +39,6 @@ class GetAppSecPenaltyBoxResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
-        if output_text and not isinstance(output_text, str):
-            raise TypeError("Expected argument 'output_text' to be a str")
-        pulumi.set(__self__, "output_text", output_text)
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
@@ -70,11 +67,6 @@ class GetAppSecPenaltyBoxResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> _builtins.str:
-        return pulumi.get(self, "output_text")
-
-    @_builtins.property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> _builtins.str:
         return pulumi.get(self, "security_policy_id")
@@ -90,7 +82,6 @@ class AwaitableGetAppSecPenaltyBoxResult(GetAppSecPenaltyBoxResult):
             config_id=self.config_id,
             enabled=self.enabled,
             id=self.id,
-            output_text=self.output_text,
             security_policy_id=self.security_policy_id)
 
 
@@ -111,7 +102,6 @@ def get_app_sec_penalty_box(config_id: Optional[_builtins.int] = None,
         config_id=pulumi.get(__ret__, 'config_id'),
         enabled=pulumi.get(__ret__, 'enabled'),
         id=pulumi.get(__ret__, 'id'),
-        output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 def get_app_sec_penalty_box_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
                                    security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -129,5 +119,4 @@ def get_app_sec_penalty_box_output(config_id: Optional[pulumi.Input[_builtins.in
         config_id=pulumi.get(__response__, 'config_id'),
         enabled=pulumi.get(__response__, 'enabled'),
         id=pulumi.get(__response__, 'id'),
-        output_text=pulumi.get(__response__, 'output_text'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

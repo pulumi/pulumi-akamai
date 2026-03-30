@@ -6,7 +6,6 @@ package com.pulumi.akamai;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -93,21 +92,6 @@ public final class ClientlistActivationArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.siebelTicketId);
     }
 
-    /**
-     * The client list version.
-     * 
-     */
-    @Import(name="version", required=true)
-    private Output<Integer> version;
-
-    /**
-     * @return The client list version.
-     * 
-     */
-    public Output<Integer> version() {
-        return this.version;
-    }
-
     private ClientlistActivationArgs() {}
 
     private ClientlistActivationArgs(ClientlistActivationArgs $) {
@@ -116,7 +100,6 @@ public final class ClientlistActivationArgs extends com.pulumi.resources.Resourc
         this.network = $.network;
         this.notificationRecipients = $.notificationRecipients;
         this.siebelTicketId = $.siebelTicketId;
-        this.version = $.version;
     }
 
     public static Builder builder() {
@@ -252,36 +235,12 @@ public final class ClientlistActivationArgs extends com.pulumi.resources.Resourc
             return siebelTicketId(Output.of(siebelTicketId));
         }
 
-        /**
-         * @param version The client list version.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder version(Output<Integer> version) {
-            $.version = version;
-            return this;
-        }
-
-        /**
-         * @param version The client list version.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder version(Integer version) {
-            return version(Output.of(version));
-        }
-
         public ClientlistActivationArgs build() {
             if ($.listId == null) {
                 throw new MissingRequiredPropertyException("ClientlistActivationArgs", "listId");
             }
             if ($.network == null) {
                 throw new MissingRequiredPropertyException("ClientlistActivationArgs", "network");
-            }
-            if ($.version == null) {
-                throw new MissingRequiredPropertyException("ClientlistActivationArgs", "version");
             }
             return $;
         }

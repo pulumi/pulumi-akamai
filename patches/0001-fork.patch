@@ -5,7 +5,7 @@ Subject: [PATCH] fork
 
 
 diff --git a/pkg/providers/property/resource_akamai_property.go b/pkg/providers/property/resource_akamai_property.go
-index 62e5d079..9785e958 100644
+index 4acba118..ddbf2508 100644
 --- a/pkg/providers/property/resource_akamai_property.go
 +++ b/pkg/providers/property/resource_akamai_property.go
 @@ -618,9 +618,10 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter

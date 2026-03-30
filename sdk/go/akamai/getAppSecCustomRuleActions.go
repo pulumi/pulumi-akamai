@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -34,7 +34,6 @@ type GetAppSecCustomRuleActionsResult struct {
 	CustomRuleId *int `pulumi:"customRuleId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
-	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -84,10 +83,6 @@ func (o GetAppSecCustomRuleActionsResultOutput) CustomRuleId() pulumi.IntPtrOutp
 // The provider-assigned unique ID for this managed resource.
 func (o GetAppSecCustomRuleActionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecCustomRuleActionsResult) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetAppSecCustomRuleActionsResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppSecCustomRuleActionsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecCustomRuleActionsResultOutput) SecurityPolicyId() pulumi.StringOutput {

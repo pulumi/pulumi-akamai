@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -36,7 +36,6 @@ type LookupAppsecRapidRulesResult struct {
 	Enabled              bool                           `pulumi:"enabled"`
 	Id                   string                         `pulumi:"id"`
 	IncludeExpiryDetails *bool                          `pulumi:"includeExpiryDetails"`
-	OutputText           string                         `pulumi:"outputText"`
 	RapidRules           []GetAppsecRapidRulesRapidRule `pulumi:"rapidRules"`
 	RuleId               *int                           `pulumi:"ruleId"`
 	SecurityPolicyId     string                         `pulumi:"securityPolicyId"`
@@ -96,10 +95,6 @@ func (o LookupAppsecRapidRulesResultOutput) Id() pulumi.StringOutput {
 
 func (o LookupAppsecRapidRulesResultOutput) IncludeExpiryDetails() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LookupAppsecRapidRulesResult) *bool { return v.IncludeExpiryDetails }).(pulumi.BoolPtrOutput)
-}
-
-func (o LookupAppsecRapidRulesResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppsecRapidRulesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o LookupAppsecRapidRulesResultOutput) RapidRules() GetAppsecRapidRulesRapidRuleArrayOutput {

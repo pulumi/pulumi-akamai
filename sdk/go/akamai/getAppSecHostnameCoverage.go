@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,9 +24,8 @@ func GetAppSecHostnameCoverage(ctx *pulumi.Context, opts ...pulumi.InvokeOption)
 // A collection of values returned by getAppSecHostnameCoverage.
 type GetAppSecHostnameCoverageResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	Json       string `pulumi:"json"`
-	OutputText string `pulumi:"outputText"`
+	Id   string `pulumi:"id"`
+	Json string `pulumi:"json"`
 }
 
 func GetAppSecHostnameCoverageOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageResultOutput {
@@ -58,10 +57,6 @@ func (o GetAppSecHostnameCoverageResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecHostnameCoverageResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecHostnameCoverageResult) string { return v.Json }).(pulumi.StringOutput)
-}
-
-func (o GetAppSecHostnameCoverageResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppSecHostnameCoverageResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

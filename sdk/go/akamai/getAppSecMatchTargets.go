@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -34,7 +34,6 @@ type GetAppSecMatchTargetsResult struct {
 	Id            string `pulumi:"id"`
 	Json          string `pulumi:"json"`
 	MatchTargetId *int   `pulumi:"matchTargetId"`
-	OutputText    string `pulumi:"outputText"`
 }
 
 func GetAppSecMatchTargetsOutput(ctx *pulumi.Context, args GetAppSecMatchTargetsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecMatchTargetsResultOutput {
@@ -86,10 +85,6 @@ func (o GetAppSecMatchTargetsResultOutput) Json() pulumi.StringOutput {
 
 func (o GetAppSecMatchTargetsResultOutput) MatchTargetId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetAppSecMatchTargetsResult) *int { return v.MatchTargetId }).(pulumi.IntPtrOutput)
-}
-
-func (o GetAppSecMatchTargetsResultOutput) OutputText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppSecMatchTargetsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

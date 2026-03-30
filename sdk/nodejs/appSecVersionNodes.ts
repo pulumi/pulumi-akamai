@@ -37,10 +37,6 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
      */
     declare public readonly configId: pulumi.Output<number>;
     /**
-     * Text representation
-     */
-    declare public /*out*/ readonly outputText: pulumi.Output<string>;
-    /**
      * Brief description of the security configuration version
      */
     declare public readonly versionNotes: pulumi.Output<string>;
@@ -59,7 +55,6 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AppSecVersionNodesState | undefined;
             resourceInputs["configId"] = state?.configId;
-            resourceInputs["outputText"] = state?.outputText;
             resourceInputs["versionNotes"] = state?.versionNotes;
         } else {
             const args = argsOrState as AppSecVersionNodesArgs | undefined;
@@ -71,7 +66,6 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
             }
             resourceInputs["configId"] = args?.configId;
             resourceInputs["versionNotes"] = args?.versionNotes;
-            resourceInputs["outputText"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecVersionNodes.__pulumiType, name, resourceInputs, opts);
@@ -86,10 +80,6 @@ export interface AppSecVersionNodesState {
      * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
-    /**
-     * Text representation
-     */
-    outputText?: pulumi.Input<string>;
     /**
      * Brief description of the security configuration version
      */

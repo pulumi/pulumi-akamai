@@ -31,7 +31,6 @@ export interface GetAppSecHostnameCoverageOverlappingResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
 }
 export function getAppSecHostnameCoverageOverlappingOutput(args: GetAppSecHostnameCoverageOverlappingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecHostnameCoverageOverlappingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

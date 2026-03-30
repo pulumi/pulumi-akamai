@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v10/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,20 +40,22 @@ type GetCPSEnrollmentResult struct {
 	EnrollmentId                   int                             `pulumi:"enrollmentId"`
 	HttpChallenges                 []GetCPSEnrollmentHttpChallenge `pulumi:"httpChallenges"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                    string                                 `pulumi:"id"`
-	NetworkConfigurations []GetCPSEnrollmentNetworkConfiguration `pulumi:"networkConfigurations"`
-	OrgId                 int                                    `pulumi:"orgId"`
-	Organizations         []GetCPSEnrollmentOrganization         `pulumi:"organizations"`
-	PendingChanges        bool                                   `pulumi:"pendingChanges"`
-	ProductionSlots       []int                                  `pulumi:"productionSlots"`
-	RegistrationAuthority string                                 `pulumi:"registrationAuthority"`
-	Sans                  []string                               `pulumi:"sans"`
-	SecureNetwork         string                                 `pulumi:"secureNetwork"`
-	SignatureAlgorithm    string                                 `pulumi:"signatureAlgorithm"`
-	SniOnly               bool                                   `pulumi:"sniOnly"`
-	StagingSlots          []int                                  `pulumi:"stagingSlots"`
-	TechContacts          []GetCPSEnrollmentTechContact          `pulumi:"techContacts"`
-	ValidationType        string                                 `pulumi:"validationType"`
+	Id                       string                                 `pulumi:"id"`
+	NetworkConfigurations    []GetCPSEnrollmentNetworkConfiguration `pulumi:"networkConfigurations"`
+	OrgId                    int                                    `pulumi:"orgId"`
+	Organizations            []GetCPSEnrollmentOrganization         `pulumi:"organizations"`
+	PendingChanges           bool                                   `pulumi:"pendingChanges"`
+	PostVerificationWarnings string                                 `pulumi:"postVerificationWarnings"`
+	PreVerificationWarnings  string                                 `pulumi:"preVerificationWarnings"`
+	ProductionSlots          []int                                  `pulumi:"productionSlots"`
+	RegistrationAuthority    string                                 `pulumi:"registrationAuthority"`
+	Sans                     []string                               `pulumi:"sans"`
+	SecureNetwork            string                                 `pulumi:"secureNetwork"`
+	SignatureAlgorithm       string                                 `pulumi:"signatureAlgorithm"`
+	SniOnly                  bool                                   `pulumi:"sniOnly"`
+	StagingSlots             []int                                  `pulumi:"stagingSlots"`
+	TechContacts             []GetCPSEnrollmentTechContact          `pulumi:"techContacts"`
+	ValidationType           string                                 `pulumi:"validationType"`
 }
 
 func GetCPSEnrollmentOutput(ctx *pulumi.Context, args GetCPSEnrollmentOutputArgs, opts ...pulumi.InvokeOption) GetCPSEnrollmentResultOutput {
@@ -152,6 +154,14 @@ func (o GetCPSEnrollmentResultOutput) Organizations() GetCPSEnrollmentOrganizati
 
 func (o GetCPSEnrollmentResultOutput) PendingChanges() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentResult) bool { return v.PendingChanges }).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentResultOutput) PostVerificationWarnings() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentResult) string { return v.PostVerificationWarnings }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentResultOutput) PreVerificationWarnings() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentResult) string { return v.PreVerificationWarnings }).(pulumi.StringOutput)
 }
 
 func (o GetCPSEnrollmentResultOutput) ProductionSlots() pulumi.IntArrayOutput {

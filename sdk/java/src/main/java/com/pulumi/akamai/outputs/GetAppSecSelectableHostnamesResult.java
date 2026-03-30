@@ -27,7 +27,6 @@ public final class GetAppSecSelectableHostnamesResult {
      * 
      */
     private String id;
-    private String outputText;
 
     private GetAppSecSelectableHostnamesResult() {}
     public Optional<Boolean> activeInProduction() {
@@ -58,9 +57,6 @@ public final class GetAppSecSelectableHostnamesResult {
     public String id() {
         return this.id;
     }
-    public String outputText() {
-        return this.outputText;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -79,7 +75,6 @@ public final class GetAppSecSelectableHostnamesResult {
         private List<String> hostnames;
         private String hostnamesJson;
         private String id;
-        private String outputText;
         public Builder() {}
         public Builder(GetAppSecSelectableHostnamesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -91,7 +86,6 @@ public final class GetAppSecSelectableHostnamesResult {
     	      this.hostnames = defaults.hostnames;
     	      this.hostnamesJson = defaults.hostnamesJson;
     	      this.id = defaults.id;
-    	      this.outputText = defaults.outputText;
         }
 
         @CustomType.Setter
@@ -151,14 +145,6 @@ public final class GetAppSecSelectableHostnamesResult {
             this.id = id;
             return this;
         }
-        @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecSelectableHostnamesResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
         public GetAppSecSelectableHostnamesResult build() {
             final var _resultValue = new GetAppSecSelectableHostnamesResult();
             _resultValue.activeInProduction = activeInProduction;
@@ -169,7 +155,6 @@ public final class GetAppSecSelectableHostnamesResult {
             _resultValue.hostnames = hostnames;
             _resultValue.hostnamesJson = hostnamesJson;
             _resultValue.id = id;
-            _resultValue.outputText = outputText;
             return _resultValue;
         }
     }

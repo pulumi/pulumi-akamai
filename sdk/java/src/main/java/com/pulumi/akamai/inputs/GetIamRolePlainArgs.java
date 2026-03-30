@@ -4,26 +4,36 @@
 package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetIamRolePlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetIamRolePlainArgs Empty = new GetIamRolePlainArgs();
 
-    @Import(name="roleId", required=true)
-    private Integer roleId;
+    @Import(name="roleId")
+    private @Nullable Integer roleId;
 
-    public Integer roleId() {
-        return this.roleId;
+    public Optional<Integer> roleId() {
+        return Optional.ofNullable(this.roleId);
+    }
+
+    @Import(name="roleName")
+    private @Nullable String roleName;
+
+    public Optional<String> roleName() {
+        return Optional.ofNullable(this.roleName);
     }
 
     private GetIamRolePlainArgs() {}
 
     private GetIamRolePlainArgs(GetIamRolePlainArgs $) {
         this.roleId = $.roleId;
+        this.roleName = $.roleName;
     }
 
     public static Builder builder() {
@@ -44,15 +54,17 @@ public final class GetIamRolePlainArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetIamRolePlainArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder roleId(Integer roleId) {
+        public Builder roleId(@Nullable Integer roleId) {
             $.roleId = roleId;
             return this;
         }
 
+        public Builder roleName(@Nullable String roleName) {
+            $.roleName = roleName;
+            return this;
+        }
+
         public GetIamRolePlainArgs build() {
-            if ($.roleId == null) {
-                throw new MissingRequiredPropertyException("GetIamRolePlainArgs", "roleId");
-            }
             return $;
         }
     }

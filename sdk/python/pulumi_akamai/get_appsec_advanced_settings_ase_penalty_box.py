@@ -26,7 +26,7 @@ class GetAppsecAdvancedSettingsAsePenaltyBoxResult:
     """
     A collection of values returned by getAppsecAdvancedSettingsAsePenaltyBox.
     """
-    def __init__(__self__, config_id=None, id=None, json=None, output_text=None):
+    def __init__(__self__, config_id=None, id=None, json=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -36,9 +36,6 @@ class GetAppsecAdvancedSettingsAsePenaltyBoxResult:
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
-        if output_text and not isinstance(output_text, str):
-            raise TypeError("Expected argument 'output_text' to be a str")
-        pulumi.set(__self__, "output_text", output_text)
 
     @_builtins.property
     @pulumi.getter(name="configId")
@@ -58,11 +55,6 @@ class GetAppsecAdvancedSettingsAsePenaltyBoxResult:
     def json(self) -> _builtins.str:
         return pulumi.get(self, "json")
 
-    @_builtins.property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> _builtins.str:
-        return pulumi.get(self, "output_text")
-
 
 class AwaitableGetAppsecAdvancedSettingsAsePenaltyBoxResult(GetAppsecAdvancedSettingsAsePenaltyBoxResult):
     # pylint: disable=using-constant-test
@@ -72,8 +64,7 @@ class AwaitableGetAppsecAdvancedSettingsAsePenaltyBoxResult(GetAppsecAdvancedSet
         return GetAppsecAdvancedSettingsAsePenaltyBoxResult(
             config_id=self.config_id,
             id=self.id,
-            json=self.json,
-            output_text=self.output_text)
+            json=self.json)
 
 
 def get_appsec_advanced_settings_ase_penalty_box(config_id: Optional[_builtins.int] = None,
@@ -89,8 +80,7 @@ def get_appsec_advanced_settings_ase_penalty_box(config_id: Optional[_builtins.i
     return AwaitableGetAppsecAdvancedSettingsAsePenaltyBoxResult(
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
-        json=pulumi.get(__ret__, 'json'),
-        output_text=pulumi.get(__ret__, 'output_text'))
+        json=pulumi.get(__ret__, 'json'))
 def get_appsec_advanced_settings_ase_penalty_box_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecAdvancedSettingsAsePenaltyBoxResult]:
     """
@@ -103,5 +93,4 @@ def get_appsec_advanced_settings_ase_penalty_box_output(config_id: Optional[pulu
     return __ret__.apply(lambda __response__: GetAppsecAdvancedSettingsAsePenaltyBoxResult(
         config_id=pulumi.get(__response__, 'config_id'),
         id=pulumi.get(__response__, 'id'),
-        json=pulumi.get(__response__, 'json'),
-        output_text=pulumi.get(__response__, 'output_text')))
+        json=pulumi.get(__response__, 'json')))

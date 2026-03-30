@@ -6,10 +6,12 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-export function getIamRole(args: GetIamRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetIamRoleResult> {
+export function getIamRole(args?: GetIamRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetIamRoleResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamRole:getIamRole", {
         "roleId": args.roleId,
+        "roleName": args.roleName,
     }, opts);
 }
 
@@ -17,7 +19,8 @@ export function getIamRole(args: GetIamRoleArgs, opts?: pulumi.InvokeOptions): P
  * A collection of arguments for invoking getIamRole.
  */
 export interface GetIamRoleArgs {
-    roleId: number;
+    roleId?: number;
+    roleName?: string;
 }
 
 /**
@@ -35,15 +38,17 @@ export interface GetIamRoleResult {
     readonly modifiedBy: string;
     readonly modifiedDate: string;
     readonly roleDescription: string;
-    readonly roleId: number;
+    readonly roleId?: number;
     readonly roleName: string;
     readonly type: string;
     readonly users: outputs.GetIamRoleUser[];
 }
-export function getIamRoleOutput(args: GetIamRoleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamRoleResult> {
+export function getIamRoleOutput(args?: GetIamRoleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamRoleResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getIamRole:getIamRole", {
         "roleId": args.roleId,
+        "roleName": args.roleName,
     }, opts);
 }
 
@@ -51,5 +56,6 @@ export function getIamRoleOutput(args: GetIamRoleOutputArgs, opts?: pulumi.Invok
  * A collection of arguments for invoking getIamRole.
  */
 export interface GetIamRoleOutputArgs {
-    roleId: pulumi.Input<number>;
+    roleId?: pulumi.Input<number>;
+    roleName?: pulumi.Input<string>;
 }

@@ -61,7 +61,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
-        public readonly string OutputText;
 
         [OutputConstructor]
         private GetAppSecCustomRulesResult(
@@ -71,15 +70,12 @@ namespace Pulumi.Akamai
 
             string id,
 
-            string json,
-
-            string outputText)
+            string json)
         {
             ConfigId = configId;
             CustomRuleId = customRuleId;
             Id = id;
             Json = json;
-            OutputText = outputText;
         }
     }
 }

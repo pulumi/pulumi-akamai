@@ -33,7 +33,6 @@ export interface GetAppSecApiRequestConstraintsResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecApiRequestConstraintsOutput(args: GetAppSecApiRequestConstraintsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecApiRequestConstraintsResult> {

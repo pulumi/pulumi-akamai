@@ -27,7 +27,6 @@ public final class GetAppSecIPGeoResult {
     private String id;
     private List<GetAppSecIPGeoIpControl> ipControls;
     private String mode;
-    private String outputText;
     private String securityPolicyId;
     private String ukraineGeoControlAction;
 
@@ -60,9 +59,6 @@ public final class GetAppSecIPGeoResult {
     public String mode() {
         return this.mode;
     }
-    public String outputText() {
-        return this.outputText;
-    }
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -87,7 +83,6 @@ public final class GetAppSecIPGeoResult {
         private String id;
         private List<GetAppSecIPGeoIpControl> ipControls;
         private String mode;
-        private String outputText;
         private String securityPolicyId;
         private String ukraineGeoControlAction;
         public Builder() {}
@@ -101,7 +96,6 @@ public final class GetAppSecIPGeoResult {
     	      this.id = defaults.id;
     	      this.ipControls = defaults.ipControls;
     	      this.mode = defaults.mode;
-    	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
     	      this.ukraineGeoControlAction = defaults.ukraineGeoControlAction;
         }
@@ -183,14 +177,6 @@ public final class GetAppSecIPGeoResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder securityPolicyId(String securityPolicyId) {
             if (securityPolicyId == null) {
               throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "securityPolicyId");
@@ -216,7 +202,6 @@ public final class GetAppSecIPGeoResult {
             _resultValue.id = id;
             _resultValue.ipControls = ipControls;
             _resultValue.mode = mode;
-            _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;
             _resultValue.ukraineGeoControlAction = ukraineGeoControlAction;
             return _resultValue;

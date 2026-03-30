@@ -19,7 +19,6 @@ public final class GetAppSecHostnameCoverageOverlappingResult {
      */
     private String id;
     private String json;
-    private String outputText;
 
     private GetAppSecHostnameCoverageOverlappingResult() {}
     public Integer configId() {
@@ -38,9 +37,6 @@ public final class GetAppSecHostnameCoverageOverlappingResult {
     public String json() {
         return this.json;
     }
-    public String outputText() {
-        return this.outputText;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -55,7 +51,6 @@ public final class GetAppSecHostnameCoverageOverlappingResult {
         private String hostname;
         private String id;
         private String json;
-        private String outputText;
         public Builder() {}
         public Builder(GetAppSecHostnameCoverageOverlappingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -63,7 +58,6 @@ public final class GetAppSecHostnameCoverageOverlappingResult {
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
-    	      this.outputText = defaults.outputText;
         }
 
         @CustomType.Setter
@@ -98,21 +92,12 @@ public final class GetAppSecHostnameCoverageOverlappingResult {
             this.json = json;
             return this;
         }
-        @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppSecHostnameCoverageOverlappingResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
         public GetAppSecHostnameCoverageOverlappingResult build() {
             final var _resultValue = new GetAppSecHostnameCoverageOverlappingResult();
             _resultValue.configId = configId;
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.json = json;
-            _resultValue.outputText = outputText;
             return _resultValue;
         }
     }

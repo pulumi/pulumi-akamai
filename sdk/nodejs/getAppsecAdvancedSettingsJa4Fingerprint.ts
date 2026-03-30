@@ -28,7 +28,6 @@ export interface GetAppsecAdvancedSettingsJa4FingerprintResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly outputText: string;
 }
 export function getAppsecAdvancedSettingsJa4FingerprintOutput(args: GetAppsecAdvancedSettingsJa4FingerprintOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecAdvancedSettingsJa4FingerprintResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

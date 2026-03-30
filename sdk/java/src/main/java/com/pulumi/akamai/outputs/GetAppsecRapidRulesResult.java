@@ -21,7 +21,6 @@ public final class GetAppsecRapidRulesResult {
     private Boolean enabled;
     private String id;
     private @Nullable Boolean includeExpiryDetails;
-    private String outputText;
     private List<GetAppsecRapidRulesRapidRule> rapidRules;
     private @Nullable Integer ruleId;
     private String securityPolicyId;
@@ -41,9 +40,6 @@ public final class GetAppsecRapidRulesResult {
     }
     public Optional<Boolean> includeExpiryDetails() {
         return Optional.ofNullable(this.includeExpiryDetails);
-    }
-    public String outputText() {
-        return this.outputText;
     }
     public List<GetAppsecRapidRulesRapidRule> rapidRules() {
         return this.rapidRules;
@@ -69,7 +65,6 @@ public final class GetAppsecRapidRulesResult {
         private Boolean enabled;
         private String id;
         private @Nullable Boolean includeExpiryDetails;
-        private String outputText;
         private List<GetAppsecRapidRulesRapidRule> rapidRules;
         private @Nullable Integer ruleId;
         private String securityPolicyId;
@@ -81,7 +76,6 @@ public final class GetAppsecRapidRulesResult {
     	      this.enabled = defaults.enabled;
     	      this.id = defaults.id;
     	      this.includeExpiryDetails = defaults.includeExpiryDetails;
-    	      this.outputText = defaults.outputText;
     	      this.rapidRules = defaults.rapidRules;
     	      this.ruleId = defaults.ruleId;
     	      this.securityPolicyId = defaults.securityPolicyId;
@@ -126,14 +120,6 @@ public final class GetAppsecRapidRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder outputText(String outputText) {
-            if (outputText == null) {
-              throw new MissingRequiredPropertyException("GetAppsecRapidRulesResult", "outputText");
-            }
-            this.outputText = outputText;
-            return this;
-        }
-        @CustomType.Setter
         public Builder rapidRules(List<GetAppsecRapidRulesRapidRule> rapidRules) {
             if (rapidRules == null) {
               throw new MissingRequiredPropertyException("GetAppsecRapidRulesResult", "rapidRules");
@@ -165,7 +151,6 @@ public final class GetAppsecRapidRulesResult {
             _resultValue.enabled = enabled;
             _resultValue.id = id;
             _resultValue.includeExpiryDetails = includeExpiryDetails;
-            _resultValue.outputText = outputText;
             _resultValue.rapidRules = rapidRules;
             _resultValue.ruleId = ruleId;
             _resultValue.securityPolicyId = securityPolicyId;
