@@ -26,7 +26,7 @@ class GetAppSecEvalRulesResult:
     """
     A collection of values returned by getAppSecEvalRules.
     """
-    def __init__(__self__, condition_exception=None, config_id=None, eval_rule_action=None, id=None, json=None, rule_id=None, security_policy_id=None):
+    def __init__(__self__, condition_exception=None, config_id=None, eval_rule_action=None, id=None, json=None, output_text=None, rule_id=None, security_policy_id=None):
         if condition_exception and not isinstance(condition_exception, str):
             raise TypeError("Expected argument 'condition_exception' to be a str")
         pulumi.set(__self__, "condition_exception", condition_exception)
@@ -42,6 +42,9 @@ class GetAppSecEvalRulesResult:
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if rule_id and not isinstance(rule_id, int):
             raise TypeError("Expected argument 'rule_id' to be a int")
         pulumi.set(__self__, "rule_id", rule_id)
@@ -78,6 +81,11 @@ class GetAppSecEvalRulesResult:
         return pulumi.get(self, "json")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> Optional[_builtins.int]:
         return pulumi.get(self, "rule_id")
@@ -99,6 +107,7 @@ class AwaitableGetAppSecEvalRulesResult(GetAppSecEvalRulesResult):
             eval_rule_action=self.eval_rule_action,
             id=self.id,
             json=self.json,
+            output_text=self.output_text,
             rule_id=self.rule_id,
             security_policy_id=self.security_policy_id)
 
@@ -123,6 +132,7 @@ def get_app_sec_eval_rules(config_id: Optional[_builtins.int] = None,
         eval_rule_action=pulumi.get(__ret__, 'eval_rule_action'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         rule_id=pulumi.get(__ret__, 'rule_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 def get_app_sec_eval_rules_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
@@ -144,5 +154,6 @@ def get_app_sec_eval_rules_output(config_id: Optional[pulumi.Input[_builtins.int
         eval_rule_action=pulumi.get(__response__, 'eval_rule_action'),
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
+        output_text=pulumi.get(__response__, 'output_text'),
         rule_id=pulumi.get(__response__, 'rule_id'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

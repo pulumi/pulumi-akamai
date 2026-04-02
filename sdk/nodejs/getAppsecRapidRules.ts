@@ -35,6 +35,7 @@ export interface GetAppsecRapidRulesResult {
     readonly enabled: boolean;
     readonly id: string;
     readonly includeExpiryDetails?: boolean;
+    readonly outputText: string;
     readonly rapidRules: outputs.GetAppsecRapidRulesRapidRule[];
     readonly ruleId?: number;
     readonly securityPolicyId: string;

@@ -30,8 +30,9 @@ type LookupAppsecAdvancedSettingsPiiLearningArgs struct {
 type LookupAppsecAdvancedSettingsPiiLearningResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func LookupAppsecAdvancedSettingsPiiLearningOutput(ctx *pulumi.Context, args LookupAppsecAdvancedSettingsPiiLearningOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAdvancedSettingsPiiLearningResultOutput {
@@ -78,6 +79,10 @@ func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) Id() pulumi.StringO
 
 func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppsecAdvancedSettingsPiiLearningResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppsecAdvancedSettingsPiiLearningResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -32,8 +32,9 @@ type LookupAppSecCustomDenyResult struct {
 	ConfigId     int     `pulumi:"configId"`
 	CustomDenyId *string `pulumi:"customDenyId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func LookupAppSecCustomDenyOutput(ctx *pulumi.Context, args LookupAppSecCustomDenyOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecCustomDenyResultOutput {
@@ -85,6 +86,10 @@ func (o LookupAppSecCustomDenyResultOutput) Id() pulumi.StringOutput {
 
 func (o LookupAppSecCustomDenyResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecCustomDenyResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecCustomDenyResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecCustomDenyResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

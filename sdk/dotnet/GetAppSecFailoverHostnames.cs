@@ -55,6 +55,7 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
+        public readonly string OutputText;
 
         [OutputConstructor]
         private GetAppSecFailoverHostnamesResult(
@@ -64,12 +65,15 @@ namespace Pulumi.Akamai
 
             string id,
 
-            string json)
+            string json,
+
+            string outputText)
         {
             ConfigId = configId;
             Hostnames = hostnames;
             Id = id;
             Json = json;
+            OutputText = outputText;
         }
     }
 }

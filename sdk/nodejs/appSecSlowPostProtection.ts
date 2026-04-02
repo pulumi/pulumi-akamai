@@ -41,6 +41,10 @@ export class AppSecSlowPostProtection extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
+     * Text representation
+     */
+    declare public /*out*/ readonly outputText: pulumi.Output<string>;
+    /**
      * Unique identifier of the security policy
      */
     declare public readonly securityPolicyId: pulumi.Output<string>;
@@ -60,6 +64,7 @@ export class AppSecSlowPostProtection extends pulumi.CustomResource {
             const state = argsOrState as AppSecSlowPostProtectionState | undefined;
             resourceInputs["configId"] = state?.configId;
             resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["outputText"] = state?.outputText;
             resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppSecSlowPostProtectionArgs | undefined;
@@ -75,6 +80,7 @@ export class AppSecSlowPostProtection extends pulumi.CustomResource {
             resourceInputs["configId"] = args?.configId;
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["securityPolicyId"] = args?.securityPolicyId;
+            resourceInputs["outputText"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecSlowPostProtection.__pulumiType, name, resourceInputs, opts);
@@ -93,6 +99,10 @@ export interface AppSecSlowPostProtectionState {
      * Whether to enable slow POST protection
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Text representation
+     */
+    outputText?: pulumi.Input<string>;
     /**
      * Unique identifier of the security policy
      */

@@ -21,6 +21,7 @@ public final class GetAppSecReputationProfileActionsResult {
      */
     private String id;
     private String json;
+    private String outputText;
     private @Nullable Integer reputationProfileId;
     private String securityPolicyId;
 
@@ -40,6 +41,9 @@ public final class GetAppSecReputationProfileActionsResult {
     }
     public String json() {
         return this.json;
+    }
+    public String outputText() {
+        return this.outputText;
     }
     public Optional<Integer> reputationProfileId() {
         return Optional.ofNullable(this.reputationProfileId);
@@ -61,6 +65,7 @@ public final class GetAppSecReputationProfileActionsResult {
         private Integer configId;
         private String id;
         private String json;
+        private String outputText;
         private @Nullable Integer reputationProfileId;
         private String securityPolicyId;
         public Builder() {}
@@ -70,6 +75,7 @@ public final class GetAppSecReputationProfileActionsResult {
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
+    	      this.outputText = defaults.outputText;
     	      this.reputationProfileId = defaults.reputationProfileId;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
@@ -107,6 +113,14 @@ public final class GetAppSecReputationProfileActionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecReputationProfileActionsResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder reputationProfileId(@Nullable Integer reputationProfileId) {
 
             this.reputationProfileId = reputationProfileId;
@@ -126,6 +140,7 @@ public final class GetAppSecReputationProfileActionsResult {
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
+            _resultValue.outputText = outputText;
             _resultValue.reputationProfileId = reputationProfileId;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;

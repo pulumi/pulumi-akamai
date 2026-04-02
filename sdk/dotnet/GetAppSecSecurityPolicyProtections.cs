@@ -62,12 +62,14 @@ namespace Pulumi.Akamai
         public readonly bool ApplyRateControls;
         public readonly bool ApplyReputationControls;
         public readonly bool ApplySlowPostControls;
+        public readonly bool ApplyUrlProtectionControls;
         public readonly int ConfigId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
         public readonly string Json;
+        public readonly string OutputText;
         public readonly string SecurityPolicyId;
 
         [OutputConstructor]
@@ -88,11 +90,15 @@ namespace Pulumi.Akamai
 
             bool applySlowPostControls,
 
+            bool applyUrlProtectionControls,
+
             int configId,
 
             string id,
 
             string json,
+
+            string outputText,
 
             string securityPolicyId)
         {
@@ -104,9 +110,11 @@ namespace Pulumi.Akamai
             ApplyRateControls = applyRateControls;
             ApplyReputationControls = applyReputationControls;
             ApplySlowPostControls = applySlowPostControls;
+            ApplyUrlProtectionControls = applyUrlProtectionControls;
             ConfigId = configId;
             Id = id;
             Json = json;
+            OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
         }
     }

@@ -22,15 +22,15 @@ public final class CloudAccessKeyCredentialsBArgs extends com.pulumi.resources.R
      * Access key id from cloud provider which is used to sign API requests
      * 
      */
-    @Import(name="cloudAccessKeyId", required=true)
-    private Output<String> cloudAccessKeyId;
+    @Import(name="cloudAccessKeyId")
+    private @Nullable Output<String> cloudAccessKeyId;
 
     /**
      * @return Access key id from cloud provider which is used to sign API requests
      * 
      */
-    public Output<String> cloudAccessKeyId() {
-        return this.cloudAccessKeyId;
+    public Optional<Output<String>> cloudAccessKeyId() {
+        return Optional.ofNullable(this.cloudAccessKeyId);
     }
 
     /**
@@ -127,7 +127,7 @@ public final class CloudAccessKeyCredentialsBArgs extends com.pulumi.resources.R
          * @return builder
          * 
          */
-        public Builder cloudAccessKeyId(Output<String> cloudAccessKeyId) {
+        public Builder cloudAccessKeyId(@Nullable Output<String> cloudAccessKeyId) {
             $.cloudAccessKeyId = cloudAccessKeyId;
             return this;
         }
@@ -227,9 +227,6 @@ public final class CloudAccessKeyCredentialsBArgs extends com.pulumi.resources.R
         }
 
         public CloudAccessKeyCredentialsBArgs build() {
-            if ($.cloudAccessKeyId == null) {
-                throw new MissingRequiredPropertyException("CloudAccessKeyCredentialsBArgs", "cloudAccessKeyId");
-            }
             if ($.cloudSecretAccessKey == null) {
                 throw new MissingRequiredPropertyException("CloudAccessKeyCredentialsBArgs", "cloudSecretAccessKey");
             }

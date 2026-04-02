@@ -59,15 +59,19 @@ class AppSecVersionNodesArgs:
 class _AppSecVersionNodesState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 output_text: Optional[pulumi.Input[_builtins.str]] = None,
                  version_notes: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecVersionNodes resources.
 
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[_builtins.str] output_text: Text representation
         :param pulumi.Input[_builtins.str] version_notes: Brief description of the security configuration version
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
+        if output_text is not None:
+            pulumi.set(__self__, "output_text", output_text)
         if version_notes is not None:
             pulumi.set(__self__, "version_notes", version_notes)
 
@@ -82,6 +86,18 @@ class _AppSecVersionNodesState:
     @config_id.setter
     def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "config_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Text representation
+        """
+        return pulumi.get(self, "output_text")
+
+    @output_text.setter
+    def output_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "output_text", value)
 
     @_builtins.property
     @pulumi.getter(name="versionNotes")
@@ -154,6 +170,7 @@ class AppSecVersionNodes(pulumi.CustomResource):
             if version_notes is None and not opts.urn:
                 raise TypeError("Missing required property 'version_notes'")
             __props__.__dict__["version_notes"] = version_notes
+            __props__.__dict__["output_text"] = None
         super(AppSecVersionNodes, __self__).__init__(
             'akamai:index/appSecVersionNodes:AppSecVersionNodes',
             resource_name,
@@ -165,6 +182,7 @@ class AppSecVersionNodes(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[_builtins.int]] = None,
+            output_text: Optional[pulumi.Input[_builtins.str]] = None,
             version_notes: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecVersionNodes':
         """
         Get an existing AppSecVersionNodes resource's state with the given name, id, and optional extra
@@ -174,6 +192,7 @@ class AppSecVersionNodes(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[_builtins.str] output_text: Text representation
         :param pulumi.Input[_builtins.str] version_notes: Brief description of the security configuration version
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -181,6 +200,7 @@ class AppSecVersionNodes(pulumi.CustomResource):
         __props__ = _AppSecVersionNodesState.__new__(_AppSecVersionNodesState)
 
         __props__.__dict__["config_id"] = config_id
+        __props__.__dict__["output_text"] = output_text
         __props__.__dict__["version_notes"] = version_notes
         return AppSecVersionNodes(resource_name, opts=opts, __props__=__props__)
 
@@ -191,6 +211,14 @@ class AppSecVersionNodes(pulumi.CustomResource):
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
+
+    @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> pulumi.Output[_builtins.str]:
+        """
+        Text representation
+        """
+        return pulumi.get(self, "output_text")
 
     @_builtins.property
     @pulumi.getter(name="versionNotes")

@@ -33,6 +33,7 @@ type GetAppSecReputationProfilesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                  string `pulumi:"id"`
 	Json                string `pulumi:"json"`
+	OutputText          string `pulumi:"outputText"`
 	ReputationProfileId *int   `pulumi:"reputationProfileId"`
 }
 
@@ -81,6 +82,10 @@ func (o GetAppSecReputationProfilesResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecReputationProfilesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecReputationProfilesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecReputationProfilesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfilesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecReputationProfilesResultOutput) ReputationProfileId() pulumi.IntPtrOutput {

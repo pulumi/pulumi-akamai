@@ -19,6 +19,8 @@ type AppSecSlowPostProtection struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// Whether to enable slow POST protection
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Text representation
+	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
@@ -66,6 +68,8 @@ type appSecSlowPostProtectionState struct {
 	ConfigId *int `pulumi:"configId"`
 	// Whether to enable slow POST protection
 	Enabled *bool `pulumi:"enabled"`
+	// Text representation
+	OutputText *string `pulumi:"outputText"`
 	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
@@ -75,6 +79,8 @@ type AppSecSlowPostProtectionState struct {
 	ConfigId pulumi.IntPtrInput
 	// Whether to enable slow POST protection
 	Enabled pulumi.BoolPtrInput
+	// Text representation
+	OutputText pulumi.StringPtrInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
@@ -197,6 +203,11 @@ func (o AppSecSlowPostProtectionOutput) ConfigId() pulumi.IntOutput {
 // Whether to enable slow POST protection
 func (o AppSecSlowPostProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecSlowPostProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Text representation
+func (o AppSecSlowPostProtectionOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecSlowPostProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }
 
 // Unique identifier of the security policy

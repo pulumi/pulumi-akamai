@@ -18,6 +18,7 @@ public final class GetAppSecThreatIntelResult {
      */
     private String id;
     private String json;
+    private String outputText;
     private String securityPolicyId;
     private String threatIntel;
 
@@ -34,6 +35,9 @@ public final class GetAppSecThreatIntelResult {
     }
     public String json() {
         return this.json;
+    }
+    public String outputText() {
+        return this.outputText;
     }
     public String securityPolicyId() {
         return this.securityPolicyId;
@@ -54,6 +58,7 @@ public final class GetAppSecThreatIntelResult {
         private Integer configId;
         private String id;
         private String json;
+        private String outputText;
         private String securityPolicyId;
         private String threatIntel;
         public Builder() {}
@@ -62,6 +67,7 @@ public final class GetAppSecThreatIntelResult {
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
+    	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
     	      this.threatIntel = defaults.threatIntel;
         }
@@ -91,6 +97,14 @@ public final class GetAppSecThreatIntelResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecThreatIntelResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityPolicyId(String securityPolicyId) {
             if (securityPolicyId == null) {
               throw new MissingRequiredPropertyException("GetAppSecThreatIntelResult", "securityPolicyId");
@@ -111,6 +125,7 @@ public final class GetAppSecThreatIntelResult {
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
+            _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;
             _resultValue.threatIntel = threatIntel;
             return _resultValue;

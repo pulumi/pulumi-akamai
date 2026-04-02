@@ -37,6 +37,7 @@ export interface GetAppSecIPGeoResult {
     readonly id: string;
     readonly ipControls: outputs.GetAppSecIPGeoIpControl[];
     readonly mode: string;
+    readonly outputText: string;
     readonly securityPolicyId: string;
     readonly ukraineGeoControlAction: string;
 }

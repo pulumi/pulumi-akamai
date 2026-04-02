@@ -60,6 +60,7 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly int LatestVersion;
+        public readonly string OutputText;
         public readonly string ProductionStatus;
         public readonly string StagingStatus;
         public readonly int? Version;
@@ -72,6 +73,8 @@ namespace Pulumi.Akamai
 
             int latestVersion,
 
+            string outputText,
+
             string productionStatus,
 
             string stagingStatus,
@@ -81,6 +84,7 @@ namespace Pulumi.Akamai
             ConfigId = configId;
             Id = id;
             LatestVersion = latestVersion;
+            OutputText = outputText;
             ProductionStatus = productionStatus;
             StagingStatus = stagingStatus;
             Version = version;

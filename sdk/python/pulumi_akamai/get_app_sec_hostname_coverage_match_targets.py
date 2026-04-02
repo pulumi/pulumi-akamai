@@ -26,7 +26,7 @@ class GetAppSecHostnameCoverageMatchTargetsResult:
     """
     A collection of values returned by getAppSecHostnameCoverageMatchTargets.
     """
-    def __init__(__self__, config_id=None, hostname=None, id=None, json=None):
+    def __init__(__self__, config_id=None, hostname=None, id=None, json=None, output_text=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -39,6 +39,9 @@ class GetAppSecHostnameCoverageMatchTargetsResult:
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
 
     @_builtins.property
     @pulumi.getter(name="configId")
@@ -63,6 +66,11 @@ class GetAppSecHostnameCoverageMatchTargetsResult:
     def json(self) -> _builtins.str:
         return pulumi.get(self, "json")
 
+    @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
 
 class AwaitableGetAppSecHostnameCoverageMatchTargetsResult(GetAppSecHostnameCoverageMatchTargetsResult):
     # pylint: disable=using-constant-test
@@ -73,7 +81,8 @@ class AwaitableGetAppSecHostnameCoverageMatchTargetsResult(GetAppSecHostnameCove
             config_id=self.config_id,
             hostname=self.hostname,
             id=self.id,
-            json=self.json)
+            json=self.json,
+            output_text=self.output_text)
 
 
 def get_app_sec_hostname_coverage_match_targets(config_id: Optional[_builtins.int] = None,
@@ -92,7 +101,8 @@ def get_app_sec_hostname_coverage_match_targets(config_id: Optional[_builtins.in
         config_id=pulumi.get(__ret__, 'config_id'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
-        json=pulumi.get(__ret__, 'json'))
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 def get_app_sec_hostname_coverage_match_targets_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
                                                        hostname: Optional[pulumi.Input[_builtins.str]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecHostnameCoverageMatchTargetsResult]:
@@ -108,4 +118,5 @@ def get_app_sec_hostname_coverage_match_targets_output(config_id: Optional[pulum
         config_id=pulumi.get(__response__, 'config_id'),
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
-        json=pulumi.get(__response__, 'json')))
+        json=pulumi.get(__response__, 'json'),
+        output_text=pulumi.get(__response__, 'output_text')))

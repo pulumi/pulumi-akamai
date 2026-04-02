@@ -17,6 +17,7 @@ public final class GetAppSecEvalResult {
      * 
      */
     private String id;
+    private String outputText;
     private String securityPolicyId;
 
     private GetAppSecEvalResult() {}
@@ -29,6 +30,9 @@ public final class GetAppSecEvalResult {
      */
     public String id() {
         return this.id;
+    }
+    public String outputText() {
+        return this.outputText;
     }
     public String securityPolicyId() {
         return this.securityPolicyId;
@@ -45,12 +49,14 @@ public final class GetAppSecEvalResult {
     public static final class Builder {
         private Integer configId;
         private String id;
+        private String outputText;
         private String securityPolicyId;
         public Builder() {}
         public Builder(GetAppSecEvalResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
+    	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
 
@@ -71,6 +77,14 @@ public final class GetAppSecEvalResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecEvalResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityPolicyId(String securityPolicyId) {
             if (securityPolicyId == null) {
               throw new MissingRequiredPropertyException("GetAppSecEvalResult", "securityPolicyId");
@@ -82,6 +96,7 @@ public final class GetAppSecEvalResult {
             final var _resultValue = new GetAppSecEvalResult();
             _resultValue.configId = configId;
             _resultValue.id = id;
+            _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;
         }

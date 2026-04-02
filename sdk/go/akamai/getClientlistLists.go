@@ -29,12 +29,13 @@ type GetClientlistListsArgs struct {
 
 // A collection of values returned by getClientlistLists.
 type GetClientlistListsResult struct {
-	Id      string                   `pulumi:"id"`
-	Json    string                   `pulumi:"json"`
-	ListIds []string                 `pulumi:"listIds"`
-	Lists   []GetClientlistListsList `pulumi:"lists"`
-	Name    *string                  `pulumi:"name"`
-	Types   []string                 `pulumi:"types"`
+	Id         string                   `pulumi:"id"`
+	Json       string                   `pulumi:"json"`
+	ListIds    []string                 `pulumi:"listIds"`
+	Lists      []GetClientlistListsList `pulumi:"lists"`
+	Name       *string                  `pulumi:"name"`
+	OutputText string                   `pulumi:"outputText"`
+	Types      []string                 `pulumi:"types"`
 }
 
 func GetClientlistListsOutput(ctx *pulumi.Context, args GetClientlistListsOutputArgs, opts ...pulumi.InvokeOption) GetClientlistListsResultOutput {
@@ -89,6 +90,10 @@ func (o GetClientlistListsResultOutput) Lists() GetClientlistListsListArrayOutpu
 
 func (o GetClientlistListsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetClientlistListsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetClientlistListsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClientlistListsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetClientlistListsResultOutput) Types() pulumi.StringArrayOutput {

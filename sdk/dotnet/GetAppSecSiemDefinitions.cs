@@ -53,6 +53,7 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
+        public readonly string OutputText;
         public readonly string? SiemDefinitionName;
 
         [OutputConstructor]
@@ -61,10 +62,13 @@ namespace Pulumi.Akamai
 
             string json,
 
+            string outputText,
+
             string? siemDefinitionName)
         {
             Id = id;
             Json = json;
+            OutputText = outputText;
             SiemDefinitionName = siemDefinitionName;
         }
     }

@@ -15,39 +15,40 @@ import (
 type GtmProperty struct {
 	pulumi.CustomResourceState
 
-	BackupCname               pulumi.StringPtrOutput              `pulumi:"backupCname"`
-	BackupIp                  pulumi.StringPtrOutput              `pulumi:"backupIp"`
-	BalanceByDownloadScore    pulumi.BoolPtrOutput                `pulumi:"balanceByDownloadScore"`
-	Cname                     pulumi.StringPtrOutput              `pulumi:"cname"`
-	Comments                  pulumi.StringPtrOutput              `pulumi:"comments"`
-	Domain                    pulumi.StringOutput                 `pulumi:"domain"`
-	DynamicTtl                pulumi.IntPtrOutput                 `pulumi:"dynamicTtl"`
-	FailbackDelay             pulumi.IntPtrOutput                 `pulumi:"failbackDelay"`
-	FailoverDelay             pulumi.IntPtrOutput                 `pulumi:"failoverDelay"`
-	GhostDemandReporting      pulumi.BoolPtrOutput                `pulumi:"ghostDemandReporting"`
-	HandoutLimit              pulumi.IntOutput                    `pulumi:"handoutLimit"`
-	HandoutMode               pulumi.StringOutput                 `pulumi:"handoutMode"`
-	HealthMax                 pulumi.Float64PtrOutput             `pulumi:"healthMax"`
-	HealthMultiplier          pulumi.Float64PtrOutput             `pulumi:"healthMultiplier"`
-	HealthThreshold           pulumi.Float64PtrOutput             `pulumi:"healthThreshold"`
-	Ipv6                      pulumi.BoolPtrOutput                `pulumi:"ipv6"`
-	LivenessTests             GtmPropertyLivenessTestArrayOutput  `pulumi:"livenessTests"`
-	LoadImbalancePercentage   pulumi.Float64PtrOutput             `pulumi:"loadImbalancePercentage"`
-	MapName                   pulumi.StringPtrOutput              `pulumi:"mapName"`
-	MaxUnreachablePenalty     pulumi.IntPtrOutput                 `pulumi:"maxUnreachablePenalty"`
-	MinLiveFraction           pulumi.Float64PtrOutput             `pulumi:"minLiveFraction"`
-	Name                      pulumi.StringOutput                 `pulumi:"name"`
-	ScoreAggregationType      pulumi.StringOutput                 `pulumi:"scoreAggregationType"`
-	StaticRrSets              GtmPropertyStaticRrSetArrayOutput   `pulumi:"staticRrSets"`
-	StickinessBonusConstant   pulumi.IntPtrOutput                 `pulumi:"stickinessBonusConstant"`
-	StickinessBonusPercentage pulumi.IntPtrOutput                 `pulumi:"stickinessBonusPercentage"`
-	TrafficTargets            GtmPropertyTrafficTargetArrayOutput `pulumi:"trafficTargets"`
-	Type                      pulumi.StringOutput                 `pulumi:"type"`
-	UnreachableThreshold      pulumi.Float64PtrOutput             `pulumi:"unreachableThreshold"`
-	UseComputedTargets        pulumi.BoolPtrOutput                `pulumi:"useComputedTargets"`
-	WaitOnComplete            pulumi.BoolPtrOutput                `pulumi:"waitOnComplete"`
-	WeightedHashBitsForIpv4   pulumi.IntOutput                    `pulumi:"weightedHashBitsForIpv4"`
-	WeightedHashBitsForIpv6   pulumi.IntOutput                    `pulumi:"weightedHashBitsForIpv6"`
+	BackupCname                    pulumi.StringPtrOutput                             `pulumi:"backupCname"`
+	BackupIp                       pulumi.StringPtrOutput                             `pulumi:"backupIp"`
+	BalanceByDownloadScore         pulumi.BoolPtrOutput                               `pulumi:"balanceByDownloadScore"`
+	Cname                          pulumi.StringPtrOutput                             `pulumi:"cname"`
+	Comments                       pulumi.StringPtrOutput                             `pulumi:"comments"`
+	Domain                         pulumi.StringOutput                                `pulumi:"domain"`
+	DynamicTtl                     pulumi.IntPtrOutput                                `pulumi:"dynamicTtl"`
+	FailbackDelay                  pulumi.IntPtrOutput                                `pulumi:"failbackDelay"`
+	FailoverDelay                  pulumi.IntPtrOutput                                `pulumi:"failoverDelay"`
+	GhostDemandReporting           pulumi.BoolPtrOutput                               `pulumi:"ghostDemandReporting"`
+	HandoutLimit                   pulumi.IntOutput                                   `pulumi:"handoutLimit"`
+	HandoutMode                    pulumi.StringOutput                                `pulumi:"handoutMode"`
+	HealthMax                      pulumi.Float64PtrOutput                            `pulumi:"healthMax"`
+	HealthMultiplier               pulumi.Float64PtrOutput                            `pulumi:"healthMultiplier"`
+	HealthThreshold                pulumi.Float64PtrOutput                            `pulumi:"healthThreshold"`
+	Ipv6                           pulumi.BoolPtrOutput                               `pulumi:"ipv6"`
+	LivenessTests                  GtmPropertyLivenessTestArrayOutput                 `pulumi:"livenessTests"`
+	LoadImbalancePercentage        pulumi.Float64PtrOutput                            `pulumi:"loadImbalancePercentage"`
+	MapName                        pulumi.StringPtrOutput                             `pulumi:"mapName"`
+	MaxUnreachablePenalty          pulumi.IntPtrOutput                                `pulumi:"maxUnreachablePenalty"`
+	MinLiveFraction                pulumi.Float64PtrOutput                            `pulumi:"minLiveFraction"`
+	Name                           pulumi.StringOutput                                `pulumi:"name"`
+	ScoreAggregationType           pulumi.StringOutput                                `pulumi:"scoreAggregationType"`
+	StateChangeNotificationWebhook GtmPropertyStateChangeNotificationWebhookPtrOutput `pulumi:"stateChangeNotificationWebhook"`
+	StaticRrSets                   GtmPropertyStaticRrSetArrayOutput                  `pulumi:"staticRrSets"`
+	StickinessBonusConstant        pulumi.IntPtrOutput                                `pulumi:"stickinessBonusConstant"`
+	StickinessBonusPercentage      pulumi.IntPtrOutput                                `pulumi:"stickinessBonusPercentage"`
+	TrafficTargets                 GtmPropertyTrafficTargetArrayOutput                `pulumi:"trafficTargets"`
+	Type                           pulumi.StringOutput                                `pulumi:"type"`
+	UnreachableThreshold           pulumi.Float64PtrOutput                            `pulumi:"unreachableThreshold"`
+	UseComputedTargets             pulumi.BoolPtrOutput                               `pulumi:"useComputedTargets"`
+	WaitOnComplete                 pulumi.BoolPtrOutput                               `pulumi:"waitOnComplete"`
+	WeightedHashBitsForIpv4        pulumi.IntOutput                                   `pulumi:"weightedHashBitsForIpv4"`
+	WeightedHashBitsForIpv6        pulumi.IntOutput                                   `pulumi:"weightedHashBitsForIpv6"`
 }
 
 // NewGtmProperty registers a new resource with the given unique name, arguments, and options.
@@ -101,75 +102,77 @@ func GetGtmProperty(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmProperty resources.
 type gtmPropertyState struct {
-	BackupCname               *string                    `pulumi:"backupCname"`
-	BackupIp                  *string                    `pulumi:"backupIp"`
-	BalanceByDownloadScore    *bool                      `pulumi:"balanceByDownloadScore"`
-	Cname                     *string                    `pulumi:"cname"`
-	Comments                  *string                    `pulumi:"comments"`
-	Domain                    *string                    `pulumi:"domain"`
-	DynamicTtl                *int                       `pulumi:"dynamicTtl"`
-	FailbackDelay             *int                       `pulumi:"failbackDelay"`
-	FailoverDelay             *int                       `pulumi:"failoverDelay"`
-	GhostDemandReporting      *bool                      `pulumi:"ghostDemandReporting"`
-	HandoutLimit              *int                       `pulumi:"handoutLimit"`
-	HandoutMode               *string                    `pulumi:"handoutMode"`
-	HealthMax                 *float64                   `pulumi:"healthMax"`
-	HealthMultiplier          *float64                   `pulumi:"healthMultiplier"`
-	HealthThreshold           *float64                   `pulumi:"healthThreshold"`
-	Ipv6                      *bool                      `pulumi:"ipv6"`
-	LivenessTests             []GtmPropertyLivenessTest  `pulumi:"livenessTests"`
-	LoadImbalancePercentage   *float64                   `pulumi:"loadImbalancePercentage"`
-	MapName                   *string                    `pulumi:"mapName"`
-	MaxUnreachablePenalty     *int                       `pulumi:"maxUnreachablePenalty"`
-	MinLiveFraction           *float64                   `pulumi:"minLiveFraction"`
-	Name                      *string                    `pulumi:"name"`
-	ScoreAggregationType      *string                    `pulumi:"scoreAggregationType"`
-	StaticRrSets              []GtmPropertyStaticRrSet   `pulumi:"staticRrSets"`
-	StickinessBonusConstant   *int                       `pulumi:"stickinessBonusConstant"`
-	StickinessBonusPercentage *int                       `pulumi:"stickinessBonusPercentage"`
-	TrafficTargets            []GtmPropertyTrafficTarget `pulumi:"trafficTargets"`
-	Type                      *string                    `pulumi:"type"`
-	UnreachableThreshold      *float64                   `pulumi:"unreachableThreshold"`
-	UseComputedTargets        *bool                      `pulumi:"useComputedTargets"`
-	WaitOnComplete            *bool                      `pulumi:"waitOnComplete"`
-	WeightedHashBitsForIpv4   *int                       `pulumi:"weightedHashBitsForIpv4"`
-	WeightedHashBitsForIpv6   *int                       `pulumi:"weightedHashBitsForIpv6"`
+	BackupCname                    *string                                    `pulumi:"backupCname"`
+	BackupIp                       *string                                    `pulumi:"backupIp"`
+	BalanceByDownloadScore         *bool                                      `pulumi:"balanceByDownloadScore"`
+	Cname                          *string                                    `pulumi:"cname"`
+	Comments                       *string                                    `pulumi:"comments"`
+	Domain                         *string                                    `pulumi:"domain"`
+	DynamicTtl                     *int                                       `pulumi:"dynamicTtl"`
+	FailbackDelay                  *int                                       `pulumi:"failbackDelay"`
+	FailoverDelay                  *int                                       `pulumi:"failoverDelay"`
+	GhostDemandReporting           *bool                                      `pulumi:"ghostDemandReporting"`
+	HandoutLimit                   *int                                       `pulumi:"handoutLimit"`
+	HandoutMode                    *string                                    `pulumi:"handoutMode"`
+	HealthMax                      *float64                                   `pulumi:"healthMax"`
+	HealthMultiplier               *float64                                   `pulumi:"healthMultiplier"`
+	HealthThreshold                *float64                                   `pulumi:"healthThreshold"`
+	Ipv6                           *bool                                      `pulumi:"ipv6"`
+	LivenessTests                  []GtmPropertyLivenessTest                  `pulumi:"livenessTests"`
+	LoadImbalancePercentage        *float64                                   `pulumi:"loadImbalancePercentage"`
+	MapName                        *string                                    `pulumi:"mapName"`
+	MaxUnreachablePenalty          *int                                       `pulumi:"maxUnreachablePenalty"`
+	MinLiveFraction                *float64                                   `pulumi:"minLiveFraction"`
+	Name                           *string                                    `pulumi:"name"`
+	ScoreAggregationType           *string                                    `pulumi:"scoreAggregationType"`
+	StateChangeNotificationWebhook *GtmPropertyStateChangeNotificationWebhook `pulumi:"stateChangeNotificationWebhook"`
+	StaticRrSets                   []GtmPropertyStaticRrSet                   `pulumi:"staticRrSets"`
+	StickinessBonusConstant        *int                                       `pulumi:"stickinessBonusConstant"`
+	StickinessBonusPercentage      *int                                       `pulumi:"stickinessBonusPercentage"`
+	TrafficTargets                 []GtmPropertyTrafficTarget                 `pulumi:"trafficTargets"`
+	Type                           *string                                    `pulumi:"type"`
+	UnreachableThreshold           *float64                                   `pulumi:"unreachableThreshold"`
+	UseComputedTargets             *bool                                      `pulumi:"useComputedTargets"`
+	WaitOnComplete                 *bool                                      `pulumi:"waitOnComplete"`
+	WeightedHashBitsForIpv4        *int                                       `pulumi:"weightedHashBitsForIpv4"`
+	WeightedHashBitsForIpv6        *int                                       `pulumi:"weightedHashBitsForIpv6"`
 }
 
 type GtmPropertyState struct {
-	BackupCname               pulumi.StringPtrInput
-	BackupIp                  pulumi.StringPtrInput
-	BalanceByDownloadScore    pulumi.BoolPtrInput
-	Cname                     pulumi.StringPtrInput
-	Comments                  pulumi.StringPtrInput
-	Domain                    pulumi.StringPtrInput
-	DynamicTtl                pulumi.IntPtrInput
-	FailbackDelay             pulumi.IntPtrInput
-	FailoverDelay             pulumi.IntPtrInput
-	GhostDemandReporting      pulumi.BoolPtrInput
-	HandoutLimit              pulumi.IntPtrInput
-	HandoutMode               pulumi.StringPtrInput
-	HealthMax                 pulumi.Float64PtrInput
-	HealthMultiplier          pulumi.Float64PtrInput
-	HealthThreshold           pulumi.Float64PtrInput
-	Ipv6                      pulumi.BoolPtrInput
-	LivenessTests             GtmPropertyLivenessTestArrayInput
-	LoadImbalancePercentage   pulumi.Float64PtrInput
-	MapName                   pulumi.StringPtrInput
-	MaxUnreachablePenalty     pulumi.IntPtrInput
-	MinLiveFraction           pulumi.Float64PtrInput
-	Name                      pulumi.StringPtrInput
-	ScoreAggregationType      pulumi.StringPtrInput
-	StaticRrSets              GtmPropertyStaticRrSetArrayInput
-	StickinessBonusConstant   pulumi.IntPtrInput
-	StickinessBonusPercentage pulumi.IntPtrInput
-	TrafficTargets            GtmPropertyTrafficTargetArrayInput
-	Type                      pulumi.StringPtrInput
-	UnreachableThreshold      pulumi.Float64PtrInput
-	UseComputedTargets        pulumi.BoolPtrInput
-	WaitOnComplete            pulumi.BoolPtrInput
-	WeightedHashBitsForIpv4   pulumi.IntPtrInput
-	WeightedHashBitsForIpv6   pulumi.IntPtrInput
+	BackupCname                    pulumi.StringPtrInput
+	BackupIp                       pulumi.StringPtrInput
+	BalanceByDownloadScore         pulumi.BoolPtrInput
+	Cname                          pulumi.StringPtrInput
+	Comments                       pulumi.StringPtrInput
+	Domain                         pulumi.StringPtrInput
+	DynamicTtl                     pulumi.IntPtrInput
+	FailbackDelay                  pulumi.IntPtrInput
+	FailoverDelay                  pulumi.IntPtrInput
+	GhostDemandReporting           pulumi.BoolPtrInput
+	HandoutLimit                   pulumi.IntPtrInput
+	HandoutMode                    pulumi.StringPtrInput
+	HealthMax                      pulumi.Float64PtrInput
+	HealthMultiplier               pulumi.Float64PtrInput
+	HealthThreshold                pulumi.Float64PtrInput
+	Ipv6                           pulumi.BoolPtrInput
+	LivenessTests                  GtmPropertyLivenessTestArrayInput
+	LoadImbalancePercentage        pulumi.Float64PtrInput
+	MapName                        pulumi.StringPtrInput
+	MaxUnreachablePenalty          pulumi.IntPtrInput
+	MinLiveFraction                pulumi.Float64PtrInput
+	Name                           pulumi.StringPtrInput
+	ScoreAggregationType           pulumi.StringPtrInput
+	StateChangeNotificationWebhook GtmPropertyStateChangeNotificationWebhookPtrInput
+	StaticRrSets                   GtmPropertyStaticRrSetArrayInput
+	StickinessBonusConstant        pulumi.IntPtrInput
+	StickinessBonusPercentage      pulumi.IntPtrInput
+	TrafficTargets                 GtmPropertyTrafficTargetArrayInput
+	Type                           pulumi.StringPtrInput
+	UnreachableThreshold           pulumi.Float64PtrInput
+	UseComputedTargets             pulumi.BoolPtrInput
+	WaitOnComplete                 pulumi.BoolPtrInput
+	WeightedHashBitsForIpv4        pulumi.IntPtrInput
+	WeightedHashBitsForIpv6        pulumi.IntPtrInput
 }
 
 func (GtmPropertyState) ElementType() reflect.Type {
@@ -177,72 +180,74 @@ func (GtmPropertyState) ElementType() reflect.Type {
 }
 
 type gtmPropertyArgs struct {
-	BackupCname               *string                    `pulumi:"backupCname"`
-	BackupIp                  *string                    `pulumi:"backupIp"`
-	BalanceByDownloadScore    *bool                      `pulumi:"balanceByDownloadScore"`
-	Cname                     *string                    `pulumi:"cname"`
-	Comments                  *string                    `pulumi:"comments"`
-	Domain                    string                     `pulumi:"domain"`
-	DynamicTtl                *int                       `pulumi:"dynamicTtl"`
-	FailbackDelay             *int                       `pulumi:"failbackDelay"`
-	FailoverDelay             *int                       `pulumi:"failoverDelay"`
-	GhostDemandReporting      *bool                      `pulumi:"ghostDemandReporting"`
-	HandoutLimit              int                        `pulumi:"handoutLimit"`
-	HandoutMode               string                     `pulumi:"handoutMode"`
-	HealthMax                 *float64                   `pulumi:"healthMax"`
-	HealthMultiplier          *float64                   `pulumi:"healthMultiplier"`
-	HealthThreshold           *float64                   `pulumi:"healthThreshold"`
-	Ipv6                      *bool                      `pulumi:"ipv6"`
-	LivenessTests             []GtmPropertyLivenessTest  `pulumi:"livenessTests"`
-	LoadImbalancePercentage   *float64                   `pulumi:"loadImbalancePercentage"`
-	MapName                   *string                    `pulumi:"mapName"`
-	MaxUnreachablePenalty     *int                       `pulumi:"maxUnreachablePenalty"`
-	MinLiveFraction           *float64                   `pulumi:"minLiveFraction"`
-	Name                      *string                    `pulumi:"name"`
-	ScoreAggregationType      string                     `pulumi:"scoreAggregationType"`
-	StaticRrSets              []GtmPropertyStaticRrSet   `pulumi:"staticRrSets"`
-	StickinessBonusConstant   *int                       `pulumi:"stickinessBonusConstant"`
-	StickinessBonusPercentage *int                       `pulumi:"stickinessBonusPercentage"`
-	TrafficTargets            []GtmPropertyTrafficTarget `pulumi:"trafficTargets"`
-	Type                      string                     `pulumi:"type"`
-	UnreachableThreshold      *float64                   `pulumi:"unreachableThreshold"`
-	UseComputedTargets        *bool                      `pulumi:"useComputedTargets"`
-	WaitOnComplete            *bool                      `pulumi:"waitOnComplete"`
+	BackupCname                    *string                                    `pulumi:"backupCname"`
+	BackupIp                       *string                                    `pulumi:"backupIp"`
+	BalanceByDownloadScore         *bool                                      `pulumi:"balanceByDownloadScore"`
+	Cname                          *string                                    `pulumi:"cname"`
+	Comments                       *string                                    `pulumi:"comments"`
+	Domain                         string                                     `pulumi:"domain"`
+	DynamicTtl                     *int                                       `pulumi:"dynamicTtl"`
+	FailbackDelay                  *int                                       `pulumi:"failbackDelay"`
+	FailoverDelay                  *int                                       `pulumi:"failoverDelay"`
+	GhostDemandReporting           *bool                                      `pulumi:"ghostDemandReporting"`
+	HandoutLimit                   int                                        `pulumi:"handoutLimit"`
+	HandoutMode                    string                                     `pulumi:"handoutMode"`
+	HealthMax                      *float64                                   `pulumi:"healthMax"`
+	HealthMultiplier               *float64                                   `pulumi:"healthMultiplier"`
+	HealthThreshold                *float64                                   `pulumi:"healthThreshold"`
+	Ipv6                           *bool                                      `pulumi:"ipv6"`
+	LivenessTests                  []GtmPropertyLivenessTest                  `pulumi:"livenessTests"`
+	LoadImbalancePercentage        *float64                                   `pulumi:"loadImbalancePercentage"`
+	MapName                        *string                                    `pulumi:"mapName"`
+	MaxUnreachablePenalty          *int                                       `pulumi:"maxUnreachablePenalty"`
+	MinLiveFraction                *float64                                   `pulumi:"minLiveFraction"`
+	Name                           *string                                    `pulumi:"name"`
+	ScoreAggregationType           string                                     `pulumi:"scoreAggregationType"`
+	StateChangeNotificationWebhook *GtmPropertyStateChangeNotificationWebhook `pulumi:"stateChangeNotificationWebhook"`
+	StaticRrSets                   []GtmPropertyStaticRrSet                   `pulumi:"staticRrSets"`
+	StickinessBonusConstant        *int                                       `pulumi:"stickinessBonusConstant"`
+	StickinessBonusPercentage      *int                                       `pulumi:"stickinessBonusPercentage"`
+	TrafficTargets                 []GtmPropertyTrafficTarget                 `pulumi:"trafficTargets"`
+	Type                           string                                     `pulumi:"type"`
+	UnreachableThreshold           *float64                                   `pulumi:"unreachableThreshold"`
+	UseComputedTargets             *bool                                      `pulumi:"useComputedTargets"`
+	WaitOnComplete                 *bool                                      `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmProperty resource.
 type GtmPropertyArgs struct {
-	BackupCname               pulumi.StringPtrInput
-	BackupIp                  pulumi.StringPtrInput
-	BalanceByDownloadScore    pulumi.BoolPtrInput
-	Cname                     pulumi.StringPtrInput
-	Comments                  pulumi.StringPtrInput
-	Domain                    pulumi.StringInput
-	DynamicTtl                pulumi.IntPtrInput
-	FailbackDelay             pulumi.IntPtrInput
-	FailoverDelay             pulumi.IntPtrInput
-	GhostDemandReporting      pulumi.BoolPtrInput
-	HandoutLimit              pulumi.IntInput
-	HandoutMode               pulumi.StringInput
-	HealthMax                 pulumi.Float64PtrInput
-	HealthMultiplier          pulumi.Float64PtrInput
-	HealthThreshold           pulumi.Float64PtrInput
-	Ipv6                      pulumi.BoolPtrInput
-	LivenessTests             GtmPropertyLivenessTestArrayInput
-	LoadImbalancePercentage   pulumi.Float64PtrInput
-	MapName                   pulumi.StringPtrInput
-	MaxUnreachablePenalty     pulumi.IntPtrInput
-	MinLiveFraction           pulumi.Float64PtrInput
-	Name                      pulumi.StringPtrInput
-	ScoreAggregationType      pulumi.StringInput
-	StaticRrSets              GtmPropertyStaticRrSetArrayInput
-	StickinessBonusConstant   pulumi.IntPtrInput
-	StickinessBonusPercentage pulumi.IntPtrInput
-	TrafficTargets            GtmPropertyTrafficTargetArrayInput
-	Type                      pulumi.StringInput
-	UnreachableThreshold      pulumi.Float64PtrInput
-	UseComputedTargets        pulumi.BoolPtrInput
-	WaitOnComplete            pulumi.BoolPtrInput
+	BackupCname                    pulumi.StringPtrInput
+	BackupIp                       pulumi.StringPtrInput
+	BalanceByDownloadScore         pulumi.BoolPtrInput
+	Cname                          pulumi.StringPtrInput
+	Comments                       pulumi.StringPtrInput
+	Domain                         pulumi.StringInput
+	DynamicTtl                     pulumi.IntPtrInput
+	FailbackDelay                  pulumi.IntPtrInput
+	FailoverDelay                  pulumi.IntPtrInput
+	GhostDemandReporting           pulumi.BoolPtrInput
+	HandoutLimit                   pulumi.IntInput
+	HandoutMode                    pulumi.StringInput
+	HealthMax                      pulumi.Float64PtrInput
+	HealthMultiplier               pulumi.Float64PtrInput
+	HealthThreshold                pulumi.Float64PtrInput
+	Ipv6                           pulumi.BoolPtrInput
+	LivenessTests                  GtmPropertyLivenessTestArrayInput
+	LoadImbalancePercentage        pulumi.Float64PtrInput
+	MapName                        pulumi.StringPtrInput
+	MaxUnreachablePenalty          pulumi.IntPtrInput
+	MinLiveFraction                pulumi.Float64PtrInput
+	Name                           pulumi.StringPtrInput
+	ScoreAggregationType           pulumi.StringInput
+	StateChangeNotificationWebhook GtmPropertyStateChangeNotificationWebhookPtrInput
+	StaticRrSets                   GtmPropertyStaticRrSetArrayInput
+	StickinessBonusConstant        pulumi.IntPtrInput
+	StickinessBonusPercentage      pulumi.IntPtrInput
+	TrafficTargets                 GtmPropertyTrafficTargetArrayInput
+	Type                           pulumi.StringInput
+	UnreachableThreshold           pulumi.Float64PtrInput
+	UseComputedTargets             pulumi.BoolPtrInput
+	WaitOnComplete                 pulumi.BoolPtrInput
 }
 
 func (GtmPropertyArgs) ElementType() reflect.Type {
@@ -422,6 +427,12 @@ func (o GtmPropertyOutput) Name() pulumi.StringOutput {
 
 func (o GtmPropertyOutput) ScoreAggregationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmProperty) pulumi.StringOutput { return v.ScoreAggregationType }).(pulumi.StringOutput)
+}
+
+func (o GtmPropertyOutput) StateChangeNotificationWebhook() GtmPropertyStateChangeNotificationWebhookPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) GtmPropertyStateChangeNotificationWebhookPtrOutput {
+		return v.StateChangeNotificationWebhook
+	}).(GtmPropertyStateChangeNotificationWebhookPtrOutput)
 }
 
 func (o GtmPropertyOutput) StaticRrSets() GtmPropertyStaticRrSetArrayOutput {

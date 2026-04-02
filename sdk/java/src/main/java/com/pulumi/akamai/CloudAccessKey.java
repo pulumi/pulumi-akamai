@@ -50,14 +50,14 @@ public class CloudAccessKey extends com.pulumi.resources.CustomResource {
         return this.accessKeyUid;
     }
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Four options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34;, &#34;AOS4_HMAC_SHA256&#34; or &#34;AVM_CLOUDINARY&#34;.
+     * The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
      * 
      */
     @Export(name="authenticationMethod", refs={String.class}, tree="[0]")
     private Output<String> authenticationMethod;
 
     /**
-     * @return The type of cloud provider signing process used to authenticate API requests. Four options are available: &#34;AWS4_HMAC_SHA256&#34;, &#34;GOOG4_HMAC_SHA256&#34;, &#34;AOS4_HMAC_SHA256&#34; or &#34;AVM_CLOUDINARY&#34;.
+     * @return The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
      * 
      */
     public Output<String> authenticationMethod() {

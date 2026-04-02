@@ -23,6 +23,7 @@ public final class GetAppSecWafModeResult {
     private String id;
     private String json;
     private String mode;
+    private String outputText;
     private String securityPolicyId;
 
     private GetAppSecWafModeResult() {}
@@ -54,6 +55,9 @@ public final class GetAppSecWafModeResult {
     public String mode() {
         return this.mode;
     }
+    public String outputText() {
+        return this.outputText;
+    }
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -75,6 +79,7 @@ public final class GetAppSecWafModeResult {
         private String id;
         private String json;
         private String mode;
+        private String outputText;
         private String securityPolicyId;
         public Builder() {}
         public Builder(GetAppSecWafModeResult defaults) {
@@ -87,6 +92,7 @@ public final class GetAppSecWafModeResult {
     	      this.id = defaults.id;
     	      this.json = defaults.json;
     	      this.mode = defaults.mode;
+    	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
 
@@ -155,6 +161,14 @@ public final class GetAppSecWafModeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecWafModeResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityPolicyId(String securityPolicyId) {
             if (securityPolicyId == null) {
               throw new MissingRequiredPropertyException("GetAppSecWafModeResult", "securityPolicyId");
@@ -172,6 +186,7 @@ public final class GetAppSecWafModeResult {
             _resultValue.id = id;
             _resultValue.json = json;
             _resultValue.mode = mode;
+            _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;
         }

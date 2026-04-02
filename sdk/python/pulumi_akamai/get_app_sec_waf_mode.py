@@ -26,7 +26,7 @@ class GetAppSecWafModeResult:
     """
     A collection of values returned by getAppSecWafMode.
     """
-    def __init__(__self__, config_id=None, current_ruleset=None, eval_expiration_date=None, eval_ruleset=None, eval_status=None, id=None, json=None, mode=None, security_policy_id=None):
+    def __init__(__self__, config_id=None, current_ruleset=None, eval_expiration_date=None, eval_ruleset=None, eval_status=None, id=None, json=None, mode=None, output_text=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -51,6 +51,9 @@ class GetAppSecWafModeResult:
         if mode and not isinstance(mode, str):
             raise TypeError("Expected argument 'mode' to be a str")
         pulumi.set(__self__, "mode", mode)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
@@ -99,6 +102,11 @@ class GetAppSecWafModeResult:
         return pulumi.get(self, "mode")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> _builtins.str:
         return pulumi.get(self, "security_policy_id")
@@ -118,6 +126,7 @@ class AwaitableGetAppSecWafModeResult(GetAppSecWafModeResult):
             id=self.id,
             json=self.json,
             mode=self.mode,
+            output_text=self.output_text,
             security_policy_id=self.security_policy_id)
 
 
@@ -142,6 +151,7 @@ def get_app_sec_waf_mode(config_id: Optional[_builtins.int] = None,
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         mode=pulumi.get(__ret__, 'mode'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 def get_app_sec_waf_mode_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
                                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -163,4 +173,5 @@ def get_app_sec_waf_mode_output(config_id: Optional[pulumi.Input[_builtins.int]]
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
         mode=pulumi.get(__response__, 'mode'),
+        output_text=pulumi.get(__response__, 'output_text'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

@@ -30,6 +30,7 @@ export interface GetAppSecThreatIntelResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
     readonly securityPolicyId: string;
     readonly threatIntel: string;
 }

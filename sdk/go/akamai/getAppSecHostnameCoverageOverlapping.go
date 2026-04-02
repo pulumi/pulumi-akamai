@@ -32,8 +32,9 @@ type GetAppSecHostnameCoverageOverlappingResult struct {
 	ConfigId int    `pulumi:"configId"`
 	Hostname string `pulumi:"hostname"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func GetAppSecHostnameCoverageOverlappingOutput(ctx *pulumi.Context, args GetAppSecHostnameCoverageOverlappingOutputArgs, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageOverlappingResultOutput {
@@ -85,6 +86,10 @@ func (o GetAppSecHostnameCoverageOverlappingResultOutput) Id() pulumi.StringOutp
 
 func (o GetAppSecHostnameCoverageOverlappingResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecHostnameCoverageOverlappingResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

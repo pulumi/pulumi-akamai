@@ -28,6 +28,7 @@ export interface GetAppSecSiemDefinitionsResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
     readonly siemDefinitionName?: string;
 }
 export function getAppSecSiemDefinitionsOutput(args?: GetAppSecSiemDefinitionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSiemDefinitionsResult> {

@@ -19,6 +19,7 @@ public final class GetClientlistListsResult {
     private List<String> listIds;
     private List<GetClientlistListsList> lists;
     private @Nullable String name;
+    private String outputText;
     private @Nullable List<String> types;
 
     private GetClientlistListsResult() {}
@@ -36,6 +37,9 @@ public final class GetClientlistListsResult {
     }
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
+    }
+    public String outputText() {
+        return this.outputText;
     }
     public List<String> types() {
         return this.types == null ? List.of() : this.types;
@@ -55,6 +59,7 @@ public final class GetClientlistListsResult {
         private List<String> listIds;
         private List<GetClientlistListsList> lists;
         private @Nullable String name;
+        private String outputText;
         private @Nullable List<String> types;
         public Builder() {}
         public Builder(GetClientlistListsResult defaults) {
@@ -64,6 +69,7 @@ public final class GetClientlistListsResult {
     	      this.listIds = defaults.listIds;
     	      this.lists = defaults.lists;
     	      this.name = defaults.name;
+    	      this.outputText = defaults.outputText;
     	      this.types = defaults.types;
         }
 
@@ -112,6 +118,14 @@ public final class GetClientlistListsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetClientlistListsResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder types(@Nullable List<String> types) {
 
             this.types = types;
@@ -127,6 +141,7 @@ public final class GetClientlistListsResult {
             _resultValue.listIds = listIds;
             _resultValue.lists = lists;
             _resultValue.name = name;
+            _resultValue.outputText = outputText;
             _resultValue.types = types;
             return _resultValue;
         }

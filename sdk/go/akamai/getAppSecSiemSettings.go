@@ -30,8 +30,9 @@ type LookupAppSecSiemSettingsArgs struct {
 type LookupAppSecSiemSettingsResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func LookupAppSecSiemSettingsOutput(ctx *pulumi.Context, args LookupAppSecSiemSettingsOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecSiemSettingsResultOutput {
@@ -78,6 +79,10 @@ func (o LookupAppSecSiemSettingsResultOutput) Id() pulumi.StringOutput {
 
 func (o LookupAppSecSiemSettingsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSiemSettingsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecSiemSettingsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSiemSettingsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -55,6 +55,7 @@ namespace Pulumi.Akamai
         public readonly string Json;
         public readonly Outputs.GetClientlistListListResult List;
         public readonly string ListId;
+        public readonly string OutputText;
 
         [OutputConstructor]
         private GetClientlistListResult(
@@ -64,12 +65,15 @@ namespace Pulumi.Akamai
 
             Outputs.GetClientlistListListResult list,
 
-            string listId)
+            string listId,
+
+            string outputText)
         {
             Id = id;
             Json = json;
             List = list;
             ListId = listId;
+            OutputText = outputText;
         }
     }
 }

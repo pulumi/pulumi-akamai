@@ -96,6 +96,123 @@ export interface AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions {
     rules?: pulumi.Input<pulumi.Input<number>[]>;
 }
 
+export interface AppsecUrlProtectionPolicyApiDefinition {
+    /**
+     * Unique identifier of the API definition
+     */
+    apiDefinitionId: pulumi.Input<number>;
+    /**
+     * Whether defined resources are included
+     */
+    definedResources?: pulumi.Input<boolean>;
+    /**
+     * List of resource IDs
+     */
+    resourceIds?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * Whether undefined resources are included
+     */
+    undefinedResources?: pulumi.Input<boolean>;
+}
+
+export interface AppsecUrlProtectionPolicyBypassCondition {
+    /**
+     * Whether to use wildcard matching for header names
+     */
+    nameWildcard?: pulumi.Input<boolean>;
+    /**
+     * List of header names for RequestHeaderCondition
+     */
+    names?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Type of condition (e.g., RequestHeaderCondition, NetworkListCondition)
+     */
+    type: pulumi.Input<string>;
+    /**
+     * Whether the value matching is case sensitive
+     */
+    valueCaseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Whether to use wildcard matching for values
+     */
+    valueWildcard?: pulumi.Input<boolean>;
+    /**
+     * List of values for the condition
+     */
+    values?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface AppsecUrlProtectionPolicyHostnamePath {
+    /**
+     * Hostname for the URL protection policy
+     */
+    hostname: pulumi.Input<string>;
+    /**
+     * List of paths associated with the hostname
+     */
+    paths: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface AppsecUrlProtectionPolicyIntelligentLoadShedding {
+    /**
+     * List of categories for intelligent load shedding
+     */
+    categories?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Custom criteria for intelligent load shedding
+     */
+    customCriterias?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria>[]>;
+    /**
+     * Number of hits per second threshold
+     */
+    hitsPerSec: pulumi.Input<number>;
+}
+
+export interface AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria {
+    /**
+     * List of client list IDs
+     */
+    listIds: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Whether this is a positive match condition
+     */
+    positiveMatch: pulumi.Input<boolean>;
+    /**
+     * Type of custom criteria (e.g., CLIENT_LIST)
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface AppsecWafRulesetAttackGroup {
+    /**
+     * Unique name of the attack group
+     */
+    attackGroup: pulumi.Input<string>;
+    /**
+     * Action taken when the attack group is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+     */
+    attackGroupAction: pulumi.Input<string>;
+    /**
+     * JSON-formatted conditions and exceptions associated with the attack group
+     */
+    conditionException?: pulumi.Input<string>;
+}
+
+export interface AppsecWafRulesetRule {
+    /**
+     * Conditions and exceptions associated with the rule
+     */
+    conditionException?: pulumi.Input<string>;
+    /**
+     * Action taken when the rule is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+     */
+    ruleAction: pulumi.Input<string>;
+    /**
+     * Unique identifier for a rule
+     */
+    ruleId: pulumi.Input<number>;
+}
+
 export interface ClientlistListItem {
     /**
      * A description of the item.
@@ -119,7 +236,7 @@ export interface CloudAccessKeyCredentialsA {
     /**
      * Access key id from cloud provider which is used to sign API requests
      */
-    cloudAccessKeyId: pulumi.Input<string>;
+    cloudAccessKeyId?: pulumi.Input<string>;
     /**
      * Cloud Access secret from cloud provider which is used to sign API requests
      */
@@ -142,7 +259,7 @@ export interface CloudAccessKeyCredentialsB {
     /**
      * Access key id from cloud provider which is used to sign API requests
      */
-    cloudAccessKeyId: pulumi.Input<string>;
+    cloudAccessKeyId?: pulumi.Input<string>;
     /**
      * Cloud Access secret from cloud provider which is used to sign API requests
      */
@@ -11858,6 +11975,11 @@ export interface GtmPropertyLivenessTest {
 export interface GtmPropertyLivenessTestHttpHeader {
     name?: pulumi.Input<string>;
     value?: pulumi.Input<string>;
+}
+
+export interface GtmPropertyStateChangeNotificationWebhook {
+    format: pulumi.Input<string>;
+    url: pulumi.Input<string>;
 }
 
 export interface GtmPropertyStaticRrSet {

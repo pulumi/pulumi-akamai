@@ -43,7 +43,7 @@ export class CloudAccessKey extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly accessKeyUid: pulumi.Output<number>;
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+     * The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
      */
     declare public readonly authenticationMethod: pulumi.Output<string>;
     /**
@@ -141,7 +141,7 @@ export interface CloudAccessKeyState {
      */
     accessKeyUid?: pulumi.Input<number>;
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+     * The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
      */
     authenticationMethod?: pulumi.Input<string>;
     /**
@@ -180,7 +180,7 @@ export interface CloudAccessKeyArgs {
      */
     accessKeyName: pulumi.Input<string>;
     /**
-     * The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+     * The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
      */
     authenticationMethod: pulumi.Input<string>;
     /**

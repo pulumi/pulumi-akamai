@@ -33,6 +33,7 @@ type GetAppSecRatePolicyActionsResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
+	OutputText       string `pulumi:"outputText"`
 	RatePolicyId     *int   `pulumi:"ratePolicyId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
@@ -79,6 +80,10 @@ func (o GetAppSecRatePolicyActionsResultOutput) ConfigId() pulumi.IntOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetAppSecRatePolicyActionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRatePolicyActionsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecRatePolicyActionsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRatePolicyActionsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecRatePolicyActionsResultOutput) RatePolicyId() pulumi.IntPtrOutput {

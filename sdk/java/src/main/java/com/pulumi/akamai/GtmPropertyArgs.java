@@ -4,6 +4,7 @@
 package com.pulumi.akamai;
 
 import com.pulumi.akamai.inputs.GtmPropertyLivenessTestArgs;
+import com.pulumi.akamai.inputs.GtmPropertyStateChangeNotificationWebhookArgs;
 import com.pulumi.akamai.inputs.GtmPropertyStaticRrSetArgs;
 import com.pulumi.akamai.inputs.GtmPropertyTrafficTargetArgs;
 import com.pulumi.core.Output;
@@ -184,6 +185,13 @@ public final class GtmPropertyArgs extends com.pulumi.resources.ResourceArgs {
         return this.scoreAggregationType;
     }
 
+    @Import(name="stateChangeNotificationWebhook")
+    private @Nullable Output<GtmPropertyStateChangeNotificationWebhookArgs> stateChangeNotificationWebhook;
+
+    public Optional<Output<GtmPropertyStateChangeNotificationWebhookArgs>> stateChangeNotificationWebhook() {
+        return Optional.ofNullable(this.stateChangeNotificationWebhook);
+    }
+
     @Import(name="staticRrSets")
     private @Nullable Output<List<GtmPropertyStaticRrSetArgs>> staticRrSets;
 
@@ -266,6 +274,7 @@ public final class GtmPropertyArgs extends com.pulumi.resources.ResourceArgs {
         this.minLiveFraction = $.minLiveFraction;
         this.name = $.name;
         this.scoreAggregationType = $.scoreAggregationType;
+        this.stateChangeNotificationWebhook = $.stateChangeNotificationWebhook;
         this.staticRrSets = $.staticRrSets;
         this.stickinessBonusConstant = $.stickinessBonusConstant;
         this.stickinessBonusPercentage = $.stickinessBonusPercentage;
@@ -503,6 +512,15 @@ public final class GtmPropertyArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder scoreAggregationType(String scoreAggregationType) {
             return scoreAggregationType(Output.of(scoreAggregationType));
+        }
+
+        public Builder stateChangeNotificationWebhook(@Nullable Output<GtmPropertyStateChangeNotificationWebhookArgs> stateChangeNotificationWebhook) {
+            $.stateChangeNotificationWebhook = stateChangeNotificationWebhook;
+            return this;
+        }
+
+        public Builder stateChangeNotificationWebhook(GtmPropertyStateChangeNotificationWebhookArgs stateChangeNotificationWebhook) {
+            return stateChangeNotificationWebhook(Output.of(stateChangeNotificationWebhook));
         }
 
         public Builder staticRrSets(@Nullable Output<List<GtmPropertyStaticRrSetArgs>> staticRrSets) {

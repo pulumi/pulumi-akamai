@@ -22,6 +22,7 @@ public final class GetAppSecEvalRulesResult {
      */
     private String id;
     private String json;
+    private String outputText;
     private @Nullable Integer ruleId;
     private String securityPolicyId;
 
@@ -45,6 +46,9 @@ public final class GetAppSecEvalRulesResult {
     public String json() {
         return this.json;
     }
+    public String outputText() {
+        return this.outputText;
+    }
     public Optional<Integer> ruleId() {
         return Optional.ofNullable(this.ruleId);
     }
@@ -66,6 +70,7 @@ public final class GetAppSecEvalRulesResult {
         private String evalRuleAction;
         private String id;
         private String json;
+        private String outputText;
         private @Nullable Integer ruleId;
         private String securityPolicyId;
         public Builder() {}
@@ -76,6 +81,7 @@ public final class GetAppSecEvalRulesResult {
     	      this.evalRuleAction = defaults.evalRuleAction;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
+    	      this.outputText = defaults.outputText;
     	      this.ruleId = defaults.ruleId;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
@@ -121,6 +127,14 @@ public final class GetAppSecEvalRulesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecEvalRulesResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ruleId(@Nullable Integer ruleId) {
 
             this.ruleId = ruleId;
@@ -141,6 +155,7 @@ public final class GetAppSecEvalRulesResult {
             _resultValue.evalRuleAction = evalRuleAction;
             _resultValue.id = id;
             _resultValue.json = json;
+            _resultValue.outputText = outputText;
             _resultValue.ruleId = ruleId;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;

@@ -34,6 +34,7 @@ export interface GetAppSecContractsGroupsResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
 }
 export function getAppSecContractsGroupsOutput(args?: GetAppSecContractsGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecContractsGroupsResult> {
     args = args || {};

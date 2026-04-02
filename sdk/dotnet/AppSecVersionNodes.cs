@@ -19,6 +19,12 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
+        /// Text representation
+        /// </summary>
+        [Output("outputText")]
+        public Output<string> OutputText { get; private set; } = null!;
+
+        /// <summary>
         /// Brief description of the security configuration version
         /// </summary>
         [Output("versionNotes")]
@@ -95,6 +101,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
+
+        /// <summary>
+        /// Text representation
+        /// </summary>
+        [Input("outputText")]
+        public Input<string>? OutputText { get; set; }
 
         /// <summary>
         /// Brief description of the security configuration version

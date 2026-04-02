@@ -20,6 +20,7 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
     private Boolean applyRateControls;
     private Boolean applyReputationControls;
     private Boolean applySlowPostControls;
+    private Boolean applyUrlProtectionControls;
     private Integer configId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -27,6 +28,7 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
      */
     private String id;
     private String json;
+    private String outputText;
     private String securityPolicyId;
 
     private GetAppSecSecurityPolicyProtectionsResult() {}
@@ -54,6 +56,9 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
     public Boolean applySlowPostControls() {
         return this.applySlowPostControls;
     }
+    public Boolean applyUrlProtectionControls() {
+        return this.applyUrlProtectionControls;
+    }
     public Integer configId() {
         return this.configId;
     }
@@ -66,6 +71,9 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
     }
     public String json() {
         return this.json;
+    }
+    public String outputText() {
+        return this.outputText;
     }
     public String securityPolicyId() {
         return this.securityPolicyId;
@@ -88,9 +96,11 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
         private Boolean applyRateControls;
         private Boolean applyReputationControls;
         private Boolean applySlowPostControls;
+        private Boolean applyUrlProtectionControls;
         private Integer configId;
         private String id;
         private String json;
+        private String outputText;
         private String securityPolicyId;
         public Builder() {}
         public Builder(GetAppSecSecurityPolicyProtectionsResult defaults) {
@@ -103,9 +113,11 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
     	      this.applyRateControls = defaults.applyRateControls;
     	      this.applyReputationControls = defaults.applyReputationControls;
     	      this.applySlowPostControls = defaults.applySlowPostControls;
+    	      this.applyUrlProtectionControls = defaults.applyUrlProtectionControls;
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
+    	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
 
@@ -174,6 +186,14 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder applyUrlProtectionControls(Boolean applyUrlProtectionControls) {
+            if (applyUrlProtectionControls == null) {
+              throw new MissingRequiredPropertyException("GetAppSecSecurityPolicyProtectionsResult", "applyUrlProtectionControls");
+            }
+            this.applyUrlProtectionControls = applyUrlProtectionControls;
+            return this;
+        }
+        @CustomType.Setter
         public Builder configId(Integer configId) {
             if (configId == null) {
               throw new MissingRequiredPropertyException("GetAppSecSecurityPolicyProtectionsResult", "configId");
@@ -198,6 +218,14 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecSecurityPolicyProtectionsResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityPolicyId(String securityPolicyId) {
             if (securityPolicyId == null) {
               throw new MissingRequiredPropertyException("GetAppSecSecurityPolicyProtectionsResult", "securityPolicyId");
@@ -215,9 +243,11 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
             _resultValue.applyRateControls = applyRateControls;
             _resultValue.applyReputationControls = applyReputationControls;
             _resultValue.applySlowPostControls = applySlowPostControls;
+            _resultValue.applyUrlProtectionControls = applyUrlProtectionControls;
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
+            _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;
         }

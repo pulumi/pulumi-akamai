@@ -35,6 +35,7 @@ type LookupAppSecApiRequestConstraintsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
 	Json             string `pulumi:"json"`
+	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -88,6 +89,10 @@ func (o LookupAppSecApiRequestConstraintsResultOutput) Id() pulumi.StringOutput 
 
 func (o LookupAppSecApiRequestConstraintsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecApiRequestConstraintsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o LookupAppSecApiRequestConstraintsResultOutput) SecurityPolicyId() pulumi.StringOutput {

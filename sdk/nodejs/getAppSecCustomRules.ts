@@ -31,6 +31,7 @@ export interface GetAppSecCustomRulesResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
 }
 export function getAppSecCustomRulesOutput(args: GetAppSecCustomRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecCustomRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

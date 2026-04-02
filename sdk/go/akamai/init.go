@@ -137,6 +137,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppsecRapidRules{}
 	case "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections":
 		r = &AppsecSecurityPolicyDefaultProtections{}
+	case "akamai:index/appsecSecurityPolicyProtections:AppsecSecurityPolicyProtections":
+		r = &AppsecSecurityPolicyProtections{}
+	case "akamai:index/appsecUrlProtectionAction:AppsecUrlProtectionAction":
+		r = &AppsecUrlProtectionAction{}
+	case "akamai:index/appsecUrlProtectionPolicy:AppsecUrlProtectionPolicy":
+		r = &AppsecUrlProtectionPolicy{}
+	case "akamai:index/appsecWafRuleset:AppsecWafRuleset":
+		r = &AppsecWafRuleset{}
 	case "akamai:index/aprGeneralSettings:AprGeneralSettings":
 		r = &AprGeneralSettings{}
 	case "akamai:index/aprProtectedOperations:AprProtectedOperations":
@@ -634,6 +642,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appsecSecurityPolicyDefaultProtections",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appsecSecurityPolicyProtections",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appsecUrlProtectionAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appsecUrlProtectionPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appsecWafRuleset",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

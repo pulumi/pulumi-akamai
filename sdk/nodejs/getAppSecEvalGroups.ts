@@ -35,6 +35,7 @@ export interface GetAppSecEvalGroupsResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecEvalGroupsOutput(args: GetAppSecEvalGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecEvalGroupsResult> {

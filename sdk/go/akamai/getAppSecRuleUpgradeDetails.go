@@ -33,6 +33,7 @@ type GetAppSecRuleUpgradeDetailsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
 	Json             string `pulumi:"json"`
+	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -81,6 +82,10 @@ func (o GetAppSecRuleUpgradeDetailsResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecRuleUpgradeDetailsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecRuleUpgradeDetailsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecRuleUpgradeDetailsResultOutput) SecurityPolicyId() pulumi.StringOutput {

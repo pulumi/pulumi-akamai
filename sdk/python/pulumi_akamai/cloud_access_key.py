@@ -33,7 +33,7 @@ class CloudAccessKeyArgs:
         The set of arguments for constructing a CloudAccessKey resource.
 
         :param pulumi.Input[_builtins.str] access_key_name: Name of the access key.
-        :param pulumi.Input[_builtins.str] authentication_method: The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+        :param pulumi.Input[_builtins.str] authentication_method: The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract assigned to the access key
         :param pulumi.Input[_builtins.int] group_id: The unique identifier assigned to the access control group assigned to the access key
         :param pulumi.Input['CloudAccessKeyNetworkConfigurationArgs'] network_configuration: The secure networks that you assigned the access key to during creation
@@ -68,7 +68,7 @@ class CloudAccessKeyArgs:
     @pulumi.getter(name="authenticationMethod")
     def authentication_method(self) -> pulumi.Input[_builtins.str]:
         """
-        The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+        The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
         """
         return pulumi.get(self, "authentication_method")
 
@@ -164,7 +164,7 @@ class _CloudAccessKeyState:
 
         :param pulumi.Input[_builtins.str] access_key_name: Name of the access key.
         :param pulumi.Input[_builtins.int] access_key_uid: The unique identifier Akamai assigns to an access key.
-        :param pulumi.Input[_builtins.str] authentication_method: The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+        :param pulumi.Input[_builtins.str] authentication_method: The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract assigned to the access key
         :param pulumi.Input['CloudAccessKeyCredentialsAArgs'] credentials_a: The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         :param pulumi.Input['CloudAccessKeyCredentialsBArgs'] credentials_b: The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
@@ -221,7 +221,7 @@ class _CloudAccessKeyState:
     @pulumi.getter(name="authenticationMethod")
     def authentication_method(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+        The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
         """
         return pulumi.get(self, "authentication_method")
 
@@ -332,7 +332,7 @@ class CloudAccessKey(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_key_name: Name of the access key.
-        :param pulumi.Input[_builtins.str] authentication_method: The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+        :param pulumi.Input[_builtins.str] authentication_method: The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract assigned to the access key
         :param pulumi.Input[Union['CloudAccessKeyCredentialsAArgs', 'CloudAccessKeyCredentialsAArgsDict']] credentials_a: The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         :param pulumi.Input[Union['CloudAccessKeyCredentialsBArgs', 'CloudAccessKeyCredentialsBArgsDict']] credentials_b: The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
@@ -429,7 +429,7 @@ class CloudAccessKey(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_key_name: Name of the access key.
         :param pulumi.Input[_builtins.int] access_key_uid: The unique identifier Akamai assigns to an access key.
-        :param pulumi.Input[_builtins.str] authentication_method: The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+        :param pulumi.Input[_builtins.str] authentication_method: The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract assigned to the access key
         :param pulumi.Input[Union['CloudAccessKeyCredentialsAArgs', 'CloudAccessKeyCredentialsAArgsDict']] credentials_a: The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         :param pulumi.Input[Union['CloudAccessKeyCredentialsBArgs', 'CloudAccessKeyCredentialsBArgsDict']] credentials_b: The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
@@ -473,7 +473,7 @@ class CloudAccessKey(pulumi.CustomResource):
     @pulumi.getter(name="authenticationMethod")
     def authentication_method(self) -> pulumi.Output[_builtins.str]:
         """
-        The type of cloud provider signing process used to authenticate API requests. Four options are available: "AWS4_HMAC_SHA256", "GOOG4_HMAC_SHA256", "AOS4_HMAC_SHA256" or "AVM_CLOUDINARY".
+        The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
         """
         return pulumi.get(self, "authentication_method")
 

@@ -25,6 +25,20 @@ __all__ = [
     'AppSecSiemSettingsExceptionsArgsDict',
     'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs',
     'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict',
+    'AppsecUrlProtectionPolicyApiDefinitionArgs',
+    'AppsecUrlProtectionPolicyApiDefinitionArgsDict',
+    'AppsecUrlProtectionPolicyBypassConditionArgs',
+    'AppsecUrlProtectionPolicyBypassConditionArgsDict',
+    'AppsecUrlProtectionPolicyHostnamePathArgs',
+    'AppsecUrlProtectionPolicyHostnamePathArgsDict',
+    'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs',
+    'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict',
+    'AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgs',
+    'AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgsDict',
+    'AppsecWafRulesetAttackGroupArgs',
+    'AppsecWafRulesetAttackGroupArgsDict',
+    'AppsecWafRulesetRuleArgs',
+    'AppsecWafRulesetRuleArgsDict',
     'ClientlistListItemArgs',
     'ClientlistListItemArgsDict',
     'CloudAccessKeyCredentialsAArgs',
@@ -157,6 +171,8 @@ __all__ = [
     'GtmPropertyLivenessTestArgsDict',
     'GtmPropertyLivenessTestHttpHeaderArgs',
     'GtmPropertyLivenessTestHttpHeaderArgsDict',
+    'GtmPropertyStateChangeNotificationWebhookArgs',
+    'GtmPropertyStateChangeNotificationWebhookArgsDict',
     'GtmPropertyStaticRrSetArgs',
     'GtmPropertyStaticRrSetArgsDict',
     'GtmPropertyTrafficTargetArgs',
@@ -1126,6 +1142,537 @@ class AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs:
         pulumi.set(self, "rules", value)
 
 
+class AppsecUrlProtectionPolicyApiDefinitionArgsDict(TypedDict):
+    api_definition_id: pulumi.Input[_builtins.int]
+    """
+    Unique identifier of the API definition
+    """
+    defined_resources: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether defined resources are included
+    """
+    resource_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    List of resource IDs
+    """
+    undefined_resources: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether undefined resources are included
+    """
+
+@pulumi.input_type
+class AppsecUrlProtectionPolicyApiDefinitionArgs:
+    def __init__(__self__, *,
+                 api_definition_id: pulumi.Input[_builtins.int],
+                 defined_resources: Optional[pulumi.Input[_builtins.bool]] = None,
+                 resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 undefined_resources: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.int] api_definition_id: Unique identifier of the API definition
+        :param pulumi.Input[_builtins.bool] defined_resources: Whether defined resources are included
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] resource_ids: List of resource IDs
+        :param pulumi.Input[_builtins.bool] undefined_resources: Whether undefined resources are included
+        """
+        pulumi.set(__self__, "api_definition_id", api_definition_id)
+        if defined_resources is not None:
+            pulumi.set(__self__, "defined_resources", defined_resources)
+        if resource_ids is not None:
+            pulumi.set(__self__, "resource_ids", resource_ids)
+        if undefined_resources is not None:
+            pulumi.set(__self__, "undefined_resources", undefined_resources)
+
+    @_builtins.property
+    @pulumi.getter(name="apiDefinitionId")
+    def api_definition_id(self) -> pulumi.Input[_builtins.int]:
+        """
+        Unique identifier of the API definition
+        """
+        return pulumi.get(self, "api_definition_id")
+
+    @api_definition_id.setter
+    def api_definition_id(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "api_definition_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="definedResources")
+    def defined_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether defined resources are included
+        """
+        return pulumi.get(self, "defined_resources")
+
+    @defined_resources.setter
+    def defined_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "defined_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceIds")
+    def resource_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        List of resource IDs
+        """
+        return pulumi.get(self, "resource_ids")
+
+    @resource_ids.setter
+    def resource_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "resource_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="undefinedResources")
+    def undefined_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether undefined resources are included
+        """
+        return pulumi.get(self, "undefined_resources")
+
+    @undefined_resources.setter
+    def undefined_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "undefined_resources", value)
+
+
+class AppsecUrlProtectionPolicyBypassConditionArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of condition (e.g., RequestHeaderCondition, NetworkListCondition)
+    """
+    name_wildcard: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether to use wildcard matching for header names
+    """
+    names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of header names for RequestHeaderCondition
+    """
+    value_case_sensitive: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether the value matching is case sensitive
+    """
+    value_wildcard: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether to use wildcard matching for values
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of values for the condition
+    """
+
+@pulumi.input_type
+class AppsecUrlProtectionPolicyBypassConditionArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 name_wildcard: Optional[pulumi.Input[_builtins.bool]] = None,
+                 names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 value_case_sensitive: Optional[pulumi.Input[_builtins.bool]] = None,
+                 value_wildcard: Optional[pulumi.Input[_builtins.bool]] = None,
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of condition (e.g., RequestHeaderCondition, NetworkListCondition)
+        :param pulumi.Input[_builtins.bool] name_wildcard: Whether to use wildcard matching for header names
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] names: List of header names for RequestHeaderCondition
+        :param pulumi.Input[_builtins.bool] value_case_sensitive: Whether the value matching is case sensitive
+        :param pulumi.Input[_builtins.bool] value_wildcard: Whether to use wildcard matching for values
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: List of values for the condition
+        """
+        pulumi.set(__self__, "type", type)
+        if name_wildcard is not None:
+            pulumi.set(__self__, "name_wildcard", name_wildcard)
+        if names is not None:
+            pulumi.set(__self__, "names", names)
+        if value_case_sensitive is not None:
+            pulumi.set(__self__, "value_case_sensitive", value_case_sensitive)
+        if value_wildcard is not None:
+            pulumi.set(__self__, "value_wildcard", value_wildcard)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of condition (e.g., RequestHeaderCondition, NetworkListCondition)
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nameWildcard")
+    def name_wildcard(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether to use wildcard matching for header names
+        """
+        return pulumi.get(self, "name_wildcard")
+
+    @name_wildcard.setter
+    def name_wildcard(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "name_wildcard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of header names for RequestHeaderCondition
+        """
+        return pulumi.get(self, "names")
+
+    @names.setter
+    def names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "names", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueCaseSensitive")
+    def value_case_sensitive(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether the value matching is case sensitive
+        """
+        return pulumi.get(self, "value_case_sensitive")
+
+    @value_case_sensitive.setter
+    def value_case_sensitive(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "value_case_sensitive", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueWildcard")
+    def value_wildcard(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether to use wildcard matching for values
+        """
+        return pulumi.get(self, "value_wildcard")
+
+    @value_wildcard.setter
+    def value_wildcard(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "value_wildcard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of values for the condition
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "values", value)
+
+
+class AppsecUrlProtectionPolicyHostnamePathArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    Hostname for the URL protection policy
+    """
+    paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    List of paths associated with the hostname
+    """
+
+@pulumi.input_type
+class AppsecUrlProtectionPolicyHostnamePathArgs:
+    def __init__(__self__, *,
+                 hostname: pulumi.Input[_builtins.str],
+                 paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[_builtins.str] hostname: Hostname for the URL protection policy
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] paths: List of paths associated with the hostname
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "paths", paths)
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> pulumi.Input[_builtins.str]:
+        """
+        Hostname for the URL protection policy
+        """
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "hostname", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def paths(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        List of paths associated with the hostname
+        """
+        return pulumi.get(self, "paths")
+
+    @paths.setter
+    def paths(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "paths", value)
+
+
+class AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict(TypedDict):
+    hits_per_sec: pulumi.Input[_builtins.int]
+    """
+    Number of hits per second threshold
+    """
+    categories: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of categories for intelligent load shedding
+    """
+    custom_criterias: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgsDict']]]]
+    """
+    Custom criteria for intelligent load shedding
+    """
+
+@pulumi.input_type
+class AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs:
+    def __init__(__self__, *,
+                 hits_per_sec: pulumi.Input[_builtins.int],
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 custom_criterias: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.int] hits_per_sec: Number of hits per second threshold
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of categories for intelligent load shedding
+        :param pulumi.Input[Sequence[pulumi.Input['AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgs']]] custom_criterias: Custom criteria for intelligent load shedding
+        """
+        pulumi.set(__self__, "hits_per_sec", hits_per_sec)
+        if categories is not None:
+            pulumi.set(__self__, "categories", categories)
+        if custom_criterias is not None:
+            pulumi.set(__self__, "custom_criterias", custom_criterias)
+
+    @_builtins.property
+    @pulumi.getter(name="hitsPerSec")
+    def hits_per_sec(self) -> pulumi.Input[_builtins.int]:
+        """
+        Number of hits per second threshold
+        """
+        return pulumi.get(self, "hits_per_sec")
+
+    @hits_per_sec.setter
+    def hits_per_sec(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "hits_per_sec", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of categories for intelligent load shedding
+        """
+        return pulumi.get(self, "categories")
+
+    @categories.setter
+    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "categories", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customCriterias")
+    def custom_criterias(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgs']]]]:
+        """
+        Custom criteria for intelligent load shedding
+        """
+        return pulumi.get(self, "custom_criterias")
+
+    @custom_criterias.setter
+    def custom_criterias(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgs']]]]):
+        pulumi.set(self, "custom_criterias", value)
+
+
+class AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgsDict(TypedDict):
+    list_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    List of client list IDs
+    """
+    positive_match: pulumi.Input[_builtins.bool]
+    """
+    Whether this is a positive match condition
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of custom criteria (e.g., CLIENT_LIST)
+    """
+
+@pulumi.input_type
+class AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgs:
+    def __init__(__self__, *,
+                 list_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 positive_match: pulumi.Input[_builtins.bool],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] list_ids: List of client list IDs
+        :param pulumi.Input[_builtins.bool] positive_match: Whether this is a positive match condition
+        :param pulumi.Input[_builtins.str] type: Type of custom criteria (e.g., CLIENT_LIST)
+        """
+        pulumi.set(__self__, "list_ids", list_ids)
+        pulumi.set(__self__, "positive_match", positive_match)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="listIds")
+    def list_ids(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        List of client list IDs
+        """
+        return pulumi.get(self, "list_ids")
+
+    @list_ids.setter
+    def list_ids(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "list_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="positiveMatch")
+    def positive_match(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether this is a positive match condition
+        """
+        return pulumi.get(self, "positive_match")
+
+    @positive_match.setter
+    def positive_match(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "positive_match", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of custom criteria (e.g., CLIENT_LIST)
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+
+class AppsecWafRulesetAttackGroupArgsDict(TypedDict):
+    attack_group: pulumi.Input[_builtins.str]
+    """
+    Unique name of the attack group
+    """
+    attack_group_action: pulumi.Input[_builtins.str]
+    """
+    Action taken when the attack group is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+    """
+    condition_exception: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    JSON-formatted conditions and exceptions associated with the attack group
+    """
+
+@pulumi.input_type
+class AppsecWafRulesetAttackGroupArgs:
+    def __init__(__self__, *,
+                 attack_group: pulumi.Input[_builtins.str],
+                 attack_group_action: pulumi.Input[_builtins.str],
+                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] attack_group: Unique name of the attack group
+        :param pulumi.Input[_builtins.str] attack_group_action: Action taken when the attack group is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+        :param pulumi.Input[_builtins.str] condition_exception: JSON-formatted conditions and exceptions associated with the attack group
+        """
+        pulumi.set(__self__, "attack_group", attack_group)
+        pulumi.set(__self__, "attack_group_action", attack_group_action)
+        if condition_exception is not None:
+            pulumi.set(__self__, "condition_exception", condition_exception)
+
+    @_builtins.property
+    @pulumi.getter(name="attackGroup")
+    def attack_group(self) -> pulumi.Input[_builtins.str]:
+        """
+        Unique name of the attack group
+        """
+        return pulumi.get(self, "attack_group")
+
+    @attack_group.setter
+    def attack_group(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "attack_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="attackGroupAction")
+    def attack_group_action(self) -> pulumi.Input[_builtins.str]:
+        """
+        Action taken when the attack group is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+        """
+        return pulumi.get(self, "attack_group_action")
+
+    @attack_group_action.setter
+    def attack_group_action(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "attack_group_action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="conditionException")
+    def condition_exception(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        JSON-formatted conditions and exceptions associated with the attack group
+        """
+        return pulumi.get(self, "condition_exception")
+
+    @condition_exception.setter
+    def condition_exception(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "condition_exception", value)
+
+
+class AppsecWafRulesetRuleArgsDict(TypedDict):
+    rule_action: pulumi.Input[_builtins.str]
+    """
+    Action taken when the rule is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+    """
+    rule_id: pulumi.Input[_builtins.int]
+    """
+    Unique identifier for a rule
+    """
+    condition_exception: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Conditions and exceptions associated with the rule
+    """
+
+@pulumi.input_type
+class AppsecWafRulesetRuleArgs:
+    def __init__(__self__, *,
+                 rule_action: pulumi.Input[_builtins.str],
+                 rule_id: pulumi.Input[_builtins.int],
+                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] rule_action: Action taken when the rule is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+        :param pulumi.Input[_builtins.int] rule_id: Unique identifier for a rule
+        :param pulumi.Input[_builtins.str] condition_exception: Conditions and exceptions associated with the rule
+        """
+        pulumi.set(__self__, "rule_action", rule_action)
+        pulumi.set(__self__, "rule_id", rule_id)
+        if condition_exception is not None:
+            pulumi.set(__self__, "condition_exception", condition_exception)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleAction")
+    def rule_action(self) -> pulumi.Input[_builtins.str]:
+        """
+        Action taken when the rule is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+        """
+        return pulumi.get(self, "rule_action")
+
+    @rule_action.setter
+    def rule_action(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "rule_action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleId")
+    def rule_id(self) -> pulumi.Input[_builtins.int]:
+        """
+        Unique identifier for a rule
+        """
+        return pulumi.get(self, "rule_id")
+
+    @rule_id.setter
+    def rule_id(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "rule_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="conditionException")
+    def condition_exception(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Conditions and exceptions associated with the rule
+        """
+        return pulumi.get(self, "condition_exception")
+
+    @condition_exception.setter
+    def condition_exception(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "condition_exception", value)
+
+
 class ClientlistListItemArgsDict(TypedDict):
     value: pulumi.Input[_builtins.str]
     """
@@ -1215,10 +1762,6 @@ class ClientlistListItemArgs:
 
 
 class CloudAccessKeyCredentialsAArgsDict(TypedDict):
-    cloud_access_key_id: pulumi.Input[_builtins.str]
-    """
-    Access key id from cloud provider which is used to sign API requests
-    """
     cloud_secret_access_key: pulumi.Input[_builtins.str]
     """
     Cloud Access secret from cloud provider which is used to sign API requests
@@ -1226,6 +1769,10 @@ class CloudAccessKeyCredentialsAArgsDict(TypedDict):
     primary_key: pulumi.Input[_builtins.bool]
     """
     Boolean value which helps to define if credentials should be assigned to property
+    """
+    cloud_access_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Access key id from cloud provider which is used to sign API requests
     """
     version: NotRequired[pulumi.Input[_builtins.int]]
     """
@@ -1239,37 +1786,26 @@ class CloudAccessKeyCredentialsAArgsDict(TypedDict):
 @pulumi.input_type
 class CloudAccessKeyCredentialsAArgs:
     def __init__(__self__, *,
-                 cloud_access_key_id: pulumi.Input[_builtins.str],
                  cloud_secret_access_key: pulumi.Input[_builtins.str],
                  primary_key: pulumi.Input[_builtins.bool],
+                 cloud_access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  version: Optional[pulumi.Input[_builtins.int]] = None,
                  version_guid: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] cloud_access_key_id: Access key id from cloud provider which is used to sign API requests
         :param pulumi.Input[_builtins.str] cloud_secret_access_key: Cloud Access secret from cloud provider which is used to sign API requests
         :param pulumi.Input[_builtins.bool] primary_key: Boolean value which helps to define if credentials should be assigned to property
+        :param pulumi.Input[_builtins.str] cloud_access_key_id: Access key id from cloud provider which is used to sign API requests
         :param pulumi.Input[_builtins.int] version: Numeric access key version associated with specific pair of cloud access credentials used to sign API requests
         :param pulumi.Input[_builtins.str] version_guid: The unique identifier assigned to specific access key version
         """
-        pulumi.set(__self__, "cloud_access_key_id", cloud_access_key_id)
         pulumi.set(__self__, "cloud_secret_access_key", cloud_secret_access_key)
         pulumi.set(__self__, "primary_key", primary_key)
+        if cloud_access_key_id is not None:
+            pulumi.set(__self__, "cloud_access_key_id", cloud_access_key_id)
         if version is not None:
             pulumi.set(__self__, "version", version)
         if version_guid is not None:
             pulumi.set(__self__, "version_guid", version_guid)
-
-    @_builtins.property
-    @pulumi.getter(name="cloudAccessKeyId")
-    def cloud_access_key_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        Access key id from cloud provider which is used to sign API requests
-        """
-        return pulumi.get(self, "cloud_access_key_id")
-
-    @cloud_access_key_id.setter
-    def cloud_access_key_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "cloud_access_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudSecretAccessKey")
@@ -1294,6 +1830,18 @@ class CloudAccessKeyCredentialsAArgs:
     @primary_key.setter
     def primary_key(self, value: pulumi.Input[_builtins.bool]):
         pulumi.set(self, "primary_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudAccessKeyId")
+    def cloud_access_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Access key id from cloud provider which is used to sign API requests
+        """
+        return pulumi.get(self, "cloud_access_key_id")
+
+    @cloud_access_key_id.setter
+    def cloud_access_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cloud_access_key_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -1321,10 +1869,6 @@ class CloudAccessKeyCredentialsAArgs:
 
 
 class CloudAccessKeyCredentialsBArgsDict(TypedDict):
-    cloud_access_key_id: pulumi.Input[_builtins.str]
-    """
-    Access key id from cloud provider which is used to sign API requests
-    """
     cloud_secret_access_key: pulumi.Input[_builtins.str]
     """
     Cloud Access secret from cloud provider which is used to sign API requests
@@ -1332,6 +1876,10 @@ class CloudAccessKeyCredentialsBArgsDict(TypedDict):
     primary_key: pulumi.Input[_builtins.bool]
     """
     Boolean value which helps to define if credentials should be assigned to property
+    """
+    cloud_access_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Access key id from cloud provider which is used to sign API requests
     """
     version: NotRequired[pulumi.Input[_builtins.int]]
     """
@@ -1345,37 +1893,26 @@ class CloudAccessKeyCredentialsBArgsDict(TypedDict):
 @pulumi.input_type
 class CloudAccessKeyCredentialsBArgs:
     def __init__(__self__, *,
-                 cloud_access_key_id: pulumi.Input[_builtins.str],
                  cloud_secret_access_key: pulumi.Input[_builtins.str],
                  primary_key: pulumi.Input[_builtins.bool],
+                 cloud_access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  version: Optional[pulumi.Input[_builtins.int]] = None,
                  version_guid: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] cloud_access_key_id: Access key id from cloud provider which is used to sign API requests
         :param pulumi.Input[_builtins.str] cloud_secret_access_key: Cloud Access secret from cloud provider which is used to sign API requests
         :param pulumi.Input[_builtins.bool] primary_key: Boolean value which helps to define if credentials should be assigned to property
+        :param pulumi.Input[_builtins.str] cloud_access_key_id: Access key id from cloud provider which is used to sign API requests
         :param pulumi.Input[_builtins.int] version: Numeric access key version associated with specific pair of cloud access credentials used to sign API requests
         :param pulumi.Input[_builtins.str] version_guid: The unique identifier assigned to specific access key version
         """
-        pulumi.set(__self__, "cloud_access_key_id", cloud_access_key_id)
         pulumi.set(__self__, "cloud_secret_access_key", cloud_secret_access_key)
         pulumi.set(__self__, "primary_key", primary_key)
+        if cloud_access_key_id is not None:
+            pulumi.set(__self__, "cloud_access_key_id", cloud_access_key_id)
         if version is not None:
             pulumi.set(__self__, "version", version)
         if version_guid is not None:
             pulumi.set(__self__, "version_guid", version_guid)
-
-    @_builtins.property
-    @pulumi.getter(name="cloudAccessKeyId")
-    def cloud_access_key_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        Access key id from cloud provider which is used to sign API requests
-        """
-        return pulumi.get(self, "cloud_access_key_id")
-
-    @cloud_access_key_id.setter
-    def cloud_access_key_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "cloud_access_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudSecretAccessKey")
@@ -1400,6 +1937,18 @@ class CloudAccessKeyCredentialsBArgs:
     @primary_key.setter
     def primary_key(self, value: pulumi.Input[_builtins.bool]):
         pulumi.set(self, "primary_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudAccessKeyId")
+    def cloud_access_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Access key id from cloud provider which is used to sign API requests
+        """
+        return pulumi.get(self, "cloud_access_key_id")
+
+    @cloud_access_key_id.setter
+    def cloud_access_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cloud_access_key_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -8144,6 +8693,37 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class GtmPropertyStateChangeNotificationWebhookArgsDict(TypedDict):
+    format: pulumi.Input[_builtins.str]
+    url: pulumi.Input[_builtins.str]
+
+@pulumi.input_type
+class GtmPropertyStateChangeNotificationWebhookArgs:
+    def __init__(__self__, *,
+                 format: pulumi.Input[_builtins.str],
+                 url: pulumi.Input[_builtins.str]):
+        pulumi.set(__self__, "format", format)
+        pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "format")
+
+    @format.setter
+    def format(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "format", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "url", value)
 
 
 class GtmPropertyStaticRrSetArgsDict(TypedDict):

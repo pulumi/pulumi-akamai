@@ -37,6 +37,7 @@ type GetAppSecEvalGroupsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
 	Json             string `pulumi:"json"`
+	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -98,6 +99,10 @@ func (o GetAppSecEvalGroupsResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecEvalGroupsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecEvalGroupsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecEvalGroupsResultOutput) SecurityPolicyId() pulumi.StringOutput {

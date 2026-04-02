@@ -40,6 +40,21 @@ public final class AppSecRateProtectionState extends com.pulumi.resources.Resour
     }
 
     /**
+     * Text representation
+     * 
+     */
+    @Import(name="outputText")
+    private @Nullable Output<String> outputText;
+
+    /**
+     * @return Text representation
+     * 
+     */
+    public Optional<Output<String>> outputText() {
+        return Optional.ofNullable(this.outputText);
+    }
+
+    /**
      * Unique identifier of the security policy
      * 
      */
@@ -59,6 +74,7 @@ public final class AppSecRateProtectionState extends com.pulumi.resources.Resour
     private AppSecRateProtectionState(AppSecRateProtectionState $) {
         this.configId = $.configId;
         this.enabled = $.enabled;
+        this.outputText = $.outputText;
         this.securityPolicyId = $.securityPolicyId;
     }
 
@@ -108,6 +124,27 @@ public final class AppSecRateProtectionState extends com.pulumi.resources.Resour
 
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
+        }
+
+        /**
+         * @param outputText Text representation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outputText(@Nullable Output<String> outputText) {
+            $.outputText = outputText;
+            return this;
+        }
+
+        /**
+         * @param outputText Text representation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outputText(String outputText) {
+            return outputText(Output.of(outputText));
         }
 
         /**

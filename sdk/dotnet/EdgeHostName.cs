@@ -24,6 +24,12 @@ namespace Pulumi.Akamai
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
+        /// <summary>
+        /// Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+        /// </summary>
+        [Output("httpsServiceBinding")]
+        public Output<string?> HttpsServiceBinding { get; private set; } = null!;
+
         [Output("ipBehavior")]
         public Output<string> IpBehavior { get; private set; } = null!;
 
@@ -116,6 +122,12 @@ namespace Pulumi.Akamai
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
+        /// <summary>
+        /// Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+        /// </summary>
+        [Input("httpsServiceBinding")]
+        public Input<string>? HttpsServiceBinding { get; set; }
+
         [Input("ipBehavior", required: true)]
         public Input<string> IpBehavior { get; set; } = null!;
 
@@ -171,6 +183,12 @@ namespace Pulumi.Akamai
 
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
+
+        /// <summary>
+        /// Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+        /// </summary>
+        [Input("httpsServiceBinding")]
+        public Input<string>? HttpsServiceBinding { get; set; }
 
         [Input("ipBehavior")]
         public Input<string>? IpBehavior { get; set; }

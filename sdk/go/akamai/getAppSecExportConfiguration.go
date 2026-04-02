@@ -32,10 +32,11 @@ type GetAppSecExportConfigurationArgs struct {
 type GetAppSecExportConfigurationResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string   `pulumi:"id"`
-	Json     string   `pulumi:"json"`
-	Searches []string `pulumi:"searches"`
-	Version  int      `pulumi:"version"`
+	Id         string   `pulumi:"id"`
+	Json       string   `pulumi:"json"`
+	OutputText string   `pulumi:"outputText"`
+	Searches   []string `pulumi:"searches"`
+	Version    int      `pulumi:"version"`
 }
 
 func GetAppSecExportConfigurationOutput(ctx *pulumi.Context, args GetAppSecExportConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetAppSecExportConfigurationResultOutput {
@@ -84,6 +85,10 @@ func (o GetAppSecExportConfigurationResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecExportConfigurationResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecExportConfigurationResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecExportConfigurationResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecExportConfigurationResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecExportConfigurationResultOutput) Searches() pulumi.StringArrayOutput {

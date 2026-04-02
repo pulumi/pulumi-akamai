@@ -34,6 +34,7 @@ type LookupAppSecPenaltyBoxResult struct {
 	Enabled  bool   `pulumi:"enabled"`
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
+	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -86,6 +87,10 @@ func (o LookupAppSecPenaltyBoxResultOutput) Enabled() pulumi.BoolOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o LookupAppSecPenaltyBoxResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecPenaltyBoxResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecPenaltyBoxResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecPenaltyBoxResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o LookupAppSecPenaltyBoxResultOutput) SecurityPolicyId() pulumi.StringOutput {

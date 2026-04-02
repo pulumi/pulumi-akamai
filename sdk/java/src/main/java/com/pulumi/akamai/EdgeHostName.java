@@ -44,6 +44,20 @@ public class EdgeHostName extends com.pulumi.resources.CustomResource {
     public Output<String> groupId() {
         return this.groupId;
     }
+    /**
+     * Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+     * 
+     */
+    @Export(name="httpsServiceBinding", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> httpsServiceBinding;
+
+    /**
+     * @return Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+     * 
+     */
+    public Output<Optional<String>> httpsServiceBinding() {
+        return Codegen.optional(this.httpsServiceBinding);
+    }
     @Export(name="ipBehavior", refs={String.class}, tree="[0]")
     private Output<String> ipBehavior;
 

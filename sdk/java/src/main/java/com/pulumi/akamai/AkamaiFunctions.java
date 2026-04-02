@@ -120,6 +120,16 @@ import com.pulumi.akamai.inputs.GetAppsecPenaltyBoxConditionsArgs;
 import com.pulumi.akamai.inputs.GetAppsecPenaltyBoxConditionsPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecRapidRulesArgs;
 import com.pulumi.akamai.inputs.GetAppsecRapidRulesPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPoliciesActionsArgs;
+import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPoliciesActionsPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPoliciesArgs;
+import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPoliciesPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPolicyActionsArgs;
+import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPolicyActionsPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPolicyArgs;
+import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPolicyPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecWafRulesetArgs;
+import com.pulumi.akamai.inputs.GetAppsecWafRulesetPlainArgs;
 import com.pulumi.akamai.inputs.GetAprGeneralSettingsArgs;
 import com.pulumi.akamai.inputs.GetAprGeneralSettingsPlainArgs;
 import com.pulumi.akamai.inputs.GetAprProtectedOperationsArgs;
@@ -447,6 +457,11 @@ import com.pulumi.akamai.outputs.GetAppsecCustomRulesUsageResult;
 import com.pulumi.akamai.outputs.GetAppsecEvalPenaltyBoxConditionsResult;
 import com.pulumi.akamai.outputs.GetAppsecPenaltyBoxConditionsResult;
 import com.pulumi.akamai.outputs.GetAppsecRapidRulesResult;
+import com.pulumi.akamai.outputs.GetAppsecUrlProtectionPoliciesActionsResult;
+import com.pulumi.akamai.outputs.GetAppsecUrlProtectionPoliciesResult;
+import com.pulumi.akamai.outputs.GetAppsecUrlProtectionPolicyActionsResult;
+import com.pulumi.akamai.outputs.GetAppsecUrlProtectionPolicyResult;
+import com.pulumi.akamai.outputs.GetAppsecWafRulesetResult;
 import com.pulumi.akamai.outputs.GetAprGeneralSettingsResult;
 import com.pulumi.akamai.outputs.GetAprProtectedOperationsResult;
 import com.pulumi.akamai.outputs.GetAprUserAllowListResult;
@@ -1528,6 +1543,81 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetAppsecRapidRulesResult> getAppsecRapidRulesPlain(GetAppsecRapidRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getAppsecRapidRules:getAppsecRapidRules", TypeShape.of(GetAppsecRapidRulesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecUrlProtectionPoliciesResult> getAppsecUrlProtectionPolicies(GetAppsecUrlProtectionPoliciesArgs args) {
+        return getAppsecUrlProtectionPolicies(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecUrlProtectionPoliciesResult> getAppsecUrlProtectionPoliciesPlain(GetAppsecUrlProtectionPoliciesPlainArgs args) {
+        return getAppsecUrlProtectionPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecUrlProtectionPoliciesResult> getAppsecUrlProtectionPolicies(GetAppsecUrlProtectionPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecUrlProtectionPolicies:getAppsecUrlProtectionPolicies", TypeShape.of(GetAppsecUrlProtectionPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecUrlProtectionPoliciesResult> getAppsecUrlProtectionPolicies(GetAppsecUrlProtectionPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecUrlProtectionPolicies:getAppsecUrlProtectionPolicies", TypeShape.of(GetAppsecUrlProtectionPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecUrlProtectionPoliciesResult> getAppsecUrlProtectionPoliciesPlain(GetAppsecUrlProtectionPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecUrlProtectionPolicies:getAppsecUrlProtectionPolicies", TypeShape.of(GetAppsecUrlProtectionPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecUrlProtectionPoliciesActionsResult> getAppsecUrlProtectionPoliciesActions(GetAppsecUrlProtectionPoliciesActionsArgs args) {
+        return getAppsecUrlProtectionPoliciesActions(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecUrlProtectionPoliciesActionsResult> getAppsecUrlProtectionPoliciesActionsPlain(GetAppsecUrlProtectionPoliciesActionsPlainArgs args) {
+        return getAppsecUrlProtectionPoliciesActionsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecUrlProtectionPoliciesActionsResult> getAppsecUrlProtectionPoliciesActions(GetAppsecUrlProtectionPoliciesActionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecUrlProtectionPoliciesActions:getAppsecUrlProtectionPoliciesActions", TypeShape.of(GetAppsecUrlProtectionPoliciesActionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecUrlProtectionPoliciesActionsResult> getAppsecUrlProtectionPoliciesActions(GetAppsecUrlProtectionPoliciesActionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecUrlProtectionPoliciesActions:getAppsecUrlProtectionPoliciesActions", TypeShape.of(GetAppsecUrlProtectionPoliciesActionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecUrlProtectionPoliciesActionsResult> getAppsecUrlProtectionPoliciesActionsPlain(GetAppsecUrlProtectionPoliciesActionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecUrlProtectionPoliciesActions:getAppsecUrlProtectionPoliciesActions", TypeShape.of(GetAppsecUrlProtectionPoliciesActionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecUrlProtectionPolicyResult> getAppsecUrlProtectionPolicy(GetAppsecUrlProtectionPolicyArgs args) {
+        return getAppsecUrlProtectionPolicy(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecUrlProtectionPolicyResult> getAppsecUrlProtectionPolicyPlain(GetAppsecUrlProtectionPolicyPlainArgs args) {
+        return getAppsecUrlProtectionPolicyPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecUrlProtectionPolicyResult> getAppsecUrlProtectionPolicy(GetAppsecUrlProtectionPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecUrlProtectionPolicy:getAppsecUrlProtectionPolicy", TypeShape.of(GetAppsecUrlProtectionPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecUrlProtectionPolicyResult> getAppsecUrlProtectionPolicy(GetAppsecUrlProtectionPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecUrlProtectionPolicy:getAppsecUrlProtectionPolicy", TypeShape.of(GetAppsecUrlProtectionPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecUrlProtectionPolicyResult> getAppsecUrlProtectionPolicyPlain(GetAppsecUrlProtectionPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecUrlProtectionPolicy:getAppsecUrlProtectionPolicy", TypeShape.of(GetAppsecUrlProtectionPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecUrlProtectionPolicyActionsResult> getAppsecUrlProtectionPolicyActions(GetAppsecUrlProtectionPolicyActionsArgs args) {
+        return getAppsecUrlProtectionPolicyActions(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecUrlProtectionPolicyActionsResult> getAppsecUrlProtectionPolicyActionsPlain(GetAppsecUrlProtectionPolicyActionsPlainArgs args) {
+        return getAppsecUrlProtectionPolicyActionsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecUrlProtectionPolicyActionsResult> getAppsecUrlProtectionPolicyActions(GetAppsecUrlProtectionPolicyActionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecUrlProtectionPolicyActions:getAppsecUrlProtectionPolicyActions", TypeShape.of(GetAppsecUrlProtectionPolicyActionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecUrlProtectionPolicyActionsResult> getAppsecUrlProtectionPolicyActions(GetAppsecUrlProtectionPolicyActionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecUrlProtectionPolicyActions:getAppsecUrlProtectionPolicyActions", TypeShape.of(GetAppsecUrlProtectionPolicyActionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecUrlProtectionPolicyActionsResult> getAppsecUrlProtectionPolicyActionsPlain(GetAppsecUrlProtectionPolicyActionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecUrlProtectionPolicyActions:getAppsecUrlProtectionPolicyActions", TypeShape.of(GetAppsecUrlProtectionPolicyActionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecWafRulesetResult> getAppsecWafRuleset(GetAppsecWafRulesetArgs args) {
+        return getAppsecWafRuleset(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecWafRulesetResult> getAppsecWafRulesetPlain(GetAppsecWafRulesetPlainArgs args) {
+        return getAppsecWafRulesetPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecWafRulesetResult> getAppsecWafRuleset(GetAppsecWafRulesetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecWafRuleset:getAppsecWafRuleset", TypeShape.of(GetAppsecWafRulesetResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecWafRulesetResult> getAppsecWafRuleset(GetAppsecWafRulesetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecWafRuleset:getAppsecWafRuleset", TypeShape.of(GetAppsecWafRulesetResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecWafRulesetResult> getAppsecWafRulesetPlain(GetAppsecWafRulesetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecWafRuleset:getAppsecWafRuleset", TypeShape.of(GetAppsecWafRulesetResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetAprGeneralSettingsResult> getAprGeneralSettings(GetAprGeneralSettingsArgs args) {
         return getAprGeneralSettings(args, InvokeOptions.Empty);

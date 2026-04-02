@@ -20,6 +20,7 @@ public final class GetAppSecCustomRuleActionsResult {
      * 
      */
     private String id;
+    private String outputText;
     private String securityPolicyId;
 
     private GetAppSecCustomRuleActionsResult() {}
@@ -35,6 +36,9 @@ public final class GetAppSecCustomRuleActionsResult {
      */
     public String id() {
         return this.id;
+    }
+    public String outputText() {
+        return this.outputText;
     }
     public String securityPolicyId() {
         return this.securityPolicyId;
@@ -52,6 +56,7 @@ public final class GetAppSecCustomRuleActionsResult {
         private Integer configId;
         private @Nullable Integer customRuleId;
         private String id;
+        private String outputText;
         private String securityPolicyId;
         public Builder() {}
         public Builder(GetAppSecCustomRuleActionsResult defaults) {
@@ -59,6 +64,7 @@ public final class GetAppSecCustomRuleActionsResult {
     	      this.configId = defaults.configId;
     	      this.customRuleId = defaults.customRuleId;
     	      this.id = defaults.id;
+    	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
 
@@ -85,6 +91,14 @@ public final class GetAppSecCustomRuleActionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecCustomRuleActionsResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityPolicyId(String securityPolicyId) {
             if (securityPolicyId == null) {
               throw new MissingRequiredPropertyException("GetAppSecCustomRuleActionsResult", "securityPolicyId");
@@ -97,6 +111,7 @@ public final class GetAppSecCustomRuleActionsResult {
             _resultValue.configId = configId;
             _resultValue.customRuleId = customRuleId;
             _resultValue.id = id;
+            _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;
         }

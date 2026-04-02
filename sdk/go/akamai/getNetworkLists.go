@@ -38,6 +38,7 @@ type GetNetworkListsResult struct {
 	Lists         []string `pulumi:"lists"`
 	Name          *string  `pulumi:"name"`
 	NetworkListId string   `pulumi:"networkListId"`
+	OutputText    string   `pulumi:"outputText"`
 	SyncPoint     int      `pulumi:"syncPoint"`
 	Type          *string  `pulumi:"type"`
 }
@@ -104,6 +105,10 @@ func (o GetNetworkListsResultOutput) Name() pulumi.StringPtrOutput {
 
 func (o GetNetworkListsResultOutput) NetworkListId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) string { return v.NetworkListId }).(pulumi.StringOutput)
+}
+
+func (o GetNetworkListsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkListsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetNetworkListsResultOutput) SyncPoint() pulumi.IntOutput {

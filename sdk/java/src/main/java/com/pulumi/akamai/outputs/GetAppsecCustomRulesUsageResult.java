@@ -20,6 +20,7 @@ public final class GetAppsecCustomRulesUsageResult {
      */
     private String id;
     private String json;
+    private String outputText;
     private List<Integer> ruleIds;
     private List<GetAppsecCustomRulesUsageRule> rules;
 
@@ -36,6 +37,9 @@ public final class GetAppsecCustomRulesUsageResult {
     }
     public String json() {
         return this.json;
+    }
+    public String outputText() {
+        return this.outputText;
     }
     public List<Integer> ruleIds() {
         return this.ruleIds;
@@ -56,6 +60,7 @@ public final class GetAppsecCustomRulesUsageResult {
         private Integer configId;
         private String id;
         private String json;
+        private String outputText;
         private List<Integer> ruleIds;
         private List<GetAppsecCustomRulesUsageRule> rules;
         public Builder() {}
@@ -64,6 +69,7 @@ public final class GetAppsecCustomRulesUsageResult {
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
+    	      this.outputText = defaults.outputText;
     	      this.ruleIds = defaults.ruleIds;
     	      this.rules = defaults.rules;
         }
@@ -93,6 +99,14 @@ public final class GetAppsecCustomRulesUsageResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppsecCustomRulesUsageResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ruleIds(List<Integer> ruleIds) {
             if (ruleIds == null) {
               throw new MissingRequiredPropertyException("GetAppsecCustomRulesUsageResult", "ruleIds");
@@ -119,6 +133,7 @@ public final class GetAppsecCustomRulesUsageResult {
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
+            _resultValue.outputText = outputText;
             _resultValue.ruleIds = ruleIds;
             _resultValue.rules = rules;
             return _resultValue;

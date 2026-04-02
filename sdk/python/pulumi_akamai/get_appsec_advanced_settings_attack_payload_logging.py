@@ -26,7 +26,7 @@ class GetAppsecAdvancedSettingsAttackPayloadLoggingResult:
     """
     A collection of values returned by getAppsecAdvancedSettingsAttackPayloadLogging.
     """
-    def __init__(__self__, config_id=None, id=None, json=None, security_policy_id=None):
+    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -36,6 +36,9 @@ class GetAppsecAdvancedSettingsAttackPayloadLoggingResult:
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
@@ -59,6 +62,11 @@ class GetAppsecAdvancedSettingsAttackPayloadLoggingResult:
         return pulumi.get(self, "json")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "security_policy_id")
@@ -73,6 +81,7 @@ class AwaitableGetAppsecAdvancedSettingsAttackPayloadLoggingResult(GetAppsecAdva
             config_id=self.config_id,
             id=self.id,
             json=self.json,
+            output_text=self.output_text,
             security_policy_id=self.security_policy_id)
 
 
@@ -92,6 +101,7 @@ def get_appsec_advanced_settings_attack_payload_logging(config_id: Optional[_bui
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 def get_appsec_advanced_settings_attack_payload_logging_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
                                                                security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -108,4 +118,5 @@ def get_appsec_advanced_settings_attack_payload_logging_output(config_id: Option
         config_id=pulumi.get(__response__, 'config_id'),
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
+        output_text=pulumi.get(__response__, 'output_text'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

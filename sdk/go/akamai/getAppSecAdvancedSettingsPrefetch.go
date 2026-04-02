@@ -30,8 +30,9 @@ type LookupAppSecAdvancedSettingsPrefetchArgs struct {
 type LookupAppSecAdvancedSettingsPrefetchResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func LookupAppSecAdvancedSettingsPrefetchOutput(ctx *pulumi.Context, args LookupAppSecAdvancedSettingsPrefetchOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecAdvancedSettingsPrefetchResultOutput {
@@ -78,6 +79,10 @@ func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) Id() pulumi.StringOutp
 
 func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecAdvancedSettingsPrefetchResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecAdvancedSettingsPrefetchResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

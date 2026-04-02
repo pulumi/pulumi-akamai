@@ -30,8 +30,9 @@ type LookupAppsecAdvancedSettingsAsePenaltyBoxArgs struct {
 type LookupAppsecAdvancedSettingsAsePenaltyBoxResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func LookupAppsecAdvancedSettingsAsePenaltyBoxOutput(ctx *pulumi.Context, args LookupAppsecAdvancedSettingsAsePenaltyBoxOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput {
@@ -78,6 +79,10 @@ func (o LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput) Id() pulumi.Strin
 
 func (o LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppsecAdvancedSettingsAsePenaltyBoxResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppsecAdvancedSettingsAsePenaltyBoxResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -26,7 +26,7 @@ class GetAppsecAapSelectedHostnamesResult:
     """
     A collection of values returned by getAppsecAapSelectedHostnames.
     """
-    def __init__(__self__, config_id=None, evaluated_hosts=None, id=None, json=None, match_targets=None, protected_hosts=None, security_policy_id=None, selected_hosts=None):
+    def __init__(__self__, config_id=None, evaluated_hosts=None, id=None, json=None, match_targets=None, output_text=None, protected_hosts=None, security_policy_id=None, selected_hosts=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -42,6 +42,9 @@ class GetAppsecAapSelectedHostnamesResult:
         if match_targets and not isinstance(match_targets, str):
             raise TypeError("Expected argument 'match_targets' to be a str")
         pulumi.set(__self__, "match_targets", match_targets)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if protected_hosts and not isinstance(protected_hosts, list):
             raise TypeError("Expected argument 'protected_hosts' to be a list")
         pulumi.set(__self__, "protected_hosts", protected_hosts)
@@ -81,6 +84,11 @@ class GetAppsecAapSelectedHostnamesResult:
         return pulumi.get(self, "match_targets")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter(name="protectedHosts")
     def protected_hosts(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "protected_hosts")
@@ -107,6 +115,7 @@ class AwaitableGetAppsecAapSelectedHostnamesResult(GetAppsecAapSelectedHostnames
             id=self.id,
             json=self.json,
             match_targets=self.match_targets,
+            output_text=self.output_text,
             protected_hosts=self.protected_hosts,
             security_policy_id=self.security_policy_id,
             selected_hosts=self.selected_hosts)
@@ -130,6 +139,7 @@ def get_appsec_aap_selected_hostnames(config_id: Optional[_builtins.int] = None,
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         match_targets=pulumi.get(__ret__, 'match_targets'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         protected_hosts=pulumi.get(__ret__, 'protected_hosts'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         selected_hosts=pulumi.get(__ret__, 'selected_hosts'))
@@ -150,6 +160,7 @@ def get_appsec_aap_selected_hostnames_output(config_id: Optional[pulumi.Input[_b
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
         match_targets=pulumi.get(__response__, 'match_targets'),
+        output_text=pulumi.get(__response__, 'output_text'),
         protected_hosts=pulumi.get(__response__, 'protected_hosts'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id'),
         selected_hosts=pulumi.get(__response__, 'selected_hosts')))

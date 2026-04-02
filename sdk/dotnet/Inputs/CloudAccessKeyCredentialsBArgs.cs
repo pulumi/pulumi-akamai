@@ -15,8 +15,8 @@ namespace Pulumi.Akamai.Inputs
         /// <summary>
         /// Access key id from cloud provider which is used to sign API requests
         /// </summary>
-        [Input("cloudAccessKeyId", required: true)]
-        public Input<string> CloudAccessKeyId { get; set; } = null!;
+        [Input("cloudAccessKeyId")]
+        public Input<string>? CloudAccessKeyId { get; set; }
 
         [Input("cloudSecretAccessKey", required: true)]
         private Input<string>? _cloudSecretAccessKey;

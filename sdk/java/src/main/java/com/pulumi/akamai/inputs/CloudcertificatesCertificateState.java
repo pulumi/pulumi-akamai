@@ -6,6 +6,8 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.akamai.inputs.CloudcertificatesCertificateSubjectArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -30,6 +32,21 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
+    }
+
+    /**
+     * If true, the resource will be automatically replaced when &#39;renew_pending&#39; becomes true. Defaults to false.
+     * 
+     */
+    @Import(name="autoRenew")
+    private @Nullable Output<Boolean> autoRenew;
+
+    /**
+     * @return If true, the resource will be automatically replaced when &#39;renew_pending&#39; becomes true. Defaults to false.
+     * 
+     */
+    public Optional<Output<Boolean>> autoRenew() {
+        return Optional.ofNullable(this.autoRenew);
     }
 
     /**
@@ -183,14 +200,14 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
     }
 
     /**
-     * The key size for a certificate. Valid value for key type RSA: &#39;2048&#39;. Valid value for key type ECDSA: &#39;P-256&#39;.
+     * The key size for a certificate. Valid values for key type ECDSA: &#39;P-256&#39;, &#39;P-384&#39;. Valid value for key type RSA: &#39;2048&#39;.
      * 
      */
     @Import(name="keySize")
     private @Nullable Output<String> keySize;
 
     /**
-     * @return The key size for a certificate. Valid value for key type RSA: &#39;2048&#39;. Valid value for key type ECDSA: &#39;P-256&#39;.
+     * @return The key size for a certificate. Valid values for key type ECDSA: &#39;P-256&#39;, &#39;P-384&#39;. Valid value for key type RSA: &#39;2048&#39;.
      * 
      */
     public Optional<Output<String>> keySize() {
@@ -198,14 +215,14 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
     }
 
     /**
-     * The key type for a certificate. Valid values are &#39;RSA&#39; or &#39;ECDSA&#39;
+     * The key type for a certificate. Valid values are &#39;ECDSA&#39;, &#39;RSA&#39;.
      * 
      */
     @Import(name="keyType")
     private @Nullable Output<String> keyType;
 
     /**
-     * @return The key type for a certificate. Valid values are &#39;RSA&#39; or &#39;ECDSA&#39;
+     * @return The key type for a certificate. Valid values are &#39;ECDSA&#39;, &#39;RSA&#39;.
      * 
      */
     public Optional<Output<String>> keyType() {
@@ -258,6 +275,36 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
     }
 
     /**
+     * Number of days before the certificate&#39;s expiration date when renewal should be indicated. Only non-negative values are accepted.
+     * 
+     */
+    @Import(name="renewBeforeExpirationDays")
+    private @Nullable Output<Integer> renewBeforeExpirationDays;
+
+    /**
+     * @return Number of days before the certificate&#39;s expiration date when renewal should be indicated. Only non-negative values are accepted.
+     * 
+     */
+    public Optional<Output<Integer>> renewBeforeExpirationDays() {
+        return Optional.ofNullable(this.renewBeforeExpirationDays);
+    }
+
+    /**
+     * Indicates whether the certificate needs renewal. Set to true when the current time is within &#39;renew_before_expiration_days&#39; of the certificate&#39;s expiration date.
+     * 
+     */
+    @Import(name="renewPending")
+    private @Nullable Output<Boolean> renewPending;
+
+    /**
+     * @return Indicates whether the certificate needs renewal. Set to true when the current time is within &#39;renew_before_expiration_days&#39; of the certificate&#39;s expiration date.
+     * 
+     */
+    public Optional<Output<Boolean>> renewPending() {
+        return Optional.ofNullable(this.renewPending);
+    }
+
+    /**
      * The list of Subject Alternative Names (SANs) for the certificate.
      * 
      */
@@ -273,14 +320,14 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
     }
 
     /**
-     * Secure network type to use for the certificate. The only valid value is &#39;ENHANCED_TLS&#39;
+     * Secure network type to use for the certificate. Valid values are &#39;ENHANCED_TLS&#39; and &#39;STANDARD_TLS&#39;.
      * 
      */
     @Import(name="secureNetwork")
     private @Nullable Output<String> secureNetwork;
 
     /**
-     * @return Secure network type to use for the certificate. The only valid value is &#39;ENHANCED_TLS&#39;
+     * @return Secure network type to use for the certificate. Valid values are &#39;ENHANCED_TLS&#39; and &#39;STANDARD_TLS&#39;.
      * 
      */
     public Optional<Output<String>> secureNetwork() {
@@ -306,6 +353,7 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
 
     private CloudcertificatesCertificateState(CloudcertificatesCertificateState $) {
         this.accountId = $.accountId;
+        this.autoRenew = $.autoRenew;
         this.baseName = $.baseName;
         this.certificateId = $.certificateId;
         this.certificateStatus = $.certificateStatus;
@@ -321,6 +369,8 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
         this.modifiedBy = $.modifiedBy;
         this.modifiedDate = $.modifiedDate;
         this.name = $.name;
+        this.renewBeforeExpirationDays = $.renewBeforeExpirationDays;
+        this.renewPending = $.renewPending;
         this.sans = $.sans;
         this.secureNetwork = $.secureNetwork;
         this.subject = $.subject;
@@ -363,6 +413,27 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
+        }
+
+        /**
+         * @param autoRenew If true, the resource will be automatically replaced when &#39;renew_pending&#39; becomes true. Defaults to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoRenew(@Nullable Output<Boolean> autoRenew) {
+            $.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * @param autoRenew If true, the resource will be automatically replaced when &#39;renew_pending&#39; becomes true. Defaults to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoRenew(Boolean autoRenew) {
+            return autoRenew(Output.of(autoRenew));
         }
 
         /**
@@ -576,7 +647,7 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
         }
 
         /**
-         * @param keySize The key size for a certificate. Valid value for key type RSA: &#39;2048&#39;. Valid value for key type ECDSA: &#39;P-256&#39;.
+         * @param keySize The key size for a certificate. Valid values for key type ECDSA: &#39;P-256&#39;, &#39;P-384&#39;. Valid value for key type RSA: &#39;2048&#39;.
          * 
          * @return builder
          * 
@@ -587,7 +658,7 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
         }
 
         /**
-         * @param keySize The key size for a certificate. Valid value for key type RSA: &#39;2048&#39;. Valid value for key type ECDSA: &#39;P-256&#39;.
+         * @param keySize The key size for a certificate. Valid values for key type ECDSA: &#39;P-256&#39;, &#39;P-384&#39;. Valid value for key type RSA: &#39;2048&#39;.
          * 
          * @return builder
          * 
@@ -597,7 +668,7 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
         }
 
         /**
-         * @param keyType The key type for a certificate. Valid values are &#39;RSA&#39; or &#39;ECDSA&#39;
+         * @param keyType The key type for a certificate. Valid values are &#39;ECDSA&#39;, &#39;RSA&#39;.
          * 
          * @return builder
          * 
@@ -608,7 +679,7 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
         }
 
         /**
-         * @param keyType The key type for a certificate. Valid values are &#39;RSA&#39; or &#39;ECDSA&#39;
+         * @param keyType The key type for a certificate. Valid values are &#39;ECDSA&#39;, &#39;RSA&#39;.
          * 
          * @return builder
          * 
@@ -681,6 +752,48 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
         }
 
         /**
+         * @param renewBeforeExpirationDays Number of days before the certificate&#39;s expiration date when renewal should be indicated. Only non-negative values are accepted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewBeforeExpirationDays(@Nullable Output<Integer> renewBeforeExpirationDays) {
+            $.renewBeforeExpirationDays = renewBeforeExpirationDays;
+            return this;
+        }
+
+        /**
+         * @param renewBeforeExpirationDays Number of days before the certificate&#39;s expiration date when renewal should be indicated. Only non-negative values are accepted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewBeforeExpirationDays(Integer renewBeforeExpirationDays) {
+            return renewBeforeExpirationDays(Output.of(renewBeforeExpirationDays));
+        }
+
+        /**
+         * @param renewPending Indicates whether the certificate needs renewal. Set to true when the current time is within &#39;renew_before_expiration_days&#39; of the certificate&#39;s expiration date.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewPending(@Nullable Output<Boolean> renewPending) {
+            $.renewPending = renewPending;
+            return this;
+        }
+
+        /**
+         * @param renewPending Indicates whether the certificate needs renewal. Set to true when the current time is within &#39;renew_before_expiration_days&#39; of the certificate&#39;s expiration date.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewPending(Boolean renewPending) {
+            return renewPending(Output.of(renewPending));
+        }
+
+        /**
          * @param sans The list of Subject Alternative Names (SANs) for the certificate.
          * 
          * @return builder
@@ -712,7 +825,7 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
         }
 
         /**
-         * @param secureNetwork Secure network type to use for the certificate. The only valid value is &#39;ENHANCED_TLS&#39;
+         * @param secureNetwork Secure network type to use for the certificate. Valid values are &#39;ENHANCED_TLS&#39; and &#39;STANDARD_TLS&#39;.
          * 
          * @return builder
          * 
@@ -723,7 +836,7 @@ public final class CloudcertificatesCertificateState extends com.pulumi.resource
         }
 
         /**
-         * @param secureNetwork Secure network type to use for the certificate. The only valid value is &#39;ENHANCED_TLS&#39;
+         * @param secureNetwork Secure network type to use for the certificate. Valid values are &#39;ENHANCED_TLS&#39; and &#39;STANDARD_TLS&#39;.
          * 
          * @return builder
          * 

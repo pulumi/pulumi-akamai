@@ -64,6 +64,10 @@ from .appsec_eval_penalty_box_conditions import *
 from .appsec_penalty_box_conditions import *
 from .appsec_rapid_rules import *
 from .appsec_security_policy_default_protections import *
+from .appsec_security_policy_protections import *
+from .appsec_url_protection_action import *
+from .appsec_url_protection_policy import *
+from .appsec_waf_ruleset import *
 from .apr_general_settings import *
 from .apr_protected_operations import *
 from .apr_user_allow_list import *
@@ -177,6 +181,11 @@ from .get_appsec_custom_rules_usage import *
 from .get_appsec_eval_penalty_box_conditions import *
 from .get_appsec_penalty_box_conditions import *
 from .get_appsec_rapid_rules import *
+from .get_appsec_url_protection_policies import *
+from .get_appsec_url_protection_policies_actions import *
+from .get_appsec_url_protection_policy import *
+from .get_appsec_url_protection_policy_actions import *
+from .get_appsec_waf_ruleset import *
 from .get_apr_general_settings import *
 from .get_apr_protected_operations import *
 from .get_apr_user_allow_list import *
@@ -840,6 +849,38 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections": "AppsecSecurityPolicyDefaultProtections"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecSecurityPolicyProtections",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecSecurityPolicyProtections:AppsecSecurityPolicyProtections": "AppsecSecurityPolicyProtections"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecUrlProtectionAction",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecUrlProtectionAction:AppsecUrlProtectionAction": "AppsecUrlProtectionAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecUrlProtectionPolicy",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecUrlProtectionPolicy:AppsecUrlProtectionPolicy": "AppsecUrlProtectionPolicy"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecWafRuleset",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecWafRuleset:AppsecWafRuleset": "AppsecWafRuleset"
   }
  },
  {

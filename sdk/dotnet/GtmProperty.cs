@@ -81,6 +81,9 @@ namespace Pulumi.Akamai
         [Output("scoreAggregationType")]
         public Output<string> ScoreAggregationType { get; private set; } = null!;
 
+        [Output("stateChangeNotificationWebhook")]
+        public Output<Outputs.GtmPropertyStateChangeNotificationWebhook?> StateChangeNotificationWebhook { get; private set; } = null!;
+
         [Output("staticRrSets")]
         public Output<ImmutableArray<Outputs.GtmPropertyStaticRrSet>> StaticRrSets { get; private set; } = null!;
 
@@ -235,6 +238,9 @@ namespace Pulumi.Akamai
         [Input("scoreAggregationType", required: true)]
         public Input<string> ScoreAggregationType { get; set; } = null!;
 
+        [Input("stateChangeNotificationWebhook")]
+        public Input<Inputs.GtmPropertyStateChangeNotificationWebhookArgs>? StateChangeNotificationWebhook { get; set; }
+
         [Input("staticRrSets")]
         private InputList<Inputs.GtmPropertyStaticRrSetArgs>? _staticRrSets;
         public InputList<Inputs.GtmPropertyStaticRrSetArgs> StaticRrSets
@@ -350,6 +356,9 @@ namespace Pulumi.Akamai
 
         [Input("scoreAggregationType")]
         public Input<string>? ScoreAggregationType { get; set; }
+
+        [Input("stateChangeNotificationWebhook")]
+        public Input<Inputs.GtmPropertyStateChangeNotificationWebhookGetArgs>? StateChangeNotificationWebhook { get; set; }
 
         [Input("staticRrSets")]
         private InputList<Inputs.GtmPropertyStaticRrSetGetArgs>? _staticRrSets;

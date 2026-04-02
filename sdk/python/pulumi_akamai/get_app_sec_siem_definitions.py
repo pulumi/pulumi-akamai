@@ -26,13 +26,16 @@ class GetAppSecSiemDefinitionsResult:
     """
     A collection of values returned by getAppSecSiemDefinitions.
     """
-    def __init__(__self__, id=None, json=None, siem_definition_name=None):
+    def __init__(__self__, id=None, json=None, output_text=None, siem_definition_name=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if siem_definition_name and not isinstance(siem_definition_name, str):
             raise TypeError("Expected argument 'siem_definition_name' to be a str")
         pulumi.set(__self__, "siem_definition_name", siem_definition_name)
@@ -51,6 +54,11 @@ class GetAppSecSiemDefinitionsResult:
         return pulumi.get(self, "json")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter(name="siemDefinitionName")
     def siem_definition_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "siem_definition_name")
@@ -64,6 +72,7 @@ class AwaitableGetAppSecSiemDefinitionsResult(GetAppSecSiemDefinitionsResult):
         return GetAppSecSiemDefinitionsResult(
             id=self.id,
             json=self.json,
+            output_text=self.output_text,
             siem_definition_name=self.siem_definition_name)
 
 
@@ -80,6 +89,7 @@ def get_app_sec_siem_definitions(siem_definition_name: Optional[_builtins.str] =
     return AwaitableGetAppSecSiemDefinitionsResult(
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         siem_definition_name=pulumi.get(__ret__, 'siem_definition_name'))
 def get_app_sec_siem_definitions_output(siem_definition_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecSiemDefinitionsResult]:
@@ -93,4 +103,5 @@ def get_app_sec_siem_definitions_output(siem_definition_name: Optional[pulumi.In
     return __ret__.apply(lambda __response__: GetAppSecSiemDefinitionsResult(
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
+        output_text=pulumi.get(__response__, 'output_text'),
         siem_definition_name=pulumi.get(__response__, 'siem_definition_name')))

@@ -68,6 +68,7 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
+        public readonly string OutputText;
         public readonly int? RuleId;
         public readonly string SecurityPolicyId;
 
@@ -83,6 +84,8 @@ namespace Pulumi.Akamai
 
             string json,
 
+            string outputText,
+
             int? ruleId,
 
             string securityPolicyId)
@@ -92,6 +95,7 @@ namespace Pulumi.Akamai
             EvalRuleAction = evalRuleAction;
             Id = id;
             Json = json;
+            OutputText = outputText;
             RuleId = ruleId;
             SecurityPolicyId = securityPolicyId;
         }

@@ -31,8 +31,9 @@ type GetAppSecFailoverHostnamesResult struct {
 	ConfigId  int      `pulumi:"configId"`
 	Hostnames []string `pulumi:"hostnames"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func GetAppSecFailoverHostnamesOutput(ctx *pulumi.Context, args GetAppSecFailoverHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecFailoverHostnamesResultOutput {
@@ -83,6 +84,10 @@ func (o GetAppSecFailoverHostnamesResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecFailoverHostnamesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecFailoverHostnamesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecFailoverHostnamesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecFailoverHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

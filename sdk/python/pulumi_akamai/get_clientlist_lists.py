@@ -27,7 +27,7 @@ class GetClientlistListsResult:
     """
     A collection of values returned by getClientlistLists.
     """
-    def __init__(__self__, id=None, json=None, list_ids=None, lists=None, name=None, types=None):
+    def __init__(__self__, id=None, json=None, list_ids=None, lists=None, name=None, output_text=None, types=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -43,6 +43,9 @@ class GetClientlistListsResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if types and not isinstance(types, list):
             raise TypeError("Expected argument 'types' to be a list")
         pulumi.set(__self__, "types", types)
@@ -73,6 +76,11 @@ class GetClientlistListsResult:
         return pulumi.get(self, "name")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter
     def types(self) -> Optional[Sequence[_builtins.str]]:
         return pulumi.get(self, "types")
@@ -89,6 +97,7 @@ class AwaitableGetClientlistListsResult(GetClientlistListsResult):
             list_ids=self.list_ids,
             lists=self.lists,
             name=self.name,
+            output_text=self.output_text,
             types=self.types)
 
 
@@ -110,6 +119,7 @@ def get_clientlist_lists(name: Optional[_builtins.str] = None,
         list_ids=pulumi.get(__ret__, 'list_ids'),
         lists=pulumi.get(__ret__, 'lists'),
         name=pulumi.get(__ret__, 'name'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         types=pulumi.get(__ret__, 'types'))
 def get_clientlist_lists_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
@@ -128,4 +138,5 @@ def get_clientlist_lists_output(name: Optional[pulumi.Input[Optional[_builtins.s
         list_ids=pulumi.get(__response__, 'list_ids'),
         lists=pulumi.get(__response__, 'lists'),
         name=pulumi.get(__response__, 'name'),
+        output_text=pulumi.get(__response__, 'output_text'),
         types=pulumi.get(__response__, 'types')))
