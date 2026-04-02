@@ -27,6 +27,8 @@ type AppSecWafMode struct {
 	EvalStatus pulumi.StringOutput `pulumi:"evalStatus"`
 	// How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
 	Mode pulumi.StringOutput `pulumi:"mode"`
+	// Text representation
+	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
@@ -82,6 +84,8 @@ type appSecWafModeState struct {
 	EvalStatus *string `pulumi:"evalStatus"`
 	// How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
 	Mode *string `pulumi:"mode"`
+	// Text representation
+	OutputText *string `pulumi:"outputText"`
 	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
@@ -99,6 +103,8 @@ type AppSecWafModeState struct {
 	EvalStatus pulumi.StringPtrInput
 	// How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
 	Mode pulumi.StringPtrInput
+	// Text representation
+	OutputText pulumi.StringPtrInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
@@ -241,6 +247,11 @@ func (o AppSecWafModeOutput) EvalStatus() pulumi.StringOutput {
 // How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
 func (o AppSecWafModeOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafMode) pulumi.StringOutput { return v.Mode }).(pulumi.StringOutput)
+}
+
+// Text representation
+func (o AppSecWafModeOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecWafMode) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }
 
 // Unique identifier of the security policy

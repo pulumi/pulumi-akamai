@@ -33,6 +33,7 @@ type GetAppSecConfigurationVersionResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
 	LatestVersion    int    `pulumi:"latestVersion"`
+	OutputText       string `pulumi:"outputText"`
 	ProductionStatus string `pulumi:"productionStatus"`
 	StagingStatus    string `pulumi:"stagingStatus"`
 	Version          *int   `pulumi:"version"`
@@ -83,6 +84,10 @@ func (o GetAppSecConfigurationVersionResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecConfigurationVersionResultOutput) LatestVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAppSecConfigurationVersionResult) int { return v.LatestVersion }).(pulumi.IntOutput)
+}
+
+func (o GetAppSecConfigurationVersionResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecConfigurationVersionResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecConfigurationVersionResultOutput) ProductionStatus() pulumi.StringOutput {

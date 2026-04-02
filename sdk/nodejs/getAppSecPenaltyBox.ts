@@ -31,6 +31,7 @@ export interface GetAppSecPenaltyBoxResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecPenaltyBoxOutput(args: GetAppSecPenaltyBoxOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecPenaltyBoxResult> {

@@ -19,8 +19,10 @@ type EdgeHostName struct {
 	ContractId   pulumi.StringOutput `pulumi:"contractId"`
 	EdgeHostname pulumi.StringOutput `pulumi:"edgeHostname"`
 	GroupId      pulumi.StringOutput `pulumi:"groupId"`
-	IpBehavior   pulumi.StringOutput `pulumi:"ipBehavior"`
-	ProductId    pulumi.StringOutput `pulumi:"productId"`
+	// Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+	HttpsServiceBinding pulumi.StringPtrOutput `pulumi:"httpsServiceBinding"`
+	IpBehavior          pulumi.StringOutput    `pulumi:"ipBehavior"`
+	ProductId           pulumi.StringOutput    `pulumi:"productId"`
 	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails pulumi.StringArrayOutput `pulumi:"statusUpdateEmails"`
 	// Enables to set timeout for processing
@@ -83,8 +85,10 @@ type edgeHostNameState struct {
 	ContractId   *string `pulumi:"contractId"`
 	EdgeHostname *string `pulumi:"edgeHostname"`
 	GroupId      *string `pulumi:"groupId"`
-	IpBehavior   *string `pulumi:"ipBehavior"`
-	ProductId    *string `pulumi:"productId"`
+	// Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+	HttpsServiceBinding *string `pulumi:"httpsServiceBinding"`
+	IpBehavior          *string `pulumi:"ipBehavior"`
+	ProductId           *string `pulumi:"productId"`
 	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails []string `pulumi:"statusUpdateEmails"`
 	// Enables to set timeout for processing
@@ -100,8 +104,10 @@ type EdgeHostNameState struct {
 	ContractId   pulumi.StringPtrInput
 	EdgeHostname pulumi.StringPtrInput
 	GroupId      pulumi.StringPtrInput
-	IpBehavior   pulumi.StringPtrInput
-	ProductId    pulumi.StringPtrInput
+	// Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+	HttpsServiceBinding pulumi.StringPtrInput
+	IpBehavior          pulumi.StringPtrInput
+	ProductId           pulumi.StringPtrInput
 	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails pulumi.StringArrayInput
 	// Enables to set timeout for processing
@@ -117,12 +123,14 @@ func (EdgeHostNameState) ElementType() reflect.Type {
 }
 
 type edgeHostNameArgs struct {
-	Certificate  *int    `pulumi:"certificate"`
-	ContractId   string  `pulumi:"contractId"`
-	EdgeHostname string  `pulumi:"edgeHostname"`
-	GroupId      string  `pulumi:"groupId"`
-	IpBehavior   string  `pulumi:"ipBehavior"`
-	ProductId    *string `pulumi:"productId"`
+	Certificate  *int   `pulumi:"certificate"`
+	ContractId   string `pulumi:"contractId"`
+	EdgeHostname string `pulumi:"edgeHostname"`
+	GroupId      string `pulumi:"groupId"`
+	// Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+	HttpsServiceBinding *string `pulumi:"httpsServiceBinding"`
+	IpBehavior          string  `pulumi:"ipBehavior"`
+	ProductId           *string `pulumi:"productId"`
 	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails []string `pulumi:"statusUpdateEmails"`
 	// Enables to set timeout for processing
@@ -139,8 +147,10 @@ type EdgeHostNameArgs struct {
 	ContractId   pulumi.StringInput
 	EdgeHostname pulumi.StringInput
 	GroupId      pulumi.StringInput
-	IpBehavior   pulumi.StringInput
-	ProductId    pulumi.StringPtrInput
+	// Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+	HttpsServiceBinding pulumi.StringPtrInput
+	IpBehavior          pulumi.StringInput
+	ProductId           pulumi.StringPtrInput
 	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails pulumi.StringArrayInput
 	// Enables to set timeout for processing
@@ -252,6 +262,11 @@ func (o EdgeHostNameOutput) EdgeHostname() pulumi.StringOutput {
 
 func (o EdgeHostNameOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
+}
+
+// Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+func (o EdgeHostNameOutput) HttpsServiceBinding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringPtrOutput { return v.HttpsServiceBinding }).(pulumi.StringPtrOutput)
 }
 
 func (o EdgeHostNameOutput) IpBehavior() pulumi.StringOutput {

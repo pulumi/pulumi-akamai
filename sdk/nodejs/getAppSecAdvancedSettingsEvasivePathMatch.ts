@@ -30,6 +30,7 @@ export interface GetAppSecAdvancedSettingsEvasivePathMatchResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
     readonly securityPolicyId?: string;
 }
 export function getAppSecAdvancedSettingsEvasivePathMatchOutput(args: GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> {

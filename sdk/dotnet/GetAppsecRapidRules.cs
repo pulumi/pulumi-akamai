@@ -71,6 +71,7 @@ namespace Pulumi.Akamai
         public readonly bool Enabled;
         public readonly string Id;
         public readonly bool? IncludeExpiryDetails;
+        public readonly string OutputText;
         public readonly ImmutableArray<Outputs.GetAppsecRapidRulesRapidRuleResult> RapidRules;
         public readonly int? RuleId;
         public readonly string SecurityPolicyId;
@@ -87,6 +88,8 @@ namespace Pulumi.Akamai
 
             bool? includeExpiryDetails,
 
+            string outputText,
+
             ImmutableArray<Outputs.GetAppsecRapidRulesRapidRuleResult> rapidRules,
 
             int? ruleId,
@@ -98,6 +101,7 @@ namespace Pulumi.Akamai
             Enabled = enabled;
             Id = id;
             IncludeExpiryDetails = includeExpiryDetails;
+            OutputText = outputText;
             RapidRules = rapidRules;
             RuleId = ruleId;
             SecurityPolicyId = securityPolicyId;

@@ -32,6 +32,7 @@ export interface GetAppsecAapSelectedHostnamesResult {
     readonly id: string;
     readonly json: string;
     readonly matchTargets: string;
+    readonly outputText: string;
     readonly protectedHosts: string[];
     readonly securityPolicyId: string;
     readonly selectedHosts: string[];

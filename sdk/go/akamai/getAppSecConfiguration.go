@@ -34,6 +34,7 @@ type LookupAppSecConfigurationResult struct {
 	Id                string  `pulumi:"id"`
 	LatestVersion     int     `pulumi:"latestVersion"`
 	Name              *string `pulumi:"name"`
+	OutputText        string  `pulumi:"outputText"`
 	ProductionVersion int     `pulumi:"productionVersion"`
 	StagingVersion    int     `pulumi:"stagingVersion"`
 }
@@ -90,6 +91,10 @@ func (o LookupAppSecConfigurationResultOutput) LatestVersion() pulumi.IntOutput 
 
 func (o LookupAppSecConfigurationResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupAppSecConfigurationResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o LookupAppSecConfigurationResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecConfigurationResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o LookupAppSecConfigurationResultOutput) ProductionVersion() pulumi.IntOutput {

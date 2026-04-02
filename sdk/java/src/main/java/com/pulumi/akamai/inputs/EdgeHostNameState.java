@@ -46,6 +46,21 @@ public final class EdgeHostNameState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.groupId);
     }
 
+    /**
+     * Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+     * 
+     */
+    @Import(name="httpsServiceBinding")
+    private @Nullable Output<String> httpsServiceBinding;
+
+    /**
+     * @return Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+     * 
+     */
+    public Optional<Output<String>> httpsServiceBinding() {
+        return Optional.ofNullable(this.httpsServiceBinding);
+    }
+
     @Import(name="ipBehavior")
     private @Nullable Output<String> ipBehavior;
 
@@ -127,6 +142,7 @@ public final class EdgeHostNameState extends com.pulumi.resources.ResourceArgs {
         this.contractId = $.contractId;
         this.edgeHostname = $.edgeHostname;
         this.groupId = $.groupId;
+        this.httpsServiceBinding = $.httpsServiceBinding;
         this.ipBehavior = $.ipBehavior;
         this.productId = $.productId;
         this.statusUpdateEmails = $.statusUpdateEmails;
@@ -187,6 +203,27 @@ public final class EdgeHostNameState extends com.pulumi.resources.ResourceArgs {
 
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
+        }
+
+        /**
+         * @param httpsServiceBinding Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder httpsServiceBinding(@Nullable Output<String> httpsServiceBinding) {
+            $.httpsServiceBinding = httpsServiceBinding;
+            return this;
+        }
+
+        /**
+         * @param httpsServiceBinding Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder httpsServiceBinding(String httpsServiceBinding) {
+            return httpsServiceBinding(Output.of(httpsServiceBinding));
         }
 
         public Builder ipBehavior(@Nullable Output<String> ipBehavior) {

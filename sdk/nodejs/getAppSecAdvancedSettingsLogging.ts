@@ -30,6 +30,7 @@ export interface GetAppSecAdvancedSettingsLoggingResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
     readonly securityPolicyId?: string;
 }
 export function getAppSecAdvancedSettingsLoggingOutput(args: GetAppSecAdvancedSettingsLoggingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecAdvancedSettingsLoggingResult> {

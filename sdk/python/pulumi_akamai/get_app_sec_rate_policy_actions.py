@@ -26,13 +26,16 @@ class GetAppSecRatePolicyActionsResult:
     """
     A collection of values returned by getAppSecRatePolicyActions.
     """
-    def __init__(__self__, config_id=None, id=None, rate_policy_id=None, security_policy_id=None):
+    def __init__(__self__, config_id=None, id=None, output_text=None, rate_policy_id=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if rate_policy_id and not isinstance(rate_policy_id, int):
             raise TypeError("Expected argument 'rate_policy_id' to be a int")
         pulumi.set(__self__, "rate_policy_id", rate_policy_id)
@@ -54,6 +57,11 @@ class GetAppSecRatePolicyActionsResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter(name="ratePolicyId")
     def rate_policy_id(self) -> Optional[_builtins.int]:
         return pulumi.get(self, "rate_policy_id")
@@ -72,6 +80,7 @@ class AwaitableGetAppSecRatePolicyActionsResult(GetAppSecRatePolicyActionsResult
         return GetAppSecRatePolicyActionsResult(
             config_id=self.config_id,
             id=self.id,
+            output_text=self.output_text,
             rate_policy_id=self.rate_policy_id,
             security_policy_id=self.security_policy_id)
 
@@ -93,6 +102,7 @@ def get_app_sec_rate_policy_actions(config_id: Optional[_builtins.int] = None,
     return AwaitableGetAppSecRatePolicyActionsResult(
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         rate_policy_id=pulumi.get(__ret__, 'rate_policy_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 def get_app_sec_rate_policy_actions_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
@@ -111,5 +121,6 @@ def get_app_sec_rate_policy_actions_output(config_id: Optional[pulumi.Input[_bui
     return __ret__.apply(lambda __response__: GetAppSecRatePolicyActionsResult(
         config_id=pulumi.get(__response__, 'config_id'),
         id=pulumi.get(__response__, 'id'),
+        output_text=pulumi.get(__response__, 'output_text'),
         rate_policy_id=pulumi.get(__response__, 'rate_policy_id'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

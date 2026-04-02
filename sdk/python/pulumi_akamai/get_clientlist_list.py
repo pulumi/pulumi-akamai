@@ -27,7 +27,7 @@ class GetClientlistListResult:
     """
     A collection of values returned by getClientlistList.
     """
-    def __init__(__self__, id=None, json=None, list=None, list_id=None):
+    def __init__(__self__, id=None, json=None, list=None, list_id=None, output_text=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -40,6 +40,9 @@ class GetClientlistListResult:
         if list_id and not isinstance(list_id, str):
             raise TypeError("Expected argument 'list_id' to be a str")
         pulumi.set(__self__, "list_id", list_id)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
 
     @_builtins.property
     @pulumi.getter
@@ -64,6 +67,11 @@ class GetClientlistListResult:
     def list_id(self) -> _builtins.str:
         return pulumi.get(self, "list_id")
 
+    @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
 
 class AwaitableGetClientlistListResult(GetClientlistListResult):
     # pylint: disable=using-constant-test
@@ -74,7 +82,8 @@ class AwaitableGetClientlistListResult(GetClientlistListResult):
             id=self.id,
             json=self.json,
             list=self.list,
-            list_id=self.list_id)
+            list_id=self.list_id,
+            output_text=self.output_text)
 
 
 def get_clientlist_list(list_id: Optional[_builtins.str] = None,
@@ -91,7 +100,8 @@ def get_clientlist_list(list_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         list=pulumi.get(__ret__, 'list'),
-        list_id=pulumi.get(__ret__, 'list_id'))
+        list_id=pulumi.get(__ret__, 'list_id'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 def get_clientlist_list_output(list_id: Optional[pulumi.Input[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClientlistListResult]:
     """
@@ -105,4 +115,5 @@ def get_clientlist_list_output(list_id: Optional[pulumi.Input[_builtins.str]] = 
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
         list=pulumi.get(__response__, 'list'),
-        list_id=pulumi.get(__response__, 'list_id')))
+        list_id=pulumi.get(__response__, 'list_id'),
+        output_text=pulumi.get(__response__, 'output_text')))

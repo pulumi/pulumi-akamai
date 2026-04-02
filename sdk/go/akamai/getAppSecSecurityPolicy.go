@@ -33,6 +33,7 @@ type LookupAppSecSecurityPolicyResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                    string   `pulumi:"id"`
 	Json                  string   `pulumi:"json"`
+	OutputText            string   `pulumi:"outputText"`
 	SecurityPolicyId      string   `pulumi:"securityPolicyId"`
 	SecurityPolicyIdLists []string `pulumi:"securityPolicyIdLists"`
 	SecurityPolicyName    *string  `pulumi:"securityPolicyName"`
@@ -83,6 +84,10 @@ func (o LookupAppSecSecurityPolicyResultOutput) Id() pulumi.StringOutput {
 
 func (o LookupAppSecSecurityPolicyResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSecurityPolicyResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecSecurityPolicyResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSecurityPolicyResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o LookupAppSecSecurityPolicyResultOutput) SecurityPolicyId() pulumi.StringOutput {

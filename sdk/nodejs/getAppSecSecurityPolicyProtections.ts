@@ -32,12 +32,14 @@ export interface GetAppSecSecurityPolicyProtectionsResult {
     readonly applyRateControls: boolean;
     readonly applyReputationControls: boolean;
     readonly applySlowPostControls: boolean;
+    readonly applyUrlProtectionControls: boolean;
     readonly configId: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecSecurityPolicyProtectionsOutput(args: GetAppSecSecurityPolicyProtectionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSecurityPolicyProtectionsResult> {

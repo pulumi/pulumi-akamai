@@ -17,6 +17,8 @@ type AppSecVersionNodes struct {
 
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
+	// Text representation
+	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// Brief description of the security configuration version
 	VersionNotes pulumi.StringOutput `pulumi:"versionNotes"`
 }
@@ -59,6 +61,8 @@ func GetAppSecVersionNodes(ctx *pulumi.Context,
 type appSecVersionNodesState struct {
 	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
+	// Text representation
+	OutputText *string `pulumi:"outputText"`
 	// Brief description of the security configuration version
 	VersionNotes *string `pulumi:"versionNotes"`
 }
@@ -66,6 +70,8 @@ type appSecVersionNodesState struct {
 type AppSecVersionNodesState struct {
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
+	// Text representation
+	OutputText pulumi.StringPtrInput
 	// Brief description of the security configuration version
 	VersionNotes pulumi.StringPtrInput
 }
@@ -179,6 +185,11 @@ func (o AppSecVersionNodesOutput) ToAppSecVersionNodesOutputWithContext(ctx cont
 // Unique identifier of the security configuration
 func (o AppSecVersionNodesOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecVersionNodes) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// Text representation
+func (o AppSecVersionNodesOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecVersionNodes) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }
 
 // Brief description of the security configuration version

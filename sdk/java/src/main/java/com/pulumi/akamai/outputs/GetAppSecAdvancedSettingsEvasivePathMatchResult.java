@@ -20,6 +20,7 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchResult {
      */
     private String id;
     private String json;
+    private String outputText;
     private @Nullable String securityPolicyId;
 
     private GetAppSecAdvancedSettingsEvasivePathMatchResult() {}
@@ -35,6 +36,9 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchResult {
     }
     public String json() {
         return this.json;
+    }
+    public String outputText() {
+        return this.outputText;
     }
     public Optional<String> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
@@ -52,6 +56,7 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchResult {
         private Integer configId;
         private String id;
         private String json;
+        private String outputText;
         private @Nullable String securityPolicyId;
         public Builder() {}
         public Builder(GetAppSecAdvancedSettingsEvasivePathMatchResult defaults) {
@@ -59,6 +64,7 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchResult {
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
+    	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
 
@@ -87,6 +93,14 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchResult {
             return this;
         }
         @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecAdvancedSettingsEvasivePathMatchResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityPolicyId(@Nullable String securityPolicyId) {
 
             this.securityPolicyId = securityPolicyId;
@@ -97,6 +111,7 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchResult {
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
+            _resultValue.outputText = outputText;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;
         }

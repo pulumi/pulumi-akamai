@@ -18,7 +18,7 @@ public final class CloudAccessKeyCredentialsA {
      * @return Access key id from cloud provider which is used to sign API requests
      * 
      */
-    private String cloudAccessKeyId;
+    private @Nullable String cloudAccessKeyId;
     /**
      * @return Cloud Access secret from cloud provider which is used to sign API requests
      * 
@@ -45,8 +45,8 @@ public final class CloudAccessKeyCredentialsA {
      * @return Access key id from cloud provider which is used to sign API requests
      * 
      */
-    public String cloudAccessKeyId() {
-        return this.cloudAccessKeyId;
+    public Optional<String> cloudAccessKeyId() {
+        return Optional.ofNullable(this.cloudAccessKeyId);
     }
     /**
      * @return Cloud Access secret from cloud provider which is used to sign API requests
@@ -86,7 +86,7 @@ public final class CloudAccessKeyCredentialsA {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cloudAccessKeyId;
+        private @Nullable String cloudAccessKeyId;
         private String cloudSecretAccessKey;
         private Boolean primaryKey;
         private @Nullable Integer version;
@@ -102,10 +102,8 @@ public final class CloudAccessKeyCredentialsA {
         }
 
         @CustomType.Setter
-        public Builder cloudAccessKeyId(String cloudAccessKeyId) {
-            if (cloudAccessKeyId == null) {
-              throw new MissingRequiredPropertyException("CloudAccessKeyCredentialsA", "cloudAccessKeyId");
-            }
+        public Builder cloudAccessKeyId(@Nullable String cloudAccessKeyId) {
+
             this.cloudAccessKeyId = cloudAccessKeyId;
             return this;
         }

@@ -31,6 +31,7 @@ export interface GetAppSecBypassNetworkListsResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecBypassNetworkListsOutput(args: GetAppSecBypassNetworkListsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecBypassNetworkListsResult> {

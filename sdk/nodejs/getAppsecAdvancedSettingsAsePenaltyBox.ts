@@ -28,6 +28,7 @@ export interface GetAppsecAdvancedSettingsAsePenaltyBoxResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
 }
 export function getAppsecAdvancedSettingsAsePenaltyBoxOutput(args: GetAppsecAdvancedSettingsAsePenaltyBoxOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecAdvancedSettingsAsePenaltyBoxResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -26,6 +26,7 @@ class EdgeHostNameArgs:
                  group_id: pulumi.Input[_builtins.str],
                  ip_behavior: pulumi.Input[_builtins.str],
                  certificate: Optional[pulumi.Input[_builtins.int]] = None,
+                 https_service_binding: Optional[pulumi.Input[_builtins.str]] = None,
                  product_id: Optional[pulumi.Input[_builtins.str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  timeouts: Optional[pulumi.Input['EdgeHostNameTimeoutsArgs']] = None,
@@ -34,6 +35,7 @@ class EdgeHostNameArgs:
         """
         The set of arguments for constructing a EdgeHostName resource.
 
+        :param pulumi.Input[_builtins.str] https_service_binding: Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input['EdgeHostNameTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
@@ -45,6 +47,8 @@ class EdgeHostNameArgs:
         pulumi.set(__self__, "ip_behavior", ip_behavior)
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
+        if https_service_binding is not None:
+            pulumi.set(__self__, "https_service_binding", https_service_binding)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
         if status_update_emails is not None:
@@ -100,6 +104,18 @@ class EdgeHostNameArgs:
     @certificate.setter
     def certificate(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "certificate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="httpsServiceBinding")
+    def https_service_binding(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+        """
+        return pulumi.get(self, "https_service_binding")
+
+    @https_service_binding.setter
+    def https_service_binding(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "https_service_binding", value)
 
     @_builtins.property
     @pulumi.getter(name="productId")
@@ -166,6 +182,7 @@ class _EdgeHostNameState:
                  contract_id: Optional[pulumi.Input[_builtins.str]] = None,
                  edge_hostname: Optional[pulumi.Input[_builtins.str]] = None,
                  group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 https_service_binding: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_behavior: Optional[pulumi.Input[_builtins.str]] = None,
                  product_id: Optional[pulumi.Input[_builtins.str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -175,6 +192,7 @@ class _EdgeHostNameState:
         """
         Input properties used for looking up and filtering EdgeHostName resources.
 
+        :param pulumi.Input[_builtins.str] https_service_binding: Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input['EdgeHostNameTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
@@ -188,6 +206,8 @@ class _EdgeHostNameState:
             pulumi.set(__self__, "edge_hostname", edge_hostname)
         if group_id is not None:
             pulumi.set(__self__, "group_id", group_id)
+        if https_service_binding is not None:
+            pulumi.set(__self__, "https_service_binding", https_service_binding)
         if ip_behavior is not None:
             pulumi.set(__self__, "ip_behavior", ip_behavior)
         if product_id is not None:
@@ -236,6 +256,18 @@ class _EdgeHostNameState:
     @group_id.setter
     def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "group_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="httpsServiceBinding")
+    def https_service_binding(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+        """
+        return pulumi.get(self, "https_service_binding")
+
+    @https_service_binding.setter
+    def https_service_binding(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "https_service_binding", value)
 
     @_builtins.property
     @pulumi.getter(name="ipBehavior")
@@ -314,6 +346,7 @@ class EdgeHostName(pulumi.CustomResource):
                  contract_id: Optional[pulumi.Input[_builtins.str]] = None,
                  edge_hostname: Optional[pulumi.Input[_builtins.str]] = None,
                  group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 https_service_binding: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_behavior: Optional[pulumi.Input[_builtins.str]] = None,
                  product_id: Optional[pulumi.Input[_builtins.str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -326,6 +359,7 @@ class EdgeHostName(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] https_service_binding: Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
@@ -359,6 +393,7 @@ class EdgeHostName(pulumi.CustomResource):
                  contract_id: Optional[pulumi.Input[_builtins.str]] = None,
                  edge_hostname: Optional[pulumi.Input[_builtins.str]] = None,
                  group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 https_service_binding: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_behavior: Optional[pulumi.Input[_builtins.str]] = None,
                  product_id: Optional[pulumi.Input[_builtins.str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -384,6 +419,7 @@ class EdgeHostName(pulumi.CustomResource):
             if group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
+            __props__.__dict__["https_service_binding"] = https_service_binding
             if ip_behavior is None and not opts.urn:
                 raise TypeError("Missing required property 'ip_behavior'")
             __props__.__dict__["ip_behavior"] = ip_behavior
@@ -408,6 +444,7 @@ class EdgeHostName(pulumi.CustomResource):
             contract_id: Optional[pulumi.Input[_builtins.str]] = None,
             edge_hostname: Optional[pulumi.Input[_builtins.str]] = None,
             group_id: Optional[pulumi.Input[_builtins.str]] = None,
+            https_service_binding: Optional[pulumi.Input[_builtins.str]] = None,
             ip_behavior: Optional[pulumi.Input[_builtins.str]] = None,
             product_id: Optional[pulumi.Input[_builtins.str]] = None,
             status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -421,6 +458,7 @@ class EdgeHostName(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] https_service_binding: Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
@@ -434,6 +472,7 @@ class EdgeHostName(pulumi.CustomResource):
         __props__.__dict__["contract_id"] = contract_id
         __props__.__dict__["edge_hostname"] = edge_hostname
         __props__.__dict__["group_id"] = group_id
+        __props__.__dict__["https_service_binding"] = https_service_binding
         __props__.__dict__["ip_behavior"] = ip_behavior
         __props__.__dict__["product_id"] = product_id
         __props__.__dict__["status_update_emails"] = status_update_emails
@@ -461,6 +500,14 @@ class EdgeHostName(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="httpsServiceBinding")
+    def https_service_binding(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+        """
+        return pulumi.get(self, "https_service_binding")
 
     @_builtins.property
     @pulumi.getter(name="ipBehavior")

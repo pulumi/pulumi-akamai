@@ -37,10 +37,12 @@ type GetAppSecSecurityPolicyProtectionsResult struct {
 	ApplyRateControls             bool `pulumi:"applyRateControls"`
 	ApplyReputationControls       bool `pulumi:"applyReputationControls"`
 	ApplySlowPostControls         bool `pulumi:"applySlowPostControls"`
+	ApplyUrlProtectionControls    bool `pulumi:"applyUrlProtectionControls"`
 	ConfigId                      int  `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
 	Json             string `pulumi:"json"`
+	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -110,6 +112,10 @@ func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplySlowPostControls() 
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplySlowPostControls }).(pulumi.BoolOutput)
 }
 
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyUrlProtectionControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyUrlProtectionControls }).(pulumi.BoolOutput)
+}
+
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) int { return v.ConfigId }).(pulumi.IntOutput)
 }
@@ -121,6 +127,10 @@ func (o GetAppSecSecurityPolicyProtectionsResultOutput) Id() pulumi.StringOutput
 
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) SecurityPolicyId() pulumi.StringOutput {

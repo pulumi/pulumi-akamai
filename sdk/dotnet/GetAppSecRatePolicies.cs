@@ -60,6 +60,7 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
+        public readonly string OutputText;
         public readonly int? RatePolicyId;
 
         [OutputConstructor]
@@ -70,11 +71,14 @@ namespace Pulumi.Akamai
 
             string json,
 
+            string outputText,
+
             int? ratePolicyId)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
+            OutputText = outputText;
             RatePolicyId = ratePolicyId;
         }
     }

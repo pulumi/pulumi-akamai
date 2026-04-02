@@ -26,7 +26,7 @@ class GetAppSecCustomRuleActionsResult:
     """
     A collection of values returned by getAppSecCustomRuleActions.
     """
-    def __init__(__self__, config_id=None, custom_rule_id=None, id=None, security_policy_id=None):
+    def __init__(__self__, config_id=None, custom_rule_id=None, id=None, output_text=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -36,6 +36,9 @@ class GetAppSecCustomRuleActionsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
@@ -59,6 +62,11 @@ class GetAppSecCustomRuleActionsResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> _builtins.str:
         return pulumi.get(self, "security_policy_id")
@@ -73,6 +81,7 @@ class AwaitableGetAppSecCustomRuleActionsResult(GetAppSecCustomRuleActionsResult
             config_id=self.config_id,
             custom_rule_id=self.custom_rule_id,
             id=self.id,
+            output_text=self.output_text,
             security_policy_id=self.security_policy_id)
 
 
@@ -94,6 +103,7 @@ def get_app_sec_custom_rule_actions(config_id: Optional[_builtins.int] = None,
         config_id=pulumi.get(__ret__, 'config_id'),
         custom_rule_id=pulumi.get(__ret__, 'custom_rule_id'),
         id=pulumi.get(__ret__, 'id'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 def get_app_sec_custom_rule_actions_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
                                            custom_rule_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
@@ -112,4 +122,5 @@ def get_app_sec_custom_rule_actions_output(config_id: Optional[pulumi.Input[_bui
         config_id=pulumi.get(__response__, 'config_id'),
         custom_rule_id=pulumi.get(__response__, 'custom_rule_id'),
         id=pulumi.get(__response__, 'id'),
+        output_text=pulumi.get(__response__, 'output_text'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

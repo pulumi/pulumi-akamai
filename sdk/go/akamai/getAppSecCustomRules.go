@@ -32,8 +32,9 @@ type GetAppSecCustomRulesResult struct {
 	ConfigId     int  `pulumi:"configId"`
 	CustomRuleId *int `pulumi:"customRuleId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func GetAppSecCustomRulesOutput(ctx *pulumi.Context, args GetAppSecCustomRulesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecCustomRulesResultOutput {
@@ -85,6 +86,10 @@ func (o GetAppSecCustomRulesResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecCustomRulesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecCustomRulesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecCustomRulesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecCustomRulesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

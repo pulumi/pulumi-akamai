@@ -57,6 +57,7 @@ export class GtmProperty extends pulumi.CustomResource {
     declare public readonly minLiveFraction: pulumi.Output<number | undefined>;
     declare public readonly name: pulumi.Output<string>;
     declare public readonly scoreAggregationType: pulumi.Output<string>;
+    declare public readonly stateChangeNotificationWebhook: pulumi.Output<outputs.GtmPropertyStateChangeNotificationWebhook | undefined>;
     declare public readonly staticRrSets: pulumi.Output<outputs.GtmPropertyStaticRrSet[] | undefined>;
     declare public readonly stickinessBonusConstant: pulumi.Output<number | undefined>;
     declare public readonly stickinessBonusPercentage: pulumi.Output<number | undefined>;
@@ -104,6 +105,7 @@ export class GtmProperty extends pulumi.CustomResource {
             resourceInputs["minLiveFraction"] = state?.minLiveFraction;
             resourceInputs["name"] = state?.name;
             resourceInputs["scoreAggregationType"] = state?.scoreAggregationType;
+            resourceInputs["stateChangeNotificationWebhook"] = state?.stateChangeNotificationWebhook;
             resourceInputs["staticRrSets"] = state?.staticRrSets;
             resourceInputs["stickinessBonusConstant"] = state?.stickinessBonusConstant;
             resourceInputs["stickinessBonusPercentage"] = state?.stickinessBonusPercentage;
@@ -154,6 +156,7 @@ export class GtmProperty extends pulumi.CustomResource {
             resourceInputs["minLiveFraction"] = args?.minLiveFraction;
             resourceInputs["name"] = args?.name;
             resourceInputs["scoreAggregationType"] = args?.scoreAggregationType;
+            resourceInputs["stateChangeNotificationWebhook"] = args?.stateChangeNotificationWebhook;
             resourceInputs["staticRrSets"] = args?.staticRrSets;
             resourceInputs["stickinessBonusConstant"] = args?.stickinessBonusConstant;
             resourceInputs["stickinessBonusPercentage"] = args?.stickinessBonusPercentage;
@@ -199,6 +202,7 @@ export interface GtmPropertyState {
     minLiveFraction?: pulumi.Input<number>;
     name?: pulumi.Input<string>;
     scoreAggregationType?: pulumi.Input<string>;
+    stateChangeNotificationWebhook?: pulumi.Input<inputs.GtmPropertyStateChangeNotificationWebhook>;
     staticRrSets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyStaticRrSet>[]>;
     stickinessBonusConstant?: pulumi.Input<number>;
     stickinessBonusPercentage?: pulumi.Input<number>;
@@ -238,6 +242,7 @@ export interface GtmPropertyArgs {
     minLiveFraction?: pulumi.Input<number>;
     name?: pulumi.Input<string>;
     scoreAggregationType: pulumi.Input<string>;
+    stateChangeNotificationWebhook?: pulumi.Input<inputs.GtmPropertyStateChangeNotificationWebhook>;
     staticRrSets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyStaticRrSet>[]>;
     stickinessBonusConstant?: pulumi.Input<number>;
     stickinessBonusPercentage?: pulumi.Input<number>;

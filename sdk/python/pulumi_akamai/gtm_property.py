@@ -45,6 +45,7 @@ class GtmPropertyArgs:
                  max_unreachable_penalty: Optional[pulumi.Input[_builtins.int]] = None,
                  min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 state_change_notification_webhook: Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']] = None,
                  static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -98,6 +99,8 @@ class GtmPropertyArgs:
             pulumi.set(__self__, "min_live_fraction", min_live_fraction)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if state_change_notification_webhook is not None:
+            pulumi.set(__self__, "state_change_notification_webhook", state_change_notification_webhook)
         if static_rr_sets is not None:
             pulumi.set(__self__, "static_rr_sets", static_rr_sets)
         if stickiness_bonus_constant is not None:
@@ -330,6 +333,15 @@ class GtmPropertyArgs:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="stateChangeNotificationWebhook")
+    def state_change_notification_webhook(self) -> Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']]:
+        return pulumi.get(self, "state_change_notification_webhook")
+
+    @state_change_notification_webhook.setter
+    def state_change_notification_webhook(self, value: Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']]):
+        pulumi.set(self, "state_change_notification_webhook", value)
+
+    @_builtins.property
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
         return pulumi.get(self, "static_rr_sets")
@@ -419,6 +431,7 @@ class _GtmPropertyState:
                  min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  score_aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 state_change_notification_webhook: Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']] = None,
                  static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -478,6 +491,8 @@ class _GtmPropertyState:
             pulumi.set(__self__, "name", name)
         if score_aggregation_type is not None:
             pulumi.set(__self__, "score_aggregation_type", score_aggregation_type)
+        if state_change_notification_webhook is not None:
+            pulumi.set(__self__, "state_change_notification_webhook", state_change_notification_webhook)
         if static_rr_sets is not None:
             pulumi.set(__self__, "static_rr_sets", static_rr_sets)
         if stickiness_bonus_constant is not None:
@@ -707,6 +722,15 @@ class _GtmPropertyState:
         pulumi.set(self, "score_aggregation_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="stateChangeNotificationWebhook")
+    def state_change_notification_webhook(self) -> Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']]:
+        return pulumi.get(self, "state_change_notification_webhook")
+
+    @state_change_notification_webhook.setter
+    def state_change_notification_webhook(self, value: Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']]):
+        pulumi.set(self, "state_change_notification_webhook", value)
+
+    @_builtins.property
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
         return pulumi.get(self, "static_rr_sets")
@@ -826,6 +850,7 @@ class GtmProperty(pulumi.CustomResource):
                  min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  score_aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 state_change_notification_webhook: Optional[pulumi.Input[Union['GtmPropertyStateChangeNotificationWebhookArgs', 'GtmPropertyStateChangeNotificationWebhookArgsDict']]] = None,
                  static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -888,6 +913,7 @@ class GtmProperty(pulumi.CustomResource):
                  min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  score_aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 state_change_notification_webhook: Optional[pulumi.Input[Union['GtmPropertyStateChangeNotificationWebhookArgs', 'GtmPropertyStateChangeNotificationWebhookArgsDict']]] = None,
                  static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -936,6 +962,7 @@ class GtmProperty(pulumi.CustomResource):
             if score_aggregation_type is None and not opts.urn:
                 raise TypeError("Missing required property 'score_aggregation_type'")
             __props__.__dict__["score_aggregation_type"] = score_aggregation_type
+            __props__.__dict__["state_change_notification_webhook"] = state_change_notification_webhook
             __props__.__dict__["static_rr_sets"] = static_rr_sets
             __props__.__dict__["stickiness_bonus_constant"] = stickiness_bonus_constant
             __props__.__dict__["stickiness_bonus_percentage"] = stickiness_bonus_percentage
@@ -983,6 +1010,7 @@ class GtmProperty(pulumi.CustomResource):
             min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             score_aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
+            state_change_notification_webhook: Optional[pulumi.Input[Union['GtmPropertyStateChangeNotificationWebhookArgs', 'GtmPropertyStateChangeNotificationWebhookArgsDict']]] = None,
             static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
             stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
             stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1028,6 +1056,7 @@ class GtmProperty(pulumi.CustomResource):
         __props__.__dict__["min_live_fraction"] = min_live_fraction
         __props__.__dict__["name"] = name
         __props__.__dict__["score_aggregation_type"] = score_aggregation_type
+        __props__.__dict__["state_change_notification_webhook"] = state_change_notification_webhook
         __props__.__dict__["static_rr_sets"] = static_rr_sets
         __props__.__dict__["stickiness_bonus_constant"] = stickiness_bonus_constant
         __props__.__dict__["stickiness_bonus_percentage"] = stickiness_bonus_percentage
@@ -1154,6 +1183,11 @@ class GtmProperty(pulumi.CustomResource):
     @pulumi.getter(name="scoreAggregationType")
     def score_aggregation_type(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "score_aggregation_type")
+
+    @_builtins.property
+    @pulumi.getter(name="stateChangeNotificationWebhook")
+    def state_change_notification_webhook(self) -> pulumi.Output[Optional['outputs.GtmPropertyStateChangeNotificationWebhook']]:
+        return pulumi.get(self, "state_change_notification_webhook")
 
     @_builtins.property
     @pulumi.getter(name="staticRrSets")

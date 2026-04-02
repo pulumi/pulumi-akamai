@@ -295,6 +295,26 @@ export type AppsecSecurityPolicyDefaultProtections = import("./appsecSecurityPol
 export const AppsecSecurityPolicyDefaultProtections: typeof import("./appsecSecurityPolicyDefaultProtections").AppsecSecurityPolicyDefaultProtections = null as any;
 utilities.lazyLoad(exports, ["AppsecSecurityPolicyDefaultProtections"], () => require("./appsecSecurityPolicyDefaultProtections"));
 
+export { AppsecSecurityPolicyProtectionsArgs, AppsecSecurityPolicyProtectionsState } from "./appsecSecurityPolicyProtections";
+export type AppsecSecurityPolicyProtections = import("./appsecSecurityPolicyProtections").AppsecSecurityPolicyProtections;
+export const AppsecSecurityPolicyProtections: typeof import("./appsecSecurityPolicyProtections").AppsecSecurityPolicyProtections = null as any;
+utilities.lazyLoad(exports, ["AppsecSecurityPolicyProtections"], () => require("./appsecSecurityPolicyProtections"));
+
+export { AppsecUrlProtectionActionArgs, AppsecUrlProtectionActionState } from "./appsecUrlProtectionAction";
+export type AppsecUrlProtectionAction = import("./appsecUrlProtectionAction").AppsecUrlProtectionAction;
+export const AppsecUrlProtectionAction: typeof import("./appsecUrlProtectionAction").AppsecUrlProtectionAction = null as any;
+utilities.lazyLoad(exports, ["AppsecUrlProtectionAction"], () => require("./appsecUrlProtectionAction"));
+
+export { AppsecUrlProtectionPolicyArgs, AppsecUrlProtectionPolicyState } from "./appsecUrlProtectionPolicy";
+export type AppsecUrlProtectionPolicy = import("./appsecUrlProtectionPolicy").AppsecUrlProtectionPolicy;
+export const AppsecUrlProtectionPolicy: typeof import("./appsecUrlProtectionPolicy").AppsecUrlProtectionPolicy = null as any;
+utilities.lazyLoad(exports, ["AppsecUrlProtectionPolicy"], () => require("./appsecUrlProtectionPolicy"));
+
+export { AppsecWafRulesetArgs, AppsecWafRulesetState } from "./appsecWafRuleset";
+export type AppsecWafRuleset = import("./appsecWafRuleset").AppsecWafRuleset;
+export const AppsecWafRuleset: typeof import("./appsecWafRuleset").AppsecWafRuleset = null as any;
+utilities.lazyLoad(exports, ["AppsecWafRuleset"], () => require("./appsecWafRuleset"));
+
 export { AprGeneralSettingsArgs, AprGeneralSettingsState } from "./aprGeneralSettings";
 export type AprGeneralSettings = import("./aprGeneralSettings").AprGeneralSettings;
 export const AprGeneralSettings: typeof import("./aprGeneralSettings").AprGeneralSettings = null as any;
@@ -859,6 +879,31 @@ export { GetAppsecRapidRulesArgs, GetAppsecRapidRulesResult, GetAppsecRapidRules
 export const getAppsecRapidRules: typeof import("./getAppsecRapidRules").getAppsecRapidRules = null as any;
 export const getAppsecRapidRulesOutput: typeof import("./getAppsecRapidRules").getAppsecRapidRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecRapidRules","getAppsecRapidRulesOutput"], () => require("./getAppsecRapidRules"));
+
+export { GetAppsecUrlProtectionPoliciesArgs, GetAppsecUrlProtectionPoliciesResult, GetAppsecUrlProtectionPoliciesOutputArgs } from "./getAppsecUrlProtectionPolicies";
+export const getAppsecUrlProtectionPolicies: typeof import("./getAppsecUrlProtectionPolicies").getAppsecUrlProtectionPolicies = null as any;
+export const getAppsecUrlProtectionPoliciesOutput: typeof import("./getAppsecUrlProtectionPolicies").getAppsecUrlProtectionPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecUrlProtectionPolicies","getAppsecUrlProtectionPoliciesOutput"], () => require("./getAppsecUrlProtectionPolicies"));
+
+export { GetAppsecUrlProtectionPoliciesActionsArgs, GetAppsecUrlProtectionPoliciesActionsResult, GetAppsecUrlProtectionPoliciesActionsOutputArgs } from "./getAppsecUrlProtectionPoliciesActions";
+export const getAppsecUrlProtectionPoliciesActions: typeof import("./getAppsecUrlProtectionPoliciesActions").getAppsecUrlProtectionPoliciesActions = null as any;
+export const getAppsecUrlProtectionPoliciesActionsOutput: typeof import("./getAppsecUrlProtectionPoliciesActions").getAppsecUrlProtectionPoliciesActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecUrlProtectionPoliciesActions","getAppsecUrlProtectionPoliciesActionsOutput"], () => require("./getAppsecUrlProtectionPoliciesActions"));
+
+export { GetAppsecUrlProtectionPolicyArgs, GetAppsecUrlProtectionPolicyResult, GetAppsecUrlProtectionPolicyOutputArgs } from "./getAppsecUrlProtectionPolicy";
+export const getAppsecUrlProtectionPolicy: typeof import("./getAppsecUrlProtectionPolicy").getAppsecUrlProtectionPolicy = null as any;
+export const getAppsecUrlProtectionPolicyOutput: typeof import("./getAppsecUrlProtectionPolicy").getAppsecUrlProtectionPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecUrlProtectionPolicy","getAppsecUrlProtectionPolicyOutput"], () => require("./getAppsecUrlProtectionPolicy"));
+
+export { GetAppsecUrlProtectionPolicyActionsArgs, GetAppsecUrlProtectionPolicyActionsResult, GetAppsecUrlProtectionPolicyActionsOutputArgs } from "./getAppsecUrlProtectionPolicyActions";
+export const getAppsecUrlProtectionPolicyActions: typeof import("./getAppsecUrlProtectionPolicyActions").getAppsecUrlProtectionPolicyActions = null as any;
+export const getAppsecUrlProtectionPolicyActionsOutput: typeof import("./getAppsecUrlProtectionPolicyActions").getAppsecUrlProtectionPolicyActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecUrlProtectionPolicyActions","getAppsecUrlProtectionPolicyActionsOutput"], () => require("./getAppsecUrlProtectionPolicyActions"));
+
+export { GetAppsecWafRulesetArgs, GetAppsecWafRulesetResult, GetAppsecWafRulesetOutputArgs } from "./getAppsecWafRuleset";
+export const getAppsecWafRuleset: typeof import("./getAppsecWafRuleset").getAppsecWafRuleset = null as any;
+export const getAppsecWafRulesetOutput: typeof import("./getAppsecWafRuleset").getAppsecWafRulesetOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecWafRuleset","getAppsecWafRulesetOutput"], () => require("./getAppsecWafRuleset"));
 
 export { GetAprGeneralSettingsArgs, GetAprGeneralSettingsResult, GetAprGeneralSettingsOutputArgs } from "./getAprGeneralSettings";
 export const getAprGeneralSettings: typeof import("./getAprGeneralSettings").getAprGeneralSettings = null as any;
@@ -1928,6 +1973,14 @@ const _module = {
                 return new AppsecRapidRules(name, <any>undefined, { urn })
             case "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections":
                 return new AppsecSecurityPolicyDefaultProtections(name, <any>undefined, { urn })
+            case "akamai:index/appsecSecurityPolicyProtections:AppsecSecurityPolicyProtections":
+                return new AppsecSecurityPolicyProtections(name, <any>undefined, { urn })
+            case "akamai:index/appsecUrlProtectionAction:AppsecUrlProtectionAction":
+                return new AppsecUrlProtectionAction(name, <any>undefined, { urn })
+            case "akamai:index/appsecUrlProtectionPolicy:AppsecUrlProtectionPolicy":
+                return new AppsecUrlProtectionPolicy(name, <any>undefined, { urn })
+            case "akamai:index/appsecWafRuleset:AppsecWafRuleset":
+                return new AppsecWafRuleset(name, <any>undefined, { urn })
             case "akamai:index/aprGeneralSettings:AprGeneralSettings":
                 return new AprGeneralSettings(name, <any>undefined, { urn })
             case "akamai:index/aprProtectedOperations:AprProtectedOperations":
@@ -2169,6 +2222,10 @@ pulumi.runtime.registerResourceModule("akamai", "index/appsecEvalPenaltyBoxCondi
 pulumi.runtime.registerResourceModule("akamai", "index/appsecPenaltyBoxConditions", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecRapidRules", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecSecurityPolicyDefaultProtections", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecSecurityPolicyProtections", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecUrlProtectionAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecUrlProtectionPolicy", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecWafRuleset", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/aprGeneralSettings", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/aprProtectedOperations", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/aprUserAllowList", _module)

@@ -65,6 +65,7 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetAppSecIPGeoIpControlResult> IpControls;
         public readonly string Mode;
+        public readonly string OutputText;
         public readonly string SecurityPolicyId;
         public readonly string UkraineGeoControlAction;
 
@@ -86,6 +87,8 @@ namespace Pulumi.Akamai
 
             string mode,
 
+            string outputText,
+
             string securityPolicyId,
 
             string ukraineGeoControlAction)
@@ -98,6 +101,7 @@ namespace Pulumi.Akamai
             Id = id;
             IpControls = ipControls;
             Mode = mode;
+            OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
             UkraineGeoControlAction = ukraineGeoControlAction;
         }

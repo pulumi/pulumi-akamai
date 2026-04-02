@@ -30,8 +30,9 @@ type GetAppSecVersionNotesArgs struct {
 type GetAppSecVersionNotesResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func GetAppSecVersionNotesOutput(ctx *pulumi.Context, args GetAppSecVersionNotesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecVersionNotesResultOutput {
@@ -78,6 +79,10 @@ func (o GetAppSecVersionNotesResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecVersionNotesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecVersionNotesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecVersionNotesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecVersionNotesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

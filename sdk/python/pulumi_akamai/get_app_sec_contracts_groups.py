@@ -26,7 +26,7 @@ class GetAppSecContractsGroupsResult:
     """
     A collection of values returned by getAppSecContractsGroups.
     """
-    def __init__(__self__, contractid=None, default_contractid=None, default_groupid=None, groupid=None, id=None, json=None):
+    def __init__(__self__, contractid=None, default_contractid=None, default_groupid=None, groupid=None, id=None, json=None, output_text=None):
         if contractid and not isinstance(contractid, str):
             raise TypeError("Expected argument 'contractid' to be a str")
         pulumi.set(__self__, "contractid", contractid)
@@ -45,6 +45,9 @@ class GetAppSecContractsGroupsResult:
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
 
     @_builtins.property
     @pulumi.getter
@@ -79,6 +82,11 @@ class GetAppSecContractsGroupsResult:
     def json(self) -> _builtins.str:
         return pulumi.get(self, "json")
 
+    @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
 
 class AwaitableGetAppSecContractsGroupsResult(GetAppSecContractsGroupsResult):
     # pylint: disable=using-constant-test
@@ -91,7 +99,8 @@ class AwaitableGetAppSecContractsGroupsResult(GetAppSecContractsGroupsResult):
             default_groupid=self.default_groupid,
             groupid=self.groupid,
             id=self.id,
-            json=self.json)
+            json=self.json,
+            output_text=self.output_text)
 
 
 def get_app_sec_contracts_groups(contractid: Optional[_builtins.str] = None,
@@ -112,7 +121,8 @@ def get_app_sec_contracts_groups(contractid: Optional[_builtins.str] = None,
         default_groupid=pulumi.get(__ret__, 'default_groupid'),
         groupid=pulumi.get(__ret__, 'groupid'),
         id=pulumi.get(__ret__, 'id'),
-        json=pulumi.get(__ret__, 'json'))
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 def get_app_sec_contracts_groups_output(contractid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                         groupid: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecContractsGroupsResult]:
@@ -130,4 +140,5 @@ def get_app_sec_contracts_groups_output(contractid: Optional[pulumi.Input[Option
         default_groupid=pulumi.get(__response__, 'default_groupid'),
         groupid=pulumi.get(__response__, 'groupid'),
         id=pulumi.get(__response__, 'id'),
-        json=pulumi.get(__response__, 'json')))
+        json=pulumi.get(__response__, 'json'),
+        output_text=pulumi.get(__response__, 'output_text')))

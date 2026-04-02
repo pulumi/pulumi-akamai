@@ -30,6 +30,7 @@ export interface GetAppsecAdvancedSettingsAttackPayloadLoggingResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
     readonly securityPolicyId?: string;
 }
 export function getAppsecAdvancedSettingsAttackPayloadLoggingOutput(args: GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> {

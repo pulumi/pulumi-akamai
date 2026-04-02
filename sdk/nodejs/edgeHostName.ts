@@ -38,6 +38,10 @@ export class EdgeHostName extends pulumi.CustomResource {
     declare public readonly contractId: pulumi.Output<string>;
     declare public readonly edgeHostname: pulumi.Output<string>;
     declare public readonly groupId: pulumi.Output<string>;
+    /**
+     * Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+     */
+    declare public readonly httpsServiceBinding: pulumi.Output<string | undefined>;
     declare public readonly ipBehavior: pulumi.Output<string>;
     declare public readonly productId: pulumi.Output<string>;
     /**
@@ -74,6 +78,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             resourceInputs["contractId"] = state?.contractId;
             resourceInputs["edgeHostname"] = state?.edgeHostname;
             resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["httpsServiceBinding"] = state?.httpsServiceBinding;
             resourceInputs["ipBehavior"] = state?.ipBehavior;
             resourceInputs["productId"] = state?.productId;
             resourceInputs["statusUpdateEmails"] = state?.statusUpdateEmails;
@@ -98,6 +103,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             resourceInputs["contractId"] = args?.contractId;
             resourceInputs["edgeHostname"] = args?.edgeHostname;
             resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["httpsServiceBinding"] = args?.httpsServiceBinding;
             resourceInputs["ipBehavior"] = args?.ipBehavior;
             resourceInputs["productId"] = args?.productId;
             resourceInputs["statusUpdateEmails"] = args?.statusUpdateEmails;
@@ -120,6 +126,10 @@ export interface EdgeHostNameState {
     contractId?: pulumi.Input<string>;
     edgeHostname?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
+    /**
+     * Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+     */
+    httpsServiceBinding?: pulumi.Input<string>;
     ipBehavior?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
     /**
@@ -148,6 +158,10 @@ export interface EdgeHostNameArgs {
     contractId: pulumi.Input<string>;
     edgeHostname: pulumi.Input<string>;
     groupId: pulumi.Input<string>;
+    /**
+     * Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
+     */
+    httpsServiceBinding?: pulumi.Input<string>;
     ipBehavior: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
     /**

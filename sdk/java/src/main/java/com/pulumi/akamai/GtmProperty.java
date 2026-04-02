@@ -7,6 +7,7 @@ import com.pulumi.akamai.GtmPropertyArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.GtmPropertyState;
 import com.pulumi.akamai.outputs.GtmPropertyLivenessTest;
+import com.pulumi.akamai.outputs.GtmPropertyStateChangeNotificationWebhook;
 import com.pulumi.akamai.outputs.GtmPropertyStaticRrSet;
 import com.pulumi.akamai.outputs.GtmPropertyTrafficTarget;
 import com.pulumi.core.Alias;
@@ -161,6 +162,12 @@ public class GtmProperty extends com.pulumi.resources.CustomResource {
 
     public Output<String> scoreAggregationType() {
         return this.scoreAggregationType;
+    }
+    @Export(name="stateChangeNotificationWebhook", refs={GtmPropertyStateChangeNotificationWebhook.class}, tree="[0]")
+    private Output</* @Nullable */ GtmPropertyStateChangeNotificationWebhook> stateChangeNotificationWebhook;
+
+    public Output<Optional<GtmPropertyStateChangeNotificationWebhook>> stateChangeNotificationWebhook() {
+        return Codegen.optional(this.stateChangeNotificationWebhook);
     }
     @Export(name="staticRrSets", refs={List.class,GtmPropertyStaticRrSet.class}, tree="[0,1]")
     private Output</* @Nullable */ List<GtmPropertyStaticRrSet>> staticRrSets;

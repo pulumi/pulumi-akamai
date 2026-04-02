@@ -61,6 +61,7 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly string Json;
         public readonly int? MatchTargetId;
+        public readonly string OutputText;
 
         [OutputConstructor]
         private GetAppSecMatchTargetsResult(
@@ -70,12 +71,15 @@ namespace Pulumi.Akamai
 
             string json,
 
-            int? matchTargetId)
+            int? matchTargetId,
+
+            string outputText)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
             MatchTargetId = matchTargetId;
+            OutputText = outputText;
         }
     }
 }

@@ -24,8 +24,9 @@ func GetAppSecHostnameCoverage(ctx *pulumi.Context, opts ...pulumi.InvokeOption)
 // A collection of values returned by getAppSecHostnameCoverage.
 type GetAppSecHostnameCoverageResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func GetAppSecHostnameCoverageOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageResultOutput {
@@ -57,6 +58,10 @@ func (o GetAppSecHostnameCoverageResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAppSecHostnameCoverageResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecHostnameCoverageResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecHostnameCoverageResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

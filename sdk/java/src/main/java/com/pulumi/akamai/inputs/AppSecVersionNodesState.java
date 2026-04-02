@@ -32,6 +32,21 @@ public final class AppSecVersionNodesState extends com.pulumi.resources.Resource
     }
 
     /**
+     * Text representation
+     * 
+     */
+    @Import(name="outputText")
+    private @Nullable Output<String> outputText;
+
+    /**
+     * @return Text representation
+     * 
+     */
+    public Optional<Output<String>> outputText() {
+        return Optional.ofNullable(this.outputText);
+    }
+
+    /**
      * Brief description of the security configuration version
      * 
      */
@@ -50,6 +65,7 @@ public final class AppSecVersionNodesState extends com.pulumi.resources.Resource
 
     private AppSecVersionNodesState(AppSecVersionNodesState $) {
         this.configId = $.configId;
+        this.outputText = $.outputText;
         this.versionNotes = $.versionNotes;
     }
 
@@ -90,6 +106,27 @@ public final class AppSecVersionNodesState extends com.pulumi.resources.Resource
          */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
+        }
+
+        /**
+         * @param outputText Text representation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outputText(@Nullable Output<String> outputText) {
+            $.outputText = outputText;
+            return this;
+        }
+
+        /**
+         * @param outputText Text representation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outputText(String outputText) {
+            return outputText(Output.of(outputText));
         }
 
         /**

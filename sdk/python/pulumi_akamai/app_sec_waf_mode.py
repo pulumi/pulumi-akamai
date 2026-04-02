@@ -79,6 +79,7 @@ class _AppSecWafModeState:
                  eval_ruleset: Optional[pulumi.Input[_builtins.str]] = None,
                  eval_status: Optional[pulumi.Input[_builtins.str]] = None,
                  mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 output_text: Optional[pulumi.Input[_builtins.str]] = None,
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecWafMode resources.
@@ -89,6 +90,7 @@ class _AppSecWafModeState:
         :param pulumi.Input[_builtins.str] eval_ruleset: Versioning information for the Kona Rule Set being evaluated, if applicable
         :param pulumi.Input[_builtins.str] eval_status: Whether an evaluation is currently in progress
         :param pulumi.Input[_builtins.str] mode: How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
+        :param pulumi.Input[_builtins.str] output_text: Text representation
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
         if config_id is not None:
@@ -103,6 +105,8 @@ class _AppSecWafModeState:
             pulumi.set(__self__, "eval_status", eval_status)
         if mode is not None:
             pulumi.set(__self__, "mode", mode)
+        if output_text is not None:
+            pulumi.set(__self__, "output_text", output_text)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
 
@@ -177,6 +181,18 @@ class _AppSecWafModeState:
     @mode.setter
     def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Text representation
+        """
+        return pulumi.get(self, "output_text")
+
+    @output_text.setter
+    def output_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "output_text", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
@@ -259,6 +275,7 @@ class AppSecWafMode(pulumi.CustomResource):
             __props__.__dict__["eval_expiration_date"] = None
             __props__.__dict__["eval_ruleset"] = None
             __props__.__dict__["eval_status"] = None
+            __props__.__dict__["output_text"] = None
         super(AppSecWafMode, __self__).__init__(
             'akamai:index/appSecWafMode:AppSecWafMode',
             resource_name,
@@ -275,6 +292,7 @@ class AppSecWafMode(pulumi.CustomResource):
             eval_ruleset: Optional[pulumi.Input[_builtins.str]] = None,
             eval_status: Optional[pulumi.Input[_builtins.str]] = None,
             mode: Optional[pulumi.Input[_builtins.str]] = None,
+            output_text: Optional[pulumi.Input[_builtins.str]] = None,
             security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecWafMode':
         """
         Get an existing AppSecWafMode resource's state with the given name, id, and optional extra
@@ -289,6 +307,7 @@ class AppSecWafMode(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] eval_ruleset: Versioning information for the Kona Rule Set being evaluated, if applicable
         :param pulumi.Input[_builtins.str] eval_status: Whether an evaluation is currently in progress
         :param pulumi.Input[_builtins.str] mode: How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
+        :param pulumi.Input[_builtins.str] output_text: Text representation
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -301,6 +320,7 @@ class AppSecWafMode(pulumi.CustomResource):
         __props__.__dict__["eval_ruleset"] = eval_ruleset
         __props__.__dict__["eval_status"] = eval_status
         __props__.__dict__["mode"] = mode
+        __props__.__dict__["output_text"] = output_text
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppSecWafMode(resource_name, opts=opts, __props__=__props__)
 
@@ -351,6 +371,14 @@ class AppSecWafMode(pulumi.CustomResource):
         How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
         """
         return pulumi.get(self, "mode")
+
+    @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> pulumi.Output[_builtins.str]:
+        """
+        Text representation
+        """
+        return pulumi.get(self, "output_text")
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")

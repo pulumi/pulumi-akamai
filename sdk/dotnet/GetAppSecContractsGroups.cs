@@ -63,6 +63,7 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
+        public readonly string OutputText;
 
         [OutputConstructor]
         private GetAppSecContractsGroupsResult(
@@ -76,7 +77,9 @@ namespace Pulumi.Akamai
 
             string id,
 
-            string json)
+            string json,
+
+            string outputText)
         {
             Contractid = contractid;
             DefaultContractid = defaultContractid;
@@ -84,6 +87,7 @@ namespace Pulumi.Akamai
             Groupid = groupid;
             Id = id;
             Json = json;
+            OutputText = outputText;
         }
     }
 }

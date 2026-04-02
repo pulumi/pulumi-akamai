@@ -18,6 +18,7 @@ public final class GetAppSecSiemSettingsResult {
      */
     private String id;
     private String json;
+    private String outputText;
 
     private GetAppSecSiemSettingsResult() {}
     public Integer configId() {
@@ -33,6 +34,9 @@ public final class GetAppSecSiemSettingsResult {
     public String json() {
         return this.json;
     }
+    public String outputText() {
+        return this.outputText;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -46,12 +50,14 @@ public final class GetAppSecSiemSettingsResult {
         private Integer configId;
         private String id;
         private String json;
+        private String outputText;
         public Builder() {}
         public Builder(GetAppSecSiemSettingsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
+    	      this.outputText = defaults.outputText;
         }
 
         @CustomType.Setter
@@ -78,11 +84,20 @@ public final class GetAppSecSiemSettingsResult {
             this.json = json;
             return this;
         }
+        @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecSiemSettingsResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
         public GetAppSecSiemSettingsResult build() {
             final var _resultValue = new GetAppSecSiemSettingsResult();
             _resultValue.configId = configId;
             _resultValue.id = id;
             _resultValue.json = json;
+            _resultValue.outputText = outputText;
             return _resultValue;
         }
     }

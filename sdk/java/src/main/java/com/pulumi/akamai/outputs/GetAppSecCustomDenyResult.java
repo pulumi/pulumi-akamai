@@ -21,6 +21,7 @@ public final class GetAppSecCustomDenyResult {
      */
     private String id;
     private String json;
+    private String outputText;
 
     private GetAppSecCustomDenyResult() {}
     public Integer configId() {
@@ -39,6 +40,9 @@ public final class GetAppSecCustomDenyResult {
     public String json() {
         return this.json;
     }
+    public String outputText() {
+        return this.outputText;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -53,6 +57,7 @@ public final class GetAppSecCustomDenyResult {
         private @Nullable String customDenyId;
         private String id;
         private String json;
+        private String outputText;
         public Builder() {}
         public Builder(GetAppSecCustomDenyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -60,6 +65,7 @@ public final class GetAppSecCustomDenyResult {
     	      this.customDenyId = defaults.customDenyId;
     	      this.id = defaults.id;
     	      this.json = defaults.json;
+    	      this.outputText = defaults.outputText;
         }
 
         @CustomType.Setter
@@ -92,12 +98,21 @@ public final class GetAppSecCustomDenyResult {
             this.json = json;
             return this;
         }
+        @CustomType.Setter
+        public Builder outputText(String outputText) {
+            if (outputText == null) {
+              throw new MissingRequiredPropertyException("GetAppSecCustomDenyResult", "outputText");
+            }
+            this.outputText = outputText;
+            return this;
+        }
         public GetAppSecCustomDenyResult build() {
             final var _resultValue = new GetAppSecCustomDenyResult();
             _resultValue.configId = configId;
             _resultValue.customDenyId = customDenyId;
             _resultValue.id = id;
             _resultValue.json = json;
+            _resultValue.outputText = outputText;
             return _resultValue;
         }
     }

@@ -40,7 +40,8 @@ type GetAppSecSelectableHostnamesResult struct {
 	Hostnames          []string `pulumi:"hostnames"`
 	HostnamesJson      string   `pulumi:"hostnamesJson"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id         string `pulumi:"id"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func GetAppSecSelectableHostnamesOutput(ctx *pulumi.Context, args GetAppSecSelectableHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecSelectableHostnamesResultOutput {
@@ -111,6 +112,10 @@ func (o GetAppSecSelectableHostnamesResultOutput) HostnamesJson() pulumi.StringO
 // The provider-assigned unique ID for this managed resource.
 func (o GetAppSecSelectableHostnamesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecSelectableHostnamesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

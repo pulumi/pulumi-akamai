@@ -30,8 +30,9 @@ type LookupAppsecAdvancedSettingsJa4FingerprintArgs struct {
 type LookupAppsecAdvancedSettingsJa4FingerprintResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
+	OutputText string `pulumi:"outputText"`
 }
 
 func LookupAppsecAdvancedSettingsJa4FingerprintOutput(ctx *pulumi.Context, args LookupAppsecAdvancedSettingsJa4FingerprintOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAdvancedSettingsJa4FingerprintResultOutput {
@@ -78,6 +79,10 @@ func (o LookupAppsecAdvancedSettingsJa4FingerprintResultOutput) Id() pulumi.Stri
 
 func (o LookupAppsecAdvancedSettingsJa4FingerprintResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppsecAdvancedSettingsJa4FingerprintResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o LookupAppsecAdvancedSettingsJa4FingerprintResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppsecAdvancedSettingsJa4FingerprintResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func init() {

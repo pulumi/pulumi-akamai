@@ -30,6 +30,7 @@ export interface GetAppSecRuleUpgradeDetailsResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecRuleUpgradeDetailsOutput(args: GetAppSecRuleUpgradeDetailsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecRuleUpgradeDetailsResult> {

@@ -29,6 +29,7 @@ export interface GetAppSecEvalResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly outputText: string;
     readonly securityPolicyId: string;
 }
 export function getAppSecEvalOutput(args: GetAppSecEvalOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecEvalResult> {

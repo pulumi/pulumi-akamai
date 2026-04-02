@@ -22,6 +22,12 @@ namespace Pulumi.Akamai
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
+        /// Text representation
+        /// </summary>
+        [Output("outputText")]
+        public Output<string> OutputText { get; private set; } = null!;
+
+        /// <summary>
         /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
@@ -104,6 +110,12 @@ namespace Pulumi.Akamai
 
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
+
+        /// <summary>
+        /// Text representation
+        /// </summary>
+        [Input("outputText")]
+        public Input<string>? OutputText { get; set; }
 
         /// <summary>
         /// Unique identifier of the security policy

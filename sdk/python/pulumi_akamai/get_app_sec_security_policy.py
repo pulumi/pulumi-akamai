@@ -26,7 +26,7 @@ class GetAppSecSecurityPolicyResult:
     """
     A collection of values returned by getAppSecSecurityPolicy.
     """
-    def __init__(__self__, config_id=None, id=None, json=None, security_policy_id=None, security_policy_id_lists=None, security_policy_name=None):
+    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, security_policy_id=None, security_policy_id_lists=None, security_policy_name=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -36,6 +36,9 @@ class GetAppSecSecurityPolicyResult:
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
@@ -65,6 +68,11 @@ class GetAppSecSecurityPolicyResult:
         return pulumi.get(self, "json")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> _builtins.str:
         return pulumi.get(self, "security_policy_id")
@@ -89,6 +97,7 @@ class AwaitableGetAppSecSecurityPolicyResult(GetAppSecSecurityPolicyResult):
             config_id=self.config_id,
             id=self.id,
             json=self.json,
+            output_text=self.output_text,
             security_policy_id=self.security_policy_id,
             security_policy_id_lists=self.security_policy_id_lists,
             security_policy_name=self.security_policy_name)
@@ -110,6 +119,7 @@ def get_app_sec_security_policy(config_id: Optional[_builtins.int] = None,
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         security_policy_id_lists=pulumi.get(__ret__, 'security_policy_id_lists'),
         security_policy_name=pulumi.get(__ret__, 'security_policy_name'))
@@ -128,6 +138,7 @@ def get_app_sec_security_policy_output(config_id: Optional[pulumi.Input[_builtin
         config_id=pulumi.get(__response__, 'config_id'),
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
+        output_text=pulumi.get(__response__, 'output_text'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id'),
         security_policy_id_lists=pulumi.get(__response__, 'security_policy_id_lists'),
         security_policy_name=pulumi.get(__response__, 'security_policy_name')))

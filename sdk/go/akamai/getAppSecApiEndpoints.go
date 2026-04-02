@@ -36,6 +36,7 @@ type GetAppSecApiEndpointsResult struct {
 	Id               string  `pulumi:"id"`
 	IdLists          []int   `pulumi:"idLists"`
 	Json             string  `pulumi:"json"`
+	OutputText       string  `pulumi:"outputText"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -93,6 +94,10 @@ func (o GetAppSecApiEndpointsResultOutput) IdLists() pulumi.IntArrayOutput {
 
 func (o GetAppSecApiEndpointsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecApiEndpointsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecApiEndpointsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecApiEndpointsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
 func (o GetAppSecApiEndpointsResultOutput) SecurityPolicyId() pulumi.StringPtrOutput {

@@ -26,7 +26,7 @@ class GetAppSecMatchTargetsResult:
     """
     A collection of values returned by getAppSecMatchTargets.
     """
-    def __init__(__self__, config_id=None, id=None, json=None, match_target_id=None):
+    def __init__(__self__, config_id=None, id=None, json=None, match_target_id=None, output_text=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -39,6 +39,9 @@ class GetAppSecMatchTargetsResult:
         if match_target_id and not isinstance(match_target_id, int):
             raise TypeError("Expected argument 'match_target_id' to be a int")
         pulumi.set(__self__, "match_target_id", match_target_id)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
 
     @_builtins.property
     @pulumi.getter(name="configId")
@@ -63,6 +66,11 @@ class GetAppSecMatchTargetsResult:
     def match_target_id(self) -> Optional[_builtins.int]:
         return pulumi.get(self, "match_target_id")
 
+    @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
 
 class AwaitableGetAppSecMatchTargetsResult(GetAppSecMatchTargetsResult):
     # pylint: disable=using-constant-test
@@ -73,7 +81,8 @@ class AwaitableGetAppSecMatchTargetsResult(GetAppSecMatchTargetsResult):
             config_id=self.config_id,
             id=self.id,
             json=self.json,
-            match_target_id=self.match_target_id)
+            match_target_id=self.match_target_id,
+            output_text=self.output_text)
 
 
 def get_app_sec_match_targets(config_id: Optional[_builtins.int] = None,
@@ -92,7 +101,8 @@ def get_app_sec_match_targets(config_id: Optional[_builtins.int] = None,
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
-        match_target_id=pulumi.get(__ret__, 'match_target_id'))
+        match_target_id=pulumi.get(__ret__, 'match_target_id'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 def get_app_sec_match_targets_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
                                      match_target_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecMatchTargetsResult]:
@@ -108,4 +118,5 @@ def get_app_sec_match_targets_output(config_id: Optional[pulumi.Input[_builtins.
         config_id=pulumi.get(__response__, 'config_id'),
         id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
-        match_target_id=pulumi.get(__response__, 'match_target_id')))
+        match_target_id=pulumi.get(__response__, 'match_target_id'),
+        output_text=pulumi.get(__response__, 'output_text')))

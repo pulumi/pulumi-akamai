@@ -96,6 +96,123 @@ export interface AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions {
     rules?: number[];
 }
 
+export interface AppsecUrlProtectionPolicyApiDefinition {
+    /**
+     * Unique identifier of the API definition
+     */
+    apiDefinitionId: number;
+    /**
+     * Whether defined resources are included
+     */
+    definedResources: boolean;
+    /**
+     * List of resource IDs
+     */
+    resourceIds: number[];
+    /**
+     * Whether undefined resources are included
+     */
+    undefinedResources: boolean;
+}
+
+export interface AppsecUrlProtectionPolicyBypassCondition {
+    /**
+     * Whether to use wildcard matching for header names
+     */
+    nameWildcard?: boolean;
+    /**
+     * List of header names for RequestHeaderCondition
+     */
+    names?: string[];
+    /**
+     * Type of condition (e.g., RequestHeaderCondition, NetworkListCondition)
+     */
+    type: string;
+    /**
+     * Whether the value matching is case sensitive
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * Whether to use wildcard matching for values
+     */
+    valueWildcard?: boolean;
+    /**
+     * List of values for the condition
+     */
+    values?: string[];
+}
+
+export interface AppsecUrlProtectionPolicyHostnamePath {
+    /**
+     * Hostname for the URL protection policy
+     */
+    hostname: string;
+    /**
+     * List of paths associated with the hostname
+     */
+    paths: string[];
+}
+
+export interface AppsecUrlProtectionPolicyIntelligentLoadShedding {
+    /**
+     * List of categories for intelligent load shedding
+     */
+    categories?: string[];
+    /**
+     * Custom criteria for intelligent load shedding
+     */
+    customCriterias: outputs.AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria[];
+    /**
+     * Number of hits per second threshold
+     */
+    hitsPerSec: number;
+}
+
+export interface AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria {
+    /**
+     * List of client list IDs
+     */
+    listIds: string[];
+    /**
+     * Whether this is a positive match condition
+     */
+    positiveMatch: boolean;
+    /**
+     * Type of custom criteria (e.g., CLIENT_LIST)
+     */
+    type: string;
+}
+
+export interface AppsecWafRulesetAttackGroup {
+    /**
+     * Unique name of the attack group
+     */
+    attackGroup: string;
+    /**
+     * Action taken when the attack group is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+     */
+    attackGroupAction: string;
+    /**
+     * JSON-formatted conditions and exceptions associated with the attack group
+     */
+    conditionException?: string;
+}
+
+export interface AppsecWafRulesetRule {
+    /**
+     * Conditions and exceptions associated with the rule
+     */
+    conditionException?: string;
+    /**
+     * Action taken when the rule is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+     */
+    ruleAction: string;
+    /**
+     * Unique identifier for a rule
+     */
+    ruleId: number;
+}
+
 export interface ClientlistListItem {
     /**
      * A description of the item.
@@ -119,7 +236,7 @@ export interface CloudAccessKeyCredentialsA {
     /**
      * Access key id from cloud provider which is used to sign API requests
      */
-    cloudAccessKeyId: string;
+    cloudAccessKeyId?: string;
     /**
      * Cloud Access secret from cloud provider which is used to sign API requests
      */
@@ -142,7 +259,7 @@ export interface CloudAccessKeyCredentialsB {
     /**
      * Access key id from cloud provider which is used to sign API requests
      */
-    cloudAccessKeyId: string;
+    cloudAccessKeyId?: string;
     /**
      * Cloud Access secret from cloud provider which is used to sign API requests
      */
@@ -1528,6 +1645,284 @@ export interface GetAppsecRapidRulesRapidRule {
      * The rapid rule name.
      */
     name: string;
+}
+
+export interface GetAppsecUrlProtectionPoliciesActionsUrlProtectionPoliciesAction {
+    /**
+     * Action to take for load shedding.
+     */
+    loadSheddingAction: string;
+    /**
+     * Action to take when the max rate threshold is exceeded.
+     */
+    maxRateThresholdAction: string;
+    /**
+     * Unique identifier of the URL protection policy.
+     */
+    urlProtectionPolicyId: number;
+}
+
+export interface GetAppsecUrlProtectionPoliciesUrlProtectionPolicy {
+    /**
+     * List of API definitions associated with the URL protection policy
+     */
+    apiDefinitions: outputs.GetAppsecUrlProtectionPoliciesUrlProtectionPolicyApiDefinition[];
+    /**
+     * List of bypass conditions for the URL protection policy
+     */
+    bypassConditions: outputs.GetAppsecUrlProtectionPoliciesUrlProtectionPolicyBypassCondition[];
+    /**
+     * Unique identifier of the security configuration
+     */
+    configId: number;
+    /**
+     * Date when the URL protection policy was created
+     */
+    createDate: string;
+    /**
+     * User who created the URL protection policy
+     */
+    createdBy: string;
+    /**
+     * Description of the URL protection policy
+     */
+    description: string;
+    /**
+     * List of hostname and path configurations
+     */
+    hostnamePaths: outputs.GetAppsecUrlProtectionPoliciesUrlProtectionPolicyHostnamePath[];
+    /**
+     * Intelligent load shedding configuration
+     */
+    intelligentLoadShedding: outputs.GetAppsecUrlProtectionPoliciesUrlProtectionPolicyIntelligentLoadShedding;
+    /**
+     * Maximum rate threshold for the URL protection policy
+     */
+    maxRateThreshold: number;
+    /**
+     * Name of the URL protection policy
+     */
+    name: string;
+    /**
+     * Date when the URL protection policy was last updated
+     */
+    updateDate: string;
+    /**
+     * User who last updated the URL protection policy
+     */
+    updatedBy: string;
+    /**
+     * Unique identifier of the URL protection policy
+     */
+    urlProtectionPolicyId: number;
+    /**
+     * Whether you're currently using the URL protection policy
+     */
+    used: boolean;
+}
+
+export interface GetAppsecUrlProtectionPoliciesUrlProtectionPolicyApiDefinition {
+    /**
+     * Unique identifier of the API definition
+     */
+    apiDefinitionId: number;
+    /**
+     * Whether defined resources are included
+     */
+    definedResources: boolean;
+    /**
+     * List of resource IDs
+     */
+    resourceIds: number[];
+    /**
+     * Whether undefined resources are included
+     */
+    undefinedResources: boolean;
+}
+
+export interface GetAppsecUrlProtectionPoliciesUrlProtectionPolicyBypassCondition {
+    /**
+     * Whether to use wildcard matching for header names
+     */
+    nameWildcard: boolean;
+    /**
+     * List of header names for RequestHeaderCondition
+     */
+    names: string[];
+    /**
+     * Type of condition (e.g., RequestHeaderCondition, NetworkListCondition)
+     */
+    type: string;
+    /**
+     * Whether the value matching is case sensitive
+     */
+    valueCaseSensitive: boolean;
+    /**
+     * Whether to use wildcard matching for values
+     */
+    valueWildcard: boolean;
+    /**
+     * List of values for the condition
+     */
+    values: string[];
+}
+
+export interface GetAppsecUrlProtectionPoliciesUrlProtectionPolicyHostnamePath {
+    /**
+     * Hostname for the URL protection policy
+     */
+    hostname: string;
+    /**
+     * List of paths associated with the hostname
+     */
+    paths: string[];
+}
+
+export interface GetAppsecUrlProtectionPoliciesUrlProtectionPolicyIntelligentLoadShedding {
+    /**
+     * List of categories for intelligent load shedding
+     */
+    categories: string[];
+    /**
+     * Custom criteria for intelligent load shedding
+     */
+    customCriterias: outputs.GetAppsecUrlProtectionPoliciesUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria[];
+    /**
+     * Number of hits per second threshold
+     */
+    hitsPerSec: number;
+}
+
+export interface GetAppsecUrlProtectionPoliciesUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria {
+    /**
+     * List of client list IDs
+     */
+    listIds: string[];
+    /**
+     * Whether this is a positive match condition
+     */
+    positiveMatch: boolean;
+    /**
+     * Type of custom criteria (e.g., CLIENT_LIST)
+     */
+    type: string;
+}
+
+export interface GetAppsecUrlProtectionPolicyApiDefinition {
+    /**
+     * Unique identifier of the API definition
+     */
+    apiDefinitionId: number;
+    /**
+     * Whether defined resources are included
+     */
+    definedResources: boolean;
+    /**
+     * List of resource IDs
+     */
+    resourceIds: number[];
+    /**
+     * Whether undefined resources are included
+     */
+    undefinedResources: boolean;
+}
+
+export interface GetAppsecUrlProtectionPolicyBypassCondition {
+    /**
+     * Whether to use wildcard matching for header names
+     */
+    nameWildcard: boolean;
+    /**
+     * List of header names for RequestHeaderCondition
+     */
+    names: string[];
+    /**
+     * Type of condition (e.g., RequestHeaderCondition, NetworkListCondition)
+     */
+    type: string;
+    /**
+     * Whether the value matching is case sensitive
+     */
+    valueCaseSensitive: boolean;
+    /**
+     * Whether to use wildcard matching for values
+     */
+    valueWildcard: boolean;
+    /**
+     * List of values for the condition
+     */
+    values: string[];
+}
+
+export interface GetAppsecUrlProtectionPolicyHostnamePath {
+    /**
+     * Hostname for the URL protection
+     */
+    hostname: string;
+    /**
+     * List of paths associated with the hostname
+     */
+    paths: string[];
+}
+
+export interface GetAppsecUrlProtectionPolicyIntelligentLoadShedding {
+    /**
+     * List of categories for intelligent load shedding
+     */
+    categories: string[];
+    /**
+     * Custom criteria for intelligent load shedding
+     */
+    customCriterias: outputs.GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria[];
+    /**
+     * Number of hits per second threshold
+     */
+    hitsPerSec: number;
+}
+
+export interface GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria {
+    /**
+     * List of client list IDs
+     */
+    listIds: string[];
+    /**
+     * Whether this is a positive match condition
+     */
+    positiveMatch: boolean;
+    /**
+     * Type of custom criteria (e.g., CLIENT_LIST)
+     */
+    type: string;
+}
+
+export interface GetAppsecWafRulesetAttackGroup {
+    /**
+     * Unique name of the attack group
+     */
+    attackGroup: string;
+    /**
+     * Action taken when the attack group is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+     */
+    attackGroupAction: string;
+    /**
+     * Conditions and exceptions associated with the attack group
+     */
+    conditionException: string;
+}
+
+export interface GetAppsecWafRulesetRule {
+    /**
+     * Conditions and exceptions associated with the rule
+     */
+    conditionException: string;
+    /**
+     * Action taken when the rule is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
+     */
+    ruleAction: string;
+    /**
+     * Unique identifier for a rule
+     */
+    ruleId: number;
 }
 
 export interface GetCPSEnrollmentAdminContact {
@@ -10832,6 +11227,11 @@ export interface GtmPropertyLivenessTest {
 export interface GtmPropertyLivenessTestHttpHeader {
     name?: string;
     value?: string;
+}
+
+export interface GtmPropertyStateChangeNotificationWebhook {
+    format: string;
+    url: string;
 }
 
 export interface GtmPropertyStaticRrSet {

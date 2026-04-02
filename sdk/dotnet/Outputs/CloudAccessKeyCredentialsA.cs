@@ -16,7 +16,7 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// Access key id from cloud provider which is used to sign API requests
         /// </summary>
-        public readonly string CloudAccessKeyId;
+        public readonly string? CloudAccessKeyId;
         /// <summary>
         /// Cloud Access secret from cloud provider which is used to sign API requests
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private CloudAccessKeyCredentialsA(
-            string cloudAccessKeyId,
+            string? cloudAccessKeyId,
 
             string cloudSecretAccessKey,
 

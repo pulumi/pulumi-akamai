@@ -31,6 +31,7 @@ export interface GetAppSecHostnameCoverageMatchTargetsResult {
      */
     readonly id: string;
     readonly json: string;
+    readonly outputText: string;
 }
 export function getAppSecHostnameCoverageMatchTargetsOutput(args: GetAppSecHostnameCoverageMatchTargetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecHostnameCoverageMatchTargetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

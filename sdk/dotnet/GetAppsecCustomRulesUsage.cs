@@ -70,6 +70,7 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
+        public readonly string OutputText;
         public readonly ImmutableArray<int> RuleIds;
         public readonly ImmutableArray<Outputs.GetAppsecCustomRulesUsageRuleResult> Rules;
 
@@ -81,6 +82,8 @@ namespace Pulumi.Akamai
 
             string json,
 
+            string outputText,
+
             ImmutableArray<int> ruleIds,
 
             ImmutableArray<Outputs.GetAppsecCustomRulesUsageRuleResult> rules)
@@ -88,6 +91,7 @@ namespace Pulumi.Akamai
             ConfigId = configId;
             Id = id;
             Json = json;
+            OutputText = outputText;
             RuleIds = ruleIds;
             Rules = rules;
         }

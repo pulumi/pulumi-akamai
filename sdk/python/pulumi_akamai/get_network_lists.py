@@ -26,7 +26,7 @@ class GetNetworkListsResult:
     """
     A collection of values returned by getNetworkLists.
     """
-    def __init__(__self__, contract_id=None, group_id=None, id=None, json=None, lists=None, name=None, network_list_id=None, sync_point=None, type=None):
+    def __init__(__self__, contract_id=None, group_id=None, id=None, json=None, lists=None, name=None, network_list_id=None, output_text=None, sync_point=None, type=None):
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
@@ -48,6 +48,9 @@ class GetNetworkListsResult:
         if network_list_id and not isinstance(network_list_id, str):
             raise TypeError("Expected argument 'network_list_id' to be a str")
         pulumi.set(__self__, "network_list_id", network_list_id)
+        if output_text and not isinstance(output_text, str):
+            raise TypeError("Expected argument 'output_text' to be a str")
+        pulumi.set(__self__, "output_text", output_text)
         if sync_point and not isinstance(sync_point, int):
             raise TypeError("Expected argument 'sync_point' to be a int")
         pulumi.set(__self__, "sync_point", sync_point)
@@ -94,6 +97,11 @@ class GetNetworkListsResult:
         return pulumi.get(self, "network_list_id")
 
     @_builtins.property
+    @pulumi.getter(name="outputText")
+    def output_text(self) -> _builtins.str:
+        return pulumi.get(self, "output_text")
+
+    @_builtins.property
     @pulumi.getter(name="syncPoint")
     def sync_point(self) -> _builtins.int:
         return pulumi.get(self, "sync_point")
@@ -117,6 +125,7 @@ class AwaitableGetNetworkListsResult(GetNetworkListsResult):
             lists=self.lists,
             name=self.name,
             network_list_id=self.network_list_id,
+            output_text=self.output_text,
             sync_point=self.sync_point,
             type=self.type)
 
@@ -143,6 +152,7 @@ def get_network_lists(name: Optional[_builtins.str] = None,
         lists=pulumi.get(__ret__, 'lists'),
         name=pulumi.get(__ret__, 'name'),
         network_list_id=pulumi.get(__ret__, 'network_list_id'),
+        output_text=pulumi.get(__ret__, 'output_text'),
         sync_point=pulumi.get(__ret__, 'sync_point'),
         type=pulumi.get(__ret__, 'type'))
 def get_network_lists_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -166,5 +176,6 @@ def get_network_lists_output(name: Optional[pulumi.Input[Optional[_builtins.str]
         lists=pulumi.get(__response__, 'lists'),
         name=pulumi.get(__response__, 'name'),
         network_list_id=pulumi.get(__response__, 'network_list_id'),
+        output_text=pulumi.get(__response__, 'output_text'),
         sync_point=pulumi.get(__response__, 'sync_point'),
         type=pulumi.get(__response__, 'type')))
