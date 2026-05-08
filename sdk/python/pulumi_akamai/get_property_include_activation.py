@@ -147,10 +147,10 @@ def get_property_include_activation(contract_id: Optional[_builtins.str] = None,
         note=pulumi.get(__ret__, 'note'),
         notify_emails=pulumi.get(__ret__, 'notify_emails'),
         version=pulumi.get(__ret__, 'version'))
-def get_property_include_activation_output(contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           include_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           network: Optional[pulumi.Input[_builtins.str]] = None,
+def get_property_include_activation_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           include_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           network: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyIncludeActivationResult]:
     """
     Use this data source to access information about an existing resource.

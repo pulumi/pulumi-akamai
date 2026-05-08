@@ -44,5 +44,5 @@ export function getCloudletsRequestControlMatchRuleOutput(args?: GetCloudletsReq
  * A collection of arguments for invoking getCloudletsRequestControlMatchRule.
  */
 export interface GetCloudletsRequestControlMatchRuleOutputArgs {
-    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleArgs>[]>;
+    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleArgs>[] | undefined>;
 }

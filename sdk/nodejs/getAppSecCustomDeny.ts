@@ -46,5 +46,5 @@ export function getAppSecCustomDenyOutput(args: GetAppSecCustomDenyOutputArgs, o
  */
 export interface GetAppSecCustomDenyOutputArgs {
     configId: pulumi.Input<number>;
-    customDenyId?: pulumi.Input<string>;
+    customDenyId?: pulumi.Input<string | undefined>;
 }

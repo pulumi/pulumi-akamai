@@ -22,58 +22,58 @@ class DnsRecordArgs:
                  recordtype: pulumi.Input[_builtins.str],
                  ttl: pulumi.Input[_builtins.int],
                  zone: pulumi.Input[_builtins.str],
-                 algorithm: Optional[pulumi.Input[_builtins.int]] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 digest: Optional[pulumi.Input[_builtins.str]] = None,
-                 digest_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 flags: Optional[pulumi.Input[_builtins.int]] = None,
-                 flagsnaptr: Optional[pulumi.Input[_builtins.str]] = None,
-                 hardware: Optional[pulumi.Input[_builtins.str]] = None,
-                 inception: Optional[pulumi.Input[_builtins.str]] = None,
-                 iterations: Optional[pulumi.Input[_builtins.int]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 keytag: Optional[pulumi.Input[_builtins.int]] = None,
-                 labels: Optional[pulumi.Input[_builtins.int]] = None,
-                 mailbox: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hashed_owner_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nxdomain_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 order: Optional[pulumi.Input[_builtins.int]] = None,
-                 original_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 preference: Optional[pulumi.Input[_builtins.int]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 priority_increment: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.int]] = None,
-                 refresh: Optional[pulumi.Input[_builtins.int]] = None,
-                 regexp: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry: Optional[pulumi.Input[_builtins.int]] = None,
-                 salt: Optional[pulumi.Input[_builtins.str]] = None,
-                 selector: Optional[pulumi.Input[_builtins.int]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 signer: Optional[pulumi.Input[_builtins.str]] = None,
-                 software: Optional[pulumi.Input[_builtins.str]] = None,
-                 subtype: Optional[pulumi.Input[_builtins.int]] = None,
-                 svc_params: Optional[pulumi.Input[_builtins.str]] = None,
-                 svc_priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 txt: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_bitmaps: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_covered: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_mnemonic: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 usage: Optional[pulumi.Input[_builtins.int]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None):
+                 algorithm: pulumi.Input[Optional[_builtins.int]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 digest: pulumi.Input[Optional[_builtins.str]] = None,
+                 digest_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 flags: pulumi.Input[Optional[_builtins.int]] = None,
+                 flagsnaptr: pulumi.Input[Optional[_builtins.str]] = None,
+                 hardware: pulumi.Input[Optional[_builtins.str]] = None,
+                 inception: pulumi.Input[Optional[_builtins.str]] = None,
+                 iterations: pulumi.Input[Optional[_builtins.int]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 keytag: pulumi.Input[Optional[_builtins.int]] = None,
+                 labels: pulumi.Input[Optional[_builtins.int]] = None,
+                 mailbox: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hashed_owner_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nxdomain_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 order: pulumi.Input[Optional[_builtins.int]] = None,
+                 original_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 preference: pulumi.Input[Optional[_builtins.int]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 priority_increment: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.int]] = None,
+                 refresh: pulumi.Input[Optional[_builtins.int]] = None,
+                 regexp: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry: pulumi.Input[Optional[_builtins.int]] = None,
+                 salt: pulumi.Input[Optional[_builtins.str]] = None,
+                 selector: pulumi.Input[Optional[_builtins.int]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 signer: pulumi.Input[Optional[_builtins.str]] = None,
+                 software: pulumi.Input[Optional[_builtins.str]] = None,
+                 subtype: pulumi.Input[Optional[_builtins.int]] = None,
+                 svc_params: pulumi.Input[Optional[_builtins.str]] = None,
+                 svc_priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 txt: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_bitmaps: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_covered: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_mnemonic: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 usage: pulumi.Input[Optional[_builtins.int]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a DnsRecord resource.
         """
@@ -214,535 +214,535 @@ class DnsRecordArgs:
 
     @_builtins.property
     @pulumi.getter
-    def algorithm(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def algorithm(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "algorithm")
 
     @algorithm.setter
-    def algorithm(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def algorithm(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "algorithm", value)
 
     @_builtins.property
     @pulumi.getter
-    def certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "certificate")
 
     @certificate.setter
-    def certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate", value)
 
     @_builtins.property
     @pulumi.getter
-    def digest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def digest(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "digest")
 
     @digest.setter
-    def digest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def digest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "digest", value)
 
     @_builtins.property
     @pulumi.getter(name="digestType")
-    def digest_type(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def digest_type(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "digest_type")
 
     @digest_type.setter
-    def digest_type(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def digest_type(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "digest_type", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def expiration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "expiration")
 
     @expiration.setter
-    def expiration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration", value)
 
     @_builtins.property
     @pulumi.getter
-    def expiry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def expiry(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "expiry")
 
     @expiry.setter
-    def expiry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def expiry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "expiry", value)
 
     @_builtins.property
     @pulumi.getter
-    def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "fingerprint")
 
     @fingerprint.setter
-    def fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fingerprint", value)
 
     @_builtins.property
     @pulumi.getter(name="fingerprintType")
-    def fingerprint_type(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fingerprint_type(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "fingerprint_type")
 
     @fingerprint_type.setter
-    def fingerprint_type(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fingerprint_type(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fingerprint_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def flags(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def flags(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "flags")
 
     @flags.setter
-    def flags(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def flags(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "flags", value)
 
     @_builtins.property
     @pulumi.getter
-    def flagsnaptr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def flagsnaptr(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "flagsnaptr")
 
     @flagsnaptr.setter
-    def flagsnaptr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def flagsnaptr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "flagsnaptr", value)
 
     @_builtins.property
     @pulumi.getter
-    def hardware(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hardware(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "hardware")
 
     @hardware.setter
-    def hardware(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hardware(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hardware", value)
 
     @_builtins.property
     @pulumi.getter
-    def inception(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def inception(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "inception")
 
     @inception.setter
-    def inception(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def inception(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "inception", value)
 
     @_builtins.property
     @pulumi.getter
-    def iterations(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iterations(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "iterations")
 
     @iterations.setter
-    def iterations(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iterations(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iterations", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def keytag(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def keytag(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "keytag")
 
     @keytag.setter
-    def keytag(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def keytag(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "keytag", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def labels(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def labels(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter
-    def mailbox(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mailbox(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "mailbox")
 
     @mailbox.setter
-    def mailbox(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mailbox(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mailbox", value)
 
     @_builtins.property
     @pulumi.getter(name="matchType")
-    def match_type(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def match_type(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "match_type")
 
     @match_type.setter
-    def match_type(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def match_type(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "match_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nameServer")
-    def name_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name_server")
 
     @name_server.setter
-    def name_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name_server", value)
 
     @_builtins.property
     @pulumi.getter(name="nextHashedOwnerName")
-    def next_hashed_owner_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_hashed_owner_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "next_hashed_owner_name")
 
     @next_hashed_owner_name.setter
-    def next_hashed_owner_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_hashed_owner_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_hashed_owner_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nxdomainTtl")
-    def nxdomain_ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def nxdomain_ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "nxdomain_ttl")
 
     @nxdomain_ttl.setter
-    def nxdomain_ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def nxdomain_ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "nxdomain_ttl", value)
 
     @_builtins.property
     @pulumi.getter
-    def order(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def order(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "order")
 
     @order.setter
-    def order(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def order(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "order", value)
 
     @_builtins.property
     @pulumi.getter(name="originalTtl")
-    def original_ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def original_ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "original_ttl")
 
     @original_ttl.setter
-    def original_ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def original_ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "original_ttl", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def preference(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def preference(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "preference")
 
     @preference.setter
-    def preference(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def preference(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "preference", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="priorityIncrement")
-    def priority_increment(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority_increment(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "priority_increment")
 
     @priority_increment.setter
-    def priority_increment(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority_increment(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority_increment", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def refresh(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def refresh(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "refresh")
 
     @refresh.setter
-    def refresh(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def refresh(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "refresh", value)
 
     @_builtins.property
     @pulumi.getter
-    def regexp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def regexp(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "regexp")
 
     @regexp.setter
-    def regexp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def regexp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "regexp", value)
 
     @_builtins.property
     @pulumi.getter
-    def replacement(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replacement(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "replacement")
 
     @replacement.setter
-    def replacement(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replacement(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replacement", value)
 
     @_builtins.property
     @pulumi.getter
-    def retry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retry(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "retry")
 
     @retry.setter
-    def retry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retry", value)
 
     @_builtins.property
     @pulumi.getter
-    def salt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def salt(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "salt")
 
     @salt.setter
-    def salt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def salt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "salt", value)
 
     @_builtins.property
     @pulumi.getter
-    def selector(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def selector(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "selector")
 
     @selector.setter
-    def selector(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def selector(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "selector", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
     @_builtins.property
     @pulumi.getter
-    def signature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signature(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "signature")
 
     @signature.setter
-    def signature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature", value)
 
     @_builtins.property
     @pulumi.getter
-    def signer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signer(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "signer")
 
     @signer.setter
-    def signer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signer", value)
 
     @_builtins.property
     @pulumi.getter
-    def software(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "software")
 
     @software.setter
-    def software(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software", value)
 
     @_builtins.property
     @pulumi.getter
-    def subtype(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def subtype(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "subtype")
 
     @subtype.setter
-    def subtype(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def subtype(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "subtype", value)
 
     @_builtins.property
     @pulumi.getter(name="svcParams")
-    def svc_params(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def svc_params(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "svc_params")
 
     @svc_params.setter
-    def svc_params(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def svc_params(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "svc_params", value)
 
     @_builtins.property
     @pulumi.getter(name="svcPriority")
-    def svc_priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def svc_priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "svc_priority")
 
     @svc_priority.setter
-    def svc_priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def svc_priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "svc_priority", value)
 
     @_builtins.property
     @pulumi.getter(name="targetName")
-    def target_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "target_name")
 
     @target_name.setter
-    def target_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "targets", value)
 
     @_builtins.property
     @pulumi.getter
-    def txt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def txt(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "txt")
 
     @txt.setter
-    def txt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def txt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "txt", value)
 
     @_builtins.property
     @pulumi.getter(name="typeBitmaps")
-    def type_bitmaps(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type_bitmaps(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type_bitmaps")
 
     @type_bitmaps.setter
-    def type_bitmaps(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type_bitmaps(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type_bitmaps", value)
 
     @_builtins.property
     @pulumi.getter(name="typeCovered")
-    def type_covered(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type_covered(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type_covered")
 
     @type_covered.setter
-    def type_covered(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type_covered(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type_covered", value)
 
     @_builtins.property
     @pulumi.getter(name="typeMnemonic")
-    def type_mnemonic(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type_mnemonic(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type_mnemonic")
 
     @type_mnemonic.setter
-    def type_mnemonic(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type_mnemonic(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type_mnemonic", value)
 
     @_builtins.property
     @pulumi.getter(name="typeValue")
-    def type_value(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def type_value(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "type_value")
 
     @type_value.setter
-    def type_value(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def type_value(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "type_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def usage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def usage(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "usage")
 
     @usage.setter
-    def usage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def usage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "usage", value)
 
     @_builtins.property
     @pulumi.getter
-    def weight(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weight(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "weight")
 
     @weight.setter
-    def weight(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weight(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weight", value)
 
 
 @pulumi.input_type
 class _DnsRecordState:
     def __init__(__self__, *,
-                 algorithm: Optional[pulumi.Input[_builtins.int]] = None,
-                 answer_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 digest: Optional[pulumi.Input[_builtins.str]] = None,
-                 digest_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 flags: Optional[pulumi.Input[_builtins.int]] = None,
-                 flagsnaptr: Optional[pulumi.Input[_builtins.str]] = None,
-                 hardware: Optional[pulumi.Input[_builtins.str]] = None,
-                 inception: Optional[pulumi.Input[_builtins.str]] = None,
-                 iterations: Optional[pulumi.Input[_builtins.int]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 keytag: Optional[pulumi.Input[_builtins.int]] = None,
-                 labels: Optional[pulumi.Input[_builtins.int]] = None,
-                 mailbox: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hashed_owner_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nxdomain_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 order: Optional[pulumi.Input[_builtins.int]] = None,
-                 original_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 preference: Optional[pulumi.Input[_builtins.int]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 priority_increment: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.int]] = None,
-                 record_sha: Optional[pulumi.Input[_builtins.str]] = None,
-                 recordtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh: Optional[pulumi.Input[_builtins.int]] = None,
-                 regexp: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry: Optional[pulumi.Input[_builtins.int]] = None,
-                 salt: Optional[pulumi.Input[_builtins.str]] = None,
-                 selector: Optional[pulumi.Input[_builtins.int]] = None,
-                 serial: Optional[pulumi.Input[_builtins.int]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 signer: Optional[pulumi.Input[_builtins.str]] = None,
-                 software: Optional[pulumi.Input[_builtins.str]] = None,
-                 subtype: Optional[pulumi.Input[_builtins.int]] = None,
-                 svc_params: Optional[pulumi.Input[_builtins.str]] = None,
-                 svc_priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 txt: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_bitmaps: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_covered: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_mnemonic: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 usage: Optional[pulumi.Input[_builtins.int]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 algorithm: pulumi.Input[Optional[_builtins.int]] = None,
+                 answer_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 digest: pulumi.Input[Optional[_builtins.str]] = None,
+                 digest_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 flags: pulumi.Input[Optional[_builtins.int]] = None,
+                 flagsnaptr: pulumi.Input[Optional[_builtins.str]] = None,
+                 hardware: pulumi.Input[Optional[_builtins.str]] = None,
+                 inception: pulumi.Input[Optional[_builtins.str]] = None,
+                 iterations: pulumi.Input[Optional[_builtins.int]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 keytag: pulumi.Input[Optional[_builtins.int]] = None,
+                 labels: pulumi.Input[Optional[_builtins.int]] = None,
+                 mailbox: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hashed_owner_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nxdomain_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 order: pulumi.Input[Optional[_builtins.int]] = None,
+                 original_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 preference: pulumi.Input[Optional[_builtins.int]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 priority_increment: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.int]] = None,
+                 record_sha: pulumi.Input[Optional[_builtins.str]] = None,
+                 recordtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh: pulumi.Input[Optional[_builtins.int]] = None,
+                 regexp: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry: pulumi.Input[Optional[_builtins.int]] = None,
+                 salt: pulumi.Input[Optional[_builtins.str]] = None,
+                 selector: pulumi.Input[Optional[_builtins.int]] = None,
+                 serial: pulumi.Input[Optional[_builtins.int]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 signer: pulumi.Input[Optional[_builtins.str]] = None,
+                 software: pulumi.Input[Optional[_builtins.str]] = None,
+                 subtype: pulumi.Input[Optional[_builtins.int]] = None,
+                 svc_params: pulumi.Input[Optional[_builtins.str]] = None,
+                 svc_priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 txt: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_bitmaps: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_covered: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_mnemonic: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 usage: pulumi.Input[Optional[_builtins.int]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DnsRecord resources.
         """
@@ -867,533 +867,533 @@ class _DnsRecordState:
 
     @_builtins.property
     @pulumi.getter
-    def algorithm(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def algorithm(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "algorithm")
 
     @algorithm.setter
-    def algorithm(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def algorithm(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="answerType")
-    def answer_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def answer_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "answer_type")
 
     @answer_type.setter
-    def answer_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def answer_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "answer_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "certificate")
 
     @certificate.setter
-    def certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate", value)
 
     @_builtins.property
     @pulumi.getter
-    def digest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def digest(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "digest")
 
     @digest.setter
-    def digest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def digest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "digest", value)
 
     @_builtins.property
     @pulumi.getter(name="digestType")
-    def digest_type(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def digest_type(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "digest_type")
 
     @digest_type.setter
-    def digest_type(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def digest_type(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "digest_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsName")
-    def dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dns_name")
 
     @dns_name.setter
-    def dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_name", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def expiration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "expiration")
 
     @expiration.setter
-    def expiration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration", value)
 
     @_builtins.property
     @pulumi.getter
-    def expiry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def expiry(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "expiry")
 
     @expiry.setter
-    def expiry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def expiry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "expiry", value)
 
     @_builtins.property
     @pulumi.getter
-    def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "fingerprint")
 
     @fingerprint.setter
-    def fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fingerprint", value)
 
     @_builtins.property
     @pulumi.getter(name="fingerprintType")
-    def fingerprint_type(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fingerprint_type(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "fingerprint_type")
 
     @fingerprint_type.setter
-    def fingerprint_type(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fingerprint_type(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fingerprint_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def flags(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def flags(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "flags")
 
     @flags.setter
-    def flags(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def flags(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "flags", value)
 
     @_builtins.property
     @pulumi.getter
-    def flagsnaptr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def flagsnaptr(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "flagsnaptr")
 
     @flagsnaptr.setter
-    def flagsnaptr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def flagsnaptr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "flagsnaptr", value)
 
     @_builtins.property
     @pulumi.getter
-    def hardware(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hardware(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "hardware")
 
     @hardware.setter
-    def hardware(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hardware(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hardware", value)
 
     @_builtins.property
     @pulumi.getter
-    def inception(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def inception(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "inception")
 
     @inception.setter
-    def inception(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def inception(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "inception", value)
 
     @_builtins.property
     @pulumi.getter
-    def iterations(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iterations(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "iterations")
 
     @iterations.setter
-    def iterations(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iterations(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iterations", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def keytag(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def keytag(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "keytag")
 
     @keytag.setter
-    def keytag(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def keytag(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "keytag", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def labels(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def labels(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter
-    def mailbox(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mailbox(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "mailbox")
 
     @mailbox.setter
-    def mailbox(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mailbox(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mailbox", value)
 
     @_builtins.property
     @pulumi.getter(name="matchType")
-    def match_type(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def match_type(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "match_type")
 
     @match_type.setter
-    def match_type(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def match_type(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "match_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nameServer")
-    def name_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name_server")
 
     @name_server.setter
-    def name_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name_server", value)
 
     @_builtins.property
     @pulumi.getter(name="nextHashedOwnerName")
-    def next_hashed_owner_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_hashed_owner_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "next_hashed_owner_name")
 
     @next_hashed_owner_name.setter
-    def next_hashed_owner_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_hashed_owner_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_hashed_owner_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nxdomainTtl")
-    def nxdomain_ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def nxdomain_ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "nxdomain_ttl")
 
     @nxdomain_ttl.setter
-    def nxdomain_ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def nxdomain_ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "nxdomain_ttl", value)
 
     @_builtins.property
     @pulumi.getter
-    def order(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def order(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "order")
 
     @order.setter
-    def order(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def order(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "order", value)
 
     @_builtins.property
     @pulumi.getter(name="originalTtl")
-    def original_ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def original_ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "original_ttl")
 
     @original_ttl.setter
-    def original_ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def original_ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "original_ttl", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def preference(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def preference(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "preference")
 
     @preference.setter
-    def preference(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def preference(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "preference", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="priorityIncrement")
-    def priority_increment(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority_increment(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "priority_increment")
 
     @priority_increment.setter
-    def priority_increment(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority_increment(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority_increment", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="recordSha")
-    def record_sha(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def record_sha(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "record_sha")
 
     @record_sha.setter
-    def record_sha(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def record_sha(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "record_sha", value)
 
     @_builtins.property
     @pulumi.getter
-    def recordtype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recordtype(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "recordtype")
 
     @recordtype.setter
-    def recordtype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recordtype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recordtype", value)
 
     @_builtins.property
     @pulumi.getter
-    def refresh(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def refresh(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "refresh")
 
     @refresh.setter
-    def refresh(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def refresh(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "refresh", value)
 
     @_builtins.property
     @pulumi.getter
-    def regexp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def regexp(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "regexp")
 
     @regexp.setter
-    def regexp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def regexp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "regexp", value)
 
     @_builtins.property
     @pulumi.getter
-    def replacement(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replacement(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "replacement")
 
     @replacement.setter
-    def replacement(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replacement(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replacement", value)
 
     @_builtins.property
     @pulumi.getter
-    def retry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retry(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "retry")
 
     @retry.setter
-    def retry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retry", value)
 
     @_builtins.property
     @pulumi.getter
-    def salt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def salt(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "salt")
 
     @salt.setter
-    def salt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def salt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "salt", value)
 
     @_builtins.property
     @pulumi.getter
-    def selector(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def selector(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "selector")
 
     @selector.setter
-    def selector(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def selector(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "selector", value)
 
     @_builtins.property
     @pulumi.getter
-    def serial(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def serial(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "serial")
 
     @serial.setter
-    def serial(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def serial(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "serial", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
     @_builtins.property
     @pulumi.getter
-    def signature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signature(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "signature")
 
     @signature.setter
-    def signature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature", value)
 
     @_builtins.property
     @pulumi.getter
-    def signer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signer(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "signer")
 
     @signer.setter
-    def signer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signer", value)
 
     @_builtins.property
     @pulumi.getter
-    def software(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "software")
 
     @software.setter
-    def software(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software", value)
 
     @_builtins.property
     @pulumi.getter
-    def subtype(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def subtype(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "subtype")
 
     @subtype.setter
-    def subtype(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def subtype(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "subtype", value)
 
     @_builtins.property
     @pulumi.getter(name="svcParams")
-    def svc_params(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def svc_params(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "svc_params")
 
     @svc_params.setter
-    def svc_params(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def svc_params(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "svc_params", value)
 
     @_builtins.property
     @pulumi.getter(name="svcPriority")
-    def svc_priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def svc_priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "svc_priority")
 
     @svc_priority.setter
-    def svc_priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def svc_priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "svc_priority", value)
 
     @_builtins.property
     @pulumi.getter(name="targetName")
-    def target_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "target_name")
 
     @target_name.setter
-    def target_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "targets", value)
 
     @_builtins.property
     @pulumi.getter
-    def ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "ttl")
 
     @ttl.setter
-    def ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ttl", value)
 
     @_builtins.property
     @pulumi.getter
-    def txt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def txt(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "txt")
 
     @txt.setter
-    def txt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def txt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "txt", value)
 
     @_builtins.property
     @pulumi.getter(name="typeBitmaps")
-    def type_bitmaps(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type_bitmaps(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type_bitmaps")
 
     @type_bitmaps.setter
-    def type_bitmaps(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type_bitmaps(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type_bitmaps", value)
 
     @_builtins.property
     @pulumi.getter(name="typeCovered")
-    def type_covered(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type_covered(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type_covered")
 
     @type_covered.setter
-    def type_covered(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type_covered(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type_covered", value)
 
     @_builtins.property
     @pulumi.getter(name="typeMnemonic")
-    def type_mnemonic(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type_mnemonic(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type_mnemonic")
 
     @type_mnemonic.setter
-    def type_mnemonic(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type_mnemonic(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type_mnemonic", value)
 
     @_builtins.property
     @pulumi.getter(name="typeValue")
-    def type_value(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def type_value(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "type_value")
 
     @type_value.setter
-    def type_value(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def type_value(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "type_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def usage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def usage(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "usage")
 
     @usage.setter
-    def usage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def usage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "usage", value)
 
     @_builtins.property
     @pulumi.getter
-    def weight(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weight(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "weight")
 
     @weight.setter
-    def weight(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weight(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weight", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -1403,61 +1403,61 @@ class DnsRecord(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 algorithm: Optional[pulumi.Input[_builtins.int]] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 digest: Optional[pulumi.Input[_builtins.str]] = None,
-                 digest_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 flags: Optional[pulumi.Input[_builtins.int]] = None,
-                 flagsnaptr: Optional[pulumi.Input[_builtins.str]] = None,
-                 hardware: Optional[pulumi.Input[_builtins.str]] = None,
-                 inception: Optional[pulumi.Input[_builtins.str]] = None,
-                 iterations: Optional[pulumi.Input[_builtins.int]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 keytag: Optional[pulumi.Input[_builtins.int]] = None,
-                 labels: Optional[pulumi.Input[_builtins.int]] = None,
-                 mailbox: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hashed_owner_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nxdomain_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 order: Optional[pulumi.Input[_builtins.int]] = None,
-                 original_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 preference: Optional[pulumi.Input[_builtins.int]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 priority_increment: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.int]] = None,
-                 recordtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh: Optional[pulumi.Input[_builtins.int]] = None,
-                 regexp: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry: Optional[pulumi.Input[_builtins.int]] = None,
-                 salt: Optional[pulumi.Input[_builtins.str]] = None,
-                 selector: Optional[pulumi.Input[_builtins.int]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 signer: Optional[pulumi.Input[_builtins.str]] = None,
-                 software: Optional[pulumi.Input[_builtins.str]] = None,
-                 subtype: Optional[pulumi.Input[_builtins.int]] = None,
-                 svc_params: Optional[pulumi.Input[_builtins.str]] = None,
-                 svc_priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 txt: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_bitmaps: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_covered: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_mnemonic: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 usage: Optional[pulumi.Input[_builtins.int]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 algorithm: pulumi.Input[Optional[_builtins.int]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 digest: pulumi.Input[Optional[_builtins.str]] = None,
+                 digest_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 flags: pulumi.Input[Optional[_builtins.int]] = None,
+                 flagsnaptr: pulumi.Input[Optional[_builtins.str]] = None,
+                 hardware: pulumi.Input[Optional[_builtins.str]] = None,
+                 inception: pulumi.Input[Optional[_builtins.str]] = None,
+                 iterations: pulumi.Input[Optional[_builtins.int]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 keytag: pulumi.Input[Optional[_builtins.int]] = None,
+                 labels: pulumi.Input[Optional[_builtins.int]] = None,
+                 mailbox: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hashed_owner_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nxdomain_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 order: pulumi.Input[Optional[_builtins.int]] = None,
+                 original_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 preference: pulumi.Input[Optional[_builtins.int]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 priority_increment: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.int]] = None,
+                 recordtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh: pulumi.Input[Optional[_builtins.int]] = None,
+                 regexp: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry: pulumi.Input[Optional[_builtins.int]] = None,
+                 salt: pulumi.Input[Optional[_builtins.str]] = None,
+                 selector: pulumi.Input[Optional[_builtins.int]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 signer: pulumi.Input[Optional[_builtins.str]] = None,
+                 software: pulumi.Input[Optional[_builtins.str]] = None,
+                 subtype: pulumi.Input[Optional[_builtins.int]] = None,
+                 svc_params: pulumi.Input[Optional[_builtins.str]] = None,
+                 svc_priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 txt: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_bitmaps: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_covered: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_mnemonic: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 usage: pulumi.Input[Optional[_builtins.int]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a DnsRecord resource with the given unique name, props, and options.
@@ -1489,61 +1489,61 @@ class DnsRecord(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 algorithm: Optional[pulumi.Input[_builtins.int]] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 digest: Optional[pulumi.Input[_builtins.str]] = None,
-                 digest_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 flags: Optional[pulumi.Input[_builtins.int]] = None,
-                 flagsnaptr: Optional[pulumi.Input[_builtins.str]] = None,
-                 hardware: Optional[pulumi.Input[_builtins.str]] = None,
-                 inception: Optional[pulumi.Input[_builtins.str]] = None,
-                 iterations: Optional[pulumi.Input[_builtins.int]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 keytag: Optional[pulumi.Input[_builtins.int]] = None,
-                 labels: Optional[pulumi.Input[_builtins.int]] = None,
-                 mailbox: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hashed_owner_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nxdomain_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 order: Optional[pulumi.Input[_builtins.int]] = None,
-                 original_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 preference: Optional[pulumi.Input[_builtins.int]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 priority_increment: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.int]] = None,
-                 recordtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh: Optional[pulumi.Input[_builtins.int]] = None,
-                 regexp: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry: Optional[pulumi.Input[_builtins.int]] = None,
-                 salt: Optional[pulumi.Input[_builtins.str]] = None,
-                 selector: Optional[pulumi.Input[_builtins.int]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 signer: Optional[pulumi.Input[_builtins.str]] = None,
-                 software: Optional[pulumi.Input[_builtins.str]] = None,
-                 subtype: Optional[pulumi.Input[_builtins.int]] = None,
-                 svc_params: Optional[pulumi.Input[_builtins.str]] = None,
-                 svc_priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 txt: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_bitmaps: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_covered: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_mnemonic: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 usage: Optional[pulumi.Input[_builtins.int]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 algorithm: pulumi.Input[Optional[_builtins.int]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 digest: pulumi.Input[Optional[_builtins.str]] = None,
+                 digest_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 flags: pulumi.Input[Optional[_builtins.int]] = None,
+                 flagsnaptr: pulumi.Input[Optional[_builtins.str]] = None,
+                 hardware: pulumi.Input[Optional[_builtins.str]] = None,
+                 inception: pulumi.Input[Optional[_builtins.str]] = None,
+                 iterations: pulumi.Input[Optional[_builtins.int]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 keytag: pulumi.Input[Optional[_builtins.int]] = None,
+                 labels: pulumi.Input[Optional[_builtins.int]] = None,
+                 mailbox: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hashed_owner_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nxdomain_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 order: pulumi.Input[Optional[_builtins.int]] = None,
+                 original_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 preference: pulumi.Input[Optional[_builtins.int]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 priority_increment: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.int]] = None,
+                 recordtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh: pulumi.Input[Optional[_builtins.int]] = None,
+                 regexp: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry: pulumi.Input[Optional[_builtins.int]] = None,
+                 salt: pulumi.Input[Optional[_builtins.str]] = None,
+                 selector: pulumi.Input[Optional[_builtins.int]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 signer: pulumi.Input[Optional[_builtins.str]] = None,
+                 software: pulumi.Input[Optional[_builtins.str]] = None,
+                 subtype: pulumi.Input[Optional[_builtins.int]] = None,
+                 svc_params: pulumi.Input[Optional[_builtins.str]] = None,
+                 svc_priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 txt: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_bitmaps: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_covered: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_mnemonic: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 usage: pulumi.Input[Optional[_builtins.int]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1630,65 +1630,65 @@ class DnsRecord(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            algorithm: Optional[pulumi.Input[_builtins.int]] = None,
-            answer_type: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            digest: Optional[pulumi.Input[_builtins.str]] = None,
-            digest_type: Optional[pulumi.Input[_builtins.int]] = None,
-            dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-            email_address: Optional[pulumi.Input[_builtins.str]] = None,
-            expiration: Optional[pulumi.Input[_builtins.str]] = None,
-            expiry: Optional[pulumi.Input[_builtins.int]] = None,
-            fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-            fingerprint_type: Optional[pulumi.Input[_builtins.int]] = None,
-            flags: Optional[pulumi.Input[_builtins.int]] = None,
-            flagsnaptr: Optional[pulumi.Input[_builtins.str]] = None,
-            hardware: Optional[pulumi.Input[_builtins.str]] = None,
-            inception: Optional[pulumi.Input[_builtins.str]] = None,
-            iterations: Optional[pulumi.Input[_builtins.int]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            keytag: Optional[pulumi.Input[_builtins.int]] = None,
-            labels: Optional[pulumi.Input[_builtins.int]] = None,
-            mailbox: Optional[pulumi.Input[_builtins.str]] = None,
-            match_type: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            name_server: Optional[pulumi.Input[_builtins.str]] = None,
-            next_hashed_owner_name: Optional[pulumi.Input[_builtins.str]] = None,
-            nxdomain_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-            order: Optional[pulumi.Input[_builtins.int]] = None,
-            original_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            preference: Optional[pulumi.Input[_builtins.int]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            priority_increment: Optional[pulumi.Input[_builtins.int]] = None,
-            protocol: Optional[pulumi.Input[_builtins.int]] = None,
-            record_sha: Optional[pulumi.Input[_builtins.str]] = None,
-            recordtype: Optional[pulumi.Input[_builtins.str]] = None,
-            refresh: Optional[pulumi.Input[_builtins.int]] = None,
-            regexp: Optional[pulumi.Input[_builtins.str]] = None,
-            replacement: Optional[pulumi.Input[_builtins.str]] = None,
-            retry: Optional[pulumi.Input[_builtins.int]] = None,
-            salt: Optional[pulumi.Input[_builtins.str]] = None,
-            selector: Optional[pulumi.Input[_builtins.int]] = None,
-            serial: Optional[pulumi.Input[_builtins.int]] = None,
-            service: Optional[pulumi.Input[_builtins.str]] = None,
-            signature: Optional[pulumi.Input[_builtins.str]] = None,
-            signer: Optional[pulumi.Input[_builtins.str]] = None,
-            software: Optional[pulumi.Input[_builtins.str]] = None,
-            subtype: Optional[pulumi.Input[_builtins.int]] = None,
-            svc_params: Optional[pulumi.Input[_builtins.str]] = None,
-            svc_priority: Optional[pulumi.Input[_builtins.int]] = None,
-            target_name: Optional[pulumi.Input[_builtins.str]] = None,
-            targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ttl: Optional[pulumi.Input[_builtins.int]] = None,
-            txt: Optional[pulumi.Input[_builtins.str]] = None,
-            type_bitmaps: Optional[pulumi.Input[_builtins.str]] = None,
-            type_covered: Optional[pulumi.Input[_builtins.str]] = None,
-            type_mnemonic: Optional[pulumi.Input[_builtins.str]] = None,
-            type_value: Optional[pulumi.Input[_builtins.int]] = None,
-            usage: Optional[pulumi.Input[_builtins.int]] = None,
-            weight: Optional[pulumi.Input[_builtins.int]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'DnsRecord':
+            algorithm: pulumi.Input[Optional[_builtins.int]] = None,
+            answer_type: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            digest: pulumi.Input[Optional[_builtins.str]] = None,
+            digest_type: pulumi.Input[Optional[_builtins.int]] = None,
+            dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+            email_address: pulumi.Input[Optional[_builtins.str]] = None,
+            expiration: pulumi.Input[Optional[_builtins.str]] = None,
+            expiry: pulumi.Input[Optional[_builtins.int]] = None,
+            fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            fingerprint_type: pulumi.Input[Optional[_builtins.int]] = None,
+            flags: pulumi.Input[Optional[_builtins.int]] = None,
+            flagsnaptr: pulumi.Input[Optional[_builtins.str]] = None,
+            hardware: pulumi.Input[Optional[_builtins.str]] = None,
+            inception: pulumi.Input[Optional[_builtins.str]] = None,
+            iterations: pulumi.Input[Optional[_builtins.int]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            keytag: pulumi.Input[Optional[_builtins.int]] = None,
+            labels: pulumi.Input[Optional[_builtins.int]] = None,
+            mailbox: pulumi.Input[Optional[_builtins.str]] = None,
+            match_type: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            name_server: pulumi.Input[Optional[_builtins.str]] = None,
+            next_hashed_owner_name: pulumi.Input[Optional[_builtins.str]] = None,
+            nxdomain_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            order: pulumi.Input[Optional[_builtins.int]] = None,
+            original_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            preference: pulumi.Input[Optional[_builtins.int]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            priority_increment: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol: pulumi.Input[Optional[_builtins.int]] = None,
+            record_sha: pulumi.Input[Optional[_builtins.str]] = None,
+            recordtype: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh: pulumi.Input[Optional[_builtins.int]] = None,
+            regexp: pulumi.Input[Optional[_builtins.str]] = None,
+            replacement: pulumi.Input[Optional[_builtins.str]] = None,
+            retry: pulumi.Input[Optional[_builtins.int]] = None,
+            salt: pulumi.Input[Optional[_builtins.str]] = None,
+            selector: pulumi.Input[Optional[_builtins.int]] = None,
+            serial: pulumi.Input[Optional[_builtins.int]] = None,
+            service: pulumi.Input[Optional[_builtins.str]] = None,
+            signature: pulumi.Input[Optional[_builtins.str]] = None,
+            signer: pulumi.Input[Optional[_builtins.str]] = None,
+            software: pulumi.Input[Optional[_builtins.str]] = None,
+            subtype: pulumi.Input[Optional[_builtins.int]] = None,
+            svc_params: pulumi.Input[Optional[_builtins.str]] = None,
+            svc_priority: pulumi.Input[Optional[_builtins.int]] = None,
+            target_name: pulumi.Input[Optional[_builtins.str]] = None,
+            targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            txt: pulumi.Input[Optional[_builtins.str]] = None,
+            type_bitmaps: pulumi.Input[Optional[_builtins.str]] = None,
+            type_covered: pulumi.Input[Optional[_builtins.str]] = None,
+            type_mnemonic: pulumi.Input[Optional[_builtins.str]] = None,
+            type_value: pulumi.Input[Optional[_builtins.int]] = None,
+            usage: pulumi.Input[Optional[_builtins.int]] = None,
+            weight: pulumi.Input[Optional[_builtins.int]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'DnsRecord':
         """
         Get an existing DnsRecord resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

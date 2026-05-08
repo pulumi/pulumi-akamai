@@ -94,8 +94,8 @@ def get_properties_search(key: Optional[_builtins.str] = None,
         key=pulumi.get(__ret__, 'key'),
         properties=pulumi.get(__ret__, 'properties'),
         value=pulumi.get(__ret__, 'value'))
-def get_properties_search_output(key: Optional[pulumi.Input[_builtins.str]] = None,
-                                 value: Optional[pulumi.Input[_builtins.str]] = None,
+def get_properties_search_output(key: pulumi.Input[Optional[_builtins.str]] = None,
+                                 value: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertiesSearchResult]:
     """
     Use this data source to access information about an existing resource.

@@ -72,7 +72,7 @@ export interface PropertyDomainownershipDomainsState {
     /**
      * List of domains.
      */
-    domains?: pulumi.Input<pulumi.Input<inputs.PropertyDomainownershipDomainsDomain>[]>;
+    domains?: pulumi.Input<pulumi.Input<inputs.PropertyDomainownershipDomainsDomain>[] | undefined>;
 }
 
 /**

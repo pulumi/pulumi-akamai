@@ -21,9 +21,9 @@ class ClientlistActivationArgs:
     def __init__(__self__, *,
                  list_id: pulumi.Input[_builtins.str],
                  network: pulumi.Input[_builtins.str],
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 siebel_ticket_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 siebel_ticket_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ClientlistActivation resource.
 
@@ -68,51 +68,51 @@ class ClientlistActivationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def comments(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comments(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A brief description for the activation.
         """
         return pulumi.get(self, "comments")
 
     @comments.setter
-    def comments(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comments(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comments", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationRecipients")
-    def notification_recipients(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_recipients(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Users to notify via email.
         """
         return pulumi.get(self, "notification_recipients")
 
     @notification_recipients.setter
-    def notification_recipients(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_recipients(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_recipients", value)
 
     @_builtins.property
     @pulumi.getter(name="siebelTicketId")
-    def siebel_ticket_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def siebel_ticket_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies the Siebel ticket, if the activation is linked to one.
         """
         return pulumi.get(self, "siebel_ticket_id")
 
     @siebel_ticket_id.setter
-    def siebel_ticket_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def siebel_ticket_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "siebel_ticket_id", value)
 
 
 @pulumi.input_type
 class _ClientlistActivationState:
     def __init__(__self__, *,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 siebel_ticket_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 siebel_ticket_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ClientlistActivation resources.
 
@@ -141,86 +141,86 @@ class _ClientlistActivationState:
 
     @_builtins.property
     @pulumi.getter
-    def comments(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comments(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A brief description for the activation.
         """
         return pulumi.get(self, "comments")
 
     @comments.setter
-    def comments(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comments(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comments", value)
 
     @_builtins.property
     @pulumi.getter(name="listId")
-    def list_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def list_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The client list unique identifier.
         """
         return pulumi.get(self, "list_id")
 
     @list_id.setter
-    def list_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def list_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "list_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network environment where you activate your client list: either STAGING or PRODUCTION.
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationRecipients")
-    def notification_recipients(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_recipients(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Users to notify via email.
         """
         return pulumi.get(self, "notification_recipients")
 
     @notification_recipients.setter
-    def notification_recipients(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_recipients(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_recipients", value)
 
     @_builtins.property
     @pulumi.getter(name="siebelTicketId")
-    def siebel_ticket_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def siebel_ticket_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies the Siebel ticket, if the activation is linked to one.
         """
         return pulumi.get(self, "siebel_ticket_id")
 
     @siebel_ticket_id.setter
-    def siebel_ticket_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def siebel_ticket_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "siebel_ticket_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current activation status, either ACTIVE, INACTIVE, MODIFIED, PENDING_ACTIVATION, PENDING_DEACTIVATION, or FAILED.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The client list version.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -230,11 +230,11 @@ class ClientlistActivation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 siebel_ticket_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 siebel_ticket_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a ClientlistActivation resource with the given unique name, props, and options.
@@ -271,11 +271,11 @@ class ClientlistActivation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 siebel_ticket_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 siebel_ticket_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -306,13 +306,13 @@ class ClientlistActivation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            comments: Optional[pulumi.Input[_builtins.str]] = None,
-            list_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            siebel_ticket_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'ClientlistActivation':
+            comments: pulumi.Input[Optional[_builtins.str]] = None,
+            list_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            siebel_ticket_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'ClientlistActivation':
         """
         Get an existing ClientlistActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -91,7 +91,7 @@ def get_cps_csr(enrollment_id: Optional[_builtins.int] = None,
         csr_rsa=pulumi.get(__ret__, 'csr_rsa'),
         enrollment_id=pulumi.get(__ret__, 'enrollment_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_cps_csr_output(enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_cps_csr_output(enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpsCsrResult]:
     """
     Use this data source to access information about an existing resource.

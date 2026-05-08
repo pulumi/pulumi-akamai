@@ -23,9 +23,9 @@ class GtmGeomapArgs:
     def __init__(__self__, *,
                  default_datacenter: pulumi.Input['GtmGeomapDefaultDatacenterArgs'],
                  domain: pulumi.Input[_builtins.str],
-                 assignments: Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 assignments: pulumi.Input[Optional[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a GtmGeomap resource.
         """
@@ -58,40 +58,40 @@ class GtmGeomapArgs:
 
     @_builtins.property
     @pulumi.getter
-    def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]:
+    def assignments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]:
         return pulumi.get(self, "assignments")
 
     @assignments.setter
-    def assignments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]):
+    def assignments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]):
         pulumi.set(self, "assignments", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
 
 @pulumi.input_type
 class _GtmGeomapState:
     def __init__(__self__, *,
-                 assignments: Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]] = None,
-                 default_datacenter: Optional[pulumi.Input['GtmGeomapDefaultDatacenterArgs']] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 assignments: pulumi.Input[Optional[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]] = None,
+                 default_datacenter: pulumi.Input[Optional['GtmGeomapDefaultDatacenterArgs']] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering GtmGeomap resources.
         """
@@ -108,47 +108,47 @@ class _GtmGeomapState:
 
     @_builtins.property
     @pulumi.getter
-    def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]:
+    def assignments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]:
         return pulumi.get(self, "assignments")
 
     @assignments.setter
-    def assignments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]):
+    def assignments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]):
         pulumi.set(self, "assignments", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultDatacenter")
-    def default_datacenter(self) -> Optional[pulumi.Input['GtmGeomapDefaultDatacenterArgs']]:
+    def default_datacenter(self) -> pulumi.Input[Optional['GtmGeomapDefaultDatacenterArgs']]:
         return pulumi.get(self, "default_datacenter")
 
     @default_datacenter.setter
-    def default_datacenter(self, value: Optional[pulumi.Input['GtmGeomapDefaultDatacenterArgs']]):
+    def default_datacenter(self, value: pulumi.Input[Optional['GtmGeomapDefaultDatacenterArgs']]):
         pulumi.set(self, "default_datacenter", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
 
@@ -158,11 +158,11 @@ class GtmGeomap(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 assignments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmGeomapAssignmentArgs', 'GtmGeomapAssignmentArgsDict']]]]] = None,
-                 default_datacenter: Optional[pulumi.Input[Union['GtmGeomapDefaultDatacenterArgs', 'GtmGeomapDefaultDatacenterArgsDict']]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 assignments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmGeomapAssignmentArgs', 'GtmGeomapAssignmentArgsDict']]]]] = None,
+                 default_datacenter: pulumi.Input[Optional[Union['GtmGeomapDefaultDatacenterArgs', 'GtmGeomapDefaultDatacenterArgsDict']]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a GtmGeomap resource with the given unique name, props, and options.
@@ -194,11 +194,11 @@ class GtmGeomap(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 assignments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmGeomapAssignmentArgs', 'GtmGeomapAssignmentArgsDict']]]]] = None,
-                 default_datacenter: Optional[pulumi.Input[Union['GtmGeomapDefaultDatacenterArgs', 'GtmGeomapDefaultDatacenterArgsDict']]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 assignments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmGeomapAssignmentArgs', 'GtmGeomapAssignmentArgsDict']]]]] = None,
+                 default_datacenter: pulumi.Input[Optional[Union['GtmGeomapDefaultDatacenterArgs', 'GtmGeomapDefaultDatacenterArgsDict']]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -229,11 +229,11 @@ class GtmGeomap(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            assignments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmGeomapAssignmentArgs', 'GtmGeomapAssignmentArgsDict']]]]] = None,
-            default_datacenter: Optional[pulumi.Input[Union['GtmGeomapDefaultDatacenterArgs', 'GtmGeomapDefaultDatacenterArgsDict']]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None) -> 'GtmGeomap':
+            assignments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmGeomapAssignmentArgs', 'GtmGeomapAssignmentArgsDict']]]]] = None,
+            default_datacenter: pulumi.Input[Optional[Union['GtmGeomapDefaultDatacenterArgs', 'GtmGeomapDefaultDatacenterArgsDict']]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None) -> 'GtmGeomap':
         """
         Get an existing GtmGeomap resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

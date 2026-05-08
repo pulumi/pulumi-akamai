@@ -85,12 +85,12 @@ export interface AprGeneralSettingsState {
     /**
      * Identifies a security configuration.
      */
-    configId?: pulumi.Input<number>;
-    generalSettings?: pulumi.Input<string>;
+    configId?: pulumi.Input<number | undefined>;
+    generalSettings?: pulumi.Input<string | undefined>;
     /**
      * Identifies a security policy.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

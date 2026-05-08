@@ -81,7 +81,7 @@ def get_iam_states(country: Optional[_builtins.str] = None,
         country=pulumi.get(__ret__, 'country'),
         id=pulumi.get(__ret__, 'id'),
         states=pulumi.get(__ret__, 'states'))
-def get_iam_states_output(country: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_states_output(country: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamStatesResult]:
     """
     Use this data source to access information about an existing resource.

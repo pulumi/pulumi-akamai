@@ -85,15 +85,15 @@ export interface AppSecRatePolicyState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * JSON-formatted definition of the rate policy
      */
-    ratePolicy?: pulumi.Input<string>;
+    ratePolicy?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the rate policy
      */
-    ratePolicyId?: pulumi.Input<number>;
+    ratePolicyId?: pulumi.Input<number | undefined>;
 }
 
 /**

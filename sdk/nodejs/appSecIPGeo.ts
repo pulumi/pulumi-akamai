@@ -126,39 +126,39 @@ export interface AppSecIPGeoState {
     /**
      * An Object containing List of ASN network lists to be blocked with specified action
      */
-    asnControls?: pulumi.Input<inputs.AppSecIPGeoAsnControls>;
+    asnControls?: pulumi.Input<inputs.AppSecIPGeoAsnControls | undefined>;
     /**
      * Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
      */
-    blockAction?: pulumi.Input<string>;
+    blockAction?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * List of unique identifiers of ipNetworkLists allowed through the firewall.
      */
-    exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * An Object containing List of geographic network lists to be blocked with specified action
      */
-    geoControls?: pulumi.Input<inputs.AppSecIPGeoGeoControls>;
+    geoControls?: pulumi.Input<inputs.AppSecIPGeoGeoControls | undefined>;
     /**
      * An Object containing List of IP network lists to be blocked with specified action
      */
-    ipControls?: pulumi.Input<inputs.AppSecIPGeoIpControls>;
+    ipControls?: pulumi.Input<inputs.AppSecIPGeoIpControls | undefined>;
     /**
      * Protection mode (block or allow)
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Action set for Ukraine geo control
      */
-    ukraineGeoControlAction?: pulumi.Input<string>;
+    ukraineGeoControlAction?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -168,11 +168,11 @@ export interface AppSecIPGeoArgs {
     /**
      * An Object containing List of ASN network lists to be blocked with specified action
      */
-    asnControls?: pulumi.Input<inputs.AppSecIPGeoAsnControls>;
+    asnControls?: pulumi.Input<inputs.AppSecIPGeoAsnControls | undefined>;
     /**
      * Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
      */
-    blockAction?: pulumi.Input<string>;
+    blockAction?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
@@ -180,15 +180,15 @@ export interface AppSecIPGeoArgs {
     /**
      * List of unique identifiers of ipNetworkLists allowed through the firewall.
      */
-    exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * An Object containing List of geographic network lists to be blocked with specified action
      */
-    geoControls?: pulumi.Input<inputs.AppSecIPGeoGeoControls>;
+    geoControls?: pulumi.Input<inputs.AppSecIPGeoGeoControls | undefined>;
     /**
      * An Object containing List of IP network lists to be blocked with specified action
      */
-    ipControls?: pulumi.Input<inputs.AppSecIPGeoIpControls>;
+    ipControls?: pulumi.Input<inputs.AppSecIPGeoIpControls | undefined>;
     /**
      * Protection mode (block or allow)
      */
@@ -200,5 +200,5 @@ export interface AppSecIPGeoArgs {
     /**
      * Action set for Ukraine geo control
      */
-    ukraineGeoControlAction?: pulumi.Input<string>;
+    ukraineGeoControlAction?: pulumi.Input<string | undefined>;
 }

@@ -204,8 +204,8 @@ def get_cloudlets_application_load_balancer(origin_id: Optional[_builtins.str] =
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'),
         warnings=pulumi.get(__ret__, 'warnings'))
-def get_cloudlets_application_load_balancer_output(origin_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_cloudlets_application_load_balancer_output(origin_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsApplicationLoadBalancerResult]:
     """
     Use this data source to access information about an existing resource.

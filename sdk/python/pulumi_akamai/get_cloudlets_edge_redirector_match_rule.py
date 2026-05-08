@@ -83,7 +83,7 @@ def get_cloudlets_edge_redirector_match_rule(match_rules: Optional[Sequence[Unio
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         match_rules=pulumi.get(__ret__, 'match_rules'))
-def get_cloudlets_edge_redirector_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs', 'GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgsDict']]]]] = None,
+def get_cloudlets_edge_redirector_match_rule_output(match_rules: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs', 'GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgsDict']]]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsEdgeRedirectorMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.

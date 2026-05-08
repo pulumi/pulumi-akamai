@@ -105,10 +105,10 @@ def get_mtlstruststore_ca_set_versions(active_versions_only: Optional[_builtins.
         include_certificates=pulumi.get(__ret__, 'include_certificates'),
         name=pulumi.get(__ret__, 'name'),
         versions=pulumi.get(__ret__, 'versions'))
-def get_mtlstruststore_ca_set_versions_output(active_versions_only: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                              id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              include_certificates: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_mtlstruststore_ca_set_versions_output(active_versions_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              include_certificates: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMtlstruststoreCaSetVersionsResult]:
     """
     Use this data source to access information about an existing resource.

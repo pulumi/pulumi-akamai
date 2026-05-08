@@ -82,7 +82,7 @@ def get_mtlskeystore_account_ca_certificates(statuses: Optional[Sequence[_builti
         certificates=pulumi.get(__ret__, 'certificates'),
         id=pulumi.get(__ret__, 'id'),
         statuses=pulumi.get(__ret__, 'statuses'))
-def get_mtlskeystore_account_ca_certificates_output(statuses: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_mtlskeystore_account_ca_certificates_output(statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMtlskeystoreAccountCaCertificatesResult]:
     """
     Use this data source to access information about an existing resource.

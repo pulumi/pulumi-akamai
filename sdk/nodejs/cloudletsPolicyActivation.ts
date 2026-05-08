@@ -114,31 +114,31 @@ export interface CloudletsPolicyActivationState {
     /**
      * Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      */
-    associatedProperties?: pulumi.Input<pulumi.Input<string>[]>;
+    associatedProperties?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates if policy that is being activated is a shared policy
      */
-    isShared?: pulumi.Input<boolean>;
+    isShared?: pulumi.Input<boolean | undefined>;
     /**
      * The network you want to activate the policy version on (options are Staging and Production)
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * ID of the Cloudlets policy you want to activate
      */
-    policyId?: pulumi.Input<number>;
+    policyId?: pulumi.Input<number | undefined>;
     /**
      * Activation status for this Cloudlets policy
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CloudletsPolicyActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyActivationTimeouts | undefined>;
     /**
      * Cloudlets policy version you want to activate
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -148,7 +148,7 @@ export interface CloudletsPolicyActivationArgs {
     /**
      * Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      */
-    associatedProperties?: pulumi.Input<pulumi.Input<string>[]>;
+    associatedProperties?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The network you want to activate the policy version on (options are Staging and Production)
      */
@@ -160,7 +160,7 @@ export interface CloudletsPolicyActivationArgs {
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CloudletsPolicyActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyActivationTimeouts | undefined>;
     /**
      * Cloudlets policy version you want to activate
      */

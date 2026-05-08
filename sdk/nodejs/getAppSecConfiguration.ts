@@ -47,5 +47,5 @@ export function getAppSecConfigurationOutput(args?: GetAppSecConfigurationOutput
  * A collection of arguments for invoking getAppSecConfiguration.
  */
 export interface GetAppSecConfigurationOutputArgs {
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

@@ -88,15 +88,15 @@ export interface BotmanContentProtectionRuleSequenceState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifiers of content protection rules, listed in the order of their evaluation
      */
-    contentProtectionRuleIds?: pulumi.Input<pulumi.Input<string>[]>;
+    contentProtectionRuleIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

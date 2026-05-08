@@ -121,35 +121,35 @@ export interface AppSecConfigurationState {
     /**
      * Unique identifier of the new security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the Akamai contract associated with the new configuration
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the existing configuration being cloned to create the new configuration
      */
-    createFromConfigId?: pulumi.Input<number>;
+    createFromConfigId?: pulumi.Input<number | undefined>;
     /**
      * Version number of the existing configuration being cloned to create the new configuration
      */
-    createFromVersion?: pulumi.Input<number>;
+    createFromVersion?: pulumi.Input<number | undefined>;
     /**
      * Brief description of the new configuration
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the contract group associated with the new configuration
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * Hostnames to be protected by the new configuration
      */
-    hostNames?: pulumi.Input<pulumi.Input<string>[]>;
+    hostNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name of the new configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -163,11 +163,11 @@ export interface AppSecConfigurationArgs {
     /**
      * Unique identifier of the existing configuration being cloned to create the new configuration
      */
-    createFromConfigId?: pulumi.Input<number>;
+    createFromConfigId?: pulumi.Input<number | undefined>;
     /**
      * Version number of the existing configuration being cloned to create the new configuration
      */
-    createFromVersion?: pulumi.Input<number>;
+    createFromVersion?: pulumi.Input<number | undefined>;
     /**
      * Brief description of the new configuration
      */
@@ -183,5 +183,5 @@ export interface AppSecConfigurationArgs {
     /**
      * Name of the new configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

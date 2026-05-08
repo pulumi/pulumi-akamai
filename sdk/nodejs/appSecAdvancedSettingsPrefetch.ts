@@ -106,23 +106,23 @@ export interface AppSecAdvancedSettingsPrefetchState {
     /**
      * Whether to enable prefetch requests for all file extensions
      */
-    allExtensions?: pulumi.Input<boolean>;
+    allExtensions?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Whether to enable or disable prefetch requests
      */
-    enableAppLayer?: pulumi.Input<boolean>;
+    enableAppLayer?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable prefetch requests for rate controls
      */
-    enableRateControls?: pulumi.Input<boolean>;
+    enableRateControls?: pulumi.Input<boolean | undefined>;
     /**
      * List of file extensions
      */
-    extensions?: pulumi.Input<pulumi.Input<string>[]>;
+    extensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**

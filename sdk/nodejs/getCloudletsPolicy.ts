@@ -63,7 +63,7 @@ export function getCloudletsPolicyOutput(args?: GetCloudletsPolicyOutputArgs, op
  * A collection of arguments for invoking getCloudletsPolicy.
  */
 export interface GetCloudletsPolicyOutputArgs {
-    name?: pulumi.Input<string>;
-    policyId?: pulumi.Input<number>;
-    version?: pulumi.Input<number>;
+    name?: pulumi.Input<string | undefined>;
+    policyId?: pulumi.Input<number | undefined>;
+    version?: pulumi.Input<number | undefined>;
 }

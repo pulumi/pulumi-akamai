@@ -119,10 +119,10 @@ def get_property_includes(contract_id: Optional[_builtins.str] = None,
         includes=pulumi.get(__ret__, 'includes'),
         parent_property=pulumi.get(__ret__, 'parent_property'),
         type=pulumi.get(__ret__, 'type'))
-def get_property_includes_output(contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 parent_property: Optional[pulumi.Input[Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict']]]] = None,
-                                 type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_property_includes_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 parent_property: pulumi.Input[Optional[Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict']]]] = None,
+                                 type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyIncludesResult]:
     """
     Use this data source to access information about an existing resource.

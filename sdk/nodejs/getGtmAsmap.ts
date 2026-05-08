@@ -57,9 +57,9 @@ export function getGtmAsmapOutput(args: GetGtmAsmapOutputArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getGtmAsmap.
  */
 export interface GetGtmAsmapOutputArgs {
-    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmAsmapAssignmentArgs>[]>;
-    defaultDatacenter?: pulumi.Input<inputs.GetGtmAsmapDefaultDatacenterArgs>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmAsmapAssignmentArgs>[] | undefined>;
+    defaultDatacenter?: pulumi.Input<inputs.GetGtmAsmapDefaultDatacenterArgs | undefined>;
     domain: pulumi.Input<string>;
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmAsmapLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmAsmapLinkArgs>[] | undefined>;
     mapName: pulumi.Input<string>;
 }

@@ -103,8 +103,8 @@ def get_gtm_default_datacenter(datacenter: Optional[_builtins.int] = None,
         domain=pulumi.get(__ret__, 'domain'),
         id=pulumi.get(__ret__, 'id'),
         nickname=pulumi.get(__ret__, 'nickname'))
-def get_gtm_default_datacenter_output(datacenter: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                      domain: Optional[pulumi.Input[_builtins.str]] = None,
+def get_gtm_default_datacenter_output(datacenter: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                      domain: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmDefaultDatacenterResult]:
     """
     Use this data source to access information about an existing resource.

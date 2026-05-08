@@ -44,5 +44,5 @@ export function getCloudletsForwardRewriteMatchRuleOutput(args?: GetCloudletsFor
  * A collection of arguments for invoking getCloudletsForwardRewriteMatchRule.
  */
 export interface GetCloudletsForwardRewriteMatchRuleOutputArgs {
-    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs>[]>;
+    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs>[] | undefined>;
 }

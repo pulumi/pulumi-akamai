@@ -23,7 +23,7 @@ class CloudwrapperActivationArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[_builtins.int],
                  revision: pulumi.Input[_builtins.str],
-                 timeouts: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']] = None):
+                 timeouts: pulumi.Input[Optional['CloudwrapperActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudwrapperActivation resource.
 
@@ -61,20 +61,20 @@ class CloudwrapperActivationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudwrapperActivationTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudwrapperActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _CloudwrapperActivationState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 revision: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 revision: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['CloudwrapperActivationTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CloudwrapperActivation resources.
 
@@ -90,35 +90,35 @@ class _CloudwrapperActivationState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The configuration you want to activate.
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def revision(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def revision(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique hash value of the configuration.
         """
         return pulumi.get(self, "revision")
 
     @revision.setter
-    def revision(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def revision(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "revision", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudwrapperActivationTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudwrapperActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
@@ -128,9 +128,9 @@ class CloudwrapperActivation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 revision: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 revision: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CloudwrapperActivation resource with the given unique name, props, and options.
@@ -164,9 +164,9 @@ class CloudwrapperActivation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 revision: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 revision: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,9 +193,9 @@ class CloudwrapperActivation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            revision: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None) -> 'CloudwrapperActivation':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            revision: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None) -> 'CloudwrapperActivation':
         """
         Get an existing CloudwrapperActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -24,18 +24,18 @@ class GtmResourceArgs:
                  aggregation_type: pulumi.Input[_builtins.str],
                  domain: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 constrained_property: Optional[pulumi.Input[_builtins.str]] = None,
-                 decay_rate: Optional[pulumi.Input[_builtins.float]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 leader_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 least_squares_decay: Optional[pulumi.Input[_builtins.float]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_u_multiplicative_increment: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]] = None,
-                 upper_bound: Optional[pulumi.Input[_builtins.int]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 constrained_property: pulumi.Input[Optional[_builtins.str]] = None,
+                 decay_rate: pulumi.Input[Optional[_builtins.float]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 leader_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 least_squares_decay: pulumi.Input[Optional[_builtins.float]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_u_multiplicative_increment: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_instances: pulumi.Input[Optional[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]] = None,
+                 upper_bound: pulumi.Input[Optional[_builtins.int]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a GtmResource resource.
         """
@@ -96,131 +96,131 @@ class GtmResourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="constrainedProperty")
-    def constrained_property(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def constrained_property(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "constrained_property")
 
     @constrained_property.setter
-    def constrained_property(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def constrained_property(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "constrained_property", value)
 
     @_builtins.property
     @pulumi.getter(name="decayRate")
-    def decay_rate(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def decay_rate(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "decay_rate")
 
     @decay_rate.setter
-    def decay_rate(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def decay_rate(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "decay_rate", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="hostHeader")
-    def host_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "host_header")
 
     @host_header.setter
-    def host_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_header", value)
 
     @_builtins.property
     @pulumi.getter(name="leaderString")
-    def leader_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def leader_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "leader_string")
 
     @leader_string.setter
-    def leader_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def leader_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "leader_string", value)
 
     @_builtins.property
     @pulumi.getter(name="leastSquaresDecay")
-    def least_squares_decay(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def least_squares_decay(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "least_squares_decay")
 
     @least_squares_decay.setter
-    def least_squares_decay(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def least_squares_decay(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "least_squares_decay", value)
 
     @_builtins.property
     @pulumi.getter(name="loadImbalancePercentage")
-    def load_imbalance_percentage(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def load_imbalance_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
-    def load_imbalance_percentage(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def load_imbalance_percentage(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "load_imbalance_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="maxUMultiplicativeIncrement")
-    def max_u_multiplicative_increment(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_u_multiplicative_increment(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "max_u_multiplicative_increment")
 
     @max_u_multiplicative_increment.setter
-    def max_u_multiplicative_increment(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_u_multiplicative_increment(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_u_multiplicative_increment", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceInstances")
-    def resource_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]:
+    def resource_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]:
         return pulumi.get(self, "resource_instances")
 
     @resource_instances.setter
-    def resource_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]):
+    def resource_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]):
         pulumi.set(self, "resource_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="upperBound")
-    def upper_bound(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def upper_bound(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "upper_bound")
 
     @upper_bound.setter
-    def upper_bound(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def upper_bound(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "upper_bound", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
 
 @pulumi.input_type
 class _GtmResourceState:
     def __init__(__self__, *,
-                 aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 constrained_property: Optional[pulumi.Input[_builtins.str]] = None,
-                 decay_rate: Optional[pulumi.Input[_builtins.float]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 leader_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 least_squares_decay: Optional[pulumi.Input[_builtins.float]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_u_multiplicative_increment: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 upper_bound: Optional[pulumi.Input[_builtins.int]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 constrained_property: pulumi.Input[Optional[_builtins.str]] = None,
+                 decay_rate: pulumi.Input[Optional[_builtins.float]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 leader_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 least_squares_decay: pulumi.Input[Optional[_builtins.float]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_u_multiplicative_increment: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_instances: pulumi.Input[Optional[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 upper_bound: pulumi.Input[Optional[_builtins.int]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering GtmResource resources.
         """
@@ -257,137 +257,137 @@ class _GtmResourceState:
 
     @_builtins.property
     @pulumi.getter(name="aggregationType")
-    def aggregation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def aggregation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "aggregation_type")
 
     @aggregation_type.setter
-    def aggregation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def aggregation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "aggregation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="constrainedProperty")
-    def constrained_property(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def constrained_property(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "constrained_property")
 
     @constrained_property.setter
-    def constrained_property(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def constrained_property(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "constrained_property", value)
 
     @_builtins.property
     @pulumi.getter(name="decayRate")
-    def decay_rate(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def decay_rate(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "decay_rate")
 
     @decay_rate.setter
-    def decay_rate(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def decay_rate(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "decay_rate", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="hostHeader")
-    def host_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "host_header")
 
     @host_header.setter
-    def host_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_header", value)
 
     @_builtins.property
     @pulumi.getter(name="leaderString")
-    def leader_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def leader_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "leader_string")
 
     @leader_string.setter
-    def leader_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def leader_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "leader_string", value)
 
     @_builtins.property
     @pulumi.getter(name="leastSquaresDecay")
-    def least_squares_decay(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def least_squares_decay(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "least_squares_decay")
 
     @least_squares_decay.setter
-    def least_squares_decay(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def least_squares_decay(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "least_squares_decay", value)
 
     @_builtins.property
     @pulumi.getter(name="loadImbalancePercentage")
-    def load_imbalance_percentage(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def load_imbalance_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
-    def load_imbalance_percentage(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def load_imbalance_percentage(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "load_imbalance_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="maxUMultiplicativeIncrement")
-    def max_u_multiplicative_increment(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_u_multiplicative_increment(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "max_u_multiplicative_increment")
 
     @max_u_multiplicative_increment.setter
-    def max_u_multiplicative_increment(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_u_multiplicative_increment(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_u_multiplicative_increment", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceInstances")
-    def resource_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]:
+    def resource_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]:
         return pulumi.get(self, "resource_instances")
 
     @resource_instances.setter
-    def resource_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]):
+    def resource_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]):
         pulumi.set(self, "resource_instances", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="upperBound")
-    def upper_bound(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def upper_bound(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "upper_bound")
 
     @upper_bound.setter
-    def upper_bound(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def upper_bound(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "upper_bound", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
 
@@ -397,21 +397,21 @@ class GtmResource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 constrained_property: Optional[pulumi.Input[_builtins.str]] = None,
-                 decay_rate: Optional[pulumi.Input[_builtins.float]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 leader_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 least_squares_decay: Optional[pulumi.Input[_builtins.float]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_u_multiplicative_increment: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmResourceResourceInstanceArgs', 'GtmResourceResourceInstanceArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 upper_bound: Optional[pulumi.Input[_builtins.int]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 constrained_property: pulumi.Input[Optional[_builtins.str]] = None,
+                 decay_rate: pulumi.Input[Optional[_builtins.float]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 leader_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 least_squares_decay: pulumi.Input[Optional[_builtins.float]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_u_multiplicative_increment: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmResourceResourceInstanceArgs', 'GtmResourceResourceInstanceArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 upper_bound: pulumi.Input[Optional[_builtins.int]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a GtmResource resource with the given unique name, props, and options.
@@ -443,21 +443,21 @@ class GtmResource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 constrained_property: Optional[pulumi.Input[_builtins.str]] = None,
-                 decay_rate: Optional[pulumi.Input[_builtins.float]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 leader_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 least_squares_decay: Optional[pulumi.Input[_builtins.float]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_u_multiplicative_increment: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmResourceResourceInstanceArgs', 'GtmResourceResourceInstanceArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 upper_bound: Optional[pulumi.Input[_builtins.int]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 constrained_property: pulumi.Input[Optional[_builtins.str]] = None,
+                 decay_rate: pulumi.Input[Optional[_builtins.float]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 leader_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 least_squares_decay: pulumi.Input[Optional[_builtins.float]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_u_multiplicative_increment: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmResourceResourceInstanceArgs', 'GtmResourceResourceInstanceArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 upper_bound: pulumi.Input[Optional[_builtins.int]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -500,21 +500,21 @@ class GtmResource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            constrained_property: Optional[pulumi.Input[_builtins.str]] = None,
-            decay_rate: Optional[pulumi.Input[_builtins.float]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            host_header: Optional[pulumi.Input[_builtins.str]] = None,
-            leader_string: Optional[pulumi.Input[_builtins.str]] = None,
-            least_squares_decay: Optional[pulumi.Input[_builtins.float]] = None,
-            load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-            max_u_multiplicative_increment: Optional[pulumi.Input[_builtins.float]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmResourceResourceInstanceArgs', 'GtmResourceResourceInstanceArgsDict']]]]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            upper_bound: Optional[pulumi.Input[_builtins.int]] = None,
-            wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None) -> 'GtmResource':
+            aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            constrained_property: pulumi.Input[Optional[_builtins.str]] = None,
+            decay_rate: pulumi.Input[Optional[_builtins.float]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            host_header: pulumi.Input[Optional[_builtins.str]] = None,
+            leader_string: pulumi.Input[Optional[_builtins.str]] = None,
+            least_squares_decay: pulumi.Input[Optional[_builtins.float]] = None,
+            load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+            max_u_multiplicative_increment: pulumi.Input[Optional[_builtins.float]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmResourceResourceInstanceArgs', 'GtmResourceResourceInstanceArgsDict']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            upper_bound: pulumi.Input[Optional[_builtins.int]] = None,
+            wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None) -> 'GtmResource':
         """
         Get an existing GtmResource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

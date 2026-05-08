@@ -50,7 +50,7 @@ export function getAppSecApiEndpointsOutput(args: GetAppSecApiEndpointsOutputArg
  * A collection of arguments for invoking getAppSecApiEndpoints.
  */
 export interface GetAppSecApiEndpointsOutputArgs {
-    apiName?: pulumi.Input<string>;
+    apiName?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

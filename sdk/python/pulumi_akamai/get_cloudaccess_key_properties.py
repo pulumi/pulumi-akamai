@@ -92,7 +92,7 @@ def get_cloudaccess_key_properties(access_key_name: Optional[_builtins.str] = No
         access_key_uid=pulumi.get(__ret__, 'access_key_uid'),
         id=pulumi.get(__ret__, 'id'),
         properties=pulumi.get(__ret__, 'properties'))
-def get_cloudaccess_key_properties_output(access_key_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloudaccess_key_properties_output(access_key_name: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudaccessKeyPropertiesResult]:
     """
     Use this data source to access information about an existing resource.

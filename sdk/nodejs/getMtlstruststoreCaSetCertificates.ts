@@ -64,11 +64,11 @@ export function getMtlstruststoreCaSetCertificatesOutput(args?: GetMtlstruststor
  * A collection of arguments for invoking getMtlstruststoreCaSetCertificates.
  */
 export interface GetMtlstruststoreCaSetCertificatesOutputArgs {
-    id?: pulumi.Input<string>;
-    includeActive?: pulumi.Input<boolean>;
-    includeExpired?: pulumi.Input<boolean>;
-    includeExpiringByDate?: pulumi.Input<string>;
-    includeExpiringInDays?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-    version?: pulumi.Input<number>;
+    id?: pulumi.Input<string | undefined>;
+    includeActive?: pulumi.Input<boolean | undefined>;
+    includeExpired?: pulumi.Input<boolean | undefined>;
+    includeExpiringByDate?: pulumi.Input<string | undefined>;
+    includeExpiringInDays?: pulumi.Input<number | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<number | undefined>;
 }

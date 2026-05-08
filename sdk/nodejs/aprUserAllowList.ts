@@ -73,8 +73,8 @@ export interface AprUserAllowListState {
     /**
      * Identifies a security configuration.
      */
-    configId?: pulumi.Input<number>;
-    userAllowList?: pulumi.Input<string>;
+    configId?: pulumi.Input<number | undefined>;
+    userAllowList?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -85,5 +85,5 @@ export interface AprUserAllowListArgs {
      * Identifies a security configuration.
      */
     configId: pulumi.Input<number>;
-    userAllowList?: pulumi.Input<string>;
+    userAllowList?: pulumi.Input<string | undefined>;
 }

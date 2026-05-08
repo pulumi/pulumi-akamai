@@ -103,8 +103,8 @@ def get_app_sec_hostname_coverage_overlapping(config_id: Optional[_builtins.int]
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'))
-def get_app_sec_hostname_coverage_overlapping_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                                     hostname: Optional[pulumi.Input[_builtins.str]] = None,
+def get_app_sec_hostname_coverage_overlapping_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                                     hostname: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecHostnameCoverageOverlappingResult]:
     """
     Use this data source to access information about an existing resource.

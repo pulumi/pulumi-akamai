@@ -85,15 +85,15 @@ export interface AppSecReputationProfileState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * JSON-formatted definition of the reputation profile
      */
-    reputationProfile?: pulumi.Input<string>;
+    reputationProfile?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the reputation profile
      */
-    reputationProfileId?: pulumi.Input<number>;
+    reputationProfileId?: pulumi.Input<number | undefined>;
 }
 
 /**

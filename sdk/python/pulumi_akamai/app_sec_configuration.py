@@ -23,9 +23,9 @@ class AppSecConfigurationArgs:
                  description: pulumi.Input[_builtins.str],
                  group_id: pulumi.Input[_builtins.str],
                  host_names: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 create_from_config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_from_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 create_from_config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_from_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecConfiguration resource.
 
@@ -98,52 +98,52 @@ class AppSecConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="createFromConfigId")
-    def create_from_config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def create_from_config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the existing configuration being cloned to create the new configuration
         """
         return pulumi.get(self, "create_from_config_id")
 
     @create_from_config_id.setter
-    def create_from_config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def create_from_config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "create_from_config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createFromVersion")
-    def create_from_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def create_from_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version number of the existing configuration being cloned to create the new configuration
         """
         return pulumi.get(self, "create_from_version")
 
     @create_from_version.setter
-    def create_from_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def create_from_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "create_from_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the new configuration
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _AppSecConfigurationState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_from_config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_from_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_from_config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_from_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecConfiguration resources.
 
@@ -175,98 +175,98 @@ class _AppSecConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the new security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the Akamai contract associated with the new configuration
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createFromConfigId")
-    def create_from_config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def create_from_config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the existing configuration being cloned to create the new configuration
         """
         return pulumi.get(self, "create_from_config_id")
 
     @create_from_config_id.setter
-    def create_from_config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def create_from_config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "create_from_config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createFromVersion")
-    def create_from_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def create_from_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version number of the existing configuration being cloned to create the new configuration
         """
         return pulumi.get(self, "create_from_version")
 
     @create_from_version.setter
-    def create_from_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def create_from_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "create_from_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Brief description of the new configuration
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the contract group associated with the new configuration
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hostNames")
-    def host_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def host_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Hostnames to be protected by the new configuration
         """
         return pulumi.get(self, "host_names")
 
     @host_names.setter
-    def host_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def host_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "host_names", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the new configuration
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -276,13 +276,13 @@ class AppSecConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_from_config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_from_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_from_config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_from_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecConfiguration resource with the given unique name, props, and options.
@@ -321,13 +321,13 @@ class AppSecConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_from_config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_from_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_from_config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_from_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -363,14 +363,14 @@ class AppSecConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            create_from_config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            create_from_version: Optional[pulumi.Input[_builtins.int]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            host_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecConfiguration':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_from_config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            create_from_version: pulumi.Input[Optional[_builtins.int]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            host_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecConfiguration':
         """
         Get an existing AppSecConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

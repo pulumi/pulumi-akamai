@@ -94,8 +94,8 @@ def get_iam_account_switch_keys(client_id: Optional[_builtins.str] = None,
         client_id=pulumi.get(__ret__, 'client_id'),
         filter=pulumi.get(__ret__, 'filter'),
         id=pulumi.get(__ret__, 'id'))
-def get_iam_account_switch_keys_output(client_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_account_switch_keys_output(client_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccountSwitchKeysResult]:
     """
     Use this data source to access information about an existing resource.

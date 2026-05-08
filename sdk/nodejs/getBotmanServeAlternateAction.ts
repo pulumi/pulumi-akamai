@@ -44,6 +44,6 @@ export function getBotmanServeAlternateActionOutput(args: GetBotmanServeAlternat
  * A collection of arguments for invoking getBotmanServeAlternateAction.
  */
 export interface GetBotmanServeAlternateActionOutputArgs {
-    actionId?: pulumi.Input<string>;
+    actionId?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
 }

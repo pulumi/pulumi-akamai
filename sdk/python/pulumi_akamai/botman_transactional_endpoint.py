@@ -71,10 +71,10 @@ class BotmanTransactionalEndpointArgs:
 @pulumi.input_type
 class _BotmanTransactionalEndpointState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 operation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 transactional_endpoint: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 transactional_endpoint: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BotmanTransactionalEndpoint resources.
         """
@@ -89,38 +89,38 @@ class _BotmanTransactionalEndpointState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="operationId")
-    def operation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "operation_id")
 
     @operation_id.setter
-    def operation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionalEndpoint")
-    def transactional_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transactional_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "transactional_endpoint")
 
     @transactional_endpoint.setter
-    def transactional_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transactional_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transactional_endpoint", value)
 
 
@@ -130,10 +130,10 @@ class BotmanTransactionalEndpoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 operation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 transactional_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 transactional_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a BotmanTransactionalEndpoint resource with the given unique name, props, and options.
@@ -165,10 +165,10 @@ class BotmanTransactionalEndpoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 operation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 transactional_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 transactional_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -200,10 +200,10 @@ class BotmanTransactionalEndpoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            operation_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            transactional_endpoint: Optional[pulumi.Input[_builtins.str]] = None) -> 'BotmanTransactionalEndpoint':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            transactional_endpoint: pulumi.Input[Optional[_builtins.str]] = None) -> 'BotmanTransactionalEndpoint':
         """
         Get an existing BotmanTransactionalEndpoint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

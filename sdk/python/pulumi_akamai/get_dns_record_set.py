@@ -105,9 +105,9 @@ def get_dns_record_set(name: Optional[_builtins.str] = None,
         rdatas=pulumi.get(__ret__, 'rdatas'),
         record_type=pulumi.get(__ret__, 'record_type'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_dns_record_set_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                              record_type: Optional[pulumi.Input[_builtins.str]] = None,
-                              zone: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dns_record_set_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                              record_type: pulumi.Input[Optional[_builtins.str]] = None,
+                              zone: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDnsRecordSetResult]:
     """
     Use this data source to access information about an existing resource.

@@ -53,7 +53,7 @@ export function getPropertyActivationOutput(args: GetPropertyActivationOutputArg
  * A collection of arguments for invoking getPropertyActivation.
  */
 export interface GetPropertyActivationOutputArgs {
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     propertyId: pulumi.Input<string>;
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }

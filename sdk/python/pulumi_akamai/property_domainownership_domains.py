@@ -45,7 +45,7 @@ class PropertyDomainownershipDomainsArgs:
 @pulumi.input_type
 class _PropertyDomainownershipDomainsState:
     def __init__(__self__, *,
-                 domains: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]]] = None):
+                 domains: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]]] = None):
         """
         Input properties used for looking up and filtering PropertyDomainownershipDomains resources.
 
@@ -56,14 +56,14 @@ class _PropertyDomainownershipDomainsState:
 
     @_builtins.property
     @pulumi.getter
-    def domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]]]:
+    def domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]]]:
         """
         List of domains.
         """
         return pulumi.get(self, "domains")
 
     @domains.setter
-    def domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]]]):
+    def domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyDomainownershipDomainsDomainArgs']]]]):
         pulumi.set(self, "domains", value)
 
 
@@ -73,7 +73,7 @@ class PropertyDomainownershipDomains(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyDomainownershipDomainsDomainArgs', 'PropertyDomainownershipDomainsDomainArgsDict']]]]] = None,
+                 domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyDomainownershipDomainsDomainArgs', 'PropertyDomainownershipDomainsDomainArgsDict']]]]] = None,
                  __props__=None):
         """
         Create a PropertyDomainownershipDomains resource with the given unique name, props, and options.
@@ -106,7 +106,7 @@ class PropertyDomainownershipDomains(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyDomainownershipDomainsDomainArgs', 'PropertyDomainownershipDomainsDomainArgsDict']]]]] = None,
+                 domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyDomainownershipDomainsDomainArgs', 'PropertyDomainownershipDomainsDomainArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -129,7 +129,7 @@ class PropertyDomainownershipDomains(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyDomainownershipDomainsDomainArgs', 'PropertyDomainownershipDomainsDomainArgsDict']]]]] = None) -> 'PropertyDomainownershipDomains':
+            domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyDomainownershipDomainsDomainArgs', 'PropertyDomainownershipDomainsDomainArgsDict']]]]] = None) -> 'PropertyDomainownershipDomains':
         """
         Get an existing PropertyDomainownershipDomains resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

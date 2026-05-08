@@ -47,6 +47,6 @@ export function getApidefinitionsApiOutput(args?: GetApidefinitionsApiOutputArgs
  * A collection of arguments for invoking getApidefinitionsApi.
  */
 export interface GetApidefinitionsApiOutputArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
+    id?: pulumi.Input<number | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

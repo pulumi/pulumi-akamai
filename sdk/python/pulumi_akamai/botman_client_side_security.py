@@ -49,8 +49,8 @@ class BotmanClientSideSecurityArgs:
 @pulumi.input_type
 class _BotmanClientSideSecurityState:
     def __init__(__self__, *,
-                 client_side_security: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 client_side_security: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BotmanClientSideSecurity resources.
         """
@@ -61,20 +61,20 @@ class _BotmanClientSideSecurityState:
 
     @_builtins.property
     @pulumi.getter(name="clientSideSecurity")
-    def client_side_security(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_side_security(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "client_side_security")
 
     @client_side_security.setter
-    def client_side_security(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_side_security(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_side_security", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
 
@@ -84,8 +84,8 @@ class BotmanClientSideSecurity(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 client_side_security: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 client_side_security: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a BotmanClientSideSecurity resource with the given unique name, props, and options.
@@ -117,8 +117,8 @@ class BotmanClientSideSecurity(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 client_side_security: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 client_side_security: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -144,8 +144,8 @@ class BotmanClientSideSecurity(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            client_side_security: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'BotmanClientSideSecurity':
+            client_side_security: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'BotmanClientSideSecurity':
         """
         Get an existing BotmanClientSideSecurity resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

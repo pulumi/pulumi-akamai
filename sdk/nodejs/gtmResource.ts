@@ -116,21 +116,21 @@ export class GtmResource extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmResource resources.
  */
 export interface GtmResourceState {
-    aggregationType?: pulumi.Input<string>;
-    constrainedProperty?: pulumi.Input<string>;
-    decayRate?: pulumi.Input<number>;
-    description?: pulumi.Input<string>;
-    domain?: pulumi.Input<string>;
-    hostHeader?: pulumi.Input<string>;
-    leaderString?: pulumi.Input<string>;
-    leastSquaresDecay?: pulumi.Input<number>;
-    loadImbalancePercentage?: pulumi.Input<number>;
-    maxUMultiplicativeIncrement?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GtmResourceResourceInstance>[]>;
-    type?: pulumi.Input<string>;
-    upperBound?: pulumi.Input<number>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    aggregationType?: pulumi.Input<string | undefined>;
+    constrainedProperty?: pulumi.Input<string | undefined>;
+    decayRate?: pulumi.Input<number | undefined>;
+    description?: pulumi.Input<string | undefined>;
+    domain?: pulumi.Input<string | undefined>;
+    hostHeader?: pulumi.Input<string | undefined>;
+    leaderString?: pulumi.Input<string | undefined>;
+    leastSquaresDecay?: pulumi.Input<number | undefined>;
+    loadImbalancePercentage?: pulumi.Input<number | undefined>;
+    maxUMultiplicativeIncrement?: pulumi.Input<number | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GtmResourceResourceInstance>[] | undefined>;
+    type?: pulumi.Input<string | undefined>;
+    upperBound?: pulumi.Input<number | undefined>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -138,18 +138,18 @@ export interface GtmResourceState {
  */
 export interface GtmResourceArgs {
     aggregationType: pulumi.Input<string>;
-    constrainedProperty?: pulumi.Input<string>;
-    decayRate?: pulumi.Input<number>;
-    description?: pulumi.Input<string>;
+    constrainedProperty?: pulumi.Input<string | undefined>;
+    decayRate?: pulumi.Input<number | undefined>;
+    description?: pulumi.Input<string | undefined>;
     domain: pulumi.Input<string>;
-    hostHeader?: pulumi.Input<string>;
-    leaderString?: pulumi.Input<string>;
-    leastSquaresDecay?: pulumi.Input<number>;
-    loadImbalancePercentage?: pulumi.Input<number>;
-    maxUMultiplicativeIncrement?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GtmResourceResourceInstance>[]>;
+    hostHeader?: pulumi.Input<string | undefined>;
+    leaderString?: pulumi.Input<string | undefined>;
+    leastSquaresDecay?: pulumi.Input<number | undefined>;
+    loadImbalancePercentage?: pulumi.Input<number | undefined>;
+    maxUMultiplicativeIncrement?: pulumi.Input<number | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GtmResourceResourceInstance>[] | undefined>;
     type: pulumi.Input<string>;
-    upperBound?: pulumi.Input<number>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    upperBound?: pulumi.Input<number | undefined>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }

@@ -47,5 +47,5 @@ export function getIamPropertyUsersOutput(args: GetIamPropertyUsersOutputArgs, o
  */
 export interface GetIamPropertyUsersOutputArgs {
     assetId: pulumi.Input<string>;
-    userType?: pulumi.Input<string>;
+    userType?: pulumi.Input<string | undefined>;
 }

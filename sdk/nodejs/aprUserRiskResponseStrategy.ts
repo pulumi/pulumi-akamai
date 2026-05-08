@@ -76,8 +76,8 @@ export interface AprUserRiskResponseStrategyState {
     /**
      * Identifies a security configuration.
      */
-    configId?: pulumi.Input<number>;
-    userRiskResponseStrategy?: pulumi.Input<string>;
+    configId?: pulumi.Input<number | undefined>;
+    userRiskResponseStrategy?: pulumi.Input<string | undefined>;
 }
 
 /**

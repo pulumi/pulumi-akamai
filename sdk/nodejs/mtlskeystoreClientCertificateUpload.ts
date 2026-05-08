@@ -117,32 +117,32 @@ export interface MtlskeystoreClientCertificateUploadState {
     /**
      * If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
      */
-    autoAcknowledgeWarnings?: pulumi.Input<boolean>;
+    autoAcknowledgeWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of the client certificate to which the signed certificate will be uploaded.
      */
-    clientCertificateId?: pulumi.Input<number>;
+    clientCertificateId?: pulumi.Input<number | undefined>;
     /**
      * The signed certificate to upload.
      */
-    signedCertificate?: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateUploadTimeouts>;
+    signedCertificate?: pulumi.Input<string | undefined>;
+    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateUploadTimeouts | undefined>;
     /**
      * The optional trust chain associated with the signed certificate.
      */
-    trustChain?: pulumi.Input<string>;
+    trustChain?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier for the client certificate version.
      */
-    versionGuid?: pulumi.Input<string>;
+    versionGuid?: pulumi.Input<string | undefined>;
     /**
      * The version number of the client certificate to upload the signed certificate to.
      */
-    versionNumber?: pulumi.Input<number>;
+    versionNumber?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`.
      */
-    waitForDeployment?: pulumi.Input<boolean>;
+    waitForDeployment?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -152,7 +152,7 @@ export interface MtlskeystoreClientCertificateUploadArgs {
     /**
      * If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
      */
-    autoAcknowledgeWarnings?: pulumi.Input<boolean>;
+    autoAcknowledgeWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of the client certificate to which the signed certificate will be uploaded.
      */
@@ -161,11 +161,11 @@ export interface MtlskeystoreClientCertificateUploadArgs {
      * The signed certificate to upload.
      */
     signedCertificate: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateUploadTimeouts>;
+    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateUploadTimeouts | undefined>;
     /**
      * The optional trust chain associated with the signed certificate.
      */
-    trustChain?: pulumi.Input<string>;
+    trustChain?: pulumi.Input<string | undefined>;
     /**
      * The version number of the client certificate to upload the signed certificate to.
      */
@@ -173,5 +173,5 @@ export interface MtlskeystoreClientCertificateUploadArgs {
     /**
      * Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`.
      */
-    waitForDeployment?: pulumi.Input<boolean>;
+    waitForDeployment?: pulumi.Input<boolean | undefined>;
 }

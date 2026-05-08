@@ -88,15 +88,15 @@ export interface AppsecEvalPenaltyBoxConditionsState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Description of evaluation penalty box conditions
      */
-    penaltyBoxConditions?: pulumi.Input<string>;
+    penaltyBoxConditions?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

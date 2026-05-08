@@ -73,9 +73,9 @@ export class BotmanChallengeAction extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanChallengeAction resources.
  */
 export interface BotmanChallengeActionState {
-    actionId?: pulumi.Input<string>;
-    challengeAction?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
+    actionId?: pulumi.Input<string | undefined>;
+    challengeAction?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
 }
 
 /**

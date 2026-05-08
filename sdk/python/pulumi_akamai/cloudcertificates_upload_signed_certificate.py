@@ -21,8 +21,8 @@ class CloudcertificatesUploadSignedCertificateArgs:
     def __init__(__self__, *,
                  certificate_id: pulumi.Input[_builtins.str],
                  signed_certificate_pem: pulumi.Input[_builtins.str],
-                 acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 trust_chain_pem: Optional[pulumi.Input[_builtins.str]] = None):
+                 acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 trust_chain_pem: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudcertificatesUploadSignedCertificate resource.
 
@@ -64,44 +64,44 @@ class CloudcertificatesUploadSignedCertificateArgs:
 
     @_builtins.property
     @pulumi.getter(name="acknowledgeWarnings")
-    def acknowledge_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate.
         """
         return pulumi.get(self, "acknowledge_warnings")
 
     @acknowledge_warnings.setter
-    def acknowledge_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="trustChainPem")
-    def trust_chain_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_chain_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PEM-encoded trust chain for the signed certificate to upload.
         """
         return pulumi.get(self, "trust_chain_pem")
 
     @trust_chain_pem.setter
-    def trust_chain_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_chain_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_chain_pem", value)
 
 
 @pulumi.input_type
 class _CloudcertificatesUploadSignedCertificateState:
     def __init__(__self__, *,
-                 acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 signed_certificate_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 signed_certificate_not_valid_after_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 signed_certificate_not_valid_before_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 signed_certificate_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 signed_certificate_serial_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 signed_certificate_sha256_fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_chain_pem: Optional[pulumi.Input[_builtins.str]] = None):
+                 acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 signed_certificate_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 signed_certificate_not_valid_after_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 signed_certificate_not_valid_before_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 signed_certificate_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 signed_certificate_serial_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 signed_certificate_sha256_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_chain_pem: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudcertificatesUploadSignedCertificate resources.
 
@@ -145,146 +145,146 @@ class _CloudcertificatesUploadSignedCertificateState:
 
     @_builtins.property
     @pulumi.getter(name="acknowledgeWarnings")
-    def acknowledge_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate.
         """
         return pulumi.get(self, "acknowledge_warnings")
 
     @acknowledge_warnings.setter
-    def acknowledge_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Certificate identifier on which to perform the upload operation.
         """
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
-    def certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_id", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateStatus")
-    def certificate_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the certificate. Can be one of 'CSR_READY', 'READY_FOR_USE', 'ACTIVE'.
         """
         return pulumi.get(self, "certificate_status")
 
     @certificate_status.setter
-    def certificate_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_status", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedBy")
-    def modified_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User who last modified the certificate.
         """
         return pulumi.get(self, "modified_by")
 
     @modified_by.setter
-    def modified_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_by", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedDate")
-    def modified_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date the certificate was last updated.
         """
         return pulumi.get(self, "modified_date")
 
     @modified_date.setter
-    def modified_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_date", value)
 
     @_builtins.property
     @pulumi.getter(name="signedCertificateIssuer")
-    def signed_certificate_issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signed_certificate_issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Issuer field of the signed certificate.
         """
         return pulumi.get(self, "signed_certificate_issuer")
 
     @signed_certificate_issuer.setter
-    def signed_certificate_issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signed_certificate_issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signed_certificate_issuer", value)
 
     @_builtins.property
     @pulumi.getter(name="signedCertificateNotValidAfterDate")
-    def signed_certificate_not_valid_after_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signed_certificate_not_valid_after_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This marks the end of the signed certificate's valid period.
         """
         return pulumi.get(self, "signed_certificate_not_valid_after_date")
 
     @signed_certificate_not_valid_after_date.setter
-    def signed_certificate_not_valid_after_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signed_certificate_not_valid_after_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signed_certificate_not_valid_after_date", value)
 
     @_builtins.property
     @pulumi.getter(name="signedCertificateNotValidBeforeDate")
-    def signed_certificate_not_valid_before_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signed_certificate_not_valid_before_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This marks the start of the signed certificate's valid period.
         """
         return pulumi.get(self, "signed_certificate_not_valid_before_date")
 
     @signed_certificate_not_valid_before_date.setter
-    def signed_certificate_not_valid_before_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signed_certificate_not_valid_before_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signed_certificate_not_valid_before_date", value)
 
     @_builtins.property
     @pulumi.getter(name="signedCertificatePem")
-    def signed_certificate_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signed_certificate_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PEM-encoded signed certificate to upload.
         """
         return pulumi.get(self, "signed_certificate_pem")
 
     @signed_certificate_pem.setter
-    def signed_certificate_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signed_certificate_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signed_certificate_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="signedCertificateSerialNumber")
-    def signed_certificate_serial_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signed_certificate_serial_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Signed certificate serial number in hex format.
         """
         return pulumi.get(self, "signed_certificate_serial_number")
 
     @signed_certificate_serial_number.setter
-    def signed_certificate_serial_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signed_certificate_serial_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signed_certificate_serial_number", value)
 
     @_builtins.property
     @pulumi.getter(name="signedCertificateSha256Fingerprint")
-    def signed_certificate_sha256_fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signed_certificate_sha256_fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SHA-256 fingerprint of the signed certificate.
         """
         return pulumi.get(self, "signed_certificate_sha256_fingerprint")
 
     @signed_certificate_sha256_fingerprint.setter
-    def signed_certificate_sha256_fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signed_certificate_sha256_fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signed_certificate_sha256_fingerprint", value)
 
     @_builtins.property
     @pulumi.getter(name="trustChainPem")
-    def trust_chain_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_chain_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PEM-encoded trust chain for the signed certificate to upload.
         """
         return pulumi.get(self, "trust_chain_pem")
 
     @trust_chain_pem.setter
-    def trust_chain_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_chain_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_chain_pem", value)
 
 
@@ -294,10 +294,10 @@ class CloudcertificatesUploadSignedCertificate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 signed_certificate_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_chain_pem: Optional[pulumi.Input[_builtins.str]] = None,
+                 acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 signed_certificate_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_chain_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a CloudcertificatesUploadSignedCertificate resource with the given unique name, props, and options.
@@ -333,10 +333,10 @@ class CloudcertificatesUploadSignedCertificate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 signed_certificate_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_chain_pem: Optional[pulumi.Input[_builtins.str]] = None,
+                 acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 signed_certificate_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_chain_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -372,18 +372,18 @@ class CloudcertificatesUploadSignedCertificate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-            certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_status: Optional[pulumi.Input[_builtins.str]] = None,
-            modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-            modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-            signed_certificate_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-            signed_certificate_not_valid_after_date: Optional[pulumi.Input[_builtins.str]] = None,
-            signed_certificate_not_valid_before_date: Optional[pulumi.Input[_builtins.str]] = None,
-            signed_certificate_pem: Optional[pulumi.Input[_builtins.str]] = None,
-            signed_certificate_serial_number: Optional[pulumi.Input[_builtins.str]] = None,
-            signed_certificate_sha256_fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-            trust_chain_pem: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudcertificatesUploadSignedCertificate':
+            acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_status: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+            signed_certificate_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            signed_certificate_not_valid_after_date: pulumi.Input[Optional[_builtins.str]] = None,
+            signed_certificate_not_valid_before_date: pulumi.Input[Optional[_builtins.str]] = None,
+            signed_certificate_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            signed_certificate_serial_number: pulumi.Input[Optional[_builtins.str]] = None,
+            signed_certificate_sha256_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            trust_chain_pem: pulumi.Input[Optional[_builtins.str]] = None) -> 'CloudcertificatesUploadSignedCertificate':
         """
         Get an existing CloudcertificatesUploadSignedCertificate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

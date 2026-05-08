@@ -27,11 +27,11 @@ class MtlskeystoreClientCertificateAkamaiArgs:
                  group_id: pulumi.Input[_builtins.int],
                  notification_emails: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  secure_network: pulumi.Input[_builtins.str],
-                 key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']] = None):
+                 key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 revoked_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a MtlskeystoreClientCertificateAkamai resource.
 
@@ -137,82 +137,82 @@ class MtlskeystoreClientCertificateAkamaiArgs:
 
     @_builtins.property
     @pulumi.getter(name="keyAlgorithm")
-    def key_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`.
         """
         return pulumi.get(self, "key_algorithm")
 
     @key_algorithm.setter
-    def key_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredCa")
-    def preferred_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The common name of the account CA certificate selected to sign the client certificate.
         """
         return pulumi.get(self, "preferred_ca")
 
     @preferred_ca.setter
-    def preferred_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_ca", value)
 
     @_builtins.property
     @pulumi.getter(name="revokedVersions")
-    def revoked_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def revoked_versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         A set of client certificate versions that should be revoked.
         """
         return pulumi.get(self, "revoked_versions")
 
     @revoked_versions.setter
-    def revoked_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def revoked_versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "revoked_versions", value)
 
     @_builtins.property
     @pulumi.getter
-    def subject(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
         """
         return pulumi.get(self, "subject")
 
     @subject.setter
-    def subject(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _MtlskeystoreClientCertificateAkamaiState:
     def __init__(__self__, *,
-                 certificate_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 certificate_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 geography: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 previous_guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 secure_network: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']] = None,
-                 versions: Optional[pulumi.Input[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]]] = None):
+                 certificate_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 certificate_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 geography: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preferred_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 previous_guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 revoked_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']] = None,
+                 versions: pulumi.Input[Optional[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]]] = None):
         """
         Input properties used for looking up and filtering MtlskeystoreClientCertificateAkamai resources.
 
@@ -270,203 +270,203 @@ class _MtlskeystoreClientCertificateAkamaiState:
 
     @_builtins.property
     @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def certificate_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier of the client certificate.
         """
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
-    def certificate_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def certificate_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "certificate_id", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateName")
-    def certificate_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the client certificate. Must be between 1 and 64 characters.
         """
         return pulumi.get(self, "certificate_name")
 
     @certificate_name.setter
-    def certificate_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_name", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The contract assigned to the client certificate. Must have a length of at least 1.
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who created the client certificate. Read-only.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdDate")
-    def created_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An ISO 8601 timestamp indicating the client certificate's creation. Read-only.
         """
         return pulumi.get(self, "created_date")
 
     @created_date.setter
-    def created_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_date", value)
 
     @_builtins.property
     @pulumi.getter(name="currentGuid")
-    def current_guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for the `current` client certificate version.
         """
         return pulumi.get(self, "current_guid")
 
     @current_guid.setter
-    def current_guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_guid", value)
 
     @_builtins.property
     @pulumi.getter
-    def geography(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def geography(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
         """
         return pulumi.get(self, "geography")
 
     @geography.setter
-    def geography(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def geography(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "geography", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The group assigned to the client certificate. Must be greater than or equal to 0.
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyAlgorithm")
-    def key_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`.
         """
         return pulumi.get(self, "key_algorithm")
 
     @key_algorithm.setter
-    def key_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmails")
-    def notification_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The email addresses to notify for client certificate-related issues. Must have at least one email address.
         """
         return pulumi.get(self, "notification_emails")
 
     @notification_emails.setter
-    def notification_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_emails", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredCa")
-    def preferred_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The common name of the account CA certificate selected to sign the client certificate.
         """
         return pulumi.get(self, "preferred_ca")
 
     @preferred_ca.setter
-    def preferred_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_ca", value)
 
     @_builtins.property
     @pulumi.getter(name="previousGuid")
-    def previous_guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def previous_guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for the `previous` client certificate version.
         """
         return pulumi.get(self, "previous_guid")
 
     @previous_guid.setter
-    def previous_guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def previous_guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "previous_guid", value)
 
     @_builtins.property
     @pulumi.getter(name="revokedVersions")
-    def revoked_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def revoked_versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         A set of client certificate versions that should be revoked.
         """
         return pulumi.get(self, "revoked_versions")
 
     @revoked_versions.setter
-    def revoked_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def revoked_versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "revoked_versions", value)
 
     @_builtins.property
     @pulumi.getter(name="secureNetwork")
-    def secure_network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secure_network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
         """
         return pulumi.get(self, "secure_network")
 
     @secure_network.setter
-    def secure_network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secure_network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secure_network", value)
 
     @_builtins.property
     @pulumi.getter
-    def subject(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
         """
         return pulumi.get(self, "subject")
 
     @subject.setter
-    def subject(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['MtlskeystoreClientCertificateAkamaiTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter
-    def versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]]]:
+    def versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]]]:
         """
         A list of client certificate versions. Each version represents a specific iteration of the client certificate.
         """
         return pulumi.get(self, "versions")
 
     @versions.setter
-    def versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]]]):
+    def versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MtlskeystoreClientCertificateAkamaiVersionArgs']]]]):
         pulumi.set(self, "versions", value)
 
 
@@ -476,17 +476,17 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 geography: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 secure_network: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
+                 certificate_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 geography: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preferred_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 revoked_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a MtlskeystoreClientCertificateAkamai resource with the given unique name, props, and options.
@@ -528,17 +528,17 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 geography: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 secure_network: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
+                 certificate_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 geography: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preferred_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 revoked_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -587,23 +587,23 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            certificate_id: Optional[pulumi.Input[_builtins.int]] = None,
-            certificate_name: Optional[pulumi.Input[_builtins.str]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_date: Optional[pulumi.Input[_builtins.str]] = None,
-            current_guid: Optional[pulumi.Input[_builtins.str]] = None,
-            geography: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.int]] = None,
-            key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            preferred_ca: Optional[pulumi.Input[_builtins.str]] = None,
-            previous_guid: Optional[pulumi.Input[_builtins.str]] = None,
-            revoked_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            secure_network: Optional[pulumi.Input[_builtins.str]] = None,
-            subject: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
-            versions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiVersionArgs', 'MtlskeystoreClientCertificateAkamaiVersionArgsDict']]]]] = None) -> 'MtlskeystoreClientCertificateAkamai':
+            certificate_id: pulumi.Input[Optional[_builtins.int]] = None,
+            certificate_name: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            current_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            geography: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            preferred_ca: pulumi.Input[Optional[_builtins.str]] = None,
+            previous_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            revoked_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+            subject: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
+            versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiVersionArgs', 'MtlskeystoreClientCertificateAkamaiVersionArgsDict']]]]] = None) -> 'MtlskeystoreClientCertificateAkamai':
         """
         Get an existing MtlskeystoreClientCertificateAkamai resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

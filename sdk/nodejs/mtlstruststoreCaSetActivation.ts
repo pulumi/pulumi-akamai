@@ -117,32 +117,32 @@ export interface MtlstruststoreCaSetActivationState {
     /**
      * Uniquely Identifies a CA set.
      */
-    caSetId?: pulumi.Input<string>;
+    caSetId?: pulumi.Input<string | undefined>;
     /**
      * User who submitted the activation request.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * Date the activation request was submitted in ISO-8601 format.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * The user who completed the activation.
      */
-    modifiedBy?: pulumi.Input<string>;
+    modifiedBy?: pulumi.Input<string | undefined>;
     /**
      * Date the activation request was modified in ISO-8601 format.
      */
-    modifiedDate?: pulumi.Input<string>;
+    modifiedDate?: pulumi.Input<string | undefined>;
     /**
      * Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
      */
-    network?: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.MtlstruststoreCaSetActivationTimeouts>;
+    network?: pulumi.Input<string | undefined>;
+    timeouts?: pulumi.Input<inputs.MtlstruststoreCaSetActivationTimeouts | undefined>;
     /**
      * Identifies the version of the CA set.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -157,7 +157,7 @@ export interface MtlstruststoreCaSetActivationArgs {
      * Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
      */
     network: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.MtlstruststoreCaSetActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.MtlstruststoreCaSetActivationTimeouts | undefined>;
     /**
      * Identifies the version of the CA set.
      */

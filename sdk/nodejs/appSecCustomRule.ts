@@ -82,12 +82,12 @@ export interface AppSecCustomRuleState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * JSON-formatted definition of the custom rule
      */
-    customRule?: pulumi.Input<string>;
-    customRuleId?: pulumi.Input<number>;
+    customRule?: pulumi.Input<string | undefined>;
+    customRuleId?: pulumi.Input<number | undefined>;
 }
 
 /**

@@ -103,23 +103,23 @@ export interface AppsecUrlProtectionActionState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Load shedding action to apply (e.g., alert, deny, none, deny_custom_{custom_deny_id}, challenge_{challenge_id})
      */
-    loadSheddingAction?: pulumi.Input<string>;
+    loadSheddingAction?: pulumi.Input<string | undefined>;
     /**
      * Action to apply when max rate threshold is exceeded (e.g., alert, deny, none, deny_custom_{custom_deny_id}, challenge_{challenge_id})
      */
-    maxRateThresholdAction?: pulumi.Input<string>;
+    maxRateThresholdAction?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the URL protection policy
      */
-    urlProtectionPolicyId?: pulumi.Input<number>;
+    urlProtectionPolicyId?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -133,7 +133,7 @@ export interface AppsecUrlProtectionActionArgs {
     /**
      * Load shedding action to apply (e.g., alert, deny, none, deny_custom_{custom_deny_id}, challenge_{challenge_id})
      */
-    loadSheddingAction?: pulumi.Input<string>;
+    loadSheddingAction?: pulumi.Input<string | undefined>;
     /**
      * Action to apply when max rate threshold is exceeded (e.g., alert, deny, none, deny_custom_{custom_deny_id}, challenge_{challenge_id})
      */

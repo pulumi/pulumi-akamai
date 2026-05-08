@@ -103,8 +103,8 @@ def get_app_sec_custom_deny(config_id: Optional[_builtins.int] = None,
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'))
-def get_app_sec_custom_deny_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                   custom_deny_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_app_sec_custom_deny_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                   custom_deny_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecCustomDenyResult]:
     """
     Use this data source to access information about an existing resource.

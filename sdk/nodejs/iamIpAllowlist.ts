@@ -70,7 +70,7 @@ export interface IamIpAllowlistState {
     /**
      * Whether to enable or disable the allowlist.
      */
-    enable?: pulumi.Input<boolean>;
+    enable?: pulumi.Input<boolean | undefined>;
 }
 
 /**

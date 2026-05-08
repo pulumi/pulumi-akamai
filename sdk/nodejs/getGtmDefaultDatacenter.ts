@@ -45,6 +45,6 @@ export function getGtmDefaultDatacenterOutput(args: GetGtmDefaultDatacenterOutpu
  * A collection of arguments for invoking getGtmDefaultDatacenter.
  */
 export interface GetGtmDefaultDatacenterOutputArgs {
-    datacenter?: pulumi.Input<number>;
+    datacenter?: pulumi.Input<number | undefined>;
     domain: pulumi.Input<string>;
 }

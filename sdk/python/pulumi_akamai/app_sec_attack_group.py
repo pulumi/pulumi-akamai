@@ -23,7 +23,7 @@ class AppSecAttackGroupArgs:
                  attack_group_action: pulumi.Input[_builtins.str],
                  config_id: pulumi.Input[_builtins.int],
                  security_policy_id: pulumi.Input[_builtins.str],
-                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition_exception: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecAttackGroup resource.
 
@@ -90,25 +90,25 @@ class AppSecAttackGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="conditionException")
-    def condition_exception(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_exception(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted condition and exception information for the attack group
         """
         return pulumi.get(self, "condition_exception")
 
     @condition_exception.setter
-    def condition_exception(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_exception(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_exception", value)
 
 
 @pulumi.input_type
 class _AppSecAttackGroupState:
     def __init__(__self__, *,
-                 attack_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 attack_group_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 attack_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 attack_group_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_exception: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecAttackGroup resources.
 
@@ -131,62 +131,62 @@ class _AppSecAttackGroupState:
 
     @_builtins.property
     @pulumi.getter(name="attackGroup")
-    def attack_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attack_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique name of the attack group to be modified
         """
         return pulumi.get(self, "attack_group")
 
     @attack_group.setter
-    def attack_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attack_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attack_group", value)
 
     @_builtins.property
     @pulumi.getter(name="attackGroupAction")
-    def attack_group_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attack_group_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to be taken when the attack group is triggered
         """
         return pulumi.get(self, "attack_group_action")
 
     @attack_group_action.setter
-    def attack_group_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attack_group_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attack_group_action", value)
 
     @_builtins.property
     @pulumi.getter(name="conditionException")
-    def condition_exception(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_exception(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted condition and exception information for the attack group
         """
         return pulumi.get(self, "condition_exception")
 
     @condition_exception.setter
-    def condition_exception(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_exception(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_exception", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -196,11 +196,11 @@ class AppSecAttackGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 attack_group_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attack_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 attack_group_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_exception: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecAttackGroup resource with the given unique name, props, and options.
@@ -237,11 +237,11 @@ class AppSecAttackGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 attack_group_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attack_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 attack_group_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_exception: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -274,11 +274,11 @@ class AppSecAttackGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attack_group: Optional[pulumi.Input[_builtins.str]] = None,
-            attack_group_action: Optional[pulumi.Input[_builtins.str]] = None,
-            condition_exception: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecAttackGroup':
+            attack_group: pulumi.Input[Optional[_builtins.str]] = None,
+            attack_group_action: pulumi.Input[Optional[_builtins.str]] = None,
+            condition_exception: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecAttackGroup':
         """
         Get an existing AppSecAttackGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -88,10 +88,10 @@ class AppSecPenaltyBoxArgs:
 @pulumi.input_type
 class _AppSecPenaltyBoxState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 penalty_box_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 penalty_box_protection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 penalty_box_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 penalty_box_protection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecPenaltyBox resources.
 
@@ -111,50 +111,50 @@ class _AppSecPenaltyBoxState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="penaltyBoxAction")
-    def penalty_box_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def penalty_box_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action to be taken when the penalty box is triggered
         """
         return pulumi.get(self, "penalty_box_action")
 
     @penalty_box_action.setter
-    def penalty_box_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def penalty_box_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "penalty_box_action", value)
 
     @_builtins.property
     @pulumi.getter(name="penaltyBoxProtection")
-    def penalty_box_protection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def penalty_box_protection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable the penalty box for the specified security policy
         """
         return pulumi.get(self, "penalty_box_protection")
 
     @penalty_box_protection.setter
-    def penalty_box_protection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def penalty_box_protection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "penalty_box_protection", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -164,10 +164,10 @@ class AppSecPenaltyBox(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 penalty_box_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 penalty_box_protection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 penalty_box_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 penalty_box_protection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecPenaltyBox resource with the given unique name, props, and options.
@@ -203,10 +203,10 @@ class AppSecPenaltyBox(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 penalty_box_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 penalty_box_protection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 penalty_box_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 penalty_box_protection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -238,10 +238,10 @@ class AppSecPenaltyBox(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            penalty_box_action: Optional[pulumi.Input[_builtins.str]] = None,
-            penalty_box_protection: Optional[pulumi.Input[_builtins.bool]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecPenaltyBox':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            penalty_box_action: pulumi.Input[Optional[_builtins.str]] = None,
+            penalty_box_protection: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecPenaltyBox':
         """
         Get an existing AppSecPenaltyBox resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

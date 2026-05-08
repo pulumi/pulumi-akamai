@@ -132,43 +132,43 @@ export interface ClientlistListState {
     /**
      * Contract ID for which client list is assigned.
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Group ID for which client list is assigned.
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * Set of items containing item information.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.ClientlistListItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.ClientlistListItem>[] | undefined>;
     /**
      * The number of items that a client list contains.
      */
-    itemsCount?: pulumi.Input<number>;
+    itemsCount?: pulumi.Input<number | undefined>;
     /**
      * The ID of the client list.
      */
-    listId?: pulumi.Input<string>;
+    listId?: pulumi.Input<string | undefined>;
     /**
      * The name of the client list.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The client list notes.
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * The client list tags.
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The current version of the client list.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -186,19 +186,19 @@ export interface ClientlistListArgs {
     /**
      * Set of items containing item information.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.ClientlistListItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.ClientlistListItem>[] | undefined>;
     /**
      * The name of the client list.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The client list notes.
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * The client list tags.
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]
      */

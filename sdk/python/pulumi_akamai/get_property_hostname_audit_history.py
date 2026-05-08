@@ -82,7 +82,7 @@ def get_property_hostname_audit_history(hostname: Optional[_builtins.str] = None
         histories=pulumi.get(__ret__, 'histories'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'))
-def get_property_hostname_audit_history_output(hostname: Optional[pulumi.Input[_builtins.str]] = None,
+def get_property_hostname_audit_history_output(hostname: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyHostnameAuditHistoryResult]:
     """
     Use this data source to access information about an existing resource.

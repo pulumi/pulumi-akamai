@@ -50,7 +50,7 @@ export function getIamAllowedApisOutput(args: GetIamAllowedApisOutputArgs, opts?
  * A collection of arguments for invoking getIamAllowedApis.
  */
 export interface GetIamAllowedApisOutputArgs {
-    allowAccountSwitch?: pulumi.Input<boolean>;
-    clientType?: pulumi.Input<string>;
+    allowAccountSwitch?: pulumi.Input<boolean | undefined>;
+    clientType?: pulumi.Input<string | undefined>;
     username: pulumi.Input<string>;
 }

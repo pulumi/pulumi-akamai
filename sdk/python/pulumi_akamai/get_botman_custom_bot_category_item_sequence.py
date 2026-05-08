@@ -93,8 +93,8 @@ def get_botman_custom_bot_category_item_sequence(category_id: Optional[_builtins
         category_id=pulumi.get(__ret__, 'category_id'),
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_botman_custom_bot_category_item_sequence_output(category_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        config_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_botman_custom_bot_category_item_sequence_output(category_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        config_id: pulumi.Input[Optional[_builtins.int]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanCustomBotCategoryItemSequenceResult]:
     """
     Use this data source to access information about an existing resource.

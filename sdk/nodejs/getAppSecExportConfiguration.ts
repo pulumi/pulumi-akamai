@@ -50,6 +50,6 @@ export function getAppSecExportConfigurationOutput(args: GetAppSecExportConfigur
  */
 export interface GetAppSecExportConfigurationOutputArgs {
     configId: pulumi.Input<number>;
-    searches?: pulumi.Input<pulumi.Input<string>[]>;
+    searches?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     version: pulumi.Input<number>;
 }

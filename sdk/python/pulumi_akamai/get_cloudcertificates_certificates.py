@@ -190,16 +190,16 @@ def get_cloudcertificates_certificates(certificate_name: Optional[_builtins.str]
         issuer=pulumi.get(__ret__, 'issuer'),
         key_type=pulumi.get(__ret__, 'key_type'),
         sort=pulumi.get(__ret__, 'sort'))
-def get_cloudcertificates_certificates_output(certificate_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              certificate_statuses: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                              contract_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              expiring_in_days: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                              group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              include_certificate_materials: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                              issuer: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              key_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              sort: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cloudcertificates_certificates_output(certificate_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              certificate_statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                              contract_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              expiring_in_days: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                              group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              include_certificate_materials: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                              issuer: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              key_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              sort: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudcertificatesCertificatesResult]:
     """
     Use this data source to access information about an existing resource.

@@ -164,8 +164,8 @@ def get_property_domainownership_domain(domain_name: Optional[_builtins.str] = N
         validation_requested_by=pulumi.get(__ret__, 'validation_requested_by'),
         validation_requested_date=pulumi.get(__ret__, 'validation_requested_date'),
         validation_scope=pulumi.get(__ret__, 'validation_scope'))
-def get_property_domainownership_domain_output(domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                               validation_scope: Optional[pulumi.Input[_builtins.str]] = None,
+def get_property_domainownership_domain_output(domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                               validation_scope: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyDomainownershipDomainResult]:
     """
     Use this data source to access information about an existing resource.

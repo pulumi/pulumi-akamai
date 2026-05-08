@@ -24,7 +24,7 @@ class CloudletsApplicationLoadBalancerActivationArgs:
                  network: pulumi.Input[_builtins.str],
                  origin_id: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.int],
-                 timeouts: Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']] = None):
+                 timeouts: pulumi.Input[Optional['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsApplicationLoadBalancerActivation resource.
 
@@ -77,25 +77,25 @@ class CloudletsApplicationLoadBalancerActivationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _CloudletsApplicationLoadBalancerActivationState:
     def __init__(__self__, *,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering CloudletsApplicationLoadBalancerActivation resources.
 
@@ -118,62 +118,62 @@ class _CloudletsApplicationLoadBalancerActivationState:
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network you want to activate the application load balancer version on (options are Staging and Production)
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter(name="originId")
-    def origin_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The conditional origin’s unique identifier
         """
         return pulumi.get(self, "origin_id")
 
     @origin_id.setter
-    def origin_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Activation status for this application load balancer
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Cloudlets application load balancer version you want to activate
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -183,10 +183,10 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudletsApplicationLoadBalancerActivationTimeoutsArgs', 'CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerActivationTimeoutsArgs', 'CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a CloudletsApplicationLoadBalancerActivation resource with the given unique name, props, and options.
@@ -222,10 +222,10 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudletsApplicationLoadBalancerActivationTimeoutsArgs', 'CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerActivationTimeoutsArgs', 'CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -256,11 +256,11 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            network: Optional[pulumi.Input[_builtins.str]] = None,
-            origin_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['CloudletsApplicationLoadBalancerActivationTimeoutsArgs', 'CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict']]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'CloudletsApplicationLoadBalancerActivation':
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            origin_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerActivationTimeoutsArgs', 'CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict']]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'CloudletsApplicationLoadBalancerActivation':
         """
         Get an existing CloudletsApplicationLoadBalancerActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

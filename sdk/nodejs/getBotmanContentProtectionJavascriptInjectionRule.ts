@@ -49,6 +49,6 @@ export function getBotmanContentProtectionJavascriptInjectionRuleOutput(args: Ge
  */
 export interface GetBotmanContentProtectionJavascriptInjectionRuleOutputArgs {
     configId: pulumi.Input<number>;
-    contentProtectionJavascriptInjectionRuleId?: pulumi.Input<string>;
+    contentProtectionJavascriptInjectionRuleId?: pulumi.Input<string | undefined>;
     securityPolicyId: pulumi.Input<string>;
 }

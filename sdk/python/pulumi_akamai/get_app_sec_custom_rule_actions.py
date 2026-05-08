@@ -105,9 +105,9 @@ def get_app_sec_custom_rule_actions(config_id: Optional[_builtins.int] = None,
         id=pulumi.get(__ret__, 'id'),
         output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_app_sec_custom_rule_actions_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                           custom_rule_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                           security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_app_sec_custom_rule_actions_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                           custom_rule_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                           security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecCustomRuleActionsResult]:
     """
     Use this data source to access information about an existing resource.

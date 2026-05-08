@@ -123,39 +123,39 @@ export interface EdgeWorkerState {
     /**
      * The unique identifier of the EdgeWorker
      */
-    edgeworkerId?: pulumi.Input<number>;
+    edgeworkerId?: pulumi.Input<number | undefined>;
     /**
      * Defines the group association for the EdgeWorker
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * The path to the EdgeWorkers tgz code bundle
      */
-    localBundle?: pulumi.Input<string>;
+    localBundle?: pulumi.Input<string | undefined>;
     /**
      * The local bundle hash for the EdgeWorker
      */
-    localBundleHash?: pulumi.Input<string>;
+    localBundleHash?: pulumi.Input<string | undefined>;
     /**
      * The EdgeWorker name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of a resource tier
      */
-    resourceTierId?: pulumi.Input<number>;
+    resourceTierId?: pulumi.Input<number | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.EdgeWorkerTimeouts>;
+    timeouts?: pulumi.Input<inputs.EdgeWorkerTimeouts | undefined>;
     /**
      * The bundle version
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
     /**
      * The list of warnings returned by EdgeWorker validation
      */
-    warnings?: pulumi.Input<pulumi.Input<string>[]>;
+    warnings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -169,11 +169,11 @@ export interface EdgeWorkerArgs {
     /**
      * The path to the EdgeWorkers tgz code bundle
      */
-    localBundle?: pulumi.Input<string>;
+    localBundle?: pulumi.Input<string | undefined>;
     /**
      * The EdgeWorker name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of a resource tier
      */
@@ -181,5 +181,5 @@ export interface EdgeWorkerArgs {
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.EdgeWorkerTimeouts>;
+    timeouts?: pulumi.Input<inputs.EdgeWorkerTimeouts | undefined>;
 }

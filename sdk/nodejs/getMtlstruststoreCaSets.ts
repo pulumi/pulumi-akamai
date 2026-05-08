@@ -48,6 +48,6 @@ export function getMtlstruststoreCaSetsOutput(args?: GetMtlstruststoreCaSetsOutp
  * A collection of arguments for invoking getMtlstruststoreCaSets.
  */
 export interface GetMtlstruststoreCaSetsOutputArgs {
-    activatedOn?: pulumi.Input<string>;
-    namePrefix?: pulumi.Input<string>;
+    activatedOn?: pulumi.Input<string | undefined>;
+    namePrefix?: pulumi.Input<string | undefined>;
 }

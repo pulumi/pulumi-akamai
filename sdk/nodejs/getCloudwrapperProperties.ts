@@ -51,7 +51,7 @@ export function getCloudwrapperPropertiesOutput(args?: GetCloudwrapperProperties
  * A collection of arguments for invoking getCloudwrapperProperties.
  */
 export interface GetCloudwrapperPropertiesOutputArgs {
-    contractIds?: pulumi.Input<pulumi.Input<string>[]>;
-    properties?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperPropertiesPropertyArgs>[]>;
-    unused?: pulumi.Input<boolean>;
+    contractIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    properties?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperPropertiesPropertyArgs>[] | undefined>;
+    unused?: pulumi.Input<boolean | undefined>;
 }

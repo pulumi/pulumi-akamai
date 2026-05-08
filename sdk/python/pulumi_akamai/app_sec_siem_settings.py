@@ -25,10 +25,10 @@ class AppSecSiemSettingsArgs:
                  enable_for_all_policies: pulumi.Input[_builtins.bool],
                  enable_siem: pulumi.Input[_builtins.bool],
                  siem_id: pulumi.Input[_builtins.int],
-                 enable_botman_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exceptions: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']] = None,
-                 include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 enable_botman_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exceptions: pulumi.Input[Optional['AppSecSiemSettingsExceptionsArgs']] = None,
+                 include_ja4_fingerprint_to_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AppSecSiemSettings resource.
 
@@ -104,64 +104,64 @@ class AppSecSiemSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="enableBotmanSiem")
-    def enable_botman_siem(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_botman_siem(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether Bot Manager events should be included in SIEM events
         """
         return pulumi.get(self, "enable_botman_siem")
 
     @enable_botman_siem.setter
-    def enable_botman_siem(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_botman_siem(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_botman_siem", value)
 
     @_builtins.property
     @pulumi.getter
-    def exceptions(self) -> Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']]:
+    def exceptions(self) -> pulumi.Input[Optional['AppSecSiemSettingsExceptionsArgs']]:
         """
         Describes all the protections and actions to be excluded from SIEM events
         """
         return pulumi.get(self, "exceptions")
 
     @exceptions.setter
-    def exceptions(self, value: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']]):
+    def exceptions(self, value: pulumi.Input[Optional['AppSecSiemSettingsExceptionsArgs']]):
         pulumi.set(self, "exceptions", value)
 
     @_builtins.property
     @pulumi.getter(name="includeJa4FingerprintToSiem")
-    def include_ja4_fingerprint_to_siem(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_ja4_fingerprint_to_siem(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether JA4 Fingerprint should be included in SIEM events
         """
         return pulumi.get(self, "include_ja4_fingerprint_to_siem")
 
     @include_ja4_fingerprint_to_siem.setter
-    def include_ja4_fingerprint_to_siem(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_ja4_fingerprint_to_siem(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_ja4_fingerprint_to_siem", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyIds")
-    def security_policy_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_policy_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of IDs of security policy for which SIEM integration is to be enabled
         """
         return pulumi.get(self, "security_policy_ids")
 
     @security_policy_ids.setter
-    def security_policy_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_policy_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_policy_ids", value)
 
 
 @pulumi.input_type
 class _AppSecSiemSettingsState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_botman_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_for_all_policies: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exceptions: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']] = None,
-                 include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 siem_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_botman_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_for_all_policies: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exceptions: pulumi.Input[Optional['AppSecSiemSettingsExceptionsArgs']] = None,
+                 include_ja4_fingerprint_to_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 siem_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecSiemSettings resources.
 
@@ -193,98 +193,98 @@ class _AppSecSiemSettingsState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableBotmanSiem")
-    def enable_botman_siem(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_botman_siem(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether Bot Manager events should be included in SIEM events
         """
         return pulumi.get(self, "enable_botman_siem")
 
     @enable_botman_siem.setter
-    def enable_botman_siem(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_botman_siem(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_botman_siem", value)
 
     @_builtins.property
     @pulumi.getter(name="enableForAllPolicies")
-    def enable_for_all_policies(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_for_all_policies(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable SIEM on all security policies in the security configuration
         """
         return pulumi.get(self, "enable_for_all_policies")
 
     @enable_for_all_policies.setter
-    def enable_for_all_policies(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_for_all_policies(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_for_all_policies", value)
 
     @_builtins.property
     @pulumi.getter(name="enableSiem")
-    def enable_siem(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_siem(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable SIEM
         """
         return pulumi.get(self, "enable_siem")
 
     @enable_siem.setter
-    def enable_siem(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_siem(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_siem", value)
 
     @_builtins.property
     @pulumi.getter
-    def exceptions(self) -> Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']]:
+    def exceptions(self) -> pulumi.Input[Optional['AppSecSiemSettingsExceptionsArgs']]:
         """
         Describes all the protections and actions to be excluded from SIEM events
         """
         return pulumi.get(self, "exceptions")
 
     @exceptions.setter
-    def exceptions(self, value: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']]):
+    def exceptions(self, value: pulumi.Input[Optional['AppSecSiemSettingsExceptionsArgs']]):
         pulumi.set(self, "exceptions", value)
 
     @_builtins.property
     @pulumi.getter(name="includeJa4FingerprintToSiem")
-    def include_ja4_fingerprint_to_siem(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_ja4_fingerprint_to_siem(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether JA4 Fingerprint should be included in SIEM events
         """
         return pulumi.get(self, "include_ja4_fingerprint_to_siem")
 
     @include_ja4_fingerprint_to_siem.setter
-    def include_ja4_fingerprint_to_siem(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_ja4_fingerprint_to_siem(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_ja4_fingerprint_to_siem", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyIds")
-    def security_policy_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_policy_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of IDs of security policy for which SIEM integration is to be enabled
         """
         return pulumi.get(self, "security_policy_ids")
 
     @security_policy_ids.setter
-    def security_policy_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_policy_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_policy_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="siemId")
-    def siem_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def siem_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the SIEM settings being modified
         """
         return pulumi.get(self, "siem_id")
 
     @siem_id.setter
-    def siem_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def siem_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "siem_id", value)
 
 
@@ -294,14 +294,14 @@ class AppSecSiemSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_botman_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_for_all_policies: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exceptions: Optional[pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
-                 include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 siem_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_botman_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_for_all_policies: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
+                 include_ja4_fingerprint_to_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 siem_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a AppSecSiemSettings resource with the given unique name, props, and options.
@@ -341,14 +341,14 @@ class AppSecSiemSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_botman_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_for_all_policies: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exceptions: Optional[pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
-                 include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 siem_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_botman_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_for_all_policies: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
+                 include_ja4_fingerprint_to_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 siem_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -384,14 +384,14 @@ class AppSecSiemSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            enable_botman_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_for_all_policies: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-            exceptions: Optional[pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
-            include_ja4_fingerprint_to_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-            security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            siem_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'AppSecSiemSettings':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            enable_botman_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_for_all_policies: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+            exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
+            include_ja4_fingerprint_to_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_policy_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            siem_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'AppSecSiemSettings':
         """
         Get an existing AppSecSiemSettings resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

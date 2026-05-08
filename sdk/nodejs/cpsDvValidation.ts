@@ -96,23 +96,23 @@ export interface CpsDvValidationState {
     /**
      * Whether to acknowledge all post-verification warnings
      */
-    acknowledgePostVerificationWarnings?: pulumi.Input<boolean>;
+    acknowledgePostVerificationWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * The unique identifier of enrollment
      */
-    enrollmentId?: pulumi.Input<number>;
+    enrollmentId?: pulumi.Input<number | undefined>;
     /**
      * List of SANs
      */
-    sans?: pulumi.Input<pulumi.Input<string>[]>;
+    sans?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Status of validation
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpsDvValidationTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpsDvValidationTimeouts | undefined>;
 }
 
 /**
@@ -122,7 +122,7 @@ export interface CpsDvValidationArgs {
     /**
      * Whether to acknowledge all post-verification warnings
      */
-    acknowledgePostVerificationWarnings?: pulumi.Input<boolean>;
+    acknowledgePostVerificationWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * The unique identifier of enrollment
      */
@@ -130,9 +130,9 @@ export interface CpsDvValidationArgs {
     /**
      * List of SANs
      */
-    sans?: pulumi.Input<pulumi.Input<string>[]>;
+    sans?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpsDvValidationTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpsDvValidationTimeouts | undefined>;
 }

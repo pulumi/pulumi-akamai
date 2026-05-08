@@ -204,8 +204,8 @@ def get_mtlskeystore_client_certificate(certificate_id: Optional[_builtins.int] 
         signer=pulumi.get(__ret__, 'signer'),
         subject=pulumi.get(__ret__, 'subject'),
         versions=pulumi.get(__ret__, 'versions'))
-def get_mtlskeystore_client_certificate_output(certificate_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                               include_associated_properties: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_mtlskeystore_client_certificate_output(certificate_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                               include_associated_properties: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMtlskeystoreClientCertificateResult]:
     """
     Use this data source to access information about an existing resource.

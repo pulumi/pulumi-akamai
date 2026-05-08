@@ -88,15 +88,15 @@ export interface BotmanCustomBotCategoryItemSequenceState {
     /**
      * Unique identifiers of bots in this category, sorted in preferred order
      */
-    botIds?: pulumi.Input<pulumi.Input<string>[]>;
+    botIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique identifier of the bot category
      */
-    categoryId?: pulumi.Input<string>;
+    categoryId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
 }
 
 /**

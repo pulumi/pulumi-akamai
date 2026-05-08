@@ -81,7 +81,7 @@ def get_botman_bot_detection(detection_name: Optional[_builtins.str] = None,
         detection_name=pulumi.get(__ret__, 'detection_name'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-def get_botman_bot_detection_output(detection_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_botman_bot_detection_output(detection_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanBotDetectionResult]:
     """
     Use this data source to access information about an existing resource.

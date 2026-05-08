@@ -46,5 +46,5 @@ export function getAppSecAdvancedSettingsPragmaHeaderOutput(args: GetAppSecAdvan
  */
 export interface GetAppSecAdvancedSettingsPragmaHeaderOutputArgs {
     configId: pulumi.Input<number>;
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

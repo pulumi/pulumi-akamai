@@ -82,10 +82,10 @@ export class BotmanTransactionalEndpoint extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanTransactionalEndpoint resources.
  */
 export interface BotmanTransactionalEndpointState {
-    configId?: pulumi.Input<number>;
-    operationId?: pulumi.Input<string>;
-    securityPolicyId?: pulumi.Input<string>;
-    transactionalEndpoint?: pulumi.Input<string>;
+    configId?: pulumi.Input<number | undefined>;
+    operationId?: pulumi.Input<string | undefined>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
+    transactionalEndpoint?: pulumi.Input<string | undefined>;
 }
 
 /**

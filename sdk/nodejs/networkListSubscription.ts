@@ -70,8 +70,8 @@ export class NetworkListSubscription extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkListSubscription resources.
  */
 export interface NetworkListSubscriptionState {
-    networkLists?: pulumi.Input<pulumi.Input<string>[]>;
-    recipients?: pulumi.Input<pulumi.Input<string>[]>;
+    networkLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    recipients?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**

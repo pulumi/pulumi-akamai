@@ -203,8 +203,8 @@ def get_property(name: Optional[_builtins.str] = None,
         rules=pulumi.get(__ret__, 'rules'),
         staging_version=pulumi.get(__ret__, 'staging_version'),
         version=pulumi.get(__ret__, 'version'))
-def get_property_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                        version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_property_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                        version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyResult]:
     """
     Use this data source to access information about an existing resource.

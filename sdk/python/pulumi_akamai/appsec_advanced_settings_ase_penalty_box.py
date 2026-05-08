@@ -75,9 +75,9 @@ class AppsecAdvancedSettingsAsePenaltyBoxArgs:
 @pulumi.input_type
 class _AppsecAdvancedSettingsAsePenaltyBoxState:
     def __init__(__self__, *,
-                 block_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 qualification_exclusions: Optional[pulumi.Input['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs']] = None):
+                 block_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 qualification_exclusions: pulumi.Input[Optional['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs']] = None):
         """
         Input properties used for looking up and filtering AppsecAdvancedSettingsAsePenaltyBox resources.
 
@@ -94,38 +94,38 @@ class _AppsecAdvancedSettingsAsePenaltyBoxState:
 
     @_builtins.property
     @pulumi.getter(name="blockDuration")
-    def block_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Block duration for ASE Penalty Box in minutes.
         """
         return pulumi.get(self, "block_duration")
 
     @block_duration.setter
-    def block_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration.
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="qualificationExclusions")
-    def qualification_exclusions(self) -> Optional[pulumi.Input['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs']]:
+    def qualification_exclusions(self) -> pulumi.Input[Optional['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs']]:
         """
         Qualification exclusions for ASE Penalty Box. Contains attack groups and rules.
         """
         return pulumi.get(self, "qualification_exclusions")
 
     @qualification_exclusions.setter
-    def qualification_exclusions(self, value: Optional[pulumi.Input['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs']]):
+    def qualification_exclusions(self, value: pulumi.Input[Optional['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs']]):
         pulumi.set(self, "qualification_exclusions", value)
 
 
@@ -135,9 +135,9 @@ class AppsecAdvancedSettingsAsePenaltyBox(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 block_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 qualification_exclusions: Optional[pulumi.Input[Union['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs', 'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict']]] = None,
+                 block_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 qualification_exclusions: pulumi.Input[Optional[Union['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs', 'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict']]] = None,
                  __props__=None):
         """
         Create a AppsecAdvancedSettingsAsePenaltyBox resource with the given unique name, props, and options.
@@ -172,9 +172,9 @@ class AppsecAdvancedSettingsAsePenaltyBox(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 block_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 qualification_exclusions: Optional[pulumi.Input[Union['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs', 'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict']]] = None,
+                 block_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 qualification_exclusions: pulumi.Input[Optional[Union['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs', 'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -203,9 +203,9 @@ class AppsecAdvancedSettingsAsePenaltyBox(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            block_duration: Optional[pulumi.Input[_builtins.int]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            qualification_exclusions: Optional[pulumi.Input[Union['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs', 'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict']]] = None) -> 'AppsecAdvancedSettingsAsePenaltyBox':
+            block_duration: pulumi.Input[Optional[_builtins.int]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            qualification_exclusions: pulumi.Input[Optional[Union['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs', 'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict']]] = None) -> 'AppsecAdvancedSettingsAsePenaltyBox':
         """
         Get an existing AppsecAdvancedSettingsAsePenaltyBox resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -139,51 +139,51 @@ export interface CloudcertificatesUploadSignedCertificateState {
     /**
      * Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate.
      */
-    acknowledgeWarnings?: pulumi.Input<boolean>;
+    acknowledgeWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Certificate identifier on which to perform the upload operation.
      */
-    certificateId?: pulumi.Input<string>;
+    certificateId?: pulumi.Input<string | undefined>;
     /**
      * The status of the certificate. Can be one of 'CSR_READY', 'READY_FOR_USE', 'ACTIVE'.
      */
-    certificateStatus?: pulumi.Input<string>;
+    certificateStatus?: pulumi.Input<string | undefined>;
     /**
      * User who last modified the certificate.
      */
-    modifiedBy?: pulumi.Input<string>;
+    modifiedBy?: pulumi.Input<string | undefined>;
     /**
      * Date the certificate was last updated.
      */
-    modifiedDate?: pulumi.Input<string>;
+    modifiedDate?: pulumi.Input<string | undefined>;
     /**
      * Issuer field of the signed certificate.
      */
-    signedCertificateIssuer?: pulumi.Input<string>;
+    signedCertificateIssuer?: pulumi.Input<string | undefined>;
     /**
      * This marks the end of the signed certificate's valid period.
      */
-    signedCertificateNotValidAfterDate?: pulumi.Input<string>;
+    signedCertificateNotValidAfterDate?: pulumi.Input<string | undefined>;
     /**
      * This marks the start of the signed certificate's valid period.
      */
-    signedCertificateNotValidBeforeDate?: pulumi.Input<string>;
+    signedCertificateNotValidBeforeDate?: pulumi.Input<string | undefined>;
     /**
      * PEM-encoded signed certificate to upload.
      */
-    signedCertificatePem?: pulumi.Input<string>;
+    signedCertificatePem?: pulumi.Input<string | undefined>;
     /**
      * Signed certificate serial number in hex format.
      */
-    signedCertificateSerialNumber?: pulumi.Input<string>;
+    signedCertificateSerialNumber?: pulumi.Input<string | undefined>;
     /**
      * SHA-256 fingerprint of the signed certificate.
      */
-    signedCertificateSha256Fingerprint?: pulumi.Input<string>;
+    signedCertificateSha256Fingerprint?: pulumi.Input<string | undefined>;
     /**
      * PEM-encoded trust chain for the signed certificate to upload.
      */
-    trustChainPem?: pulumi.Input<string>;
+    trustChainPem?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -193,7 +193,7 @@ export interface CloudcertificatesUploadSignedCertificateArgs {
     /**
      * Acknowledges warnings and retries certificate upload when the returned response contains warnings for the uploaded certificate.
      */
-    acknowledgeWarnings?: pulumi.Input<boolean>;
+    acknowledgeWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Certificate identifier on which to perform the upload operation.
      */
@@ -205,5 +205,5 @@ export interface CloudcertificatesUploadSignedCertificateArgs {
     /**
      * PEM-encoded trust chain for the signed certificate to upload.
      */
-    trustChainPem?: pulumi.Input<string>;
+    trustChainPem?: pulumi.Input<string | undefined>;
 }

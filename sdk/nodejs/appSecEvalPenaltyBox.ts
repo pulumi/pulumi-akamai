@@ -97,19 +97,19 @@ export interface AppSecEvalPenaltyBoxState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Action applied to requests from clients in the penalty box
      */
-    penaltyBoxAction?: pulumi.Input<string>;
+    penaltyBoxAction?: pulumi.Input<string | undefined>;
     /**
      * Whether to enable the penalty box for the specified security policy
      */
-    penaltyBoxProtection?: pulumi.Input<boolean>;
+    penaltyBoxProtection?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

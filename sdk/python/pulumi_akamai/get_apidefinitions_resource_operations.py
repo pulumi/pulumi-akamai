@@ -115,9 +115,9 @@ def get_apidefinitions_resource_operations(api_id: Optional[_builtins.int] = Non
         resource_operations=pulumi.get(__ret__, 'resource_operations'),
         resource_path=pulumi.get(__ret__, 'resource_path'),
         version=pulumi.get(__ret__, 'version'))
-def get_apidefinitions_resource_operations_output(api_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                                  resource_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  resource_path: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_apidefinitions_resource_operations_output(api_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                                  resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  resource_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApidefinitionsResourceOperationsResult]:
     """
     Use this data source to access information about an existing resource.

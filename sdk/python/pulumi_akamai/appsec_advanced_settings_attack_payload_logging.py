@@ -21,7 +21,7 @@ class AppsecAdvancedSettingsAttackPayloadLoggingArgs:
     def __init__(__self__, *,
                  attack_payload_logging: pulumi.Input[_builtins.str],
                  config_id: pulumi.Input[_builtins.int],
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppsecAdvancedSettingsAttackPayloadLogging resource.
 
@@ -60,23 +60,23 @@ class AppsecAdvancedSettingsAttackPayloadLoggingArgs:
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
 @pulumi.input_type
 class _AppsecAdvancedSettingsAttackPayloadLoggingState:
     def __init__(__self__, *,
-                 attack_payload_logging: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 attack_payload_logging: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppsecAdvancedSettingsAttackPayloadLogging resources.
 
@@ -93,38 +93,38 @@ class _AppsecAdvancedSettingsAttackPayloadLoggingState:
 
     @_builtins.property
     @pulumi.getter(name="attackPayloadLogging")
-    def attack_payload_logging(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attack_payload_logging(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether to enable, disable, or update attack payload logging settings
         """
         return pulumi.get(self, "attack_payload_logging")
 
     @attack_payload_logging.setter
-    def attack_payload_logging(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attack_payload_logging(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attack_payload_logging", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -134,9 +134,9 @@ class AppsecAdvancedSettingsAttackPayloadLogging(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_payload_logging: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attack_payload_logging: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppsecAdvancedSettingsAttackPayloadLogging resource with the given unique name, props, and options.
@@ -171,9 +171,9 @@ class AppsecAdvancedSettingsAttackPayloadLogging(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_payload_logging: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attack_payload_logging: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -200,9 +200,9 @@ class AppsecAdvancedSettingsAttackPayloadLogging(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attack_payload_logging: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppsecAdvancedSettingsAttackPayloadLogging':
+            attack_payload_logging: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppsecAdvancedSettingsAttackPayloadLogging':
         """
         Get an existing AppsecAdvancedSettingsAttackPayloadLogging resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

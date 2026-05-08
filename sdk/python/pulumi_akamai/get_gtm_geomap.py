@@ -114,8 +114,8 @@ def get_gtm_geomap(domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         links=pulumi.get(__ret__, 'links'),
         map_name=pulumi.get(__ret__, 'map_name'))
-def get_gtm_geomap_output(domain: Optional[pulumi.Input[_builtins.str]] = None,
-                          map_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_gtm_geomap_output(domain: pulumi.Input[Optional[_builtins.str]] = None,
+                          map_name: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmGeomapResult]:
     """
     Use this data source to access information about an existing resource.

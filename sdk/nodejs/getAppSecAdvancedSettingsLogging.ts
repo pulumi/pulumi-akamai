@@ -46,5 +46,5 @@ export function getAppSecAdvancedSettingsLoggingOutput(args: GetAppSecAdvancedSe
  */
 export interface GetAppSecAdvancedSettingsLoggingOutputArgs {
     configId: pulumi.Input<number>;
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

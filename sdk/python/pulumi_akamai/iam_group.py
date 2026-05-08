@@ -20,7 +20,7 @@ __all__ = ['IamGroupArgs', 'IamGroup']
 class IamGroupArgs:
     def __init__(__self__, *,
                  parent_group_id: pulumi.Input[_builtins.int],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamGroup resource.
 
@@ -45,23 +45,23 @@ class IamGroupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Human readable name for a group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IamGroupState:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 sub_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 sub_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None):
         """
         Input properties used for looking up and filtering IamGroup resources.
 
@@ -78,38 +78,38 @@ class _IamGroupState:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Human readable name for a group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="parentGroupId")
-    def parent_group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def parent_group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier for the parent group.
         """
         return pulumi.get(self, "parent_group_id")
 
     @parent_group_id.setter
-    def parent_group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def parent_group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "parent_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subGroups")
-    def sub_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def sub_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         Subgroups IDs.
         """
         return pulumi.get(self, "sub_groups")
 
     @sub_groups.setter
-    def sub_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def sub_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "sub_groups", value)
 
 
@@ -119,8 +119,8 @@ class IamGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_group_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_group_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a IamGroup resource with the given unique name, props, and options.
@@ -154,8 +154,8 @@ class IamGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_group_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_group_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -180,9 +180,9 @@ class IamGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-            sub_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None) -> 'IamGroup':
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            sub_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None) -> 'IamGroup':
         """
         Get an existing IamGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

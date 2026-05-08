@@ -23,7 +23,7 @@ class EdgeKvArgs:
                  namespace_name: pulumi.Input[_builtins.str],
                  network: pulumi.Input[_builtins.str],
                  retention_in_seconds: pulumi.Input[_builtins.int],
-                 geo_location: Optional[pulumi.Input[_builtins.str]] = None):
+                 geo_location: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a EdgeKv resource.
 
@@ -90,25 +90,25 @@ class EdgeKvArgs:
 
     @_builtins.property
     @pulumi.getter(name="geoLocation")
-    def geo_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def geo_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage location for data
         """
         return pulumi.get(self, "geo_location")
 
     @geo_location.setter
-    def geo_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def geo_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "geo_location", value)
 
 
 @pulumi.input_type
 class _EdgeKvState:
     def __init__(__self__, *,
-                 geo_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 geo_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering EdgeKv resources.
 
@@ -131,62 +131,62 @@ class _EdgeKvState:
 
     @_builtins.property
     @pulumi.getter(name="geoLocation")
-    def geo_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def geo_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage location for data
         """
         return pulumi.get(self, "geo_location")
 
     @geo_location.setter
-    def geo_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def geo_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "geo_location", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="namespaceName")
-    def namespace_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name for the EKV namespace
         """
         return pulumi.get(self, "namespace_name")
 
     @namespace_name.setter
-    def namespace_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network on which the namespace will be activated
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionInSeconds")
-    def retention_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Retention period for data in this namespace. An update of this value will just affect new EKV items.
         """
         return pulumi.get(self, "retention_in_seconds")
 
     @retention_in_seconds.setter
-    def retention_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_in_seconds", value)
 
 
@@ -196,11 +196,11 @@ class EdgeKv(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 geo_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
+                 geo_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a EdgeKv resource with the given unique name, props, and options.
@@ -237,11 +237,11 @@ class EdgeKv(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 geo_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
+                 geo_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -274,11 +274,11 @@ class EdgeKv(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            geo_location: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.int]] = None,
-            namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-            network: Optional[pulumi.Input[_builtins.str]] = None,
-            retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None) -> 'EdgeKv':
+            geo_location: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None) -> 'EdgeKv':
         """
         Get an existing EdgeKv resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

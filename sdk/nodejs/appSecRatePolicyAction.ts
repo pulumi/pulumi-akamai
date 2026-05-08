@@ -106,23 +106,23 @@ export interface AppSecRatePolicyActionState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Action to be taken for requests coming from an IPv4 address
      */
-    ipv4Action?: pulumi.Input<string>;
+    ipv4Action?: pulumi.Input<string | undefined>;
     /**
      * Action to be taken for requests coming from an IPv6 address
      */
-    ipv6Action?: pulumi.Input<string>;
+    ipv6Action?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the rate policy
      */
-    ratePolicyId?: pulumi.Input<number>;
+    ratePolicyId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

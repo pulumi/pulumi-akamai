@@ -123,39 +123,39 @@ export interface IamCidrBlockState {
     /**
      * Specifies activities available for the CIDR block.
      */
-    actions?: pulumi.Input<inputs.IamCidrBlockActions>;
+    actions?: pulumi.Input<inputs.IamCidrBlockActions | undefined>;
     /**
      * The value of an IP address or IP address range.
      */
-    cidrBlock?: pulumi.Input<string>;
+    cidrBlock?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for each CIDR block.
      */
-    cidrBlockId?: pulumi.Input<number>;
+    cidrBlockId?: pulumi.Input<number | undefined>;
     /**
      * Descriptive label you provide for the CIDR block.
      */
-    comments?: pulumi.Input<string>;
+    comments?: pulumi.Input<string | undefined>;
     /**
      * The user who created the CIDR block.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the CIDR block was created.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * Enables the CIDR block on the account.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The user who last edited the CIDR block.
      */
-    modifiedBy?: pulumi.Input<string>;
+    modifiedBy?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the CIDR block was last modified.
      */
-    modifiedDate?: pulumi.Input<string>;
+    modifiedDate?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -169,7 +169,7 @@ export interface IamCidrBlockArgs {
     /**
      * Descriptive label you provide for the CIDR block.
      */
-    comments?: pulumi.Input<string>;
+    comments?: pulumi.Input<string | undefined>;
     /**
      * Enables the CIDR block on the account.
      */

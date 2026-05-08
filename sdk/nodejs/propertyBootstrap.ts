@@ -106,27 +106,27 @@ export interface PropertyBootstrapState {
     /**
      * ID of the property in the Identity and Access Management API.
      */
-    assetId?: pulumi.Input<string>;
+    assetId?: pulumi.Input<string | undefined>;
     /**
      * Contract ID to be assigned to the Property
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Group ID to be assigned to the Property
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * Name to give to the Property (must be unique)
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Product ID to be assigned to the Property
      */
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
-    useHostnameBucket?: pulumi.Input<boolean>;
+    useHostnameBucket?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -144,7 +144,7 @@ export interface PropertyBootstrapArgs {
     /**
      * Name to give to the Property (must be unique)
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Product ID to be assigned to the Property
      */
@@ -152,5 +152,5 @@ export interface PropertyBootstrapArgs {
     /**
      * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
-    useHostnameBucket?: pulumi.Input<boolean>;
+    useHostnameBucket?: pulumi.Input<boolean | undefined>;
 }

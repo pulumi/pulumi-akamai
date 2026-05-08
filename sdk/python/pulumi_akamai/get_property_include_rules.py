@@ -167,10 +167,10 @@ def get_property_include_rules(contract_id: Optional[_builtins.str] = None,
         rules=pulumi.get(__ret__, 'rules'),
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'))
-def get_property_include_rules_output(contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      include_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      version: Optional[pulumi.Input[_builtins.int]] = None,
+def get_property_include_rules_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      include_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      version: pulumi.Input[Optional[_builtins.int]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyIncludeRulesResult]:
     """
     Use this data source to access information about an existing resource.

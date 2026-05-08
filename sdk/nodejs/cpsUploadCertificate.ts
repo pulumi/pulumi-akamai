@@ -126,43 +126,43 @@ export interface CpsUploadCertificateState {
     /**
      * Whether to acknowledge change management
      */
-    acknowledgeChangeManagement?: pulumi.Input<boolean>;
+    acknowledgeChangeManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to acknowledge post-verification warnings
      */
-    acknowledgePostVerificationWarnings?: pulumi.Input<boolean>;
+    acknowledgePostVerificationWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * List of post-verification warnings to be automatically acknowledged
      */
-    autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[]>;
+    autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * ECDSA certificate in pem format to be uploaded
      */
-    certificateEcdsaPem?: pulumi.Input<string>;
+    certificateEcdsaPem?: pulumi.Input<string | undefined>;
     /**
      * RSA certificate in pem format to be uploaded
      */
-    certificateRsaPem?: pulumi.Input<string>;
+    certificateRsaPem?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the enrollment
      */
-    enrollmentId?: pulumi.Input<number>;
+    enrollmentId?: pulumi.Input<number | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpsUploadCertificateTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpsUploadCertificateTimeouts | undefined>;
     /**
      * Trust chain in pem format for provided ECDSA certificate
      */
-    trustChainEcdsaPem?: pulumi.Input<string>;
+    trustChainEcdsaPem?: pulumi.Input<string | undefined>;
     /**
      * Trust chain in pem format for provided RSA certificate
      */
-    trustChainRsaPem?: pulumi.Input<string>;
+    trustChainRsaPem?: pulumi.Input<string | undefined>;
     /**
      * Whether to wait for certificate to be deployed
      */
-    waitForDeployment?: pulumi.Input<boolean>;
+    waitForDeployment?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -172,23 +172,23 @@ export interface CpsUploadCertificateArgs {
     /**
      * Whether to acknowledge change management
      */
-    acknowledgeChangeManagement?: pulumi.Input<boolean>;
+    acknowledgeChangeManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to acknowledge post-verification warnings
      */
-    acknowledgePostVerificationWarnings?: pulumi.Input<boolean>;
+    acknowledgePostVerificationWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * List of post-verification warnings to be automatically acknowledged
      */
-    autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[]>;
+    autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * ECDSA certificate in pem format to be uploaded
      */
-    certificateEcdsaPem?: pulumi.Input<string>;
+    certificateEcdsaPem?: pulumi.Input<string | undefined>;
     /**
      * RSA certificate in pem format to be uploaded
      */
-    certificateRsaPem?: pulumi.Input<string>;
+    certificateRsaPem?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the enrollment
      */
@@ -196,17 +196,17 @@ export interface CpsUploadCertificateArgs {
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpsUploadCertificateTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpsUploadCertificateTimeouts | undefined>;
     /**
      * Trust chain in pem format for provided ECDSA certificate
      */
-    trustChainEcdsaPem?: pulumi.Input<string>;
+    trustChainEcdsaPem?: pulumi.Input<string | undefined>;
     /**
      * Trust chain in pem format for provided RSA certificate
      */
-    trustChainRsaPem?: pulumi.Input<string>;
+    trustChainRsaPem?: pulumi.Input<string | undefined>;
     /**
      * Whether to wait for certificate to be deployed
      */
-    waitForDeployment?: pulumi.Input<boolean>;
+    waitForDeployment?: pulumi.Input<boolean | undefined>;
 }

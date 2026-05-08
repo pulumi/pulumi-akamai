@@ -51,6 +51,6 @@ export function getAppSecReputationProfileActionsOutput(args: GetAppSecReputatio
  */
 export interface GetAppSecReputationProfileActionsOutputArgs {
     configId: pulumi.Input<number>;
-    reputationProfileId?: pulumi.Input<number>;
+    reputationProfileId?: pulumi.Input<number | undefined>;
     securityPolicyId: pulumi.Input<string>;
 }

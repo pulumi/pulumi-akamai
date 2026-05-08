@@ -121,11 +121,11 @@ def get_gtm_asmap(assignments: Optional[Sequence[Union['GetGtmAsmapAssignmentArg
         id=pulumi.get(__ret__, 'id'),
         links=pulumi.get(__ret__, 'links'),
         map_name=pulumi.get(__ret__, 'map_name'))
-def get_gtm_asmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmAsmapAssignmentArgs', 'GetGtmAsmapAssignmentArgsDict']]]]] = None,
-                         default_datacenter: Optional[pulumi.Input[Optional[Union['GetGtmAsmapDefaultDatacenterArgs', 'GetGtmAsmapDefaultDatacenterArgsDict']]]] = None,
-                         domain: Optional[pulumi.Input[_builtins.str]] = None,
-                         links: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmAsmapLinkArgs', 'GetGtmAsmapLinkArgsDict']]]]] = None,
-                         map_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_gtm_asmap_output(assignments: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmAsmapAssignmentArgs', 'GetGtmAsmapAssignmentArgsDict']]]]] = None,
+                         default_datacenter: pulumi.Input[Optional[Optional[Union['GetGtmAsmapDefaultDatacenterArgs', 'GetGtmAsmapDefaultDatacenterArgsDict']]]] = None,
+                         domain: pulumi.Input[Optional[_builtins.str]] = None,
+                         links: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmAsmapLinkArgs', 'GetGtmAsmapLinkArgsDict']]]]] = None,
+                         map_name: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmAsmapResult]:
     """
     Use this data source to access information about an existing resource.

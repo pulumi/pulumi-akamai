@@ -81,7 +81,7 @@ def get_edge_workers_property_rules(edgeworker_id: Optional[_builtins.int] = Non
         edgeworker_id=pulumi.get(__ret__, 'edgeworker_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-def get_edge_workers_property_rules_output(edgeworker_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_edge_workers_property_rules_output(edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgeWorkersPropertyRulesResult]:
     """
     Use this data source to access information about an existing resource.

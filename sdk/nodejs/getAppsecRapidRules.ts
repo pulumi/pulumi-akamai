@@ -55,7 +55,7 @@ export function getAppsecRapidRulesOutput(args: GetAppsecRapidRulesOutputArgs, o
  */
 export interface GetAppsecRapidRulesOutputArgs {
     configId: pulumi.Input<number>;
-    includeExpiryDetails?: pulumi.Input<boolean>;
-    ruleId?: pulumi.Input<number>;
+    includeExpiryDetails?: pulumi.Input<boolean | undefined>;
+    ruleId?: pulumi.Input<number | undefined>;
     securityPolicyId: pulumi.Input<string>;
 }

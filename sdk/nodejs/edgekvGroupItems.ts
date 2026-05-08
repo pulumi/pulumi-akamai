@@ -105,23 +105,23 @@ export interface EdgekvGroupItemsState {
     /**
      * The name of the EdgeKV group.
      */
-    groupName?: pulumi.Input<string>;
+    groupName?: pulumi.Input<string | undefined>;
     /**
      * A map of items within the specified group. Each item consists of an item key and a value.
      */
-    items?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    items?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name for the EdgeKV namespace.
      */
-    namespaceName?: pulumi.Input<string>;
+    namespaceName?: pulumi.Input<string | undefined>;
     /**
      * The network against which to execute the API request.
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.EdgekvGroupItemsTimeouts>;
+    timeouts?: pulumi.Input<inputs.EdgekvGroupItemsTimeouts | undefined>;
 }
 
 /**
@@ -147,5 +147,5 @@ export interface EdgekvGroupItemsArgs {
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.EdgekvGroupItemsTimeouts>;
+    timeouts?: pulumi.Input<inputs.EdgekvGroupItemsTimeouts | undefined>;
 }

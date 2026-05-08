@@ -85,15 +85,15 @@ export interface AppSecCustomDenyState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * JSON-formatted information about the properties and property values for the custom deny
      */
-    customDeny?: pulumi.Input<string>;
+    customDeny?: pulumi.Input<string | undefined>;
     /**
      * custom_deny_id
      */
-    customDenyId?: pulumi.Input<string>;
+    customDenyId?: pulumi.Input<string | undefined>;
 }
 
 /**

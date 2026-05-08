@@ -83,7 +83,7 @@ def get_cloudlets_api_prioritization_match_rule(match_rules: Optional[Sequence[U
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         match_rules=pulumi.get(__ret__, 'match_rules'))
-def get_cloudlets_api_prioritization_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs', 'GetCloudletsApiPrioritizationMatchRuleMatchRuleArgsDict']]]]] = None,
+def get_cloudlets_api_prioritization_match_rule_output(match_rules: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs', 'GetCloudletsApiPrioritizationMatchRuleMatchRuleArgsDict']]]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsApiPrioritizationMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.

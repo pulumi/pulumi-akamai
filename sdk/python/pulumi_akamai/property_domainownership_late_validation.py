@@ -26,7 +26,7 @@ class PropertyDomainownershipLateValidationArgs:
                  property_id: pulumi.Input[_builtins.str],
                  validation_method: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.int],
-                 timeouts: Optional[pulumi.Input['PropertyDomainownershipLateValidationTimeoutsArgs']] = None):
+                 timeouts: pulumi.Input[Optional['PropertyDomainownershipLateValidationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyDomainownershipLateValidation resource.
 
@@ -112,23 +112,23 @@ class PropertyDomainownershipLateValidationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['PropertyDomainownershipLateValidationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['PropertyDomainownershipLateValidationTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['PropertyDomainownershipLateValidationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['PropertyDomainownershipLateValidationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _PropertyDomainownershipLateValidationState:
     def __init__(__self__, *,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['PropertyDomainownershipLateValidationTimeoutsArgs']] = None,
-                 validation_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['PropertyDomainownershipLateValidationTimeoutsArgs']] = None,
+                 validation_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering PropertyDomainownershipLateValidation resources.
 
@@ -156,52 +156,52 @@ class _PropertyDomainownershipLateValidationState:
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contract ID of the Property.
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Group ID of the Property.
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyId")
-    def property_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property ID of the Property which domains will be validated.
         """
         return pulumi.get(self, "property_id")
 
     @property_id.setter
-    def property_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['PropertyDomainownershipLateValidationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['PropertyDomainownershipLateValidationTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['PropertyDomainownershipLateValidationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['PropertyDomainownershipLateValidationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter(name="validationMethod")
-    def validation_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def validation_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The method used to validate the domain. Possible values are: 
         * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
@@ -211,19 +211,19 @@ class _PropertyDomainownershipLateValidationState:
         return pulumi.get(self, "validation_method")
 
     @validation_method.setter
-    def validation_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def validation_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "validation_method", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Property version containing domains to be validated.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -233,12 +233,12 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict']]] = None,
-                 validation_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict']]] = None,
+                 validation_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a PropertyDomainownershipLateValidation resource with the given unique name, props, and options.
@@ -278,12 +278,12 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict']]] = None,
-                 validation_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict']]] = None,
+                 validation_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -319,12 +319,12 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            property_id: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict']]] = None,
-            validation_method: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'PropertyDomainownershipLateValidation':
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            property_id: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict']]] = None,
+            validation_method: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'PropertyDomainownershipLateValidation':
         """
         Get an existing PropertyDomainownershipLateValidation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

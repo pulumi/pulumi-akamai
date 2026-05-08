@@ -46,5 +46,5 @@ export function getGtmResourcesOutput(args: GetGtmResourcesOutputArgs, opts?: pu
  */
 export interface GetGtmResourcesOutputArgs {
     domain: pulumi.Input<string>;
-    resources?: pulumi.Input<pulumi.Input<inputs.GetGtmResourcesResourceArgs>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.GetGtmResourcesResourceArgs>[] | undefined>;
 }

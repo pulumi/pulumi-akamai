@@ -56,6 +56,6 @@ export function getPropertyIncludesOutput(args: GetPropertyIncludesOutputArgs, o
 export interface GetPropertyIncludesOutputArgs {
     contractId: pulumi.Input<string>;
     groupId: pulumi.Input<string>;
-    parentProperty?: pulumi.Input<inputs.GetPropertyIncludesParentPropertyArgs>;
-    type?: pulumi.Input<string>;
+    parentProperty?: pulumi.Input<inputs.GetPropertyIncludesParentPropertyArgs | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }

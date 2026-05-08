@@ -24,12 +24,12 @@ class AppSecIPGeoArgs:
                  config_id: pulumi.Input[_builtins.int],
                  mode: pulumi.Input[_builtins.str],
                  security_policy_id: pulumi.Input[_builtins.str],
-                 asn_controls: Optional[pulumi.Input['AppSecIPGeoAsnControlsArgs']] = None,
-                 block_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 exception_ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 geo_controls: Optional[pulumi.Input['AppSecIPGeoGeoControlsArgs']] = None,
-                 ip_controls: Optional[pulumi.Input['AppSecIPGeoIpControlsArgs']] = None,
-                 ukraine_geo_control_action: Optional[pulumi.Input[_builtins.str]] = None):
+                 asn_controls: pulumi.Input[Optional['AppSecIPGeoAsnControlsArgs']] = None,
+                 block_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 exception_ip_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 geo_controls: pulumi.Input[Optional['AppSecIPGeoGeoControlsArgs']] = None,
+                 ip_controls: pulumi.Input[Optional['AppSecIPGeoIpControlsArgs']] = None,
+                 ukraine_geo_control_action: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecIPGeo resource.
 
@@ -97,89 +97,89 @@ class AppSecIPGeoArgs:
 
     @_builtins.property
     @pulumi.getter(name="asnControls")
-    def asn_controls(self) -> Optional[pulumi.Input['AppSecIPGeoAsnControlsArgs']]:
+    def asn_controls(self) -> pulumi.Input[Optional['AppSecIPGeoAsnControlsArgs']]:
         """
         An Object containing List of ASN network lists to be blocked with specified action
         """
         return pulumi.get(self, "asn_controls")
 
     @asn_controls.setter
-    def asn_controls(self, value: Optional[pulumi.Input['AppSecIPGeoAsnControlsArgs']]):
+    def asn_controls(self, value: pulumi.Input[Optional['AppSecIPGeoAsnControlsArgs']]):
         pulumi.set(self, "asn_controls", value)
 
     @_builtins.property
     @pulumi.getter(name="blockAction")
-    def block_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
         """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
-    def block_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_action", value)
 
     @_builtins.property
     @pulumi.getter(name="exceptionIpNetworkLists")
-    def exception_ip_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exception_ip_network_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of unique identifiers of ip_network_lists allowed through the firewall.
         """
         return pulumi.get(self, "exception_ip_network_lists")
 
     @exception_ip_network_lists.setter
-    def exception_ip_network_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exception_ip_network_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exception_ip_network_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="geoControls")
-    def geo_controls(self) -> Optional[pulumi.Input['AppSecIPGeoGeoControlsArgs']]:
+    def geo_controls(self) -> pulumi.Input[Optional['AppSecIPGeoGeoControlsArgs']]:
         """
         An Object containing List of geographic network lists to be blocked with specified action
         """
         return pulumi.get(self, "geo_controls")
 
     @geo_controls.setter
-    def geo_controls(self, value: Optional[pulumi.Input['AppSecIPGeoGeoControlsArgs']]):
+    def geo_controls(self, value: pulumi.Input[Optional['AppSecIPGeoGeoControlsArgs']]):
         pulumi.set(self, "geo_controls", value)
 
     @_builtins.property
     @pulumi.getter(name="ipControls")
-    def ip_controls(self) -> Optional[pulumi.Input['AppSecIPGeoIpControlsArgs']]:
+    def ip_controls(self) -> pulumi.Input[Optional['AppSecIPGeoIpControlsArgs']]:
         """
         An Object containing List of IP network lists to be blocked with specified action
         """
         return pulumi.get(self, "ip_controls")
 
     @ip_controls.setter
-    def ip_controls(self, value: Optional[pulumi.Input['AppSecIPGeoIpControlsArgs']]):
+    def ip_controls(self, value: pulumi.Input[Optional['AppSecIPGeoIpControlsArgs']]):
         pulumi.set(self, "ip_controls", value)
 
     @_builtins.property
     @pulumi.getter(name="ukraineGeoControlAction")
-    def ukraine_geo_control_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ukraine_geo_control_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action set for Ukraine geo control
         """
         return pulumi.get(self, "ukraine_geo_control_action")
 
     @ukraine_geo_control_action.setter
-    def ukraine_geo_control_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ukraine_geo_control_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ukraine_geo_control_action", value)
 
 
 @pulumi.input_type
 class _AppSecIPGeoState:
     def __init__(__self__, *,
-                 asn_controls: Optional[pulumi.Input['AppSecIPGeoAsnControlsArgs']] = None,
-                 block_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 exception_ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 geo_controls: Optional[pulumi.Input['AppSecIPGeoGeoControlsArgs']] = None,
-                 ip_controls: Optional[pulumi.Input['AppSecIPGeoIpControlsArgs']] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ukraine_geo_control_action: Optional[pulumi.Input[_builtins.str]] = None):
+                 asn_controls: pulumi.Input[Optional['AppSecIPGeoAsnControlsArgs']] = None,
+                 block_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 exception_ip_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 geo_controls: pulumi.Input[Optional['AppSecIPGeoGeoControlsArgs']] = None,
+                 ip_controls: pulumi.Input[Optional['AppSecIPGeoIpControlsArgs']] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ukraine_geo_control_action: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecIPGeo resources.
 
@@ -214,110 +214,110 @@ class _AppSecIPGeoState:
 
     @_builtins.property
     @pulumi.getter(name="asnControls")
-    def asn_controls(self) -> Optional[pulumi.Input['AppSecIPGeoAsnControlsArgs']]:
+    def asn_controls(self) -> pulumi.Input[Optional['AppSecIPGeoAsnControlsArgs']]:
         """
         An Object containing List of ASN network lists to be blocked with specified action
         """
         return pulumi.get(self, "asn_controls")
 
     @asn_controls.setter
-    def asn_controls(self, value: Optional[pulumi.Input['AppSecIPGeoAsnControlsArgs']]):
+    def asn_controls(self, value: pulumi.Input[Optional['AppSecIPGeoAsnControlsArgs']]):
         pulumi.set(self, "asn_controls", value)
 
     @_builtins.property
     @pulumi.getter(name="blockAction")
-    def block_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the action set for BLOCK Mode blocking all the traffic except from lists identified in exception_ip_network_lists
         """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
-    def block_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_action", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="exceptionIpNetworkLists")
-    def exception_ip_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exception_ip_network_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of unique identifiers of ip_network_lists allowed through the firewall.
         """
         return pulumi.get(self, "exception_ip_network_lists")
 
     @exception_ip_network_lists.setter
-    def exception_ip_network_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exception_ip_network_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exception_ip_network_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="geoControls")
-    def geo_controls(self) -> Optional[pulumi.Input['AppSecIPGeoGeoControlsArgs']]:
+    def geo_controls(self) -> pulumi.Input[Optional['AppSecIPGeoGeoControlsArgs']]:
         """
         An Object containing List of geographic network lists to be blocked with specified action
         """
         return pulumi.get(self, "geo_controls")
 
     @geo_controls.setter
-    def geo_controls(self, value: Optional[pulumi.Input['AppSecIPGeoGeoControlsArgs']]):
+    def geo_controls(self, value: pulumi.Input[Optional['AppSecIPGeoGeoControlsArgs']]):
         pulumi.set(self, "geo_controls", value)
 
     @_builtins.property
     @pulumi.getter(name="ipControls")
-    def ip_controls(self) -> Optional[pulumi.Input['AppSecIPGeoIpControlsArgs']]:
+    def ip_controls(self) -> pulumi.Input[Optional['AppSecIPGeoIpControlsArgs']]:
         """
         An Object containing List of IP network lists to be blocked with specified action
         """
         return pulumi.get(self, "ip_controls")
 
     @ip_controls.setter
-    def ip_controls(self, value: Optional[pulumi.Input['AppSecIPGeoIpControlsArgs']]):
+    def ip_controls(self, value: pulumi.Input[Optional['AppSecIPGeoIpControlsArgs']]):
         pulumi.set(self, "ip_controls", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protection mode (block or allow)
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ukraineGeoControlAction")
-    def ukraine_geo_control_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ukraine_geo_control_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action set for Ukraine geo control
         """
         return pulumi.get(self, "ukraine_geo_control_action")
 
     @ukraine_geo_control_action.setter
-    def ukraine_geo_control_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ukraine_geo_control_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ukraine_geo_control_action", value)
 
 
@@ -327,15 +327,15 @@ class AppSecIPGeo(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 asn_controls: Optional[pulumi.Input[Union['AppSecIPGeoAsnControlsArgs', 'AppSecIPGeoAsnControlsArgsDict']]] = None,
-                 block_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 exception_ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 geo_controls: Optional[pulumi.Input[Union['AppSecIPGeoGeoControlsArgs', 'AppSecIPGeoGeoControlsArgsDict']]] = None,
-                 ip_controls: Optional[pulumi.Input[Union['AppSecIPGeoIpControlsArgs', 'AppSecIPGeoIpControlsArgsDict']]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ukraine_geo_control_action: Optional[pulumi.Input[_builtins.str]] = None,
+                 asn_controls: pulumi.Input[Optional[Union['AppSecIPGeoAsnControlsArgs', 'AppSecIPGeoAsnControlsArgsDict']]] = None,
+                 block_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 exception_ip_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 geo_controls: pulumi.Input[Optional[Union['AppSecIPGeoGeoControlsArgs', 'AppSecIPGeoGeoControlsArgsDict']]] = None,
+                 ip_controls: pulumi.Input[Optional[Union['AppSecIPGeoIpControlsArgs', 'AppSecIPGeoIpControlsArgsDict']]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ukraine_geo_control_action: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecIPGeo resource with the given unique name, props, and options.
@@ -376,15 +376,15 @@ class AppSecIPGeo(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 asn_controls: Optional[pulumi.Input[Union['AppSecIPGeoAsnControlsArgs', 'AppSecIPGeoAsnControlsArgsDict']]] = None,
-                 block_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 exception_ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 geo_controls: Optional[pulumi.Input[Union['AppSecIPGeoGeoControlsArgs', 'AppSecIPGeoGeoControlsArgsDict']]] = None,
-                 ip_controls: Optional[pulumi.Input[Union['AppSecIPGeoIpControlsArgs', 'AppSecIPGeoIpControlsArgsDict']]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ukraine_geo_control_action: Optional[pulumi.Input[_builtins.str]] = None,
+                 asn_controls: pulumi.Input[Optional[Union['AppSecIPGeoAsnControlsArgs', 'AppSecIPGeoAsnControlsArgsDict']]] = None,
+                 block_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 exception_ip_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 geo_controls: pulumi.Input[Optional[Union['AppSecIPGeoGeoControlsArgs', 'AppSecIPGeoGeoControlsArgsDict']]] = None,
+                 ip_controls: pulumi.Input[Optional[Union['AppSecIPGeoIpControlsArgs', 'AppSecIPGeoIpControlsArgsDict']]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ukraine_geo_control_action: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -419,15 +419,15 @@ class AppSecIPGeo(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            asn_controls: Optional[pulumi.Input[Union['AppSecIPGeoAsnControlsArgs', 'AppSecIPGeoAsnControlsArgsDict']]] = None,
-            block_action: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            exception_ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            geo_controls: Optional[pulumi.Input[Union['AppSecIPGeoGeoControlsArgs', 'AppSecIPGeoGeoControlsArgsDict']]] = None,
-            ip_controls: Optional[pulumi.Input[Union['AppSecIPGeoIpControlsArgs', 'AppSecIPGeoIpControlsArgsDict']]] = None,
-            mode: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ukraine_geo_control_action: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecIPGeo':
+            asn_controls: pulumi.Input[Optional[Union['AppSecIPGeoAsnControlsArgs', 'AppSecIPGeoAsnControlsArgsDict']]] = None,
+            block_action: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            exception_ip_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            geo_controls: pulumi.Input[Optional[Union['AppSecIPGeoGeoControlsArgs', 'AppSecIPGeoGeoControlsArgsDict']]] = None,
+            ip_controls: pulumi.Input[Optional[Union['AppSecIPGeoIpControlsArgs', 'AppSecIPGeoIpControlsArgsDict']]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ukraine_geo_control_action: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecIPGeo':
         """
         Get an existing AppSecIPGeo resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

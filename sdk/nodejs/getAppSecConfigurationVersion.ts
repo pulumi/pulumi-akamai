@@ -48,5 +48,5 @@ export function getAppSecConfigurationVersionOutput(args: GetAppSecConfiguration
  */
 export interface GetAppSecConfigurationVersionOutputArgs {
     configId: pulumi.Input<number>;
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }

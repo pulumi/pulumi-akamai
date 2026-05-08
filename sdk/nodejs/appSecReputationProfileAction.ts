@@ -97,19 +97,19 @@ export interface AppSecReputationProfileActionState {
     /**
      * Action to be taken when the reputation profile is triggered
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the reputation profile
      */
-    reputationProfileId?: pulumi.Input<number>;
+    reputationProfileId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

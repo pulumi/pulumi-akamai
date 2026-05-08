@@ -85,15 +85,15 @@ export interface AppsecAdvancedSettingsAttackPayloadLoggingState {
     /**
      * Whether to enable, disable, or update attack payload logging settings
      */
-    attackPayloadLogging?: pulumi.Input<string>;
+    attackPayloadLogging?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -111,5 +111,5 @@ export interface AppsecAdvancedSettingsAttackPayloadLoggingArgs {
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

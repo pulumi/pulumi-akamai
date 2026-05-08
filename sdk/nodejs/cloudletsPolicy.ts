@@ -135,47 +135,47 @@ export interface CloudletsPolicyState {
     /**
      * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
      */
-    cloudletCode?: pulumi.Input<string>;
+    cloudletCode?: pulumi.Input<string | undefined>;
     /**
      * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
      */
-    cloudletId?: pulumi.Input<number>;
+    cloudletId?: pulumi.Input<number | undefined>;
     /**
      * The description of this specific policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Defines the group association for the policy. You must have edit privileges for the group.
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * The type of policy that you want to create.
      */
-    isShared?: pulumi.Input<boolean>;
+    isShared?: pulumi.Input<boolean | undefined>;
     /**
      * The version of the Cloudlet specific matchRules.
      */
-    matchRuleFormat?: pulumi.Input<string>;
+    matchRuleFormat?: pulumi.Input<string | undefined>;
     /**
      * A JSON structure that defines the rules for this policy.
      */
-    matchRules?: pulumi.Input<string>;
+    matchRules?: pulumi.Input<string | undefined>;
     /**
      * The name of the policy. The name must be unique.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing.
      */
-    timeouts?: pulumi.Input<inputs.CloudletsPolicyTimeouts>;
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyTimeouts | undefined>;
     /**
      * The version number of the policy.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
     /**
      * A JSON encoded list of warnings.
      */
-    warnings?: pulumi.Input<string>;
+    warnings?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -189,7 +189,7 @@ export interface CloudletsPolicyArgs {
     /**
      * The description of this specific policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Defines the group association for the policy. You must have edit privileges for the group.
      */
@@ -197,21 +197,21 @@ export interface CloudletsPolicyArgs {
     /**
      * The type of policy that you want to create.
      */
-    isShared?: pulumi.Input<boolean>;
+    isShared?: pulumi.Input<boolean | undefined>;
     /**
      * The version of the Cloudlet specific matchRules.
      */
-    matchRuleFormat?: pulumi.Input<string>;
+    matchRuleFormat?: pulumi.Input<string | undefined>;
     /**
      * A JSON structure that defines the rules for this policy.
      */
-    matchRules?: pulumi.Input<string>;
+    matchRules?: pulumi.Input<string | undefined>;
     /**
      * The name of the policy. The name must be unique.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing.
      */
-    timeouts?: pulumi.Input<inputs.CloudletsPolicyTimeouts>;
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyTimeouts | undefined>;
 }

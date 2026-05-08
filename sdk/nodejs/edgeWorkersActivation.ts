@@ -108,27 +108,27 @@ export interface EdgeWorkersActivationState {
     /**
      * A unique identifier of the activation
      */
-    activationId?: pulumi.Input<number>;
+    activationId?: pulumi.Input<number | undefined>;
     /**
      * Id of the EdgeWorker to activate
      */
-    edgeworkerId?: pulumi.Input<number>;
+    edgeworkerId?: pulumi.Input<number | undefined>;
     /**
      * The network on which the version will be activated
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Assigns a log message to the activation request
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.EdgeWorkersActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.EdgeWorkersActivationTimeouts | undefined>;
     /**
      * The version of EdgeWorker to activate
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -146,11 +146,11 @@ export interface EdgeWorkersActivationArgs {
     /**
      * Assigns a log message to the activation request
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.EdgeWorkersActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.EdgeWorkersActivationTimeouts | undefined>;
     /**
      * The version of EdgeWorker to activate
      */

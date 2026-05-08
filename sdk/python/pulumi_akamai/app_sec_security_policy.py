@@ -22,8 +22,8 @@ class AppSecSecurityPolicyArgs:
                  config_id: pulumi.Input[_builtins.int],
                  security_policy_name: pulumi.Input[_builtins.str],
                  security_policy_prefix: pulumi.Input[_builtins.str],
-                 create_from_security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_settings: Optional[pulumi.Input[_builtins.bool]] = None):
+                 create_from_security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_settings: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AppSecSecurityPolicy resource.
 
@@ -79,38 +79,38 @@ class AppSecSecurityPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="createFromSecurityPolicyId")
-    def create_from_security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_from_security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the existing security policy being cloned
         """
         return pulumi.get(self, "create_from_security_policy_id")
 
     @create_from_security_policy_id.setter
-    def create_from_security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_from_security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_from_security_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSettings")
-    def default_settings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def default_settings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to assign default settings to the new security policy
         """
         return pulumi.get(self, "default_settings")
 
     @default_settings.setter
-    def default_settings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def default_settings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "default_settings", value)
 
 
 @pulumi.input_type
 class _AppSecSecurityPolicyState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_from_security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_settings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_from_security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_settings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecSecurityPolicy resources.
 
@@ -136,74 +136,74 @@ class _AppSecSecurityPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createFromSecurityPolicyId")
-    def create_from_security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_from_security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the existing security policy being cloned
         """
         return pulumi.get(self, "create_from_security_policy_id")
 
     @create_from_security_policy_id.setter
-    def create_from_security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_from_security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_from_security_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSettings")
-    def default_settings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def default_settings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to assign default settings to the new security policy
         """
         return pulumi.get(self, "default_settings")
 
     @default_settings.setter
-    def default_settings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def default_settings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "default_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the new security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyName")
-    def security_policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the new security policy
         """
         return pulumi.get(self, "security_policy_name")
 
     @security_policy_name.setter
-    def security_policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyPrefix")
-    def security_policy_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Four-character alphanumeric string prefix used in creating the security policy ID
         """
         return pulumi.get(self, "security_policy_prefix")
 
     @security_policy_prefix.setter
-    def security_policy_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_prefix", value)
 
 
@@ -213,11 +213,11 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_from_security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_settings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_from_security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_settings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecSecurityPolicy resource with the given unique name, props, and options.
@@ -254,11 +254,11 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_from_security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_settings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_from_security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_settings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -290,12 +290,12 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            create_from_security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_settings: Optional[pulumi.Input[_builtins.bool]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_prefix: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecSecurityPolicy':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            create_from_security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_settings: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_prefix: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecSecurityPolicy':
         """
         Get an existing AppSecSecurityPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

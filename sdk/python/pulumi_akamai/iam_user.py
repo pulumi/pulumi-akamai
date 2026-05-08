@@ -26,23 +26,23 @@ class IamUserArgs:
                  email: pulumi.Input[_builtins.str],
                  first_name: pulumi.Input[_builtins.str],
                  last_name: pulumi.Input[_builtins.str],
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_tfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mobile_phone: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_notifications: Optional[pulumi.Input['IamUserUserNotificationsArgs']] = None,
-                 zip_code: Optional[pulumi.Input[_builtins.str]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_tfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mobile_phone: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_notifications: pulumi.Input[Optional['IamUserUserNotificationsArgs']] = None,
+                 zip_code: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamUser resource.
 
@@ -171,239 +171,239 @@ class IamUserArgs:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's street address.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's city.
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="contactType")
-    def contact_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contact_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         To help characterize the user, the value can be any that are available from the view-contact-types operation.
         """
         return pulumi.get(self, "contact_type")
 
     @contact_type.setter
-    def contact_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contact_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contact_type", value)
 
     @_builtins.property
     @pulumi.getter(name="enableMfa")
-    def enable_mfa(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_mfa(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether multi-factor authentication is allowed.
         """
         return pulumi.get(self, "enable_mfa")
 
     @enable_mfa.setter
-    def enable_mfa(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_mfa(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_mfa", value)
 
     @_builtins.property
     @pulumi.getter(name="enableTfa")
-    def enable_tfa(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_tfa(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether two-factor authentication is allowed.
         """
         return pulumi.get(self, "enable_tfa")
 
     @enable_tfa.setter
-    def enable_tfa(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_tfa(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_tfa", value)
 
     @_builtins.property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's position at your company.
         """
         return pulumi.get(self, "job_title")
 
     @job_title.setter
-    def job_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_title", value)
 
     @_builtins.property
     @pulumi.getter
-    def lock(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def lock(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag to block a user account.
         """
         return pulumi.get(self, "lock")
 
     @lock.setter
-    def lock(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def lock(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "lock", value)
 
     @_builtins.property
     @pulumi.getter(name="mobilePhone")
-    def mobile_phone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mobile_phone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's mobile phone number.
         """
         return pulumi.get(self, "mobile_phone")
 
     @mobile_phone.setter
-    def mobile_phone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mobile_phone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mobile_phone", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         New password for a user.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def phone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's main phone number.
         """
         return pulumi.get(self, "phone")
 
     @phone.setter
-    def phone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredLanguage")
-    def preferred_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value can be any that are available from the view-languages operation.
         """
         return pulumi.get(self, "preferred_language")
 
     @preferred_language.setter
-    def preferred_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_language", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryEmail")
-    def secondary_email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secondary_email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's secondary email address.
         """
         return pulumi.get(self, "secondary_email")
 
     @secondary_email.setter
-    def secondary_email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secondary_email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secondary_email", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionTimeout")
-    def session_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def session_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
         """
         return pulumi.get(self, "session_timeout")
 
     @session_timeout.setter
-    def session_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def session_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "session_timeout", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's time zone. The value can be any that are available from the view-time-zones operation.
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="userNotifications")
-    def user_notifications(self) -> Optional[pulumi.Input['IamUserUserNotificationsArgs']]:
+    def user_notifications(self) -> pulumi.Input[Optional['IamUserUserNotificationsArgs']]:
         """
         Specifies email notifications the user receives for products.
         """
         return pulumi.get(self, "user_notifications")
 
     @user_notifications.setter
-    def user_notifications(self, value: Optional[pulumi.Input['IamUserUserNotificationsArgs']]):
+    def user_notifications(self, value: pulumi.Input[Optional['IamUserUserNotificationsArgs']]):
         pulumi.set(self, "user_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="zipCode")
-    def zip_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zip_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's five-digit ZIP code.
         """
         return pulumi.get(self, "zip_code")
 
     @zip_code.setter
-    def zip_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zip_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zip_code", value)
 
 
 @pulumi.input_type
 class _IamUserState:
     def __init__(__self__, *,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_grants_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_update_pending: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_tfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_login: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mobile_phone: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_expired_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 tfa_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_notifications: Optional[pulumi.Input['IamUserUserNotificationsArgs']] = None,
-                 zip_code: Optional[pulumi.Input[_builtins.str]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_grants_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_update_pending: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_tfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_login: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mobile_phone: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_expired_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 tfa_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_notifications: pulumi.Input[Optional['IamUserUserNotificationsArgs']] = None,
+                 zip_code: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamUser resources.
 
@@ -492,326 +492,326 @@ class _IamUserState:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's street address.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter(name="authGrantsJson")
-    def auth_grants_json(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth_grants_json(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user's per-group role assignments, in JSON form.
         """
         return pulumi.get(self, "auth_grants_json")
 
     @auth_grants_json.setter
-    def auth_grants_json(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth_grants_json(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth_grants_json", value)
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's city.
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="contactType")
-    def contact_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contact_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         To help characterize the user, the value can be any that are available from the view-contact-types operation.
         """
         return pulumi.get(self, "contact_type")
 
     @contact_type.setter
-    def contact_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contact_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contact_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         As part of the user's location, the value can be any that are available from the view-supported-countries operation.
         """
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter
-    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's email address.
         """
         return pulumi.get(self, "email")
 
     @email.setter
-    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email", value)
 
     @_builtins.property
     @pulumi.getter(name="emailUpdatePending")
-    def email_update_pending(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def email_update_pending(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether email update is pending.
         """
         return pulumi.get(self, "email_update_pending")
 
     @email_update_pending.setter
-    def email_update_pending(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def email_update_pending(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "email_update_pending", value)
 
     @_builtins.property
     @pulumi.getter(name="enableMfa")
-    def enable_mfa(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_mfa(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether multi-factor authentication is allowed.
         """
         return pulumi.get(self, "enable_mfa")
 
     @enable_mfa.setter
-    def enable_mfa(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_mfa(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_mfa", value)
 
     @_builtins.property
     @pulumi.getter(name="enableTfa")
-    def enable_tfa(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_tfa(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether two-factor authentication is allowed.
         """
         return pulumi.get(self, "enable_tfa")
 
     @enable_tfa.setter
-    def enable_tfa(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_tfa(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_tfa", value)
 
     @_builtins.property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's first name.
         """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
-    def first_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "first_name", value)
 
     @_builtins.property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's position at your company.
         """
         return pulumi.get(self, "job_title")
 
     @job_title.setter
-    def job_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_title", value)
 
     @_builtins.property
     @pulumi.getter(name="lastLogin")
-    def last_login(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_login(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ISO 8601 timestamp indicating when the user last logged in.
         """
         return pulumi.get(self, "last_login")
 
     @last_login.setter
-    def last_login(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_login(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_login", value)
 
     @_builtins.property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's surname.
         """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
-    def last_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def lock(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def lock(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag to block a user account.
         """
         return pulumi.get(self, "lock")
 
     @lock.setter
-    def lock(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def lock(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "lock", value)
 
     @_builtins.property
     @pulumi.getter(name="mobilePhone")
-    def mobile_phone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mobile_phone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's mobile phone number.
         """
         return pulumi.get(self, "mobile_phone")
 
     @mobile_phone.setter
-    def mobile_phone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mobile_phone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mobile_phone", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         New password for a user.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordExpiredAfter")
-    def password_expired_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_expired_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date a user's password expires.
         """
         return pulumi.get(self, "password_expired_after")
 
     @password_expired_after.setter
-    def password_expired_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_expired_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_expired_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def phone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's main phone number.
         """
         return pulumi.get(self, "phone")
 
     @phone.setter
-    def phone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredLanguage")
-    def preferred_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value can be any that are available from the view-languages operation.
         """
         return pulumi.get(self, "preferred_language")
 
     @preferred_language.setter
-    def preferred_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_language", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryEmail")
-    def secondary_email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secondary_email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's secondary email address.
         """
         return pulumi.get(self, "secondary_email")
 
     @secondary_email.setter
-    def secondary_email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secondary_email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secondary_email", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionTimeout")
-    def session_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def session_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
         """
         return pulumi.get(self, "session_timeout")
 
     @session_timeout.setter
-    def session_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def session_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "session_timeout", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="tfaConfigured")
-    def tfa_configured(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def tfa_configured(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether two-factor authentication is configured.
         """
         return pulumi.get(self, "tfa_configured")
 
     @tfa_configured.setter
-    def tfa_configured(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def tfa_configured(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "tfa_configured", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's time zone. The value can be any that are available from the view-time-zones operation.
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user's `loginId`. Typically, a user's email address.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="userNotifications")
-    def user_notifications(self) -> Optional[pulumi.Input['IamUserUserNotificationsArgs']]:
+    def user_notifications(self) -> pulumi.Input[Optional['IamUserUserNotificationsArgs']]:
         """
         Specifies email notifications the user receives for products.
         """
         return pulumi.get(self, "user_notifications")
 
     @user_notifications.setter
-    def user_notifications(self, value: Optional[pulumi.Input['IamUserUserNotificationsArgs']]):
+    def user_notifications(self, value: pulumi.Input[Optional['IamUserUserNotificationsArgs']]):
         pulumi.set(self, "user_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="zipCode")
-    def zip_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zip_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's five-digit ZIP code.
         """
         return pulumi.get(self, "zip_code")
 
     @zip_code.setter
-    def zip_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zip_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zip_code", value)
 
 
@@ -821,28 +821,28 @@ class IamUser(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_grants_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_tfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mobile_phone: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_notifications: Optional[pulumi.Input[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']]] = None,
-                 zip_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_grants_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_tfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mobile_phone: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']]] = None,
+                 zip_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamUser resource with the given unique name, props, and options.
@@ -896,28 +896,28 @@ class IamUser(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_grants_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_tfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mobile_phone: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_notifications: Optional[pulumi.Input[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']]] = None,
-                 zip_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_grants_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_tfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mobile_phone: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']]] = None,
+                 zip_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -976,33 +976,33 @@ class IamUser(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            address: Optional[pulumi.Input[_builtins.str]] = None,
-            auth_grants_json: Optional[pulumi.Input[_builtins.str]] = None,
-            city: Optional[pulumi.Input[_builtins.str]] = None,
-            contact_type: Optional[pulumi.Input[_builtins.str]] = None,
-            country: Optional[pulumi.Input[_builtins.str]] = None,
-            email: Optional[pulumi.Input[_builtins.str]] = None,
-            email_update_pending: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_tfa: Optional[pulumi.Input[_builtins.bool]] = None,
-            first_name: Optional[pulumi.Input[_builtins.str]] = None,
-            job_title: Optional[pulumi.Input[_builtins.str]] = None,
-            last_login: Optional[pulumi.Input[_builtins.str]] = None,
-            last_name: Optional[pulumi.Input[_builtins.str]] = None,
-            lock: Optional[pulumi.Input[_builtins.bool]] = None,
-            mobile_phone: Optional[pulumi.Input[_builtins.str]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            password_expired_after: Optional[pulumi.Input[_builtins.str]] = None,
-            phone: Optional[pulumi.Input[_builtins.str]] = None,
-            preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-            secondary_email: Optional[pulumi.Input[_builtins.str]] = None,
-            session_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            tfa_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            user_name: Optional[pulumi.Input[_builtins.str]] = None,
-            user_notifications: Optional[pulumi.Input[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']]] = None,
-            zip_code: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamUser':
+            address: pulumi.Input[Optional[_builtins.str]] = None,
+            auth_grants_json: pulumi.Input[Optional[_builtins.str]] = None,
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            contact_type: pulumi.Input[Optional[_builtins.str]] = None,
+            country: pulumi.Input[Optional[_builtins.str]] = None,
+            email: pulumi.Input[Optional[_builtins.str]] = None,
+            email_update_pending: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_tfa: pulumi.Input[Optional[_builtins.bool]] = None,
+            first_name: pulumi.Input[Optional[_builtins.str]] = None,
+            job_title: pulumi.Input[Optional[_builtins.str]] = None,
+            last_login: pulumi.Input[Optional[_builtins.str]] = None,
+            last_name: pulumi.Input[Optional[_builtins.str]] = None,
+            lock: pulumi.Input[Optional[_builtins.bool]] = None,
+            mobile_phone: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            password_expired_after: pulumi.Input[Optional[_builtins.str]] = None,
+            phone: pulumi.Input[Optional[_builtins.str]] = None,
+            preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+            secondary_email: pulumi.Input[Optional[_builtins.str]] = None,
+            session_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tfa_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']]] = None,
+            zip_code: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamUser':
         """
         Get an existing IamUser resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

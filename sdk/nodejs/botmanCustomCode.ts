@@ -70,8 +70,8 @@ export class BotmanCustomCode extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanCustomCode resources.
  */
 export interface BotmanCustomCodeState {
-    configId?: pulumi.Input<number>;
-    customCode?: pulumi.Input<string>;
+    configId?: pulumi.Input<number | undefined>;
+    customCode?: pulumi.Input<string | undefined>;
 }
 
 /**

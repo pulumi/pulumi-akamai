@@ -24,10 +24,10 @@ class MtlskeystoreClientCertificateUploadArgs:
                  client_certificate_id: pulumi.Input[_builtins.int],
                  signed_certificate: pulumi.Input[_builtins.str],
                  version_number: pulumi.Input[_builtins.int],
-                 auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 timeouts: Optional[pulumi.Input['MtlskeystoreClientCertificateUploadTimeoutsArgs']] = None,
-                 trust_chain: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
+                 auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 timeouts: pulumi.Input[Optional['MtlskeystoreClientCertificateUploadTimeoutsArgs']] = None,
+                 trust_chain: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a MtlskeystoreClientCertificateUpload resource.
 
@@ -88,61 +88,61 @@ class MtlskeystoreClientCertificateUploadArgs:
 
     @_builtins.property
     @pulumi.getter(name="autoAcknowledgeWarnings")
-    def auto_acknowledge_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_acknowledge_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
         """
         return pulumi.get(self, "auto_acknowledge_warnings")
 
     @auto_acknowledge_warnings.setter
-    def auto_acknowledge_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_acknowledge_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_acknowledge_warnings", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['MtlskeystoreClientCertificateUploadTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['MtlskeystoreClientCertificateUploadTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['MtlskeystoreClientCertificateUploadTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['MtlskeystoreClientCertificateUploadTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter(name="trustChain")
-    def trust_chain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_chain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional trust chain associated with the signed certificate.
         """
         return pulumi.get(self, "trust_chain")
 
     @trust_chain.setter
-    def trust_chain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_chain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_chain", value)
 
     @_builtins.property
     @pulumi.getter(name="waitForDeployment")
-    def wait_for_deployment(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_for_deployment(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`.
         """
         return pulumi.get(self, "wait_for_deployment")
 
     @wait_for_deployment.setter
-    def wait_for_deployment(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_for_deployment(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_for_deployment", value)
 
 
 @pulumi.input_type
 class _MtlskeystoreClientCertificateUploadState:
     def __init__(__self__, *,
-                 auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_certificate_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 signed_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['MtlskeystoreClientCertificateUploadTimeoutsArgs']] = None,
-                 trust_chain: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
+                 auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_certificate_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['MtlskeystoreClientCertificateUploadTimeoutsArgs']] = None,
+                 trust_chain: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering MtlskeystoreClientCertificateUpload resources.
 
@@ -173,95 +173,95 @@ class _MtlskeystoreClientCertificateUploadState:
 
     @_builtins.property
     @pulumi.getter(name="autoAcknowledgeWarnings")
-    def auto_acknowledge_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_acknowledge_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
         """
         return pulumi.get(self, "auto_acknowledge_warnings")
 
     @auto_acknowledge_warnings.setter
-    def auto_acknowledge_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_acknowledge_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_acknowledge_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="clientCertificateId")
-    def client_certificate_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def client_certificate_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The ID of the client certificate to which the signed certificate will be uploaded.
         """
         return pulumi.get(self, "client_certificate_id")
 
     @client_certificate_id.setter
-    def client_certificate_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def client_certificate_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "client_certificate_id", value)
 
     @_builtins.property
     @pulumi.getter(name="signedCertificate")
-    def signed_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signed_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The signed certificate to upload.
         """
         return pulumi.get(self, "signed_certificate")
 
     @signed_certificate.setter
-    def signed_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signed_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signed_certificate", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['MtlskeystoreClientCertificateUploadTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['MtlskeystoreClientCertificateUploadTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['MtlskeystoreClientCertificateUploadTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['MtlskeystoreClientCertificateUploadTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter(name="trustChain")
-    def trust_chain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_chain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional trust chain associated with the signed certificate.
         """
         return pulumi.get(self, "trust_chain")
 
     @trust_chain.setter
-    def trust_chain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_chain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_chain", value)
 
     @_builtins.property
     @pulumi.getter(name="versionGuid")
-    def version_guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique identifier for the client certificate version.
         """
         return pulumi.get(self, "version_guid")
 
     @version_guid.setter
-    def version_guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_guid", value)
 
     @_builtins.property
     @pulumi.getter(name="versionNumber")
-    def version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The version number of the client certificate to upload the signed certificate to.
         """
         return pulumi.get(self, "version_number")
 
     @version_number.setter
-    def version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version_number", value)
 
     @_builtins.property
     @pulumi.getter(name="waitForDeployment")
-    def wait_for_deployment(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_for_deployment(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to wait for the deployment of the uploaded certificate. Defaults to `true`.
         """
         return pulumi.get(self, "wait_for_deployment")
 
     @wait_for_deployment.setter
-    def wait_for_deployment(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_for_deployment(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_for_deployment", value)
 
 
@@ -271,13 +271,13 @@ class MtlskeystoreClientCertificateUpload(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_certificate_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 signed_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['MtlskeystoreClientCertificateUploadTimeoutsArgs', 'MtlskeystoreClientCertificateUploadTimeoutsArgsDict']]] = None,
-                 trust_chain: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
+                 auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_certificate_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateUploadTimeoutsArgs', 'MtlskeystoreClientCertificateUploadTimeoutsArgsDict']]] = None,
+                 trust_chain: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a MtlskeystoreClientCertificateUpload resource with the given unique name, props, and options.
@@ -315,13 +315,13 @@ class MtlskeystoreClientCertificateUpload(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_certificate_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 signed_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['MtlskeystoreClientCertificateUploadTimeoutsArgs', 'MtlskeystoreClientCertificateUploadTimeoutsArgsDict']]] = None,
-                 trust_chain: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
+                 auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_certificate_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateUploadTimeoutsArgs', 'MtlskeystoreClientCertificateUploadTimeoutsArgsDict']]] = None,
+                 trust_chain: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -355,14 +355,14 @@ class MtlskeystoreClientCertificateUpload(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-            client_certificate_id: Optional[pulumi.Input[_builtins.int]] = None,
-            signed_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['MtlskeystoreClientCertificateUploadTimeoutsArgs', 'MtlskeystoreClientCertificateUploadTimeoutsArgsDict']]] = None,
-            trust_chain: Optional[pulumi.Input[_builtins.str]] = None,
-            version_guid: Optional[pulumi.Input[_builtins.str]] = None,
-            version_number: Optional[pulumi.Input[_builtins.int]] = None,
-            wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None) -> 'MtlskeystoreClientCertificateUpload':
+            auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            client_certificate_id: pulumi.Input[Optional[_builtins.int]] = None,
+            signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateUploadTimeoutsArgs', 'MtlskeystoreClientCertificateUploadTimeoutsArgsDict']]] = None,
+            trust_chain: pulumi.Input[Optional[_builtins.str]] = None,
+            version_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            version_number: pulumi.Input[Optional[_builtins.int]] = None,
+            wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None) -> 'MtlskeystoreClientCertificateUpload':
         """
         Get an existing MtlskeystoreClientCertificateUpload resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -213,83 +213,83 @@ export interface CpsDvEnrollmentState {
     /**
      * Whether acknowledge warnings before certificate verification. Default is false
      */
-    acknowledgePreVerificationWarnings?: pulumi.Input<boolean>;
+    acknowledgePreVerificationWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Contact information for the certificate administrator to use at organization
      */
-    adminContact?: pulumi.Input<inputs.CpsDvEnrollmentAdminContact>;
+    adminContact?: pulumi.Input<inputs.CpsDvEnrollmentAdminContact | undefined>;
     /**
      * Allow to duplicate common name. Default is false
      */
-    allowDuplicateCommonName?: pulumi.Input<boolean>;
+    allowDuplicateCommonName?: pulumi.Input<boolean | undefined>;
     /**
      * Certificate trust chain type. Default is 'default'
      */
-    certificateChainType?: pulumi.Input<string>;
+    certificateChainType?: pulumi.Input<string | undefined>;
     /**
      * Certificate type of enrollment
      */
-    certificateType?: pulumi.Input<string>;
+    certificateType?: pulumi.Input<string | undefined>;
     /**
      * Common name used for enrollment
      */
-    commonName?: pulumi.Input<string>;
+    commonName?: pulumi.Input<string | undefined>;
     /**
      * Contract ID for which enrollment is retrieved
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Certificate signing request generated during enrollment creation
      */
-    csr?: pulumi.Input<inputs.CpsDvEnrollmentCsr>;
+    csr?: pulumi.Input<inputs.CpsDvEnrollmentCsr | undefined>;
     /**
      * DNS challenge information
      */
-    dnsChallenges?: pulumi.Input<pulumi.Input<inputs.CpsDvEnrollmentDnsChallenge>[]>;
+    dnsChallenges?: pulumi.Input<pulumi.Input<inputs.CpsDvEnrollmentDnsChallenge>[] | undefined>;
     /**
      * HTTP challenge information
      */
-    httpChallenges?: pulumi.Input<pulumi.Input<inputs.CpsDvEnrollmentHttpChallenge>[]>;
+    httpChallenges?: pulumi.Input<pulumi.Input<inputs.CpsDvEnrollmentHttpChallenge>[] | undefined>;
     /**
      * Settings containing network information and TLS Metadata used by CPS
      */
-    networkConfiguration?: pulumi.Input<inputs.CpsDvEnrollmentNetworkConfiguration>;
+    networkConfiguration?: pulumi.Input<inputs.CpsDvEnrollmentNetworkConfiguration | undefined>;
     /**
      * Organization information
      */
-    organization?: pulumi.Input<inputs.CpsDvEnrollmentOrganization>;
+    organization?: pulumi.Input<inputs.CpsDvEnrollmentOrganization | undefined>;
     /**
      * The registration authority or certificate authority (CA) used to obtain a certificate
      */
-    registrationAuthority?: pulumi.Input<string>;
+    registrationAuthority?: pulumi.Input<string | undefined>;
     /**
      * List of SANs
      */
-    sans?: pulumi.Input<pulumi.Input<string>[]>;
+    sans?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of TLS deployment network
      */
-    secureNetwork?: pulumi.Input<string>;
+    secureNetwork?: pulumi.Input<string | undefined>;
     /**
      * SHA algorithm type
      */
-    signatureAlgorithm?: pulumi.Input<string>;
+    signatureAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * Whether Server Name Indication is used for enrollment
      */
-    sniOnly?: pulumi.Input<boolean>;
+    sniOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Contact information for an administrator at Akamai
      */
-    techContact?: pulumi.Input<inputs.CpsDvEnrollmentTechContact>;
+    techContact?: pulumi.Input<inputs.CpsDvEnrollmentTechContact | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpsDvEnrollmentTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpsDvEnrollmentTimeouts | undefined>;
     /**
      * Enrolment validation type
      */
-    validationType?: pulumi.Input<string>;
+    validationType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -299,7 +299,7 @@ export interface CpsDvEnrollmentArgs {
     /**
      * Whether acknowledge warnings before certificate verification. Default is false
      */
-    acknowledgePreVerificationWarnings?: pulumi.Input<boolean>;
+    acknowledgePreVerificationWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Contact information for the certificate administrator to use at organization
      */
@@ -307,11 +307,11 @@ export interface CpsDvEnrollmentArgs {
     /**
      * Allow to duplicate common name. Default is false
      */
-    allowDuplicateCommonName?: pulumi.Input<boolean>;
+    allowDuplicateCommonName?: pulumi.Input<boolean | undefined>;
     /**
      * Certificate trust chain type. Default is 'default'
      */
-    certificateChainType?: pulumi.Input<string>;
+    certificateChainType?: pulumi.Input<string | undefined>;
     /**
      * Common name used for enrollment
      */
@@ -335,7 +335,7 @@ export interface CpsDvEnrollmentArgs {
     /**
      * List of SANs
      */
-    sans?: pulumi.Input<pulumi.Input<string>[]>;
+    sans?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of TLS deployment network
      */
@@ -355,5 +355,5 @@ export interface CpsDvEnrollmentArgs {
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpsDvEnrollmentTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpsDvEnrollmentTimeouts | undefined>;
 }

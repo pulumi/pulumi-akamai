@@ -60,9 +60,9 @@ export function getAppSecSelectableHostnamesOutput(args?: GetAppSecSelectableHos
  * A collection of arguments for invoking getAppSecSelectableHostnames.
  */
 export interface GetAppSecSelectableHostnamesOutputArgs {
-    activeInProduction?: pulumi.Input<boolean>;
-    activeInStaging?: pulumi.Input<boolean>;
-    configId?: pulumi.Input<number>;
-    contractid?: pulumi.Input<string>;
-    groupid?: pulumi.Input<number>;
+    activeInProduction?: pulumi.Input<boolean | undefined>;
+    activeInStaging?: pulumi.Input<boolean | undefined>;
+    configId?: pulumi.Input<number | undefined>;
+    contractid?: pulumi.Input<string | undefined>;
+    groupid?: pulumi.Input<number | undefined>;
 }

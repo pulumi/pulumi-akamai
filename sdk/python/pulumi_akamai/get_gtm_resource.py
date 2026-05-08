@@ -216,10 +216,10 @@ def get_gtm_resource(domain: Optional[_builtins.str] = None,
         resource_name=pulumi.get(__ret__, 'resource_name'),
         type=pulumi.get(__ret__, 'type'),
         upper_bound=pulumi.get(__ret__, 'upper_bound'))
-def get_gtm_resource_output(domain: Optional[pulumi.Input[_builtins.str]] = None,
-                            links: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmResourceLinkArgs', 'GetGtmResourceLinkArgsDict']]]]] = None,
-                            resource_instances: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmResourceResourceInstanceArgs', 'GetGtmResourceResourceInstanceArgsDict']]]]] = None,
-                            resource_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_gtm_resource_output(domain: pulumi.Input[Optional[_builtins.str]] = None,
+                            links: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmResourceLinkArgs', 'GetGtmResourceLinkArgsDict']]]]] = None,
+                            resource_instances: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmResourceResourceInstanceArgs', 'GetGtmResourceResourceInstanceArgsDict']]]]] = None,
+                            resource_name: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmResourceResult]:
     """
     Use this data source to access information about an existing resource.

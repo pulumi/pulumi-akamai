@@ -105,9 +105,9 @@ def get_botman_transactional_endpoint(config_id: Optional[_builtins.int] = None,
         json=pulumi.get(__ret__, 'json'),
         operation_id=pulumi.get(__ret__, 'operation_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_botman_transactional_endpoint_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                             operation_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_botman_transactional_endpoint_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                             operation_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanTransactionalEndpointResult]:
     """
     Use this data source to access information about an existing resource.

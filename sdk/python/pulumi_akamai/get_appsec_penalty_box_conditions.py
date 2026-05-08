@@ -103,8 +103,8 @@ def get_appsec_penalty_box_conditions(config_id: Optional[_builtins.int] = None,
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_appsec_penalty_box_conditions_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                             security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_appsec_penalty_box_conditions_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                             security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecPenaltyBoxConditionsResult]:
     """
     Use this data source to access information about an existing resource.

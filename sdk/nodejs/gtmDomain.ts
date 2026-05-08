@@ -177,75 +177,75 @@ export class GtmDomain extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmDomain resources.
  */
 export interface GtmDomainState {
-    cnameCoalescingEnabled?: pulumi.Input<boolean>;
-    comment?: pulumi.Input<string>;
-    contract?: pulumi.Input<string>;
-    defaultErrorPenalty?: pulumi.Input<number>;
-    defaultHealthMax?: pulumi.Input<number>;
-    defaultHealthMultiplier?: pulumi.Input<number>;
-    defaultHealthThreshold?: pulumi.Input<number>;
-    defaultMaxUnreachablePenalty?: pulumi.Input<number>;
-    defaultSslClientCertificate?: pulumi.Input<string>;
-    defaultSslClientPrivateKey?: pulumi.Input<string>;
-    defaultTimeoutPenalty?: pulumi.Input<number>;
-    defaultUnreachableThreshold?: pulumi.Input<number>;
-    emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
-    endUserMappingEnabled?: pulumi.Input<boolean>;
-    group?: pulumi.Input<string>;
-    loadFeedback?: pulumi.Input<boolean>;
-    loadImbalancePercentage?: pulumi.Input<number>;
-    mapUpdateInterval?: pulumi.Input<number>;
-    maxProperties?: pulumi.Input<number>;
-    maxResources?: pulumi.Input<number>;
-    maxTestTimeout?: pulumi.Input<number>;
-    maxTtl?: pulumi.Input<number>;
-    minPingableRegionFraction?: pulumi.Input<number>;
-    minTestInterval?: pulumi.Input<number>;
-    minTtl?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-    pingInterval?: pulumi.Input<number>;
-    pingPacketSize?: pulumi.Input<number>;
-    roundRobinPrefix?: pulumi.Input<string>;
-    servermonitorLivenessCount?: pulumi.Input<number>;
-    servermonitorLoadCount?: pulumi.Input<number>;
-    servermonitorPool?: pulumi.Input<string>;
+    cnameCoalescingEnabled?: pulumi.Input<boolean | undefined>;
+    comment?: pulumi.Input<string | undefined>;
+    contract?: pulumi.Input<string | undefined>;
+    defaultErrorPenalty?: pulumi.Input<number | undefined>;
+    defaultHealthMax?: pulumi.Input<number | undefined>;
+    defaultHealthMultiplier?: pulumi.Input<number | undefined>;
+    defaultHealthThreshold?: pulumi.Input<number | undefined>;
+    defaultMaxUnreachablePenalty?: pulumi.Input<number | undefined>;
+    defaultSslClientCertificate?: pulumi.Input<string | undefined>;
+    defaultSslClientPrivateKey?: pulumi.Input<string | undefined>;
+    defaultTimeoutPenalty?: pulumi.Input<number | undefined>;
+    defaultUnreachableThreshold?: pulumi.Input<number | undefined>;
+    emailNotificationLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    endUserMappingEnabled?: pulumi.Input<boolean | undefined>;
+    group?: pulumi.Input<string | undefined>;
+    loadFeedback?: pulumi.Input<boolean | undefined>;
+    loadImbalancePercentage?: pulumi.Input<number | undefined>;
+    mapUpdateInterval?: pulumi.Input<number | undefined>;
+    maxProperties?: pulumi.Input<number | undefined>;
+    maxResources?: pulumi.Input<number | undefined>;
+    maxTestTimeout?: pulumi.Input<number | undefined>;
+    maxTtl?: pulumi.Input<number | undefined>;
+    minPingableRegionFraction?: pulumi.Input<number | undefined>;
+    minTestInterval?: pulumi.Input<number | undefined>;
+    minTtl?: pulumi.Input<number | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    pingInterval?: pulumi.Input<number | undefined>;
+    pingPacketSize?: pulumi.Input<number | undefined>;
+    roundRobinPrefix?: pulumi.Input<string | undefined>;
+    servermonitorLivenessCount?: pulumi.Input<number | undefined>;
+    servermonitorLoadCount?: pulumi.Input<number | undefined>;
+    servermonitorPool?: pulumi.Input<string | undefined>;
     /**
      * If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
      */
-    signAndServe?: pulumi.Input<boolean>;
+    signAndServe?: pulumi.Input<boolean | undefined>;
     /**
      * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
      */
-    signAndServeAlgorithm?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    signAndServeAlgorithm?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }
 
 /**
  * The set of arguments for constructing a GtmDomain resource.
  */
 export interface GtmDomainArgs {
-    cnameCoalescingEnabled?: pulumi.Input<boolean>;
-    comment?: pulumi.Input<string>;
-    contract?: pulumi.Input<string>;
-    defaultErrorPenalty?: pulumi.Input<number>;
-    defaultSslClientCertificate?: pulumi.Input<string>;
-    defaultSslClientPrivateKey?: pulumi.Input<string>;
-    defaultTimeoutPenalty?: pulumi.Input<number>;
-    emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
-    endUserMappingEnabled?: pulumi.Input<boolean>;
-    group?: pulumi.Input<string>;
-    loadFeedback?: pulumi.Input<boolean>;
-    loadImbalancePercentage?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
+    cnameCoalescingEnabled?: pulumi.Input<boolean | undefined>;
+    comment?: pulumi.Input<string | undefined>;
+    contract?: pulumi.Input<string | undefined>;
+    defaultErrorPenalty?: pulumi.Input<number | undefined>;
+    defaultSslClientCertificate?: pulumi.Input<string | undefined>;
+    defaultSslClientPrivateKey?: pulumi.Input<string | undefined>;
+    defaultTimeoutPenalty?: pulumi.Input<number | undefined>;
+    emailNotificationLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    endUserMappingEnabled?: pulumi.Input<boolean | undefined>;
+    group?: pulumi.Input<string | undefined>;
+    loadFeedback?: pulumi.Input<boolean | undefined>;
+    loadImbalancePercentage?: pulumi.Input<number | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
      */
-    signAndServe?: pulumi.Input<boolean>;
+    signAndServe?: pulumi.Input<boolean | undefined>;
     /**
      * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
      */
-    signAndServeAlgorithm?: pulumi.Input<string>;
+    signAndServeAlgorithm?: pulumi.Input<string | undefined>;
     type: pulumi.Input<string>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }

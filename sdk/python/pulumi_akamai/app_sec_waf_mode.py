@@ -73,14 +73,14 @@ class AppSecWafModeArgs:
 @pulumi.input_type
 class _AppSecWafModeState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 current_ruleset: Optional[pulumi.Input[_builtins.str]] = None,
-                 eval_expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 eval_ruleset: Optional[pulumi.Input[_builtins.str]] = None,
-                 eval_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 current_ruleset: pulumi.Input[Optional[_builtins.str]] = None,
+                 eval_expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 eval_ruleset: pulumi.Input[Optional[_builtins.str]] = None,
+                 eval_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecWafMode resources.
 
@@ -112,98 +112,98 @@ class _AppSecWafModeState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currentRuleset")
-    def current_ruleset(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_ruleset(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Versioning information for the current Kona Rule Set
         """
         return pulumi.get(self, "current_ruleset")
 
     @current_ruleset.setter
-    def current_ruleset(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_ruleset(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_ruleset", value)
 
     @_builtins.property
     @pulumi.getter(name="evalExpirationDate")
-    def eval_expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def eval_expiration_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date on which the evaluation period ends, if applicable
         """
         return pulumi.get(self, "eval_expiration_date")
 
     @eval_expiration_date.setter
-    def eval_expiration_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def eval_expiration_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "eval_expiration_date", value)
 
     @_builtins.property
     @pulumi.getter(name="evalRuleset")
-    def eval_ruleset(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def eval_ruleset(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Versioning information for the Kona Rule Set being evaluated, if applicable
         """
         return pulumi.get(self, "eval_ruleset")
 
     @eval_ruleset.setter
-    def eval_ruleset(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def eval_ruleset(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "eval_ruleset", value)
 
     @_builtins.property
     @pulumi.getter(name="evalStatus")
-    def eval_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def eval_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether an evaluation is currently in progress
         """
         return pulumi.get(self, "eval_status")
 
     @eval_status.setter
-    def eval_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def eval_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "eval_status", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter(name="outputText")
-    def output_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Text representation
         """
         return pulumi.get(self, "output_text")
 
     @output_text.setter
-    def output_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_text", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -213,9 +213,9 @@ class AppSecWafMode(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecWafMode resource with the given unique name, props, and options.
@@ -250,9 +250,9 @@ class AppSecWafMode(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -286,14 +286,14 @@ class AppSecWafMode(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            current_ruleset: Optional[pulumi.Input[_builtins.str]] = None,
-            eval_expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-            eval_ruleset: Optional[pulumi.Input[_builtins.str]] = None,
-            eval_status: Optional[pulumi.Input[_builtins.str]] = None,
-            mode: Optional[pulumi.Input[_builtins.str]] = None,
-            output_text: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecWafMode':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            current_ruleset: pulumi.Input[Optional[_builtins.str]] = None,
+            eval_expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+            eval_ruleset: pulumi.Input[Optional[_builtins.str]] = None,
+            eval_status: pulumi.Input[Optional[_builtins.str]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            output_text: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecWafMode':
         """
         Get an existing AppSecWafMode resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

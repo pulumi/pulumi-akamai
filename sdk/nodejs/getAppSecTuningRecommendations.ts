@@ -56,9 +56,9 @@ export function getAppSecTuningRecommendationsOutput(args: GetAppSecTuningRecomm
  * A collection of arguments for invoking getAppSecTuningRecommendations.
  */
 export interface GetAppSecTuningRecommendationsOutputArgs {
-    attackGroup?: pulumi.Input<string>;
+    attackGroup?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
-    ruleId?: pulumi.Input<number>;
-    rulesetType?: pulumi.Input<string>;
-    securityPolicyId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<number | undefined>;
+    rulesetType?: pulumi.Input<string | undefined>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

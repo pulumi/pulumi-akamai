@@ -81,7 +81,7 @@ def get_apr_user_risk_response_strategy(config_id: Optional[_builtins.int] = Non
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-def get_apr_user_risk_response_strategy_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_apr_user_risk_response_strategy_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAprUserRiskResponseStrategyResult]:
     """
     Use this data source to access information about an existing resource.

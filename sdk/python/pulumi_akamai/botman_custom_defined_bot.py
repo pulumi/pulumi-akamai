@@ -49,9 +49,9 @@ class BotmanCustomDefinedBotArgs:
 @pulumi.input_type
 class _BotmanCustomDefinedBotState:
     def __init__(__self__, *,
-                 bot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_defined_bot: Optional[pulumi.Input[_builtins.str]] = None):
+                 bot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_defined_bot: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BotmanCustomDefinedBot resources.
         """
@@ -64,29 +64,29 @@ class _BotmanCustomDefinedBotState:
 
     @_builtins.property
     @pulumi.getter(name="botId")
-    def bot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "bot_id")
 
     @bot_id.setter
-    def bot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bot_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customDefinedBot")
-    def custom_defined_bot(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_defined_bot(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "custom_defined_bot")
 
     @custom_defined_bot.setter
-    def custom_defined_bot(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_defined_bot(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_defined_bot", value)
 
 
@@ -96,8 +96,8 @@ class BotmanCustomDefinedBot(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_defined_bot: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_defined_bot: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a BotmanCustomDefinedBot resource with the given unique name, props, and options.
@@ -129,8 +129,8 @@ class BotmanCustomDefinedBot(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_defined_bot: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_defined_bot: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -157,9 +157,9 @@ class BotmanCustomDefinedBot(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bot_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            custom_defined_bot: Optional[pulumi.Input[_builtins.str]] = None) -> 'BotmanCustomDefinedBot':
+            bot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            custom_defined_bot: pulumi.Input[Optional[_builtins.str]] = None) -> 'BotmanCustomDefinedBot':
         """
         Get an existing BotmanCustomDefinedBot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -60,8 +60,8 @@ export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs,
  */
 export interface GetPropertyHostnamesOutputArgs {
     contractId: pulumi.Input<string>;
-    filterPendingDefaultCerts?: pulumi.Input<boolean>;
+    filterPendingDefaultCerts?: pulumi.Input<boolean | undefined>;
     groupId: pulumi.Input<string>;
     propertyId: pulumi.Input<string>;
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }

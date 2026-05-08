@@ -49,8 +49,8 @@ class BotmanBotAnalyticsCookieArgs:
 @pulumi.input_type
 class _BotmanBotAnalyticsCookieState:
     def __init__(__self__, *,
-                 bot_analytics_cookie: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 bot_analytics_cookie: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BotmanBotAnalyticsCookie resources.
         """
@@ -61,20 +61,20 @@ class _BotmanBotAnalyticsCookieState:
 
     @_builtins.property
     @pulumi.getter(name="botAnalyticsCookie")
-    def bot_analytics_cookie(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bot_analytics_cookie(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "bot_analytics_cookie")
 
     @bot_analytics_cookie.setter
-    def bot_analytics_cookie(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bot_analytics_cookie(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bot_analytics_cookie", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
 
@@ -84,8 +84,8 @@ class BotmanBotAnalyticsCookie(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bot_analytics_cookie: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 bot_analytics_cookie: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a BotmanBotAnalyticsCookie resource with the given unique name, props, and options.
@@ -117,8 +117,8 @@ class BotmanBotAnalyticsCookie(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bot_analytics_cookie: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 bot_analytics_cookie: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -144,8 +144,8 @@ class BotmanBotAnalyticsCookie(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bot_analytics_cookie: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'BotmanBotAnalyticsCookie':
+            bot_analytics_cookie: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'BotmanBotAnalyticsCookie':
         """
         Get an existing BotmanBotAnalyticsCookie resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

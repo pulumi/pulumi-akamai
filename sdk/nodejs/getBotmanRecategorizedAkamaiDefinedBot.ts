@@ -44,6 +44,6 @@ export function getBotmanRecategorizedAkamaiDefinedBotOutput(args: GetBotmanReca
  * A collection of arguments for invoking getBotmanRecategorizedAkamaiDefinedBot.
  */
 export interface GetBotmanRecategorizedAkamaiDefinedBotOutputArgs {
-    botId?: pulumi.Input<string>;
+    botId?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
 }

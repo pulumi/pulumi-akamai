@@ -82,15 +82,15 @@ export interface IamGroupState {
     /**
      * Human readable name for a group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the parent group.
      */
-    parentGroupId?: pulumi.Input<number>;
+    parentGroupId?: pulumi.Input<number | undefined>;
     /**
      * Subgroups IDs.
      */
-    subGroups?: pulumi.Input<pulumi.Input<number>[]>;
+    subGroups?: pulumi.Input<pulumi.Input<number>[] | undefined>;
 }
 
 /**
@@ -100,7 +100,7 @@ export interface IamGroupArgs {
     /**
      * Human readable name for a group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the parent group.
      */

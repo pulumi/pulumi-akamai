@@ -22,15 +22,15 @@ __all__ = ['CpsUploadCertificateArgs', 'CpsUploadCertificate']
 class CpsUploadCertificateArgs:
     def __init__(__self__, *,
                  enrollment_id: pulumi.Input[_builtins.int],
-                 acknowledge_change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']] = None,
-                 trust_chain_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_chain_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
+                 acknowledge_change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['CpsUploadCertificateTimeoutsArgs']] = None,
+                 trust_chain_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_chain_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a CpsUploadCertificate resource.
 
@@ -79,126 +79,126 @@ class CpsUploadCertificateArgs:
 
     @_builtins.property
     @pulumi.getter(name="acknowledgeChangeManagement")
-    def acknowledge_change_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_change_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to acknowledge change management
         """
         return pulumi.get(self, "acknowledge_change_management")
 
     @acknowledge_change_management.setter
-    def acknowledge_change_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_change_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_change_management", value)
 
     @_builtins.property
     @pulumi.getter(name="acknowledgePostVerificationWarnings")
-    def acknowledge_post_verification_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_post_verification_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to acknowledge post-verification warnings
         """
         return pulumi.get(self, "acknowledge_post_verification_warnings")
 
     @acknowledge_post_verification_warnings.setter
-    def acknowledge_post_verification_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_post_verification_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_post_verification_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="autoApproveWarnings")
-    def auto_approve_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def auto_approve_warnings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of post-verification warnings to be automatically acknowledged
         """
         return pulumi.get(self, "auto_approve_warnings")
 
     @auto_approve_warnings.setter
-    def auto_approve_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def auto_approve_warnings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "auto_approve_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateEcdsaPem")
-    def certificate_ecdsa_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_ecdsa_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ECDSA certificate in pem format to be uploaded
         """
         return pulumi.get(self, "certificate_ecdsa_pem")
 
     @certificate_ecdsa_pem.setter
-    def certificate_ecdsa_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_ecdsa_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_ecdsa_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateRsaPem")
-    def certificate_rsa_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_rsa_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         RSA certificate in pem format to be uploaded
         """
         return pulumi.get(self, "certificate_rsa_pem")
 
     @certificate_rsa_pem.setter
-    def certificate_rsa_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_rsa_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_rsa_pem", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CpsUploadCertificateTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CpsUploadCertificateTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter(name="trustChainEcdsaPem")
-    def trust_chain_ecdsa_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_chain_ecdsa_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Trust chain in pem format for provided ECDSA certificate
         """
         return pulumi.get(self, "trust_chain_ecdsa_pem")
 
     @trust_chain_ecdsa_pem.setter
-    def trust_chain_ecdsa_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_chain_ecdsa_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_chain_ecdsa_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="trustChainRsaPem")
-    def trust_chain_rsa_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_chain_rsa_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Trust chain in pem format for provided RSA certificate
         """
         return pulumi.get(self, "trust_chain_rsa_pem")
 
     @trust_chain_rsa_pem.setter
-    def trust_chain_rsa_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_chain_rsa_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_chain_rsa_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="waitForDeployment")
-    def wait_for_deployment(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_for_deployment(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to wait for certificate to be deployed
         """
         return pulumi.get(self, "wait_for_deployment")
 
     @wait_for_deployment.setter
-    def wait_for_deployment(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_for_deployment(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_for_deployment", value)
 
 
 @pulumi.input_type
 class _CpsUploadCertificateState:
     def __init__(__self__, *,
-                 acknowledge_change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeouts: Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']] = None,
-                 trust_chain_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_chain_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
+                 acknowledge_change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeouts: pulumi.Input[Optional['CpsUploadCertificateTimeoutsArgs']] = None,
+                 trust_chain_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_chain_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering CpsUploadCertificate resources.
 
@@ -236,122 +236,122 @@ class _CpsUploadCertificateState:
 
     @_builtins.property
     @pulumi.getter(name="acknowledgeChangeManagement")
-    def acknowledge_change_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_change_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to acknowledge change management
         """
         return pulumi.get(self, "acknowledge_change_management")
 
     @acknowledge_change_management.setter
-    def acknowledge_change_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_change_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_change_management", value)
 
     @_builtins.property
     @pulumi.getter(name="acknowledgePostVerificationWarnings")
-    def acknowledge_post_verification_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_post_verification_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to acknowledge post-verification warnings
         """
         return pulumi.get(self, "acknowledge_post_verification_warnings")
 
     @acknowledge_post_verification_warnings.setter
-    def acknowledge_post_verification_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_post_verification_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_post_verification_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="autoApproveWarnings")
-    def auto_approve_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def auto_approve_warnings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of post-verification warnings to be automatically acknowledged
         """
         return pulumi.get(self, "auto_approve_warnings")
 
     @auto_approve_warnings.setter
-    def auto_approve_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def auto_approve_warnings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "auto_approve_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateEcdsaPem")
-    def certificate_ecdsa_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_ecdsa_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ECDSA certificate in pem format to be uploaded
         """
         return pulumi.get(self, "certificate_ecdsa_pem")
 
     @certificate_ecdsa_pem.setter
-    def certificate_ecdsa_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_ecdsa_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_ecdsa_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateRsaPem")
-    def certificate_rsa_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_rsa_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         RSA certificate in pem format to be uploaded
         """
         return pulumi.get(self, "certificate_rsa_pem")
 
     @certificate_rsa_pem.setter
-    def certificate_rsa_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_rsa_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_rsa_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="enrollmentId")
-    def enrollment_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def enrollment_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier of the enrollment
         """
         return pulumi.get(self, "enrollment_id")
 
     @enrollment_id.setter
-    def enrollment_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def enrollment_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "enrollment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CpsUploadCertificateTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CpsUploadCertificateTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter(name="trustChainEcdsaPem")
-    def trust_chain_ecdsa_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_chain_ecdsa_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Trust chain in pem format for provided ECDSA certificate
         """
         return pulumi.get(self, "trust_chain_ecdsa_pem")
 
     @trust_chain_ecdsa_pem.setter
-    def trust_chain_ecdsa_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_chain_ecdsa_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_chain_ecdsa_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="trustChainRsaPem")
-    def trust_chain_rsa_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_chain_rsa_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Trust chain in pem format for provided RSA certificate
         """
         return pulumi.get(self, "trust_chain_rsa_pem")
 
     @trust_chain_rsa_pem.setter
-    def trust_chain_rsa_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_chain_rsa_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_chain_rsa_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="waitForDeployment")
-    def wait_for_deployment(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_for_deployment(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to wait for certificate to be deployed
         """
         return pulumi.get(self, "wait_for_deployment")
 
     @wait_for_deployment.setter
-    def wait_for_deployment(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_for_deployment(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_for_deployment", value)
 
 
@@ -361,16 +361,16 @@ class CpsUploadCertificate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acknowledge_change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
-                 trust_chain_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_chain_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
+                 acknowledge_change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
+                 trust_chain_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_chain_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a CpsUploadCertificate resource with the given unique name, props, and options.
@@ -412,16 +412,16 @@ class CpsUploadCertificate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acknowledge_change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
-                 trust_chain_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_chain_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
+                 acknowledge_change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
+                 trust_chain_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_chain_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -453,16 +453,16 @@ class CpsUploadCertificate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acknowledge_change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-            acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            certificate_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-            enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
-            timeouts: Optional[pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
-            trust_chain_ecdsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-            trust_chain_rsa_pem: Optional[pulumi.Input[_builtins.str]] = None,
-            wait_for_deployment: Optional[pulumi.Input[_builtins.bool]] = None) -> 'CpsUploadCertificate':
+            acknowledge_change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            certificate_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+            timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
+            trust_chain_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            trust_chain_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None) -> 'CpsUploadCertificate':
         """
         Get an existing CpsUploadCertificate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

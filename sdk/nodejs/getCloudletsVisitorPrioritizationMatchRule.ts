@@ -44,5 +44,5 @@ export function getCloudletsVisitorPrioritizationMatchRuleOutput(args?: GetCloud
  * A collection of arguments for invoking getCloudletsVisitorPrioritizationMatchRule.
  */
 export interface GetCloudletsVisitorPrioritizationMatchRuleOutputArgs {
-    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs>[]>;
+    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs>[] | undefined>;
 }

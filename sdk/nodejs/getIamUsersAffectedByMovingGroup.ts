@@ -52,5 +52,5 @@ export function getIamUsersAffectedByMovingGroupOutput(args: GetIamUsersAffected
 export interface GetIamUsersAffectedByMovingGroupOutputArgs {
     destinationGroupId: pulumi.Input<number>;
     sourceGroupId: pulumi.Input<number>;
-    userType?: pulumi.Input<string>;
+    userType?: pulumi.Input<string | undefined>;
 }

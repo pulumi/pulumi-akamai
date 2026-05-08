@@ -102,23 +102,23 @@ export interface CloudletsApplicationLoadBalancerActivationState {
     /**
      * The network you want to activate the application load balancer version on (options are Staging and Production)
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * The conditional origin’s unique identifier
      */
-    originId?: pulumi.Input<string>;
+    originId?: pulumi.Input<string | undefined>;
     /**
      * Activation status for this application load balancer
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CloudletsApplicationLoadBalancerActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.CloudletsApplicationLoadBalancerActivationTimeouts | undefined>;
     /**
      * Cloudlets application load balancer version you want to activate
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -136,7 +136,7 @@ export interface CloudletsApplicationLoadBalancerActivationArgs {
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CloudletsApplicationLoadBalancerActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.CloudletsApplicationLoadBalancerActivationTimeouts | undefined>;
     /**
      * Cloudlets application load balancer version you want to activate
      */

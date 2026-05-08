@@ -21,7 +21,7 @@ class AppSecAdvancedSettingsPragmaHeaderArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[_builtins.int],
                  pragma_header: pulumi.Input[_builtins.str],
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecAdvancedSettingsPragmaHeader resource.
 
@@ -60,23 +60,23 @@ class AppSecAdvancedSettingsPragmaHeaderArgs:
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
 @pulumi.input_type
 class _AppSecAdvancedSettingsPragmaHeaderState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 pragma_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 pragma_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecAdvancedSettingsPragmaHeader resources.
 
@@ -93,38 +93,38 @@ class _AppSecAdvancedSettingsPragmaHeaderState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pragmaHeader")
-    def pragma_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pragma_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted information describing the conditions to exclude from the default remove action
         """
         return pulumi.get(self, "pragma_header")
 
     @pragma_header.setter
-    def pragma_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pragma_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pragma_header", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -134,9 +134,9 @@ class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 pragma_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 pragma_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecAdvancedSettingsPragmaHeader resource with the given unique name, props, and options.
@@ -171,9 +171,9 @@ class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 pragma_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 pragma_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -200,9 +200,9 @@ class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            pragma_header: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecAdvancedSettingsPragmaHeader':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            pragma_header: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecAdvancedSettingsPragmaHeader':
         """
         Get an existing AppSecAdvancedSettingsPragmaHeader resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -46,5 +46,5 @@ export function getAppSecAdvancedSettingsEvasivePathMatchOutput(args: GetAppSecA
  */
 export interface GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs {
     configId: pulumi.Input<number>;
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

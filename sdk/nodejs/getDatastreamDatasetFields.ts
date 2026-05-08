@@ -44,5 +44,5 @@ export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFiel
  * A collection of arguments for invoking getDatastreamDatasetFields.
  */
 export interface GetDatastreamDatasetFieldsOutputArgs {
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
 }

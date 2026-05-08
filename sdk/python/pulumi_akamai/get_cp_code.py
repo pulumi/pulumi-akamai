@@ -115,9 +115,9 @@ def get_cp_code(contract_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         product_ids=pulumi.get(__ret__, 'product_ids'))
-def get_cp_code_output(contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cp_code_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       name: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpCodeResult]:
     """
     Use this data source to access information about an existing resource.

@@ -109,31 +109,31 @@ export interface ClientlistActivationState {
     /**
      * A brief description for the activation.
      */
-    comments?: pulumi.Input<string>;
+    comments?: pulumi.Input<string | undefined>;
     /**
      * The client list unique identifier.
      */
-    listId?: pulumi.Input<string>;
+    listId?: pulumi.Input<string | undefined>;
     /**
      * The network environment where you activate your client list: either STAGING or PRODUCTION.
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Users to notify via email.
      */
-    notificationRecipients?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationRecipients?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Identifies the Siebel ticket, if the activation is linked to one.
      */
-    siebelTicketId?: pulumi.Input<string>;
+    siebelTicketId?: pulumi.Input<string | undefined>;
     /**
      * The current activation status, either ACTIVE, INACTIVE, MODIFIED, PENDING_ACTIVATION, PENDING_DEACTIVATION, or FAILED.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The client list version.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -143,7 +143,7 @@ export interface ClientlistActivationArgs {
     /**
      * A brief description for the activation.
      */
-    comments?: pulumi.Input<string>;
+    comments?: pulumi.Input<string | undefined>;
     /**
      * The client list unique identifier.
      */
@@ -155,9 +155,9 @@ export interface ClientlistActivationArgs {
     /**
      * Users to notify via email.
      */
-    notificationRecipients?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationRecipients?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Identifies the Siebel ticket, if the activation is linked to one.
      */
-    siebelTicketId?: pulumi.Input<string>;
+    siebelTicketId?: pulumi.Input<string | undefined>;
 }

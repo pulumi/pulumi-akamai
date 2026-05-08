@@ -57,9 +57,9 @@ export function getPropertyRulesOutput(args: GetPropertyRulesOutputArgs, opts?: 
  * A collection of arguments for invoking getPropertyRules.
  */
 export interface GetPropertyRulesOutputArgs {
-    contractId?: pulumi.Input<string>;
-    groupId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
+    groupId?: pulumi.Input<string | undefined>;
     propertyId: pulumi.Input<string>;
-    ruleFormat?: pulumi.Input<string>;
-    version?: pulumi.Input<number>;
+    ruleFormat?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<number | undefined>;
 }

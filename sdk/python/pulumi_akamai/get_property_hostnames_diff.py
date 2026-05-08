@@ -116,9 +116,9 @@ def get_property_hostnames_diff(contract_id: Optional[_builtins.str] = None,
         hostnames=pulumi.get(__ret__, 'hostnames'),
         id=pulumi.get(__ret__, 'id'),
         property_id=pulumi.get(__ret__, 'property_id'))
-def get_property_hostnames_diff_output(contract_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       property_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_property_hostnames_diff_output(contract_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       property_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyHostnamesDiffResult]:
     """
     Use this data source to access information about an existing resource.

@@ -103,11 +103,11 @@ class AppSecRatePolicyActionArgs:
 @pulumi.input_type
 class _AppSecRatePolicyActionState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipv4_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 rate_policy_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipv4_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 rate_policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecRatePolicyAction resources.
 
@@ -130,62 +130,62 @@ class _AppSecRatePolicyActionState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4Action")
-    def ipv4_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to be taken for requests coming from an IPv4 address
         """
         return pulumi.get(self, "ipv4_action")
 
     @ipv4_action.setter
-    def ipv4_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4_action", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6Action")
-    def ipv6_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to be taken for requests coming from an IPv6 address
         """
         return pulumi.get(self, "ipv6_action")
 
     @ipv6_action.setter
-    def ipv6_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6_action", value)
 
     @_builtins.property
     @pulumi.getter(name="ratePolicyId")
-    def rate_policy_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def rate_policy_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the rate policy
         """
         return pulumi.get(self, "rate_policy_id")
 
     @rate_policy_id.setter
-    def rate_policy_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def rate_policy_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "rate_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -195,11 +195,11 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipv4_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 rate_policy_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipv4_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 rate_policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecRatePolicyAction resource with the given unique name, props, and options.
@@ -236,11 +236,11 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipv4_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 rate_policy_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipv4_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 rate_policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -275,11 +275,11 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            ipv4_action: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv6_action: Optional[pulumi.Input[_builtins.str]] = None,
-            rate_policy_id: Optional[pulumi.Input[_builtins.int]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecRatePolicyAction':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            ipv4_action: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6_action: pulumi.Input[Optional[_builtins.str]] = None,
+            rate_policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecRatePolicyAction':
         """
         Get an existing AppSecRatePolicyAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

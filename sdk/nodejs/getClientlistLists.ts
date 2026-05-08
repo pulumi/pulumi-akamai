@@ -48,6 +48,6 @@ export function getClientlistListsOutput(args?: GetClientlistListsOutputArgs, op
  * A collection of arguments for invoking getClientlistLists.
  */
 export interface GetClientlistListsOutputArgs {
-    name?: pulumi.Input<string>;
-    types?: pulumi.Input<pulumi.Input<string>[]>;
+    name?: pulumi.Input<string | undefined>;
+    types?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

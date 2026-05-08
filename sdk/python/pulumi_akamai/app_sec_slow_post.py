@@ -22,9 +22,9 @@ class AppSecSlowPostArgs:
                  config_id: pulumi.Input[_builtins.int],
                  security_policy_id: pulumi.Input[_builtins.str],
                  slow_rate_action: pulumi.Input[_builtins.str],
-                 duration_threshold_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 slow_rate_threshold_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 slow_rate_threshold_rate: Optional[pulumi.Input[_builtins.int]] = None):
+                 duration_threshold_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 slow_rate_threshold_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 slow_rate_threshold_rate: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a AppSecSlowPost resource.
 
@@ -83,50 +83,50 @@ class AppSecSlowPostArgs:
 
     @_builtins.property
     @pulumi.getter(name="durationThresholdTimeout")
-    def duration_threshold_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def duration_threshold_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         """
         return pulumi.get(self, "duration_threshold_timeout")
 
     @duration_threshold_timeout.setter
-    def duration_threshold_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def duration_threshold_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "duration_threshold_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="slowRateThresholdPeriod")
-    def slow_rate_threshold_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def slow_rate_threshold_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
         """
         return pulumi.get(self, "slow_rate_threshold_period")
 
     @slow_rate_threshold_period.setter
-    def slow_rate_threshold_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def slow_rate_threshold_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "slow_rate_threshold_period", value)
 
     @_builtins.property
     @pulumi.getter(name="slowRateThresholdRate")
-    def slow_rate_threshold_rate(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def slow_rate_threshold_rate(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
         return pulumi.get(self, "slow_rate_threshold_rate")
 
     @slow_rate_threshold_rate.setter
-    def slow_rate_threshold_rate(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def slow_rate_threshold_rate(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "slow_rate_threshold_rate", value)
 
 
 @pulumi.input_type
 class _AppSecSlowPostState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 duration_threshold_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 slow_rate_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 slow_rate_threshold_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 slow_rate_threshold_rate: Optional[pulumi.Input[_builtins.int]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 duration_threshold_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 slow_rate_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 slow_rate_threshold_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 slow_rate_threshold_rate: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecSlowPost resources.
 
@@ -152,74 +152,74 @@ class _AppSecSlowPostState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="durationThresholdTimeout")
-    def duration_threshold_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def duration_threshold_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
         """
         return pulumi.get(self, "duration_threshold_timeout")
 
     @duration_threshold_timeout.setter
-    def duration_threshold_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def duration_threshold_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "duration_threshold_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="slowRateAction")
-    def slow_rate_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def slow_rate_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to be taken when slow POST protection is triggered
         """
         return pulumi.get(self, "slow_rate_action")
 
     @slow_rate_action.setter
-    def slow_rate_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def slow_rate_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "slow_rate_action", value)
 
     @_builtins.property
     @pulumi.getter(name="slowRateThresholdPeriod")
-    def slow_rate_threshold_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def slow_rate_threshold_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
         """
         return pulumi.get(self, "slow_rate_threshold_period")
 
     @slow_rate_threshold_period.setter
-    def slow_rate_threshold_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def slow_rate_threshold_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "slow_rate_threshold_period", value)
 
     @_builtins.property
     @pulumi.getter(name="slowRateThresholdRate")
-    def slow_rate_threshold_rate(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def slow_rate_threshold_rate(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
         return pulumi.get(self, "slow_rate_threshold_rate")
 
     @slow_rate_threshold_rate.setter
-    def slow_rate_threshold_rate(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def slow_rate_threshold_rate(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "slow_rate_threshold_rate", value)
 
 
@@ -229,12 +229,12 @@ class AppSecSlowPost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 duration_threshold_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 slow_rate_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 slow_rate_threshold_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 slow_rate_threshold_rate: Optional[pulumi.Input[_builtins.int]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 duration_threshold_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 slow_rate_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 slow_rate_threshold_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 slow_rate_threshold_rate: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a AppSecSlowPost resource with the given unique name, props, and options.
@@ -272,12 +272,12 @@ class AppSecSlowPost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 duration_threshold_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 slow_rate_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 slow_rate_threshold_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 slow_rate_threshold_rate: Optional[pulumi.Input[_builtins.int]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 duration_threshold_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 slow_rate_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 slow_rate_threshold_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 slow_rate_threshold_rate: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -309,12 +309,12 @@ class AppSecSlowPost(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            duration_threshold_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            slow_rate_action: Optional[pulumi.Input[_builtins.str]] = None,
-            slow_rate_threshold_period: Optional[pulumi.Input[_builtins.int]] = None,
-            slow_rate_threshold_rate: Optional[pulumi.Input[_builtins.int]] = None) -> 'AppSecSlowPost':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            duration_threshold_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            slow_rate_action: pulumi.Input[Optional[_builtins.str]] = None,
+            slow_rate_threshold_period: pulumi.Input[Optional[_builtins.int]] = None,
+            slow_rate_threshold_rate: pulumi.Input[Optional[_builtins.int]] = None) -> 'AppSecSlowPost':
         """
         Get an existing AppSecSlowPost resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -83,20 +83,20 @@ export class GtmCidrmap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmCidrmap resources.
  */
 export interface GtmCidrmapState {
-    assignments?: pulumi.Input<pulumi.Input<inputs.GtmCidrmapAssignment>[]>;
-    defaultDatacenter?: pulumi.Input<inputs.GtmCidrmapDefaultDatacenter>;
-    domain?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GtmCidrmapAssignment>[] | undefined>;
+    defaultDatacenter?: pulumi.Input<inputs.GtmCidrmapDefaultDatacenter | undefined>;
+    domain?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }
 
 /**
  * The set of arguments for constructing a GtmCidrmap resource.
  */
 export interface GtmCidrmapArgs {
-    assignments?: pulumi.Input<pulumi.Input<inputs.GtmCidrmapAssignment>[]>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GtmCidrmapAssignment>[] | undefined>;
     defaultDatacenter: pulumi.Input<inputs.GtmCidrmapDefaultDatacenter>;
     domain: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    name?: pulumi.Input<string | undefined>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }

@@ -129,11 +129,11 @@ def get_app_sec_tuning_recommendations(attack_group: Optional[_builtins.str] = N
         rule_id=pulumi.get(__ret__, 'rule_id'),
         ruleset_type=pulumi.get(__ret__, 'ruleset_type'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_app_sec_tuning_recommendations_output(attack_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                              rule_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                              ruleset_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_app_sec_tuning_recommendations_output(attack_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                              rule_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                              ruleset_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              security_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecTuningRecommendationsResult]:
     """
     Use this data source to access information about an existing resource.

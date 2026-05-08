@@ -73,10 +73,10 @@ class BotmanContentProtectionJavascriptInjectionRuleArgs:
 @pulumi.input_type
 class _BotmanContentProtectionJavascriptInjectionRuleState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 content_protection_javascript_injection_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_protection_javascript_injection_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 content_protection_javascript_injection_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_protection_javascript_injection_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BotmanContentProtectionJavascriptInjectionRule resources.
 
@@ -96,50 +96,50 @@ class _BotmanContentProtectionJavascriptInjectionRuleState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="contentProtectionJavascriptInjectionRule")
-    def content_protection_javascript_injection_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_protection_javascript_injection_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The content protection JavaScript injection rule
         """
         return pulumi.get(self, "content_protection_javascript_injection_rule")
 
     @content_protection_javascript_injection_rule.setter
-    def content_protection_javascript_injection_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_protection_javascript_injection_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_protection_javascript_injection_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="contentProtectionJavascriptInjectionRuleId")
-    def content_protection_javascript_injection_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_protection_javascript_injection_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of a content protection JavaScript injection rule
         """
         return pulumi.get(self, "content_protection_javascript_injection_rule_id")
 
     @content_protection_javascript_injection_rule_id.setter
-    def content_protection_javascript_injection_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_protection_javascript_injection_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_protection_javascript_injection_rule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -149,9 +149,9 @@ class BotmanContentProtectionJavascriptInjectionRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 content_protection_javascript_injection_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 content_protection_javascript_injection_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a BotmanContentProtectionJavascriptInjectionRule resource with the given unique name, props, and options.
@@ -186,9 +186,9 @@ class BotmanContentProtectionJavascriptInjectionRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 content_protection_javascript_injection_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 content_protection_javascript_injection_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -218,10 +218,10 @@ class BotmanContentProtectionJavascriptInjectionRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            content_protection_javascript_injection_rule: Optional[pulumi.Input[_builtins.str]] = None,
-            content_protection_javascript_injection_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'BotmanContentProtectionJavascriptInjectionRule':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            content_protection_javascript_injection_rule: pulumi.Input[Optional[_builtins.str]] = None,
+            content_protection_javascript_injection_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'BotmanContentProtectionJavascriptInjectionRule':
         """
         Get an existing BotmanContentProtectionJavascriptInjectionRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

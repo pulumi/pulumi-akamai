@@ -23,7 +23,7 @@ class IamCidrBlockArgs:
     def __init__(__self__, *,
                  cidr_block: pulumi.Input[_builtins.str],
                  enabled: pulumi.Input[_builtins.bool],
-                 comments: Optional[pulumi.Input[_builtins.str]] = None):
+                 comments: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamCidrBlock resource.
 
@@ -62,29 +62,29 @@ class IamCidrBlockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def comments(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comments(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Descriptive label you provide for the CIDR block.
         """
         return pulumi.get(self, "comments")
 
     @comments.setter
-    def comments(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comments(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comments", value)
 
 
 @pulumi.input_type
 class _IamCidrBlockState:
     def __init__(__self__, *,
-                 actions: Optional[pulumi.Input['IamCidrBlockActionsArgs']] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_block_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_date: Optional[pulumi.Input[_builtins.str]] = None):
+                 actions: pulumi.Input[Optional['IamCidrBlockActionsArgs']] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_block_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_date: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamCidrBlock resources.
 
@@ -119,110 +119,110 @@ class _IamCidrBlockState:
 
     @_builtins.property
     @pulumi.getter
-    def actions(self) -> Optional[pulumi.Input['IamCidrBlockActionsArgs']]:
+    def actions(self) -> pulumi.Input[Optional['IamCidrBlockActionsArgs']]:
         """
         Specifies activities available for the CIDR block.
         """
         return pulumi.get(self, "actions")
 
     @actions.setter
-    def actions(self, value: Optional[pulumi.Input['IamCidrBlockActionsArgs']]):
+    def actions(self, value: pulumi.Input[Optional['IamCidrBlockActionsArgs']]):
         pulumi.set(self, "actions", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value of an IP address or IP address range.
         """
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
-    def cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlockId")
-    def cidr_block_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cidr_block_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier for each CIDR block.
         """
         return pulumi.get(self, "cidr_block_id")
 
     @cidr_block_id.setter
-    def cidr_block_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cidr_block_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cidr_block_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def comments(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comments(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Descriptive label you provide for the CIDR block.
         """
         return pulumi.get(self, "comments")
 
     @comments.setter
-    def comments(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comments(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comments", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who created the CIDR block.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdDate")
-    def created_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ISO 8601 timestamp indicating when the CIDR block was created.
         """
         return pulumi.get(self, "created_date")
 
     @created_date.setter
-    def created_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enables the CIDR block on the account.
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedBy")
-    def modified_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who last edited the CIDR block.
         """
         return pulumi.get(self, "modified_by")
 
     @modified_by.setter
-    def modified_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_by", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedDate")
-    def modified_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ISO 8601 timestamp indicating when the CIDR block was last modified.
         """
         return pulumi.get(self, "modified_date")
 
     @modified_date.setter
-    def modified_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_date", value)
 
 
@@ -232,9 +232,9 @@ class IamCidrBlock(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a IamCidrBlock resource with the given unique name, props, and options.
@@ -269,9 +269,9 @@ class IamCidrBlock(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -304,15 +304,15 @@ class IamCidrBlock(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actions: Optional[pulumi.Input[Union['IamCidrBlockActionsArgs', 'IamCidrBlockActionsArgsDict']]] = None,
-            cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-            cidr_block_id: Optional[pulumi.Input[_builtins.int]] = None,
-            comments: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_date: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-            modified_date: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamCidrBlock':
+            actions: pulumi.Input[Optional[Union['IamCidrBlockActionsArgs', 'IamCidrBlockActionsArgsDict']]] = None,
+            cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+            cidr_block_id: pulumi.Input[Optional[_builtins.int]] = None,
+            comments: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_date: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamCidrBlock':
         """
         Get an existing IamCidrBlock resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

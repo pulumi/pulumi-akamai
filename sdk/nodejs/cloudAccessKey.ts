@@ -135,40 +135,40 @@ export interface CloudAccessKeyState {
     /**
      * Name of the access key.
      */
-    accessKeyName?: pulumi.Input<string>;
+    accessKeyName?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier Akamai assigns to an access key.
      */
-    accessKeyUid?: pulumi.Input<number>;
+    accessKeyUid?: pulumi.Input<number | undefined>;
     /**
      * The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
      */
-    authenticationMethod?: pulumi.Input<string>;
+    authenticationMethod?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the contract assigned to the access key
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
-    credentialsA?: pulumi.Input<inputs.CloudAccessKeyCredentialsA>;
+    credentialsA?: pulumi.Input<inputs.CloudAccessKeyCredentialsA | undefined>;
     /**
      * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
-    credentialsB?: pulumi.Input<inputs.CloudAccessKeyCredentialsB>;
+    credentialsB?: pulumi.Input<inputs.CloudAccessKeyCredentialsB | undefined>;
     /**
      * The unique identifier assigned to the access control group assigned to the access key
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * The secure networks that you assigned the access key to during creation
      */
-    networkConfiguration?: pulumi.Input<inputs.CloudAccessKeyNetworkConfiguration>;
+    networkConfiguration?: pulumi.Input<inputs.CloudAccessKeyNetworkConfiguration | undefined>;
     /**
      * Value of `versionGuid` field for credentials marked as primary
      */
-    primaryGuid?: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.CloudAccessKeyTimeouts>;
+    primaryGuid?: pulumi.Input<string | undefined>;
+    timeouts?: pulumi.Input<inputs.CloudAccessKeyTimeouts | undefined>;
 }
 
 /**
@@ -190,11 +190,11 @@ export interface CloudAccessKeyArgs {
     /**
      * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
-    credentialsA?: pulumi.Input<inputs.CloudAccessKeyCredentialsA>;
+    credentialsA?: pulumi.Input<inputs.CloudAccessKeyCredentialsA | undefined>;
     /**
      * The combination of a `cloudAccessKeyId` and a `cloudSecretAccessKey` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
      */
-    credentialsB?: pulumi.Input<inputs.CloudAccessKeyCredentialsB>;
+    credentialsB?: pulumi.Input<inputs.CloudAccessKeyCredentialsB | undefined>;
     /**
      * The unique identifier assigned to the access control group assigned to the access key
      */
@@ -203,5 +203,5 @@ export interface CloudAccessKeyArgs {
      * The secure networks that you assigned the access key to during creation
      */
     networkConfiguration: pulumi.Input<inputs.CloudAccessKeyNetworkConfiguration>;
-    timeouts?: pulumi.Input<inputs.CloudAccessKeyTimeouts>;
+    timeouts?: pulumi.Input<inputs.CloudAccessKeyTimeouts | undefined>;
 }

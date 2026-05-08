@@ -103,23 +103,23 @@ export interface AppSecAttackGroupState {
     /**
      * Unique name of the attack group to be modified
      */
-    attackGroup?: pulumi.Input<string>;
+    attackGroup?: pulumi.Input<string | undefined>;
     /**
      * Action to be taken when the attack group is triggered
      */
-    attackGroupAction?: pulumi.Input<string>;
+    attackGroupAction?: pulumi.Input<string | undefined>;
     /**
      * JSON-formatted condition and exception information for the attack group
      */
-    conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -137,7 +137,7 @@ export interface AppSecAttackGroupArgs {
     /**
      * JSON-formatted condition and exception information for the attack group
      */
-    conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */

@@ -91,7 +91,7 @@ def get_app_sec_siem_definitions(siem_definition_name: Optional[_builtins.str] =
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'),
         siem_definition_name=pulumi.get(__ret__, 'siem_definition_name'))
-def get_app_sec_siem_definitions_output(siem_definition_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_app_sec_siem_definitions_output(siem_definition_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecSiemDefinitionsResult]:
     """
     Use this data source to access information about an existing resource.

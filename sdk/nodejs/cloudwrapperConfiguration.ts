@@ -135,40 +135,40 @@ export interface CloudwrapperConfigurationState {
     /**
      * Capacity Alerts enablement information for the configuration. The Alert Threshold should be between 50 and 100.
      */
-    capacityAlertsThreshold?: pulumi.Input<number>;
+    capacityAlertsThreshold?: pulumi.Input<number | undefined>;
     /**
      * Additional information you provide to differentiate or track changes of the configuration.
      */
-    comments?: pulumi.Input<string>;
+    comments?: pulumi.Input<string | undefined>;
     /**
      * Name of the configuration.
      */
-    configName?: pulumi.Input<string>;
+    configName?: pulumi.Input<string | undefined>;
     /**
      * Contract ID having Cloud Wrapper entitlement.
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * List of locations to use with the configuration.
      */
-    locations?: pulumi.Input<pulumi.Input<inputs.CloudwrapperConfigurationLocation>[]>;
+    locations?: pulumi.Input<pulumi.Input<inputs.CloudwrapperConfigurationLocation>[] | undefined>;
     /**
      * Email addresses to use for notifications.
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of properties belonging to eligible products.
      */
-    propertyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    propertyIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Retain idle objects beyond their max idle lifetime.
      */
-    retainIdleObjects?: pulumi.Input<boolean>;
+    retainIdleObjects?: pulumi.Input<boolean | undefined>;
     /**
      * Unique hash value of the configuration.
      */
-    revision?: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.CloudwrapperConfigurationTimeouts>;
+    revision?: pulumi.Input<string | undefined>;
+    timeouts?: pulumi.Input<inputs.CloudwrapperConfigurationTimeouts | undefined>;
 }
 
 /**
@@ -178,7 +178,7 @@ export interface CloudwrapperConfigurationArgs {
     /**
      * Capacity Alerts enablement information for the configuration. The Alert Threshold should be between 50 and 100.
      */
-    capacityAlertsThreshold?: pulumi.Input<number>;
+    capacityAlertsThreshold?: pulumi.Input<number | undefined>;
     /**
      * Additional information you provide to differentiate or track changes of the configuration.
      */
@@ -198,7 +198,7 @@ export interface CloudwrapperConfigurationArgs {
     /**
      * Email addresses to use for notifications.
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of properties belonging to eligible products.
      */
@@ -206,6 +206,6 @@ export interface CloudwrapperConfigurationArgs {
     /**
      * Retain idle objects beyond their max idle lifetime.
      */
-    retainIdleObjects?: pulumi.Input<boolean>;
-    timeouts?: pulumi.Input<inputs.CloudwrapperConfigurationTimeouts>;
+    retainIdleObjects?: pulumi.Input<boolean | undefined>;
+    timeouts?: pulumi.Input<inputs.CloudwrapperConfigurationTimeouts | undefined>;
 }

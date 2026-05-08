@@ -58,6 +58,6 @@ export function getCloudwrapperConfigurationOutput(args: GetCloudwrapperConfigur
  */
 export interface GetCloudwrapperConfigurationOutputArgs {
     id: pulumi.Input<number>;
-    locations?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationLocationArgs>[]>;
-    multiCdnSettings?: pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsArgs>;
+    locations?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationLocationArgs>[] | undefined>;
+    multiCdnSettings?: pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsArgs | undefined>;
 }

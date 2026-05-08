@@ -103,11 +103,11 @@ class AppSecAdvancedSettingsPrefetchArgs:
 @pulumi.input_type
 class _AppSecAdvancedSettingsPrefetchState:
     def __init__(__self__, *,
-                 all_extensions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_app_layer: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_rate_controls: Optional[pulumi.Input[_builtins.bool]] = None,
-                 extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 all_extensions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_app_layer: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_rate_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+                 extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering AppSecAdvancedSettingsPrefetch resources.
 
@@ -130,62 +130,62 @@ class _AppSecAdvancedSettingsPrefetchState:
 
     @_builtins.property
     @pulumi.getter(name="allExtensions")
-    def all_extensions(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def all_extensions(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable prefetch requests for all file extensions
         """
         return pulumi.get(self, "all_extensions")
 
     @all_extensions.setter
-    def all_extensions(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def all_extensions(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "all_extensions", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableAppLayer")
-    def enable_app_layer(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_app_layer(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable or disable prefetch requests
         """
         return pulumi.get(self, "enable_app_layer")
 
     @enable_app_layer.setter
-    def enable_app_layer(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_app_layer(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_app_layer", value)
 
     @_builtins.property
     @pulumi.getter(name="enableRateControls")
-    def enable_rate_controls(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_rate_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable prefetch requests for rate controls
         """
         return pulumi.get(self, "enable_rate_controls")
 
     @enable_rate_controls.setter
-    def enable_rate_controls(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_rate_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_rate_controls", value)
 
     @_builtins.property
     @pulumi.getter
-    def extensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def extensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of file extensions
         """
         return pulumi.get(self, "extensions")
 
     @extensions.setter
-    def extensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def extensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "extensions", value)
 
 
@@ -195,11 +195,11 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 all_extensions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_app_layer: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_rate_controls: Optional[pulumi.Input[_builtins.bool]] = None,
-                 extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 all_extensions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_app_layer: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_rate_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+                 extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a AppSecAdvancedSettingsPrefetch resource with the given unique name, props, and options.
@@ -236,11 +236,11 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 all_extensions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_app_layer: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_rate_controls: Optional[pulumi.Input[_builtins.bool]] = None,
-                 extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 all_extensions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_app_layer: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_rate_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+                 extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -275,11 +275,11 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            all_extensions: Optional[pulumi.Input[_builtins.bool]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            enable_app_layer: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_rate_controls: Optional[pulumi.Input[_builtins.bool]] = None,
-            extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'AppSecAdvancedSettingsPrefetch':
+            all_extensions: pulumi.Input[Optional[_builtins.bool]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            enable_app_layer: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_rate_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'AppSecAdvancedSettingsPrefetch':
         """
         Get an existing AppSecAdvancedSettingsPrefetch resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

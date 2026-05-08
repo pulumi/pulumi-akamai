@@ -103,8 +103,8 @@ def get_edge_worker_activation(edgeworker_id: Optional[_builtins.int] = None,
         id=pulumi.get(__ret__, 'id'),
         network=pulumi.get(__ret__, 'network'),
         version=pulumi.get(__ret__, 'version'))
-def get_edge_worker_activation_output(edgeworker_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                      network: Optional[pulumi.Input[_builtins.str]] = None,
+def get_edge_worker_activation_output(edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                      network: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgeWorkerActivationResult]:
     """
     Use this data source to access information about an existing resource.

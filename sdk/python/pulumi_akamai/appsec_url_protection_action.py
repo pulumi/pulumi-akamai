@@ -23,7 +23,7 @@ class AppsecUrlProtectionActionArgs:
                  max_rate_threshold_action: pulumi.Input[_builtins.str],
                  security_policy_id: pulumi.Input[_builtins.str],
                  url_protection_policy_id: pulumi.Input[_builtins.int],
-                 load_shedding_action: Optional[pulumi.Input[_builtins.str]] = None):
+                 load_shedding_action: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppsecUrlProtectionAction resource.
 
@@ -90,25 +90,25 @@ class AppsecUrlProtectionActionArgs:
 
     @_builtins.property
     @pulumi.getter(name="loadSheddingAction")
-    def load_shedding_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_shedding_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load shedding action to apply (e.g., alert, deny, none, deny_custom_{custom_deny_id}, challenge_{challenge_id})
         """
         return pulumi.get(self, "load_shedding_action")
 
     @load_shedding_action.setter
-    def load_shedding_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_shedding_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_shedding_action", value)
 
 
 @pulumi.input_type
 class _AppsecUrlProtectionActionState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 load_shedding_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_rate_threshold_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_protection_policy_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 load_shedding_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_rate_threshold_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_protection_policy_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppsecUrlProtectionAction resources.
 
@@ -131,62 +131,62 @@ class _AppsecUrlProtectionActionState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="loadSheddingAction")
-    def load_shedding_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_shedding_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load shedding action to apply (e.g., alert, deny, none, deny_custom_{custom_deny_id}, challenge_{challenge_id})
         """
         return pulumi.get(self, "load_shedding_action")
 
     @load_shedding_action.setter
-    def load_shedding_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_shedding_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_shedding_action", value)
 
     @_builtins.property
     @pulumi.getter(name="maxRateThresholdAction")
-    def max_rate_threshold_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_rate_threshold_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to apply when max rate threshold is exceeded (e.g., alert, deny, none, deny_custom_{custom_deny_id}, challenge_{challenge_id})
         """
         return pulumi.get(self, "max_rate_threshold_action")
 
     @max_rate_threshold_action.setter
-    def max_rate_threshold_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_rate_threshold_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_rate_threshold_action", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="urlProtectionPolicyId")
-    def url_protection_policy_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def url_protection_policy_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the URL protection policy
         """
         return pulumi.get(self, "url_protection_policy_id")
 
     @url_protection_policy_id.setter
-    def url_protection_policy_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def url_protection_policy_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "url_protection_policy_id", value)
 
 
@@ -196,11 +196,11 @@ class AppsecUrlProtectionAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 load_shedding_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_rate_threshold_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_protection_policy_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 load_shedding_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_rate_threshold_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_protection_policy_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a AppsecUrlProtectionAction resource with the given unique name, props, and options.
@@ -237,11 +237,11 @@ class AppsecUrlProtectionAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 load_shedding_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_rate_threshold_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_protection_policy_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 load_shedding_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_rate_threshold_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_protection_policy_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -274,11 +274,11 @@ class AppsecUrlProtectionAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            load_shedding_action: Optional[pulumi.Input[_builtins.str]] = None,
-            max_rate_threshold_action: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            url_protection_policy_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'AppsecUrlProtectionAction':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            load_shedding_action: pulumi.Input[Optional[_builtins.str]] = None,
+            max_rate_threshold_action: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            url_protection_policy_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'AppsecUrlProtectionAction':
         """
         Get an existing AppsecUrlProtectionAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

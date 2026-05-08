@@ -62,7 +62,7 @@ export function getGtmResourceOutput(args: GetGtmResourceOutputArgs, opts?: pulu
  */
 export interface GetGtmResourceOutputArgs {
     domain: pulumi.Input<string>;
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmResourceLinkArgs>[]>;
-    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GetGtmResourceResourceInstanceArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmResourceLinkArgs>[] | undefined>;
+    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GetGtmResourceResourceInstanceArgs>[] | undefined>;
     resourceName: pulumi.Input<string>;
 }

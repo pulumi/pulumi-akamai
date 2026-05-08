@@ -155,9 +155,9 @@ def get_network_lists(name: Optional[_builtins.str] = None,
         output_text=pulumi.get(__ret__, 'output_text'),
         sync_point=pulumi.get(__ret__, 'sync_point'),
         type=pulumi.get(__ret__, 'type'))
-def get_network_lists_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             network_list_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_network_lists_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             network_list_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkListsResult]:
     """
     Use this data source to access information about an existing resource.

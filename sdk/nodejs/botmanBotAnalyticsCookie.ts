@@ -70,8 +70,8 @@ export class BotmanBotAnalyticsCookie extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanBotAnalyticsCookie resources.
  */
 export interface BotmanBotAnalyticsCookieState {
-    botAnalyticsCookie?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
+    botAnalyticsCookie?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
 }
 
 /**

@@ -73,9 +73,9 @@ class AppsecEvalPenaltyBoxConditionsArgs:
 @pulumi.input_type
 class _AppsecEvalPenaltyBoxConditionsState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 penalty_box_conditions: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 penalty_box_conditions: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppsecEvalPenaltyBoxConditions resources.
 
@@ -92,38 +92,38 @@ class _AppsecEvalPenaltyBoxConditionsState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="penaltyBoxConditions")
-    def penalty_box_conditions(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def penalty_box_conditions(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of evaluation penalty box conditions
         """
         return pulumi.get(self, "penalty_box_conditions")
 
     @penalty_box_conditions.setter
-    def penalty_box_conditions(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def penalty_box_conditions(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "penalty_box_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -133,9 +133,9 @@ class AppsecEvalPenaltyBoxConditions(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 penalty_box_conditions: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 penalty_box_conditions: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppsecEvalPenaltyBoxConditions resource with the given unique name, props, and options.
@@ -170,9 +170,9 @@ class AppsecEvalPenaltyBoxConditions(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 penalty_box_conditions: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 penalty_box_conditions: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -201,9 +201,9 @@ class AppsecEvalPenaltyBoxConditions(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            penalty_box_conditions: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppsecEvalPenaltyBoxConditions':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            penalty_box_conditions: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppsecEvalPenaltyBoxConditions':
         """
         Get an existing AppsecEvalPenaltyBoxConditions resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

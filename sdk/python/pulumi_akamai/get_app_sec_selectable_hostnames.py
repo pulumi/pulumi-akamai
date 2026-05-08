@@ -149,11 +149,11 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[_builtins.bo
         hostnames_json=pulumi.get(__ret__, 'hostnames_json'),
         id=pulumi.get(__ret__, 'id'),
         output_text=pulumi.get(__ret__, 'output_text'))
-def get_app_sec_selectable_hostnames_output(active_in_production: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                            active_in_staging: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                            config_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                            contractid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            groupid: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_app_sec_selectable_hostnames_output(active_in_production: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                            active_in_staging: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                            config_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                            contractid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            groupid: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecSelectableHostnamesResult]:
     """
     Use this data source to access information about an existing resource.

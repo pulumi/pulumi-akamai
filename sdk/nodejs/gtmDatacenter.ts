@@ -128,44 +128,44 @@ export class GtmDatacenter extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmDatacenter resources.
  */
 export interface GtmDatacenterState {
-    city?: pulumi.Input<string>;
-    cloneOf?: pulumi.Input<number>;
-    cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
-    cloudServerTargeting?: pulumi.Input<boolean>;
-    continent?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    datacenterId?: pulumi.Input<number>;
-    defaultLoadObject?: pulumi.Input<inputs.GtmDatacenterDefaultLoadObject>;
-    domain?: pulumi.Input<string>;
-    latitude?: pulumi.Input<number>;
-    longitude?: pulumi.Input<number>;
-    nickname?: pulumi.Input<string>;
-    pingInterval?: pulumi.Input<number>;
-    pingPacketSize?: pulumi.Input<number>;
-    scorePenalty?: pulumi.Input<number>;
-    servermonitorLivenessCount?: pulumi.Input<number>;
-    servermonitorLoadCount?: pulumi.Input<number>;
-    servermonitorPool?: pulumi.Input<string>;
-    stateOrProvince?: pulumi.Input<string>;
-    virtual?: pulumi.Input<boolean>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    city?: pulumi.Input<string | undefined>;
+    cloneOf?: pulumi.Input<number | undefined>;
+    cloudServerHostHeaderOverride?: pulumi.Input<boolean | undefined>;
+    cloudServerTargeting?: pulumi.Input<boolean | undefined>;
+    continent?: pulumi.Input<string | undefined>;
+    country?: pulumi.Input<string | undefined>;
+    datacenterId?: pulumi.Input<number | undefined>;
+    defaultLoadObject?: pulumi.Input<inputs.GtmDatacenterDefaultLoadObject | undefined>;
+    domain?: pulumi.Input<string | undefined>;
+    latitude?: pulumi.Input<number | undefined>;
+    longitude?: pulumi.Input<number | undefined>;
+    nickname?: pulumi.Input<string | undefined>;
+    pingInterval?: pulumi.Input<number | undefined>;
+    pingPacketSize?: pulumi.Input<number | undefined>;
+    scorePenalty?: pulumi.Input<number | undefined>;
+    servermonitorLivenessCount?: pulumi.Input<number | undefined>;
+    servermonitorLoadCount?: pulumi.Input<number | undefined>;
+    servermonitorPool?: pulumi.Input<string | undefined>;
+    stateOrProvince?: pulumi.Input<string | undefined>;
+    virtual?: pulumi.Input<boolean | undefined>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }
 
 /**
  * The set of arguments for constructing a GtmDatacenter resource.
  */
 export interface GtmDatacenterArgs {
-    city?: pulumi.Input<string>;
-    cloneOf?: pulumi.Input<number>;
-    cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
-    cloudServerTargeting?: pulumi.Input<boolean>;
-    continent?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    defaultLoadObject?: pulumi.Input<inputs.GtmDatacenterDefaultLoadObject>;
+    city?: pulumi.Input<string | undefined>;
+    cloneOf?: pulumi.Input<number | undefined>;
+    cloudServerHostHeaderOverride?: pulumi.Input<boolean | undefined>;
+    cloudServerTargeting?: pulumi.Input<boolean | undefined>;
+    continent?: pulumi.Input<string | undefined>;
+    country?: pulumi.Input<string | undefined>;
+    defaultLoadObject?: pulumi.Input<inputs.GtmDatacenterDefaultLoadObject | undefined>;
     domain: pulumi.Input<string>;
-    latitude?: pulumi.Input<number>;
-    longitude?: pulumi.Input<number>;
-    nickname?: pulumi.Input<string>;
-    stateOrProvince?: pulumi.Input<string>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    latitude?: pulumi.Input<number | undefined>;
+    longitude?: pulumi.Input<number | undefined>;
+    nickname?: pulumi.Input<string | undefined>;
+    stateOrProvince?: pulumi.Input<string | undefined>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }

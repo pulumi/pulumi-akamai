@@ -46,5 +46,5 @@ export function getAppsecAdvancedSettingsAttackPayloadLoggingOutput(args: GetApp
  */
 export interface GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs {
     configId: pulumi.Input<number>;
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

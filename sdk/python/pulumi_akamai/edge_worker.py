@@ -23,9 +23,9 @@ class EdgeWorkerArgs:
     def __init__(__self__, *,
                  group_id: pulumi.Input[_builtins.int],
                  resource_tier_id: pulumi.Input[_builtins.int],
-                 local_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']] = None):
+                 local_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['EdgeWorkerTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a EdgeWorker resource.
 
@@ -70,53 +70,53 @@ class EdgeWorkerArgs:
 
     @_builtins.property
     @pulumi.getter(name="localBundle")
-    def local_bundle(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_bundle(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The path to the EdgeWorkers tgz code bundle
         """
         return pulumi.get(self, "local_bundle")
 
     @local_bundle.setter
-    def local_bundle(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_bundle(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_bundle", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The EdgeWorker name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['EdgeWorkerTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['EdgeWorkerTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _EdgeWorkerState:
     def __init__(__self__, *,
-                 edgeworker_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_bundle_hash: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_tier_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeouts: Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_bundle_hash: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_tier_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeouts: pulumi.Input[Optional['EdgeWorkerTimeoutsArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering EdgeWorker resources.
 
@@ -151,110 +151,110 @@ class _EdgeWorkerState:
 
     @_builtins.property
     @pulumi.getter(name="edgeworkerId")
-    def edgeworker_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def edgeworker_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier of the EdgeWorker
         """
         return pulumi.get(self, "edgeworker_id")
 
     @edgeworker_id.setter
-    def edgeworker_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def edgeworker_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "edgeworker_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Defines the group association for the EdgeWorker
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="localBundle")
-    def local_bundle(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_bundle(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The path to the EdgeWorkers tgz code bundle
         """
         return pulumi.get(self, "local_bundle")
 
     @local_bundle.setter
-    def local_bundle(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_bundle(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_bundle", value)
 
     @_builtins.property
     @pulumi.getter(name="localBundleHash")
-    def local_bundle_hash(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_bundle_hash(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The local bundle hash for the EdgeWorker
         """
         return pulumi.get(self, "local_bundle_hash")
 
     @local_bundle_hash.setter
-    def local_bundle_hash(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_bundle_hash(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_bundle_hash", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The EdgeWorker name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTierId")
-    def resource_tier_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def resource_tier_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier of a resource tier
         """
         return pulumi.get(self, "resource_tier_id")
 
     @resource_tier_id.setter
-    def resource_tier_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def resource_tier_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "resource_tier_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['EdgeWorkerTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['EdgeWorkerTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The bundle version
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter
-    def warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def warnings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of warnings returned by EdgeWorker validation
         """
         return pulumi.get(self, "warnings")
 
     @warnings.setter
-    def warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def warnings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "warnings", value)
 
 
@@ -264,11 +264,11 @@ class EdgeWorker(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_tier_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeouts: Optional[pulumi.Input[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_tier_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeouts: pulumi.Input[Optional[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a EdgeWorker resource with the given unique name, props, and options.
@@ -305,11 +305,11 @@ class EdgeWorker(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_tier_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeouts: Optional[pulumi.Input[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_tier_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeouts: pulumi.Input[Optional[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -342,15 +342,15 @@ class EdgeWorker(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            edgeworker_id: Optional[pulumi.Input[_builtins.int]] = None,
-            group_id: Optional[pulumi.Input[_builtins.int]] = None,
-            local_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-            local_bundle_hash: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_tier_id: Optional[pulumi.Input[_builtins.int]] = None,
-            timeouts: Optional[pulumi.Input[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None,
-            warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'EdgeWorker':
+            edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            local_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+            local_bundle_hash: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_tier_id: pulumi.Input[Optional[_builtins.int]] = None,
+            timeouts: pulumi.Input[Optional[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'EdgeWorker':
         """
         Get an existing EdgeWorker resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -49,6 +49,6 @@ export function getBotmanBotDetectionActionOutput(args: GetBotmanBotDetectionAct
  */
 export interface GetBotmanBotDetectionActionOutputArgs {
     configId: pulumi.Input<number>;
-    detectionId?: pulumi.Input<string>;
+    detectionId?: pulumi.Input<string | undefined>;
     securityPolicyId: pulumi.Input<string>;
 }

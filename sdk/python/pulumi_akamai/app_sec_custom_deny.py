@@ -58,9 +58,9 @@ class AppSecCustomDenyArgs:
 @pulumi.input_type
 class _AppSecCustomDenyState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_deny: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_deny_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_deny: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_deny_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecCustomDeny resources.
 
@@ -77,38 +77,38 @@ class _AppSecCustomDenyState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customDeny")
-    def custom_deny(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_deny(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted information about the properties and property values for the custom deny
         """
         return pulumi.get(self, "custom_deny")
 
     @custom_deny.setter
-    def custom_deny(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_deny(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_deny", value)
 
     @_builtins.property
     @pulumi.getter(name="customDenyId")
-    def custom_deny_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_deny_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         custom_deny_id
         """
         return pulumi.get(self, "custom_deny_id")
 
     @custom_deny_id.setter
-    def custom_deny_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_deny_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_deny_id", value)
 
 
@@ -118,8 +118,8 @@ class AppSecCustomDeny(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_deny: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_deny: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecCustomDeny resource with the given unique name, props, and options.
@@ -153,8 +153,8 @@ class AppSecCustomDeny(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_deny: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_deny: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -181,9 +181,9 @@ class AppSecCustomDeny(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            custom_deny: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_deny_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecCustomDeny':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            custom_deny: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_deny_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecCustomDeny':
         """
         Get an existing AppSecCustomDeny resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

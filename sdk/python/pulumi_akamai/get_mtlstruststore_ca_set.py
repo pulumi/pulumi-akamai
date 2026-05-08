@@ -233,9 +233,9 @@ def get_mtlstruststore_ca_set(id: Optional[_builtins.str] = None,
         version_description=pulumi.get(__ret__, 'version_description'),
         version_modified_by=pulumi.get(__ret__, 'version_modified_by'),
         version_modified_date=pulumi.get(__ret__, 'version_modified_date'))
-def get_mtlstruststore_ca_set_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_mtlstruststore_ca_set_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMtlstruststoreCaSetResult]:
     """
     Use this data source to access information about an existing resource.

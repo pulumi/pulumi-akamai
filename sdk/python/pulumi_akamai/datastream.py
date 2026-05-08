@@ -28,23 +28,23 @@ class DatastreamArgs:
                  group_id: pulumi.Input[_builtins.str],
                  properties: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  stream_name: pulumi.Input[_builtins.str],
-                 azure_connector: Optional[pulumi.Input['DatastreamAzureConnectorArgs']] = None,
-                 collect_midgress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 datadog_connector: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']] = None,
-                 dynatrace_connector: Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']] = None,
-                 elasticsearch_connector: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']] = None,
-                 gcs_connector: Optional[pulumi.Input['DatastreamGcsConnectorArgs']] = None,
-                 https_connector: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']] = None,
-                 loggly_connector: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']] = None,
-                 new_relic_connector: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 oracle_connector: Optional[pulumi.Input['DatastreamOracleConnectorArgs']] = None,
-                 s3_compatible_connector: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']] = None,
-                 s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
-                 sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
-                 sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
-                 trafficpeak_connector: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']] = None):
+                 azure_connector: pulumi.Input[Optional['DatastreamAzureConnectorArgs']] = None,
+                 collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 datadog_connector: pulumi.Input[Optional['DatastreamDatadogConnectorArgs']] = None,
+                 dynatrace_connector: pulumi.Input[Optional['DatastreamDynatraceConnectorArgs']] = None,
+                 elasticsearch_connector: pulumi.Input[Optional['DatastreamElasticsearchConnectorArgs']] = None,
+                 gcs_connector: pulumi.Input[Optional['DatastreamGcsConnectorArgs']] = None,
+                 https_connector: pulumi.Input[Optional['DatastreamHttpsConnectorArgs']] = None,
+                 loggly_connector: pulumi.Input[Optional['DatastreamLogglyConnectorArgs']] = None,
+                 new_relic_connector: pulumi.Input[Optional['DatastreamNewRelicConnectorArgs']] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 oracle_connector: pulumi.Input[Optional['DatastreamOracleConnectorArgs']] = None,
+                 s3_compatible_connector: pulumi.Input[Optional['DatastreamS3CompatibleConnectorArgs']] = None,
+                 s3_connector: pulumi.Input[Optional['DatastreamS3ConnectorArgs']] = None,
+                 sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 splunk_connector: pulumi.Input[Optional['DatastreamSplunkConnectorArgs']] = None,
+                 sumologic_connector: pulumi.Input[Optional['DatastreamSumologicConnectorArgs']] = None,
+                 trafficpeak_connector: pulumi.Input[Optional['DatastreamTrafficpeakConnectorArgs']] = None):
         """
         The set of arguments for constructing a Datastream resource.
 
@@ -187,203 +187,203 @@ class DatastreamArgs:
 
     @_builtins.property
     @pulumi.getter(name="azureConnector")
-    def azure_connector(self) -> Optional[pulumi.Input['DatastreamAzureConnectorArgs']]:
+    def azure_connector(self) -> pulumi.Input[Optional['DatastreamAzureConnectorArgs']]:
         return pulumi.get(self, "azure_connector")
 
     @azure_connector.setter
-    def azure_connector(self, value: Optional[pulumi.Input['DatastreamAzureConnectorArgs']]):
+    def azure_connector(self, value: pulumi.Input[Optional['DatastreamAzureConnectorArgs']]):
         pulumi.set(self, "azure_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="collectMidgress")
-    def collect_midgress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def collect_midgress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Identifies if stream needs to collect midgress data
         """
         return pulumi.get(self, "collect_midgress")
 
     @collect_midgress.setter
-    def collect_midgress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def collect_midgress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "collect_midgress", value)
 
     @_builtins.property
     @pulumi.getter(name="datadogConnector")
-    def datadog_connector(self) -> Optional[pulumi.Input['DatastreamDatadogConnectorArgs']]:
+    def datadog_connector(self) -> pulumi.Input[Optional['DatastreamDatadogConnectorArgs']]:
         return pulumi.get(self, "datadog_connector")
 
     @datadog_connector.setter
-    def datadog_connector(self, value: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']]):
+    def datadog_connector(self, value: pulumi.Input[Optional['DatastreamDatadogConnectorArgs']]):
         pulumi.set(self, "datadog_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceConnector")
-    def dynatrace_connector(self) -> Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']]:
+    def dynatrace_connector(self) -> pulumi.Input[Optional['DatastreamDynatraceConnectorArgs']]:
         return pulumi.get(self, "dynatrace_connector")
 
     @dynatrace_connector.setter
-    def dynatrace_connector(self, value: Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']]):
+    def dynatrace_connector(self, value: pulumi.Input[Optional['DatastreamDynatraceConnectorArgs']]):
         pulumi.set(self, "dynatrace_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="elasticsearchConnector")
-    def elasticsearch_connector(self) -> Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]:
+    def elasticsearch_connector(self) -> pulumi.Input[Optional['DatastreamElasticsearchConnectorArgs']]:
         return pulumi.get(self, "elasticsearch_connector")
 
     @elasticsearch_connector.setter
-    def elasticsearch_connector(self, value: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]):
+    def elasticsearch_connector(self, value: pulumi.Input[Optional['DatastreamElasticsearchConnectorArgs']]):
         pulumi.set(self, "elasticsearch_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="gcsConnector")
-    def gcs_connector(self) -> Optional[pulumi.Input['DatastreamGcsConnectorArgs']]:
+    def gcs_connector(self) -> pulumi.Input[Optional['DatastreamGcsConnectorArgs']]:
         return pulumi.get(self, "gcs_connector")
 
     @gcs_connector.setter
-    def gcs_connector(self, value: Optional[pulumi.Input['DatastreamGcsConnectorArgs']]):
+    def gcs_connector(self, value: pulumi.Input[Optional['DatastreamGcsConnectorArgs']]):
         pulumi.set(self, "gcs_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsConnector")
-    def https_connector(self) -> Optional[pulumi.Input['DatastreamHttpsConnectorArgs']]:
+    def https_connector(self) -> pulumi.Input[Optional['DatastreamHttpsConnectorArgs']]:
         return pulumi.get(self, "https_connector")
 
     @https_connector.setter
-    def https_connector(self, value: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']]):
+    def https_connector(self, value: pulumi.Input[Optional['DatastreamHttpsConnectorArgs']]):
         pulumi.set(self, "https_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="logglyConnector")
-    def loggly_connector(self) -> Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]:
+    def loggly_connector(self) -> pulumi.Input[Optional['DatastreamLogglyConnectorArgs']]:
         return pulumi.get(self, "loggly_connector")
 
     @loggly_connector.setter
-    def loggly_connector(self, value: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]):
+    def loggly_connector(self, value: pulumi.Input[Optional['DatastreamLogglyConnectorArgs']]):
         pulumi.set(self, "loggly_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="newRelicConnector")
-    def new_relic_connector(self) -> Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]:
+    def new_relic_connector(self) -> pulumi.Input[Optional['DatastreamNewRelicConnectorArgs']]:
         return pulumi.get(self, "new_relic_connector")
 
     @new_relic_connector.setter
-    def new_relic_connector(self, value: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]):
+    def new_relic_connector(self, value: pulumi.Input[Optional['DatastreamNewRelicConnectorArgs']]):
         pulumi.set(self, "new_relic_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmails")
-    def notification_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of email addresses where the system sends notifications about activations and deactivations of the stream
         """
         return pulumi.get(self, "notification_emails")
 
     @notification_emails.setter
-    def notification_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_emails", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleConnector")
-    def oracle_connector(self) -> Optional[pulumi.Input['DatastreamOracleConnectorArgs']]:
+    def oracle_connector(self) -> pulumi.Input[Optional['DatastreamOracleConnectorArgs']]:
         return pulumi.get(self, "oracle_connector")
 
     @oracle_connector.setter
-    def oracle_connector(self, value: Optional[pulumi.Input['DatastreamOracleConnectorArgs']]):
+    def oracle_connector(self, value: pulumi.Input[Optional['DatastreamOracleConnectorArgs']]):
         pulumi.set(self, "oracle_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="s3CompatibleConnector")
-    def s3_compatible_connector(self) -> Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']]:
+    def s3_compatible_connector(self) -> pulumi.Input[Optional['DatastreamS3CompatibleConnectorArgs']]:
         return pulumi.get(self, "s3_compatible_connector")
 
     @s3_compatible_connector.setter
-    def s3_compatible_connector(self, value: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']]):
+    def s3_compatible_connector(self, value: pulumi.Input[Optional['DatastreamS3CompatibleConnectorArgs']]):
         pulumi.set(self, "s3_compatible_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="s3Connector")
-    def s3_connector(self) -> Optional[pulumi.Input['DatastreamS3ConnectorArgs']]:
+    def s3_connector(self) -> pulumi.Input[Optional['DatastreamS3ConnectorArgs']]:
         return pulumi.get(self, "s3_connector")
 
     @s3_connector.setter
-    def s3_connector(self, value: Optional[pulumi.Input['DatastreamS3ConnectorArgs']]):
+    def s3_connector(self, value: pulumi.Input[Optional['DatastreamS3ConnectorArgs']]):
         pulumi.set(self, "s3_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="samplingPercentage")
-    def sampling_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def sampling_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The sample percentage of data that your stream will send to the destination
         """
         return pulumi.get(self, "sampling_percentage")
 
     @sampling_percentage.setter
-    def sampling_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def sampling_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "sampling_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="splunkConnector")
-    def splunk_connector(self) -> Optional[pulumi.Input['DatastreamSplunkConnectorArgs']]:
+    def splunk_connector(self) -> pulumi.Input[Optional['DatastreamSplunkConnectorArgs']]:
         return pulumi.get(self, "splunk_connector")
 
     @splunk_connector.setter
-    def splunk_connector(self, value: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']]):
+    def splunk_connector(self, value: pulumi.Input[Optional['DatastreamSplunkConnectorArgs']]):
         pulumi.set(self, "splunk_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="sumologicConnector")
-    def sumologic_connector(self) -> Optional[pulumi.Input['DatastreamSumologicConnectorArgs']]:
+    def sumologic_connector(self) -> pulumi.Input[Optional['DatastreamSumologicConnectorArgs']]:
         return pulumi.get(self, "sumologic_connector")
 
     @sumologic_connector.setter
-    def sumologic_connector(self, value: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']]):
+    def sumologic_connector(self, value: pulumi.Input[Optional['DatastreamSumologicConnectorArgs']]):
         pulumi.set(self, "sumologic_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficpeakConnector")
-    def trafficpeak_connector(self) -> Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']]:
+    def trafficpeak_connector(self) -> pulumi.Input[Optional['DatastreamTrafficpeakConnectorArgs']]:
         return pulumi.get(self, "trafficpeak_connector")
 
     @trafficpeak_connector.setter
-    def trafficpeak_connector(self, value: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']]):
+    def trafficpeak_connector(self, value: pulumi.Input[Optional['DatastreamTrafficpeakConnectorArgs']]):
         pulumi.set(self, "trafficpeak_connector", value)
 
 
 @pulumi.input_type
 class _DatastreamState:
     def __init__(__self__, *,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 azure_connector: Optional[pulumi.Input['DatastreamAzureConnectorArgs']] = None,
-                 collect_midgress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 datadog_connector: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']] = None,
-                 dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 delivery_configuration: Optional[pulumi.Input['DatastreamDeliveryConfigurationArgs']] = None,
-                 dynatrace_connector: Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']] = None,
-                 elasticsearch_connector: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']] = None,
-                 gcs_connector: Optional[pulumi.Input['DatastreamGcsConnectorArgs']] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_connector: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']] = None,
-                 integration_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 loggly_connector: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']] = None,
-                 modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 new_relic_connector: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 oracle_connector: Optional[pulumi.Input['DatastreamOracleConnectorArgs']] = None,
-                 papi_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 s3_compatible_connector: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']] = None,
-                 s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
-                 sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
-                 stream_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
-                 trafficpeak_connector: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 azure_connector: pulumi.Input[Optional['DatastreamAzureConnectorArgs']] = None,
+                 collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 datadog_connector: pulumi.Input[Optional['DatastreamDatadogConnectorArgs']] = None,
+                 dataset_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 delivery_configuration: pulumi.Input[Optional['DatastreamDeliveryConfigurationArgs']] = None,
+                 dynatrace_connector: pulumi.Input[Optional['DatastreamDynatraceConnectorArgs']] = None,
+                 elasticsearch_connector: pulumi.Input[Optional['DatastreamElasticsearchConnectorArgs']] = None,
+                 gcs_connector: pulumi.Input[Optional['DatastreamGcsConnectorArgs']] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_connector: pulumi.Input[Optional['DatastreamHttpsConnectorArgs']] = None,
+                 integration_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 loggly_connector: pulumi.Input[Optional['DatastreamLogglyConnectorArgs']] = None,
+                 modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 new_relic_connector: pulumi.Input[Optional['DatastreamNewRelicConnectorArgs']] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 oracle_connector: pulumi.Input[Optional['DatastreamOracleConnectorArgs']] = None,
+                 papi_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 s3_compatible_connector: pulumi.Input[Optional['DatastreamS3CompatibleConnectorArgs']] = None,
+                 s3_connector: pulumi.Input[Optional['DatastreamS3ConnectorArgs']] = None,
+                 sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 splunk_connector: pulumi.Input[Optional['DatastreamSplunkConnectorArgs']] = None,
+                 stream_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 sumologic_connector: pulumi.Input[Optional['DatastreamSumologicConnectorArgs']] = None,
+                 trafficpeak_connector: pulumi.Input[Optional['DatastreamTrafficpeakConnectorArgs']] = None):
         """
         Input properties used for looking up and filtering Datastream resources.
 
@@ -476,356 +476,356 @@ class _DatastreamState:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Defining if stream should be active or not
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="azureConnector")
-    def azure_connector(self) -> Optional[pulumi.Input['DatastreamAzureConnectorArgs']]:
+    def azure_connector(self) -> pulumi.Input[Optional['DatastreamAzureConnectorArgs']]:
         return pulumi.get(self, "azure_connector")
 
     @azure_connector.setter
-    def azure_connector(self, value: Optional[pulumi.Input['DatastreamAzureConnectorArgs']]):
+    def azure_connector(self, value: pulumi.Input[Optional['DatastreamAzureConnectorArgs']]):
         pulumi.set(self, "azure_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="collectMidgress")
-    def collect_midgress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def collect_midgress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Identifies if stream needs to collect midgress data
         """
         return pulumi.get(self, "collect_midgress")
 
     @collect_midgress.setter
-    def collect_midgress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def collect_midgress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "collect_midgress", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies the contract that has access to the product
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username who created the stream
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdDate")
-    def created_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the stream was created
         """
         return pulumi.get(self, "created_date")
 
     @created_date.setter
-    def created_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_date", value)
 
     @_builtins.property
     @pulumi.getter(name="datadogConnector")
-    def datadog_connector(self) -> Optional[pulumi.Input['DatastreamDatadogConnectorArgs']]:
+    def datadog_connector(self) -> pulumi.Input[Optional['DatastreamDatadogConnectorArgs']]:
         return pulumi.get(self, "datadog_connector")
 
     @datadog_connector.setter
-    def datadog_connector(self, value: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']]):
+    def datadog_connector(self, value: pulumi.Input[Optional['DatastreamDatadogConnectorArgs']]):
         pulumi.set(self, "datadog_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="datasetFields")
-    def dataset_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def dataset_fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         """
         return pulumi.get(self, "dataset_fields")
 
     @dataset_fields.setter
-    def dataset_fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def dataset_fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "dataset_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="deliveryConfiguration")
-    def delivery_configuration(self) -> Optional[pulumi.Input['DatastreamDeliveryConfigurationArgs']]:
+    def delivery_configuration(self) -> pulumi.Input[Optional['DatastreamDeliveryConfigurationArgs']]:
         """
         Provides information about the configuration related to logs (format, file names, delivery frequency)
         """
         return pulumi.get(self, "delivery_configuration")
 
     @delivery_configuration.setter
-    def delivery_configuration(self, value: Optional[pulumi.Input['DatastreamDeliveryConfigurationArgs']]):
+    def delivery_configuration(self, value: pulumi.Input[Optional['DatastreamDeliveryConfigurationArgs']]):
         pulumi.set(self, "delivery_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceConnector")
-    def dynatrace_connector(self) -> Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']]:
+    def dynatrace_connector(self) -> pulumi.Input[Optional['DatastreamDynatraceConnectorArgs']]:
         return pulumi.get(self, "dynatrace_connector")
 
     @dynatrace_connector.setter
-    def dynatrace_connector(self, value: Optional[pulumi.Input['DatastreamDynatraceConnectorArgs']]):
+    def dynatrace_connector(self, value: pulumi.Input[Optional['DatastreamDynatraceConnectorArgs']]):
         pulumi.set(self, "dynatrace_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="elasticsearchConnector")
-    def elasticsearch_connector(self) -> Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]:
+    def elasticsearch_connector(self) -> pulumi.Input[Optional['DatastreamElasticsearchConnectorArgs']]:
         return pulumi.get(self, "elasticsearch_connector")
 
     @elasticsearch_connector.setter
-    def elasticsearch_connector(self, value: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]):
+    def elasticsearch_connector(self, value: pulumi.Input[Optional['DatastreamElasticsearchConnectorArgs']]):
         pulumi.set(self, "elasticsearch_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="gcsConnector")
-    def gcs_connector(self) -> Optional[pulumi.Input['DatastreamGcsConnectorArgs']]:
+    def gcs_connector(self) -> pulumi.Input[Optional['DatastreamGcsConnectorArgs']]:
         return pulumi.get(self, "gcs_connector")
 
     @gcs_connector.setter
-    def gcs_connector(self, value: Optional[pulumi.Input['DatastreamGcsConnectorArgs']]):
+    def gcs_connector(self, value: pulumi.Input[Optional['DatastreamGcsConnectorArgs']]):
         pulumi.set(self, "gcs_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies the group that has access to the product and for which the stream configuration was created
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsConnector")
-    def https_connector(self) -> Optional[pulumi.Input['DatastreamHttpsConnectorArgs']]:
+    def https_connector(self) -> pulumi.Input[Optional['DatastreamHttpsConnectorArgs']]:
         return pulumi.get(self, "https_connector")
 
     @https_connector.setter
-    def https_connector(self, value: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']]):
+    def https_connector(self, value: pulumi.Input[Optional['DatastreamHttpsConnectorArgs']]):
         pulumi.set(self, "https_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="integrationType")
-    def integration_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def integration_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         """
         return pulumi.get(self, "integration_type")
 
     @integration_type.setter
-    def integration_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def integration_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "integration_type", value)
 
     @_builtins.property
     @pulumi.getter(name="latestVersion")
-    def latest_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def latest_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Identifies the latest active configuration version of the stream
         """
         return pulumi.get(self, "latest_version")
 
     @latest_version.setter
-    def latest_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def latest_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "latest_version", value)
 
     @_builtins.property
     @pulumi.getter(name="logglyConnector")
-    def loggly_connector(self) -> Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]:
+    def loggly_connector(self) -> pulumi.Input[Optional['DatastreamLogglyConnectorArgs']]:
         return pulumi.get(self, "loggly_connector")
 
     @loggly_connector.setter
-    def loggly_connector(self, value: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]):
+    def loggly_connector(self, value: pulumi.Input[Optional['DatastreamLogglyConnectorArgs']]):
         pulumi.set(self, "loggly_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedBy")
-    def modified_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username who modified the stream
         """
         return pulumi.get(self, "modified_by")
 
     @modified_by.setter
-    def modified_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_by", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedDate")
-    def modified_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the stream was modified
         """
         return pulumi.get(self, "modified_date")
 
     @modified_date.setter
-    def modified_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_date", value)
 
     @_builtins.property
     @pulumi.getter(name="newRelicConnector")
-    def new_relic_connector(self) -> Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]:
+    def new_relic_connector(self) -> pulumi.Input[Optional['DatastreamNewRelicConnectorArgs']]:
         return pulumi.get(self, "new_relic_connector")
 
     @new_relic_connector.setter
-    def new_relic_connector(self, value: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]):
+    def new_relic_connector(self, value: pulumi.Input[Optional['DatastreamNewRelicConnectorArgs']]):
         pulumi.set(self, "new_relic_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmails")
-    def notification_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of email addresses where the system sends notifications about activations and deactivations of the stream
         """
         return pulumi.get(self, "notification_emails")
 
     @notification_emails.setter
-    def notification_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_emails", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleConnector")
-    def oracle_connector(self) -> Optional[pulumi.Input['DatastreamOracleConnectorArgs']]:
+    def oracle_connector(self) -> pulumi.Input[Optional['DatastreamOracleConnectorArgs']]:
         return pulumi.get(self, "oracle_connector")
 
     @oracle_connector.setter
-    def oracle_connector(self, value: Optional[pulumi.Input['DatastreamOracleConnectorArgs']]):
+    def oracle_connector(self, value: pulumi.Input[Optional['DatastreamOracleConnectorArgs']]):
         pulumi.set(self, "oracle_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="papiJson")
-    def papi_json(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def papi_json(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
         """
         return pulumi.get(self, "papi_json")
 
     @papi_json.setter
-    def papi_json(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def papi_json(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "papi_json", value)
 
     @_builtins.property
     @pulumi.getter(name="productId")
-    def product_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the product for which the stream was created
         """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
-    def product_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Identifies the properties monitored in the stream
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="s3CompatibleConnector")
-    def s3_compatible_connector(self) -> Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']]:
+    def s3_compatible_connector(self) -> pulumi.Input[Optional['DatastreamS3CompatibleConnectorArgs']]:
         return pulumi.get(self, "s3_compatible_connector")
 
     @s3_compatible_connector.setter
-    def s3_compatible_connector(self, value: Optional[pulumi.Input['DatastreamS3CompatibleConnectorArgs']]):
+    def s3_compatible_connector(self, value: pulumi.Input[Optional['DatastreamS3CompatibleConnectorArgs']]):
         pulumi.set(self, "s3_compatible_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="s3Connector")
-    def s3_connector(self) -> Optional[pulumi.Input['DatastreamS3ConnectorArgs']]:
+    def s3_connector(self) -> pulumi.Input[Optional['DatastreamS3ConnectorArgs']]:
         return pulumi.get(self, "s3_connector")
 
     @s3_connector.setter
-    def s3_connector(self, value: Optional[pulumi.Input['DatastreamS3ConnectorArgs']]):
+    def s3_connector(self, value: pulumi.Input[Optional['DatastreamS3ConnectorArgs']]):
         pulumi.set(self, "s3_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="samplingPercentage")
-    def sampling_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def sampling_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The sample percentage of data that your stream will send to the destination
         """
         return pulumi.get(self, "sampling_percentage")
 
     @sampling_percentage.setter
-    def sampling_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def sampling_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "sampling_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="splunkConnector")
-    def splunk_connector(self) -> Optional[pulumi.Input['DatastreamSplunkConnectorArgs']]:
+    def splunk_connector(self) -> pulumi.Input[Optional['DatastreamSplunkConnectorArgs']]:
         return pulumi.get(self, "splunk_connector")
 
     @splunk_connector.setter
-    def splunk_connector(self, value: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']]):
+    def splunk_connector(self, value: pulumi.Input[Optional['DatastreamSplunkConnectorArgs']]):
         pulumi.set(self, "splunk_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="streamName")
-    def stream_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the stream
         """
         return pulumi.get(self, "stream_name")
 
     @stream_name.setter
-    def stream_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_name", value)
 
     @_builtins.property
     @pulumi.getter(name="streamVersion")
-    def stream_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stream_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Identifies the configuration version of the stream
         """
         return pulumi.get(self, "stream_version")
 
     @stream_version.setter
-    def stream_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stream_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stream_version", value)
 
     @_builtins.property
     @pulumi.getter(name="sumologicConnector")
-    def sumologic_connector(self) -> Optional[pulumi.Input['DatastreamSumologicConnectorArgs']]:
+    def sumologic_connector(self) -> pulumi.Input[Optional['DatastreamSumologicConnectorArgs']]:
         return pulumi.get(self, "sumologic_connector")
 
     @sumologic_connector.setter
-    def sumologic_connector(self, value: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']]):
+    def sumologic_connector(self, value: pulumi.Input[Optional['DatastreamSumologicConnectorArgs']]):
         pulumi.set(self, "sumologic_connector", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficpeakConnector")
-    def trafficpeak_connector(self) -> Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']]:
+    def trafficpeak_connector(self) -> pulumi.Input[Optional['DatastreamTrafficpeakConnectorArgs']]:
         return pulumi.get(self, "trafficpeak_connector")
 
     @trafficpeak_connector.setter
-    def trafficpeak_connector(self, value: Optional[pulumi.Input['DatastreamTrafficpeakConnectorArgs']]):
+    def trafficpeak_connector(self, value: pulumi.Input[Optional['DatastreamTrafficpeakConnectorArgs']]):
         pulumi.set(self, "trafficpeak_connector", value)
 
 
@@ -835,30 +835,30 @@ class Datastream(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 azure_connector: Optional[pulumi.Input[Union['DatastreamAzureConnectorArgs', 'DatastreamAzureConnectorArgsDict']]] = None,
-                 collect_midgress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 datadog_connector: Optional[pulumi.Input[Union['DatastreamDatadogConnectorArgs', 'DatastreamDatadogConnectorArgsDict']]] = None,
-                 dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 delivery_configuration: Optional[pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']]] = None,
-                 dynatrace_connector: Optional[pulumi.Input[Union['DatastreamDynatraceConnectorArgs', 'DatastreamDynatraceConnectorArgsDict']]] = None,
-                 elasticsearch_connector: Optional[pulumi.Input[Union['DatastreamElasticsearchConnectorArgs', 'DatastreamElasticsearchConnectorArgsDict']]] = None,
-                 gcs_connector: Optional[pulumi.Input[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_connector: Optional[pulumi.Input[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
-                 loggly_connector: Optional[pulumi.Input[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
-                 new_relic_connector: Optional[pulumi.Input[Union['DatastreamNewRelicConnectorArgs', 'DatastreamNewRelicConnectorArgsDict']]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 oracle_connector: Optional[pulumi.Input[Union['DatastreamOracleConnectorArgs', 'DatastreamOracleConnectorArgsDict']]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 s3_compatible_connector: Optional[pulumi.Input[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
-                 s3_connector: Optional[pulumi.Input[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
-                 sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 splunk_connector: Optional[pulumi.Input[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
-                 stream_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sumologic_connector: Optional[pulumi.Input[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
-                 trafficpeak_connector: Optional[pulumi.Input[Union['DatastreamTrafficpeakConnectorArgs', 'DatastreamTrafficpeakConnectorArgsDict']]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 azure_connector: pulumi.Input[Optional[Union['DatastreamAzureConnectorArgs', 'DatastreamAzureConnectorArgsDict']]] = None,
+                 collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 datadog_connector: pulumi.Input[Optional[Union['DatastreamDatadogConnectorArgs', 'DatastreamDatadogConnectorArgsDict']]] = None,
+                 dataset_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 delivery_configuration: pulumi.Input[Optional[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']]] = None,
+                 dynatrace_connector: pulumi.Input[Optional[Union['DatastreamDynatraceConnectorArgs', 'DatastreamDynatraceConnectorArgsDict']]] = None,
+                 elasticsearch_connector: pulumi.Input[Optional[Union['DatastreamElasticsearchConnectorArgs', 'DatastreamElasticsearchConnectorArgsDict']]] = None,
+                 gcs_connector: pulumi.Input[Optional[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_connector: pulumi.Input[Optional[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
+                 loggly_connector: pulumi.Input[Optional[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
+                 new_relic_connector: pulumi.Input[Optional[Union['DatastreamNewRelicConnectorArgs', 'DatastreamNewRelicConnectorArgsDict']]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 oracle_connector: pulumi.Input[Optional[Union['DatastreamOracleConnectorArgs', 'DatastreamOracleConnectorArgsDict']]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 s3_compatible_connector: pulumi.Input[Optional[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
+                 s3_connector: pulumi.Input[Optional[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
+                 sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 splunk_connector: pulumi.Input[Optional[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
+                 stream_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sumologic_connector: pulumi.Input[Optional[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
+                 trafficpeak_connector: pulumi.Input[Optional[Union['DatastreamTrafficpeakConnectorArgs', 'DatastreamTrafficpeakConnectorArgsDict']]] = None,
                  __props__=None):
         """
         Create a Datastream resource with the given unique name, props, and options.
@@ -900,30 +900,30 @@ class Datastream(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 azure_connector: Optional[pulumi.Input[Union['DatastreamAzureConnectorArgs', 'DatastreamAzureConnectorArgsDict']]] = None,
-                 collect_midgress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 datadog_connector: Optional[pulumi.Input[Union['DatastreamDatadogConnectorArgs', 'DatastreamDatadogConnectorArgsDict']]] = None,
-                 dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 delivery_configuration: Optional[pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']]] = None,
-                 dynatrace_connector: Optional[pulumi.Input[Union['DatastreamDynatraceConnectorArgs', 'DatastreamDynatraceConnectorArgsDict']]] = None,
-                 elasticsearch_connector: Optional[pulumi.Input[Union['DatastreamElasticsearchConnectorArgs', 'DatastreamElasticsearchConnectorArgsDict']]] = None,
-                 gcs_connector: Optional[pulumi.Input[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_connector: Optional[pulumi.Input[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
-                 loggly_connector: Optional[pulumi.Input[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
-                 new_relic_connector: Optional[pulumi.Input[Union['DatastreamNewRelicConnectorArgs', 'DatastreamNewRelicConnectorArgsDict']]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 oracle_connector: Optional[pulumi.Input[Union['DatastreamOracleConnectorArgs', 'DatastreamOracleConnectorArgsDict']]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 s3_compatible_connector: Optional[pulumi.Input[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
-                 s3_connector: Optional[pulumi.Input[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
-                 sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 splunk_connector: Optional[pulumi.Input[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
-                 stream_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sumologic_connector: Optional[pulumi.Input[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
-                 trafficpeak_connector: Optional[pulumi.Input[Union['DatastreamTrafficpeakConnectorArgs', 'DatastreamTrafficpeakConnectorArgsDict']]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 azure_connector: pulumi.Input[Optional[Union['DatastreamAzureConnectorArgs', 'DatastreamAzureConnectorArgsDict']]] = None,
+                 collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 datadog_connector: pulumi.Input[Optional[Union['DatastreamDatadogConnectorArgs', 'DatastreamDatadogConnectorArgsDict']]] = None,
+                 dataset_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 delivery_configuration: pulumi.Input[Optional[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']]] = None,
+                 dynatrace_connector: pulumi.Input[Optional[Union['DatastreamDynatraceConnectorArgs', 'DatastreamDynatraceConnectorArgsDict']]] = None,
+                 elasticsearch_connector: pulumi.Input[Optional[Union['DatastreamElasticsearchConnectorArgs', 'DatastreamElasticsearchConnectorArgsDict']]] = None,
+                 gcs_connector: pulumi.Input[Optional[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_connector: pulumi.Input[Optional[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
+                 loggly_connector: pulumi.Input[Optional[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
+                 new_relic_connector: pulumi.Input[Optional[Union['DatastreamNewRelicConnectorArgs', 'DatastreamNewRelicConnectorArgsDict']]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 oracle_connector: pulumi.Input[Optional[Union['DatastreamOracleConnectorArgs', 'DatastreamOracleConnectorArgsDict']]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 s3_compatible_connector: pulumi.Input[Optional[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
+                 s3_connector: pulumi.Input[Optional[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
+                 sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 splunk_connector: pulumi.Input[Optional[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
+                 stream_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sumologic_connector: pulumi.Input[Optional[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
+                 trafficpeak_connector: pulumi.Input[Optional[Union['DatastreamTrafficpeakConnectorArgs', 'DatastreamTrafficpeakConnectorArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -990,39 +990,39 @@ class Datastream(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            azure_connector: Optional[pulumi.Input[Union['DatastreamAzureConnectorArgs', 'DatastreamAzureConnectorArgsDict']]] = None,
-            collect_midgress: Optional[pulumi.Input[_builtins.bool]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_date: Optional[pulumi.Input[_builtins.str]] = None,
-            datadog_connector: Optional[pulumi.Input[Union['DatastreamDatadogConnectorArgs', 'DatastreamDatadogConnectorArgsDict']]] = None,
-            dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            delivery_configuration: Optional[pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']]] = None,
-            dynatrace_connector: Optional[pulumi.Input[Union['DatastreamDynatraceConnectorArgs', 'DatastreamDynatraceConnectorArgsDict']]] = None,
-            elasticsearch_connector: Optional[pulumi.Input[Union['DatastreamElasticsearchConnectorArgs', 'DatastreamElasticsearchConnectorArgsDict']]] = None,
-            gcs_connector: Optional[pulumi.Input[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            https_connector: Optional[pulumi.Input[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
-            integration_type: Optional[pulumi.Input[_builtins.str]] = None,
-            latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-            loggly_connector: Optional[pulumi.Input[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
-            modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-            modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-            new_relic_connector: Optional[pulumi.Input[Union['DatastreamNewRelicConnectorArgs', 'DatastreamNewRelicConnectorArgsDict']]] = None,
-            notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            oracle_connector: Optional[pulumi.Input[Union['DatastreamOracleConnectorArgs', 'DatastreamOracleConnectorArgsDict']]] = None,
-            papi_json: Optional[pulumi.Input[_builtins.str]] = None,
-            product_id: Optional[pulumi.Input[_builtins.str]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            s3_compatible_connector: Optional[pulumi.Input[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
-            s3_connector: Optional[pulumi.Input[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
-            sampling_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-            splunk_connector: Optional[pulumi.Input[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
-            stream_name: Optional[pulumi.Input[_builtins.str]] = None,
-            stream_version: Optional[pulumi.Input[_builtins.int]] = None,
-            sumologic_connector: Optional[pulumi.Input[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
-            trafficpeak_connector: Optional[pulumi.Input[Union['DatastreamTrafficpeakConnectorArgs', 'DatastreamTrafficpeakConnectorArgsDict']]] = None) -> 'Datastream':
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            azure_connector: pulumi.Input[Optional[Union['DatastreamAzureConnectorArgs', 'DatastreamAzureConnectorArgsDict']]] = None,
+            collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            datadog_connector: pulumi.Input[Optional[Union['DatastreamDatadogConnectorArgs', 'DatastreamDatadogConnectorArgsDict']]] = None,
+            dataset_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            delivery_configuration: pulumi.Input[Optional[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']]] = None,
+            dynatrace_connector: pulumi.Input[Optional[Union['DatastreamDynatraceConnectorArgs', 'DatastreamDynatraceConnectorArgsDict']]] = None,
+            elasticsearch_connector: pulumi.Input[Optional[Union['DatastreamElasticsearchConnectorArgs', 'DatastreamElasticsearchConnectorArgsDict']]] = None,
+            gcs_connector: pulumi.Input[Optional[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            https_connector: pulumi.Input[Optional[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
+            integration_type: pulumi.Input[Optional[_builtins.str]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+            loggly_connector: pulumi.Input[Optional[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
+            modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+            new_relic_connector: pulumi.Input[Optional[Union['DatastreamNewRelicConnectorArgs', 'DatastreamNewRelicConnectorArgsDict']]] = None,
+            notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            oracle_connector: pulumi.Input[Optional[Union['DatastreamOracleConnectorArgs', 'DatastreamOracleConnectorArgsDict']]] = None,
+            papi_json: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            s3_compatible_connector: pulumi.Input[Optional[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
+            s3_connector: pulumi.Input[Optional[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
+            sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            splunk_connector: pulumi.Input[Optional[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
+            stream_name: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_version: pulumi.Input[Optional[_builtins.int]] = None,
+            sumologic_connector: pulumi.Input[Optional[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
+            trafficpeak_connector: pulumi.Input[Optional[Union['DatastreamTrafficpeakConnectorArgs', 'DatastreamTrafficpeakConnectorArgsDict']]] = None) -> 'Datastream':
         """
         Get an existing Datastream resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

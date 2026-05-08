@@ -22,8 +22,8 @@ class ApidefinitionsApiArgs:
                  api: pulumi.Input[_builtins.str],
                  contract_id: pulumi.Input[_builtins.str],
                  group_id: pulumi.Input[_builtins.int],
-                 production_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 staging_version: Optional[pulumi.Input[_builtins.int]] = None):
+                 production_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 staging_version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a ApidefinitionsApi resource.
 
@@ -79,38 +79,38 @@ class ApidefinitionsApiArgs:
 
     @_builtins.property
     @pulumi.getter(name="productionVersion")
-    def production_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def production_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the API currently deployed in production
         """
         return pulumi.get(self, "production_version")
 
     @production_version.setter
-    def production_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def production_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "production_version", value)
 
     @_builtins.property
     @pulumi.getter(name="stagingVersion")
-    def staging_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def staging_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the API currently deployed in staging
         """
         return pulumi.get(self, "staging_version")
 
     @staging_version.setter
-    def staging_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def staging_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "staging_version", value)
 
 
 @pulumi.input_type
 class _ApidefinitionsApiState:
     def __init__(__self__, *,
-                 api: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 production_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 staging_version: Optional[pulumi.Input[_builtins.int]] = None):
+                 api: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 production_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 staging_version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ApidefinitionsApi resources.
 
@@ -136,74 +136,74 @@ class _ApidefinitionsApiState:
 
     @_builtins.property
     @pulumi.getter
-    def api(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted information about the API configuration
         """
         return pulumi.get(self, "api")
 
     @api.setter
-    def api(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the contract (without the 'ctr_' prefix) assigned to the API.
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier for the group (without the 'grp_' prefix) assigned to the API.
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="latestVersion")
-    def latest_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def latest_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Latest version of the API
         """
         return pulumi.get(self, "latest_version")
 
     @latest_version.setter
-    def latest_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def latest_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "latest_version", value)
 
     @_builtins.property
     @pulumi.getter(name="productionVersion")
-    def production_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def production_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the API currently deployed in production
         """
         return pulumi.get(self, "production_version")
 
     @production_version.setter
-    def production_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def production_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "production_version", value)
 
     @_builtins.property
     @pulumi.getter(name="stagingVersion")
-    def staging_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def staging_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the API currently deployed in staging
         """
         return pulumi.get(self, "staging_version")
 
     @staging_version.setter
-    def staging_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def staging_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "staging_version", value)
 
 
@@ -213,11 +213,11 @@ class ApidefinitionsApi(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 production_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 staging_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 api: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 production_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 staging_version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a ApidefinitionsApi resource with the given unique name, props, and options.
@@ -254,11 +254,11 @@ class ApidefinitionsApi(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 production_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 staging_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 api: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 production_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 staging_version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -290,12 +290,12 @@ class ApidefinitionsApi(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api: Optional[pulumi.Input[_builtins.str]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.int]] = None,
-            latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-            production_version: Optional[pulumi.Input[_builtins.int]] = None,
-            staging_version: Optional[pulumi.Input[_builtins.int]] = None) -> 'ApidefinitionsApi':
+            api: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+            production_version: pulumi.Input[Optional[_builtins.int]] = None,
+            staging_version: pulumi.Input[Optional[_builtins.int]] = None) -> 'ApidefinitionsApi':
         """
         Get an existing ApidefinitionsApi resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

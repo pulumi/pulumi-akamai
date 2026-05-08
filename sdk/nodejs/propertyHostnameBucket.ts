@@ -138,47 +138,47 @@ export interface PropertyHostnameBucketState {
     /**
      * The ID of the latest hostname bucket activation.
      */
-    activationId?: pulumi.Input<string>;
+    activationId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
      */
-    hostnameCount?: pulumi.Input<number>;
+    hostnameCount?: pulumi.Input<number | undefined>;
     /**
      * The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
      */
-    hostnames?: pulumi.Input<{[key: string]: pulumi.Input<inputs.PropertyHostnameBucketHostnames>}>;
+    hostnames?: pulumi.Input<{[key: string]: pulumi.Input<inputs.PropertyHostnameBucketHostnames>} | undefined>;
     /**
      * The network to activate on, either `STAGING` or `PRODUCTION`.
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Assigns a log message to the request.
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * Email addresses to notify when the activation status changes.
      */
-    notifyEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notifyEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The number of hostnames with a `DEFAULT` certificate type that are still in the `PENDING` state.
      */
-    pendingDefaultCerts?: pulumi.Input<number>;
+    pendingDefaultCerts?: pulumi.Input<number | undefined>;
     /**
      * The unique identifier for the property.
      */
-    propertyId?: pulumi.Input<string>;
+    propertyId?: pulumi.Input<string | undefined>;
     /**
      * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
      */
-    timeoutForActivation?: pulumi.Input<number>;
+    timeoutForActivation?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -188,15 +188,15 @@ export interface PropertyHostnameBucketArgs {
     /**
      * The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
      */
-    hostnameCount?: pulumi.Input<number>;
+    hostnameCount?: pulumi.Input<number | undefined>;
     /**
      * The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
      */
@@ -208,11 +208,11 @@ export interface PropertyHostnameBucketArgs {
     /**
      * Assigns a log message to the request.
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * Email addresses to notify when the activation status changes.
      */
-    notifyEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notifyEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier for the property.
      */
@@ -220,5 +220,5 @@ export interface PropertyHostnameBucketArgs {
     /**
      * The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
      */
-    timeoutForActivation?: pulumi.Input<number>;
+    timeoutForActivation?: pulumi.Input<number | undefined>;
 }

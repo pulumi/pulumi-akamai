@@ -76,9 +76,9 @@ export class BotmanRecategorizedAkamaiDefinedBot extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanRecategorizedAkamaiDefinedBot resources.
  */
 export interface BotmanRecategorizedAkamaiDefinedBotState {
-    botId?: pulumi.Input<string>;
-    categoryId?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
+    botId?: pulumi.Input<string | undefined>;
+    categoryId?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
 }
 
 /**

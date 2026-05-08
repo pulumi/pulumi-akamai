@@ -82,7 +82,7 @@ def get_datastream_dataset_fields(product_id: Optional[_builtins.str] = None,
         dataset_fields=pulumi.get(__ret__, 'dataset_fields'),
         id=pulumi.get(__ret__, 'id'),
         product_id=pulumi.get(__ret__, 'product_id'))
-def get_datastream_dataset_fields_output(product_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_datastream_dataset_fields_output(product_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastreamDatasetFieldsResult]:
     """
     Use this data source to access information about an existing resource.

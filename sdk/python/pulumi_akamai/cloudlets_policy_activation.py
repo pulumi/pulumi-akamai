@@ -24,8 +24,8 @@ class CloudletsPolicyActivationArgs:
                  network: pulumi.Input[_builtins.str],
                  policy_id: pulumi.Input[_builtins.int],
                  version: pulumi.Input[_builtins.int],
-                 associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeouts: Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']] = None):
+                 associated_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 timeouts: pulumi.Input[Optional['CloudletsPolicyActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsPolicyActivation resource.
 
@@ -81,39 +81,39 @@ class CloudletsPolicyActivationArgs:
 
     @_builtins.property
     @pulumi.getter(name="associatedProperties")
-    def associated_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def associated_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         """
         return pulumi.get(self, "associated_properties")
 
     @associated_properties.setter
-    def associated_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def associated_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "associated_properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudletsPolicyActivationTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudletsPolicyActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _CloudletsPolicyActivationState:
     def __init__(__self__, *,
-                 associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 associated_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['CloudletsPolicyActivationTimeoutsArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering CloudletsPolicyActivation resources.
 
@@ -142,86 +142,86 @@ class _CloudletsPolicyActivationState:
 
     @_builtins.property
     @pulumi.getter(name="associatedProperties")
-    def associated_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def associated_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         """
         return pulumi.get(self, "associated_properties")
 
     @associated_properties.setter
-    def associated_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def associated_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "associated_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="isShared")
-    def is_shared(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shared(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if policy that is being activated is a shared policy
         """
         return pulumi.get(self, "is_shared")
 
     @is_shared.setter
-    def is_shared(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shared(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shared", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network you want to activate the policy version on (options are Staging and Production)
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def policy_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         ID of the Cloudlets policy you want to activate
         """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
-    def policy_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def policy_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "policy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Activation status for this Cloudlets policy
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudletsPolicyActivationTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudletsPolicyActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Cloudlets policy version you want to activate
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -231,11 +231,11 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 associated_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a CloudletsPolicyActivation resource with the given unique name, props, and options.
@@ -272,11 +272,11 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 associated_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -309,13 +309,13 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            is_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-            network: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_id: Optional[pulumi.Input[_builtins.int]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'CloudletsPolicyActivation':
+            associated_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'CloudletsPolicyActivation':
         """
         Get an existing CloudletsPolicyActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

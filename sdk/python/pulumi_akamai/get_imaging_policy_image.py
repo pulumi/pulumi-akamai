@@ -83,7 +83,7 @@ def get_imaging_policy_image(policy: Optional[Union['GetImagingPolicyImagePolicy
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         policy=pulumi.get(__ret__, 'policy'))
-def get_imaging_policy_image_output(policy: Optional[pulumi.Input[Union['GetImagingPolicyImagePolicyArgs', 'GetImagingPolicyImagePolicyArgsDict']]] = None,
+def get_imaging_policy_image_output(policy: pulumi.Input[Optional[Union['GetImagingPolicyImagePolicyArgs', 'GetImagingPolicyImagePolicyArgsDict']]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagingPolicyImageResult]:
     """
     Use this data source to access information about an existing resource.

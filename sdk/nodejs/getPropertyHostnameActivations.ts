@@ -56,8 +56,8 @@ export function getPropertyHostnameActivationsOutput(args: GetPropertyHostnameAc
  * A collection of arguments for invoking getPropertyHostnameActivations.
  */
 export interface GetPropertyHostnameActivationsOutputArgs {
-    contractId?: pulumi.Input<string>;
-    groupId?: pulumi.Input<string>;
-    network?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
+    groupId?: pulumi.Input<string | undefined>;
+    network?: pulumi.Input<string | undefined>;
     propertyId: pulumi.Input<string>;
 }

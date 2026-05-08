@@ -94,19 +94,19 @@ export interface ImagingPolicySetState {
     /**
      * The unique identifier for the Akamai Contract containing the Policy Set(s)
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * A friendly name for the Policy Set
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The geographic region which media using this Policy Set is optimized for
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * The type of media this Policy Set manages
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -120,7 +120,7 @@ export interface ImagingPolicySetArgs {
     /**
      * A friendly name for the Policy Set
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The geographic region which media using this Policy Set is optimized for
      */

@@ -24,7 +24,7 @@ class MtlstruststoreCaSetActivationArgs:
                  ca_set_id: pulumi.Input[_builtins.str],
                  network: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.int],
-                 timeouts: Optional[pulumi.Input['MtlstruststoreCaSetActivationTimeoutsArgs']] = None):
+                 timeouts: pulumi.Input[Optional['MtlstruststoreCaSetActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a MtlstruststoreCaSetActivation resource.
 
@@ -76,25 +76,25 @@ class MtlstruststoreCaSetActivationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['MtlstruststoreCaSetActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['MtlstruststoreCaSetActivationTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['MtlstruststoreCaSetActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['MtlstruststoreCaSetActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _MtlstruststoreCaSetActivationState:
     def __init__(__self__, *,
-                 ca_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['MtlstruststoreCaSetActivationTimeoutsArgs']] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 ca_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['MtlstruststoreCaSetActivationTimeoutsArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering MtlstruststoreCaSetActivation resources.
 
@@ -125,95 +125,95 @@ class _MtlstruststoreCaSetActivationState:
 
     @_builtins.property
     @pulumi.getter(name="caSetId")
-    def ca_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ca_set_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Uniquely Identifies a CA set.
         """
         return pulumi.get(self, "ca_set_id")
 
     @ca_set_id.setter
-    def ca_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ca_set_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_set_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User who submitted the activation request.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdDate")
-    def created_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date the activation request was submitted in ISO-8601 format.
         """
         return pulumi.get(self, "created_date")
 
     @created_date.setter
-    def created_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_date", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedBy")
-    def modified_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who completed the activation.
         """
         return pulumi.get(self, "modified_by")
 
     @modified_by.setter
-    def modified_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_by", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedDate")
-    def modified_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date the activation request was modified in ISO-8601 format.
         """
         return pulumi.get(self, "modified_date")
 
     @modified_date.setter
-    def modified_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['MtlstruststoreCaSetActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['MtlstruststoreCaSetActivationTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['MtlstruststoreCaSetActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['MtlstruststoreCaSetActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Identifies the version of the CA set.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -223,10 +223,10 @@ class MtlstruststoreCaSetActivation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 ca_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a MtlstruststoreCaSetActivation resource with the given unique name, props, and options.
@@ -261,10 +261,10 @@ class MtlstruststoreCaSetActivation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 ca_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -298,14 +298,14 @@ class MtlstruststoreCaSetActivation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ca_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_date: Optional[pulumi.Input[_builtins.str]] = None,
-            modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-            modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-            network: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict']]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'MtlstruststoreCaSetActivation':
+            ca_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict']]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'MtlstruststoreCaSetActivation':
         """
         Get an existing MtlstruststoreCaSetActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

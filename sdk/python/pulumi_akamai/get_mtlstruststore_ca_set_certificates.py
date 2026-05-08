@@ -141,13 +141,13 @@ def get_mtlstruststore_ca_set_certificates(id: Optional[_builtins.str] = None,
         include_expiring_in_days=pulumi.get(__ret__, 'include_expiring_in_days'),
         name=pulumi.get(__ret__, 'name'),
         version=pulumi.get(__ret__, 'version'))
-def get_mtlstruststore_ca_set_certificates_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  include_active: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                  include_expired: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                  include_expiring_by_date: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  include_expiring_in_days: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_mtlstruststore_ca_set_certificates_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  include_active: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                  include_expired: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                  include_expiring_by_date: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  include_expiring_in_days: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMtlstruststoreCaSetCertificatesResult]:
     """
     Use this data source to access information about an existing resource.

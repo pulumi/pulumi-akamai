@@ -118,35 +118,35 @@ export interface AppSecEvalState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Versioning information for the Kona Rule Set currently in use in production
      */
-    currentRuleset?: pulumi.Input<string>;
+    currentRuleset?: pulumi.Input<string | undefined>;
     /**
      * Evaluation mode (ASE_AUTO or ASE_MANUAL)
      */
-    evalMode?: pulumi.Input<string>;
+    evalMode?: pulumi.Input<string | undefined>;
     /**
      * Evaluation mode operation (START, STOP, RESTART, UPDATE or COMPLETE)
      */
-    evalOperation?: pulumi.Input<string>;
+    evalOperation?: pulumi.Input<string | undefined>;
     /**
      * Whether an evaluation is currently in progress
      */
-    evalStatus?: pulumi.Input<string>;
+    evalStatus?: pulumi.Input<string | undefined>;
     /**
      * Versioning information for the Kona Rule Set being evaluated
      */
-    evaluatingRuleset?: pulumi.Input<string>;
+    evaluatingRuleset?: pulumi.Input<string | undefined>;
     /**
      * Date when the evaluation period ends
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -160,7 +160,7 @@ export interface AppSecEvalArgs {
     /**
      * Evaluation mode (ASE_AUTO or ASE_MANUAL)
      */
-    evalMode?: pulumi.Input<string>;
+    evalMode?: pulumi.Input<string | undefined>;
     /**
      * Evaluation mode operation (START, STOP, RESTART, UPDATE or COMPLETE)
      */

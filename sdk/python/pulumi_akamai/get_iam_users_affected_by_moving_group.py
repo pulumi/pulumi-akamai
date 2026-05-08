@@ -106,9 +106,9 @@ def get_iam_users_affected_by_moving_group(destination_group_id: Optional[_built
         source_group_id=pulumi.get(__ret__, 'source_group_id'),
         user_type=pulumi.get(__ret__, 'user_type'),
         users=pulumi.get(__ret__, 'users'))
-def get_iam_users_affected_by_moving_group_output(destination_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                                  source_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                                  user_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_users_affected_by_moving_group_output(destination_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                                  source_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                                  user_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamUsersAffectedByMovingGroupResult]:
     """
     Use this data source to access information about an existing resource.

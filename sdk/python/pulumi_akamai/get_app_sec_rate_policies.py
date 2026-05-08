@@ -103,8 +103,8 @@ def get_app_sec_rate_policies(config_id: Optional[_builtins.int] = None,
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'),
         rate_policy_id=pulumi.get(__ret__, 'rate_policy_id'))
-def get_app_sec_rate_policies_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                     rate_policy_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_app_sec_rate_policies_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                     rate_policy_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecRatePoliciesResult]:
     """
     Use this data source to access information about an existing resource.

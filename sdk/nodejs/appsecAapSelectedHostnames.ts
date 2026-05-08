@@ -91,19 +91,19 @@ export interface AppsecAapSelectedHostnamesState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * List of hostnames to be evaluated
      */
-    evaluatedHosts?: pulumi.Input<pulumi.Input<string>[]>;
+    evaluatedHosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of hostnames to be protected
      */
-    protectedHosts?: pulumi.Input<pulumi.Input<string>[]>;
+    protectedHosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -117,11 +117,11 @@ export interface AppsecAapSelectedHostnamesArgs {
     /**
      * List of hostnames to be evaluated
      */
-    evaluatedHosts?: pulumi.Input<pulumi.Input<string>[]>;
+    evaluatedHosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of hostnames to be protected
      */
-    protectedHosts?: pulumi.Input<pulumi.Input<string>[]>;
+    protectedHosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique identifier of the security policy
      */

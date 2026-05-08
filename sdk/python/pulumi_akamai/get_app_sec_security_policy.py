@@ -123,8 +123,8 @@ def get_app_sec_security_policy(config_id: Optional[_builtins.int] = None,
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         security_policy_id_lists=pulumi.get(__ret__, 'security_policy_id_lists'),
         security_policy_name=pulumi.get(__ret__, 'security_policy_name'))
-def get_app_sec_security_policy_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                       security_policy_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_app_sec_security_policy_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                       security_policy_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecSecurityPolicyResult]:
     """
     Use this data source to access information about an existing resource.

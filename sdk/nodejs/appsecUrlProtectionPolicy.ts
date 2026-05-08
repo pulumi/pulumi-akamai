@@ -147,55 +147,55 @@ export interface AppsecUrlProtectionPolicyState {
     /**
      * List of API definitions associated with the URL protection policy
      */
-    apiDefinitions?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyApiDefinition>[]>;
+    apiDefinitions?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyApiDefinition>[] | undefined>;
     /**
      * List of bypass conditions for the URL protection policy
      */
-    bypassConditions?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyBypassCondition>[]>;
+    bypassConditions?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyBypassCondition>[] | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Date when the URL protection policy was created
      */
-    createDate?: pulumi.Input<string>;
+    createDate?: pulumi.Input<string | undefined>;
     /**
      * User who created the URL protection policy
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * Description of the URL protection policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * List of hostname and path configurations
      */
-    hostnamePaths?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyHostnamePath>[]>;
+    hostnamePaths?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyHostnamePath>[] | undefined>;
     /**
      * Intelligent load shedding configuration
      */
-    intelligentLoadShedding?: pulumi.Input<inputs.AppsecUrlProtectionPolicyIntelligentLoadShedding>;
+    intelligentLoadShedding?: pulumi.Input<inputs.AppsecUrlProtectionPolicyIntelligentLoadShedding | undefined>;
     /**
      * Maximum rate threshold for the URL protection policy
      */
-    maxRateThreshold?: pulumi.Input<number>;
+    maxRateThreshold?: pulumi.Input<number | undefined>;
     /**
      * Name of the URL protection policy
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Date when the URL protection policy was last updated
      */
-    updateDate?: pulumi.Input<string>;
+    updateDate?: pulumi.Input<string | undefined>;
     /**
      * User who last updated the URL protection policy
      */
-    updatedBy?: pulumi.Input<string>;
+    updatedBy?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the URL protection policy
      */
-    urlProtectionPolicyId?: pulumi.Input<number>;
+    urlProtectionPolicyId?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -205,11 +205,11 @@ export interface AppsecUrlProtectionPolicyArgs {
     /**
      * List of API definitions associated with the URL protection policy
      */
-    apiDefinitions?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyApiDefinition>[]>;
+    apiDefinitions?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyApiDefinition>[] | undefined>;
     /**
      * List of bypass conditions for the URL protection policy
      */
-    bypassConditions?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyBypassCondition>[]>;
+    bypassConditions?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyBypassCondition>[] | undefined>;
     /**
      * Unique identifier of the security configuration
      */
@@ -217,15 +217,15 @@ export interface AppsecUrlProtectionPolicyArgs {
     /**
      * Description of the URL protection policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * List of hostname and path configurations
      */
-    hostnamePaths?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyHostnamePath>[]>;
+    hostnamePaths?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyHostnamePath>[] | undefined>;
     /**
      * Intelligent load shedding configuration
      */
-    intelligentLoadShedding?: pulumi.Input<inputs.AppsecUrlProtectionPolicyIntelligentLoadShedding>;
+    intelligentLoadShedding?: pulumi.Input<inputs.AppsecUrlProtectionPolicyIntelligentLoadShedding | undefined>;
     /**
      * Maximum rate threshold for the URL protection policy
      */
@@ -233,5 +233,5 @@ export interface AppsecUrlProtectionPolicyArgs {
     /**
      * Name of the URL protection policy
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

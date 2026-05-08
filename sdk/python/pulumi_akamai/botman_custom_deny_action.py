@@ -49,9 +49,9 @@ class BotmanCustomDenyActionArgs:
 @pulumi.input_type
 class _BotmanCustomDenyActionState:
     def __init__(__self__, *,
-                 action_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_deny_action: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_deny_action: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BotmanCustomDenyAction resources.
         """
@@ -64,29 +64,29 @@ class _BotmanCustomDenyActionState:
 
     @_builtins.property
     @pulumi.getter(name="actionId")
-    def action_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "action_id")
 
     @action_id.setter
-    def action_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customDenyAction")
-    def custom_deny_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_deny_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "custom_deny_action")
 
     @custom_deny_action.setter
-    def custom_deny_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_deny_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_deny_action", value)
 
 
@@ -96,8 +96,8 @@ class BotmanCustomDenyAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_deny_action: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_deny_action: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a BotmanCustomDenyAction resource with the given unique name, props, and options.
@@ -129,8 +129,8 @@ class BotmanCustomDenyAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_deny_action: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_deny_action: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -157,9 +157,9 @@ class BotmanCustomDenyAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            custom_deny_action: Optional[pulumi.Input[_builtins.str]] = None) -> 'BotmanCustomDenyAction':
+            action_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            custom_deny_action: pulumi.Input[Optional[_builtins.str]] = None) -> 'BotmanCustomDenyAction':
         """
         Get an existing BotmanCustomDenyAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

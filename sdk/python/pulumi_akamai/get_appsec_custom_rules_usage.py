@@ -114,8 +114,8 @@ def get_appsec_custom_rules_usage(config_id: Optional[_builtins.int] = None,
         output_text=pulumi.get(__ret__, 'output_text'),
         rule_ids=pulumi.get(__ret__, 'rule_ids'),
         rules=pulumi.get(__ret__, 'rules'))
-def get_appsec_custom_rules_usage_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                         rule_ids: Optional[pulumi.Input[Sequence[_builtins.int]]] = None,
+def get_appsec_custom_rules_usage_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                         rule_ids: pulumi.Input[Optional[Sequence[_builtins.int]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecCustomRulesUsageResult]:
     """
     Use this data source to access information about an existing resource.

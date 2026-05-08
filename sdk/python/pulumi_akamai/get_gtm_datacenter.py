@@ -234,8 +234,8 @@ def get_gtm_datacenter(datacenter_id: Optional[_builtins.int] = None,
         servermonitor_pool=pulumi.get(__ret__, 'servermonitor_pool'),
         state_or_province=pulumi.get(__ret__, 'state_or_province'),
         virtual=pulumi.get(__ret__, 'virtual'))
-def get_gtm_datacenter_output(datacenter_id: Optional[pulumi.Input[_builtins.int]] = None,
-                              domain: Optional[pulumi.Input[_builtins.str]] = None,
+def get_gtm_datacenter_output(datacenter_id: pulumi.Input[Optional[_builtins.int]] = None,
+                              domain: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmDatacenterResult]:
     """
     Use this data source to access information about an existing resource.

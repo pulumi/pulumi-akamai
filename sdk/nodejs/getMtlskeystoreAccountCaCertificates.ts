@@ -44,5 +44,5 @@ export function getMtlskeystoreAccountCaCertificatesOutput(args?: GetMtlskeystor
  * A collection of arguments for invoking getMtlskeystoreAccountCaCertificates.
  */
 export interface GetMtlskeystoreAccountCaCertificatesOutputArgs {
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

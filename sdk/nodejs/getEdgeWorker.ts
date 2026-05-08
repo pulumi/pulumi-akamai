@@ -54,7 +54,7 @@ export function getEdgeWorkerOutput(args?: GetEdgeWorkerOutputArgs, opts?: pulum
  * A collection of arguments for invoking getEdgeWorker.
  */
 export interface GetEdgeWorkerOutputArgs {
-    edgeworkerId?: pulumi.Input<number>;
-    localBundle?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    edgeworkerId?: pulumi.Input<number | undefined>;
+    localBundle?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

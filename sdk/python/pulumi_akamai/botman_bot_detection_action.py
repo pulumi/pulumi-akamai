@@ -71,10 +71,10 @@ class BotmanBotDetectionActionArgs:
 @pulumi.input_type
 class _BotmanBotDetectionActionState:
     def __init__(__self__, *,
-                 bot_detection_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 detection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 bot_detection_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 detection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BotmanBotDetectionAction resources.
         """
@@ -89,38 +89,38 @@ class _BotmanBotDetectionActionState:
 
     @_builtins.property
     @pulumi.getter(name="botDetectionAction")
-    def bot_detection_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bot_detection_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "bot_detection_action")
 
     @bot_detection_action.setter
-    def bot_detection_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bot_detection_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bot_detection_action", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="detectionId")
-    def detection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "detection_id")
 
     @detection_id.setter
-    def detection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -130,10 +130,10 @@ class BotmanBotDetectionAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bot_detection_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 detection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bot_detection_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 detection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a BotmanBotDetectionAction resource with the given unique name, props, and options.
@@ -165,10 +165,10 @@ class BotmanBotDetectionAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bot_detection_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 detection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bot_detection_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 detection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -200,10 +200,10 @@ class BotmanBotDetectionAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bot_detection_action: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            detection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'BotmanBotDetectionAction':
+            bot_detection_action: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            detection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'BotmanBotDetectionAction':
         """
         Get an existing BotmanBotDetectionAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

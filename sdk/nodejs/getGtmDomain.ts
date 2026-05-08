@@ -100,13 +100,13 @@ export function getGtmDomainOutput(args: GetGtmDomainOutputArgs, opts?: pulumi.I
  * A collection of arguments for invoking getGtmDomain.
  */
 export interface GetGtmDomainOutputArgs {
-    asMaps?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainAsMapArgs>[]>;
-    cidrMaps?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainCidrMapArgs>[]>;
-    datacenters?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainDatacenterArgs>[]>;
-    geographicMaps?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainGeographicMapArgs>[]>;
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainLinkArgs>[]>;
+    asMaps?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainAsMapArgs>[] | undefined>;
+    cidrMaps?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainCidrMapArgs>[] | undefined>;
+    datacenters?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainDatacenterArgs>[] | undefined>;
+    geographicMaps?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainGeographicMapArgs>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainLinkArgs>[] | undefined>;
     name: pulumi.Input<string>;
-    properties?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyArgs>[]>;
-    resources?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainResourceArgs>[]>;
-    status?: pulumi.Input<inputs.GetGtmDomainStatusArgs>;
+    properties?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyArgs>[] | undefined>;
+    resources?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainResourceArgs>[] | undefined>;
+    status?: pulumi.Input<inputs.GetGtmDomainStatusArgs | undefined>;
 }

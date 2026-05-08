@@ -47,7 +47,7 @@ export function getApidefinitionsOpenapiOutput(args: GetApidefinitionsOpenapiOut
  * A collection of arguments for invoking getApidefinitionsOpenapi.
  */
 export interface GetApidefinitionsOpenapiOutputArgs {
-    api?: pulumi.Input<string>;
-    apiFileName?: pulumi.Input<string>;
+    api?: pulumi.Input<string | undefined>;
+    apiFileName?: pulumi.Input<string | undefined>;
     filePath: pulumi.Input<string>;
 }

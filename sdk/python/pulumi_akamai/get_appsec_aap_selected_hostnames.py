@@ -143,8 +143,8 @@ def get_appsec_aap_selected_hostnames(config_id: Optional[_builtins.int] = None,
         protected_hosts=pulumi.get(__ret__, 'protected_hosts'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         selected_hosts=pulumi.get(__ret__, 'selected_hosts'))
-def get_appsec_aap_selected_hostnames_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                             security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_appsec_aap_selected_hostnames_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                             security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecAapSelectedHostnamesResult]:
     """
     Use this data source to access information about an existing resource.

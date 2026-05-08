@@ -80,14 +80,14 @@ export function getCloudcertificatesCertificatesOutput(args?: GetCloudcertificat
  * A collection of arguments for invoking getCloudcertificatesCertificates.
  */
 export interface GetCloudcertificatesCertificatesOutputArgs {
-    certificateName?: pulumi.Input<string>;
-    certificateStatuses?: pulumi.Input<pulumi.Input<string>[]>;
-    contractId?: pulumi.Input<string>;
-    domain?: pulumi.Input<string>;
-    expiringInDays?: pulumi.Input<number>;
-    groupId?: pulumi.Input<string>;
-    includeCertificateMaterials?: pulumi.Input<boolean>;
-    issuer?: pulumi.Input<string>;
-    keyType?: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
+    certificateName?: pulumi.Input<string | undefined>;
+    certificateStatuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    contractId?: pulumi.Input<string | undefined>;
+    domain?: pulumi.Input<string | undefined>;
+    expiringInDays?: pulumi.Input<number | undefined>;
+    groupId?: pulumi.Input<string | undefined>;
+    includeCertificateMaterials?: pulumi.Input<boolean | undefined>;
+    issuer?: pulumi.Input<string | undefined>;
+    keyType?: pulumi.Input<string | undefined>;
+    sort?: pulumi.Input<string | undefined>;
 }

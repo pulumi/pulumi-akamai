@@ -125,9 +125,9 @@ def get_app_sec_reputation_profile_actions(config_id: Optional[_builtins.int] = 
         output_text=pulumi.get(__ret__, 'output_text'),
         reputation_profile_id=pulumi.get(__ret__, 'reputation_profile_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_app_sec_reputation_profile_actions_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                                  reputation_profile_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_app_sec_reputation_profile_actions_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                                  reputation_profile_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                  security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecReputationProfileActionsResult]:
     """
     Use this data source to access information about an existing resource.

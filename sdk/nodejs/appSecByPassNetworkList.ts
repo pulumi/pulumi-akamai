@@ -88,15 +88,15 @@ export interface AppSecByPassNetworkListState {
     /**
      * List of network list IDs that compose the bypass list
      */
-    bypassNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    bypassNetworkLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * The unique identifier of the security policy governing the bypass network lists
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

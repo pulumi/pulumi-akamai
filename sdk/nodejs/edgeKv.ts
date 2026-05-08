@@ -103,23 +103,23 @@ export interface EdgeKvState {
     /**
      * Storage location for data
      */
-    geoLocation?: pulumi.Input<string>;
+    geoLocation?: pulumi.Input<string | undefined>;
     /**
      * Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * Name for the EKV namespace
      */
-    namespaceName?: pulumi.Input<string>;
+    namespaceName?: pulumi.Input<string | undefined>;
     /**
      * The network on which the namespace will be activated
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Retention period for data in this namespace. An update of this value will just affect new EKV items.
      */
-    retentionInSeconds?: pulumi.Input<number>;
+    retentionInSeconds?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -129,7 +129,7 @@ export interface EdgeKvArgs {
     /**
      * Storage location for data
      */
-    geoLocation?: pulumi.Input<string>;
+    geoLocation?: pulumi.Input<string | undefined>;
     /**
      * Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      */

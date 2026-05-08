@@ -103,8 +103,8 @@ def get_appsec_advanced_settings_request_body(config_id: Optional[_builtins.int]
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_appsec_advanced_settings_request_body_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                                     security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_appsec_advanced_settings_request_body_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                                     security_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecAdvancedSettingsRequestBodyResult]:
     """
     Use this data source to access information about an existing resource.

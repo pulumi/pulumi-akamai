@@ -103,27 +103,27 @@ export interface AppSecRuleUpgradeState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Versioning information for the current KRS rule set
      */
-    currentRuleset?: pulumi.Input<string>;
+    currentRuleset?: pulumi.Input<string | undefined>;
     /**
      * Whether an evaluation is currently in progress
      */
-    evalStatus?: pulumi.Input<string>;
+    evalStatus?: pulumi.Input<string | undefined>;
     /**
      * Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
      */
-    upgradeMode?: pulumi.Input<string>;
+    upgradeMode?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -141,5 +141,5 @@ export interface AppSecRuleUpgradeArgs {
     /**
      * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
      */
-    upgradeMode?: pulumi.Input<string>;
+    upgradeMode?: pulumi.Input<string | undefined>;
 }
