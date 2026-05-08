@@ -43,5 +43,5 @@ export function getCloudwrapperLocationsOutput(args?: GetCloudwrapperLocationsOu
  * A collection of arguments for invoking getCloudwrapperLocations.
  */
 export interface GetCloudwrapperLocationsOutputArgs {
-    locations?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperLocationsLocationArgs>[]>;
+    locations?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperLocationsLocationArgs>[] | undefined>;
 }

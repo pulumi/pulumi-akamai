@@ -123,8 +123,8 @@ def get_app_sec_configuration_version(config_id: Optional[_builtins.int] = None,
         production_status=pulumi.get(__ret__, 'production_status'),
         staging_status=pulumi.get(__ret__, 'staging_status'),
         version=pulumi.get(__ret__, 'version'))
-def get_app_sec_configuration_version_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                             version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_app_sec_configuration_version_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                             version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecConfigurationVersionResult]:
     """
     Use this data source to access information about an existing resource.

@@ -9,91 +9,91 @@ export interface AppSecIPGeoAsnControls {
     /**
      * Action set for ASN Controls
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * List of IDs of ASN network list to be blocked.
      */
-    asnNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    asnNetworkLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface AppSecIPGeoGeoControls {
     /**
      * Action set for GEO Controls.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * List of IDs of geographic network list to be blocked.
      */
-    geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    geoNetworkLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface AppSecIPGeoIpControls {
     /**
      * Action set for IP Controls.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * List of IDs of IP network list to be blocked.
      */
-    ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    ipNetworkLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface AppSecSiemSettingsExceptions {
     /**
      * Whether there should be an exception to include api request constraints events in SIEM
      */
-    apiRequestConstraints?: pulumi.Input<pulumi.Input<string>[]>;
+    apiRequestConstraints?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include apr protection events in SIEM
      */
-    aprProtections?: pulumi.Input<pulumi.Input<string>[]>;
+    aprProtections?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include bot management events in SIEM
      */
-    botManagements?: pulumi.Input<pulumi.Input<string>[]>;
+    botManagements?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include client reputation events in SIEM
      */
-    clientReps?: pulumi.Input<pulumi.Input<string>[]>;
+    clientReps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include custom rules events in SIEM
      */
-    customRules?: pulumi.Input<pulumi.Input<string>[]>;
+    customRules?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include ip geo events in SIEM
      */
-    ipGeos?: pulumi.Input<pulumi.Input<string>[]>;
+    ipGeos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include malware protection events in SIEM
      */
-    malwareProtections?: pulumi.Input<pulumi.Input<string>[]>;
+    malwareProtections?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include rate events in SIEM
      */
-    rates?: pulumi.Input<pulumi.Input<string>[]>;
+    rates?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include slow post events in SIEM
      */
-    slowPosts?: pulumi.Input<pulumi.Input<string>[]>;
+    slowPosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include url protection events in SIEM
      */
-    urlProtections?: pulumi.Input<pulumi.Input<string>[]>;
+    urlProtections?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether there should be an exception to include waf events in SIEM
      */
-    wafs?: pulumi.Input<pulumi.Input<string>[]>;
+    wafs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions {
     /**
      * List of attack group names.
      */
-    attackGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    attackGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of rule IDs.
      */
-    rules?: pulumi.Input<pulumi.Input<number>[]>;
+    rules?: pulumi.Input<pulumi.Input<number>[] | undefined>;
 }
 
 export interface AppsecUrlProtectionPolicyApiDefinition {
@@ -104,26 +104,26 @@ export interface AppsecUrlProtectionPolicyApiDefinition {
     /**
      * Whether defined resources are included
      */
-    definedResources?: pulumi.Input<boolean>;
+    definedResources?: pulumi.Input<boolean | undefined>;
     /**
      * List of resource IDs
      */
-    resourceIds?: pulumi.Input<pulumi.Input<number>[]>;
+    resourceIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Whether undefined resources are included
      */
-    undefinedResources?: pulumi.Input<boolean>;
+    undefinedResources?: pulumi.Input<boolean | undefined>;
 }
 
 export interface AppsecUrlProtectionPolicyBypassCondition {
     /**
      * Whether to use wildcard matching for header names
      */
-    nameWildcard?: pulumi.Input<boolean>;
+    nameWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * List of header names for RequestHeaderCondition
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of condition (e.g., RequestHeaderCondition, NetworkListCondition)
      */
@@ -131,15 +131,15 @@ export interface AppsecUrlProtectionPolicyBypassCondition {
     /**
      * Whether the value matching is case sensitive
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to use wildcard matching for values
      */
-    valueWildcard?: pulumi.Input<boolean>;
+    valueWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * List of values for the condition
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface AppsecUrlProtectionPolicyHostnamePath {
@@ -157,11 +157,11 @@ export interface AppsecUrlProtectionPolicyIntelligentLoadShedding {
     /**
      * List of categories for intelligent load shedding
      */
-    categories?: pulumi.Input<pulumi.Input<string>[]>;
+    categories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Custom criteria for intelligent load shedding
      */
-    customCriterias?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria>[]>;
+    customCriterias?: pulumi.Input<pulumi.Input<inputs.AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria>[] | undefined>;
     /**
      * Number of hits per second threshold
      */
@@ -195,14 +195,14 @@ export interface AppsecWafRulesetAttackGroup {
     /**
      * JSON-formatted conditions and exceptions associated with the attack group
      */
-    conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string | undefined>;
 }
 
 export interface AppsecWafRulesetRule {
     /**
      * Conditions and exceptions associated with the rule
      */
-    conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string | undefined>;
     /**
      * Action taken when the rule is triggered (alert, deny, deny_custom_{custom_deny_id}, none)
      */
@@ -217,15 +217,15 @@ export interface ClientlistListItem {
     /**
      * A description of the item.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The item expiration date.
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * The item tags.
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
      */
@@ -236,7 +236,7 @@ export interface CloudAccessKeyCredentialsA {
     /**
      * Access key id from cloud provider which is used to sign API requests
      */
-    cloudAccessKeyId?: pulumi.Input<string>;
+    cloudAccessKeyId?: pulumi.Input<string | undefined>;
     /**
      * Cloud Access secret from cloud provider which is used to sign API requests
      */
@@ -248,18 +248,18 @@ export interface CloudAccessKeyCredentialsA {
     /**
      * Numeric access key version associated with specific pair of cloud access credentials used to sign API requests
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
     /**
      * The unique identifier assigned to specific access key version
      */
-    versionGuid?: pulumi.Input<string>;
+    versionGuid?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudAccessKeyCredentialsB {
     /**
      * Access key id from cloud provider which is used to sign API requests
      */
-    cloudAccessKeyId?: pulumi.Input<string>;
+    cloudAccessKeyId?: pulumi.Input<string | undefined>;
     /**
      * Cloud Access secret from cloud provider which is used to sign API requests
      */
@@ -271,18 +271,18 @@ export interface CloudAccessKeyCredentialsB {
     /**
      * Numeric access key version associated with specific pair of cloud access credentials used to sign API requests
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
     /**
      * The unique identifier assigned to specific access key version
      */
-    versionGuid?: pulumi.Input<string>;
+    versionGuid?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudAccessKeyNetworkConfiguration {
     /**
      * Additional type of the deployment network that the access key will be deployed to.
      */
-    additionalCdn?: pulumi.Input<string>;
+    additionalCdn?: pulumi.Input<string | undefined>;
     /**
      * The API deploys the access key to this secure network
      */
@@ -293,57 +293,57 @@ export interface CloudAccessKeyTimeouts {
     /**
      * Optional configurable resource create timeout. By default it's 60 minutes with 1 minute polling interval.
      */
-    create?: pulumi.Input<string>;
+    create?: pulumi.Input<string | undefined>;
     /**
      * Optional configurable resource delete timeout. By default it's 60 minutes with 1 minute polling interval.
      */
-    delete?: pulumi.Input<string>;
+    delete?: pulumi.Input<string | undefined>;
     /**
      * Optional configurable resource update timeout. By default it's 60 minutes with 1 minute polling interval.
      */
-    update?: pulumi.Input<string>;
+    update?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudcertificatesCertificateSubject {
     /**
      * Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
      */
-    commonName?: pulumi.Input<string>;
+    commonName?: pulumi.Input<string | undefined>;
     /**
      * Two-letter ISO 3166 country code.
      */
-    country?: pulumi.Input<string>;
+    country?: pulumi.Input<string | undefined>;
     /**
      * City or locality name.
      */
-    locality?: pulumi.Input<string>;
+    locality?: pulumi.Input<string | undefined>;
     /**
      * Legal name of the organization.
      */
-    organization?: pulumi.Input<string>;
+    organization?: pulumi.Input<string | undefined>;
     /**
      * Full name of the state or province.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudletsApplicationLoadBalancerActivationTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudletsApplicationLoadBalancerDataCenter {
     /**
      * The city in which the data center is located.
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * Describes if cloud server host header is overridden
      */
-    cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
+    cloudServerHostHeaderOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Describes if this datacenter is a cloud service
      */
-    cloudService?: pulumi.Input<boolean>;
+    cloudService?: pulumi.Input<boolean | undefined>;
     /**
      * The continent on which the data center is located
      */
@@ -355,7 +355,7 @@ export interface CloudletsApplicationLoadBalancerDataCenter {
     /**
      * This should match the 'hostname' value defined for this datacenter in Property Manager
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * The latitude value for the data center. This member supports six decimal places of precision.
      */
@@ -363,7 +363,7 @@ export interface CloudletsApplicationLoadBalancerDataCenter {
     /**
      * An array of strings that represent the origin servers used to poll the data centers in an application load balancer configuration. These servers support basic HTTP polling.
      */
-    livenessHosts?: pulumi.Input<pulumi.Input<string>[]>;
+    livenessHosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The longitude value for the data center. This member supports six decimal places of precision.
      */
@@ -379,22 +379,22 @@ export interface CloudletsApplicationLoadBalancerDataCenter {
     /**
      * The state, province, or region where the data center is located
      */
-    stateOrProvince?: pulumi.Input<string>;
+    stateOrProvince?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudletsApplicationLoadBalancerLivenessSettings {
     /**
      * Maps additional case-insensitive HTTP header names included to the liveness testing requests
      */
-    additionalHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Host header for the liveness HTTP request
      */
-    hostHeader?: pulumi.Input<string>;
+    hostHeader?: pulumi.Input<string | undefined>;
     /**
      * Describes how often the liveness test will be performed. Optional defaults to 60 seconds, minimum is 10 seconds.
      */
-    interval?: pulumi.Input<number>;
+    interval?: pulumi.Input<number | undefined>;
     /**
      * The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
      */
@@ -402,7 +402,7 @@ export interface CloudletsApplicationLoadBalancerLivenessSettings {
     /**
      * Describes whether or not to validate the origin certificate for an HTTPS request
      */
-    peerCertificateVerification?: pulumi.Input<boolean>;
+    peerCertificateVerification?: pulumi.Input<boolean | undefined>;
     /**
      * The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
      */
@@ -414,43 +414,43 @@ export interface CloudletsApplicationLoadBalancerLivenessSettings {
     /**
      * The request which will be used for TCP(S) tests
      */
-    requestString?: pulumi.Input<string>;
-    responseString?: pulumi.Input<string>;
+    requestString?: pulumi.Input<string | undefined>;
+    responseString?: pulumi.Input<string | undefined>;
     /**
      * Set to true to mark the liveness test as failed when the request returns a 3xx (redirection) status code.
      */
-    status3xxFailure?: pulumi.Input<boolean>;
+    status3xxFailure?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true to mark the liveness test as failed when the request returns a 4xx (client error) status code.
      */
-    status4xxFailure?: pulumi.Input<boolean>;
+    status4xxFailure?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true to mark the liveness test as failed when the request returns a 5xx (server error) status code.
      */
-    status5xxFailure?: pulumi.Input<boolean>;
+    status5xxFailure?: pulumi.Input<boolean | undefined>;
     /**
      * The number of seconds the system waits before failing the liveness test. The default is 25 seconds.
      */
-    timeout?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number | undefined>;
 }
 
 export interface CloudletsPolicyActivationTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudletsPolicyTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudwrapperActivationTimeouts {
     /**
      * Optional configurable activation timeout to be used on resource create. By default it's 4h with 1m pooling interval.
      */
-    create?: pulumi.Input<string>;
+    create?: pulumi.Input<string | undefined>;
     /**
      * Optional configurable activation timeout to be used on resource update. By default it's 4h with 1m pooling interval.
      */
-    update?: pulumi.Input<string>;
+    update?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudwrapperConfigurationLocation {
@@ -483,30 +483,30 @@ export interface CloudwrapperConfigurationTimeouts {
     /**
      * A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.
      */
-    delete?: pulumi.Input<string>;
+    delete?: pulumi.Input<string | undefined>;
 }
 
 export interface CpCodeTimeouts {
-    update?: pulumi.Input<string>;
+    update?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsDvEnrollmentAdminContact {
     /**
      * The address of the contact
      */
-    addressLineOne?: pulumi.Input<string>;
+    addressLineOne?: pulumi.Input<string | undefined>;
     /**
      * The address of the contact
      */
-    addressLineTwo?: pulumi.Input<string>;
+    addressLineTwo?: pulumi.Input<string | undefined>;
     /**
      * City of residence of the contact
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * Country code of the contact
      */
-    countryCode?: pulumi.Input<string>;
+    countryCode?: pulumi.Input<string | undefined>;
     /**
      * E-mail address of the contact
      */
@@ -522,7 +522,7 @@ export interface CpsDvEnrollmentAdminContact {
     /**
      * Organization where contact is hired
      */
-    organization?: pulumi.Input<string>;
+    organization?: pulumi.Input<string | undefined>;
     /**
      * Phone number of the contact
      */
@@ -530,15 +530,15 @@ export interface CpsDvEnrollmentAdminContact {
     /**
      * Postal code of the contact
      */
-    postalCode?: pulumi.Input<string>;
+    postalCode?: pulumi.Input<string | undefined>;
     /**
      * The region of the contact
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Title of the the contact
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsDvEnrollmentCsr {
@@ -557,60 +557,60 @@ export interface CpsDvEnrollmentCsr {
     /**
      * Organizational unit of organization
      */
-    organizationalUnit?: pulumi.Input<string>;
+    organizationalUnit?: pulumi.Input<string | undefined>;
     /**
      * For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
      */
-    preferredTrustChain?: pulumi.Input<string>;
+    preferredTrustChain?: pulumi.Input<string | undefined>;
     /**
      * State or province of organization location
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsDvEnrollmentDnsChallenge {
     /**
      * Domain for which the challenges were completed
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * The domain name where Akamai publishes the response body to validate
      */
-    fullPath?: pulumi.Input<string>;
+    fullPath?: pulumi.Input<string | undefined>;
     /**
      * The unique content of the challenge
      */
-    responseBody?: pulumi.Input<string>;
+    responseBody?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsDvEnrollmentHttpChallenge {
     /**
      * Domain for which the challenges were completed
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * The URL where Akamai publishes the response body to validate
      */
-    fullPath?: pulumi.Input<string>;
+    fullPath?: pulumi.Input<string | undefined>;
     /**
      * The unique content of the challenge
      */
-    responseBody?: pulumi.Input<string>;
+    responseBody?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsDvEnrollmentNetworkConfiguration {
     /**
      * The trust chain configuration used for client mutual authentication
      */
-    clientMutualAuthentication?: pulumi.Input<inputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication>;
+    clientMutualAuthentication?: pulumi.Input<inputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication | undefined>;
     /**
      * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
      */
-    cloneDnsNames?: pulumi.Input<boolean>;
+    cloneDnsNames?: pulumi.Input<boolean | undefined>;
     /**
      * TLS versions which are disallowed
      */
-    disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[]>;
+    disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Geography type used for enrollment
      */
@@ -618,34 +618,34 @@ export interface CpsDvEnrollmentNetworkConfiguration {
     /**
      * Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
      */
-    mustHaveCiphers?: pulumi.Input<string>;
+    mustHaveCiphers?: pulumi.Input<string | undefined>;
     /**
      * Enable OCSP stapling. Default is 'on'
      */
-    ocspStapling?: pulumi.Input<string>;
+    ocspStapling?: pulumi.Input<string | undefined>;
     /**
      * Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
      */
-    preferredCiphers?: pulumi.Input<string>;
+    preferredCiphers?: pulumi.Input<string | undefined>;
     /**
      * Enable QUIC protocol. Default is false
      */
-    quicEnabled?: pulumi.Input<boolean>;
+    quicEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 export interface CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
     /**
      * Enable OCSP stapling
      */
-    ocspEnabled?: pulumi.Input<boolean>;
+    ocspEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Enable the server to send the certificate authority (CA) list to the client
      */
-    sendCaListToClient?: pulumi.Input<boolean>;
+    sendCaListToClient?: pulumi.Input<boolean | undefined>;
     /**
      * The identifier of the set of trust chains, created in the Trust Chain Manager
      */
-    setId?: pulumi.Input<string>;
+    setId?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsDvEnrollmentOrganization {
@@ -656,7 +656,7 @@ export interface CpsDvEnrollmentOrganization {
     /**
      * The address of organization
      */
-    addressLineTwo?: pulumi.Input<string>;
+    addressLineTwo?: pulumi.Input<string | undefined>;
     /**
      * City of organization
      */
@@ -687,19 +687,19 @@ export interface CpsDvEnrollmentTechContact {
     /**
      * The address of the contact
      */
-    addressLineOne?: pulumi.Input<string>;
+    addressLineOne?: pulumi.Input<string | undefined>;
     /**
      * The address of the contact
      */
-    addressLineTwo?: pulumi.Input<string>;
+    addressLineTwo?: pulumi.Input<string | undefined>;
     /**
      * City of residence of the contact
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * Country code of the contact
      */
-    countryCode?: pulumi.Input<string>;
+    countryCode?: pulumi.Input<string | undefined>;
     /**
      * E-mail address of the contact
      */
@@ -715,7 +715,7 @@ export interface CpsDvEnrollmentTechContact {
     /**
      * Organization where contact is hired
      */
-    organization?: pulumi.Input<string>;
+    organization?: pulumi.Input<string | undefined>;
     /**
      * Phone number of the contact
      */
@@ -723,42 +723,42 @@ export interface CpsDvEnrollmentTechContact {
     /**
      * Postal code of the contact
      */
-    postalCode?: pulumi.Input<string>;
+    postalCode?: pulumi.Input<string | undefined>;
     /**
      * The region of the contact
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Title of the the contact
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsDvEnrollmentTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsDvValidationTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsThirdPartyEnrollmentAdminContact {
     /**
      * The address of the contact
      */
-    addressLineOne?: pulumi.Input<string>;
+    addressLineOne?: pulumi.Input<string | undefined>;
     /**
      * The address of the contact
      */
-    addressLineTwo?: pulumi.Input<string>;
+    addressLineTwo?: pulumi.Input<string | undefined>;
     /**
      * City of residence of the contact
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * Country code of the contact
      */
-    countryCode?: pulumi.Input<string>;
+    countryCode?: pulumi.Input<string | undefined>;
     /**
      * E-mail address of the contact
      */
@@ -774,7 +774,7 @@ export interface CpsThirdPartyEnrollmentAdminContact {
     /**
      * Organization where contact is hired
      */
-    organization?: pulumi.Input<string>;
+    organization?: pulumi.Input<string | undefined>;
     /**
      * Phone number of the contact
      */
@@ -782,15 +782,15 @@ export interface CpsThirdPartyEnrollmentAdminContact {
     /**
      * Postal code of the contact
      */
-    postalCode?: pulumi.Input<string>;
+    postalCode?: pulumi.Input<string | undefined>;
     /**
      * The region of the contact
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Title of the the contact
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsThirdPartyEnrollmentCsr {
@@ -809,30 +809,30 @@ export interface CpsThirdPartyEnrollmentCsr {
     /**
      * Organizational unit of organization
      */
-    organizationalUnit?: pulumi.Input<string>;
+    organizationalUnit?: pulumi.Input<string | undefined>;
     /**
      * For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
      */
-    preferredTrustChain?: pulumi.Input<string>;
+    preferredTrustChain?: pulumi.Input<string | undefined>;
     /**
      * State or province of organization location
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsThirdPartyEnrollmentNetworkConfiguration {
     /**
      * The trust chain configuration used for client mutual authentication
      */
-    clientMutualAuthentication?: pulumi.Input<inputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication>;
+    clientMutualAuthentication?: pulumi.Input<inputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication | undefined>;
     /**
      * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
      */
-    cloneDnsNames?: pulumi.Input<boolean>;
+    cloneDnsNames?: pulumi.Input<boolean | undefined>;
     /**
      * TLS versions which are disallowed
      */
-    disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[]>;
+    disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Geography type used for enrollment
      */
@@ -840,34 +840,34 @@ export interface CpsThirdPartyEnrollmentNetworkConfiguration {
     /**
      * Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
      */
-    mustHaveCiphers?: pulumi.Input<string>;
+    mustHaveCiphers?: pulumi.Input<string | undefined>;
     /**
      * Enable OCSP stapling. Default is 'on'
      */
-    ocspStapling?: pulumi.Input<string>;
+    ocspStapling?: pulumi.Input<string | undefined>;
     /**
      * Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
      */
-    preferredCiphers?: pulumi.Input<string>;
+    preferredCiphers?: pulumi.Input<string | undefined>;
     /**
      * Enable QUIC protocol. Default is false
      */
-    quicEnabled?: pulumi.Input<boolean>;
+    quicEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 export interface CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication {
     /**
      * Enable OCSP stapling
      */
-    ocspEnabled?: pulumi.Input<boolean>;
+    ocspEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Enable the server to send the certificate authority (CA) list to the client
      */
-    sendCaListToClient?: pulumi.Input<boolean>;
+    sendCaListToClient?: pulumi.Input<boolean | undefined>;
     /**
      * The identifier of the set of trust chains, created in the Trust Chain Manager
      */
-    setId?: pulumi.Input<string>;
+    setId?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsThirdPartyEnrollmentOrganization {
@@ -878,7 +878,7 @@ export interface CpsThirdPartyEnrollmentOrganization {
     /**
      * The address of organization
      */
-    addressLineTwo?: pulumi.Input<string>;
+    addressLineTwo?: pulumi.Input<string | undefined>;
     /**
      * City of organization
      */
@@ -909,19 +909,19 @@ export interface CpsThirdPartyEnrollmentTechContact {
     /**
      * The address of the contact
      */
-    addressLineOne?: pulumi.Input<string>;
+    addressLineOne?: pulumi.Input<string | undefined>;
     /**
      * The address of the contact
      */
-    addressLineTwo?: pulumi.Input<string>;
+    addressLineTwo?: pulumi.Input<string | undefined>;
     /**
      * City of residence of the contact
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * Country code of the contact
      */
-    countryCode?: pulumi.Input<string>;
+    countryCode?: pulumi.Input<string | undefined>;
     /**
      * E-mail address of the contact
      */
@@ -937,7 +937,7 @@ export interface CpsThirdPartyEnrollmentTechContact {
     /**
      * Organization where contact is hired
      */
-    organization?: pulumi.Input<string>;
+    organization?: pulumi.Input<string | undefined>;
     /**
      * Phone number of the contact
      */
@@ -945,23 +945,23 @@ export interface CpsThirdPartyEnrollmentTechContact {
     /**
      * Postal code of the contact
      */
-    postalCode?: pulumi.Input<string>;
+    postalCode?: pulumi.Input<string | undefined>;
     /**
      * The region of the contact
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Title of the the contact
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsThirdPartyEnrollmentTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface CpsUploadCertificateTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface DatastreamAzureConnector {
@@ -976,7 +976,7 @@ export interface DatastreamAzureConnector {
     /**
      * Indicates whether the logs should be compressed
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the Azure Storage container name
      */
@@ -999,7 +999,7 @@ export interface DatastreamDatadogConnector {
     /**
      * Indicates whether the logs should be compressed
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the connector
      */
@@ -1011,22 +1011,22 @@ export interface DatastreamDatadogConnector {
     /**
      * The service of the Datadog connector
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
     /**
      * The source of the Datadog connector
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * The tags of the Datadog connector
      */
-    tags?: pulumi.Input<string>;
+    tags?: pulumi.Input<string | undefined>;
 }
 
 export interface DatastreamDeliveryConfiguration {
     /**
      * A delimiter that you use to separate data set fields in log lines
      */
-    fieldDelimiter?: pulumi.Input<string>;
+    fieldDelimiter?: pulumi.Input<string | undefined>;
     /**
      * The format in which logs will be received
      */
@@ -1038,11 +1038,11 @@ export interface DatastreamDeliveryConfiguration {
     /**
      * The prefix of the log file that will be send to a destination
      */
-    uploadFilePrefix?: pulumi.Input<string>;
+    uploadFilePrefix?: pulumi.Input<string | undefined>;
     /**
      * The suffix of the log file that will be send to a destination
      */
-    uploadFileSuffix?: pulumi.Input<string>;
+    uploadFileSuffix?: pulumi.Input<string | undefined>;
 }
 
 export interface DatastreamDeliveryConfigurationFrequency {
@@ -1060,11 +1060,11 @@ export interface DatastreamDynatraceConnector {
     /**
      * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
      */
-    customHeaderName?: pulumi.Input<string>;
+    customHeaderName?: pulumi.Input<string | undefined>;
     /**
      * The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
      */
-    customHeaderValue?: pulumi.Input<string>;
+    customHeaderValue?: pulumi.Input<string | undefined>;
     /**
      * The destination's name.
      */
@@ -1079,27 +1079,27 @@ export interface DatastreamElasticsearchConnector {
     /**
      * The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
      */
-    caCert?: pulumi.Input<string>;
+    caCert?: pulumi.Input<string | undefined>;
     /**
      * The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
      */
-    clientCert?: pulumi.Input<string>;
+    clientCert?: pulumi.Input<string | undefined>;
     /**
      * The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
      */
-    clientKey?: pulumi.Input<string>;
+    clientKey?: pulumi.Input<string | undefined>;
     /**
      * The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
      */
-    customHeaderName?: pulumi.Input<string>;
+    customHeaderName?: pulumi.Input<string | undefined>;
     /**
      * The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
      */
-    customHeaderValue?: pulumi.Input<string>;
+    customHeaderValue?: pulumi.Input<string | undefined>;
     /**
      * The name of the connector.
      */
@@ -1115,7 +1115,7 @@ export interface DatastreamElasticsearchConnector {
     /**
      * Indicates whether mTLS is enabled or not.
      */
-    mTls?: pulumi.Input<boolean>;
+    mTls?: pulumi.Input<boolean | undefined>;
     /**
      * The Elasticsearch basic access authentication password.
      */
@@ -1123,7 +1123,7 @@ export interface DatastreamElasticsearchConnector {
     /**
      * The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
      */
-    tlsHostname?: pulumi.Input<string>;
+    tlsHostname?: pulumi.Input<string | undefined>;
     /**
      * The Elasticsearch basic access authentication username.
      */
@@ -1138,7 +1138,7 @@ export interface DatastreamGcsConnector {
     /**
      * Indicates whether the logs should be compressed
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the connector
      */
@@ -1146,7 +1146,7 @@ export interface DatastreamGcsConnector {
     /**
      * The path to the folder within Google Cloud bucket where logs will be stored
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
     /**
      * The contents of the JSON private key generated and downloaded in Google Cloud Storage account
      */
@@ -1169,31 +1169,31 @@ export interface DatastreamHttpsConnector {
     /**
      * The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
      */
-    caCert?: pulumi.Input<string>;
+    caCert?: pulumi.Input<string | undefined>;
     /**
      * The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
      */
-    clientCert?: pulumi.Input<string>;
+    clientCert?: pulumi.Input<string | undefined>;
     /**
      * The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
      */
-    clientKey?: pulumi.Input<string>;
+    clientKey?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the logs should be compressed
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * Content type to pass in the log file header
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * The name of custom header passed with the request to the destination
      */
-    customHeaderName?: pulumi.Input<string>;
+    customHeaderName?: pulumi.Input<string | undefined>;
     /**
      * The custom header's contents passed with the request to the destination
      */
-    customHeaderValue?: pulumi.Input<string>;
+    customHeaderValue?: pulumi.Input<string | undefined>;
     /**
      * The name of the connector
      */
@@ -1205,19 +1205,19 @@ export interface DatastreamHttpsConnector {
     /**
      * Indicates whether mTLS is enabled or not.
      */
-    mTls?: pulumi.Input<boolean>;
+    mTls?: pulumi.Input<boolean | undefined>;
     /**
      * Password set for custom HTTPS endpoint for authentication
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
      */
-    tlsHostname?: pulumi.Input<string>;
+    tlsHostname?: pulumi.Input<string | undefined>;
     /**
      * Username used for authentication
      */
-    userName?: pulumi.Input<string>;
+    userName?: pulumi.Input<string | undefined>;
 }
 
 export interface DatastreamLogglyConnector {
@@ -1228,15 +1228,15 @@ export interface DatastreamLogglyConnector {
     /**
      * The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
      */
-    customHeaderName?: pulumi.Input<string>;
+    customHeaderName?: pulumi.Input<string | undefined>;
     /**
      * The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
      */
-    customHeaderValue?: pulumi.Input<string>;
+    customHeaderValue?: pulumi.Input<string | undefined>;
     /**
      * The name of the connector.
      */
@@ -1248,7 +1248,7 @@ export interface DatastreamLogglyConnector {
     /**
      * The tags you can use to segment and filter log events in Loggly. See Tags in the Loggly documentation.
      */
-    tags?: pulumi.Input<string>;
+    tags?: pulumi.Input<string | undefined>;
 }
 
 export interface DatastreamNewRelicConnector {
@@ -1259,15 +1259,15 @@ export interface DatastreamNewRelicConnector {
     /**
      * The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
      */
-    customHeaderName?: pulumi.Input<string>;
+    customHeaderName?: pulumi.Input<string | undefined>;
     /**
      * The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
      */
-    customHeaderValue?: pulumi.Input<string>;
+    customHeaderValue?: pulumi.Input<string | undefined>;
     /**
      * The name of the connector.
      */
@@ -1290,7 +1290,7 @@ export interface DatastreamOracleConnector {
     /**
      * Indicates whether the logs should be compressed
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the connector
      */
@@ -1325,7 +1325,7 @@ export interface DatastreamS3CompatibleConnector {
     /**
      * Enables gzip compression for a log file sent to a destination. This value is always true for this destination type.
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the destination.
      */
@@ -1337,7 +1337,7 @@ export interface DatastreamS3CompatibleConnector {
     /**
      * The path to the folder within your S3-compatible object storage bucket where you want to store logs. Optional field.
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
     /**
      * The physical storage location of your S3-compatible object storage bucket.
      */
@@ -1360,7 +1360,7 @@ export interface DatastreamS3Connector {
     /**
      * Indicates whether the logs should be compressed
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the connector
      */
@@ -1383,27 +1383,27 @@ export interface DatastreamSplunkConnector {
     /**
      * The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
      */
-    caCert?: pulumi.Input<string>;
+    caCert?: pulumi.Input<string | undefined>;
     /**
      * The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
      */
-    clientCert?: pulumi.Input<string>;
+    clientCert?: pulumi.Input<string | undefined>;
     /**
      * The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
      */
-    clientKey?: pulumi.Input<string>;
+    clientKey?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the logs should be compressed
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * The name of custom header passed with the request to the destination
      */
-    customHeaderName?: pulumi.Input<string>;
+    customHeaderName?: pulumi.Input<string | undefined>;
     /**
      * The custom header's contents passed with the request to the destination
      */
-    customHeaderValue?: pulumi.Input<string>;
+    customHeaderValue?: pulumi.Input<string | undefined>;
     /**
      * The name of the connector
      */
@@ -1419,11 +1419,11 @@ export interface DatastreamSplunkConnector {
     /**
      * Indicates whether mTLS is enabled or not.
      */
-    mTls?: pulumi.Input<boolean>;
+    mTls?: pulumi.Input<boolean | undefined>;
     /**
      * The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
      */
-    tlsHostname?: pulumi.Input<string>;
+    tlsHostname?: pulumi.Input<string | undefined>;
 }
 
 export interface DatastreamSumologicConnector {
@@ -1434,19 +1434,19 @@ export interface DatastreamSumologicConnector {
     /**
      * Indicates whether the logs should be compressed
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * Content type to pass in the log file header
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * The name of custom header passed with the request to the destination
      */
-    customHeaderName?: pulumi.Input<string>;
+    customHeaderName?: pulumi.Input<string | undefined>;
     /**
      * The custom header's contents passed with the request to the destination
      */
-    customHeaderValue?: pulumi.Input<string>;
+    customHeaderValue?: pulumi.Input<string | undefined>;
     /**
      * The name of the connector
      */
@@ -1465,7 +1465,7 @@ export interface DatastreamTrafficpeakConnector {
     /**
      * Enables gzip compression for a log file sent to a destination. The value is true by default.
      */
-    compressLogs?: pulumi.Input<boolean>;
+    compressLogs?: pulumi.Input<boolean | undefined>;
     /**
      * The type of the resource passed in the request's custom header. - Supported headers: `application/json` or `application/json; charset=utf-8`.
      */
@@ -1473,11 +1473,11 @@ export interface DatastreamTrafficpeakConnector {
     /**
      * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. Optional field.
      */
-    customHeaderName?: pulumi.Input<string>;
+    customHeaderName?: pulumi.Input<string | undefined>;
     /**
      * The custom header's contents passed with the request that contains information about the client connection. Optional field.
      */
-    customHeaderValue?: pulumi.Input<string>;
+    customHeaderValue?: pulumi.Input<string | undefined>;
     /**
      * The destination's name.
      */
@@ -1500,19 +1500,19 @@ export interface DnsZoneOutboundZoneTransfer {
     /**
      * The access control list, defined as IPv4 and IPv6 CIDR blocks.
      */
-    acls?: pulumi.Input<pulumi.Input<string>[]>;
+    acls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Enables outbound zone transfer.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Customer secondary nameservers to notify, if NOTIFY requests are desired. Up to 64 IPv4 or IPv6 addresses. If no targets are specified, you can manually request zone transfer updates as needed.
      */
-    notifyTargets?: pulumi.Input<pulumi.Input<string>[]>;
+    notifyTargets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The TSIG key used for outbound zone transfers.
      */
-    tsigKey?: pulumi.Input<inputs.DnsZoneOutboundZoneTransferTsigKey>;
+    tsigKey?: pulumi.Input<inputs.DnsZoneOutboundZoneTransferTsigKey | undefined>;
 }
 
 export interface DnsZoneOutboundZoneTransferTsigKey {
@@ -1537,20 +1537,20 @@ export interface DnsZoneTsigKey {
 }
 
 export interface EdgeHostNameTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface EdgeWorkerTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface EdgeWorkersActivationTimeouts {
-    default?: pulumi.Input<string>;
-    delete?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
+    delete?: pulumi.Input<string | undefined>;
 }
 
 export interface EdgekvGroupItemsTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRule {
@@ -1592,23 +1592,23 @@ export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs {
     /**
      * If set to true, disables a rule so it is not evaluated against incoming requests.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The end time for this match (in seconds since the epoch)
      */
-    end?: pulumi.Input<number>;
+    end?: pulumi.Input<number | undefined>;
     /**
      * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
      */
-    matchUrl?: pulumi.Input<string>;
+    matchUrl?: pulumi.Input<string | undefined>;
     /**
      * Defines a set of match objects
      */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs>[]>;
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs>[] | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The range 0.0: 99.0 specifies the percentage of requests that pass through to the origin. The value of 100 means the request always passes through to the origin. A value of -1 means send everyone to the waiting room.
      */
@@ -1616,11 +1616,11 @@ export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs {
     /**
      * The start time for this match (in seconds since the epoch)
      */
-    start?: pulumi.Input<number>;
+    start?: pulumi.Input<number | undefined>;
     /**
      * The type of Cloudlet the rule is for
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch {
@@ -1658,31 +1658,31 @@ export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs {
     /**
      * If true, the match is case sensitive
      */
-    caseSensitive?: pulumi.Input<boolean>;
+    caseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
      */
-    checkIps?: pulumi.Input<string>;
+    checkIps?: pulumi.Input<string | undefined>;
     /**
      * Valid entries for this property: contains, exists, and equals
      */
-    matchOperator?: pulumi.Input<string>;
+    matchOperator?: pulumi.Input<string | undefined>;
     /**
      * The type of match used
      */
-    matchType?: pulumi.Input<string>;
+    matchType?: pulumi.Input<string | undefined>;
     /**
      * Depends on the matchType
      */
-    matchValue?: pulumi.Input<string>;
+    matchValue?: pulumi.Input<string | undefined>;
     /**
      * If true, negates the match
      */
-    negate?: pulumi.Input<boolean>;
+    negate?: pulumi.Input<boolean | undefined>;
     /**
      * An object used when a rule either includes more complex match criteria, like multiple value attributes
      */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs>[] | undefined>;
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue {
@@ -1716,19 +1716,19 @@ export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatch
     /**
      * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set to true if the entry for the name property should be evaluated based on case sensitivity
      */
-    nameCaseSensitive?: pulumi.Input<boolean>;
+    nameCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entry for the name property includes wildcards
      */
-    nameHasWildcard?: pulumi.Input<boolean>;
+    nameHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * If using the object type, use this set to list the values to match on (use only with the object type)
      */
-    options?: pulumi.Input<inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    options?: pulumi.Input<inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs | undefined>;
     /**
      * The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
      */
@@ -1736,7 +1736,7 @@ export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatch
     /**
      * The value attributes in the incoming request to match on (use only with simple type)
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -1762,19 +1762,19 @@ export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatch
     /**
      * Set to true if the entries for the value property should be evaluated based on case sensitivity
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if provided value should be compared in escaped form
      */
-    valueEscaped?: pulumi.Input<boolean>;
+    valueEscaped?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entries for the value property include wildcards
      */
-    valueHasWildcard?: pulumi.Input<boolean>;
+    valueHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * The value attributes in the incoming request to match on
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRule {
@@ -1824,11 +1824,11 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs {
     /**
      * If set to true, disables a rule so it is not evaluated against incoming requests.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The end time for this match (in seconds since the epoch)
      */
-    end?: pulumi.Input<number>;
+    end?: pulumi.Input<number | undefined>;
     /**
      * This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
      */
@@ -1836,31 +1836,31 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs {
     /**
      * Akamai internal use only
      */
-    id?: pulumi.Input<number>;
+    id?: pulumi.Input<number | undefined>;
     /**
      * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
      */
-    matchUrl?: pulumi.Input<string>;
+    matchUrl?: pulumi.Input<string | undefined>;
     /**
      * Defines a set of match objects
      */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs>[]>;
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs>[] | undefined>;
     /**
      * Is used in some cloudlets to support default rules (rule that is always matched)
      */
-    matchesAlways?: pulumi.Input<boolean>;
+    matchesAlways?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The start time for this match (in seconds since the epoch)
      */
-    start?: pulumi.Input<number>;
+    start?: pulumi.Input<number | undefined>;
     /**
      * The type of Cloudlet the rule is for
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting {
@@ -1912,31 +1912,31 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs 
     /**
      * If true, the match is case sensitive
      */
-    caseSensitive?: pulumi.Input<boolean>;
+    caseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
      */
-    checkIps?: pulumi.Input<string>;
+    checkIps?: pulumi.Input<string | undefined>;
     /**
      * Valid entries for this property: contains, exists, and equals
      */
-    matchOperator?: pulumi.Input<string>;
+    matchOperator?: pulumi.Input<string | undefined>;
     /**
      * The type of match used
      */
-    matchType?: pulumi.Input<string>;
+    matchType?: pulumi.Input<string | undefined>;
     /**
      * Depends on the matchType
      */
-    matchValue?: pulumi.Input<string>;
+    matchValue?: pulumi.Input<string | undefined>;
     /**
      * If true, negates the match
      */
-    negate?: pulumi.Input<boolean>;
+    negate?: pulumi.Input<boolean | undefined>;
     /**
      * An object used when a rule either includes more complex match criteria, like multiple value attributes, or a range match
      */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs>[] | undefined>;
 }
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue {
@@ -1970,19 +1970,19 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjec
     /**
      * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set to true if the entry for the name property should be evaluated based on case sensitivity
      */
-    nameCaseSensitive?: pulumi.Input<boolean>;
+    nameCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entry for the name property includes wildcards
      */
-    nameHasWildcard?: pulumi.Input<boolean>;
+    nameHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * If using the object type, use this set to list the values to match on (use only with the object type)
      */
-    options?: pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    options?: pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs | undefined>;
     /**
      * The array type, which can be one of the following: object, range, or simple. Use the simple option when adding only an array of string-based values
      */
@@ -1990,7 +1990,7 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjec
     /**
      * The value attributes in the incoming request to match on (use only with simple or range type)
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -2016,19 +2016,19 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjec
     /**
      * Set to true if the entries for the value property should be evaluated based on case sensitivity
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if provided value should be compared in escaped form
      */
-    valueEscaped?: pulumi.Input<boolean>;
+    valueEscaped?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entries for the value property include wildcards
      */
-    valueHasWildcard?: pulumi.Input<boolean>;
+    valueHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * The value attributes in the incoming request to match on
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRule {
@@ -2070,11 +2070,11 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs {
     /**
      * If set to true, disables a rule so it is not evaluated against incoming requests.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The end time for this match (in seconds since the epoch)
      */
-    end?: pulumi.Input<number>;
+    end?: pulumi.Input<number | undefined>;
     /**
      * This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
      */
@@ -2082,23 +2082,23 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs {
     /**
      * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
      */
-    matchUrl?: pulumi.Input<string>;
+    matchUrl?: pulumi.Input<string | undefined>;
     /**
      * Defines a set of match objects
      */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs>[]>;
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs>[] | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The start time for this match (in seconds since the epoch)
      */
-    start?: pulumi.Input<number>;
+    start?: pulumi.Input<number | undefined>;
     /**
      * The type of Cloudlet the rule is for
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings {
@@ -2120,15 +2120,15 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettin
     /**
      * The ID of the Conditional Origin requests are forwarded to
      */
-    originId?: pulumi.Input<string>;
+    originId?: pulumi.Input<string | undefined>;
     /**
      * If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
      */
-    pathAndQs?: pulumi.Input<string>;
+    pathAndQs?: pulumi.Input<string | undefined>;
     /**
      * If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
      */
-    useIncomingQueryString?: pulumi.Input<boolean>;
+    useIncomingQueryString?: pulumi.Input<boolean | undefined>;
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch {
@@ -2166,31 +2166,31 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs {
     /**
      * If true, the match is case sensitive
      */
-    caseSensitive?: pulumi.Input<boolean>;
+    caseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
      */
-    checkIps?: pulumi.Input<string>;
+    checkIps?: pulumi.Input<string | undefined>;
     /**
      * Valid entries for this property: contains, exists, and equals
      */
-    matchOperator?: pulumi.Input<string>;
+    matchOperator?: pulumi.Input<string | undefined>;
     /**
      * The type of match used
      */
-    matchType?: pulumi.Input<string>;
+    matchType?: pulumi.Input<string | undefined>;
     /**
      * Depends on the matchType
      */
-    matchValue?: pulumi.Input<string>;
+    matchValue?: pulumi.Input<string | undefined>;
     /**
      * If true, negates the match
      */
-    negate?: pulumi.Input<boolean>;
+    negate?: pulumi.Input<boolean | undefined>;
     /**
      * An object used when a rule either includes more complex match criteria, like multiple value attributes
      */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs>[] | undefined>;
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue {
@@ -2224,19 +2224,19 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMa
     /**
      * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set to true if the entry for the name property should be evaluated based on case sensitivity
      */
-    nameCaseSensitive?: pulumi.Input<boolean>;
+    nameCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entry for the name property includes wildcards
      */
-    nameHasWildcard?: pulumi.Input<boolean>;
+    nameHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * If using the object type, use this set to list the values to match on (use only with the object type)
      */
-    options?: pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    options?: pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs | undefined>;
     /**
      * The array type, which can be one of the following: object or simple or range. Use the simple option when adding only an array of string-based values
      */
@@ -2244,7 +2244,7 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMa
     /**
      * The value attributes in the incoming request to match on (use only with simple or range type)
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -2270,19 +2270,19 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMa
     /**
      * Set to true if the entries for the value property should be evaluated based on case sensitivity
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if provided value should be compared in escaped form
      */
-    valueEscaped?: pulumi.Input<boolean>;
+    valueEscaped?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entries for the value property include wildcards
      */
-    valueHasWildcard?: pulumi.Input<boolean>;
+    valueHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * The value attributes in the incoming request to match on
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsEdgeRedirectorMatchRuleMatchRule {
@@ -2340,27 +2340,27 @@ export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs {
     /**
      * If set to true, disables a rule so it is not evaluated against incoming requests.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The end time for this match (in seconds since the epoch)
      */
-    end?: pulumi.Input<number>;
+    end?: pulumi.Input<number | undefined>;
     /**
      * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
      */
-    matchUrl?: pulumi.Input<string>;
+    matchUrl?: pulumi.Input<string | undefined>;
     /**
      * Defines a set of match objects
      */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs>[]>;
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs>[] | undefined>;
     /**
      * Is used in some cloudlets to support default rules (rule that is always matched)
      */
-    matchesAlways?: pulumi.Input<boolean>;
+    matchesAlways?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The URL Edge Redirector redirects the request to. If using use_relative_url, you can enter a path for the value
      */
@@ -2368,7 +2368,7 @@ export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs {
     /**
      * The start time for this match (in seconds since the epoch)
      */
-    start?: pulumi.Input<number>;
+    start?: pulumi.Input<number | undefined>;
     /**
      * The HTTP response status code (allowed values: 301, 302, 303, 307, 308)
      */
@@ -2376,15 +2376,15 @@ export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs {
     /**
      * The type of Cloudlet the rule is for
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL
      */
-    useIncomingQueryString?: pulumi.Input<boolean>;
+    useIncomingQueryString?: pulumi.Input<boolean | undefined>;
     /**
      * If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirectUrl should be fully-qualified URL
      */
-    useRelativeUrl?: pulumi.Input<string>;
+    useRelativeUrl?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch {
@@ -2422,31 +2422,31 @@ export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs {
     /**
      * If true, the match is case sensitive
      */
-    caseSensitive?: pulumi.Input<boolean>;
+    caseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
      */
-    checkIps?: pulumi.Input<string>;
+    checkIps?: pulumi.Input<string | undefined>;
     /**
      * Valid entries for this property: contains, exists, and equals
      */
-    matchOperator?: pulumi.Input<string>;
+    matchOperator?: pulumi.Input<string | undefined>;
     /**
      * The type of match used
      */
-    matchType?: pulumi.Input<string>;
+    matchType?: pulumi.Input<string | undefined>;
     /**
      * Depends on the matchType
      */
-    matchValue?: pulumi.Input<string>;
+    matchValue?: pulumi.Input<string | undefined>;
     /**
      * If true, negates the match
      */
-    negate?: pulumi.Input<boolean>;
+    negate?: pulumi.Input<boolean | undefined>;
     /**
      * An object used when a rule either includes more complex match criteria, like multiple value attributes
      */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs>[] | undefined>;
 }
 
 export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue {
@@ -2480,19 +2480,19 @@ export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchVal
     /**
      * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set to true if the entry for the name property should be evaluated based on case sensitivity
      */
-    nameCaseSensitive?: pulumi.Input<boolean>;
+    nameCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entry for the name property includes wildcards
      */
-    nameHasWildcard?: pulumi.Input<boolean>;
+    nameHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * If using the object type, use this set to list the values to match on (use only with the object type)
      */
-    options?: pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    options?: pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs | undefined>;
     /**
      * The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
      */
@@ -2500,7 +2500,7 @@ export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchVal
     /**
      * The value attributes in the incoming request to match on (use only with simple type)
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -2526,19 +2526,19 @@ export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchVal
     /**
      * Set to true if the entries for the value property should be evaluated based on case sensitivity
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if provided value should be compared in escaped form
      */
-    valueEscaped?: pulumi.Input<boolean>;
+    valueEscaped?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entries for the value property include wildcards
      */
-    valueHasWildcard?: pulumi.Input<boolean>;
+    valueHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * The value attributes in the incoming request to match on
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRule {
@@ -2580,11 +2580,11 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleArgs {
     /**
      * If set to true, disables a rule so it is not evaluated against incoming requests.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The end time for this match (in seconds since the epoch)
      */
-    end?: pulumi.Input<number>;
+    end?: pulumi.Input<number | undefined>;
     /**
      * This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
      */
@@ -2592,23 +2592,23 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleArgs {
     /**
      * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
      */
-    matchUrl?: pulumi.Input<string>;
+    matchUrl?: pulumi.Input<string | undefined>;
     /**
      * Defines a set of match objects
      */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs>[]>;
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs>[] | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The start time for this match (in seconds since the epoch)
      */
-    start?: pulumi.Input<number>;
+    start?: pulumi.Input<number | undefined>;
     /**
      * The type of Cloudlet the rule is for
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings {
@@ -2630,15 +2630,15 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs
     /**
      * The ID of the Conditional Origin requests are forwarded to
      */
-    originId?: pulumi.Input<string>;
+    originId?: pulumi.Input<string | undefined>;
     /**
      * If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
      */
-    pathAndQs?: pulumi.Input<string>;
+    pathAndQs?: pulumi.Input<string | undefined>;
     /**
      * If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
      */
-    useIncomingQueryString?: pulumi.Input<boolean>;
+    useIncomingQueryString?: pulumi.Input<boolean | undefined>;
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatch {
@@ -2676,31 +2676,31 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs {
     /**
      * If true, the match is case sensitive
      */
-    caseSensitive?: pulumi.Input<boolean>;
+    caseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
      */
-    checkIps?: pulumi.Input<string>;
+    checkIps?: pulumi.Input<string | undefined>;
     /**
      * Valid entries for this property: contains, exists, and equals
      */
-    matchOperator?: pulumi.Input<string>;
+    matchOperator?: pulumi.Input<string | undefined>;
     /**
      * The type of match used
      */
-    matchType?: pulumi.Input<string>;
+    matchType?: pulumi.Input<string | undefined>;
     /**
      * Depends on the matchType
      */
-    matchValue?: pulumi.Input<string>;
+    matchValue?: pulumi.Input<string | undefined>;
     /**
      * If true, negates the match
      */
-    negate?: pulumi.Input<boolean>;
+    negate?: pulumi.Input<boolean | undefined>;
     /**
      * An object used when a rule either includes more complex match criteria, like multiple value attributes
      */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs>[] | undefined>;
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue {
@@ -2734,19 +2734,19 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchVal
     /**
      * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set to true if the entry for the name property should be evaluated based on case sensitivity
      */
-    nameCaseSensitive?: pulumi.Input<boolean>;
+    nameCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entry for the name property includes wildcards
      */
-    nameHasWildcard?: pulumi.Input<boolean>;
+    nameHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * If using the object type, use this set to list the values to match on (use only with the object type)
      */
-    options?: pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    options?: pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs | undefined>;
     /**
      * The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
      */
@@ -2754,7 +2754,7 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchVal
     /**
      * The value attributes in the incoming request to match on (use only with simple or range type)
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -2780,19 +2780,19 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchVal
     /**
      * Set to true if the entries for the value property should be evaluated based on case sensitivity
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if provided value should be compared in escaped form
      */
-    valueEscaped?: pulumi.Input<boolean>;
+    valueEscaped?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entries for the value property include wildcards
      */
-    valueHasWildcard?: pulumi.Input<boolean>;
+    valueHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * The value attributes in the incoming request to match on
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRule {
@@ -2838,11 +2838,11 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs {
     /**
      * If set to true, disables a rule so it is not evaluated against incoming requests.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The end time for this match (in seconds since the epoch)
      */
-    end?: pulumi.Input<number>;
+    end?: pulumi.Input<number | undefined>;
     /**
      * This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
      */
@@ -2850,27 +2850,27 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs {
     /**
      * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
      */
-    matchUrl?: pulumi.Input<string>;
+    matchUrl?: pulumi.Input<string | undefined>;
     /**
      * Defines a set of match objects
      */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs>[]>;
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs>[] | undefined>;
     /**
      * Is used in some cloudlets to support default rules (rule that is always matched)
      */
-    matchesAlways?: pulumi.Input<boolean>;
+    matchesAlways?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The start time for this match (in seconds since the epoch)
      */
-    start?: pulumi.Input<number>;
+    start?: pulumi.Input<number | undefined>;
     /**
      * The type of Cloudlet the rule is for. It is known as Continuous Deployment (CD) too.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings {
@@ -2930,31 +2930,31 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs {
     /**
      * If true, the match is case sensitive
      */
-    caseSensitive?: pulumi.Input<boolean>;
+    caseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
      */
-    checkIps?: pulumi.Input<string>;
+    checkIps?: pulumi.Input<string | undefined>;
     /**
      * Valid entries for this property: contains, exists, and equals
      */
-    matchOperator?: pulumi.Input<string>;
+    matchOperator?: pulumi.Input<string | undefined>;
     /**
      * The type of match used
      */
-    matchType?: pulumi.Input<string>;
+    matchType?: pulumi.Input<string | undefined>;
     /**
      * Depends on the matchType
      */
-    matchValue?: pulumi.Input<string>;
+    matchValue?: pulumi.Input<string | undefined>;
     /**
      * If true, negates the match
      */
-    negate?: pulumi.Input<boolean>;
+    negate?: pulumi.Input<boolean | undefined>;
     /**
      * An object used when a rule either includes more complex match criteria, like multiple value attributes
      */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs>[] | undefined>;
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue {
@@ -2988,19 +2988,19 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValu
     /**
      * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set to true if the entry for the name property should be evaluated based on case sensitivity
      */
-    nameCaseSensitive?: pulumi.Input<boolean>;
+    nameCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entry for the name property includes wildcards
      */
-    nameHasWildcard?: pulumi.Input<boolean>;
+    nameHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * If using the object type, use this set to list the values to match on (use only with the object type)
      */
-    options?: pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    options?: pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs | undefined>;
     /**
      * The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
      */
@@ -3008,7 +3008,7 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValu
     /**
      * The value attributes in the incoming request to match on (use only with simple or range type)
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -3034,19 +3034,19 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValu
     /**
      * Set to true if the entries for the value property should be evaluated based on case sensitivity
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if provided value should be compared in escaped form
      */
-    valueEscaped?: pulumi.Input<boolean>;
+    valueEscaped?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entries for the value property include wildcards
      */
-    valueHasWildcard?: pulumi.Input<boolean>;
+    valueHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * The value attributes in the incoming request to match on
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRule {
@@ -3092,31 +3092,31 @@ export interface GetCloudletsRequestControlMatchRuleMatchRuleArgs {
     /**
      * If set to true, disables a rule so it is not evaluated against incoming requests.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The end time for this match (in seconds since the epoch)
      */
-    end?: pulumi.Input<number>;
+    end?: pulumi.Input<number | undefined>;
     /**
      * Defines a set of match objects
      */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>[]>;
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>[] | undefined>;
     /**
      * Is used in some cloudlets to support default rules (rule that is always matched)
      */
-    matchesAlways?: pulumi.Input<boolean>;
+    matchesAlways?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The start time for this match (in seconds since the epoch)
      */
-    start?: pulumi.Input<number>;
+    start?: pulumi.Input<number | undefined>;
     /**
      * The type of Cloudlet the rule is for
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRuleMatch {
@@ -3154,31 +3154,31 @@ export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs {
     /**
      * If true, the match is case sensitive
      */
-    caseSensitive?: pulumi.Input<boolean>;
+    caseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
      */
-    checkIps?: pulumi.Input<string>;
+    checkIps?: pulumi.Input<string | undefined>;
     /**
      * Valid entries for this property: contains, exists, and equals
      */
-    matchOperator?: pulumi.Input<string>;
+    matchOperator?: pulumi.Input<string | undefined>;
     /**
      * The type of match used
      */
-    matchType?: pulumi.Input<string>;
+    matchType?: pulumi.Input<string | undefined>;
     /**
      * Depends on the matchType
      */
-    matchValue?: pulumi.Input<string>;
+    matchValue?: pulumi.Input<string | undefined>;
     /**
      * If true, negates the match
      */
-    negate?: pulumi.Input<boolean>;
+    negate?: pulumi.Input<boolean | undefined>;
     /**
      * An object used when a rule either includes more complex match criteria, like multiple value attributes
      */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs>[] | undefined>;
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue {
@@ -3212,19 +3212,19 @@ export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchVal
     /**
      * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set to true if the entry for the name property should be evaluated based on case sensitivity
      */
-    nameCaseSensitive?: pulumi.Input<boolean>;
+    nameCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entry for the name property includes wildcards
      */
-    nameHasWildcard?: pulumi.Input<boolean>;
+    nameHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * If using the object type, use this set to list the values to match on (use only with the object type)
      */
-    options?: pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    options?: pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs | undefined>;
     /**
      * The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
      */
@@ -3232,7 +3232,7 @@ export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchVal
     /**
      * The value attributes in the incoming request to match on (use only with simple type)
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -3258,19 +3258,19 @@ export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchVal
     /**
      * Set to true if the entries for the value property should be evaluated based on case sensitivity
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if provided value should be compared in escaped form
      */
-    valueEscaped?: pulumi.Input<boolean>;
+    valueEscaped?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entries for the value property include wildcards
      */
-    valueHasWildcard?: pulumi.Input<boolean>;
+    valueHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * The value attributes in the incoming request to match on
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsSharedPolicyActivations {
@@ -3288,11 +3288,11 @@ export interface GetCloudletsSharedPolicyActivationsArgs {
     /**
      * The policy version number that's currently in use on this network and the status of the most recent activation or deactivation operation for this policy's versions.
      */
-    production?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsProductionArgs>;
+    production?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsProductionArgs | undefined>;
     /**
      * The policy version number that's currently in use on this network and the status of the most recent activation or deactivation operation for this policy's versions.
      */
-    staging?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsStagingArgs>;
+    staging?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsStagingArgs | undefined>;
 }
 
 export interface GetCloudletsSharedPolicyActivationsProduction {
@@ -3310,11 +3310,11 @@ export interface GetCloudletsSharedPolicyActivationsProductionArgs {
     /**
      * The status of the activation that's currently in use on this network, or null if the policy has no activations.
      */
-    effective?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsProductionEffectiveArgs>;
+    effective?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsProductionEffectiveArgs | undefined>;
     /**
      * The status of the latest activation or null if the policy has no activations.
      */
-    latest?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsProductionLatestArgs>;
+    latest?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsProductionLatestArgs | undefined>;
 }
 
 export interface GetCloudletsSharedPolicyActivationsProductionEffective {
@@ -3364,43 +3364,43 @@ export interface GetCloudletsSharedPolicyActivationsProductionEffectiveArgs {
     /**
      * Identifies the activation.
      */
-    activationId?: pulumi.Input<number>;
+    activationId?: pulumi.Input<number | undefined>;
     /**
      * The username who created the activation.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the activation was created.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
      */
-    finishDate?: pulumi.Input<string>;
+    finishDate?: pulumi.Input<string | undefined>;
     /**
      * The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * Identifies the shared policy.
      */
-    policyId?: pulumi.Input<number>;
+    policyId?: pulumi.Input<number | undefined>;
     /**
      * The number of the policy version.
      */
-    policyVersion?: pulumi.Input<number>;
+    policyVersion?: pulumi.Input<number | undefined>;
     /**
      * Indicates if the policy version is deleted.
      */
-    policyVersionDeleted?: pulumi.Input<boolean>;
+    policyVersionDeleted?: pulumi.Input<boolean | undefined>;
     /**
      * The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsSharedPolicyActivationsProductionLatest {
@@ -3450,43 +3450,43 @@ export interface GetCloudletsSharedPolicyActivationsProductionLatestArgs {
     /**
      * Identifies the activation.
      */
-    activationId?: pulumi.Input<number>;
+    activationId?: pulumi.Input<number | undefined>;
     /**
      * The username who created the activation.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the activation was created.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
      */
-    finishDate?: pulumi.Input<string>;
+    finishDate?: pulumi.Input<string | undefined>;
     /**
      * The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * Identifies the shared policy.
      */
-    policyId?: pulumi.Input<number>;
+    policyId?: pulumi.Input<number | undefined>;
     /**
      * The number of the policy version.
      */
-    policyVersion?: pulumi.Input<number>;
+    policyVersion?: pulumi.Input<number | undefined>;
     /**
      * Indicates if the policy version is deleted.
      */
-    policyVersionDeleted?: pulumi.Input<boolean>;
+    policyVersionDeleted?: pulumi.Input<boolean | undefined>;
     /**
      * The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsSharedPolicyActivationsStaging {
@@ -3504,11 +3504,11 @@ export interface GetCloudletsSharedPolicyActivationsStagingArgs {
     /**
      * The status of the activation that's currently in use on this network, or null if the policy has no activations.
      */
-    effective?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsStagingEffectiveArgs>;
+    effective?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsStagingEffectiveArgs | undefined>;
     /**
      * The status of the latest activation or null if the policy has no activations.
      */
-    latest?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsStagingLatestArgs>;
+    latest?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsStagingLatestArgs | undefined>;
 }
 
 export interface GetCloudletsSharedPolicyActivationsStagingEffective {
@@ -3558,43 +3558,43 @@ export interface GetCloudletsSharedPolicyActivationsStagingEffectiveArgs {
     /**
      * Identifies the activation.
      */
-    activationId?: pulumi.Input<number>;
+    activationId?: pulumi.Input<number | undefined>;
     /**
      * The username who created the activation.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the activation was created.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
      */
-    finishDate?: pulumi.Input<string>;
+    finishDate?: pulumi.Input<string | undefined>;
     /**
      * The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * Identifies the shared policy.
      */
-    policyId?: pulumi.Input<number>;
+    policyId?: pulumi.Input<number | undefined>;
     /**
      * The number of the policy version.
      */
-    policyVersion?: pulumi.Input<number>;
+    policyVersion?: pulumi.Input<number | undefined>;
     /**
      * Indicates if the policy version is deleted.
      */
-    policyVersionDeleted?: pulumi.Input<boolean>;
+    policyVersionDeleted?: pulumi.Input<boolean | undefined>;
     /**
      * The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsSharedPolicyActivationsStagingLatest {
@@ -3644,43 +3644,43 @@ export interface GetCloudletsSharedPolicyActivationsStagingLatestArgs {
     /**
      * Identifies the activation.
      */
-    activationId?: pulumi.Input<number>;
+    activationId?: pulumi.Input<number | undefined>;
     /**
      * The username who created the activation.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the activation was created.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the activation ended, either successfully or unsuccessfully. You can check details of unsuccessful attempts in 'failureDetails'.
      */
-    finishDate?: pulumi.Input<string>;
+    finishDate?: pulumi.Input<string | undefined>;
     /**
      * The networks where you can activate or deactivate the policy version, either 'PRODUCTION' or 'STAGING'.
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * The operations that you can perform on a policy version, either 'ACTIVATION' or 'DEACTIVATION'.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * Identifies the shared policy.
      */
-    policyId?: pulumi.Input<number>;
+    policyId?: pulumi.Input<number | undefined>;
     /**
      * The number of the policy version.
      */
-    policyVersion?: pulumi.Input<number>;
+    policyVersion?: pulumi.Input<number | undefined>;
     /**
      * Indicates if the policy version is deleted.
      */
-    policyVersionDeleted?: pulumi.Input<boolean>;
+    policyVersionDeleted?: pulumi.Input<boolean | undefined>;
     /**
      * The status of the operation, either 'IN_PROGRESS', 'SUCCESS', or 'FAILED'.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRule {
@@ -3722,23 +3722,23 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs {
     /**
      * If set to true, disables a rule so it is not evaluated against incoming requests.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The end time for this match (in seconds since the epoch)
      */
-    end?: pulumi.Input<number>;
+    end?: pulumi.Input<number | undefined>;
     /**
      * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
      */
-    matchUrl?: pulumi.Input<string>;
+    matchUrl?: pulumi.Input<string | undefined>;
     /**
      * Defines a set of match objects
      */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs>[]>;
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs>[] | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The range 0.0: 99.0 specifies the percentage of requests that pass through to the origin. The value of 100 means the request always passes through to the origin. A value of -1 means send everyone to the waiting room.
      */
@@ -3746,11 +3746,11 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs {
     /**
      * The start time for this match (in seconds since the epoch)
      */
-    start?: pulumi.Input<number>;
+    start?: pulumi.Input<number | undefined>;
     /**
      * The type of Cloudlet the rule is for
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch {
@@ -3788,31 +3788,31 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs {
     /**
      * If true, the match is case sensitive
      */
-    caseSensitive?: pulumi.Input<boolean>;
+    caseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
      */
-    checkIps?: pulumi.Input<string>;
+    checkIps?: pulumi.Input<string | undefined>;
     /**
      * Valid entries for this property: contains, exists, and equals
      */
-    matchOperator?: pulumi.Input<string>;
+    matchOperator?: pulumi.Input<string | undefined>;
     /**
      * The type of match used
      */
-    matchType?: pulumi.Input<string>;
+    matchType?: pulumi.Input<string | undefined>;
     /**
      * Depends on the matchType
      */
-    matchValue?: pulumi.Input<string>;
+    matchValue?: pulumi.Input<string | undefined>;
     /**
      * If true, negates the match
      */
-    negate?: pulumi.Input<boolean>;
+    negate?: pulumi.Input<boolean | undefined>;
     /**
      * An object used when a rule either includes more complex match criteria, like multiple value attributes
      */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs>[] | undefined>;
 }
 
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue {
@@ -3846,19 +3846,19 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectM
     /**
      * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set to true if the entry for the name property should be evaluated based on case sensitivity
      */
-    nameCaseSensitive?: pulumi.Input<boolean>;
+    nameCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entry for the name property includes wildcards
      */
-    nameHasWildcard?: pulumi.Input<boolean>;
+    nameHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * If using the object type, use this set to list the values to match on (use only with the object type)
      */
-    options?: pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    options?: pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs | undefined>;
     /**
      * The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
      */
@@ -3866,7 +3866,7 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectM
     /**
      * The value attributes in the incoming request to match on (use only with simple type)
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -3892,19 +3892,19 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectM
     /**
      * Set to true if the entries for the value property should be evaluated based on case sensitivity
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if provided value should be compared in escaped form
      */
-    valueEscaped?: pulumi.Input<boolean>;
+    valueEscaped?: pulumi.Input<boolean | undefined>;
     /**
      * Set to true if the entries for the value property include wildcards
      */
-    valueHasWildcard?: pulumi.Input<boolean>;
+    valueHasWildcard?: pulumi.Input<boolean | undefined>;
     /**
      * The value attributes in the incoming request to match on
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudwrapperCapacitiesCapacity {
@@ -3942,31 +3942,31 @@ export interface GetCloudwrapperCapacitiesCapacityArgs {
     /**
      * Capacity allocated for the location.
      */
-    approved?: pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityApprovedArgs>;
+    approved?: pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityApprovedArgs | undefined>;
     /**
      * Capacity already assigned to Cloud Wrapper configurations.
      */
-    assigned?: pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityAssignedArgs>;
+    assigned?: pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityAssignedArgs | undefined>;
     /**
      * Contract ID having Cloud Wrapper entitlement.
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the configured location.
      */
-    locationId?: pulumi.Input<number>;
+    locationId?: pulumi.Input<number | undefined>;
     /**
      * Name of the location.
      */
-    locationName?: pulumi.Input<string>;
+    locationName?: pulumi.Input<string | undefined>;
     /**
      * The type of property this capacity is related to.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * Capacity value that can be assigned to Cloud Wrapper configurations.
      */
-    unassigned?: pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityUnassignedArgs>;
+    unassigned?: pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityUnassignedArgs | undefined>;
 }
 
 export interface GetCloudwrapperCapacitiesCapacityApproved {
@@ -4022,19 +4022,19 @@ export interface GetCloudwrapperConfigurationLocationArgs {
     /**
      * The capacity assigned to this configuration's location.
      */
-    capacity?: pulumi.Input<inputs.GetCloudwrapperConfigurationLocationCapacityArgs>;
+    capacity?: pulumi.Input<inputs.GetCloudwrapperConfigurationLocationCapacityArgs | undefined>;
     /**
      * Additional comments provided by user.
      */
-    comments?: pulumi.Input<string>;
+    comments?: pulumi.Input<string | undefined>;
     /**
      * The name of the map.
      */
-    mapName?: pulumi.Input<string>;
+    mapName?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the location and traffic type combination.
      */
-    trafficTypeId?: pulumi.Input<number>;
+    trafficTypeId?: pulumi.Input<number | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationLocationCapacity {
@@ -4074,23 +4074,23 @@ export interface GetCloudwrapperConfigurationMultiCdnSettingsArgs {
     /**
      * Specify diagnostic data beacons details.
      */
-    bocc?: pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs>;
+    bocc?: pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs | undefined>;
     /**
      * List of CDN added for the configuration.
      */
-    cdns?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs>[]>;
+    cdns?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs>[] | undefined>;
     /**
      * Specifies data streams details.
      */
-    dataStreams?: pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs>;
+    dataStreams?: pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs | undefined>;
     /**
      * Option to opt out of alerts based on soft limits of bandwidth usage.
      */
-    enableSoftAlerts?: pulumi.Input<boolean>;
+    enableSoftAlerts?: pulumi.Input<boolean | undefined>;
     /**
      * List of origins corresponding to the properties selected in the configuration.
      */
-    origins?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs>[]>;
+    origins?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs>[] | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationMultiCdnSettingsBocc {
@@ -4120,23 +4120,23 @@ export interface GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs {
     /**
      * The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
      */
-    conditionalSamplingFrequency?: pulumi.Input<string>;
+    conditionalSamplingFrequency?: pulumi.Input<string | undefined>;
     /**
      * Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
      */
-    forwardType?: pulumi.Input<string>;
+    forwardType?: pulumi.Input<string | undefined>;
     /**
      * Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
      */
-    requestType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string | undefined>;
     /**
      * The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
      */
-    samplingFrequency?: pulumi.Input<string>;
+    samplingFrequency?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationMultiCdnSettingsCdn {
@@ -4166,23 +4166,23 @@ export interface GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs {
     /**
      * List of auth keys configured for the CDN.
      */
-    cdnAuthKeys?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs>[]>;
+    cdnAuthKeys?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs>[] | undefined>;
     /**
      * Unique identifier for the CDN.
      */
-    cdnCode?: pulumi.Input<string>;
+    cdnCode?: pulumi.Input<string | undefined>;
     /**
      * Enable CDN.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specify whether CDN communication is HTTPS only.
      */
-    httpsOnly?: pulumi.Input<boolean>;
+    httpsOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Configure an access control list using IP addresses in CIDR notation.
      */
-    ipAclCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    ipAclCidrs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey {
@@ -4208,19 +4208,19 @@ export interface GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs {
     /**
      * The name of the auth key.
      */
-    authKeyName?: pulumi.Input<string>;
+    authKeyName?: pulumi.Input<string | undefined>;
     /**
      * The expirty date of an auth key.
      */
-    expiryDate?: pulumi.Input<string>;
+    expiryDate?: pulumi.Input<string | undefined>;
     /**
      * The header name of an auth key.
      */
-    headerName?: pulumi.Input<string>;
+    headerName?: pulumi.Input<string | undefined>;
     /**
      * The secret of an auth key.
      */
-    secret?: pulumi.Input<string>;
+    secret?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationMultiCdnSettingsDataStreams {
@@ -4242,15 +4242,15 @@ export interface GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs {
     /**
      * Unique identifiers of the Data Streams.
      */
-    dataStreamIds?: pulumi.Input<pulumi.Input<number>[]>;
+    dataStreamIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Enables DataStream reporting.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the percentage of log data you want to collect for this configuration.
      */
-    samplingRate?: pulumi.Input<number>;
+    samplingRate?: pulumi.Input<number | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationMultiCdnSettingsOrigin {
@@ -4272,15 +4272,15 @@ export interface GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs {
     /**
      * Origins hostname corresponding to the Akamai Delivery Property.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * Origin identifier and will be used to generated Multi CDN host names.
      */
-    originId?: pulumi.Input<string>;
+    originId?: pulumi.Input<string | undefined>;
     /**
      * Property ID of the property that origin belongs to.
      */
-    propertyId?: pulumi.Input<number>;
+    propertyId?: pulumi.Input<number | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationsConfiguration {
@@ -4350,63 +4350,63 @@ export interface GetCloudwrapperConfigurationsConfigurationArgs {
     /**
      * Represents the threshold for sending alerts.
      */
-    capacityAlertsThreshold?: pulumi.Input<number>;
+    capacityAlertsThreshold?: pulumi.Input<number | undefined>;
     /**
      * Additional information provided by user which can help to differentiate or track changes of the configuration.
      */
-    comments?: pulumi.Input<string>;
+    comments?: pulumi.Input<string | undefined>;
     /**
      * Name of the configuration.
      */
-    configName?: pulumi.Input<string>;
+    configName?: pulumi.Input<string | undefined>;
     /**
      * Contract ID with Cloud Wrapper entitlement.
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of a Cloud Wrapper configuration.
      */
-    id?: pulumi.Input<number>;
+    id?: pulumi.Input<number | undefined>;
     /**
      * User to last activate the configuration.
      */
-    lastActivatedBy?: pulumi.Input<string>;
+    lastActivatedBy?: pulumi.Input<string | undefined>;
     /**
      * ISO format date that represents when the configuration was last activated successfully.
      */
-    lastActivatedDate?: pulumi.Input<string>;
+    lastActivatedDate?: pulumi.Input<string | undefined>;
     /**
      * User to last modify the configuration.
      */
-    lastUpdatedBy?: pulumi.Input<string>;
+    lastUpdatedBy?: pulumi.Input<string | undefined>;
     /**
      * ISO format date that represents when the configuration was last edited.
      */
-    lastUpdatedDate?: pulumi.Input<string>;
+    lastUpdatedDate?: pulumi.Input<string | undefined>;
     /**
      * List of all unused properties.
      */
-    locations?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationLocationArgs>[]>;
+    locations?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationLocationArgs>[] | undefined>;
     /**
      * Specify details about the Multi CDN settings.
      */
-    multiCdnSettings?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs>;
+    multiCdnSettings?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs | undefined>;
     /**
      * Email addresses to receive notifications.
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of properties belonging to media delivery products. Properties need to be unique across configurations.
      */
-    propertyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    propertyIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Retain idle objects beyond their max idle lifetime.
      */
-    retainIdleObjects?: pulumi.Input<boolean>;
+    retainIdleObjects?: pulumi.Input<boolean | undefined>;
     /**
      * Current state of the provisioning of the configuration, either SAVED, IN_PROGRESS, ACTIVE, DELETE_IN_PROGRESS, or FAILED.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationsConfigurationLocation {
@@ -4432,19 +4432,19 @@ export interface GetCloudwrapperConfigurationsConfigurationLocationArgs {
     /**
      * The capacity assigned to this configuration's location.
      */
-    capacity?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs>;
+    capacity?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs | undefined>;
     /**
      * Additional comments provided by user.
      */
-    comments?: pulumi.Input<string>;
+    comments?: pulumi.Input<string | undefined>;
     /**
      * The name of the map.
      */
-    mapName?: pulumi.Input<string>;
+    mapName?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the location and traffic type combination.
      */
-    trafficTypeId?: pulumi.Input<number>;
+    trafficTypeId?: pulumi.Input<number | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationsConfigurationLocationCapacity {
@@ -4484,23 +4484,23 @@ export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs 
     /**
      * Specify diagnostic data beacons details.
      */
-    bocc?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs>;
+    bocc?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs | undefined>;
     /**
      * List of CDN added for the configuration.
      */
-    cdns?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs>[]>;
+    cdns?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs>[] | undefined>;
     /**
      * Specifies data streams details.
      */
-    dataStreams?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs>;
+    dataStreams?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs | undefined>;
     /**
      * Option to opt out of alerts based on soft limits of bandwidth usage.
      */
-    enableSoftAlerts?: pulumi.Input<boolean>;
+    enableSoftAlerts?: pulumi.Input<boolean | undefined>;
     /**
      * List of origins corresponding to the properties selected in the configuration.
      */
-    origins?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs>[]>;
+    origins?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs>[] | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBocc {
@@ -4530,23 +4530,23 @@ export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccA
     /**
      * The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
      */
-    conditionalSamplingFrequency?: pulumi.Input<string>;
+    conditionalSamplingFrequency?: pulumi.Input<string | undefined>;
     /**
      * Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
      */
-    forwardType?: pulumi.Input<string>;
+    forwardType?: pulumi.Input<string | undefined>;
     /**
      * Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
      */
-    requestType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string | undefined>;
     /**
      * The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
      */
-    samplingFrequency?: pulumi.Input<string>;
+    samplingFrequency?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn {
@@ -4576,23 +4576,23 @@ export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnAr
     /**
      * List of auth keys configured for the CDN.
      */
-    cdnAuthKeys?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs>[]>;
+    cdnAuthKeys?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs>[] | undefined>;
     /**
      * Unique identifier for the CDN.
      */
-    cdnCode?: pulumi.Input<string>;
+    cdnCode?: pulumi.Input<string | undefined>;
     /**
      * Enable CDN.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specify whether CDN communication is HTTPS only.
      */
-    httpsOnly?: pulumi.Input<boolean>;
+    httpsOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Configure an access control list using IP addresses in CIDR notation.
      */
-    ipAclCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    ipAclCidrs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey {
@@ -4618,19 +4618,19 @@ export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCd
     /**
      * The name of the auth key.
      */
-    authKeyName?: pulumi.Input<string>;
+    authKeyName?: pulumi.Input<string | undefined>;
     /**
      * The expirty date of an auth key.
      */
-    expiryDate?: pulumi.Input<string>;
+    expiryDate?: pulumi.Input<string | undefined>;
     /**
      * The header name of an auth key.
      */
-    headerName?: pulumi.Input<string>;
+    headerName?: pulumi.Input<string | undefined>;
     /**
      * The secret of an auth key.
      */
-    secret?: pulumi.Input<string>;
+    secret?: pulumi.Input<string | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams {
@@ -4652,15 +4652,15 @@ export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataS
     /**
      * Unique identifiers of the Data Streams.
      */
-    dataStreamIds?: pulumi.Input<pulumi.Input<number>[]>;
+    dataStreamIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Enables DataStream reporting.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the percentage of log data you want to collect for this configuration.
      */
-    samplingRate?: pulumi.Input<number>;
+    samplingRate?: pulumi.Input<number | undefined>;
 }
 
 export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin {
@@ -4682,15 +4682,15 @@ export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigi
     /**
      * Origins hostname corresponding to the Akamai Delivery Property.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * Origin identifier and will be used to generated Multi CDN host names.
      */
-    originId?: pulumi.Input<string>;
+    originId?: pulumi.Input<string | undefined>;
     /**
      * Property ID of the property that origin belongs to.
      */
-    propertyId?: pulumi.Input<number>;
+    propertyId?: pulumi.Input<number | undefined>;
 }
 
 export interface GetCloudwrapperLocationsLocation {
@@ -4716,19 +4716,19 @@ export interface GetCloudwrapperLocationsLocationArgs {
     /**
      * Unique identifier of the location.
      */
-    locationId?: pulumi.Input<number>;
+    locationId?: pulumi.Input<number | undefined>;
     /**
      * Name of the location.
      */
-    locationName?: pulumi.Input<string>;
+    locationName?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the multi CDN location.
      */
-    multiCdnLocationId?: pulumi.Input<string>;
+    multiCdnLocationId?: pulumi.Input<string | undefined>;
     /**
      * List of traffic types for the location.
      */
-    trafficTypes?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperLocationsLocationTrafficTypeArgs>[]>;
+    trafficTypes?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperLocationsLocationTrafficTypeArgs>[] | undefined>;
 }
 
 export interface GetCloudwrapperLocationsLocationTrafficType {
@@ -4750,15 +4750,15 @@ export interface GetCloudwrapperLocationsLocationTrafficTypeArgs {
     /**
      * Represents the failover map.
      */
-    locationId?: pulumi.Input<string>;
+    locationId?: pulumi.Input<string | undefined>;
     /**
      * Represents the traffic type. LIVE applies to low-latency media traffic, such as live streaming. LIVE_VOD applies to redundant media traffic, like video on demand content. WEB_STANDARD_TLS or WEB_ENHANCED_TLS applies to web content using Standard TLS security or Enhanced TLS security, respectively.
      */
-    trafficType?: pulumi.Input<string>;
+    trafficType?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the location and traffic type combination.
      */
-    trafficTypeId?: pulumi.Input<number>;
+    trafficTypeId?: pulumi.Input<number | undefined>;
 }
 
 export interface GetCloudwrapperPropertiesProperty {
@@ -4788,23 +4788,23 @@ export interface GetCloudwrapperPropertiesPropertyArgs {
     /**
      * Contract ID having Cloud Wrapper entitlement.
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * ID of the group which the property belongs to.
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * Property ID of the property.
      */
-    propertyId?: pulumi.Input<number>;
+    propertyId?: pulumi.Input<number | undefined>;
     /**
      * Name of the property belonging to the origin.
      */
-    propertyName?: pulumi.Input<string>;
+    propertyName?: pulumi.Input<string | undefined>;
     /**
      * The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmAsmapAssignment {
@@ -4826,15 +4826,15 @@ export interface GetGtmAsmapAssignmentArgs {
     /**
      * Specifies an array of AS numbers.
      */
-    asNumbers?: pulumi.Input<pulumi.Input<number>[]>;
+    asNumbers?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for the group.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmAsmapDefaultDatacenter {
@@ -4852,11 +4852,11 @@ export interface GetGtmAsmapDefaultDatacenterArgs {
     /**
      * For each property, an identifier for all other AS zones
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for all other AS zones
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmAsmapLink {
@@ -4874,11 +4874,11 @@ export interface GetGtmAsmapLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmCidrmapAssignment {
@@ -4900,15 +4900,15 @@ export interface GetGtmCidrmapAssignmentArgs {
     /**
      * Specifies an array of CIDR blocks.
      */
-    blocks?: pulumi.Input<pulumi.Input<string>[]>;
+    blocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for the CIDR zone group.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmCidrmapDefaultDatacenter {
@@ -4926,11 +4926,11 @@ export interface GetGtmCidrmapDefaultDatacenterArgs {
     /**
      * For each property, an identifier for all other CIDR zones' CNAME.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for all other CIDR blocks.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmCidrmapLink {
@@ -4948,11 +4948,11 @@ export interface GetGtmCidrmapLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainAsMap {
@@ -4978,19 +4978,19 @@ export interface GetGtmDomainAsMapArgs {
     /**
      * Contains information about the AS zone groupings of AS IDs.
      */
-    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainAsMapAssignmentArgs>[]>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainAsMapAssignmentArgs>[] | undefined>;
     /**
      * A placeholder for all other AS zones, AS IDs not found in these AS zones.
      */
-    defaultDatacenter?: pulumi.Input<inputs.GetGtmDomainAsMapDefaultDatacenterArgs>;
+    defaultDatacenter?: pulumi.Input<inputs.GetGtmDomainAsMapDefaultDatacenterArgs | undefined>;
     /**
      * Specifies the URL path that allows direct navigation to the As map.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainAsMapLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainAsMapLinkArgs>[] | undefined>;
     /**
      * A descriptive label for the AS map.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainAsMapAssignment {
@@ -5012,15 +5012,15 @@ export interface GetGtmDomainAsMapAssignmentArgs {
     /**
      * Specifies an array of AS numbers.
      */
-    asNumbers?: pulumi.Input<pulumi.Input<number>[]>;
+    asNumbers?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for all other AS zones.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainAsMapDefaultDatacenter {
@@ -5038,11 +5038,11 @@ export interface GetGtmDomainAsMapDefaultDatacenterArgs {
     /**
      * For each property, an identifier for all other AS zones' CNAME.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for all other AS zones.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainAsMapLink {
@@ -5060,11 +5060,11 @@ export interface GetGtmDomainAsMapLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainCidrMap {
@@ -5090,19 +5090,19 @@ export interface GetGtmDomainCidrMapArgs {
     /**
      * Contains information about the CIDR zone groupings of CIDR blocks.
      */
-    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainCidrMapAssignmentArgs>[]>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainCidrMapAssignmentArgs>[] | undefined>;
     /**
      * A placeholder for all other CIDR zones, CIDR blocks not found in these CIDR zones.
      */
-    defaultDatacenter?: pulumi.Input<inputs.GetGtmDomainCidrMapDefaultDatacenterArgs>;
+    defaultDatacenter?: pulumi.Input<inputs.GetGtmDomainCidrMapDefaultDatacenterArgs | undefined>;
     /**
      * Specifies the URL path that allows direct navigation to the CIDR map.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainCidrMapLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainCidrMapLinkArgs>[] | undefined>;
     /**
      * Unique name for the CIDR map.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainCidrMapAssignment {
@@ -5124,15 +5124,15 @@ export interface GetGtmDomainCidrMapAssignmentArgs {
     /**
      * Specifies an array of CIDR blocks.
      */
-    blocks?: pulumi.Input<pulumi.Input<string>[]>;
+    blocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for all other AS zones.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainCidrMapDefaultDatacenter {
@@ -5150,11 +5150,11 @@ export interface GetGtmDomainCidrMapDefaultDatacenterArgs {
     /**
      * For each property, an identifier for all other CIDR zones' CNAME.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for all other CIDR blocks.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainCidrMapLink {
@@ -5172,11 +5172,11 @@ export interface GetGtmDomainCidrMapLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainDatacenter {
@@ -5250,67 +5250,67 @@ export interface GetGtmDomainDatacenterArgs {
     /**
      * The name of the city where the data center is located.
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * Identifies the data center's ID of which this data center is a clone.
      */
-    cloneOf?: pulumi.Input<number>;
+    cloneOf?: pulumi.Input<number | undefined>;
     /**
      * Balances load between two or more servers in a cloud environment.
      */
-    cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
+    cloudServerHostHeaderOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Balances load between two or more servers in a cloud environment.
      */
-    cloudServerTargeting?: pulumi.Input<boolean>;
+    cloudServerTargeting?: pulumi.Input<boolean | undefined>;
     /**
      * A two-letter code that specifies the continent where the data center maps to.
      */
-    continent?: pulumi.Input<string>;
+    continent?: pulumi.Input<string | undefined>;
     /**
      * A two-letter ISO 3166 country code that specifies the country where the data center is located.
      */
-    country?: pulumi.Input<string>;
+    country?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * Specifies the load reporting interface between you and the GTM system.
      */
-    defaultLoadObjects?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainDatacenterDefaultLoadObjectArgs>[]>;
+    defaultLoadObjects?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainDatacenterDefaultLoadObjectArgs>[] | undefined>;
     /**
      * Specifies the geographic latitude of the data center's position.
      */
-    latitude?: pulumi.Input<number>;
+    latitude?: pulumi.Input<number | undefined>;
     /**
      * Provides a URL path that allows direct navigation to a data center.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainDatacenterLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainDatacenterLinkArgs>[] | undefined>;
     /**
      * Specifies the geographic longitude of the data center's position.
      */
-    longitude?: pulumi.Input<number>;
+    longitude?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for the datacenter.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
     /**
      * Influences the score for a datacenter.
      */
-    scorePenalty?: pulumi.Input<number>;
+    scorePenalty?: pulumi.Input<number | undefined>;
     /**
      * The name of the pool from which servermonitors are drawn for liveness tests in this datacenter. If omitted (null), the domain-wide default is used. (If no domain-wide default is specified, the pool used is all servermonitors in the same continent as the datacenter.).
      */
-    serverMonitorPool?: pulumi.Input<string>;
+    serverMonitorPool?: pulumi.Input<string | undefined>;
     /**
      * Specifies a two-letter ISO 3166 country code for the state of province, where the data center is located.
      */
-    stateOrProvince?: pulumi.Input<string>;
+    stateOrProvince?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether or not the data center is virtual or physical.
      */
-    virtual?: pulumi.Input<boolean>;
+    virtual?: pulumi.Input<boolean | undefined>;
 }
 
 export interface GetGtmDomainDatacenterDefaultLoadObject {
@@ -5332,15 +5332,15 @@ export interface GetGtmDomainDatacenterDefaultLoadObjectArgs {
     /**
      * Specifies the load object that GTM requests.
      */
-    loadObject?: pulumi.Input<string>;
+    loadObject?: pulumi.Input<string | undefined>;
     /**
      * Specifies the TCP port to connect to when requesting the load object.
      */
-    loadObjectPort?: pulumi.Input<number>;
+    loadObjectPort?: pulumi.Input<number | undefined>;
     /**
      * Specifies the list of servers to requests the load object from.
      */
-    loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+    loadServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GetGtmDomainDatacenterLink {
@@ -5358,11 +5358,11 @@ export interface GetGtmDomainDatacenterLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainGeographicMap {
@@ -5388,19 +5388,19 @@ export interface GetGtmDomainGeographicMapArgs {
     /**
      * Contains information about the geographic zone groupings of countries.
      */
-    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainGeographicMapAssignmentArgs>[]>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainGeographicMapAssignmentArgs>[] | undefined>;
     /**
      * A placeholder for all other geographic zones, countries not found in these geographic zones.
      */
-    defaultDatacenter?: pulumi.Input<inputs.GetGtmDomainGeographicMapDefaultDatacenterArgs>;
+    defaultDatacenter?: pulumi.Input<inputs.GetGtmDomainGeographicMapDefaultDatacenterArgs | undefined>;
     /**
      * Specifies the URL path that allows direct navigation to the geographic map.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainGeographicMapLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainGeographicMapLinkArgs>[] | undefined>;
     /**
      * A descriptive label for the geographic map.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainGeographicMapAssignment {
@@ -5422,15 +5422,15 @@ export interface GetGtmDomainGeographicMapAssignmentArgs {
     /**
      * Specifies an array of two-letter ISO 3166 `country` codes.
      */
-    countries?: pulumi.Input<pulumi.Input<string>[]>;
+    countries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for all other AS zones.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainGeographicMapDefaultDatacenter {
@@ -5448,11 +5448,11 @@ export interface GetGtmDomainGeographicMapDefaultDatacenterArgs {
     /**
      * An identifier for all other geographic zones' CNAME.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for all other geographic zones.
      */
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainGeographicMapLink {
@@ -5470,11 +5470,11 @@ export interface GetGtmDomainGeographicMapLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainLink {
@@ -5492,11 +5492,11 @@ export interface GetGtmDomainLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainProperty {
@@ -5642,139 +5642,139 @@ export interface GetGtmDomainPropertyArgs {
     /**
      * Specifies a backup CNAME.
      */
-    backupCname?: pulumi.Input<string>;
+    backupCname?: pulumi.Input<string | undefined>;
     /**
      * Specifies a backup IP.
      */
-    backupIp?: pulumi.Input<string>;
+    backupIp?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether download score based load balancing is enabled.
      */
-    balanceByDownloadScore?: pulumi.Input<boolean>;
+    balanceByDownloadScore?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates the fully qualified name aliased to a particular property.
      */
-    cname?: pulumi.Input<string>;
+    cname?: pulumi.Input<string | undefined>;
     /**
      * Descriptive comments for the property.
      */
-    comments?: pulumi.Input<string>;
+    comments?: pulumi.Input<string | undefined>;
     /**
      * Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing.
      */
-    dynamicTtl?: pulumi.Input<number>;
+    dynamicTtl?: pulumi.Input<number | undefined>;
     /**
      * Specifies the failback delay in seconds.
      */
-    failbackDelay?: pulumi.Input<number>;
+    failbackDelay?: pulumi.Input<number | undefined>;
     /**
      * Specifies the failover delay in seconds.
      */
-    failoverDelay?: pulumi.Input<number>;
+    failoverDelay?: pulumi.Input<number | undefined>;
     /**
      * Whether an alternate way to collect load feedback from a GTM Performance domain is enabled.
      */
-    ghostDemandReporting?: pulumi.Input<boolean>;
+    ghostDemandReporting?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates the limit for the number of live IPs handed out to a DNS request.
      */
-    handoutLimit?: pulumi.Input<number>;
+    handoutLimit?: pulumi.Input<number | undefined>;
     /**
      * Specifies how IPs are returned when more than one IP is alive and available.
      */
-    handoutMode?: pulumi.Input<string>;
+    handoutMode?: pulumi.Input<string | undefined>;
     /**
      * Defines the absolute limit beyond which IPs are declared unhealthy.
      */
-    healthMax?: pulumi.Input<number>;
+    healthMax?: pulumi.Input<number | undefined>;
     /**
      * Configures a cutoff value that is computed from the median scores.
      */
-    healthMultiplier?: pulumi.Input<number>;
+    healthMultiplier?: pulumi.Input<number | undefined>;
     /**
      * Configures a cutoff value that is computed from the median scores.
      */
-    healthThreshold?: pulumi.Input<number>;
+    healthThreshold?: pulumi.Input<number | undefined>;
     /**
      * Indicates the type of IP address handed out by a property.
      */
-    ipv6?: pulumi.Input<boolean>;
+    ipv6?: pulumi.Input<boolean | undefined>;
     /**
      * An ISO 8601 timestamp that indicates when the property was last changed.
      */
-    lastModified?: pulumi.Input<string>;
+    lastModified?: pulumi.Input<string | undefined>;
     /**
      * Provides a URL path that allows direct navigation to the property.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyLinkArgs>[] | undefined>;
     /**
      * Contains information about liveness tests.
      */
-    livenessTests?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyLivenessTestArgs>[]>;
+    livenessTests?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyLivenessTestArgs>[] | undefined>;
     /**
      * Indicates the percent of load imbalance factor for the domain.
      */
-    loadImbalancePercentage?: pulumi.Input<number>;
+    loadImbalancePercentage?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for a geographic or a CIDR map that's required if the property is either geographic or cidrmapping.
      */
-    mapName?: pulumi.Input<string>;
+    mapName?: pulumi.Input<string | undefined>;
     /**
      * For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
      */
-    maxUnreachablePenalty?: pulumi.Input<number>;
+    maxUnreachablePenalty?: pulumi.Input<number | undefined>;
     /**
      * Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
      */
-    minLiveFraction?: pulumi.Input<number>;
+    minLiveFraction?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for the property.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
      */
-    scoreAggregationType?: pulumi.Input<string>;
+    scoreAggregationType?: pulumi.Input<string | undefined>;
     /**
      * Contains static recordsets.
      */
-    staticRrSets?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyStaticRrSetArgs>[]>;
+    staticRrSets?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyStaticRrSetArgs>[] | undefined>;
     /**
      * Specifies the TTL in seconds for static resource records that don't change based on the requesting name server IP.
      */
-    staticTtl?: pulumi.Input<number>;
+    staticTtl?: pulumi.Input<number | undefined>;
     /**
      * Specifies a percentage used to configure data center affinity.
      */
-    sticknessBonusConstant?: pulumi.Input<number>;
+    sticknessBonusConstant?: pulumi.Input<number | undefined>;
     /**
      * Specifies a percentage used to configure data center affinity.
      */
-    sticknessBonusPercentage?: pulumi.Input<number>;
+    sticknessBonusPercentage?: pulumi.Input<number | undefined>;
     /**
      * Traffic targets for the property.
      */
-    trafficTargets?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyTrafficTargetArgs>[]>;
+    trafficTargets?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyTrafficTargetArgs>[] | undefined>;
     /**
      * Specifies the load balancing behvior for the property.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
      */
-    unreachableThreshold?: pulumi.Input<number>;
+    unreachableThreshold?: pulumi.Input<number | undefined>;
     /**
      * For load-feedback domains only, this specifies that you want GTM to automatically compute target load.
      */
-    useComputedTargets?: pulumi.Input<boolean>;
+    useComputedTargets?: pulumi.Input<boolean | undefined>;
     /**
      * For weighted hashed properties, how many leading bits of the client nameserver IP address to include when computing a hash for picking a datacenter for a client nameserver using IPv4; the default value is 32 (the entire address).
      */
-    weightedHashBitsForIpv4?: pulumi.Input<number>;
+    weightedHashBitsForIpv4?: pulumi.Input<number | undefined>;
     /**
      * For weighted hashed properties, how many leading bits of the client nameserver IP address to include when computing a hash for picking a datacenter for a client nameserver using IPv6; the default value is 128 (the entire address).
      */
-    weightedHashBitsForIpv6?: pulumi.Input<number>;
+    weightedHashBitsForIpv6?: pulumi.Input<number | undefined>;
 }
 
 export interface GetGtmDomainPropertyLink {
@@ -5792,11 +5792,11 @@ export interface GetGtmDomainPropertyLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainPropertyLivenessTest {
@@ -5918,115 +5918,115 @@ export interface GetGtmDomainPropertyLivenessTestArgs {
     /**
      * List of alternate trust anchors (CA certificates)
      */
-    alternateCaCertificates?: pulumi.Input<pulumi.Input<string>[]>;
+    alternateCaCertificates?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
      */
-    answersRequired?: pulumi.Input<boolean>;
+    answersRequired?: pulumi.Input<boolean | undefined>;
     /**
      * Disables warnings when non-standard ports are used.
      */
-    disableNonstandardPortWarning?: pulumi.Input<boolean>;
+    disableNonstandardPortWarning?: pulumi.Input<boolean | undefined>;
     /**
      * Disables the liveness test.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
      */
-    errorPenalty?: pulumi.Input<number>;
+    errorPenalty?: pulumi.Input<number | undefined>;
     /**
      * Treats a 3xx HTTP response as a failure if the testObjectProtocol is http, https or ftp.
      */
-    httpError3xx?: pulumi.Input<boolean>;
+    httpError3xx?: pulumi.Input<boolean | undefined>;
     /**
      * Treats a 4xx HTTP response as a failure if the testObjectProtocol is http, https or ftp.
      */
-    httpError4xx?: pulumi.Input<boolean>;
+    httpError4xx?: pulumi.Input<boolean | undefined>;
     /**
      * Treats a 5xx HTTP response as a failure if the testObjectProtocol is http, https or ftp.
      */
-    httpError5xx?: pulumi.Input<boolean>;
+    httpError5xx?: pulumi.Input<boolean | undefined>;
     /**
      * List of HTTP headers for the liveness test.
      */
-    httpHeaders?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyLivenessTestHttpHeaderArgs>[]>;
+    httpHeaders?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainPropertyLivenessTestHttpHeaderArgs>[] | undefined>;
     /**
      * Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
      */
-    httpMethod?: pulumi.Input<string>;
+    httpMethod?: pulumi.Input<string | undefined>;
     /**
      * Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
      */
-    httpRequestBody?: pulumi.Input<string>;
+    httpRequestBody?: pulumi.Input<string | undefined>;
     /**
      * A descriptive name for the liveness test.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Validates the origin certificate. Applies only to tests with testObjectProtocol of https.
      */
-    peerCertificateVerification?: pulumi.Input<boolean>;
+    peerCertificateVerification?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
      */
-    pre2023SecurityPosture?: pulumi.Input<boolean>;
+    pre2023SecurityPosture?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates that if testObjectProtocol is DNS, DOH or DOT, the DNS query is recursive.
      */
-    recursionRequested?: pulumi.Input<boolean>;
+    recursionRequested?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies a request string.
      */
-    requestString?: pulumi.Input<string>;
+    requestString?: pulumi.Input<string | undefined>;
     /**
      * Specifies the query type, if testObjectProtocol is DNS.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Specifies a response string.
      */
-    responseString?: pulumi.Input<string>;
+    responseString?: pulumi.Input<string | undefined>;
     /**
      * Indicates a base64-encoded certificate.
      */
-    sslClientCertificate?: pulumi.Input<string>;
+    sslClientCertificate?: pulumi.Input<string | undefined>;
     /**
      * Indicates a base64-encoded private key.
      */
-    sslClientPrivateKey?: pulumi.Input<string>;
+    sslClientPrivateKey?: pulumi.Input<string | undefined>;
     /**
      * Indicates the interval at which the liveness test is run, in seconds.
      */
-    testInterval?: pulumi.Input<number>;
+    testInterval?: pulumi.Input<number | undefined>;
     /**
      * Specifies the static text that acts as a stand-in for the data that you're sending on the network.
      */
-    testObject?: pulumi.Input<string>;
+    testObject?: pulumi.Input<string | undefined>;
     /**
      * Specifies the test object's password.
      */
-    testObjectPassword?: pulumi.Input<string>;
+    testObjectPassword?: pulumi.Input<string | undefined>;
     /**
      * Specifies the port number for the testObject.
      */
-    testObjectPort?: pulumi.Input<number>;
+    testObjectPort?: pulumi.Input<number | undefined>;
     /**
      * Specifies the test protocol.
      */
-    testObjectProtocol?: pulumi.Input<string>;
+    testObjectProtocol?: pulumi.Input<string | undefined>;
     /**
      * A descriptive name for the testObject.
      */
-    testObjectUsername?: pulumi.Input<string>;
+    testObjectUsername?: pulumi.Input<string | undefined>;
     /**
      * Specifies the duration of the liveness test before it fails.
      */
-    testTimeout?: pulumi.Input<number>;
+    testTimeout?: pulumi.Input<number | undefined>;
     /**
      * Specifies the timeout penalty score.
      */
-    timeoutPenalty?: pulumi.Input<number>;
+    timeoutPenalty?: pulumi.Input<number | undefined>;
 }
 
 export interface GetGtmDomainPropertyLivenessTestHttpHeader {
@@ -6044,11 +6044,11 @@ export interface GetGtmDomainPropertyLivenessTestHttpHeaderArgs {
     /**
      * Name of the HTTP header.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Value of the HTTP header.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainPropertyStaticRrSet {
@@ -6070,15 +6070,15 @@ export interface GetGtmDomainPropertyStaticRrSetArgs {
     /**
      * An array of data strings, representing multiple records within a set.
      */
-    rdatas?: pulumi.Input<pulumi.Input<string>[]>;
+    rdatas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The number of seconds that this record should live in a resolver's cache before being refetched.
      */
-    ttl?: pulumi.Input<number>;
+    ttl?: pulumi.Input<number | undefined>;
     /**
      * The record type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainPropertyTrafficTarget {
@@ -6116,31 +6116,31 @@ export interface GetGtmDomainPropertyTrafficTargetArgs {
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the traffic target is used.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies an optional data center for the property.
      */
-    handoutCname?: pulumi.Input<string>;
+    handoutCname?: pulumi.Input<string | undefined>;
     /**
      * An alternative label for the traffic target.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
      */
-    precedence?: pulumi.Input<number>;
+    precedence?: pulumi.Input<number | undefined>;
     /**
      * Identifies the IP address or the hostnames of the servers.
      */
-    servers?: pulumi.Input<pulumi.Input<string>[]>;
+    servers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Specifies the traffic target weight for the target.
      */
-    weight?: pulumi.Input<number>;
+    weight?: pulumi.Input<number | undefined>;
 }
 
 export interface GetGtmDomainResource {
@@ -6206,59 +6206,59 @@ export interface GetGtmDomainResourceArgs {
     /**
      * Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
      */
-    aggregationType?: pulumi.Input<string>;
+    aggregationType?: pulumi.Input<string | undefined>;
     /**
      * Specifies the name of the property that this resource constraints.
      */
-    constrainedProperty?: pulumi.Input<string>;
+    constrainedProperty?: pulumi.Input<string | undefined>;
     /**
      * For internal use only.
      */
-    decayRate?: pulumi.Input<number>;
+    decayRate?: pulumi.Input<number | undefined>;
     /**
      * A descriptive note to help you track what the resource constraints.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Specifies the host header used when fetching the load object.
      */
-    hostHeader?: pulumi.Input<string>;
+    hostHeader?: pulumi.Input<string | undefined>;
     /**
      * Specifies the text that comes before the loadObject.
      */
-    leaderString?: pulumi.Input<string>;
+    leaderString?: pulumi.Input<string | undefined>;
     /**
      * For internal use only.
      */
-    leastSquaresDecay?: pulumi.Input<number>;
+    leastSquaresDecay?: pulumi.Input<number | undefined>;
     /**
      * Specifies the URL path that allows direct navigation to the resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainResourceLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainResourceLinkArgs>[] | undefined>;
     /**
      * Indicates the percent of load imbalance factor for the domain.
      */
-    loadImbalancePercentage?: pulumi.Input<number>;
+    loadImbalancePercentage?: pulumi.Input<number | undefined>;
     /**
      * For internal use only.
      */
-    maxUMultiplicativeIncrement?: pulumi.Input<number>;
+    maxUMultiplicativeIncrement?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for the resource.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of resource instances.
      */
-    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainResourceResourceInstanceArgs>[]>;
+    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainResourceResourceInstanceArgs>[] | undefined>;
     /**
      * Indicates the kind of loadObject format used to determine the load on the resource.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * An optional sanity check that specifies the maximum allowed value for any component of the load object.
      */
-    upperBound?: pulumi.Input<number>;
+    upperBound?: pulumi.Input<number | undefined>;
 }
 
 export interface GetGtmDomainResourceLink {
@@ -6276,11 +6276,11 @@ export interface GetGtmDomainResourceLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainResourceResourceInstance {
@@ -6310,23 +6310,23 @@ export interface GetGtmDomainResourceResourceInstanceArgs {
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * Identifies the load object file used to report real-time information about the current load, maximum allowable load and target load on each resource.
      */
-    loadObject?: pulumi.Input<string>;
+    loadObject?: pulumi.Input<string | undefined>;
     /**
      * Specifies the TCP port of the loadObject.
      */
-    loadObjectPort?: pulumi.Input<number>;
+    loadObjectPort?: pulumi.Input<number | undefined>;
     /**
      * Specifies the list of servers to requests the load object from.
      */
-    loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+    loadServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether to use default loadObject.
      */
-    useDefaultLoadObject?: pulumi.Input<boolean>;
+    useDefaultLoadObject?: pulumi.Input<boolean | undefined>;
 }
 
 export interface GetGtmDomainStatus {
@@ -6360,27 +6360,27 @@ export interface GetGtmDomainStatusArgs {
     /**
      * A unique identifier generated when a change occurs to the domain.
      */
-    changeId?: pulumi.Input<string>;
+    changeId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the URL path that allows direct navigation to the domain.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainStatusLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainStatusLinkArgs>[] | undefined>;
     /**
      * A notification generated when a change occurs to the domain.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the domain validates.
      */
-    passingValidation?: pulumi.Input<boolean>;
+    passingValidation?: pulumi.Input<boolean | undefined>;
     /**
      * Tracks the status of the domain's propagation state.
      */
-    propagationStatus?: pulumi.Input<string>;
+    propagationStatus?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating when a change occurs to the domain.
      */
-    propagationStatusDate?: pulumi.Input<string>;
+    propagationStatusDate?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainStatusLink {
@@ -6398,11 +6398,11 @@ export interface GetGtmDomainStatusLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainsDomain {
@@ -6460,51 +6460,51 @@ export interface GetGtmDomainsDomainArgs {
     /**
      * The contract's identifier, with which the domain is associated.
      */
-    acgId?: pulumi.Input<string>;
+    acgId?: pulumi.Input<string | undefined>;
     /**
      * 'PENDING' when a change has been made but not yet propagated; 'COMPLETE' when the last configuration change has propagated successfully; 'DENIED' if the domain configuration failed validation; 'DELETED' if the domain has been deleted.
      */
-    activationState?: pulumi.Input<string>;
+    activationState?: pulumi.Input<string | undefined>;
     /**
      * UUID that identifies a version of the domain configuration.
      */
-    changeId?: pulumi.Input<string>;
+    changeId?: pulumi.Input<string | undefined>;
     /**
      * UUID for delete request during domain deletion. Null if the domain is not being deleted.
      */
-    deleteRequestId?: pulumi.Input<string>;
+    deleteRequestId?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp that indicates the time of the last domain change.
      */
-    lastModified?: pulumi.Input<string>;
+    lastModified?: pulumi.Input<string | undefined>;
     /**
      * The email address of the administrator who made the last change to the domain.
      */
-    lastModifiedBy?: pulumi.Input<string>;
+    lastModifiedBy?: pulumi.Input<string | undefined>;
     /**
      * Provides a URL path that allows direct navigation to the domain.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainsDomainLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainsDomainLinkArgs>[] | undefined>;
     /**
      * A descriptive note about changes to the domain.
      */
-    modificationComments?: pulumi.Input<string>;
+    modificationComments?: pulumi.Input<string | undefined>;
     /**
      * A unique domain name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
      */
-    signAndServe?: pulumi.Input<boolean>;
+    signAndServe?: pulumi.Input<boolean | undefined>;
     /**
      * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
      */
-    signAndServeAlgorithm?: pulumi.Input<string>;
+    signAndServeAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The current status of the domain.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmDomainsDomainLink {
@@ -6522,11 +6522,11 @@ export interface GetGtmDomainsDomainLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmResourceLink {
@@ -6544,11 +6544,11 @@ export interface GetGtmResourceLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmResourceResourceInstance {
@@ -6578,23 +6578,23 @@ export interface GetGtmResourceResourceInstanceArgs {
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * Identifies the load object file used to report real-time information about the current load, maximum allowable load and target load on each resource.
      */
-    loadObject?: pulumi.Input<string>;
+    loadObject?: pulumi.Input<string | undefined>;
     /**
      * Specifies the TCP port of the loadObject.
      */
-    loadObjectPort?: pulumi.Input<number>;
+    loadObjectPort?: pulumi.Input<number | undefined>;
     /**
      * Specifies the list of servers to requests the load object from.
      */
-    loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+    loadServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether to use default loadObject.
      */
-    useDefaultLoadObject?: pulumi.Input<boolean>;
+    useDefaultLoadObject?: pulumi.Input<boolean | undefined>;
 }
 
 export interface GetGtmResourcesResource {
@@ -6660,43 +6660,43 @@ export interface GetGtmResourcesResourceArgs {
     /**
      * Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
      */
-    aggregationType?: pulumi.Input<string>;
+    aggregationType?: pulumi.Input<string | undefined>;
     /**
      * Specifies the name of the property that this resource constraints.
      */
-    constrainedProperty?: pulumi.Input<string>;
+    constrainedProperty?: pulumi.Input<string | undefined>;
     /**
      * For internal use only.
      */
-    decayRate?: pulumi.Input<number>;
+    decayRate?: pulumi.Input<number | undefined>;
     /**
      * A descriptive note which allows to track what is constrained by this resource.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Specifies the host header used when fetching the load object.
      */
-    hostHeader?: pulumi.Input<string>;
+    hostHeader?: pulumi.Input<string | undefined>;
     /**
      * Specifies the text that comes before the load object.
      */
-    leaderString?: pulumi.Input<string>;
+    leaderString?: pulumi.Input<string | undefined>;
     /**
      * For internal use only.
      */
-    leastSquaresDecay?: pulumi.Input<number>;
+    leastSquaresDecay?: pulumi.Input<number | undefined>;
     /**
      * Specifies the URL path that allows direct navigation to the resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmResourcesResourceLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmResourcesResourceLinkArgs>[] | undefined>;
     /**
      * Indicates the percentage of load imbalance for the domain.
      */
-    loadImbalancePercentage?: pulumi.Input<number>;
+    loadImbalancePercentage?: pulumi.Input<number | undefined>;
     /**
      * For internal use only.
      */
-    maxUMultiplicativeIncrement?: pulumi.Input<number>;
+    maxUMultiplicativeIncrement?: pulumi.Input<number | undefined>;
     /**
      * A descriptive label for the resource.
      */
@@ -6704,15 +6704,15 @@ export interface GetGtmResourcesResourceArgs {
     /**
      * Instances of the resource.
      */
-    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GetGtmResourcesResourceResourceInstanceArgs>[]>;
+    resourceInstances?: pulumi.Input<pulumi.Input<inputs.GetGtmResourcesResourceResourceInstanceArgs>[] | undefined>;
     /**
      * Indicates the type of load object used to determine the load on the resource.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * An optional sanity check that specifies the maximum allowed value for any component of the load object.
      */
-    upperBound?: pulumi.Input<number>;
+    upperBound?: pulumi.Input<number | undefined>;
 }
 
 export interface GetGtmResourcesResourceLink {
@@ -6730,11 +6730,11 @@ export interface GetGtmResourcesResourceLinkArgs {
     /**
      * A hypermedia link to the complete URL that uniquely defines a resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates the link relationship of the object.
      */
-    rel?: pulumi.Input<string>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface GetGtmResourcesResourceResourceInstance {
@@ -6764,23 +6764,23 @@ export interface GetGtmResourcesResourceResourceInstanceArgs {
     /**
      * A unique identifier for an existing data center in the domain.
      */
-    datacenterId?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
     /**
      * Identifies the load object file used to report real-time information about the current load, maximum allowable load and target load on each resource.
      */
-    loadObject?: pulumi.Input<string>;
+    loadObject?: pulumi.Input<string | undefined>;
     /**
      * Specifies the TCP port of the loadObject.
      */
-    loadObjectPort?: pulumi.Input<number>;
+    loadObjectPort?: pulumi.Input<number | undefined>;
     /**
      * Specifies the list of servers to requests the load object from.
      */
-    loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+    loadServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether to use default loadObject.
      */
-    useDefaultLoadObject?: pulumi.Input<boolean>;
+    useDefaultLoadObject?: pulumi.Input<boolean | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicy {
@@ -6822,35 +6822,35 @@ export interface GetImagingPolicyImagePolicyArgs {
     /**
      * The breakpoint widths (in pixels) to use to create derivative images/videos.
      */
-    breakpoints?: pulumi.Input<inputs.GetImagingPolicyImagePolicyBreakpointsArgs>;
+    breakpoints?: pulumi.Input<inputs.GetImagingPolicyImagePolicyBreakpointsArgs | undefined>;
     /**
      * Hosts that are allowed for image/video URLs within transformations or variables.
      */
-    hosts?: pulumi.Input<pulumi.Input<string>[]>;
+    hosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
      */
-    output?: pulumi.Input<inputs.GetImagingPolicyImagePolicyOutputArgs>;
+    output?: pulumi.Input<inputs.GetImagingPolicyImagePolicyOutputArgs | undefined>;
     /**
      * Post-processing Transformations are applied to the image after image and quality settings have been applied.
      */
-    postBreakpointTransformations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>[]>;
+    postBreakpointTransformations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>[] | undefined>;
     /**
      * The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
      */
-    rolloutDuration?: pulumi.Input<string>;
+    rolloutDuration?: pulumi.Input<string | undefined>;
     /**
      * The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
      */
-    serveStaleDuration?: pulumi.Input<string>;
+    serveStaleDuration?: pulumi.Input<string | undefined>;
     /**
      * Set of image transformations to apply to the source image. If unspecified, no operations are performed.
      */
-    transformations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>[]>;
+    transformations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>[] | undefined>;
     /**
      * Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don't have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image's request URL.
      */
-    variables?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyVariableArgs>[]>;
+    variables?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyVariableArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyBreakpoints {
@@ -6858,7 +6858,7 @@ export interface GetImagingPolicyImagePolicyBreakpoints {
 }
 
 export interface GetImagingPolicyImagePolicyBreakpointsArgs {
-    widths?: pulumi.Input<pulumi.Input<number>[]>;
+    widths?: pulumi.Input<pulumi.Input<number>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyOutput {
@@ -6908,43 +6908,43 @@ export interface GetImagingPolicyImagePolicyOutputArgs {
     /**
      * Override the quality of image to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of images for users with faster connections.
      */
-    adaptiveQuality?: pulumi.Input<string>;
+    adaptiveQuality?: pulumi.Input<string | undefined>;
     /**
      * Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
      */
-    allowPristineOnDownsize?: pulumi.Input<string>;
+    allowPristineOnDownsize?: pulumi.Input<string | undefined>;
     /**
      * The graphics file formats allowed for browser specific results.
      */
-    allowedFormats?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedFormats?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The forced extra formats for the `imFormat` query parameter, which requests a specific browser type. By default, Image and Video Manager detects the browser and returns the appropriate image.
      */
-    forcedFormats?: pulumi.Input<pulumi.Input<string>[]>;
+    forcedFormats?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
      */
-    perceptualQuality?: pulumi.Input<string>;
+    perceptualQuality?: pulumi.Input<string | undefined>;
     /**
      * Only applies with perceptualQuality set. Sets a minimum image quality to respect when using perceptual quality. Perceptual quality will not reduce the quality below this value even if it determines the compressed image to be acceptably visually similar.
      */
-    perceptualQualityFloor?: pulumi.Input<string>;
+    perceptualQualityFloor?: pulumi.Input<string | undefined>;
     /**
      * Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format's quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
      */
-    perceptualQualityVar?: pulumi.Input<string>;
+    perceptualQualityVar?: pulumi.Input<string | undefined>;
     /**
      * Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
      */
-    preferModernFormats?: pulumi.Input<string>;
+    preferModernFormats?: pulumi.Input<string | undefined>;
     /**
      * Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
      */
-    quality?: pulumi.Input<string>;
+    quality?: pulumi.Input<string | undefined>;
     /**
      * Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
      */
-    qualityVar?: pulumi.Input<string>;
+    qualityVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformation {
@@ -7017,66 +7017,66 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationArgs {
     /**
      * Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
      */
-    backgroundColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgs>[]>;
+    backgroundColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgs>[] | undefined>;
     /**
      * Applies a Gaussian blur to the image.
      */
-    blurs?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs>[]>;
+    blurs?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs>[] | undefined>;
     /**
      * Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a 'green screen' technique commonly used to isolate and remove background colors.
      */
-    chromaKeys?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgs>[]>;
+    chromaKeys?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgs>[] | undefined>;
     /**
      * Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
      */
-    composites?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs>[]>;
-    compounds?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgs>[]>;
+    composites?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs>[] | undefined>;
+    compounds?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgs>[] | undefined>;
     /**
      * Adjusts both the contrast and brightness of an image.
      */
-    contrasts?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs>[]>;
+    contrasts?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs>[] | undefined>;
     /**
      * Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
      */
-    goops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs>[]>;
+    goops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs>[] | undefined>;
     /**
      * Restricts image color to shades of gray only.
      */
-    grayscales?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs>[]>;
+    grayscales?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs>[] | undefined>;
     /**
      * Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
      */
-    hsls?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs>[]>;
+    hsls?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs>[] | undefined>;
     /**
      * Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
      */
-    hsvs?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs>[]>;
-    ifDimensions?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgs>[]>;
-    ifOrientations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgs>[]>;
+    hsvs?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs>[] | undefined>;
+    ifDimensions?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgs>[] | undefined>;
+    ifOrientations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgs>[] | undefined>;
     /**
      * Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
      */
-    maxColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs>[]>;
+    maxColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs>[] | undefined>;
     /**
      * Flips an image horizontally, vertically, or both.
      */
-    mirrors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs>[]>;
+    mirrors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs>[] | undefined>;
     /**
      * Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
      */
-    monoHues?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs>[]>;
+    monoHues?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs>[] | undefined>;
     /**
      * Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
      */
-    opacities?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgs>[]>;
+    opacities?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgs>[] | undefined>;
     /**
      * Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
      */
-    removeColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgs>[]>;
+    removeColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgs>[] | undefined>;
     /**
      * Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
      */
-    unsharpMasks?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgs>[]>;
+    unsharpMasks?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor {
@@ -7094,11 +7094,11 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationBackgrou
     /**
      * The hexadecimal CSS color value for the background.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The hexadecimal CSS color value for the background.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationBlur {
@@ -7116,11 +7116,11 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs
     /**
      * The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
      */
-    sigma?: pulumi.Input<string>;
+    sigma?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
      */
-    sigmaVar?: pulumi.Input<string>;
+    sigmaVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKey {
@@ -7186,59 +7186,59 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKe
     /**
      * The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
      */
-    hue?: pulumi.Input<string>;
+    hue?: pulumi.Input<string | undefined>;
     /**
      * How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
      */
-    hueFeather?: pulumi.Input<string>;
+    hueFeather?: pulumi.Input<string | undefined>;
     /**
      * How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
      */
-    hueFeatherVar?: pulumi.Input<string>;
+    hueFeatherVar?: pulumi.Input<string | undefined>;
     /**
      * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
      */
-    hueTolerance?: pulumi.Input<string>;
+    hueTolerance?: pulumi.Input<string | undefined>;
     /**
      * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
      */
-    hueToleranceVar?: pulumi.Input<string>;
+    hueToleranceVar?: pulumi.Input<string | undefined>;
     /**
      * The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
      */
-    hueVar?: pulumi.Input<string>;
+    hueVar?: pulumi.Input<string | undefined>;
     /**
      * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
      */
-    lightnessFeather?: pulumi.Input<string>;
+    lightnessFeather?: pulumi.Input<string | undefined>;
     /**
      * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
      */
-    lightnessFeatherVar?: pulumi.Input<string>;
+    lightnessFeatherVar?: pulumi.Input<string | undefined>;
     /**
      * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
      */
-    lightnessTolerance?: pulumi.Input<string>;
+    lightnessTolerance?: pulumi.Input<string | undefined>;
     /**
      * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
      */
-    lightnessToleranceVar?: pulumi.Input<string>;
+    lightnessToleranceVar?: pulumi.Input<string | undefined>;
     /**
      * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
      */
-    saturationFeather?: pulumi.Input<string>;
+    saturationFeather?: pulumi.Input<string | undefined>;
     /**
      * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
      */
-    saturationFeatherVar?: pulumi.Input<string>;
+    saturationFeatherVar?: pulumi.Input<string | undefined>;
     /**
      * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
      */
-    saturationTolerance?: pulumi.Input<string>;
+    saturationTolerance?: pulumi.Input<string | undefined>;
     /**
      * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
      */
-    saturationToleranceVar?: pulumi.Input<string>;
+    saturationToleranceVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationComposite {
@@ -7297,52 +7297,52 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationComposit
     /**
      * Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
      */
-    gravity?: pulumi.Input<string>;
+    gravity?: pulumi.Input<string | undefined>;
     /**
      * Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
      */
-    gravityVar?: pulumi.Input<string>;
+    gravityVar?: pulumi.Input<string | undefined>;
     image: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageArgs>;
     /**
      * Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
      */
-    placement?: pulumi.Input<string>;
+    placement?: pulumi.Input<string | undefined>;
     /**
      * Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
      */
-    placementVar?: pulumi.Input<string>;
+    placementVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
      */
-    scale?: pulumi.Input<string>;
+    scale?: pulumi.Input<string | undefined>;
     /**
      * The dimension, either `width` or `height`, of the source image to scale.
      */
-    scaleDimension?: pulumi.Input<string>;
+    scaleDimension?: pulumi.Input<string | undefined>;
     /**
      * The dimension, either `width` or `height`, of the source image to scale.
      */
-    scaleDimensionVar?: pulumi.Input<string>;
+    scaleDimensionVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
      */
-    scaleVar?: pulumi.Input<string>;
+    scaleVar?: pulumi.Input<string | undefined>;
     /**
      * The x-axis position of the image to apply.
      */
-    xPosition?: pulumi.Input<string>;
+    xPosition?: pulumi.Input<string | undefined>;
     /**
      * The x-axis position of the image to apply.
      */
-    xPositionVar?: pulumi.Input<string>;
+    xPositionVar?: pulumi.Input<string | undefined>;
     /**
      * The y-axis position of the image to apply.
      */
-    yPosition?: pulumi.Input<string>;
+    yPosition?: pulumi.Input<string | undefined>;
     /**
      * The y-axis position of the image to apply.
      */
-    yPositionVar?: pulumi.Input<string>;
+    yPositionVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage {
@@ -7368,19 +7368,19 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationComposit
     /**
      * A rectangular box, with a specified color and applied transformation.
      */
-    boxImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgs>[]>;
+    boxImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgs>[] | undefined>;
     /**
      * A rectangular box, with a specified color and applied transformation.
      */
-    circleImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgs>[]>;
+    circleImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgs>[] | undefined>;
     /**
      * A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
      */
-    textImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgs>[]>;
+    textImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgs>[] | undefined>;
     /**
      * An image loaded from a URL.
      */
-    urlImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs>[]>;
+    urlImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage {
@@ -7415,28 +7415,28 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationComposit
     /**
      * The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
     /**
      * The height of the box in pixels.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height of the box in pixels.
      */
-    heightVar?: pulumi.Input<string>;
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
+    heightVar?: pulumi.Input<string | undefined>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
     /**
      * The width of the box in pixels.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width of the box in pixels.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImage {
@@ -7471,28 +7471,28 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationComposit
     /**
      * The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
     /**
      * The diameter of the circle. The diameter will be the width and the height of the image in pixels.
      */
-    diameter?: pulumi.Input<string>;
+    diameter?: pulumi.Input<string | undefined>;
     /**
      * The diameter of the circle. The diameter will be the width and the height of the image in pixels.
      */
-    diameterVar?: pulumi.Input<string>;
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
+    diameterVar?: pulumi.Input<string | undefined>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
     /**
      * The width of the box in pixels.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width of the box in pixels.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage {
@@ -7551,52 +7551,52 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationComposit
     /**
      * The main fill color of the text.
      */
-    fill?: pulumi.Input<string>;
+    fill?: pulumi.Input<string | undefined>;
     /**
      * The main fill color of the text.
      */
-    fillVar?: pulumi.Input<string>;
+    fillVar?: pulumi.Input<string | undefined>;
     /**
      * The size in pixels to render the text.
      */
-    size?: pulumi.Input<string>;
+    size?: pulumi.Input<string | undefined>;
     /**
      * The size in pixels to render the text.
      */
-    sizeVar?: pulumi.Input<string>;
+    sizeVar?: pulumi.Input<string | undefined>;
     /**
      * The color for the outline of the text.
      */
-    stroke?: pulumi.Input<string>;
+    stroke?: pulumi.Input<string | undefined>;
     /**
      * The thickness in points for the outline of the text.
      */
-    strokeSize?: pulumi.Input<string>;
+    strokeSize?: pulumi.Input<string | undefined>;
     /**
      * The thickness in points for the outline of the text.
      */
-    strokeSizeVar?: pulumi.Input<string>;
+    strokeSizeVar?: pulumi.Input<string | undefined>;
     /**
      * The color for the outline of the text.
      */
-    strokeVar?: pulumi.Input<string>;
+    strokeVar?: pulumi.Input<string | undefined>;
     /**
      * The line of text to render.
      */
-    text?: pulumi.Input<string>;
+    text?: pulumi.Input<string | undefined>;
     /**
      * The line of text to render.
      */
-    textVar?: pulumi.Input<string>;
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
+    textVar?: pulumi.Input<string | undefined>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
     /**
      * The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
      */
-    typeface?: pulumi.Input<string>;
+    typeface?: pulumi.Input<string | undefined>;
     /**
      * The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
      */
-    typefaceVar?: pulumi.Input<string>;
+    typefaceVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage {
@@ -7612,15 +7612,15 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationComposit
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs {
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
     /**
      * The URL of the image.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * The URL of the image.
      */
-    urlVar?: pulumi.Input<string>;
+    urlVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompound {
@@ -7628,7 +7628,7 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompound
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgs {
-    transformations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>[]>;
+    transformations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationContrast {
@@ -7654,19 +7654,19 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationContrast
     /**
      * Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
      */
-    brightness?: pulumi.Input<string>;
+    brightness?: pulumi.Input<string | undefined>;
     /**
      * Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
      */
-    brightnessVar?: pulumi.Input<string>;
+    brightnessVar?: pulumi.Input<string | undefined>;
     /**
      * Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
      */
-    contrast?: pulumi.Input<string>;
+    contrast?: pulumi.Input<string | undefined>;
     /**
      * Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
      */
-    contrastVar?: pulumi.Input<string>;
+    contrastVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationGoop {
@@ -7708,35 +7708,35 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs
     /**
      * Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
      */
-    chaos?: pulumi.Input<string>;
+    chaos?: pulumi.Input<string | undefined>;
     /**
      * Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
      */
-    chaosVar?: pulumi.Input<string>;
+    chaosVar?: pulumi.Input<string | undefined>;
     /**
      * Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
      */
-    density?: pulumi.Input<string>;
+    density?: pulumi.Input<string | undefined>;
     /**
      * Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
      */
-    densityVar?: pulumi.Input<string>;
+    densityVar?: pulumi.Input<string | undefined>;
     /**
      * By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
      */
-    power?: pulumi.Input<string>;
+    power?: pulumi.Input<string | undefined>;
     /**
      * By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
      */
-    powerVar?: pulumi.Input<string>;
+    powerVar?: pulumi.Input<string | undefined>;
     /**
      * Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
      */
-    seed?: pulumi.Input<string>;
+    seed?: pulumi.Input<string | undefined>;
     /**
      * Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
      */
-    seedVar?: pulumi.Input<string>;
+    seedVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscale {
@@ -7754,11 +7754,11 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscal
     /**
      * The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
      */
-    typeVar?: pulumi.Input<string>;
+    typeVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationHsl {
@@ -7792,27 +7792,27 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs 
     /**
      * The number of degrees to rotate colors around the color wheel, `0` by default.
      */
-    hue?: pulumi.Input<string>;
+    hue?: pulumi.Input<string | undefined>;
     /**
      * The number of degrees to rotate colors around the color wheel, `0` by default.
      */
-    hueVar?: pulumi.Input<string>;
+    hueVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
      */
-    lightness?: pulumi.Input<string>;
+    lightness?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
      */
-    lightnessVar?: pulumi.Input<string>;
+    lightnessVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
      */
-    saturation?: pulumi.Input<string>;
+    saturation?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
      */
-    saturationVar?: pulumi.Input<string>;
+    saturationVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationHsv {
@@ -7846,27 +7846,27 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs 
     /**
      * The number of degrees to rotate colors around the color wheel, `0.0` by default.
      */
-    hue?: pulumi.Input<string>;
+    hue?: pulumi.Input<string | undefined>;
     /**
      * The number of degrees to rotate colors around the color wheel, `0.0` by default.
      */
-    hueVar?: pulumi.Input<string>;
+    hueVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
      */
-    saturation?: pulumi.Input<string>;
+    saturation?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
      */
-    saturationVar?: pulumi.Input<string>;
+    saturationVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
      */
-    valueVar?: pulumi.Input<string>;
+    valueVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimension {
@@ -7893,26 +7893,26 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimens
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgs {
-    default?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
+    default?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
     /**
      * The dimension to use to select the transformation, either `height`, `width`, or `both`.
      */
-    dimension?: pulumi.Input<string>;
+    dimension?: pulumi.Input<string | undefined>;
     /**
      * The dimension to use to select the transformation, either `height`, `width`, or `both`.
      */
-    dimensionVar?: pulumi.Input<string>;
-    equal?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
-    greaterThan?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
-    lessThan?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
+    dimensionVar?: pulumi.Input<string | undefined>;
+    equal?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
+    greaterThan?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
+    lessThan?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
     /**
      * The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
     /**
      * The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
      */
-    valueVar?: pulumi.Input<string>;
+    valueVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation {
@@ -7923,10 +7923,10 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrient
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgs {
-    default?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
-    landscape?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
-    portrait?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
-    square?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>;
+    default?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
+    landscape?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
+    portrait?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
+    square?: pulumi.Input<inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor {
@@ -7944,11 +7944,11 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor
     /**
      * The value representing the maximum number of colors to use with the source image.
      */
-    colors?: pulumi.Input<string>;
+    colors?: pulumi.Input<string | undefined>;
     /**
      * The value representing the maximum number of colors to use with the source image.
      */
-    colorsVar?: pulumi.Input<string>;
+    colorsVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationMirror {
@@ -7974,19 +7974,19 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorAr
     /**
      * Flips the image horizontally.
      */
-    horizontal?: pulumi.Input<string>;
+    horizontal?: pulumi.Input<string | undefined>;
     /**
      * Flips the image horizontally.
      */
-    horizontalVar?: pulumi.Input<string>;
+    horizontalVar?: pulumi.Input<string | undefined>;
     /**
      * Flips the image vertically.
      */
-    vertical?: pulumi.Input<string>;
+    vertical?: pulumi.Input<string | undefined>;
     /**
      * Flips the image vertically.
      */
-    verticalVar?: pulumi.Input<string>;
+    verticalVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHue {
@@ -8004,11 +8004,11 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueA
     /**
      * Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
      */
-    hue?: pulumi.Input<string>;
+    hue?: pulumi.Input<string | undefined>;
     /**
      * Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
      */
-    hueVar?: pulumi.Input<string>;
+    hueVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationOpacity {
@@ -8026,11 +8026,11 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityA
     /**
      * Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
      */
-    opacity?: pulumi.Input<string>;
+    opacity?: pulumi.Input<string | undefined>;
     /**
      * Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
      */
-    opacityVar?: pulumi.Input<string>;
+    opacityVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor {
@@ -8064,27 +8064,27 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveCo
     /**
      * The hexadecimal CSS color value to remove.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The hexadecimal CSS color value to remove.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
     /**
      * The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
      */
-    feather?: pulumi.Input<string>;
+    feather?: pulumi.Input<string | undefined>;
     /**
      * The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
      */
-    featherVar?: pulumi.Input<string>;
+    featherVar?: pulumi.Input<string | undefined>;
     /**
      * The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
      */
-    tolerance?: pulumi.Input<string>;
+    tolerance?: pulumi.Input<string | undefined>;
     /**
      * The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
      */
-    toleranceVar?: pulumi.Input<string>;
+    toleranceVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMask {
@@ -8118,27 +8118,27 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpM
     /**
      * Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
      */
-    gain?: pulumi.Input<string>;
+    gain?: pulumi.Input<string | undefined>;
     /**
      * Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
      */
-    gainVar?: pulumi.Input<string>;
+    gainVar?: pulumi.Input<string | undefined>;
     /**
      * The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
      */
-    sigma?: pulumi.Input<string>;
+    sigma?: pulumi.Input<string | undefined>;
     /**
      * The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
      */
-    sigmaVar?: pulumi.Input<string>;
+    sigmaVar?: pulumi.Input<string | undefined>;
     /**
      * Set the minimum change required to include a detail in the filter. Higher values discard more changes.
      */
-    threshold?: pulumi.Input<string>;
+    threshold?: pulumi.Input<string | undefined>;
     /**
      * Set the minimum change required to include a detail in the filter. Higher values discard more changes.
      */
-    thresholdVar?: pulumi.Input<string>;
+    thresholdVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformation {
@@ -8271,126 +8271,126 @@ export interface GetImagingPolicyImagePolicyTransformationArgs {
     /**
      * Places a specified `image` beside the source image. The API places the `image` on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.
      */
-    appends?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendArgs>[]>;
+    appends?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendArgs>[] | undefined>;
     /**
      * Lets you change the height or width of an image (either by cropping or expanding the area) to an aspect ratio of your choosing.
      */
-    aspectCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAspectCropArgs>[]>;
+    aspectCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAspectCropArgs>[] | undefined>;
     /**
      * Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
      */
-    backgroundColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationBackgroundColorArgs>[]>;
+    backgroundColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationBackgroundColorArgs>[] | undefined>;
     /**
      * Applies a Gaussian blur to the image.
      */
-    blurs?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationBlurArgs>[]>;
+    blurs?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationBlurArgs>[] | undefined>;
     /**
      * Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a 'green screen' technique commonly used to isolate and remove background colors.
      */
-    chromaKeys?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationChromaKeyArgs>[]>;
+    chromaKeys?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationChromaKeyArgs>[] | undefined>;
     /**
      * Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
      */
-    composites?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeArgs>[]>;
-    compounds?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompoundArgs>[]>;
+    composites?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeArgs>[] | undefined>;
+    compounds?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompoundArgs>[] | undefined>;
     /**
      * Adjusts both the contrast and brightness of an image.
      */
-    contrasts?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationContrastArgs>[]>;
+    contrasts?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationContrastArgs>[] | undefined>;
     /**
      * Crops an image.
      */
-    crops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCropArgs>[]>;
+    crops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCropArgs>[] | undefined>;
     /**
      * Applies a method to detect faces in the source image and applies the rectangular crop on either the `biggest` face or `all` of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.
      */
-    faceCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationFaceCropArgs>[]>;
+    faceCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationFaceCropArgs>[] | undefined>;
     /**
      * Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified `width` and `height` values.
      */
-    featureCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationFeatureCropArgs>[]>;
+    featureCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationFeatureCropArgs>[] | undefined>;
     /**
      * Resizes an image to fit within a specific size box and then uses a fill of that same image to cover any transparent space at the edges. By default the fill image has a Blur transformation with a sigma value of 8 applied, but the transformation can be customized using the fillTransformation parameter.
      */
-    fitAndFills?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationFitAndFillArgs>[]>;
+    fitAndFills?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationFitAndFillArgs>[] | undefined>;
     /**
      * Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
      */
-    goops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationGoopArgs>[]>;
+    goops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationGoopArgs>[] | undefined>;
     /**
      * Restricts image color to shades of gray only.
      */
-    grayscales?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationGrayscaleArgs>[]>;
+    grayscales?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationGrayscaleArgs>[] | undefined>;
     /**
      * Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
      */
-    hsls?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationHslArgs>[]>;
+    hsls?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationHslArgs>[] | undefined>;
     /**
      * Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
      */
-    hsvs?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationHsvArgs>[]>;
-    ifDimensions?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationIfDimensionArgs>[]>;
-    ifOrientations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationIfOrientationArgs>[]>;
+    hsvs?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationHsvArgs>[] | undefined>;
+    ifDimensions?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationIfDimensionArgs>[] | undefined>;
+    ifOrientations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationIfOrientationArgs>[] | undefined>;
     /**
      * Apply artistic transformations to images quickly and dynamically by specifying transformations with a query string appendedto the image URL.
      */
-    imQueries?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationImQueryArgs>[]>;
+    imQueries?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationImQueryArgs>[] | undefined>;
     /**
      * Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
      */
-    maxColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationMaxColorArgs>[]>;
+    maxColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationMaxColorArgs>[] | undefined>;
     /**
      * Flips an image horizontally, vertically, or both.
      */
-    mirrors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationMirrorArgs>[]>;
+    mirrors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationMirrorArgs>[] | undefined>;
     /**
      * Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
      */
-    monoHues?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationMonoHueArgs>[]>;
+    monoHues?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationMonoHueArgs>[] | undefined>;
     /**
      * Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
      */
-    opacities?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationOpacityArgs>[]>;
+    opacities?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationOpacityArgs>[] | undefined>;
     /**
      * Crops to a region around a specified area of interest relative to the specified `width` and `height` values.
      */
-    regionOfInterestCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgs>[]>;
+    regionOfInterestCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgs>[] | undefined>;
     /**
      * Shrinks or expands an image relative to the image's specified dimensions. Image and Video Manager fills the expanded areas with transparency. Positive values shrink the side, while negative values expand it.
      */
-    relativeCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRelativeCropArgs>[]>;
+    relativeCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRelativeCropArgs>[] | undefined>;
     /**
      * Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
      */
-    removeColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRemoveColorArgs>[]>;
+    removeColors?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRemoveColorArgs>[] | undefined>;
     /**
      * Resizes an image to a particular, absolute dimension. If you don't enter a `width` or a `height`, the image is resized with the `fit` aspect preservation mode, which selects a value for the missing dimension that preserves the image's aspect.
      */
-    resizes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationResizeArgs>[]>;
+    resizes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationResizeArgs>[] | undefined>;
     /**
      * Rotate the image around its center by indicating the degrees of rotation.
      */
-    rotates?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRotateArgs>[]>;
+    rotates?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRotateArgs>[] | undefined>;
     /**
      * Changes the image's size to different dimensions relative to its starting size.
      */
-    scales?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationScaleArgs>[]>;
+    scales?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationScaleArgs>[] | undefined>;
     /**
      * Slants an image into a parallelogram, as a percent of the starting dimension as represented in decimal format. You need to specify at least one axis property. Transparent pixels fill empty areas around the sheared image as needed, so it's often useful to use a `BackgroundColor` transformation for these areas.
      */
-    shears?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationShearsArgs>[]>;
+    shears?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationShearsArgs>[] | undefined>;
     /**
      * Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
      */
-    smartCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationSmartCropArgs>[]>;
+    smartCrops?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationSmartCropArgs>[] | undefined>;
     /**
      * Automatically crops uniform backgrounds from the edges of an image.
      */
-    trims?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationTrimArgs>[]>;
+    trims?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationTrimArgs>[] | undefined>;
     /**
      * Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
      */
-    unsharpMasks?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs>[]>;
+    unsharpMasks?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationAppend {
@@ -8425,28 +8425,28 @@ export interface GetImagingPolicyImagePolicyTransformationAppendArgs {
     /**
      * Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
      */
-    gravity?: pulumi.Input<string>;
+    gravity?: pulumi.Input<string | undefined>;
     /**
      * Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
      */
-    gravityPriority?: pulumi.Input<string>;
+    gravityPriority?: pulumi.Input<string | undefined>;
     /**
      * Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
      */
-    gravityPriorityVar?: pulumi.Input<string>;
+    gravityPriorityVar?: pulumi.Input<string | undefined>;
     /**
      * Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
      */
-    gravityVar?: pulumi.Input<string>;
+    gravityVar?: pulumi.Input<string | undefined>;
     image: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendImageArgs>;
     /**
      * Whether to preserve the source image's minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &times; 100 pixels. The dimensions of the appending `image` are 50 &times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &times; 100 pixels.
      */
-    preserveMinorDimension?: pulumi.Input<string>;
+    preserveMinorDimension?: pulumi.Input<string | undefined>;
     /**
      * Whether to preserve the source image's minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &times; 100 pixels. The dimensions of the appending `image` are 50 &times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image's minor dimension vertical. To preserve the source image's minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image's minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &times; 100 pixels.
      */
-    preserveMinorDimensionVar?: pulumi.Input<string>;
+    preserveMinorDimensionVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationAppendImage {
@@ -8472,19 +8472,19 @@ export interface GetImagingPolicyImagePolicyTransformationAppendImageArgs {
     /**
      * A rectangular box, with a specified color and applied transformation.
      */
-    boxImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs>[]>;
+    boxImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs>[] | undefined>;
     /**
      * A rectangular box, with a specified color and applied transformation.
      */
-    circleImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs>[]>;
+    circleImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs>[] | undefined>;
     /**
      * A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
      */
-    textImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs>[]>;
+    textImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs>[] | undefined>;
     /**
      * An image loaded from a URL.
      */
-    urlImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs>[]>;
+    urlImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationAppendImageBoxImage {
@@ -8519,28 +8519,28 @@ export interface GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArg
     /**
      * The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
     /**
      * The height of the box in pixels.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height of the box in pixels.
      */
-    heightVar?: pulumi.Input<string>;
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    heightVar?: pulumi.Input<string | undefined>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The width of the box in pixels.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width of the box in pixels.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationAppendImageCircleImage {
@@ -8575,28 +8575,28 @@ export interface GetImagingPolicyImagePolicyTransformationAppendImageCircleImage
     /**
      * The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
     /**
      * The diameter of the circle. The diameter will be the width and the height of the image in pixels.
      */
-    diameter?: pulumi.Input<string>;
+    diameter?: pulumi.Input<string | undefined>;
     /**
      * The diameter of the circle. The diameter will be the width and the height of the image in pixels.
      */
-    diameterVar?: pulumi.Input<string>;
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    diameterVar?: pulumi.Input<string | undefined>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The width of the box in pixels.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width of the box in pixels.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationAppendImageTextImage {
@@ -8655,52 +8655,52 @@ export interface GetImagingPolicyImagePolicyTransformationAppendImageTextImageAr
     /**
      * The main fill color of the text.
      */
-    fill?: pulumi.Input<string>;
+    fill?: pulumi.Input<string | undefined>;
     /**
      * The main fill color of the text.
      */
-    fillVar?: pulumi.Input<string>;
+    fillVar?: pulumi.Input<string | undefined>;
     /**
      * The size in pixels to render the text.
      */
-    size?: pulumi.Input<string>;
+    size?: pulumi.Input<string | undefined>;
     /**
      * The size in pixels to render the text.
      */
-    sizeVar?: pulumi.Input<string>;
+    sizeVar?: pulumi.Input<string | undefined>;
     /**
      * The color for the outline of the text.
      */
-    stroke?: pulumi.Input<string>;
+    stroke?: pulumi.Input<string | undefined>;
     /**
      * The thickness in points for the outline of the text.
      */
-    strokeSize?: pulumi.Input<string>;
+    strokeSize?: pulumi.Input<string | undefined>;
     /**
      * The thickness in points for the outline of the text.
      */
-    strokeSizeVar?: pulumi.Input<string>;
+    strokeSizeVar?: pulumi.Input<string | undefined>;
     /**
      * The color for the outline of the text.
      */
-    strokeVar?: pulumi.Input<string>;
+    strokeVar?: pulumi.Input<string | undefined>;
     /**
      * The line of text to render.
      */
-    text?: pulumi.Input<string>;
+    text?: pulumi.Input<string | undefined>;
     /**
      * The line of text to render.
      */
-    textVar?: pulumi.Input<string>;
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    textVar?: pulumi.Input<string | undefined>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
      */
-    typeface?: pulumi.Input<string>;
+    typeface?: pulumi.Input<string | undefined>;
     /**
      * The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
      */
-    typefaceVar?: pulumi.Input<string>;
+    typefaceVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationAppendImageUrlImage {
@@ -8716,15 +8716,15 @@ export interface GetImagingPolicyImagePolicyTransformationAppendImageUrlImage {
 }
 
 export interface GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs {
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The URL of the image.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * The URL of the image.
      */
-    urlVar?: pulumi.Input<string>;
+    urlVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationAspectCrop {
@@ -8774,43 +8774,43 @@ export interface GetImagingPolicyImagePolicyTransformationAspectCropArgs {
     /**
      * Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
      */
-    allowExpansion?: pulumi.Input<string>;
+    allowExpansion?: pulumi.Input<string | undefined>;
     /**
      * Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
      */
-    allowExpansionVar?: pulumi.Input<string>;
+    allowExpansionVar?: pulumi.Input<string | undefined>;
     /**
      * The height term of the aspect ratio to crop.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height term of the aspect ratio to crop.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * The width term of the aspect ratio to crop.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width term of the aspect ratio to crop.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
     /**
      * Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
      */
-    xPosition?: pulumi.Input<string>;
+    xPosition?: pulumi.Input<string | undefined>;
     /**
      * Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
      */
-    xPositionVar?: pulumi.Input<string>;
+    xPositionVar?: pulumi.Input<string | undefined>;
     /**
      * Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
      */
-    yPosition?: pulumi.Input<string>;
+    yPosition?: pulumi.Input<string | undefined>;
     /**
      * Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
      */
-    yPositionVar?: pulumi.Input<string>;
+    yPositionVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationBackgroundColor {
@@ -8828,11 +8828,11 @@ export interface GetImagingPolicyImagePolicyTransformationBackgroundColorArgs {
     /**
      * The hexadecimal CSS color value for the background.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The hexadecimal CSS color value for the background.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationBlur {
@@ -8850,11 +8850,11 @@ export interface GetImagingPolicyImagePolicyTransformationBlurArgs {
     /**
      * The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
      */
-    sigma?: pulumi.Input<string>;
+    sigma?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
      */
-    sigmaVar?: pulumi.Input<string>;
+    sigmaVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationChromaKey {
@@ -8920,59 +8920,59 @@ export interface GetImagingPolicyImagePolicyTransformationChromaKeyArgs {
     /**
      * The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
      */
-    hue?: pulumi.Input<string>;
+    hue?: pulumi.Input<string | undefined>;
     /**
      * How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
      */
-    hueFeather?: pulumi.Input<string>;
+    hueFeather?: pulumi.Input<string | undefined>;
     /**
      * How much additional hue to make semi-transparent beyond the Hue Tolerance. By default Hue Feather is 0.083 which applies semi-transparency to hues 30° around the Hue Tolerance.
      */
-    hueFeatherVar?: pulumi.Input<string>;
+    hueFeatherVar?: pulumi.Input<string | undefined>;
     /**
      * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
      */
-    hueTolerance?: pulumi.Input<string>;
+    hueTolerance?: pulumi.Input<string | undefined>;
     /**
      * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
      */
-    hueToleranceVar?: pulumi.Input<string>;
+    hueToleranceVar?: pulumi.Input<string | undefined>;
     /**
      * The hue to remove. Enter the degree of rotation between 0 and 360 degrees around the color wheel. By default Chroma Key removes a green hue, 120° on the color wheel.
      */
-    hueVar?: pulumi.Input<string>;
+    hueVar?: pulumi.Input<string | undefined>;
     /**
      * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
      */
-    lightnessFeather?: pulumi.Input<string>;
+    lightnessFeather?: pulumi.Input<string | undefined>;
     /**
      * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
      */
-    lightnessFeatherVar?: pulumi.Input<string>;
+    lightnessFeatherVar?: pulumi.Input<string | undefined>;
     /**
      * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
      */
-    lightnessTolerance?: pulumi.Input<string>;
+    lightnessTolerance?: pulumi.Input<string | undefined>;
     /**
      * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
      */
-    lightnessToleranceVar?: pulumi.Input<string>;
+    lightnessToleranceVar?: pulumi.Input<string | undefined>;
     /**
      * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
      */
-    saturationFeather?: pulumi.Input<string>;
+    saturationFeather?: pulumi.Input<string | undefined>;
     /**
      * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
      */
-    saturationFeatherVar?: pulumi.Input<string>;
+    saturationFeatherVar?: pulumi.Input<string | undefined>;
     /**
      * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
      */
-    saturationTolerance?: pulumi.Input<string>;
+    saturationTolerance?: pulumi.Input<string | undefined>;
     /**
      * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
      */
-    saturationToleranceVar?: pulumi.Input<string>;
+    saturationToleranceVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationComposite {
@@ -9031,52 +9031,52 @@ export interface GetImagingPolicyImagePolicyTransformationCompositeArgs {
     /**
      * Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
      */
-    gravity?: pulumi.Input<string>;
+    gravity?: pulumi.Input<string | undefined>;
     /**
      * Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
      */
-    gravityVar?: pulumi.Input<string>;
+    gravityVar?: pulumi.Input<string | undefined>;
     image: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeImageArgs>;
     /**
      * Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
      */
-    placement?: pulumi.Input<string>;
+    placement?: pulumi.Input<string | undefined>;
     /**
      * Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
      */
-    placementVar?: pulumi.Input<string>;
+    placementVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
      */
-    scale?: pulumi.Input<string>;
+    scale?: pulumi.Input<string | undefined>;
     /**
      * The dimension, either `width` or `height`, of the source image to scale.
      */
-    scaleDimension?: pulumi.Input<string>;
+    scaleDimension?: pulumi.Input<string | undefined>;
     /**
      * The dimension, either `width` or `height`, of the source image to scale.
      */
-    scaleDimensionVar?: pulumi.Input<string>;
+    scaleDimensionVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
      */
-    scaleVar?: pulumi.Input<string>;
+    scaleVar?: pulumi.Input<string | undefined>;
     /**
      * The x-axis position of the image to apply.
      */
-    xPosition?: pulumi.Input<string>;
+    xPosition?: pulumi.Input<string | undefined>;
     /**
      * The x-axis position of the image to apply.
      */
-    xPositionVar?: pulumi.Input<string>;
+    xPositionVar?: pulumi.Input<string | undefined>;
     /**
      * The y-axis position of the image to apply.
      */
-    yPosition?: pulumi.Input<string>;
+    yPosition?: pulumi.Input<string | undefined>;
     /**
      * The y-axis position of the image to apply.
      */
-    yPositionVar?: pulumi.Input<string>;
+    yPositionVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationCompositeImage {
@@ -9102,19 +9102,19 @@ export interface GetImagingPolicyImagePolicyTransformationCompositeImageArgs {
     /**
      * A rectangular box, with a specified color and applied transformation.
      */
-    boxImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageArgs>[]>;
+    boxImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageArgs>[] | undefined>;
     /**
      * A rectangular box, with a specified color and applied transformation.
      */
-    circleImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageArgs>[]>;
+    circleImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageArgs>[] | undefined>;
     /**
      * A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
      */
-    textImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgs>[]>;
+    textImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgs>[] | undefined>;
     /**
      * An image loaded from a URL.
      */
-    urlImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgs>[]>;
+    urlImages?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage {
@@ -9149,28 +9149,28 @@ export interface GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage
     /**
      * The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
     /**
      * The height of the box in pixels.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height of the box in pixels.
      */
-    heightVar?: pulumi.Input<string>;
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    heightVar?: pulumi.Input<string | undefined>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The width of the box in pixels.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width of the box in pixels.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationCompositeImageCircleImage {
@@ -9205,28 +9205,28 @@ export interface GetImagingPolicyImagePolicyTransformationCompositeImageCircleIm
     /**
      * The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
     /**
      * The diameter of the circle. The diameter will be the width and the height of the image in pixels.
      */
-    diameter?: pulumi.Input<string>;
+    diameter?: pulumi.Input<string | undefined>;
     /**
      * The diameter of the circle. The diameter will be the width and the height of the image in pixels.
      */
-    diameterVar?: pulumi.Input<string>;
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    diameterVar?: pulumi.Input<string | undefined>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The width of the box in pixels.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width of the box in pixels.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationCompositeImageTextImage {
@@ -9285,52 +9285,52 @@ export interface GetImagingPolicyImagePolicyTransformationCompositeImageTextImag
     /**
      * The main fill color of the text.
      */
-    fill?: pulumi.Input<string>;
+    fill?: pulumi.Input<string | undefined>;
     /**
      * The main fill color of the text.
      */
-    fillVar?: pulumi.Input<string>;
+    fillVar?: pulumi.Input<string | undefined>;
     /**
      * The size in pixels to render the text.
      */
-    size?: pulumi.Input<string>;
+    size?: pulumi.Input<string | undefined>;
     /**
      * The size in pixels to render the text.
      */
-    sizeVar?: pulumi.Input<string>;
+    sizeVar?: pulumi.Input<string | undefined>;
     /**
      * The color for the outline of the text.
      */
-    stroke?: pulumi.Input<string>;
+    stroke?: pulumi.Input<string | undefined>;
     /**
      * The thickness in points for the outline of the text.
      */
-    strokeSize?: pulumi.Input<string>;
+    strokeSize?: pulumi.Input<string | undefined>;
     /**
      * The thickness in points for the outline of the text.
      */
-    strokeSizeVar?: pulumi.Input<string>;
+    strokeSizeVar?: pulumi.Input<string | undefined>;
     /**
      * The color for the outline of the text.
      */
-    strokeVar?: pulumi.Input<string>;
+    strokeVar?: pulumi.Input<string | undefined>;
     /**
      * The line of text to render.
      */
-    text?: pulumi.Input<string>;
+    text?: pulumi.Input<string | undefined>;
     /**
      * The line of text to render.
      */
-    textVar?: pulumi.Input<string>;
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    textVar?: pulumi.Input<string | undefined>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
      */
-    typeface?: pulumi.Input<string>;
+    typeface?: pulumi.Input<string | undefined>;
     /**
      * The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
      */
-    typefaceVar?: pulumi.Input<string>;
+    typefaceVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationCompositeImageUrlImage {
@@ -9346,15 +9346,15 @@ export interface GetImagingPolicyImagePolicyTransformationCompositeImageUrlImage
 }
 
 export interface GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgs {
-    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    transformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The URL of the image.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * The URL of the image.
      */
-    urlVar?: pulumi.Input<string>;
+    urlVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationCompound {
@@ -9362,7 +9362,7 @@ export interface GetImagingPolicyImagePolicyTransformationCompound {
 }
 
 export interface GetImagingPolicyImagePolicyTransformationCompoundArgs {
-    transformations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>[]>;
+    transformations?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationContrast {
@@ -9388,19 +9388,19 @@ export interface GetImagingPolicyImagePolicyTransformationContrastArgs {
     /**
      * Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
      */
-    brightness?: pulumi.Input<string>;
+    brightness?: pulumi.Input<string | undefined>;
     /**
      * Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
      */
-    brightnessVar?: pulumi.Input<string>;
+    brightnessVar?: pulumi.Input<string | undefined>;
     /**
      * Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
      */
-    contrast?: pulumi.Input<string>;
+    contrast?: pulumi.Input<string | undefined>;
     /**
      * Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
      */
-    contrastVar?: pulumi.Input<string>;
+    contrastVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationCrop {
@@ -9458,51 +9458,51 @@ export interface GetImagingPolicyImagePolicyTransformationCropArgs {
     /**
      * If cropping an area outside of the existing canvas, expands the image canvas.
      */
-    allowExpansion?: pulumi.Input<string>;
+    allowExpansion?: pulumi.Input<string | undefined>;
     /**
      * If cropping an area outside of the existing canvas, expands the image canvas.
      */
-    allowExpansionVar?: pulumi.Input<string>;
+    allowExpansionVar?: pulumi.Input<string | undefined>;
     /**
      * Frame of reference for X and Y Positions.
      */
-    gravity?: pulumi.Input<string>;
+    gravity?: pulumi.Input<string | undefined>;
     /**
      * Frame of reference for X and Y Positions.
      */
-    gravityVar?: pulumi.Input<string>;
+    gravityVar?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to crop along the y-axis.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to crop along the y-axis.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to crop along the x-axis.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to crop along the x-axis.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
     /**
      * The x-axis position of the image to crop from.
      */
-    xPosition?: pulumi.Input<string>;
+    xPosition?: pulumi.Input<string | undefined>;
     /**
      * The x-axis position of the image to crop from.
      */
-    xPositionVar?: pulumi.Input<string>;
+    xPositionVar?: pulumi.Input<string | undefined>;
     /**
      * The y-axis position of the image to crop from.
      */
-    yPosition?: pulumi.Input<string>;
+    yPosition?: pulumi.Input<string | undefined>;
     /**
      * The y-axis position of the image to crop from.
      */
-    yPositionVar?: pulumi.Input<string>;
+    yPositionVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationFaceCrop {
@@ -9584,75 +9584,75 @@ export interface GetImagingPolicyImagePolicyTransformationFaceCropArgs {
     /**
      * Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
      */
-    algorithm?: pulumi.Input<string>;
+    algorithm?: pulumi.Input<string | undefined>;
     /**
      * Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
      */
-    algorithmVar?: pulumi.Input<string>;
+    algorithmVar?: pulumi.Input<string | undefined>;
     /**
      * With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
      */
-    confidence?: pulumi.Input<string>;
+    confidence?: pulumi.Input<string | undefined>;
     /**
      * With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
      */
-    confidenceVar?: pulumi.Input<string>;
+    confidenceVar?: pulumi.Input<string | undefined>;
     /**
      * Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
      */
-    failGravity?: pulumi.Input<string>;
+    failGravity?: pulumi.Input<string | undefined>;
     /**
      * Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
      */
-    failGravityVar?: pulumi.Input<string>;
+    failGravityVar?: pulumi.Input<string | undefined>;
     /**
      * Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
      */
-    focus?: pulumi.Input<string>;
+    focus?: pulumi.Input<string | undefined>;
     /**
      * Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
      */
-    focusVar?: pulumi.Input<string>;
+    focusVar?: pulumi.Input<string | undefined>;
     /**
      * Controls placement of the crop. Directions are relative to the face(s) plus padding.
      */
-    gravity?: pulumi.Input<string>;
+    gravity?: pulumi.Input<string | undefined>;
     /**
      * Controls placement of the crop. Directions are relative to the face(s) plus padding.
      */
-    gravityVar?: pulumi.Input<string>;
+    gravityVar?: pulumi.Input<string | undefined>;
     /**
      * The height of the output image in pixels relative to the specified `style` value.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height of the output image in pixels relative to the specified `style` value.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
      */
-    padding?: pulumi.Input<string>;
+    padding?: pulumi.Input<string | undefined>;
     /**
      * The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
      */
-    paddingVar?: pulumi.Input<string>;
+    paddingVar?: pulumi.Input<string | undefined>;
     /**
      * Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
      */
-    style?: pulumi.Input<string>;
+    style?: pulumi.Input<string | undefined>;
     /**
      * Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
      */
-    styleVar?: pulumi.Input<string>;
+    styleVar?: pulumi.Input<string | undefined>;
     /**
      * The width of the output image in pixels relative to the specified `style` value.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width of the output image in pixels relative to the specified `style` value.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationFeatureCrop {
@@ -9734,75 +9734,75 @@ export interface GetImagingPolicyImagePolicyTransformationFeatureCropArgs {
     /**
      * Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
      */
-    failGravity?: pulumi.Input<string>;
+    failGravity?: pulumi.Input<string | undefined>;
     /**
      * Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
      */
-    failGravityVar?: pulumi.Input<string>;
+    failGravityVar?: pulumi.Input<string | undefined>;
     /**
      * The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
      */
-    featureRadius?: pulumi.Input<string>;
+    featureRadius?: pulumi.Input<string | undefined>;
     /**
      * The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
      */
-    featureRadiusVar?: pulumi.Input<string>;
+    featureRadiusVar?: pulumi.Input<string | undefined>;
     /**
      * Controls placement of the crop. Directions are relative to the region of interest plus padding.
      */
-    gravity?: pulumi.Input<string>;
+    gravity?: pulumi.Input<string | undefined>;
     /**
      * Controls placement of the crop. Directions are relative to the region of interest plus padding.
      */
-    gravityVar?: pulumi.Input<string>;
+    gravityVar?: pulumi.Input<string | undefined>;
     /**
      * The height in pixels of the output image relative to the specified `style` value.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height in pixels of the output image relative to the specified `style` value.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
      */
-    maxFeatures?: pulumi.Input<string>;
+    maxFeatures?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
      */
-    maxFeaturesVar?: pulumi.Input<string>;
+    maxFeaturesVar?: pulumi.Input<string | undefined>;
     /**
      * Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
      */
-    minFeatureQuality?: pulumi.Input<string>;
+    minFeatureQuality?: pulumi.Input<string | undefined>;
     /**
      * Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
      */
-    minFeatureQualityVar?: pulumi.Input<string>;
+    minFeatureQualityVar?: pulumi.Input<string | undefined>;
     /**
      * Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
      */
-    padding?: pulumi.Input<string>;
+    padding?: pulumi.Input<string | undefined>;
     /**
      * Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
      */
-    paddingVar?: pulumi.Input<string>;
+    paddingVar?: pulumi.Input<string | undefined>;
     /**
      * Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
      */
-    style?: pulumi.Input<string>;
+    style?: pulumi.Input<string | undefined>;
     /**
      * Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
      */
-    styleVar?: pulumi.Input<string>;
+    styleVar?: pulumi.Input<string | undefined>;
     /**
      * The width in pixels of the output image relative to the specified `style` value.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width in pixels of the output image relative to the specified `style` value.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationFitAndFill {
@@ -9826,23 +9826,23 @@ export interface GetImagingPolicyImagePolicyTransformationFitAndFill {
 }
 
 export interface GetImagingPolicyImagePolicyTransformationFitAndFillArgs {
-    fillTransformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    fillTransformation?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The height value of the resized image.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height value of the resized image.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * The width value of the resized image.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width value of the resized image.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationGoop {
@@ -9884,35 +9884,35 @@ export interface GetImagingPolicyImagePolicyTransformationGoopArgs {
     /**
      * Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
      */
-    chaos?: pulumi.Input<string>;
+    chaos?: pulumi.Input<string | undefined>;
     /**
      * Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
      */
-    chaosVar?: pulumi.Input<string>;
+    chaosVar?: pulumi.Input<string | undefined>;
     /**
      * Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
      */
-    density?: pulumi.Input<string>;
+    density?: pulumi.Input<string | undefined>;
     /**
      * Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
      */
-    densityVar?: pulumi.Input<string>;
+    densityVar?: pulumi.Input<string | undefined>;
     /**
      * By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
      */
-    power?: pulumi.Input<string>;
+    power?: pulumi.Input<string | undefined>;
     /**
      * By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
      */
-    powerVar?: pulumi.Input<string>;
+    powerVar?: pulumi.Input<string | undefined>;
     /**
      * Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
      */
-    seed?: pulumi.Input<string>;
+    seed?: pulumi.Input<string | undefined>;
     /**
      * Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
      */
-    seedVar?: pulumi.Input<string>;
+    seedVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationGrayscale {
@@ -9930,11 +9930,11 @@ export interface GetImagingPolicyImagePolicyTransformationGrayscaleArgs {
     /**
      * The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
      */
-    typeVar?: pulumi.Input<string>;
+    typeVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationHsl {
@@ -9968,27 +9968,27 @@ export interface GetImagingPolicyImagePolicyTransformationHslArgs {
     /**
      * The number of degrees to rotate colors around the color wheel, `0` by default.
      */
-    hue?: pulumi.Input<string>;
+    hue?: pulumi.Input<string | undefined>;
     /**
      * The number of degrees to rotate colors around the color wheel, `0` by default.
      */
-    hueVar?: pulumi.Input<string>;
+    hueVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
      */
-    lightness?: pulumi.Input<string>;
+    lightness?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
      */
-    lightnessVar?: pulumi.Input<string>;
+    lightnessVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
      */
-    saturation?: pulumi.Input<string>;
+    saturation?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
      */
-    saturationVar?: pulumi.Input<string>;
+    saturationVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationHsv {
@@ -10022,27 +10022,27 @@ export interface GetImagingPolicyImagePolicyTransformationHsvArgs {
     /**
      * The number of degrees to rotate colors around the color wheel, `0.0` by default.
      */
-    hue?: pulumi.Input<string>;
+    hue?: pulumi.Input<string | undefined>;
     /**
      * The number of degrees to rotate colors around the color wheel, `0.0` by default.
      */
-    hueVar?: pulumi.Input<string>;
+    hueVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
      */
-    saturation?: pulumi.Input<string>;
+    saturation?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
      */
-    saturationVar?: pulumi.Input<string>;
+    saturationVar?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
     /**
      * A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
      */
-    valueVar?: pulumi.Input<string>;
+    valueVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationIfDimension {
@@ -10069,26 +10069,26 @@ export interface GetImagingPolicyImagePolicyTransformationIfDimension {
 }
 
 export interface GetImagingPolicyImagePolicyTransformationIfDimensionArgs {
-    default?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    default?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The dimension to use to select the transformation, either `height`, `width`, or `both`.
      */
-    dimension?: pulumi.Input<string>;
+    dimension?: pulumi.Input<string | undefined>;
     /**
      * The dimension to use to select the transformation, either `height`, `width`, or `both`.
      */
-    dimensionVar?: pulumi.Input<string>;
-    equal?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
-    greaterThan?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
-    lessThan?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    dimensionVar?: pulumi.Input<string | undefined>;
+    equal?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
+    greaterThan?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
+    lessThan?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
     /**
      * The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
     /**
      * The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
      */
-    valueVar?: pulumi.Input<string>;
+    valueVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationIfOrientation {
@@ -10099,10 +10099,10 @@ export interface GetImagingPolicyImagePolicyTransformationIfOrientation {
 }
 
 export interface GetImagingPolicyImagePolicyTransformationIfOrientationArgs {
-    default?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
-    landscape?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
-    portrait?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
-    square?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs>;
+    default?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
+    landscape?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
+    portrait?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
+    square?: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationArgs | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationImQuery {
@@ -10136,11 +10136,11 @@ export interface GetImagingPolicyImagePolicyTransformationMaxColorArgs {
     /**
      * The value representing the maximum number of colors to use with the source image.
      */
-    colors?: pulumi.Input<string>;
+    colors?: pulumi.Input<string | undefined>;
     /**
      * The value representing the maximum number of colors to use with the source image.
      */
-    colorsVar?: pulumi.Input<string>;
+    colorsVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationMirror {
@@ -10166,19 +10166,19 @@ export interface GetImagingPolicyImagePolicyTransformationMirrorArgs {
     /**
      * Flips the image horizontally.
      */
-    horizontal?: pulumi.Input<string>;
+    horizontal?: pulumi.Input<string | undefined>;
     /**
      * Flips the image horizontally.
      */
-    horizontalVar?: pulumi.Input<string>;
+    horizontalVar?: pulumi.Input<string | undefined>;
     /**
      * Flips the image vertically.
      */
-    vertical?: pulumi.Input<string>;
+    vertical?: pulumi.Input<string | undefined>;
     /**
      * Flips the image vertically.
      */
-    verticalVar?: pulumi.Input<string>;
+    verticalVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationMonoHue {
@@ -10196,11 +10196,11 @@ export interface GetImagingPolicyImagePolicyTransformationMonoHueArgs {
     /**
      * Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
      */
-    hue?: pulumi.Input<string>;
+    hue?: pulumi.Input<string | undefined>;
     /**
      * Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
      */
-    hueVar?: pulumi.Input<string>;
+    hueVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationOpacity {
@@ -10218,11 +10218,11 @@ export interface GetImagingPolicyImagePolicyTransformationOpacityArgs {
     /**
      * Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
      */
-    opacity?: pulumi.Input<string>;
+    opacity?: pulumi.Input<string | undefined>;
     /**
      * Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
      */
-    opacityVar?: pulumi.Input<string>;
+    opacityVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop {
@@ -10265,36 +10265,36 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropAr
     /**
      * The placement of the crop area relative to the specified area of interest.
      */
-    gravity?: pulumi.Input<string>;
+    gravity?: pulumi.Input<string | undefined>;
     /**
      * The placement of the crop area relative to the specified area of interest.
      */
-    gravityVar?: pulumi.Input<string>;
+    gravityVar?: pulumi.Input<string | undefined>;
     /**
      * The height in pixels of the output image relative to the specified `style` value.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height in pixels of the output image relative to the specified `style` value.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     regionOfInterest: pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgs>;
     /**
      * Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
      */
-    style?: pulumi.Input<string>;
+    style?: pulumi.Input<string | undefined>;
     /**
      * Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
      */
-    styleVar?: pulumi.Input<string>;
+    styleVar?: pulumi.Input<string | undefined>;
     /**
      * The width in pixels of the output image relative to the specified `style` value.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width in pixels of the output image relative to the specified `style` value.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest {
@@ -10321,20 +10321,20 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * Defines a circle with a specified `radius` from its `center` point.
      */
-    circleShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs>[]>;
-    pointShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShapeArgs>[]>;
+    circleShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs>[] | undefined>;
+    pointShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShapeArgs>[] | undefined>;
     /**
      * Defines a polygon from a series of connected points.
      */
-    polygonShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs>[]>;
+    polygonShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs>[] | undefined>;
     /**
      * Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
      */
-    rectangleShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs>[]>;
+    rectangleShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs>[] | undefined>;
     /**
      * Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
      */
-    unionShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgs>[]>;
+    unionShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape {
@@ -10360,11 +10360,11 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The radius of the circle measured in pixels.
      */
-    radius?: pulumi.Input<string>;
+    radius?: pulumi.Input<string | undefined>;
     /**
      * The radius of the circle measured in pixels.
      */
-    radiusVar?: pulumi.Input<string>;
+    radiusVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter {
@@ -10390,19 +10390,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    x?: pulumi.Input<string>;
+    x?: pulumi.Input<string | undefined>;
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    xVar?: pulumi.Input<string>;
+    xVar?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    y?: pulumi.Input<string>;
+    y?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    yVar?: pulumi.Input<string>;
+    yVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShape {
@@ -10428,19 +10428,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    x?: pulumi.Input<string>;
+    x?: pulumi.Input<string | undefined>;
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    xVar?: pulumi.Input<string>;
+    xVar?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    y?: pulumi.Input<string>;
+    y?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    yVar?: pulumi.Input<string>;
+    yVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShape {
@@ -10480,19 +10480,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    x?: pulumi.Input<string>;
+    x?: pulumi.Input<string | undefined>;
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    xVar?: pulumi.Input<string>;
+    xVar?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    y?: pulumi.Input<string>;
+    y?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    yVar?: pulumi.Input<string>;
+    yVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShape {
@@ -10520,19 +10520,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * Extends the rectangle down from the `anchor` point.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * Extends the rectangle down from the `anchor` point.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * Extends the rectangle right from the `anchor` point.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * Extends the rectangle right from the `anchor` point.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchor {
@@ -10558,19 +10558,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    x?: pulumi.Input<string>;
+    x?: pulumi.Input<string | undefined>;
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    xVar?: pulumi.Input<string>;
+    xVar?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    y?: pulumi.Input<string>;
+    y?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    yVar?: pulumi.Input<string>;
+    yVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShape {
@@ -10605,20 +10605,20 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * Defines a circle with a specified `radius` from its `center` point.
      */
-    circleShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeArgs>[]>;
-    pointShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShapeArgs>[]>;
+    circleShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeArgs>[] | undefined>;
+    pointShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShapeArgs>[] | undefined>;
     /**
      * Defines a polygon from a series of connected points.
      */
-    polygonShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeArgs>[]>;
+    polygonShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeArgs>[] | undefined>;
     /**
      * Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
      */
-    rectangleShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeArgs>[]>;
+    rectangleShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeArgs>[] | undefined>;
     /**
      * Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
      */
-    unionShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeArgs>[]>;
+    unionShapes?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShape {
@@ -10644,11 +10644,11 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The radius of the circle measured in pixels.
      */
-    radius?: pulumi.Input<string>;
+    radius?: pulumi.Input<string | undefined>;
     /**
      * The radius of the circle measured in pixels.
      */
-    radiusVar?: pulumi.Input<string>;
+    radiusVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenter {
@@ -10674,19 +10674,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    x?: pulumi.Input<string>;
+    x?: pulumi.Input<string | undefined>;
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    xVar?: pulumi.Input<string>;
+    xVar?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    y?: pulumi.Input<string>;
+    y?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    yVar?: pulumi.Input<string>;
+    yVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShape {
@@ -10712,19 +10712,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    x?: pulumi.Input<string>;
+    x?: pulumi.Input<string | undefined>;
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    xVar?: pulumi.Input<string>;
+    xVar?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    y?: pulumi.Input<string>;
+    y?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    yVar?: pulumi.Input<string>;
+    yVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape {
@@ -10764,19 +10764,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    x?: pulumi.Input<string>;
+    x?: pulumi.Input<string | undefined>;
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    xVar?: pulumi.Input<string>;
+    xVar?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    y?: pulumi.Input<string>;
+    y?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    yVar?: pulumi.Input<string>;
+    yVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShape {
@@ -10804,19 +10804,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * Extends the rectangle down from the `anchor` point.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * Extends the rectangle down from the `anchor` point.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * Extends the rectangle right from the `anchor` point.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * Extends the rectangle right from the `anchor` point.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchor {
@@ -10842,19 +10842,19 @@ export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRe
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    x?: pulumi.Input<string>;
+    x?: pulumi.Input<string | undefined>;
     /**
      * The horizontal position of the point, measured in pixels.
      */
-    xVar?: pulumi.Input<string>;
+    xVar?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    y?: pulumi.Input<string>;
+    y?: pulumi.Input<string | undefined>;
     /**
      * The vertical position of the point, measured in pixels.
      */
-    yVar?: pulumi.Input<string>;
+    yVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShape {
@@ -10910,35 +10910,35 @@ export interface GetImagingPolicyImagePolicyTransformationRelativeCropArgs {
     /**
      * The number of pixels to shrink or expand the right side of the image.
      */
-    east?: pulumi.Input<string>;
+    east?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to shrink or expand the right side of the image.
      */
-    eastVar?: pulumi.Input<string>;
+    eastVar?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to shrink or expand the top side of the image.
      */
-    north?: pulumi.Input<string>;
+    north?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to shrink or expand the top side of the image.
      */
-    northVar?: pulumi.Input<string>;
+    northVar?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to shrink or expand the bottom side of the image.
      */
-    south?: pulumi.Input<string>;
+    south?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to shrink or expand the bottom side of the image.
      */
-    southVar?: pulumi.Input<string>;
+    southVar?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to shrink or expand the left side of the image.
      */
-    west?: pulumi.Input<string>;
+    west?: pulumi.Input<string | undefined>;
     /**
      * The number of pixels to shrink or expand the left side of the image.
      */
-    westVar?: pulumi.Input<string>;
+    westVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRemoveColor {
@@ -10972,27 +10972,27 @@ export interface GetImagingPolicyImagePolicyTransformationRemoveColorArgs {
     /**
      * The hexadecimal CSS color value to remove.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * The hexadecimal CSS color value to remove.
      */
-    colorVar?: pulumi.Input<string>;
+    colorVar?: pulumi.Input<string | undefined>;
     /**
      * The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
      */
-    feather?: pulumi.Input<string>;
+    feather?: pulumi.Input<string | undefined>;
     /**
      * The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
      */
-    featherVar?: pulumi.Input<string>;
+    featherVar?: pulumi.Input<string | undefined>;
     /**
      * The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
      */
-    tolerance?: pulumi.Input<string>;
+    tolerance?: pulumi.Input<string | undefined>;
     /**
      * The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
      */
-    toleranceVar?: pulumi.Input<string>;
+    toleranceVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationResize {
@@ -11034,35 +11034,35 @@ export interface GetImagingPolicyImagePolicyTransformationResizeArgs {
     /**
      * Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
      */
-    aspect?: pulumi.Input<string>;
+    aspect?: pulumi.Input<string | undefined>;
     /**
      * Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
      */
-    aspectVar?: pulumi.Input<string>;
+    aspectVar?: pulumi.Input<string | undefined>;
     /**
      * The height to resize the source image to. Must be set if height is not specified.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height to resize the source image to. Must be set if height is not specified.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
      */
-    typeVar?: pulumi.Input<string>;
+    typeVar?: pulumi.Input<string | undefined>;
     /**
      * The width to resize the source image to. Must be set if width is not specified.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width to resize the source image to. Must be set if width is not specified.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationRotate {
@@ -11080,11 +11080,11 @@ export interface GetImagingPolicyImagePolicyTransformationRotateArgs {
     /**
      * The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
      */
-    degrees?: pulumi.Input<string>;
+    degrees?: pulumi.Input<string | undefined>;
     /**
      * The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
      */
-    degreesVar?: pulumi.Input<string>;
+    degreesVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationScale {
@@ -11110,19 +11110,19 @@ export interface GetImagingPolicyImagePolicyTransformationScaleArgs {
     /**
      * Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationShears {
@@ -11148,19 +11148,19 @@ export interface GetImagingPolicyImagePolicyTransformationShearsArgs {
     /**
      * The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
      */
-    xShear?: pulumi.Input<string>;
+    xShear?: pulumi.Input<string | undefined>;
     /**
      * The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
      */
-    xShearVar?: pulumi.Input<string>;
+    xShearVar?: pulumi.Input<string | undefined>;
     /**
      * The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
      */
-    yShear?: pulumi.Input<string>;
+    yShear?: pulumi.Input<string | undefined>;
     /**
      * The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
      */
-    yShearVar?: pulumi.Input<string>;
+    yShearVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationSmartCrop {
@@ -11210,43 +11210,43 @@ export interface GetImagingPolicyImagePolicyTransformationSmartCropArgs {
     /**
      * When enabled, the SmartCrop transformation doesn't actually execute. Instead, it outlines found faces or features, the region of interest, and the crop area.
      */
-    debug?: pulumi.Input<string>;
+    debug?: pulumi.Input<string | undefined>;
     /**
      * When enabled, the SmartCrop transformation doesn't actually execute. Instead, it outlines found faces or features, the region of interest, and the crop area.
      */
-    debugVar?: pulumi.Input<string>;
+    debugVar?: pulumi.Input<string | undefined>;
     /**
      * The height in pixels of the output image relative to the specified `style` value.
      */
-    height?: pulumi.Input<string>;
+    height?: pulumi.Input<string | undefined>;
     /**
      * The height in pixels of the output image relative to the specified `style` value.
      */
-    heightVar?: pulumi.Input<string>;
+    heightVar?: pulumi.Input<string | undefined>;
     /**
      * Whether to sacrifice any image fidelity for transformation performance.
      */
-    sloppy?: pulumi.Input<string>;
+    sloppy?: pulumi.Input<string | undefined>;
     /**
      * Whether to sacrifice any image fidelity for transformation performance.
      */
-    sloppyVar?: pulumi.Input<string>;
+    sloppyVar?: pulumi.Input<string | undefined>;
     /**
      * Specifies how to crop or scale a crop area for the specified area of interest in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
      */
-    style?: pulumi.Input<string>;
+    style?: pulumi.Input<string | undefined>;
     /**
      * Specifies how to crop or scale a crop area for the specified area of interest in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
      */
-    styleVar?: pulumi.Input<string>;
+    styleVar?: pulumi.Input<string | undefined>;
     /**
      * The width in pixels of the output image relative to the specified `style` value.
      */
-    width?: pulumi.Input<string>;
+    width?: pulumi.Input<string | undefined>;
     /**
      * The width in pixels of the output image relative to the specified `style` value.
      */
-    widthVar?: pulumi.Input<string>;
+    widthVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationTrim {
@@ -11272,19 +11272,19 @@ export interface GetImagingPolicyImagePolicyTransformationTrimArgs {
     /**
      * The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
      */
-    fuzz?: pulumi.Input<string>;
+    fuzz?: pulumi.Input<string | undefined>;
     /**
      * The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
      */
-    fuzzVar?: pulumi.Input<string>;
+    fuzzVar?: pulumi.Input<string | undefined>;
     /**
      * The amount of padding in pixels to add to the trimmed image.
      */
-    padding?: pulumi.Input<string>;
+    padding?: pulumi.Input<string | undefined>;
     /**
      * The amount of padding in pixels to add to the trimmed image.
      */
-    paddingVar?: pulumi.Input<string>;
+    paddingVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyTransformationUnsharpMask {
@@ -11318,27 +11318,27 @@ export interface GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs {
     /**
      * Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
      */
-    gain?: pulumi.Input<string>;
+    gain?: pulumi.Input<string | undefined>;
     /**
      * Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
      */
-    gainVar?: pulumi.Input<string>;
+    gainVar?: pulumi.Input<string | undefined>;
     /**
      * The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
      */
-    sigma?: pulumi.Input<string>;
+    sigma?: pulumi.Input<string | undefined>;
     /**
      * The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
      */
-    sigmaVar?: pulumi.Input<string>;
+    sigmaVar?: pulumi.Input<string | undefined>;
     /**
      * Set the minimum change required to include a detail in the filter. Higher values discard more changes.
      */
-    threshold?: pulumi.Input<string>;
+    threshold?: pulumi.Input<string | undefined>;
     /**
      * Set the minimum change required to include a detail in the filter. Higher values discard more changes.
      */
-    thresholdVar?: pulumi.Input<string>;
+    thresholdVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyImagePolicyVariable {
@@ -11370,7 +11370,7 @@ export interface GetImagingPolicyImagePolicyVariableArgs {
      * The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
      */
     defaultValue: pulumi.Input<string>;
-    enumOptions?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyVariableEnumOptionArgs>[]>;
+    enumOptions?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyImagePolicyVariableEnumOptionArgs>[] | undefined>;
     /**
      * The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
      */
@@ -11378,11 +11378,11 @@ export interface GetImagingPolicyImagePolicyVariableArgs {
     /**
      * A postfix added to the value provided for the variable, or to the default value.
      */
-    postfix?: pulumi.Input<string>;
+    postfix?: pulumi.Input<string | undefined>;
     /**
      * A prefix added to the value provided for the variable, or to the default value.
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * The type of value for the variable.
      */
@@ -11438,23 +11438,23 @@ export interface GetImagingPolicyVideoPolicyArgs {
     /**
      * The breakpoint widths (in pixels) to use to create derivative images/videos.
      */
-    breakpoints?: pulumi.Input<inputs.GetImagingPolicyVideoPolicyBreakpointsArgs>;
+    breakpoints?: pulumi.Input<inputs.GetImagingPolicyVideoPolicyBreakpointsArgs | undefined>;
     /**
      * Hosts that are allowed for image/video URLs within transformations or variables.
      */
-    hosts?: pulumi.Input<pulumi.Input<string>[]>;
+    hosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Dictates the output quality that are created for each resized video.
      */
-    output?: pulumi.Input<inputs.GetImagingPolicyVideoPolicyOutputArgs>;
+    output?: pulumi.Input<inputs.GetImagingPolicyVideoPolicyOutputArgs | undefined>;
     /**
      * The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
      */
-    rolloutDuration?: pulumi.Input<string>;
+    rolloutDuration?: pulumi.Input<string | undefined>;
     /**
      * Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don't have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image's request URL.
      */
-    variables?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyVideoPolicyVariableArgs>[]>;
+    variables?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyVideoPolicyVariableArgs>[] | undefined>;
 }
 
 export interface GetImagingPolicyVideoPolicyBreakpoints {
@@ -11462,7 +11462,7 @@ export interface GetImagingPolicyVideoPolicyBreakpoints {
 }
 
 export interface GetImagingPolicyVideoPolicyBreakpointsArgs {
-    widths?: pulumi.Input<pulumi.Input<number>[]>;
+    widths?: pulumi.Input<pulumi.Input<number>[] | undefined>;
 }
 
 export interface GetImagingPolicyVideoPolicyOutput {
@@ -11496,27 +11496,27 @@ export interface GetImagingPolicyVideoPolicyOutputArgs {
     /**
      * The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
      */
-    perceptualQuality?: pulumi.Input<string>;
+    perceptualQuality?: pulumi.Input<string | undefined>;
     /**
      * The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
      */
-    perceptualQualityVar?: pulumi.Input<string>;
+    perceptualQualityVar?: pulumi.Input<string | undefined>;
     /**
      * Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
      */
-    placeholderVideoUrl?: pulumi.Input<string>;
+    placeholderVideoUrl?: pulumi.Input<string | undefined>;
     /**
      * Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
      */
-    placeholderVideoUrlVar?: pulumi.Input<string>;
+    placeholderVideoUrlVar?: pulumi.Input<string | undefined>;
     /**
      * Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
      */
-    videoAdaptiveQuality?: pulumi.Input<string>;
+    videoAdaptiveQuality?: pulumi.Input<string | undefined>;
     /**
      * Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
      */
-    videoAdaptiveQualityVar?: pulumi.Input<string>;
+    videoAdaptiveQualityVar?: pulumi.Input<string | undefined>;
 }
 
 export interface GetImagingPolicyVideoPolicyVariable {
@@ -11548,7 +11548,7 @@ export interface GetImagingPolicyVideoPolicyVariableArgs {
      * The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
      */
     defaultValue: pulumi.Input<string>;
-    enumOptions?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyVideoPolicyVariableEnumOptionArgs>[]>;
+    enumOptions?: pulumi.Input<pulumi.Input<inputs.GetImagingPolicyVideoPolicyVariableEnumOptionArgs>[] | undefined>;
     /**
      * The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
      */
@@ -11556,11 +11556,11 @@ export interface GetImagingPolicyVideoPolicyVariableArgs {
     /**
      * A postfix added to the value provided for the variable, or to the default value.
      */
-    postfix?: pulumi.Input<string>;
+    postfix?: pulumi.Input<string | undefined>;
     /**
      * A prefix added to the value provided for the variable, or to the default value.
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * The type of value for the variable.
      */
@@ -11649,7 +11649,7 @@ export interface GetPropertyDomainownershipSearchDomainsDomainArgs {
     /**
      * Your account's ID.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * Your domain's name.
      */
@@ -11662,19 +11662,19 @@ export interface GetPropertyDomainownershipSearchDomainsDomainArgs {
      * * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
      * * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
      */
-    domainStatus?: pulumi.Input<string>;
+    domainStatus?: pulumi.Input<string | undefined>;
     /**
      * The domain's validation challenge details.
      */
-    validationChallenge?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs>;
+    validationChallenge?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs | undefined>;
     /**
      * The timestamp indicating when the domain validation was completed.
      */
-    validationCompletedDate?: pulumi.Input<string>;
+    validationCompletedDate?: pulumi.Input<string | undefined>;
     /**
      * The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
      */
-    validationLevel?: pulumi.Input<string>;
+    validationLevel?: pulumi.Input<string | undefined>;
     /**
      * The method used to validate the domain. Possible values are: 
      * * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
@@ -11683,15 +11683,15 @@ export interface GetPropertyDomainownershipSearchDomainsDomainArgs {
      * * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
      * * `MANUAL` - For this method, the DOM team manually performed the validation.
      */
-    validationMethod?: pulumi.Input<string>;
+    validationMethod?: pulumi.Input<string | undefined>;
     /**
      * The name of the user who requested the domain validation.
      */
-    validationRequestedBy?: pulumi.Input<string>;
+    validationRequestedBy?: pulumi.Input<string | undefined>;
     /**
      * The timestamp indicating when the domain validation was requested.
      */
-    validationRequestedDate?: pulumi.Input<string>;
+    validationRequestedDate?: pulumi.Input<string | undefined>;
     /**
      * Your domain's validation scope. Possible values are: 
      * * `HOST` - The scope is only the exactly specified domain.
@@ -11728,23 +11728,23 @@ export interface GetPropertyDomainownershipSearchDomainsDomainValidationChalleng
     /**
      * The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
      */
-    cnameRecord?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs>;
+    cnameRecord?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs | undefined>;
     /**
      * The timestamp indicating when the challenge data expires.
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
      */
-    httpFile?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs>;
+    httpFile?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs | undefined>;
     /**
      * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
      */
-    httpRedirect?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs>;
+    httpRedirect?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs | undefined>;
     /**
      * The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
      */
-    txtRecord?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs>;
+    txtRecord?: pulumi.Input<inputs.GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs | undefined>;
 }
 
 export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord {
@@ -11762,11 +11762,11 @@ export interface GetPropertyDomainownershipSearchDomainsDomainValidationChalleng
     /**
      * The 'CNAME' record for your domain that you add to the DNS configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The 'target' value you set in the 'CNAME' record that validates the domain ownership.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
 }
 
 export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile {
@@ -11788,15 +11788,15 @@ export interface GetPropertyDomainownershipSearchDomainsDomainValidationChalleng
     /**
      * The content of the file that you should place at the specified URL.
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * The content type of the file containing the token.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * The URL where you should place the file containing the challenge token.
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
 }
 
 export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect {
@@ -11814,11 +11814,11 @@ export interface GetPropertyDomainownershipSearchDomainsDomainValidationChalleng
     /**
      * The location on your HTTP server where you set up the redirect.
      */
-    from?: pulumi.Input<string>;
+    from?: pulumi.Input<string | undefined>;
     /**
      * The redirect URL with the token that you place on your HTTP server.
      */
-    to?: pulumi.Input<string>;
+    to?: pulumi.Input<string | undefined>;
 }
 
 export interface GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord {
@@ -11836,11 +11836,11 @@ export interface GetPropertyDomainownershipSearchDomainsDomainValidationChalleng
     /**
      * The hostname where you should add the 'TXT' record to validate the domain ownership.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface GetPropertyIncludesParentProperty {
@@ -11895,7 +11895,7 @@ export interface GetPropertyRulesTemplateVariable {
 
 export interface GetPropertyRulesTemplateVariableArgs {
     name: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     value: pulumi.Input<string>;
 }
 
@@ -11907,74 +11907,74 @@ export interface GtmAsmapAssignment {
 
 export interface GtmAsmapDefaultDatacenter {
     datacenterId: pulumi.Input<number>;
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GtmCidrmapAssignment {
-    blocks?: pulumi.Input<pulumi.Input<string>[]>;
+    blocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     datacenterId: pulumi.Input<number>;
     nickname: pulumi.Input<string>;
 }
 
 export interface GtmCidrmapDefaultDatacenter {
     datacenterId: pulumi.Input<number>;
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GtmDatacenterDefaultLoadObject {
-    loadObject?: pulumi.Input<string>;
-    loadObjectPort?: pulumi.Input<number>;
-    loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+    loadObject?: pulumi.Input<string | undefined>;
+    loadObjectPort?: pulumi.Input<number | undefined>;
+    loadServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface GtmGeomapAssignment {
-    countries?: pulumi.Input<pulumi.Input<string>[]>;
+    countries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     datacenterId: pulumi.Input<number>;
     nickname: pulumi.Input<string>;
 }
 
 export interface GtmGeomapDefaultDatacenter {
     datacenterId: pulumi.Input<number>;
-    nickname?: pulumi.Input<string>;
+    nickname?: pulumi.Input<string | undefined>;
 }
 
 export interface GtmPropertyLivenessTest {
-    alternateCaCertificates?: pulumi.Input<pulumi.Input<string>[]>;
-    answersRequired?: pulumi.Input<boolean>;
-    disableNonstandardPortWarning?: pulumi.Input<boolean>;
-    disabled?: pulumi.Input<boolean>;
-    errorPenalty?: pulumi.Input<number>;
-    httpError3xx?: pulumi.Input<boolean>;
-    httpError4xx?: pulumi.Input<boolean>;
-    httpError5xx?: pulumi.Input<boolean>;
-    httpHeaders?: pulumi.Input<pulumi.Input<inputs.GtmPropertyLivenessTestHttpHeader>[]>;
-    httpMethod?: pulumi.Input<string>;
-    httpRequestBody?: pulumi.Input<string>;
+    alternateCaCertificates?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    answersRequired?: pulumi.Input<boolean | undefined>;
+    disableNonstandardPortWarning?: pulumi.Input<boolean | undefined>;
+    disabled?: pulumi.Input<boolean | undefined>;
+    errorPenalty?: pulumi.Input<number | undefined>;
+    httpError3xx?: pulumi.Input<boolean | undefined>;
+    httpError4xx?: pulumi.Input<boolean | undefined>;
+    httpError5xx?: pulumi.Input<boolean | undefined>;
+    httpHeaders?: pulumi.Input<pulumi.Input<inputs.GtmPropertyLivenessTestHttpHeader>[] | undefined>;
+    httpMethod?: pulumi.Input<string | undefined>;
+    httpRequestBody?: pulumi.Input<string | undefined>;
     name: pulumi.Input<string>;
-    peerCertificateVerification?: pulumi.Input<boolean>;
+    peerCertificateVerification?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
      */
-    pre2023SecurityPosture?: pulumi.Input<boolean>;
-    recursionRequested?: pulumi.Input<boolean>;
-    requestString?: pulumi.Input<string>;
-    resourceType?: pulumi.Input<string>;
-    responseString?: pulumi.Input<string>;
-    sslClientCertificate?: pulumi.Input<string>;
-    sslClientPrivateKey?: pulumi.Input<string>;
+    pre2023SecurityPosture?: pulumi.Input<boolean | undefined>;
+    recursionRequested?: pulumi.Input<boolean | undefined>;
+    requestString?: pulumi.Input<string | undefined>;
+    resourceType?: pulumi.Input<string | undefined>;
+    responseString?: pulumi.Input<string | undefined>;
+    sslClientCertificate?: pulumi.Input<string | undefined>;
+    sslClientPrivateKey?: pulumi.Input<string | undefined>;
     testInterval: pulumi.Input<number>;
-    testObject?: pulumi.Input<string>;
-    testObjectPassword?: pulumi.Input<string>;
-    testObjectPort?: pulumi.Input<number>;
+    testObject?: pulumi.Input<string | undefined>;
+    testObjectPassword?: pulumi.Input<string | undefined>;
+    testObjectPort?: pulumi.Input<number | undefined>;
     testObjectProtocol: pulumi.Input<string>;
-    testObjectUsername?: pulumi.Input<string>;
+    testObjectUsername?: pulumi.Input<string | undefined>;
     testTimeout: pulumi.Input<number>;
-    timeoutPenalty?: pulumi.Input<number>;
+    timeoutPenalty?: pulumi.Input<number | undefined>;
 }
 
 export interface GtmPropertyLivenessTestHttpHeader {
-    name?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface GtmPropertyStateChangeNotificationWebhook {
@@ -11983,73 +11983,73 @@ export interface GtmPropertyStateChangeNotificationWebhook {
 }
 
 export interface GtmPropertyStaticRrSet {
-    rdatas?: pulumi.Input<pulumi.Input<string>[]>;
-    ttl?: pulumi.Input<number>;
-    type?: pulumi.Input<string>;
+    rdatas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ttl?: pulumi.Input<number | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface GtmPropertyTrafficTarget {
-    datacenterId?: pulumi.Input<number>;
-    enabled?: pulumi.Input<boolean>;
-    handoutCname?: pulumi.Input<string>;
-    precedence?: pulumi.Input<number>;
-    servers?: pulumi.Input<pulumi.Input<string>[]>;
-    weight?: pulumi.Input<number>;
+    datacenterId?: pulumi.Input<number | undefined>;
+    enabled?: pulumi.Input<boolean | undefined>;
+    handoutCname?: pulumi.Input<string | undefined>;
+    precedence?: pulumi.Input<number | undefined>;
+    servers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    weight?: pulumi.Input<number | undefined>;
 }
 
 export interface GtmResourceResourceInstance {
     datacenterId: pulumi.Input<number>;
-    loadObject?: pulumi.Input<string>;
-    loadObjectPort?: pulumi.Input<number>;
-    loadServers?: pulumi.Input<pulumi.Input<string>[]>;
-    useDefaultLoadObject?: pulumi.Input<boolean>;
+    loadObject?: pulumi.Input<string | undefined>;
+    loadObjectPort?: pulumi.Input<number | undefined>;
+    loadServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    useDefaultLoadObject?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamApiClientActions {
     /**
      * Whether you can deactivate the API client's credentials.
      */
-    deactivateAll?: pulumi.Input<boolean>;
+    deactivateAll?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can remove the API client.
      */
-    delete?: pulumi.Input<boolean>;
+    delete?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can update the API client.
      */
-    edit?: pulumi.Input<boolean>;
+    edit?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can update the `apis` the API client can access, same as `editAuth`.
      */
-    editApis?: pulumi.Input<boolean>;
+    editApis?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can update the `apis` the API client can access, same as `editApis`.
      */
-    editAuth?: pulumi.Input<boolean>;
+    editAuth?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can update the `groups` the API client can access.
      */
-    editGroups?: pulumi.Input<boolean>;
+    editGroups?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can update the 'ip acl' the API client can access.
      */
-    editIpAcl?: pulumi.Input<boolean>;
+    editIpAcl?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can update the API client's option to manage many accounts.
      */
-    editSwitchAccount?: pulumi.Input<boolean>;
+    editSwitchAccount?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can lock the API client.
      */
-    lock?: pulumi.Input<boolean>;
+    lock?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can transfer the API client to a new owner.
      */
-    transfer?: pulumi.Input<boolean>;
+    transfer?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can unlock the API client.
      */
-    unlock?: pulumi.Input<boolean>;
+    unlock?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamApiClientApiAccess {
@@ -12060,7 +12060,7 @@ export interface IamApiClientApiAccess {
     /**
      * The set of APIs the API client can access when `allAccessibleApis` is `false`.
      */
-    apis?: pulumi.Input<pulumi.Input<inputs.IamApiClientApiAccessApi>[]>;
+    apis?: pulumi.Input<pulumi.Input<inputs.IamApiClientApiAccessApi>[] | undefined>;
 }
 
 export interface IamApiClientApiAccessApi {
@@ -12075,77 +12075,77 @@ export interface IamApiClientApiAccessApi {
     /**
      * A human-readable name for the API.
      */
-    apiName?: pulumi.Input<string>;
+    apiName?: pulumi.Input<string | undefined>;
     /**
      * A human-readable description for the API.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A link to more information about the API.
      */
-    documentationUrl?: pulumi.Input<string>;
+    documentationUrl?: pulumi.Input<string | undefined>;
     /**
      * Specifies where the API can access resources.
      */
-    endpoint?: pulumi.Input<string>;
+    endpoint?: pulumi.Input<string | undefined>;
 }
 
 export interface IamApiClientCredential {
     /**
      * Actions available on the API client's credentials.
      */
-    actions?: pulumi.Input<inputs.IamApiClientCredentialActions>;
+    actions?: pulumi.Input<inputs.IamApiClientCredentialActions | undefined>;
     /**
      * The client secret.
      */
-    clientSecret?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string | undefined>;
     /**
      * The part of the credential that identifies the API client.
      */
-    clientToken?: pulumi.Input<string>;
+    clientToken?: pulumi.Input<string | undefined>;
     /**
      * The ISO 8601 timestamp indicating when the credential was created.
      */
-    createdOn?: pulumi.Input<string>;
+    createdOn?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier of the credential.
      */
-    credentialId?: pulumi.Input<number>;
+    credentialId?: pulumi.Input<number | undefined>;
     /**
      * A human-readable description for the credential.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ISO 8601 timestamp indicating when the credential expires. The default expiration date is two years from the creation date.
      */
-    expiresOn?: pulumi.Input<string>;
+    expiresOn?: pulumi.Input<string | undefined>;
     /**
      * Whether a credential is 'ACTIVE', 'INACTIVE', or 'DELETED'. Can be updated to 'ACTIVE' or 'INACTIVE' only.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface IamApiClientCredentialActions {
     /**
      * Whether you can activate the credential.
      */
-    activate?: pulumi.Input<boolean>;
+    activate?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can deactivate the credential.
      */
-    deactivate?: pulumi.Input<boolean>;
+    deactivate?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can remove the credential.
      */
-    delete?: pulumi.Input<boolean>;
+    delete?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can modify the credential's description.
      */
-    editDescription?: pulumi.Input<boolean>;
+    editDescription?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can modify the credential's expiration date.
      */
-    editExpiration?: pulumi.Input<boolean>;
+    editExpiration?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamApiClientGroupAccess {
@@ -12156,7 +12156,7 @@ export interface IamApiClientGroupAccess {
     /**
      * Groups the API client can access.
      */
-    groups?: pulumi.Input<pulumi.Input<inputs.IamApiClientGroupAccessGroup>[]>;
+    groups?: pulumi.Input<pulumi.Input<inputs.IamApiClientGroupAccessGroup>[] | undefined>;
 }
 
 export interface IamApiClientGroupAccessGroup {
@@ -12167,19 +12167,19 @@ export interface IamApiClientGroupAccessGroup {
     /**
      * A human-readable name for the group.
      */
-    groupName?: pulumi.Input<string>;
+    groupName?: pulumi.Input<string | undefined>;
     /**
      * Blocks the API client access to the group's child groups.
      */
-    isBlocked?: pulumi.Input<boolean>;
+    isBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * A unique identifier for the parent group within the group tree.
      */
-    parentGroupId?: pulumi.Input<number>;
+    parentGroupId?: pulumi.Input<number | undefined>;
     /**
      * A human-readable description for the role to convey its use.
      */
-    roleDescription?: pulumi.Input<string>;
+    roleDescription?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier for the role.
      */
@@ -12187,11 +12187,11 @@ export interface IamApiClientGroupAccessGroup {
     /**
      * A human-readable name for the role.
      */
-    roleName?: pulumi.Input<string>;
+    roleName?: pulumi.Input<string | undefined>;
     /**
      * Groups the API client can access.
      */
-    subGroups?: pulumi.Input<pulumi.Input<inputs.IamApiClientGroupAccessGroupSubGroup>[]>;
+    subGroups?: pulumi.Input<pulumi.Input<inputs.IamApiClientGroupAccessGroupSubGroup>[] | undefined>;
 }
 
 export interface IamApiClientGroupAccessGroupSubGroup {
@@ -12202,19 +12202,19 @@ export interface IamApiClientGroupAccessGroupSubGroup {
     /**
      * A human-readable name for the group.
      */
-    groupName?: pulumi.Input<string>;
+    groupName?: pulumi.Input<string | undefined>;
     /**
      * Blocks the API client access to the group's child groups.
      */
-    isBlocked?: pulumi.Input<boolean>;
+    isBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * A unique identifier for the parent group within the group tree.
      */
-    parentGroupId?: pulumi.Input<number>;
+    parentGroupId?: pulumi.Input<number | undefined>;
     /**
      * A human-readable description for the role to convey its use.
      */
-    roleDescription?: pulumi.Input<string>;
+    roleDescription?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier for the role.
      */
@@ -12222,11 +12222,11 @@ export interface IamApiClientGroupAccessGroupSubGroup {
     /**
      * A human-readable name for the role.
      */
-    roleName?: pulumi.Input<string>;
+    roleName?: pulumi.Input<string | undefined>;
     /**
      * Groups the API client can access.
      */
-    subGroups?: pulumi.Input<pulumi.Input<inputs.IamApiClientGroupAccessGroupSubGroup>[]>;
+    subGroups?: pulumi.Input<pulumi.Input<inputs.IamApiClientGroupAccessGroupSubGroup>[] | undefined>;
 }
 
 export interface IamApiClientIpAcl {
@@ -12263,25 +12263,25 @@ export interface IamApiClientPurgeOptionsCpCodeAccess {
     /**
      * CP codes the API client can purge.
      */
-    cpCodes?: pulumi.Input<pulumi.Input<number>[]>;
+    cpCodes?: pulumi.Input<pulumi.Input<number>[] | undefined>;
 }
 
 export interface IamCidrBlockActions {
     /**
      * Whether you can delete this CIDR block. You can't delete a CIDR block from an IP address not on the allowlist, or if the CIDR block is the only one on the allowlist.
      */
-    delete?: pulumi.Input<boolean>;
+    delete?: pulumi.Input<boolean | undefined>;
     /**
      * Whether you can edit this CIDR block. You can't edit CIDR block from an IP address not on the allowlist, or if the CIDR block is the only one on the allowlist.
      */
-    edit?: pulumi.Input<boolean>;
+    edit?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamUserUserNotifications {
     /**
      * Enables notifications for expiring API client credentials.
      */
-    apiClientCredentialExpiryNotification?: pulumi.Input<boolean>;
+    apiClientCredentialExpiryNotification?: pulumi.Input<boolean | undefined>;
     /**
      * Enables email notifications.
      */
@@ -12289,7 +12289,7 @@ export interface IamUserUserNotifications {
     /**
      * Enables notifications for group administrators when the user creates other new users.
      */
-    newUserNotification?: pulumi.Input<boolean>;
+    newUserNotification?: pulumi.Input<boolean | undefined>;
     /**
      * Enables notifications for expiring passwords.
      */
@@ -12308,216 +12308,216 @@ export interface MtlskeystoreClientCertificateAkamaiTimeouts {
     /**
      * Optional configurable resource create timeout. By default it's 30m.
      */
-    create?: pulumi.Input<string>;
+    create?: pulumi.Input<string | undefined>;
     /**
      * Optional configurable resource update timeout. By default it's 30m.
      */
-    update?: pulumi.Input<string>;
+    update?: pulumi.Input<string | undefined>;
 }
 
 export interface MtlskeystoreClientCertificateAkamaiVersion {
     /**
      * Details of the certificate block for the client certificate version.
      */
-    certificateBlock?: pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiVersionCertificateBlock>;
+    certificateBlock?: pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiVersionCertificateBlock | undefined>;
     /**
      * The user who created the client certificate version.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating the client certificate version's creation.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
      */
-    deleteRequestedDate?: pulumi.Input<string>;
+    deleteRequestedDate?: pulumi.Input<string | undefined>;
     /**
      * Specifies the key elliptic curve when key algorithm `ECDSA` is used.
      */
-    ellipticCurve?: pulumi.Input<string>;
+    ellipticCurve?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating when the client certificate version expires.
      */
-    expiryDate?: pulumi.Input<string>;
+    expiryDate?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating the client certificate version's availability.
      */
-    issuedDate?: pulumi.Input<string>;
+    issuedDate?: pulumi.Input<string | undefined>;
     /**
      * The signing entity of the client certificate version.
      */
-    issuer?: pulumi.Input<string>;
+    issuer?: pulumi.Input<string | undefined>;
     /**
      * Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
      */
-    keyAlgorithm?: pulumi.Input<string>;
+    keyAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The private key length of the client certificate version when key algorithm `RSA` is used.
      */
-    keySizeInBytes?: pulumi.Input<string>;
+    keySizeInBytes?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
      */
-    scheduledDeleteDate?: pulumi.Input<string>;
+    scheduledDeleteDate?: pulumi.Input<string | undefined>;
     /**
      * Specifies the algorithm that secures the data exchange between the edge server and origin.
      */
-    signatureAlgorithm?: pulumi.Input<string>;
+    signatureAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The client certificate version status. Possible values: `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The public key's entity stored in the client certificate version's subject public key field.
      */
-    subject?: pulumi.Input<string>;
+    subject?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the client certificate version.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
      */
-    versionGuid?: pulumi.Input<string>;
+    versionGuid?: pulumi.Input<string | undefined>;
 }
 
 export interface MtlskeystoreClientCertificateAkamaiVersionCertificateBlock {
     /**
      * A text representation of the client certificate in PEM format.
      */
-    certificate?: pulumi.Input<string>;
+    certificate?: pulumi.Input<string | undefined>;
     /**
      * A text representation of the trust chain in PEM format.
      */
-    trustChain?: pulumi.Input<string>;
+    trustChain?: pulumi.Input<string | undefined>;
 }
 
 export interface MtlskeystoreClientCertificateThirdPartyVersions {
     /**
      * Details of the certificate block for the client certificate version.
      */
-    certificateBlock?: pulumi.Input<inputs.MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock>;
+    certificateBlock?: pulumi.Input<inputs.MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock | undefined>;
     /**
      * The user who uploaded the THIRD_PARTY client certificate version. Appears as null if not specified.
      */
-    certificateSubmittedBy?: pulumi.Input<string>;
+    certificateSubmittedBy?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating when the THIRD_PARTY signer client certificate version was uploaded. Appears as null if not specified.
      */
-    certificateSubmittedDate?: pulumi.Input<string>;
+    certificateSubmittedDate?: pulumi.Input<string | undefined>;
     /**
      * The user who created the client certificate version.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating the client certificate version's creation.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * Details of the Certificate Signing Request (CSR) for the client certificate version.
      */
-    csrBlock?: pulumi.Input<inputs.MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock>;
+    csrBlock?: pulumi.Input<inputs.MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock | undefined>;
     /**
      * An ISO 8601 timestamp indicating the client certificate version's deletion request. Appears as null if there's no request.
      */
-    deleteRequestedDate?: pulumi.Input<string>;
+    deleteRequestedDate?: pulumi.Input<string | undefined>;
     /**
      * Specifies the key elliptic curve when key algorithm `ECDSA` is used.
      */
-    ellipticCurve?: pulumi.Input<string>;
+    ellipticCurve?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating when the client certificate version expires.
      */
-    expiryDate?: pulumi.Input<string>;
+    expiryDate?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating the client certificate version's availability.
      */
-    issuedDate?: pulumi.Input<string>;
+    issuedDate?: pulumi.Input<string | undefined>;
     /**
      * The signing entity of the client certificate version.
      */
-    issuer?: pulumi.Input<string>;
+    issuer?: pulumi.Input<string | undefined>;
     /**
      * Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
      */
-    keyAlgorithm?: pulumi.Input<string>;
+    keyAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The private key length of the client certificate version when key algorithm `RSA` is used.
      */
-    keySizeInBytes?: pulumi.Input<string>;
+    keySizeInBytes?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating the client certificate version's deletion. Appears as null if there's no request.
      */
-    scheduledDeleteDate?: pulumi.Input<string>;
+    scheduledDeleteDate?: pulumi.Input<string | undefined>;
     /**
      * Specifies the algorithm that secures the data exchange between the edge server and origin.
      */
-    signatureAlgorithm?: pulumi.Input<string>;
+    signatureAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The public key's entity stored in the client certificate version's subject public key field.
      */
-    subject?: pulumi.Input<string>;
+    subject?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the client certificate version.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
      */
-    versionGuid?: pulumi.Input<string>;
+    versionGuid?: pulumi.Input<string | undefined>;
 }
 
 export interface MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlock {
     /**
      * A text representation of the client certificate in PEM format.
      */
-    certificate?: pulumi.Input<string>;
+    certificate?: pulumi.Input<string | undefined>;
     /**
      * A text representation of the trust chain in PEM format.
      */
-    trustChain?: pulumi.Input<string>;
+    trustChain?: pulumi.Input<string | undefined>;
 }
 
 export interface MtlskeystoreClientCertificateThirdPartyVersionsCsrBlock {
     /**
      * Text of the certificate signing request.
      */
-    csr?: pulumi.Input<string>;
+    csr?: pulumi.Input<string | undefined>;
     /**
      * Identifies the client certificate's encryption algorithm.
      */
-    keyAlgorithm?: pulumi.Input<string>;
+    keyAlgorithm?: pulumi.Input<string | undefined>;
 }
 
 export interface MtlskeystoreClientCertificateUploadTimeouts {
     /**
      * Optional configurable resource create timeout. By default it's 30m.
      */
-    create?: pulumi.Input<string>;
+    create?: pulumi.Input<string | undefined>;
     /**
      * Optional configurable resource update timeout. By default it's 30m.
      */
-    update?: pulumi.Input<string>;
+    update?: pulumi.Input<string | undefined>;
 }
 
 export interface MtlstruststoreCaSetActivationTimeouts {
     /**
      * Optional configurable resource create timeout. By default it's 1h.
      */
-    create?: pulumi.Input<string>;
+    create?: pulumi.Input<string | undefined>;
     /**
      * Optional configurable resource delete timeout. By default it's 1h.
      */
-    delete?: pulumi.Input<string>;
+    delete?: pulumi.Input<string | undefined>;
     /**
      * Optional configurable resource update timeout. By default it's 1h.
      */
-    update?: pulumi.Input<string>;
+    update?: pulumi.Input<string | undefined>;
 }
 
 export interface MtlstruststoreCaSetCertificate {
@@ -12528,134 +12528,134 @@ export interface MtlstruststoreCaSetCertificate {
     /**
      * The user who created this CA certificate.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * When the CA certificate was created.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * Optional description for the certificate.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The certificate's ISO 8601 formatted expiration date.
      */
-    endDate?: pulumi.Input<string>;
+    endDate?: pulumi.Input<string | undefined>;
     /**
      * The fingerprint of the certificate.
      */
-    fingerprint?: pulumi.Input<string>;
+    fingerprint?: pulumi.Input<string | undefined>;
     /**
      * The certificate's issuer.
      */
-    issuer?: pulumi.Input<string>;
+    issuer?: pulumi.Input<string | undefined>;
     /**
      * The unique serial number of the certificate.
      */
-    serialNumber?: pulumi.Input<string>;
+    serialNumber?: pulumi.Input<string | undefined>;
     /**
      * The signature algorithm of the CA certificate.
      */
-    signatureAlgorithm?: pulumi.Input<string>;
+    signatureAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The start date of the certificate.
      */
-    startDate?: pulumi.Input<string>;
+    startDate?: pulumi.Input<string | undefined>;
     /**
      * The certificate's subject field.
      */
-    subject?: pulumi.Input<string>;
+    subject?: pulumi.Input<string | undefined>;
 }
 
 export interface MtlstruststoreCaSetTimeouts {
     /**
      * Optional configurable resource delete timeout. By default it's 1h.
      */
-    delete?: pulumi.Input<string>;
+    delete?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyActivationComplianceRecord {
     /**
      * Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
      */
-    noncomplianceReasonEmergency?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency>;
+    noncomplianceReasonEmergency?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency | undefined>;
     /**
      * Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
      */
-    noncomplianceReasonNoProductionTraffic?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic>;
+    noncomplianceReasonNoProductionTraffic?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic | undefined>;
     /**
      * Provides an audit record when activating on a production network with noncompliance reason as `NONE`
      */
-    noncomplianceReasonNone?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonNone>;
+    noncomplianceReasonNone?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonNone | undefined>;
     /**
      * Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
      */
-    noncomplianceReasonOther?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonOther>;
+    noncomplianceReasonOther?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonOther | undefined>;
 }
 
 export interface PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
     /**
      * Identifies the ticket that describes the need for the activation
      */
-    ticketId?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
     /**
      * Identifies the ticket that describes the need for the activation
      */
-    ticketId?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyActivationComplianceRecordNoncomplianceReasonNone {
     /**
      * Identifies the customer
      */
-    customerEmail?: pulumi.Input<string>;
+    customerEmail?: pulumi.Input<string | undefined>;
     /**
      * Identifies person who has independently approved the activation request
      */
-    peerReviewedBy?: pulumi.Input<string>;
+    peerReviewedBy?: pulumi.Input<string | undefined>;
     /**
      * Identifies the ticket that describes the need for the activation
      */
-    ticketId?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string | undefined>;
     /**
      * Whether the metadata to activate has been fully tested
      */
-    unitTested?: pulumi.Input<boolean>;
+    unitTested?: pulumi.Input<boolean | undefined>;
 }
 
 export interface PropertyActivationComplianceRecordNoncomplianceReasonOther {
     /**
      * Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
      */
-    otherNoncomplianceReason?: pulumi.Input<string>;
+    otherNoncomplianceReason?: pulumi.Input<string | undefined>;
     /**
      * Identifies the ticket that describes the need for the activation
      */
-    ticketId?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyActivationRuleError {
-    behaviorName?: pulumi.Input<string>;
-    detail?: pulumi.Input<string>;
-    errorLocation?: pulumi.Input<string>;
-    instance?: pulumi.Input<string>;
-    statusCode?: pulumi.Input<number>;
-    title?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    behaviorName?: pulumi.Input<string | undefined>;
+    detail?: pulumi.Input<string | undefined>;
+    errorLocation?: pulumi.Input<string | undefined>;
+    instance?: pulumi.Input<string | undefined>;
+    statusCode?: pulumi.Input<number | undefined>;
+    title?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyActivationTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyDomainownershipDomainsDomain {
     /**
      * Your account's ID.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * Your domain's name.
      */
@@ -12668,15 +12668,15 @@ export interface PropertyDomainownershipDomainsDomain {
      * * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
      * * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
      */
-    domainStatus?: pulumi.Input<string>;
+    domainStatus?: pulumi.Input<string | undefined>;
     /**
      * The domain's validation challenge details.
      */
-    validationChallenge?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallenge>;
+    validationChallenge?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallenge | undefined>;
     /**
      * The timestamp indicating when the domain validation was completed.
      */
-    validationCompletedDate?: pulumi.Input<string>;
+    validationCompletedDate?: pulumi.Input<string | undefined>;
     /**
      * The method used to validate the domain. Possible values are: 
      * * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
@@ -12685,15 +12685,15 @@ export interface PropertyDomainownershipDomainsDomain {
      * * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
      * * `MANUAL` - For this method, the DOM team manually performed the validation.
      */
-    validationMethod?: pulumi.Input<string>;
+    validationMethod?: pulumi.Input<string | undefined>;
     /**
      * The name of the user who requested the domain validation.
      */
-    validationRequestedBy?: pulumi.Input<string>;
+    validationRequestedBy?: pulumi.Input<string | undefined>;
     /**
      * The timestamp indicating when the domain validation was requested.
      */
-    validationRequestedDate?: pulumi.Input<string>;
+    validationRequestedDate?: pulumi.Input<string | undefined>;
     /**
      * Your domain's validation scope. Possible values are: 
      * * `HOST` - The scope is only the exactly specified domain.
@@ -12707,82 +12707,82 @@ export interface PropertyDomainownershipDomainsDomainValidationChallenge {
     /**
      * The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
      */
-    cnameRecord?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeCnameRecord>;
+    cnameRecord?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeCnameRecord | undefined>;
     /**
      * The timestamp indicating when the challenge data expires.
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
      */
-    httpFile?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeHttpFile>;
+    httpFile?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeHttpFile | undefined>;
     /**
      * Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
      */
-    httpRedirect?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect>;
+    httpRedirect?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect | undefined>;
     /**
      * The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
      */
-    txtRecord?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord>;
+    txtRecord?: pulumi.Input<inputs.PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord | undefined>;
 }
 
 export interface PropertyDomainownershipDomainsDomainValidationChallengeCnameRecord {
     /**
      * The 'CNAME' record for your domain that you add to the DNS configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The 'target' value you set in the 'CNAME' record that validates the domain ownership.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyDomainownershipDomainsDomainValidationChallengeHttpFile {
     /**
      * The content of the file that you should place at the specified URL.
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * The content type of the file containing the token.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * The URL where you should place the file containing the challenge token.
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect {
     /**
      * The location on your HTTP server where you set up the redirect.
      */
-    from?: pulumi.Input<string>;
+    from?: pulumi.Input<string | undefined>;
     /**
      * The redirect URL with the token that you place on your HTTP server.
      */
-    to?: pulumi.Input<string>;
+    to?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyDomainownershipDomainsDomainValidationChallengeTxtRecord {
     /**
      * The hostname where you should add the 'TXT' record to validate the domain ownership.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyDomainownershipLateValidationTimeouts {
     /**
      * Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
      */
-    create?: pulumi.Input<string>;
+    create?: pulumi.Input<string | undefined>;
     /**
      * Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
      */
-    update?: pulumi.Input<string>;
+    update?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyDomainownershipValidationDomain {
@@ -12812,36 +12812,36 @@ export interface PropertyDomainownershipValidationTimeouts {
     /**
      * Optional configurable domains validation timeout to be used on resource create. By default it's 30m.
      */
-    create?: pulumi.Input<string>;
+    create?: pulumi.Input<string | undefined>;
     /**
      * Optional configurable domains validation timeout to be used on resource update. By default it's 30m.
      */
-    update?: pulumi.Input<string>;
+    update?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyHostname {
     /**
      * Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
      */
-    ccmCertStatuses?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCcmCertStatus>[]>;
+    ccmCertStatuses?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCcmCertStatus>[] | undefined>;
     /**
      * Certificate identifiers and links for the CCM-managed certificates.
      */
-    ccmCertificates?: pulumi.Input<inputs.PropertyHostnameCcmCertificates>;
+    ccmCertificates?: pulumi.Input<inputs.PropertyHostnameCcmCertificates | undefined>;
     certProvisioningType: pulumi.Input<string>;
-    certStatuses?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatus>[]>;
+    certStatuses?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatus>[] | undefined>;
     cnameFrom: pulumi.Input<string>;
     cnameTo: pulumi.Input<string>;
-    cnameType?: pulumi.Input<string>;
-    edgeHostnameId?: pulumi.Input<string>;
+    cnameType?: pulumi.Input<string | undefined>;
+    edgeHostnameId?: pulumi.Input<string | undefined>;
     /**
      * Optional mutual TLS settings for the CCM hostnames.
      */
-    mtls?: pulumi.Input<inputs.PropertyHostnameMtls>;
+    mtls?: pulumi.Input<inputs.PropertyHostnameMtls | undefined>;
     /**
      * Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
      */
-    tlsConfiguration?: pulumi.Input<inputs.PropertyHostnameTlsConfiguration>;
+    tlsConfiguration?: pulumi.Input<inputs.PropertyHostnameTlsConfiguration | undefined>;
 }
 
 export interface PropertyHostnameBucketHostnames {
@@ -12852,7 +12852,7 @@ export interface PropertyHostnameBucketHostnames {
     /**
      * The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
      */
-    cnameTo?: pulumi.Input<string>;
+    cnameTo?: pulumi.Input<string | undefined>;
     /**
      * Identifies the edge hostname you mapped your traffic to on the production network.
      */
@@ -12863,49 +12863,49 @@ export interface PropertyHostnameCcmCertStatus {
     /**
      * Status of the ECDSA certificate on production network.
      */
-    ecdsaProductionStatus?: pulumi.Input<string>;
+    ecdsaProductionStatus?: pulumi.Input<string | undefined>;
     /**
      * Status of the ECDSA certificate on staging network.
      */
-    ecdsaStagingStatus?: pulumi.Input<string>;
+    ecdsaStagingStatus?: pulumi.Input<string | undefined>;
     /**
      * Status of the RSA certificate on production network.
      */
-    rsaProductionStatus?: pulumi.Input<string>;
+    rsaProductionStatus?: pulumi.Input<string | undefined>;
     /**
      * Status of the RSA certificate on staging network.
      */
-    rsaStagingStatus?: pulumi.Input<string>;
+    rsaStagingStatus?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyHostnameCcmCertificates {
     /**
      * Certificate ID for ECDSA.
      */
-    ecdsaCertId?: pulumi.Input<string>;
+    ecdsaCertId?: pulumi.Input<string | undefined>;
     /**
      * Certificate ID for RSA.
      */
-    rsaCertId?: pulumi.Input<string>;
+    rsaCertId?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyHostnameCertStatus {
     /**
      * The hostname part of the CNAME record used to validate the certificate's domain.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * The certificate's deployment status on the production network.
      */
-    productionStatus?: pulumi.Input<string>;
+    productionStatus?: pulumi.Input<string | undefined>;
     /**
      * The certificate's deployment status on the staging network.
      */
-    stagingStatus?: pulumi.Input<string>;
+    stagingStatus?: pulumi.Input<string | undefined>;
     /**
      * The destination part of the CNAME record used to validate the certificate's domain.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyHostnameMtls {
@@ -12916,11 +12916,11 @@ export interface PropertyHostnameMtls {
     /**
      * Indicates whether to check the client OCSP.
      */
-    checkClientOcsp?: pulumi.Input<boolean>;
+    checkClientOcsp?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether to send the CA set to the client.
      */
-    sendCaSetClient?: pulumi.Input<boolean>;
+    sendCaSetClient?: pulumi.Input<boolean | undefined>;
 }
 
 export interface PropertyHostnameTlsConfiguration {
@@ -12931,111 +12931,111 @@ export interface PropertyHostnameTlsConfiguration {
     /**
      * A list of TLS versions that are disallowed.
      */
-    disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[]>;
+    disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether FIPS mode is enabled.
      */
-    fipsMode?: pulumi.Input<boolean>;
+    fipsMode?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether to staple the server OCSP response.
      */
-    stapleServerOcspResponse?: pulumi.Input<boolean>;
+    stapleServerOcspResponse?: pulumi.Input<boolean | undefined>;
 }
 
 export interface PropertyIncludeActivationComplianceRecord {
     /**
      * Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
      */
-    noncomplianceReasonEmergency?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency>;
+    noncomplianceReasonEmergency?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency | undefined>;
     /**
      * Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
      */
-    noncomplianceReasonNoProductionTraffic?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic>;
+    noncomplianceReasonNoProductionTraffic?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic | undefined>;
     /**
      * Provides an audit record when activating on a production network with noncompliance reason as `NONE`
      */
-    noncomplianceReasonNone?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone>;
+    noncomplianceReasonNone?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone | undefined>;
     /**
      * Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
      */
-    noncomplianceReasonOther?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther>;
+    noncomplianceReasonOther?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther | undefined>;
 }
 
 export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency {
     /**
      * Identifies the ticket that describes the need for the activation
      */
-    ticketId?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
     /**
      * Identifies the ticket that describes the need for the activation
      */
-    ticketId?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone {
     /**
      * Identifies the customer
      */
-    customerEmail?: pulumi.Input<string>;
+    customerEmail?: pulumi.Input<string | undefined>;
     /**
      * Identifies person who has independently approved the activation request
      */
-    peerReviewedBy?: pulumi.Input<string>;
+    peerReviewedBy?: pulumi.Input<string | undefined>;
     /**
      * Identifies the ticket that describes the need for the activation
      */
-    ticketId?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string | undefined>;
     /**
      * Whether the metadata to activate has been fully tested
      */
-    unitTested?: pulumi.Input<boolean>;
+    unitTested?: pulumi.Input<boolean | undefined>;
 }
 
 export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther {
     /**
      * Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
      */
-    otherNoncomplianceReason?: pulumi.Input<string>;
+    otherNoncomplianceReason?: pulumi.Input<string | undefined>;
     /**
      * Identifies the ticket that describes the need for the activation
      */
-    ticketId?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyIncludeActivationTimeouts {
-    default?: pulumi.Input<string>;
+    default?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyRuleError {
-    behaviorName?: pulumi.Input<string>;
-    detail?: pulumi.Input<string>;
-    errorLocation?: pulumi.Input<string>;
-    instance?: pulumi.Input<string>;
-    statusCode?: pulumi.Input<number>;
-    title?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    behaviorName?: pulumi.Input<string | undefined>;
+    detail?: pulumi.Input<string | undefined>;
+    errorLocation?: pulumi.Input<string | undefined>;
+    instance?: pulumi.Input<string | undefined>;
+    statusCode?: pulumi.Input<number | undefined>;
+    title?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyRuleWarning {
-    behaviorName?: pulumi.Input<string>;
-    detail?: pulumi.Input<string>;
-    errorLocation?: pulumi.Input<string>;
-    instance?: pulumi.Input<string>;
-    statusCode?: pulumi.Input<number>;
-    title?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    behaviorName?: pulumi.Input<string | undefined>;
+    detail?: pulumi.Input<string | undefined>;
+    errorLocation?: pulumi.Input<string | undefined>;
+    instance?: pulumi.Input<string | undefined>;
+    statusCode?: pulumi.Input<number | undefined>;
+    title?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface ProviderConfig {
     accessToken: pulumi.Input<string>;
-    accountKey?: pulumi.Input<string>;
+    accountKey?: pulumi.Input<string | undefined>;
     clientSecret: pulumi.Input<string>;
     clientToken: pulumi.Input<string>;
     host: pulumi.Input<string>;
-    maxBody?: pulumi.Input<number>;
+    maxBody?: pulumi.Input<number | undefined>;
 }
 export namespace config {
 }

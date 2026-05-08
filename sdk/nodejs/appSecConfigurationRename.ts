@@ -85,15 +85,15 @@ export interface AppSecConfigurationRenameState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Brief description of the security configuration
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * New name for the security configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -111,5 +111,5 @@ export interface AppSecConfigurationRenameArgs {
     /**
      * New name for the security configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

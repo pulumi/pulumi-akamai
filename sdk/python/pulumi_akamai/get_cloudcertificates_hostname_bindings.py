@@ -130,11 +130,11 @@ def get_cloudcertificates_hostname_bindings(contract_id: Optional[_builtins.str]
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
         network=pulumi.get(__ret__, 'network'))
-def get_cloudcertificates_hostname_bindings_output(contract_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   expiring_in_days: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                   group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   network: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cloudcertificates_hostname_bindings_output(contract_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   expiring_in_days: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                   group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   network: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudcertificatesHostnameBindingsResult]:
     """
     Use this data source to access information about an existing resource.

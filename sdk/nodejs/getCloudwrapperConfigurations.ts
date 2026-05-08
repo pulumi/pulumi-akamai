@@ -43,5 +43,5 @@ export function getCloudwrapperConfigurationsOutput(args?: GetCloudwrapperConfig
  * A collection of arguments for invoking getCloudwrapperConfigurations.
  */
 export interface GetCloudwrapperConfigurationsOutputArgs {
-    configurations?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationArgs>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationArgs>[] | undefined>;
 }

@@ -155,9 +155,9 @@ def get_property_activation(network: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         version=pulumi.get(__ret__, 'version'),
         warnings=pulumi.get(__ret__, 'warnings'))
-def get_property_activation_output(network: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_property_activation_output(network: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyActivationResult]:
     """
     Use this data source to access information about an existing resource.

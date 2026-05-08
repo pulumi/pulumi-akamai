@@ -114,27 +114,27 @@ export interface PropertyDomainownershipLateValidationState {
     /**
      * Contract ID of the Property.
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Group ID of the Property.
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * Property ID of the Property which domains will be validated.
      */
-    propertyId?: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.PropertyDomainownershipLateValidationTimeouts>;
+    propertyId?: pulumi.Input<string | undefined>;
+    timeouts?: pulumi.Input<inputs.PropertyDomainownershipLateValidationTimeouts | undefined>;
     /**
      * The method used to validate the domain. Possible values are: 
      * * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
      * * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
      * * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
      */
-    validationMethod?: pulumi.Input<string>;
+    validationMethod?: pulumi.Input<string | undefined>;
     /**
      * Property version containing domains to be validated.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -153,7 +153,7 @@ export interface PropertyDomainownershipLateValidationArgs {
      * Property ID of the Property which domains will be validated.
      */
     propertyId: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.PropertyDomainownershipLateValidationTimeouts>;
+    timeouts?: pulumi.Input<inputs.PropertyDomainownershipLateValidationTimeouts | undefined>;
     /**
      * The method used to validate the domain. Possible values are: 
      * * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.

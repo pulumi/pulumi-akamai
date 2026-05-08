@@ -22,9 +22,9 @@ class ApidefinitionsActivationArgs:
                  api_id: pulumi.Input[_builtins.int],
                  network: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.int],
-                 auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ApidefinitionsActivation resource.
 
@@ -83,51 +83,51 @@ class ApidefinitionsActivationArgs:
 
     @_builtins.property
     @pulumi.getter(name="autoAcknowledgeWarnings")
-    def auto_acknowledge_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_acknowledge_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Automatically acknowledge all warnings for activation to continue. Default is false
         """
         return pulumi.get(self, "auto_acknowledge_warnings")
 
     @auto_acknowledge_warnings.setter
-    def auto_acknowledge_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_acknowledge_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_acknowledge_warnings", value)
 
     @_builtins.property
     @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Notes describing the activation
         """
         return pulumi.get(self, "notes")
 
     @notes.setter
-    def notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notes", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationRecipients")
-    def notification_recipients(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_recipients(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of email addresses to be notified with the results of the activation
         """
         return pulumi.get(self, "notification_recipients")
 
     @notification_recipients.setter
-    def notification_recipients(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_recipients(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_recipients", value)
 
 
 @pulumi.input_type
 class _ApidefinitionsActivationState:
     def __init__(__self__, *,
-                 api_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 api_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ApidefinitionsActivation resources.
 
@@ -156,86 +156,86 @@ class _ApidefinitionsActivationState:
 
     @_builtins.property
     @pulumi.getter(name="apiId")
-    def api_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def api_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the API
         """
         return pulumi.get(self, "api_id")
 
     @api_id.setter
-    def api_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def api_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "api_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autoAcknowledgeWarnings")
-    def auto_acknowledge_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_acknowledge_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Automatically acknowledge all warnings for activation to continue. Default is false
         """
         return pulumi.get(self, "auto_acknowledge_warnings")
 
     @auto_acknowledge_warnings.setter
-    def auto_acknowledge_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_acknowledge_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_acknowledge_warnings", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network on which to activate the API version (STAGING or PRODUCTION)
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Notes describing the activation
         """
         return pulumi.get(self, "notes")
 
     @notes.setter
-    def notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notes", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationRecipients")
-    def notification_recipients(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_recipients(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of email addresses to be notified with the results of the activation
         """
         return pulumi.get(self, "notification_recipients")
 
     @notification_recipients.setter
-    def notification_recipients(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_recipients(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_recipients", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The results of the activation
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the API to be activated
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -245,12 +245,12 @@ class ApidefinitionsActivation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 api_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a ApidefinitionsActivation resource with the given unique name, props, and options.
@@ -288,12 +288,12 @@ class ApidefinitionsActivation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 api_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -326,13 +326,13 @@ class ApidefinitionsActivation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_id: Optional[pulumi.Input[_builtins.int]] = None,
-            auto_acknowledge_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-            network: Optional[pulumi.Input[_builtins.str]] = None,
-            notes: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'ApidefinitionsActivation':
+            api_id: pulumi.Input[Optional[_builtins.int]] = None,
+            auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            notes: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'ApidefinitionsActivation':
         """
         Get an existing ApidefinitionsActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

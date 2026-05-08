@@ -58,9 +58,9 @@ class AppSecMatchTargetArgs:
 @pulumi.input_type
 class _AppSecMatchTargetState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 match_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_target_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 match_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_target_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecMatchTarget resources.
 
@@ -77,38 +77,38 @@ class _AppSecMatchTargetState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="matchTarget")
-    def match_target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted definition of the match target
         """
         return pulumi.get(self, "match_target")
 
     @match_target.setter
-    def match_target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_target", value)
 
     @_builtins.property
     @pulumi.getter(name="matchTargetId")
-    def match_target_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def match_target_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the match target
         """
         return pulumi.get(self, "match_target_id")
 
     @match_target_id.setter
-    def match_target_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def match_target_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "match_target_id", value)
 
 
@@ -118,8 +118,8 @@ class AppSecMatchTarget(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 match_target: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 match_target: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecMatchTarget resource with the given unique name, props, and options.
@@ -153,8 +153,8 @@ class AppSecMatchTarget(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 match_target: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 match_target: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -181,9 +181,9 @@ class AppSecMatchTarget(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            match_target: Optional[pulumi.Input[_builtins.str]] = None,
-            match_target_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'AppSecMatchTarget':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            match_target: pulumi.Input[Optional[_builtins.str]] = None,
+            match_target_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'AppSecMatchTarget':
         """
         Get an existing AppSecMatchTarget resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

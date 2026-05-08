@@ -76,11 +76,11 @@ export interface AppsecAdvancedSettingsJa4FingerprintState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * JA4 TLS Header Names to be included in the header
      */
-    headerNames?: pulumi.Input<pulumi.Input<string>[]>;
+    headerNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -94,5 +94,5 @@ export interface AppsecAdvancedSettingsJa4FingerprintArgs {
     /**
      * JA4 TLS Header Names to be included in the header
      */
-    headerNames?: pulumi.Input<pulumi.Input<string>[]>;
+    headerNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

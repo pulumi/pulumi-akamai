@@ -85,15 +85,15 @@ export interface ApidefinitionsResourceOperationsState {
     /**
      * The unique identifier for the endpoint
      */
-    apiId?: pulumi.Input<number>;
+    apiId?: pulumi.Input<number | undefined>;
     /**
      * JSON-formatted information about the API configuration
      */
-    resourceOperations?: pulumi.Input<string>;
+    resourceOperations?: pulumi.Input<string | undefined>;
     /**
      * Version of the endpoint
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**

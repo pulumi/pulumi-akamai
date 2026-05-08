@@ -85,15 +85,15 @@ export interface AppSecMatchTargetState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * JSON-formatted definition of the match target
      */
-    matchTarget?: pulumi.Input<string>;
+    matchTarget?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the match target
      */
-    matchTargetId?: pulumi.Input<number>;
+    matchTargetId?: pulumi.Input<number | undefined>;
 }
 
 /**

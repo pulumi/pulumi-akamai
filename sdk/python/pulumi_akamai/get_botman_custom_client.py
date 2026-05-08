@@ -93,8 +93,8 @@ def get_botman_custom_client(config_id: Optional[_builtins.int] = None,
         custom_client_id=pulumi.get(__ret__, 'custom_client_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-def get_botman_custom_client_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                    custom_client_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_botman_custom_client_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                    custom_client_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanCustomClientResult]:
     """
     Use this data source to access information about an existing resource.

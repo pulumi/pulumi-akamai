@@ -94,19 +94,19 @@ export interface BotmanContentProtectionRuleState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * The content protection rule
      */
-    contentProtectionRule?: pulumi.Input<string>;
+    contentProtectionRule?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of a content protection rule
      */
-    contentProtectionRuleId?: pulumi.Input<string>;
+    contentProtectionRuleId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

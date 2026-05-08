@@ -164,8 +164,8 @@ def get_app_sec_ip_geo(config_id: Optional[_builtins.int] = None,
         output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         ukraine_geo_control_action=pulumi.get(__ret__, 'ukraine_geo_control_action'))
-def get_app_sec_ip_geo_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                              security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_app_sec_ip_geo_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                              security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecIPGeoResult]:
     """
     Use this data source to access information about an existing resource.

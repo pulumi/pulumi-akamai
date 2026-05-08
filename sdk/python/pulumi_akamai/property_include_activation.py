@@ -27,10 +27,10 @@ class PropertyIncludeActivationArgs:
                  network: pulumi.Input[_builtins.str],
                  notify_emails: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  version: pulumi.Input[_builtins.int],
-                 auto_acknowledge_rule_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compliance_record: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']] = None,
-                 note: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']] = None):
+                 auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compliance_record: pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordArgs']] = None,
+                 note: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['PropertyIncludeActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyIncludeActivation resource.
 
@@ -134,67 +134,67 @@ class PropertyIncludeActivationArgs:
 
     @_builtins.property
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
-    def auto_acknowledge_rule_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_acknowledge_rule_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Automatically acknowledge all rule warnings for activation and continue
         """
         return pulumi.get(self, "auto_acknowledge_rule_warnings")
 
     @auto_acknowledge_rule_warnings.setter
-    def auto_acknowledge_rule_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_acknowledge_rule_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_acknowledge_rule_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="complianceRecord")
-    def compliance_record(self) -> Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']]:
+    def compliance_record(self) -> pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordArgs']]:
         """
         Provides an audit record when activating on a production network
         """
         return pulumi.get(self, "compliance_record")
 
     @compliance_record.setter
-    def compliance_record(self, value: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']]):
+    def compliance_record(self, value: pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordArgs']]):
         pulumi.set(self, "compliance_record", value)
 
     @_builtins.property
     @pulumi.getter
-    def note(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def note(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The note to assign to a log message of the activation request
         """
         return pulumi.get(self, "note")
 
     @note.setter
-    def note(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def note(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "note", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['PropertyIncludeActivationTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['PropertyIncludeActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _PropertyIncludeActivationState:
     def __init__(__self__, *,
-                 auto_acknowledge_rule_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compliance_record: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 note: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeouts: Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']] = None,
-                 validations: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compliance_record: pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordArgs']] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 note: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 timeouts: pulumi.Input[Optional['PropertyIncludeActivationTimeoutsArgs']] = None,
+                 validations: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering PropertyIncludeActivation resources.
 
@@ -235,134 +235,134 @@ class _PropertyIncludeActivationState:
 
     @_builtins.property
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
-    def auto_acknowledge_rule_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_acknowledge_rule_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Automatically acknowledge all rule warnings for activation and continue
         """
         return pulumi.get(self, "auto_acknowledge_rule_warnings")
 
     @auto_acknowledge_rule_warnings.setter
-    def auto_acknowledge_rule_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_acknowledge_rule_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_acknowledge_rule_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="complianceRecord")
-    def compliance_record(self) -> Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']]:
+    def compliance_record(self) -> pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordArgs']]:
         """
         Provides an audit record when activating on a production network
         """
         return pulumi.get(self, "compliance_record")
 
     @compliance_record.setter
-    def compliance_record(self, value: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']]):
+    def compliance_record(self, value: pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordArgs']]):
         pulumi.set(self, "compliance_record", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The contract under which the include is activated
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The group under which the include is activated
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="includeId")
-    def include_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def include_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the include
         """
         return pulumi.get(self, "include_id")
 
     @include_id.setter
-    def include_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def include_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "include_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network for which the activation will be performed
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter
-    def note(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def note(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The note to assign to a log message of the activation request
         """
         return pulumi.get(self, "note")
 
     @note.setter
-    def note(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def note(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "note", value)
 
     @_builtins.property
     @pulumi.getter(name="notifyEmails")
-    def notify_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notify_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of email addresses to notify about an activation status
         """
         return pulumi.get(self, "notify_emails")
 
     @notify_emails.setter
-    def notify_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notify_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notify_emails", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['PropertyIncludeActivationTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['PropertyIncludeActivationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter
-    def validations(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def validations(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The validation information in JSON format
         """
         return pulumi.get(self, "validations")
 
     @validations.setter
-    def validations(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def validations(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "validations", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier of the include
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -372,16 +372,16 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_acknowledge_rule_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compliance_record: Optional[pulumi.Input[Union['PropertyIncludeActivationComplianceRecordArgs', 'PropertyIncludeActivationComplianceRecordArgsDict']]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 note: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeouts: Optional[pulumi.Input[Union['PropertyIncludeActivationTimeoutsArgs', 'PropertyIncludeActivationTimeoutsArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compliance_record: pulumi.Input[Optional[Union['PropertyIncludeActivationComplianceRecordArgs', 'PropertyIncludeActivationComplianceRecordArgsDict']]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 note: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyIncludeActivationTimeoutsArgs', 'PropertyIncludeActivationTimeoutsArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a PropertyIncludeActivation resource with the given unique name, props, and options.
@@ -423,16 +423,16 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_acknowledge_rule_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compliance_record: Optional[pulumi.Input[Union['PropertyIncludeActivationComplianceRecordArgs', 'PropertyIncludeActivationComplianceRecordArgsDict']]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 note: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeouts: Optional[pulumi.Input[Union['PropertyIncludeActivationTimeoutsArgs', 'PropertyIncludeActivationTimeoutsArgsDict']]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
+                 auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compliance_record: pulumi.Input[Optional[Union['PropertyIncludeActivationComplianceRecordArgs', 'PropertyIncludeActivationComplianceRecordArgsDict']]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 note: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyIncludeActivationTimeoutsArgs', 'PropertyIncludeActivationTimeoutsArgsDict']]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -475,17 +475,17 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_acknowledge_rule_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-            compliance_record: Optional[pulumi.Input[Union['PropertyIncludeActivationComplianceRecordArgs', 'PropertyIncludeActivationComplianceRecordArgsDict']]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            include_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network: Optional[pulumi.Input[_builtins.str]] = None,
-            note: Optional[pulumi.Input[_builtins.str]] = None,
-            notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            timeouts: Optional[pulumi.Input[Union['PropertyIncludeActivationTimeoutsArgs', 'PropertyIncludeActivationTimeoutsArgsDict']]] = None,
-            validations: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'PropertyIncludeActivation':
+            auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            compliance_record: pulumi.Input[Optional[Union['PropertyIncludeActivationComplianceRecordArgs', 'PropertyIncludeActivationComplianceRecordArgsDict']]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            include_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            note: pulumi.Input[Optional[_builtins.str]] = None,
+            notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            timeouts: pulumi.Input[Optional[Union['PropertyIncludeActivationTimeoutsArgs', 'PropertyIncludeActivationTimeoutsArgsDict']]] = None,
+            validations: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'PropertyIncludeActivation':
         """
         Get an existing PropertyIncludeActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

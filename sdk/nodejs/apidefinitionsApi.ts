@@ -106,27 +106,27 @@ export interface ApidefinitionsApiState {
     /**
      * JSON-formatted information about the API configuration
      */
-    api?: pulumi.Input<string>;
+    api?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the contract (without the 'ctr_' prefix) assigned to the API.
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the group (without the 'grp_' prefix) assigned to the API.
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * Latest version of the API
      */
-    latestVersion?: pulumi.Input<number>;
+    latestVersion?: pulumi.Input<number | undefined>;
     /**
      * Version of the API currently deployed in production
      */
-    productionVersion?: pulumi.Input<number>;
+    productionVersion?: pulumi.Input<number | undefined>;
     /**
      * Version of the API currently deployed in staging
      */
-    stagingVersion?: pulumi.Input<number>;
+    stagingVersion?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -148,9 +148,9 @@ export interface ApidefinitionsApiArgs {
     /**
      * Version of the API currently deployed in production
      */
-    productionVersion?: pulumi.Input<number>;
+    productionVersion?: pulumi.Input<number | undefined>;
     /**
      * Version of the API currently deployed in staging
      */
-    stagingVersion?: pulumi.Input<number>;
+    stagingVersion?: pulumi.Input<number | undefined>;
 }

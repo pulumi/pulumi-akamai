@@ -94,16 +94,16 @@ export interface AprProtectedOperationsState {
     /**
      * Identifies a security configuration.
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Identifies a protected operation
      */
-    operationId?: pulumi.Input<string>;
-    protectedOperation?: pulumi.Input<string>;
+    operationId?: pulumi.Input<string | undefined>;
+    protectedOperation?: pulumi.Input<string | undefined>;
     /**
      * Identifies a security policy.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

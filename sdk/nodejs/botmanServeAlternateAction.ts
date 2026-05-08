@@ -73,9 +73,9 @@ export class BotmanServeAlternateAction extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanServeAlternateAction resources.
  */
 export interface BotmanServeAlternateActionState {
-    actionId?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
-    serveAlternateAction?: pulumi.Input<string>;
+    actionId?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
+    serveAlternateAction?: pulumi.Input<string | undefined>;
 }
 
 /**

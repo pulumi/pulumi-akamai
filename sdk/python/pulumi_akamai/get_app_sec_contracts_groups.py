@@ -123,8 +123,8 @@ def get_app_sec_contracts_groups(contractid: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'))
-def get_app_sec_contracts_groups_output(contractid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        groupid: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_app_sec_contracts_groups_output(contractid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        groupid: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecContractsGroupsResult]:
     """
     Use this data source to access information about an existing resource.

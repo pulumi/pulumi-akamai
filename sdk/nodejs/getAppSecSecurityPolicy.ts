@@ -48,5 +48,5 @@ export function getAppSecSecurityPolicyOutput(args: GetAppSecSecurityPolicyOutpu
  */
 export interface GetAppSecSecurityPolicyOutputArgs {
     configId: pulumi.Input<number>;
-    securityPolicyName?: pulumi.Input<string>;
+    securityPolicyName?: pulumi.Input<string | undefined>;
 }

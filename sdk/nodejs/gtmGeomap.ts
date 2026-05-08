@@ -83,20 +83,20 @@ export class GtmGeomap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmGeomap resources.
  */
 export interface GtmGeomapState {
-    assignments?: pulumi.Input<pulumi.Input<inputs.GtmGeomapAssignment>[]>;
-    defaultDatacenter?: pulumi.Input<inputs.GtmGeomapDefaultDatacenter>;
-    domain?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GtmGeomapAssignment>[] | undefined>;
+    defaultDatacenter?: pulumi.Input<inputs.GtmGeomapDefaultDatacenter | undefined>;
+    domain?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }
 
 /**
  * The set of arguments for constructing a GtmGeomap resource.
  */
 export interface GtmGeomapArgs {
-    assignments?: pulumi.Input<pulumi.Input<inputs.GtmGeomapAssignment>[]>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GtmGeomapAssignment>[] | undefined>;
     defaultDatacenter: pulumi.Input<inputs.GtmGeomapDefaultDatacenter>;
     domain: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    waitOnComplete?: pulumi.Input<boolean>;
+    name?: pulumi.Input<string | undefined>;
+    waitOnComplete?: pulumi.Input<boolean | undefined>;
 }

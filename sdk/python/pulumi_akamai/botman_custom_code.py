@@ -49,8 +49,8 @@ class BotmanCustomCodeArgs:
 @pulumi.input_type
 class _BotmanCustomCodeState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_code: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_code: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BotmanCustomCode resources.
         """
@@ -61,20 +61,20 @@ class _BotmanCustomCodeState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customCode")
-    def custom_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "custom_code")
 
     @custom_code.setter
-    def custom_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_code", value)
 
 
@@ -84,8 +84,8 @@ class BotmanCustomCode(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a BotmanCustomCode resource with the given unique name, props, and options.
@@ -117,8 +117,8 @@ class BotmanCustomCode(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -144,8 +144,8 @@ class BotmanCustomCode(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            custom_code: Optional[pulumi.Input[_builtins.str]] = None) -> 'BotmanCustomCode':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            custom_code: pulumi.Input[Optional[_builtins.str]] = None) -> 'BotmanCustomCode':
         """
         Get an existing BotmanCustomCode resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

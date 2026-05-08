@@ -73,9 +73,9 @@ export class NetworkListDescription extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkListDescription resources.
  */
 export interface NetworkListDescriptionState {
-    description?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    networkListId?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    networkListId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -83,6 +83,6 @@ export interface NetworkListDescriptionState {
  */
 export interface NetworkListDescriptionArgs {
     description: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     networkListId: pulumi.Input<string>;
 }

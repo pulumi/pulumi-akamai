@@ -62,5 +62,5 @@ export function getIamApiClientOutput(args?: GetIamApiClientOutputArgs, opts?: p
  * A collection of arguments for invoking getIamApiClient.
  */
 export interface GetIamApiClientOutputArgs {
-    clientId?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string | undefined>;
 }

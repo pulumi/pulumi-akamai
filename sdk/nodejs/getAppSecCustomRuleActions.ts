@@ -49,6 +49,6 @@ export function getAppSecCustomRuleActionsOutput(args: GetAppSecCustomRuleAction
  */
 export interface GetAppSecCustomRuleActionsOutputArgs {
     configId: pulumi.Input<number>;
-    customRuleId?: pulumi.Input<number>;
+    customRuleId?: pulumi.Input<number | undefined>;
     securityPolicyId: pulumi.Input<string>;
 }

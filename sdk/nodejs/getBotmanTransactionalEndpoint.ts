@@ -49,6 +49,6 @@ export function getBotmanTransactionalEndpointOutput(args: GetBotmanTransactiona
  */
 export interface GetBotmanTransactionalEndpointOutputArgs {
     configId: pulumi.Input<number>;
-    operationId?: pulumi.Input<string>;
+    operationId?: pulumi.Input<string | undefined>;
     securityPolicyId: pulumi.Input<string>;
 }

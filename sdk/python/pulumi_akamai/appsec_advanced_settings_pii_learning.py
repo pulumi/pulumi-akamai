@@ -58,8 +58,8 @@ class AppsecAdvancedSettingsPiiLearningArgs:
 @pulumi.input_type
 class _AppsecAdvancedSettingsPiiLearningState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_pii_learning: Optional[pulumi.Input[_builtins.bool]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_pii_learning: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AppsecAdvancedSettingsPiiLearning resources.
 
@@ -73,26 +73,26 @@ class _AppsecAdvancedSettingsPiiLearningState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enablePiiLearning")
-    def enable_pii_learning(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_pii_learning(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable the PII learning advanced setting
         """
         return pulumi.get(self, "enable_pii_learning")
 
     @enable_pii_learning.setter
-    def enable_pii_learning(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_pii_learning(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_pii_learning", value)
 
 
@@ -102,8 +102,8 @@ class AppsecAdvancedSettingsPiiLearning(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_pii_learning: Optional[pulumi.Input[_builtins.bool]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_pii_learning: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a AppsecAdvancedSettingsPiiLearning resource with the given unique name, props, and options.
@@ -137,8 +137,8 @@ class AppsecAdvancedSettingsPiiLearning(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_pii_learning: Optional[pulumi.Input[_builtins.bool]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_pii_learning: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -164,8 +164,8 @@ class AppsecAdvancedSettingsPiiLearning(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            enable_pii_learning: Optional[pulumi.Input[_builtins.bool]] = None) -> 'AppsecAdvancedSettingsPiiLearning':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            enable_pii_learning: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AppsecAdvancedSettingsPiiLearning':
         """
         Get an existing AppsecAdvancedSettingsPiiLearning resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

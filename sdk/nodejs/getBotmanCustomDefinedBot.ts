@@ -44,6 +44,6 @@ export function getBotmanCustomDefinedBotOutput(args: GetBotmanCustomDefinedBotO
  * A collection of arguments for invoking getBotmanCustomDefinedBot.
  */
 export interface GetBotmanCustomDefinedBotOutputArgs {
-    botId?: pulumi.Input<string>;
+    botId?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
 }

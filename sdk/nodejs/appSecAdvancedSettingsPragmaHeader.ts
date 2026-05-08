@@ -85,15 +85,15 @@ export interface AppSecAdvancedSettingsPragmaHeaderState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * JSON-formatted information describing the conditions to exclude from the default remove action
      */
-    pragmaHeader?: pulumi.Input<string>;
+    pragmaHeader?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -111,5 +111,5 @@ export interface AppSecAdvancedSettingsPragmaHeaderArgs {
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

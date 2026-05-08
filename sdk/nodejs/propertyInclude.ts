@@ -151,55 +151,55 @@ export interface PropertyIncludeState {
     /**
      * ID of the include in the Identity and Access Management API.
      */
-    assetId?: pulumi.Input<string>;
+    assetId?: pulumi.Input<string | undefined>;
     /**
      * Identifies the contract to which the include is assigned
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Identifies the group to which the include is assigned
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the most recent version of the include
      */
-    latestVersion?: pulumi.Input<number>;
+    latestVersion?: pulumi.Input<number | undefined>;
     /**
      * A descriptive name for the include
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The product assigned to the include
      */
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * The most recent version to be activated to the production network
      */
-    productionVersion?: pulumi.Input<string>;
+    productionVersion?: pulumi.Input<string | undefined>;
     /**
      * Rule validation errors
      */
-    ruleErrors?: pulumi.Input<string>;
+    ruleErrors?: pulumi.Input<string | undefined>;
     /**
      * Indicates the versioned set of features and criteria
      */
-    ruleFormat?: pulumi.Input<string>;
+    ruleFormat?: pulumi.Input<string | undefined>;
     /**
      * Rule validation warnings
      */
-    ruleWarnings?: pulumi.Input<string>;
+    ruleWarnings?: pulumi.Input<string | undefined>;
     /**
      * Property Rules as JSON
      */
-    rules?: pulumi.Input<string>;
+    rules?: pulumi.Input<string | undefined>;
     /**
      * The most recent version to be activated to the staging network
      */
-    stagingVersion?: pulumi.Input<string>;
+    stagingVersion?: pulumi.Input<string | undefined>;
     /**
      * Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -217,11 +217,11 @@ export interface PropertyIncludeArgs {
     /**
      * A descriptive name for the include
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The product assigned to the include
      */
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Indicates the versioned set of features and criteria
      */
@@ -229,7 +229,7 @@ export interface PropertyIncludeArgs {
     /**
      * Property Rules as JSON
      */
-    rules?: pulumi.Input<string>;
+    rules?: pulumi.Input<string | undefined>;
     /**
      * Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
      */

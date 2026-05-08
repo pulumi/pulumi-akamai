@@ -324,8 +324,8 @@ def get_cloudcertificates_certificate(certificate_id: Optional[_builtins.str] = 
         signed_certificate_sha256_fingerprint=pulumi.get(__ret__, 'signed_certificate_sha256_fingerprint'),
         subject=pulumi.get(__ret__, 'subject'),
         trust_chain_pem=pulumi.get(__ret__, 'trust_chain_pem'))
-def get_cloudcertificates_certificate_output(certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             include_hostname_bindings: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_cloudcertificates_certificate_output(certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             include_hostname_bindings: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudcertificatesCertificateResult]:
     """
     Use this data source to access information about an existing resource.

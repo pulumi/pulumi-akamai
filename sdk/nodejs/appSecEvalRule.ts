@@ -103,23 +103,23 @@ export interface AppSecEvalRuleState {
     /**
      * JSON-formatted condition and exception information for the evaluation rule
      */
-    conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Action to be taken when the evaluation rule is triggered
      */
-    ruleAction?: pulumi.Input<string>;
+    ruleAction?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the evaluation rule being modified
      */
-    ruleId?: pulumi.Input<number>;
+    ruleId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -129,7 +129,7 @@ export interface AppSecEvalRuleArgs {
     /**
      * JSON-formatted condition and exception information for the evaluation rule
      */
-    conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */

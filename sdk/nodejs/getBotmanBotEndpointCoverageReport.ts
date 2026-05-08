@@ -46,6 +46,6 @@ export function getBotmanBotEndpointCoverageReportOutput(args?: GetBotmanBotEndp
  * A collection of arguments for invoking getBotmanBotEndpointCoverageReport.
  */
 export interface GetBotmanBotEndpointCoverageReportOutputArgs {
-    configId?: pulumi.Input<number>;
-    operationId?: pulumi.Input<string>;
+    configId?: pulumi.Input<number | undefined>;
+    operationId?: pulumi.Input<string | undefined>;
 }

@@ -20,22 +20,22 @@ __all__ = ['GtmDomainArgs', 'GtmDomain']
 class GtmDomainArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 cname_coalescing_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_error_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_ssl_client_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_ssl_client_private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_timeout_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 end_user_mapping_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_feedback: Optional[pulumi.Input[_builtins.bool]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 cname_coalescing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_error_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_ssl_client_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_ssl_client_private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_timeout_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 email_notification_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 end_user_mapping_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_feedback: pulumi.Input[Optional[_builtins.bool]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a GtmDomain resource.
 
@@ -87,194 +87,194 @@ class GtmDomainArgs:
 
     @_builtins.property
     @pulumi.getter(name="cnameCoalescingEnabled")
-    def cname_coalescing_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cname_coalescing_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "cname_coalescing_enabled")
 
     @cname_coalescing_enabled.setter
-    def cname_coalescing_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cname_coalescing_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cname_coalescing_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "comment")
 
     @comment.setter
-    def comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comment", value)
 
     @_builtins.property
     @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "contract")
 
     @contract.setter
-    def contract(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultErrorPenalty")
-    def default_error_penalty(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def default_error_penalty(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "default_error_penalty")
 
     @default_error_penalty.setter
-    def default_error_penalty(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def default_error_penalty(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "default_error_penalty", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSslClientCertificate")
-    def default_ssl_client_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_ssl_client_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "default_ssl_client_certificate")
 
     @default_ssl_client_certificate.setter
-    def default_ssl_client_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_ssl_client_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_ssl_client_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSslClientPrivateKey")
-    def default_ssl_client_private_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_ssl_client_private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "default_ssl_client_private_key")
 
     @default_ssl_client_private_key.setter
-    def default_ssl_client_private_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_ssl_client_private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_ssl_client_private_key", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTimeoutPenalty")
-    def default_timeout_penalty(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def default_timeout_penalty(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "default_timeout_penalty")
 
     @default_timeout_penalty.setter
-    def default_timeout_penalty(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def default_timeout_penalty(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "default_timeout_penalty", value)
 
     @_builtins.property
     @pulumi.getter(name="emailNotificationLists")
-    def email_notification_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def email_notification_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "email_notification_lists")
 
     @email_notification_lists.setter
-    def email_notification_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def email_notification_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "email_notification_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="endUserMappingEnabled")
-    def end_user_mapping_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def end_user_mapping_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "end_user_mapping_enabled")
 
     @end_user_mapping_enabled.setter
-    def end_user_mapping_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def end_user_mapping_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "end_user_mapping_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "group")
 
     @group.setter
-    def group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter(name="loadFeedback")
-    def load_feedback(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def load_feedback(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "load_feedback")
 
     @load_feedback.setter
-    def load_feedback(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def load_feedback(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "load_feedback", value)
 
     @_builtins.property
     @pulumi.getter(name="loadImbalancePercentage")
-    def load_imbalance_percentage(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def load_imbalance_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
-    def load_imbalance_percentage(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def load_imbalance_percentage(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "load_imbalance_percentage", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="signAndServe")
-    def sign_and_serve(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sign_and_serve(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
         """
         return pulumi.get(self, "sign_and_serve")
 
     @sign_and_serve.setter
-    def sign_and_serve(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sign_and_serve(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sign_and_serve", value)
 
     @_builtins.property
     @pulumi.getter(name="signAndServeAlgorithm")
-    def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sign_and_serve_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         return pulumi.get(self, "sign_and_serve_algorithm")
 
     @sign_and_serve_algorithm.setter
-    def sign_and_serve_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sign_and_serve_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sign_and_serve_algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
 
 @pulumi.input_type
 class _GtmDomainState:
     def __init__(__self__, *,
-                 cname_coalescing_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_error_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_health_max: Optional[pulumi.Input[_builtins.float]] = None,
-                 default_health_multiplier: Optional[pulumi.Input[_builtins.float]] = None,
-                 default_health_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 default_max_unreachable_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_ssl_client_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_ssl_client_private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_timeout_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_unreachable_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 end_user_mapping_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_feedback: Optional[pulumi.Input[_builtins.bool]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 map_update_interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_properties: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_resources: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_test_timeout: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_pingable_region_fraction: Optional[pulumi.Input[_builtins.float]] = None,
-                 min_test_interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ping_interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 ping_packet_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 round_robin_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 servermonitor_liveness_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 servermonitor_load_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 servermonitor_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 cname_coalescing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_error_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_health_max: pulumi.Input[Optional[_builtins.float]] = None,
+                 default_health_multiplier: pulumi.Input[Optional[_builtins.float]] = None,
+                 default_health_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 default_max_unreachable_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_ssl_client_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_ssl_client_private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_timeout_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_unreachable_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 email_notification_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 end_user_mapping_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_feedback: pulumi.Input[Optional[_builtins.bool]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 map_update_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_properties: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_test_timeout: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_pingable_region_fraction: pulumi.Input[Optional[_builtins.float]] = None,
+                 min_test_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ping_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 ping_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 round_robin_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 servermonitor_liveness_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 servermonitor_load_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 servermonitor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering GtmDomain resources.
 
@@ -356,332 +356,332 @@ class _GtmDomainState:
 
     @_builtins.property
     @pulumi.getter(name="cnameCoalescingEnabled")
-    def cname_coalescing_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cname_coalescing_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "cname_coalescing_enabled")
 
     @cname_coalescing_enabled.setter
-    def cname_coalescing_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cname_coalescing_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cname_coalescing_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "comment")
 
     @comment.setter
-    def comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comment", value)
 
     @_builtins.property
     @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "contract")
 
     @contract.setter
-    def contract(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultErrorPenalty")
-    def default_error_penalty(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def default_error_penalty(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "default_error_penalty")
 
     @default_error_penalty.setter
-    def default_error_penalty(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def default_error_penalty(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "default_error_penalty", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultHealthMax")
-    def default_health_max(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def default_health_max(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "default_health_max")
 
     @default_health_max.setter
-    def default_health_max(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def default_health_max(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "default_health_max", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultHealthMultiplier")
-    def default_health_multiplier(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def default_health_multiplier(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "default_health_multiplier")
 
     @default_health_multiplier.setter
-    def default_health_multiplier(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def default_health_multiplier(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "default_health_multiplier", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultHealthThreshold")
-    def default_health_threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def default_health_threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "default_health_threshold")
 
     @default_health_threshold.setter
-    def default_health_threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def default_health_threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "default_health_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultMaxUnreachablePenalty")
-    def default_max_unreachable_penalty(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def default_max_unreachable_penalty(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "default_max_unreachable_penalty")
 
     @default_max_unreachable_penalty.setter
-    def default_max_unreachable_penalty(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def default_max_unreachable_penalty(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "default_max_unreachable_penalty", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSslClientCertificate")
-    def default_ssl_client_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_ssl_client_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "default_ssl_client_certificate")
 
     @default_ssl_client_certificate.setter
-    def default_ssl_client_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_ssl_client_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_ssl_client_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSslClientPrivateKey")
-    def default_ssl_client_private_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_ssl_client_private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "default_ssl_client_private_key")
 
     @default_ssl_client_private_key.setter
-    def default_ssl_client_private_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_ssl_client_private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_ssl_client_private_key", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTimeoutPenalty")
-    def default_timeout_penalty(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def default_timeout_penalty(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "default_timeout_penalty")
 
     @default_timeout_penalty.setter
-    def default_timeout_penalty(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def default_timeout_penalty(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "default_timeout_penalty", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultUnreachableThreshold")
-    def default_unreachable_threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def default_unreachable_threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "default_unreachable_threshold")
 
     @default_unreachable_threshold.setter
-    def default_unreachable_threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def default_unreachable_threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "default_unreachable_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="emailNotificationLists")
-    def email_notification_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def email_notification_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "email_notification_lists")
 
     @email_notification_lists.setter
-    def email_notification_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def email_notification_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "email_notification_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="endUserMappingEnabled")
-    def end_user_mapping_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def end_user_mapping_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "end_user_mapping_enabled")
 
     @end_user_mapping_enabled.setter
-    def end_user_mapping_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def end_user_mapping_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "end_user_mapping_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "group")
 
     @group.setter
-    def group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter(name="loadFeedback")
-    def load_feedback(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def load_feedback(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "load_feedback")
 
     @load_feedback.setter
-    def load_feedback(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def load_feedback(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "load_feedback", value)
 
     @_builtins.property
     @pulumi.getter(name="loadImbalancePercentage")
-    def load_imbalance_percentage(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def load_imbalance_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
-    def load_imbalance_percentage(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def load_imbalance_percentage(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "load_imbalance_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="mapUpdateInterval")
-    def map_update_interval(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def map_update_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "map_update_interval")
 
     @map_update_interval.setter
-    def map_update_interval(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def map_update_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "map_update_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="maxProperties")
-    def max_properties(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_properties(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_properties")
 
     @max_properties.setter
-    def max_properties(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_properties(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="maxResources")
-    def max_resources(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_resources")
 
     @max_resources.setter
-    def max_resources(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTestTimeout")
-    def max_test_timeout(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_test_timeout(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "max_test_timeout")
 
     @max_test_timeout.setter
-    def max_test_timeout(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_test_timeout(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_test_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTtl")
-    def max_ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_ttl")
 
     @max_ttl.setter
-    def max_ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="minPingableRegionFraction")
-    def min_pingable_region_fraction(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def min_pingable_region_fraction(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "min_pingable_region_fraction")
 
     @min_pingable_region_fraction.setter
-    def min_pingable_region_fraction(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def min_pingable_region_fraction(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "min_pingable_region_fraction", value)
 
     @_builtins.property
     @pulumi.getter(name="minTestInterval")
-    def min_test_interval(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_test_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "min_test_interval")
 
     @min_test_interval.setter
-    def min_test_interval(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_test_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_test_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="minTtl")
-    def min_ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "min_ttl")
 
     @min_ttl.setter
-    def min_ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_ttl", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="pingInterval")
-    def ping_interval(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ping_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "ping_interval")
 
     @ping_interval.setter
-    def ping_interval(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ping_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ping_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="pingPacketSize")
-    def ping_packet_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ping_packet_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "ping_packet_size")
 
     @ping_packet_size.setter
-    def ping_packet_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ping_packet_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ping_packet_size", value)
 
     @_builtins.property
     @pulumi.getter(name="roundRobinPrefix")
-    def round_robin_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def round_robin_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "round_robin_prefix")
 
     @round_robin_prefix.setter
-    def round_robin_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def round_robin_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "round_robin_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="servermonitorLivenessCount")
-    def servermonitor_liveness_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def servermonitor_liveness_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "servermonitor_liveness_count")
 
     @servermonitor_liveness_count.setter
-    def servermonitor_liveness_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def servermonitor_liveness_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "servermonitor_liveness_count", value)
 
     @_builtins.property
     @pulumi.getter(name="servermonitorLoadCount")
-    def servermonitor_load_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def servermonitor_load_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "servermonitor_load_count")
 
     @servermonitor_load_count.setter
-    def servermonitor_load_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def servermonitor_load_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "servermonitor_load_count", value)
 
     @_builtins.property
     @pulumi.getter(name="servermonitorPool")
-    def servermonitor_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def servermonitor_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "servermonitor_pool")
 
     @servermonitor_pool.setter
-    def servermonitor_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def servermonitor_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "servermonitor_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="signAndServe")
-    def sign_and_serve(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sign_and_serve(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
         """
         return pulumi.get(self, "sign_and_serve")
 
     @sign_and_serve.setter
-    def sign_and_serve(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sign_and_serve(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sign_and_serve", value)
 
     @_builtins.property
     @pulumi.getter(name="signAndServeAlgorithm")
-    def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sign_and_serve_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512, ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         return pulumi.get(self, "sign_and_serve_algorithm")
 
     @sign_and_serve_algorithm.setter
-    def sign_and_serve_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sign_and_serve_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sign_and_serve_algorithm", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
 
@@ -691,23 +691,23 @@ class GtmDomain(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cname_coalescing_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_error_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_ssl_client_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_ssl_client_private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_timeout_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 end_user_mapping_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_feedback: Optional[pulumi.Input[_builtins.bool]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cname_coalescing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_error_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_ssl_client_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_ssl_client_private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_timeout_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 email_notification_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 end_user_mapping_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_feedback: pulumi.Input[Optional[_builtins.bool]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a GtmDomain resource with the given unique name, props, and options.
@@ -741,23 +741,23 @@ class GtmDomain(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cname_coalescing_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_error_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_ssl_client_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_ssl_client_private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_timeout_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 end_user_mapping_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_feedback: Optional[pulumi.Input[_builtins.bool]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cname_coalescing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_error_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_ssl_client_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_ssl_client_private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_timeout_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 email_notification_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 end_user_mapping_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_feedback: pulumi.Input[Optional[_builtins.bool]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -817,42 +817,42 @@ class GtmDomain(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cname_coalescing_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            comment: Optional[pulumi.Input[_builtins.str]] = None,
-            contract: Optional[pulumi.Input[_builtins.str]] = None,
-            default_error_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-            default_health_max: Optional[pulumi.Input[_builtins.float]] = None,
-            default_health_multiplier: Optional[pulumi.Input[_builtins.float]] = None,
-            default_health_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-            default_max_unreachable_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-            default_ssl_client_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            default_ssl_client_private_key: Optional[pulumi.Input[_builtins.str]] = None,
-            default_timeout_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-            default_unreachable_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-            email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            end_user_mapping_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            group: Optional[pulumi.Input[_builtins.str]] = None,
-            load_feedback: Optional[pulumi.Input[_builtins.bool]] = None,
-            load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-            map_update_interval: Optional[pulumi.Input[_builtins.int]] = None,
-            max_properties: Optional[pulumi.Input[_builtins.int]] = None,
-            max_resources: Optional[pulumi.Input[_builtins.int]] = None,
-            max_test_timeout: Optional[pulumi.Input[_builtins.float]] = None,
-            max_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-            min_pingable_region_fraction: Optional[pulumi.Input[_builtins.float]] = None,
-            min_test_interval: Optional[pulumi.Input[_builtins.int]] = None,
-            min_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            ping_interval: Optional[pulumi.Input[_builtins.int]] = None,
-            ping_packet_size: Optional[pulumi.Input[_builtins.int]] = None,
-            round_robin_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            servermonitor_liveness_count: Optional[pulumi.Input[_builtins.int]] = None,
-            servermonitor_load_count: Optional[pulumi.Input[_builtins.int]] = None,
-            servermonitor_pool: Optional[pulumi.Input[_builtins.str]] = None,
-            sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-            sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None) -> 'GtmDomain':
+            cname_coalescing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            comment: pulumi.Input[Optional[_builtins.str]] = None,
+            contract: pulumi.Input[Optional[_builtins.str]] = None,
+            default_error_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+            default_health_max: pulumi.Input[Optional[_builtins.float]] = None,
+            default_health_multiplier: pulumi.Input[Optional[_builtins.float]] = None,
+            default_health_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            default_max_unreachable_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+            default_ssl_client_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            default_ssl_client_private_key: pulumi.Input[Optional[_builtins.str]] = None,
+            default_timeout_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+            default_unreachable_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            email_notification_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            end_user_mapping_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            load_feedback: pulumi.Input[Optional[_builtins.bool]] = None,
+            load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+            map_update_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            max_properties: pulumi.Input[Optional[_builtins.int]] = None,
+            max_resources: pulumi.Input[Optional[_builtins.int]] = None,
+            max_test_timeout: pulumi.Input[Optional[_builtins.float]] = None,
+            max_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            min_pingable_region_fraction: pulumi.Input[Optional[_builtins.float]] = None,
+            min_test_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            min_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ping_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            ping_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+            round_robin_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            servermonitor_liveness_count: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_load_count: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+            sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None) -> 'GtmDomain':
         """
         Get an existing GtmDomain resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

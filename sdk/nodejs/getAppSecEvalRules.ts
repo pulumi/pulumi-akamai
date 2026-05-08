@@ -52,6 +52,6 @@ export function getAppSecEvalRulesOutput(args: GetAppSecEvalRulesOutputArgs, opt
  */
 export interface GetAppSecEvalRulesOutputArgs {
     configId: pulumi.Input<number>;
-    ruleId?: pulumi.Input<number>;
+    ruleId?: pulumi.Input<number | undefined>;
     securityPolicyId: pulumi.Input<string>;
 }

@@ -42,5 +42,5 @@ export function getBotmanBotDetectionOutput(args?: GetBotmanBotDetectionOutputAr
  * A collection of arguments for invoking getBotmanBotDetection.
  */
 export interface GetBotmanBotDetectionOutputArgs {
-    detectionName?: pulumi.Input<string>;
+    detectionName?: pulumi.Input<string | undefined>;
 }

@@ -64,10 +64,10 @@ export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOu
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateOutputArgs {
-    followLinks?: pulumi.Input<boolean>;
-    templateFile?: pulumi.Input<string>;
-    templates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateTemplateArgs>[]>;
-    varDefinitionFile?: pulumi.Input<string>;
-    varValuesFile?: pulumi.Input<string>;
-    variables?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateVariableArgs>[]>;
+    followLinks?: pulumi.Input<boolean | undefined>;
+    templateFile?: pulumi.Input<string | undefined>;
+    templates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateTemplateArgs>[] | undefined>;
+    varDefinitionFile?: pulumi.Input<string | undefined>;
+    varValuesFile?: pulumi.Input<string | undefined>;
+    variables?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateVariableArgs>[] | undefined>;
 }

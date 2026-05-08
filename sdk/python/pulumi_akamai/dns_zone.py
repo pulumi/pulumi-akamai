@@ -24,15 +24,15 @@ class DnsZoneArgs:
                  contract: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
                  zone: pulumi.Input[_builtins.str],
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_customer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 masters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 outbound_zone_transfer: Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']] = None,
-                 sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 tsig_key: Optional[pulumi.Input['DnsZoneTsigKeyArgs']] = None):
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 outbound_zone_transfer: pulumi.Input[Optional['DnsZoneOutboundZoneTransferArgs']] = None,
+                 sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 tsig_key: pulumi.Input[Optional['DnsZoneTsigKeyArgs']] = None):
         """
         The set of arguments for constructing a DnsZone resource.
 
@@ -89,107 +89,107 @@ class DnsZoneArgs:
 
     @_builtins.property
     @pulumi.getter
-    def comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "comment")
 
     @comment.setter
-    def comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comment", value)
 
     @_builtins.property
     @pulumi.getter(name="endCustomerId")
-    def end_customer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_customer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "end_customer_id")
 
     @end_customer_id.setter
-    def end_customer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_customer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_customer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "group")
 
     @group.setter
-    def group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter
-    def masters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def masters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "masters")
 
     @masters.setter
-    def masters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def masters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "masters", value)
 
     @_builtins.property
     @pulumi.getter(name="outboundZoneTransfer")
-    def outbound_zone_transfer(self) -> Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']]:
+    def outbound_zone_transfer(self) -> pulumi.Input[Optional['DnsZoneOutboundZoneTransferArgs']]:
         """
         Outbound zone transfer properties.
         """
         return pulumi.get(self, "outbound_zone_transfer")
 
     @outbound_zone_transfer.setter
-    def outbound_zone_transfer(self, value: Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']]):
+    def outbound_zone_transfer(self, value: pulumi.Input[Optional['DnsZoneOutboundZoneTransferArgs']]):
         pulumi.set(self, "outbound_zone_transfer", value)
 
     @_builtins.property
     @pulumi.getter(name="signAndServe")
-    def sign_and_serve(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sign_and_serve(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "sign_and_serve")
 
     @sign_and_serve.setter
-    def sign_and_serve(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sign_and_serve(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sign_and_serve", value)
 
     @_builtins.property
     @pulumi.getter(name="signAndServeAlgorithm")
-    def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sign_and_serve_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "sign_and_serve_algorithm")
 
     @sign_and_serve_algorithm.setter
-    def sign_and_serve_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sign_and_serve_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sign_and_serve_algorithm", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="tsigKey")
-    def tsig_key(self) -> Optional[pulumi.Input['DnsZoneTsigKeyArgs']]:
+    def tsig_key(self) -> pulumi.Input[Optional['DnsZoneTsigKeyArgs']]:
         return pulumi.get(self, "tsig_key")
 
     @tsig_key.setter
-    def tsig_key(self, value: Optional[pulumi.Input['DnsZoneTsigKeyArgs']]):
+    def tsig_key(self, value: pulumi.Input[Optional['DnsZoneTsigKeyArgs']]):
         pulumi.set(self, "tsig_key", value)
 
 
 @pulumi.input_type
 class _DnsZoneState:
     def __init__(__self__, *,
-                 activation_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 alias_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_customer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 masters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 outbound_zone_transfer: Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']] = None,
-                 sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 tsig_key: Optional[pulumi.Input['DnsZoneTsigKeyArgs']] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 activation_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 alias_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 outbound_zone_transfer: pulumi.Input[Optional['DnsZoneOutboundZoneTransferArgs']] = None,
+                 sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 tsig_key: pulumi.Input[Optional['DnsZoneTsigKeyArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DnsZone resources.
 
@@ -228,140 +228,140 @@ class _DnsZoneState:
 
     @_builtins.property
     @pulumi.getter(name="activationState")
-    def activation_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def activation_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "activation_state")
 
     @activation_state.setter
-    def activation_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def activation_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "activation_state", value)
 
     @_builtins.property
     @pulumi.getter(name="aliasCount")
-    def alias_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def alias_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "alias_count")
 
     @alias_count.setter
-    def alias_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def alias_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "alias_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "comment")
 
     @comment.setter
-    def comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comment", value)
 
     @_builtins.property
     @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "contract")
 
     @contract.setter
-    def contract(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract", value)
 
     @_builtins.property
     @pulumi.getter(name="endCustomerId")
-    def end_customer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_customer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "end_customer_id")
 
     @end_customer_id.setter
-    def end_customer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_customer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_customer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "group")
 
     @group.setter
-    def group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter
-    def masters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def masters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "masters")
 
     @masters.setter
-    def masters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def masters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "masters", value)
 
     @_builtins.property
     @pulumi.getter(name="outboundZoneTransfer")
-    def outbound_zone_transfer(self) -> Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']]:
+    def outbound_zone_transfer(self) -> pulumi.Input[Optional['DnsZoneOutboundZoneTransferArgs']]:
         """
         Outbound zone transfer properties.
         """
         return pulumi.get(self, "outbound_zone_transfer")
 
     @outbound_zone_transfer.setter
-    def outbound_zone_transfer(self, value: Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']]):
+    def outbound_zone_transfer(self, value: pulumi.Input[Optional['DnsZoneOutboundZoneTransferArgs']]):
         pulumi.set(self, "outbound_zone_transfer", value)
 
     @_builtins.property
     @pulumi.getter(name="signAndServe")
-    def sign_and_serve(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sign_and_serve(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "sign_and_serve")
 
     @sign_and_serve.setter
-    def sign_and_serve(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sign_and_serve(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sign_and_serve", value)
 
     @_builtins.property
     @pulumi.getter(name="signAndServeAlgorithm")
-    def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sign_and_serve_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "sign_and_serve_algorithm")
 
     @sign_and_serve_algorithm.setter
-    def sign_and_serve_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sign_and_serve_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sign_and_serve_algorithm", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="tsigKey")
-    def tsig_key(self) -> Optional[pulumi.Input['DnsZoneTsigKeyArgs']]:
+    def tsig_key(self) -> pulumi.Input[Optional['DnsZoneTsigKeyArgs']]:
         return pulumi.get(self, "tsig_key")
 
     @tsig_key.setter
-    def tsig_key(self, value: Optional[pulumi.Input['DnsZoneTsigKeyArgs']]):
+    def tsig_key(self, value: pulumi.Input[Optional['DnsZoneTsigKeyArgs']]):
         pulumi.set(self, "tsig_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "version_id")
 
     @version_id.setter
-    def version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -371,18 +371,18 @@ class DnsZone(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_customer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 masters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 outbound_zone_transfer: Optional[pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
-                 sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 tsig_key: Optional[pulumi.Input[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 outbound_zone_transfer: pulumi.Input[Optional[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
+                 sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 tsig_key: pulumi.Input[Optional[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a DnsZone resource with the given unique name, props, and options.
@@ -415,18 +415,18 @@ class DnsZone(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_customer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 masters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 outbound_zone_transfer: Optional[pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
-                 sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 tsig_key: Optional[pulumi.Input[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 outbound_zone_transfer: pulumi.Input[Optional[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
+                 sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 tsig_key: pulumi.Input[Optional[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -469,21 +469,21 @@ class DnsZone(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activation_state: Optional[pulumi.Input[_builtins.str]] = None,
-            alias_count: Optional[pulumi.Input[_builtins.int]] = None,
-            comment: Optional[pulumi.Input[_builtins.str]] = None,
-            contract: Optional[pulumi.Input[_builtins.str]] = None,
-            end_customer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group: Optional[pulumi.Input[_builtins.str]] = None,
-            masters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            outbound_zone_transfer: Optional[pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
-            sign_and_serve: Optional[pulumi.Input[_builtins.bool]] = None,
-            sign_and_serve_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            target: Optional[pulumi.Input[_builtins.str]] = None,
-            tsig_key: Optional[pulumi.Input[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict']]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'DnsZone':
+            activation_state: pulumi.Input[Optional[_builtins.str]] = None,
+            alias_count: pulumi.Input[Optional[_builtins.int]] = None,
+            comment: pulumi.Input[Optional[_builtins.str]] = None,
+            contract: pulumi.Input[Optional[_builtins.str]] = None,
+            end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            outbound_zone_transfer: pulumi.Input[Optional[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
+            sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+            sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[_builtins.str]] = None,
+            tsig_key: pulumi.Input[Optional[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'DnsZone':
         """
         Get an existing DnsZone resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

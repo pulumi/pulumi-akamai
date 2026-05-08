@@ -81,7 +81,7 @@ def get_botman_akamai_bot_category(category_name: Optional[_builtins.str] = None
         category_name=pulumi.get(__ret__, 'category_name'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-def get_botman_akamai_bot_category_output(category_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_botman_akamai_bot_category_output(category_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanAkamaiBotCategoryResult]:
     """
     Use this data source to access information about an existing resource.

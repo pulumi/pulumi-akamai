@@ -22,11 +22,11 @@ __all__ = ['MtlstruststoreCaSetArgs', 'MtlstruststoreCaSet']
 class MtlstruststoreCaSetArgs:
     def __init__(__self__, *,
                  certificates: pulumi.Input[Sequence[pulumi.Input['MtlstruststoreCaSetCertificateArgs']]],
-                 allow_insecure_sha1: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['MtlstruststoreCaSetTimeoutsArgs']] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None):
+                 allow_insecure_sha1: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['MtlstruststoreCaSetTimeoutsArgs']] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MtlstruststoreCaSet resource.
 
@@ -62,81 +62,81 @@ class MtlstruststoreCaSetArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowInsecureSha1")
-    def allow_insecure_sha1(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_insecure_sha1(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allows certificates with SHA-1 signatures if enabled.
         """
         return pulumi.get(self, "allow_insecure_sha1")
 
     @allow_insecure_sha1.setter
-    def allow_insecure_sha1(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_insecure_sha1(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_insecure_sha1", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any additional comments you can add to the CA set.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the CA set.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['MtlstruststoreCaSetTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['MtlstruststoreCaSetTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['MtlstruststoreCaSetTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['MtlstruststoreCaSetTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter(name="versionDescription")
-    def version_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional description for the CA set version.
         """
         return pulumi.get(self, "version_description")
 
     @version_description.setter
-    def version_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_description", value)
 
 
 @pulumi.input_type
 class _MtlstruststoreCaSetState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 allow_insecure_sha1: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificates: Optional[pulumi.Input[Sequence[pulumi.Input['MtlstruststoreCaSetCertificateArgs']]]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 production_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 staging_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeouts: Optional[pulumi.Input['MtlstruststoreCaSetTimeoutsArgs']] = None,
-                 version_created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_created_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_modified_date: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 allow_insecure_sha1: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input['MtlstruststoreCaSetCertificateArgs']]]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 production_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 staging_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeouts: pulumi.Input[Optional['MtlstruststoreCaSetTimeoutsArgs']] = None,
+                 version_created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_created_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_modified_date: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MtlstruststoreCaSet resources.
 
@@ -191,191 +191,191 @@ class _MtlstruststoreCaSetState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies the account the CA set belongs to.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="allowInsecureSha1")
-    def allow_insecure_sha1(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_insecure_sha1(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allows certificates with SHA-1 signatures if enabled.
         """
         return pulumi.get(self, "allow_insecure_sha1")
 
     @allow_insecure_sha1.setter
-    def allow_insecure_sha1(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_insecure_sha1(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_insecure_sha1", value)
 
     @_builtins.property
     @pulumi.getter
-    def certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MtlstruststoreCaSetCertificateArgs']]]]:
+    def certificates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MtlstruststoreCaSetCertificateArgs']]]]:
         """
         The certificates that are valid, non-expired, root, or intermediate.
         """
         return pulumi.get(self, "certificates")
 
     @certificates.setter
-    def certificates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MtlstruststoreCaSetCertificateArgs']]]]):
+    def certificates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MtlstruststoreCaSetCertificateArgs']]]]):
         pulumi.set(self, "certificates", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who created the CA set.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdDate")
-    def created_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the CA set was created.
         """
         return pulumi.get(self, "created_date")
 
     @created_date.setter
-    def created_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any additional comments you can add to the CA set.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="latestVersion")
-    def latest_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def latest_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version number for newly created or cloned version in a CA set.
         """
         return pulumi.get(self, "latest_version")
 
     @latest_version.setter
-    def latest_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def latest_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "latest_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the CA set.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="productionVersion")
-    def production_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def production_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the CA set that is active on production.
         """
         return pulumi.get(self, "production_version")
 
     @production_version.setter
-    def production_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def production_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "production_version", value)
 
     @_builtins.property
     @pulumi.getter(name="stagingVersion")
-    def staging_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def staging_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version number of the CA set that is active on staging.
         """
         return pulumi.get(self, "staging_version")
 
     @staging_version.setter
-    def staging_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def staging_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "staging_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['MtlstruststoreCaSetTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['MtlstruststoreCaSetTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['MtlstruststoreCaSetTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['MtlstruststoreCaSetTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter(name="versionCreatedBy")
-    def version_created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who created the CA set version.
         """
         return pulumi.get(self, "version_created_by")
 
     @version_created_by.setter
-    def version_created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="versionCreatedDate")
-    def version_created_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_created_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the CA set version was created.
         """
         return pulumi.get(self, "version_created_date")
 
     @version_created_date.setter
-    def version_created_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_created_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_created_date", value)
 
     @_builtins.property
     @pulumi.getter(name="versionDescription")
-    def version_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional description for the CA set version.
         """
         return pulumi.get(self, "version_description")
 
     @version_description.setter
-    def version_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_description", value)
 
     @_builtins.property
     @pulumi.getter(name="versionModifiedBy")
-    def version_modified_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_modified_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who modified the CA set version.
         """
         return pulumi.get(self, "version_modified_by")
 
     @version_modified_by.setter
-    def version_modified_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_modified_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_modified_by", value)
 
     @_builtins.property
     @pulumi.getter(name="versionModifiedDate")
-    def version_modified_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_modified_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the CA set version was modified.
         """
         return pulumi.get(self, "version_modified_date")
 
     @version_modified_date.setter
-    def version_modified_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_modified_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_modified_date", value)
 
 
@@ -385,12 +385,12 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_insecure_sha1: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict']]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 allow_insecure_sha1: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict']]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a MtlstruststoreCaSet resource with the given unique name, props, and options.
@@ -427,12 +427,12 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_insecure_sha1: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict']]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 allow_insecure_sha1: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict']]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -470,22 +470,22 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            allow_insecure_sha1: Optional[pulumi.Input[_builtins.bool]] = None,
-            certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_date: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            production_version: Optional[pulumi.Input[_builtins.int]] = None,
-            staging_version: Optional[pulumi.Input[_builtins.int]] = None,
-            timeouts: Optional[pulumi.Input[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict']]] = None,
-            version_created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            version_created_date: Optional[pulumi.Input[_builtins.str]] = None,
-            version_description: Optional[pulumi.Input[_builtins.str]] = None,
-            version_modified_by: Optional[pulumi.Input[_builtins.str]] = None,
-            version_modified_date: Optional[pulumi.Input[_builtins.str]] = None) -> 'MtlstruststoreCaSet':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            allow_insecure_sha1: pulumi.Input[Optional[_builtins.bool]] = None,
+            certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            production_version: pulumi.Input[Optional[_builtins.int]] = None,
+            staging_version: pulumi.Input[Optional[_builtins.int]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict']]] = None,
+            version_created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            version_created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            version_description: pulumi.Input[Optional[_builtins.str]] = None,
+            version_modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            version_modified_date: pulumi.Input[Optional[_builtins.str]] = None) -> 'MtlstruststoreCaSet':
         """
         Get an existing MtlstruststoreCaSet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

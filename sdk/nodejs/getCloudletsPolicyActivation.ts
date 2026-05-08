@@ -49,7 +49,7 @@ export function getCloudletsPolicyActivationOutput(args: GetCloudletsPolicyActiv
  * A collection of arguments for invoking getCloudletsPolicyActivation.
  */
 export interface GetCloudletsPolicyActivationOutputArgs {
-    associatedProperties?: pulumi.Input<pulumi.Input<string>[]>;
+    associatedProperties?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     network: pulumi.Input<string>;
     policyId: pulumi.Input<number>;
 }

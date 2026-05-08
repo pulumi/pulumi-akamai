@@ -88,15 +88,15 @@ export interface IamBlockedUserPropertiesState {
     /**
      * List of properties to block for a user.
      */
-    blockedProperties?: pulumi.Input<pulumi.Input<number>[]>;
+    blockedProperties?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * A unique identifier for a group.
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
      */
-    identityId?: pulumi.Input<string>;
+    identityId?: pulumi.Input<string | undefined>;
 }
 
 /**

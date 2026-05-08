@@ -90,15 +90,15 @@ export interface AppsecAdvancedSettingsAsePenaltyBoxState {
     /**
      * Block duration for ASE Penalty Box in minutes.
      */
-    blockDuration?: pulumi.Input<number>;
+    blockDuration?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security configuration.
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Qualification exclusions for ASE Penalty Box. Contains attack groups and rules.
      */
-    qualificationExclusions?: pulumi.Input<inputs.AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions>;
+    qualificationExclusions?: pulumi.Input<inputs.AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions | undefined>;
 }
 
 /**

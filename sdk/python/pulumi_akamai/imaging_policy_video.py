@@ -23,7 +23,7 @@ class ImagingPolicyVideoArgs:
                  json: pulumi.Input[_builtins.str],
                  policy_id: pulumi.Input[_builtins.str],
                  policyset_id: pulumi.Input[_builtins.str],
-                 activate_on_production: Optional[pulumi.Input[_builtins.bool]] = None):
+                 activate_on_production: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ImagingPolicyVideo resource.
 
@@ -90,26 +90,26 @@ class ImagingPolicyVideoArgs:
 
     @_builtins.property
     @pulumi.getter(name="activateOnProduction")
-    def activate_on_production(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def activate_on_production(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         """
         return pulumi.get(self, "activate_on_production")
 
     @activate_on_production.setter
-    def activate_on_production(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def activate_on_production(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "activate_on_production", value)
 
 
 @pulumi.input_type
 class _ImagingPolicyVideoState:
     def __init__(__self__, *,
-                 activate_on_production: Optional[pulumi.Input[_builtins.bool]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 json: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 policyset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 activate_on_production: pulumi.Input[Optional[_builtins.bool]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 json: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 policyset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ImagingPolicyVideo resources.
 
@@ -135,74 +135,74 @@ class _ImagingPolicyVideoState:
 
     @_builtins.property
     @pulumi.getter(name="activateOnProduction")
-    def activate_on_production(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def activate_on_production(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
         """
         return pulumi.get(self, "activate_on_production")
 
     @activate_on_production.setter
-    def activate_on_production(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def activate_on_production(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "activate_on_production", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for the Akamai Contract containing the Policy Set(s)
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def json(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def json(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A JSON encoded policy
         """
         return pulumi.get(self, "json")
 
     @json.setter
-    def json(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def json(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "json", value)
 
     @_builtins.property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for a Policy. It is not possible to modify the id of the policy.
         """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
-    def policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="policysetId")
-    def policyset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policyset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for the Image & Video Manager Policy Set.
         """
         return pulumi.get(self, "policyset_id")
 
     @policyset_id.setter
-    def policyset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policyset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policyset_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The version number of this policy version
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -212,11 +212,11 @@ class ImagingPolicyVideo(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate_on_production: Optional[pulumi.Input[_builtins.bool]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 json: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 policyset_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 activate_on_production: pulumi.Input[Optional[_builtins.bool]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 json: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 policyset_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a ImagingPolicyVideo resource with the given unique name, props, and options.
@@ -253,11 +253,11 @@ class ImagingPolicyVideo(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate_on_production: Optional[pulumi.Input[_builtins.bool]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 json: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 policyset_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 activate_on_production: pulumi.Input[Optional[_builtins.bool]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 json: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 policyset_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -291,12 +291,12 @@ class ImagingPolicyVideo(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activate_on_production: Optional[pulumi.Input[_builtins.bool]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            json: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            policyset_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'ImagingPolicyVideo':
+            activate_on_production: pulumi.Input[Optional[_builtins.bool]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            json: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            policyset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'ImagingPolicyVideo':
         """
         Get an existing ImagingPolicyVideo resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

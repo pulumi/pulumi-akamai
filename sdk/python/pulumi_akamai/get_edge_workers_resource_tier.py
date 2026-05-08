@@ -93,8 +93,8 @@ def get_edge_workers_resource_tier(contract_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         resource_tier_id=pulumi.get(__ret__, 'resource_tier_id'),
         resource_tier_name=pulumi.get(__ret__, 'resource_tier_name'))
-def get_edge_workers_resource_tier_output(contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          resource_tier_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_edge_workers_resource_tier_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          resource_tier_name: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgeWorkersResourceTierResult]:
     """
     Use this data source to access information about an existing resource.

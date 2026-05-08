@@ -21,8 +21,8 @@ class AppsecAdvancedSettingsRequestBodyArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[_builtins.int],
                  request_body_inspection_limit: pulumi.Input[_builtins.str],
-                 request_body_inspection_limit_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 request_body_inspection_limit_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppsecAdvancedSettingsRequestBody resource.
 
@@ -64,36 +64,36 @@ class AppsecAdvancedSettingsRequestBodyArgs:
 
     @_builtins.property
     @pulumi.getter(name="requestBodyInspectionLimitOverride")
-    def request_body_inspection_limit_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def request_body_inspection_limit_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the Request body inspection size should be overridden at policy
         """
         return pulumi.get(self, "request_body_inspection_limit_override")
 
     @request_body_inspection_limit_override.setter
-    def request_body_inspection_limit_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def request_body_inspection_limit_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "request_body_inspection_limit_override", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
 @pulumi.input_type
 class _AppsecAdvancedSettingsRequestBodyState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 request_body_inspection_limit: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_body_inspection_limit_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 request_body_inspection_limit: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_body_inspection_limit_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppsecAdvancedSettingsRequestBody resources.
 
@@ -113,50 +113,50 @@ class _AppsecAdvancedSettingsRequestBodyState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="requestBodyInspectionLimit")
-    def request_body_inspection_limit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_body_inspection_limit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
         """
         return pulumi.get(self, "request_body_inspection_limit")
 
     @request_body_inspection_limit.setter
-    def request_body_inspection_limit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_body_inspection_limit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_body_inspection_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="requestBodyInspectionLimitOverride")
-    def request_body_inspection_limit_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def request_body_inspection_limit_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the Request body inspection size should be overridden at policy
         """
         return pulumi.get(self, "request_body_inspection_limit_override")
 
     @request_body_inspection_limit_override.setter
-    def request_body_inspection_limit_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def request_body_inspection_limit_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "request_body_inspection_limit_override", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -166,10 +166,10 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 request_body_inspection_limit: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_body_inspection_limit_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 request_body_inspection_limit: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_body_inspection_limit_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppsecAdvancedSettingsRequestBody resource with the given unique name, props, and options.
@@ -205,10 +205,10 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 request_body_inspection_limit: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_body_inspection_limit_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 request_body_inspection_limit: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_body_inspection_limit_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -236,10 +236,10 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            request_body_inspection_limit: Optional[pulumi.Input[_builtins.str]] = None,
-            request_body_inspection_limit_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppsecAdvancedSettingsRequestBody':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            request_body_inspection_limit: pulumi.Input[Optional[_builtins.str]] = None,
+            request_body_inspection_limit_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppsecAdvancedSettingsRequestBody':
         """
         Get an existing AppsecAdvancedSettingsRequestBody resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

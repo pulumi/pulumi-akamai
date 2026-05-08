@@ -115,9 +115,9 @@ def get_appsec_url_protection_policy_actions(config_id: Optional[_builtins.int] 
         max_rate_threshold_action=pulumi.get(__ret__, 'max_rate_threshold_action'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         url_protection_policy_id=pulumi.get(__ret__, 'url_protection_policy_id'))
-def get_appsec_url_protection_policy_actions_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                                    security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    url_protection_policy_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_appsec_url_protection_policy_actions_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                                    security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    url_protection_policy_id: pulumi.Input[Optional[_builtins.int]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecUrlProtectionPolicyActionsResult]:
     """
     Use this data source to access information about an existing resource.

@@ -20,15 +20,15 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 cache_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 config: Optional[pulumi.Input['ProviderConfigArgs']] = None,
-                 config_section: Optional[pulumi.Input[_builtins.str]] = None,
-                 edgerc: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retry_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_wait_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_wait_min: Optional[pulumi.Input[_builtins.int]] = None):
+                 cache_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 config: pulumi.Input[Optional['ProviderConfigArgs']] = None,
+                 config_section: pulumi.Input[Optional[_builtins.str]] = None,
+                 edgerc: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retry_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_wait_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_wait_min: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a Provider resource.
 
@@ -60,101 +60,101 @@ class ProviderArgs:
 
     @_builtins.property
     @pulumi.getter(name="cacheEnabled")
-    def cache_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cache_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "cache_enabled")
 
     @cache_enabled.setter
-    def cache_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cache_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cache_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input['ProviderConfigArgs']]:
+    def config(self) -> pulumi.Input[Optional['ProviderConfigArgs']]:
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input['ProviderConfigArgs']]):
+    def config(self, value: pulumi.Input[Optional['ProviderConfigArgs']]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="configSection")
-    def config_section(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_section(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The section of the edgerc file to use for configuration
         """
         return pulumi.get(self, "config_section")
 
     @config_section.setter
-    def config_section(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_section(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_section", value)
 
     @_builtins.property
     @pulumi.getter
-    def edgerc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def edgerc(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "edgerc")
 
     @edgerc.setter
-    def edgerc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def edgerc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "edgerc", value)
 
     @_builtins.property
     @pulumi.getter(name="requestLimit")
-    def request_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def request_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of API requests to be made per second (0 for no limit)
         """
         return pulumi.get(self, "request_limit")
 
     @request_limit.setter
-    def request_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def request_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "request_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="retryDisabled")
-    def retry_disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def retry_disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Should the retries of API requests be disabled, default false
         """
         return pulumi.get(self, "retry_disabled")
 
     @retry_disabled.setter
-    def retry_disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def retry_disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "retry_disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="retryMax")
-    def retry_max(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retry_max(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number retires of API requests, default 10
         """
         return pulumi.get(self, "retry_max")
 
     @retry_max.setter
-    def retry_max(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retry_max(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retry_max", value)
 
     @_builtins.property
     @pulumi.getter(name="retryWaitMax")
-    def retry_wait_max(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retry_wait_max(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum wait time in seconds between API requests retries, default is 30 sec
         """
         return pulumi.get(self, "retry_wait_max")
 
     @retry_wait_max.setter
-    def retry_wait_max(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retry_wait_max(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retry_wait_max", value)
 
     @_builtins.property
     @pulumi.getter(name="retryWaitMin")
-    def retry_wait_min(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retry_wait_min(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum wait time in seconds between API requests retries, default is 1 sec
         """
         return pulumi.get(self, "retry_wait_min")
 
     @retry_wait_min.setter
-    def retry_wait_min(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retry_wait_min(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retry_wait_min", value)
 
 
@@ -164,15 +164,15 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cache_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 config: Optional[pulumi.Input[Union['ProviderConfigArgs', 'ProviderConfigArgsDict']]] = None,
-                 config_section: Optional[pulumi.Input[_builtins.str]] = None,
-                 edgerc: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retry_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_wait_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_wait_min: Optional[pulumi.Input[_builtins.int]] = None,
+                 cache_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 config: pulumi.Input[Optional[Union['ProviderConfigArgs', 'ProviderConfigArgsDict']]] = None,
+                 config_section: pulumi.Input[Optional[_builtins.str]] = None,
+                 edgerc: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retry_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_wait_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_wait_min: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         The provider type for the akamai package. By default, resources use package-wide configuration
@@ -218,15 +218,15 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cache_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 config: Optional[pulumi.Input[Union['ProviderConfigArgs', 'ProviderConfigArgsDict']]] = None,
-                 config_section: Optional[pulumi.Input[_builtins.str]] = None,
-                 edgerc: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retry_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_wait_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_wait_min: Optional[pulumi.Input[_builtins.int]] = None,
+                 cache_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 config: pulumi.Input[Optional[Union['ProviderConfigArgs', 'ProviderConfigArgsDict']]] = None,
+                 config_section: pulumi.Input[Optional[_builtins.str]] = None,
+                 edgerc: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retry_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_wait_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_wait_min: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):

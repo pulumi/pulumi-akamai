@@ -84,12 +84,12 @@ export interface CloudwrapperActivationState {
     /**
      * The configuration you want to activate.
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique hash value of the configuration.
      */
-    revision?: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.CloudwrapperActivationTimeouts>;
+    revision?: pulumi.Input<string | undefined>;
+    timeouts?: pulumi.Input<inputs.CloudwrapperActivationTimeouts | undefined>;
 }
 
 /**
@@ -104,5 +104,5 @@ export interface CloudwrapperActivationArgs {
      * Unique hash value of the configuration.
      */
     revision: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.CloudwrapperActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.CloudwrapperActivationTimeouts | undefined>;
 }

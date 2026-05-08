@@ -182,12 +182,12 @@ def get_property_account_hostnames(cname_to: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         network=pulumi.get(__ret__, 'network'),
         sort=pulumi.get(__ret__, 'sort'))
-def get_property_account_hostnames_output(cname_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          contract_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          hostname: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          network: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          sort: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_property_account_hostnames_output(cname_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          contract_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          hostname: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          network: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          sort: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyAccountHostnamesResult]:
     """
     Use this data source to access information about an existing resource.

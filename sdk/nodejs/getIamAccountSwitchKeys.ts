@@ -48,6 +48,6 @@ export function getIamAccountSwitchKeysOutput(args?: GetIamAccountSwitchKeysOutp
  * A collection of arguments for invoking getIamAccountSwitchKeys.
  */
 export interface GetIamAccountSwitchKeysOutputArgs {
-    clientId?: pulumi.Input<string>;
-    filter?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string | undefined>;
+    filter?: pulumi.Input<string | undefined>;
 }

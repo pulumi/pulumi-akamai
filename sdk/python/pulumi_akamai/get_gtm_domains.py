@@ -73,7 +73,7 @@ def get_gtm_domains(domains: Optional[Sequence[Union['GetGtmDomainsDomainArgs', 
     return AwaitableGetGtmDomainsResult(
         domains=pulumi.get(__ret__, 'domains'),
         id=pulumi.get(__ret__, 'id'))
-def get_gtm_domains_output(domains: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainsDomainArgs', 'GetGtmDomainsDomainArgsDict']]]]] = None,
+def get_gtm_domains_output(domains: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmDomainsDomainArgs', 'GetGtmDomainsDomainArgsDict']]]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmDomainsResult]:
     """
     Use this data source to access information about an existing resource.

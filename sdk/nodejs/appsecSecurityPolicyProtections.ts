@@ -139,51 +139,51 @@ export interface AppsecSecurityPolicyProtectionsState {
     /**
      * Whether to enable account protection controls.
      */
-    applyAccountProtectionControls?: pulumi.Input<boolean>;
+    applyAccountProtectionControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable API constraints.
      */
-    applyApiConstraints?: pulumi.Input<boolean>;
+    applyApiConstraints?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable application layer controls.
      */
-    applyApplicationLayerControls?: pulumi.Input<boolean>;
+    applyApplicationLayerControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable botman controls.
      */
-    applyBotmanControls?: pulumi.Input<boolean>;
+    applyBotmanControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable malware controls.
      */
-    applyMalwareControls?: pulumi.Input<boolean>;
+    applyMalwareControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable network layer controls.
      */
-    applyNetworkLayerControls?: pulumi.Input<boolean>;
+    applyNetworkLayerControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable rate controls.
      */
-    applyRateControls?: pulumi.Input<boolean>;
+    applyRateControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable reputation controls.
      */
-    applyReputationControls?: pulumi.Input<boolean>;
+    applyReputationControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable slow post controls.
      */
-    applySlowPostControls?: pulumi.Input<boolean>;
+    applySlowPostControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable URL protection controls.
      */
-    applyUrlProtectionControls?: pulumi.Input<boolean>;
+    applyUrlProtectionControls?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier of the security configuration.
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -193,43 +193,43 @@ export interface AppsecSecurityPolicyProtectionsArgs {
     /**
      * Whether to enable account protection controls.
      */
-    applyAccountProtectionControls?: pulumi.Input<boolean>;
+    applyAccountProtectionControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable API constraints.
      */
-    applyApiConstraints?: pulumi.Input<boolean>;
+    applyApiConstraints?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable application layer controls.
      */
-    applyApplicationLayerControls?: pulumi.Input<boolean>;
+    applyApplicationLayerControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable botman controls.
      */
-    applyBotmanControls?: pulumi.Input<boolean>;
+    applyBotmanControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable malware controls.
      */
-    applyMalwareControls?: pulumi.Input<boolean>;
+    applyMalwareControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable network layer controls.
      */
-    applyNetworkLayerControls?: pulumi.Input<boolean>;
+    applyNetworkLayerControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable rate controls.
      */
-    applyRateControls?: pulumi.Input<boolean>;
+    applyRateControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable reputation controls.
      */
-    applyReputationControls?: pulumi.Input<boolean>;
+    applyReputationControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable slow post controls.
      */
-    applySlowPostControls?: pulumi.Input<boolean>;
+    applySlowPostControls?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable URL protection controls.
      */
-    applyUrlProtectionControls?: pulumi.Input<boolean>;
+    applyUrlProtectionControls?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier of the security configuration.
      */

@@ -125,9 +125,9 @@ def get_app_sec_api_endpoints(api_name: Optional[_builtins.str] = None,
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_app_sec_api_endpoints_output(api_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                     security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_app_sec_api_endpoints_output(api_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                     security_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecApiEndpointsResult]:
     """
     Use this data source to access information about an existing resource.

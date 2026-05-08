@@ -115,9 +115,9 @@ def get_app_sec_export_configuration(config_id: Optional[_builtins.int] = None,
         output_text=pulumi.get(__ret__, 'output_text'),
         searches=pulumi.get(__ret__, 'searches'),
         version=pulumi.get(__ret__, 'version'))
-def get_app_sec_export_configuration_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                            searches: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                            version: Optional[pulumi.Input[_builtins.int]] = None,
+def get_app_sec_export_configuration_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                            searches: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                            version: pulumi.Input[Optional[_builtins.int]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecExportConfigurationResult]:
     """
     Use this data source to access information about an existing resource.

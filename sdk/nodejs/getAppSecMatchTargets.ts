@@ -46,5 +46,5 @@ export function getAppSecMatchTargetsOutput(args: GetAppSecMatchTargetsOutputArg
  */
 export interface GetAppSecMatchTargetsOutputArgs {
     configId: pulumi.Input<number>;
-    matchTargetId?: pulumi.Input<number>;
+    matchTargetId?: pulumi.Input<number | undefined>;
 }

@@ -93,8 +93,8 @@ def get_botman_bot_endpoint_coverage_report(config_id: Optional[_builtins.int] =
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         operation_id=pulumi.get(__ret__, 'operation_id'))
-def get_botman_bot_endpoint_coverage_report_output(config_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                   operation_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_botman_bot_endpoint_coverage_report_output(config_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                   operation_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanBotEndpointCoverageReportResult]:
     """
     Use this data source to access information about an existing resource.

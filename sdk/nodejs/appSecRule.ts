@@ -100,23 +100,23 @@ export interface AppSecRuleState {
     /**
      * JSON-formatted condition and exception information for the rule
      */
-    conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Action to be taken when the rule is triggered
      */
-    ruleAction?: pulumi.Input<string>;
+    ruleAction?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the rule
      */
-    ruleId?: pulumi.Input<number>;
+    ruleId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -126,7 +126,7 @@ export interface AppSecRuleArgs {
     /**
      * JSON-formatted condition and exception information for the rule
      */
-    conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security configuration
      */
@@ -134,7 +134,7 @@ export interface AppSecRuleArgs {
     /**
      * Action to be taken when the rule is triggered
      */
-    ruleAction?: pulumi.Input<string>;
+    ruleAction?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the rule
      */

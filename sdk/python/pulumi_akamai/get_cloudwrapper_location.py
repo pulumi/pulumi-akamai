@@ -103,8 +103,8 @@ def get_cloudwrapper_location(location_name: Optional[_builtins.str] = None,
         location_name=pulumi.get(__ret__, 'location_name'),
         traffic_type=pulumi.get(__ret__, 'traffic_type'),
         traffic_type_id=pulumi.get(__ret__, 'traffic_type_id'))
-def get_cloudwrapper_location_output(location_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                     traffic_type: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloudwrapper_location_output(location_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                     traffic_type: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperLocationResult]:
     """
     Use this data source to access information about an existing resource.

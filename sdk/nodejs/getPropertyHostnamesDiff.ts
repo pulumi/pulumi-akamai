@@ -51,7 +51,7 @@ export function getPropertyHostnamesDiffOutput(args: GetPropertyHostnamesDiffOut
  * A collection of arguments for invoking getPropertyHostnamesDiff.
  */
 export interface GetPropertyHostnamesDiffOutputArgs {
-    contractId?: pulumi.Input<string>;
-    groupId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
+    groupId?: pulumi.Input<string | undefined>;
     propertyId: pulumi.Input<string>;
 }

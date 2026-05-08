@@ -105,9 +105,9 @@ def get_edgekv_group_items(group_name: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         namespace_name=pulumi.get(__ret__, 'namespace_name'),
         network=pulumi.get(__ret__, 'network'))
-def get_edgekv_group_items_output(group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                  namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                  network: Optional[pulumi.Input[_builtins.str]] = None,
+def get_edgekv_group_items_output(group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                  namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                  network: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgekvGroupItemsResult]:
     """
     Use this data source to access information about an existing resource.

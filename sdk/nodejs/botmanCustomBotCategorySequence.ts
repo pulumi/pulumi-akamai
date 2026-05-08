@@ -70,8 +70,8 @@ export class BotmanCustomBotCategorySequence extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanCustomBotCategorySequence resources.
  */
 export interface BotmanCustomBotCategorySequenceState {
-    categoryIds?: pulumi.Input<pulumi.Input<string>[]>;
-    configId?: pulumi.Input<number>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    configId?: pulumi.Input<number | undefined>;
 }
 
 /**

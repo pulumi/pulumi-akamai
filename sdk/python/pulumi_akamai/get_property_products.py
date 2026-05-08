@@ -82,7 +82,7 @@ def get_property_products(contract_id: Optional[_builtins.str] = None,
         contract_id=pulumi.get(__ret__, 'contract_id'),
         id=pulumi.get(__ret__, 'id'),
         products=pulumi.get(__ret__, 'products'))
-def get_property_products_output(contract_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_property_products_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyProductsResult]:
     """
     Use this data source to access information about an existing resource.

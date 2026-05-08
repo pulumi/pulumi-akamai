@@ -22,9 +22,9 @@ __all__ = ['CpsDvValidationArgs', 'CpsDvValidation']
 class CpsDvValidationArgs:
     def __init__(__self__, *,
                  enrollment_id: pulumi.Input[_builtins.int],
-                 acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeouts: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']] = None):
+                 acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 timeouts: pulumi.Input[Optional['CpsDvValidationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpsDvValidation resource.
 
@@ -55,49 +55,49 @@ class CpsDvValidationArgs:
 
     @_builtins.property
     @pulumi.getter(name="acknowledgePostVerificationWarnings")
-    def acknowledge_post_verification_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_post_verification_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to acknowledge all post-verification warnings
         """
         return pulumi.get(self, "acknowledge_post_verification_warnings")
 
     @acknowledge_post_verification_warnings.setter
-    def acknowledge_post_verification_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_post_verification_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_post_verification_warnings", value)
 
     @_builtins.property
     @pulumi.getter
-    def sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of SANs
         """
         return pulumi.get(self, "sans")
 
     @sans.setter
-    def sans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sans", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CpsDvValidationTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CpsDvValidationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _CpsDvValidationState:
     def __init__(__self__, *,
-                 acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']] = None):
+                 acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['CpsDvValidationTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CpsDvValidation resources.
 
@@ -120,62 +120,62 @@ class _CpsDvValidationState:
 
     @_builtins.property
     @pulumi.getter(name="acknowledgePostVerificationWarnings")
-    def acknowledge_post_verification_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_post_verification_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to acknowledge all post-verification warnings
         """
         return pulumi.get(self, "acknowledge_post_verification_warnings")
 
     @acknowledge_post_verification_warnings.setter
-    def acknowledge_post_verification_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_post_verification_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_post_verification_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="enrollmentId")
-    def enrollment_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def enrollment_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier of enrollment
         """
         return pulumi.get(self, "enrollment_id")
 
     @enrollment_id.setter
-    def enrollment_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def enrollment_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "enrollment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of SANs
         """
         return pulumi.get(self, "sans")
 
     @sans.setter
-    def sans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sans", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of validation
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CpsDvValidationTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CpsDvValidationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
@@ -185,10 +185,10 @@ class CpsDvValidation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None,
+                 acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CpsDvValidation resource with the given unique name, props, and options.
@@ -224,10 +224,10 @@ class CpsDvValidation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None,
+                 acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -254,11 +254,11 @@ class CpsDvValidation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acknowledge_post_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-            enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
-            sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None) -> 'CpsDvValidation':
+            acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+            sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None) -> 'CpsDvValidation':
         """
         Get an existing CpsDvValidation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

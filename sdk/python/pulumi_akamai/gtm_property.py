@@ -26,33 +26,33 @@ class GtmPropertyArgs:
                  handout_mode: pulumi.Input[_builtins.str],
                  score_aggregation_type: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 backup_cname: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 balance_by_download_score: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cname: Optional[pulumi.Input[_builtins.str]] = None,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 dynamic_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 failback_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 failover_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 ghost_demand_reporting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 health_max: Optional[pulumi.Input[_builtins.float]] = None,
-                 health_multiplier: Optional[pulumi.Input[_builtins.float]] = None,
-                 health_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-                 liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 map_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_unreachable_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_change_notification_webhook: Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']] = None,
-                 static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
-                 stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
-                 stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
-                 unreachable_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 use_computed_targets: Optional[pulumi.Input[_builtins.bool]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 backup_cname: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 balance_by_download_score: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cname: pulumi.Input[Optional[_builtins.str]] = None,
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 dynamic_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 failback_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 failover_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 ghost_demand_reporting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 health_max: pulumi.Input[Optional[_builtins.float]] = None,
+                 health_multiplier: pulumi.Input[Optional[_builtins.float]] = None,
+                 health_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+                 liveness_tests: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 map_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_unreachable_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_live_fraction: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_change_notification_webhook: pulumi.Input[Optional['GtmPropertyStateChangeNotificationWebhookArgs']] = None,
+                 static_rr_sets: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
+                 stickiness_bonus_constant: pulumi.Input[Optional[_builtins.int]] = None,
+                 stickiness_bonus_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 traffic_targets: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
+                 unreachable_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 use_computed_targets: pulumi.Input[Optional[_builtins.bool]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a GtmProperty resource.
         """
@@ -163,285 +163,285 @@ class GtmPropertyArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupCname")
-    def backup_cname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_cname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "backup_cname")
 
     @backup_cname.setter
-    def backup_cname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_cname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_cname", value)
 
     @_builtins.property
     @pulumi.getter(name="backupIp")
-    def backup_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "backup_ip")
 
     @backup_ip.setter
-    def backup_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="balanceByDownloadScore")
-    def balance_by_download_score(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def balance_by_download_score(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "balance_by_download_score")
 
     @balance_by_download_score.setter
-    def balance_by_download_score(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def balance_by_download_score(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "balance_by_download_score", value)
 
     @_builtins.property
     @pulumi.getter
-    def cname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cname")
 
     @cname.setter
-    def cname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cname", value)
 
     @_builtins.property
     @pulumi.getter
-    def comments(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comments(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "comments")
 
     @comments.setter
-    def comments(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comments(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comments", value)
 
     @_builtins.property
     @pulumi.getter(name="dynamicTtl")
-    def dynamic_ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dynamic_ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "dynamic_ttl")
 
     @dynamic_ttl.setter
-    def dynamic_ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dynamic_ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dynamic_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="failbackDelay")
-    def failback_delay(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failback_delay(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "failback_delay")
 
     @failback_delay.setter
-    def failback_delay(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failback_delay(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failback_delay", value)
 
     @_builtins.property
     @pulumi.getter(name="failoverDelay")
-    def failover_delay(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failover_delay(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "failover_delay")
 
     @failover_delay.setter
-    def failover_delay(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failover_delay(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failover_delay", value)
 
     @_builtins.property
     @pulumi.getter(name="ghostDemandReporting")
-    def ghost_demand_reporting(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ghost_demand_reporting(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ghost_demand_reporting")
 
     @ghost_demand_reporting.setter
-    def ghost_demand_reporting(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ghost_demand_reporting(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ghost_demand_reporting", value)
 
     @_builtins.property
     @pulumi.getter(name="healthMax")
-    def health_max(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def health_max(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "health_max")
 
     @health_max.setter
-    def health_max(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def health_max(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "health_max", value)
 
     @_builtins.property
     @pulumi.getter(name="healthMultiplier")
-    def health_multiplier(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def health_multiplier(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "health_multiplier")
 
     @health_multiplier.setter
-    def health_multiplier(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def health_multiplier(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "health_multiplier", value)
 
     @_builtins.property
     @pulumi.getter(name="healthThreshold")
-    def health_threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def health_threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "health_threshold")
 
     @health_threshold.setter
-    def health_threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def health_threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "health_threshold", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv6(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ipv6(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ipv6")
 
     @ipv6.setter
-    def ipv6(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ipv6(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ipv6", value)
 
     @_builtins.property
     @pulumi.getter(name="livenessTests")
-    def liveness_tests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]:
+    def liveness_tests(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]:
         return pulumi.get(self, "liveness_tests")
 
     @liveness_tests.setter
-    def liveness_tests(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]):
+    def liveness_tests(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]):
         pulumi.set(self, "liveness_tests", value)
 
     @_builtins.property
     @pulumi.getter(name="loadImbalancePercentage")
-    def load_imbalance_percentage(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def load_imbalance_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
-    def load_imbalance_percentage(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def load_imbalance_percentage(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "load_imbalance_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="mapName")
-    def map_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def map_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "map_name")
 
     @map_name.setter
-    def map_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def map_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "map_name", value)
 
     @_builtins.property
     @pulumi.getter(name="maxUnreachablePenalty")
-    def max_unreachable_penalty(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_unreachable_penalty(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_unreachable_penalty")
 
     @max_unreachable_penalty.setter
-    def max_unreachable_penalty(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_unreachable_penalty(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_unreachable_penalty", value)
 
     @_builtins.property
     @pulumi.getter(name="minLiveFraction")
-    def min_live_fraction(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def min_live_fraction(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "min_live_fraction")
 
     @min_live_fraction.setter
-    def min_live_fraction(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def min_live_fraction(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "min_live_fraction", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="stateChangeNotificationWebhook")
-    def state_change_notification_webhook(self) -> Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']]:
+    def state_change_notification_webhook(self) -> pulumi.Input[Optional['GtmPropertyStateChangeNotificationWebhookArgs']]:
         return pulumi.get(self, "state_change_notification_webhook")
 
     @state_change_notification_webhook.setter
-    def state_change_notification_webhook(self, value: Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']]):
+    def state_change_notification_webhook(self, value: pulumi.Input[Optional['GtmPropertyStateChangeNotificationWebhookArgs']]):
         pulumi.set(self, "state_change_notification_webhook", value)
 
     @_builtins.property
     @pulumi.getter(name="staticRrSets")
-    def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
+    def static_rr_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
         return pulumi.get(self, "static_rr_sets")
 
     @static_rr_sets.setter
-    def static_rr_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]):
+    def static_rr_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]):
         pulumi.set(self, "static_rr_sets", value)
 
     @_builtins.property
     @pulumi.getter(name="stickinessBonusConstant")
-    def stickiness_bonus_constant(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stickiness_bonus_constant(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "stickiness_bonus_constant")
 
     @stickiness_bonus_constant.setter
-    def stickiness_bonus_constant(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stickiness_bonus_constant(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stickiness_bonus_constant", value)
 
     @_builtins.property
     @pulumi.getter(name="stickinessBonusPercentage")
-    def stickiness_bonus_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stickiness_bonus_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "stickiness_bonus_percentage")
 
     @stickiness_bonus_percentage.setter
-    def stickiness_bonus_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stickiness_bonus_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stickiness_bonus_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficTargets")
-    def traffic_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
+    def traffic_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
         return pulumi.get(self, "traffic_targets")
 
     @traffic_targets.setter
-    def traffic_targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]):
+    def traffic_targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]):
         pulumi.set(self, "traffic_targets", value)
 
     @_builtins.property
     @pulumi.getter(name="unreachableThreshold")
-    def unreachable_threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def unreachable_threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "unreachable_threshold")
 
     @unreachable_threshold.setter
-    def unreachable_threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def unreachable_threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "unreachable_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="useComputedTargets")
-    def use_computed_targets(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_computed_targets(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "use_computed_targets")
 
     @use_computed_targets.setter
-    def use_computed_targets(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_computed_targets(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_computed_targets", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
 
 @pulumi.input_type
 class _GtmPropertyState:
     def __init__(__self__, *,
-                 backup_cname: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 balance_by_download_score: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cname: Optional[pulumi.Input[_builtins.str]] = None,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 dynamic_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 failback_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 failover_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 ghost_demand_reporting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 handout_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 handout_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_max: Optional[pulumi.Input[_builtins.float]] = None,
-                 health_multiplier: Optional[pulumi.Input[_builtins.float]] = None,
-                 health_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-                 liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 map_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_unreachable_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 score_aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_change_notification_webhook: Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']] = None,
-                 static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
-                 stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
-                 stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 unreachable_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 use_computed_targets: Optional[pulumi.Input[_builtins.bool]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 weighted_hash_bits_for_ipv4: Optional[pulumi.Input[_builtins.int]] = None,
-                 weighted_hash_bits_for_ipv6: Optional[pulumi.Input[_builtins.int]] = None):
+                 backup_cname: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 balance_by_download_score: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cname: pulumi.Input[Optional[_builtins.str]] = None,
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 dynamic_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 failback_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 failover_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 ghost_demand_reporting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 handout_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 handout_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_max: pulumi.Input[Optional[_builtins.float]] = None,
+                 health_multiplier: pulumi.Input[Optional[_builtins.float]] = None,
+                 health_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+                 liveness_tests: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 map_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_unreachable_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_live_fraction: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 score_aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_change_notification_webhook: pulumi.Input[Optional['GtmPropertyStateChangeNotificationWebhookArgs']] = None,
+                 static_rr_sets: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
+                 stickiness_bonus_constant: pulumi.Input[Optional[_builtins.int]] = None,
+                 stickiness_bonus_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 traffic_targets: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 unreachable_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 use_computed_targets: pulumi.Input[Optional[_builtins.bool]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 weighted_hash_bits_for_ipv4: pulumi.Input[Optional[_builtins.int]] = None,
+                 weighted_hash_bits_for_ipv6: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering GtmProperty resources.
         """
@@ -516,308 +516,308 @@ class _GtmPropertyState:
 
     @_builtins.property
     @pulumi.getter(name="backupCname")
-    def backup_cname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_cname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "backup_cname")
 
     @backup_cname.setter
-    def backup_cname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_cname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_cname", value)
 
     @_builtins.property
     @pulumi.getter(name="backupIp")
-    def backup_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "backup_ip")
 
     @backup_ip.setter
-    def backup_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="balanceByDownloadScore")
-    def balance_by_download_score(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def balance_by_download_score(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "balance_by_download_score")
 
     @balance_by_download_score.setter
-    def balance_by_download_score(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def balance_by_download_score(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "balance_by_download_score", value)
 
     @_builtins.property
     @pulumi.getter
-    def cname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cname")
 
     @cname.setter
-    def cname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cname", value)
 
     @_builtins.property
     @pulumi.getter
-    def comments(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comments(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "comments")
 
     @comments.setter
-    def comments(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comments(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comments", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="dynamicTtl")
-    def dynamic_ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dynamic_ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "dynamic_ttl")
 
     @dynamic_ttl.setter
-    def dynamic_ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dynamic_ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dynamic_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="failbackDelay")
-    def failback_delay(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failback_delay(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "failback_delay")
 
     @failback_delay.setter
-    def failback_delay(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failback_delay(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failback_delay", value)
 
     @_builtins.property
     @pulumi.getter(name="failoverDelay")
-    def failover_delay(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failover_delay(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "failover_delay")
 
     @failover_delay.setter
-    def failover_delay(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failover_delay(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failover_delay", value)
 
     @_builtins.property
     @pulumi.getter(name="ghostDemandReporting")
-    def ghost_demand_reporting(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ghost_demand_reporting(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ghost_demand_reporting")
 
     @ghost_demand_reporting.setter
-    def ghost_demand_reporting(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ghost_demand_reporting(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ghost_demand_reporting", value)
 
     @_builtins.property
     @pulumi.getter(name="handoutLimit")
-    def handout_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def handout_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "handout_limit")
 
     @handout_limit.setter
-    def handout_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def handout_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "handout_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="handoutMode")
-    def handout_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def handout_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "handout_mode")
 
     @handout_mode.setter
-    def handout_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def handout_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "handout_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="healthMax")
-    def health_max(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def health_max(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "health_max")
 
     @health_max.setter
-    def health_max(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def health_max(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "health_max", value)
 
     @_builtins.property
     @pulumi.getter(name="healthMultiplier")
-    def health_multiplier(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def health_multiplier(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "health_multiplier")
 
     @health_multiplier.setter
-    def health_multiplier(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def health_multiplier(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "health_multiplier", value)
 
     @_builtins.property
     @pulumi.getter(name="healthThreshold")
-    def health_threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def health_threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "health_threshold")
 
     @health_threshold.setter
-    def health_threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def health_threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "health_threshold", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv6(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ipv6(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ipv6")
 
     @ipv6.setter
-    def ipv6(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ipv6(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ipv6", value)
 
     @_builtins.property
     @pulumi.getter(name="livenessTests")
-    def liveness_tests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]:
+    def liveness_tests(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]:
         return pulumi.get(self, "liveness_tests")
 
     @liveness_tests.setter
-    def liveness_tests(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]):
+    def liveness_tests(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]):
         pulumi.set(self, "liveness_tests", value)
 
     @_builtins.property
     @pulumi.getter(name="loadImbalancePercentage")
-    def load_imbalance_percentage(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def load_imbalance_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
-    def load_imbalance_percentage(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def load_imbalance_percentage(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "load_imbalance_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="mapName")
-    def map_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def map_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "map_name")
 
     @map_name.setter
-    def map_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def map_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "map_name", value)
 
     @_builtins.property
     @pulumi.getter(name="maxUnreachablePenalty")
-    def max_unreachable_penalty(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_unreachable_penalty(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_unreachable_penalty")
 
     @max_unreachable_penalty.setter
-    def max_unreachable_penalty(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_unreachable_penalty(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_unreachable_penalty", value)
 
     @_builtins.property
     @pulumi.getter(name="minLiveFraction")
-    def min_live_fraction(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def min_live_fraction(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "min_live_fraction")
 
     @min_live_fraction.setter
-    def min_live_fraction(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def min_live_fraction(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "min_live_fraction", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="scoreAggregationType")
-    def score_aggregation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def score_aggregation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "score_aggregation_type")
 
     @score_aggregation_type.setter
-    def score_aggregation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def score_aggregation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "score_aggregation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="stateChangeNotificationWebhook")
-    def state_change_notification_webhook(self) -> Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']]:
+    def state_change_notification_webhook(self) -> pulumi.Input[Optional['GtmPropertyStateChangeNotificationWebhookArgs']]:
         return pulumi.get(self, "state_change_notification_webhook")
 
     @state_change_notification_webhook.setter
-    def state_change_notification_webhook(self, value: Optional[pulumi.Input['GtmPropertyStateChangeNotificationWebhookArgs']]):
+    def state_change_notification_webhook(self, value: pulumi.Input[Optional['GtmPropertyStateChangeNotificationWebhookArgs']]):
         pulumi.set(self, "state_change_notification_webhook", value)
 
     @_builtins.property
     @pulumi.getter(name="staticRrSets")
-    def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
+    def static_rr_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
         return pulumi.get(self, "static_rr_sets")
 
     @static_rr_sets.setter
-    def static_rr_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]):
+    def static_rr_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]):
         pulumi.set(self, "static_rr_sets", value)
 
     @_builtins.property
     @pulumi.getter(name="stickinessBonusConstant")
-    def stickiness_bonus_constant(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stickiness_bonus_constant(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "stickiness_bonus_constant")
 
     @stickiness_bonus_constant.setter
-    def stickiness_bonus_constant(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stickiness_bonus_constant(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stickiness_bonus_constant", value)
 
     @_builtins.property
     @pulumi.getter(name="stickinessBonusPercentage")
-    def stickiness_bonus_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stickiness_bonus_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "stickiness_bonus_percentage")
 
     @stickiness_bonus_percentage.setter
-    def stickiness_bonus_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stickiness_bonus_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stickiness_bonus_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficTargets")
-    def traffic_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
+    def traffic_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
         return pulumi.get(self, "traffic_targets")
 
     @traffic_targets.setter
-    def traffic_targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]):
+    def traffic_targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]):
         pulumi.set(self, "traffic_targets", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="unreachableThreshold")
-    def unreachable_threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def unreachable_threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "unreachable_threshold")
 
     @unreachable_threshold.setter
-    def unreachable_threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def unreachable_threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "unreachable_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="useComputedTargets")
-    def use_computed_targets(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_computed_targets(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "use_computed_targets")
 
     @use_computed_targets.setter
-    def use_computed_targets(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_computed_targets(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_computed_targets", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
     @_builtins.property
     @pulumi.getter(name="weightedHashBitsForIpv4")
-    def weighted_hash_bits_for_ipv4(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weighted_hash_bits_for_ipv4(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "weighted_hash_bits_for_ipv4")
 
     @weighted_hash_bits_for_ipv4.setter
-    def weighted_hash_bits_for_ipv4(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weighted_hash_bits_for_ipv4(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weighted_hash_bits_for_ipv4", value)
 
     @_builtins.property
     @pulumi.getter(name="weightedHashBitsForIpv6")
-    def weighted_hash_bits_for_ipv6(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weighted_hash_bits_for_ipv6(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "weighted_hash_bits_for_ipv6")
 
     @weighted_hash_bits_for_ipv6.setter
-    def weighted_hash_bits_for_ipv6(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weighted_hash_bits_for_ipv6(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weighted_hash_bits_for_ipv6", value)
 
 
@@ -827,38 +827,38 @@ class GtmProperty(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_cname: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 balance_by_download_score: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cname: Optional[pulumi.Input[_builtins.str]] = None,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 dynamic_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 failback_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 failover_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 ghost_demand_reporting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 handout_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 handout_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_max: Optional[pulumi.Input[_builtins.float]] = None,
-                 health_multiplier: Optional[pulumi.Input[_builtins.float]] = None,
-                 health_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-                 liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyLivenessTestArgs', 'GtmPropertyLivenessTestArgsDict']]]]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 map_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_unreachable_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 score_aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_change_notification_webhook: Optional[pulumi.Input[Union['GtmPropertyStateChangeNotificationWebhookArgs', 'GtmPropertyStateChangeNotificationWebhookArgsDict']]] = None,
-                 static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
-                 stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
-                 stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyTrafficTargetArgs', 'GtmPropertyTrafficTargetArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 unreachable_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 use_computed_targets: Optional[pulumi.Input[_builtins.bool]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 backup_cname: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 balance_by_download_score: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cname: pulumi.Input[Optional[_builtins.str]] = None,
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 dynamic_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 failback_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 failover_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 ghost_demand_reporting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 handout_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 handout_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_max: pulumi.Input[Optional[_builtins.float]] = None,
+                 health_multiplier: pulumi.Input[Optional[_builtins.float]] = None,
+                 health_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+                 liveness_tests: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmPropertyLivenessTestArgs', 'GtmPropertyLivenessTestArgsDict']]]]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 map_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_unreachable_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_live_fraction: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 score_aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_change_notification_webhook: pulumi.Input[Optional[Union['GtmPropertyStateChangeNotificationWebhookArgs', 'GtmPropertyStateChangeNotificationWebhookArgsDict']]] = None,
+                 static_rr_sets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
+                 stickiness_bonus_constant: pulumi.Input[Optional[_builtins.int]] = None,
+                 stickiness_bonus_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 traffic_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmPropertyTrafficTargetArgs', 'GtmPropertyTrafficTargetArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 unreachable_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 use_computed_targets: pulumi.Input[Optional[_builtins.bool]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a GtmProperty resource with the given unique name, props, and options.
@@ -890,38 +890,38 @@ class GtmProperty(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_cname: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 balance_by_download_score: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cname: Optional[pulumi.Input[_builtins.str]] = None,
-                 comments: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 dynamic_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 failback_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 failover_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 ghost_demand_reporting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 handout_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 handout_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_max: Optional[pulumi.Input[_builtins.float]] = None,
-                 health_multiplier: Optional[pulumi.Input[_builtins.float]] = None,
-                 health_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-                 liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyLivenessTestArgs', 'GtmPropertyLivenessTestArgsDict']]]]] = None,
-                 load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 map_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_unreachable_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 score_aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_change_notification_webhook: Optional[pulumi.Input[Union['GtmPropertyStateChangeNotificationWebhookArgs', 'GtmPropertyStateChangeNotificationWebhookArgsDict']]] = None,
-                 static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
-                 stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
-                 stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyTrafficTargetArgs', 'GtmPropertyTrafficTargetArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 unreachable_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 use_computed_targets: Optional[pulumi.Input[_builtins.bool]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 backup_cname: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 balance_by_download_score: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cname: pulumi.Input[Optional[_builtins.str]] = None,
+                 comments: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 dynamic_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 failback_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 failover_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 ghost_demand_reporting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 handout_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 handout_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_max: pulumi.Input[Optional[_builtins.float]] = None,
+                 health_multiplier: pulumi.Input[Optional[_builtins.float]] = None,
+                 health_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+                 liveness_tests: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmPropertyLivenessTestArgs', 'GtmPropertyLivenessTestArgsDict']]]]] = None,
+                 load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 map_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_unreachable_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_live_fraction: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 score_aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_change_notification_webhook: pulumi.Input[Optional[Union['GtmPropertyStateChangeNotificationWebhookArgs', 'GtmPropertyStateChangeNotificationWebhookArgsDict']]] = None,
+                 static_rr_sets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
+                 stickiness_bonus_constant: pulumi.Input[Optional[_builtins.int]] = None,
+                 stickiness_bonus_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 traffic_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmPropertyTrafficTargetArgs', 'GtmPropertyTrafficTargetArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 unreachable_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 use_computed_targets: pulumi.Input[Optional[_builtins.bool]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -987,40 +987,40 @@ class GtmProperty(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backup_cname: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            balance_by_download_score: Optional[pulumi.Input[_builtins.bool]] = None,
-            cname: Optional[pulumi.Input[_builtins.str]] = None,
-            comments: Optional[pulumi.Input[_builtins.str]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            dynamic_ttl: Optional[pulumi.Input[_builtins.int]] = None,
-            failback_delay: Optional[pulumi.Input[_builtins.int]] = None,
-            failover_delay: Optional[pulumi.Input[_builtins.int]] = None,
-            ghost_demand_reporting: Optional[pulumi.Input[_builtins.bool]] = None,
-            handout_limit: Optional[pulumi.Input[_builtins.int]] = None,
-            handout_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            health_max: Optional[pulumi.Input[_builtins.float]] = None,
-            health_multiplier: Optional[pulumi.Input[_builtins.float]] = None,
-            health_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-            ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-            liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyLivenessTestArgs', 'GtmPropertyLivenessTestArgsDict']]]]] = None,
-            load_imbalance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-            map_name: Optional[pulumi.Input[_builtins.str]] = None,
-            max_unreachable_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-            min_live_fraction: Optional[pulumi.Input[_builtins.float]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            score_aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state_change_notification_webhook: Optional[pulumi.Input[Union['GtmPropertyStateChangeNotificationWebhookArgs', 'GtmPropertyStateChangeNotificationWebhookArgsDict']]] = None,
-            static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
-            stickiness_bonus_constant: Optional[pulumi.Input[_builtins.int]] = None,
-            stickiness_bonus_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-            traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyTrafficTargetArgs', 'GtmPropertyTrafficTargetArgsDict']]]]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            unreachable_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-            use_computed_targets: Optional[pulumi.Input[_builtins.bool]] = None,
-            wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
-            weighted_hash_bits_for_ipv4: Optional[pulumi.Input[_builtins.int]] = None,
-            weighted_hash_bits_for_ipv6: Optional[pulumi.Input[_builtins.int]] = None) -> 'GtmProperty':
+            backup_cname: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            balance_by_download_score: pulumi.Input[Optional[_builtins.bool]] = None,
+            cname: pulumi.Input[Optional[_builtins.str]] = None,
+            comments: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            dynamic_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            failback_delay: pulumi.Input[Optional[_builtins.int]] = None,
+            failover_delay: pulumi.Input[Optional[_builtins.int]] = None,
+            ghost_demand_reporting: pulumi.Input[Optional[_builtins.bool]] = None,
+            handout_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            handout_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            health_max: pulumi.Input[Optional[_builtins.float]] = None,
+            health_multiplier: pulumi.Input[Optional[_builtins.float]] = None,
+            health_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+            liveness_tests: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmPropertyLivenessTestArgs', 'GtmPropertyLivenessTestArgsDict']]]]] = None,
+            load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+            map_name: pulumi.Input[Optional[_builtins.str]] = None,
+            max_unreachable_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+            min_live_fraction: pulumi.Input[Optional[_builtins.float]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            score_aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state_change_notification_webhook: pulumi.Input[Optional[Union['GtmPropertyStateChangeNotificationWebhookArgs', 'GtmPropertyStateChangeNotificationWebhookArgsDict']]] = None,
+            static_rr_sets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
+            stickiness_bonus_constant: pulumi.Input[Optional[_builtins.int]] = None,
+            stickiness_bonus_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            traffic_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmPropertyTrafficTargetArgs', 'GtmPropertyTrafficTargetArgsDict']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            unreachable_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            use_computed_targets: pulumi.Input[Optional[_builtins.bool]] = None,
+            wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
+            weighted_hash_bits_for_ipv4: pulumi.Input[Optional[_builtins.int]] = None,
+            weighted_hash_bits_for_ipv6: pulumi.Input[Optional[_builtins.int]] = None) -> 'GtmProperty':
         """
         Get an existing GtmProperty resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

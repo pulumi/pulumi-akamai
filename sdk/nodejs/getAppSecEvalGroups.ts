@@ -51,7 +51,7 @@ export function getAppSecEvalGroupsOutput(args: GetAppSecEvalGroupsOutputArgs, o
  * A collection of arguments for invoking getAppSecEvalGroups.
  */
 export interface GetAppSecEvalGroupsOutputArgs {
-    attackGroup?: pulumi.Input<string>;
+    attackGroup?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
     securityPolicyId: pulumi.Input<string>;
 }

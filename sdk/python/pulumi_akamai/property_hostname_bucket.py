@@ -24,12 +24,12 @@ class PropertyHostnameBucketArgs:
                  hostnames: pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]],
                  network: pulumi.Input[_builtins.str],
                  property_id: pulumi.Input[_builtins.str],
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 note: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeout_for_activation: Optional[pulumi.Input[_builtins.int]] = None):
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 note: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 timeout_for_activation: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a PropertyHostnameBucket resource.
 
@@ -97,91 +97,91 @@ class PropertyHostnameBucketArgs:
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameCount")
-    def hostname_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def hostname_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         """
         return pulumi.get(self, "hostname_count")
 
     @hostname_count.setter
-    def hostname_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def hostname_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "hostname_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def note(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def note(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Assigns a log message to the request.
         """
         return pulumi.get(self, "note")
 
     @note.setter
-    def note(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def note(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "note", value)
 
     @_builtins.property
     @pulumi.getter(name="notifyEmails")
-    def notify_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notify_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Email addresses to notify when the activation status changes.
         """
         return pulumi.get(self, "notify_emails")
 
     @notify_emails.setter
-    def notify_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notify_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notify_emails", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutForActivation")
-    def timeout_for_activation(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_for_activation(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         """
         return pulumi.get(self, "timeout_for_activation")
 
     @timeout_for_activation.setter
-    def timeout_for_activation(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_for_activation(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_for_activation", value)
 
 
 @pulumi.input_type
 class _PropertyHostnameBucketState:
     def __init__(__self__, *,
-                 activation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 note: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pending_default_certs: Optional[pulumi.Input[_builtins.int]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_for_activation: Optional[pulumi.Input[_builtins.int]] = None):
+                 activation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 note: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pending_default_certs: pulumi.Input[Optional[_builtins.int]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_for_activation: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering PropertyHostnameBucket resources.
 
@@ -222,134 +222,134 @@ class _PropertyHostnameBucketState:
 
     @_builtins.property
     @pulumi.getter(name="activationId")
-    def activation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def activation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the latest hostname bucket activation.
         """
         return pulumi.get(self, "activation_id")
 
     @activation_id.setter
-    def activation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def activation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "activation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameCount")
-    def hostname_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def hostname_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
         """
         return pulumi.get(self, "hostname_count")
 
     @hostname_count.setter
-    def hostname_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def hostname_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "hostname_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostnames(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]]]:
+    def hostnames(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]]]:
         """
         The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         """
         return pulumi.get(self, "hostnames")
 
     @hostnames.setter
-    def hostnames(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]]]):
+    def hostnames(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input['PropertyHostnameBucketHostnamesArgs']]]]):
         pulumi.set(self, "hostnames", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network to activate on, either `STAGING` or `PRODUCTION`.
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter
-    def note(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def note(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Assigns a log message to the request.
         """
         return pulumi.get(self, "note")
 
     @note.setter
-    def note(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def note(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "note", value)
 
     @_builtins.property
     @pulumi.getter(name="notifyEmails")
-    def notify_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notify_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Email addresses to notify when the activation status changes.
         """
         return pulumi.get(self, "notify_emails")
 
     @notify_emails.setter
-    def notify_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notify_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notify_emails", value)
 
     @_builtins.property
     @pulumi.getter(name="pendingDefaultCerts")
-    def pending_default_certs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pending_default_certs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of hostnames with a `DEFAULT` certificate type that are still in the `PENDING` state.
         """
         return pulumi.get(self, "pending_default_certs")
 
     @pending_default_certs.setter
-    def pending_default_certs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pending_default_certs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pending_default_certs", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyId")
-    def property_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the property.
         """
         return pulumi.get(self, "property_id")
 
     @property_id.setter
-    def property_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutForActivation")
-    def timeout_for_activation(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_for_activation(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The timeout value in minutes after which a single hostname activation will be canceled. Defaults to 120 minutes.
         """
         return pulumi.get(self, "timeout_for_activation")
 
     @timeout_for_activation.setter
-    def timeout_for_activation(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_for_activation(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_for_activation", value)
 
 
@@ -359,15 +359,15 @@ class PropertyHostnameBucket(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 note: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_for_activation: Optional[pulumi.Input[_builtins.int]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 note: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_for_activation: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a PropertyHostnameBucket resource with the given unique name, props, and options.
@@ -408,15 +408,15 @@ class PropertyHostnameBucket(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]]] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 note: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_for_activation: Optional[pulumi.Input[_builtins.int]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 note: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_for_activation: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -453,17 +453,17 @@ class PropertyHostnameBucket(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activation_id: Optional[pulumi.Input[_builtins.str]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            hostname_count: Optional[pulumi.Input[_builtins.int]] = None,
-            hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]]] = None,
-            network: Optional[pulumi.Input[_builtins.str]] = None,
-            note: Optional[pulumi.Input[_builtins.str]] = None,
-            notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pending_default_certs: Optional[pulumi.Input[_builtins.int]] = None,
-            property_id: Optional[pulumi.Input[_builtins.str]] = None,
-            timeout_for_activation: Optional[pulumi.Input[_builtins.int]] = None) -> 'PropertyHostnameBucket':
+            activation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname_count: pulumi.Input[Optional[_builtins.int]] = None,
+            hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            note: pulumi.Input[Optional[_builtins.str]] = None,
+            notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pending_default_certs: pulumi.Input[Optional[_builtins.int]] = None,
+            property_id: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_for_activation: pulumi.Input[Optional[_builtins.int]] = None) -> 'PropertyHostnameBucket':
         """
         Get an existing PropertyHostnameBucket resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

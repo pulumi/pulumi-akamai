@@ -44,6 +44,6 @@ export function getBotmanResponseActionOutput(args: GetBotmanResponseActionOutpu
  * A collection of arguments for invoking getBotmanResponseAction.
  */
 export interface GetBotmanResponseActionOutputArgs {
-    actionId?: pulumi.Input<string>;
+    actionId?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
 }

@@ -131,7 +131,7 @@ def get_cps_deployments(enrollment_id: Optional[_builtins.int] = None,
         production_certificate_rsa=pulumi.get(__ret__, 'production_certificate_rsa'),
         staging_certificate_ecdsa=pulumi.get(__ret__, 'staging_certificate_ecdsa'),
         staging_certificate_rsa=pulumi.get(__ret__, 'staging_certificate_rsa'))
-def get_cps_deployments_output(enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_cps_deployments_output(enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpsDeploymentsResult]:
     """
     Use this data source to access information about an existing resource.

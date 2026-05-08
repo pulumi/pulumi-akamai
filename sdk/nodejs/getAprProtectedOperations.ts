@@ -49,6 +49,6 @@ export function getAprProtectedOperationsOutput(args: GetAprProtectedOperationsO
  */
 export interface GetAprProtectedOperationsOutputArgs {
     configId: pulumi.Input<number>;
-    operationId?: pulumi.Input<string>;
+    operationId?: pulumi.Input<string | undefined>;
     securityPolicyId: pulumi.Input<string>;
 }

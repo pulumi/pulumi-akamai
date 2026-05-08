@@ -43,5 +43,5 @@ export function getAppSecSiemDefinitionsOutput(args?: GetAppSecSiemDefinitionsOu
  * A collection of arguments for invoking getAppSecSiemDefinitions.
  */
 export interface GetAppSecSiemDefinitionsOutputArgs {
-    siemDefinitionName?: pulumi.Input<string>;
+    siemDefinitionName?: pulumi.Input<string | undefined>;
 }

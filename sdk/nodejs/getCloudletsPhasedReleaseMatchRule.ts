@@ -44,5 +44,5 @@ export function getCloudletsPhasedReleaseMatchRuleOutput(args?: GetCloudletsPhas
  * A collection of arguments for invoking getCloudletsPhasedReleaseMatchRule.
  */
 export interface GetCloudletsPhasedReleaseMatchRuleOutputArgs {
-    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs>[]>;
+    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs>[] | undefined>;
 }

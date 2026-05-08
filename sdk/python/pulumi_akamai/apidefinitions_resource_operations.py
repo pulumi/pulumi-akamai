@@ -58,9 +58,9 @@ class ApidefinitionsResourceOperationsArgs:
 @pulumi.input_type
 class _ApidefinitionsResourceOperationsState:
     def __init__(__self__, *,
-                 api_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_operations: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 api_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_operations: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ApidefinitionsResourceOperations resources.
 
@@ -77,38 +77,38 @@ class _ApidefinitionsResourceOperationsState:
 
     @_builtins.property
     @pulumi.getter(name="apiId")
-    def api_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def api_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier for the endpoint
         """
         return pulumi.get(self, "api_id")
 
     @api_id.setter
-    def api_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def api_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "api_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceOperations")
-    def resource_operations(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_operations(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted information about the API configuration
         """
         return pulumi.get(self, "resource_operations")
 
     @resource_operations.setter
-    def resource_operations(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_operations(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_operations", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the endpoint
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -118,8 +118,8 @@ class ApidefinitionsResourceOperations(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_operations: Optional[pulumi.Input[_builtins.str]] = None,
+                 api_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_operations: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a ApidefinitionsResourceOperations resource with the given unique name, props, and options.
@@ -153,8 +153,8 @@ class ApidefinitionsResourceOperations(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_operations: Optional[pulumi.Input[_builtins.str]] = None,
+                 api_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_operations: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -181,9 +181,9 @@ class ApidefinitionsResourceOperations(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_id: Optional[pulumi.Input[_builtins.int]] = None,
-            resource_operations: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'ApidefinitionsResourceOperations':
+            api_id: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_operations: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'ApidefinitionsResourceOperations':
         """
         Get an existing ApidefinitionsResourceOperations resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

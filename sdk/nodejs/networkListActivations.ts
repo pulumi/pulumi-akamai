@@ -106,27 +106,27 @@ export interface NetworkListActivationsState {
     /**
      * The Akamai network on which the list is activated: STAGING or PRODUCTION
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the network list
      */
-    networkListId?: pulumi.Input<string>;
+    networkListId?: pulumi.Input<string | undefined>;
     /**
      * Descriptive text to accompany the activation
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * List of email addresses of Control Center users who receive an email when activation of this list is complete
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This network list's current activation status in the environment specified by the "network" attribute
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Identifies the sync point of the network list to be activated
      */
-    syncPoint?: pulumi.Input<number>;
+    syncPoint?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -136,7 +136,7 @@ export interface NetworkListActivationsArgs {
     /**
      * The Akamai network on which the list is activated: STAGING or PRODUCTION
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the network list
      */
@@ -144,7 +144,7 @@ export interface NetworkListActivationsArgs {
     /**
      * Descriptive text to accompany the activation
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * List of email addresses of Control Center users who receive an email when activation of this list is complete
      */

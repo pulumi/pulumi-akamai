@@ -71,10 +71,10 @@ class BotmanAkamaiBotCategoryActionArgs:
 @pulumi.input_type
 class _BotmanAkamaiBotCategoryActionState:
     def __init__(__self__, *,
-                 akamai_bot_category_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 category_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 akamai_bot_category_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 category_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BotmanAkamaiBotCategoryAction resources.
         """
@@ -89,38 +89,38 @@ class _BotmanAkamaiBotCategoryActionState:
 
     @_builtins.property
     @pulumi.getter(name="akamaiBotCategoryAction")
-    def akamai_bot_category_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def akamai_bot_category_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "akamai_bot_category_action")
 
     @akamai_bot_category_action.setter
-    def akamai_bot_category_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def akamai_bot_category_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "akamai_bot_category_action", value)
 
     @_builtins.property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "category_id")
 
     @category_id.setter
-    def category_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -130,10 +130,10 @@ class BotmanAkamaiBotCategoryAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 akamai_bot_category_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 category_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 akamai_bot_category_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 category_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a BotmanAkamaiBotCategoryAction resource with the given unique name, props, and options.
@@ -165,10 +165,10 @@ class BotmanAkamaiBotCategoryAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 akamai_bot_category_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 category_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 akamai_bot_category_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 category_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -200,10 +200,10 @@ class BotmanAkamaiBotCategoryAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            akamai_bot_category_action: Optional[pulumi.Input[_builtins.str]] = None,
-            category_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'BotmanAkamaiBotCategoryAction':
+            akamai_bot_category_action: pulumi.Input[Optional[_builtins.str]] = None,
+            category_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'BotmanAkamaiBotCategoryAction':
         """
         Get an existing BotmanAkamaiBotCategoryAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

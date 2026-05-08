@@ -23,10 +23,10 @@ class CloudletsApplicationLoadBalancerArgs:
     def __init__(__self__, *,
                  data_centers: pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]],
                  origin_id: pulumi.Input[_builtins.str],
-                 balancing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 liveness_settings: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None,
-                 origin_description: Optional[pulumi.Input[_builtins.str]] = None):
+                 balancing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 liveness_settings: pulumi.Input[Optional['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None,
+                 origin_description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudletsApplicationLoadBalancer resource.
 
@@ -73,61 +73,61 @@ class CloudletsApplicationLoadBalancerArgs:
 
     @_builtins.property
     @pulumi.getter(name="balancingType")
-    def balancing_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def balancing_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
         """
         return pulumi.get(self, "balancing_type")
 
     @balancing_type.setter
-    def balancing_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def balancing_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "balancing_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The load balancer configuration version description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="livenessSettings")
-    def liveness_settings(self) -> Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]:
+    def liveness_settings(self) -> pulumi.Input[Optional['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]:
         return pulumi.get(self, "liveness_settings")
 
     @liveness_settings.setter
-    def liveness_settings(self, value: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]):
+    def liveness_settings(self, value: pulumi.Input[Optional['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]):
         pulumi.set(self, "liveness_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="originDescription")
-    def origin_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The load balancer configuration description
         """
         return pulumi.get(self, "origin_description")
 
     @origin_description.setter
-    def origin_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_description", value)
 
 
 @pulumi.input_type
 class _CloudletsApplicationLoadBalancerState:
     def __init__(__self__, *,
-                 balancing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_centers: Optional[pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 liveness_settings: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None,
-                 origin_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
-                 warnings: Optional[pulumi.Input[_builtins.str]] = None):
+                 balancing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_centers: pulumi.Input[Optional[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 liveness_settings: pulumi.Input[Optional['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None,
+                 origin_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
+                 warnings: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudletsApplicationLoadBalancer resources.
 
@@ -158,95 +158,95 @@ class _CloudletsApplicationLoadBalancerState:
 
     @_builtins.property
     @pulumi.getter(name="balancingType")
-    def balancing_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def balancing_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
         """
         return pulumi.get(self, "balancing_type")
 
     @balancing_type.setter
-    def balancing_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def balancing_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "balancing_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dataCenters")
-    def data_centers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]]:
+    def data_centers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]]:
         """
         The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         """
         return pulumi.get(self, "data_centers")
 
     @data_centers.setter
-    def data_centers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]]):
+    def data_centers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]]):
         pulumi.set(self, "data_centers", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The load balancer configuration version description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="livenessSettings")
-    def liveness_settings(self) -> Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]:
+    def liveness_settings(self) -> pulumi.Input[Optional['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]:
         return pulumi.get(self, "liveness_settings")
 
     @liveness_settings.setter
-    def liveness_settings(self, value: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]):
+    def liveness_settings(self, value: pulumi.Input[Optional['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]):
         pulumi.set(self, "liveness_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="originDescription")
-    def origin_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The load balancer configuration description
         """
         return pulumi.get(self, "origin_description")
 
     @origin_description.setter
-    def origin_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_description", value)
 
     @_builtins.property
     @pulumi.getter(name="originId")
-    def origin_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The conditional origin's unique identifier
         """
         return pulumi.get(self, "origin_id")
 
     @origin_id.setter
-    def origin_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The load balancer configuration version
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter
-    def warnings(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def warnings(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Describes warnings during activation of load balancer configuration
         """
         return pulumi.get(self, "warnings")
 
     @warnings.setter
-    def warnings(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def warnings(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "warnings", value)
 
 
@@ -256,12 +256,12 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 balancing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_centers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 liveness_settings: Optional[pulumi.Input[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict']]] = None,
-                 origin_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 balancing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict']]] = None,
+                 origin_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a CloudletsApplicationLoadBalancer resource with the given unique name, props, and options.
@@ -298,12 +298,12 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 balancing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_centers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 liveness_settings: Optional[pulumi.Input[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict']]] = None,
-                 origin_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 balancing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict']]] = None,
+                 origin_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -335,14 +335,14 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            balancing_type: Optional[pulumi.Input[_builtins.str]] = None,
-            data_centers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            liveness_settings: Optional[pulumi.Input[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict']]] = None,
-            origin_description: Optional[pulumi.Input[_builtins.str]] = None,
-            origin_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None,
-            warnings: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudletsApplicationLoadBalancer':
+            balancing_type: pulumi.Input[Optional[_builtins.str]] = None,
+            data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict']]] = None,
+            origin_description: pulumi.Input[Optional[_builtins.str]] = None,
+            origin_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None,
+            warnings: pulumi.Input[Optional[_builtins.str]] = None) -> 'CloudletsApplicationLoadBalancer':
         """
         Get an existing CloudletsApplicationLoadBalancer resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

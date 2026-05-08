@@ -45,5 +45,5 @@ export function getBotmanCustomClientOutput(args: GetBotmanCustomClientOutputArg
  */
 export interface GetBotmanCustomClientOutputArgs {
     configId: pulumi.Input<number>;
-    customClientId?: pulumi.Input<string>;
+    customClientId?: pulumi.Input<string | undefined>;
 }

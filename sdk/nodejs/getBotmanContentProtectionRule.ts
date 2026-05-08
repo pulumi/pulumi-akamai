@@ -49,6 +49,6 @@ export function getBotmanContentProtectionRuleOutput(args: GetBotmanContentProte
  */
 export interface GetBotmanContentProtectionRuleOutputArgs {
     configId: pulumi.Input<number>;
-    contentProtectionRuleId?: pulumi.Input<string>;
+    contentProtectionRuleId?: pulumi.Input<string | undefined>;
     securityPolicyId: pulumi.Input<string>;
 }

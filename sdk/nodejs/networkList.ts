@@ -130,43 +130,43 @@ export interface NetworkListState {
     /**
      * contract ID
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * A description of the network list
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * group ID
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
      */
-    lists?: pulumi.Input<pulumi.Input<string>[]>;
+    lists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * The name to be assigned to the network list
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * network list ID
      */
-    networkListId?: pulumi.Input<string>;
+    networkListId?: pulumi.Input<string | undefined>;
     /**
      * sync point
      */
-    syncPoint?: pulumi.Input<number>;
+    syncPoint?: pulumi.Input<number | undefined>;
     /**
      * The type of the network list; must be either 'IP' or 'GEO'
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * unique ID
      */
-    uniqueid?: pulumi.Input<string>;
+    uniqueid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -176,7 +176,7 @@ export interface NetworkListArgs {
     /**
      * contract ID
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * A description of the network list
      */
@@ -184,11 +184,11 @@ export interface NetworkListArgs {
     /**
      * group ID
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing list
      */
-    lists?: pulumi.Input<pulumi.Input<string>[]>;
+    lists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
      */
@@ -196,7 +196,7 @@ export interface NetworkListArgs {
     /**
      * The name to be assigned to the network list
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The type of the network list; must be either 'IP' or 'GEO'
      */

@@ -70,5 +70,5 @@ export function getCloudcertificatesCertificateOutput(args: GetCloudcertificates
  */
 export interface GetCloudcertificatesCertificateOutputArgs {
     certificateId: pulumi.Input<string>;
-    includeHostnameBindings?: pulumi.Input<boolean>;
+    includeHostnameBindings?: pulumi.Input<boolean | undefined>;
 }

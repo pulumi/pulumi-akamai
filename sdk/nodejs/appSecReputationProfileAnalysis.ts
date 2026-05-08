@@ -97,19 +97,19 @@ export interface AppSecReputationProfileAnalysisState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      */
-    forwardSharedIpToHttpHeaderSiem?: pulumi.Input<boolean>;
+    forwardSharedIpToHttpHeaderSiem?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to add client reputation details to requests forwarded to the origin server
      */
-    forwardToHttpHeader?: pulumi.Input<boolean>;
+    forwardToHttpHeader?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

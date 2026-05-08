@@ -58,9 +58,9 @@ class AppSecVersionNodesArgs:
 @pulumi.input_type
 class _AppSecVersionNodesState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 output_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_notes: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 output_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_notes: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecVersionNodes resources.
 
@@ -77,38 +77,38 @@ class _AppSecVersionNodesState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="outputText")
-    def output_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Text representation
         """
         return pulumi.get(self, "output_text")
 
     @output_text.setter
-    def output_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_text", value)
 
     @_builtins.property
     @pulumi.getter(name="versionNotes")
-    def version_notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Brief description of the security configuration version
         """
         return pulumi.get(self, "version_notes")
 
     @version_notes.setter
-    def version_notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_notes", value)
 
 
@@ -118,8 +118,8 @@ class AppSecVersionNodes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 version_notes: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 version_notes: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecVersionNodes resource with the given unique name, props, and options.
@@ -153,8 +153,8 @@ class AppSecVersionNodes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 version_notes: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 version_notes: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -181,9 +181,9 @@ class AppSecVersionNodes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            output_text: Optional[pulumi.Input[_builtins.str]] = None,
-            version_notes: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecVersionNodes':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            output_text: pulumi.Input[Optional[_builtins.str]] = None,
+            version_notes: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecVersionNodes':
         """
         Get an existing AppSecVersionNodes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

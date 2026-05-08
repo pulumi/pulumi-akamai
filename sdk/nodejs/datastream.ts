@@ -240,93 +240,93 @@ export interface DatastreamState {
     /**
      * Defining if stream should be active or not
      */
-    active?: pulumi.Input<boolean>;
-    azureConnector?: pulumi.Input<inputs.DatastreamAzureConnector>;
+    active?: pulumi.Input<boolean | undefined>;
+    azureConnector?: pulumi.Input<inputs.DatastreamAzureConnector | undefined>;
     /**
      * Identifies if stream needs to collect midgress data
      */
-    collectMidgress?: pulumi.Input<boolean>;
+    collectMidgress?: pulumi.Input<boolean | undefined>;
     /**
      * Identifies the contract that has access to the product
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * The username who created the stream
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the stream was created
      */
-    createdDate?: pulumi.Input<string>;
-    datadogConnector?: pulumi.Input<inputs.DatastreamDatadogConnector>;
+    createdDate?: pulumi.Input<string | undefined>;
+    datadogConnector?: pulumi.Input<inputs.DatastreamDatadogConnector | undefined>;
     /**
      * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
      */
-    datasetFields?: pulumi.Input<pulumi.Input<number>[]>;
+    datasetFields?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
-    deliveryConfiguration?: pulumi.Input<inputs.DatastreamDeliveryConfiguration>;
-    dynatraceConnector?: pulumi.Input<inputs.DatastreamDynatraceConnector>;
-    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
-    gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector>;
+    deliveryConfiguration?: pulumi.Input<inputs.DatastreamDeliveryConfiguration | undefined>;
+    dynatraceConnector?: pulumi.Input<inputs.DatastreamDynatraceConnector | undefined>;
+    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector | undefined>;
+    gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector | undefined>;
     /**
      * Identifies the group that has access to the product and for which the stream configuration was created
      */
-    groupId?: pulumi.Input<string>;
-    httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector>;
+    groupId?: pulumi.Input<string | undefined>;
+    httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector | undefined>;
     /**
      * The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
      */
-    integrationType?: pulumi.Input<string>;
+    integrationType?: pulumi.Input<string | undefined>;
     /**
      * Identifies the latest active configuration version of the stream
      */
-    latestVersion?: pulumi.Input<number>;
-    logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector>;
+    latestVersion?: pulumi.Input<number | undefined>;
+    logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector | undefined>;
     /**
      * The username who modified the stream
      */
-    modifiedBy?: pulumi.Input<string>;
+    modifiedBy?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the stream was modified
      */
-    modifiedDate?: pulumi.Input<string>;
-    newRelicConnector?: pulumi.Input<inputs.DatastreamNewRelicConnector>;
+    modifiedDate?: pulumi.Input<string | undefined>;
+    newRelicConnector?: pulumi.Input<inputs.DatastreamNewRelicConnector | undefined>;
     /**
      * List of email addresses where the system sends notifications about activations and deactivations of the stream
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
-    oracleConnector?: pulumi.Input<inputs.DatastreamOracleConnector>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    oracleConnector?: pulumi.Input<inputs.DatastreamOracleConnector | undefined>;
     /**
      * The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
      */
-    papiJson?: pulumi.Input<string>;
+    papiJson?: pulumi.Input<string | undefined>;
     /**
      * The ID of the product for which the stream was created
      */
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Identifies the properties monitored in the stream
      */
-    properties?: pulumi.Input<pulumi.Input<string>[]>;
-    s3CompatibleConnector?: pulumi.Input<inputs.DatastreamS3CompatibleConnector>;
-    s3Connector?: pulumi.Input<inputs.DatastreamS3Connector>;
+    properties?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    s3CompatibleConnector?: pulumi.Input<inputs.DatastreamS3CompatibleConnector | undefined>;
+    s3Connector?: pulumi.Input<inputs.DatastreamS3Connector | undefined>;
     /**
      * The sample percentage of data that your stream will send to the destination
      */
-    samplingPercentage?: pulumi.Input<number>;
-    splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector>;
+    samplingPercentage?: pulumi.Input<number | undefined>;
+    splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector | undefined>;
     /**
      * The name of the stream
      */
-    streamName?: pulumi.Input<string>;
+    streamName?: pulumi.Input<string | undefined>;
     /**
      * Identifies the configuration version of the stream
      */
-    streamVersion?: pulumi.Input<number>;
-    sumologicConnector?: pulumi.Input<inputs.DatastreamSumologicConnector>;
-    trafficpeakConnector?: pulumi.Input<inputs.DatastreamTrafficpeakConnector>;
+    streamVersion?: pulumi.Input<number | undefined>;
+    sumologicConnector?: pulumi.Input<inputs.DatastreamSumologicConnector | undefined>;
+    trafficpeakConnector?: pulumi.Input<inputs.DatastreamTrafficpeakConnector | undefined>;
 }
 
 /**
@@ -337,16 +337,16 @@ export interface DatastreamArgs {
      * Defining if stream should be active or not
      */
     active: pulumi.Input<boolean>;
-    azureConnector?: pulumi.Input<inputs.DatastreamAzureConnector>;
+    azureConnector?: pulumi.Input<inputs.DatastreamAzureConnector | undefined>;
     /**
      * Identifies if stream needs to collect midgress data
      */
-    collectMidgress?: pulumi.Input<boolean>;
+    collectMidgress?: pulumi.Input<boolean | undefined>;
     /**
      * Identifies the contract that has access to the product
      */
     contractId: pulumi.Input<string>;
-    datadogConnector?: pulumi.Input<inputs.DatastreamDatadogConnector>;
+    datadogConnector?: pulumi.Input<inputs.DatastreamDatadogConnector | undefined>;
     /**
      * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
      */
@@ -355,36 +355,36 @@ export interface DatastreamArgs {
      * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
     deliveryConfiguration: pulumi.Input<inputs.DatastreamDeliveryConfiguration>;
-    dynatraceConnector?: pulumi.Input<inputs.DatastreamDynatraceConnector>;
-    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
-    gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector>;
+    dynatraceConnector?: pulumi.Input<inputs.DatastreamDynatraceConnector | undefined>;
+    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector | undefined>;
+    gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector | undefined>;
     /**
      * Identifies the group that has access to the product and for which the stream configuration was created
      */
     groupId: pulumi.Input<string>;
-    httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector>;
-    logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector>;
-    newRelicConnector?: pulumi.Input<inputs.DatastreamNewRelicConnector>;
+    httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector | undefined>;
+    logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector | undefined>;
+    newRelicConnector?: pulumi.Input<inputs.DatastreamNewRelicConnector | undefined>;
     /**
      * List of email addresses where the system sends notifications about activations and deactivations of the stream
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
-    oracleConnector?: pulumi.Input<inputs.DatastreamOracleConnector>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    oracleConnector?: pulumi.Input<inputs.DatastreamOracleConnector | undefined>;
     /**
      * Identifies the properties monitored in the stream
      */
     properties: pulumi.Input<pulumi.Input<string>[]>;
-    s3CompatibleConnector?: pulumi.Input<inputs.DatastreamS3CompatibleConnector>;
-    s3Connector?: pulumi.Input<inputs.DatastreamS3Connector>;
+    s3CompatibleConnector?: pulumi.Input<inputs.DatastreamS3CompatibleConnector | undefined>;
+    s3Connector?: pulumi.Input<inputs.DatastreamS3Connector | undefined>;
     /**
      * The sample percentage of data that your stream will send to the destination
      */
-    samplingPercentage?: pulumi.Input<number>;
-    splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector>;
+    samplingPercentage?: pulumi.Input<number | undefined>;
+    splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector | undefined>;
     /**
      * The name of the stream
      */
     streamName: pulumi.Input<string>;
-    sumologicConnector?: pulumi.Input<inputs.DatastreamSumologicConnector>;
-    trafficpeakConnector?: pulumi.Input<inputs.DatastreamTrafficpeakConnector>;
+    sumologicConnector?: pulumi.Input<inputs.DatastreamSumologicConnector | undefined>;
+    trafficpeakConnector?: pulumi.Input<inputs.DatastreamTrafficpeakConnector | undefined>;
 }

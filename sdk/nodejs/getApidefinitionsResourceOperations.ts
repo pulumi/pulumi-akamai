@@ -50,6 +50,6 @@ export function getApidefinitionsResourceOperationsOutput(args: GetApidefinition
  */
 export interface GetApidefinitionsResourceOperationsOutputArgs {
     apiId: pulumi.Input<number>;
-    resourceName?: pulumi.Input<string>;
-    resourcePath?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
+    resourcePath?: pulumi.Input<string | undefined>;
 }

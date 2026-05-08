@@ -70,8 +70,8 @@ export class BotmanClientSideSecurity extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanClientSideSecurity resources.
  */
 export interface BotmanClientSideSecurityState {
-    clientSideSecurity?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
+    clientSideSecurity?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
 }
 
 /**

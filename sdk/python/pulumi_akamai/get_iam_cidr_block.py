@@ -152,7 +152,7 @@ def get_iam_cidr_block(cidr_block_id: Optional[_builtins.int] = None,
         id=pulumi.get(__ret__, 'id'),
         modified_by=pulumi.get(__ret__, 'modified_by'),
         modified_date=pulumi.get(__ret__, 'modified_date'))
-def get_iam_cidr_block_output(cidr_block_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_iam_cidr_block_output(cidr_block_id: pulumi.Input[Optional[_builtins.int]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamCidrBlockResult]:
     """
     Use this data source to access information about an existing resource.

@@ -322,7 +322,7 @@ def get_cps_enrollment(enrollment_id: Optional[_builtins.int] = None,
         staging_slots=pulumi.get(__ret__, 'staging_slots'),
         tech_contacts=pulumi.get(__ret__, 'tech_contacts'),
         validation_type=pulumi.get(__ret__, 'validation_type'))
-def get_cps_enrollment_output(enrollment_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_cps_enrollment_output(enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCPSEnrollmentResult]:
     """
     Use this data source to access information about an existing resource.

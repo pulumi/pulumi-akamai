@@ -115,9 +115,9 @@ def get_cloudlets_policy_activation(associated_properties: Optional[Sequence[_bu
         policy_id=pulumi.get(__ret__, 'policy_id'),
         status=pulumi.get(__ret__, 'status'),
         version=pulumi.get(__ret__, 'version'))
-def get_cloudlets_policy_activation_output(associated_properties: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                           network: Optional[pulumi.Input[_builtins.str]] = None,
-                                           policy_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_cloudlets_policy_activation_output(associated_properties: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                           network: pulumi.Input[Optional[_builtins.str]] = None,
+                                           policy_id: pulumi.Input[Optional[_builtins.int]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsPolicyActivationResult]:
     """
     Use this data source to access information about an existing resource.

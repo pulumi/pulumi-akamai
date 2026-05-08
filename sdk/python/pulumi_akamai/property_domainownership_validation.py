@@ -22,7 +22,7 @@ __all__ = ['PropertyDomainownershipValidationArgs', 'PropertyDomainownershipVali
 class PropertyDomainownershipValidationArgs:
     def __init__(__self__, *,
                  domains: pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipValidationDomainArgs']]],
-                 timeouts: Optional[pulumi.Input['PropertyDomainownershipValidationTimeoutsArgs']] = None):
+                 timeouts: pulumi.Input[Optional['PropertyDomainownershipValidationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyDomainownershipValidation resource.
 
@@ -46,19 +46,19 @@ class PropertyDomainownershipValidationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['PropertyDomainownershipValidationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['PropertyDomainownershipValidationTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['PropertyDomainownershipValidationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['PropertyDomainownershipValidationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _PropertyDomainownershipValidationState:
     def __init__(__self__, *,
-                 domains: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipValidationDomainArgs']]]] = None,
-                 timeouts: Optional[pulumi.Input['PropertyDomainownershipValidationTimeoutsArgs']] = None):
+                 domains: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyDomainownershipValidationDomainArgs']]]] = None,
+                 timeouts: pulumi.Input[Optional['PropertyDomainownershipValidationTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering PropertyDomainownershipValidation resources.
 
@@ -71,23 +71,23 @@ class _PropertyDomainownershipValidationState:
 
     @_builtins.property
     @pulumi.getter
-    def domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipValidationDomainArgs']]]]:
+    def domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyDomainownershipValidationDomainArgs']]]]:
         """
         List of domains to be validated.
         """
         return pulumi.get(self, "domains")
 
     @domains.setter
-    def domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyDomainownershipValidationDomainArgs']]]]):
+    def domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyDomainownershipValidationDomainArgs']]]]):
         pulumi.set(self, "domains", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['PropertyDomainownershipValidationTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['PropertyDomainownershipValidationTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['PropertyDomainownershipValidationTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['PropertyDomainownershipValidationTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
@@ -97,8 +97,8 @@ class PropertyDomainownershipValidation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyDomainownershipValidationDomainArgs', 'PropertyDomainownershipValidationDomainArgsDict']]]]] = None,
-                 timeouts: Optional[pulumi.Input[Union['PropertyDomainownershipValidationTimeoutsArgs', 'PropertyDomainownershipValidationTimeoutsArgsDict']]] = None,
+                 domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyDomainownershipValidationDomainArgs', 'PropertyDomainownershipValidationDomainArgsDict']]]]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipValidationTimeoutsArgs', 'PropertyDomainownershipValidationTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a PropertyDomainownershipValidation resource with the given unique name, props, and options.
@@ -131,8 +131,8 @@ class PropertyDomainownershipValidation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyDomainownershipValidationDomainArgs', 'PropertyDomainownershipValidationDomainArgsDict']]]]] = None,
-                 timeouts: Optional[pulumi.Input[Union['PropertyDomainownershipValidationTimeoutsArgs', 'PropertyDomainownershipValidationTimeoutsArgsDict']]] = None,
+                 domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyDomainownershipValidationDomainArgs', 'PropertyDomainownershipValidationDomainArgsDict']]]]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipValidationTimeoutsArgs', 'PropertyDomainownershipValidationTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -156,8 +156,8 @@ class PropertyDomainownershipValidation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyDomainownershipValidationDomainArgs', 'PropertyDomainownershipValidationDomainArgsDict']]]]] = None,
-            timeouts: Optional[pulumi.Input[Union['PropertyDomainownershipValidationTimeoutsArgs', 'PropertyDomainownershipValidationTimeoutsArgsDict']]] = None) -> 'PropertyDomainownershipValidation':
+            domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyDomainownershipValidationDomainArgs', 'PropertyDomainownershipValidationDomainArgsDict']]]]] = None,
+            timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipValidationTimeoutsArgs', 'PropertyDomainownershipValidationTimeoutsArgsDict']]] = None) -> 'PropertyDomainownershipValidation':
         """
         Get an existing PropertyDomainownershipValidation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

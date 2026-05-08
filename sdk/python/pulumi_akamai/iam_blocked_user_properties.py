@@ -73,9 +73,9 @@ class IamBlockedUserPropertiesArgs:
 @pulumi.input_type
 class _IamBlockedUserPropertiesState:
     def __init__(__self__, *,
-                 blocked_properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 identity_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 blocked_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 identity_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamBlockedUserProperties resources.
 
@@ -92,38 +92,38 @@ class _IamBlockedUserPropertiesState:
 
     @_builtins.property
     @pulumi.getter(name="blockedProperties")
-    def blocked_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def blocked_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         List of properties to block for a user.
         """
         return pulumi.get(self, "blocked_properties")
 
     @blocked_properties.setter
-    def blocked_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def blocked_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "blocked_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         A unique identifier for a group.
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="identityId")
-    def identity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         """
         return pulumi.get(self, "identity_id")
 
     @identity_id.setter
-    def identity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_id", value)
 
 
@@ -133,9 +133,9 @@ class IamBlockedUserProperties(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocked_properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 identity_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 blocked_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 identity_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamBlockedUserProperties resource with the given unique name, props, and options.
@@ -170,9 +170,9 @@ class IamBlockedUserProperties(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocked_properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 identity_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 blocked_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 identity_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -201,9 +201,9 @@ class IamBlockedUserProperties(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            blocked_properties: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            group_id: Optional[pulumi.Input[_builtins.int]] = None,
-            identity_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamBlockedUserProperties':
+            blocked_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            identity_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamBlockedUserProperties':
         """
         Get an existing IamBlockedUserProperties resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

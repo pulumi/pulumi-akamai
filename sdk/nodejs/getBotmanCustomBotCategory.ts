@@ -44,6 +44,6 @@ export function getBotmanCustomBotCategoryOutput(args: GetBotmanCustomBotCategor
  * A collection of arguments for invoking getBotmanCustomBotCategory.
  */
 export interface GetBotmanCustomBotCategoryOutputArgs {
-    categoryId?: pulumi.Input<string>;
+    categoryId?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
 }

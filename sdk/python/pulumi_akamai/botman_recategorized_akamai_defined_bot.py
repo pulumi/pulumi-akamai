@@ -60,9 +60,9 @@ class BotmanRecategorizedAkamaiDefinedBotArgs:
 @pulumi.input_type
 class _BotmanRecategorizedAkamaiDefinedBotState:
     def __init__(__self__, *,
-                 bot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 category_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 bot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 category_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BotmanRecategorizedAkamaiDefinedBot resources.
         """
@@ -75,29 +75,29 @@ class _BotmanRecategorizedAkamaiDefinedBotState:
 
     @_builtins.property
     @pulumi.getter(name="botId")
-    def bot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "bot_id")
 
     @bot_id.setter
-    def bot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bot_id", value)
 
     @_builtins.property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "category_id")
 
     @category_id.setter
-    def category_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
 
@@ -107,9 +107,9 @@ class BotmanRecategorizedAkamaiDefinedBot(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 category_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 bot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 category_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a BotmanRecategorizedAkamaiDefinedBot resource with the given unique name, props, and options.
@@ -141,9 +141,9 @@ class BotmanRecategorizedAkamaiDefinedBot(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 category_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 bot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 category_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -172,9 +172,9 @@ class BotmanRecategorizedAkamaiDefinedBot(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bot_id: Optional[pulumi.Input[_builtins.str]] = None,
-            category_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'BotmanRecategorizedAkamaiDefinedBot':
+            bot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            category_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'BotmanRecategorizedAkamaiDefinedBot':
         """
         Get an existing BotmanRecategorizedAkamaiDefinedBot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

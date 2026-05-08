@@ -174,8 +174,8 @@ def get_iam_role(role_id: Optional[_builtins.int] = None,
         role_name=pulumi.get(__ret__, 'role_name'),
         type=pulumi.get(__ret__, 'type'),
         users=pulumi.get(__ret__, 'users'))
-def get_iam_role_output(role_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                        role_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_role_output(role_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                        role_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamRoleResult]:
     """
     Use this data source to access information about an existing resource.

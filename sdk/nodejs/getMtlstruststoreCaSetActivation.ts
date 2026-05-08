@@ -51,7 +51,7 @@ export function getMtlstruststoreCaSetActivationOutput(args: GetMtlstruststoreCa
  * A collection of arguments for invoking getMtlstruststoreCaSetActivation.
  */
 export interface GetMtlstruststoreCaSetActivationOutputArgs {
-    caSetId?: pulumi.Input<string>;
-    caSetName?: pulumi.Input<string>;
+    caSetId?: pulumi.Input<string | undefined>;
+    caSetName?: pulumi.Input<string | undefined>;
     id: pulumi.Input<number>;
 }

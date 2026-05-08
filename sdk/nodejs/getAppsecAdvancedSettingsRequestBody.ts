@@ -46,5 +46,5 @@ export function getAppsecAdvancedSettingsRequestBodyOutput(args: GetAppsecAdvanc
  */
 export interface GetAppsecAdvancedSettingsRequestBodyOutputArgs {
     configId: pulumi.Input<number>;
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

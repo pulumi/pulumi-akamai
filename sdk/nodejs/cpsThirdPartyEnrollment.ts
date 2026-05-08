@@ -198,75 +198,75 @@ export interface CpsThirdPartyEnrollmentState {
     /**
      * Whether acknowledge warnings before certificate verification. Default is false
      */
-    acknowledgePreVerificationWarnings?: pulumi.Input<boolean>;
+    acknowledgePreVerificationWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Contact information for the certificate administrator to use at organization
      */
-    adminContact?: pulumi.Input<inputs.CpsThirdPartyEnrollmentAdminContact>;
+    adminContact?: pulumi.Input<inputs.CpsThirdPartyEnrollmentAdminContact | undefined>;
     /**
      * Allow to duplicate common name. Default is false
      */
-    allowDuplicateCommonName?: pulumi.Input<boolean>;
+    allowDuplicateCommonName?: pulumi.Input<boolean | undefined>;
     /**
      * List of warnings to be automatically approved
      */
-    autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[]>;
+    autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Certificate trust chain type. Default is 'default'
      */
-    certificateChainType?: pulumi.Input<string>;
+    certificateChainType?: pulumi.Input<string | undefined>;
     /**
      * When set to false, the certificate will be deployed to both staging and production networks
      */
-    changeManagement?: pulumi.Input<boolean>;
+    changeManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Common name used for enrollment
      */
-    commonName?: pulumi.Input<string>;
+    commonName?: pulumi.Input<string | undefined>;
     /**
      * Contract ID for which enrollment is retrieved
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Data used for generation of Certificate Signing Request
      */
-    csr?: pulumi.Input<inputs.CpsThirdPartyEnrollmentCsr>;
+    csr?: pulumi.Input<inputs.CpsThirdPartyEnrollmentCsr | undefined>;
     /**
      * When true, SANs are excluded from the CSR
      */
-    excludeSans?: pulumi.Input<boolean>;
+    excludeSans?: pulumi.Input<boolean | undefined>;
     /**
      * Settings containing network information and TLS metadata used by CPS
      */
-    networkConfiguration?: pulumi.Input<inputs.CpsThirdPartyEnrollmentNetworkConfiguration>;
+    networkConfiguration?: pulumi.Input<inputs.CpsThirdPartyEnrollmentNetworkConfiguration | undefined>;
     /**
      * Organization information
      */
-    organization?: pulumi.Input<inputs.CpsThirdPartyEnrollmentOrganization>;
+    organization?: pulumi.Input<inputs.CpsThirdPartyEnrollmentOrganization | undefined>;
     /**
      * List of SANs
      */
-    sans?: pulumi.Input<pulumi.Input<string>[]>;
+    sans?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of TLS deployment network
      */
-    secureNetwork?: pulumi.Input<string>;
+    secureNetwork?: pulumi.Input<string | undefined>;
     /**
      * The SHA function. Changing this value may require running terraform destroy, terraform apply
      */
-    signatureAlgorithm?: pulumi.Input<string>;
+    signatureAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * Whether Server Name Indication is used for enrollment
      */
-    sniOnly?: pulumi.Input<boolean>;
+    sniOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Contact information for an administrator at Akamai
      */
-    techContact?: pulumi.Input<inputs.CpsThirdPartyEnrollmentTechContact>;
+    techContact?: pulumi.Input<inputs.CpsThirdPartyEnrollmentTechContact | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpsThirdPartyEnrollmentTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpsThirdPartyEnrollmentTimeouts | undefined>;
 }
 
 /**
@@ -276,7 +276,7 @@ export interface CpsThirdPartyEnrollmentArgs {
     /**
      * Whether acknowledge warnings before certificate verification. Default is false
      */
-    acknowledgePreVerificationWarnings?: pulumi.Input<boolean>;
+    acknowledgePreVerificationWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Contact information for the certificate administrator to use at organization
      */
@@ -284,19 +284,19 @@ export interface CpsThirdPartyEnrollmentArgs {
     /**
      * Allow to duplicate common name. Default is false
      */
-    allowDuplicateCommonName?: pulumi.Input<boolean>;
+    allowDuplicateCommonName?: pulumi.Input<boolean | undefined>;
     /**
      * List of warnings to be automatically approved
      */
-    autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[]>;
+    autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Certificate trust chain type. Default is 'default'
      */
-    certificateChainType?: pulumi.Input<string>;
+    certificateChainType?: pulumi.Input<string | undefined>;
     /**
      * When set to false, the certificate will be deployed to both staging and production networks
      */
-    changeManagement?: pulumi.Input<boolean>;
+    changeManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Common name used for enrollment
      */
@@ -312,7 +312,7 @@ export interface CpsThirdPartyEnrollmentArgs {
     /**
      * When true, SANs are excluded from the CSR
      */
-    excludeSans?: pulumi.Input<boolean>;
+    excludeSans?: pulumi.Input<boolean | undefined>;
     /**
      * Settings containing network information and TLS metadata used by CPS
      */
@@ -324,7 +324,7 @@ export interface CpsThirdPartyEnrollmentArgs {
     /**
      * List of SANs
      */
-    sans?: pulumi.Input<pulumi.Input<string>[]>;
+    sans?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of TLS deployment network
      */
@@ -332,7 +332,7 @@ export interface CpsThirdPartyEnrollmentArgs {
     /**
      * The SHA function. Changing this value may require running terraform destroy, terraform apply
      */
-    signatureAlgorithm?: pulumi.Input<string>;
+    signatureAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * Whether Server Name Indication is used for enrollment
      */
@@ -344,5 +344,5 @@ export interface CpsThirdPartyEnrollmentArgs {
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpsThirdPartyEnrollmentTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpsThirdPartyEnrollmentTimeouts | undefined>;
 }

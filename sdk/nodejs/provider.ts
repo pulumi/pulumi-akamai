@@ -72,33 +72,33 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
-    cacheEnabled?: pulumi.Input<boolean>;
-    config?: pulumi.Input<inputs.ProviderConfig>;
+    cacheEnabled?: pulumi.Input<boolean | undefined>;
+    config?: pulumi.Input<inputs.ProviderConfig | undefined>;
     /**
      * The section of the edgerc file to use for configuration
      */
-    configSection?: pulumi.Input<string>;
-    edgerc?: pulumi.Input<string>;
+    configSection?: pulumi.Input<string | undefined>;
+    edgerc?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of API requests to be made per second (0 for no limit)
      */
-    requestLimit?: pulumi.Input<number>;
+    requestLimit?: pulumi.Input<number | undefined>;
     /**
      * Should the retries of API requests be disabled, default false
      */
-    retryDisabled?: pulumi.Input<boolean>;
+    retryDisabled?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum number retires of API requests, default 10
      */
-    retryMax?: pulumi.Input<number>;
+    retryMax?: pulumi.Input<number | undefined>;
     /**
      * The maximum wait time in seconds between API requests retries, default is 30 sec
      */
-    retryWaitMax?: pulumi.Input<number>;
+    retryWaitMax?: pulumi.Input<number | undefined>;
     /**
      * The minimum wait time in seconds between API requests retries, default is 1 sec
      */
-    retryWaitMin?: pulumi.Input<number>;
+    retryWaitMin?: pulumi.Input<number | undefined>;
 }
 
 export namespace Provider {

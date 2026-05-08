@@ -82,10 +82,10 @@ export class BotmanBotDetectionAction extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanBotDetectionAction resources.
  */
 export interface BotmanBotDetectionActionState {
-    botDetectionAction?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
-    detectionId?: pulumi.Input<string>;
-    securityPolicyId?: pulumi.Input<string>;
+    botDetectionAction?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
+    detectionId?: pulumi.Input<string | undefined>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

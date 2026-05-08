@@ -88,10 +88,10 @@ class AppSecReputationProfileAnalysisArgs:
 @pulumi.input_type
 class _AppSecReputationProfileAnalysisState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 forward_shared_ip_to_http_header_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forward_to_http_header: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 forward_shared_ip_to_http_header_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forward_to_http_header: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecReputationProfileAnalysis resources.
 
@@ -111,50 +111,50 @@ class _AppSecReputationProfileAnalysisState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="forwardSharedIpToHttpHeaderSiem")
-    def forward_shared_ip_to_http_header_siem(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def forward_shared_ip_to_http_header_siem(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
         """
         return pulumi.get(self, "forward_shared_ip_to_http_header_siem")
 
     @forward_shared_ip_to_http_header_siem.setter
-    def forward_shared_ip_to_http_header_siem(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def forward_shared_ip_to_http_header_siem(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "forward_shared_ip_to_http_header_siem", value)
 
     @_builtins.property
     @pulumi.getter(name="forwardToHttpHeader")
-    def forward_to_http_header(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def forward_to_http_header(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to add client reputation details to requests forwarded to the origin server
         """
         return pulumi.get(self, "forward_to_http_header")
 
     @forward_to_http_header.setter
-    def forward_to_http_header(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def forward_to_http_header(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "forward_to_http_header", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -164,10 +164,10 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 forward_shared_ip_to_http_header_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forward_to_http_header: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 forward_shared_ip_to_http_header_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forward_to_http_header: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecReputationProfileAnalysis resource with the given unique name, props, and options.
@@ -203,10 +203,10 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 forward_shared_ip_to_http_header_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forward_to_http_header: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 forward_shared_ip_to_http_header_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forward_to_http_header: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -238,10 +238,10 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            forward_shared_ip_to_http_header_siem: Optional[pulumi.Input[_builtins.bool]] = None,
-            forward_to_http_header: Optional[pulumi.Input[_builtins.bool]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecReputationProfileAnalysis':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            forward_shared_ip_to_http_header_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+            forward_to_http_header: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecReputationProfileAnalysis':
         """
         Get an existing AppSecReputationProfileAnalysis resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

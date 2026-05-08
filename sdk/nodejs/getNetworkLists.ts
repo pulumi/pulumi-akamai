@@ -55,7 +55,7 @@ export function getNetworkListsOutput(args?: GetNetworkListsOutputArgs, opts?: p
  * A collection of arguments for invoking getNetworkLists.
  */
 export interface GetNetworkListsOutputArgs {
-    name?: pulumi.Input<string>;
-    networkListId?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    networkListId?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }

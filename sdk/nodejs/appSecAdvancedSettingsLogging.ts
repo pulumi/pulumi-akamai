@@ -85,15 +85,15 @@ export interface AppSecAdvancedSettingsLoggingState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Whether to enable, disable, or update HTTP header logging settings
      */
-    logging?: pulumi.Input<string>;
+    logging?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -111,5 +111,5 @@ export interface AppSecAdvancedSettingsLoggingArgs {
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

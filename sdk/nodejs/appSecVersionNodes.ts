@@ -85,15 +85,15 @@ export interface AppSecVersionNodesState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Text representation
      */
-    outputText?: pulumi.Input<string>;
+    outputText?: pulumi.Input<string | undefined>;
     /**
      * Brief description of the security configuration version
      */
-    versionNotes?: pulumi.Input<string>;
+    versionNotes?: pulumi.Input<string | undefined>;
 }
 
 /**

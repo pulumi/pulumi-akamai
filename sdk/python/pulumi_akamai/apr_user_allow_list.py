@@ -20,7 +20,7 @@ __all__ = ['AprUserAllowListArgs', 'AprUserAllowList']
 class AprUserAllowListArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[_builtins.int],
-                 user_allow_list: Optional[pulumi.Input[_builtins.str]] = None):
+                 user_allow_list: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AprUserAllowList resource.
 
@@ -44,19 +44,19 @@ class AprUserAllowListArgs:
 
     @_builtins.property
     @pulumi.getter(name="userAllowList")
-    def user_allow_list(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_allow_list(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "user_allow_list")
 
     @user_allow_list.setter
-    def user_allow_list(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_allow_list(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_allow_list", value)
 
 
 @pulumi.input_type
 class _AprUserAllowListState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_allow_list: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_allow_list: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AprUserAllowList resources.
 
@@ -69,23 +69,23 @@ class _AprUserAllowListState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Identifies a security configuration.
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userAllowList")
-    def user_allow_list(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_allow_list(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "user_allow_list")
 
     @user_allow_list.setter
-    def user_allow_list(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_allow_list(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_allow_list", value)
 
 
@@ -95,8 +95,8 @@ class AprUserAllowList(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_allow_list: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_allow_list: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AprUserAllowList resource with the given unique name, props, and options.
@@ -129,8 +129,8 @@ class AprUserAllowList(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_allow_list: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_allow_list: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -154,8 +154,8 @@ class AprUserAllowList(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            user_allow_list: Optional[pulumi.Input[_builtins.str]] = None) -> 'AprUserAllowList':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            user_allow_list: pulumi.Input[Optional[_builtins.str]] = None) -> 'AprUserAllowList':
         """
         Get an existing AprUserAllowList resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

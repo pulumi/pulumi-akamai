@@ -81,7 +81,7 @@ def get_authorities_set(contract: Optional[_builtins.str] = None,
         authorities=pulumi.get(__ret__, 'authorities'),
         contract=pulumi.get(__ret__, 'contract'),
         id=pulumi.get(__ret__, 'id'))
-def get_authorities_set_output(contract: Optional[pulumi.Input[_builtins.str]] = None,
+def get_authorities_set_output(contract: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuthoritiesSetResult]:
     """
     Use this data source to access information about an existing resource.

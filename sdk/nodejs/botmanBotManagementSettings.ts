@@ -76,9 +76,9 @@ export class BotmanBotManagementSettings extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanBotManagementSettings resources.
  */
 export interface BotmanBotManagementSettingsState {
-    botManagementSettings?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
-    securityPolicyId?: pulumi.Input<string>;
+    botManagementSettings?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

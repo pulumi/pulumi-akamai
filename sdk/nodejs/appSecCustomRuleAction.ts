@@ -97,19 +97,19 @@ export interface AppSecCustomRuleActionState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Action to be taken when the custom rule is invoked
      */
-    customRuleAction?: pulumi.Input<string>;
+    customRuleAction?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the custom rule whose action is being modified
      */
-    customRuleId?: pulumi.Input<number>;
+    customRuleId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

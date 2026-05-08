@@ -200,80 +200,80 @@ export interface IamApiClientState {
     /**
      * The part of the client secret that identifies your API client and lets you access applications and resources.
      */
-    accessToken?: pulumi.Input<string>;
+    accessToken?: pulumi.Input<string | undefined>;
     /**
      * Specifies activities available for the API client.
      */
-    actions?: pulumi.Input<inputs.IamApiClientActions>;
+    actions?: pulumi.Input<inputs.IamApiClientActions | undefined>;
     /**
      * The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
      */
-    activeCredentialCount?: pulumi.Input<number>;
+    activeCredentialCount?: pulumi.Input<number | undefined>;
     /**
      * Enables the API client to manage more than one account.
      */
-    allowAccountSwitch?: pulumi.Input<boolean>;
+    allowAccountSwitch?: pulumi.Input<boolean | undefined>;
     /**
      * The APIs the API client can access.
      */
-    apiAccess?: pulumi.Input<inputs.IamApiClientApiAccess>;
+    apiAccess?: pulumi.Input<inputs.IamApiClientApiAccess | undefined>;
     /**
      * The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
      */
-    authorizedUsers?: pulumi.Input<pulumi.Input<string>[]>;
+    authorizedUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The base URL for the service.
      */
-    baseUrl?: pulumi.Input<string>;
+    baseUrl?: pulumi.Input<string | undefined>;
     /**
      * Whether the API client can create a credential for a new API client. The default is false.
      */
-    canAutoCreateCredential?: pulumi.Input<boolean>;
+    canAutoCreateCredential?: pulumi.Input<boolean | undefined>;
     /**
      * A human-readable description of the API client.
      */
-    clientDescription?: pulumi.Input<string>;
+    clientDescription?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier for the API client.
      */
-    clientId?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string | undefined>;
     /**
      * A human-readable name for the API client.
      */
-    clientName?: pulumi.Input<string>;
+    clientName?: pulumi.Input<string | undefined>;
     /**
      * Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
      */
-    clientType?: pulumi.Input<string>;
+    clientType?: pulumi.Input<string | undefined>;
     /**
      * The user who created the API client.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * The ISO 8601 timestamp indicating when the API client was created.
      */
-    createdDate?: pulumi.Input<string>;
-    credential?: pulumi.Input<inputs.IamApiClientCredential>;
+    createdDate?: pulumi.Input<string | undefined>;
+    credential?: pulumi.Input<inputs.IamApiClientCredential | undefined>;
     /**
      * Specifies the API client's group access.
      */
-    groupAccess?: pulumi.Input<inputs.IamApiClientGroupAccess>;
+    groupAccess?: pulumi.Input<inputs.IamApiClientGroupAccess | undefined>;
     /**
      * Specifies the API client's IP list restriction.
      */
-    ipAcl?: pulumi.Input<inputs.IamApiClientIpAcl>;
+    ipAcl?: pulumi.Input<inputs.IamApiClientIpAcl | undefined>;
     /**
      * Whether to lock or unlock the API client.
      */
-    lock?: pulumi.Input<boolean>;
+    lock?: pulumi.Input<boolean | undefined>;
     /**
      * Email addresses to notify users when credentials expire.
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
      */
-    purgeOptions?: pulumi.Input<inputs.IamApiClientPurgeOptions>;
+    purgeOptions?: pulumi.Input<inputs.IamApiClientPurgeOptions | undefined>;
 }
 
 /**
@@ -283,7 +283,7 @@ export interface IamApiClientArgs {
     /**
      * Enables the API client to manage more than one account.
      */
-    allowAccountSwitch?: pulumi.Input<boolean>;
+    allowAccountSwitch?: pulumi.Input<boolean | undefined>;
     /**
      * The APIs the API client can access.
      */
@@ -295,11 +295,11 @@ export interface IamApiClientArgs {
     /**
      * Whether the API client can create a credential for a new API client. The default is false.
      */
-    canAutoCreateCredential?: pulumi.Input<boolean>;
+    canAutoCreateCredential?: pulumi.Input<boolean | undefined>;
     /**
      * A human-readable description of the API client.
      */
-    clientDescription?: pulumi.Input<string>;
+    clientDescription?: pulumi.Input<string | undefined>;
     /**
      * A human-readable name for the API client.
      */
@@ -316,17 +316,17 @@ export interface IamApiClientArgs {
     /**
      * Specifies the API client's IP list restriction.
      */
-    ipAcl?: pulumi.Input<inputs.IamApiClientIpAcl>;
+    ipAcl?: pulumi.Input<inputs.IamApiClientIpAcl | undefined>;
     /**
      * Whether to lock or unlock the API client.
      */
-    lock?: pulumi.Input<boolean>;
+    lock?: pulumi.Input<boolean | undefined>;
     /**
      * Email addresses to notify users when credentials expire.
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `apiName` of `CCU API`.
      */
-    purgeOptions?: pulumi.Input<inputs.IamApiClientPurgeOptions>;
+    purgeOptions?: pulumi.Input<inputs.IamApiClientPurgeOptions | undefined>;
 }

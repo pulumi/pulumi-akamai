@@ -20,7 +20,7 @@ __all__ = ['AppSecMatchTargetSequenceArgs', 'AppSecMatchTargetSequence']
 class AppSecMatchTargetSequenceArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[_builtins.int],
-                 match_target_sequence: Optional[pulumi.Input[_builtins.str]] = None):
+                 match_target_sequence: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecMatchTargetSequence resource.
 
@@ -45,22 +45,22 @@ class AppSecMatchTargetSequenceArgs:
 
     @_builtins.property
     @pulumi.getter(name="matchTargetSequence")
-    def match_target_sequence(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_target_sequence(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted definition of the processing sequence for all defined match targets
         """
         return pulumi.get(self, "match_target_sequence")
 
     @match_target_sequence.setter
-    def match_target_sequence(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_target_sequence(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_target_sequence", value)
 
 
 @pulumi.input_type
 class _AppSecMatchTargetSequenceState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 match_target_sequence: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 match_target_sequence: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecMatchTargetSequence resources.
 
@@ -74,26 +74,26 @@ class _AppSecMatchTargetSequenceState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="matchTargetSequence")
-    def match_target_sequence(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_target_sequence(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted definition of the processing sequence for all defined match targets
         """
         return pulumi.get(self, "match_target_sequence")
 
     @match_target_sequence.setter
-    def match_target_sequence(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_target_sequence(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_target_sequence", value)
 
 
@@ -103,8 +103,8 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 match_target_sequence: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 match_target_sequence: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecMatchTargetSequence resource with the given unique name, props, and options.
@@ -138,8 +138,8 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 match_target_sequence: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 match_target_sequence: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -163,8 +163,8 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            match_target_sequence: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecMatchTargetSequence':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            match_target_sequence: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecMatchTargetSequence':
         """
         Get an existing AppSecMatchTargetSequence resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -95,9 +95,9 @@ def get_apidefinitions_openapi(api: Optional[_builtins.str] = None,
         api_file_name=pulumi.get(__ret__, 'api_file_name'),
         file_path=pulumi.get(__ret__, 'file_path'),
         id=pulumi.get(__ret__, 'id'))
-def get_apidefinitions_openapi_output(api: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      api_file_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      file_path: Optional[pulumi.Input[_builtins.str]] = None,
+def get_apidefinitions_openapi_output(api: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      api_file_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      file_path: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApidefinitionsOpenapiResult]:
     """
     Use this data source to access information about an existing resource.

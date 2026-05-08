@@ -105,9 +105,9 @@ def get_botman_content_protection_rule(config_id: Optional[_builtins.int] = None
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_botman_content_protection_rule_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                              content_protection_rule_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_botman_content_protection_rule_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                              content_protection_rule_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanContentProtectionRuleResult]:
     """
     Use this data source to access information about an existing resource.

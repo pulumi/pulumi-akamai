@@ -42,5 +42,5 @@ export function getBotmanAkamaiBotCategoryOutput(args?: GetBotmanAkamaiBotCatego
  * A collection of arguments for invoking getBotmanAkamaiBotCategory.
  */
 export interface GetBotmanAkamaiBotCategoryOutputArgs {
-    categoryName?: pulumi.Input<string>;
+    categoryName?: pulumi.Input<string | undefined>;
 }

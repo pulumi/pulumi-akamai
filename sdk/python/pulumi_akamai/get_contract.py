@@ -83,8 +83,8 @@ def get_contract(group_id: Optional[_builtins.str] = None,
         group_id=pulumi.get(__ret__, 'group_id'),
         group_name=pulumi.get(__ret__, 'group_name'),
         id=pulumi.get(__ret__, 'id'))
-def get_contract_output(group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        group_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_contract_output(group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        group_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContractResult]:
     """
     Use this data source to access information about an existing resource.

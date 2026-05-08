@@ -58,5 +58,5 @@ export function getCloudletsApplicationLoadBalancerOutput(args: GetCloudletsAppl
  */
 export interface GetCloudletsApplicationLoadBalancerOutputArgs {
     originId: pulumi.Input<string>;
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }

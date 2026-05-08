@@ -23,9 +23,9 @@ class PropertyIncludeArgs:
                  group_id: pulumi.Input[_builtins.str],
                  rule_format: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PropertyInclude resource.
 
@@ -98,57 +98,57 @@ class PropertyIncludeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A descriptive name for the include
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="productId")
-    def product_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The product assigned to the include
         """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
-    def product_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rules(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property Rules as JSON
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rules(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rules", value)
 
 
 @pulumi.input_type
 class _PropertyIncludeState:
     def __init__(__self__, *,
-                 asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 production_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_errors: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_warnings: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 staging_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 production_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_errors: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_warnings: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 staging_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PropertyInclude resources.
 
@@ -195,158 +195,158 @@ class _PropertyIncludeState:
 
     @_builtins.property
     @pulumi.getter(name="assetId")
-    def asset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the include in the Identity and Access Management API.
         """
         return pulumi.get(self, "asset_id")
 
     @asset_id.setter
-    def asset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies the contract to which the include is assigned
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies the group to which the include is assigned
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="latestVersion")
-    def latest_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def latest_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies the most recent version of the include
         """
         return pulumi.get(self, "latest_version")
 
     @latest_version.setter
-    def latest_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def latest_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "latest_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A descriptive name for the include
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="productId")
-    def product_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The product assigned to the include
         """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
-    def product_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_id", value)
 
     @_builtins.property
     @pulumi.getter(name="productionVersion")
-    def production_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def production_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The most recent version to be activated to the production network
         """
         return pulumi.get(self, "production_version")
 
     @production_version.setter
-    def production_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def production_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "production_version", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleErrors")
-    def rule_errors(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_errors(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule validation errors
         """
         return pulumi.get(self, "rule_errors")
 
     @rule_errors.setter
-    def rule_errors(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_errors(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleFormat")
-    def rule_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the versioned set of features and criteria
         """
         return pulumi.get(self, "rule_format")
 
     @rule_format.setter
-    def rule_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_format", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleWarnings")
-    def rule_warnings(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_warnings(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule validation warnings
         """
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
-    def rule_warnings(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_warnings(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_warnings", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rules(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property Rules as JSON
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rules(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="stagingVersion")
-    def staging_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def staging_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The most recent version to be activated to the staging network
         """
         return pulumi.get(self, "staging_version")
 
     @staging_version.setter
-    def staging_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def staging_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "staging_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -356,13 +356,13 @@ class PropertyInclude(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PropertyInclude resource with the given unique name, props, and options.
@@ -401,13 +401,13 @@ class PropertyInclude(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -448,19 +448,19 @@ class PropertyInclude(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            product_id: Optional[pulumi.Input[_builtins.str]] = None,
-            production_version: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_errors: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_warnings: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[_builtins.str]] = None,
-            staging_version: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'PropertyInclude':
+            asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            production_version: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_errors: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_warnings: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[_builtins.str]] = None,
+            staging_version: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'PropertyInclude':
         """
         Get an existing PropertyInclude resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

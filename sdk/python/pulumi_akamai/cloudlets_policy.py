@@ -23,12 +23,12 @@ class CloudletsPolicyArgs:
     def __init__(__self__, *,
                  cloudlet_code: pulumi.Input[_builtins.str],
                  group_id: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-                 match_rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+                 match_rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['CloudletsPolicyTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsPolicy resource.
 
@@ -82,91 +82,91 @@ class CloudletsPolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of this specific policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isShared")
-    def is_shared(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shared(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The type of policy that you want to create.
         """
         return pulumi.get(self, "is_shared")
 
     @is_shared.setter
-    def is_shared(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shared(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shared", value)
 
     @_builtins.property
     @pulumi.getter(name="matchRuleFormat")
-    def match_rule_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_rule_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Cloudlet specific matchRules.
         """
         return pulumi.get(self, "match_rule_format")
 
     @match_rule_format.setter
-    def match_rule_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_rule_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_rule_format", value)
 
     @_builtins.property
     @pulumi.getter(name="matchRules")
-    def match_rules(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_rules(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A JSON structure that defines the rules for this policy.
         """
         return pulumi.get(self, "match_rules")
 
     @match_rules.setter
-    def match_rules(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_rules(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the policy. The name must be unique.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudletsPolicyTimeoutsArgs']]:
         """
         Enables to set timeout for processing.
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudletsPolicyTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _CloudletsPolicyState:
     def __init__(__self__, *,
-                 cloudlet_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloudlet_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-                 match_rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None,
-                 warnings: Optional[pulumi.Input[_builtins.str]] = None):
+                 cloudlet_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloudlet_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+                 match_rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['CloudletsPolicyTimeoutsArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None,
+                 warnings: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudletsPolicy resources.
 
@@ -207,134 +207,134 @@ class _CloudletsPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="cloudletCode")
-    def cloudlet_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloudlet_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
         """
         return pulumi.get(self, "cloudlet_code")
 
     @cloudlet_code.setter
-    def cloudlet_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloudlet_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloudlet_code", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudletId")
-    def cloudlet_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cloudlet_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies.
         """
         return pulumi.get(self, "cloudlet_id")
 
     @cloudlet_id.setter
-    def cloudlet_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cloudlet_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cloudlet_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of this specific policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the group association for the policy. You must have edit privileges for the group.
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isShared")
-    def is_shared(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shared(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The type of policy that you want to create.
         """
         return pulumi.get(self, "is_shared")
 
     @is_shared.setter
-    def is_shared(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shared(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shared", value)
 
     @_builtins.property
     @pulumi.getter(name="matchRuleFormat")
-    def match_rule_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_rule_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Cloudlet specific matchRules.
         """
         return pulumi.get(self, "match_rule_format")
 
     @match_rule_format.setter
-    def match_rule_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_rule_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_rule_format", value)
 
     @_builtins.property
     @pulumi.getter(name="matchRules")
-    def match_rules(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_rules(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A JSON structure that defines the rules for this policy.
         """
         return pulumi.get(self, "match_rules")
 
     @match_rules.setter
-    def match_rules(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_rules(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the policy. The name must be unique.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudletsPolicyTimeoutsArgs']]:
         """
         Enables to set timeout for processing.
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudletsPolicyTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The version number of the policy.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter
-    def warnings(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def warnings(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A JSON encoded list of warnings.
         """
         return pulumi.get(self, "warnings")
 
     @warnings.setter
-    def warnings(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def warnings(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "warnings", value)
 
 
@@ -344,14 +344,14 @@ class CloudletsPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloudlet_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-                 match_rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']]] = None,
+                 cloudlet_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+                 match_rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CloudletsPolicy resource with the given unique name, props, and options.
@@ -391,14 +391,14 @@ class CloudletsPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloudlet_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-                 match_rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']]] = None,
+                 cloudlet_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+                 match_rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -433,17 +433,17 @@ class CloudletsPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cloudlet_code: Optional[pulumi.Input[_builtins.str]] = None,
-            cloudlet_id: Optional[pulumi.Input[_builtins.int]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-            match_rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-            match_rules: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None,
-            warnings: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudletsPolicy':
+            cloudlet_code: pulumi.Input[Optional[_builtins.str]] = None,
+            cloudlet_id: pulumi.Input[Optional[_builtins.int]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            match_rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+            match_rules: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None,
+            warnings: pulumi.Input[Optional[_builtins.str]] = None) -> 'CloudletsPolicy':
         """
         Get an existing CloudletsPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

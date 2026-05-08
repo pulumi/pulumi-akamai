@@ -23,8 +23,8 @@ class AppsecWafRulesetArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[_builtins.int],
                  security_policy_id: pulumi.Input[_builtins.str],
-                 attack_groups: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]] = None):
+                 attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]] = None):
         """
         The set of arguments for constructing a AppsecWafRuleset resource.
 
@@ -66,36 +66,36 @@ class AppsecWafRulesetArgs:
 
     @_builtins.property
     @pulumi.getter(name="attackGroups")
-    def attack_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]]:
+    def attack_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]]:
         """
         List of attack group objects including action and condition exceptions
         """
         return pulumi.get(self, "attack_groups")
 
     @attack_groups.setter
-    def attack_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]]):
+    def attack_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]]):
         pulumi.set(self, "attack_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]]:
         """
         List of rule objects including action and condition exceptions
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
 @pulumi.input_type
 class _AppsecWafRulesetState:
     def __init__(__self__, *,
-                 attack_groups: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppsecWafRuleset resources.
 
@@ -115,50 +115,50 @@ class _AppsecWafRulesetState:
 
     @_builtins.property
     @pulumi.getter(name="attackGroups")
-    def attack_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]]:
+    def attack_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]]:
         """
         List of attack group objects including action and condition exceptions
         """
         return pulumi.get(self, "attack_groups")
 
     @attack_groups.setter
-    def attack_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]]):
+    def attack_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetAttackGroupArgs']]]]):
         pulumi.set(self, "attack_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]]:
         """
         List of rule objects including action and condition exceptions
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecWafRulesetRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -168,10 +168,10 @@ class AppsecWafRuleset(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppsecWafRuleset resource with the given unique name, props, and options.
@@ -207,10 +207,10 @@ class AppsecWafRuleset(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -238,10 +238,10 @@ class AppsecWafRuleset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attack_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppsecWafRuleset':
+            attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppsecWafRuleset':
         """
         Get an existing AppsecWafRuleset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

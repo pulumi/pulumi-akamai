@@ -56,5 +56,5 @@ export function getPropertyOutput(args: GetPropertyOutputArgs, opts?: pulumi.Inv
  */
 export interface GetPropertyOutputArgs {
     name: pulumi.Input<string>;
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }

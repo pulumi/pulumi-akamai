@@ -58,9 +58,9 @@ class AppSecRatePolicyArgs:
 @pulumi.input_type
 class _AppSecRatePolicyState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 rate_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 rate_policy_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 rate_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 rate_policy_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AppSecRatePolicy resources.
 
@@ -77,38 +77,38 @@ class _AppSecRatePolicyState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ratePolicy")
-    def rate_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rate_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted definition of the rate policy
         """
         return pulumi.get(self, "rate_policy")
 
     @rate_policy.setter
-    def rate_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rate_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rate_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="ratePolicyId")
-    def rate_policy_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def rate_policy_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the rate policy
         """
         return pulumi.get(self, "rate_policy_id")
 
     @rate_policy_id.setter
-    def rate_policy_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def rate_policy_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "rate_policy_id", value)
 
 
@@ -118,8 +118,8 @@ class AppSecRatePolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 rate_policy: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 rate_policy: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecRatePolicy resource with the given unique name, props, and options.
@@ -153,8 +153,8 @@ class AppSecRatePolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 rate_policy: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 rate_policy: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -181,9 +181,9 @@ class AppSecRatePolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            rate_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            rate_policy_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'AppSecRatePolicy':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            rate_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            rate_policy_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'AppSecRatePolicy':
         """
         Get an existing AppSecRatePolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

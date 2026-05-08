@@ -49,8 +49,8 @@ class BotmanCustomBotCategorySequenceArgs:
 @pulumi.input_type
 class _BotmanCustomBotCategorySequenceState:
     def __init__(__self__, *,
-                 category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BotmanCustomBotCategorySequence resources.
         """
@@ -61,20 +61,20 @@ class _BotmanCustomBotCategorySequenceState:
 
     @_builtins.property
     @pulumi.getter(name="categoryIds")
-    def category_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def category_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "category_ids")
 
     @category_ids.setter
-    def category_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def category_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "category_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
 
@@ -84,8 +84,8 @@ class BotmanCustomBotCategorySequence(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a BotmanCustomBotCategorySequence resource with the given unique name, props, and options.
@@ -117,8 +117,8 @@ class BotmanCustomBotCategorySequence(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -144,8 +144,8 @@ class BotmanCustomBotCategorySequence(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'BotmanCustomBotCategorySequence':
+            category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'BotmanCustomBotCategorySequence':
         """
         Get an existing BotmanCustomBotCategorySequence resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

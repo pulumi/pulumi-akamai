@@ -93,8 +93,8 @@ def get_botman_javascript_injection(config_id: Optional[_builtins.int] = None,
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_botman_javascript_injection_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                           security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_botman_javascript_injection_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                           security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanJavascriptInjectionResult]:
     """
     Use this data source to access information about an existing resource.

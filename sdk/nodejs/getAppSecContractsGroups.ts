@@ -49,6 +49,6 @@ export function getAppSecContractsGroupsOutput(args?: GetAppSecContractsGroupsOu
  * A collection of arguments for invoking getAppSecContractsGroups.
  */
 export interface GetAppSecContractsGroupsOutputArgs {
-    contractid?: pulumi.Input<string>;
-    groupid?: pulumi.Input<number>;
+    contractid?: pulumi.Input<string | undefined>;
+    groupid?: pulumi.Input<number | undefined>;
 }

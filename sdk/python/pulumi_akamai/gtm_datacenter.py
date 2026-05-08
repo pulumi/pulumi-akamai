@@ -22,18 +22,18 @@ __all__ = ['GtmDatacenterArgs', 'GtmDatacenter']
 class GtmDatacenterArgs:
     def __init__(__self__, *,
                  domain: pulumi.Input[_builtins.str],
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_of: Optional[pulumi.Input[_builtins.int]] = None,
-                 cloud_server_host_header_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cloud_server_targeting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 continent: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_load_object: Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 nickname: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_or_province: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_of: pulumi.Input[Optional[_builtins.int]] = None,
+                 cloud_server_host_header_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cloud_server_targeting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 continent: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_load_object: pulumi.Input[Optional['GtmDatacenterDefaultLoadObjectArgs']] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 nickname: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_or_province: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a GtmDatacenter resource.
         """
@@ -74,137 +74,137 @@ class GtmDatacenterArgs:
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="cloneOf")
-    def clone_of(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def clone_of(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "clone_of")
 
     @clone_of.setter
-    def clone_of(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def clone_of(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "clone_of", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudServerHostHeaderOverride")
-    def cloud_server_host_header_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cloud_server_host_header_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "cloud_server_host_header_override")
 
     @cloud_server_host_header_override.setter
-    def cloud_server_host_header_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cloud_server_host_header_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cloud_server_host_header_override", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudServerTargeting")
-    def cloud_server_targeting(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cloud_server_targeting(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "cloud_server_targeting")
 
     @cloud_server_targeting.setter
-    def cloud_server_targeting(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cloud_server_targeting(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cloud_server_targeting", value)
 
     @_builtins.property
     @pulumi.getter
-    def continent(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def continent(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "continent")
 
     @continent.setter
-    def continent(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def continent(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "continent", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultLoadObject")
-    def default_load_object(self) -> Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']]:
+    def default_load_object(self) -> pulumi.Input[Optional['GtmDatacenterDefaultLoadObjectArgs']]:
         return pulumi.get(self, "default_load_object")
 
     @default_load_object.setter
-    def default_load_object(self, value: Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']]):
+    def default_load_object(self, value: pulumi.Input[Optional['GtmDatacenterDefaultLoadObjectArgs']]):
         pulumi.set(self, "default_load_object", value)
 
     @_builtins.property
     @pulumi.getter
-    def latitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def latitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "latitude")
 
     @latitude.setter
-    def latitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def latitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "latitude", value)
 
     @_builtins.property
     @pulumi.getter
-    def longitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def longitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "longitude")
 
     @longitude.setter
-    def longitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def longitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "longitude", value)
 
     @_builtins.property
     @pulumi.getter
-    def nickname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nickname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "nickname")
 
     @nickname.setter
-    def nickname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nickname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nickname", value)
 
     @_builtins.property
     @pulumi.getter(name="stateOrProvince")
-    def state_or_province(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_or_province(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state_or_province")
 
     @state_or_province.setter
-    def state_or_province(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_or_province(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_or_province", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
 
 @pulumi.input_type
 class _GtmDatacenterState:
     def __init__(__self__, *,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_of: Optional[pulumi.Input[_builtins.int]] = None,
-                 cloud_server_host_header_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cloud_server_targeting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 continent: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 datacenter_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_load_object: Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 nickname: Optional[pulumi.Input[_builtins.str]] = None,
-                 ping_interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 ping_packet_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 score_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-                 servermonitor_liveness_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 servermonitor_load_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 servermonitor_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_or_province: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual: Optional[pulumi.Input[_builtins.bool]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_of: pulumi.Input[Optional[_builtins.int]] = None,
+                 cloud_server_host_header_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cloud_server_targeting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 continent: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 datacenter_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_load_object: pulumi.Input[Optional['GtmDatacenterDefaultLoadObjectArgs']] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 nickname: pulumi.Input[Optional[_builtins.str]] = None,
+                 ping_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 ping_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 score_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+                 servermonitor_liveness_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 servermonitor_load_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 servermonitor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_or_province: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual: pulumi.Input[Optional[_builtins.bool]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering GtmDatacenter resources.
         """
@@ -253,191 +253,191 @@ class _GtmDatacenterState:
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="cloneOf")
-    def clone_of(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def clone_of(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "clone_of")
 
     @clone_of.setter
-    def clone_of(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def clone_of(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "clone_of", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudServerHostHeaderOverride")
-    def cloud_server_host_header_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cloud_server_host_header_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "cloud_server_host_header_override")
 
     @cloud_server_host_header_override.setter
-    def cloud_server_host_header_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cloud_server_host_header_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cloud_server_host_header_override", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudServerTargeting")
-    def cloud_server_targeting(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cloud_server_targeting(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "cloud_server_targeting")
 
     @cloud_server_targeting.setter
-    def cloud_server_targeting(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cloud_server_targeting(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cloud_server_targeting", value)
 
     @_builtins.property
     @pulumi.getter
-    def continent(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def continent(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "continent")
 
     @continent.setter
-    def continent(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def continent(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "continent", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def datacenter_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
-    def datacenter_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def datacenter_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "datacenter_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultLoadObject")
-    def default_load_object(self) -> Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']]:
+    def default_load_object(self) -> pulumi.Input[Optional['GtmDatacenterDefaultLoadObjectArgs']]:
         return pulumi.get(self, "default_load_object")
 
     @default_load_object.setter
-    def default_load_object(self, value: Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']]):
+    def default_load_object(self, value: pulumi.Input[Optional['GtmDatacenterDefaultLoadObjectArgs']]):
         pulumi.set(self, "default_load_object", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def latitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def latitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "latitude")
 
     @latitude.setter
-    def latitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def latitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "latitude", value)
 
     @_builtins.property
     @pulumi.getter
-    def longitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def longitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "longitude")
 
     @longitude.setter
-    def longitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def longitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "longitude", value)
 
     @_builtins.property
     @pulumi.getter
-    def nickname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nickname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "nickname")
 
     @nickname.setter
-    def nickname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nickname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nickname", value)
 
     @_builtins.property
     @pulumi.getter(name="pingInterval")
-    def ping_interval(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ping_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "ping_interval")
 
     @ping_interval.setter
-    def ping_interval(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ping_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ping_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="pingPacketSize")
-    def ping_packet_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ping_packet_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "ping_packet_size")
 
     @ping_packet_size.setter
-    def ping_packet_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ping_packet_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ping_packet_size", value)
 
     @_builtins.property
     @pulumi.getter(name="scorePenalty")
-    def score_penalty(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def score_penalty(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "score_penalty")
 
     @score_penalty.setter
-    def score_penalty(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def score_penalty(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "score_penalty", value)
 
     @_builtins.property
     @pulumi.getter(name="servermonitorLivenessCount")
-    def servermonitor_liveness_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def servermonitor_liveness_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "servermonitor_liveness_count")
 
     @servermonitor_liveness_count.setter
-    def servermonitor_liveness_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def servermonitor_liveness_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "servermonitor_liveness_count", value)
 
     @_builtins.property
     @pulumi.getter(name="servermonitorLoadCount")
-    def servermonitor_load_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def servermonitor_load_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "servermonitor_load_count")
 
     @servermonitor_load_count.setter
-    def servermonitor_load_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def servermonitor_load_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "servermonitor_load_count", value)
 
     @_builtins.property
     @pulumi.getter(name="servermonitorPool")
-    def servermonitor_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def servermonitor_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "servermonitor_pool")
 
     @servermonitor_pool.setter
-    def servermonitor_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def servermonitor_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "servermonitor_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="stateOrProvince")
-    def state_or_province(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_or_province(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state_or_province")
 
     @state_or_province.setter
-    def state_or_province(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_or_province(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_or_province", value)
 
     @_builtins.property
     @pulumi.getter
-    def virtual(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def virtual(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "virtual")
 
     @virtual.setter
-    def virtual(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def virtual(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "virtual", value)
 
     @_builtins.property
     @pulumi.getter(name="waitOnComplete")
-    def wait_on_complete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_on_complete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
-    def wait_on_complete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_on_complete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_on_complete", value)
 
 
@@ -447,19 +447,19 @@ class GtmDatacenter(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_of: Optional[pulumi.Input[_builtins.int]] = None,
-                 cloud_server_host_header_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cloud_server_targeting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 continent: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_load_object: Optional[pulumi.Input[Union['GtmDatacenterDefaultLoadObjectArgs', 'GtmDatacenterDefaultLoadObjectArgsDict']]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 nickname: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_or_province: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_of: pulumi.Input[Optional[_builtins.int]] = None,
+                 cloud_server_host_header_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cloud_server_targeting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 continent: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_load_object: pulumi.Input[Optional[Union['GtmDatacenterDefaultLoadObjectArgs', 'GtmDatacenterDefaultLoadObjectArgsDict']]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 nickname: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_or_province: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a GtmDatacenter resource with the given unique name, props, and options.
@@ -491,19 +491,19 @@ class GtmDatacenter(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_of: Optional[pulumi.Input[_builtins.int]] = None,
-                 cloud_server_host_header_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cloud_server_targeting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 continent: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_load_object: Optional[pulumi.Input[Union['GtmDatacenterDefaultLoadObjectArgs', 'GtmDatacenterDefaultLoadObjectArgsDict']]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 nickname: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_or_province: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_of: pulumi.Input[Optional[_builtins.int]] = None,
+                 cloud_server_host_header_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cloud_server_targeting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 continent: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_load_object: pulumi.Input[Optional[Union['GtmDatacenterDefaultLoadObjectArgs', 'GtmDatacenterDefaultLoadObjectArgsDict']]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 nickname: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_or_province: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -548,27 +548,27 @@ class GtmDatacenter(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            city: Optional[pulumi.Input[_builtins.str]] = None,
-            clone_of: Optional[pulumi.Input[_builtins.int]] = None,
-            cloud_server_host_header_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            cloud_server_targeting: Optional[pulumi.Input[_builtins.bool]] = None,
-            continent: Optional[pulumi.Input[_builtins.str]] = None,
-            country: Optional[pulumi.Input[_builtins.str]] = None,
-            datacenter_id: Optional[pulumi.Input[_builtins.int]] = None,
-            default_load_object: Optional[pulumi.Input[Union['GtmDatacenterDefaultLoadObjectArgs', 'GtmDatacenterDefaultLoadObjectArgsDict']]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            latitude: Optional[pulumi.Input[_builtins.float]] = None,
-            longitude: Optional[pulumi.Input[_builtins.float]] = None,
-            nickname: Optional[pulumi.Input[_builtins.str]] = None,
-            ping_interval: Optional[pulumi.Input[_builtins.int]] = None,
-            ping_packet_size: Optional[pulumi.Input[_builtins.int]] = None,
-            score_penalty: Optional[pulumi.Input[_builtins.int]] = None,
-            servermonitor_liveness_count: Optional[pulumi.Input[_builtins.int]] = None,
-            servermonitor_load_count: Optional[pulumi.Input[_builtins.int]] = None,
-            servermonitor_pool: Optional[pulumi.Input[_builtins.str]] = None,
-            state_or_province: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual: Optional[pulumi.Input[_builtins.bool]] = None,
-            wait_on_complete: Optional[pulumi.Input[_builtins.bool]] = None) -> 'GtmDatacenter':
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            clone_of: pulumi.Input[Optional[_builtins.int]] = None,
+            cloud_server_host_header_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            cloud_server_targeting: pulumi.Input[Optional[_builtins.bool]] = None,
+            continent: pulumi.Input[Optional[_builtins.str]] = None,
+            country: pulumi.Input[Optional[_builtins.str]] = None,
+            datacenter_id: pulumi.Input[Optional[_builtins.int]] = None,
+            default_load_object: pulumi.Input[Optional[Union['GtmDatacenterDefaultLoadObjectArgs', 'GtmDatacenterDefaultLoadObjectArgsDict']]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            latitude: pulumi.Input[Optional[_builtins.float]] = None,
+            longitude: pulumi.Input[Optional[_builtins.float]] = None,
+            nickname: pulumi.Input[Optional[_builtins.str]] = None,
+            ping_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            ping_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+            score_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_liveness_count: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_load_count: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            state_or_province: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual: pulumi.Input[Optional[_builtins.bool]] = None,
+            wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None) -> 'GtmDatacenter':
         """
         Get an existing GtmDatacenter resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

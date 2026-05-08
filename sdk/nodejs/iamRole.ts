@@ -91,19 +91,19 @@ export interface IamRoleState {
     /**
      * The description for a role.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The list of existing unique identifiers for the granted roles.
      */
-    grantedRoles?: pulumi.Input<pulumi.Input<number>[]>;
+    grantedRoles?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * The name you supply for a role.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -121,9 +121,9 @@ export interface IamRoleArgs {
     /**
      * The name you supply for a role.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

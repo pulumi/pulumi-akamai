@@ -147,47 +147,47 @@ export interface PropertyIncludeActivationState {
     /**
      * Automatically acknowledge all rule warnings for activation and continue
      */
-    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
+    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Provides an audit record when activating on a production network
      */
-    complianceRecord?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecord>;
+    complianceRecord?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecord | undefined>;
     /**
      * The contract under which the include is activated
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * The group under which the include is activated
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the include
      */
-    includeId?: pulumi.Input<string>;
+    includeId?: pulumi.Input<string | undefined>;
     /**
      * The network for which the activation will be performed
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * The note to assign to a log message of the activation request
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * The list of email addresses to notify about an activation status
      */
-    notifyEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notifyEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.PropertyIncludeActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.PropertyIncludeActivationTimeouts | undefined>;
     /**
      * The validation information in JSON format
      */
-    validations?: pulumi.Input<string>;
+    validations?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the include
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -197,11 +197,11 @@ export interface PropertyIncludeActivationArgs {
     /**
      * Automatically acknowledge all rule warnings for activation and continue
      */
-    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
+    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Provides an audit record when activating on a production network
      */
-    complianceRecord?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecord>;
+    complianceRecord?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecord | undefined>;
     /**
      * The contract under which the include is activated
      */
@@ -221,7 +221,7 @@ export interface PropertyIncludeActivationArgs {
     /**
      * The note to assign to a log message of the activation request
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * The list of email addresses to notify about an activation status
      */
@@ -229,7 +229,7 @@ export interface PropertyIncludeActivationArgs {
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.PropertyIncludeActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.PropertyIncludeActivationTimeouts | undefined>;
     /**
      * The unique identifier of the include
      */

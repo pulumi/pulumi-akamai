@@ -30,15 +30,15 @@ class CpsThirdPartyEnrollmentArgs:
                  secure_network: pulumi.Input[_builtins.str],
                  sni_only: pulumi.Input[_builtins.bool],
                  tech_contact: pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs'],
-                 acknowledge_pre_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_duplicate_common_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_chain_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exclude_sans: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 signature_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']] = None):
+                 acknowledge_pre_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_duplicate_common_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_chain_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exclude_sans: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['CpsThirdPartyEnrollmentTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpsThirdPartyEnrollment resource.
 
@@ -199,134 +199,134 @@ class CpsThirdPartyEnrollmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="acknowledgePreVerificationWarnings")
-    def acknowledge_pre_verification_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_pre_verification_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether acknowledge warnings before certificate verification. Default is false
         """
         return pulumi.get(self, "acknowledge_pre_verification_warnings")
 
     @acknowledge_pre_verification_warnings.setter
-    def acknowledge_pre_verification_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_pre_verification_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_pre_verification_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="allowDuplicateCommonName")
-    def allow_duplicate_common_name(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_duplicate_common_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allow to duplicate common name. Default is false
         """
         return pulumi.get(self, "allow_duplicate_common_name")
 
     @allow_duplicate_common_name.setter
-    def allow_duplicate_common_name(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_duplicate_common_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_duplicate_common_name", value)
 
     @_builtins.property
     @pulumi.getter(name="autoApproveWarnings")
-    def auto_approve_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def auto_approve_warnings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of warnings to be automatically approved
         """
         return pulumi.get(self, "auto_approve_warnings")
 
     @auto_approve_warnings.setter
-    def auto_approve_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def auto_approve_warnings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "auto_approve_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateChainType")
-    def certificate_chain_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_chain_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Certificate trust chain type. Default is 'default'
         """
         return pulumi.get(self, "certificate_chain_type")
 
     @certificate_chain_type.setter
-    def certificate_chain_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_chain_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_chain_type", value)
 
     @_builtins.property
     @pulumi.getter(name="changeManagement")
-    def change_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def change_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When set to false, the certificate will be deployed to both staging and production networks
         """
         return pulumi.get(self, "change_management")
 
     @change_management.setter
-    def change_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def change_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "change_management", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeSans")
-    def exclude_sans(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def exclude_sans(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When true, SANs are excluded from the CSR
         """
         return pulumi.get(self, "exclude_sans")
 
     @exclude_sans.setter
-    def exclude_sans(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def exclude_sans(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "exclude_sans", value)
 
     @_builtins.property
     @pulumi.getter
-    def sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of SANs
         """
         return pulumi.get(self, "sans")
 
     @sans.setter
-    def sans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sans", value)
 
     @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
-    def signature_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signature_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The SHA function. Changing this value may require running terraform destroy, terraform apply
         """
         return pulumi.get(self, "signature_algorithm")
 
     @signature_algorithm.setter
-    def signature_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signature_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature_algorithm", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CpsThirdPartyEnrollmentTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CpsThirdPartyEnrollmentTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _CpsThirdPartyEnrollmentState:
     def __init__(__self__, *,
-                 acknowledge_pre_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 admin_contact: Optional[pulumi.Input['CpsThirdPartyEnrollmentAdminContactArgs']] = None,
-                 allow_duplicate_common_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_chain_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 common_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 csr: Optional[pulumi.Input['CpsThirdPartyEnrollmentCsrArgs']] = None,
-                 exclude_sans: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_configuration: Optional[pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs']] = None,
-                 organization: Optional[pulumi.Input['CpsThirdPartyEnrollmentOrganizationArgs']] = None,
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 secure_network: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 sni_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tech_contact: Optional[pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs']] = None,
-                 timeouts: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']] = None):
+                 acknowledge_pre_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 admin_contact: pulumi.Input[Optional['CpsThirdPartyEnrollmentAdminContactArgs']] = None,
+                 allow_duplicate_common_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_chain_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 common_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 csr: pulumi.Input[Optional['CpsThirdPartyEnrollmentCsrArgs']] = None,
+                 exclude_sans: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_configuration: pulumi.Input[Optional['CpsThirdPartyEnrollmentNetworkConfigurationArgs']] = None,
+                 organization: pulumi.Input[Optional['CpsThirdPartyEnrollmentOrganizationArgs']] = None,
+                 sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 sni_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tech_contact: pulumi.Input[Optional['CpsThirdPartyEnrollmentTechContactArgs']] = None,
+                 timeouts: pulumi.Input[Optional['CpsThirdPartyEnrollmentTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CpsThirdPartyEnrollment resources.
 
@@ -388,218 +388,218 @@ class _CpsThirdPartyEnrollmentState:
 
     @_builtins.property
     @pulumi.getter(name="acknowledgePreVerificationWarnings")
-    def acknowledge_pre_verification_warnings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def acknowledge_pre_verification_warnings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether acknowledge warnings before certificate verification. Default is false
         """
         return pulumi.get(self, "acknowledge_pre_verification_warnings")
 
     @acknowledge_pre_verification_warnings.setter
-    def acknowledge_pre_verification_warnings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def acknowledge_pre_verification_warnings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "acknowledge_pre_verification_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="adminContact")
-    def admin_contact(self) -> Optional[pulumi.Input['CpsThirdPartyEnrollmentAdminContactArgs']]:
+    def admin_contact(self) -> pulumi.Input[Optional['CpsThirdPartyEnrollmentAdminContactArgs']]:
         """
         Contact information for the certificate administrator to use at organization
         """
         return pulumi.get(self, "admin_contact")
 
     @admin_contact.setter
-    def admin_contact(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentAdminContactArgs']]):
+    def admin_contact(self, value: pulumi.Input[Optional['CpsThirdPartyEnrollmentAdminContactArgs']]):
         pulumi.set(self, "admin_contact", value)
 
     @_builtins.property
     @pulumi.getter(name="allowDuplicateCommonName")
-    def allow_duplicate_common_name(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_duplicate_common_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allow to duplicate common name. Default is false
         """
         return pulumi.get(self, "allow_duplicate_common_name")
 
     @allow_duplicate_common_name.setter
-    def allow_duplicate_common_name(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_duplicate_common_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_duplicate_common_name", value)
 
     @_builtins.property
     @pulumi.getter(name="autoApproveWarnings")
-    def auto_approve_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def auto_approve_warnings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of warnings to be automatically approved
         """
         return pulumi.get(self, "auto_approve_warnings")
 
     @auto_approve_warnings.setter
-    def auto_approve_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def auto_approve_warnings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "auto_approve_warnings", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateChainType")
-    def certificate_chain_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_chain_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Certificate trust chain type. Default is 'default'
         """
         return pulumi.get(self, "certificate_chain_type")
 
     @certificate_chain_type.setter
-    def certificate_chain_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_chain_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_chain_type", value)
 
     @_builtins.property
     @pulumi.getter(name="changeManagement")
-    def change_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def change_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When set to false, the certificate will be deployed to both staging and production networks
         """
         return pulumi.get(self, "change_management")
 
     @change_management.setter
-    def change_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def change_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "change_management", value)
 
     @_builtins.property
     @pulumi.getter(name="commonName")
-    def common_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def common_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Common name used for enrollment
         """
         return pulumi.get(self, "common_name")
 
     @common_name.setter
-    def common_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def common_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "common_name", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contract ID for which enrollment is retrieved
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def csr(self) -> Optional[pulumi.Input['CpsThirdPartyEnrollmentCsrArgs']]:
+    def csr(self) -> pulumi.Input[Optional['CpsThirdPartyEnrollmentCsrArgs']]:
         """
         Data used for generation of Certificate Signing Request
         """
         return pulumi.get(self, "csr")
 
     @csr.setter
-    def csr(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentCsrArgs']]):
+    def csr(self, value: pulumi.Input[Optional['CpsThirdPartyEnrollmentCsrArgs']]):
         pulumi.set(self, "csr", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeSans")
-    def exclude_sans(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def exclude_sans(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When true, SANs are excluded from the CSR
         """
         return pulumi.get(self, "exclude_sans")
 
     @exclude_sans.setter
-    def exclude_sans(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def exclude_sans(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "exclude_sans", value)
 
     @_builtins.property
     @pulumi.getter(name="networkConfiguration")
-    def network_configuration(self) -> Optional[pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs']]:
+    def network_configuration(self) -> pulumi.Input[Optional['CpsThirdPartyEnrollmentNetworkConfigurationArgs']]:
         """
         Settings containing network information and TLS metadata used by CPS
         """
         return pulumi.get(self, "network_configuration")
 
     @network_configuration.setter
-    def network_configuration(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs']]):
+    def network_configuration(self, value: pulumi.Input[Optional['CpsThirdPartyEnrollmentNetworkConfigurationArgs']]):
         pulumi.set(self, "network_configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def organization(self) -> Optional[pulumi.Input['CpsThirdPartyEnrollmentOrganizationArgs']]:
+    def organization(self) -> pulumi.Input[Optional['CpsThirdPartyEnrollmentOrganizationArgs']]:
         """
         Organization information
         """
         return pulumi.get(self, "organization")
 
     @organization.setter
-    def organization(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentOrganizationArgs']]):
+    def organization(self, value: pulumi.Input[Optional['CpsThirdPartyEnrollmentOrganizationArgs']]):
         pulumi.set(self, "organization", value)
 
     @_builtins.property
     @pulumi.getter
-    def sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of SANs
         """
         return pulumi.get(self, "sans")
 
     @sans.setter
-    def sans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sans", value)
 
     @_builtins.property
     @pulumi.getter(name="secureNetwork")
-    def secure_network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secure_network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of TLS deployment network
         """
         return pulumi.get(self, "secure_network")
 
     @secure_network.setter
-    def secure_network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secure_network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secure_network", value)
 
     @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
-    def signature_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signature_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The SHA function. Changing this value may require running terraform destroy, terraform apply
         """
         return pulumi.get(self, "signature_algorithm")
 
     @signature_algorithm.setter
-    def signature_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signature_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature_algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="sniOnly")
-    def sni_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sni_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether Server Name Indication is used for enrollment
         """
         return pulumi.get(self, "sni_only")
 
     @sni_only.setter
-    def sni_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sni_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sni_only", value)
 
     @_builtins.property
     @pulumi.getter(name="techContact")
-    def tech_contact(self) -> Optional[pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs']]:
+    def tech_contact(self) -> pulumi.Input[Optional['CpsThirdPartyEnrollmentTechContactArgs']]:
         """
         Contact information for an administrator at Akamai
         """
         return pulumi.get(self, "tech_contact")
 
     @tech_contact.setter
-    def tech_contact(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs']]):
+    def tech_contact(self, value: pulumi.Input[Optional['CpsThirdPartyEnrollmentTechContactArgs']]):
         pulumi.set(self, "tech_contact", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CpsThirdPartyEnrollmentTimeoutsArgs']]:
         """
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CpsThirdPartyEnrollmentTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
@@ -609,24 +609,24 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acknowledge_pre_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 admin_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']]] = None,
-                 allow_duplicate_common_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_chain_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 common_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 csr: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']]] = None,
-                 exclude_sans: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_configuration: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']]] = None,
-                 organization: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']]] = None,
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 secure_network: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 sni_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tech_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']]] = None,
+                 acknowledge_pre_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 admin_contact: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']]] = None,
+                 allow_duplicate_common_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_chain_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 common_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 csr: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']]] = None,
+                 exclude_sans: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_configuration: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']]] = None,
+                 organization: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']]] = None,
+                 sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 sni_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tech_contact: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CpsThirdPartyEnrollment resource with the given unique name, props, and options.
@@ -676,24 +676,24 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acknowledge_pre_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-                 admin_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']]] = None,
-                 allow_duplicate_common_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_chain_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 common_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 csr: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']]] = None,
-                 exclude_sans: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_configuration: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']]] = None,
-                 organization: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']]] = None,
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 secure_network: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 sni_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tech_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']]] = None,
+                 acknowledge_pre_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+                 admin_contact: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']]] = None,
+                 allow_duplicate_common_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_chain_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 common_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 csr: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']]] = None,
+                 exclude_sans: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_configuration: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']]] = None,
+                 organization: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']]] = None,
+                 sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 sni_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tech_contact: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -749,24 +749,24 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acknowledge_pre_verification_warnings: Optional[pulumi.Input[_builtins.bool]] = None,
-            admin_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']]] = None,
-            allow_duplicate_common_name: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            certificate_chain_type: Optional[pulumi.Input[_builtins.str]] = None,
-            change_management: Optional[pulumi.Input[_builtins.bool]] = None,
-            common_name: Optional[pulumi.Input[_builtins.str]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            csr: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']]] = None,
-            exclude_sans: Optional[pulumi.Input[_builtins.bool]] = None,
-            network_configuration: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']]] = None,
-            organization: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']]] = None,
-            sans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            secure_network: Optional[pulumi.Input[_builtins.str]] = None,
-            signature_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            sni_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            tech_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']]] = None,
-            timeouts: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']]] = None) -> 'CpsThirdPartyEnrollment':
+            acknowledge_pre_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            admin_contact: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']]] = None,
+            allow_duplicate_common_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            certificate_chain_type: pulumi.Input[Optional[_builtins.str]] = None,
+            change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            common_name: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            csr: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']]] = None,
+            exclude_sans: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_configuration: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']]] = None,
+            organization: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']]] = None,
+            sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+            signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            sni_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            tech_contact: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']]] = None,
+            timeouts: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']]] = None) -> 'CpsThirdPartyEnrollment':
         """
         Get an existing CpsThirdPartyEnrollment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

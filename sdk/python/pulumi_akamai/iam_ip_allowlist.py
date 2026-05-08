@@ -43,7 +43,7 @@ class IamIpAllowlistArgs:
 @pulumi.input_type
 class _IamIpAllowlistState:
     def __init__(__self__, *,
-                 enable: Optional[pulumi.Input[_builtins.bool]] = None):
+                 enable: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering IamIpAllowlist resources.
 
@@ -54,14 +54,14 @@ class _IamIpAllowlistState:
 
     @_builtins.property
     @pulumi.getter
-    def enable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable or disable the allowlist.
         """
         return pulumi.get(self, "enable")
 
     @enable.setter
-    def enable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable", value)
 
 
@@ -71,7 +71,7 @@ class IamIpAllowlist(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable: Optional[pulumi.Input[_builtins.bool]] = None,
+                 enable: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a IamIpAllowlist resource with the given unique name, props, and options.
@@ -104,7 +104,7 @@ class IamIpAllowlist(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable: Optional[pulumi.Input[_builtins.bool]] = None,
+                 enable: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -127,7 +127,7 @@ class IamIpAllowlist(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable: Optional[pulumi.Input[_builtins.bool]] = None) -> 'IamIpAllowlist':
+            enable: pulumi.Input[Optional[_builtins.bool]] = None) -> 'IamIpAllowlist':
         """
         Get an existing IamIpAllowlist resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

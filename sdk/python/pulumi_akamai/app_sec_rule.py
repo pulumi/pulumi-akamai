@@ -22,8 +22,8 @@ class AppSecRuleArgs:
                  config_id: pulumi.Input[_builtins.int],
                  rule_id: pulumi.Input[_builtins.int],
                  security_policy_id: pulumi.Input[_builtins.str],
-                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_action: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition_exception: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_action: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecRule resource.
 
@@ -79,37 +79,37 @@ class AppSecRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="conditionException")
-    def condition_exception(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_exception(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted condition and exception information for the rule
         """
         return pulumi.get(self, "condition_exception")
 
     @condition_exception.setter
-    def condition_exception(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_exception(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_exception", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleAction")
-    def rule_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to be taken when the rule is triggered
         """
         return pulumi.get(self, "rule_action")
 
     @rule_action.setter
-    def rule_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_action", value)
 
 
 @pulumi.input_type
 class _AppSecRuleState:
     def __init__(__self__, *,
-                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 rule_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition_exception: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 rule_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecRule resources.
 
@@ -132,62 +132,62 @@ class _AppSecRuleState:
 
     @_builtins.property
     @pulumi.getter(name="conditionException")
-    def condition_exception(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_exception(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted condition and exception information for the rule
         """
         return pulumi.get(self, "condition_exception")
 
     @condition_exception.setter
-    def condition_exception(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_exception(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_exception", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleAction")
-    def rule_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to be taken when the rule is triggered
         """
         return pulumi.get(self, "rule_action")
 
     @rule_action.setter
-    def rule_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_action", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleId")
-    def rule_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def rule_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the rule
         """
         return pulumi.get(self, "rule_id")
 
     @rule_id.setter
-    def rule_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def rule_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "rule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -197,11 +197,11 @@ class AppSecRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 rule_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 condition_exception: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 rule_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecRule resource with the given unique name, props, and options.
@@ -238,11 +238,11 @@ class AppSecRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 condition_exception: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 rule_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 condition_exception: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 rule_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -273,11 +273,11 @@ class AppSecRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            condition_exception: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            rule_action: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_id: Optional[pulumi.Input[_builtins.int]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecRule':
+            condition_exception: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            rule_action: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecRule':
         """
         Get an existing AppSecRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

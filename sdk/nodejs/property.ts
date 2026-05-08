@@ -170,65 +170,65 @@ export interface PropertyState {
     /**
      * ID of the property in the Identity and Access Management API.
      */
-    assetId?: pulumi.Input<string>;
+    assetId?: pulumi.Input<string | undefined>;
     /**
      * Contract ID to be assigned to the Property
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * Group ID to be assigned to the Property
      */
-    groupId?: pulumi.Input<string>;
-    hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[]>;
+    groupId?: pulumi.Input<string | undefined>;
+    hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[] | undefined>;
     /**
      * Property's current latest version number
      */
-    latestVersion?: pulumi.Input<number>;
+    latestVersion?: pulumi.Input<number | undefined>;
     /**
      * Name to give to the Property (must be unique)
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Product ID to be assigned to the Property
      */
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Property's version currently activated in production (zero when not active in production)
      */
-    productionVersion?: pulumi.Input<number>;
+    productionVersion?: pulumi.Input<number | undefined>;
     /**
      * Property ID
      */
-    propertyId?: pulumi.Input<string>;
+    propertyId?: pulumi.Input<string | undefined>;
     /**
      * Required property's version to be read
      */
-    readVersion?: pulumi.Input<number>;
-    ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyRuleError>[]>;
+    readVersion?: pulumi.Input<number | undefined>;
+    ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyRuleError>[] | undefined>;
     /**
      * Specify the rule format version (defaults to latest version available when created)
      */
-    ruleFormat?: pulumi.Input<string>;
+    ruleFormat?: pulumi.Input<string | undefined>;
     /**
      * Rule validation warnings
      */
-    ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyRuleWarning>[]>;
+    ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyRuleWarning>[] | undefined>;
     /**
      * Property Rules as JSON
      */
-    rules?: pulumi.Input<string>;
+    rules?: pulumi.Input<string | undefined>;
     /**
      * Property's version currently activated in staging (zero when not active in staging)
      */
-    stagingVersion?: pulumi.Input<number>;
+    stagingVersion?: pulumi.Input<number | undefined>;
     /**
      * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
-    useHostnameBucket?: pulumi.Input<boolean>;
+    useHostnameBucket?: pulumi.Input<boolean | undefined>;
     /**
      * Property version notes
      */
-    versionNotes?: pulumi.Input<string>;
+    versionNotes?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -243,11 +243,11 @@ export interface PropertyArgs {
      * Group ID to be assigned to the Property
      */
     groupId: pulumi.Input<string>;
-    hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[]>;
+    hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[] | undefined>;
     /**
      * Name to give to the Property (must be unique)
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Product ID to be assigned to the Property
      */
@@ -255,21 +255,21 @@ export interface PropertyArgs {
     /**
      * Property ID
      */
-    propertyId?: pulumi.Input<string>;
+    propertyId?: pulumi.Input<string | undefined>;
     /**
      * Specify the rule format version (defaults to latest version available when created)
      */
-    ruleFormat?: pulumi.Input<string>;
+    ruleFormat?: pulumi.Input<string | undefined>;
     /**
      * Property Rules as JSON
      */
-    rules?: pulumi.Input<string>;
+    rules?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
      */
-    useHostnameBucket?: pulumi.Input<boolean>;
+    useHostnameBucket?: pulumi.Input<boolean | undefined>;
     /**
      * Property version notes
      */
-    versionNotes?: pulumi.Input<string>;
+    versionNotes?: pulumi.Input<string | undefined>;
 }

@@ -130,8 +130,8 @@ def get_apidefinitions_api(id: Optional[_builtins.int] = None,
         name=pulumi.get(__ret__, 'name'),
         production_version=pulumi.get(__ret__, 'production_version'),
         staging_version=pulumi.get(__ret__, 'staging_version'))
-def get_apidefinitions_api_output(id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_apidefinitions_api_output(id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApidefinitionsApiResult]:
     """
     Use this data source to access information about an existing resource.

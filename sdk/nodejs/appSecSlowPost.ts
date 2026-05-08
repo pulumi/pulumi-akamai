@@ -106,27 +106,27 @@ export interface AppSecSlowPostState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
      */
-    durationThresholdTimeout?: pulumi.Input<number>;
+    durationThresholdTimeout?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Action to be taken when slow POST protection is triggered
      */
-    slowRateAction?: pulumi.Input<string>;
+    slowRateAction?: pulumi.Input<string | undefined>;
     /**
      * Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
      */
-    slowRateThresholdPeriod?: pulumi.Input<number>;
+    slowRateThresholdPeriod?: pulumi.Input<number | undefined>;
     /**
      * Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
      */
-    slowRateThresholdRate?: pulumi.Input<number>;
+    slowRateThresholdRate?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -140,7 +140,7 @@ export interface AppSecSlowPostArgs {
     /**
      * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the specified action
      */
-    durationThresholdTimeout?: pulumi.Input<number>;
+    durationThresholdTimeout?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
@@ -152,9 +152,9 @@ export interface AppSecSlowPostArgs {
     /**
      * Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
      */
-    slowRateThresholdPeriod?: pulumi.Input<number>;
+    slowRateThresholdPeriod?: pulumi.Input<number | undefined>;
     /**
      * Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
      */
-    slowRateThresholdRate?: pulumi.Input<number>;
+    slowRateThresholdRate?: pulumi.Input<number | undefined>;
 }

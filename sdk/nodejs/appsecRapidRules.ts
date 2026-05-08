@@ -97,23 +97,23 @@ export interface AppsecRapidRulesState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Default action that applies to violations of all rapid rules
      */
-    defaultAction?: pulumi.Input<string>;
+    defaultAction?: pulumi.Input<string | undefined>;
     /**
      * Hidden attribute containing information about rapid rules status enabled/disabled
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * JSON-formatted list of rule definition (ID, action, action lock and exception)
      */
-    ruleDefinitions?: pulumi.Input<string>;
+    ruleDefinitions?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -127,11 +127,11 @@ export interface AppsecRapidRulesArgs {
     /**
      * Default action that applies to violations of all rapid rules
      */
-    defaultAction?: pulumi.Input<string>;
+    defaultAction?: pulumi.Input<string | undefined>;
     /**
      * JSON-formatted list of rule definition (ID, action, action lock and exception)
      */
-    ruleDefinitions?: pulumi.Input<string>;
+    ruleDefinitions?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */

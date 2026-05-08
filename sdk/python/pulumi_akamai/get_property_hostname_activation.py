@@ -220,11 +220,11 @@ def get_property_hostname_activation(contract_id: Optional[_builtins.str] = None
         status=pulumi.get(__ret__, 'status'),
         submit_date=pulumi.get(__ret__, 'submit_date'),
         update_date=pulumi.get(__ret__, 'update_date'))
-def get_property_hostname_activation_output(contract_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            hostname_activation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            include_hostnames: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                            property_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_property_hostname_activation_output(contract_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            hostname_activation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            include_hostnames: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                            property_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyHostnameActivationResult]:
     """
     Use this data source to access information about an existing resource.

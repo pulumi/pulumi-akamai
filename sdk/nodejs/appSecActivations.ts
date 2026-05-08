@@ -106,27 +106,27 @@ export interface AppSecActivationsState {
     /**
      * Unique identifier of the security configuration to be activated
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Network on which to activate the configuration version (STAGING or PRODUCTION)
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Note describing the activation. Will use timestamp if omitted.
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * List of email addresses to be notified with the results of the activation
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The results of the activation
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Version of the security configuration to be activated
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -140,11 +140,11 @@ export interface AppSecActivationsArgs {
     /**
      * Network on which to activate the configuration version (STAGING or PRODUCTION)
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Note describing the activation. Will use timestamp if omitted.
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * List of email addresses to be notified with the results of the activation
      */

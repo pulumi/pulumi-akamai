@@ -82,7 +82,7 @@ def get_appsec_url_protection_policies(config_id: Optional[_builtins.int] = None
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
         url_protection_policies=pulumi.get(__ret__, 'url_protection_policies'))
-def get_appsec_url_protection_policies_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_appsec_url_protection_policies_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecUrlProtectionPoliciesResult]:
     """
     Use this data source to access information about an existing resource.

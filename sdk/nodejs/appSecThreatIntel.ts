@@ -88,15 +88,15 @@ export interface AppSecThreatIntelState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Whether threat intelligence protection should be on or off
      */
-    threatIntel?: pulumi.Input<string>;
+    threatIntel?: pulumi.Input<string | undefined>;
 }
 
 /**

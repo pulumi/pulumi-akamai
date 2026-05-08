@@ -44,5 +44,5 @@ export function getCloudletsEdgeRedirectorMatchRuleOutput(args?: GetCloudletsEdg
  * A collection of arguments for invoking getCloudletsEdgeRedirectorMatchRule.
  */
 export interface GetCloudletsEdgeRedirectorMatchRuleOutputArgs {
-    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs>[]>;
+    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs>[] | undefined>;
 }

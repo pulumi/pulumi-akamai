@@ -76,11 +76,11 @@ export interface AppSecMatchTargetSequenceState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * JSON-formatted definition of the processing sequence for all defined match targets
      */
-    matchTargetSequence?: pulumi.Input<string>;
+    matchTargetSequence?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -94,5 +94,5 @@ export interface AppSecMatchTargetSequenceArgs {
     /**
      * JSON-formatted definition of the processing sequence for all defined match targets
      */
-    matchTargetSequence?: pulumi.Input<string>;
+    matchTargetSequence?: pulumi.Input<string | undefined>;
 }

@@ -27,13 +27,13 @@ class IamApiClientArgs:
                  client_type: pulumi.Input[_builtins.str],
                  credential: pulumi.Input['IamApiClientCredentialArgs'],
                  group_access: pulumi.Input['IamApiClientGroupAccessArgs'],
-                 allow_account_switch: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_auto_create_credential: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_acl: Optional[pulumi.Input['IamApiClientIpAclArgs']] = None,
-                 lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purge_options: Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']] = None):
+                 allow_account_switch: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_auto_create_credential: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_acl: pulumi.Input[Optional['IamApiClientIpAclArgs']] = None,
+                 lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 purge_options: pulumi.Input[Optional['IamApiClientPurgeOptionsArgs']] = None):
         """
         The set of arguments for constructing a IamApiClient resource.
 
@@ -142,112 +142,112 @@ class IamApiClientArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowAccountSwitch")
-    def allow_account_switch(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_account_switch(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enables the API client to manage more than one account.
         """
         return pulumi.get(self, "allow_account_switch")
 
     @allow_account_switch.setter
-    def allow_account_switch(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_account_switch(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_account_switch", value)
 
     @_builtins.property
     @pulumi.getter(name="canAutoCreateCredential")
-    def can_auto_create_credential(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_auto_create_credential(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the API client can create a credential for a new API client. The default is false.
         """
         return pulumi.get(self, "can_auto_create_credential")
 
     @can_auto_create_credential.setter
-    def can_auto_create_credential(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_auto_create_credential(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_auto_create_credential", value)
 
     @_builtins.property
     @pulumi.getter(name="clientDescription")
-    def client_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A human-readable description of the API client.
         """
         return pulumi.get(self, "client_description")
 
     @client_description.setter
-    def client_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_description", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAcl")
-    def ip_acl(self) -> Optional[pulumi.Input['IamApiClientIpAclArgs']]:
+    def ip_acl(self) -> pulumi.Input[Optional['IamApiClientIpAclArgs']]:
         """
         Specifies the API client's IP list restriction.
         """
         return pulumi.get(self, "ip_acl")
 
     @ip_acl.setter
-    def ip_acl(self, value: Optional[pulumi.Input['IamApiClientIpAclArgs']]):
+    def ip_acl(self, value: pulumi.Input[Optional['IamApiClientIpAclArgs']]):
         pulumi.set(self, "ip_acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def lock(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def lock(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to lock or unlock the API client.
         """
         return pulumi.get(self, "lock")
 
     @lock.setter
-    def lock(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def lock(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "lock", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmails")
-    def notification_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Email addresses to notify users when credentials expire.
         """
         return pulumi.get(self, "notification_emails")
 
     @notification_emails.setter
-    def notification_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_emails", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeOptions")
-    def purge_options(self) -> Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']]:
+    def purge_options(self) -> pulumi.Input[Optional['IamApiClientPurgeOptionsArgs']]:
         """
         Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         return pulumi.get(self, "purge_options")
 
     @purge_options.setter
-    def purge_options(self, value: Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']]):
+    def purge_options(self, value: pulumi.Input[Optional['IamApiClientPurgeOptionsArgs']]):
         pulumi.set(self, "purge_options", value)
 
 
 @pulumi.input_type
 class _IamApiClientState:
     def __init__(__self__, *,
-                 access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 actions: Optional[pulumi.Input['IamApiClientActionsArgs']] = None,
-                 active_credential_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 allow_account_switch: Optional[pulumi.Input[_builtins.bool]] = None,
-                 api_access: Optional[pulumi.Input['IamApiClientApiAccessArgs']] = None,
-                 authorized_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 base_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_auto_create_credential: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential: Optional[pulumi.Input['IamApiClientCredentialArgs']] = None,
-                 group_access: Optional[pulumi.Input['IamApiClientGroupAccessArgs']] = None,
-                 ip_acl: Optional[pulumi.Input['IamApiClientIpAclArgs']] = None,
-                 lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purge_options: Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']] = None):
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 actions: pulumi.Input[Optional['IamApiClientActionsArgs']] = None,
+                 active_credential_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 allow_account_switch: pulumi.Input[Optional[_builtins.bool]] = None,
+                 api_access: pulumi.Input[Optional['IamApiClientApiAccessArgs']] = None,
+                 authorized_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 base_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_auto_create_credential: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential: pulumi.Input[Optional['IamApiClientCredentialArgs']] = None,
+                 group_access: pulumi.Input[Optional['IamApiClientGroupAccessArgs']] = None,
+                 ip_acl: pulumi.Input[Optional['IamApiClientIpAclArgs']] = None,
+                 lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 purge_options: pulumi.Input[Optional['IamApiClientPurgeOptionsArgs']] = None):
         """
         Input properties used for looking up and filtering IamApiClient resources.
 
@@ -314,239 +314,239 @@ class _IamApiClientState:
 
     @_builtins.property
     @pulumi.getter(name="accessToken")
-    def access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The part of the client secret that identifies your API client and lets you access applications and resources.
         """
         return pulumi.get(self, "access_token")
 
     @access_token.setter
-    def access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_token", value)
 
     @_builtins.property
     @pulumi.getter
-    def actions(self) -> Optional[pulumi.Input['IamApiClientActionsArgs']]:
+    def actions(self) -> pulumi.Input[Optional['IamApiClientActionsArgs']]:
         """
         Specifies activities available for the API client.
         """
         return pulumi.get(self, "actions")
 
     @actions.setter
-    def actions(self, value: Optional[pulumi.Input['IamApiClientActionsArgs']]):
+    def actions(self, value: pulumi.Input[Optional['IamApiClientActionsArgs']]):
         pulumi.set(self, "actions", value)
 
     @_builtins.property
     @pulumi.getter(name="activeCredentialCount")
-    def active_credential_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def active_credential_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
         """
         return pulumi.get(self, "active_credential_count")
 
     @active_credential_count.setter
-    def active_credential_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def active_credential_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "active_credential_count", value)
 
     @_builtins.property
     @pulumi.getter(name="allowAccountSwitch")
-    def allow_account_switch(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_account_switch(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enables the API client to manage more than one account.
         """
         return pulumi.get(self, "allow_account_switch")
 
     @allow_account_switch.setter
-    def allow_account_switch(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_account_switch(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_account_switch", value)
 
     @_builtins.property
     @pulumi.getter(name="apiAccess")
-    def api_access(self) -> Optional[pulumi.Input['IamApiClientApiAccessArgs']]:
+    def api_access(self) -> pulumi.Input[Optional['IamApiClientApiAccessArgs']]:
         """
         The APIs the API client can access.
         """
         return pulumi.get(self, "api_access")
 
     @api_access.setter
-    def api_access(self, value: Optional[pulumi.Input['IamApiClientApiAccessArgs']]):
+    def api_access(self, value: pulumi.Input[Optional['IamApiClientApiAccessArgs']]):
         pulumi.set(self, "api_access", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizedUsers")
-    def authorized_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def authorized_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         """
         return pulumi.get(self, "authorized_users")
 
     @authorized_users.setter
-    def authorized_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def authorized_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "authorized_users", value)
 
     @_builtins.property
     @pulumi.getter(name="baseUrl")
-    def base_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def base_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base URL for the service.
         """
         return pulumi.get(self, "base_url")
 
     @base_url.setter
-    def base_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def base_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "base_url", value)
 
     @_builtins.property
     @pulumi.getter(name="canAutoCreateCredential")
-    def can_auto_create_credential(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_auto_create_credential(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the API client can create a credential for a new API client. The default is false.
         """
         return pulumi.get(self, "can_auto_create_credential")
 
     @can_auto_create_credential.setter
-    def can_auto_create_credential(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_auto_create_credential(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_auto_create_credential", value)
 
     @_builtins.property
     @pulumi.getter(name="clientDescription")
-    def client_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A human-readable description of the API client.
         """
         return pulumi.get(self, "client_description")
 
     @client_description.setter
-    def client_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_description", value)
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique identifier for the API client.
         """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clientName")
-    def client_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A human-readable name for the API client.
         """
         return pulumi.get(self, "client_name")
 
     @client_name.setter
-    def client_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clientType")
-    def client_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         """
         return pulumi.get(self, "client_type")
 
     @client_type.setter
-    def client_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_type", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who created the API client.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdDate")
-    def created_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ISO 8601 timestamp indicating when the API client was created.
         """
         return pulumi.get(self, "created_date")
 
     @created_date.setter
-    def created_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def credential(self) -> Optional[pulumi.Input['IamApiClientCredentialArgs']]:
+    def credential(self) -> pulumi.Input[Optional['IamApiClientCredentialArgs']]:
         return pulumi.get(self, "credential")
 
     @credential.setter
-    def credential(self, value: Optional[pulumi.Input['IamApiClientCredentialArgs']]):
+    def credential(self, value: pulumi.Input[Optional['IamApiClientCredentialArgs']]):
         pulumi.set(self, "credential", value)
 
     @_builtins.property
     @pulumi.getter(name="groupAccess")
-    def group_access(self) -> Optional[pulumi.Input['IamApiClientGroupAccessArgs']]:
+    def group_access(self) -> pulumi.Input[Optional['IamApiClientGroupAccessArgs']]:
         """
         Specifies the API client's group access.
         """
         return pulumi.get(self, "group_access")
 
     @group_access.setter
-    def group_access(self, value: Optional[pulumi.Input['IamApiClientGroupAccessArgs']]):
+    def group_access(self, value: pulumi.Input[Optional['IamApiClientGroupAccessArgs']]):
         pulumi.set(self, "group_access", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAcl")
-    def ip_acl(self) -> Optional[pulumi.Input['IamApiClientIpAclArgs']]:
+    def ip_acl(self) -> pulumi.Input[Optional['IamApiClientIpAclArgs']]:
         """
         Specifies the API client's IP list restriction.
         """
         return pulumi.get(self, "ip_acl")
 
     @ip_acl.setter
-    def ip_acl(self, value: Optional[pulumi.Input['IamApiClientIpAclArgs']]):
+    def ip_acl(self, value: pulumi.Input[Optional['IamApiClientIpAclArgs']]):
         pulumi.set(self, "ip_acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def lock(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def lock(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to lock or unlock the API client.
         """
         return pulumi.get(self, "lock")
 
     @lock.setter
-    def lock(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def lock(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "lock", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmails")
-    def notification_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Email addresses to notify users when credentials expire.
         """
         return pulumi.get(self, "notification_emails")
 
     @notification_emails.setter
-    def notification_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_emails", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeOptions")
-    def purge_options(self) -> Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']]:
+    def purge_options(self) -> pulumi.Input[Optional['IamApiClientPurgeOptionsArgs']]:
         """
         Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         return pulumi.get(self, "purge_options")
 
     @purge_options.setter
-    def purge_options(self, value: Optional[pulumi.Input['IamApiClientPurgeOptionsArgs']]):
+    def purge_options(self, value: pulumi.Input[Optional['IamApiClientPurgeOptionsArgs']]):
         pulumi.set(self, "purge_options", value)
 
 
@@ -556,19 +556,19 @@ class IamApiClient(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_account_switch: Optional[pulumi.Input[_builtins.bool]] = None,
-                 api_access: Optional[pulumi.Input[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']]] = None,
-                 authorized_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 can_auto_create_credential: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential: Optional[pulumi.Input[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict']]] = None,
-                 group_access: Optional[pulumi.Input[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']]] = None,
-                 ip_acl: Optional[pulumi.Input[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']]] = None,
-                 lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purge_options: Optional[pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']]] = None,
+                 allow_account_switch: pulumi.Input[Optional[_builtins.bool]] = None,
+                 api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']]] = None,
+                 authorized_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 can_auto_create_credential: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict']]] = None,
+                 group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']]] = None,
+                 ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']]] = None,
+                 lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']]] = None,
                  __props__=None):
         """
         Create a IamApiClient resource with the given unique name, props, and options.
@@ -612,19 +612,19 @@ class IamApiClient(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_account_switch: Optional[pulumi.Input[_builtins.bool]] = None,
-                 api_access: Optional[pulumi.Input[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']]] = None,
-                 authorized_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 can_auto_create_credential: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential: Optional[pulumi.Input[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict']]] = None,
-                 group_access: Optional[pulumi.Input[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']]] = None,
-                 ip_acl: Optional[pulumi.Input[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']]] = None,
-                 lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purge_options: Optional[pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']]] = None,
+                 allow_account_switch: pulumi.Input[Optional[_builtins.bool]] = None,
+                 api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']]] = None,
+                 authorized_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 can_auto_create_credential: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict']]] = None,
+                 group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']]] = None,
+                 ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']]] = None,
+                 lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -678,26 +678,26 @@ class IamApiClient(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_token: Optional[pulumi.Input[_builtins.str]] = None,
-            actions: Optional[pulumi.Input[Union['IamApiClientActionsArgs', 'IamApiClientActionsArgsDict']]] = None,
-            active_credential_count: Optional[pulumi.Input[_builtins.int]] = None,
-            allow_account_switch: Optional[pulumi.Input[_builtins.bool]] = None,
-            api_access: Optional[pulumi.Input[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']]] = None,
-            authorized_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            base_url: Optional[pulumi.Input[_builtins.str]] = None,
-            can_auto_create_credential: Optional[pulumi.Input[_builtins.bool]] = None,
-            client_description: Optional[pulumi.Input[_builtins.str]] = None,
-            client_id: Optional[pulumi.Input[_builtins.str]] = None,
-            client_name: Optional[pulumi.Input[_builtins.str]] = None,
-            client_type: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_date: Optional[pulumi.Input[_builtins.str]] = None,
-            credential: Optional[pulumi.Input[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict']]] = None,
-            group_access: Optional[pulumi.Input[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']]] = None,
-            ip_acl: Optional[pulumi.Input[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']]] = None,
-            lock: Optional[pulumi.Input[_builtins.bool]] = None,
-            notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            purge_options: Optional[pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']]] = None) -> 'IamApiClient':
+            access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            actions: pulumi.Input[Optional[Union['IamApiClientActionsArgs', 'IamApiClientActionsArgsDict']]] = None,
+            active_credential_count: pulumi.Input[Optional[_builtins.int]] = None,
+            allow_account_switch: pulumi.Input[Optional[_builtins.bool]] = None,
+            api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']]] = None,
+            authorized_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            base_url: pulumi.Input[Optional[_builtins.str]] = None,
+            can_auto_create_credential: pulumi.Input[Optional[_builtins.bool]] = None,
+            client_description: pulumi.Input[Optional[_builtins.str]] = None,
+            client_id: pulumi.Input[Optional[_builtins.str]] = None,
+            client_name: pulumi.Input[Optional[_builtins.str]] = None,
+            client_type: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict']]] = None,
+            group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']]] = None,
+            ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']]] = None,
+            lock: pulumi.Input[Optional[_builtins.bool]] = None,
+            notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']]] = None) -> 'IamApiClient':
         """
         Get an existing IamApiClient resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -152,55 +152,55 @@ export interface PropertyActivationState {
     /**
      * The ID given to the activation event while it's in progress.
      */
-    activationId?: pulumi.Input<string>;
+    activationId?: pulumi.Input<string | undefined>;
     /**
      * Automatically acknowledge all rule warnings for activation to continue. Default is false
      */
-    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
+    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Provides an audit record when activating on a production network.
      */
-    complianceRecord?: pulumi.Input<inputs.PropertyActivationComplianceRecord>;
+    complianceRecord?: pulumi.Input<inputs.PropertyActivationComplianceRecord | undefined>;
     /**
      * One or more email addresses to which to send activation status changes.
      */
-    contacts?: pulumi.Input<pulumi.Input<string>[]>;
+    contacts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Errors returned during activation.
      */
-    errors?: pulumi.Input<string>;
+    errors?: pulumi.Input<string | undefined>;
     /**
      * Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Assigns a log message to the activation request.
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * Your property's ID, including the prp_ prefix.
      */
-    propertyId?: pulumi.Input<string>;
+    propertyId?: pulumi.Input<string | undefined>;
     /**
      * Any errors returned by the API about rules.
      */
-    ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
+    ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[] | undefined>;
     /**
      * The property version's activation status on the given network.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing.
      */
-    timeouts?: pulumi.Input<inputs.PropertyActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.PropertyActivationTimeouts | undefined>;
     /**
      * Your property's version number.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
     /**
      * Warnings returned during activation.
      */
-    warnings?: pulumi.Input<string>;
+    warnings?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -210,15 +210,15 @@ export interface PropertyActivationArgs {
     /**
      * The ID given to the activation event while it's in progress.
      */
-    activationId?: pulumi.Input<string>;
+    activationId?: pulumi.Input<string | undefined>;
     /**
      * Automatically acknowledge all rule warnings for activation to continue. Default is false
      */
-    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
+    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Provides an audit record when activating on a production network.
      */
-    complianceRecord?: pulumi.Input<inputs.PropertyActivationComplianceRecord>;
+    complianceRecord?: pulumi.Input<inputs.PropertyActivationComplianceRecord | undefined>;
     /**
      * One or more email addresses to which to send activation status changes.
      */
@@ -226,11 +226,11 @@ export interface PropertyActivationArgs {
     /**
      * Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Assigns a log message to the activation request.
      */
-    note?: pulumi.Input<string>;
+    note?: pulumi.Input<string | undefined>;
     /**
      * Your property's ID, including the prp_ prefix.
      */
@@ -238,7 +238,7 @@ export interface PropertyActivationArgs {
     /**
      * Enables to set timeout for processing.
      */
-    timeouts?: pulumi.Input<inputs.PropertyActivationTimeouts>;
+    timeouts?: pulumi.Input<inputs.PropertyActivationTimeouts | undefined>;
     /**
      * Your property's version number.
      */

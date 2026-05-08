@@ -143,12 +143,12 @@ def get_property_rules_template(follow_links: Optional[_builtins.bool] = None,
         var_definition_file=pulumi.get(__ret__, 'var_definition_file'),
         var_values_file=pulumi.get(__ret__, 'var_values_file'),
         variables=pulumi.get(__ret__, 'variables'))
-def get_property_rules_template_output(follow_links: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                       template_file: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       templates: Optional[pulumi.Input[Optional[Sequence[Union['GetPropertyRulesTemplateTemplateArgs', 'GetPropertyRulesTemplateTemplateArgsDict']]]]] = None,
-                                       var_definition_file: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       var_values_file: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       variables: Optional[pulumi.Input[Optional[Sequence[Union['GetPropertyRulesTemplateVariableArgs', 'GetPropertyRulesTemplateVariableArgsDict']]]]] = None,
+def get_property_rules_template_output(follow_links: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                       template_file: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       templates: pulumi.Input[Optional[Optional[Sequence[Union['GetPropertyRulesTemplateTemplateArgs', 'GetPropertyRulesTemplateTemplateArgsDict']]]]] = None,
+                                       var_definition_file: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       var_values_file: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       variables: pulumi.Input[Optional[Optional[Sequence[Union['GetPropertyRulesTemplateVariableArgs', 'GetPropertyRulesTemplateVariableArgsDict']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyRulesTemplateResult]:
     """
     Use this data source to access information about an existing resource.

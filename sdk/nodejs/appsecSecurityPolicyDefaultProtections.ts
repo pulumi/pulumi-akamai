@@ -94,19 +94,19 @@ export interface AppsecSecurityPolicyDefaultProtectionsState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the new security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Name of the new security policy
      */
-    securityPolicyName?: pulumi.Input<string>;
+    securityPolicyName?: pulumi.Input<string | undefined>;
     /**
      * Four-character alphanumeric string prefix used in creating the security policy ID
      */
-    securityPolicyPrefix?: pulumi.Input<string>;
+    securityPolicyPrefix?: pulumi.Input<string | undefined>;
 }
 
 /**

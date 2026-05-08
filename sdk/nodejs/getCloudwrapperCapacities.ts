@@ -47,6 +47,6 @@ export function getCloudwrapperCapacitiesOutput(args?: GetCloudwrapperCapacities
  * A collection of arguments for invoking getCloudwrapperCapacities.
  */
 export interface GetCloudwrapperCapacitiesOutputArgs {
-    capacities?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityArgs>[]>;
-    contractIds?: pulumi.Input<pulumi.Input<string>[]>;
+    capacities?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityArgs>[] | undefined>;
+    contractIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

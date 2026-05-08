@@ -44,6 +44,6 @@ export function getBotmanCustomDenyActionOutput(args: GetBotmanCustomDenyActionO
  * A collection of arguments for invoking getBotmanCustomDenyAction.
  */
 export interface GetBotmanCustomDenyActionOutputArgs {
-    actionId?: pulumi.Input<string>;
+    actionId?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
 }

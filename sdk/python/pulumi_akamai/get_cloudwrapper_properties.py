@@ -97,9 +97,9 @@ def get_cloudwrapper_properties(contract_ids: Optional[Sequence[_builtins.str]] 
         id=pulumi.get(__ret__, 'id'),
         properties=pulumi.get(__ret__, 'properties'),
         unused=pulumi.get(__ret__, 'unused'))
-def get_cloudwrapper_properties_output(contract_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       properties: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperPropertiesPropertyArgs', 'GetCloudwrapperPropertiesPropertyArgsDict']]]]] = None,
-                                       unused: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_cloudwrapper_properties_output(contract_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       properties: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperPropertiesPropertyArgs', 'GetCloudwrapperPropertiesPropertyArgsDict']]]]] = None,
+                                       unused: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperPropertiesResult]:
     """
     Use this data source to access information about an existing resource.

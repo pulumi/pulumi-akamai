@@ -73,9 +73,9 @@ export class BotmanCustomDenyAction extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanCustomDenyAction resources.
  */
 export interface BotmanCustomDenyActionState {
-    actionId?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
-    customDenyAction?: pulumi.Input<string>;
+    actionId?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
+    customDenyAction?: pulumi.Input<string | undefined>;
 }
 
 /**

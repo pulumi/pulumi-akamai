@@ -106,27 +106,27 @@ export interface AppSecSecurityPolicyState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Unique identifier of the existing security policy being cloned
      */
-    createFromSecurityPolicyId?: pulumi.Input<string>;
+    createFromSecurityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Whether to assign default settings to the new security policy
      */
-    defaultSettings?: pulumi.Input<boolean>;
+    defaultSettings?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier of the new security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Name of the new security policy
      */
-    securityPolicyName?: pulumi.Input<string>;
+    securityPolicyName?: pulumi.Input<string | undefined>;
     /**
      * Four-character alphanumeric string prefix used in creating the security policy ID
      */
-    securityPolicyPrefix?: pulumi.Input<string>;
+    securityPolicyPrefix?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -140,11 +140,11 @@ export interface AppSecSecurityPolicyArgs {
     /**
      * Unique identifier of the existing security policy being cloned
      */
-    createFromSecurityPolicyId?: pulumi.Input<string>;
+    createFromSecurityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Whether to assign default settings to the new security policy
      */
-    defaultSettings?: pulumi.Input<boolean>;
+    defaultSettings?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the new security policy
      */

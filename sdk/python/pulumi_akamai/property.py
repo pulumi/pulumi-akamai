@@ -24,13 +24,13 @@ class PropertyArgs:
                  contract_id: pulumi.Input[_builtins.str],
                  group_id: pulumi.Input[_builtins.str],
                  product_id: pulumi.Input[_builtins.str],
-                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_hostname_bucket: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version_notes: Optional[pulumi.Input[_builtins.str]] = None):
+                 hostnames: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_hostname_bucket: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version_notes: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Property resource.
 
@@ -100,106 +100,106 @@ class PropertyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
+    def hostnames(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
         return pulumi.get(self, "hostnames")
 
     @hostnames.setter
-    def hostnames(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]):
+    def hostnames(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameArgs']]]]):
         pulumi.set(self, "hostnames", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name to give to the Property (must be unique)
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyId")
-    def property_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property ID
         """
         return pulumi.get(self, "property_id")
 
     @property_id.setter
-    def property_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleFormat")
-    def rule_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the rule format version (defaults to latest version available when created)
         """
         return pulumi.get(self, "rule_format")
 
     @rule_format.setter
-    def rule_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_format", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rules(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property Rules as JSON
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rules(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="useHostnameBucket")
-    def use_hostname_bucket(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_hostname_bucket(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         """
         return pulumi.get(self, "use_hostname_bucket")
 
     @use_hostname_bucket.setter
-    def use_hostname_bucket(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_hostname_bucket(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_hostname_bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="versionNotes")
-    def version_notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property version notes
         """
         return pulumi.get(self, "version_notes")
 
     @version_notes.setter
-    def version_notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_notes", value)
 
 
 @pulumi.input_type
 class _PropertyState:
     def __init__(__self__, *,
-                 asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
-                 latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 production_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 read_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]] = None,
-                 rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]] = None,
-                 rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 staging_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 use_hostname_bucket: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version_notes: Optional[pulumi.Input[_builtins.str]] = None):
+                 asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostnames: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
+                 latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 production_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 read_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 rule_errors: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]] = None,
+                 rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_warnings: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]] = None,
+                 rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 staging_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 use_hostname_bucket: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version_notes: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Property resources.
 
@@ -256,200 +256,200 @@ class _PropertyState:
 
     @_builtins.property
     @pulumi.getter(name="assetId")
-    def asset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the property in the Identity and Access Management API.
         """
         return pulumi.get(self, "asset_id")
 
     @asset_id.setter
-    def asset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contract ID to be assigned to the Property
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Group ID to be assigned to the Property
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
+    def hostnames(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
         return pulumi.get(self, "hostnames")
 
     @hostnames.setter
-    def hostnames(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]):
+    def hostnames(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameArgs']]]]):
         pulumi.set(self, "hostnames", value)
 
     @_builtins.property
     @pulumi.getter(name="latestVersion")
-    def latest_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def latest_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Property's current latest version number
         """
         return pulumi.get(self, "latest_version")
 
     @latest_version.setter
-    def latest_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def latest_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "latest_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name to give to the Property (must be unique)
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="productId")
-    def product_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Product ID to be assigned to the Property
         """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
-    def product_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_id", value)
 
     @_builtins.property
     @pulumi.getter(name="productionVersion")
-    def production_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def production_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Property's version currently activated in production (zero when not active in production)
         """
         return pulumi.get(self, "production_version")
 
     @production_version.setter
-    def production_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def production_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "production_version", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyId")
-    def property_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property ID
         """
         return pulumi.get(self, "property_id")
 
     @property_id.setter
-    def property_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_id", value)
 
     @_builtins.property
     @pulumi.getter(name="readVersion")
-    def read_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def read_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Required property's version to be read
         """
         return pulumi.get(self, "read_version")
 
     @read_version.setter
-    def read_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def read_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "read_version", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleErrors")
-    def rule_errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]]:
+    def rule_errors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]]:
         return pulumi.get(self, "rule_errors")
 
     @rule_errors.setter
-    def rule_errors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]]):
+    def rule_errors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]]):
         pulumi.set(self, "rule_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleFormat")
-    def rule_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the rule format version (defaults to latest version available when created)
         """
         return pulumi.get(self, "rule_format")
 
     @rule_format.setter
-    def rule_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_format", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleWarnings")
-    def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]:
+    def rule_warnings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]:
         """
         Rule validation warnings
         """
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
-    def rule_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]):
+    def rule_warnings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]):
         pulumi.set(self, "rule_warnings", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rules(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property Rules as JSON
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rules(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="stagingVersion")
-    def staging_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def staging_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Property's version currently activated in staging (zero when not active in staging)
         """
         return pulumi.get(self, "staging_version")
 
     @staging_version.setter
-    def staging_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def staging_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "staging_version", value)
 
     @_builtins.property
     @pulumi.getter(name="useHostnameBucket")
-    def use_hostname_bucket(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_hostname_bucket(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.
         """
         return pulumi.get(self, "use_hostname_bucket")
 
     @use_hostname_bucket.setter
-    def use_hostname_bucket(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_hostname_bucket(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_hostname_bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="versionNotes")
-    def version_notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property version notes
         """
         return pulumi.get(self, "version_notes")
 
     @version_notes.setter
-    def version_notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_notes", value)
 
 
@@ -459,16 +459,16 @@ class Property(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_hostname_bucket: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version_notes: Optional[pulumi.Input[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_hostname_bucket: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version_notes: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a Property resource with the given unique name, props, and options.
@@ -509,16 +509,16 @@ class Property(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_hostname_bucket: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version_notes: Optional[pulumi.Input[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_hostname_bucket: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version_notes: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -563,23 +563,23 @@ class Property(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
-            latest_version: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            product_id: Optional[pulumi.Input[_builtins.str]] = None,
-            production_version: Optional[pulumi.Input[_builtins.int]] = None,
-            property_id: Optional[pulumi.Input[_builtins.str]] = None,
-            read_version: Optional[pulumi.Input[_builtins.int]] = None,
-            rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyRuleErrorArgs', 'PropertyRuleErrorArgsDict']]]]] = None,
-            rule_format: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict']]]]] = None,
-            rules: Optional[pulumi.Input[_builtins.str]] = None,
-            staging_version: Optional[pulumi.Input[_builtins.int]] = None,
-            use_hostname_bucket: Optional[pulumi.Input[_builtins.bool]] = None,
-            version_notes: Optional[pulumi.Input[_builtins.str]] = None) -> 'Property':
+            asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            production_version: pulumi.Input[Optional[_builtins.int]] = None,
+            property_id: pulumi.Input[Optional[_builtins.str]] = None,
+            read_version: pulumi.Input[Optional[_builtins.int]] = None,
+            rule_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyRuleErrorArgs', 'PropertyRuleErrorArgsDict']]]]] = None,
+            rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[_builtins.str]] = None,
+            staging_version: pulumi.Input[Optional[_builtins.int]] = None,
+            use_hostname_bucket: pulumi.Input[Optional[_builtins.bool]] = None,
+            version_notes: pulumi.Input[Optional[_builtins.str]] = None) -> 'Property':
         """
         Get an existing Property resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

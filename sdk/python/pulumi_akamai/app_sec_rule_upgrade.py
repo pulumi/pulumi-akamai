@@ -21,7 +21,7 @@ class AppSecRuleUpgradeArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[_builtins.int],
                  security_policy_id: pulumi.Input[_builtins.str],
-                 upgrade_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 upgrade_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppSecRuleUpgrade resource.
 
@@ -60,26 +60,26 @@ class AppSecRuleUpgradeArgs:
 
     @_builtins.property
     @pulumi.getter(name="upgradeMode")
-    def upgrade_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgrade_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
         return pulumi.get(self, "upgrade_mode")
 
     @upgrade_mode.setter
-    def upgrade_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgrade_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgrade_mode", value)
 
 
 @pulumi.input_type
 class _AppSecRuleUpgradeState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 current_ruleset: Optional[pulumi.Input[_builtins.str]] = None,
-                 eval_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 current_ruleset: pulumi.Input[Optional[_builtins.str]] = None,
+                 eval_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppSecRuleUpgrade resources.
 
@@ -105,74 +105,74 @@ class _AppSecRuleUpgradeState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currentRuleset")
-    def current_ruleset(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_ruleset(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Versioning information for the current KRS rule set
         """
         return pulumi.get(self, "current_ruleset")
 
     @current_ruleset.setter
-    def current_ruleset(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_ruleset(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_ruleset", value)
 
     @_builtins.property
     @pulumi.getter(name="evalStatus")
-    def eval_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def eval_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether an evaluation is currently in progress
         """
         return pulumi.get(self, "eval_status")
 
     @eval_status.setter
-    def eval_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def eval_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "eval_status", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradeMode")
-    def upgrade_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgrade_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
         return pulumi.get(self, "upgrade_mode")
 
     @upgrade_mode.setter
-    def upgrade_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgrade_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgrade_mode", value)
 
 
@@ -182,9 +182,9 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppSecRuleUpgrade resource with the given unique name, props, and options.
@@ -219,9 +219,9 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -251,12 +251,12 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            current_ruleset: Optional[pulumi.Input[_builtins.str]] = None,
-            eval_status: Optional[pulumi.Input[_builtins.str]] = None,
-            mode: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            upgrade_mode: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppSecRuleUpgrade':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            current_ruleset: pulumi.Input[Optional[_builtins.str]] = None,
+            eval_status: pulumi.Input[Optional[_builtins.str]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppSecRuleUpgrade':
         """
         Get an existing AppSecRuleUpgrade resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

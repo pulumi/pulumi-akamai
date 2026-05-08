@@ -21,8 +21,8 @@ class AppsecRapidRulesArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[_builtins.int],
                  security_policy_id: pulumi.Input[_builtins.str],
-                 default_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_definitions: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_definitions: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppsecRapidRules resource.
 
@@ -64,37 +64,37 @@ class AppsecRapidRulesArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultAction")
-    def default_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default action that applies to violations of all rapid rules
         """
         return pulumi.get(self, "default_action")
 
     @default_action.setter
-    def default_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_action", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleDefinitions")
-    def rule_definitions(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_definitions(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted list of rule definition (ID, action, action lock and exception)
         """
         return pulumi.get(self, "rule_definitions")
 
     @rule_definitions.setter
-    def rule_definitions(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_definitions(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_definitions", value)
 
 
 @pulumi.input_type
 class _AppsecRapidRulesState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rule_definitions: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rule_definitions: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppsecRapidRules resources.
 
@@ -117,62 +117,62 @@ class _AppsecRapidRulesState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultAction")
-    def default_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default action that applies to violations of all rapid rules
         """
         return pulumi.get(self, "default_action")
 
     @default_action.setter
-    def default_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_action", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Hidden attribute containing information about rapid rules status enabled/disabled
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleDefinitions")
-    def rule_definitions(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_definitions(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-formatted list of rule definition (ID, action, action lock and exception)
         """
         return pulumi.get(self, "rule_definitions")
 
     @rule_definitions.setter
-    def rule_definitions(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_definitions(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_definitions", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -182,10 +182,10 @@ class AppsecRapidRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_definitions: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_definitions: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AppsecRapidRules resource with the given unique name, props, and options.
@@ -221,10 +221,10 @@ class AppsecRapidRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_definitions: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_definitions: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -253,11 +253,11 @@ class AppsecRapidRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            default_action: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            rule_definitions: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppsecRapidRules':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            default_action: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            rule_definitions: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppsecRapidRules':
         """
         Get an existing AppsecRapidRules resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

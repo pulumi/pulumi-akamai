@@ -109,27 +109,27 @@ export interface ImagingPolicyImageState {
     /**
      * With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
      */
-    activateOnProduction?: pulumi.Input<boolean>;
+    activateOnProduction?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier for the Akamai Contract containing the Policy Set(s)
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * A JSON encoded policy
      */
-    json?: pulumi.Input<string>;
+    json?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for a Policy. It is not possible to modify the id of the policy.
      */
-    policyId?: pulumi.Input<string>;
+    policyId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the Image & Video Manager Policy Set.
      */
-    policysetId?: pulumi.Input<string>;
+    policysetId?: pulumi.Input<string | undefined>;
     /**
      * The version number of this policy version
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -139,7 +139,7 @@ export interface ImagingPolicyImageArgs {
     /**
      * With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
      */
-    activateOnProduction?: pulumi.Input<boolean>;
+    activateOnProduction?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier for the Akamai Contract containing the Policy Set(s)
      */

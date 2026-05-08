@@ -85,8 +85,8 @@ def get_cloudwrapper_capacities(capacities: Optional[Sequence[Union['GetCloudwra
         capacities=pulumi.get(__ret__, 'capacities'),
         contract_ids=pulumi.get(__ret__, 'contract_ids'),
         id=pulumi.get(__ret__, 'id'))
-def get_cloudwrapper_capacities_output(capacities: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict']]]]] = None,
-                                       contract_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_cloudwrapper_capacities_output(capacities: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict']]]]] = None,
+                                       contract_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperCapacitiesResult]:
     """
     Use this data source to access information about an existing resource.

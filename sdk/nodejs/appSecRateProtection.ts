@@ -91,16 +91,16 @@ export interface AppSecRateProtectionState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
-    enabled?: pulumi.Input<boolean>;
+    configId?: pulumi.Input<number | undefined>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Text representation
      */
-    outputText?: pulumi.Input<string>;
+    outputText?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

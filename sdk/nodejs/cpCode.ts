@@ -86,14 +86,14 @@ export class CpCode extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CpCode resources.
  */
 export interface CpCodeState {
-    contractId?: pulumi.Input<string>;
-    groupId?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    productId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
+    groupId?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpCodeTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpCodeTimeouts | undefined>;
 }
 
 /**
@@ -102,10 +102,10 @@ export interface CpCodeState {
 export interface CpCodeArgs {
     contractId: pulumi.Input<string>;
     groupId: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    productId?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.CpCodeTimeouts>;
+    timeouts?: pulumi.Input<inputs.CpCodeTimeouts | undefined>;
 }

@@ -204,9 +204,9 @@ def get_cloudwrapper_configuration(id: Optional[_builtins.int] = None,
         property_ids=pulumi.get(__ret__, 'property_ids'),
         retain_idle_objects=pulumi.get(__ret__, 'retain_idle_objects'),
         status=pulumi.get(__ret__, 'status'))
-def get_cloudwrapper_configuration_output(id: Optional[pulumi.Input[_builtins.int]] = None,
-                                          locations: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperConfigurationLocationArgs', 'GetCloudwrapperConfigurationLocationArgsDict']]]]] = None,
-                                          multi_cdn_settings: Optional[pulumi.Input[Optional[Union['GetCloudwrapperConfigurationMultiCdnSettingsArgs', 'GetCloudwrapperConfigurationMultiCdnSettingsArgsDict']]]] = None,
+def get_cloudwrapper_configuration_output(id: pulumi.Input[Optional[_builtins.int]] = None,
+                                          locations: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperConfigurationLocationArgs', 'GetCloudwrapperConfigurationLocationArgsDict']]]]] = None,
+                                          multi_cdn_settings: pulumi.Input[Optional[Optional[Union['GetCloudwrapperConfigurationMultiCdnSettingsArgs', 'GetCloudwrapperConfigurationMultiCdnSettingsArgsDict']]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperConfigurationResult]:
     """
     Use this data source to access information about an existing resource.

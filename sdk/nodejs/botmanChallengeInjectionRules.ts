@@ -70,8 +70,8 @@ export class BotmanChallengeInjectionRules extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanChallengeInjectionRules resources.
  */
 export interface BotmanChallengeInjectionRulesState {
-    challengeInjectionRules?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
+    challengeInjectionRules?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
 }
 
 /**

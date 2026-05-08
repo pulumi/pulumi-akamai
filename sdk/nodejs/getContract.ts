@@ -45,6 +45,6 @@ export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getContract.
  */
 export interface GetContractOutputArgs {
-    groupId?: pulumi.Input<string>;
-    groupName?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
+    groupName?: pulumi.Input<string | undefined>;
 }

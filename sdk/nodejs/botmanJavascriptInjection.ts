@@ -76,9 +76,9 @@ export class BotmanJavascriptInjection extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanJavascriptInjection resources.
  */
 export interface BotmanJavascriptInjectionState {
-    configId?: pulumi.Input<number>;
-    javascriptInjection?: pulumi.Input<string>;
-    securityPolicyId?: pulumi.Input<string>;
+    configId?: pulumi.Input<number | undefined>;
+    javascriptInjection?: pulumi.Input<string | undefined>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

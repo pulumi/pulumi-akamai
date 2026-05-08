@@ -82,7 +82,7 @@ def get_cps_enrollments(contract_id: Optional[_builtins.str] = None,
         contract_id=pulumi.get(__ret__, 'contract_id'),
         enrollments=pulumi.get(__ret__, 'enrollments'),
         id=pulumi.get(__ret__, 'id'))
-def get_cps_enrollments_output(contract_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cps_enrollments_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCPSEnrollmentsResult]:
     """
     Use this data source to access information about an existing resource.

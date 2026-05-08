@@ -102,7 +102,7 @@ def get_clientlist_list(list_id: Optional[_builtins.str] = None,
         list=pulumi.get(__ret__, 'list'),
         list_id=pulumi.get(__ret__, 'list_id'),
         output_text=pulumi.get(__ret__, 'output_text'))
-def get_clientlist_list_output(list_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_clientlist_list_output(list_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClientlistListResult]:
     """
     Use this data source to access information about an existing resource.

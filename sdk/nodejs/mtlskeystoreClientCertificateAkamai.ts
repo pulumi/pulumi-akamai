@@ -180,68 +180,68 @@ export interface MtlskeystoreClientCertificateAkamaiState {
     /**
      * The unique identifier of the client certificate.
      */
-    certificateId?: pulumi.Input<number>;
+    certificateId?: pulumi.Input<number | undefined>;
     /**
      * The name of the client certificate. Must be between 1 and 64 characters.
      */
-    certificateName?: pulumi.Input<string>;
+    certificateName?: pulumi.Input<string | undefined>;
     /**
      * The contract assigned to the client certificate. Must have a length of at least 1.
      */
-    contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     /**
      * The user who created the client certificate. Read-only.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * An ISO 8601 timestamp indicating the client certificate's creation. Read-only.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the `current` client certificate version.
      */
-    currentGuid?: pulumi.Input<string>;
+    currentGuid?: pulumi.Input<string | undefined>;
     /**
      * Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
      */
-    geography?: pulumi.Input<string>;
+    geography?: pulumi.Input<string | undefined>;
     /**
      * The group assigned to the client certificate. Must be greater than or equal to 0.
      */
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
     /**
      * The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`.
      */
-    keyAlgorithm?: pulumi.Input<string>;
+    keyAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The email addresses to notify for client certificate-related issues. Must have at least one email address.
      */
-    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The common name of the account CA certificate selected to sign the client certificate.
      */
-    preferredCa?: pulumi.Input<string>;
+    preferredCa?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the `previous` client certificate version.
      */
-    previousGuid?: pulumi.Input<string>;
+    previousGuid?: pulumi.Input<string | undefined>;
     /**
      * A set of client certificate versions that should be revoked.
      */
-    revokedVersions?: pulumi.Input<pulumi.Input<number>[]>;
+    revokedVersions?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
      */
-    secureNetwork?: pulumi.Input<string>;
+    secureNetwork?: pulumi.Input<string | undefined>;
     /**
      * The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
      */
-    subject?: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiTimeouts>;
+    subject?: pulumi.Input<string | undefined>;
+    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiTimeouts | undefined>;
     /**
      * A list of client certificate versions. Each version represents a specific iteration of the client certificate.
      */
-    versions?: pulumi.Input<pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiVersion>[]>;
+    versions?: pulumi.Input<pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiVersion>[] | undefined>;
 }
 
 /**
@@ -267,7 +267,7 @@ export interface MtlskeystoreClientCertificateAkamaiArgs {
     /**
      * The cryptographic algorithm used for key generation. Possible values: `RSA` or `ECDSA`.
      */
-    keyAlgorithm?: pulumi.Input<string>;
+    keyAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The email addresses to notify for client certificate-related issues. Must have at least one email address.
      */
@@ -275,11 +275,11 @@ export interface MtlskeystoreClientCertificateAkamaiArgs {
     /**
      * The common name of the account CA certificate selected to sign the client certificate.
      */
-    preferredCa?: pulumi.Input<string>;
+    preferredCa?: pulumi.Input<string | undefined>;
     /**
      * A set of client certificate versions that should be revoked.
      */
-    revokedVersions?: pulumi.Input<pulumi.Input<number>[]>;
+    revokedVersions?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
      */
@@ -287,6 +287,6 @@ export interface MtlskeystoreClientCertificateAkamaiArgs {
     /**
      * The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
      */
-    subject?: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiTimeouts>;
+    subject?: pulumi.Input<string | undefined>;
+    timeouts?: pulumi.Input<inputs.MtlskeystoreClientCertificateAkamaiTimeouts | undefined>;
 }

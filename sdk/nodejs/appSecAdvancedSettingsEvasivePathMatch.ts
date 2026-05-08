@@ -85,15 +85,15 @@ export interface AppSecAdvancedSettingsEvasivePathMatchState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Whether to enable the evasive path match setting
      */
-    enablePathMatch?: pulumi.Input<boolean>;
+    enablePathMatch?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -111,5 +111,5 @@ export interface AppSecAdvancedSettingsEvasivePathMatchArgs {
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

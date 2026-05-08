@@ -68,10 +68,10 @@ export function getPropertyAccountHostnamesOutput(args?: GetPropertyAccountHostn
  * A collection of arguments for invoking getPropertyAccountHostnames.
  */
 export interface GetPropertyAccountHostnamesOutputArgs {
-    cnameTo?: pulumi.Input<string>;
-    contractId?: pulumi.Input<string>;
-    groupId?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    network?: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
+    cnameTo?: pulumi.Input<string | undefined>;
+    contractId?: pulumi.Input<string | undefined>;
+    groupId?: pulumi.Input<string | undefined>;
+    hostname?: pulumi.Input<string | undefined>;
+    network?: pulumi.Input<string | undefined>;
+    sort?: pulumi.Input<string | undefined>;
 }

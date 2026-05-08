@@ -81,7 +81,7 @@ def get_botman_akamai_defined_bot(bot_name: Optional[_builtins.str] = None,
         bot_name=pulumi.get(__ret__, 'bot_name'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-def get_botman_akamai_defined_bot_output(bot_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_botman_akamai_defined_bot_output(bot_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanAkamaiDefinedBotResult]:
     """
     Use this data source to access information about an existing resource.

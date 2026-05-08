@@ -102,7 +102,7 @@ def get_zone_dnssec_status(zone: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         new_records=pulumi.get(__ret__, 'new_records'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_zone_dnssec_status_output(zone: Optional[pulumi.Input[_builtins.str]] = None,
+def get_zone_dnssec_status_output(zone: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetZoneDnssecStatusResult]:
     """
     Use this data source to access information about an existing resource.

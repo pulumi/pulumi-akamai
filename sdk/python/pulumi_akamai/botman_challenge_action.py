@@ -49,9 +49,9 @@ class BotmanChallengeActionArgs:
 @pulumi.input_type
 class _BotmanChallengeActionState:
     def __init__(__self__, *,
-                 action_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 challenge_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 action_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 challenge_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BotmanChallengeAction resources.
         """
@@ -64,29 +64,29 @@ class _BotmanChallengeActionState:
 
     @_builtins.property
     @pulumi.getter(name="actionId")
-    def action_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "action_id")
 
     @action_id.setter
-    def action_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_id", value)
 
     @_builtins.property
     @pulumi.getter(name="challengeAction")
-    def challenge_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def challenge_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "challenge_action")
 
     @challenge_action.setter
-    def challenge_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def challenge_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "challenge_action", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
 
@@ -96,8 +96,8 @@ class BotmanChallengeAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 challenge_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 challenge_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a BotmanChallengeAction resource with the given unique name, props, and options.
@@ -129,8 +129,8 @@ class BotmanChallengeAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 challenge_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 challenge_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -157,9 +157,9 @@ class BotmanChallengeAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_id: Optional[pulumi.Input[_builtins.str]] = None,
-            challenge_action: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'BotmanChallengeAction':
+            action_id: pulumi.Input[Optional[_builtins.str]] = None,
+            challenge_action: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'BotmanChallengeAction':
         """
         Get an existing BotmanChallengeAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

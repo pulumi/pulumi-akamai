@@ -73,9 +73,9 @@ export class BotmanCustomClient extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanCustomClient resources.
  */
 export interface BotmanCustomClientState {
-    configId?: pulumi.Input<number>;
-    customClient?: pulumi.Input<string>;
-    customClientId?: pulumi.Input<string>;
+    configId?: pulumi.Input<number | undefined>;
+    customClient?: pulumi.Input<string | undefined>;
+    customClientId?: pulumi.Input<string | undefined>;
 }
 
 /**

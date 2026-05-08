@@ -75,8 +75,8 @@ export interface PropertyDomainownershipValidationState {
     /**
      * List of domains to be validated.
      */
-    domains?: pulumi.Input<pulumi.Input<inputs.PropertyDomainownershipValidationDomain>[]>;
-    timeouts?: pulumi.Input<inputs.PropertyDomainownershipValidationTimeouts>;
+    domains?: pulumi.Input<pulumi.Input<inputs.PropertyDomainownershipValidationDomain>[] | undefined>;
+    timeouts?: pulumi.Input<inputs.PropertyDomainownershipValidationTimeouts | undefined>;
 }
 
 /**
@@ -87,5 +87,5 @@ export interface PropertyDomainownershipValidationArgs {
      * List of domains to be validated.
      */
     domains: pulumi.Input<pulumi.Input<inputs.PropertyDomainownershipValidationDomain>[]>;
-    timeouts?: pulumi.Input<inputs.PropertyDomainownershipValidationTimeouts>;
+    timeouts?: pulumi.Input<inputs.PropertyDomainownershipValidationTimeouts | undefined>;
 }

@@ -73,7 +73,7 @@ def get_property_domainownership_search_domains(domains: Optional[Sequence[Union
     return AwaitableGetPropertyDomainownershipSearchDomainsResult(
         domains=pulumi.get(__ret__, 'domains'),
         id=pulumi.get(__ret__, 'id'))
-def get_property_domainownership_search_domains_output(domains: Optional[pulumi.Input[Sequence[Union['GetPropertyDomainownershipSearchDomainsDomainArgs', 'GetPropertyDomainownershipSearchDomainsDomainArgsDict']]]] = None,
+def get_property_domainownership_search_domains_output(domains: pulumi.Input[Optional[Sequence[Union['GetPropertyDomainownershipSearchDomainsDomainArgs', 'GetPropertyDomainownershipSearchDomainsDomainArgsDict']]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyDomainownershipSearchDomainsResult]:
     """
     Use this data source to access information about an existing resource.

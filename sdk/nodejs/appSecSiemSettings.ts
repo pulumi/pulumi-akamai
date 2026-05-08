@@ -123,35 +123,35 @@ export interface AppSecSiemSettingsState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Whether Bot Manager events should be included in SIEM events
      */
-    enableBotmanSiem?: pulumi.Input<boolean>;
+    enableBotmanSiem?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable SIEM on all security policies in the security configuration
      */
-    enableForAllPolicies?: pulumi.Input<boolean>;
+    enableForAllPolicies?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable SIEM
      */
-    enableSiem?: pulumi.Input<boolean>;
+    enableSiem?: pulumi.Input<boolean | undefined>;
     /**
      * Describes all the protections and actions to be excluded from SIEM events
      */
-    exceptions?: pulumi.Input<inputs.AppSecSiemSettingsExceptions>;
+    exceptions?: pulumi.Input<inputs.AppSecSiemSettingsExceptions | undefined>;
     /**
      * Whether JA4 Fingerprint should be included in SIEM events
      */
-    includeJa4FingerprintToSiem?: pulumi.Input<boolean>;
+    includeJa4FingerprintToSiem?: pulumi.Input<boolean | undefined>;
     /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      */
-    securityPolicyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    securityPolicyIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique identifier of the SIEM settings being modified
      */
-    siemId?: pulumi.Input<number>;
+    siemId?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -165,7 +165,7 @@ export interface AppSecSiemSettingsArgs {
     /**
      * Whether Bot Manager events should be included in SIEM events
      */
-    enableBotmanSiem?: pulumi.Input<boolean>;
+    enableBotmanSiem?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable SIEM on all security policies in the security configuration
      */
@@ -177,15 +177,15 @@ export interface AppSecSiemSettingsArgs {
     /**
      * Describes all the protections and actions to be excluded from SIEM events
      */
-    exceptions?: pulumi.Input<inputs.AppSecSiemSettingsExceptions>;
+    exceptions?: pulumi.Input<inputs.AppSecSiemSettingsExceptions | undefined>;
     /**
      * Whether JA4 Fingerprint should be included in SIEM events
      */
-    includeJa4FingerprintToSiem?: pulumi.Input<boolean>;
+    includeJa4FingerprintToSiem?: pulumi.Input<boolean | undefined>;
     /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      */
-    securityPolicyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    securityPolicyIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique identifier of the SIEM settings being modified
      */

@@ -106,9 +106,9 @@ def get_iam_allowed_apis(allow_account_switch: Optional[_builtins.bool] = None,
         client_type=pulumi.get(__ret__, 'client_type'),
         id=pulumi.get(__ret__, 'id'),
         username=pulumi.get(__ret__, 'username'))
-def get_iam_allowed_apis_output(allow_account_switch: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                client_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                username: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_allowed_apis_output(allow_account_switch: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                client_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                username: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAllowedApisResult]:
     """
     Use this data source to access information about an existing resource.

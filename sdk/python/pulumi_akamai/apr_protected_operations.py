@@ -84,10 +84,10 @@ class AprProtectedOperationsArgs:
 @pulumi.input_type
 class _AprProtectedOperationsState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 operation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protected_operation: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protected_operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AprProtectedOperations resources.
 
@@ -106,47 +106,47 @@ class _AprProtectedOperationsState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Identifies a security configuration.
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="operationId")
-    def operation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies a protected operation
         """
         return pulumi.get(self, "operation_id")
 
     @operation_id.setter
-    def operation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="protectedOperation")
-    def protected_operation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protected_operation(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "protected_operation")
 
     @protected_operation.setter
-    def protected_operation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protected_operation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protected_operation", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifies a security policy.
         """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
-    def security_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_policy_id", value)
 
 
@@ -156,10 +156,10 @@ class AprProtectedOperations(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 operation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protected_operation: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protected_operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AprProtectedOperations resource with the given unique name, props, and options.
@@ -194,10 +194,10 @@ class AprProtectedOperations(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 operation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protected_operation: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protected_operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -229,10 +229,10 @@ class AprProtectedOperations(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            operation_id: Optional[pulumi.Input[_builtins.str]] = None,
-            protected_operation: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AprProtectedOperations':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protected_operation: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AprProtectedOperations':
         """
         Get an existing AprProtectedOperations resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

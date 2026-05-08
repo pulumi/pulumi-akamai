@@ -49,7 +49,7 @@ export function getMtlstruststoreCaSetAssociationsOutput(args?: GetMtlstruststor
  * A collection of arguments for invoking getMtlstruststoreCaSetAssociations.
  */
 export interface GetMtlstruststoreCaSetAssociationsOutputArgs {
-    associationType?: pulumi.Input<string>;
-    id?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    associationType?: pulumi.Input<string | undefined>;
+    id?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

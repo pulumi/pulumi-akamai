@@ -52,8 +52,8 @@ export function getMtlstruststoreCaSetVersionsOutput(args?: GetMtlstruststoreCaS
  * A collection of arguments for invoking getMtlstruststoreCaSetVersions.
  */
 export interface GetMtlstruststoreCaSetVersionsOutputArgs {
-    activeVersionsOnly?: pulumi.Input<boolean>;
-    id?: pulumi.Input<string>;
-    includeCertificates?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
+    activeVersionsOnly?: pulumi.Input<boolean | undefined>;
+    id?: pulumi.Input<string | undefined>;
+    includeCertificates?: pulumi.Input<boolean | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

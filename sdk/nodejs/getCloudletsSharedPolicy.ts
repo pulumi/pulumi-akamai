@@ -56,7 +56,7 @@ export function getCloudletsSharedPolicyOutput(args: GetCloudletsSharedPolicyOut
  * A collection of arguments for invoking getCloudletsSharedPolicy.
  */
 export interface GetCloudletsSharedPolicyOutputArgs {
-    activations?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsArgs>;
+    activations?: pulumi.Input<inputs.GetCloudletsSharedPolicyActivationsArgs | undefined>;
     policyId: pulumi.Input<number>;
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }

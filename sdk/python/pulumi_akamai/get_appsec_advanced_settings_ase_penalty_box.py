@@ -91,7 +91,7 @@ def get_appsec_advanced_settings_ase_penalty_box(config_id: Optional[_builtins.i
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'))
-def get_appsec_advanced_settings_ase_penalty_box_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_appsec_advanced_settings_ase_penalty_box_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecAdvancedSettingsAsePenaltyBoxResult]:
     """
     Use this data source to access information about an existing resource.

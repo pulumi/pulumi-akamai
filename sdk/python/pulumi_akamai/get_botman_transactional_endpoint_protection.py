@@ -81,7 +81,7 @@ def get_botman_transactional_endpoint_protection(config_id: Optional[_builtins.i
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-def get_botman_transactional_endpoint_protection_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_botman_transactional_endpoint_protection_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanTransactionalEndpointProtectionResult]:
     """
     Use this data source to access information about an existing resource.

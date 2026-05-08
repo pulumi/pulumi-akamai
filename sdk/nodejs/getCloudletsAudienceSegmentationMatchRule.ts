@@ -44,5 +44,5 @@ export function getCloudletsAudienceSegmentationMatchRuleOutput(args?: GetCloudl
  * A collection of arguments for invoking getCloudletsAudienceSegmentationMatchRule.
  */
 export interface GetCloudletsAudienceSegmentationMatchRuleOutputArgs {
-    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>[]>;
+    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>[] | undefined>;
 }

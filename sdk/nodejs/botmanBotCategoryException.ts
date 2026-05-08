@@ -76,9 +76,9 @@ export class BotmanBotCategoryException extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanBotCategoryException resources.
  */
 export interface BotmanBotCategoryExceptionState {
-    botCategoryException?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
-    securityPolicyId?: pulumi.Input<string>;
+    botCategoryException?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -118,35 +118,35 @@ export interface AppSecWafModeState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Versioning information for the current Kona Rule Set
      */
-    currentRuleset?: pulumi.Input<string>;
+    currentRuleset?: pulumi.Input<string | undefined>;
     /**
      * Date on which the evaluation period ends, if applicable
      */
-    evalExpirationDate?: pulumi.Input<string>;
+    evalExpirationDate?: pulumi.Input<string | undefined>;
     /**
      * Versioning information for the Kona Rule Set being evaluated, if applicable
      */
-    evalRuleset?: pulumi.Input<string>;
+    evalRuleset?: pulumi.Input<string | undefined>;
     /**
      * Whether an evaluation is currently in progress
      */
-    evalStatus?: pulumi.Input<string>;
+    evalStatus?: pulumi.Input<string | undefined>;
     /**
      * How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * Text representation
      */
-    outputText?: pulumi.Input<string>;
+    outputText?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

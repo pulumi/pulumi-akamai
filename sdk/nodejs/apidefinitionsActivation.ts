@@ -112,31 +112,31 @@ export interface ApidefinitionsActivationState {
     /**
      * Unique identifier of the API
      */
-    apiId?: pulumi.Input<number>;
+    apiId?: pulumi.Input<number | undefined>;
     /**
      * Automatically acknowledge all warnings for activation to continue. Default is false
      */
-    autoAcknowledgeWarnings?: pulumi.Input<boolean>;
+    autoAcknowledgeWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Network on which to activate the API version (STAGING or PRODUCTION)
      */
-    network?: pulumi.Input<string>;
+    network?: pulumi.Input<string | undefined>;
     /**
      * Notes describing the activation
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * List of email addresses to be notified with the results of the activation
      */
-    notificationRecipients?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationRecipients?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The results of the activation
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Version of the API to be activated
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -150,7 +150,7 @@ export interface ApidefinitionsActivationArgs {
     /**
      * Automatically acknowledge all warnings for activation to continue. Default is false
      */
-    autoAcknowledgeWarnings?: pulumi.Input<boolean>;
+    autoAcknowledgeWarnings?: pulumi.Input<boolean | undefined>;
     /**
      * Network on which to activate the API version (STAGING or PRODUCTION)
      */
@@ -158,11 +158,11 @@ export interface ApidefinitionsActivationArgs {
     /**
      * Notes describing the activation
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * List of email addresses to be notified with the results of the activation
      */
-    notificationRecipients?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationRecipients?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Version of the API to be activated
      */

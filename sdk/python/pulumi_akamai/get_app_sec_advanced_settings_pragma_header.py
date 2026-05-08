@@ -103,8 +103,8 @@ def get_app_sec_advanced_settings_pragma_header(config_id: Optional[_builtins.in
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_app_sec_advanced_settings_pragma_header_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                                       security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_app_sec_advanced_settings_pragma_header_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                                       security_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecAdvancedSettingsPragmaHeaderResult]:
     """
     Use this data source to access information about an existing resource.

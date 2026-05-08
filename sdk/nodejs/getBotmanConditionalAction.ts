@@ -44,6 +44,6 @@ export function getBotmanConditionalActionOutput(args: GetBotmanConditionalActio
  * A collection of arguments for invoking getBotmanConditionalAction.
  */
 export interface GetBotmanConditionalActionOutputArgs {
-    actionId?: pulumi.Input<string>;
+    actionId?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
 }

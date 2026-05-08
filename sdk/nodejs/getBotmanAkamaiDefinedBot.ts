@@ -42,5 +42,5 @@ export function getBotmanAkamaiDefinedBotOutput(args?: GetBotmanAkamaiDefinedBot
  * A collection of arguments for invoking getBotmanAkamaiDefinedBot.
  */
 export interface GetBotmanAkamaiDefinedBotOutputArgs {
-    botName?: pulumi.Input<string>;
+    botName?: pulumi.Input<string | undefined>;
 }

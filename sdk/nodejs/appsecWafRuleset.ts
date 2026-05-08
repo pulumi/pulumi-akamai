@@ -93,19 +93,19 @@ export interface AppsecWafRulesetState {
     /**
      * List of attack group objects including action and condition exceptions
      */
-    attackGroups?: pulumi.Input<pulumi.Input<inputs.AppsecWafRulesetAttackGroup>[]>;
+    attackGroups?: pulumi.Input<pulumi.Input<inputs.AppsecWafRulesetAttackGroup>[] | undefined>;
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * List of rule objects including action and condition exceptions
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.AppsecWafRulesetRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.AppsecWafRulesetRule>[] | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -115,7 +115,7 @@ export interface AppsecWafRulesetArgs {
     /**
      * List of attack group objects including action and condition exceptions
      */
-    attackGroups?: pulumi.Input<pulumi.Input<inputs.AppsecWafRulesetAttackGroup>[]>;
+    attackGroups?: pulumi.Input<pulumi.Input<inputs.AppsecWafRulesetAttackGroup>[] | undefined>;
     /**
      * Unique identifier of the security configuration
      */
@@ -123,7 +123,7 @@ export interface AppsecWafRulesetArgs {
     /**
      * List of rule objects including action and condition exceptions
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.AppsecWafRulesetRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.AppsecWafRulesetRule>[] | undefined>;
     /**
      * Unique identifier of the security policy
      */

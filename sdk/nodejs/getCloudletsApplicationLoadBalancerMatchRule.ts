@@ -44,5 +44,5 @@ export function getCloudletsApplicationLoadBalancerMatchRuleOutput(args?: GetClo
  * A collection of arguments for invoking getCloudletsApplicationLoadBalancerMatchRule.
  */
 export interface GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs {
-    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs>[]>;
+    matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs>[] | undefined>;
 }

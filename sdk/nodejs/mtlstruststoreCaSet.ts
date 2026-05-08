@@ -159,64 +159,64 @@ export interface MtlstruststoreCaSetState {
     /**
      * Identifies the account the CA set belongs to.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * Allows certificates with SHA-1 signatures if enabled.
      */
-    allowInsecureSha1?: pulumi.Input<boolean>;
+    allowInsecureSha1?: pulumi.Input<boolean | undefined>;
     /**
      * The certificates that are valid, non-expired, root, or intermediate.
      */
-    certificates?: pulumi.Input<pulumi.Input<inputs.MtlstruststoreCaSetCertificate>[]>;
+    certificates?: pulumi.Input<pulumi.Input<inputs.MtlstruststoreCaSetCertificate>[] | undefined>;
     /**
      * The user who created the CA set.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * When the CA set was created.
      */
-    createdDate?: pulumi.Input<string>;
+    createdDate?: pulumi.Input<string | undefined>;
     /**
      * Any additional comments you can add to the CA set.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Version number for newly created or cloned version in a CA set.
      */
-    latestVersion?: pulumi.Input<number>;
+    latestVersion?: pulumi.Input<number | undefined>;
     /**
      * The name of the CA set.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Version of the CA set that is active on production.
      */
-    productionVersion?: pulumi.Input<number>;
+    productionVersion?: pulumi.Input<number | undefined>;
     /**
      * Version number of the CA set that is active on staging.
      */
-    stagingVersion?: pulumi.Input<number>;
-    timeouts?: pulumi.Input<inputs.MtlstruststoreCaSetTimeouts>;
+    stagingVersion?: pulumi.Input<number | undefined>;
+    timeouts?: pulumi.Input<inputs.MtlstruststoreCaSetTimeouts | undefined>;
     /**
      * The user who created the CA set version.
      */
-    versionCreatedBy?: pulumi.Input<string>;
+    versionCreatedBy?: pulumi.Input<string | undefined>;
     /**
      * When the CA set version was created.
      */
-    versionCreatedDate?: pulumi.Input<string>;
+    versionCreatedDate?: pulumi.Input<string | undefined>;
     /**
      * Additional description for the CA set version.
      */
-    versionDescription?: pulumi.Input<string>;
+    versionDescription?: pulumi.Input<string | undefined>;
     /**
      * The user who modified the CA set version.
      */
-    versionModifiedBy?: pulumi.Input<string>;
+    versionModifiedBy?: pulumi.Input<string | undefined>;
     /**
      * When the CA set version was modified.
      */
-    versionModifiedDate?: pulumi.Input<string>;
+    versionModifiedDate?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -226,7 +226,7 @@ export interface MtlstruststoreCaSetArgs {
     /**
      * Allows certificates with SHA-1 signatures if enabled.
      */
-    allowInsecureSha1?: pulumi.Input<boolean>;
+    allowInsecureSha1?: pulumi.Input<boolean | undefined>;
     /**
      * The certificates that are valid, non-expired, root, or intermediate.
      */
@@ -234,14 +234,14 @@ export interface MtlstruststoreCaSetArgs {
     /**
      * Any additional comments you can add to the CA set.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The name of the CA set.
      */
-    name?: pulumi.Input<string>;
-    timeouts?: pulumi.Input<inputs.MtlstruststoreCaSetTimeouts>;
+    name?: pulumi.Input<string | undefined>;
+    timeouts?: pulumi.Input<inputs.MtlstruststoreCaSetTimeouts | undefined>;
     /**
      * Additional description for the CA set version.
      */
-    versionDescription?: pulumi.Input<string>;
+    versionDescription?: pulumi.Input<string | undefined>;
 }

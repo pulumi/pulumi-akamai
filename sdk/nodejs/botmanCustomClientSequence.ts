@@ -70,8 +70,8 @@ export class BotmanCustomClientSequence extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanCustomClientSequence resources.
  */
 export interface BotmanCustomClientSequenceState {
-    configId?: pulumi.Input<number>;
-    customClientIds?: pulumi.Input<pulumi.Input<string>[]>;
+    configId?: pulumi.Input<number | undefined>;
+    customClientIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**

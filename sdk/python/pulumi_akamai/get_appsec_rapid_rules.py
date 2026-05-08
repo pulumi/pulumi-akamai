@@ -145,10 +145,10 @@ def get_appsec_rapid_rules(config_id: Optional[_builtins.int] = None,
         rapid_rules=pulumi.get(__ret__, 'rapid_rules'),
         rule_id=pulumi.get(__ret__, 'rule_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-def get_appsec_rapid_rules_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                  include_expiry_details: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                  rule_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_appsec_rapid_rules_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                  include_expiry_details: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                  rule_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                  security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecRapidRulesResult]:
     """
     Use this data source to access information about an existing resource.

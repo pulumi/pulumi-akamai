@@ -82,7 +82,7 @@ def get_datastreams(group_id: Optional[_builtins.int] = None,
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
         streams_details=pulumi.get(__ret__, 'streams_details'))
-def get_datastreams_output(group_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_datastreams_output(group_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastreamsResult]:
     """
     Use this data source to access information about an existing resource.

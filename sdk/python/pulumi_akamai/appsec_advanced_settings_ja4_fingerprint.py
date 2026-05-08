@@ -20,7 +20,7 @@ __all__ = ['AppsecAdvancedSettingsJa4FingerprintArgs', 'AppsecAdvancedSettingsJa
 class AppsecAdvancedSettingsJa4FingerprintArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[_builtins.int],
-                 header_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 header_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AppsecAdvancedSettingsJa4Fingerprint resource.
 
@@ -45,22 +45,22 @@ class AppsecAdvancedSettingsJa4FingerprintArgs:
 
     @_builtins.property
     @pulumi.getter(name="headerNames")
-    def header_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def header_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         JA4 TLS Header Names to be included in the header
         """
         return pulumi.get(self, "header_names")
 
     @header_names.setter
-    def header_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def header_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "header_names", value)
 
 
 @pulumi.input_type
 class _AppsecAdvancedSettingsJa4FingerprintState:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 header_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 header_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering AppsecAdvancedSettingsJa4Fingerprint resources.
 
@@ -74,26 +74,26 @@ class _AppsecAdvancedSettingsJa4FingerprintState:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="headerNames")
-    def header_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def header_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         JA4 TLS Header Names to be included in the header
         """
         return pulumi.get(self, "header_names")
 
     @header_names.setter
-    def header_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def header_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "header_names", value)
 
 
@@ -103,8 +103,8 @@ class AppsecAdvancedSettingsJa4Fingerprint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 header_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 header_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a AppsecAdvancedSettingsJa4Fingerprint resource with the given unique name, props, and options.
@@ -138,8 +138,8 @@ class AppsecAdvancedSettingsJa4Fingerprint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 header_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 header_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -163,8 +163,8 @@ class AppsecAdvancedSettingsJa4Fingerprint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config_id: Optional[pulumi.Input[_builtins.int]] = None,
-            header_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'AppsecAdvancedSettingsJa4Fingerprint':
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            header_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'AppsecAdvancedSettingsJa4Fingerprint':
         """
         Get an existing AppsecAdvancedSettingsJa4Fingerprint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

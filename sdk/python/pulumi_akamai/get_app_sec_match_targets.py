@@ -103,8 +103,8 @@ def get_app_sec_match_targets(config_id: Optional[_builtins.int] = None,
         json=pulumi.get(__ret__, 'json'),
         match_target_id=pulumi.get(__ret__, 'match_target_id'),
         output_text=pulumi.get(__ret__, 'output_text'))
-def get_app_sec_match_targets_output(config_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                     match_target_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_app_sec_match_targets_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                     match_target_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecMatchTargetsResult]:
     """
     Use this data source to access information about an existing resource.

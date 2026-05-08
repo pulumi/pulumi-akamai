@@ -43,5 +43,5 @@ export function getGtmDomainsOutput(args?: GetGtmDomainsOutputArgs, opts?: pulum
  * A collection of arguments for invoking getGtmDomains.
  */
 export interface GetGtmDomainsOutputArgs {
-    domains?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainsDomainArgs>[]>;
+    domains?: pulumi.Input<pulumi.Input<inputs.GetGtmDomainsDomainArgs>[] | undefined>;
 }

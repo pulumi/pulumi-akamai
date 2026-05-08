@@ -46,5 +46,5 @@ export function getAppSecRatePoliciesOutput(args: GetAppSecRatePoliciesOutputArg
  */
 export interface GetAppSecRatePoliciesOutputArgs {
     configId: pulumi.Input<number>;
-    ratePolicyId?: pulumi.Input<number>;
+    ratePolicyId?: pulumi.Input<number | undefined>;
 }

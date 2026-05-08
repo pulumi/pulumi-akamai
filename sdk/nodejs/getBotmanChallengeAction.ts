@@ -44,6 +44,6 @@ export function getBotmanChallengeActionOutput(args: GetBotmanChallengeActionOut
  * A collection of arguments for invoking getBotmanChallengeAction.
  */
 export interface GetBotmanChallengeActionOutputArgs {
-    actionId?: pulumi.Input<string>;
+    actionId?: pulumi.Input<string | undefined>;
     configId: pulumi.Input<number>;
 }

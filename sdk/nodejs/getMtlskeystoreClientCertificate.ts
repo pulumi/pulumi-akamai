@@ -58,5 +58,5 @@ export function getMtlskeystoreClientCertificateOutput(args: GetMtlskeystoreClie
  */
 export interface GetMtlskeystoreClientCertificateOutputArgs {
     certificateId: pulumi.Input<number>;
-    includeAssociatedProperties?: pulumi.Input<boolean>;
+    includeAssociatedProperties?: pulumi.Input<boolean | undefined>;
 }

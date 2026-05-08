@@ -122,62 +122,62 @@ export class EdgeHostName extends pulumi.CustomResource {
  * Input properties used for looking up and filtering EdgeHostName resources.
  */
 export interface EdgeHostNameState {
-    certificate?: pulumi.Input<number>;
-    contractId?: pulumi.Input<string>;
-    edgeHostname?: pulumi.Input<string>;
-    groupId?: pulumi.Input<string>;
+    certificate?: pulumi.Input<number | undefined>;
+    contractId?: pulumi.Input<string | undefined>;
+    edgeHostname?: pulumi.Input<string | undefined>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
      */
-    httpsServiceBinding?: pulumi.Input<string>;
-    ipBehavior?: pulumi.Input<string>;
-    productId?: pulumi.Input<string>;
+    httpsServiceBinding?: pulumi.Input<string | undefined>;
+    ipBehavior?: pulumi.Input<string | undefined>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Email address that should receive updates on the IP behavior update request.
      */
-    statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts>;
+    timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts | undefined>;
     /**
      * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
      */
-    ttl?: pulumi.Input<number>;
+    ttl?: pulumi.Input<number | undefined>;
     /**
      * A JSON encoded list of use cases
      */
-    useCases?: pulumi.Input<string>;
+    useCases?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a EdgeHostName resource.
  */
 export interface EdgeHostNameArgs {
-    certificate?: pulumi.Input<number>;
+    certificate?: pulumi.Input<number | undefined>;
     contractId: pulumi.Input<string>;
     edgeHostname: pulumi.Input<string>;
     groupId: pulumi.Input<string>;
     /**
      * Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
      */
-    httpsServiceBinding?: pulumi.Input<string>;
+    httpsServiceBinding?: pulumi.Input<string | undefined>;
     ipBehavior: pulumi.Input<string>;
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Email address that should receive updates on the IP behavior update request.
      */
-    statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Enables to set timeout for processing
      */
-    timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts>;
+    timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts | undefined>;
     /**
      * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
      */
-    ttl?: pulumi.Input<number>;
+    ttl?: pulumi.Input<number | undefined>;
     /**
      * A JSON encoded list of use cases
      */
-    useCases?: pulumi.Input<string>;
+    useCases?: pulumi.Input<string | undefined>;
 }

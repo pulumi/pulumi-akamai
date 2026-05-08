@@ -106,9 +106,9 @@ def get_iam_blocked_properties(contract_id: Optional[_builtins.str] = None,
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
         ui_identity_id=pulumi.get(__ret__, 'ui_identity_id'))
-def get_iam_blocked_properties_output(contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                                      ui_identity_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_blocked_properties_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                                      ui_identity_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamBlockedPropertiesResult]:
     """
     Use this data source to access information about an existing resource.

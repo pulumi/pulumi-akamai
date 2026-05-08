@@ -94,8 +94,8 @@ def get_iam_property_users(asset_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         user_type=pulumi.get(__ret__, 'user_type'),
         users=pulumi.get(__ret__, 'users'))
-def get_iam_property_users_output(asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  user_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_property_users_output(asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  user_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamPropertyUsersResult]:
     """
     Use this data source to access information about an existing resource.

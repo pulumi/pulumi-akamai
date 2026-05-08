@@ -44,5 +44,5 @@ export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pul
  * A collection of arguments for invoking getDatastreams.
  */
 export interface GetDatastreamsOutputArgs {
-    groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number | undefined>;
 }

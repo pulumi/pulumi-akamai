@@ -93,8 +93,8 @@ def get_botman_custom_defined_bot(bot_id: Optional[_builtins.str] = None,
         config_id=pulumi.get(__ret__, 'config_id'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-def get_botman_custom_defined_bot_output(bot_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         config_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_botman_custom_defined_bot_output(bot_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         config_id: pulumi.Input[Optional[_builtins.int]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanCustomDefinedBotResult]:
     """
     Use this data source to access information about an existing resource.

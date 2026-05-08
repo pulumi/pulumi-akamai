@@ -216,9 +216,9 @@ def get_cloudlets_policy(name: Optional[_builtins.str] = None,
         version=pulumi.get(__ret__, 'version'),
         version_description=pulumi.get(__ret__, 'version_description'),
         warnings=pulumi.get(__ret__, 'warnings'))
-def get_cloudlets_policy_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                policy_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_cloudlets_policy_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                policy_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsPolicyResult]:
     """
     Use this data source to access information about an existing resource.

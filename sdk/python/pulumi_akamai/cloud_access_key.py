@@ -26,9 +26,9 @@ class CloudAccessKeyArgs:
                  contract_id: pulumi.Input[_builtins.str],
                  group_id: pulumi.Input[_builtins.int],
                  network_configuration: pulumi.Input['CloudAccessKeyNetworkConfigurationArgs'],
-                 credentials_a: Optional[pulumi.Input['CloudAccessKeyCredentialsAArgs']] = None,
-                 credentials_b: Optional[pulumi.Input['CloudAccessKeyCredentialsBArgs']] = None,
-                 timeouts: Optional[pulumi.Input['CloudAccessKeyTimeoutsArgs']] = None):
+                 credentials_a: pulumi.Input[Optional['CloudAccessKeyCredentialsAArgs']] = None,
+                 credentials_b: pulumi.Input[Optional['CloudAccessKeyCredentialsBArgs']] = None,
+                 timeouts: pulumi.Input[Optional['CloudAccessKeyTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudAccessKey resource.
 
@@ -114,51 +114,51 @@ class CloudAccessKeyArgs:
 
     @_builtins.property
     @pulumi.getter(name="credentialsA")
-    def credentials_a(self) -> Optional[pulumi.Input['CloudAccessKeyCredentialsAArgs']]:
+    def credentials_a(self) -> pulumi.Input[Optional['CloudAccessKeyCredentialsAArgs']]:
         """
         The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         """
         return pulumi.get(self, "credentials_a")
 
     @credentials_a.setter
-    def credentials_a(self, value: Optional[pulumi.Input['CloudAccessKeyCredentialsAArgs']]):
+    def credentials_a(self, value: pulumi.Input[Optional['CloudAccessKeyCredentialsAArgs']]):
         pulumi.set(self, "credentials_a", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialsB")
-    def credentials_b(self) -> Optional[pulumi.Input['CloudAccessKeyCredentialsBArgs']]:
+    def credentials_b(self) -> pulumi.Input[Optional['CloudAccessKeyCredentialsBArgs']]:
         """
         The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         """
         return pulumi.get(self, "credentials_b")
 
     @credentials_b.setter
-    def credentials_b(self, value: Optional[pulumi.Input['CloudAccessKeyCredentialsBArgs']]):
+    def credentials_b(self, value: pulumi.Input[Optional['CloudAccessKeyCredentialsBArgs']]):
         pulumi.set(self, "credentials_b", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudAccessKeyTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudAccessKeyTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudAccessKeyTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudAccessKeyTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
 @pulumi.input_type
 class _CloudAccessKeyState:
     def __init__(__self__, *,
-                 access_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_key_uid: Optional[pulumi.Input[_builtins.int]] = None,
-                 authentication_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials_a: Optional[pulumi.Input['CloudAccessKeyCredentialsAArgs']] = None,
-                 credentials_b: Optional[pulumi.Input['CloudAccessKeyCredentialsBArgs']] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_configuration: Optional[pulumi.Input['CloudAccessKeyNetworkConfigurationArgs']] = None,
-                 primary_guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['CloudAccessKeyTimeoutsArgs']] = None):
+                 access_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_key_uid: pulumi.Input[Optional[_builtins.int]] = None,
+                 authentication_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials_a: pulumi.Input[Optional['CloudAccessKeyCredentialsAArgs']] = None,
+                 credentials_b: pulumi.Input[Optional['CloudAccessKeyCredentialsBArgs']] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_configuration: pulumi.Input[Optional['CloudAccessKeyNetworkConfigurationArgs']] = None,
+                 primary_guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['CloudAccessKeyTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CloudAccessKey resources.
 
@@ -195,119 +195,119 @@ class _CloudAccessKeyState:
 
     @_builtins.property
     @pulumi.getter(name="accessKeyName")
-    def access_key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the access key.
         """
         return pulumi.get(self, "access_key_name")
 
     @access_key_name.setter
-    def access_key_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_key_name", value)
 
     @_builtins.property
     @pulumi.getter(name="accessKeyUid")
-    def access_key_uid(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def access_key_uid(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier Akamai assigns to an access key.
         """
         return pulumi.get(self, "access_key_uid")
 
     @access_key_uid.setter
-    def access_key_uid(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def access_key_uid(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "access_key_uid", value)
 
     @_builtins.property
     @pulumi.getter(name="authenticationMethod")
-    def authentication_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authentication_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
         """
         return pulumi.get(self, "authentication_method")
 
     @authentication_method.setter
-    def authentication_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authentication_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_method", value)
 
     @_builtins.property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the contract assigned to the access key
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialsA")
-    def credentials_a(self) -> Optional[pulumi.Input['CloudAccessKeyCredentialsAArgs']]:
+    def credentials_a(self) -> pulumi.Input[Optional['CloudAccessKeyCredentialsAArgs']]:
         """
         The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         """
         return pulumi.get(self, "credentials_a")
 
     @credentials_a.setter
-    def credentials_a(self, value: Optional[pulumi.Input['CloudAccessKeyCredentialsAArgs']]):
+    def credentials_a(self, value: pulumi.Input[Optional['CloudAccessKeyCredentialsAArgs']]):
         pulumi.set(self, "credentials_a", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialsB")
-    def credentials_b(self) -> Optional[pulumi.Input['CloudAccessKeyCredentialsBArgs']]:
+    def credentials_b(self) -> pulumi.Input[Optional['CloudAccessKeyCredentialsBArgs']]:
         """
         The combination of a `cloud_access_key_id` and a `cloud_secret_access_key` used to sign API requests. This pair can be identified as access key version. Access key can contain only two access key versions at specific time (defined as credentialsA and credentialsB).
         """
         return pulumi.get(self, "credentials_b")
 
     @credentials_b.setter
-    def credentials_b(self, value: Optional[pulumi.Input['CloudAccessKeyCredentialsBArgs']]):
+    def credentials_b(self, value: pulumi.Input[Optional['CloudAccessKeyCredentialsBArgs']]):
         pulumi.set(self, "credentials_b", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The unique identifier assigned to the access control group assigned to the access key
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkConfiguration")
-    def network_configuration(self) -> Optional[pulumi.Input['CloudAccessKeyNetworkConfigurationArgs']]:
+    def network_configuration(self) -> pulumi.Input[Optional['CloudAccessKeyNetworkConfigurationArgs']]:
         """
         The secure networks that you assigned the access key to during creation
         """
         return pulumi.get(self, "network_configuration")
 
     @network_configuration.setter
-    def network_configuration(self, value: Optional[pulumi.Input['CloudAccessKeyNetworkConfigurationArgs']]):
+    def network_configuration(self, value: pulumi.Input[Optional['CloudAccessKeyNetworkConfigurationArgs']]):
         pulumi.set(self, "network_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryGuid")
-    def primary_guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value of `version_guid` field for credentials marked as primary
         """
         return pulumi.get(self, "primary_guid")
 
     @primary_guid.setter
-    def primary_guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_guid", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['CloudAccessKeyTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['CloudAccessKeyTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['CloudAccessKeyTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['CloudAccessKeyTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
 
@@ -317,14 +317,14 @@ class CloudAccessKey(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 authentication_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials_a: Optional[pulumi.Input[Union['CloudAccessKeyCredentialsAArgs', 'CloudAccessKeyCredentialsAArgsDict']]] = None,
-                 credentials_b: Optional[pulumi.Input[Union['CloudAccessKeyCredentialsBArgs', 'CloudAccessKeyCredentialsBArgsDict']]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_configuration: Optional[pulumi.Input[Union['CloudAccessKeyNetworkConfigurationArgs', 'CloudAccessKeyNetworkConfigurationArgsDict']]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudAccessKeyTimeoutsArgs', 'CloudAccessKeyTimeoutsArgsDict']]] = None,
+                 access_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials_a: pulumi.Input[Optional[Union['CloudAccessKeyCredentialsAArgs', 'CloudAccessKeyCredentialsAArgsDict']]] = None,
+                 credentials_b: pulumi.Input[Optional[Union['CloudAccessKeyCredentialsBArgs', 'CloudAccessKeyCredentialsBArgsDict']]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_configuration: pulumi.Input[Optional[Union['CloudAccessKeyNetworkConfigurationArgs', 'CloudAccessKeyNetworkConfigurationArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudAccessKeyTimeoutsArgs', 'CloudAccessKeyTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CloudAccessKey resource with the given unique name, props, and options.
@@ -363,14 +363,14 @@ class CloudAccessKey(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 authentication_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials_a: Optional[pulumi.Input[Union['CloudAccessKeyCredentialsAArgs', 'CloudAccessKeyCredentialsAArgsDict']]] = None,
-                 credentials_b: Optional[pulumi.Input[Union['CloudAccessKeyCredentialsBArgs', 'CloudAccessKeyCredentialsBArgsDict']]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_configuration: Optional[pulumi.Input[Union['CloudAccessKeyNetworkConfigurationArgs', 'CloudAccessKeyNetworkConfigurationArgsDict']]] = None,
-                 timeouts: Optional[pulumi.Input[Union['CloudAccessKeyTimeoutsArgs', 'CloudAccessKeyTimeoutsArgsDict']]] = None,
+                 access_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials_a: pulumi.Input[Optional[Union['CloudAccessKeyCredentialsAArgs', 'CloudAccessKeyCredentialsAArgsDict']]] = None,
+                 credentials_b: pulumi.Input[Optional[Union['CloudAccessKeyCredentialsBArgs', 'CloudAccessKeyCredentialsBArgsDict']]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_configuration: pulumi.Input[Optional[Union['CloudAccessKeyNetworkConfigurationArgs', 'CloudAccessKeyNetworkConfigurationArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudAccessKeyTimeoutsArgs', 'CloudAccessKeyTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -410,16 +410,16 @@ class CloudAccessKey(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-            access_key_uid: Optional[pulumi.Input[_builtins.int]] = None,
-            authentication_method: Optional[pulumi.Input[_builtins.str]] = None,
-            contract_id: Optional[pulumi.Input[_builtins.str]] = None,
-            credentials_a: Optional[pulumi.Input[Union['CloudAccessKeyCredentialsAArgs', 'CloudAccessKeyCredentialsAArgsDict']]] = None,
-            credentials_b: Optional[pulumi.Input[Union['CloudAccessKeyCredentialsBArgs', 'CloudAccessKeyCredentialsBArgsDict']]] = None,
-            group_id: Optional[pulumi.Input[_builtins.int]] = None,
-            network_configuration: Optional[pulumi.Input[Union['CloudAccessKeyNetworkConfigurationArgs', 'CloudAccessKeyNetworkConfigurationArgsDict']]] = None,
-            primary_guid: Optional[pulumi.Input[_builtins.str]] = None,
-            timeouts: Optional[pulumi.Input[Union['CloudAccessKeyTimeoutsArgs', 'CloudAccessKeyTimeoutsArgsDict']]] = None) -> 'CloudAccessKey':
+            access_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+            access_key_uid: pulumi.Input[Optional[_builtins.int]] = None,
+            authentication_method: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credentials_a: pulumi.Input[Optional[Union['CloudAccessKeyCredentialsAArgs', 'CloudAccessKeyCredentialsAArgsDict']]] = None,
+            credentials_b: pulumi.Input[Optional[Union['CloudAccessKeyCredentialsBArgs', 'CloudAccessKeyCredentialsBArgsDict']]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            network_configuration: pulumi.Input[Optional[Union['CloudAccessKeyNetworkConfigurationArgs', 'CloudAccessKeyNetworkConfigurationArgsDict']]] = None,
+            primary_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudAccessKeyTimeoutsArgs', 'CloudAccessKeyTimeoutsArgsDict']]] = None) -> 'CloudAccessKey':
         """
         Get an existing CloudAccessKey resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -79,11 +79,11 @@ export interface AppsecAdvancedSettingsPiiLearningState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Whether to enable the PII learning advanced setting
      */
-    enablePiiLearning?: pulumi.Input<boolean>;
+    enablePiiLearning?: pulumi.Input<boolean | undefined>;
 }
 
 /**

@@ -57,9 +57,9 @@ export function getGtmCidrmapOutput(args: GetGtmCidrmapOutputArgs, opts?: pulumi
  * A collection of arguments for invoking getGtmCidrmap.
  */
 export interface GetGtmCidrmapOutputArgs {
-    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmCidrmapAssignmentArgs>[]>;
-    defaultDatacenter?: pulumi.Input<inputs.GetGtmCidrmapDefaultDatacenterArgs>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GetGtmCidrmapAssignmentArgs>[] | undefined>;
+    defaultDatacenter?: pulumi.Input<inputs.GetGtmCidrmapDefaultDatacenterArgs | undefined>;
     domain: pulumi.Input<string>;
-    links?: pulumi.Input<pulumi.Input<inputs.GetGtmCidrmapLinkArgs>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.GetGtmCidrmapLinkArgs>[] | undefined>;
     mapName: pulumi.Input<string>;
 }

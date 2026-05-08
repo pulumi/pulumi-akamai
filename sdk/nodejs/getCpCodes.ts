@@ -56,7 +56,7 @@ export function getCpCodesOutput(args: GetCpCodesOutputArgs, opts?: pulumi.Invok
  */
 export interface GetCpCodesOutputArgs {
     contractId: pulumi.Input<string>;
-    filterByName?: pulumi.Input<string>;
-    filterByProductId?: pulumi.Input<string>;
+    filterByName?: pulumi.Input<string | undefined>;
+    filterByProductId?: pulumi.Input<string | undefined>;
     groupId: pulumi.Input<string>;
 }

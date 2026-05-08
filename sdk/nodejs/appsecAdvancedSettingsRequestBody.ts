@@ -91,19 +91,19 @@ export interface AppsecAdvancedSettingsRequestBodyState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
      */
-    requestBodyInspectionLimit?: pulumi.Input<string>;
+    requestBodyInspectionLimit?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the Request body inspection size should be overridden at policy
      */
-    requestBodyInspectionLimitOverride?: pulumi.Input<boolean>;
+    requestBodyInspectionLimitOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -121,9 +121,9 @@ export interface AppsecAdvancedSettingsRequestBodyArgs {
     /**
      * Indicates if the Request body inspection size should be overridden at policy
      */
-    requestBodyInspectionLimitOverride?: pulumi.Input<boolean>;
+    requestBodyInspectionLimitOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }

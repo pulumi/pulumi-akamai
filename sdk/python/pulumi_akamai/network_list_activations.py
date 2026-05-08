@@ -22,8 +22,8 @@ class NetworkListActivationsArgs:
                  network_list_id: pulumi.Input[_builtins.str],
                  notification_emails: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  sync_point: pulumi.Input[_builtins.int],
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None):
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkListActivations resource.
 
@@ -79,38 +79,38 @@ class NetworkListActivationsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Akamai network on which the list is activated: STAGING or PRODUCTION
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Descriptive text to accompany the activation
         """
         return pulumi.get(self, "notes")
 
     @notes.setter
-    def notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notes", value)
 
 
 @pulumi.input_type
 class _NetworkListActivationsState:
     def __init__(__self__, *,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 sync_point: Optional[pulumi.Input[_builtins.int]] = None):
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 sync_point: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkListActivations resources.
 
@@ -136,74 +136,74 @@ class _NetworkListActivationsState:
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Akamai network on which the list is activated: STAGING or PRODUCTION
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter(name="networkListId")
-    def network_list_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_list_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the network list
         """
         return pulumi.get(self, "network_list_id")
 
     @network_list_id.setter
-    def network_list_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_list_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_list_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Descriptive text to accompany the activation
         """
         return pulumi.get(self, "notes")
 
     @notes.setter
-    def notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notes", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmails")
-    def notification_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of email addresses of Control Center users who receive an email when activation of this list is complete
         """
         return pulumi.get(self, "notification_emails")
 
     @notification_emails.setter
-    def notification_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_emails", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This network list's current activation status in the environment specified by the "network" attribute
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="syncPoint")
-    def sync_point(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def sync_point(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Identifies the sync point of the network list to be activated
         """
         return pulumi.get(self, "sync_point")
 
     @sync_point.setter
-    def sync_point(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def sync_point(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "sync_point", value)
 
 
@@ -213,11 +213,11 @@ class NetworkListActivations(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sync_point: Optional[pulumi.Input[_builtins.int]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sync_point: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a NetworkListActivations resource with the given unique name, props, and options.
@@ -254,11 +254,11 @@ class NetworkListActivations(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 network: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sync_point: Optional[pulumi.Input[_builtins.int]] = None,
+                 network: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sync_point: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -290,12 +290,12 @@ class NetworkListActivations(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            network: Optional[pulumi.Input[_builtins.str]] = None,
-            network_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-            notes: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            sync_point: Optional[pulumi.Input[_builtins.int]] = None) -> 'NetworkListActivations':
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            network_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+            notes: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            sync_point: pulumi.Input[Optional[_builtins.int]] = None) -> 'NetworkListActivations':
         """
         Get an existing NetworkListActivations resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

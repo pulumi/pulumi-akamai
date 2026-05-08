@@ -60,9 +60,9 @@ export function getCloudcertificatesHostnameBindingsOutput(args?: GetCloudcertif
  * A collection of arguments for invoking getCloudcertificatesHostnameBindings.
  */
 export interface GetCloudcertificatesHostnameBindingsOutputArgs {
-    contractId?: pulumi.Input<string>;
-    domain?: pulumi.Input<string>;
-    expiringInDays?: pulumi.Input<number>;
-    groupId?: pulumi.Input<string>;
-    network?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
+    domain?: pulumi.Input<string | undefined>;
+    expiringInDays?: pulumi.Input<number | undefined>;
+    groupId?: pulumi.Input<string | undefined>;
+    network?: pulumi.Input<string | undefined>;
 }

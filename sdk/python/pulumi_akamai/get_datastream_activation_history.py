@@ -82,7 +82,7 @@ def get_datastream_activation_history(stream_id: Optional[_builtins.int] = None,
         activations=pulumi.get(__ret__, 'activations'),
         id=pulumi.get(__ret__, 'id'),
         stream_id=pulumi.get(__ret__, 'stream_id'))
-def get_datastream_activation_history_output(stream_id: Optional[pulumi.Input[_builtins.int]] = None,
+def get_datastream_activation_history_output(stream_id: pulumi.Input[Optional[_builtins.int]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastreamActivationHistoryResult]:
     """
     Use this data source to access information about an existing resource.

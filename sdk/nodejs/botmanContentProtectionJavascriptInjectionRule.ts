@@ -94,19 +94,19 @@ export interface BotmanContentProtectionJavascriptInjectionRuleState {
     /**
      * Unique identifier of the security configuration
      */
-    configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number | undefined>;
     /**
      * The content protection JavaScript injection rule
      */
-    contentProtectionJavascriptInjectionRule?: pulumi.Input<string>;
+    contentProtectionJavascriptInjectionRule?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of a content protection JavaScript injection rule
      */
-    contentProtectionJavascriptInjectionRuleId?: pulumi.Input<string>;
+    contentProtectionJavascriptInjectionRuleId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the security policy
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

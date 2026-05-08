@@ -49,7 +49,7 @@ export function getAppSecApiRequestConstraintsOutput(args: GetAppSecApiRequestCo
  * A collection of arguments for invoking getAppSecApiRequestConstraints.
  */
 export interface GetAppSecApiRequestConstraintsOutputArgs {
-    apiId?: pulumi.Input<number>;
+    apiId?: pulumi.Input<number | undefined>;
     configId: pulumi.Input<number>;
     securityPolicyId: pulumi.Input<string>;
 }

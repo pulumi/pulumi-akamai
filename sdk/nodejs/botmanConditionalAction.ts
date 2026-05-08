@@ -73,9 +73,9 @@ export class BotmanConditionalAction extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BotmanConditionalAction resources.
  */
 export interface BotmanConditionalActionState {
-    actionId?: pulumi.Input<string>;
-    conditionalAction?: pulumi.Input<string>;
-    configId?: pulumi.Input<number>;
+    actionId?: pulumi.Input<string | undefined>;
+    conditionalAction?: pulumi.Input<string | undefined>;
+    configId?: pulumi.Input<number | undefined>;
 }
 
 /**

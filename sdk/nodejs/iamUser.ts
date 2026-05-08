@@ -242,111 +242,111 @@ export interface IamUserState {
     /**
      * The user's street address.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * A user's per-group role assignments, in JSON form.
      */
-    authGrantsJson?: pulumi.Input<string>;
+    authGrantsJson?: pulumi.Input<string | undefined>;
     /**
      * The user's city.
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * To help characterize the user, the value can be any that are available from the view-contact-types operation.
      */
-    contactType?: pulumi.Input<string>;
+    contactType?: pulumi.Input<string | undefined>;
     /**
      * As part of the user's location, the value can be any that are available from the view-supported-countries operation.
      */
-    country?: pulumi.Input<string>;
+    country?: pulumi.Input<string | undefined>;
     /**
      * The user's email address.
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether email update is pending.
      */
-    emailUpdatePending?: pulumi.Input<boolean>;
+    emailUpdatePending?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether multi-factor authentication is allowed.
      */
-    enableMfa?: pulumi.Input<boolean>;
+    enableMfa?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether two-factor authentication is allowed.
      */
-    enableTfa?: pulumi.Input<boolean>;
+    enableTfa?: pulumi.Input<boolean | undefined>;
     /**
      * The user's first name.
      */
-    firstName?: pulumi.Input<string>;
+    firstName?: pulumi.Input<string | undefined>;
     /**
      * The user's position at your company.
      */
-    jobTitle?: pulumi.Input<string>;
+    jobTitle?: pulumi.Input<string | undefined>;
     /**
      * ISO 8601 timestamp indicating when the user last logged in.
      */
-    lastLogin?: pulumi.Input<string>;
+    lastLogin?: pulumi.Input<string | undefined>;
     /**
      * The user's surname.
      */
-    lastName?: pulumi.Input<string>;
+    lastName?: pulumi.Input<string | undefined>;
     /**
      * Flag to block a user account.
      */
-    lock?: pulumi.Input<boolean>;
+    lock?: pulumi.Input<boolean | undefined>;
     /**
      * The user's mobile phone number.
      */
-    mobilePhone?: pulumi.Input<string>;
+    mobilePhone?: pulumi.Input<string | undefined>;
     /**
      * New password for a user.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The date a user's password expires.
      */
-    passwordExpiredAfter?: pulumi.Input<string>;
+    passwordExpiredAfter?: pulumi.Input<string | undefined>;
     /**
      * The user's main phone number.
      */
-    phone?: pulumi.Input<string>;
+    phone?: pulumi.Input<string | undefined>;
     /**
      * The value can be any that are available from the view-languages operation.
      */
-    preferredLanguage?: pulumi.Input<string>;
+    preferredLanguage?: pulumi.Input<string | undefined>;
     /**
      * The user's secondary email address.
      */
-    secondaryEmail?: pulumi.Input<string>;
+    secondaryEmail?: pulumi.Input<string | undefined>;
     /**
      * The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
      */
-    sessionTimeout?: pulumi.Input<number>;
+    sessionTimeout?: pulumi.Input<number | undefined>;
     /**
      * The user's state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether two-factor authentication is configured.
      */
-    tfaConfigured?: pulumi.Input<boolean>;
+    tfaConfigured?: pulumi.Input<boolean | undefined>;
     /**
      * The user's time zone. The value can be any that are available from the view-time-zones operation.
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * A user's `loginId`. Typically, a user's email address.
      */
-    userName?: pulumi.Input<string>;
+    userName?: pulumi.Input<string | undefined>;
     /**
      * Specifies email notifications the user receives for products.
      */
-    userNotifications?: pulumi.Input<inputs.IamUserUserNotifications>;
+    userNotifications?: pulumi.Input<inputs.IamUserUserNotifications | undefined>;
     /**
      * The user's five-digit ZIP code.
      */
-    zipCode?: pulumi.Input<string>;
+    zipCode?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -356,7 +356,7 @@ export interface IamUserArgs {
     /**
      * The user's street address.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * A user's per-group role assignments, in JSON form.
      */
@@ -364,11 +364,11 @@ export interface IamUserArgs {
     /**
      * The user's city.
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * To help characterize the user, the value can be any that are available from the view-contact-types operation.
      */
-    contactType?: pulumi.Input<string>;
+    contactType?: pulumi.Input<string | undefined>;
     /**
      * As part of the user's location, the value can be any that are available from the view-supported-countries operation.
      */
@@ -380,11 +380,11 @@ export interface IamUserArgs {
     /**
      * Indicates whether multi-factor authentication is allowed.
      */
-    enableMfa?: pulumi.Input<boolean>;
+    enableMfa?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether two-factor authentication is allowed.
      */
-    enableTfa?: pulumi.Input<boolean>;
+    enableTfa?: pulumi.Input<boolean | undefined>;
     /**
      * The user's first name.
      */
@@ -392,7 +392,7 @@ export interface IamUserArgs {
     /**
      * The user's position at your company.
      */
-    jobTitle?: pulumi.Input<string>;
+    jobTitle?: pulumi.Input<string | undefined>;
     /**
      * The user's surname.
      */
@@ -400,45 +400,45 @@ export interface IamUserArgs {
     /**
      * Flag to block a user account.
      */
-    lock?: pulumi.Input<boolean>;
+    lock?: pulumi.Input<boolean | undefined>;
     /**
      * The user's mobile phone number.
      */
-    mobilePhone?: pulumi.Input<string>;
+    mobilePhone?: pulumi.Input<string | undefined>;
     /**
      * New password for a user.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The user's main phone number.
      */
-    phone?: pulumi.Input<string>;
+    phone?: pulumi.Input<string | undefined>;
     /**
      * The value can be any that are available from the view-languages operation.
      */
-    preferredLanguage?: pulumi.Input<string>;
+    preferredLanguage?: pulumi.Input<string | undefined>;
     /**
      * The user's secondary email address.
      */
-    secondaryEmail?: pulumi.Input<string>;
+    secondaryEmail?: pulumi.Input<string | undefined>;
     /**
      * The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
      */
-    sessionTimeout?: pulumi.Input<number>;
+    sessionTimeout?: pulumi.Input<number | undefined>;
     /**
      * The user's state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The user's time zone. The value can be any that are available from the view-time-zones operation.
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * Specifies email notifications the user receives for products.
      */
-    userNotifications?: pulumi.Input<inputs.IamUserUserNotifications>;
+    userNotifications?: pulumi.Input<inputs.IamUserUserNotifications | undefined>;
     /**
      * The user's five-digit ZIP code.
      */
-    zipCode?: pulumi.Input<string>;
+    zipCode?: pulumi.Input<string | undefined>;
 }
