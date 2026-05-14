@@ -12,6 +12,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAppSecSecurityPolicyProtectionsResult {
+    private Boolean applyAccountProtectionControls;
     private Boolean applyApiConstraints;
     private Boolean applyApplicationLayerControls;
     private Boolean applyBotmanControls;
@@ -32,6 +33,9 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
     private String securityPolicyId;
 
     private GetAppSecSecurityPolicyProtectionsResult() {}
+    public Boolean applyAccountProtectionControls() {
+        return this.applyAccountProtectionControls;
+    }
     public Boolean applyApiConstraints() {
         return this.applyApiConstraints;
     }
@@ -88,6 +92,7 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean applyAccountProtectionControls;
         private Boolean applyApiConstraints;
         private Boolean applyApplicationLayerControls;
         private Boolean applyBotmanControls;
@@ -105,6 +110,7 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
         public Builder() {}
         public Builder(GetAppSecSecurityPolicyProtectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.applyAccountProtectionControls = defaults.applyAccountProtectionControls;
     	      this.applyApiConstraints = defaults.applyApiConstraints;
     	      this.applyApplicationLayerControls = defaults.applyApplicationLayerControls;
     	      this.applyBotmanControls = defaults.applyBotmanControls;
@@ -121,6 +127,14 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
 
+        @CustomType.Setter
+        public Builder applyAccountProtectionControls(Boolean applyAccountProtectionControls) {
+            if (applyAccountProtectionControls == null) {
+              throw new MissingRequiredPropertyException("GetAppSecSecurityPolicyProtectionsResult", "applyAccountProtectionControls");
+            }
+            this.applyAccountProtectionControls = applyAccountProtectionControls;
+            return this;
+        }
         @CustomType.Setter
         public Builder applyApiConstraints(Boolean applyApiConstraints) {
             if (applyApiConstraints == null) {
@@ -235,6 +249,7 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
         }
         public GetAppSecSecurityPolicyProtectionsResult build() {
             final var _resultValue = new GetAppSecSecurityPolicyProtectionsResult();
+            _resultValue.applyAccountProtectionControls = applyAccountProtectionControls;
             _resultValue.applyApiConstraints = applyApiConstraints;
             _resultValue.applyApplicationLayerControls = applyApplicationLayerControls;
             _resultValue.applyBotmanControls = applyBotmanControls;

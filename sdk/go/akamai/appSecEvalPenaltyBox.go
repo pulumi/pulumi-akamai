@@ -17,7 +17,7 @@ type AppSecEvalPenaltyBox struct {
 
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// Action applied to requests from clients in the penalty box
+	// The action to be taken when the penalty box is triggered
 	PenaltyBoxAction pulumi.StringOutput `pulumi:"penaltyBoxAction"`
 	// Whether to enable the penalty box for the specified security policy
 	PenaltyBoxProtection pulumi.BoolOutput `pulumi:"penaltyBoxProtection"`
@@ -69,7 +69,7 @@ func GetAppSecEvalPenaltyBox(ctx *pulumi.Context,
 type appSecEvalPenaltyBoxState struct {
 	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// Action applied to requests from clients in the penalty box
+	// The action to be taken when the penalty box is triggered
 	PenaltyBoxAction *string `pulumi:"penaltyBoxAction"`
 	// Whether to enable the penalty box for the specified security policy
 	PenaltyBoxProtection *bool `pulumi:"penaltyBoxProtection"`
@@ -80,7 +80,7 @@ type appSecEvalPenaltyBoxState struct {
 type AppSecEvalPenaltyBoxState struct {
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// Action applied to requests from clients in the penalty box
+	// The action to be taken when the penalty box is triggered
 	PenaltyBoxAction pulumi.StringPtrInput
 	// Whether to enable the penalty box for the specified security policy
 	PenaltyBoxProtection pulumi.BoolPtrInput
@@ -95,7 +95,7 @@ func (AppSecEvalPenaltyBoxState) ElementType() reflect.Type {
 type appSecEvalPenaltyBoxArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// Action applied to requests from clients in the penalty box
+	// The action to be taken when the penalty box is triggered
 	PenaltyBoxAction string `pulumi:"penaltyBoxAction"`
 	// Whether to enable the penalty box for the specified security policy
 	PenaltyBoxProtection bool `pulumi:"penaltyBoxProtection"`
@@ -107,7 +107,7 @@ type appSecEvalPenaltyBoxArgs struct {
 type AppSecEvalPenaltyBoxArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// Action applied to requests from clients in the penalty box
+	// The action to be taken when the penalty box is triggered
 	PenaltyBoxAction pulumi.StringInput
 	// Whether to enable the penalty box for the specified security policy
 	PenaltyBoxProtection pulumi.BoolInput
@@ -207,7 +207,7 @@ func (o AppSecEvalPenaltyBoxOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecEvalPenaltyBox) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// Action applied to requests from clients in the penalty box
+// The action to be taken when the penalty box is triggered
 func (o AppSecEvalPenaltyBoxOutput) PenaltyBoxAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecEvalPenaltyBox) pulumi.StringOutput { return v.PenaltyBoxAction }).(pulumi.StringOutput)
 }

@@ -16,61 +16,61 @@ namespace Pulumi.Akamai
         /// Whether to enable account protection controls.
         /// </summary>
         [Output("applyAccountProtectionControls")]
-        public Output<bool?> ApplyAccountProtectionControls { get; private set; } = null!;
+        public Output<bool> ApplyAccountProtectionControls { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable API constraints.
         /// </summary>
         [Output("applyApiConstraints")]
-        public Output<bool?> ApplyApiConstraints { get; private set; } = null!;
+        public Output<bool> ApplyApiConstraints { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable application layer controls.
         /// </summary>
         [Output("applyApplicationLayerControls")]
-        public Output<bool?> ApplyApplicationLayerControls { get; private set; } = null!;
+        public Output<bool> ApplyApplicationLayerControls { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable botman controls.
         /// </summary>
         [Output("applyBotmanControls")]
-        public Output<bool?> ApplyBotmanControls { get; private set; } = null!;
+        public Output<bool> ApplyBotmanControls { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable malware controls.
         /// </summary>
         [Output("applyMalwareControls")]
-        public Output<bool?> ApplyMalwareControls { get; private set; } = null!;
+        public Output<bool> ApplyMalwareControls { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable network layer controls.
         /// </summary>
         [Output("applyNetworkLayerControls")]
-        public Output<bool?> ApplyNetworkLayerControls { get; private set; } = null!;
+        public Output<bool> ApplyNetworkLayerControls { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable rate controls.
         /// </summary>
         [Output("applyRateControls")]
-        public Output<bool?> ApplyRateControls { get; private set; } = null!;
+        public Output<bool> ApplyRateControls { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable reputation controls.
         /// </summary>
         [Output("applyReputationControls")]
-        public Output<bool?> ApplyReputationControls { get; private set; } = null!;
+        public Output<bool> ApplyReputationControls { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable slow post controls.
         /// </summary>
         [Output("applySlowPostControls")]
-        public Output<bool?> ApplySlowPostControls { get; private set; } = null!;
+        public Output<bool> ApplySlowPostControls { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable URL protection controls.
         /// </summary>
         [Output("applyUrlProtectionControls")]
-        public Output<bool?> ApplyUrlProtectionControls { get; private set; } = null!;
+        public Output<bool> ApplyUrlProtectionControls { get; private set; } = null!;
 
         /// <summary>
         /// Unique identifier of the security configuration.
@@ -133,62 +133,62 @@ namespace Pulumi.Akamai
         /// <summary>
         /// Whether to enable account protection controls.
         /// </summary>
-        [Input("applyAccountProtectionControls")]
-        public Input<bool>? ApplyAccountProtectionControls { get; set; }
+        [Input("applyAccountProtectionControls", required: true)]
+        public Input<bool> ApplyAccountProtectionControls { get; set; } = null!;
 
         /// <summary>
         /// Whether to enable API constraints.
         /// </summary>
-        [Input("applyApiConstraints")]
-        public Input<bool>? ApplyApiConstraints { get; set; }
+        [Input("applyApiConstraints", required: true)]
+        public Input<bool> ApplyApiConstraints { get; set; } = null!;
 
         /// <summary>
         /// Whether to enable application layer controls.
         /// </summary>
-        [Input("applyApplicationLayerControls")]
-        public Input<bool>? ApplyApplicationLayerControls { get; set; }
+        [Input("applyApplicationLayerControls", required: true)]
+        public Input<bool> ApplyApplicationLayerControls { get; set; } = null!;
 
         /// <summary>
         /// Whether to enable botman controls.
         /// </summary>
-        [Input("applyBotmanControls")]
-        public Input<bool>? ApplyBotmanControls { get; set; }
+        [Input("applyBotmanControls", required: true)]
+        public Input<bool> ApplyBotmanControls { get; set; } = null!;
 
         /// <summary>
         /// Whether to enable malware controls.
         /// </summary>
-        [Input("applyMalwareControls")]
-        public Input<bool>? ApplyMalwareControls { get; set; }
+        [Input("applyMalwareControls", required: true)]
+        public Input<bool> ApplyMalwareControls { get; set; } = null!;
 
         /// <summary>
         /// Whether to enable network layer controls.
         /// </summary>
-        [Input("applyNetworkLayerControls")]
-        public Input<bool>? ApplyNetworkLayerControls { get; set; }
+        [Input("applyNetworkLayerControls", required: true)]
+        public Input<bool> ApplyNetworkLayerControls { get; set; } = null!;
 
         /// <summary>
         /// Whether to enable rate controls.
         /// </summary>
-        [Input("applyRateControls")]
-        public Input<bool>? ApplyRateControls { get; set; }
+        [Input("applyRateControls", required: true)]
+        public Input<bool> ApplyRateControls { get; set; } = null!;
 
         /// <summary>
         /// Whether to enable reputation controls.
         /// </summary>
-        [Input("applyReputationControls")]
-        public Input<bool>? ApplyReputationControls { get; set; }
+        [Input("applyReputationControls", required: true)]
+        public Input<bool> ApplyReputationControls { get; set; } = null!;
 
         /// <summary>
         /// Whether to enable slow post controls.
         /// </summary>
-        [Input("applySlowPostControls")]
-        public Input<bool>? ApplySlowPostControls { get; set; }
+        [Input("applySlowPostControls", required: true)]
+        public Input<bool> ApplySlowPostControls { get; set; } = null!;
 
         /// <summary>
         /// Whether to enable URL protection controls.
         /// </summary>
-        [Input("applyUrlProtectionControls")]
-        public Input<bool>? ApplyUrlProtectionControls { get; set; }
+        [Input("applyUrlProtectionControls", required: true)]
+        public Input<bool> ApplyUrlProtectionControls { get; set; } = null!;
 
         /// <summary>
         /// Unique identifier of the security configuration.

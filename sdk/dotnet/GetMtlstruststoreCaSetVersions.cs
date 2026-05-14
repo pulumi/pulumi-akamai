@@ -27,6 +27,14 @@ namespace Pulumi.Akamai
         [Input("activeVersionsOnly")]
         public bool? ActiveVersionsOnly { get; set; }
 
+        [Input("caSetVersionStatuses")]
+        private List<string>? _caSetVersionStatuses;
+        public List<string> CaSetVersionStatuses
+        {
+            get => _caSetVersionStatuses ?? (_caSetVersionStatuses = new List<string>());
+            set => _caSetVersionStatuses = value;
+        }
+
         [Input("id")]
         public string? Id { get; set; }
 
@@ -46,6 +54,14 @@ namespace Pulumi.Akamai
     {
         [Input("activeVersionsOnly")]
         public Input<bool>? ActiveVersionsOnly { get; set; }
+
+        [Input("caSetVersionStatuses")]
+        private InputList<string>? _caSetVersionStatuses;
+        public InputList<string> CaSetVersionStatuses
+        {
+            get => _caSetVersionStatuses ?? (_caSetVersionStatuses = new InputList<string>());
+            set => _caSetVersionStatuses = value;
+        }
 
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -67,6 +83,7 @@ namespace Pulumi.Akamai
     public sealed class GetMtlstruststoreCaSetVersionsResult
     {
         public readonly bool? ActiveVersionsOnly;
+        public readonly ImmutableArray<string> CaSetVersionStatuses;
         public readonly string Id;
         public readonly bool? IncludeCertificates;
         public readonly string Name;
@@ -75,6 +92,8 @@ namespace Pulumi.Akamai
         [OutputConstructor]
         private GetMtlstruststoreCaSetVersionsResult(
             bool? activeVersionsOnly,
+
+            ImmutableArray<string> caSetVersionStatuses,
 
             string id,
 
@@ -85,6 +104,7 @@ namespace Pulumi.Akamai
             ImmutableArray<Outputs.GetMtlstruststoreCaSetVersionsVersionResult> versions)
         {
             ActiveVersionsOnly = activeVersionsOnly;
+            CaSetVersionStatuses = caSetVersionStatuses;
             Id = id;
             IncludeCertificates = includeCertificates;
             Name = name;

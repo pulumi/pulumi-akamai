@@ -289,6 +289,12 @@ __all__ = [
     'PropertyRuleWarningArgsDict',
     'ProviderConfigArgs',
     'ProviderConfigArgsDict',
+    'ReportinggroupsGroupAccessGroupArgs',
+    'ReportinggroupsGroupAccessGroupArgsDict',
+    'ReportinggroupsGroupContractArgs',
+    'ReportinggroupsGroupContractArgsDict',
+    'ReportinggroupsGroupContractCpCodeArgs',
+    'ReportinggroupsGroupContractCpCodeArgsDict',
     'GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs',
     'GetCloudletsApiPrioritizationMatchRuleMatchRuleArgsDict',
     'GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs',
@@ -13952,6 +13958,149 @@ class ProviderConfigArgs:
     @max_body.setter
     def max_body(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_body", value)
+
+
+class ReportinggroupsGroupAccessGroupArgsDict(TypedDict):
+    contract_id: pulumi.Input[_builtins.str]
+    """
+    Identifies the contract assigned to the access control group.
+    """
+    group_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Identifies the access control group. It is required for reporting group creation and cannot be updated.
+    """
+
+@pulumi.input_type
+class ReportinggroupsGroupAccessGroupArgs:
+    def __init__(__self__, *,
+                 contract_id: pulumi.Input[_builtins.str],
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract assigned to the access control group.
+        :param pulumi.Input[_builtins.str] group_id: Identifies the access control group. It is required for reporting group creation and cannot be updated.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        if group_id is not None:
+            pulumi.set(__self__, "group_id", group_id)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        Identifies the contract assigned to the access control group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "contract_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Identifies the access control group. It is required for reporting group creation and cannot be updated.
+        """
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "group_id", value)
+
+
+class ReportinggroupsGroupContractArgsDict(TypedDict):
+    contract_id: pulumi.Input[_builtins.str]
+    """
+    Identifies the contract assigned to the reporting group.
+    """
+    cp_codes: pulumi.Input[Sequence[pulumi.Input['ReportinggroupsGroupContractCpCodeArgsDict']]]
+    """
+    A collection of CP codes assigned to the reporting group.
+    """
+
+@pulumi.input_type
+class ReportinggroupsGroupContractArgs:
+    def __init__(__self__, *,
+                 contract_id: pulumi.Input[_builtins.str],
+                 cp_codes: pulumi.Input[Sequence[pulumi.Input['ReportinggroupsGroupContractCpCodeArgs']]]):
+        """
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract assigned to the reporting group.
+        :param pulumi.Input[Sequence[pulumi.Input['ReportinggroupsGroupContractCpCodeArgs']]] cp_codes: A collection of CP codes assigned to the reporting group.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "cp_codes", cp_codes)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        Identifies the contract assigned to the reporting group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "contract_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodes")
+    def cp_codes(self) -> pulumi.Input[Sequence[pulumi.Input['ReportinggroupsGroupContractCpCodeArgs']]]:
+        """
+        A collection of CP codes assigned to the reporting group.
+        """
+        return pulumi.get(self, "cp_codes")
+
+    @cp_codes.setter
+    def cp_codes(self, value: pulumi.Input[Sequence[pulumi.Input['ReportinggroupsGroupContractCpCodeArgs']]]):
+        pulumi.set(self, "cp_codes", value)
+
+
+class ReportinggroupsGroupContractCpCodeArgsDict(TypedDict):
+    cp_code_id: pulumi.Input[_builtins.str]
+    """
+    Identifies a CP code.
+    """
+    cp_code_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The descriptive label for the CP code.
+    """
+
+@pulumi.input_type
+class ReportinggroupsGroupContractCpCodeArgs:
+    def __init__(__self__, *,
+                 cp_code_id: pulumi.Input[_builtins.str],
+                 cp_code_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cp_code_id: Identifies a CP code.
+        :param pulumi.Input[_builtins.str] cp_code_name: The descriptive label for the CP code.
+        """
+        pulumi.set(__self__, "cp_code_id", cp_code_id)
+        if cp_code_name is not None:
+            pulumi.set(__self__, "cp_code_name", cp_code_name)
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodeId")
+    def cp_code_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        Identifies a CP code.
+        """
+        return pulumi.get(self, "cp_code_id")
+
+    @cp_code_id.setter
+    def cp_code_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cp_code_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodeName")
+    def cp_code_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The descriptive label for the CP code.
+        """
+        return pulumi.get(self, "cp_code_name")
+
+    @cp_code_name.setter
+    def cp_code_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cp_code_name", value)
 
 
 class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgsDict(TypedDict):

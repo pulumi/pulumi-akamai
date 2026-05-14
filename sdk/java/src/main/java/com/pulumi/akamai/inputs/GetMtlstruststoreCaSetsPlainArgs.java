@@ -5,6 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -21,6 +22,13 @@ public final class GetMtlstruststoreCaSetsPlainArgs extends com.pulumi.resources
         return Optional.ofNullable(this.activatedOn);
     }
 
+    @Import(name="caSetStatuses")
+    private @Nullable List<String> caSetStatuses;
+
+    public Optional<List<String>> caSetStatuses() {
+        return Optional.ofNullable(this.caSetStatuses);
+    }
+
     @Import(name="namePrefix")
     private @Nullable String namePrefix;
 
@@ -32,6 +40,7 @@ public final class GetMtlstruststoreCaSetsPlainArgs extends com.pulumi.resources
 
     private GetMtlstruststoreCaSetsPlainArgs(GetMtlstruststoreCaSetsPlainArgs $) {
         this.activatedOn = $.activatedOn;
+        this.caSetStatuses = $.caSetStatuses;
         this.namePrefix = $.namePrefix;
     }
 
@@ -56,6 +65,15 @@ public final class GetMtlstruststoreCaSetsPlainArgs extends com.pulumi.resources
         public Builder activatedOn(@Nullable String activatedOn) {
             $.activatedOn = activatedOn;
             return this;
+        }
+
+        public Builder caSetStatuses(@Nullable List<String> caSetStatuses) {
+            $.caSetStatuses = caSetStatuses;
+            return this;
+        }
+
+        public Builder caSetStatuses(String... caSetStatuses) {
+            return caSetStatuses(List.of(caSetStatuses));
         }
 
         public Builder namePrefix(@Nullable String namePrefix) {

@@ -41,13 +41,17 @@ type LookupMtlstruststoreCaSetResult struct {
 	Id                  string                              `pulumi:"id"`
 	Name                string                              `pulumi:"name"`
 	ProductionVersion   int                                 `pulumi:"productionVersion"`
+	RemovalDate         string                              `pulumi:"removalDate"`
 	StagingVersion      int                                 `pulumi:"stagingVersion"`
+	Status              string                              `pulumi:"status"`
 	Version             int                                 `pulumi:"version"`
 	VersionCreatedBy    string                              `pulumi:"versionCreatedBy"`
 	VersionCreatedDate  string                              `pulumi:"versionCreatedDate"`
 	VersionDescription  string                              `pulumi:"versionDescription"`
 	VersionModifiedBy   string                              `pulumi:"versionModifiedBy"`
 	VersionModifiedDate string                              `pulumi:"versionModifiedDate"`
+	VersionRemovalDate  string                              `pulumi:"versionRemovalDate"`
+	VersionStatus       string                              `pulumi:"versionStatus"`
 }
 
 func LookupMtlstruststoreCaSetOutput(ctx *pulumi.Context, args LookupMtlstruststoreCaSetOutputArgs, opts ...pulumi.InvokeOption) LookupMtlstruststoreCaSetResultOutput {
@@ -129,8 +133,16 @@ func (o LookupMtlstruststoreCaSetResultOutput) ProductionVersion() pulumi.IntOut
 	return o.ApplyT(func(v LookupMtlstruststoreCaSetResult) int { return v.ProductionVersion }).(pulumi.IntOutput)
 }
 
+func (o LookupMtlstruststoreCaSetResultOutput) RemovalDate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMtlstruststoreCaSetResult) string { return v.RemovalDate }).(pulumi.StringOutput)
+}
+
 func (o LookupMtlstruststoreCaSetResultOutput) StagingVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMtlstruststoreCaSetResult) int { return v.StagingVersion }).(pulumi.IntOutput)
+}
+
+func (o LookupMtlstruststoreCaSetResultOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMtlstruststoreCaSetResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
 func (o LookupMtlstruststoreCaSetResultOutput) Version() pulumi.IntOutput {
@@ -155,6 +167,14 @@ func (o LookupMtlstruststoreCaSetResultOutput) VersionModifiedBy() pulumi.String
 
 func (o LookupMtlstruststoreCaSetResultOutput) VersionModifiedDate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMtlstruststoreCaSetResult) string { return v.VersionModifiedDate }).(pulumi.StringOutput)
+}
+
+func (o LookupMtlstruststoreCaSetResultOutput) VersionRemovalDate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMtlstruststoreCaSetResult) string { return v.VersionRemovalDate }).(pulumi.StringOutput)
+}
+
+func (o LookupMtlstruststoreCaSetResultOutput) VersionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMtlstruststoreCaSetResult) string { return v.VersionStatus }).(pulumi.StringOutput)
 }
 
 func init() {

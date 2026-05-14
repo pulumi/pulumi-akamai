@@ -6,6 +6,7 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -22,6 +23,13 @@ public final class GetMtlstruststoreCaSetsArgs extends com.pulumi.resources.Invo
         return Optional.ofNullable(this.activatedOn);
     }
 
+    @Import(name="caSetStatuses")
+    private @Nullable Output<List<String>> caSetStatuses;
+
+    public Optional<Output<List<String>>> caSetStatuses() {
+        return Optional.ofNullable(this.caSetStatuses);
+    }
+
     @Import(name="namePrefix")
     private @Nullable Output<String> namePrefix;
 
@@ -33,6 +41,7 @@ public final class GetMtlstruststoreCaSetsArgs extends com.pulumi.resources.Invo
 
     private GetMtlstruststoreCaSetsArgs(GetMtlstruststoreCaSetsArgs $) {
         this.activatedOn = $.activatedOn;
+        this.caSetStatuses = $.caSetStatuses;
         this.namePrefix = $.namePrefix;
     }
 
@@ -61,6 +70,19 @@ public final class GetMtlstruststoreCaSetsArgs extends com.pulumi.resources.Invo
 
         public Builder activatedOn(String activatedOn) {
             return activatedOn(Output.of(activatedOn));
+        }
+
+        public Builder caSetStatuses(@Nullable Output<List<String>> caSetStatuses) {
+            $.caSetStatuses = caSetStatuses;
+            return this;
+        }
+
+        public Builder caSetStatuses(List<String> caSetStatuses) {
+            return caSetStatuses(Output.of(caSetStatuses));
+        }
+
+        public Builder caSetStatuses(String... caSetStatuses) {
+            return caSetStatuses(List.of(caSetStatuses));
         }
 
         public Builder namePrefix(@Nullable Output<String> namePrefix) {

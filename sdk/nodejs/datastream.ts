@@ -112,7 +112,7 @@ export class Datastream extends pulumi.CustomResource {
     /**
      * The sample percentage of data that your stream will send to the destination
      */
-    declare public readonly samplingPercentage: pulumi.Output<number | undefined>;
+    declare public readonly samplingPercentage: pulumi.Output<number>;
     declare public readonly splunkConnector: pulumi.Output<outputs.DatastreamSplunkConnector | undefined>;
     /**
      * The name of the stream

@@ -27,7 +27,15 @@ public final class GetMtlstruststoreCaSetActivitiesActivity {
      */
     private String network;
     /**
-     * @return The type of CA set activity. &#39;CREATE_CA_SET&#39; indicates creating a CA set, or &#39;CREATE_CA_SET_VERSION&#39; for creating a version. &#39;ACTIVATE_CA_SET_VERSION&#39; indicates activating a CA set version, while &#39;DEACTIVATE_CA_SET_VERSION&#39; indicates deactivation. &#39;DELETE_CA_SET&#39; indicates deleting a CA set.
+     * @return The type of CA set activity. Possible values are:
+     * * `CREATE_CA_SET` - creating a CA set.
+     * * `CREATE_CA_SET_VERSION` - creating a CA set version.
+     * * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.
+     * * `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.
+     * * `DELETE_CA_SET` - soft deleting a CA set.
+     * * `DELETE_CA_SET_VERSION` - soft deleting a CA set version.
+     * * `REMOVE_CA_SET` - hard deleting a CA set.
+     * * `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.
      * 
      */
     private String type;
@@ -60,7 +68,15 @@ public final class GetMtlstruststoreCaSetActivitiesActivity {
         return this.network;
     }
     /**
-     * @return The type of CA set activity. &#39;CREATE_CA_SET&#39; indicates creating a CA set, or &#39;CREATE_CA_SET_VERSION&#39; for creating a version. &#39;ACTIVATE_CA_SET_VERSION&#39; indicates activating a CA set version, while &#39;DEACTIVATE_CA_SET_VERSION&#39; indicates deactivation. &#39;DELETE_CA_SET&#39; indicates deleting a CA set.
+     * @return The type of CA set activity. Possible values are:
+     * * `CREATE_CA_SET` - creating a CA set.
+     * * `CREATE_CA_SET_VERSION` - creating a CA set version.
+     * * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.
+     * * `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.
+     * * `DELETE_CA_SET` - soft deleting a CA set.
+     * * `DELETE_CA_SET_VERSION` - soft deleting a CA set version.
+     * * `REMOVE_CA_SET` - hard deleting a CA set.
+     * * `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.
      * 
      */
     public String type() {

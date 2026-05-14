@@ -263,6 +263,8 @@ from .get_datastream_activation_history import *
 from .get_datastream_dataset_fields import *
 from .get_datastreams import *
 from .get_dns_record_set import *
+from .get_edge_hostname import *
+from .get_edge_hostnames import *
 from .get_edge_worker import *
 from .get_edge_worker_activation import *
 from .get_edge_workers_property_rules import *
@@ -337,6 +339,10 @@ from .get_property_products import *
 from .get_property_rule_formats import *
 from .get_property_rules import *
 from .get_property_rules_template import *
+from .get_reportinggroups_cp_code import *
+from .get_reportinggroups_cp_codes import *
+from .get_reportinggroups_group import *
+from .get_reportinggroups_groups import *
 from .get_zone_dnssec_status import *
 from .gtm_asmap import *
 from .gtm_cidrmap import *
@@ -374,6 +380,7 @@ from .property_hostname_bucket import *
 from .property_include import *
 from .property_include_activation import *
 from .provider import *
+from .reportinggroups_group import *
 from ._inputs import *
 from . import outputs
 
@@ -1593,6 +1600,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/propertyIncludeActivation:PropertyIncludeActivation": "PropertyIncludeActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/reportinggroupsGroup",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/reportinggroupsGroup:ReportinggroupsGroup": "ReportinggroupsGroup"
   }
  }
 ]

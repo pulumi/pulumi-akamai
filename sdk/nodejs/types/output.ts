@@ -4941,6 +4941,122 @@ export interface GetDatastreamsStreamsDetailProperty {
     propertyName: string;
 }
 
+export interface GetEdgeHostnameEdgeHostname {
+    /**
+     * The origin domain portion of the edge hostname.
+     */
+    domainPrefix: string;
+    /**
+     * The Akamai-specific portion of the edge hostname.
+     */
+    domainSuffix: string;
+    /**
+     * The full edge domain name formed from the domainPrefix and domainSuffix.
+     */
+    edgeHostnameDomain: string;
+    /**
+     * The edge hostname's unique identifier.
+     */
+    edgeHostnameId: string;
+    /**
+     * HTTPS service binding of the edge hostname.
+     */
+    httpsServiceBinding: string;
+    /**
+     * IP version behavior of the edge hostname.
+     */
+    ipVersionBehaviour: string;
+    /**
+     * The product you created the edge hostname for.
+     */
+    productId: string;
+    /**
+     * Whether to use the edge hostname with SSL.
+     */
+    secure: boolean;
+    /**
+     * Status of the edge hostname.
+     */
+    status: string;
+    /**
+     * Available use cases for edge hostnames assigned to the product.
+     */
+    useCases: outputs.GetEdgeHostnameEdgeHostnameUseCase[];
+}
+
+export interface GetEdgeHostnameEdgeHostnameUseCase {
+    /**
+     * Specifies one of the available options available in the response object.
+     */
+    option: string;
+    /**
+     * Identifies the type of network over which traffic deploys.
+     */
+    type: string;
+    /**
+     * Identifies each use case.
+     */
+    useCase: string;
+}
+
+export interface GetEdgeHostnamesEdgeHostname {
+    /**
+     * The origin domain portion of the edge hostname.
+     */
+    domainPrefix: string;
+    /**
+     * The Akamai-specific portion of the edge hostname.
+     */
+    domainSuffix: string;
+    /**
+     * The full edge domain name formed from the domainPrefix and domainSuffix.
+     */
+    edgeHostnameDomain: string;
+    /**
+     * The edge hostname's unique identifier.
+     */
+    edgeHostnameId: string;
+    /**
+     * HTTPS service binding of the edge hostname.
+     */
+    httpsServiceBinding: string;
+    /**
+     * IP version behavior of the edge hostname.
+     */
+    ipVersionBehaviour: string;
+    /**
+     * The product you created the edge hostname for.
+     */
+    productId: string;
+    /**
+     * Whether to use the edge hostname with SSL.
+     */
+    secure: boolean;
+    /**
+     * Status of the edge hostname.
+     */
+    status: string;
+    /**
+     * Available use cases for edge hostnames assigned to the product.
+     */
+    useCases: outputs.GetEdgeHostnamesEdgeHostnameUseCase[];
+}
+
+export interface GetEdgeHostnamesEdgeHostnameUseCase {
+    /**
+     * Specifies one of the available options available in the response object.
+     */
+    option: string;
+    /**
+     * Identifies the type of network over which traffic deploys.
+     */
+    type: string;
+    /**
+     * Identifies each use case.
+     */
+    useCase: string;
+}
+
 export interface GetGroupsGroup {
     contractIds: string[];
     groupId: string;
@@ -9870,7 +9986,15 @@ export interface GetMtlstruststoreCaSetActivitiesActivity {
      */
     network: string;
     /**
-     * The type of CA set activity. 'CREATE_CA_SET' indicates creating a CA set, or 'CREATE_CA_SET_VERSION' for creating a version. 'ACTIVATE_CA_SET_VERSION' indicates activating a CA set version, while 'DEACTIVATE_CA_SET_VERSION' indicates deactivation. 'DELETE_CA_SET' indicates deleting a CA set.
+     * The type of CA set activity. Possible values are: 
+     * * `CREATE_CA_SET` - creating a CA set.
+     * * `CREATE_CA_SET_VERSION` - creating a CA set version.
+     * * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.
+     * * `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.
+     * * `DELETE_CA_SET` - soft deleting a CA set.
+     * * `DELETE_CA_SET_VERSION` - soft deleting a CA set version.
+     * * `REMOVE_CA_SET` - hard deleting a CA set.
+     * * `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.
      */
     type: string;
     /**
@@ -10060,9 +10184,17 @@ export interface GetMtlstruststoreCaSetVersionsVersion {
      */
     productionStatus: string;
     /**
+     * The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.
+     */
+    removalDate: string;
+    /**
      * The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
      */
     stagingStatus: string;
+    /**
+     * Indicates the CA set version status, 'NOT_DELETED' or 'DELETED'.
+     */
+    status: string;
     /**
      * Version identifier on which to perform the desired operation.
      */
@@ -10161,6 +10293,10 @@ export interface GetMtlstruststoreCaSetsCaSet {
      * The CA set version activated on the 'PRODUCTION' network.
      */
     productionVersion: number;
+    /**
+     * The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.
+     */
+    removalDate: string;
     /**
      * The CA set version activated on the 'STAGING' network.
      */
@@ -11111,6 +11247,222 @@ export interface GetPropertyRulesTemplateVariable {
     name: string;
     type?: string;
     value: string;
+}
+
+export interface GetReportinggroupsCpCodeAccessGroup {
+    /**
+     * The contract identifier assigned to the access control group.
+     */
+    contractId: string;
+    /**
+     * The access control group identifier.
+     */
+    groupId: string;
+}
+
+export interface GetReportinggroupsCpCodeContract {
+    /**
+     * The contract identifier.
+     */
+    contractId: string;
+    /**
+     * The contract status.
+     */
+    status: string;
+}
+
+export interface GetReportinggroupsCpCodeOverrideTimeZone {
+    /**
+     * The time zone identifier.
+     */
+    timeZoneId: string;
+    /**
+     * The time zone value.
+     */
+    timeZoneValue: string;
+}
+
+export interface GetReportinggroupsCpCodeProduct {
+    /**
+     * The product identifier.
+     */
+    productId: string;
+    /**
+     * The product name.
+     */
+    productName: string;
+}
+
+export interface GetReportinggroupsCpCodesCpCode {
+    /**
+     * The access control group associated with the CP code.
+     */
+    accessGroup: outputs.GetReportinggroupsCpCodesCpCodeAccessGroup;
+    /**
+     * The account identifier associated with the CP code.
+     */
+    accountId: string;
+    /**
+     * List of contracts associated with the CP code.
+     */
+    contracts: outputs.GetReportinggroupsCpCodesCpCodeContract[];
+    /**
+     * The unique numeric identifier of the CP code.
+     */
+    cpCodeId: number;
+    /**
+     * The default time zone of the CP code.
+     */
+    defaultTimeZone: string;
+    /**
+     * The name of the CP code.
+     */
+    name: string;
+    /**
+     * The override time zone of the CP code.
+     */
+    overrideTimeZone: outputs.GetReportinggroupsCpCodesCpCodeOverrideTimeZone;
+    /**
+     * List of products associated with the CP code.
+     */
+    products: outputs.GetReportinggroupsCpCodesCpCodeProduct[];
+    /**
+     * Whether the CP code can be used to purge content.
+     */
+    purgeable: boolean;
+    /**
+     * The type of the CP code.
+     */
+    type: string;
+}
+
+export interface GetReportinggroupsCpCodesCpCodeAccessGroup {
+    /**
+     * The contract identifier assigned to the access control group.
+     */
+    contractId: string;
+    /**
+     * The access control group identifier.
+     */
+    groupId: string;
+}
+
+export interface GetReportinggroupsCpCodesCpCodeContract {
+    /**
+     * The contract identifier.
+     */
+    contractId: string;
+    /**
+     * The contract status.
+     */
+    status: string;
+}
+
+export interface GetReportinggroupsCpCodesCpCodeOverrideTimeZone {
+    /**
+     * The time zone identifier.
+     */
+    timeZoneId: string;
+    /**
+     * The time zone value.
+     */
+    timeZoneValue: string;
+}
+
+export interface GetReportinggroupsCpCodesCpCodeProduct {
+    /**
+     * The product identifier.
+     */
+    productId: string;
+    /**
+     * The product name.
+     */
+    productName: string;
+}
+
+export interface GetReportinggroupsGroupAccessGroup {
+    /**
+     * Identifies the contract assigned to the access control group.
+     */
+    contractId: string;
+    /**
+     * Identifies the access control group. May be null if the reporting group belongs to many groups.
+     */
+    groupId: string;
+}
+
+export interface GetReportinggroupsGroupContract {
+    /**
+     * Identifies the contract assigned to the reporting group.
+     */
+    contractId: string;
+    /**
+     * A collection of CP codes assigned to the reporting group.
+     */
+    cpCodes: outputs.GetReportinggroupsGroupContractCpCode[];
+}
+
+export interface GetReportinggroupsGroupContractCpCode {
+    /**
+     * Identifies a CP code.
+     */
+    cpCodeId: string;
+    /**
+     * The descriptive label for the CP code.
+     */
+    cpCodeName: string;
+}
+
+export interface GetReportinggroupsGroupsGroup {
+    /**
+     * The access control group that controls access to specific CP codes.
+     */
+    accessGroup: outputs.GetReportinggroupsGroupsGroupAccessGroup;
+    /**
+     * The contract and CP codes assigned to the reporting group.
+     */
+    contract: outputs.GetReportinggroupsGroupsGroupContract;
+    /**
+     * The unique identifier for the reporting group.
+     */
+    reportingGroupId: number;
+    /**
+     * The descriptive label for the reporting group.
+     */
+    reportingGroupName: string;
+}
+
+export interface GetReportinggroupsGroupsGroupAccessGroup {
+    /**
+     * Identifies the contract assigned to the access control group.
+     */
+    contractId: string;
+    /**
+     * Identifies the access control group. May be null if the reporting group belongs to many groups.
+     */
+    groupId: string;
+}
+
+export interface GetReportinggroupsGroupsGroupContract {
+    /**
+     * Identifies the contract assigned to the reporting group.
+     */
+    contractId: string;
+    /**
+     * A collection of CP codes assigned to the reporting group.
+     */
+    cpCodes: outputs.GetReportinggroupsGroupsGroupContractCpCode[];
+}
+
+export interface GetReportinggroupsGroupsGroupContractCpCode {
+    /**
+     * Identifies a CP code.
+     */
+    cpCodeId: string;
+    /**
+     * The descriptive label for the CP code.
+     */
+    cpCodeName: string;
 }
 
 export interface GetZoneDnssecStatusCurrentRecords {
@@ -12279,6 +12631,39 @@ export interface PropertyRuleWarning {
     statusCode?: number;
     title?: string;
     type?: string;
+}
+
+export interface ReportinggroupsGroupAccessGroup {
+    /**
+     * Identifies the contract assigned to the access control group.
+     */
+    contractId: string;
+    /**
+     * Identifies the access control group. It is required for reporting group creation and cannot be updated.
+     */
+    groupId?: string;
+}
+
+export interface ReportinggroupsGroupContract {
+    /**
+     * Identifies the contract assigned to the reporting group.
+     */
+    contractId: string;
+    /**
+     * A collection of CP codes assigned to the reporting group.
+     */
+    cpCodes: outputs.ReportinggroupsGroupContractCpCode[];
+}
+
+export interface ReportinggroupsGroupContractCpCode {
+    /**
+     * Identifies a CP code.
+     */
+    cpCodeId: string;
+    /**
+     * The descriptive label for the CP code.
+     */
+    cpCodeName: string;
 }
 
 export namespace config {

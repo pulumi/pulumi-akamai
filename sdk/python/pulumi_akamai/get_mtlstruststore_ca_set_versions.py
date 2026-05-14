@@ -27,10 +27,13 @@ class GetMtlstruststoreCaSetVersionsResult:
     """
     A collection of values returned by getMtlstruststoreCaSetVersions.
     """
-    def __init__(__self__, active_versions_only=None, id=None, include_certificates=None, name=None, versions=None):
+    def __init__(__self__, active_versions_only=None, ca_set_version_statuses=None, id=None, include_certificates=None, name=None, versions=None):
         if active_versions_only and not isinstance(active_versions_only, bool):
             raise TypeError("Expected argument 'active_versions_only' to be a bool")
         pulumi.set(__self__, "active_versions_only", active_versions_only)
+        if ca_set_version_statuses and not isinstance(ca_set_version_statuses, list):
+            raise TypeError("Expected argument 'ca_set_version_statuses' to be a list")
+        pulumi.set(__self__, "ca_set_version_statuses", ca_set_version_statuses)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -48,6 +51,11 @@ class GetMtlstruststoreCaSetVersionsResult:
     @pulumi.getter(name="activeVersionsOnly")
     def active_versions_only(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "active_versions_only")
+
+    @_builtins.property
+    @pulumi.getter(name="caSetVersionStatuses")
+    def ca_set_version_statuses(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "ca_set_version_statuses")
 
     @_builtins.property
     @pulumi.getter
@@ -77,6 +85,7 @@ class AwaitableGetMtlstruststoreCaSetVersionsResult(GetMtlstruststoreCaSetVersio
             yield self
         return GetMtlstruststoreCaSetVersionsResult(
             active_versions_only=self.active_versions_only,
+            ca_set_version_statuses=self.ca_set_version_statuses,
             id=self.id,
             include_certificates=self.include_certificates,
             name=self.name,
@@ -84,6 +93,7 @@ class AwaitableGetMtlstruststoreCaSetVersionsResult(GetMtlstruststoreCaSetVersio
 
 
 def get_mtlstruststore_ca_set_versions(active_versions_only: Optional[_builtins.bool] = None,
+                                       ca_set_version_statuses: Optional[Sequence[_builtins.str]] = None,
                                        id: Optional[_builtins.str] = None,
                                        include_certificates: Optional[_builtins.bool] = None,
                                        name: Optional[_builtins.str] = None,
@@ -93,6 +103,7 @@ def get_mtlstruststore_ca_set_versions(active_versions_only: Optional[_builtins.
     """
     __args__ = dict()
     __args__['activeVersionsOnly'] = active_versions_only
+    __args__['caSetVersionStatuses'] = ca_set_version_statuses
     __args__['id'] = id
     __args__['includeCertificates'] = include_certificates
     __args__['name'] = name
@@ -101,11 +112,13 @@ def get_mtlstruststore_ca_set_versions(active_versions_only: Optional[_builtins.
 
     return AwaitableGetMtlstruststoreCaSetVersionsResult(
         active_versions_only=pulumi.get(__ret__, 'active_versions_only'),
+        ca_set_version_statuses=pulumi.get(__ret__, 'ca_set_version_statuses'),
         id=pulumi.get(__ret__, 'id'),
         include_certificates=pulumi.get(__ret__, 'include_certificates'),
         name=pulumi.get(__ret__, 'name'),
         versions=pulumi.get(__ret__, 'versions'))
 def get_mtlstruststore_ca_set_versions_output(active_versions_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                              ca_set_version_statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               include_certificates: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -115,6 +128,7 @@ def get_mtlstruststore_ca_set_versions_output(active_versions_only: pulumi.Input
     """
     __args__ = dict()
     __args__['activeVersionsOnly'] = active_versions_only
+    __args__['caSetVersionStatuses'] = ca_set_version_statuses
     __args__['id'] = id
     __args__['includeCertificates'] = include_certificates
     __args__['name'] = name
@@ -122,6 +136,7 @@ def get_mtlstruststore_ca_set_versions_output(active_versions_only: pulumi.Input
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getMtlstruststoreCaSetVersions:getMtlstruststoreCaSetVersions', __args__, opts=opts, typ=GetMtlstruststoreCaSetVersionsResult)
     return __ret__.apply(lambda __response__: GetMtlstruststoreCaSetVersionsResult(
         active_versions_only=pulumi.get(__response__, 'active_versions_only'),
+        ca_set_version_statuses=pulumi.get(__response__, 'ca_set_version_statuses'),
         id=pulumi.get(__response__, 'id'),
         include_certificates=pulumi.get(__response__, 'include_certificates'),
         name=pulumi.get(__response__, 'name'),

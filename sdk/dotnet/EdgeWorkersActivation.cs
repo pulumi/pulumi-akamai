@@ -19,6 +19,12 @@ namespace Pulumi.Akamai
         public Output<int> ActivationId { get; private set; } = null!;
 
         /// <summary>
+        /// Automatically pin the initial revision during parent EdgeWorker activation.
+        /// </summary>
+        [Output("autoPin")]
+        public Output<bool?> AutoPin { get; private set; } = null!;
+
+        /// <summary>
         /// Id of the EdgeWorker to activate
         /// </summary>
         [Output("edgeworkerId")]
@@ -95,6 +101,12 @@ namespace Pulumi.Akamai
     public sealed class EdgeWorkersActivationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Automatically pin the initial revision during parent EdgeWorker activation.
+        /// </summary>
+        [Input("autoPin")]
+        public Input<bool>? AutoPin { get; set; }
+
+        /// <summary>
         /// Id of the EdgeWorker to activate
         /// </summary>
         [Input("edgeworkerId", required: true)]
@@ -137,6 +149,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("activationId")]
         public Input<int>? ActivationId { get; set; }
+
+        /// <summary>
+        /// Automatically pin the initial revision during parent EdgeWorker activation.
+        /// </summary>
+        [Input("autoPin")]
+        public Input<bool>? AutoPin { get; set; }
 
         /// <summary>
         /// Id of the EdgeWorker to activate

@@ -1274,7 +1274,7 @@ class Datastream(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="samplingPercentage")
-    def sampling_percentage(self) -> pulumi.Output[Optional[_builtins.int]]:
+    def sampling_percentage(self) -> pulumi.Output[_builtins.int]:
         """
         The sample percentage of data that your stream will send to the destination
         """

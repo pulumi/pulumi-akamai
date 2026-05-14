@@ -59,7 +59,7 @@ type Datastream struct {
 	S3CompatibleConnector DatastreamS3CompatibleConnectorPtrOutput `pulumi:"s3CompatibleConnector"`
 	S3Connector           DatastreamS3ConnectorPtrOutput           `pulumi:"s3Connector"`
 	// The sample percentage of data that your stream will send to the destination
-	SamplingPercentage pulumi.IntPtrOutput                `pulumi:"samplingPercentage"`
+	SamplingPercentage pulumi.IntOutput                   `pulumi:"samplingPercentage"`
 	SplunkConnector    DatastreamSplunkConnectorPtrOutput `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName pulumi.StringOutput `pulumi:"streamName"`
@@ -520,8 +520,8 @@ func (o DatastreamOutput) S3Connector() DatastreamS3ConnectorPtrOutput {
 }
 
 // The sample percentage of data that your stream will send to the destination
-func (o DatastreamOutput) SamplingPercentage() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *Datastream) pulumi.IntPtrOutput { return v.SamplingPercentage }).(pulumi.IntPtrOutput)
+func (o DatastreamOutput) SamplingPercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.IntOutput { return v.SamplingPercentage }).(pulumi.IntOutput)
 }
 
 func (o DatastreamOutput) SplunkConnector() DatastreamSplunkConnectorPtrOutput {

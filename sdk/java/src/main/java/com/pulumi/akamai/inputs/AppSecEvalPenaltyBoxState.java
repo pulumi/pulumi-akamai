@@ -33,14 +33,14 @@ public final class AppSecEvalPenaltyBoxState extends com.pulumi.resources.Resour
     }
 
     /**
-     * Action applied to requests from clients in the penalty box
+     * The action to be taken when the penalty box is triggered
      * 
      */
     @Import(name="penaltyBoxAction")
     private @Nullable Output<String> penaltyBoxAction;
 
     /**
-     * @return Action applied to requests from clients in the penalty box
+     * @return The action to be taken when the penalty box is triggered
      * 
      */
     public Optional<Output<String>> penaltyBoxAction() {
@@ -126,7 +126,7 @@ public final class AppSecEvalPenaltyBoxState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param penaltyBoxAction Action applied to requests from clients in the penalty box
+         * @param penaltyBoxAction The action to be taken when the penalty box is triggered
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class AppSecEvalPenaltyBoxState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param penaltyBoxAction Action applied to requests from clients in the penalty box
+         * @param penaltyBoxAction The action to be taken when the penalty box is triggered
          * 
          * @return builder
          * 

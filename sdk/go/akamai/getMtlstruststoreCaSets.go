@@ -23,14 +23,16 @@ func GetMtlstruststoreCaSets(ctx *pulumi.Context, args *GetMtlstruststoreCaSetsA
 
 // A collection of arguments for invoking getMtlstruststoreCaSets.
 type GetMtlstruststoreCaSetsArgs struct {
-	ActivatedOn *string `pulumi:"activatedOn"`
-	NamePrefix  *string `pulumi:"namePrefix"`
+	ActivatedOn   *string  `pulumi:"activatedOn"`
+	CaSetStatuses []string `pulumi:"caSetStatuses"`
+	NamePrefix    *string  `pulumi:"namePrefix"`
 }
 
 // A collection of values returned by getMtlstruststoreCaSets.
 type GetMtlstruststoreCaSetsResult struct {
-	ActivatedOn *string                        `pulumi:"activatedOn"`
-	CaSets      []GetMtlstruststoreCaSetsCaSet `pulumi:"caSets"`
+	ActivatedOn   *string                        `pulumi:"activatedOn"`
+	CaSetStatuses []string                       `pulumi:"caSetStatuses"`
+	CaSets        []GetMtlstruststoreCaSetsCaSet `pulumi:"caSets"`
 	// The provider-assigned unique ID for this managed resource.
 	Id         string  `pulumi:"id"`
 	NamePrefix *string `pulumi:"namePrefix"`
@@ -47,8 +49,9 @@ func GetMtlstruststoreCaSetsOutput(ctx *pulumi.Context, args GetMtlstruststoreCa
 
 // A collection of arguments for invoking getMtlstruststoreCaSets.
 type GetMtlstruststoreCaSetsOutputArgs struct {
-	ActivatedOn pulumi.StringPtrInput `pulumi:"activatedOn"`
-	NamePrefix  pulumi.StringPtrInput `pulumi:"namePrefix"`
+	ActivatedOn   pulumi.StringPtrInput   `pulumi:"activatedOn"`
+	CaSetStatuses pulumi.StringArrayInput `pulumi:"caSetStatuses"`
+	NamePrefix    pulumi.StringPtrInput   `pulumi:"namePrefix"`
 }
 
 func (GetMtlstruststoreCaSetsOutputArgs) ElementType() reflect.Type {
@@ -72,6 +75,10 @@ func (o GetMtlstruststoreCaSetsResultOutput) ToGetMtlstruststoreCaSetsResultOutp
 
 func (o GetMtlstruststoreCaSetsResultOutput) ActivatedOn() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMtlstruststoreCaSetsResult) *string { return v.ActivatedOn }).(pulumi.StringPtrOutput)
+}
+
+func (o GetMtlstruststoreCaSetsResultOutput) CaSetStatuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMtlstruststoreCaSetsResult) []string { return v.CaSetStatuses }).(pulumi.StringArrayOutput)
 }
 
 func (o GetMtlstruststoreCaSetsResultOutput) CaSets() GetMtlstruststoreCaSetsCaSetArrayOutput {

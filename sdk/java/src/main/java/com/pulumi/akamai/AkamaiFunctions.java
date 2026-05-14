@@ -276,6 +276,10 @@ import com.pulumi.akamai.inputs.GetDatastreamsArgs;
 import com.pulumi.akamai.inputs.GetDatastreamsPlainArgs;
 import com.pulumi.akamai.inputs.GetDnsRecordSetArgs;
 import com.pulumi.akamai.inputs.GetDnsRecordSetPlainArgs;
+import com.pulumi.akamai.inputs.GetEdgeHostnameArgs;
+import com.pulumi.akamai.inputs.GetEdgeHostnamePlainArgs;
+import com.pulumi.akamai.inputs.GetEdgeHostnamesArgs;
+import com.pulumi.akamai.inputs.GetEdgeHostnamesPlainArgs;
 import com.pulumi.akamai.inputs.GetEdgeWorkerActivationArgs;
 import com.pulumi.akamai.inputs.GetEdgeWorkerActivationPlainArgs;
 import com.pulumi.akamai.inputs.GetEdgeWorkerArgs;
@@ -396,6 +400,14 @@ import com.pulumi.akamai.inputs.GetPropertyRulesArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesTemplateArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesTemplatePlainArgs;
+import com.pulumi.akamai.inputs.GetReportinggroupsCpCodeArgs;
+import com.pulumi.akamai.inputs.GetReportinggroupsCpCodePlainArgs;
+import com.pulumi.akamai.inputs.GetReportinggroupsCpCodesArgs;
+import com.pulumi.akamai.inputs.GetReportinggroupsCpCodesPlainArgs;
+import com.pulumi.akamai.inputs.GetReportinggroupsGroupArgs;
+import com.pulumi.akamai.inputs.GetReportinggroupsGroupPlainArgs;
+import com.pulumi.akamai.inputs.GetReportinggroupsGroupsArgs;
+import com.pulumi.akamai.inputs.GetReportinggroupsGroupsPlainArgs;
 import com.pulumi.akamai.inputs.GetZoneDnssecStatusArgs;
 import com.pulumi.akamai.inputs.GetZoneDnssecStatusPlainArgs;
 import com.pulumi.akamai.outputs.GetApidefinitionsApiResult;
@@ -539,6 +551,8 @@ import com.pulumi.akamai.outputs.GetDatastreamActivationHistoryResult;
 import com.pulumi.akamai.outputs.GetDatastreamDatasetFieldsResult;
 import com.pulumi.akamai.outputs.GetDatastreamsResult;
 import com.pulumi.akamai.outputs.GetDnsRecordSetResult;
+import com.pulumi.akamai.outputs.GetEdgeHostnameResult;
+import com.pulumi.akamai.outputs.GetEdgeHostnamesResult;
 import com.pulumi.akamai.outputs.GetEdgeWorkerActivationResult;
 import com.pulumi.akamai.outputs.GetEdgeWorkerResult;
 import com.pulumi.akamai.outputs.GetEdgeWorkersPropertyRulesResult;
@@ -613,6 +627,10 @@ import com.pulumi.akamai.outputs.GetPropertyResult;
 import com.pulumi.akamai.outputs.GetPropertyRuleFormatsResult;
 import com.pulumi.akamai.outputs.GetPropertyRulesResult;
 import com.pulumi.akamai.outputs.GetPropertyRulesTemplateResult;
+import com.pulumi.akamai.outputs.GetReportinggroupsCpCodeResult;
+import com.pulumi.akamai.outputs.GetReportinggroupsCpCodesResult;
+import com.pulumi.akamai.outputs.GetReportinggroupsGroupResult;
+import com.pulumi.akamai.outputs.GetReportinggroupsGroupsResult;
 import com.pulumi.akamai.outputs.GetZoneDnssecStatusResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
@@ -2936,6 +2954,36 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetDnsRecordSetResult> getDnsRecordSetPlain(GetDnsRecordSetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getDnsRecordSet:getDnsRecordSet", TypeShape.of(GetDnsRecordSetResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetEdgeHostnameResult> getEdgeHostname(GetEdgeHostnameArgs args) {
+        return getEdgeHostname(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetEdgeHostnameResult> getEdgeHostnamePlain(GetEdgeHostnamePlainArgs args) {
+        return getEdgeHostnamePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetEdgeHostnameResult> getEdgeHostname(GetEdgeHostnameArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getEdgeHostname:getEdgeHostname", TypeShape.of(GetEdgeHostnameResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetEdgeHostnameResult> getEdgeHostname(GetEdgeHostnameArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getEdgeHostname:getEdgeHostname", TypeShape.of(GetEdgeHostnameResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetEdgeHostnameResult> getEdgeHostnamePlain(GetEdgeHostnamePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getEdgeHostname:getEdgeHostname", TypeShape.of(GetEdgeHostnameResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetEdgeHostnamesResult> getEdgeHostnames(GetEdgeHostnamesArgs args) {
+        return getEdgeHostnames(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetEdgeHostnamesResult> getEdgeHostnamesPlain(GetEdgeHostnamesPlainArgs args) {
+        return getEdgeHostnamesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetEdgeHostnamesResult> getEdgeHostnames(GetEdgeHostnamesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getEdgeHostnames:getEdgeHostnames", TypeShape.of(GetEdgeHostnamesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetEdgeHostnamesResult> getEdgeHostnames(GetEdgeHostnamesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getEdgeHostnames:getEdgeHostnames", TypeShape.of(GetEdgeHostnamesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetEdgeHostnamesResult> getEdgeHostnamesPlain(GetEdgeHostnamesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getEdgeHostnames:getEdgeHostnames", TypeShape.of(GetEdgeHostnamesResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetEdgeWorkerResult> getEdgeWorker() {
         return getEdgeWorker(GetEdgeWorkerArgs.Empty, InvokeOptions.Empty);
     }
@@ -4225,6 +4273,78 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetPropertyRulesTemplateResult> getPropertyRulesTemplatePlain(GetPropertyRulesTemplatePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", TypeShape.of(GetPropertyRulesTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetReportinggroupsCpCodeResult> getReportinggroupsCpCode(GetReportinggroupsCpCodeArgs args) {
+        return getReportinggroupsCpCode(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetReportinggroupsCpCodeResult> getReportinggroupsCpCodePlain(GetReportinggroupsCpCodePlainArgs args) {
+        return getReportinggroupsCpCodePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetReportinggroupsCpCodeResult> getReportinggroupsCpCode(GetReportinggroupsCpCodeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getReportinggroupsCpCode:getReportinggroupsCpCode", TypeShape.of(GetReportinggroupsCpCodeResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetReportinggroupsCpCodeResult> getReportinggroupsCpCode(GetReportinggroupsCpCodeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getReportinggroupsCpCode:getReportinggroupsCpCode", TypeShape.of(GetReportinggroupsCpCodeResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetReportinggroupsCpCodeResult> getReportinggroupsCpCodePlain(GetReportinggroupsCpCodePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getReportinggroupsCpCode:getReportinggroupsCpCode", TypeShape.of(GetReportinggroupsCpCodeResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetReportinggroupsCpCodesResult> getReportinggroupsCpCodes() {
+        return getReportinggroupsCpCodes(GetReportinggroupsCpCodesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetReportinggroupsCpCodesResult> getReportinggroupsCpCodesPlain() {
+        return getReportinggroupsCpCodesPlain(GetReportinggroupsCpCodesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetReportinggroupsCpCodesResult> getReportinggroupsCpCodes(GetReportinggroupsCpCodesArgs args) {
+        return getReportinggroupsCpCodes(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetReportinggroupsCpCodesResult> getReportinggroupsCpCodesPlain(GetReportinggroupsCpCodesPlainArgs args) {
+        return getReportinggroupsCpCodesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetReportinggroupsCpCodesResult> getReportinggroupsCpCodes(GetReportinggroupsCpCodesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getReportinggroupsCpCodes:getReportinggroupsCpCodes", TypeShape.of(GetReportinggroupsCpCodesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetReportinggroupsCpCodesResult> getReportinggroupsCpCodes(GetReportinggroupsCpCodesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getReportinggroupsCpCodes:getReportinggroupsCpCodes", TypeShape.of(GetReportinggroupsCpCodesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetReportinggroupsCpCodesResult> getReportinggroupsCpCodesPlain(GetReportinggroupsCpCodesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getReportinggroupsCpCodes:getReportinggroupsCpCodes", TypeShape.of(GetReportinggroupsCpCodesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetReportinggroupsGroupResult> getReportinggroupsGroup(GetReportinggroupsGroupArgs args) {
+        return getReportinggroupsGroup(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetReportinggroupsGroupResult> getReportinggroupsGroupPlain(GetReportinggroupsGroupPlainArgs args) {
+        return getReportinggroupsGroupPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetReportinggroupsGroupResult> getReportinggroupsGroup(GetReportinggroupsGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getReportinggroupsGroup:getReportinggroupsGroup", TypeShape.of(GetReportinggroupsGroupResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetReportinggroupsGroupResult> getReportinggroupsGroup(GetReportinggroupsGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getReportinggroupsGroup:getReportinggroupsGroup", TypeShape.of(GetReportinggroupsGroupResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetReportinggroupsGroupResult> getReportinggroupsGroupPlain(GetReportinggroupsGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getReportinggroupsGroup:getReportinggroupsGroup", TypeShape.of(GetReportinggroupsGroupResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetReportinggroupsGroupsResult> getReportinggroupsGroups() {
+        return getReportinggroupsGroups(GetReportinggroupsGroupsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetReportinggroupsGroupsResult> getReportinggroupsGroupsPlain() {
+        return getReportinggroupsGroupsPlain(GetReportinggroupsGroupsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetReportinggroupsGroupsResult> getReportinggroupsGroups(GetReportinggroupsGroupsArgs args) {
+        return getReportinggroupsGroups(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetReportinggroupsGroupsResult> getReportinggroupsGroupsPlain(GetReportinggroupsGroupsPlainArgs args) {
+        return getReportinggroupsGroupsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetReportinggroupsGroupsResult> getReportinggroupsGroups(GetReportinggroupsGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getReportinggroupsGroups:getReportinggroupsGroups", TypeShape.of(GetReportinggroupsGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetReportinggroupsGroupsResult> getReportinggroupsGroups(GetReportinggroupsGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getReportinggroupsGroups:getReportinggroupsGroups", TypeShape.of(GetReportinggroupsGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetReportinggroupsGroupsResult> getReportinggroupsGroupsPlain(GetReportinggroupsGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getReportinggroupsGroups:getReportinggroupsGroups", TypeShape.of(GetReportinggroupsGroupsResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetZoneDnssecStatusResult> getZoneDnssecStatus(GetZoneDnssecStatusArgs args) {
         return getZoneDnssecStatus(args, InvokeOptions.Empty);

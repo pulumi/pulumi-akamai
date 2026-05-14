@@ -39,6 +39,10 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly activationId: pulumi.Output<number>;
     /**
+     * Automatically pin the initial revision during parent EdgeWorker activation.
+     */
+    declare public readonly autoPin: pulumi.Output<boolean | undefined>;
+    /**
      * Id of the EdgeWorker to activate
      */
     declare public readonly edgeworkerId: pulumi.Output<number>;
@@ -73,6 +77,7 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as EdgeWorkersActivationState | undefined;
             resourceInputs["activationId"] = state?.activationId;
+            resourceInputs["autoPin"] = state?.autoPin;
             resourceInputs["edgeworkerId"] = state?.edgeworkerId;
             resourceInputs["network"] = state?.network;
             resourceInputs["note"] = state?.note;
@@ -89,6 +94,7 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
             if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
+            resourceInputs["autoPin"] = args?.autoPin;
             resourceInputs["edgeworkerId"] = args?.edgeworkerId;
             resourceInputs["network"] = args?.network;
             resourceInputs["note"] = args?.note;
@@ -109,6 +115,10 @@ export interface EdgeWorkersActivationState {
      * A unique identifier of the activation
      */
     activationId?: pulumi.Input<number | undefined>;
+    /**
+     * Automatically pin the initial revision during parent EdgeWorker activation.
+     */
+    autoPin?: pulumi.Input<boolean | undefined>;
     /**
      * Id of the EdgeWorker to activate
      */
@@ -135,6 +145,10 @@ export interface EdgeWorkersActivationState {
  * The set of arguments for constructing a EdgeWorkersActivation resource.
  */
 export interface EdgeWorkersActivationArgs {
+    /**
+     * Automatically pin the initial revision during parent EdgeWorker activation.
+     */
+    autoPin?: pulumi.Input<boolean | undefined>;
     /**
      * Id of the EdgeWorker to activate
      */

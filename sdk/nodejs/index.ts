@@ -1290,6 +1290,16 @@ export const getDnsRecordSet: typeof import("./getDnsRecordSet").getDnsRecordSet
 export const getDnsRecordSetOutput: typeof import("./getDnsRecordSet").getDnsRecordSetOutput = null as any;
 utilities.lazyLoad(exports, ["getDnsRecordSet","getDnsRecordSetOutput"], () => require("./getDnsRecordSet"));
 
+export { GetEdgeHostnameArgs, GetEdgeHostnameResult, GetEdgeHostnameOutputArgs } from "./getEdgeHostname";
+export const getEdgeHostname: typeof import("./getEdgeHostname").getEdgeHostname = null as any;
+export const getEdgeHostnameOutput: typeof import("./getEdgeHostname").getEdgeHostnameOutput = null as any;
+utilities.lazyLoad(exports, ["getEdgeHostname","getEdgeHostnameOutput"], () => require("./getEdgeHostname"));
+
+export { GetEdgeHostnamesArgs, GetEdgeHostnamesResult, GetEdgeHostnamesOutputArgs } from "./getEdgeHostnames";
+export const getEdgeHostnames: typeof import("./getEdgeHostnames").getEdgeHostnames = null as any;
+export const getEdgeHostnamesOutput: typeof import("./getEdgeHostnames").getEdgeHostnamesOutput = null as any;
+utilities.lazyLoad(exports, ["getEdgeHostnames","getEdgeHostnamesOutput"], () => require("./getEdgeHostnames"));
+
 export { GetEdgeWorkerArgs, GetEdgeWorkerResult, GetEdgeWorkerOutputArgs } from "./getEdgeWorker";
 export const getEdgeWorker: typeof import("./getEdgeWorker").getEdgeWorker = null as any;
 export const getEdgeWorkerOutput: typeof import("./getEdgeWorker").getEdgeWorkerOutput = null as any;
@@ -1660,6 +1670,26 @@ export const getPropertyRulesTemplate: typeof import("./getPropertyRulesTemplate
 export const getPropertyRulesTemplateOutput: typeof import("./getPropertyRulesTemplate").getPropertyRulesTemplateOutput = null as any;
 utilities.lazyLoad(exports, ["getPropertyRulesTemplate","getPropertyRulesTemplateOutput"], () => require("./getPropertyRulesTemplate"));
 
+export { GetReportinggroupsCpCodeArgs, GetReportinggroupsCpCodeResult, GetReportinggroupsCpCodeOutputArgs } from "./getReportinggroupsCpCode";
+export const getReportinggroupsCpCode: typeof import("./getReportinggroupsCpCode").getReportinggroupsCpCode = null as any;
+export const getReportinggroupsCpCodeOutput: typeof import("./getReportinggroupsCpCode").getReportinggroupsCpCodeOutput = null as any;
+utilities.lazyLoad(exports, ["getReportinggroupsCpCode","getReportinggroupsCpCodeOutput"], () => require("./getReportinggroupsCpCode"));
+
+export { GetReportinggroupsCpCodesArgs, GetReportinggroupsCpCodesResult, GetReportinggroupsCpCodesOutputArgs } from "./getReportinggroupsCpCodes";
+export const getReportinggroupsCpCodes: typeof import("./getReportinggroupsCpCodes").getReportinggroupsCpCodes = null as any;
+export const getReportinggroupsCpCodesOutput: typeof import("./getReportinggroupsCpCodes").getReportinggroupsCpCodesOutput = null as any;
+utilities.lazyLoad(exports, ["getReportinggroupsCpCodes","getReportinggroupsCpCodesOutput"], () => require("./getReportinggroupsCpCodes"));
+
+export { GetReportinggroupsGroupArgs, GetReportinggroupsGroupResult, GetReportinggroupsGroupOutputArgs } from "./getReportinggroupsGroup";
+export const getReportinggroupsGroup: typeof import("./getReportinggroupsGroup").getReportinggroupsGroup = null as any;
+export const getReportinggroupsGroupOutput: typeof import("./getReportinggroupsGroup").getReportinggroupsGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getReportinggroupsGroup","getReportinggroupsGroupOutput"], () => require("./getReportinggroupsGroup"));
+
+export { GetReportinggroupsGroupsArgs, GetReportinggroupsGroupsResult, GetReportinggroupsGroupsOutputArgs } from "./getReportinggroupsGroups";
+export const getReportinggroupsGroups: typeof import("./getReportinggroupsGroups").getReportinggroupsGroups = null as any;
+export const getReportinggroupsGroupsOutput: typeof import("./getReportinggroupsGroups").getReportinggroupsGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getReportinggroupsGroups","getReportinggroupsGroupsOutput"], () => require("./getReportinggroupsGroups"));
+
 export { GetZoneDnssecStatusArgs, GetZoneDnssecStatusResult, GetZoneDnssecStatusOutputArgs } from "./getZoneDnssecStatus";
 export const getZoneDnssecStatus: typeof import("./getZoneDnssecStatus").getZoneDnssecStatus = null as any;
 export const getZoneDnssecStatusOutput: typeof import("./getZoneDnssecStatus").getZoneDnssecStatusOutput = null as any;
@@ -1842,6 +1872,11 @@ utilities.lazyLoad(exports, ["PropertyIncludeActivation"], () => require("./prop
 
 export * from "./provider";
 import { Provider } from "./provider";
+
+export { ReportinggroupsGroupArgs, ReportinggroupsGroupState } from "./reportinggroupsGroup";
+export type ReportinggroupsGroup = import("./reportinggroupsGroup").ReportinggroupsGroup;
+export const ReportinggroupsGroup: typeof import("./reportinggroupsGroup").ReportinggroupsGroup = null as any;
+utilities.lazyLoad(exports, ["ReportinggroupsGroup"], () => require("./reportinggroupsGroup"));
 
 
 // Export sub-modules:
@@ -2159,6 +2194,8 @@ const _module = {
                 return new PropertyInclude(name, <any>undefined, { urn })
             case "akamai:index/propertyIncludeActivation:PropertyIncludeActivation":
                 return new PropertyIncludeActivation(name, <any>undefined, { urn })
+            case "akamai:index/reportinggroupsGroup:ReportinggroupsGroup":
+                return new ReportinggroupsGroup(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -2315,6 +2352,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/propertyDomainownershipVa
 pulumi.runtime.registerResourceModule("akamai", "index/propertyHostnameBucket", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyInclude", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyIncludeActivation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/reportinggroupsGroup", _module)
 pulumi.runtime.registerResourcePackage("akamai", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

@@ -54,6 +54,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly int ProductionVersion;
         /// <summary>
+        /// The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.
+        /// </summary>
+        public readonly string RemovalDate;
+        /// <summary>
         /// The CA set version activated on the 'STAGING' network.
         /// </summary>
         public readonly int StagingVersion;
@@ -84,6 +88,8 @@ namespace Pulumi.Akamai.Outputs
 
             int productionVersion,
 
+            string removalDate,
+
             int stagingVersion,
 
             string status)
@@ -98,6 +104,7 @@ namespace Pulumi.Akamai.Outputs
             LatestVersion = latestVersion;
             Name = name;
             ProductionVersion = productionVersion;
+            RemovalDate = removalDate;
             StagingVersion = stagingVersion;
             Status = status;
         }

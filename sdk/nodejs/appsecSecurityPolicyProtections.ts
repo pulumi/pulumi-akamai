@@ -35,43 +35,43 @@ export class AppsecSecurityPolicyProtections extends pulumi.CustomResource {
     /**
      * Whether to enable account protection controls.
      */
-    declare public readonly applyAccountProtectionControls: pulumi.Output<boolean | undefined>;
+    declare public readonly applyAccountProtectionControls: pulumi.Output<boolean>;
     /**
      * Whether to enable API constraints.
      */
-    declare public readonly applyApiConstraints: pulumi.Output<boolean | undefined>;
+    declare public readonly applyApiConstraints: pulumi.Output<boolean>;
     /**
      * Whether to enable application layer controls.
      */
-    declare public readonly applyApplicationLayerControls: pulumi.Output<boolean | undefined>;
+    declare public readonly applyApplicationLayerControls: pulumi.Output<boolean>;
     /**
      * Whether to enable botman controls.
      */
-    declare public readonly applyBotmanControls: pulumi.Output<boolean | undefined>;
+    declare public readonly applyBotmanControls: pulumi.Output<boolean>;
     /**
      * Whether to enable malware controls.
      */
-    declare public readonly applyMalwareControls: pulumi.Output<boolean | undefined>;
+    declare public readonly applyMalwareControls: pulumi.Output<boolean>;
     /**
      * Whether to enable network layer controls.
      */
-    declare public readonly applyNetworkLayerControls: pulumi.Output<boolean | undefined>;
+    declare public readonly applyNetworkLayerControls: pulumi.Output<boolean>;
     /**
      * Whether to enable rate controls.
      */
-    declare public readonly applyRateControls: pulumi.Output<boolean | undefined>;
+    declare public readonly applyRateControls: pulumi.Output<boolean>;
     /**
      * Whether to enable reputation controls.
      */
-    declare public readonly applyReputationControls: pulumi.Output<boolean | undefined>;
+    declare public readonly applyReputationControls: pulumi.Output<boolean>;
     /**
      * Whether to enable slow post controls.
      */
-    declare public readonly applySlowPostControls: pulumi.Output<boolean | undefined>;
+    declare public readonly applySlowPostControls: pulumi.Output<boolean>;
     /**
      * Whether to enable URL protection controls.
      */
-    declare public readonly applyUrlProtectionControls: pulumi.Output<boolean | undefined>;
+    declare public readonly applyUrlProtectionControls: pulumi.Output<boolean>;
     /**
      * Unique identifier of the security configuration.
      */
@@ -108,6 +108,36 @@ export class AppsecSecurityPolicyProtections extends pulumi.CustomResource {
             resourceInputs["securityPolicyId"] = state?.securityPolicyId;
         } else {
             const args = argsOrState as AppsecSecurityPolicyProtectionsArgs | undefined;
+            if (args?.applyAccountProtectionControls === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applyAccountProtectionControls'");
+            }
+            if (args?.applyApiConstraints === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applyApiConstraints'");
+            }
+            if (args?.applyApplicationLayerControls === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applyApplicationLayerControls'");
+            }
+            if (args?.applyBotmanControls === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applyBotmanControls'");
+            }
+            if (args?.applyMalwareControls === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applyMalwareControls'");
+            }
+            if (args?.applyNetworkLayerControls === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applyNetworkLayerControls'");
+            }
+            if (args?.applyRateControls === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applyRateControls'");
+            }
+            if (args?.applyReputationControls === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applyReputationControls'");
+            }
+            if (args?.applySlowPostControls === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applySlowPostControls'");
+            }
+            if (args?.applyUrlProtectionControls === undefined && !opts.urn) {
+                throw new Error("Missing required property 'applyUrlProtectionControls'");
+            }
             if (args?.configId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
@@ -193,43 +223,43 @@ export interface AppsecSecurityPolicyProtectionsArgs {
     /**
      * Whether to enable account protection controls.
      */
-    applyAccountProtectionControls?: pulumi.Input<boolean | undefined>;
+    applyAccountProtectionControls: pulumi.Input<boolean>;
     /**
      * Whether to enable API constraints.
      */
-    applyApiConstraints?: pulumi.Input<boolean | undefined>;
+    applyApiConstraints: pulumi.Input<boolean>;
     /**
      * Whether to enable application layer controls.
      */
-    applyApplicationLayerControls?: pulumi.Input<boolean | undefined>;
+    applyApplicationLayerControls: pulumi.Input<boolean>;
     /**
      * Whether to enable botman controls.
      */
-    applyBotmanControls?: pulumi.Input<boolean | undefined>;
+    applyBotmanControls: pulumi.Input<boolean>;
     /**
      * Whether to enable malware controls.
      */
-    applyMalwareControls?: pulumi.Input<boolean | undefined>;
+    applyMalwareControls: pulumi.Input<boolean>;
     /**
      * Whether to enable network layer controls.
      */
-    applyNetworkLayerControls?: pulumi.Input<boolean | undefined>;
+    applyNetworkLayerControls: pulumi.Input<boolean>;
     /**
      * Whether to enable rate controls.
      */
-    applyRateControls?: pulumi.Input<boolean | undefined>;
+    applyRateControls: pulumi.Input<boolean>;
     /**
      * Whether to enable reputation controls.
      */
-    applyReputationControls?: pulumi.Input<boolean | undefined>;
+    applyReputationControls: pulumi.Input<boolean>;
     /**
      * Whether to enable slow post controls.
      */
-    applySlowPostControls?: pulumi.Input<boolean | undefined>;
+    applySlowPostControls: pulumi.Input<boolean>;
     /**
      * Whether to enable URL protection controls.
      */
-    applyUrlProtectionControls?: pulumi.Input<boolean | undefined>;
+    applyUrlProtectionControls: pulumi.Input<boolean>;
     /**
      * Unique identifier of the security configuration.
      */

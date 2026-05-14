@@ -25,13 +25,17 @@ public final class GetMtlstruststoreCaSetResult {
     private String id;
     private String name;
     private Integer productionVersion;
+    private String removalDate;
     private Integer stagingVersion;
+    private String status;
     private Integer version;
     private String versionCreatedBy;
     private String versionCreatedDate;
     private String versionDescription;
     private String versionModifiedBy;
     private String versionModifiedDate;
+    private String versionRemovalDate;
+    private String versionStatus;
 
     private GetMtlstruststoreCaSetResult() {}
     public String accountId() {
@@ -67,8 +71,14 @@ public final class GetMtlstruststoreCaSetResult {
     public Integer productionVersion() {
         return this.productionVersion;
     }
+    public String removalDate() {
+        return this.removalDate;
+    }
     public Integer stagingVersion() {
         return this.stagingVersion;
+    }
+    public String status() {
+        return this.status;
     }
     public Integer version() {
         return this.version;
@@ -87,6 +97,12 @@ public final class GetMtlstruststoreCaSetResult {
     }
     public String versionModifiedDate() {
         return this.versionModifiedDate;
+    }
+    public String versionRemovalDate() {
+        return this.versionRemovalDate;
+    }
+    public String versionStatus() {
+        return this.versionStatus;
     }
 
     public static Builder builder() {
@@ -109,13 +125,17 @@ public final class GetMtlstruststoreCaSetResult {
         private String id;
         private String name;
         private Integer productionVersion;
+        private String removalDate;
         private Integer stagingVersion;
+        private String status;
         private Integer version;
         private String versionCreatedBy;
         private String versionCreatedDate;
         private String versionDescription;
         private String versionModifiedBy;
         private String versionModifiedDate;
+        private String versionRemovalDate;
+        private String versionStatus;
         public Builder() {}
         public Builder(GetMtlstruststoreCaSetResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -130,13 +150,17 @@ public final class GetMtlstruststoreCaSetResult {
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.productionVersion = defaults.productionVersion;
+    	      this.removalDate = defaults.removalDate;
     	      this.stagingVersion = defaults.stagingVersion;
+    	      this.status = defaults.status;
     	      this.version = defaults.version;
     	      this.versionCreatedBy = defaults.versionCreatedBy;
     	      this.versionCreatedDate = defaults.versionCreatedDate;
     	      this.versionDescription = defaults.versionDescription;
     	      this.versionModifiedBy = defaults.versionModifiedBy;
     	      this.versionModifiedDate = defaults.versionModifiedDate;
+    	      this.versionRemovalDate = defaults.versionRemovalDate;
+    	      this.versionStatus = defaults.versionStatus;
         }
 
         @CustomType.Setter
@@ -231,11 +255,27 @@ public final class GetMtlstruststoreCaSetResult {
             return this;
         }
         @CustomType.Setter
+        public Builder removalDate(String removalDate) {
+            if (removalDate == null) {
+              throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetResult", "removalDate");
+            }
+            this.removalDate = removalDate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stagingVersion(Integer stagingVersion) {
             if (stagingVersion == null) {
               throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetResult", "stagingVersion");
             }
             this.stagingVersion = stagingVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder status(String status) {
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
@@ -286,6 +326,22 @@ public final class GetMtlstruststoreCaSetResult {
             this.versionModifiedDate = versionModifiedDate;
             return this;
         }
+        @CustomType.Setter
+        public Builder versionRemovalDate(String versionRemovalDate) {
+            if (versionRemovalDate == null) {
+              throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetResult", "versionRemovalDate");
+            }
+            this.versionRemovalDate = versionRemovalDate;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder versionStatus(String versionStatus) {
+            if (versionStatus == null) {
+              throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetResult", "versionStatus");
+            }
+            this.versionStatus = versionStatus;
+            return this;
+        }
         public GetMtlstruststoreCaSetResult build() {
             final var _resultValue = new GetMtlstruststoreCaSetResult();
             _resultValue.accountId = accountId;
@@ -299,13 +355,17 @@ public final class GetMtlstruststoreCaSetResult {
             _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.productionVersion = productionVersion;
+            _resultValue.removalDate = removalDate;
             _resultValue.stagingVersion = stagingVersion;
+            _resultValue.status = status;
             _resultValue.version = version;
             _resultValue.versionCreatedBy = versionCreatedBy;
             _resultValue.versionCreatedDate = versionCreatedDate;
             _resultValue.versionDescription = versionDescription;
             _resultValue.versionModifiedBy = versionModifiedBy;
             _resultValue.versionModifiedDate = versionModifiedDate;
+            _resultValue.versionRemovalDate = versionRemovalDate;
+            _resultValue.versionStatus = versionStatus;
             return _resultValue;
         }
     }

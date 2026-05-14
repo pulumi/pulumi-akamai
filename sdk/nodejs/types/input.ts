@@ -13037,5 +13037,38 @@ export interface ProviderConfig {
     host: pulumi.Input<string>;
     maxBody?: pulumi.Input<number | undefined>;
 }
+
+export interface ReportinggroupsGroupAccessGroup {
+    /**
+     * Identifies the contract assigned to the access control group.
+     */
+    contractId: pulumi.Input<string>;
+    /**
+     * Identifies the access control group. It is required for reporting group creation and cannot be updated.
+     */
+    groupId?: pulumi.Input<string | undefined>;
+}
+
+export interface ReportinggroupsGroupContract {
+    /**
+     * Identifies the contract assigned to the reporting group.
+     */
+    contractId: pulumi.Input<string>;
+    /**
+     * A collection of CP codes assigned to the reporting group.
+     */
+    cpCodes: pulumi.Input<pulumi.Input<inputs.ReportinggroupsGroupContractCpCode>[]>;
+}
+
+export interface ReportinggroupsGroupContractCpCode {
+    /**
+     * Identifies a CP code.
+     */
+    cpCodeId: pulumi.Input<string>;
+    /**
+     * The descriptive label for the CP code.
+     */
+    cpCodeName?: pulumi.Input<string | undefined>;
+}
 export namespace config {
 }

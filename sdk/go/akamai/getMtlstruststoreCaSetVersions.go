@@ -23,19 +23,21 @@ func GetMtlstruststoreCaSetVersions(ctx *pulumi.Context, args *GetMtlstruststore
 
 // A collection of arguments for invoking getMtlstruststoreCaSetVersions.
 type GetMtlstruststoreCaSetVersionsArgs struct {
-	ActiveVersionsOnly  *bool   `pulumi:"activeVersionsOnly"`
-	Id                  *string `pulumi:"id"`
-	IncludeCertificates *bool   `pulumi:"includeCertificates"`
-	Name                *string `pulumi:"name"`
+	ActiveVersionsOnly   *bool    `pulumi:"activeVersionsOnly"`
+	CaSetVersionStatuses []string `pulumi:"caSetVersionStatuses"`
+	Id                   *string  `pulumi:"id"`
+	IncludeCertificates  *bool    `pulumi:"includeCertificates"`
+	Name                 *string  `pulumi:"name"`
 }
 
 // A collection of values returned by getMtlstruststoreCaSetVersions.
 type GetMtlstruststoreCaSetVersionsResult struct {
-	ActiveVersionsOnly  *bool                                   `pulumi:"activeVersionsOnly"`
-	Id                  string                                  `pulumi:"id"`
-	IncludeCertificates *bool                                   `pulumi:"includeCertificates"`
-	Name                string                                  `pulumi:"name"`
-	Versions            []GetMtlstruststoreCaSetVersionsVersion `pulumi:"versions"`
+	ActiveVersionsOnly   *bool                                   `pulumi:"activeVersionsOnly"`
+	CaSetVersionStatuses []string                                `pulumi:"caSetVersionStatuses"`
+	Id                   string                                  `pulumi:"id"`
+	IncludeCertificates  *bool                                   `pulumi:"includeCertificates"`
+	Name                 string                                  `pulumi:"name"`
+	Versions             []GetMtlstruststoreCaSetVersionsVersion `pulumi:"versions"`
 }
 
 func GetMtlstruststoreCaSetVersionsOutput(ctx *pulumi.Context, args GetMtlstruststoreCaSetVersionsOutputArgs, opts ...pulumi.InvokeOption) GetMtlstruststoreCaSetVersionsResultOutput {
@@ -49,10 +51,11 @@ func GetMtlstruststoreCaSetVersionsOutput(ctx *pulumi.Context, args GetMtlstrust
 
 // A collection of arguments for invoking getMtlstruststoreCaSetVersions.
 type GetMtlstruststoreCaSetVersionsOutputArgs struct {
-	ActiveVersionsOnly  pulumi.BoolPtrInput   `pulumi:"activeVersionsOnly"`
-	Id                  pulumi.StringPtrInput `pulumi:"id"`
-	IncludeCertificates pulumi.BoolPtrInput   `pulumi:"includeCertificates"`
-	Name                pulumi.StringPtrInput `pulumi:"name"`
+	ActiveVersionsOnly   pulumi.BoolPtrInput     `pulumi:"activeVersionsOnly"`
+	CaSetVersionStatuses pulumi.StringArrayInput `pulumi:"caSetVersionStatuses"`
+	Id                   pulumi.StringPtrInput   `pulumi:"id"`
+	IncludeCertificates  pulumi.BoolPtrInput     `pulumi:"includeCertificates"`
+	Name                 pulumi.StringPtrInput   `pulumi:"name"`
 }
 
 func (GetMtlstruststoreCaSetVersionsOutputArgs) ElementType() reflect.Type {
@@ -76,6 +79,10 @@ func (o GetMtlstruststoreCaSetVersionsResultOutput) ToGetMtlstruststoreCaSetVers
 
 func (o GetMtlstruststoreCaSetVersionsResultOutput) ActiveVersionsOnly() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsResult) *bool { return v.ActiveVersionsOnly }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMtlstruststoreCaSetVersionsResultOutput) CaSetVersionStatuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsResult) []string { return v.CaSetVersionStatuses }).(pulumi.StringArrayOutput)
 }
 
 func (o GetMtlstruststoreCaSetVersionsResultOutput) Id() pulumi.StringOutput {

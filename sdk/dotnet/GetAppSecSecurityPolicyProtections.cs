@@ -54,6 +54,7 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetAppSecSecurityPolicyProtectionsResult
     {
+        public readonly bool ApplyAccountProtectionControls;
         public readonly bool ApplyApiConstraints;
         public readonly bool ApplyApplicationLayerControls;
         public readonly bool ApplyBotmanControls;
@@ -74,6 +75,8 @@ namespace Pulumi.Akamai
 
         [OutputConstructor]
         private GetAppSecSecurityPolicyProtectionsResult(
+            bool applyAccountProtectionControls,
+
             bool applyApiConstraints,
 
             bool applyApplicationLayerControls,
@@ -102,6 +105,7 @@ namespace Pulumi.Akamai
 
             string securityPolicyId)
         {
+            ApplyAccountProtectionControls = applyAccountProtectionControls;
             ApplyApiConstraints = applyApiConstraints;
             ApplyApplicationLayerControls = applyApplicationLayerControls;
             ApplyBotmanControls = applyBotmanControls;

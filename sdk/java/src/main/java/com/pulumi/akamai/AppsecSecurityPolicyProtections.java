@@ -13,7 +13,6 @@ import com.pulumi.core.internal.Codegen;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
-import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/appsecSecurityPolicyProtections:AppsecSecurityPolicyProtections")
@@ -23,140 +22,140 @@ public class AppsecSecurityPolicyProtections extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="applyAccountProtectionControls", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applyAccountProtectionControls;
+    private Output<Boolean> applyAccountProtectionControls;
 
     /**
      * @return Whether to enable account protection controls.
      * 
      */
-    public Output<Optional<Boolean>> applyAccountProtectionControls() {
-        return Codegen.optional(this.applyAccountProtectionControls);
+    public Output<Boolean> applyAccountProtectionControls() {
+        return this.applyAccountProtectionControls;
     }
     /**
      * Whether to enable API constraints.
      * 
      */
     @Export(name="applyApiConstraints", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applyApiConstraints;
+    private Output<Boolean> applyApiConstraints;
 
     /**
      * @return Whether to enable API constraints.
      * 
      */
-    public Output<Optional<Boolean>> applyApiConstraints() {
-        return Codegen.optional(this.applyApiConstraints);
+    public Output<Boolean> applyApiConstraints() {
+        return this.applyApiConstraints;
     }
     /**
      * Whether to enable application layer controls.
      * 
      */
     @Export(name="applyApplicationLayerControls", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applyApplicationLayerControls;
+    private Output<Boolean> applyApplicationLayerControls;
 
     /**
      * @return Whether to enable application layer controls.
      * 
      */
-    public Output<Optional<Boolean>> applyApplicationLayerControls() {
-        return Codegen.optional(this.applyApplicationLayerControls);
+    public Output<Boolean> applyApplicationLayerControls() {
+        return this.applyApplicationLayerControls;
     }
     /**
      * Whether to enable botman controls.
      * 
      */
     @Export(name="applyBotmanControls", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applyBotmanControls;
+    private Output<Boolean> applyBotmanControls;
 
     /**
      * @return Whether to enable botman controls.
      * 
      */
-    public Output<Optional<Boolean>> applyBotmanControls() {
-        return Codegen.optional(this.applyBotmanControls);
+    public Output<Boolean> applyBotmanControls() {
+        return this.applyBotmanControls;
     }
     /**
      * Whether to enable malware controls.
      * 
      */
     @Export(name="applyMalwareControls", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applyMalwareControls;
+    private Output<Boolean> applyMalwareControls;
 
     /**
      * @return Whether to enable malware controls.
      * 
      */
-    public Output<Optional<Boolean>> applyMalwareControls() {
-        return Codegen.optional(this.applyMalwareControls);
+    public Output<Boolean> applyMalwareControls() {
+        return this.applyMalwareControls;
     }
     /**
      * Whether to enable network layer controls.
      * 
      */
     @Export(name="applyNetworkLayerControls", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applyNetworkLayerControls;
+    private Output<Boolean> applyNetworkLayerControls;
 
     /**
      * @return Whether to enable network layer controls.
      * 
      */
-    public Output<Optional<Boolean>> applyNetworkLayerControls() {
-        return Codegen.optional(this.applyNetworkLayerControls);
+    public Output<Boolean> applyNetworkLayerControls() {
+        return this.applyNetworkLayerControls;
     }
     /**
      * Whether to enable rate controls.
      * 
      */
     @Export(name="applyRateControls", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applyRateControls;
+    private Output<Boolean> applyRateControls;
 
     /**
      * @return Whether to enable rate controls.
      * 
      */
-    public Output<Optional<Boolean>> applyRateControls() {
-        return Codegen.optional(this.applyRateControls);
+    public Output<Boolean> applyRateControls() {
+        return this.applyRateControls;
     }
     /**
      * Whether to enable reputation controls.
      * 
      */
     @Export(name="applyReputationControls", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applyReputationControls;
+    private Output<Boolean> applyReputationControls;
 
     /**
      * @return Whether to enable reputation controls.
      * 
      */
-    public Output<Optional<Boolean>> applyReputationControls() {
-        return Codegen.optional(this.applyReputationControls);
+    public Output<Boolean> applyReputationControls() {
+        return this.applyReputationControls;
     }
     /**
      * Whether to enable slow post controls.
      * 
      */
     @Export(name="applySlowPostControls", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applySlowPostControls;
+    private Output<Boolean> applySlowPostControls;
 
     /**
      * @return Whether to enable slow post controls.
      * 
      */
-    public Output<Optional<Boolean>> applySlowPostControls() {
-        return Codegen.optional(this.applySlowPostControls);
+    public Output<Boolean> applySlowPostControls() {
+        return this.applySlowPostControls;
     }
     /**
      * Whether to enable URL protection controls.
      * 
      */
     @Export(name="applyUrlProtectionControls", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> applyUrlProtectionControls;
+    private Output<Boolean> applyUrlProtectionControls;
 
     /**
      * @return Whether to enable URL protection controls.
      * 
      */
-    public Output<Optional<Boolean>> applyUrlProtectionControls() {
-        return Codegen.optional(this.applyUrlProtectionControls);
+    public Output<Boolean> applyUrlProtectionControls() {
+        return this.applyUrlProtectionControls;
     }
     /**
      * Unique identifier of the security configuration.

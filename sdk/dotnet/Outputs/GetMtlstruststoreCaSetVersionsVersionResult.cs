@@ -42,9 +42,17 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string ProductionStatus;
         /// <summary>
+        /// The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.
+        /// </summary>
+        public readonly string RemovalDate;
+        /// <summary>
         /// The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
         /// </summary>
         public readonly string StagingStatus;
+        /// <summary>
+        /// Indicates the CA set version status, 'NOT_DELETED' or 'DELETED'.
+        /// </summary>
+        public readonly string Status;
         /// <summary>
         /// Version identifier on which to perform the desired operation.
         /// </summary>
@@ -70,7 +78,11 @@ namespace Pulumi.Akamai.Outputs
 
             string productionStatus,
 
+            string removalDate,
+
             string stagingStatus,
+
+            string status,
 
             int version,
 
@@ -83,7 +95,9 @@ namespace Pulumi.Akamai.Outputs
             ModifiedBy = modifiedBy;
             ModifiedDate = modifiedDate;
             ProductionStatus = productionStatus;
+            RemovalDate = removalDate;
             StagingStatus = stagingStatus;
+            Status = status;
             Version = version;
             VersionDescription = versionDescription;
         }

@@ -329,14 +329,14 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="samplingPercentage", refs={Integer.class}, tree="[0]")
-    private Output</* @Nullable */ Integer> samplingPercentage;
+    private Output<Integer> samplingPercentage;
 
     /**
      * @return The sample percentage of data that your stream will send to the destination
      * 
      */
-    public Output<Optional<Integer>> samplingPercentage() {
-        return Codegen.optional(this.samplingPercentage);
+    public Output<Integer> samplingPercentage() {
+        return this.samplingPercentage;
     }
     @Export(name="splunkConnector", refs={DatastreamSplunkConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamSplunkConnector> splunkConnector;

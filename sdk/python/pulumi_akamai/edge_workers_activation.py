@@ -24,6 +24,7 @@ class EdgeWorkersActivationArgs:
                  edgeworker_id: pulumi.Input[_builtins.int],
                  network: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.str],
+                 auto_pin: pulumi.Input[Optional[_builtins.bool]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
                  timeouts: pulumi.Input[Optional['EdgeWorkersActivationTimeoutsArgs']] = None):
         """
@@ -32,12 +33,15 @@ class EdgeWorkersActivationArgs:
         :param pulumi.Input[_builtins.int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[_builtins.str] network: The network on which the version will be activated
         :param pulumi.Input[_builtins.str] version: The version of EdgeWorker to activate
+        :param pulumi.Input[_builtins.bool] auto_pin: Automatically pin the initial revision during parent EdgeWorker activation.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the activation request
         :param pulumi.Input['EdgeWorkersActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "edgeworker_id", edgeworker_id)
         pulumi.set(__self__, "network", network)
         pulumi.set(__self__, "version", version)
+        if auto_pin is not None:
+            pulumi.set(__self__, "auto_pin", auto_pin)
         if note is not None:
             pulumi.set(__self__, "note", note)
         if timeouts is not None:
@@ -80,6 +84,18 @@ class EdgeWorkersActivationArgs:
         pulumi.set(self, "version", value)
 
     @_builtins.property
+    @pulumi.getter(name="autoPin")
+    def auto_pin(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Automatically pin the initial revision during parent EdgeWorker activation.
+        """
+        return pulumi.get(self, "auto_pin")
+
+    @auto_pin.setter
+    def auto_pin(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "auto_pin", value)
+
+    @_builtins.property
     @pulumi.getter
     def note(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -108,6 +124,7 @@ class EdgeWorkersActivationArgs:
 class _EdgeWorkersActivationState:
     def __init__(__self__, *,
                  activation_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_pin: pulumi.Input[Optional[_builtins.bool]] = None,
                  edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
@@ -117,6 +134,7 @@ class _EdgeWorkersActivationState:
         Input properties used for looking up and filtering EdgeWorkersActivation resources.
 
         :param pulumi.Input[_builtins.int] activation_id: A unique identifier of the activation
+        :param pulumi.Input[_builtins.bool] auto_pin: Automatically pin the initial revision during parent EdgeWorker activation.
         :param pulumi.Input[_builtins.int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[_builtins.str] network: The network on which the version will be activated
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the activation request
@@ -125,6 +143,8 @@ class _EdgeWorkersActivationState:
         """
         if activation_id is not None:
             pulumi.set(__self__, "activation_id", activation_id)
+        if auto_pin is not None:
+            pulumi.set(__self__, "auto_pin", auto_pin)
         if edgeworker_id is not None:
             pulumi.set(__self__, "edgeworker_id", edgeworker_id)
         if network is not None:
@@ -147,6 +167,18 @@ class _EdgeWorkersActivationState:
     @activation_id.setter
     def activation_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "activation_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoPin")
+    def auto_pin(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Automatically pin the initial revision during parent EdgeWorker activation.
+        """
+        return pulumi.get(self, "auto_pin")
+
+    @auto_pin.setter
+    def auto_pin(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "auto_pin", value)
 
     @_builtins.property
     @pulumi.getter(name="edgeworkerId")
@@ -215,6 +247,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 auto_pin: pulumi.Input[Optional[_builtins.bool]] = None,
                  edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
@@ -226,6 +259,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.bool] auto_pin: Automatically pin the initial revision during parent EdgeWorker activation.
         :param pulumi.Input[_builtins.int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[_builtins.str] network: The network on which the version will be activated
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the activation request
@@ -256,6 +290,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 auto_pin: pulumi.Input[Optional[_builtins.bool]] = None,
                  edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
@@ -270,6 +305,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = EdgeWorkersActivationArgs.__new__(EdgeWorkersActivationArgs)
 
+            __props__.__dict__["auto_pin"] = auto_pin
             if edgeworker_id is None and not opts.urn:
                 raise TypeError("Missing required property 'edgeworker_id'")
             __props__.__dict__["edgeworker_id"] = edgeworker_id
@@ -293,6 +329,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             activation_id: pulumi.Input[Optional[_builtins.int]] = None,
+            auto_pin: pulumi.Input[Optional[_builtins.bool]] = None,
             edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
             network: pulumi.Input[Optional[_builtins.str]] = None,
             note: pulumi.Input[Optional[_builtins.str]] = None,
@@ -306,6 +343,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] activation_id: A unique identifier of the activation
+        :param pulumi.Input[_builtins.bool] auto_pin: Automatically pin the initial revision during parent EdgeWorker activation.
         :param pulumi.Input[_builtins.int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[_builtins.str] network: The network on which the version will be activated
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the activation request
@@ -317,6 +355,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         __props__ = _EdgeWorkersActivationState.__new__(_EdgeWorkersActivationState)
 
         __props__.__dict__["activation_id"] = activation_id
+        __props__.__dict__["auto_pin"] = auto_pin
         __props__.__dict__["edgeworker_id"] = edgeworker_id
         __props__.__dict__["network"] = network
         __props__.__dict__["note"] = note
@@ -331,6 +370,14 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         A unique identifier of the activation
         """
         return pulumi.get(self, "activation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="autoPin")
+    def auto_pin(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Automatically pin the initial revision during parent EdgeWorker activation.
+        """
+        return pulumi.get(self, "auto_pin")
 
     @_builtins.property
     @pulumi.getter(name="edgeworkerId")

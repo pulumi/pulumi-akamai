@@ -16,6 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetMtlstruststoreCaSetVersionsResult {
     private @Nullable Boolean activeVersionsOnly;
+    private @Nullable List<String> caSetVersionStatuses;
     private String id;
     private @Nullable Boolean includeCertificates;
     private String name;
@@ -24,6 +25,9 @@ public final class GetMtlstruststoreCaSetVersionsResult {
     private GetMtlstruststoreCaSetVersionsResult() {}
     public Optional<Boolean> activeVersionsOnly() {
         return Optional.ofNullable(this.activeVersionsOnly);
+    }
+    public List<String> caSetVersionStatuses() {
+        return this.caSetVersionStatuses == null ? List.of() : this.caSetVersionStatuses;
     }
     public String id() {
         return this.id;
@@ -48,6 +52,7 @@ public final class GetMtlstruststoreCaSetVersionsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean activeVersionsOnly;
+        private @Nullable List<String> caSetVersionStatuses;
         private String id;
         private @Nullable Boolean includeCertificates;
         private String name;
@@ -56,6 +61,7 @@ public final class GetMtlstruststoreCaSetVersionsResult {
         public Builder(GetMtlstruststoreCaSetVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activeVersionsOnly = defaults.activeVersionsOnly;
+    	      this.caSetVersionStatuses = defaults.caSetVersionStatuses;
     	      this.id = defaults.id;
     	      this.includeCertificates = defaults.includeCertificates;
     	      this.name = defaults.name;
@@ -67,6 +73,15 @@ public final class GetMtlstruststoreCaSetVersionsResult {
 
             this.activeVersionsOnly = activeVersionsOnly;
             return this;
+        }
+        @CustomType.Setter
+        public Builder caSetVersionStatuses(@Nullable List<String> caSetVersionStatuses) {
+
+            this.caSetVersionStatuses = caSetVersionStatuses;
+            return this;
+        }
+        public Builder caSetVersionStatuses(String... caSetVersionStatuses) {
+            return caSetVersionStatuses(List.of(caSetVersionStatuses));
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -104,6 +119,7 @@ public final class GetMtlstruststoreCaSetVersionsResult {
         public GetMtlstruststoreCaSetVersionsResult build() {
             final var _resultValue = new GetMtlstruststoreCaSetVersionsResult();
             _resultValue.activeVersionsOnly = activeVersionsOnly;
+            _resultValue.caSetVersionStatuses = caSetVersionStatuses;
             _resultValue.id = id;
             _resultValue.includeCertificates = includeCertificates;
             _resultValue.name = name;

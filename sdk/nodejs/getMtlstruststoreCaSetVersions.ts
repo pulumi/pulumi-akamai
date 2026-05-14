@@ -11,6 +11,7 @@ export function getMtlstruststoreCaSetVersions(args?: GetMtlstruststoreCaSetVers
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getMtlstruststoreCaSetVersions:getMtlstruststoreCaSetVersions", {
         "activeVersionsOnly": args.activeVersionsOnly,
+        "caSetVersionStatuses": args.caSetVersionStatuses,
         "id": args.id,
         "includeCertificates": args.includeCertificates,
         "name": args.name,
@@ -22,6 +23,7 @@ export function getMtlstruststoreCaSetVersions(args?: GetMtlstruststoreCaSetVers
  */
 export interface GetMtlstruststoreCaSetVersionsArgs {
     activeVersionsOnly?: boolean;
+    caSetVersionStatuses?: string[];
     id?: string;
     includeCertificates?: boolean;
     name?: string;
@@ -32,6 +34,7 @@ export interface GetMtlstruststoreCaSetVersionsArgs {
  */
 export interface GetMtlstruststoreCaSetVersionsResult {
     readonly activeVersionsOnly?: boolean;
+    readonly caSetVersionStatuses?: string[];
     readonly id: string;
     readonly includeCertificates?: boolean;
     readonly name: string;
@@ -42,6 +45,7 @@ export function getMtlstruststoreCaSetVersionsOutput(args?: GetMtlstruststoreCaS
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getMtlstruststoreCaSetVersions:getMtlstruststoreCaSetVersions", {
         "activeVersionsOnly": args.activeVersionsOnly,
+        "caSetVersionStatuses": args.caSetVersionStatuses,
         "id": args.id,
         "includeCertificates": args.includeCertificates,
         "name": args.name,
@@ -53,6 +57,7 @@ export function getMtlstruststoreCaSetVersionsOutput(args?: GetMtlstruststoreCaS
  */
 export interface GetMtlstruststoreCaSetVersionsOutputArgs {
     activeVersionsOnly?: pulumi.Input<boolean | undefined>;
+    caSetVersionStatuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     id?: pulumi.Input<string | undefined>;
     includeCertificates?: pulumi.Input<boolean | undefined>;
     name?: pulumi.Input<string | undefined>;

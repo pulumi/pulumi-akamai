@@ -40,13 +40,17 @@ export interface GetMtlstruststoreCaSetResult {
     readonly id: string;
     readonly name: string;
     readonly productionVersion: number;
+    readonly removalDate: string;
     readonly stagingVersion: number;
+    readonly status: string;
     readonly version: number;
     readonly versionCreatedBy: string;
     readonly versionCreatedDate: string;
     readonly versionDescription: string;
     readonly versionModifiedBy: string;
     readonly versionModifiedDate: string;
+    readonly versionRemovalDate: string;
+    readonly versionStatus: string;
 }
 export function getMtlstruststoreCaSetOutput(args?: GetMtlstruststoreCaSetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMtlstruststoreCaSetResult> {
     args = args || {};
