@@ -50,10 +50,20 @@ public final class GetMtlstruststoreCaSetVersionsVersion {
      */
     private String productionStatus;
     /**
+     * @return The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.
+     * 
+     */
+    private String removalDate;
+    /**
      * @return The CA set version&#39;s status on the staging network, either &#39;ACTIVE&#39; or &#39;INACTIVE&#39;.
      * 
      */
     private String stagingStatus;
+    /**
+     * @return Indicates the CA set version status, &#39;NOT_DELETED&#39; or &#39;DELETED&#39;.
+     * 
+     */
+    private String status;
     /**
      * @return Version identifier on which to perform the desired operation.
      * 
@@ -116,11 +126,25 @@ public final class GetMtlstruststoreCaSetVersionsVersion {
         return this.productionStatus;
     }
     /**
+     * @return The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.
+     * 
+     */
+    public String removalDate() {
+        return this.removalDate;
+    }
+    /**
      * @return The CA set version&#39;s status on the staging network, either &#39;ACTIVE&#39; or &#39;INACTIVE&#39;.
      * 
      */
     public String stagingStatus() {
         return this.stagingStatus;
+    }
+    /**
+     * @return Indicates the CA set version status, &#39;NOT_DELETED&#39; or &#39;DELETED&#39;.
+     * 
+     */
+    public String status() {
+        return this.status;
     }
     /**
      * @return Version identifier on which to perform the desired operation.
@@ -153,7 +177,9 @@ public final class GetMtlstruststoreCaSetVersionsVersion {
         private String modifiedBy;
         private String modifiedDate;
         private String productionStatus;
+        private String removalDate;
         private String stagingStatus;
+        private String status;
         private Integer version;
         private String versionDescription;
         public Builder() {}
@@ -166,7 +192,9 @@ public final class GetMtlstruststoreCaSetVersionsVersion {
     	      this.modifiedBy = defaults.modifiedBy;
     	      this.modifiedDate = defaults.modifiedDate;
     	      this.productionStatus = defaults.productionStatus;
+    	      this.removalDate = defaults.removalDate;
     	      this.stagingStatus = defaults.stagingStatus;
+    	      this.status = defaults.status;
     	      this.version = defaults.version;
     	      this.versionDescription = defaults.versionDescription;
         }
@@ -231,11 +259,27 @@ public final class GetMtlstruststoreCaSetVersionsVersion {
             return this;
         }
         @CustomType.Setter
+        public Builder removalDate(String removalDate) {
+            if (removalDate == null) {
+              throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetVersionsVersion", "removalDate");
+            }
+            this.removalDate = removalDate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stagingStatus(String stagingStatus) {
             if (stagingStatus == null) {
               throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetVersionsVersion", "stagingStatus");
             }
             this.stagingStatus = stagingStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder status(String status) {
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetVersionsVersion", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
@@ -263,7 +307,9 @@ public final class GetMtlstruststoreCaSetVersionsVersion {
             _resultValue.modifiedBy = modifiedBy;
             _resultValue.modifiedDate = modifiedDate;
             _resultValue.productionStatus = productionStatus;
+            _resultValue.removalDate = removalDate;
             _resultValue.stagingStatus = stagingStatus;
+            _resultValue.status = status;
             _resultValue.version = version;
             _resultValue.versionDescription = versionDescription;
             return _resultValue;

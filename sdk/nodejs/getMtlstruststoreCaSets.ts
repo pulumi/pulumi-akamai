@@ -11,6 +11,7 @@ export function getMtlstruststoreCaSets(args?: GetMtlstruststoreCaSetsArgs, opts
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getMtlstruststoreCaSets:getMtlstruststoreCaSets", {
         "activatedOn": args.activatedOn,
+        "caSetStatuses": args.caSetStatuses,
         "namePrefix": args.namePrefix,
     }, opts);
 }
@@ -20,6 +21,7 @@ export function getMtlstruststoreCaSets(args?: GetMtlstruststoreCaSetsArgs, opts
  */
 export interface GetMtlstruststoreCaSetsArgs {
     activatedOn?: string;
+    caSetStatuses?: string[];
     namePrefix?: string;
 }
 
@@ -28,6 +30,7 @@ export interface GetMtlstruststoreCaSetsArgs {
  */
 export interface GetMtlstruststoreCaSetsResult {
     readonly activatedOn?: string;
+    readonly caSetStatuses?: string[];
     readonly caSets: outputs.GetMtlstruststoreCaSetsCaSet[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -40,6 +43,7 @@ export function getMtlstruststoreCaSetsOutput(args?: GetMtlstruststoreCaSetsOutp
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getMtlstruststoreCaSets:getMtlstruststoreCaSets", {
         "activatedOn": args.activatedOn,
+        "caSetStatuses": args.caSetStatuses,
         "namePrefix": args.namePrefix,
     }, opts);
 }
@@ -49,5 +53,6 @@ export function getMtlstruststoreCaSetsOutput(args?: GetMtlstruststoreCaSetsOutp
  */
 export interface GetMtlstruststoreCaSetsOutputArgs {
     activatedOn?: pulumi.Input<string | undefined>;
+    caSetStatuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     namePrefix?: pulumi.Input<string | undefined>;
 }

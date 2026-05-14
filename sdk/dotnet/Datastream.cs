@@ -145,7 +145,7 @@ namespace Pulumi.Akamai
         /// The sample percentage of data that your stream will send to the destination
         /// </summary>
         [Output("samplingPercentage")]
-        public Output<int?> SamplingPercentage { get; private set; } = null!;
+        public Output<int> SamplingPercentage { get; private set; } = null!;
 
         [Output("splunkConnector")]
         public Output<Outputs.DatastreamSplunkConnector?> SplunkConnector { get; private set; } = null!;

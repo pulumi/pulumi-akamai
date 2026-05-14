@@ -19,23 +19,21 @@ __all__ = ['AppsecSecurityPolicyProtectionsArgs', 'AppsecSecurityPolicyProtectio
 @pulumi.input_type
 class AppsecSecurityPolicyProtectionsArgs:
     def __init__(__self__, *,
+                 apply_account_protection_controls: pulumi.Input[_builtins.bool],
+                 apply_api_constraints: pulumi.Input[_builtins.bool],
+                 apply_application_layer_controls: pulumi.Input[_builtins.bool],
+                 apply_botman_controls: pulumi.Input[_builtins.bool],
+                 apply_malware_controls: pulumi.Input[_builtins.bool],
+                 apply_network_layer_controls: pulumi.Input[_builtins.bool],
+                 apply_rate_controls: pulumi.Input[_builtins.bool],
+                 apply_reputation_controls: pulumi.Input[_builtins.bool],
+                 apply_slow_post_controls: pulumi.Input[_builtins.bool],
+                 apply_url_protection_controls: pulumi.Input[_builtins.bool],
                  config_id: pulumi.Input[_builtins.int],
-                 security_policy_id: pulumi.Input[_builtins.str],
-                 apply_account_protection_controls: pulumi.Input[Optional[_builtins.bool]] = None,
-                 apply_api_constraints: pulumi.Input[Optional[_builtins.bool]] = None,
-                 apply_application_layer_controls: pulumi.Input[Optional[_builtins.bool]] = None,
-                 apply_botman_controls: pulumi.Input[Optional[_builtins.bool]] = None,
-                 apply_malware_controls: pulumi.Input[Optional[_builtins.bool]] = None,
-                 apply_network_layer_controls: pulumi.Input[Optional[_builtins.bool]] = None,
-                 apply_rate_controls: pulumi.Input[Optional[_builtins.bool]] = None,
-                 apply_reputation_controls: pulumi.Input[Optional[_builtins.bool]] = None,
-                 apply_slow_post_controls: pulumi.Input[Optional[_builtins.bool]] = None,
-                 apply_url_protection_controls: pulumi.Input[Optional[_builtins.bool]] = None):
+                 security_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppsecSecurityPolicyProtections resource.
 
-        :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration.
-        :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy.
         :param pulumi.Input[_builtins.bool] apply_account_protection_controls: Whether to enable account protection controls.
         :param pulumi.Input[_builtins.bool] apply_api_constraints: Whether to enable API constraints.
         :param pulumi.Input[_builtins.bool] apply_application_layer_controls: Whether to enable application layer controls.
@@ -46,29 +44,141 @@ class AppsecSecurityPolicyProtectionsArgs:
         :param pulumi.Input[_builtins.bool] apply_reputation_controls: Whether to enable reputation controls.
         :param pulumi.Input[_builtins.bool] apply_slow_post_controls: Whether to enable slow post controls.
         :param pulumi.Input[_builtins.bool] apply_url_protection_controls: Whether to enable URL protection controls.
+        :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration.
+        :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy.
         """
+        pulumi.set(__self__, "apply_account_protection_controls", apply_account_protection_controls)
+        pulumi.set(__self__, "apply_api_constraints", apply_api_constraints)
+        pulumi.set(__self__, "apply_application_layer_controls", apply_application_layer_controls)
+        pulumi.set(__self__, "apply_botman_controls", apply_botman_controls)
+        pulumi.set(__self__, "apply_malware_controls", apply_malware_controls)
+        pulumi.set(__self__, "apply_network_layer_controls", apply_network_layer_controls)
+        pulumi.set(__self__, "apply_rate_controls", apply_rate_controls)
+        pulumi.set(__self__, "apply_reputation_controls", apply_reputation_controls)
+        pulumi.set(__self__, "apply_slow_post_controls", apply_slow_post_controls)
+        pulumi.set(__self__, "apply_url_protection_controls", apply_url_protection_controls)
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if apply_account_protection_controls is not None:
-            pulumi.set(__self__, "apply_account_protection_controls", apply_account_protection_controls)
-        if apply_api_constraints is not None:
-            pulumi.set(__self__, "apply_api_constraints", apply_api_constraints)
-        if apply_application_layer_controls is not None:
-            pulumi.set(__self__, "apply_application_layer_controls", apply_application_layer_controls)
-        if apply_botman_controls is not None:
-            pulumi.set(__self__, "apply_botman_controls", apply_botman_controls)
-        if apply_malware_controls is not None:
-            pulumi.set(__self__, "apply_malware_controls", apply_malware_controls)
-        if apply_network_layer_controls is not None:
-            pulumi.set(__self__, "apply_network_layer_controls", apply_network_layer_controls)
-        if apply_rate_controls is not None:
-            pulumi.set(__self__, "apply_rate_controls", apply_rate_controls)
-        if apply_reputation_controls is not None:
-            pulumi.set(__self__, "apply_reputation_controls", apply_reputation_controls)
-        if apply_slow_post_controls is not None:
-            pulumi.set(__self__, "apply_slow_post_controls", apply_slow_post_controls)
-        if apply_url_protection_controls is not None:
-            pulumi.set(__self__, "apply_url_protection_controls", apply_url_protection_controls)
+
+    @_builtins.property
+    @pulumi.getter(name="applyAccountProtectionControls")
+    def apply_account_protection_controls(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable account protection controls.
+        """
+        return pulumi.get(self, "apply_account_protection_controls")
+
+    @apply_account_protection_controls.setter
+    def apply_account_protection_controls(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_account_protection_controls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyApiConstraints")
+    def apply_api_constraints(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable API constraints.
+        """
+        return pulumi.get(self, "apply_api_constraints")
+
+    @apply_api_constraints.setter
+    def apply_api_constraints(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_api_constraints", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyApplicationLayerControls")
+    def apply_application_layer_controls(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable application layer controls.
+        """
+        return pulumi.get(self, "apply_application_layer_controls")
+
+    @apply_application_layer_controls.setter
+    def apply_application_layer_controls(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_application_layer_controls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyBotmanControls")
+    def apply_botman_controls(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable botman controls.
+        """
+        return pulumi.get(self, "apply_botman_controls")
+
+    @apply_botman_controls.setter
+    def apply_botman_controls(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_botman_controls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyMalwareControls")
+    def apply_malware_controls(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable malware controls.
+        """
+        return pulumi.get(self, "apply_malware_controls")
+
+    @apply_malware_controls.setter
+    def apply_malware_controls(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_malware_controls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyNetworkLayerControls")
+    def apply_network_layer_controls(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable network layer controls.
+        """
+        return pulumi.get(self, "apply_network_layer_controls")
+
+    @apply_network_layer_controls.setter
+    def apply_network_layer_controls(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_network_layer_controls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyRateControls")
+    def apply_rate_controls(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable rate controls.
+        """
+        return pulumi.get(self, "apply_rate_controls")
+
+    @apply_rate_controls.setter
+    def apply_rate_controls(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_rate_controls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyReputationControls")
+    def apply_reputation_controls(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable reputation controls.
+        """
+        return pulumi.get(self, "apply_reputation_controls")
+
+    @apply_reputation_controls.setter
+    def apply_reputation_controls(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_reputation_controls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applySlowPostControls")
+    def apply_slow_post_controls(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable slow post controls.
+        """
+        return pulumi.get(self, "apply_slow_post_controls")
+
+    @apply_slow_post_controls.setter
+    def apply_slow_post_controls(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_slow_post_controls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyUrlProtectionControls")
+    def apply_url_protection_controls(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Whether to enable URL protection controls.
+        """
+        return pulumi.get(self, "apply_url_protection_controls")
+
+    @apply_url_protection_controls.setter
+    def apply_url_protection_controls(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "apply_url_protection_controls", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
@@ -93,126 +203,6 @@ class AppsecSecurityPolicyProtectionsArgs:
     @security_policy_id.setter
     def security_policy_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "security_policy_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applyAccountProtectionControls")
-    def apply_account_protection_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable account protection controls.
-        """
-        return pulumi.get(self, "apply_account_protection_controls")
-
-    @apply_account_protection_controls.setter
-    def apply_account_protection_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_account_protection_controls", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applyApiConstraints")
-    def apply_api_constraints(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable API constraints.
-        """
-        return pulumi.get(self, "apply_api_constraints")
-
-    @apply_api_constraints.setter
-    def apply_api_constraints(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_api_constraints", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applyApplicationLayerControls")
-    def apply_application_layer_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable application layer controls.
-        """
-        return pulumi.get(self, "apply_application_layer_controls")
-
-    @apply_application_layer_controls.setter
-    def apply_application_layer_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_application_layer_controls", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applyBotmanControls")
-    def apply_botman_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable botman controls.
-        """
-        return pulumi.get(self, "apply_botman_controls")
-
-    @apply_botman_controls.setter
-    def apply_botman_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_botman_controls", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applyMalwareControls")
-    def apply_malware_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable malware controls.
-        """
-        return pulumi.get(self, "apply_malware_controls")
-
-    @apply_malware_controls.setter
-    def apply_malware_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_malware_controls", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applyNetworkLayerControls")
-    def apply_network_layer_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable network layer controls.
-        """
-        return pulumi.get(self, "apply_network_layer_controls")
-
-    @apply_network_layer_controls.setter
-    def apply_network_layer_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_network_layer_controls", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applyRateControls")
-    def apply_rate_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable rate controls.
-        """
-        return pulumi.get(self, "apply_rate_controls")
-
-    @apply_rate_controls.setter
-    def apply_rate_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_rate_controls", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applyReputationControls")
-    def apply_reputation_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable reputation controls.
-        """
-        return pulumi.get(self, "apply_reputation_controls")
-
-    @apply_reputation_controls.setter
-    def apply_reputation_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_reputation_controls", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applySlowPostControls")
-    def apply_slow_post_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable slow post controls.
-        """
-        return pulumi.get(self, "apply_slow_post_controls")
-
-    @apply_slow_post_controls.setter
-    def apply_slow_post_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_slow_post_controls", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applyUrlProtectionControls")
-    def apply_url_protection_controls(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Whether to enable URL protection controls.
-        """
-        return pulumi.get(self, "apply_url_protection_controls")
-
-    @apply_url_protection_controls.setter
-    def apply_url_protection_controls(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "apply_url_protection_controls", value)
 
 
 @pulumi.input_type
@@ -498,15 +488,35 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AppsecSecurityPolicyProtectionsArgs.__new__(AppsecSecurityPolicyProtectionsArgs)
 
+            if apply_account_protection_controls is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_account_protection_controls'")
             __props__.__dict__["apply_account_protection_controls"] = apply_account_protection_controls
+            if apply_api_constraints is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_api_constraints'")
             __props__.__dict__["apply_api_constraints"] = apply_api_constraints
+            if apply_application_layer_controls is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_application_layer_controls'")
             __props__.__dict__["apply_application_layer_controls"] = apply_application_layer_controls
+            if apply_botman_controls is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_botman_controls'")
             __props__.__dict__["apply_botman_controls"] = apply_botman_controls
+            if apply_malware_controls is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_malware_controls'")
             __props__.__dict__["apply_malware_controls"] = apply_malware_controls
+            if apply_network_layer_controls is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_network_layer_controls'")
             __props__.__dict__["apply_network_layer_controls"] = apply_network_layer_controls
+            if apply_rate_controls is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_rate_controls'")
             __props__.__dict__["apply_rate_controls"] = apply_rate_controls
+            if apply_reputation_controls is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_reputation_controls'")
             __props__.__dict__["apply_reputation_controls"] = apply_reputation_controls
+            if apply_slow_post_controls is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_slow_post_controls'")
             __props__.__dict__["apply_slow_post_controls"] = apply_slow_post_controls
+            if apply_url_protection_controls is None and not opts.urn:
+                raise TypeError("Missing required property 'apply_url_protection_controls'")
             __props__.__dict__["apply_url_protection_controls"] = apply_url_protection_controls
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
@@ -576,7 +586,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applyAccountProtectionControls")
-    def apply_account_protection_controls(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_account_protection_controls(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable account protection controls.
         """
@@ -584,7 +594,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applyApiConstraints")
-    def apply_api_constraints(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_api_constraints(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable API constraints.
         """
@@ -592,7 +602,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applyApplicationLayerControls")
-    def apply_application_layer_controls(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_application_layer_controls(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable application layer controls.
         """
@@ -600,7 +610,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applyBotmanControls")
-    def apply_botman_controls(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_botman_controls(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable botman controls.
         """
@@ -608,7 +618,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applyMalwareControls")
-    def apply_malware_controls(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_malware_controls(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable malware controls.
         """
@@ -616,7 +626,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applyNetworkLayerControls")
-    def apply_network_layer_controls(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_network_layer_controls(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable network layer controls.
         """
@@ -624,7 +634,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applyRateControls")
-    def apply_rate_controls(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_rate_controls(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable rate controls.
         """
@@ -632,7 +642,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applyReputationControls")
-    def apply_reputation_controls(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_reputation_controls(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable reputation controls.
         """
@@ -640,7 +650,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applySlowPostControls")
-    def apply_slow_post_controls(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_slow_post_controls(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable slow post controls.
         """
@@ -648,7 +658,7 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="applyUrlProtectionControls")
-    def apply_url_protection_controls(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def apply_url_protection_controls(self) -> pulumi.Output[_builtins.bool]:
         """
         Whether to enable URL protection controls.
         """

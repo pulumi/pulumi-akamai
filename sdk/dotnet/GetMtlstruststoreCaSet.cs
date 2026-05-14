@@ -71,13 +71,17 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly string Name;
         public readonly int ProductionVersion;
+        public readonly string RemovalDate;
         public readonly int StagingVersion;
+        public readonly string Status;
         public readonly int Version;
         public readonly string VersionCreatedBy;
         public readonly string VersionCreatedDate;
         public readonly string VersionDescription;
         public readonly string VersionModifiedBy;
         public readonly string VersionModifiedDate;
+        public readonly string VersionRemovalDate;
+        public readonly string VersionStatus;
 
         [OutputConstructor]
         private GetMtlstruststoreCaSetResult(
@@ -103,7 +107,11 @@ namespace Pulumi.Akamai
 
             int productionVersion,
 
+            string removalDate,
+
             int stagingVersion,
+
+            string status,
 
             int version,
 
@@ -115,7 +123,11 @@ namespace Pulumi.Akamai
 
             string versionModifiedBy,
 
-            string versionModifiedDate)
+            string versionModifiedDate,
+
+            string versionRemovalDate,
+
+            string versionStatus)
         {
             AccountId = accountId;
             AllowInsecureSha1 = allowInsecureSha1;
@@ -128,13 +140,17 @@ namespace Pulumi.Akamai
             Id = id;
             Name = name;
             ProductionVersion = productionVersion;
+            RemovalDate = removalDate;
             StagingVersion = stagingVersion;
+            Status = status;
             Version = version;
             VersionCreatedBy = versionCreatedBy;
             VersionCreatedDate = versionCreatedDate;
             VersionDescription = versionDescription;
             VersionModifiedBy = versionModifiedBy;
             VersionModifiedDate = versionModifiedDate;
+            VersionRemovalDate = versionRemovalDate;
+            VersionStatus = versionStatus;
         }
     }
 }

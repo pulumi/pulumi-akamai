@@ -19,7 +19,7 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// Action applied to requests from clients in the penalty box
+        /// The action to be taken when the penalty box is triggered
         /// </summary>
         [Output("penaltyBoxAction")]
         public Output<string> PenaltyBoxAction { get; private set; } = null!;
@@ -89,7 +89,7 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// Action applied to requests from clients in the penalty box
+        /// The action to be taken when the penalty box is triggered
         /// </summary>
         [Input("penaltyBoxAction", required: true)]
         public Input<string> PenaltyBoxAction { get; set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// Action applied to requests from clients in the penalty box
+        /// The action to be taken when the penalty box is triggered
         /// </summary>
         [Input("penaltyBoxAction")]
         public Input<string>? PenaltyBoxAction { get; set; }

@@ -152,6 +152,9 @@ __all__ = [
     'PropertyIncludeActivationTimeouts',
     'PropertyRuleError',
     'PropertyRuleWarning',
+    'ReportinggroupsGroupAccessGroup',
+    'ReportinggroupsGroupContract',
+    'ReportinggroupsGroupContractCpCode',
     'GetAppSecIPGeoAsnControlResult',
     'GetAppSecIPGeoGeoControlResult',
     'GetAppSecIPGeoIpControlResult',
@@ -280,6 +283,10 @@ __all__ = [
     'GetDatastreamDatasetFieldsDatasetFieldResult',
     'GetDatastreamsStreamsDetailResult',
     'GetDatastreamsStreamsDetailPropertyResult',
+    'GetEdgeHostnameEdgeHostnameResult',
+    'GetEdgeHostnameEdgeHostnameUseCaseResult',
+    'GetEdgeHostnamesEdgeHostnameResult',
+    'GetEdgeHostnamesEdgeHostnameUseCaseResult',
     'GetGroupsGroupResult',
     'GetGtmAsmapAssignmentResult',
     'GetGtmAsmapDefaultDatacenterResult',
@@ -535,6 +542,22 @@ __all__ = [
     'GetPropertyProductsProductResult',
     'GetPropertyRulesTemplateTemplateResult',
     'GetPropertyRulesTemplateVariableResult',
+    'GetReportinggroupsCpCodeAccessGroupResult',
+    'GetReportinggroupsCpCodeContractResult',
+    'GetReportinggroupsCpCodeOverrideTimeZoneResult',
+    'GetReportinggroupsCpCodeProductResult',
+    'GetReportinggroupsCpCodesCpCodeResult',
+    'GetReportinggroupsCpCodesCpCodeAccessGroupResult',
+    'GetReportinggroupsCpCodesCpCodeContractResult',
+    'GetReportinggroupsCpCodesCpCodeOverrideTimeZoneResult',
+    'GetReportinggroupsCpCodesCpCodeProductResult',
+    'GetReportinggroupsGroupAccessGroupResult',
+    'GetReportinggroupsGroupContractResult',
+    'GetReportinggroupsGroupContractCpCodeResult',
+    'GetReportinggroupsGroupsGroupResult',
+    'GetReportinggroupsGroupsGroupAccessGroupResult',
+    'GetReportinggroupsGroupsGroupContractResult',
+    'GetReportinggroupsGroupsGroupContractCpCodeResult',
     'GetZoneDnssecStatusCurrentRecordsResult',
     'GetZoneDnssecStatusNewRecordsResult',
 ]
@@ -10932,6 +10955,152 @@ class PropertyRuleWarning(dict):
 
 
 @pulumi.output_type
+class ReportinggroupsGroupAccessGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contractId":
+            suggest = "contract_id"
+        elif key == "groupId":
+            suggest = "group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ReportinggroupsGroupAccessGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ReportinggroupsGroupAccessGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ReportinggroupsGroupAccessGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 group_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str contract_id: Identifies the contract assigned to the access control group.
+        :param _builtins.str group_id: Identifies the access control group. It is required for reporting group creation and cannot be updated.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        if group_id is not None:
+            pulumi.set(__self__, "group_id", group_id)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        Identifies the contract assigned to the access control group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> Optional[_builtins.str]:
+        """
+        Identifies the access control group. It is required for reporting group creation and cannot be updated.
+        """
+        return pulumi.get(self, "group_id")
+
+
+@pulumi.output_type
+class ReportinggroupsGroupContract(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contractId":
+            suggest = "contract_id"
+        elif key == "cpCodes":
+            suggest = "cp_codes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ReportinggroupsGroupContract. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ReportinggroupsGroupContract.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ReportinggroupsGroupContract.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 cp_codes: Sequence['outputs.ReportinggroupsGroupContractCpCode']):
+        """
+        :param _builtins.str contract_id: Identifies the contract assigned to the reporting group.
+        :param Sequence['ReportinggroupsGroupContractCpCodeArgs'] cp_codes: A collection of CP codes assigned to the reporting group.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "cp_codes", cp_codes)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        Identifies the contract assigned to the reporting group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodes")
+    def cp_codes(self) -> Sequence['outputs.ReportinggroupsGroupContractCpCode']:
+        """
+        A collection of CP codes assigned to the reporting group.
+        """
+        return pulumi.get(self, "cp_codes")
+
+
+@pulumi.output_type
+class ReportinggroupsGroupContractCpCode(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cpCodeId":
+            suggest = "cp_code_id"
+        elif key == "cpCodeName":
+            suggest = "cp_code_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ReportinggroupsGroupContractCpCode. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ReportinggroupsGroupContractCpCode.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ReportinggroupsGroupContractCpCode.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cp_code_id: _builtins.str,
+                 cp_code_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str cp_code_id: Identifies a CP code.
+        :param _builtins.str cp_code_name: The descriptive label for the CP code.
+        """
+        pulumi.set(__self__, "cp_code_id", cp_code_id)
+        if cp_code_name is not None:
+            pulumi.set(__self__, "cp_code_name", cp_code_name)
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodeId")
+    def cp_code_id(self) -> _builtins.str:
+        """
+        Identifies a CP code.
+        """
+        return pulumi.get(self, "cp_code_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodeName")
+    def cp_code_name(self) -> Optional[_builtins.str]:
+        """
+        The descriptive label for the CP code.
+        """
+        return pulumi.get(self, "cp_code_name")
+
+
+@pulumi.output_type
 class GetAppSecIPGeoAsnControlResult(dict):
     def __init__(__self__, *,
                  action: _builtins.str,
@@ -20365,6 +20534,320 @@ class GetDatastreamsStreamsDetailPropertyResult(dict):
         The descriptive label for the property.
         """
         return pulumi.get(self, "property_name")
+
+
+@pulumi.output_type
+class GetEdgeHostnameEdgeHostnameResult(dict):
+    def __init__(__self__, *,
+                 domain_prefix: _builtins.str,
+                 domain_suffix: _builtins.str,
+                 edge_hostname_domain: _builtins.str,
+                 edge_hostname_id: _builtins.str,
+                 https_service_binding: _builtins.str,
+                 ip_version_behaviour: _builtins.str,
+                 product_id: _builtins.str,
+                 secure: _builtins.bool,
+                 status: _builtins.str,
+                 use_cases: Sequence['outputs.GetEdgeHostnameEdgeHostnameUseCaseResult']):
+        """
+        :param _builtins.str domain_prefix: The origin domain portion of the edge hostname.
+        :param _builtins.str domain_suffix: The Akamai-specific portion of the edge hostname.
+        :param _builtins.str edge_hostname_domain: The full edge domain name formed from the domainPrefix and domainSuffix.
+        :param _builtins.str edge_hostname_id: The edge hostname's unique identifier.
+        :param _builtins.str https_service_binding: HTTPS service binding of the edge hostname.
+        :param _builtins.str ip_version_behaviour: IP version behavior of the edge hostname.
+        :param _builtins.str product_id: The product you created the edge hostname for.
+        :param _builtins.bool secure: Whether to use the edge hostname with SSL.
+        :param _builtins.str status: Status of the edge hostname.
+        :param Sequence['GetEdgeHostnameEdgeHostnameUseCaseArgs'] use_cases: Available use cases for edge hostnames assigned to the product.
+        """
+        pulumi.set(__self__, "domain_prefix", domain_prefix)
+        pulumi.set(__self__, "domain_suffix", domain_suffix)
+        pulumi.set(__self__, "edge_hostname_domain", edge_hostname_domain)
+        pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+        pulumi.set(__self__, "https_service_binding", https_service_binding)
+        pulumi.set(__self__, "ip_version_behaviour", ip_version_behaviour)
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "secure", secure)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "use_cases", use_cases)
+
+    @_builtins.property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> _builtins.str:
+        """
+        The origin domain portion of the edge hostname.
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @_builtins.property
+    @pulumi.getter(name="domainSuffix")
+    def domain_suffix(self) -> _builtins.str:
+        """
+        The Akamai-specific portion of the edge hostname.
+        """
+        return pulumi.get(self, "domain_suffix")
+
+    @_builtins.property
+    @pulumi.getter(name="edgeHostnameDomain")
+    def edge_hostname_domain(self) -> _builtins.str:
+        """
+        The full edge domain name formed from the domainPrefix and domainSuffix.
+        """
+        return pulumi.get(self, "edge_hostname_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="edgeHostnameId")
+    def edge_hostname_id(self) -> _builtins.str:
+        """
+        The edge hostname's unique identifier.
+        """
+        return pulumi.get(self, "edge_hostname_id")
+
+    @_builtins.property
+    @pulumi.getter(name="httpsServiceBinding")
+    def https_service_binding(self) -> _builtins.str:
+        """
+        HTTPS service binding of the edge hostname.
+        """
+        return pulumi.get(self, "https_service_binding")
+
+    @_builtins.property
+    @pulumi.getter(name="ipVersionBehaviour")
+    def ip_version_behaviour(self) -> _builtins.str:
+        """
+        IP version behavior of the edge hostname.
+        """
+        return pulumi.get(self, "ip_version_behaviour")
+
+    @_builtins.property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> _builtins.str:
+        """
+        The product you created the edge hostname for.
+        """
+        return pulumi.get(self, "product_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def secure(self) -> _builtins.bool:
+        """
+        Whether to use the edge hostname with SSL.
+        """
+        return pulumi.get(self, "secure")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Status of the edge hostname.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="useCases")
+    def use_cases(self) -> Sequence['outputs.GetEdgeHostnameEdgeHostnameUseCaseResult']:
+        """
+        Available use cases for edge hostnames assigned to the product.
+        """
+        return pulumi.get(self, "use_cases")
+
+
+@pulumi.output_type
+class GetEdgeHostnameEdgeHostnameUseCaseResult(dict):
+    def __init__(__self__, *,
+                 option: _builtins.str,
+                 type: _builtins.str,
+                 use_case: _builtins.str):
+        """
+        :param _builtins.str option: Specifies one of the available options available in the response object.
+        :param _builtins.str type: Identifies the type of network over which traffic deploys.
+        :param _builtins.str use_case: Identifies each use case.
+        """
+        pulumi.set(__self__, "option", option)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "use_case", use_case)
+
+    @_builtins.property
+    @pulumi.getter
+    def option(self) -> _builtins.str:
+        """
+        Specifies one of the available options available in the response object.
+        """
+        return pulumi.get(self, "option")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Identifies the type of network over which traffic deploys.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="useCase")
+    def use_case(self) -> _builtins.str:
+        """
+        Identifies each use case.
+        """
+        return pulumi.get(self, "use_case")
+
+
+@pulumi.output_type
+class GetEdgeHostnamesEdgeHostnameResult(dict):
+    def __init__(__self__, *,
+                 domain_prefix: _builtins.str,
+                 domain_suffix: _builtins.str,
+                 edge_hostname_domain: _builtins.str,
+                 edge_hostname_id: _builtins.str,
+                 https_service_binding: _builtins.str,
+                 ip_version_behaviour: _builtins.str,
+                 product_id: _builtins.str,
+                 secure: _builtins.bool,
+                 status: _builtins.str,
+                 use_cases: Sequence['outputs.GetEdgeHostnamesEdgeHostnameUseCaseResult']):
+        """
+        :param _builtins.str domain_prefix: The origin domain portion of the edge hostname.
+        :param _builtins.str domain_suffix: The Akamai-specific portion of the edge hostname.
+        :param _builtins.str edge_hostname_domain: The full edge domain name formed from the domainPrefix and domainSuffix.
+        :param _builtins.str edge_hostname_id: The edge hostname's unique identifier.
+        :param _builtins.str https_service_binding: HTTPS service binding of the edge hostname.
+        :param _builtins.str ip_version_behaviour: IP version behavior of the edge hostname.
+        :param _builtins.str product_id: The product you created the edge hostname for.
+        :param _builtins.bool secure: Whether to use the edge hostname with SSL.
+        :param _builtins.str status: Status of the edge hostname.
+        :param Sequence['GetEdgeHostnamesEdgeHostnameUseCaseArgs'] use_cases: Available use cases for edge hostnames assigned to the product.
+        """
+        pulumi.set(__self__, "domain_prefix", domain_prefix)
+        pulumi.set(__self__, "domain_suffix", domain_suffix)
+        pulumi.set(__self__, "edge_hostname_domain", edge_hostname_domain)
+        pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+        pulumi.set(__self__, "https_service_binding", https_service_binding)
+        pulumi.set(__self__, "ip_version_behaviour", ip_version_behaviour)
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "secure", secure)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "use_cases", use_cases)
+
+    @_builtins.property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> _builtins.str:
+        """
+        The origin domain portion of the edge hostname.
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @_builtins.property
+    @pulumi.getter(name="domainSuffix")
+    def domain_suffix(self) -> _builtins.str:
+        """
+        The Akamai-specific portion of the edge hostname.
+        """
+        return pulumi.get(self, "domain_suffix")
+
+    @_builtins.property
+    @pulumi.getter(name="edgeHostnameDomain")
+    def edge_hostname_domain(self) -> _builtins.str:
+        """
+        The full edge domain name formed from the domainPrefix and domainSuffix.
+        """
+        return pulumi.get(self, "edge_hostname_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="edgeHostnameId")
+    def edge_hostname_id(self) -> _builtins.str:
+        """
+        The edge hostname's unique identifier.
+        """
+        return pulumi.get(self, "edge_hostname_id")
+
+    @_builtins.property
+    @pulumi.getter(name="httpsServiceBinding")
+    def https_service_binding(self) -> _builtins.str:
+        """
+        HTTPS service binding of the edge hostname.
+        """
+        return pulumi.get(self, "https_service_binding")
+
+    @_builtins.property
+    @pulumi.getter(name="ipVersionBehaviour")
+    def ip_version_behaviour(self) -> _builtins.str:
+        """
+        IP version behavior of the edge hostname.
+        """
+        return pulumi.get(self, "ip_version_behaviour")
+
+    @_builtins.property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> _builtins.str:
+        """
+        The product you created the edge hostname for.
+        """
+        return pulumi.get(self, "product_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def secure(self) -> _builtins.bool:
+        """
+        Whether to use the edge hostname with SSL.
+        """
+        return pulumi.get(self, "secure")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Status of the edge hostname.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="useCases")
+    def use_cases(self) -> Sequence['outputs.GetEdgeHostnamesEdgeHostnameUseCaseResult']:
+        """
+        Available use cases for edge hostnames assigned to the product.
+        """
+        return pulumi.get(self, "use_cases")
+
+
+@pulumi.output_type
+class GetEdgeHostnamesEdgeHostnameUseCaseResult(dict):
+    def __init__(__self__, *,
+                 option: _builtins.str,
+                 type: _builtins.str,
+                 use_case: _builtins.str):
+        """
+        :param _builtins.str option: Specifies one of the available options available in the response object.
+        :param _builtins.str type: Identifies the type of network over which traffic deploys.
+        :param _builtins.str use_case: Identifies each use case.
+        """
+        pulumi.set(__self__, "option", option)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "use_case", use_case)
+
+    @_builtins.property
+    @pulumi.getter
+    def option(self) -> _builtins.str:
+        """
+        Specifies one of the available options available in the response object.
+        """
+        return pulumi.get(self, "option")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Identifies the type of network over which traffic deploys.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="useCase")
+    def use_case(self) -> _builtins.str:
+        """
+        Identifies each use case.
+        """
+        return pulumi.get(self, "use_case")
 
 
 @pulumi.output_type
@@ -34428,7 +34911,15 @@ class GetMtlstruststoreCaSetActivitiesActivityResult(dict):
         :param _builtins.str activity_by: The user who initiated this CA set activity.
         :param _builtins.str activity_date: When this CA set activity occurred.
         :param _builtins.str network: Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
-        :param _builtins.str type: The type of CA set activity. 'CREATE_CA_SET' indicates creating a CA set, or 'CREATE_CA_SET_VERSION' for creating a version. 'ACTIVATE_CA_SET_VERSION' indicates activating a CA set version, while 'DEACTIVATE_CA_SET_VERSION' indicates deactivation. 'DELETE_CA_SET' indicates deleting a CA set.
+        :param _builtins.str type: The type of CA set activity. Possible values are: 
+               * `CREATE_CA_SET` - creating a CA set.
+               * `CREATE_CA_SET_VERSION` - creating a CA set version.
+               * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.
+               * `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.
+               * `DELETE_CA_SET` - soft deleting a CA set.
+               * `DELETE_CA_SET_VERSION` - soft deleting a CA set version.
+               * `REMOVE_CA_SET` - hard deleting a CA set.
+               * `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.
         :param _builtins.int version: The CA set's incremental version number.
         """
         pulumi.set(__self__, "activity_by", activity_by)
@@ -34465,7 +34956,15 @@ class GetMtlstruststoreCaSetActivitiesActivityResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of CA set activity. 'CREATE_CA_SET' indicates creating a CA set, or 'CREATE_CA_SET_VERSION' for creating a version. 'ACTIVATE_CA_SET_VERSION' indicates activating a CA set version, while 'DEACTIVATE_CA_SET_VERSION' indicates deactivation. 'DELETE_CA_SET' indicates deleting a CA set.
+        The type of CA set activity. Possible values are: 
+        * `CREATE_CA_SET` - creating a CA set.
+        * `CREATE_CA_SET_VERSION` - creating a CA set version.
+        * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.
+        * `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.
+        * `DELETE_CA_SET` - soft deleting a CA set.
+        * `DELETE_CA_SET_VERSION` - soft deleting a CA set version.
+        * `REMOVE_CA_SET` - hard deleting a CA set.
+        * `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.
         """
         return pulumi.get(self, "type")
 
@@ -34897,7 +35396,9 @@ class GetMtlstruststoreCaSetVersionsVersionResult(dict):
                  modified_by: _builtins.str,
                  modified_date: _builtins.str,
                  production_status: _builtins.str,
+                 removal_date: _builtins.str,
                  staging_status: _builtins.str,
+                 status: _builtins.str,
                  version: _builtins.int,
                  version_description: _builtins.str):
         """
@@ -34908,7 +35409,9 @@ class GetMtlstruststoreCaSetVersionsVersionResult(dict):
         :param _builtins.str modified_by: The user who last modified the CA set version.
         :param _builtins.str modified_date: When the CA set version was last modified.
         :param _builtins.str production_status: The CA set version's status on the production network, either 'ACTIVE' or 'INACTIVE'.
+        :param _builtins.str removal_date: The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.
         :param _builtins.str staging_status: The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
+        :param _builtins.str status: Indicates the CA set version status, 'NOT_DELETED' or 'DELETED'.
         :param _builtins.int version: Version identifier on which to perform the desired operation.
         :param _builtins.str version_description: Any additional description you can provide while creating or updating the CA set version.
         """
@@ -34919,7 +35422,9 @@ class GetMtlstruststoreCaSetVersionsVersionResult(dict):
         pulumi.set(__self__, "modified_by", modified_by)
         pulumi.set(__self__, "modified_date", modified_date)
         pulumi.set(__self__, "production_status", production_status)
+        pulumi.set(__self__, "removal_date", removal_date)
         pulumi.set(__self__, "staging_status", staging_status)
+        pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "version", version)
         pulumi.set(__self__, "version_description", version_description)
 
@@ -34980,12 +35485,28 @@ class GetMtlstruststoreCaSetVersionsVersionResult(dict):
         return pulumi.get(self, "production_status")
 
     @_builtins.property
+    @pulumi.getter(name="removalDate")
+    def removal_date(self) -> _builtins.str:
+        """
+        The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.
+        """
+        return pulumi.get(self, "removal_date")
+
+    @_builtins.property
     @pulumi.getter(name="stagingStatus")
     def staging_status(self) -> _builtins.str:
         """
         The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
         """
         return pulumi.get(self, "staging_status")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Indicates the CA set version status, 'NOT_DELETED' or 'DELETED'.
+        """
+        return pulumi.get(self, "status")
 
     @_builtins.property
     @pulumi.getter
@@ -35145,6 +35666,7 @@ class GetMtlstruststoreCaSetsCaSetResult(dict):
                  latest_version: _builtins.int,
                  name: _builtins.str,
                  production_version: _builtins.int,
+                 removal_date: _builtins.str,
                  staging_version: _builtins.int,
                  status: _builtins.str):
         """
@@ -35158,6 +35680,7 @@ class GetMtlstruststoreCaSetsCaSetResult(dict):
         :param _builtins.int latest_version: The most recent version based on the updated version.
         :param _builtins.str name: The name of the CA set.
         :param _builtins.int production_version: The CA set version activated on the 'PRODUCTION' network.
+        :param _builtins.str removal_date: The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.
         :param _builtins.int staging_version: The CA set version activated on the 'STAGING' network.
         :param _builtins.str status: Indicates if the CA set was deleted, either 'NOT_DELETED', 'DELETING', or 'DELETED'.
         """
@@ -35171,6 +35694,7 @@ class GetMtlstruststoreCaSetsCaSetResult(dict):
         pulumi.set(__self__, "latest_version", latest_version)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "production_version", production_version)
+        pulumi.set(__self__, "removal_date", removal_date)
         pulumi.set(__self__, "staging_version", staging_version)
         pulumi.set(__self__, "status", status)
 
@@ -35253,6 +35777,14 @@ class GetMtlstruststoreCaSetsCaSetResult(dict):
         The CA set version activated on the 'PRODUCTION' network.
         """
         return pulumi.get(self, "production_version")
+
+    @_builtins.property
+    @pulumi.getter(name="removalDate")
+    def removal_date(self) -> _builtins.str:
+        """
+        The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.
+        """
+        return pulumi.get(self, "removal_date")
 
     @_builtins.property
     @pulumi.getter(name="stagingVersion")
@@ -37888,6 +38420,580 @@ class GetPropertyRulesTemplateVariableResult(dict):
     @pulumi.getter
     def type(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetReportinggroupsCpCodeAccessGroupResult(dict):
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 group_id: _builtins.str):
+        """
+        :param _builtins.str contract_id: The contract identifier assigned to the access control group.
+        :param _builtins.str group_id: The access control group identifier.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        The contract identifier assigned to the access control group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.str:
+        """
+        The access control group identifier.
+        """
+        return pulumi.get(self, "group_id")
+
+
+@pulumi.output_type
+class GetReportinggroupsCpCodeContractResult(dict):
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param _builtins.str contract_id: The contract identifier.
+        :param _builtins.str status: The contract status.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        The contract identifier.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The contract status.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetReportinggroupsCpCodeOverrideTimeZoneResult(dict):
+    def __init__(__self__, *,
+                 time_zone_id: _builtins.str,
+                 time_zone_value: _builtins.str):
+        """
+        :param _builtins.str time_zone_id: The time zone identifier.
+        :param _builtins.str time_zone_value: The time zone value.
+        """
+        pulumi.set(__self__, "time_zone_id", time_zone_id)
+        pulumi.set(__self__, "time_zone_value", time_zone_value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeZoneId")
+    def time_zone_id(self) -> _builtins.str:
+        """
+        The time zone identifier.
+        """
+        return pulumi.get(self, "time_zone_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeZoneValue")
+    def time_zone_value(self) -> _builtins.str:
+        """
+        The time zone value.
+        """
+        return pulumi.get(self, "time_zone_value")
+
+
+@pulumi.output_type
+class GetReportinggroupsCpCodeProductResult(dict):
+    def __init__(__self__, *,
+                 product_id: _builtins.str,
+                 product_name: _builtins.str):
+        """
+        :param _builtins.str product_id: The product identifier.
+        :param _builtins.str product_name: The product name.
+        """
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "product_name", product_name)
+
+    @_builtins.property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> _builtins.str:
+        """
+        The product identifier.
+        """
+        return pulumi.get(self, "product_id")
+
+    @_builtins.property
+    @pulumi.getter(name="productName")
+    def product_name(self) -> _builtins.str:
+        """
+        The product name.
+        """
+        return pulumi.get(self, "product_name")
+
+
+@pulumi.output_type
+class GetReportinggroupsCpCodesCpCodeResult(dict):
+    def __init__(__self__, *,
+                 access_group: 'outputs.GetReportinggroupsCpCodesCpCodeAccessGroupResult',
+                 account_id: _builtins.str,
+                 contracts: Sequence['outputs.GetReportinggroupsCpCodesCpCodeContractResult'],
+                 cp_code_id: _builtins.int,
+                 default_time_zone: _builtins.str,
+                 name: _builtins.str,
+                 override_time_zone: 'outputs.GetReportinggroupsCpCodesCpCodeOverrideTimeZoneResult',
+                 products: Sequence['outputs.GetReportinggroupsCpCodesCpCodeProductResult'],
+                 purgeable: _builtins.bool,
+                 type: _builtins.str):
+        """
+        :param 'GetReportinggroupsCpCodesCpCodeAccessGroupArgs' access_group: The access control group associated with the CP code.
+        :param _builtins.str account_id: The account identifier associated with the CP code.
+        :param Sequence['GetReportinggroupsCpCodesCpCodeContractArgs'] contracts: List of contracts associated with the CP code.
+        :param _builtins.int cp_code_id: The unique numeric identifier of the CP code.
+        :param _builtins.str default_time_zone: The default time zone of the CP code.
+        :param _builtins.str name: The name of the CP code.
+        :param 'GetReportinggroupsCpCodesCpCodeOverrideTimeZoneArgs' override_time_zone: The override time zone of the CP code.
+        :param Sequence['GetReportinggroupsCpCodesCpCodeProductArgs'] products: List of products associated with the CP code.
+        :param _builtins.bool purgeable: Whether the CP code can be used to purge content.
+        :param _builtins.str type: The type of the CP code.
+        """
+        pulumi.set(__self__, "access_group", access_group)
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "contracts", contracts)
+        pulumi.set(__self__, "cp_code_id", cp_code_id)
+        pulumi.set(__self__, "default_time_zone", default_time_zone)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "override_time_zone", override_time_zone)
+        pulumi.set(__self__, "products", products)
+        pulumi.set(__self__, "purgeable", purgeable)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="accessGroup")
+    def access_group(self) -> 'outputs.GetReportinggroupsCpCodesCpCodeAccessGroupResult':
+        """
+        The access control group associated with the CP code.
+        """
+        return pulumi.get(self, "access_group")
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> _builtins.str:
+        """
+        The account identifier associated with the CP code.
+        """
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def contracts(self) -> Sequence['outputs.GetReportinggroupsCpCodesCpCodeContractResult']:
+        """
+        List of contracts associated with the CP code.
+        """
+        return pulumi.get(self, "contracts")
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodeId")
+    def cp_code_id(self) -> _builtins.int:
+        """
+        The unique numeric identifier of the CP code.
+        """
+        return pulumi.get(self, "cp_code_id")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultTimeZone")
+    def default_time_zone(self) -> _builtins.str:
+        """
+        The default time zone of the CP code.
+        """
+        return pulumi.get(self, "default_time_zone")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the CP code.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideTimeZone")
+    def override_time_zone(self) -> 'outputs.GetReportinggroupsCpCodesCpCodeOverrideTimeZoneResult':
+        """
+        The override time zone of the CP code.
+        """
+        return pulumi.get(self, "override_time_zone")
+
+    @_builtins.property
+    @pulumi.getter
+    def products(self) -> Sequence['outputs.GetReportinggroupsCpCodesCpCodeProductResult']:
+        """
+        List of products associated with the CP code.
+        """
+        return pulumi.get(self, "products")
+
+    @_builtins.property
+    @pulumi.getter
+    def purgeable(self) -> _builtins.bool:
+        """
+        Whether the CP code can be used to purge content.
+        """
+        return pulumi.get(self, "purgeable")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the CP code.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetReportinggroupsCpCodesCpCodeAccessGroupResult(dict):
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 group_id: _builtins.str):
+        """
+        :param _builtins.str contract_id: The contract identifier assigned to the access control group.
+        :param _builtins.str group_id: The access control group identifier.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        The contract identifier assigned to the access control group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.str:
+        """
+        The access control group identifier.
+        """
+        return pulumi.get(self, "group_id")
+
+
+@pulumi.output_type
+class GetReportinggroupsCpCodesCpCodeContractResult(dict):
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param _builtins.str contract_id: The contract identifier.
+        :param _builtins.str status: The contract status.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        The contract identifier.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The contract status.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetReportinggroupsCpCodesCpCodeOverrideTimeZoneResult(dict):
+    def __init__(__self__, *,
+                 time_zone_id: _builtins.str,
+                 time_zone_value: _builtins.str):
+        """
+        :param _builtins.str time_zone_id: The time zone identifier.
+        :param _builtins.str time_zone_value: The time zone value.
+        """
+        pulumi.set(__self__, "time_zone_id", time_zone_id)
+        pulumi.set(__self__, "time_zone_value", time_zone_value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeZoneId")
+    def time_zone_id(self) -> _builtins.str:
+        """
+        The time zone identifier.
+        """
+        return pulumi.get(self, "time_zone_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeZoneValue")
+    def time_zone_value(self) -> _builtins.str:
+        """
+        The time zone value.
+        """
+        return pulumi.get(self, "time_zone_value")
+
+
+@pulumi.output_type
+class GetReportinggroupsCpCodesCpCodeProductResult(dict):
+    def __init__(__self__, *,
+                 product_id: _builtins.str,
+                 product_name: _builtins.str):
+        """
+        :param _builtins.str product_id: The product identifier.
+        :param _builtins.str product_name: The product name.
+        """
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "product_name", product_name)
+
+    @_builtins.property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> _builtins.str:
+        """
+        The product identifier.
+        """
+        return pulumi.get(self, "product_id")
+
+    @_builtins.property
+    @pulumi.getter(name="productName")
+    def product_name(self) -> _builtins.str:
+        """
+        The product name.
+        """
+        return pulumi.get(self, "product_name")
+
+
+@pulumi.output_type
+class GetReportinggroupsGroupAccessGroupResult(dict):
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 group_id: _builtins.str):
+        """
+        :param _builtins.str contract_id: Identifies the contract assigned to the access control group.
+        :param _builtins.str group_id: Identifies the access control group. May be null if the reporting group belongs to many groups.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        Identifies the contract assigned to the access control group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.str:
+        """
+        Identifies the access control group. May be null if the reporting group belongs to many groups.
+        """
+        return pulumi.get(self, "group_id")
+
+
+@pulumi.output_type
+class GetReportinggroupsGroupContractResult(dict):
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 cp_codes: Sequence['outputs.GetReportinggroupsGroupContractCpCodeResult']):
+        """
+        :param _builtins.str contract_id: Identifies the contract assigned to the reporting group.
+        :param Sequence['GetReportinggroupsGroupContractCpCodeArgs'] cp_codes: A collection of CP codes assigned to the reporting group.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "cp_codes", cp_codes)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        Identifies the contract assigned to the reporting group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodes")
+    def cp_codes(self) -> Sequence['outputs.GetReportinggroupsGroupContractCpCodeResult']:
+        """
+        A collection of CP codes assigned to the reporting group.
+        """
+        return pulumi.get(self, "cp_codes")
+
+
+@pulumi.output_type
+class GetReportinggroupsGroupContractCpCodeResult(dict):
+    def __init__(__self__, *,
+                 cp_code_id: _builtins.str,
+                 cp_code_name: _builtins.str):
+        """
+        :param _builtins.str cp_code_id: Identifies a CP code.
+        :param _builtins.str cp_code_name: The descriptive label for the CP code.
+        """
+        pulumi.set(__self__, "cp_code_id", cp_code_id)
+        pulumi.set(__self__, "cp_code_name", cp_code_name)
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodeId")
+    def cp_code_id(self) -> _builtins.str:
+        """
+        Identifies a CP code.
+        """
+        return pulumi.get(self, "cp_code_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodeName")
+    def cp_code_name(self) -> _builtins.str:
+        """
+        The descriptive label for the CP code.
+        """
+        return pulumi.get(self, "cp_code_name")
+
+
+@pulumi.output_type
+class GetReportinggroupsGroupsGroupResult(dict):
+    def __init__(__self__, *,
+                 access_group: 'outputs.GetReportinggroupsGroupsGroupAccessGroupResult',
+                 contract: 'outputs.GetReportinggroupsGroupsGroupContractResult',
+                 reporting_group_id: _builtins.int,
+                 reporting_group_name: _builtins.str):
+        """
+        :param 'GetReportinggroupsGroupsGroupAccessGroupArgs' access_group: The access control group that controls access to specific CP codes.
+        :param 'GetReportinggroupsGroupsGroupContractArgs' contract: The contract and CP codes assigned to the reporting group.
+        :param _builtins.int reporting_group_id: The unique identifier for the reporting group.
+        :param _builtins.str reporting_group_name: The descriptive label for the reporting group.
+        """
+        pulumi.set(__self__, "access_group", access_group)
+        pulumi.set(__self__, "contract", contract)
+        pulumi.set(__self__, "reporting_group_id", reporting_group_id)
+        pulumi.set(__self__, "reporting_group_name", reporting_group_name)
+
+    @_builtins.property
+    @pulumi.getter(name="accessGroup")
+    def access_group(self) -> 'outputs.GetReportinggroupsGroupsGroupAccessGroupResult':
+        """
+        The access control group that controls access to specific CP codes.
+        """
+        return pulumi.get(self, "access_group")
+
+    @_builtins.property
+    @pulumi.getter
+    def contract(self) -> 'outputs.GetReportinggroupsGroupsGroupContractResult':
+        """
+        The contract and CP codes assigned to the reporting group.
+        """
+        return pulumi.get(self, "contract")
+
+    @_builtins.property
+    @pulumi.getter(name="reportingGroupId")
+    def reporting_group_id(self) -> _builtins.int:
+        """
+        The unique identifier for the reporting group.
+        """
+        return pulumi.get(self, "reporting_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="reportingGroupName")
+    def reporting_group_name(self) -> _builtins.str:
+        """
+        The descriptive label for the reporting group.
+        """
+        return pulumi.get(self, "reporting_group_name")
+
+
+@pulumi.output_type
+class GetReportinggroupsGroupsGroupAccessGroupResult(dict):
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 group_id: _builtins.str):
+        """
+        :param _builtins.str contract_id: Identifies the contract assigned to the access control group.
+        :param _builtins.str group_id: Identifies the access control group. May be null if the reporting group belongs to many groups.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        Identifies the contract assigned to the access control group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.str:
+        """
+        Identifies the access control group. May be null if the reporting group belongs to many groups.
+        """
+        return pulumi.get(self, "group_id")
+
+
+@pulumi.output_type
+class GetReportinggroupsGroupsGroupContractResult(dict):
+    def __init__(__self__, *,
+                 contract_id: _builtins.str,
+                 cp_codes: Sequence['outputs.GetReportinggroupsGroupsGroupContractCpCodeResult']):
+        """
+        :param _builtins.str contract_id: Identifies the contract assigned to the reporting group.
+        :param Sequence['GetReportinggroupsGroupsGroupContractCpCodeArgs'] cp_codes: A collection of CP codes assigned to the reporting group.
+        """
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "cp_codes", cp_codes)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        Identifies the contract assigned to the reporting group.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodes")
+    def cp_codes(self) -> Sequence['outputs.GetReportinggroupsGroupsGroupContractCpCodeResult']:
+        """
+        A collection of CP codes assigned to the reporting group.
+        """
+        return pulumi.get(self, "cp_codes")
+
+
+@pulumi.output_type
+class GetReportinggroupsGroupsGroupContractCpCodeResult(dict):
+    def __init__(__self__, *,
+                 cp_code_id: _builtins.str,
+                 cp_code_name: _builtins.str):
+        """
+        :param _builtins.str cp_code_id: Identifies a CP code.
+        :param _builtins.str cp_code_name: The descriptive label for the CP code.
+        """
+        pulumi.set(__self__, "cp_code_id", cp_code_id)
+        pulumi.set(__self__, "cp_code_name", cp_code_name)
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodeId")
+    def cp_code_id(self) -> _builtins.str:
+        """
+        Identifies a CP code.
+        """
+        return pulumi.get(self, "cp_code_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cpCodeName")
+    def cp_code_name(self) -> _builtins.str:
+        """
+        The descriptive label for the CP code.
+        """
+        return pulumi.get(self, "cp_code_name")
 
 
 @pulumi.output_type

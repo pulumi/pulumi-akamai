@@ -4270,6 +4270,66 @@
                 }
             }
         },
+        "akamai:index/ReportinggroupsGroupAccessGroup:ReportinggroupsGroupAccessGroup": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Identifies the contract assigned to the access control group.\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Identifies the access control group. It is required for reporting group creation and cannot be updated.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId"
+            ]
+        },
+        "akamai:index/ReportinggroupsGroupContract:ReportinggroupsGroupContract": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Identifies the contract assigned to the reporting group.\n"
+                },
+                "cpCodes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/ReportinggroupsGroupContractCpCode:ReportinggroupsGroupContractCpCode"
+                    },
+                    "description": "A collection of CP codes assigned to the reporting group.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "cpCodes"
+            ]
+        },
+        "akamai:index/ReportinggroupsGroupContractCpCode:ReportinggroupsGroupContractCpCode": {
+            "properties": {
+                "cpCodeId": {
+                    "type": "string",
+                    "description": "Identifies a CP code.\n"
+                },
+                "cpCodeName": {
+                    "type": "string",
+                    "description": "The descriptive label for the CP code.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cpCodeId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "cpCodeId",
+                        "cpCodeName"
+                    ]
+                }
+            }
+        },
         "akamai:index/getAppSecIPGeoAsnControl:getAppSecIPGeoAsnControl": {
             "properties": {
                 "action": {
@@ -9427,6 +9487,190 @@
                 "integrationType",
                 "propertyId",
                 "propertyName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getEdgeHostnameEdgeHostname:getEdgeHostnameEdgeHostname": {
+            "properties": {
+                "domainPrefix": {
+                    "type": "string",
+                    "description": "The origin domain portion of the edge hostname.\n"
+                },
+                "domainSuffix": {
+                    "type": "string",
+                    "description": "The Akamai-specific portion of the edge hostname.\n"
+                },
+                "edgeHostnameDomain": {
+                    "type": "string",
+                    "description": "The full edge domain name formed from the domainPrefix and domainSuffix.\n"
+                },
+                "edgeHostnameId": {
+                    "type": "string",
+                    "description": "The edge hostname's unique identifier.\n"
+                },
+                "httpsServiceBinding": {
+                    "type": "string",
+                    "description": "HTTPS service binding of the edge hostname.\n"
+                },
+                "ipVersionBehaviour": {
+                    "type": "string",
+                    "description": "IP version behavior of the edge hostname.\n"
+                },
+                "productId": {
+                    "type": "string",
+                    "description": "The product you created the edge hostname for.\n"
+                },
+                "secure": {
+                    "type": "boolean",
+                    "description": "Whether to use the edge hostname with SSL.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the edge hostname.\n"
+                },
+                "useCases": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getEdgeHostnameEdgeHostnameUseCase:getEdgeHostnameEdgeHostnameUseCase"
+                    },
+                    "description": "Available use cases for edge hostnames assigned to the product.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "domainPrefix",
+                "domainSuffix",
+                "edgeHostnameDomain",
+                "edgeHostnameId",
+                "httpsServiceBinding",
+                "ipVersionBehaviour",
+                "productId",
+                "secure",
+                "status",
+                "useCases"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getEdgeHostnameEdgeHostnameUseCase:getEdgeHostnameEdgeHostnameUseCase": {
+            "properties": {
+                "option": {
+                    "type": "string",
+                    "description": "Specifies one of the available options available in the response object.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Identifies the type of network over which traffic deploys.\n"
+                },
+                "useCase": {
+                    "type": "string",
+                    "description": "Identifies each use case.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "option",
+                "type",
+                "useCase"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getEdgeHostnamesEdgeHostname:getEdgeHostnamesEdgeHostname": {
+            "properties": {
+                "domainPrefix": {
+                    "type": "string",
+                    "description": "The origin domain portion of the edge hostname.\n"
+                },
+                "domainSuffix": {
+                    "type": "string",
+                    "description": "The Akamai-specific portion of the edge hostname.\n"
+                },
+                "edgeHostnameDomain": {
+                    "type": "string",
+                    "description": "The full edge domain name formed from the domainPrefix and domainSuffix.\n"
+                },
+                "edgeHostnameId": {
+                    "type": "string",
+                    "description": "The edge hostname's unique identifier.\n"
+                },
+                "httpsServiceBinding": {
+                    "type": "string",
+                    "description": "HTTPS service binding of the edge hostname.\n"
+                },
+                "ipVersionBehaviour": {
+                    "type": "string",
+                    "description": "IP version behavior of the edge hostname.\n"
+                },
+                "productId": {
+                    "type": "string",
+                    "description": "The product you created the edge hostname for.\n"
+                },
+                "secure": {
+                    "type": "boolean",
+                    "description": "Whether to use the edge hostname with SSL.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the edge hostname.\n"
+                },
+                "useCases": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getEdgeHostnamesEdgeHostnameUseCase:getEdgeHostnamesEdgeHostnameUseCase"
+                    },
+                    "description": "Available use cases for edge hostnames assigned to the product.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "domainPrefix",
+                "domainSuffix",
+                "edgeHostnameDomain",
+                "edgeHostnameId",
+                "httpsServiceBinding",
+                "ipVersionBehaviour",
+                "productId",
+                "secure",
+                "status",
+                "useCases"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getEdgeHostnamesEdgeHostnameUseCase:getEdgeHostnamesEdgeHostnameUseCase": {
+            "properties": {
+                "option": {
+                    "type": "string",
+                    "description": "Specifies one of the available options available in the response object.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Identifies the type of network over which traffic deploys.\n"
+                },
+                "useCase": {
+                    "type": "string",
+                    "description": "Identifies each use case.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "option",
+                "type",
+                "useCase"
             ],
             "language": {
                 "nodejs": {
@@ -16650,7 +16894,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of CA set activity. 'CREATE_CA_SET' indicates creating a CA set, or 'CREATE_CA_SET_VERSION' for creating a version. 'ACTIVATE_CA_SET_VERSION' indicates activating a CA set version, while 'DEACTIVATE_CA_SET_VERSION' indicates deactivation. 'DELETE_CA_SET' indicates deleting a CA set.\n"
+                    "description": "The type of CA set activity. Possible values are: \n* `CREATE_CA_SET` - creating a CA set.\n* `CREATE_CA_SET_VERSION` - creating a CA set version.\n* `ACTIVATE_CA_SET_VERSION` - activating a CA set version.\n* `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.\n* `DELETE_CA_SET` - soft deleting a CA set.\n* `DELETE_CA_SET_VERSION` - soft deleting a CA set version.\n* `REMOVE_CA_SET` - hard deleting a CA set.\n* `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.\n"
                 },
                 "version": {
                     "type": "integer",
@@ -16943,9 +17187,17 @@
                     "type": "string",
                     "description": "The CA set version's status on the production network, either 'ACTIVE' or 'INACTIVE'.\n"
                 },
+                "removalDate": {
+                    "type": "string",
+                    "description": "The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.\n"
+                },
                 "stagingStatus": {
                     "type": "string",
                     "description": "The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Indicates the CA set version status, 'NOT_DELETED' or 'DELETED'.\n"
                 },
                 "version": {
                     "type": "integer",
@@ -16965,7 +17217,9 @@
                 "modifiedBy",
                 "modifiedDate",
                 "productionStatus",
+                "removalDate",
                 "stagingStatus",
+                "status",
                 "version",
                 "versionDescription"
             ],
@@ -17084,6 +17338,10 @@
                     "type": "integer",
                     "description": "The CA set version activated on the 'PRODUCTION' network.\n"
                 },
+                "removalDate": {
+                    "type": "string",
+                    "description": "The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.\n"
+                },
                 "stagingVersion": {
                     "type": "integer",
                     "description": "The CA set version activated on the 'STAGING' network.\n"
@@ -17105,6 +17363,7 @@
                 "latestVersion",
                 "name",
                 "productionVersion",
+                "removalDate",
                 "stagingVersion",
                 "status"
             ],
@@ -18719,6 +18978,420 @@
                 "name",
                 "value"
             ]
+        },
+        "akamai:index/getReportinggroupsCpCodeAccessGroup:getReportinggroupsCpCodeAccessGroup": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract identifier assigned to the access control group.\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "The access control group identifier.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "groupId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsCpCodeContract:getReportinggroupsCpCodeContract": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract identifier.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The contract status.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "status"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsCpCodeOverrideTimeZone:getReportinggroupsCpCodeOverrideTimeZone": {
+            "properties": {
+                "timeZoneId": {
+                    "type": "string",
+                    "description": "The time zone identifier.\n"
+                },
+                "timeZoneValue": {
+                    "type": "string",
+                    "description": "The time zone value.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "timeZoneId",
+                "timeZoneValue"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsCpCodeProduct:getReportinggroupsCpCodeProduct": {
+            "properties": {
+                "productId": {
+                    "type": "string",
+                    "description": "The product identifier.\n"
+                },
+                "productName": {
+                    "type": "string",
+                    "description": "The product name.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "productId",
+                "productName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsCpCodesCpCode:getReportinggroupsCpCodesCpCode": {
+            "properties": {
+                "accessGroup": {
+                    "$ref": "#/types/akamai:index/getReportinggroupsCpCodesCpCodeAccessGroup:getReportinggroupsCpCodesCpCodeAccessGroup",
+                    "description": "The access control group associated with the CP code.\n"
+                },
+                "accountId": {
+                    "type": "string",
+                    "description": "The account identifier associated with the CP code.\n"
+                },
+                "contracts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getReportinggroupsCpCodesCpCodeContract:getReportinggroupsCpCodesCpCodeContract"
+                    },
+                    "description": "List of contracts associated with the CP code.\n"
+                },
+                "cpCodeId": {
+                    "type": "integer",
+                    "description": "The unique numeric identifier of the CP code.\n"
+                },
+                "defaultTimeZone": {
+                    "type": "string",
+                    "description": "The default time zone of the CP code.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the CP code.\n"
+                },
+                "overrideTimeZone": {
+                    "$ref": "#/types/akamai:index/getReportinggroupsCpCodesCpCodeOverrideTimeZone:getReportinggroupsCpCodesCpCodeOverrideTimeZone",
+                    "description": "The override time zone of the CP code.\n"
+                },
+                "products": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getReportinggroupsCpCodesCpCodeProduct:getReportinggroupsCpCodesCpCodeProduct"
+                    },
+                    "description": "List of products associated with the CP code.\n"
+                },
+                "purgeable": {
+                    "type": "boolean",
+                    "description": "Whether the CP code can be used to purge content.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of the CP code.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accessGroup",
+                "accountId",
+                "contracts",
+                "cpCodeId",
+                "defaultTimeZone",
+                "name",
+                "overrideTimeZone",
+                "products",
+                "purgeable",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsCpCodesCpCodeAccessGroup:getReportinggroupsCpCodesCpCodeAccessGroup": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract identifier assigned to the access control group.\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "The access control group identifier.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "groupId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsCpCodesCpCodeContract:getReportinggroupsCpCodesCpCodeContract": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract identifier.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The contract status.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "status"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsCpCodesCpCodeOverrideTimeZone:getReportinggroupsCpCodesCpCodeOverrideTimeZone": {
+            "properties": {
+                "timeZoneId": {
+                    "type": "string",
+                    "description": "The time zone identifier.\n"
+                },
+                "timeZoneValue": {
+                    "type": "string",
+                    "description": "The time zone value.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "timeZoneId",
+                "timeZoneValue"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsCpCodesCpCodeProduct:getReportinggroupsCpCodesCpCodeProduct": {
+            "properties": {
+                "productId": {
+                    "type": "string",
+                    "description": "The product identifier.\n"
+                },
+                "productName": {
+                    "type": "string",
+                    "description": "The product name.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "productId",
+                "productName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsGroupAccessGroup:getReportinggroupsGroupAccessGroup": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Identifies the contract assigned to the access control group.\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Identifies the access control group. May be null if the reporting group belongs to many groups.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "groupId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsGroupContract:getReportinggroupsGroupContract": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Identifies the contract assigned to the reporting group.\n"
+                },
+                "cpCodes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getReportinggroupsGroupContractCpCode:getReportinggroupsGroupContractCpCode"
+                    },
+                    "description": "A collection of CP codes assigned to the reporting group.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "cpCodes"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsGroupContractCpCode:getReportinggroupsGroupContractCpCode": {
+            "properties": {
+                "cpCodeId": {
+                    "type": "string",
+                    "description": "Identifies a CP code.\n"
+                },
+                "cpCodeName": {
+                    "type": "string",
+                    "description": "The descriptive label for the CP code.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cpCodeId",
+                "cpCodeName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsGroupsGroup:getReportinggroupsGroupsGroup": {
+            "properties": {
+                "accessGroup": {
+                    "$ref": "#/types/akamai:index/getReportinggroupsGroupsGroupAccessGroup:getReportinggroupsGroupsGroupAccessGroup",
+                    "description": "The access control group that controls access to specific CP codes.\n"
+                },
+                "contract": {
+                    "$ref": "#/types/akamai:index/getReportinggroupsGroupsGroupContract:getReportinggroupsGroupsGroupContract",
+                    "description": "The contract and CP codes assigned to the reporting group.\n"
+                },
+                "reportingGroupId": {
+                    "type": "integer",
+                    "description": "The unique identifier for the reporting group.\n"
+                },
+                "reportingGroupName": {
+                    "type": "string",
+                    "description": "The descriptive label for the reporting group.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accessGroup",
+                "contract",
+                "reportingGroupId",
+                "reportingGroupName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsGroupsGroupAccessGroup:getReportinggroupsGroupsGroupAccessGroup": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Identifies the contract assigned to the access control group.\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Identifies the access control group. May be null if the reporting group belongs to many groups.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "groupId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsGroupsGroupContract:getReportinggroupsGroupsGroupContract": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Identifies the contract assigned to the reporting group.\n"
+                },
+                "cpCodes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getReportinggroupsGroupsGroupContractCpCode:getReportinggroupsGroupsGroupContractCpCode"
+                    },
+                    "description": "A collection of CP codes assigned to the reporting group.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "cpCodes"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getReportinggroupsGroupsGroupContractCpCode:getReportinggroupsGroupsGroupContractCpCode": {
+            "properties": {
+                "cpCodeId": {
+                    "type": "string",
+                    "description": "Identifies a CP code.\n"
+                },
+                "cpCodeName": {
+                    "type": "string",
+                    "description": "The descriptive label for the CP code.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cpCodeId",
+                "cpCodeName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
         },
         "akamai:index/getZoneDnssecStatusCurrentRecords:getZoneDnssecStatusCurrentRecords": {
             "properties": {
@@ -20340,7 +21013,7 @@
                 },
                 "penaltyBoxAction": {
                     "type": "string",
-                    "description": "Action applied to requests from clients in the penalty box"
+                    "description": "The action to be taken when the penalty box is triggered"
                 },
                 "penaltyBoxProtection": {
                     "type": "boolean",
@@ -20364,7 +21037,7 @@
                 },
                 "penaltyBoxAction": {
                     "type": "string",
-                    "description": "Action applied to requests from clients in the penalty box"
+                    "description": "The action to be taken when the penalty box is triggered"
                 },
                 "penaltyBoxProtection": {
                     "type": "boolean",
@@ -20390,7 +21063,7 @@
                     },
                     "penaltyBoxAction": {
                         "type": "string",
-                        "description": "Action applied to requests from clients in the penalty box"
+                        "description": "The action to be taken when the penalty box is triggered"
                     },
                     "penaltyBoxProtection": {
                         "type": "boolean",
@@ -23158,6 +23831,16 @@
                 }
             },
             "required": [
+                "applyAccountProtectionControls",
+                "applyApiConstraints",
+                "applyApplicationLayerControls",
+                "applyBotmanControls",
+                "applyMalwareControls",
+                "applyNetworkLayerControls",
+                "applyRateControls",
+                "applyReputationControls",
+                "applySlowPostControls",
+                "applyUrlProtectionControls",
                 "configId",
                 "securityPolicyId"
             ],
@@ -23212,6 +23895,16 @@
                 }
             },
             "requiredInputs": [
+                "applyAccountProtectionControls",
+                "applyApiConstraints",
+                "applyApplicationLayerControls",
+                "applyBotmanControls",
+                "applyMalwareControls",
+                "applyNetworkLayerControls",
+                "applyRateControls",
+                "applyReputationControls",
+                "applySlowPostControls",
+                "applyUrlProtectionControls",
                 "configId",
                 "securityPolicyId"
             ],
@@ -27643,6 +28336,7 @@
                 "papiJson",
                 "productId",
                 "properties",
+                "samplingPercentage",
                 "streamName",
                 "streamVersion"
             ],
@@ -29000,6 +29694,10 @@
                     "type": "integer",
                     "description": "A unique identifier of the activation"
                 },
+                "autoPin": {
+                    "type": "boolean",
+                    "description": "Automatically pin the initial revision during parent EdgeWorker activation."
+                },
                 "edgeworkerId": {
                     "type": "integer",
                     "description": "Id of the EdgeWorker to activate"
@@ -29028,6 +29726,10 @@
                 "version"
             ],
             "inputProperties": {
+                "autoPin": {
+                    "type": "boolean",
+                    "description": "Automatically pin the initial revision during parent EdgeWorker activation."
+                },
                 "edgeworkerId": {
                     "type": "integer",
                     "description": "Id of the EdgeWorker to activate",
@@ -29061,6 +29763,10 @@
                     "activationId": {
                         "type": "integer",
                         "description": "A unique identifier of the activation"
+                    },
+                    "autoPin": {
+                        "type": "boolean",
+                        "description": "Automatically pin the initial revision during parent EdgeWorker activation."
                     },
                     "edgeworkerId": {
                         "type": "integer",
@@ -34121,6 +34827,73 @@
                 },
                 "type": "object"
             }
+        },
+        "akamai:index/reportinggroupsGroup:ReportinggroupsGroup": {
+            "properties": {
+                "accessGroup": {
+                    "$ref": "#/types/akamai:index/ReportinggroupsGroupAccessGroup:ReportinggroupsGroupAccessGroup",
+                    "description": "The access control group that controls access to specific CP codes."
+                },
+                "contract": {
+                    "$ref": "#/types/akamai:index/ReportinggroupsGroupContract:ReportinggroupsGroupContract",
+                    "description": "A collection of contracts and CP codes assigned to the reporting group. Exactly one contract is allowed."
+                },
+                "reportingGroupId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the reporting group. Populated after creation."
+                },
+                "reportingGroupName": {
+                    "type": "string",
+                    "description": "The descriptive label for the reporting group."
+                }
+            },
+            "required": [
+                "accessGroup",
+                "contract",
+                "reportingGroupId",
+                "reportingGroupName"
+            ],
+            "inputProperties": {
+                "accessGroup": {
+                    "$ref": "#/types/akamai:index/ReportinggroupsGroupAccessGroup:ReportinggroupsGroupAccessGroup",
+                    "description": "The access control group that controls access to specific CP codes."
+                },
+                "contract": {
+                    "$ref": "#/types/akamai:index/ReportinggroupsGroupContract:ReportinggroupsGroupContract",
+                    "description": "A collection of contracts and CP codes assigned to the reporting group. Exactly one contract is allowed."
+                },
+                "reportingGroupName": {
+                    "type": "string",
+                    "description": "The descriptive label for the reporting group."
+                }
+            },
+            "requiredInputs": [
+                "accessGroup",
+                "contract",
+                "reportingGroupName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ReportinggroupsGroup resources.\n",
+                "properties": {
+                    "accessGroup": {
+                        "$ref": "#/types/akamai:index/ReportinggroupsGroupAccessGroup:ReportinggroupsGroupAccessGroup",
+                        "description": "The access control group that controls access to specific CP codes."
+                    },
+                    "contract": {
+                        "$ref": "#/types/akamai:index/ReportinggroupsGroupContract:ReportinggroupsGroupContract",
+                        "description": "A collection of contracts and CP codes assigned to the reporting group. Exactly one contract is allowed."
+                    },
+                    "reportingGroupId": {
+                        "type": "integer",
+                        "description": "Unique identifier of the reporting group. Populated after creation."
+                    },
+                    "reportingGroupName": {
+                        "type": "string",
+                        "description": "The descriptive label for the reporting group."
+                    }
+                },
+                "type": "object"
+            }
         }
     },
     "functions": {
@@ -36142,6 +36915,9 @@
             "outputs": {
                 "description": "A collection of values returned by getAppSecSecurityPolicyProtections.\n",
                 "properties": {
+                    "applyAccountProtectionControls": {
+                        "type": "boolean"
+                    },
                     "applyApiConstraints": {
                         "type": "boolean"
                     },
@@ -36187,6 +36963,7 @@
                     }
                 },
                 "required": [
+                    "applyAccountProtectionControls",
                     "applyApiConstraints",
                     "applyApplicationLayerControls",
                     "applyBotmanControls",
@@ -41017,6 +41794,130 @@
                 "type": "object"
             }
         },
+        "akamai:index/getEdgeHostname:getEdgeHostname": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getEdgeHostname.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "options": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "contractId",
+                    "groupId",
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getEdgeHostname.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "edgeHostname": {
+                        "$ref": "#/types/akamai:index/getEdgeHostnameEdgeHostname:getEdgeHostnameEdgeHostname"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "options": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "contractId",
+                    "edgeHostname",
+                    "groupId",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getEdgeHostnames:getEdgeHostnames": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getEdgeHostnames.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "options": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "contractId",
+                    "groupId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getEdgeHostnames.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "edgeHostnames": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getEdgeHostnamesEdgeHostname:getEdgeHostnamesEdgeHostname"
+                        },
+                        "type": "array"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "options": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "contractId",
+                    "edgeHostnames",
+                    "groupId",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
         "akamai:index/getEdgeWorker:getEdgeWorker": {
             "inputs": {
                 "description": "A collection of arguments for invoking getEdgeWorker.\n",
@@ -43271,8 +44172,14 @@
                     "productionVersion": {
                         "type": "integer"
                     },
+                    "removalDate": {
+                        "type": "string"
+                    },
                     "stagingVersion": {
                         "type": "integer"
+                    },
+                    "status": {
+                        "type": "string"
                     },
                     "version": {
                         "type": "integer"
@@ -43291,6 +44198,12 @@
                     },
                     "versionModifiedDate": {
                         "type": "string"
+                    },
+                    "versionRemovalDate": {
+                        "type": "string"
+                    },
+                    "versionStatus": {
+                        "type": "string"
                     }
                 },
                 "required": [
@@ -43305,13 +44218,17 @@
                     "id",
                     "name",
                     "productionVersion",
+                    "removalDate",
                     "stagingVersion",
+                    "status",
                     "version",
                     "versionCreatedBy",
                     "versionCreatedDate",
                     "versionDescription",
                     "versionModifiedBy",
-                    "versionModifiedDate"
+                    "versionModifiedDate",
+                    "versionRemovalDate",
+                    "versionStatus"
                 ],
                 "type": "object"
             }
@@ -43648,6 +44565,12 @@
                     "activeVersionsOnly": {
                         "type": "boolean"
                     },
+                    "caSetVersionStatuses": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
                     "id": {
                         "type": "string"
                     },
@@ -43665,6 +44588,12 @@
                 "properties": {
                     "activeVersionsOnly": {
                         "type": "boolean"
+                    },
+                    "caSetVersionStatuses": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
                     },
                     "id": {
                         "type": "string"
@@ -43697,6 +44626,12 @@
                     "activatedOn": {
                         "type": "string"
                     },
+                    "caSetStatuses": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
                     "namePrefix": {
                         "type": "string"
                     }
@@ -43708,6 +44643,12 @@
                 "properties": {
                     "activatedOn": {
                         "type": "string"
+                    },
+                    "caSetStatuses": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
                     },
                     "caSets": {
                         "items": {
@@ -45130,6 +46071,226 @@
                 },
                 "required": [
                     "json",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getReportinggroupsCpCode:getReportinggroupsCpCode": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getReportinggroupsCpCode.\n",
+                "properties": {
+                    "cpCodeId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "cpCodeId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getReportinggroupsCpCode.\n",
+                "properties": {
+                    "accessGroup": {
+                        "$ref": "#/types/akamai:index/getReportinggroupsCpCodeAccessGroup:getReportinggroupsCpCodeAccessGroup"
+                    },
+                    "accountId": {
+                        "type": "string"
+                    },
+                    "contracts": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getReportinggroupsCpCodeContract:getReportinggroupsCpCodeContract"
+                        },
+                        "type": "array"
+                    },
+                    "cpCodeId": {
+                        "type": "integer"
+                    },
+                    "defaultTimeZone": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "overrideTimeZone": {
+                        "$ref": "#/types/akamai:index/getReportinggroupsCpCodeOverrideTimeZone:getReportinggroupsCpCodeOverrideTimeZone"
+                    },
+                    "products": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getReportinggroupsCpCodeProduct:getReportinggroupsCpCodeProduct"
+                        },
+                        "type": "array"
+                    },
+                    "purgeable": {
+                        "type": "boolean"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accessGroup",
+                    "accountId",
+                    "contracts",
+                    "cpCodeId",
+                    "defaultTimeZone",
+                    "name",
+                    "overrideTimeZone",
+                    "products",
+                    "purgeable",
+                    "type",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getReportinggroupsCpCodes:getReportinggroupsCpCodes": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getReportinggroupsCpCodes.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "cpCodeName": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "productId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getReportinggroupsCpCodes.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "cpCodeName": {
+                        "type": "string"
+                    },
+                    "cpCodes": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getReportinggroupsCpCodesCpCode:getReportinggroupsCpCodesCpCode"
+                        },
+                        "type": "array"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "productId": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "cpCodes",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getReportinggroupsGroup:getReportinggroupsGroup": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getReportinggroupsGroup.\n",
+                "properties": {
+                    "reportingGroupId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "reportingGroupId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getReportinggroupsGroup.\n",
+                "properties": {
+                    "accessGroup": {
+                        "$ref": "#/types/akamai:index/getReportinggroupsGroupAccessGroup:getReportinggroupsGroupAccessGroup"
+                    },
+                    "contract": {
+                        "$ref": "#/types/akamai:index/getReportinggroupsGroupContract:getReportinggroupsGroupContract"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "reportingGroupId": {
+                        "type": "integer"
+                    },
+                    "reportingGroupName": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accessGroup",
+                    "contract",
+                    "reportingGroupId",
+                    "reportingGroupName",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getReportinggroupsGroups:getReportinggroupsGroups": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getReportinggroupsGroups.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "cpCodeId": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "reportingGroupName": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getReportinggroupsGroups.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "cpCodeId": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getReportinggroupsGroupsGroup:getReportinggroupsGroupsGroup"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "reportingGroupName": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "groups",
                     "id"
                 ],
                 "type": "object"

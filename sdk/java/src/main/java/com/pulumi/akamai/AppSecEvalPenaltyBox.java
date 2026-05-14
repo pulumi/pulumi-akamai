@@ -32,14 +32,14 @@ public class AppSecEvalPenaltyBox extends com.pulumi.resources.CustomResource {
         return this.configId;
     }
     /**
-     * Action applied to requests from clients in the penalty box
+     * The action to be taken when the penalty box is triggered
      * 
      */
     @Export(name="penaltyBoxAction", refs={String.class}, tree="[0]")
     private Output<String> penaltyBoxAction;
 
     /**
-     * @return Action applied to requests from clients in the penalty box
+     * @return The action to be taken when the penalty box is triggered
      * 
      */
     public Output<String> penaltyBoxAction() {

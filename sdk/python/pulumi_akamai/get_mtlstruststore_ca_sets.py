@@ -27,10 +27,13 @@ class GetMtlstruststoreCaSetsResult:
     """
     A collection of values returned by getMtlstruststoreCaSets.
     """
-    def __init__(__self__, activated_on=None, ca_sets=None, id=None, name_prefix=None):
+    def __init__(__self__, activated_on=None, ca_set_statuses=None, ca_sets=None, id=None, name_prefix=None):
         if activated_on and not isinstance(activated_on, str):
             raise TypeError("Expected argument 'activated_on' to be a str")
         pulumi.set(__self__, "activated_on", activated_on)
+        if ca_set_statuses and not isinstance(ca_set_statuses, list):
+            raise TypeError("Expected argument 'ca_set_statuses' to be a list")
+        pulumi.set(__self__, "ca_set_statuses", ca_set_statuses)
         if ca_sets and not isinstance(ca_sets, list):
             raise TypeError("Expected argument 'ca_sets' to be a list")
         pulumi.set(__self__, "ca_sets", ca_sets)
@@ -45,6 +48,11 @@ class GetMtlstruststoreCaSetsResult:
     @pulumi.getter(name="activatedOn")
     def activated_on(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "activated_on")
+
+    @_builtins.property
+    @pulumi.getter(name="caSetStatuses")
+    def ca_set_statuses(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "ca_set_statuses")
 
     @_builtins.property
     @pulumi.getter(name="caSets")
@@ -72,12 +80,14 @@ class AwaitableGetMtlstruststoreCaSetsResult(GetMtlstruststoreCaSetsResult):
             yield self
         return GetMtlstruststoreCaSetsResult(
             activated_on=self.activated_on,
+            ca_set_statuses=self.ca_set_statuses,
             ca_sets=self.ca_sets,
             id=self.id,
             name_prefix=self.name_prefix)
 
 
 def get_mtlstruststore_ca_sets(activated_on: Optional[_builtins.str] = None,
+                               ca_set_statuses: Optional[Sequence[_builtins.str]] = None,
                                name_prefix: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMtlstruststoreCaSetsResult:
     """
@@ -85,16 +95,19 @@ def get_mtlstruststore_ca_sets(activated_on: Optional[_builtins.str] = None,
     """
     __args__ = dict()
     __args__['activatedOn'] = activated_on
+    __args__['caSetStatuses'] = ca_set_statuses
     __args__['namePrefix'] = name_prefix
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getMtlstruststoreCaSets:getMtlstruststoreCaSets', __args__, opts=opts, typ=GetMtlstruststoreCaSetsResult).value
 
     return AwaitableGetMtlstruststoreCaSetsResult(
         activated_on=pulumi.get(__ret__, 'activated_on'),
+        ca_set_statuses=pulumi.get(__ret__, 'ca_set_statuses'),
         ca_sets=pulumi.get(__ret__, 'ca_sets'),
         id=pulumi.get(__ret__, 'id'),
         name_prefix=pulumi.get(__ret__, 'name_prefix'))
 def get_mtlstruststore_ca_sets_output(activated_on: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      ca_set_statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                       name_prefix: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMtlstruststoreCaSetsResult]:
     """
@@ -102,11 +115,13 @@ def get_mtlstruststore_ca_sets_output(activated_on: pulumi.Input[Optional[Option
     """
     __args__ = dict()
     __args__['activatedOn'] = activated_on
+    __args__['caSetStatuses'] = ca_set_statuses
     __args__['namePrefix'] = name_prefix
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getMtlstruststoreCaSets:getMtlstruststoreCaSets', __args__, opts=opts, typ=GetMtlstruststoreCaSetsResult)
     return __ret__.apply(lambda __response__: GetMtlstruststoreCaSetsResult(
         activated_on=pulumi.get(__response__, 'activated_on'),
+        ca_set_statuses=pulumi.get(__response__, 'ca_set_statuses'),
         ca_sets=pulumi.get(__response__, 'ca_sets'),
         id=pulumi.get(__response__, 'id'),
         name_prefix=pulumi.get(__response__, 'name_prefix')))

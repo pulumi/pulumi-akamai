@@ -37,7 +37,7 @@ export class AppSecEvalPenaltyBox extends pulumi.CustomResource {
      */
     declare public readonly configId: pulumi.Output<number>;
     /**
-     * Action applied to requests from clients in the penalty box
+     * The action to be taken when the penalty box is triggered
      */
     declare public readonly penaltyBoxAction: pulumi.Output<string>;
     /**
@@ -99,7 +99,7 @@ export interface AppSecEvalPenaltyBoxState {
      */
     configId?: pulumi.Input<number | undefined>;
     /**
-     * Action applied to requests from clients in the penalty box
+     * The action to be taken when the penalty box is triggered
      */
     penaltyBoxAction?: pulumi.Input<string | undefined>;
     /**
@@ -121,7 +121,7 @@ export interface AppSecEvalPenaltyBoxArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * Action applied to requests from clients in the penalty box
+     * The action to be taken when the penalty box is triggered
      */
     penaltyBoxAction: pulumi.Input<string>;
     /**

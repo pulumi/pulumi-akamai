@@ -6,6 +6,7 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.akamai.inputs.EdgeWorkersActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -30,6 +31,21 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
      */
     public Optional<Output<Integer>> activationId() {
         return Optional.ofNullable(this.activationId);
+    }
+
+    /**
+     * Automatically pin the initial revision during parent EdgeWorker activation.
+     * 
+     */
+    @Import(name="autoPin")
+    private @Nullable Output<Boolean> autoPin;
+
+    /**
+     * @return Automatically pin the initial revision during parent EdgeWorker activation.
+     * 
+     */
+    public Optional<Output<Boolean>> autoPin() {
+        return Optional.ofNullable(this.autoPin);
     }
 
     /**
@@ -111,6 +127,7 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
 
     private EdgeWorkersActivationState(EdgeWorkersActivationState $) {
         this.activationId = $.activationId;
+        this.autoPin = $.autoPin;
         this.edgeworkerId = $.edgeworkerId;
         this.network = $.network;
         this.note = $.note;
@@ -155,6 +172,27 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
          */
         public Builder activationId(Integer activationId) {
             return activationId(Output.of(activationId));
+        }
+
+        /**
+         * @param autoPin Automatically pin the initial revision during parent EdgeWorker activation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoPin(@Nullable Output<Boolean> autoPin) {
+            $.autoPin = autoPin;
+            return this;
+        }
+
+        /**
+         * @param autoPin Automatically pin the initial revision during parent EdgeWorker activation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoPin(Boolean autoPin) {
+            return autoPin(Output.of(autoPin));
         }
 
         /**

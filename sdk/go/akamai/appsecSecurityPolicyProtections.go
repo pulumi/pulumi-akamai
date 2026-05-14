@@ -16,25 +16,25 @@ type AppsecSecurityPolicyProtections struct {
 	pulumi.CustomResourceState
 
 	// Whether to enable account protection controls.
-	ApplyAccountProtectionControls pulumi.BoolPtrOutput `pulumi:"applyAccountProtectionControls"`
+	ApplyAccountProtectionControls pulumi.BoolOutput `pulumi:"applyAccountProtectionControls"`
 	// Whether to enable API constraints.
-	ApplyApiConstraints pulumi.BoolPtrOutput `pulumi:"applyApiConstraints"`
+	ApplyApiConstraints pulumi.BoolOutput `pulumi:"applyApiConstraints"`
 	// Whether to enable application layer controls.
-	ApplyApplicationLayerControls pulumi.BoolPtrOutput `pulumi:"applyApplicationLayerControls"`
+	ApplyApplicationLayerControls pulumi.BoolOutput `pulumi:"applyApplicationLayerControls"`
 	// Whether to enable botman controls.
-	ApplyBotmanControls pulumi.BoolPtrOutput `pulumi:"applyBotmanControls"`
+	ApplyBotmanControls pulumi.BoolOutput `pulumi:"applyBotmanControls"`
 	// Whether to enable malware controls.
-	ApplyMalwareControls pulumi.BoolPtrOutput `pulumi:"applyMalwareControls"`
+	ApplyMalwareControls pulumi.BoolOutput `pulumi:"applyMalwareControls"`
 	// Whether to enable network layer controls.
-	ApplyNetworkLayerControls pulumi.BoolPtrOutput `pulumi:"applyNetworkLayerControls"`
+	ApplyNetworkLayerControls pulumi.BoolOutput `pulumi:"applyNetworkLayerControls"`
 	// Whether to enable rate controls.
-	ApplyRateControls pulumi.BoolPtrOutput `pulumi:"applyRateControls"`
+	ApplyRateControls pulumi.BoolOutput `pulumi:"applyRateControls"`
 	// Whether to enable reputation controls.
-	ApplyReputationControls pulumi.BoolPtrOutput `pulumi:"applyReputationControls"`
+	ApplyReputationControls pulumi.BoolOutput `pulumi:"applyReputationControls"`
 	// Whether to enable slow post controls.
-	ApplySlowPostControls pulumi.BoolPtrOutput `pulumi:"applySlowPostControls"`
+	ApplySlowPostControls pulumi.BoolOutput `pulumi:"applySlowPostControls"`
 	// Whether to enable URL protection controls.
-	ApplyUrlProtectionControls pulumi.BoolPtrOutput `pulumi:"applyUrlProtectionControls"`
+	ApplyUrlProtectionControls pulumi.BoolOutput `pulumi:"applyUrlProtectionControls"`
 	// Unique identifier of the security configuration.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// Unique identifier of the security policy.
@@ -48,6 +48,36 @@ func NewAppsecSecurityPolicyProtections(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.ApplyAccountProtectionControls == nil {
+		return nil, errors.New("invalid value for required argument 'ApplyAccountProtectionControls'")
+	}
+	if args.ApplyApiConstraints == nil {
+		return nil, errors.New("invalid value for required argument 'ApplyApiConstraints'")
+	}
+	if args.ApplyApplicationLayerControls == nil {
+		return nil, errors.New("invalid value for required argument 'ApplyApplicationLayerControls'")
+	}
+	if args.ApplyBotmanControls == nil {
+		return nil, errors.New("invalid value for required argument 'ApplyBotmanControls'")
+	}
+	if args.ApplyMalwareControls == nil {
+		return nil, errors.New("invalid value for required argument 'ApplyMalwareControls'")
+	}
+	if args.ApplyNetworkLayerControls == nil {
+		return nil, errors.New("invalid value for required argument 'ApplyNetworkLayerControls'")
+	}
+	if args.ApplyRateControls == nil {
+		return nil, errors.New("invalid value for required argument 'ApplyRateControls'")
+	}
+	if args.ApplyReputationControls == nil {
+		return nil, errors.New("invalid value for required argument 'ApplyReputationControls'")
+	}
+	if args.ApplySlowPostControls == nil {
+		return nil, errors.New("invalid value for required argument 'ApplySlowPostControls'")
+	}
+	if args.ApplyUrlProtectionControls == nil {
+		return nil, errors.New("invalid value for required argument 'ApplyUrlProtectionControls'")
+	}
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
 	}
@@ -136,25 +166,25 @@ func (AppsecSecurityPolicyProtectionsState) ElementType() reflect.Type {
 
 type appsecSecurityPolicyProtectionsArgs struct {
 	// Whether to enable account protection controls.
-	ApplyAccountProtectionControls *bool `pulumi:"applyAccountProtectionControls"`
+	ApplyAccountProtectionControls bool `pulumi:"applyAccountProtectionControls"`
 	// Whether to enable API constraints.
-	ApplyApiConstraints *bool `pulumi:"applyApiConstraints"`
+	ApplyApiConstraints bool `pulumi:"applyApiConstraints"`
 	// Whether to enable application layer controls.
-	ApplyApplicationLayerControls *bool `pulumi:"applyApplicationLayerControls"`
+	ApplyApplicationLayerControls bool `pulumi:"applyApplicationLayerControls"`
 	// Whether to enable botman controls.
-	ApplyBotmanControls *bool `pulumi:"applyBotmanControls"`
+	ApplyBotmanControls bool `pulumi:"applyBotmanControls"`
 	// Whether to enable malware controls.
-	ApplyMalwareControls *bool `pulumi:"applyMalwareControls"`
+	ApplyMalwareControls bool `pulumi:"applyMalwareControls"`
 	// Whether to enable network layer controls.
-	ApplyNetworkLayerControls *bool `pulumi:"applyNetworkLayerControls"`
+	ApplyNetworkLayerControls bool `pulumi:"applyNetworkLayerControls"`
 	// Whether to enable rate controls.
-	ApplyRateControls *bool `pulumi:"applyRateControls"`
+	ApplyRateControls bool `pulumi:"applyRateControls"`
 	// Whether to enable reputation controls.
-	ApplyReputationControls *bool `pulumi:"applyReputationControls"`
+	ApplyReputationControls bool `pulumi:"applyReputationControls"`
 	// Whether to enable slow post controls.
-	ApplySlowPostControls *bool `pulumi:"applySlowPostControls"`
+	ApplySlowPostControls bool `pulumi:"applySlowPostControls"`
 	// Whether to enable URL protection controls.
-	ApplyUrlProtectionControls *bool `pulumi:"applyUrlProtectionControls"`
+	ApplyUrlProtectionControls bool `pulumi:"applyUrlProtectionControls"`
 	// Unique identifier of the security configuration.
 	ConfigId int `pulumi:"configId"`
 	// Unique identifier of the security policy.
@@ -164,25 +194,25 @@ type appsecSecurityPolicyProtectionsArgs struct {
 // The set of arguments for constructing a AppsecSecurityPolicyProtections resource.
 type AppsecSecurityPolicyProtectionsArgs struct {
 	// Whether to enable account protection controls.
-	ApplyAccountProtectionControls pulumi.BoolPtrInput
+	ApplyAccountProtectionControls pulumi.BoolInput
 	// Whether to enable API constraints.
-	ApplyApiConstraints pulumi.BoolPtrInput
+	ApplyApiConstraints pulumi.BoolInput
 	// Whether to enable application layer controls.
-	ApplyApplicationLayerControls pulumi.BoolPtrInput
+	ApplyApplicationLayerControls pulumi.BoolInput
 	// Whether to enable botman controls.
-	ApplyBotmanControls pulumi.BoolPtrInput
+	ApplyBotmanControls pulumi.BoolInput
 	// Whether to enable malware controls.
-	ApplyMalwareControls pulumi.BoolPtrInput
+	ApplyMalwareControls pulumi.BoolInput
 	// Whether to enable network layer controls.
-	ApplyNetworkLayerControls pulumi.BoolPtrInput
+	ApplyNetworkLayerControls pulumi.BoolInput
 	// Whether to enable rate controls.
-	ApplyRateControls pulumi.BoolPtrInput
+	ApplyRateControls pulumi.BoolInput
 	// Whether to enable reputation controls.
-	ApplyReputationControls pulumi.BoolPtrInput
+	ApplyReputationControls pulumi.BoolInput
 	// Whether to enable slow post controls.
-	ApplySlowPostControls pulumi.BoolPtrInput
+	ApplySlowPostControls pulumi.BoolInput
 	// Whether to enable URL protection controls.
-	ApplyUrlProtectionControls pulumi.BoolPtrInput
+	ApplyUrlProtectionControls pulumi.BoolInput
 	// Unique identifier of the security configuration.
 	ConfigId pulumi.IntInput
 	// Unique identifier of the security policy.
@@ -277,53 +307,53 @@ func (o AppsecSecurityPolicyProtectionsOutput) ToAppsecSecurityPolicyProtections
 }
 
 // Whether to enable account protection controls.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplyAccountProtectionControls() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplyAccountProtectionControls }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplyAccountProtectionControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplyAccountProtectionControls }).(pulumi.BoolOutput)
 }
 
 // Whether to enable API constraints.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplyApiConstraints() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplyApiConstraints }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplyApiConstraints() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplyApiConstraints }).(pulumi.BoolOutput)
 }
 
 // Whether to enable application layer controls.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplyApplicationLayerControls() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplyApplicationLayerControls }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplyApplicationLayerControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplyApplicationLayerControls }).(pulumi.BoolOutput)
 }
 
 // Whether to enable botman controls.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplyBotmanControls() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplyBotmanControls }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplyBotmanControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplyBotmanControls }).(pulumi.BoolOutput)
 }
 
 // Whether to enable malware controls.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplyMalwareControls() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplyMalwareControls }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplyMalwareControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplyMalwareControls }).(pulumi.BoolOutput)
 }
 
 // Whether to enable network layer controls.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplyNetworkLayerControls() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplyNetworkLayerControls }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplyNetworkLayerControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplyNetworkLayerControls }).(pulumi.BoolOutput)
 }
 
 // Whether to enable rate controls.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplyRateControls() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplyRateControls }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplyRateControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplyRateControls }).(pulumi.BoolOutput)
 }
 
 // Whether to enable reputation controls.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplyReputationControls() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplyReputationControls }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplyReputationControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplyReputationControls }).(pulumi.BoolOutput)
 }
 
 // Whether to enable slow post controls.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplySlowPostControls() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplySlowPostControls }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplySlowPostControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplySlowPostControls }).(pulumi.BoolOutput)
 }
 
 // Whether to enable URL protection controls.
-func (o AppsecSecurityPolicyProtectionsOutput) ApplyUrlProtectionControls() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolPtrOutput { return v.ApplyUrlProtectionControls }).(pulumi.BoolPtrOutput)
+func (o AppsecSecurityPolicyProtectionsOutput) ApplyUrlProtectionControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsecSecurityPolicyProtections) pulumi.BoolOutput { return v.ApplyUrlProtectionControls }).(pulumi.BoolOutput)
 }
 
 // Unique identifier of the security configuration.

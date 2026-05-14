@@ -6,6 +6,7 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -20,6 +21,13 @@ public final class GetMtlstruststoreCaSetVersionsPlainArgs extends com.pulumi.re
 
     public Optional<Boolean> activeVersionsOnly() {
         return Optional.ofNullable(this.activeVersionsOnly);
+    }
+
+    @Import(name="caSetVersionStatuses")
+    private @Nullable List<String> caSetVersionStatuses;
+
+    public Optional<List<String>> caSetVersionStatuses() {
+        return Optional.ofNullable(this.caSetVersionStatuses);
     }
 
     @Import(name="id")
@@ -47,6 +55,7 @@ public final class GetMtlstruststoreCaSetVersionsPlainArgs extends com.pulumi.re
 
     private GetMtlstruststoreCaSetVersionsPlainArgs(GetMtlstruststoreCaSetVersionsPlainArgs $) {
         this.activeVersionsOnly = $.activeVersionsOnly;
+        this.caSetVersionStatuses = $.caSetVersionStatuses;
         this.id = $.id;
         this.includeCertificates = $.includeCertificates;
         this.name = $.name;
@@ -73,6 +82,15 @@ public final class GetMtlstruststoreCaSetVersionsPlainArgs extends com.pulumi.re
         public Builder activeVersionsOnly(@Nullable Boolean activeVersionsOnly) {
             $.activeVersionsOnly = activeVersionsOnly;
             return this;
+        }
+
+        public Builder caSetVersionStatuses(@Nullable List<String> caSetVersionStatuses) {
+            $.caSetVersionStatuses = caSetVersionStatuses;
+            return this;
+        }
+
+        public Builder caSetVersionStatuses(String... caSetVersionStatuses) {
+            return caSetVersionStatuses(List.of(caSetVersionStatuses));
         }
 
         public Builder id(@Nullable String id) {

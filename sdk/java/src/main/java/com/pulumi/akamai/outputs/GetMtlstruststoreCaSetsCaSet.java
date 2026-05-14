@@ -62,6 +62,11 @@ public final class GetMtlstruststoreCaSetsCaSet {
      */
     private Integer productionVersion;
     /**
+     * @return The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.
+     * 
+     */
+    private String removalDate;
+    /**
      * @return The CA set version activated on the &#39;STAGING&#39; network.
      * 
      */
@@ -144,6 +149,13 @@ public final class GetMtlstruststoreCaSetsCaSet {
         return this.productionVersion;
     }
     /**
+     * @return The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.
+     * 
+     */
+    public String removalDate() {
+        return this.removalDate;
+    }
+    /**
      * @return The CA set version activated on the &#39;STAGING&#39; network.
      * 
      */
@@ -177,6 +189,7 @@ public final class GetMtlstruststoreCaSetsCaSet {
         private Integer latestVersion;
         private String name;
         private Integer productionVersion;
+        private String removalDate;
         private Integer stagingVersion;
         private String status;
         public Builder() {}
@@ -192,6 +205,7 @@ public final class GetMtlstruststoreCaSetsCaSet {
     	      this.latestVersion = defaults.latestVersion;
     	      this.name = defaults.name;
     	      this.productionVersion = defaults.productionVersion;
+    	      this.removalDate = defaults.removalDate;
     	      this.stagingVersion = defaults.stagingVersion;
     	      this.status = defaults.status;
         }
@@ -277,6 +291,14 @@ public final class GetMtlstruststoreCaSetsCaSet {
             return this;
         }
         @CustomType.Setter
+        public Builder removalDate(String removalDate) {
+            if (removalDate == null) {
+              throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetsCaSet", "removalDate");
+            }
+            this.removalDate = removalDate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stagingVersion(Integer stagingVersion) {
             if (stagingVersion == null) {
               throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetsCaSet", "stagingVersion");
@@ -304,6 +326,7 @@ public final class GetMtlstruststoreCaSetsCaSet {
             _resultValue.latestVersion = latestVersion;
             _resultValue.name = name;
             _resultValue.productionVersion = productionVersion;
+            _resultValue.removalDate = removalDate;
             _resultValue.stagingVersion = stagingVersion;
             _resultValue.status = status;
             return _resultValue;

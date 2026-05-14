@@ -26,7 +26,10 @@ class GetAppSecSecurityPolicyProtectionsResult:
     """
     A collection of values returned by getAppSecSecurityPolicyProtections.
     """
-    def __init__(__self__, apply_api_constraints=None, apply_application_layer_controls=None, apply_botman_controls=None, apply_malware_controls=None, apply_network_layer_controls=None, apply_rate_controls=None, apply_reputation_controls=None, apply_slow_post_controls=None, apply_url_protection_controls=None, config_id=None, id=None, json=None, output_text=None, security_policy_id=None):
+    def __init__(__self__, apply_account_protection_controls=None, apply_api_constraints=None, apply_application_layer_controls=None, apply_botman_controls=None, apply_malware_controls=None, apply_network_layer_controls=None, apply_rate_controls=None, apply_reputation_controls=None, apply_slow_post_controls=None, apply_url_protection_controls=None, config_id=None, id=None, json=None, output_text=None, security_policy_id=None):
+        if apply_account_protection_controls and not isinstance(apply_account_protection_controls, bool):
+            raise TypeError("Expected argument 'apply_account_protection_controls' to be a bool")
+        pulumi.set(__self__, "apply_account_protection_controls", apply_account_protection_controls)
         if apply_api_constraints and not isinstance(apply_api_constraints, bool):
             raise TypeError("Expected argument 'apply_api_constraints' to be a bool")
         pulumi.set(__self__, "apply_api_constraints", apply_api_constraints)
@@ -69,6 +72,11 @@ class GetAppSecSecurityPolicyProtectionsResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applyAccountProtectionControls")
+    def apply_account_protection_controls(self) -> _builtins.bool:
+        return pulumi.get(self, "apply_account_protection_controls")
 
     @_builtins.property
     @pulumi.getter(name="applyApiConstraints")
@@ -150,6 +158,7 @@ class AwaitableGetAppSecSecurityPolicyProtectionsResult(GetAppSecSecurityPolicyP
         if False:
             yield self
         return GetAppSecSecurityPolicyProtectionsResult(
+            apply_account_protection_controls=self.apply_account_protection_controls,
             apply_api_constraints=self.apply_api_constraints,
             apply_application_layer_controls=self.apply_application_layer_controls,
             apply_botman_controls=self.apply_botman_controls,
@@ -179,6 +188,7 @@ def get_app_sec_security_policy_protections(config_id: Optional[_builtins.int] =
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections', __args__, opts=opts, typ=GetAppSecSecurityPolicyProtectionsResult).value
 
     return AwaitableGetAppSecSecurityPolicyProtectionsResult(
+        apply_account_protection_controls=pulumi.get(__ret__, 'apply_account_protection_controls'),
         apply_api_constraints=pulumi.get(__ret__, 'apply_api_constraints'),
         apply_application_layer_controls=pulumi.get(__ret__, 'apply_application_layer_controls'),
         apply_botman_controls=pulumi.get(__ret__, 'apply_botman_controls'),
@@ -205,6 +215,7 @@ def get_app_sec_security_policy_protections_output(config_id: pulumi.Input[Optio
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections', __args__, opts=opts, typ=GetAppSecSecurityPolicyProtectionsResult)
     return __ret__.apply(lambda __response__: GetAppSecSecurityPolicyProtectionsResult(
+        apply_account_protection_controls=pulumi.get(__response__, 'apply_account_protection_controls'),
         apply_api_constraints=pulumi.get(__response__, 'apply_api_constraints'),
         apply_application_layer_controls=pulumi.get(__response__, 'apply_application_layer_controls'),
         apply_botman_controls=pulumi.get(__response__, 'apply_botman_controls'),

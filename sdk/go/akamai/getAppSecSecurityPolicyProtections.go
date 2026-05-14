@@ -29,16 +29,17 @@ type GetAppSecSecurityPolicyProtectionsArgs struct {
 
 // A collection of values returned by getAppSecSecurityPolicyProtections.
 type GetAppSecSecurityPolicyProtectionsResult struct {
-	ApplyApiConstraints           bool `pulumi:"applyApiConstraints"`
-	ApplyApplicationLayerControls bool `pulumi:"applyApplicationLayerControls"`
-	ApplyBotmanControls           bool `pulumi:"applyBotmanControls"`
-	ApplyMalwareControls          bool `pulumi:"applyMalwareControls"`
-	ApplyNetworkLayerControls     bool `pulumi:"applyNetworkLayerControls"`
-	ApplyRateControls             bool `pulumi:"applyRateControls"`
-	ApplyReputationControls       bool `pulumi:"applyReputationControls"`
-	ApplySlowPostControls         bool `pulumi:"applySlowPostControls"`
-	ApplyUrlProtectionControls    bool `pulumi:"applyUrlProtectionControls"`
-	ConfigId                      int  `pulumi:"configId"`
+	ApplyAccountProtectionControls bool `pulumi:"applyAccountProtectionControls"`
+	ApplyApiConstraints            bool `pulumi:"applyApiConstraints"`
+	ApplyApplicationLayerControls  bool `pulumi:"applyApplicationLayerControls"`
+	ApplyBotmanControls            bool `pulumi:"applyBotmanControls"`
+	ApplyMalwareControls           bool `pulumi:"applyMalwareControls"`
+	ApplyNetworkLayerControls      bool `pulumi:"applyNetworkLayerControls"`
+	ApplyRateControls              bool `pulumi:"applyRateControls"`
+	ApplyReputationControls        bool `pulumi:"applyReputationControls"`
+	ApplySlowPostControls          bool `pulumi:"applySlowPostControls"`
+	ApplyUrlProtectionControls     bool `pulumi:"applyUrlProtectionControls"`
+	ConfigId                       int  `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id               string `pulumi:"id"`
 	Json             string `pulumi:"json"`
@@ -78,6 +79,10 @@ func (o GetAppSecSecurityPolicyProtectionsResultOutput) ToGetAppSecSecurityPolic
 
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ToGetAppSecSecurityPolicyProtectionsResultOutputWithContext(ctx context.Context) GetAppSecSecurityPolicyProtectionsResultOutput {
 	return o
+}
+
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyAccountProtectionControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyAccountProtectionControls }).(pulumi.BoolOutput)
 }
 
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyApiConstraints() pulumi.BoolOutput {

@@ -10,8 +10,6 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resources.ResourceArgs {
@@ -22,150 +20,150 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
      * Whether to enable account protection controls.
      * 
      */
-    @Import(name="applyAccountProtectionControls")
-    private @Nullable Output<Boolean> applyAccountProtectionControls;
+    @Import(name="applyAccountProtectionControls", required=true)
+    private Output<Boolean> applyAccountProtectionControls;
 
     /**
      * @return Whether to enable account protection controls.
      * 
      */
-    public Optional<Output<Boolean>> applyAccountProtectionControls() {
-        return Optional.ofNullable(this.applyAccountProtectionControls);
+    public Output<Boolean> applyAccountProtectionControls() {
+        return this.applyAccountProtectionControls;
     }
 
     /**
      * Whether to enable API constraints.
      * 
      */
-    @Import(name="applyApiConstraints")
-    private @Nullable Output<Boolean> applyApiConstraints;
+    @Import(name="applyApiConstraints", required=true)
+    private Output<Boolean> applyApiConstraints;
 
     /**
      * @return Whether to enable API constraints.
      * 
      */
-    public Optional<Output<Boolean>> applyApiConstraints() {
-        return Optional.ofNullable(this.applyApiConstraints);
+    public Output<Boolean> applyApiConstraints() {
+        return this.applyApiConstraints;
     }
 
     /**
      * Whether to enable application layer controls.
      * 
      */
-    @Import(name="applyApplicationLayerControls")
-    private @Nullable Output<Boolean> applyApplicationLayerControls;
+    @Import(name="applyApplicationLayerControls", required=true)
+    private Output<Boolean> applyApplicationLayerControls;
 
     /**
      * @return Whether to enable application layer controls.
      * 
      */
-    public Optional<Output<Boolean>> applyApplicationLayerControls() {
-        return Optional.ofNullable(this.applyApplicationLayerControls);
+    public Output<Boolean> applyApplicationLayerControls() {
+        return this.applyApplicationLayerControls;
     }
 
     /**
      * Whether to enable botman controls.
      * 
      */
-    @Import(name="applyBotmanControls")
-    private @Nullable Output<Boolean> applyBotmanControls;
+    @Import(name="applyBotmanControls", required=true)
+    private Output<Boolean> applyBotmanControls;
 
     /**
      * @return Whether to enable botman controls.
      * 
      */
-    public Optional<Output<Boolean>> applyBotmanControls() {
-        return Optional.ofNullable(this.applyBotmanControls);
+    public Output<Boolean> applyBotmanControls() {
+        return this.applyBotmanControls;
     }
 
     /**
      * Whether to enable malware controls.
      * 
      */
-    @Import(name="applyMalwareControls")
-    private @Nullable Output<Boolean> applyMalwareControls;
+    @Import(name="applyMalwareControls", required=true)
+    private Output<Boolean> applyMalwareControls;
 
     /**
      * @return Whether to enable malware controls.
      * 
      */
-    public Optional<Output<Boolean>> applyMalwareControls() {
-        return Optional.ofNullable(this.applyMalwareControls);
+    public Output<Boolean> applyMalwareControls() {
+        return this.applyMalwareControls;
     }
 
     /**
      * Whether to enable network layer controls.
      * 
      */
-    @Import(name="applyNetworkLayerControls")
-    private @Nullable Output<Boolean> applyNetworkLayerControls;
+    @Import(name="applyNetworkLayerControls", required=true)
+    private Output<Boolean> applyNetworkLayerControls;
 
     /**
      * @return Whether to enable network layer controls.
      * 
      */
-    public Optional<Output<Boolean>> applyNetworkLayerControls() {
-        return Optional.ofNullable(this.applyNetworkLayerControls);
+    public Output<Boolean> applyNetworkLayerControls() {
+        return this.applyNetworkLayerControls;
     }
 
     /**
      * Whether to enable rate controls.
      * 
      */
-    @Import(name="applyRateControls")
-    private @Nullable Output<Boolean> applyRateControls;
+    @Import(name="applyRateControls", required=true)
+    private Output<Boolean> applyRateControls;
 
     /**
      * @return Whether to enable rate controls.
      * 
      */
-    public Optional<Output<Boolean>> applyRateControls() {
-        return Optional.ofNullable(this.applyRateControls);
+    public Output<Boolean> applyRateControls() {
+        return this.applyRateControls;
     }
 
     /**
      * Whether to enable reputation controls.
      * 
      */
-    @Import(name="applyReputationControls")
-    private @Nullable Output<Boolean> applyReputationControls;
+    @Import(name="applyReputationControls", required=true)
+    private Output<Boolean> applyReputationControls;
 
     /**
      * @return Whether to enable reputation controls.
      * 
      */
-    public Optional<Output<Boolean>> applyReputationControls() {
-        return Optional.ofNullable(this.applyReputationControls);
+    public Output<Boolean> applyReputationControls() {
+        return this.applyReputationControls;
     }
 
     /**
      * Whether to enable slow post controls.
      * 
      */
-    @Import(name="applySlowPostControls")
-    private @Nullable Output<Boolean> applySlowPostControls;
+    @Import(name="applySlowPostControls", required=true)
+    private Output<Boolean> applySlowPostControls;
 
     /**
      * @return Whether to enable slow post controls.
      * 
      */
-    public Optional<Output<Boolean>> applySlowPostControls() {
-        return Optional.ofNullable(this.applySlowPostControls);
+    public Output<Boolean> applySlowPostControls() {
+        return this.applySlowPostControls;
     }
 
     /**
      * Whether to enable URL protection controls.
      * 
      */
-    @Import(name="applyUrlProtectionControls")
-    private @Nullable Output<Boolean> applyUrlProtectionControls;
+    @Import(name="applyUrlProtectionControls", required=true)
+    private Output<Boolean> applyUrlProtectionControls;
 
     /**
      * @return Whether to enable URL protection controls.
      * 
      */
-    public Optional<Output<Boolean>> applyUrlProtectionControls() {
-        return Optional.ofNullable(this.applyUrlProtectionControls);
+    public Output<Boolean> applyUrlProtectionControls() {
+        return this.applyUrlProtectionControls;
     }
 
     /**
@@ -239,7 +237,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applyAccountProtectionControls(@Nullable Output<Boolean> applyAccountProtectionControls) {
+        public Builder applyAccountProtectionControls(Output<Boolean> applyAccountProtectionControls) {
             $.applyAccountProtectionControls = applyAccountProtectionControls;
             return this;
         }
@@ -260,7 +258,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applyApiConstraints(@Nullable Output<Boolean> applyApiConstraints) {
+        public Builder applyApiConstraints(Output<Boolean> applyApiConstraints) {
             $.applyApiConstraints = applyApiConstraints;
             return this;
         }
@@ -281,7 +279,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applyApplicationLayerControls(@Nullable Output<Boolean> applyApplicationLayerControls) {
+        public Builder applyApplicationLayerControls(Output<Boolean> applyApplicationLayerControls) {
             $.applyApplicationLayerControls = applyApplicationLayerControls;
             return this;
         }
@@ -302,7 +300,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applyBotmanControls(@Nullable Output<Boolean> applyBotmanControls) {
+        public Builder applyBotmanControls(Output<Boolean> applyBotmanControls) {
             $.applyBotmanControls = applyBotmanControls;
             return this;
         }
@@ -323,7 +321,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applyMalwareControls(@Nullable Output<Boolean> applyMalwareControls) {
+        public Builder applyMalwareControls(Output<Boolean> applyMalwareControls) {
             $.applyMalwareControls = applyMalwareControls;
             return this;
         }
@@ -344,7 +342,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applyNetworkLayerControls(@Nullable Output<Boolean> applyNetworkLayerControls) {
+        public Builder applyNetworkLayerControls(Output<Boolean> applyNetworkLayerControls) {
             $.applyNetworkLayerControls = applyNetworkLayerControls;
             return this;
         }
@@ -365,7 +363,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applyRateControls(@Nullable Output<Boolean> applyRateControls) {
+        public Builder applyRateControls(Output<Boolean> applyRateControls) {
             $.applyRateControls = applyRateControls;
             return this;
         }
@@ -386,7 +384,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applyReputationControls(@Nullable Output<Boolean> applyReputationControls) {
+        public Builder applyReputationControls(Output<Boolean> applyReputationControls) {
             $.applyReputationControls = applyReputationControls;
             return this;
         }
@@ -407,7 +405,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applySlowPostControls(@Nullable Output<Boolean> applySlowPostControls) {
+        public Builder applySlowPostControls(Output<Boolean> applySlowPostControls) {
             $.applySlowPostControls = applySlowPostControls;
             return this;
         }
@@ -428,7 +426,7 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder applyUrlProtectionControls(@Nullable Output<Boolean> applyUrlProtectionControls) {
+        public Builder applyUrlProtectionControls(Output<Boolean> applyUrlProtectionControls) {
             $.applyUrlProtectionControls = applyUrlProtectionControls;
             return this;
         }
@@ -486,6 +484,36 @@ public final class AppsecSecurityPolicyProtectionsArgs extends com.pulumi.resour
         }
 
         public AppsecSecurityPolicyProtectionsArgs build() {
+            if ($.applyAccountProtectionControls == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applyAccountProtectionControls");
+            }
+            if ($.applyApiConstraints == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applyApiConstraints");
+            }
+            if ($.applyApplicationLayerControls == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applyApplicationLayerControls");
+            }
+            if ($.applyBotmanControls == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applyBotmanControls");
+            }
+            if ($.applyMalwareControls == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applyMalwareControls");
+            }
+            if ($.applyNetworkLayerControls == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applyNetworkLayerControls");
+            }
+            if ($.applyRateControls == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applyRateControls");
+            }
+            if ($.applyReputationControls == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applyReputationControls");
+            }
+            if ($.applySlowPostControls == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applySlowPostControls");
+            }
+            if ($.applyUrlProtectionControls == null) {
+                throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "applyUrlProtectionControls");
+            }
             if ($.configId == null) {
                 throw new MissingRequiredPropertyException("AppsecSecurityPolicyProtectionsArgs", "configId");
             }

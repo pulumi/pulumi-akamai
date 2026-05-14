@@ -24,6 +24,7 @@ export interface GetAppSecSecurityPolicyProtectionsArgs {
  * A collection of values returned by getAppSecSecurityPolicyProtections.
  */
 export interface GetAppSecSecurityPolicyProtectionsResult {
+    readonly applyAccountProtectionControls: boolean;
     readonly applyApiConstraints: boolean;
     readonly applyApplicationLayerControls: boolean;
     readonly applyBotmanControls: boolean;

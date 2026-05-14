@@ -27,7 +27,7 @@ class AppSecEvalPenaltyBoxArgs:
         The set of arguments for constructing a AppSecEvalPenaltyBox resource.
 
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[_builtins.str] penalty_box_action: Action applied to requests from clients in the penalty box
+        :param pulumi.Input[_builtins.str] penalty_box_action: The action to be taken when the penalty box is triggered
         :param pulumi.Input[_builtins.bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
@@ -52,7 +52,7 @@ class AppSecEvalPenaltyBoxArgs:
     @pulumi.getter(name="penaltyBoxAction")
     def penalty_box_action(self) -> pulumi.Input[_builtins.str]:
         """
-        Action applied to requests from clients in the penalty box
+        The action to be taken when the penalty box is triggered
         """
         return pulumi.get(self, "penalty_box_action")
 
@@ -96,7 +96,7 @@ class _AppSecEvalPenaltyBoxState:
         Input properties used for looking up and filtering AppSecEvalPenaltyBox resources.
 
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[_builtins.str] penalty_box_action: Action applied to requests from clients in the penalty box
+        :param pulumi.Input[_builtins.str] penalty_box_action: The action to be taken when the penalty box is triggered
         :param pulumi.Input[_builtins.bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
@@ -125,7 +125,7 @@ class _AppSecEvalPenaltyBoxState:
     @pulumi.getter(name="penaltyBoxAction")
     def penalty_box_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Action applied to requests from clients in the penalty box
+        The action to be taken when the penalty box is triggered
         """
         return pulumi.get(self, "penalty_box_action")
 
@@ -175,7 +175,7 @@ class AppSecEvalPenaltyBox(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[_builtins.str] penalty_box_action: Action applied to requests from clients in the penalty box
+        :param pulumi.Input[_builtins.str] penalty_box_action: The action to be taken when the penalty box is triggered
         :param pulumi.Input[_builtins.bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
@@ -250,7 +250,7 @@ class AppSecEvalPenaltyBox(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[_builtins.str] penalty_box_action: Action applied to requests from clients in the penalty box
+        :param pulumi.Input[_builtins.str] penalty_box_action: The action to be taken when the penalty box is triggered
         :param pulumi.Input[_builtins.bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
@@ -276,7 +276,7 @@ class AppSecEvalPenaltyBox(pulumi.CustomResource):
     @pulumi.getter(name="penaltyBoxAction")
     def penalty_box_action(self) -> pulumi.Output[_builtins.str]:
         """
-        Action applied to requests from clients in the penalty box
+        The action to be taken when the penalty box is triggered
         """
         return pulumi.get(self, "penalty_box_action")
 

@@ -11,6 +11,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Optional;
@@ -31,6 +32,20 @@ public class EdgeWorkersActivation extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> activationId() {
         return this.activationId;
+    }
+    /**
+     * Automatically pin the initial revision during parent EdgeWorker activation.
+     * 
+     */
+    @Export(name="autoPin", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> autoPin;
+
+    /**
+     * @return Automatically pin the initial revision during parent EdgeWorker activation.
+     * 
+     */
+    public Output<Optional<Boolean>> autoPin() {
+        return Codegen.optional(this.autoPin);
     }
     /**
      * Id of the EdgeWorker to activate

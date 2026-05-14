@@ -26,7 +26,15 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string Network;
         /// <summary>
-        /// The type of CA set activity. 'CREATE_CA_SET' indicates creating a CA set, or 'CREATE_CA_SET_VERSION' for creating a version. 'ACTIVATE_CA_SET_VERSION' indicates activating a CA set version, while 'DEACTIVATE_CA_SET_VERSION' indicates deactivation. 'DELETE_CA_SET' indicates deleting a CA set.
+        /// The type of CA set activity. Possible values are: 
+        /// * `CREATE_CA_SET` - creating a CA set.
+        /// * `CREATE_CA_SET_VERSION` - creating a CA set version.
+        /// * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.
+        /// * `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.
+        /// * `DELETE_CA_SET` - soft deleting a CA set.
+        /// * `DELETE_CA_SET_VERSION` - soft deleting a CA set version.
+        /// * `REMOVE_CA_SET` - hard deleting a CA set.
+        /// * `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.
         /// </summary>
         public readonly string Type;
         /// <summary>

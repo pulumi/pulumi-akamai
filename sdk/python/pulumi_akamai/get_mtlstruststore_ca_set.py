@@ -27,7 +27,7 @@ class GetMtlstruststoreCaSetResult:
     """
     A collection of values returned by getMtlstruststoreCaSet.
     """
-    def __init__(__self__, account_id=None, allow_insecure_sha1=None, certificates=None, created_by=None, created_date=None, deleted_by=None, deleted_date=None, description=None, id=None, name=None, production_version=None, staging_version=None, version=None, version_created_by=None, version_created_date=None, version_description=None, version_modified_by=None, version_modified_date=None):
+    def __init__(__self__, account_id=None, allow_insecure_sha1=None, certificates=None, created_by=None, created_date=None, deleted_by=None, deleted_date=None, description=None, id=None, name=None, production_version=None, removal_date=None, staging_version=None, status=None, version=None, version_created_by=None, version_created_date=None, version_description=None, version_modified_by=None, version_modified_date=None, version_removal_date=None, version_status=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -61,9 +61,15 @@ class GetMtlstruststoreCaSetResult:
         if production_version and not isinstance(production_version, int):
             raise TypeError("Expected argument 'production_version' to be a int")
         pulumi.set(__self__, "production_version", production_version)
+        if removal_date and not isinstance(removal_date, str):
+            raise TypeError("Expected argument 'removal_date' to be a str")
+        pulumi.set(__self__, "removal_date", removal_date)
         if staging_version and not isinstance(staging_version, int):
             raise TypeError("Expected argument 'staging_version' to be a int")
         pulumi.set(__self__, "staging_version", staging_version)
+        if status and not isinstance(status, str):
+            raise TypeError("Expected argument 'status' to be a str")
+        pulumi.set(__self__, "status", status)
         if version and not isinstance(version, int):
             raise TypeError("Expected argument 'version' to be a int")
         pulumi.set(__self__, "version", version)
@@ -82,6 +88,12 @@ class GetMtlstruststoreCaSetResult:
         if version_modified_date and not isinstance(version_modified_date, str):
             raise TypeError("Expected argument 'version_modified_date' to be a str")
         pulumi.set(__self__, "version_modified_date", version_modified_date)
+        if version_removal_date and not isinstance(version_removal_date, str):
+            raise TypeError("Expected argument 'version_removal_date' to be a str")
+        pulumi.set(__self__, "version_removal_date", version_removal_date)
+        if version_status and not isinstance(version_status, str):
+            raise TypeError("Expected argument 'version_status' to be a str")
+        pulumi.set(__self__, "version_status", version_status)
 
     @_builtins.property
     @pulumi.getter(name="accountId")
@@ -139,9 +151,19 @@ class GetMtlstruststoreCaSetResult:
         return pulumi.get(self, "production_version")
 
     @_builtins.property
+    @pulumi.getter(name="removalDate")
+    def removal_date(self) -> _builtins.str:
+        return pulumi.get(self, "removal_date")
+
+    @_builtins.property
     @pulumi.getter(name="stagingVersion")
     def staging_version(self) -> _builtins.int:
         return pulumi.get(self, "staging_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
 
     @_builtins.property
     @pulumi.getter
@@ -173,6 +195,16 @@ class GetMtlstruststoreCaSetResult:
     def version_modified_date(self) -> _builtins.str:
         return pulumi.get(self, "version_modified_date")
 
+    @_builtins.property
+    @pulumi.getter(name="versionRemovalDate")
+    def version_removal_date(self) -> _builtins.str:
+        return pulumi.get(self, "version_removal_date")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStatus")
+    def version_status(self) -> _builtins.str:
+        return pulumi.get(self, "version_status")
+
 
 class AwaitableGetMtlstruststoreCaSetResult(GetMtlstruststoreCaSetResult):
     # pylint: disable=using-constant-test
@@ -191,13 +223,17 @@ class AwaitableGetMtlstruststoreCaSetResult(GetMtlstruststoreCaSetResult):
             id=self.id,
             name=self.name,
             production_version=self.production_version,
+            removal_date=self.removal_date,
             staging_version=self.staging_version,
+            status=self.status,
             version=self.version,
             version_created_by=self.version_created_by,
             version_created_date=self.version_created_date,
             version_description=self.version_description,
             version_modified_by=self.version_modified_by,
-            version_modified_date=self.version_modified_date)
+            version_modified_date=self.version_modified_date,
+            version_removal_date=self.version_removal_date,
+            version_status=self.version_status)
 
 
 def get_mtlstruststore_ca_set(id: Optional[_builtins.str] = None,
@@ -226,13 +262,17 @@ def get_mtlstruststore_ca_set(id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         production_version=pulumi.get(__ret__, 'production_version'),
+        removal_date=pulumi.get(__ret__, 'removal_date'),
         staging_version=pulumi.get(__ret__, 'staging_version'),
+        status=pulumi.get(__ret__, 'status'),
         version=pulumi.get(__ret__, 'version'),
         version_created_by=pulumi.get(__ret__, 'version_created_by'),
         version_created_date=pulumi.get(__ret__, 'version_created_date'),
         version_description=pulumi.get(__ret__, 'version_description'),
         version_modified_by=pulumi.get(__ret__, 'version_modified_by'),
-        version_modified_date=pulumi.get(__ret__, 'version_modified_date'))
+        version_modified_date=pulumi.get(__ret__, 'version_modified_date'),
+        version_removal_date=pulumi.get(__ret__, 'version_removal_date'),
+        version_status=pulumi.get(__ret__, 'version_status'))
 def get_mtlstruststore_ca_set_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
@@ -258,10 +298,14 @@ def get_mtlstruststore_ca_set_output(id: pulumi.Input[Optional[Optional[_builtin
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),
         production_version=pulumi.get(__response__, 'production_version'),
+        removal_date=pulumi.get(__response__, 'removal_date'),
         staging_version=pulumi.get(__response__, 'staging_version'),
+        status=pulumi.get(__response__, 'status'),
         version=pulumi.get(__response__, 'version'),
         version_created_by=pulumi.get(__response__, 'version_created_by'),
         version_created_date=pulumi.get(__response__, 'version_created_date'),
         version_description=pulumi.get(__response__, 'version_description'),
         version_modified_by=pulumi.get(__response__, 'version_modified_by'),
-        version_modified_date=pulumi.get(__response__, 'version_modified_date')))
+        version_modified_date=pulumi.get(__response__, 'version_modified_date'),
+        version_removal_date=pulumi.get(__response__, 'version_removal_date'),
+        version_status=pulumi.get(__response__, 'version_status')))

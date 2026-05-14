@@ -13,6 +13,889 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile struct {
+	// The content of the file that you should place at the specified URL.
+	Content string `pulumi:"content"`
+	// The content type of the file containing the token.
+	ContentType string `pulumi:"contentType"`
+	// The URL where you should place the file containing the challenge token.
+	Path string `pulumi:"path"`
+}
+
+// GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileInput is an input type that accepts GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs and GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileInput` via:
+//
+//	GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs{...}
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutputWithContext(context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs struct {
+	// The content of the file that you should place at the specified URL.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The content type of the file containing the token.
+	ContentType pulumi.StringInput `pulumi:"contentType"`
+	// The URL where you should place the file containing the challenge token.
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput {
+	return i.ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput {
+	return o
+}
+
+// The content of the file that you should place at the specified URL.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile) string {
+		return v.Content
+	}).(pulumi.StringOutput)
+}
+
+// The content type of the file containing the token.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput) ContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile) string {
+		return v.ContentType
+	}).(pulumi.StringOutput)
+}
+
+// The URL where you should place the file containing the challenge token.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile) string { return v.Path }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect struct {
+	// The location on your HTTP server where you set up the redirect.
+	From string `pulumi:"from"`
+	// The redirect URL with the token that you place on your HTTP server.
+	To string `pulumi:"to"`
+}
+
+// GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectInput is an input type that accepts GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs and GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectInput` via:
+//
+//	GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs{...}
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutputWithContext(context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs struct {
+	// The location on your HTTP server where you set up the redirect.
+	From pulumi.StringInput `pulumi:"from"`
+	// The redirect URL with the token that you place on your HTTP server.
+	To pulumi.StringInput `pulumi:"to"`
+}
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput {
+	return i.ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput {
+	return o
+}
+
+// The location on your HTTP server where you set up the redirect.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput) From() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect) string {
+		return v.From
+	}).(pulumi.StringOutput)
+}
+
+// The redirect URL with the token that you place on your HTTP server.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput) To() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect) string {
+		return v.To
+	}).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord struct {
+	// The hostname where you should add the 'TXT' record to validate the domain ownership.
+	Name string `pulumi:"name"`
+	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+	Value string `pulumi:"value"`
+}
+
+// GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordInput is an input type that accepts GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs and GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordInput` via:
+//
+//	GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs{...}
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutputWithContext(context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs struct {
+	// The hostname where you should add the 'TXT' record to validate the domain ownership.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput {
+	return i.ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput {
+	return o
+}
+
+// The hostname where you should add the 'TXT' record to validate the domain ownership.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnameActivationHostname struct {
+	// Specifies whether a given activation adds or removes a hostname item. Available options are `ADD` and `REMOVE`.
+	Action string `pulumi:"action"`
+	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+	CertProvisioningType string `pulumi:"certProvisioningType"`
+	// The hostname that your end users see, indicated by the Host header in end user requests.
+	CnameFrom string `pulumi:"cnameFrom"`
+	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers.
+	CnameTo string `pulumi:"cnameTo"`
+	// Identifies the edge hostname you mapped your traffic to on the production network.
+	EdgeHostnameId string `pulumi:"edgeHostnameId"`
+}
+
+// GetPropertyHostnameActivationHostnameInput is an input type that accepts GetPropertyHostnameActivationHostnameArgs and GetPropertyHostnameActivationHostnameOutput values.
+// You can construct a concrete instance of `GetPropertyHostnameActivationHostnameInput` via:
+//
+//	GetPropertyHostnameActivationHostnameArgs{...}
+type GetPropertyHostnameActivationHostnameInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnameActivationHostnameOutput() GetPropertyHostnameActivationHostnameOutput
+	ToGetPropertyHostnameActivationHostnameOutputWithContext(context.Context) GetPropertyHostnameActivationHostnameOutput
+}
+
+type GetPropertyHostnameActivationHostnameArgs struct {
+	// Specifies whether a given activation adds or removes a hostname item. Available options are `ADD` and `REMOVE`.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+	CertProvisioningType pulumi.StringInput `pulumi:"certProvisioningType"`
+	// The hostname that your end users see, indicated by the Host header in end user requests.
+	CnameFrom pulumi.StringInput `pulumi:"cnameFrom"`
+	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers.
+	CnameTo pulumi.StringInput `pulumi:"cnameTo"`
+	// Identifies the edge hostname you mapped your traffic to on the production network.
+	EdgeHostnameId pulumi.StringInput `pulumi:"edgeHostnameId"`
+}
+
+func (GetPropertyHostnameActivationHostnameArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnameActivationHostname)(nil)).Elem()
+}
+
+func (i GetPropertyHostnameActivationHostnameArgs) ToGetPropertyHostnameActivationHostnameOutput() GetPropertyHostnameActivationHostnameOutput {
+	return i.ToGetPropertyHostnameActivationHostnameOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnameActivationHostnameArgs) ToGetPropertyHostnameActivationHostnameOutputWithContext(ctx context.Context) GetPropertyHostnameActivationHostnameOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnameActivationHostnameOutput)
+}
+
+// GetPropertyHostnameActivationHostnameArrayInput is an input type that accepts GetPropertyHostnameActivationHostnameArray and GetPropertyHostnameActivationHostnameArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnameActivationHostnameArrayInput` via:
+//
+//	GetPropertyHostnameActivationHostnameArray{ GetPropertyHostnameActivationHostnameArgs{...} }
+type GetPropertyHostnameActivationHostnameArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnameActivationHostnameArrayOutput() GetPropertyHostnameActivationHostnameArrayOutput
+	ToGetPropertyHostnameActivationHostnameArrayOutputWithContext(context.Context) GetPropertyHostnameActivationHostnameArrayOutput
+}
+
+type GetPropertyHostnameActivationHostnameArray []GetPropertyHostnameActivationHostnameInput
+
+func (GetPropertyHostnameActivationHostnameArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnameActivationHostname)(nil)).Elem()
+}
+
+func (i GetPropertyHostnameActivationHostnameArray) ToGetPropertyHostnameActivationHostnameArrayOutput() GetPropertyHostnameActivationHostnameArrayOutput {
+	return i.ToGetPropertyHostnameActivationHostnameArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnameActivationHostnameArray) ToGetPropertyHostnameActivationHostnameArrayOutputWithContext(ctx context.Context) GetPropertyHostnameActivationHostnameArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnameActivationHostnameArrayOutput)
+}
+
+type GetPropertyHostnameActivationHostnameOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnameActivationHostnameOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnameActivationHostname)(nil)).Elem()
+}
+
+func (o GetPropertyHostnameActivationHostnameOutput) ToGetPropertyHostnameActivationHostnameOutput() GetPropertyHostnameActivationHostnameOutput {
+	return o
+}
+
+func (o GetPropertyHostnameActivationHostnameOutput) ToGetPropertyHostnameActivationHostnameOutputWithContext(ctx context.Context) GetPropertyHostnameActivationHostnameOutput {
+	return o
+}
+
+// Specifies whether a given activation adds or removes a hostname item. Available options are `ADD` and `REMOVE`.
+func (o GetPropertyHostnameActivationHostnameOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationHostname) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates you create with the Certificate Provisioning System (CPS) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+func (o GetPropertyHostnameActivationHostnameOutput) CertProvisioningType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationHostname) string { return v.CertProvisioningType }).(pulumi.StringOutput)
+}
+
+// The hostname that your end users see, indicated by the Host header in end user requests.
+func (o GetPropertyHostnameActivationHostnameOutput) CnameFrom() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationHostname) string { return v.CnameFrom }).(pulumi.StringOutput)
+}
+
+// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers.
+func (o GetPropertyHostnameActivationHostnameOutput) CnameTo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationHostname) string { return v.CnameTo }).(pulumi.StringOutput)
+}
+
+// Identifies the edge hostname you mapped your traffic to on the production network.
+func (o GetPropertyHostnameActivationHostnameOutput) EdgeHostnameId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationHostname) string { return v.EdgeHostnameId }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnameActivationHostnameArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnameActivationHostnameArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnameActivationHostname)(nil)).Elem()
+}
+
+func (o GetPropertyHostnameActivationHostnameArrayOutput) ToGetPropertyHostnameActivationHostnameArrayOutput() GetPropertyHostnameActivationHostnameArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnameActivationHostnameArrayOutput) ToGetPropertyHostnameActivationHostnameArrayOutputWithContext(ctx context.Context) GetPropertyHostnameActivationHostnameArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnameActivationHostnameArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnameActivationHostnameOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnameActivationHostname {
+		return vs[0].([]GetPropertyHostnameActivationHostname)[vs[1].(int)]
+	}).(GetPropertyHostnameActivationHostnameOutput)
+}
+
+type GetPropertyHostnameActivationsHostnameActivation struct {
+	// The activation type, either `ACTIVATE` or `DEACTIVATE`.
+	ActivationType string `pulumi:"activationType"`
+	// The ISO 8601 timestamp property hostname activation's unique identifier.
+	HostnameActivationId string `pulumi:"hostnameActivationId"`
+	// The network of activation, either `STAGING` or `PRODUCTION`.`
+	Network string `pulumi:"network"`
+	// Assigns a log message to the activation request.
+	Note string `pulumi:"note"`
+	// Email addresses to notify when the activation status changes.
+	NotifyEmails []string `pulumi:"notifyEmails"`
+	// The activation's status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `activationType` is `DEACTIVATE` to no longer serve traffic.
+	Status string `pulumi:"status"`
+	// The timestamp indicating when the activation was initiated.
+	SubmitDate string `pulumi:"submitDate"`
+	// The ISO 8601 timestamp indicating when the status last changed.
+	UpdateDate string `pulumi:"updateDate"`
+}
+
+// GetPropertyHostnameActivationsHostnameActivationInput is an input type that accepts GetPropertyHostnameActivationsHostnameActivationArgs and GetPropertyHostnameActivationsHostnameActivationOutput values.
+// You can construct a concrete instance of `GetPropertyHostnameActivationsHostnameActivationInput` via:
+//
+//	GetPropertyHostnameActivationsHostnameActivationArgs{...}
+type GetPropertyHostnameActivationsHostnameActivationInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnameActivationsHostnameActivationOutput() GetPropertyHostnameActivationsHostnameActivationOutput
+	ToGetPropertyHostnameActivationsHostnameActivationOutputWithContext(context.Context) GetPropertyHostnameActivationsHostnameActivationOutput
+}
+
+type GetPropertyHostnameActivationsHostnameActivationArgs struct {
+	// The activation type, either `ACTIVATE` or `DEACTIVATE`.
+	ActivationType pulumi.StringInput `pulumi:"activationType"`
+	// The ISO 8601 timestamp property hostname activation's unique identifier.
+	HostnameActivationId pulumi.StringInput `pulumi:"hostnameActivationId"`
+	// The network of activation, either `STAGING` or `PRODUCTION`.`
+	Network pulumi.StringInput `pulumi:"network"`
+	// Assigns a log message to the activation request.
+	Note pulumi.StringInput `pulumi:"note"`
+	// Email addresses to notify when the activation status changes.
+	NotifyEmails pulumi.StringArrayInput `pulumi:"notifyEmails"`
+	// The activation's status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `activationType` is `DEACTIVATE` to no longer serve traffic.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The timestamp indicating when the activation was initiated.
+	SubmitDate pulumi.StringInput `pulumi:"submitDate"`
+	// The ISO 8601 timestamp indicating when the status last changed.
+	UpdateDate pulumi.StringInput `pulumi:"updateDate"`
+}
+
+func (GetPropertyHostnameActivationsHostnameActivationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnameActivationsHostnameActivation)(nil)).Elem()
+}
+
+func (i GetPropertyHostnameActivationsHostnameActivationArgs) ToGetPropertyHostnameActivationsHostnameActivationOutput() GetPropertyHostnameActivationsHostnameActivationOutput {
+	return i.ToGetPropertyHostnameActivationsHostnameActivationOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnameActivationsHostnameActivationArgs) ToGetPropertyHostnameActivationsHostnameActivationOutputWithContext(ctx context.Context) GetPropertyHostnameActivationsHostnameActivationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnameActivationsHostnameActivationOutput)
+}
+
+// GetPropertyHostnameActivationsHostnameActivationArrayInput is an input type that accepts GetPropertyHostnameActivationsHostnameActivationArray and GetPropertyHostnameActivationsHostnameActivationArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnameActivationsHostnameActivationArrayInput` via:
+//
+//	GetPropertyHostnameActivationsHostnameActivationArray{ GetPropertyHostnameActivationsHostnameActivationArgs{...} }
+type GetPropertyHostnameActivationsHostnameActivationArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnameActivationsHostnameActivationArrayOutput() GetPropertyHostnameActivationsHostnameActivationArrayOutput
+	ToGetPropertyHostnameActivationsHostnameActivationArrayOutputWithContext(context.Context) GetPropertyHostnameActivationsHostnameActivationArrayOutput
+}
+
+type GetPropertyHostnameActivationsHostnameActivationArray []GetPropertyHostnameActivationsHostnameActivationInput
+
+func (GetPropertyHostnameActivationsHostnameActivationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnameActivationsHostnameActivation)(nil)).Elem()
+}
+
+func (i GetPropertyHostnameActivationsHostnameActivationArray) ToGetPropertyHostnameActivationsHostnameActivationArrayOutput() GetPropertyHostnameActivationsHostnameActivationArrayOutput {
+	return i.ToGetPropertyHostnameActivationsHostnameActivationArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnameActivationsHostnameActivationArray) ToGetPropertyHostnameActivationsHostnameActivationArrayOutputWithContext(ctx context.Context) GetPropertyHostnameActivationsHostnameActivationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnameActivationsHostnameActivationArrayOutput)
+}
+
+type GetPropertyHostnameActivationsHostnameActivationOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnameActivationsHostnameActivationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnameActivationsHostnameActivation)(nil)).Elem()
+}
+
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) ToGetPropertyHostnameActivationsHostnameActivationOutput() GetPropertyHostnameActivationsHostnameActivationOutput {
+	return o
+}
+
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) ToGetPropertyHostnameActivationsHostnameActivationOutputWithContext(ctx context.Context) GetPropertyHostnameActivationsHostnameActivationOutput {
+	return o
+}
+
+// The activation type, either `ACTIVATE` or `DEACTIVATE`.
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) ActivationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationsHostnameActivation) string { return v.ActivationType }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 timestamp property hostname activation's unique identifier.
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) HostnameActivationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationsHostnameActivation) string { return v.HostnameActivationId }).(pulumi.StringOutput)
+}
+
+// The network of activation, either `STAGING` or `PRODUCTION`.`
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) Network() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationsHostnameActivation) string { return v.Network }).(pulumi.StringOutput)
+}
+
+// Assigns a log message to the activation request.
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) Note() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationsHostnameActivation) string { return v.Note }).(pulumi.StringOutput)
+}
+
+// Email addresses to notify when the activation status changes.
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) NotifyEmails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationsHostnameActivation) []string { return v.NotifyEmails }).(pulumi.StringArrayOutput)
+}
+
+// The activation's status. `ACTIVE` if currently serving traffic. `INACTIVE` if another activation has superseded this one. `PENDING` if not yet active. `ABORTED` if the client followed up with a `DELETE` request in time. `FAILED` if the activation causes a range of edge network errors that may cause a fallback to the previous activation. `PENDING_DEACTIVATION` or `DEACTIVATED` when the `activationType` is `DEACTIVATE` to no longer serve traffic.
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationsHostnameActivation) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The timestamp indicating when the activation was initiated.
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) SubmitDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationsHostnameActivation) string { return v.SubmitDate }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 timestamp indicating when the status last changed.
+func (o GetPropertyHostnameActivationsHostnameActivationOutput) UpdateDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameActivationsHostnameActivation) string { return v.UpdateDate }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnameActivationsHostnameActivationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnameActivationsHostnameActivationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnameActivationsHostnameActivation)(nil)).Elem()
+}
+
+func (o GetPropertyHostnameActivationsHostnameActivationArrayOutput) ToGetPropertyHostnameActivationsHostnameActivationArrayOutput() GetPropertyHostnameActivationsHostnameActivationArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnameActivationsHostnameActivationArrayOutput) ToGetPropertyHostnameActivationsHostnameActivationArrayOutputWithContext(ctx context.Context) GetPropertyHostnameActivationsHostnameActivationArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnameActivationsHostnameActivationArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnameActivationsHostnameActivationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnameActivationsHostnameActivation {
+		return vs[0].([]GetPropertyHostnameActivationsHostnameActivation)[vs[1].(int)]
+	}).(GetPropertyHostnameActivationsHostnameActivationOutput)
+}
+
+type GetPropertyHostnameAuditHistoryHistory struct {
+	// The type of action performed to the property hostname. Possible values are:
+	// * `ACTIVATE` - When the hostname is currently serving traffic.
+	// * `DEACTIVATE` - When the hostname isn't serving traffic.
+	// * `ADD` - When the user requested to add the hostname to a property.
+	// * `REMOVE` - When the user requested to remove the hostname from a property.
+	// * `MOVE` - When the hostname was moved from one property to another.
+	// * `MODIFY` - When the user changed the edgeHostnameId or certProvisioningType values for an already-activated hostname.
+	// * `ABORTED` - When the user request to cancel the hostname activation.
+	// * `ERROR` - When the hostname activation failed.
+	Action string `pulumi:"action"`
+	// The type of certificate used in the property hostname. Possible values are:
+	// * `CPS_MANAGED` - For certificates you create with the Certificate Provisioning System API (CPS).
+	// * `DEFAULT` - For Default Domain Validation (DV) certificates deployed automatically.
+	// * `CCM` - For the third party certificates created with the Cloud Certificate Manager.
+	CertProvisioningType string `pulumi:"certProvisioningType"`
+	// The edge hostname that the hostname points to.
+	CnameTo string `pulumi:"cnameTo"`
+	// Identifies the prevailing contract under which the data was requested.
+	ContractId string `pulumi:"contractId"`
+	// Id of the edge hostname the hostname points to.
+	EdgeHostnameId string `pulumi:"edgeHostnameId"`
+	// Identifies the group under which the property is activated.
+	GroupId string `pulumi:"groupId"`
+	// The network of activated hostnames. Possible values are:
+	// * `STAGING` - Staging network.
+	// * `PRODUCTION` - Production network.
+	Network string `pulumi:"network"`
+	// Unique identifier for the property.
+	PropertyId string `pulumi:"propertyId"`
+	// Indicates when the action occurred.
+	Timestamp string `pulumi:"timestamp"`
+	// The user who initiated the action.
+	User string `pulumi:"user"`
+}
+
+// GetPropertyHostnameAuditHistoryHistoryInput is an input type that accepts GetPropertyHostnameAuditHistoryHistoryArgs and GetPropertyHostnameAuditHistoryHistoryOutput values.
+// You can construct a concrete instance of `GetPropertyHostnameAuditHistoryHistoryInput` via:
+//
+//	GetPropertyHostnameAuditHistoryHistoryArgs{...}
+type GetPropertyHostnameAuditHistoryHistoryInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnameAuditHistoryHistoryOutput() GetPropertyHostnameAuditHistoryHistoryOutput
+	ToGetPropertyHostnameAuditHistoryHistoryOutputWithContext(context.Context) GetPropertyHostnameAuditHistoryHistoryOutput
+}
+
+type GetPropertyHostnameAuditHistoryHistoryArgs struct {
+	// The type of action performed to the property hostname. Possible values are:
+	// * `ACTIVATE` - When the hostname is currently serving traffic.
+	// * `DEACTIVATE` - When the hostname isn't serving traffic.
+	// * `ADD` - When the user requested to add the hostname to a property.
+	// * `REMOVE` - When the user requested to remove the hostname from a property.
+	// * `MOVE` - When the hostname was moved from one property to another.
+	// * `MODIFY` - When the user changed the edgeHostnameId or certProvisioningType values for an already-activated hostname.
+	// * `ABORTED` - When the user request to cancel the hostname activation.
+	// * `ERROR` - When the hostname activation failed.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The type of certificate used in the property hostname. Possible values are:
+	// * `CPS_MANAGED` - For certificates you create with the Certificate Provisioning System API (CPS).
+	// * `DEFAULT` - For Default Domain Validation (DV) certificates deployed automatically.
+	// * `CCM` - For the third party certificates created with the Cloud Certificate Manager.
+	CertProvisioningType pulumi.StringInput `pulumi:"certProvisioningType"`
+	// The edge hostname that the hostname points to.
+	CnameTo pulumi.StringInput `pulumi:"cnameTo"`
+	// Identifies the prevailing contract under which the data was requested.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// Id of the edge hostname the hostname points to.
+	EdgeHostnameId pulumi.StringInput `pulumi:"edgeHostnameId"`
+	// Identifies the group under which the property is activated.
+	GroupId pulumi.StringInput `pulumi:"groupId"`
+	// The network of activated hostnames. Possible values are:
+	// * `STAGING` - Staging network.
+	// * `PRODUCTION` - Production network.
+	Network pulumi.StringInput `pulumi:"network"`
+	// Unique identifier for the property.
+	PropertyId pulumi.StringInput `pulumi:"propertyId"`
+	// Indicates when the action occurred.
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	// The user who initiated the action.
+	User pulumi.StringInput `pulumi:"user"`
+}
+
+func (GetPropertyHostnameAuditHistoryHistoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnameAuditHistoryHistory)(nil)).Elem()
+}
+
+func (i GetPropertyHostnameAuditHistoryHistoryArgs) ToGetPropertyHostnameAuditHistoryHistoryOutput() GetPropertyHostnameAuditHistoryHistoryOutput {
+	return i.ToGetPropertyHostnameAuditHistoryHistoryOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnameAuditHistoryHistoryArgs) ToGetPropertyHostnameAuditHistoryHistoryOutputWithContext(ctx context.Context) GetPropertyHostnameAuditHistoryHistoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnameAuditHistoryHistoryOutput)
+}
+
+// GetPropertyHostnameAuditHistoryHistoryArrayInput is an input type that accepts GetPropertyHostnameAuditHistoryHistoryArray and GetPropertyHostnameAuditHistoryHistoryArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnameAuditHistoryHistoryArrayInput` via:
+//
+//	GetPropertyHostnameAuditHistoryHistoryArray{ GetPropertyHostnameAuditHistoryHistoryArgs{...} }
+type GetPropertyHostnameAuditHistoryHistoryArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnameAuditHistoryHistoryArrayOutput() GetPropertyHostnameAuditHistoryHistoryArrayOutput
+	ToGetPropertyHostnameAuditHistoryHistoryArrayOutputWithContext(context.Context) GetPropertyHostnameAuditHistoryHistoryArrayOutput
+}
+
+type GetPropertyHostnameAuditHistoryHistoryArray []GetPropertyHostnameAuditHistoryHistoryInput
+
+func (GetPropertyHostnameAuditHistoryHistoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnameAuditHistoryHistory)(nil)).Elem()
+}
+
+func (i GetPropertyHostnameAuditHistoryHistoryArray) ToGetPropertyHostnameAuditHistoryHistoryArrayOutput() GetPropertyHostnameAuditHistoryHistoryArrayOutput {
+	return i.ToGetPropertyHostnameAuditHistoryHistoryArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnameAuditHistoryHistoryArray) ToGetPropertyHostnameAuditHistoryHistoryArrayOutputWithContext(ctx context.Context) GetPropertyHostnameAuditHistoryHistoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnameAuditHistoryHistoryArrayOutput)
+}
+
+type GetPropertyHostnameAuditHistoryHistoryOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnameAuditHistoryHistoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnameAuditHistoryHistory)(nil)).Elem()
+}
+
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) ToGetPropertyHostnameAuditHistoryHistoryOutput() GetPropertyHostnameAuditHistoryHistoryOutput {
+	return o
+}
+
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) ToGetPropertyHostnameAuditHistoryHistoryOutputWithContext(ctx context.Context) GetPropertyHostnameAuditHistoryHistoryOutput {
+	return o
+}
+
+// The type of action performed to the property hostname. Possible values are:
+// * `ACTIVATE` - When the hostname is currently serving traffic.
+// * `DEACTIVATE` - When the hostname isn't serving traffic.
+// * `ADD` - When the user requested to add the hostname to a property.
+// * `REMOVE` - When the user requested to remove the hostname from a property.
+// * `MOVE` - When the hostname was moved from one property to another.
+// * `MODIFY` - When the user changed the edgeHostnameId or certProvisioningType values for an already-activated hostname.
+// * `ABORTED` - When the user request to cancel the hostname activation.
+// * `ERROR` - When the hostname activation failed.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The type of certificate used in the property hostname. Possible values are:
+// * `CPS_MANAGED` - For certificates you create with the Certificate Provisioning System API (CPS).
+// * `DEFAULT` - For Default Domain Validation (DV) certificates deployed automatically.
+// * `CCM` - For the third party certificates created with the Cloud Certificate Manager.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) CertProvisioningType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.CertProvisioningType }).(pulumi.StringOutput)
+}
+
+// The edge hostname that the hostname points to.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) CnameTo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.CnameTo }).(pulumi.StringOutput)
+}
+
+// Identifies the prevailing contract under which the data was requested.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// Id of the edge hostname the hostname points to.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) EdgeHostnameId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.EdgeHostnameId }).(pulumi.StringOutput)
+}
+
+// Identifies the group under which the property is activated.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+// The network of activated hostnames. Possible values are:
+// * `STAGING` - Staging network.
+// * `PRODUCTION` - Production network.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) Network() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.Network }).(pulumi.StringOutput)
+}
+
+// Unique identifier for the property.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) PropertyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.PropertyId }).(pulumi.StringOutput)
+}
+
+// Indicates when the action occurred.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+// The user who initiated the action.
+func (o GetPropertyHostnameAuditHistoryHistoryOutput) User() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryHistory) string { return v.User }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnameAuditHistoryHistoryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnameAuditHistoryHistoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnameAuditHistoryHistory)(nil)).Elem()
+}
+
+func (o GetPropertyHostnameAuditHistoryHistoryArrayOutput) ToGetPropertyHostnameAuditHistoryHistoryArrayOutput() GetPropertyHostnameAuditHistoryHistoryArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnameAuditHistoryHistoryArrayOutput) ToGetPropertyHostnameAuditHistoryHistoryArrayOutputWithContext(ctx context.Context) GetPropertyHostnameAuditHistoryHistoryArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnameAuditHistoryHistoryArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnameAuditHistoryHistoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnameAuditHistoryHistory {
+		return vs[0].([]GetPropertyHostnameAuditHistoryHistory)[vs[1].(int)]
+	}).(GetPropertyHostnameAuditHistoryHistoryOutput)
+}
+
+type GetPropertyHostnamesDiffHostname struct {
+	// The hostname that your end users see, indicated by the Host header in end user requests.
+	CnameFrom string `pulumi:"cnameFrom"`
+	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+	ProductionCertProvisioningType string `pulumi:"productionCertProvisioningType"`
+	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
+	ProductionCnameTo string `pulumi:"productionCnameTo"`
+	// A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
+	ProductionCnameType string `pulumi:"productionCnameType"`
+	// The unique identifier for the edge hostname.
+	ProductionEdgeHostnameId string `pulumi:"productionEdgeHostnameId"`
+	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+	StagingCertProvisioningType string `pulumi:"stagingCertProvisioningType"`
+	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
+	StagingCnameTo string `pulumi:"stagingCnameTo"`
+	// A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
+	StagingCnameType string `pulumi:"stagingCnameType"`
+	// The unique identifier for the edge hostname.
+	StagingEdgeHostnameId string `pulumi:"stagingEdgeHostnameId"`
+}
+
+// GetPropertyHostnamesDiffHostnameInput is an input type that accepts GetPropertyHostnamesDiffHostnameArgs and GetPropertyHostnamesDiffHostnameOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesDiffHostnameInput` via:
+//
+//	GetPropertyHostnamesDiffHostnameArgs{...}
+type GetPropertyHostnamesDiffHostnameInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesDiffHostnameOutput() GetPropertyHostnamesDiffHostnameOutput
+	ToGetPropertyHostnamesDiffHostnameOutputWithContext(context.Context) GetPropertyHostnamesDiffHostnameOutput
+}
+
+type GetPropertyHostnamesDiffHostnameArgs struct {
+	// The hostname that your end users see, indicated by the Host header in end user requests.
+	CnameFrom pulumi.StringInput `pulumi:"cnameFrom"`
+	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+	ProductionCertProvisioningType pulumi.StringInput `pulumi:"productionCertProvisioningType"`
+	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
+	ProductionCnameTo pulumi.StringInput `pulumi:"productionCnameTo"`
+	// A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
+	ProductionCnameType pulumi.StringInput `pulumi:"productionCnameType"`
+	// The unique identifier for the edge hostname.
+	ProductionEdgeHostnameId pulumi.StringInput `pulumi:"productionEdgeHostnameId"`
+	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+	StagingCertProvisioningType pulumi.StringInput `pulumi:"stagingCertProvisioningType"`
+	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
+	StagingCnameTo pulumi.StringInput `pulumi:"stagingCnameTo"`
+	// A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
+	StagingCnameType pulumi.StringInput `pulumi:"stagingCnameType"`
+	// The unique identifier for the edge hostname.
+	StagingEdgeHostnameId pulumi.StringInput `pulumi:"stagingEdgeHostnameId"`
+}
+
+func (GetPropertyHostnamesDiffHostnameArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesDiffHostname)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesDiffHostnameArgs) ToGetPropertyHostnamesDiffHostnameOutput() GetPropertyHostnamesDiffHostnameOutput {
+	return i.ToGetPropertyHostnamesDiffHostnameOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesDiffHostnameArgs) ToGetPropertyHostnamesDiffHostnameOutputWithContext(ctx context.Context) GetPropertyHostnamesDiffHostnameOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesDiffHostnameOutput)
+}
+
+// GetPropertyHostnamesDiffHostnameArrayInput is an input type that accepts GetPropertyHostnamesDiffHostnameArray and GetPropertyHostnamesDiffHostnameArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesDiffHostnameArrayInput` via:
+//
+//	GetPropertyHostnamesDiffHostnameArray{ GetPropertyHostnamesDiffHostnameArgs{...} }
+type GetPropertyHostnamesDiffHostnameArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesDiffHostnameArrayOutput() GetPropertyHostnamesDiffHostnameArrayOutput
+	ToGetPropertyHostnamesDiffHostnameArrayOutputWithContext(context.Context) GetPropertyHostnamesDiffHostnameArrayOutput
+}
+
+type GetPropertyHostnamesDiffHostnameArray []GetPropertyHostnamesDiffHostnameInput
+
+func (GetPropertyHostnamesDiffHostnameArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesDiffHostname)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesDiffHostnameArray) ToGetPropertyHostnamesDiffHostnameArrayOutput() GetPropertyHostnamesDiffHostnameArrayOutput {
+	return i.ToGetPropertyHostnamesDiffHostnameArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesDiffHostnameArray) ToGetPropertyHostnamesDiffHostnameArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesDiffHostnameArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesDiffHostnameArrayOutput)
+}
+
+type GetPropertyHostnamesDiffHostnameOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesDiffHostnameOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesDiffHostname)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesDiffHostnameOutput) ToGetPropertyHostnamesDiffHostnameOutput() GetPropertyHostnamesDiffHostnameOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesDiffHostnameOutput) ToGetPropertyHostnamesDiffHostnameOutputWithContext(ctx context.Context) GetPropertyHostnamesDiffHostnameOutput {
+	return o
+}
+
+// The hostname that your end users see, indicated by the Host header in end user requests.
+func (o GetPropertyHostnamesDiffHostnameOutput) CnameFrom() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesDiffHostname) string { return v.CnameFrom }).(pulumi.StringOutput)
+}
+
+// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+func (o GetPropertyHostnamesDiffHostnameOutput) ProductionCertProvisioningType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesDiffHostname) string { return v.ProductionCertProvisioningType }).(pulumi.StringOutput)
+}
+
+// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
+func (o GetPropertyHostnamesDiffHostnameOutput) ProductionCnameTo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesDiffHostname) string { return v.ProductionCnameTo }).(pulumi.StringOutput)
+}
+
+// A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
+func (o GetPropertyHostnamesDiffHostnameOutput) ProductionCnameType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesDiffHostname) string { return v.ProductionCnameType }).(pulumi.StringOutput)
+}
+
+// The unique identifier for the edge hostname.
+func (o GetPropertyHostnamesDiffHostnameOutput) ProductionEdgeHostnameId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesDiffHostname) string { return v.ProductionEdgeHostnameId }).(pulumi.StringOutput)
+}
+
+// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
+func (o GetPropertyHostnamesDiffHostnameOutput) StagingCertProvisioningType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesDiffHostname) string { return v.StagingCertProvisioningType }).(pulumi.StringOutput)
+}
+
+// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's `edgeHostnameDomain` member.
+func (o GetPropertyHostnamesDiffHostnameOutput) StagingCnameTo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesDiffHostname) string { return v.StagingCnameTo }).(pulumi.StringOutput)
+}
+
+// A hostname's CNAME type. Supports only the `EDGE_HOSTNAME` value.
+func (o GetPropertyHostnamesDiffHostnameOutput) StagingCnameType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesDiffHostname) string { return v.StagingCnameType }).(pulumi.StringOutput)
+}
+
+// The unique identifier for the edge hostname.
+func (o GetPropertyHostnamesDiffHostnameOutput) StagingEdgeHostnameId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesDiffHostname) string { return v.StagingEdgeHostnameId }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesDiffHostnameArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesDiffHostnameArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesDiffHostname)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesDiffHostnameArrayOutput) ToGetPropertyHostnamesDiffHostnameArrayOutput() GetPropertyHostnamesDiffHostnameArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesDiffHostnameArrayOutput) ToGetPropertyHostnamesDiffHostnameArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesDiffHostnameArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesDiffHostnameArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesDiffHostnameOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesDiffHostname {
+		return vs[0].([]GetPropertyHostnamesDiffHostname)[vs[1].(int)]
+	}).(GetPropertyHostnamesDiffHostnameOutput)
+}
+
 type GetPropertyHostnamesHostname struct {
 	// CCM certificate deployment status for RSA and ECDSA certificates.
 	CcmCertStatuses []GetPropertyHostnamesHostnameCcmCertStatus `pulumi:"ccmCertStatuses"`
@@ -2529,6 +3412,1438 @@ func (o GetPropertyRulesTemplateVariableArrayOutput) Index(i pulumi.IntInput) Ge
 	}).(GetPropertyRulesTemplateVariableOutput)
 }
 
+type GetReportinggroupsCpCodeAccessGroup struct {
+	// The contract identifier assigned to the access control group.
+	ContractId string `pulumi:"contractId"`
+	// The access control group identifier.
+	GroupId string `pulumi:"groupId"`
+}
+
+// GetReportinggroupsCpCodeAccessGroupInput is an input type that accepts GetReportinggroupsCpCodeAccessGroupArgs and GetReportinggroupsCpCodeAccessGroupOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodeAccessGroupInput` via:
+//
+//	GetReportinggroupsCpCodeAccessGroupArgs{...}
+type GetReportinggroupsCpCodeAccessGroupInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodeAccessGroupOutput() GetReportinggroupsCpCodeAccessGroupOutput
+	ToGetReportinggroupsCpCodeAccessGroupOutputWithContext(context.Context) GetReportinggroupsCpCodeAccessGroupOutput
+}
+
+type GetReportinggroupsCpCodeAccessGroupArgs struct {
+	// The contract identifier assigned to the access control group.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// The access control group identifier.
+	GroupId pulumi.StringInput `pulumi:"groupId"`
+}
+
+func (GetReportinggroupsCpCodeAccessGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodeAccessGroup)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodeAccessGroupArgs) ToGetReportinggroupsCpCodeAccessGroupOutput() GetReportinggroupsCpCodeAccessGroupOutput {
+	return i.ToGetReportinggroupsCpCodeAccessGroupOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodeAccessGroupArgs) ToGetReportinggroupsCpCodeAccessGroupOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeAccessGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodeAccessGroupOutput)
+}
+
+type GetReportinggroupsCpCodeAccessGroupOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodeAccessGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodeAccessGroup)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodeAccessGroupOutput) ToGetReportinggroupsCpCodeAccessGroupOutput() GetReportinggroupsCpCodeAccessGroupOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodeAccessGroupOutput) ToGetReportinggroupsCpCodeAccessGroupOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeAccessGroupOutput {
+	return o
+}
+
+// The contract identifier assigned to the access control group.
+func (o GetReportinggroupsCpCodeAccessGroupOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodeAccessGroup) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// The access control group identifier.
+func (o GetReportinggroupsCpCodeAccessGroupOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodeAccessGroup) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsCpCodeContract struct {
+	// The contract identifier.
+	ContractId string `pulumi:"contractId"`
+	// The contract status.
+	Status string `pulumi:"status"`
+}
+
+// GetReportinggroupsCpCodeContractInput is an input type that accepts GetReportinggroupsCpCodeContractArgs and GetReportinggroupsCpCodeContractOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodeContractInput` via:
+//
+//	GetReportinggroupsCpCodeContractArgs{...}
+type GetReportinggroupsCpCodeContractInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodeContractOutput() GetReportinggroupsCpCodeContractOutput
+	ToGetReportinggroupsCpCodeContractOutputWithContext(context.Context) GetReportinggroupsCpCodeContractOutput
+}
+
+type GetReportinggroupsCpCodeContractArgs struct {
+	// The contract identifier.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// The contract status.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetReportinggroupsCpCodeContractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodeContract)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodeContractArgs) ToGetReportinggroupsCpCodeContractOutput() GetReportinggroupsCpCodeContractOutput {
+	return i.ToGetReportinggroupsCpCodeContractOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodeContractArgs) ToGetReportinggroupsCpCodeContractOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeContractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodeContractOutput)
+}
+
+// GetReportinggroupsCpCodeContractArrayInput is an input type that accepts GetReportinggroupsCpCodeContractArray and GetReportinggroupsCpCodeContractArrayOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodeContractArrayInput` via:
+//
+//	GetReportinggroupsCpCodeContractArray{ GetReportinggroupsCpCodeContractArgs{...} }
+type GetReportinggroupsCpCodeContractArrayInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodeContractArrayOutput() GetReportinggroupsCpCodeContractArrayOutput
+	ToGetReportinggroupsCpCodeContractArrayOutputWithContext(context.Context) GetReportinggroupsCpCodeContractArrayOutput
+}
+
+type GetReportinggroupsCpCodeContractArray []GetReportinggroupsCpCodeContractInput
+
+func (GetReportinggroupsCpCodeContractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodeContract)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodeContractArray) ToGetReportinggroupsCpCodeContractArrayOutput() GetReportinggroupsCpCodeContractArrayOutput {
+	return i.ToGetReportinggroupsCpCodeContractArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodeContractArray) ToGetReportinggroupsCpCodeContractArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeContractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodeContractArrayOutput)
+}
+
+type GetReportinggroupsCpCodeContractOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodeContractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodeContract)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodeContractOutput) ToGetReportinggroupsCpCodeContractOutput() GetReportinggroupsCpCodeContractOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodeContractOutput) ToGetReportinggroupsCpCodeContractOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeContractOutput {
+	return o
+}
+
+// The contract identifier.
+func (o GetReportinggroupsCpCodeContractOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodeContract) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// The contract status.
+func (o GetReportinggroupsCpCodeContractOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodeContract) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsCpCodeContractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodeContractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodeContract)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodeContractArrayOutput) ToGetReportinggroupsCpCodeContractArrayOutput() GetReportinggroupsCpCodeContractArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodeContractArrayOutput) ToGetReportinggroupsCpCodeContractArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeContractArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodeContractArrayOutput) Index(i pulumi.IntInput) GetReportinggroupsCpCodeContractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportinggroupsCpCodeContract {
+		return vs[0].([]GetReportinggroupsCpCodeContract)[vs[1].(int)]
+	}).(GetReportinggroupsCpCodeContractOutput)
+}
+
+type GetReportinggroupsCpCodeOverrideTimeZone struct {
+	// The time zone identifier.
+	TimeZoneId string `pulumi:"timeZoneId"`
+	// The time zone value.
+	TimeZoneValue string `pulumi:"timeZoneValue"`
+}
+
+// GetReportinggroupsCpCodeOverrideTimeZoneInput is an input type that accepts GetReportinggroupsCpCodeOverrideTimeZoneArgs and GetReportinggroupsCpCodeOverrideTimeZoneOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodeOverrideTimeZoneInput` via:
+//
+//	GetReportinggroupsCpCodeOverrideTimeZoneArgs{...}
+type GetReportinggroupsCpCodeOverrideTimeZoneInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodeOverrideTimeZoneOutput() GetReportinggroupsCpCodeOverrideTimeZoneOutput
+	ToGetReportinggroupsCpCodeOverrideTimeZoneOutputWithContext(context.Context) GetReportinggroupsCpCodeOverrideTimeZoneOutput
+}
+
+type GetReportinggroupsCpCodeOverrideTimeZoneArgs struct {
+	// The time zone identifier.
+	TimeZoneId pulumi.StringInput `pulumi:"timeZoneId"`
+	// The time zone value.
+	TimeZoneValue pulumi.StringInput `pulumi:"timeZoneValue"`
+}
+
+func (GetReportinggroupsCpCodeOverrideTimeZoneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodeOverrideTimeZone)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodeOverrideTimeZoneArgs) ToGetReportinggroupsCpCodeOverrideTimeZoneOutput() GetReportinggroupsCpCodeOverrideTimeZoneOutput {
+	return i.ToGetReportinggroupsCpCodeOverrideTimeZoneOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodeOverrideTimeZoneArgs) ToGetReportinggroupsCpCodeOverrideTimeZoneOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeOverrideTimeZoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodeOverrideTimeZoneOutput)
+}
+
+type GetReportinggroupsCpCodeOverrideTimeZoneOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodeOverrideTimeZoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodeOverrideTimeZone)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodeOverrideTimeZoneOutput) ToGetReportinggroupsCpCodeOverrideTimeZoneOutput() GetReportinggroupsCpCodeOverrideTimeZoneOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodeOverrideTimeZoneOutput) ToGetReportinggroupsCpCodeOverrideTimeZoneOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeOverrideTimeZoneOutput {
+	return o
+}
+
+// The time zone identifier.
+func (o GetReportinggroupsCpCodeOverrideTimeZoneOutput) TimeZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodeOverrideTimeZone) string { return v.TimeZoneId }).(pulumi.StringOutput)
+}
+
+// The time zone value.
+func (o GetReportinggroupsCpCodeOverrideTimeZoneOutput) TimeZoneValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodeOverrideTimeZone) string { return v.TimeZoneValue }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsCpCodeProduct struct {
+	// The product identifier.
+	ProductId string `pulumi:"productId"`
+	// The product name.
+	ProductName string `pulumi:"productName"`
+}
+
+// GetReportinggroupsCpCodeProductInput is an input type that accepts GetReportinggroupsCpCodeProductArgs and GetReportinggroupsCpCodeProductOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodeProductInput` via:
+//
+//	GetReportinggroupsCpCodeProductArgs{...}
+type GetReportinggroupsCpCodeProductInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodeProductOutput() GetReportinggroupsCpCodeProductOutput
+	ToGetReportinggroupsCpCodeProductOutputWithContext(context.Context) GetReportinggroupsCpCodeProductOutput
+}
+
+type GetReportinggroupsCpCodeProductArgs struct {
+	// The product identifier.
+	ProductId pulumi.StringInput `pulumi:"productId"`
+	// The product name.
+	ProductName pulumi.StringInput `pulumi:"productName"`
+}
+
+func (GetReportinggroupsCpCodeProductArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodeProduct)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodeProductArgs) ToGetReportinggroupsCpCodeProductOutput() GetReportinggroupsCpCodeProductOutput {
+	return i.ToGetReportinggroupsCpCodeProductOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodeProductArgs) ToGetReportinggroupsCpCodeProductOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeProductOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodeProductOutput)
+}
+
+// GetReportinggroupsCpCodeProductArrayInput is an input type that accepts GetReportinggroupsCpCodeProductArray and GetReportinggroupsCpCodeProductArrayOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodeProductArrayInput` via:
+//
+//	GetReportinggroupsCpCodeProductArray{ GetReportinggroupsCpCodeProductArgs{...} }
+type GetReportinggroupsCpCodeProductArrayInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodeProductArrayOutput() GetReportinggroupsCpCodeProductArrayOutput
+	ToGetReportinggroupsCpCodeProductArrayOutputWithContext(context.Context) GetReportinggroupsCpCodeProductArrayOutput
+}
+
+type GetReportinggroupsCpCodeProductArray []GetReportinggroupsCpCodeProductInput
+
+func (GetReportinggroupsCpCodeProductArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodeProduct)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodeProductArray) ToGetReportinggroupsCpCodeProductArrayOutput() GetReportinggroupsCpCodeProductArrayOutput {
+	return i.ToGetReportinggroupsCpCodeProductArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodeProductArray) ToGetReportinggroupsCpCodeProductArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeProductArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodeProductArrayOutput)
+}
+
+type GetReportinggroupsCpCodeProductOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodeProductOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodeProduct)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodeProductOutput) ToGetReportinggroupsCpCodeProductOutput() GetReportinggroupsCpCodeProductOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodeProductOutput) ToGetReportinggroupsCpCodeProductOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeProductOutput {
+	return o
+}
+
+// The product identifier.
+func (o GetReportinggroupsCpCodeProductOutput) ProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodeProduct) string { return v.ProductId }).(pulumi.StringOutput)
+}
+
+// The product name.
+func (o GetReportinggroupsCpCodeProductOutput) ProductName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodeProduct) string { return v.ProductName }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsCpCodeProductArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodeProductArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodeProduct)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodeProductArrayOutput) ToGetReportinggroupsCpCodeProductArrayOutput() GetReportinggroupsCpCodeProductArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodeProductArrayOutput) ToGetReportinggroupsCpCodeProductArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodeProductArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodeProductArrayOutput) Index(i pulumi.IntInput) GetReportinggroupsCpCodeProductOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportinggroupsCpCodeProduct {
+		return vs[0].([]GetReportinggroupsCpCodeProduct)[vs[1].(int)]
+	}).(GetReportinggroupsCpCodeProductOutput)
+}
+
+type GetReportinggroupsCpCodesCpCode struct {
+	// The access control group associated with the CP code.
+	AccessGroup GetReportinggroupsCpCodesCpCodeAccessGroup `pulumi:"accessGroup"`
+	// The account identifier associated with the CP code.
+	AccountId string `pulumi:"accountId"`
+	// List of contracts associated with the CP code.
+	Contracts []GetReportinggroupsCpCodesCpCodeContract `pulumi:"contracts"`
+	// The unique numeric identifier of the CP code.
+	CpCodeId int `pulumi:"cpCodeId"`
+	// The default time zone of the CP code.
+	DefaultTimeZone string `pulumi:"defaultTimeZone"`
+	// The name of the CP code.
+	Name string `pulumi:"name"`
+	// The override time zone of the CP code.
+	OverrideTimeZone GetReportinggroupsCpCodesCpCodeOverrideTimeZone `pulumi:"overrideTimeZone"`
+	// List of products associated with the CP code.
+	Products []GetReportinggroupsCpCodesCpCodeProduct `pulumi:"products"`
+	// Whether the CP code can be used to purge content.
+	Purgeable bool `pulumi:"purgeable"`
+	// The type of the CP code.
+	Type string `pulumi:"type"`
+}
+
+// GetReportinggroupsCpCodesCpCodeInput is an input type that accepts GetReportinggroupsCpCodesCpCodeArgs and GetReportinggroupsCpCodesCpCodeOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodesCpCodeInput` via:
+//
+//	GetReportinggroupsCpCodesCpCodeArgs{...}
+type GetReportinggroupsCpCodesCpCodeInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodesCpCodeOutput() GetReportinggroupsCpCodesCpCodeOutput
+	ToGetReportinggroupsCpCodesCpCodeOutputWithContext(context.Context) GetReportinggroupsCpCodesCpCodeOutput
+}
+
+type GetReportinggroupsCpCodesCpCodeArgs struct {
+	// The access control group associated with the CP code.
+	AccessGroup GetReportinggroupsCpCodesCpCodeAccessGroupInput `pulumi:"accessGroup"`
+	// The account identifier associated with the CP code.
+	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// List of contracts associated with the CP code.
+	Contracts GetReportinggroupsCpCodesCpCodeContractArrayInput `pulumi:"contracts"`
+	// The unique numeric identifier of the CP code.
+	CpCodeId pulumi.IntInput `pulumi:"cpCodeId"`
+	// The default time zone of the CP code.
+	DefaultTimeZone pulumi.StringInput `pulumi:"defaultTimeZone"`
+	// The name of the CP code.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The override time zone of the CP code.
+	OverrideTimeZone GetReportinggroupsCpCodesCpCodeOverrideTimeZoneInput `pulumi:"overrideTimeZone"`
+	// List of products associated with the CP code.
+	Products GetReportinggroupsCpCodesCpCodeProductArrayInput `pulumi:"products"`
+	// Whether the CP code can be used to purge content.
+	Purgeable pulumi.BoolInput `pulumi:"purgeable"`
+	// The type of the CP code.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetReportinggroupsCpCodesCpCodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCode)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodesCpCodeArgs) ToGetReportinggroupsCpCodesCpCodeOutput() GetReportinggroupsCpCodesCpCodeOutput {
+	return i.ToGetReportinggroupsCpCodesCpCodeOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodesCpCodeArgs) ToGetReportinggroupsCpCodesCpCodeOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodesCpCodeOutput)
+}
+
+// GetReportinggroupsCpCodesCpCodeArrayInput is an input type that accepts GetReportinggroupsCpCodesCpCodeArray and GetReportinggroupsCpCodesCpCodeArrayOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodesCpCodeArrayInput` via:
+//
+//	GetReportinggroupsCpCodesCpCodeArray{ GetReportinggroupsCpCodesCpCodeArgs{...} }
+type GetReportinggroupsCpCodesCpCodeArrayInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodesCpCodeArrayOutput() GetReportinggroupsCpCodesCpCodeArrayOutput
+	ToGetReportinggroupsCpCodesCpCodeArrayOutputWithContext(context.Context) GetReportinggroupsCpCodesCpCodeArrayOutput
+}
+
+type GetReportinggroupsCpCodesCpCodeArray []GetReportinggroupsCpCodesCpCodeInput
+
+func (GetReportinggroupsCpCodesCpCodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodesCpCode)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodesCpCodeArray) ToGetReportinggroupsCpCodesCpCodeArrayOutput() GetReportinggroupsCpCodesCpCodeArrayOutput {
+	return i.ToGetReportinggroupsCpCodesCpCodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodesCpCodeArray) ToGetReportinggroupsCpCodesCpCodeArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodesCpCodeArrayOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodesCpCodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCode)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodesCpCodeOutput) ToGetReportinggroupsCpCodesCpCodeOutput() GetReportinggroupsCpCodesCpCodeOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeOutput) ToGetReportinggroupsCpCodesCpCodeOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeOutput {
+	return o
+}
+
+// The access control group associated with the CP code.
+func (o GetReportinggroupsCpCodesCpCodeOutput) AccessGroup() GetReportinggroupsCpCodesCpCodeAccessGroupOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) GetReportinggroupsCpCodesCpCodeAccessGroup {
+		return v.AccessGroup
+	}).(GetReportinggroupsCpCodesCpCodeAccessGroupOutput)
+}
+
+// The account identifier associated with the CP code.
+func (o GetReportinggroupsCpCodesCpCodeOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) string { return v.AccountId }).(pulumi.StringOutput)
+}
+
+// List of contracts associated with the CP code.
+func (o GetReportinggroupsCpCodesCpCodeOutput) Contracts() GetReportinggroupsCpCodesCpCodeContractArrayOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) []GetReportinggroupsCpCodesCpCodeContract { return v.Contracts }).(GetReportinggroupsCpCodesCpCodeContractArrayOutput)
+}
+
+// The unique numeric identifier of the CP code.
+func (o GetReportinggroupsCpCodesCpCodeOutput) CpCodeId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) int { return v.CpCodeId }).(pulumi.IntOutput)
+}
+
+// The default time zone of the CP code.
+func (o GetReportinggroupsCpCodesCpCodeOutput) DefaultTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) string { return v.DefaultTimeZone }).(pulumi.StringOutput)
+}
+
+// The name of the CP code.
+func (o GetReportinggroupsCpCodesCpCodeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The override time zone of the CP code.
+func (o GetReportinggroupsCpCodesCpCodeOutput) OverrideTimeZone() GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) GetReportinggroupsCpCodesCpCodeOverrideTimeZone {
+		return v.OverrideTimeZone
+	}).(GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput)
+}
+
+// List of products associated with the CP code.
+func (o GetReportinggroupsCpCodesCpCodeOutput) Products() GetReportinggroupsCpCodesCpCodeProductArrayOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) []GetReportinggroupsCpCodesCpCodeProduct { return v.Products }).(GetReportinggroupsCpCodesCpCodeProductArrayOutput)
+}
+
+// Whether the CP code can be used to purge content.
+func (o GetReportinggroupsCpCodesCpCodeOutput) Purgeable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) bool { return v.Purgeable }).(pulumi.BoolOutput)
+}
+
+// The type of the CP code.
+func (o GetReportinggroupsCpCodesCpCodeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCode) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodesCpCodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodesCpCode)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodesCpCodeArrayOutput) ToGetReportinggroupsCpCodesCpCodeArrayOutput() GetReportinggroupsCpCodesCpCodeArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeArrayOutput) ToGetReportinggroupsCpCodesCpCodeArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeArrayOutput) Index(i pulumi.IntInput) GetReportinggroupsCpCodesCpCodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportinggroupsCpCodesCpCode {
+		return vs[0].([]GetReportinggroupsCpCodesCpCode)[vs[1].(int)]
+	}).(GetReportinggroupsCpCodesCpCodeOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeAccessGroup struct {
+	// The contract identifier assigned to the access control group.
+	ContractId string `pulumi:"contractId"`
+	// The access control group identifier.
+	GroupId string `pulumi:"groupId"`
+}
+
+// GetReportinggroupsCpCodesCpCodeAccessGroupInput is an input type that accepts GetReportinggroupsCpCodesCpCodeAccessGroupArgs and GetReportinggroupsCpCodesCpCodeAccessGroupOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodesCpCodeAccessGroupInput` via:
+//
+//	GetReportinggroupsCpCodesCpCodeAccessGroupArgs{...}
+type GetReportinggroupsCpCodesCpCodeAccessGroupInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodesCpCodeAccessGroupOutput() GetReportinggroupsCpCodesCpCodeAccessGroupOutput
+	ToGetReportinggroupsCpCodesCpCodeAccessGroupOutputWithContext(context.Context) GetReportinggroupsCpCodesCpCodeAccessGroupOutput
+}
+
+type GetReportinggroupsCpCodesCpCodeAccessGroupArgs struct {
+	// The contract identifier assigned to the access control group.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// The access control group identifier.
+	GroupId pulumi.StringInput `pulumi:"groupId"`
+}
+
+func (GetReportinggroupsCpCodesCpCodeAccessGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeAccessGroup)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodesCpCodeAccessGroupArgs) ToGetReportinggroupsCpCodesCpCodeAccessGroupOutput() GetReportinggroupsCpCodesCpCodeAccessGroupOutput {
+	return i.ToGetReportinggroupsCpCodesCpCodeAccessGroupOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodesCpCodeAccessGroupArgs) ToGetReportinggroupsCpCodesCpCodeAccessGroupOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeAccessGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodesCpCodeAccessGroupOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeAccessGroupOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodesCpCodeAccessGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeAccessGroup)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodesCpCodeAccessGroupOutput) ToGetReportinggroupsCpCodesCpCodeAccessGroupOutput() GetReportinggroupsCpCodesCpCodeAccessGroupOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeAccessGroupOutput) ToGetReportinggroupsCpCodesCpCodeAccessGroupOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeAccessGroupOutput {
+	return o
+}
+
+// The contract identifier assigned to the access control group.
+func (o GetReportinggroupsCpCodesCpCodeAccessGroupOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCodeAccessGroup) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// The access control group identifier.
+func (o GetReportinggroupsCpCodesCpCodeAccessGroupOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCodeAccessGroup) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeContract struct {
+	// The contract identifier.
+	ContractId string `pulumi:"contractId"`
+	// The contract status.
+	Status string `pulumi:"status"`
+}
+
+// GetReportinggroupsCpCodesCpCodeContractInput is an input type that accepts GetReportinggroupsCpCodesCpCodeContractArgs and GetReportinggroupsCpCodesCpCodeContractOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodesCpCodeContractInput` via:
+//
+//	GetReportinggroupsCpCodesCpCodeContractArgs{...}
+type GetReportinggroupsCpCodesCpCodeContractInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodesCpCodeContractOutput() GetReportinggroupsCpCodesCpCodeContractOutput
+	ToGetReportinggroupsCpCodesCpCodeContractOutputWithContext(context.Context) GetReportinggroupsCpCodesCpCodeContractOutput
+}
+
+type GetReportinggroupsCpCodesCpCodeContractArgs struct {
+	// The contract identifier.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// The contract status.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetReportinggroupsCpCodesCpCodeContractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeContract)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodesCpCodeContractArgs) ToGetReportinggroupsCpCodesCpCodeContractOutput() GetReportinggroupsCpCodesCpCodeContractOutput {
+	return i.ToGetReportinggroupsCpCodesCpCodeContractOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodesCpCodeContractArgs) ToGetReportinggroupsCpCodesCpCodeContractOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeContractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodesCpCodeContractOutput)
+}
+
+// GetReportinggroupsCpCodesCpCodeContractArrayInput is an input type that accepts GetReportinggroupsCpCodesCpCodeContractArray and GetReportinggroupsCpCodesCpCodeContractArrayOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodesCpCodeContractArrayInput` via:
+//
+//	GetReportinggroupsCpCodesCpCodeContractArray{ GetReportinggroupsCpCodesCpCodeContractArgs{...} }
+type GetReportinggroupsCpCodesCpCodeContractArrayInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodesCpCodeContractArrayOutput() GetReportinggroupsCpCodesCpCodeContractArrayOutput
+	ToGetReportinggroupsCpCodesCpCodeContractArrayOutputWithContext(context.Context) GetReportinggroupsCpCodesCpCodeContractArrayOutput
+}
+
+type GetReportinggroupsCpCodesCpCodeContractArray []GetReportinggroupsCpCodesCpCodeContractInput
+
+func (GetReportinggroupsCpCodesCpCodeContractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodesCpCodeContract)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodesCpCodeContractArray) ToGetReportinggroupsCpCodesCpCodeContractArrayOutput() GetReportinggroupsCpCodesCpCodeContractArrayOutput {
+	return i.ToGetReportinggroupsCpCodesCpCodeContractArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodesCpCodeContractArray) ToGetReportinggroupsCpCodesCpCodeContractArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeContractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodesCpCodeContractArrayOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeContractOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodesCpCodeContractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeContract)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodesCpCodeContractOutput) ToGetReportinggroupsCpCodesCpCodeContractOutput() GetReportinggroupsCpCodesCpCodeContractOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeContractOutput) ToGetReportinggroupsCpCodesCpCodeContractOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeContractOutput {
+	return o
+}
+
+// The contract identifier.
+func (o GetReportinggroupsCpCodesCpCodeContractOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCodeContract) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// The contract status.
+func (o GetReportinggroupsCpCodesCpCodeContractOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCodeContract) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeContractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodesCpCodeContractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodesCpCodeContract)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodesCpCodeContractArrayOutput) ToGetReportinggroupsCpCodesCpCodeContractArrayOutput() GetReportinggroupsCpCodesCpCodeContractArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeContractArrayOutput) ToGetReportinggroupsCpCodesCpCodeContractArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeContractArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeContractArrayOutput) Index(i pulumi.IntInput) GetReportinggroupsCpCodesCpCodeContractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportinggroupsCpCodesCpCodeContract {
+		return vs[0].([]GetReportinggroupsCpCodesCpCodeContract)[vs[1].(int)]
+	}).(GetReportinggroupsCpCodesCpCodeContractOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeOverrideTimeZone struct {
+	// The time zone identifier.
+	TimeZoneId string `pulumi:"timeZoneId"`
+	// The time zone value.
+	TimeZoneValue string `pulumi:"timeZoneValue"`
+}
+
+// GetReportinggroupsCpCodesCpCodeOverrideTimeZoneInput is an input type that accepts GetReportinggroupsCpCodesCpCodeOverrideTimeZoneArgs and GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodesCpCodeOverrideTimeZoneInput` via:
+//
+//	GetReportinggroupsCpCodesCpCodeOverrideTimeZoneArgs{...}
+type GetReportinggroupsCpCodesCpCodeOverrideTimeZoneInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput() GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput
+	ToGetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutputWithContext(context.Context) GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput
+}
+
+type GetReportinggroupsCpCodesCpCodeOverrideTimeZoneArgs struct {
+	// The time zone identifier.
+	TimeZoneId pulumi.StringInput `pulumi:"timeZoneId"`
+	// The time zone value.
+	TimeZoneValue pulumi.StringInput `pulumi:"timeZoneValue"`
+}
+
+func (GetReportinggroupsCpCodesCpCodeOverrideTimeZoneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeOverrideTimeZone)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodesCpCodeOverrideTimeZoneArgs) ToGetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput() GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput {
+	return i.ToGetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodesCpCodeOverrideTimeZoneArgs) ToGetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeOverrideTimeZone)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput) ToGetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput() GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput) ToGetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput {
+	return o
+}
+
+// The time zone identifier.
+func (o GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput) TimeZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCodeOverrideTimeZone) string { return v.TimeZoneId }).(pulumi.StringOutput)
+}
+
+// The time zone value.
+func (o GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput) TimeZoneValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCodeOverrideTimeZone) string { return v.TimeZoneValue }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeProduct struct {
+	// The product identifier.
+	ProductId string `pulumi:"productId"`
+	// The product name.
+	ProductName string `pulumi:"productName"`
+}
+
+// GetReportinggroupsCpCodesCpCodeProductInput is an input type that accepts GetReportinggroupsCpCodesCpCodeProductArgs and GetReportinggroupsCpCodesCpCodeProductOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodesCpCodeProductInput` via:
+//
+//	GetReportinggroupsCpCodesCpCodeProductArgs{...}
+type GetReportinggroupsCpCodesCpCodeProductInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodesCpCodeProductOutput() GetReportinggroupsCpCodesCpCodeProductOutput
+	ToGetReportinggroupsCpCodesCpCodeProductOutputWithContext(context.Context) GetReportinggroupsCpCodesCpCodeProductOutput
+}
+
+type GetReportinggroupsCpCodesCpCodeProductArgs struct {
+	// The product identifier.
+	ProductId pulumi.StringInput `pulumi:"productId"`
+	// The product name.
+	ProductName pulumi.StringInput `pulumi:"productName"`
+}
+
+func (GetReportinggroupsCpCodesCpCodeProductArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeProduct)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodesCpCodeProductArgs) ToGetReportinggroupsCpCodesCpCodeProductOutput() GetReportinggroupsCpCodesCpCodeProductOutput {
+	return i.ToGetReportinggroupsCpCodesCpCodeProductOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodesCpCodeProductArgs) ToGetReportinggroupsCpCodesCpCodeProductOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeProductOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodesCpCodeProductOutput)
+}
+
+// GetReportinggroupsCpCodesCpCodeProductArrayInput is an input type that accepts GetReportinggroupsCpCodesCpCodeProductArray and GetReportinggroupsCpCodesCpCodeProductArrayOutput values.
+// You can construct a concrete instance of `GetReportinggroupsCpCodesCpCodeProductArrayInput` via:
+//
+//	GetReportinggroupsCpCodesCpCodeProductArray{ GetReportinggroupsCpCodesCpCodeProductArgs{...} }
+type GetReportinggroupsCpCodesCpCodeProductArrayInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsCpCodesCpCodeProductArrayOutput() GetReportinggroupsCpCodesCpCodeProductArrayOutput
+	ToGetReportinggroupsCpCodesCpCodeProductArrayOutputWithContext(context.Context) GetReportinggroupsCpCodesCpCodeProductArrayOutput
+}
+
+type GetReportinggroupsCpCodesCpCodeProductArray []GetReportinggroupsCpCodesCpCodeProductInput
+
+func (GetReportinggroupsCpCodesCpCodeProductArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodesCpCodeProduct)(nil)).Elem()
+}
+
+func (i GetReportinggroupsCpCodesCpCodeProductArray) ToGetReportinggroupsCpCodesCpCodeProductArrayOutput() GetReportinggroupsCpCodesCpCodeProductArrayOutput {
+	return i.ToGetReportinggroupsCpCodesCpCodeProductArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsCpCodesCpCodeProductArray) ToGetReportinggroupsCpCodesCpCodeProductArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeProductArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsCpCodesCpCodeProductArrayOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeProductOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodesCpCodeProductOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeProduct)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodesCpCodeProductOutput) ToGetReportinggroupsCpCodesCpCodeProductOutput() GetReportinggroupsCpCodesCpCodeProductOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeProductOutput) ToGetReportinggroupsCpCodesCpCodeProductOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeProductOutput {
+	return o
+}
+
+// The product identifier.
+func (o GetReportinggroupsCpCodesCpCodeProductOutput) ProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCodeProduct) string { return v.ProductId }).(pulumi.StringOutput)
+}
+
+// The product name.
+func (o GetReportinggroupsCpCodesCpCodeProductOutput) ProductName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsCpCodesCpCodeProduct) string { return v.ProductName }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsCpCodesCpCodeProductArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsCpCodesCpCodeProductArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsCpCodesCpCodeProduct)(nil)).Elem()
+}
+
+func (o GetReportinggroupsCpCodesCpCodeProductArrayOutput) ToGetReportinggroupsCpCodesCpCodeProductArrayOutput() GetReportinggroupsCpCodesCpCodeProductArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeProductArrayOutput) ToGetReportinggroupsCpCodesCpCodeProductArrayOutputWithContext(ctx context.Context) GetReportinggroupsCpCodesCpCodeProductArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsCpCodesCpCodeProductArrayOutput) Index(i pulumi.IntInput) GetReportinggroupsCpCodesCpCodeProductOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportinggroupsCpCodesCpCodeProduct {
+		return vs[0].([]GetReportinggroupsCpCodesCpCodeProduct)[vs[1].(int)]
+	}).(GetReportinggroupsCpCodesCpCodeProductOutput)
+}
+
+type GetReportinggroupsGroupAccessGroup struct {
+	// Identifies the contract assigned to the access control group.
+	ContractId string `pulumi:"contractId"`
+	// Identifies the access control group. May be null if the reporting group belongs to many groups.
+	GroupId string `pulumi:"groupId"`
+}
+
+// GetReportinggroupsGroupAccessGroupInput is an input type that accepts GetReportinggroupsGroupAccessGroupArgs and GetReportinggroupsGroupAccessGroupOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupAccessGroupInput` via:
+//
+//	GetReportinggroupsGroupAccessGroupArgs{...}
+type GetReportinggroupsGroupAccessGroupInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupAccessGroupOutput() GetReportinggroupsGroupAccessGroupOutput
+	ToGetReportinggroupsGroupAccessGroupOutputWithContext(context.Context) GetReportinggroupsGroupAccessGroupOutput
+}
+
+type GetReportinggroupsGroupAccessGroupArgs struct {
+	// Identifies the contract assigned to the access control group.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// Identifies the access control group. May be null if the reporting group belongs to many groups.
+	GroupId pulumi.StringInput `pulumi:"groupId"`
+}
+
+func (GetReportinggroupsGroupAccessGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupAccessGroup)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupAccessGroupArgs) ToGetReportinggroupsGroupAccessGroupOutput() GetReportinggroupsGroupAccessGroupOutput {
+	return i.ToGetReportinggroupsGroupAccessGroupOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupAccessGroupArgs) ToGetReportinggroupsGroupAccessGroupOutputWithContext(ctx context.Context) GetReportinggroupsGroupAccessGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupAccessGroupOutput)
+}
+
+type GetReportinggroupsGroupAccessGroupOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupAccessGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupAccessGroup)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupAccessGroupOutput) ToGetReportinggroupsGroupAccessGroupOutput() GetReportinggroupsGroupAccessGroupOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupAccessGroupOutput) ToGetReportinggroupsGroupAccessGroupOutputWithContext(ctx context.Context) GetReportinggroupsGroupAccessGroupOutput {
+	return o
+}
+
+// Identifies the contract assigned to the access control group.
+func (o GetReportinggroupsGroupAccessGroupOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupAccessGroup) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// Identifies the access control group. May be null if the reporting group belongs to many groups.
+func (o GetReportinggroupsGroupAccessGroupOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupAccessGroup) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsGroupContract struct {
+	// Identifies the contract assigned to the reporting group.
+	ContractId string `pulumi:"contractId"`
+	// A collection of CP codes assigned to the reporting group.
+	CpCodes []GetReportinggroupsGroupContractCpCode `pulumi:"cpCodes"`
+}
+
+// GetReportinggroupsGroupContractInput is an input type that accepts GetReportinggroupsGroupContractArgs and GetReportinggroupsGroupContractOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupContractInput` via:
+//
+//	GetReportinggroupsGroupContractArgs{...}
+type GetReportinggroupsGroupContractInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupContractOutput() GetReportinggroupsGroupContractOutput
+	ToGetReportinggroupsGroupContractOutputWithContext(context.Context) GetReportinggroupsGroupContractOutput
+}
+
+type GetReportinggroupsGroupContractArgs struct {
+	// Identifies the contract assigned to the reporting group.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// A collection of CP codes assigned to the reporting group.
+	CpCodes GetReportinggroupsGroupContractCpCodeArrayInput `pulumi:"cpCodes"`
+}
+
+func (GetReportinggroupsGroupContractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupContract)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupContractArgs) ToGetReportinggroupsGroupContractOutput() GetReportinggroupsGroupContractOutput {
+	return i.ToGetReportinggroupsGroupContractOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupContractArgs) ToGetReportinggroupsGroupContractOutputWithContext(ctx context.Context) GetReportinggroupsGroupContractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupContractOutput)
+}
+
+type GetReportinggroupsGroupContractOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupContractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupContract)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupContractOutput) ToGetReportinggroupsGroupContractOutput() GetReportinggroupsGroupContractOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupContractOutput) ToGetReportinggroupsGroupContractOutputWithContext(ctx context.Context) GetReportinggroupsGroupContractOutput {
+	return o
+}
+
+// Identifies the contract assigned to the reporting group.
+func (o GetReportinggroupsGroupContractOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupContract) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// A collection of CP codes assigned to the reporting group.
+func (o GetReportinggroupsGroupContractOutput) CpCodes() GetReportinggroupsGroupContractCpCodeArrayOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupContract) []GetReportinggroupsGroupContractCpCode { return v.CpCodes }).(GetReportinggroupsGroupContractCpCodeArrayOutput)
+}
+
+type GetReportinggroupsGroupContractCpCode struct {
+	// Identifies a CP code.
+	CpCodeId string `pulumi:"cpCodeId"`
+	// The descriptive label for the CP code.
+	CpCodeName string `pulumi:"cpCodeName"`
+}
+
+// GetReportinggroupsGroupContractCpCodeInput is an input type that accepts GetReportinggroupsGroupContractCpCodeArgs and GetReportinggroupsGroupContractCpCodeOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupContractCpCodeInput` via:
+//
+//	GetReportinggroupsGroupContractCpCodeArgs{...}
+type GetReportinggroupsGroupContractCpCodeInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupContractCpCodeOutput() GetReportinggroupsGroupContractCpCodeOutput
+	ToGetReportinggroupsGroupContractCpCodeOutputWithContext(context.Context) GetReportinggroupsGroupContractCpCodeOutput
+}
+
+type GetReportinggroupsGroupContractCpCodeArgs struct {
+	// Identifies a CP code.
+	CpCodeId pulumi.StringInput `pulumi:"cpCodeId"`
+	// The descriptive label for the CP code.
+	CpCodeName pulumi.StringInput `pulumi:"cpCodeName"`
+}
+
+func (GetReportinggroupsGroupContractCpCodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupContractCpCode)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupContractCpCodeArgs) ToGetReportinggroupsGroupContractCpCodeOutput() GetReportinggroupsGroupContractCpCodeOutput {
+	return i.ToGetReportinggroupsGroupContractCpCodeOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupContractCpCodeArgs) ToGetReportinggroupsGroupContractCpCodeOutputWithContext(ctx context.Context) GetReportinggroupsGroupContractCpCodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupContractCpCodeOutput)
+}
+
+// GetReportinggroupsGroupContractCpCodeArrayInput is an input type that accepts GetReportinggroupsGroupContractCpCodeArray and GetReportinggroupsGroupContractCpCodeArrayOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupContractCpCodeArrayInput` via:
+//
+//	GetReportinggroupsGroupContractCpCodeArray{ GetReportinggroupsGroupContractCpCodeArgs{...} }
+type GetReportinggroupsGroupContractCpCodeArrayInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupContractCpCodeArrayOutput() GetReportinggroupsGroupContractCpCodeArrayOutput
+	ToGetReportinggroupsGroupContractCpCodeArrayOutputWithContext(context.Context) GetReportinggroupsGroupContractCpCodeArrayOutput
+}
+
+type GetReportinggroupsGroupContractCpCodeArray []GetReportinggroupsGroupContractCpCodeInput
+
+func (GetReportinggroupsGroupContractCpCodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsGroupContractCpCode)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupContractCpCodeArray) ToGetReportinggroupsGroupContractCpCodeArrayOutput() GetReportinggroupsGroupContractCpCodeArrayOutput {
+	return i.ToGetReportinggroupsGroupContractCpCodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupContractCpCodeArray) ToGetReportinggroupsGroupContractCpCodeArrayOutputWithContext(ctx context.Context) GetReportinggroupsGroupContractCpCodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupContractCpCodeArrayOutput)
+}
+
+type GetReportinggroupsGroupContractCpCodeOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupContractCpCodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupContractCpCode)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupContractCpCodeOutput) ToGetReportinggroupsGroupContractCpCodeOutput() GetReportinggroupsGroupContractCpCodeOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupContractCpCodeOutput) ToGetReportinggroupsGroupContractCpCodeOutputWithContext(ctx context.Context) GetReportinggroupsGroupContractCpCodeOutput {
+	return o
+}
+
+// Identifies a CP code.
+func (o GetReportinggroupsGroupContractCpCodeOutput) CpCodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupContractCpCode) string { return v.CpCodeId }).(pulumi.StringOutput)
+}
+
+// The descriptive label for the CP code.
+func (o GetReportinggroupsGroupContractCpCodeOutput) CpCodeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupContractCpCode) string { return v.CpCodeName }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsGroupContractCpCodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupContractCpCodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsGroupContractCpCode)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupContractCpCodeArrayOutput) ToGetReportinggroupsGroupContractCpCodeArrayOutput() GetReportinggroupsGroupContractCpCodeArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupContractCpCodeArrayOutput) ToGetReportinggroupsGroupContractCpCodeArrayOutputWithContext(ctx context.Context) GetReportinggroupsGroupContractCpCodeArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupContractCpCodeArrayOutput) Index(i pulumi.IntInput) GetReportinggroupsGroupContractCpCodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportinggroupsGroupContractCpCode {
+		return vs[0].([]GetReportinggroupsGroupContractCpCode)[vs[1].(int)]
+	}).(GetReportinggroupsGroupContractCpCodeOutput)
+}
+
+type GetReportinggroupsGroupsGroup struct {
+	// The access control group that controls access to specific CP codes.
+	AccessGroup GetReportinggroupsGroupsGroupAccessGroup `pulumi:"accessGroup"`
+	// The contract and CP codes assigned to the reporting group.
+	Contract GetReportinggroupsGroupsGroupContract `pulumi:"contract"`
+	// The unique identifier for the reporting group.
+	ReportingGroupId int `pulumi:"reportingGroupId"`
+	// The descriptive label for the reporting group.
+	ReportingGroupName string `pulumi:"reportingGroupName"`
+}
+
+// GetReportinggroupsGroupsGroupInput is an input type that accepts GetReportinggroupsGroupsGroupArgs and GetReportinggroupsGroupsGroupOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupsGroupInput` via:
+//
+//	GetReportinggroupsGroupsGroupArgs{...}
+type GetReportinggroupsGroupsGroupInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupsGroupOutput() GetReportinggroupsGroupsGroupOutput
+	ToGetReportinggroupsGroupsGroupOutputWithContext(context.Context) GetReportinggroupsGroupsGroupOutput
+}
+
+type GetReportinggroupsGroupsGroupArgs struct {
+	// The access control group that controls access to specific CP codes.
+	AccessGroup GetReportinggroupsGroupsGroupAccessGroupInput `pulumi:"accessGroup"`
+	// The contract and CP codes assigned to the reporting group.
+	Contract GetReportinggroupsGroupsGroupContractInput `pulumi:"contract"`
+	// The unique identifier for the reporting group.
+	ReportingGroupId pulumi.IntInput `pulumi:"reportingGroupId"`
+	// The descriptive label for the reporting group.
+	ReportingGroupName pulumi.StringInput `pulumi:"reportingGroupName"`
+}
+
+func (GetReportinggroupsGroupsGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupsGroup)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupsGroupArgs) ToGetReportinggroupsGroupsGroupOutput() GetReportinggroupsGroupsGroupOutput {
+	return i.ToGetReportinggroupsGroupsGroupOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupsGroupArgs) ToGetReportinggroupsGroupsGroupOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupsGroupOutput)
+}
+
+// GetReportinggroupsGroupsGroupArrayInput is an input type that accepts GetReportinggroupsGroupsGroupArray and GetReportinggroupsGroupsGroupArrayOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupsGroupArrayInput` via:
+//
+//	GetReportinggroupsGroupsGroupArray{ GetReportinggroupsGroupsGroupArgs{...} }
+type GetReportinggroupsGroupsGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupsGroupArrayOutput() GetReportinggroupsGroupsGroupArrayOutput
+	ToGetReportinggroupsGroupsGroupArrayOutputWithContext(context.Context) GetReportinggroupsGroupsGroupArrayOutput
+}
+
+type GetReportinggroupsGroupsGroupArray []GetReportinggroupsGroupsGroupInput
+
+func (GetReportinggroupsGroupsGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsGroupsGroup)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupsGroupArray) ToGetReportinggroupsGroupsGroupArrayOutput() GetReportinggroupsGroupsGroupArrayOutput {
+	return i.ToGetReportinggroupsGroupsGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupsGroupArray) ToGetReportinggroupsGroupsGroupArrayOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupsGroupArrayOutput)
+}
+
+type GetReportinggroupsGroupsGroupOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupsGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupsGroup)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupsGroupOutput) ToGetReportinggroupsGroupsGroupOutput() GetReportinggroupsGroupsGroupOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupsGroupOutput) ToGetReportinggroupsGroupsGroupOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupOutput {
+	return o
+}
+
+// The access control group that controls access to specific CP codes.
+func (o GetReportinggroupsGroupsGroupOutput) AccessGroup() GetReportinggroupsGroupsGroupAccessGroupOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroup) GetReportinggroupsGroupsGroupAccessGroup { return v.AccessGroup }).(GetReportinggroupsGroupsGroupAccessGroupOutput)
+}
+
+// The contract and CP codes assigned to the reporting group.
+func (o GetReportinggroupsGroupsGroupOutput) Contract() GetReportinggroupsGroupsGroupContractOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroup) GetReportinggroupsGroupsGroupContract { return v.Contract }).(GetReportinggroupsGroupsGroupContractOutput)
+}
+
+// The unique identifier for the reporting group.
+func (o GetReportinggroupsGroupsGroupOutput) ReportingGroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroup) int { return v.ReportingGroupId }).(pulumi.IntOutput)
+}
+
+// The descriptive label for the reporting group.
+func (o GetReportinggroupsGroupsGroupOutput) ReportingGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroup) string { return v.ReportingGroupName }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsGroupsGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupsGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsGroupsGroup)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupsGroupArrayOutput) ToGetReportinggroupsGroupsGroupArrayOutput() GetReportinggroupsGroupsGroupArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupsGroupArrayOutput) ToGetReportinggroupsGroupsGroupArrayOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupsGroupArrayOutput) Index(i pulumi.IntInput) GetReportinggroupsGroupsGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportinggroupsGroupsGroup {
+		return vs[0].([]GetReportinggroupsGroupsGroup)[vs[1].(int)]
+	}).(GetReportinggroupsGroupsGroupOutput)
+}
+
+type GetReportinggroupsGroupsGroupAccessGroup struct {
+	// Identifies the contract assigned to the access control group.
+	ContractId string `pulumi:"contractId"`
+	// Identifies the access control group. May be null if the reporting group belongs to many groups.
+	GroupId string `pulumi:"groupId"`
+}
+
+// GetReportinggroupsGroupsGroupAccessGroupInput is an input type that accepts GetReportinggroupsGroupsGroupAccessGroupArgs and GetReportinggroupsGroupsGroupAccessGroupOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupsGroupAccessGroupInput` via:
+//
+//	GetReportinggroupsGroupsGroupAccessGroupArgs{...}
+type GetReportinggroupsGroupsGroupAccessGroupInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupsGroupAccessGroupOutput() GetReportinggroupsGroupsGroupAccessGroupOutput
+	ToGetReportinggroupsGroupsGroupAccessGroupOutputWithContext(context.Context) GetReportinggroupsGroupsGroupAccessGroupOutput
+}
+
+type GetReportinggroupsGroupsGroupAccessGroupArgs struct {
+	// Identifies the contract assigned to the access control group.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// Identifies the access control group. May be null if the reporting group belongs to many groups.
+	GroupId pulumi.StringInput `pulumi:"groupId"`
+}
+
+func (GetReportinggroupsGroupsGroupAccessGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupsGroupAccessGroup)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupsGroupAccessGroupArgs) ToGetReportinggroupsGroupsGroupAccessGroupOutput() GetReportinggroupsGroupsGroupAccessGroupOutput {
+	return i.ToGetReportinggroupsGroupsGroupAccessGroupOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupsGroupAccessGroupArgs) ToGetReportinggroupsGroupsGroupAccessGroupOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupAccessGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupsGroupAccessGroupOutput)
+}
+
+type GetReportinggroupsGroupsGroupAccessGroupOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupsGroupAccessGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupsGroupAccessGroup)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupsGroupAccessGroupOutput) ToGetReportinggroupsGroupsGroupAccessGroupOutput() GetReportinggroupsGroupsGroupAccessGroupOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupsGroupAccessGroupOutput) ToGetReportinggroupsGroupsGroupAccessGroupOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupAccessGroupOutput {
+	return o
+}
+
+// Identifies the contract assigned to the access control group.
+func (o GetReportinggroupsGroupsGroupAccessGroupOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroupAccessGroup) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// Identifies the access control group. May be null if the reporting group belongs to many groups.
+func (o GetReportinggroupsGroupsGroupAccessGroupOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroupAccessGroup) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsGroupsGroupContract struct {
+	// Identifies the contract assigned to the reporting group.
+	ContractId string `pulumi:"contractId"`
+	// A collection of CP codes assigned to the reporting group.
+	CpCodes []GetReportinggroupsGroupsGroupContractCpCode `pulumi:"cpCodes"`
+}
+
+// GetReportinggroupsGroupsGroupContractInput is an input type that accepts GetReportinggroupsGroupsGroupContractArgs and GetReportinggroupsGroupsGroupContractOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupsGroupContractInput` via:
+//
+//	GetReportinggroupsGroupsGroupContractArgs{...}
+type GetReportinggroupsGroupsGroupContractInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupsGroupContractOutput() GetReportinggroupsGroupsGroupContractOutput
+	ToGetReportinggroupsGroupsGroupContractOutputWithContext(context.Context) GetReportinggroupsGroupsGroupContractOutput
+}
+
+type GetReportinggroupsGroupsGroupContractArgs struct {
+	// Identifies the contract assigned to the reporting group.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// A collection of CP codes assigned to the reporting group.
+	CpCodes GetReportinggroupsGroupsGroupContractCpCodeArrayInput `pulumi:"cpCodes"`
+}
+
+func (GetReportinggroupsGroupsGroupContractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupsGroupContract)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupsGroupContractArgs) ToGetReportinggroupsGroupsGroupContractOutput() GetReportinggroupsGroupsGroupContractOutput {
+	return i.ToGetReportinggroupsGroupsGroupContractOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupsGroupContractArgs) ToGetReportinggroupsGroupsGroupContractOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupContractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupsGroupContractOutput)
+}
+
+type GetReportinggroupsGroupsGroupContractOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupsGroupContractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupsGroupContract)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupsGroupContractOutput) ToGetReportinggroupsGroupsGroupContractOutput() GetReportinggroupsGroupsGroupContractOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupsGroupContractOutput) ToGetReportinggroupsGroupsGroupContractOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupContractOutput {
+	return o
+}
+
+// Identifies the contract assigned to the reporting group.
+func (o GetReportinggroupsGroupsGroupContractOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroupContract) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// A collection of CP codes assigned to the reporting group.
+func (o GetReportinggroupsGroupsGroupContractOutput) CpCodes() GetReportinggroupsGroupsGroupContractCpCodeArrayOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroupContract) []GetReportinggroupsGroupsGroupContractCpCode {
+		return v.CpCodes
+	}).(GetReportinggroupsGroupsGroupContractCpCodeArrayOutput)
+}
+
+type GetReportinggroupsGroupsGroupContractCpCode struct {
+	// Identifies a CP code.
+	CpCodeId string `pulumi:"cpCodeId"`
+	// The descriptive label for the CP code.
+	CpCodeName string `pulumi:"cpCodeName"`
+}
+
+// GetReportinggroupsGroupsGroupContractCpCodeInput is an input type that accepts GetReportinggroupsGroupsGroupContractCpCodeArgs and GetReportinggroupsGroupsGroupContractCpCodeOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupsGroupContractCpCodeInput` via:
+//
+//	GetReportinggroupsGroupsGroupContractCpCodeArgs{...}
+type GetReportinggroupsGroupsGroupContractCpCodeInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupsGroupContractCpCodeOutput() GetReportinggroupsGroupsGroupContractCpCodeOutput
+	ToGetReportinggroupsGroupsGroupContractCpCodeOutputWithContext(context.Context) GetReportinggroupsGroupsGroupContractCpCodeOutput
+}
+
+type GetReportinggroupsGroupsGroupContractCpCodeArgs struct {
+	// Identifies a CP code.
+	CpCodeId pulumi.StringInput `pulumi:"cpCodeId"`
+	// The descriptive label for the CP code.
+	CpCodeName pulumi.StringInput `pulumi:"cpCodeName"`
+}
+
+func (GetReportinggroupsGroupsGroupContractCpCodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupsGroupContractCpCode)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupsGroupContractCpCodeArgs) ToGetReportinggroupsGroupsGroupContractCpCodeOutput() GetReportinggroupsGroupsGroupContractCpCodeOutput {
+	return i.ToGetReportinggroupsGroupsGroupContractCpCodeOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupsGroupContractCpCodeArgs) ToGetReportinggroupsGroupsGroupContractCpCodeOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupContractCpCodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupsGroupContractCpCodeOutput)
+}
+
+// GetReportinggroupsGroupsGroupContractCpCodeArrayInput is an input type that accepts GetReportinggroupsGroupsGroupContractCpCodeArray and GetReportinggroupsGroupsGroupContractCpCodeArrayOutput values.
+// You can construct a concrete instance of `GetReportinggroupsGroupsGroupContractCpCodeArrayInput` via:
+//
+//	GetReportinggroupsGroupsGroupContractCpCodeArray{ GetReportinggroupsGroupsGroupContractCpCodeArgs{...} }
+type GetReportinggroupsGroupsGroupContractCpCodeArrayInput interface {
+	pulumi.Input
+
+	ToGetReportinggroupsGroupsGroupContractCpCodeArrayOutput() GetReportinggroupsGroupsGroupContractCpCodeArrayOutput
+	ToGetReportinggroupsGroupsGroupContractCpCodeArrayOutputWithContext(context.Context) GetReportinggroupsGroupsGroupContractCpCodeArrayOutput
+}
+
+type GetReportinggroupsGroupsGroupContractCpCodeArray []GetReportinggroupsGroupsGroupContractCpCodeInput
+
+func (GetReportinggroupsGroupsGroupContractCpCodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsGroupsGroupContractCpCode)(nil)).Elem()
+}
+
+func (i GetReportinggroupsGroupsGroupContractCpCodeArray) ToGetReportinggroupsGroupsGroupContractCpCodeArrayOutput() GetReportinggroupsGroupsGroupContractCpCodeArrayOutput {
+	return i.ToGetReportinggroupsGroupsGroupContractCpCodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportinggroupsGroupsGroupContractCpCodeArray) ToGetReportinggroupsGroupsGroupContractCpCodeArrayOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupContractCpCodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportinggroupsGroupsGroupContractCpCodeArrayOutput)
+}
+
+type GetReportinggroupsGroupsGroupContractCpCodeOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupsGroupContractCpCodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportinggroupsGroupsGroupContractCpCode)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupsGroupContractCpCodeOutput) ToGetReportinggroupsGroupsGroupContractCpCodeOutput() GetReportinggroupsGroupsGroupContractCpCodeOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupsGroupContractCpCodeOutput) ToGetReportinggroupsGroupsGroupContractCpCodeOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupContractCpCodeOutput {
+	return o
+}
+
+// Identifies a CP code.
+func (o GetReportinggroupsGroupsGroupContractCpCodeOutput) CpCodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroupContractCpCode) string { return v.CpCodeId }).(pulumi.StringOutput)
+}
+
+// The descriptive label for the CP code.
+func (o GetReportinggroupsGroupsGroupContractCpCodeOutput) CpCodeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportinggroupsGroupsGroupContractCpCode) string { return v.CpCodeName }).(pulumi.StringOutput)
+}
+
+type GetReportinggroupsGroupsGroupContractCpCodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportinggroupsGroupsGroupContractCpCodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportinggroupsGroupsGroupContractCpCode)(nil)).Elem()
+}
+
+func (o GetReportinggroupsGroupsGroupContractCpCodeArrayOutput) ToGetReportinggroupsGroupsGroupContractCpCodeArrayOutput() GetReportinggroupsGroupsGroupContractCpCodeArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupsGroupContractCpCodeArrayOutput) ToGetReportinggroupsGroupsGroupContractCpCodeArrayOutputWithContext(ctx context.Context) GetReportinggroupsGroupsGroupContractCpCodeArrayOutput {
+	return o
+}
+
+func (o GetReportinggroupsGroupsGroupContractCpCodeArrayOutput) Index(i pulumi.IntInput) GetReportinggroupsGroupsGroupContractCpCodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportinggroupsGroupsGroupContractCpCode {
+		return vs[0].([]GetReportinggroupsGroupsGroupContractCpCode)[vs[1].(int)]
+	}).(GetReportinggroupsGroupsGroupContractCpCodeOutput)
+}
+
 type GetZoneDnssecStatusCurrentRecords struct {
 	// The generated DNSKEY record for this zone.
 	DnskeyRecord string `pulumi:"dnskeyRecord"`
@@ -2688,6 +5003,17 @@ func (o GetZoneDnssecStatusNewRecordsOutput) LastModifiedDate() pulumi.StringOut
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnameActivationHostnameInput)(nil)).Elem(), GetPropertyHostnameActivationHostnameArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnameActivationHostnameArrayInput)(nil)).Elem(), GetPropertyHostnameActivationHostnameArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnameActivationsHostnameActivationInput)(nil)).Elem(), GetPropertyHostnameActivationsHostnameActivationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnameActivationsHostnameActivationArrayInput)(nil)).Elem(), GetPropertyHostnameActivationsHostnameActivationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnameAuditHistoryHistoryInput)(nil)).Elem(), GetPropertyHostnameAuditHistoryHistoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnameAuditHistoryHistoryArrayInput)(nil)).Elem(), GetPropertyHostnameAuditHistoryHistoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesDiffHostnameInput)(nil)).Elem(), GetPropertyHostnamesDiffHostnameArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesDiffHostnameArrayInput)(nil)).Elem(), GetPropertyHostnamesDiffHostnameArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameInput)(nil)).Elem(), GetPropertyHostnamesHostnameArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketArgs{})
@@ -2728,8 +5054,43 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateTemplateArrayInput)(nil)).Elem(), GetPropertyRulesTemplateTemplateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateVariableInput)(nil)).Elem(), GetPropertyRulesTemplateVariableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateVariableArrayInput)(nil)).Elem(), GetPropertyRulesTemplateVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodeAccessGroupInput)(nil)).Elem(), GetReportinggroupsCpCodeAccessGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodeContractInput)(nil)).Elem(), GetReportinggroupsCpCodeContractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodeContractArrayInput)(nil)).Elem(), GetReportinggroupsCpCodeContractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodeOverrideTimeZoneInput)(nil)).Elem(), GetReportinggroupsCpCodeOverrideTimeZoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodeProductInput)(nil)).Elem(), GetReportinggroupsCpCodeProductArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodeProductArrayInput)(nil)).Elem(), GetReportinggroupsCpCodeProductArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeInput)(nil)).Elem(), GetReportinggroupsCpCodesCpCodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeArrayInput)(nil)).Elem(), GetReportinggroupsCpCodesCpCodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeAccessGroupInput)(nil)).Elem(), GetReportinggroupsCpCodesCpCodeAccessGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeContractInput)(nil)).Elem(), GetReportinggroupsCpCodesCpCodeContractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeContractArrayInput)(nil)).Elem(), GetReportinggroupsCpCodesCpCodeContractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeOverrideTimeZoneInput)(nil)).Elem(), GetReportinggroupsCpCodesCpCodeOverrideTimeZoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeProductInput)(nil)).Elem(), GetReportinggroupsCpCodesCpCodeProductArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsCpCodesCpCodeProductArrayInput)(nil)).Elem(), GetReportinggroupsCpCodesCpCodeProductArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupAccessGroupInput)(nil)).Elem(), GetReportinggroupsGroupAccessGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupContractInput)(nil)).Elem(), GetReportinggroupsGroupContractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupContractCpCodeInput)(nil)).Elem(), GetReportinggroupsGroupContractCpCodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupContractCpCodeArrayInput)(nil)).Elem(), GetReportinggroupsGroupContractCpCodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupsGroupInput)(nil)).Elem(), GetReportinggroupsGroupsGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupsGroupArrayInput)(nil)).Elem(), GetReportinggroupsGroupsGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupsGroupAccessGroupInput)(nil)).Elem(), GetReportinggroupsGroupsGroupAccessGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupsGroupContractInput)(nil)).Elem(), GetReportinggroupsGroupsGroupContractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupsGroupContractCpCodeInput)(nil)).Elem(), GetReportinggroupsGroupsGroupContractCpCodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupsGroupContractCpCodeArrayInput)(nil)).Elem(), GetReportinggroupsGroupsGroupContractCpCodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecStatusCurrentRecordsInput)(nil)).Elem(), GetZoneDnssecStatusCurrentRecordsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecStatusNewRecordsInput)(nil)).Elem(), GetZoneDnssecStatusNewRecordsArgs{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnameActivationHostnameOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnameActivationHostnameArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnameActivationsHostnameActivationOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnameActivationsHostnameActivationArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnameAuditHistoryHistoryOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnameAuditHistoryHistoryArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesDiffHostnameOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesDiffHostnameArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketOutput{})
@@ -2770,6 +5131,30 @@ func init() {
 	pulumi.RegisterOutputType(GetPropertyRulesTemplateTemplateArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyRulesTemplateVariableOutput{})
 	pulumi.RegisterOutputType(GetPropertyRulesTemplateVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodeAccessGroupOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodeContractOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodeContractArrayOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodeOverrideTimeZoneOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodeProductOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodeProductArrayOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodesCpCodeOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodesCpCodeArrayOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodesCpCodeAccessGroupOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodesCpCodeContractOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodesCpCodeContractArrayOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodesCpCodeOverrideTimeZoneOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodesCpCodeProductOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsCpCodesCpCodeProductArrayOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupAccessGroupOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupContractOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupContractCpCodeOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupContractCpCodeArrayOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupsGroupOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupsGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupsGroupAccessGroupOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupsGroupContractOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupsGroupContractCpCodeOutput{})
+	pulumi.RegisterOutputType(GetReportinggroupsGroupsGroupContractCpCodeArrayOutput{})
 	pulumi.RegisterOutputType(GetZoneDnssecStatusCurrentRecordsOutput{})
 	pulumi.RegisterOutputType(GetZoneDnssecStatusNewRecordsOutput{})
 }

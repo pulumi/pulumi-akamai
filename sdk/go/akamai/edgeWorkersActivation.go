@@ -17,6 +17,8 @@ type EdgeWorkersActivation struct {
 
 	// A unique identifier of the activation
 	ActivationId pulumi.IntOutput `pulumi:"activationId"`
+	// Automatically pin the initial revision during parent EdgeWorker activation.
+	AutoPin pulumi.BoolPtrOutput `pulumi:"autoPin"`
 	// Id of the EdgeWorker to activate
 	EdgeworkerId pulumi.IntOutput `pulumi:"edgeworkerId"`
 	// The network on which the version will be activated
@@ -70,6 +72,8 @@ func GetEdgeWorkersActivation(ctx *pulumi.Context,
 type edgeWorkersActivationState struct {
 	// A unique identifier of the activation
 	ActivationId *int `pulumi:"activationId"`
+	// Automatically pin the initial revision during parent EdgeWorker activation.
+	AutoPin *bool `pulumi:"autoPin"`
 	// Id of the EdgeWorker to activate
 	EdgeworkerId *int `pulumi:"edgeworkerId"`
 	// The network on which the version will be activated
@@ -85,6 +89,8 @@ type edgeWorkersActivationState struct {
 type EdgeWorkersActivationState struct {
 	// A unique identifier of the activation
 	ActivationId pulumi.IntPtrInput
+	// Automatically pin the initial revision during parent EdgeWorker activation.
+	AutoPin pulumi.BoolPtrInput
 	// Id of the EdgeWorker to activate
 	EdgeworkerId pulumi.IntPtrInput
 	// The network on which the version will be activated
@@ -102,6 +108,8 @@ func (EdgeWorkersActivationState) ElementType() reflect.Type {
 }
 
 type edgeWorkersActivationArgs struct {
+	// Automatically pin the initial revision during parent EdgeWorker activation.
+	AutoPin *bool `pulumi:"autoPin"`
 	// Id of the EdgeWorker to activate
 	EdgeworkerId int `pulumi:"edgeworkerId"`
 	// The network on which the version will be activated
@@ -116,6 +124,8 @@ type edgeWorkersActivationArgs struct {
 
 // The set of arguments for constructing a EdgeWorkersActivation resource.
 type EdgeWorkersActivationArgs struct {
+	// Automatically pin the initial revision during parent EdgeWorker activation.
+	AutoPin pulumi.BoolPtrInput
 	// Id of the EdgeWorker to activate
 	EdgeworkerId pulumi.IntInput
 	// The network on which the version will be activated
@@ -218,6 +228,11 @@ func (o EdgeWorkersActivationOutput) ToEdgeWorkersActivationOutputWithContext(ct
 // A unique identifier of the activation
 func (o EdgeWorkersActivationOutput) ActivationId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeWorkersActivation) pulumi.IntOutput { return v.ActivationId }).(pulumi.IntOutput)
+}
+
+// Automatically pin the initial revision during parent EdgeWorker activation.
+func (o EdgeWorkersActivationOutput) AutoPin() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *EdgeWorkersActivation) pulumi.BoolPtrOutput { return v.AutoPin }).(pulumi.BoolPtrOutput)
 }
 
 // Id of the EdgeWorker to activate

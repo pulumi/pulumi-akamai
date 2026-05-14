@@ -7,6 +7,7 @@ import com.pulumi.akamai.inputs.EdgeWorkersActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -17,6 +18,21 @@ import javax.annotation.Nullable;
 public final class EdgeWorkersActivationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final EdgeWorkersActivationArgs Empty = new EdgeWorkersActivationArgs();
+
+    /**
+     * Automatically pin the initial revision during parent EdgeWorker activation.
+     * 
+     */
+    @Import(name="autoPin")
+    private @Nullable Output<Boolean> autoPin;
+
+    /**
+     * @return Automatically pin the initial revision during parent EdgeWorker activation.
+     * 
+     */
+    public Optional<Output<Boolean>> autoPin() {
+        return Optional.ofNullable(this.autoPin);
+    }
 
     /**
      * Id of the EdgeWorker to activate
@@ -96,6 +112,7 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
     private EdgeWorkersActivationArgs() {}
 
     private EdgeWorkersActivationArgs(EdgeWorkersActivationArgs $) {
+        this.autoPin = $.autoPin;
         this.edgeworkerId = $.edgeworkerId;
         this.network = $.network;
         this.note = $.note;
@@ -119,6 +136,27 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
 
         public Builder(EdgeWorkersActivationArgs defaults) {
             $ = new EdgeWorkersActivationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param autoPin Automatically pin the initial revision during parent EdgeWorker activation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoPin(@Nullable Output<Boolean> autoPin) {
+            $.autoPin = autoPin;
+            return this;
+        }
+
+        /**
+         * @param autoPin Automatically pin the initial revision during parent EdgeWorker activation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoPin(Boolean autoPin) {
+            return autoPin(Output.of(autoPin));
         }
 
         /**

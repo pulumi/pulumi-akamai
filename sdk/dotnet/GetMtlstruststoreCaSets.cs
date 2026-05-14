@@ -27,6 +27,14 @@ namespace Pulumi.Akamai
         [Input("activatedOn")]
         public string? ActivatedOn { get; set; }
 
+        [Input("caSetStatuses")]
+        private List<string>? _caSetStatuses;
+        public List<string> CaSetStatuses
+        {
+            get => _caSetStatuses ?? (_caSetStatuses = new List<string>());
+            set => _caSetStatuses = value;
+        }
+
         [Input("namePrefix")]
         public string? NamePrefix { get; set; }
 
@@ -40,6 +48,14 @@ namespace Pulumi.Akamai
     {
         [Input("activatedOn")]
         public Input<string>? ActivatedOn { get; set; }
+
+        [Input("caSetStatuses")]
+        private InputList<string>? _caSetStatuses;
+        public InputList<string> CaSetStatuses
+        {
+            get => _caSetStatuses ?? (_caSetStatuses = new InputList<string>());
+            set => _caSetStatuses = value;
+        }
 
         [Input("namePrefix")]
         public Input<string>? NamePrefix { get; set; }
@@ -55,6 +71,7 @@ namespace Pulumi.Akamai
     public sealed class GetMtlstruststoreCaSetsResult
     {
         public readonly string? ActivatedOn;
+        public readonly ImmutableArray<string> CaSetStatuses;
         public readonly ImmutableArray<Outputs.GetMtlstruststoreCaSetsCaSetResult> CaSets;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -66,6 +83,8 @@ namespace Pulumi.Akamai
         private GetMtlstruststoreCaSetsResult(
             string? activatedOn,
 
+            ImmutableArray<string> caSetStatuses,
+
             ImmutableArray<Outputs.GetMtlstruststoreCaSetsCaSetResult> caSets,
 
             string id,
@@ -73,6 +92,7 @@ namespace Pulumi.Akamai
             string? namePrefix)
         {
             ActivatedOn = activatedOn;
+            CaSetStatuses = caSetStatuses;
             CaSets = caSets;
             Id = id;
             NamePrefix = namePrefix;

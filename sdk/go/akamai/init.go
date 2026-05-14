@@ -323,6 +323,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &PropertyInclude{}
 	case "akamai:index/propertyIncludeActivation:PropertyIncludeActivation":
 		r = &PropertyIncludeActivation{}
+	case "akamai:index/reportinggroupsGroup:ReportinggroupsGroup":
+		r = &ReportinggroupsGroup{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -1107,6 +1109,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/propertyIncludeActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/reportinggroupsGroup",
 		&module{version},
 	)
 	pulumi.RegisterResourcePackage(

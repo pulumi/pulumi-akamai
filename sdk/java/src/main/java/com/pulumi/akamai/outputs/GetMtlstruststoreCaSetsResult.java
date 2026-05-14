@@ -15,6 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetMtlstruststoreCaSetsResult {
     private @Nullable String activatedOn;
+    private @Nullable List<String> caSetStatuses;
     private List<GetMtlstruststoreCaSetsCaSet> caSets;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -26,6 +27,9 @@ public final class GetMtlstruststoreCaSetsResult {
     private GetMtlstruststoreCaSetsResult() {}
     public Optional<String> activatedOn() {
         return Optional.ofNullable(this.activatedOn);
+    }
+    public List<String> caSetStatuses() {
+        return this.caSetStatuses == null ? List.of() : this.caSetStatuses;
     }
     public List<GetMtlstruststoreCaSetsCaSet> caSets() {
         return this.caSets;
@@ -51,6 +55,7 @@ public final class GetMtlstruststoreCaSetsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String activatedOn;
+        private @Nullable List<String> caSetStatuses;
         private List<GetMtlstruststoreCaSetsCaSet> caSets;
         private String id;
         private @Nullable String namePrefix;
@@ -58,6 +63,7 @@ public final class GetMtlstruststoreCaSetsResult {
         public Builder(GetMtlstruststoreCaSetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activatedOn = defaults.activatedOn;
+    	      this.caSetStatuses = defaults.caSetStatuses;
     	      this.caSets = defaults.caSets;
     	      this.id = defaults.id;
     	      this.namePrefix = defaults.namePrefix;
@@ -68,6 +74,15 @@ public final class GetMtlstruststoreCaSetsResult {
 
             this.activatedOn = activatedOn;
             return this;
+        }
+        @CustomType.Setter
+        public Builder caSetStatuses(@Nullable List<String> caSetStatuses) {
+
+            this.caSetStatuses = caSetStatuses;
+            return this;
+        }
+        public Builder caSetStatuses(String... caSetStatuses) {
+            return caSetStatuses(List.of(caSetStatuses));
         }
         @CustomType.Setter
         public Builder caSets(List<GetMtlstruststoreCaSetsCaSet> caSets) {
@@ -97,6 +112,7 @@ public final class GetMtlstruststoreCaSetsResult {
         public GetMtlstruststoreCaSetsResult build() {
             final var _resultValue = new GetMtlstruststoreCaSetsResult();
             _resultValue.activatedOn = activatedOn;
+            _resultValue.caSetStatuses = caSetStatuses;
             _resultValue.caSets = caSets;
             _resultValue.id = id;
             _resultValue.namePrefix = namePrefix;
