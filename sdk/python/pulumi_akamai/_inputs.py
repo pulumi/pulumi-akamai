@@ -1420,7 +1420,7 @@ class AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict(TypedDict):
     """
     List of categories for intelligent load shedding
     """
-    custom_criterias: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgs']]]]]
+    custom_criterias: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgsDict']]]]]
     """
     Custom criteria for intelligent load shedding
     """
@@ -3494,7 +3494,7 @@ class CpsDvEnrollmentNetworkConfigurationArgsDict(TypedDict):
     """
     Geography type used for enrollment
     """
-    client_mutual_authentication: NotRequired[pulumi.Input[Optional['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs']]]
+    client_mutual_authentication: NotRequired[pulumi.Input[Optional['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict']]]
     """
     The trust chain configuration used for client mutual authentication
     """
@@ -4549,7 +4549,7 @@ class CpsThirdPartyEnrollmentNetworkConfigurationArgsDict(TypedDict):
     """
     Geography type used for enrollment
     """
-    client_mutual_authentication: NotRequired[pulumi.Input[Optional['CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs']]]
+    client_mutual_authentication: NotRequired[pulumi.Input[Optional['CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgsDict']]]
     """
     The trust chain configuration used for client mutual authentication
     """
@@ -7741,7 +7741,7 @@ class DnsZoneOutboundZoneTransferArgsDict(TypedDict):
     """
     Customer secondary nameservers to notify, if NOTIFY requests are desired. Up to 64 IPv4 or IPv6 addresses. If no targets are specified, you can manually request zone transfer updates as needed.
     """
-    tsig_key: NotRequired[pulumi.Input[Optional['DnsZoneOutboundZoneTransferTsigKeyArgs']]]
+    tsig_key: NotRequired[pulumi.Input[Optional['DnsZoneOutboundZoneTransferTsigKeyArgsDict']]]
     """
     The TSIG key used for outbound zone transfers.
     """
@@ -8305,7 +8305,7 @@ class GtmPropertyLivenessTestArgsDict(TypedDict):
     http_error3xx: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     http_error4xx: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     http_error5xx: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
-    http_headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]]]
+    http_headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgsDict']]]]]
     http_method: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     http_request_body: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     peer_certificate_verification: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
@@ -9168,7 +9168,7 @@ class IamApiClientApiAccessArgsDict(TypedDict):
     """
     Enables the API client to access a full set of available APIs.
     """
-    apis: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IamApiClientApiAccessApiArgs']]]]]
+    apis: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IamApiClientApiAccessApiArgsDict']]]]]
     """
     The set of APIs the API client can access when `all_accessible_apis` is `false`.
     """
@@ -9339,7 +9339,7 @@ class IamApiClientApiAccessApiArgs:
 
 
 class IamApiClientCredentialArgsDict(TypedDict):
-    actions: NotRequired[pulumi.Input[Optional['IamApiClientCredentialActionsArgs']]]
+    actions: NotRequired[pulumi.Input[Optional['IamApiClientCredentialActionsArgsDict']]]
     """
     Actions available on the API client's credentials.
     """
@@ -9621,7 +9621,7 @@ class IamApiClientGroupAccessArgsDict(TypedDict):
     """
     Sets the API client's group access the same as the authorized user.
     """
-    groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IamApiClientGroupAccessGroupArgs']]]]]
+    groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IamApiClientGroupAccessGroupArgsDict']]]]]
     """
     Groups the API client can access.
     """
@@ -9693,7 +9693,7 @@ class IamApiClientGroupAccessGroupArgsDict(TypedDict):
     """
     A human-readable name for the role.
     """
-    sub_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]]]]
+    sub_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgsDict']]]]]
     """
     Groups the API client can access.
     """
@@ -9860,7 +9860,7 @@ class IamApiClientGroupAccessGroupSubGroupArgsDict(TypedDict):
     """
     A human-readable name for the role.
     """
-    sub_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgs']]]]]
+    sub_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IamApiClientGroupAccessGroupSubGroupArgsDict']]]]]
     """
     Groups the API client can access.
     """
@@ -10383,7 +10383,7 @@ class MtlskeystoreClientCertificateAkamaiTimeoutsArgs:
 
 
 class MtlskeystoreClientCertificateAkamaiVersionArgsDict(TypedDict):
-    certificate_block: NotRequired[pulumi.Input[Optional['MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs']]]
+    certificate_block: NotRequired[pulumi.Input[Optional['MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgsDict']]]
     """
     Details of the certificate block for the client certificate version.
     """
@@ -10761,7 +10761,7 @@ class MtlskeystoreClientCertificateAkamaiVersionCertificateBlockArgs:
 
 
 class MtlskeystoreClientCertificateThirdPartyVersionsArgsDict(TypedDict):
-    certificate_block: NotRequired[pulumi.Input[Optional['MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgs']]]
+    certificate_block: NotRequired[pulumi.Input[Optional['MtlskeystoreClientCertificateThirdPartyVersionsCertificateBlockArgsDict']]]
     """
     Details of the certificate block for the client certificate version.
     """
@@ -10781,7 +10781,7 @@ class MtlskeystoreClientCertificateThirdPartyVersionsArgsDict(TypedDict):
     """
     An ISO 8601 timestamp indicating the client certificate version's creation.
     """
-    csr_block: NotRequired[pulumi.Input[Optional['MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgs']]]
+    csr_block: NotRequired[pulumi.Input[Optional['MtlskeystoreClientCertificateThirdPartyVersionsCsrBlockArgsDict']]]
     """
     Details of the Certificate Signing Request (CSR) for the client certificate version.
     """
@@ -11623,19 +11623,19 @@ class MtlstruststoreCaSetTimeoutsArgs:
 
 
 class PropertyActivationComplianceRecordArgsDict(TypedDict):
-    noncompliance_reason_emergency: NotRequired[pulumi.Input[Optional['PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs']]]
+    noncompliance_reason_emergency: NotRequired[pulumi.Input[Optional['PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict']]]
     """
     Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
     """
-    noncompliance_reason_no_production_traffic: NotRequired[pulumi.Input[Optional['PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs']]]
+    noncompliance_reason_no_production_traffic: NotRequired[pulumi.Input[Optional['PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict']]]
     """
     Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
     """
-    noncompliance_reason_none: NotRequired[pulumi.Input[Optional['PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs']]]
+    noncompliance_reason_none: NotRequired[pulumi.Input[Optional['PropertyActivationComplianceRecordNoncomplianceReasonNoneArgsDict']]]
     """
     Provides an audit record when activating on a production network with noncompliance reason as `NONE`
     """
-    noncompliance_reason_other: NotRequired[pulumi.Input[Optional['PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs']]]
+    noncompliance_reason_other: NotRequired[pulumi.Input[Optional['PropertyActivationComplianceRecordNoncomplianceReasonOtherArgsDict']]]
     """
     Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
     """
@@ -12050,7 +12050,7 @@ class PropertyDomainownershipDomainsDomainArgsDict(TypedDict):
     * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
     * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
     """
-    validation_challenge: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeArgs']]]
+    validation_challenge: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeArgsDict']]]
     """
     The domain's validation challenge details.
     """
@@ -12252,7 +12252,7 @@ class PropertyDomainownershipDomainsDomainArgs:
 
 
 class PropertyDomainownershipDomainsDomainValidationChallengeArgsDict(TypedDict):
-    cname_record: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs']]]
+    cname_record: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgsDict']]]
     """
     The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
     """
@@ -12260,15 +12260,15 @@ class PropertyDomainownershipDomainsDomainValidationChallengeArgsDict(TypedDict)
     """
     The timestamp indicating when the challenge data expires.
     """
-    http_file: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs']]]
+    http_file: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgsDict']]]
     """
     Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
     """
-    http_redirect: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs']]]
+    http_redirect: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgsDict']]]
     """
     Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
     """
-    txt_record: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs']]]
+    txt_record: NotRequired[pulumi.Input[Optional['PropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgsDict']]]
     """
     The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
     """
@@ -12768,22 +12768,22 @@ class PropertyHostnameArgsDict(TypedDict):
     cert_provisioning_type: pulumi.Input[_builtins.str]
     cname_from: pulumi.Input[_builtins.str]
     cname_to: pulumi.Input[_builtins.str]
-    ccm_cert_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgs']]]]]
+    ccm_cert_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCcmCertStatusArgsDict']]]]]
     """
     Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
     """
-    ccm_certificates: NotRequired[pulumi.Input[Optional['PropertyHostnameCcmCertificatesArgs']]]
+    ccm_certificates: NotRequired[pulumi.Input[Optional['PropertyHostnameCcmCertificatesArgsDict']]]
     """
     Certificate identifiers and links for the CCM-managed certificates.
     """
-    cert_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]]]
+    cert_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusArgsDict']]]]]
     cname_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     edge_hostname_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    mtls: NotRequired[pulumi.Input[Optional['PropertyHostnameMtlsArgs']]]
+    mtls: NotRequired[pulumi.Input[Optional['PropertyHostnameMtlsArgsDict']]]
     """
     Optional mutual TLS settings for the CCM hostnames.
     """
-    tls_configuration: NotRequired[pulumi.Input[Optional['PropertyHostnameTlsConfigurationArgs']]]
+    tls_configuration: NotRequired[pulumi.Input[Optional['PropertyHostnameTlsConfigurationArgsDict']]]
     """
     Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
     """
@@ -13379,19 +13379,19 @@ class PropertyHostnameTlsConfigurationArgs:
 
 
 class PropertyIncludeActivationComplianceRecordArgsDict(TypedDict):
-    noncompliance_reason_emergency: NotRequired[pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgs']]]
+    noncompliance_reason_emergency: NotRequired[pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgsDict']]]
     """
     Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
     """
-    noncompliance_reason_no_production_traffic: NotRequired[pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs']]]
+    noncompliance_reason_no_production_traffic: NotRequired[pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgsDict']]]
     """
     Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
     """
-    noncompliance_reason_none: NotRequired[pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs']]]
+    noncompliance_reason_none: NotRequired[pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgsDict']]]
     """
     Provides an audit record when activating on a production network with noncompliance reason as `NONE`
     """
-    noncompliance_reason_other: NotRequired[pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgs']]]
+    noncompliance_reason_other: NotRequired[pulumi.Input[Optional['PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgsDict']]]
     """
     Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
     """
