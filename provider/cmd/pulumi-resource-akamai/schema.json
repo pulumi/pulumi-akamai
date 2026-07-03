@@ -395,15 +395,7 @@
             "type": "object",
             "required": [
                 "hitsPerSec"
-            ],
-            "language": {
-                "nodejs": {
-                    "requiredOutputs": [
-                        "customCriterias",
-                        "hitsPerSec"
-                    ]
-                }
-            }
+            ]
         },
         "akamai:index/AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria:AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria": {
             "properties": {
@@ -482,6 +474,10 @@
                     "type": "string",
                     "description": "The item expiration date.\n"
                 },
+                "key": {
+                    "type": "string",
+                    "description": "Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.\n"
+                },
                 "tags": {
                     "type": "array",
                     "items": {
@@ -491,13 +487,17 @@
                 },
                 "value": {
                     "type": "string",
-                    "description": "Value of the item. (i.e. IP address, AS Number, GEO, ...etc)\n"
+                    "description": "Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.\n"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.\n"
                 }
             },
-            "type": "object",
-            "required": [
-                "value"
-            ]
+            "type": "object"
         },
         "akamai:index/CloudAccessKeyCredentialsA:CloudAccessKeyCredentialsA": {
             "properties": {
@@ -5901,7 +5901,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of the client list.\n"
+                    "description": "Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.\n"
                 },
                 "updateDate": {
                     "type": "string",
@@ -5965,6 +5965,10 @@
                     "type": "string",
                     "description": "The client list item expiration date.\n"
                 },
+                "key": {
+                    "type": "string",
+                    "description": "Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.\n"
+                },
                 "productionActivationStatus": {
                     "type": "string",
                     "description": "The client list activation status in production environment.\n"
@@ -5982,7 +5986,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.\n"
+                    "description": "Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.\n"
                 },
                 "updateDate": {
                     "type": "string",
@@ -5994,7 +5998,14 @@
                 },
                 "value": {
                     "type": "string",
-                    "description": "Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.\n"
+                    "description": "Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.\n"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.\n"
                 }
             },
             "type": "object",
@@ -6003,13 +6014,15 @@
                 "createdBy",
                 "createdVersion",
                 "expirationDate",
+                "key",
                 "productionActivationStatus",
                 "stagingActivationStatus",
                 "tags",
                 "type",
                 "updateDate",
                 "updatedBy",
-                "value"
+                "value",
+                "values"
             ],
             "language": {
                 "nodejs": {
@@ -6076,7 +6089,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of the client list\n"
+                    "description": "Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.\n"
                 },
                 "updateDate": {
                     "type": "string",
@@ -9345,6 +9358,48 @@
                 }
             }
         },
+        "akamai:index/getDatastreamAppsecConfigsAppSecConfig:getDatastreamAppsecConfigsAppSecConfig": {
+            "properties": {
+                "fileType": {
+                    "type": "string",
+                    "description": "The file type of the AppSec configuration (e.g. RBAC, WAF)\n"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "The unique identifier of the AppSec configuration\n"
+                },
+                "latestVersion": {
+                    "type": "integer",
+                    "description": "The latest version of the AppSec configuration\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the AppSec configuration\n"
+                },
+                "productionVersion": {
+                    "type": "integer",
+                    "description": "The version currently active in production\n"
+                },
+                "targetProduct": {
+                    "type": "string",
+                    "description": "The target product for the AppSec configuration\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "fileType",
+                "id",
+                "latestVersion",
+                "name",
+                "productionVersion",
+                "targetProduct"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getDatastreamDatasetFieldsDatasetField:getDatastreamDatasetFieldsDatasetField": {
             "properties": {
                 "datasetFieldDescription": {
@@ -9384,6 +9439,13 @@
         },
         "akamai:index/getDatastreamsStreamsDetail:getDatastreamsStreamsDetail": {
             "properties": {
+                "appSecConfigs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getDatastreamsStreamsDetailAppSecConfig:getDatastreamsStreamsDetailAppSecConfig"
+                    },
+                    "description": "List of AppSec configs associated with the stream.\n"
+                },
                 "contractId": {
                     "type": "string",
                     "description": "Identifies the contract that the stream is associated with.\n"
@@ -9407,6 +9469,10 @@
                 "latestVersion": {
                     "type": "integer",
                     "description": "Identifies the latestVersion version of the stream.\n"
+                },
+                "logType": {
+                    "type": "string",
+                    "description": "The log type of the stream.\n"
                 },
                 "modifiedBy": {
                     "type": "string",
@@ -9446,12 +9512,14 @@
             },
             "type": "object",
             "required": [
+                "appSecConfigs",
                 "contractId",
                 "createdBy",
                 "createdDate",
                 "groupId",
                 "integrationType",
                 "latestVersion",
+                "logType",
                 "modifiedBy",
                 "modifiedDate",
                 "productId",
@@ -9460,6 +9528,28 @@
                 "streamName",
                 "streamStatus",
                 "streamVersion"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getDatastreamsStreamsDetailAppSecConfig:getDatastreamsStreamsDetailAppSecConfig": {
+            "properties": {
+                "appSecId": {
+                    "type": "integer",
+                    "description": "The identifier of the AppSec config.\n"
+                },
+                "appSecName": {
+                    "type": "string",
+                    "description": "The descriptive label for the AppSec config.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "appSecId",
+                "appSecName"
             ],
             "language": {
                 "nodejs": {
@@ -25978,7 +26068,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]"
+                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN REQUEST_HEADER_NAME_VALUE]"
                 },
                 "version": {
                     "type": "integer",
@@ -26029,7 +26119,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]",
+                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN REQUEST_HEADER_NAME_VALUE]",
                     "willReplaceOnChanges": true
                 }
             },
@@ -26083,7 +26173,7 @@
                     },
                     "type": {
                         "type": "string",
-                        "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN]",
+                        "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH USER_ID DOMAIN REQUEST_HEADER_NAME_VALUE]",
                         "willReplaceOnChanges": true
                     },
                     "version": {
@@ -26106,7 +26196,7 @@
                 },
                 "authenticationMethod": {
                     "type": "string",
-                    "description": "The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it."
+                    "description": "The type of signing process used to authenticate API requests:\n  - `AOS4_HMAC_SHA256` — Akamai Object Storage\n  - `AVM_CLOUDINARY` — Akamai Video Manager Cloudinary\n  - `AWS4_HMAC_SHA256` — Amazon Web Services\n  - `GOOG4_HMAC_SHA256` — Google Cloud Services\n  - `G2O` — Akamai Signature Header Authentication\n  - `VP_QUEUE_IT` — Akamai Visitor Prioritization powered by Queue-it"
                 },
                 "contractId": {
                     "type": "string",
@@ -26152,7 +26242,7 @@
                 },
                 "authenticationMethod": {
                     "type": "string",
-                    "description": "The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it."
+                    "description": "The type of signing process used to authenticate API requests:\n  - `AOS4_HMAC_SHA256` — Akamai Object Storage\n  - `AVM_CLOUDINARY` — Akamai Video Manager Cloudinary\n  - `AWS4_HMAC_SHA256` — Amazon Web Services\n  - `GOOG4_HMAC_SHA256` — Google Cloud Services\n  - `G2O` — Akamai Signature Header Authentication\n  - `VP_QUEUE_IT` — Akamai Visitor Prioritization powered by Queue-it"
                 },
                 "contractId": {
                     "type": "string",
@@ -26198,7 +26288,7 @@
                     },
                     "authenticationMethod": {
                         "type": "string",
-                        "description": "The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it."
+                        "description": "The type of signing process used to authenticate API requests:\n  - `AOS4_HMAC_SHA256` — Akamai Object Storage\n  - `AVM_CLOUDINARY` — Akamai Video Manager Cloudinary\n  - `AWS4_HMAC_SHA256` — Amazon Web Services\n  - `GOOG4_HMAC_SHA256` — Google Cloud Services\n  - `G2O` — Akamai Signature Header Authentication\n  - `VP_QUEUE_IT` — Akamai Visitor Prioritization powered by Queue-it"
                     },
                     "contractId": {
                         "type": "string",
@@ -28197,6 +28287,13 @@
                     "type": "boolean",
                     "description": "Defining if stream should be active or not"
                 },
+                "appSecConfigs": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Identifies the application security configurations monitored in the stream"
+                },
                 "azureConnector": {
                     "$ref": "#/types/akamai:index/DatastreamAzureConnector:DatastreamAzureConnector"
                 },
@@ -28253,6 +28350,10 @@
                 "latestVersion": {
                     "type": "integer",
                     "description": "Identifies the latest active configuration version of the stream"
+                },
+                "logType": {
+                    "type": "string",
+                    "description": "Type of logs for the stream"
                 },
                 "logglyConnector": {
                     "$ref": "#/types/akamai:index/DatastreamLogglyConnector:DatastreamLogglyConnector"
@@ -28326,7 +28427,6 @@
                 "contractId",
                 "createdBy",
                 "createdDate",
-                "datasetFields",
                 "deliveryConfiguration",
                 "groupId",
                 "integrationType",
@@ -28335,7 +28435,6 @@
                 "modifiedDate",
                 "papiJson",
                 "productId",
-                "properties",
                 "samplingPercentage",
                 "streamName",
                 "streamVersion"
@@ -28344,6 +28443,13 @@
                 "active": {
                     "type": "boolean",
                     "description": "Defining if stream should be active or not"
+                },
+                "appSecConfigs": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Identifies the application security configurations monitored in the stream"
                 },
                 "azureConnector": {
                     "$ref": "#/types/akamai:index/DatastreamAzureConnector:DatastreamAzureConnector"
@@ -28385,6 +28491,11 @@
                 },
                 "httpsConnector": {
                     "$ref": "#/types/akamai:index/DatastreamHttpsConnector:DatastreamHttpsConnector"
+                },
+                "logType": {
+                    "type": "string",
+                    "description": "Type of logs for the stream",
+                    "willReplaceOnChanges": true
                 },
                 "logglyConnector": {
                     "$ref": "#/types/akamai:index/DatastreamLogglyConnector:DatastreamLogglyConnector"
@@ -28436,10 +28547,8 @@
             "requiredInputs": [
                 "active",
                 "contractId",
-                "datasetFields",
                 "deliveryConfiguration",
                 "groupId",
-                "properties",
                 "streamName"
             ],
             "stateInputs": {
@@ -28448,6 +28557,13 @@
                     "active": {
                         "type": "boolean",
                         "description": "Defining if stream should be active or not"
+                    },
+                    "appSecConfigs": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "Identifies the application security configurations monitored in the stream"
                     },
                     "azureConnector": {
                         "$ref": "#/types/akamai:index/DatastreamAzureConnector:DatastreamAzureConnector"
@@ -28505,6 +28621,11 @@
                     "latestVersion": {
                         "type": "integer",
                         "description": "Identifies the latest active configuration version of the stream"
+                    },
+                    "logType": {
+                        "type": "string",
+                        "description": "Type of logs for the stream",
+                        "willReplaceOnChanges": true
                     },
                     "logglyConnector": {
                         "$ref": "#/types/akamai:index/DatastreamLogglyConnector:DatastreamLogglyConnector"
@@ -29475,7 +29596,7 @@
             "properties": {
                 "geoLocation": {
                     "type": "string",
-                    "description": "Storage location for data"
+                    "description": "Storage location for data."
                 },
                 "groupId": {
                     "type": "integer",
@@ -29483,11 +29604,11 @@
                 },
                 "namespaceName": {
                     "type": "string",
-                    "description": "Name for the EKV namespace"
+                    "description": "Name for the EKV namespace."
                 },
                 "network": {
                     "type": "string",
-                    "description": "The network on which the namespace will be activated"
+                    "description": "The network on which the namespace will be activated."
                 },
                 "retentionInSeconds": {
                     "type": "integer",
@@ -29503,7 +29624,7 @@
             "inputProperties": {
                 "geoLocation": {
                     "type": "string",
-                    "description": "Storage location for data",
+                    "description": "Storage location for data.",
                     "willReplaceOnChanges": true
                 },
                 "groupId": {
@@ -29513,12 +29634,12 @@
                 },
                 "namespaceName": {
                     "type": "string",
-                    "description": "Name for the EKV namespace",
+                    "description": "Name for the EKV namespace.",
                     "willReplaceOnChanges": true
                 },
                 "network": {
                     "type": "string",
-                    "description": "The network on which the namespace will be activated",
+                    "description": "The network on which the namespace will be activated.",
                     "willReplaceOnChanges": true
                 },
                 "retentionInSeconds": {
@@ -29537,7 +29658,7 @@
                 "properties": {
                     "geoLocation": {
                         "type": "string",
-                        "description": "Storage location for data",
+                        "description": "Storage location for data.",
                         "willReplaceOnChanges": true
                     },
                     "groupId": {
@@ -29547,12 +29668,12 @@
                     },
                     "namespaceName": {
                         "type": "string",
-                        "description": "Name for the EKV namespace",
+                        "description": "Name for the EKV namespace.",
                         "willReplaceOnChanges": true
                     },
                     "network": {
                         "type": "string",
-                        "description": "The network on which the namespace will be activated",
+                        "description": "The network on which the namespace will be activated.",
                         "willReplaceOnChanges": true
                     },
                     "retentionInSeconds": {
@@ -41638,6 +41759,9 @@
             "inputs": {
                 "description": "A collection of arguments for invoking getDatastreamActivationHistory.\n",
                 "properties": {
+                    "logType": {
+                        "type": "string"
+                    },
                     "streamId": {
                         "type": "integer"
                     }
@@ -41660,6 +41784,9 @@
                         "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
+                    "logType": {
+                        "type": "string"
+                    },
                     "streamId": {
                         "type": "integer"
                     }
@@ -41667,6 +41794,52 @@
                 "required": [
                     "activations",
                     "streamId",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getDatastreamAppsecConfigs:getDatastreamAppsecConfigs": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getDatastreamAppsecConfigs.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "contractId",
+                    "groupId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getDatastreamAppsecConfigs.\n",
+                "properties": {
+                    "appSecConfigs": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getDatastreamAppsecConfigsAppSecConfig:getDatastreamAppsecConfigsAppSecConfig"
+                        },
+                        "type": "array"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "appSecConfigs",
+                    "contractId",
+                    "groupId",
                     "id"
                 ],
                 "type": "object"
@@ -41712,6 +41885,9 @@
                 "properties": {
                     "groupId": {
                         "type": "integer"
+                    },
+                    "logType": {
+                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -41724,6 +41900,9 @@
                     },
                     "id": {
                         "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "logType": {
                         "type": "string"
                     },
                     "streamsDetails": {
