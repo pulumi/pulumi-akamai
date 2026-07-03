@@ -48,6 +48,20 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<Boolean> active() {
         return this.active;
     }
+    /**
+     * Identifies the application security configurations monitored in the stream
+     * 
+     */
+    @Export(name="appSecConfigs", refs={List.class,Integer.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<Integer>> appSecConfigs;
+
+    /**
+     * @return Identifies the application security configurations monitored in the stream
+     * 
+     */
+    public Output<Optional<List<Integer>>> appSecConfigs() {
+        return Codegen.optional(this.appSecConfigs);
+    }
     @Export(name="azureConnector", refs={DatastreamAzureConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamAzureConnector> azureConnector;
 
@@ -121,14 +135,14 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="datasetFields", refs={List.class,Integer.class}, tree="[0,1]")
-    private Output<List<Integer>> datasetFields;
+    private Output</* @Nullable */ List<Integer>> datasetFields;
 
     /**
      * @return A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
      * 
      */
-    public Output<List<Integer>> datasetFields() {
-        return this.datasetFields;
+    public Output<Optional<List<Integer>>> datasetFields() {
+        return Codegen.optional(this.datasetFields);
     }
     /**
      * Provides information about the configuration related to logs (format, file names, delivery frequency)
@@ -209,6 +223,20 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> latestVersion() {
         return this.latestVersion;
+    }
+    /**
+     * Type of logs for the stream
+     * 
+     */
+    @Export(name="logType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> logType;
+
+    /**
+     * @return Type of logs for the stream
+     * 
+     */
+    public Output<Optional<String>> logType() {
+        return Codegen.optional(this.logType);
     }
     @Export(name="logglyConnector", refs={DatastreamLogglyConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamLogglyConnector> logglyConnector;
@@ -303,14 +331,14 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="properties", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> properties;
+    private Output</* @Nullable */ List<String>> properties;
 
     /**
      * @return Identifies the properties monitored in the stream
      * 
      */
-    public Output<List<String>> properties() {
-        return this.properties;
+    public Output<Optional<List<String>>> properties() {
+        return Codegen.optional(this.properties);
     }
     @Export(name="s3CompatibleConnector", refs={DatastreamS3CompatibleConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamS3CompatibleConnector> s3CompatibleConnector;

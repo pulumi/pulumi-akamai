@@ -280,8 +280,10 @@ __all__ = [
     'GetContractsContractResult',
     'GetCpCodesCpCodeResult',
     'GetDatastreamActivationHistoryActivationResult',
+    'GetDatastreamAppsecConfigsAppSecConfigResult',
     'GetDatastreamDatasetFieldsDatasetFieldResult',
     'GetDatastreamsStreamsDetailResult',
+    'GetDatastreamsStreamsDetailAppSecConfigResult',
     'GetDatastreamsStreamsDetailPropertyResult',
     'GetEdgeHostnameEdgeHostnameResult',
     'GetEdgeHostnameEdgeHostnameUseCaseResult',
@@ -1395,31 +1397,32 @@ class ClientlistListItem(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 value: _builtins.str,
                  description: Optional[_builtins.str] = None,
                  expiration_date: Optional[_builtins.str] = None,
-                 tags: Optional[Sequence[_builtins.str]] = None):
+                 key: Optional[_builtins.str] = None,
+                 tags: Optional[Sequence[_builtins.str]] = None,
+                 value: Optional[_builtins.str] = None,
+                 values: Optional[Sequence[_builtins.str]] = None):
         """
-        :param _builtins.str value: Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
         :param _builtins.str description: A description of the item.
         :param _builtins.str expiration_date: The item expiration date.
+        :param _builtins.str key: Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
         :param Sequence[_builtins.str] tags: The item tags.
+        :param _builtins.str value: Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
+        :param Sequence[_builtins.str] values: Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
         """
-        pulumi.set(__self__, "value", value)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if expiration_date is not None:
             pulumi.set(__self__, "expiration_date", expiration_date)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
-
-    @_builtins.property
-    @pulumi.getter
-    def value(self) -> _builtins.str:
-        """
-        Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
-        """
-        return pulumi.get(self, "value")
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
 
     @_builtins.property
     @pulumi.getter
@@ -1439,11 +1442,35 @@ class ClientlistListItem(dict):
 
     @_builtins.property
     @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
     def tags(self) -> Optional[Sequence[_builtins.str]]:
         """
         The item tags.
         """
         return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
+        """
+        return pulumi.get(self, "value")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -13646,7 +13673,7 @@ class GetClientlistListListResult(dict):
         :param _builtins.bool shared: Whether the client list is shared.
         :param _builtins.str staging_activation_status: The activation status in staging environment.
         :param Sequence[_builtins.str] tags: The client list tags.
-        :param _builtins.str type: The type of the client list.
+        :param _builtins.str type: Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
         :param _builtins.str update_date: The date of last update.
         :param _builtins.str updated_by: The username of the user that updated the client list last.
         :param _builtins.int version: The current version of the client list.
@@ -13786,7 +13813,7 @@ class GetClientlistListListResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of the client list.
+        Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
         """
         return pulumi.get(self, "type")
 
@@ -13822,6 +13849,7 @@ class GetClientlistListListItemResult(dict):
                  created_by: _builtins.str,
                  created_version: _builtins.int,
                  expiration_date: _builtins.str,
+                 key: _builtins.str,
                  production_activation_status: _builtins.str,
                  staging_activation_status: _builtins.str,
                  tags: Sequence[_builtins.str],
@@ -13829,25 +13857,29 @@ class GetClientlistListListItemResult(dict):
                  update_date: _builtins.str,
                  updated_by: _builtins.str,
                  value: _builtins.str,
+                 values: Sequence[_builtins.str],
                  description: Optional[_builtins.str] = None):
         """
         :param _builtins.str create_date: The client list item creation date.
         :param _builtins.str created_by: The username of the person who created the client list item.
         :param _builtins.int created_version: The version of the client list when item was created.
         :param _builtins.str expiration_date: The client list item expiration date.
+        :param _builtins.str key: Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
         :param _builtins.str production_activation_status: The client list activation status in production environment.
         :param _builtins.str staging_activation_status: The client list activation status in staging environment.
         :param Sequence[_builtins.str] tags: A list of tags associated with the client list item.
-        :param _builtins.str type: Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.
+        :param _builtins.str type: Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
         :param _builtins.str update_date: The date of last update.
         :param _builtins.str updated_by: The username of the person that updated the client list item last.
-        :param _builtins.str value: Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.
+        :param _builtins.str value: Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
+        :param Sequence[_builtins.str] values: Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
         :param _builtins.str description: The description of the client list item.
         """
         pulumi.set(__self__, "create_date", create_date)
         pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "created_version", created_version)
         pulumi.set(__self__, "expiration_date", expiration_date)
+        pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "production_activation_status", production_activation_status)
         pulumi.set(__self__, "staging_activation_status", staging_activation_status)
         pulumi.set(__self__, "tags", tags)
@@ -13855,6 +13887,7 @@ class GetClientlistListListItemResult(dict):
         pulumi.set(__self__, "update_date", update_date)
         pulumi.set(__self__, "updated_by", updated_by)
         pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "values", values)
         if description is not None:
             pulumi.set(__self__, "description", description)
 
@@ -13891,6 +13924,14 @@ class GetClientlistListListItemResult(dict):
         return pulumi.get(self, "expiration_date")
 
     @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
     @pulumi.getter(name="productionActivationStatus")
     def production_activation_status(self) -> _builtins.str:
         """
@@ -13918,7 +13959,7 @@ class GetClientlistListListItemResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.
+        Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
         """
         return pulumi.get(self, "type")
 
@@ -13942,9 +13983,17 @@ class GetClientlistListListItemResult(dict):
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.
+        Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
         """
         return pulumi.get(self, "value")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        """
+        return pulumi.get(self, "values")
 
     @_builtins.property
     @pulumi.getter
@@ -13989,7 +14038,7 @@ class GetClientlistListsListResult(dict):
         :param _builtins.bool shared: Whether the client list is shared.
         :param _builtins.str staging_activation_status: The activation status in staging environment.
         :param Sequence[_builtins.str] tags: The client list tags
-        :param _builtins.str type: The type of the client list
+        :param _builtins.str type: Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
         :param _builtins.str update_date: The date of last update.
         :param _builtins.str updated_by: The username of the user that updated the client list last.
         :param _builtins.int version: The current version of the client list.
@@ -14120,7 +14169,7 @@ class GetClientlistListsListResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of the client list
+        Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
         """
         return pulumi.get(self, "type")
 
@@ -20274,6 +20323,79 @@ class GetDatastreamActivationHistoryActivationResult(dict):
 
 
 @pulumi.output_type
+class GetDatastreamAppsecConfigsAppSecConfigResult(dict):
+    def __init__(__self__, *,
+                 file_type: _builtins.str,
+                 id: _builtins.int,
+                 latest_version: _builtins.int,
+                 name: _builtins.str,
+                 production_version: _builtins.int,
+                 target_product: _builtins.str):
+        """
+        :param _builtins.str file_type: The file type of the AppSec configuration (e.g. RBAC, WAF)
+        :param _builtins.int id: The unique identifier of the AppSec configuration
+        :param _builtins.int latest_version: The latest version of the AppSec configuration
+        :param _builtins.str name: The name of the AppSec configuration
+        :param _builtins.int production_version: The version currently active in production
+        :param _builtins.str target_product: The target product for the AppSec configuration
+        """
+        pulumi.set(__self__, "file_type", file_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "latest_version", latest_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "production_version", production_version)
+        pulumi.set(__self__, "target_product", target_product)
+
+    @_builtins.property
+    @pulumi.getter(name="fileType")
+    def file_type(self) -> _builtins.str:
+        """
+        The file type of the AppSec configuration (e.g. RBAC, WAF)
+        """
+        return pulumi.get(self, "file_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.int:
+        """
+        The unique identifier of the AppSec configuration
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> _builtins.int:
+        """
+        The latest version of the AppSec configuration
+        """
+        return pulumi.get(self, "latest_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the AppSec configuration
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="productionVersion")
+    def production_version(self) -> _builtins.int:
+        """
+        The version currently active in production
+        """
+        return pulumi.get(self, "production_version")
+
+    @_builtins.property
+    @pulumi.getter(name="targetProduct")
+    def target_product(self) -> _builtins.str:
+        """
+        The target product for the AppSec configuration
+        """
+        return pulumi.get(self, "target_product")
+
+
+@pulumi.output_type
 class GetDatastreamDatasetFieldsDatasetFieldResult(dict):
     def __init__(__self__, *,
                  dataset_field_description: _builtins.str,
@@ -20338,12 +20460,14 @@ class GetDatastreamDatasetFieldsDatasetFieldResult(dict):
 @pulumi.output_type
 class GetDatastreamsStreamsDetailResult(dict):
     def __init__(__self__, *,
+                 app_sec_configs: Sequence['outputs.GetDatastreamsStreamsDetailAppSecConfigResult'],
                  contract_id: _builtins.str,
                  created_by: _builtins.str,
                  created_date: _builtins.str,
                  group_id: _builtins.int,
                  integration_type: _builtins.str,
                  latest_version: _builtins.int,
+                 log_type: _builtins.str,
                  modified_by: _builtins.str,
                  modified_date: _builtins.str,
                  product_id: _builtins.str,
@@ -20353,12 +20477,14 @@ class GetDatastreamsStreamsDetailResult(dict):
                  stream_status: _builtins.str,
                  stream_version: _builtins.int):
         """
+        :param Sequence['GetDatastreamsStreamsDetailAppSecConfigArgs'] app_sec_configs: List of AppSec configs associated with the stream.
         :param _builtins.str contract_id: Identifies the contract that the stream is associated with.
         :param _builtins.str created_by: The username who created the stream.
         :param _builtins.str created_date: The date and time when the stream was created.
         :param _builtins.int group_id: Identifies the group where the stream is created.
         :param _builtins.str integration_type: The integration mode for the stream in datastream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param _builtins.int latest_version: Identifies the latestVersion version of the stream.
+        :param _builtins.str log_type: The log type of the stream.
         :param _builtins.str modified_by: The username who activated or deactivated the stream
         :param _builtins.str modified_date: The date and time when activation status was modified
         :param _builtins.str product_id: The productId.
@@ -20368,12 +20494,14 @@ class GetDatastreamsStreamsDetailResult(dict):
         :param _builtins.str stream_status: The activation status of the stream.
         :param _builtins.int stream_version: Identifies the current version of the stream.
         """
+        pulumi.set(__self__, "app_sec_configs", app_sec_configs)
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "created_date", created_date)
         pulumi.set(__self__, "group_id", group_id)
         pulumi.set(__self__, "integration_type", integration_type)
         pulumi.set(__self__, "latest_version", latest_version)
+        pulumi.set(__self__, "log_type", log_type)
         pulumi.set(__self__, "modified_by", modified_by)
         pulumi.set(__self__, "modified_date", modified_date)
         pulumi.set(__self__, "product_id", product_id)
@@ -20382,6 +20510,14 @@ class GetDatastreamsStreamsDetailResult(dict):
         pulumi.set(__self__, "stream_name", stream_name)
         pulumi.set(__self__, "stream_status", stream_status)
         pulumi.set(__self__, "stream_version", stream_version)
+
+    @_builtins.property
+    @pulumi.getter(name="appSecConfigs")
+    def app_sec_configs(self) -> Sequence['outputs.GetDatastreamsStreamsDetailAppSecConfigResult']:
+        """
+        List of AppSec configs associated with the stream.
+        """
+        return pulumi.get(self, "app_sec_configs")
 
     @_builtins.property
     @pulumi.getter(name="contractId")
@@ -20430,6 +20566,14 @@ class GetDatastreamsStreamsDetailResult(dict):
         Identifies the latestVersion version of the stream.
         """
         return pulumi.get(self, "latest_version")
+
+    @_builtins.property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> _builtins.str:
+        """
+        The log type of the stream.
+        """
+        return pulumi.get(self, "log_type")
 
     @_builtins.property
     @pulumi.getter(name="modifiedBy")
@@ -20494,6 +20638,35 @@ class GetDatastreamsStreamsDetailResult(dict):
         Identifies the current version of the stream.
         """
         return pulumi.get(self, "stream_version")
+
+
+@pulumi.output_type
+class GetDatastreamsStreamsDetailAppSecConfigResult(dict):
+    def __init__(__self__, *,
+                 app_sec_id: _builtins.int,
+                 app_sec_name: _builtins.str):
+        """
+        :param _builtins.int app_sec_id: The identifier of the AppSec config.
+        :param _builtins.str app_sec_name: The descriptive label for the AppSec config.
+        """
+        pulumi.set(__self__, "app_sec_id", app_sec_id)
+        pulumi.set(__self__, "app_sec_name", app_sec_name)
+
+    @_builtins.property
+    @pulumi.getter(name="appSecId")
+    def app_sec_id(self) -> _builtins.int:
+        """
+        The identifier of the AppSec config.
+        """
+        return pulumi.get(self, "app_sec_id")
+
+    @_builtins.property
+    @pulumi.getter(name="appSecName")
+    def app_sec_name(self) -> _builtins.str:
+        """
+        The descriptive label for the AppSec config.
+        """
+        return pulumi.get(self, "app_sec_name")
 
 
 @pulumi.output_type

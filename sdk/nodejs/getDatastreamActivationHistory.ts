@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
 export function getDatastreamActivationHistory(args: GetDatastreamActivationHistoryArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastreamActivationHistoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", {
+        "logType": args.logType,
         "streamId": args.streamId,
     }, opts);
 }
@@ -17,6 +18,7 @@ export function getDatastreamActivationHistory(args: GetDatastreamActivationHist
  * A collection of arguments for invoking getDatastreamActivationHistory.
  */
 export interface GetDatastreamActivationHistoryArgs {
+    logType?: string;
     streamId: number;
 }
 
@@ -29,11 +31,13 @@ export interface GetDatastreamActivationHistoryResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly logType?: string;
     readonly streamId: number;
 }
 export function getDatastreamActivationHistoryOutput(args: GetDatastreamActivationHistoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastreamActivationHistoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", {
+        "logType": args.logType,
         "streamId": args.streamId,
     }, opts);
 }
@@ -42,5 +46,6 @@ export function getDatastreamActivationHistoryOutput(args: GetDatastreamActivati
  * A collection of arguments for invoking getDatastreamActivationHistory.
  */
 export interface GetDatastreamActivationHistoryOutputArgs {
+    logType?: pulumi.Input<string | undefined>;
     streamId: pulumi.Input<number>;
 }

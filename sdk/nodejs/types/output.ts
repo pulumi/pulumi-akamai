@@ -161,7 +161,7 @@ export interface AppsecUrlProtectionPolicyIntelligentLoadShedding {
     /**
      * Custom criteria for intelligent load shedding
      */
-    customCriterias: outputs.AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria[];
+    customCriterias?: outputs.AppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteria[];
     /**
      * Number of hits per second threshold
      */
@@ -223,13 +223,21 @@ export interface ClientlistListItem {
      */
     expirationDate?: string;
     /**
+     * Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     */
+    key?: string;
+    /**
      * The item tags.
      */
     tags?: string[];
     /**
-     * Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
      */
-    value: string;
+    value?: string;
+    /**
+     * Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     */
+    values?: string[];
 }
 
 export interface CloudAccessKeyCredentialsA {
@@ -2528,7 +2536,7 @@ export interface GetClientlistListList {
      */
     tags: string[];
     /**
-     * The type of the client list.
+     * Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
      */
     type: string;
     /**
@@ -2567,6 +2575,10 @@ export interface GetClientlistListListItem {
      */
     expirationDate: string;
     /**
+     * Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     */
+    key: string;
+    /**
      * The client list activation status in production environment.
      */
     productionActivationStatus: string;
@@ -2579,7 +2591,7 @@ export interface GetClientlistListListItem {
      */
     tags: string[];
     /**
-     * Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.
+     * Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
      */
     type: string;
     /**
@@ -2591,9 +2603,13 @@ export interface GetClientlistListListItem {
      */
     updatedBy: string;
     /**
-     * Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.
+     * Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
      */
     value: string;
+    /**
+     * Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     */
+    values: string[];
 }
 
 export interface GetClientlistListsList {
@@ -2650,7 +2666,7 @@ export interface GetClientlistListsList {
      */
     tags: string[];
     /**
-     * The type of the client list
+     * Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
      */
     type: string;
     /**
@@ -4844,6 +4860,33 @@ export interface GetDatastreamActivationHistoryActivation {
     streamVersion: number;
 }
 
+export interface GetDatastreamAppsecConfigsAppSecConfig {
+    /**
+     * The file type of the AppSec configuration (e.g. RBAC, WAF)
+     */
+    fileType: string;
+    /**
+     * The unique identifier of the AppSec configuration
+     */
+    id: number;
+    /**
+     * The latest version of the AppSec configuration
+     */
+    latestVersion: number;
+    /**
+     * The name of the AppSec configuration
+     */
+    name: string;
+    /**
+     * The version currently active in production
+     */
+    productionVersion: number;
+    /**
+     * The target product for the AppSec configuration
+     */
+    targetProduct: string;
+}
+
 export interface GetDatastreamDatasetFieldsDatasetField {
     /**
      * Describes the data set field
@@ -4869,6 +4912,10 @@ export interface GetDatastreamDatasetFieldsDatasetField {
 
 export interface GetDatastreamsStreamsDetail {
     /**
+     * List of AppSec configs associated with the stream.
+     */
+    appSecConfigs: outputs.GetDatastreamsStreamsDetailAppSecConfig[];
+    /**
      * Identifies the contract that the stream is associated with.
      */
     contractId: string;
@@ -4892,6 +4939,10 @@ export interface GetDatastreamsStreamsDetail {
      * Identifies the latestVersion version of the stream.
      */
     latestVersion: number;
+    /**
+     * The log type of the stream.
+     */
+    logType: string;
     /**
      * The username who activated or deactivated the stream
      */
@@ -4924,6 +4975,17 @@ export interface GetDatastreamsStreamsDetail {
      * Identifies the current version of the stream.
      */
     streamVersion: number;
+}
+
+export interface GetDatastreamsStreamsDetailAppSecConfig {
+    /**
+     * The identifier of the AppSec config.
+     */
+    appSecId: number;
+    /**
+     * The descriptive label for the AppSec config.
+     */
+    appSecName: string;
 }
 
 export interface GetDatastreamsStreamsDetailProperty {

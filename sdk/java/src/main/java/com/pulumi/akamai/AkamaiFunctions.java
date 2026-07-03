@@ -270,6 +270,8 @@ import com.pulumi.akamai.inputs.GetCpsDeploymentsArgs;
 import com.pulumi.akamai.inputs.GetCpsDeploymentsPlainArgs;
 import com.pulumi.akamai.inputs.GetDatastreamActivationHistoryArgs;
 import com.pulumi.akamai.inputs.GetDatastreamActivationHistoryPlainArgs;
+import com.pulumi.akamai.inputs.GetDatastreamAppsecConfigsArgs;
+import com.pulumi.akamai.inputs.GetDatastreamAppsecConfigsPlainArgs;
 import com.pulumi.akamai.inputs.GetDatastreamDatasetFieldsArgs;
 import com.pulumi.akamai.inputs.GetDatastreamDatasetFieldsPlainArgs;
 import com.pulumi.akamai.inputs.GetDatastreamsArgs;
@@ -548,6 +550,7 @@ import com.pulumi.akamai.outputs.GetCpsCsrResult;
 import com.pulumi.akamai.outputs.GetCpsDeploymentsResult;
 import com.pulumi.akamai.outputs.GetCpsWarningsResult;
 import com.pulumi.akamai.outputs.GetDatastreamActivationHistoryResult;
+import com.pulumi.akamai.outputs.GetDatastreamAppsecConfigsResult;
 import com.pulumi.akamai.outputs.GetDatastreamDatasetFieldsResult;
 import com.pulumi.akamai.outputs.GetDatastreamsResult;
 import com.pulumi.akamai.outputs.GetDnsRecordSetResult;
@@ -2896,6 +2899,21 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetDatastreamActivationHistoryResult> getDatastreamActivationHistoryPlain(GetDatastreamActivationHistoryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", TypeShape.of(GetDatastreamActivationHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetDatastreamAppsecConfigsResult> getDatastreamAppsecConfigs(GetDatastreamAppsecConfigsArgs args) {
+        return getDatastreamAppsecConfigs(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetDatastreamAppsecConfigsResult> getDatastreamAppsecConfigsPlain(GetDatastreamAppsecConfigsPlainArgs args) {
+        return getDatastreamAppsecConfigsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetDatastreamAppsecConfigsResult> getDatastreamAppsecConfigs(GetDatastreamAppsecConfigsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getDatastreamAppsecConfigs:getDatastreamAppsecConfigs", TypeShape.of(GetDatastreamAppsecConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetDatastreamAppsecConfigsResult> getDatastreamAppsecConfigs(GetDatastreamAppsecConfigsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getDatastreamAppsecConfigs:getDatastreamAppsecConfigs", TypeShape.of(GetDatastreamAppsecConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetDatastreamAppsecConfigsResult> getDatastreamAppsecConfigsPlain(GetDatastreamAppsecConfigsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getDatastreamAppsecConfigs:getDatastreamAppsecConfigs", TypeShape.of(GetDatastreamAppsecConfigsResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetDatastreamDatasetFieldsResult> getDatastreamDatasetFields() {
         return getDatastreamDatasetFields(GetDatastreamDatasetFieldsArgs.Empty, InvokeOptions.Empty);

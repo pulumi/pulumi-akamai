@@ -13,6 +13,169 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallenge struct {
+	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+	CnameRecord GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord `pulumi:"cnameRecord"`
+	// The timestamp indicating when the challenge data expires.
+	ExpirationDate string `pulumi:"expirationDate"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+	HttpFile GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile `pulumi:"httpFile"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+	HttpRedirect GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect `pulumi:"httpRedirect"`
+	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+	TxtRecord GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord `pulumi:"txtRecord"`
+}
+
+// GetPropertyDomainownershipSearchDomainsDomainValidationChallengeInput is an input type that accepts GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs and GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipSearchDomainsDomainValidationChallengeInput` via:
+//
+//	GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs{...}
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutputWithContext(context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs struct {
+	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+	CnameRecord GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordInput `pulumi:"cnameRecord"`
+	// The timestamp indicating when the challenge data expires.
+	ExpirationDate pulumi.StringInput `pulumi:"expirationDate"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+	HttpFile GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileInput `pulumi:"httpFile"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+	HttpRedirect GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectInput `pulumi:"httpRedirect"`
+	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+	TxtRecord GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordInput `pulumi:"txtRecord"`
+}
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallenge)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput {
+	return i.ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallenge)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput {
+	return o
+}
+
+// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput) CnameRecord() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallenge) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord {
+		return v.CnameRecord
+	}).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput)
+}
+
+// The timestamp indicating when the challenge data expires.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput) ExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallenge) string {
+		return v.ExpirationDate
+	}).(pulumi.StringOutput)
+}
+
+// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput) HttpFile() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallenge) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile {
+		return v.HttpFile
+	}).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput)
+}
+
+// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput) HttpRedirect() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallenge) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirect {
+		return v.HttpRedirect
+	}).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput)
+}
+
+// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput) TxtRecord() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallenge) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecord {
+		return v.TxtRecord
+	}).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord struct {
+	// The 'CNAME' record for your domain that you add to the DNS configuration.
+	Name string `pulumi:"name"`
+	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+	Target string `pulumi:"target"`
+}
+
+// GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordInput is an input type that accepts GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs and GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordInput` via:
+//
+//	GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs{...}
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput
+	ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutputWithContext(context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs struct {
+	// The 'CNAME' record for your domain that you add to the DNS configuration.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+	Target pulumi.StringInput `pulumi:"target"`
+}
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput {
+	return i.ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput {
+	return o
+}
+
+// The 'CNAME' record for your domain that you add to the DNS configuration.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+func (o GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecord) string {
+		return v.Target
+	}).(pulumi.StringOutput)
+}
+
 type GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFile struct {
 	// The content of the file that you should place at the specified URL.
 	Content string `pulumi:"content"`
@@ -5003,6 +5166,8 @@ func (o GetZoneDnssecStatusNewRecordsOutput) LastModifiedDate() pulumi.StringOut
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordArgs{})
@@ -5080,6 +5245,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupsGroupContractCpCodeArrayInput)(nil)).Elem(), GetReportinggroupsGroupsGroupContractCpCodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecStatusCurrentRecordsInput)(nil)).Elem(), GetZoneDnssecStatusCurrentRecordsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecStatusNewRecordsInput)(nil)).Elem(), GetZoneDnssecStatusNewRecordsArgs{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput{})
 	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput{})
 	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpRedirectOutput{})
 	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeTxtRecordOutput{})

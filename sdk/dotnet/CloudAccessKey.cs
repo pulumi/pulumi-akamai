@@ -25,7 +25,13 @@ namespace Pulumi.Akamai
         public Output<int> AccessKeyUid { get; private set; } = null!;
 
         /// <summary>
-        /// The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
+        /// The type of signing process used to authenticate API requests:
+        ///   - `AOS4_HMAC_SHA256` — Akamai Object Storage
+        ///   - `AVM_CLOUDINARY` — Akamai Video Manager Cloudinary
+        ///   - `AWS4_HMAC_SHA256` — Amazon Web Services
+        ///   - `GOOG4_HMAC_SHA256` — Google Cloud Services
+        ///   - `G2O` — Akamai Signature Header Authentication
+        ///   - `VP_QUEUE_IT` — Akamai Visitor Prioritization powered by Queue-it
         /// </summary>
         [Output("authenticationMethod")]
         public Output<string> AuthenticationMethod { get; private set; } = null!;
@@ -122,7 +128,13 @@ namespace Pulumi.Akamai
         public Input<string> AccessKeyName { get; set; } = null!;
 
         /// <summary>
-        /// The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
+        /// The type of signing process used to authenticate API requests:
+        ///   - `AOS4_HMAC_SHA256` — Akamai Object Storage
+        ///   - `AVM_CLOUDINARY` — Akamai Video Manager Cloudinary
+        ///   - `AWS4_HMAC_SHA256` — Amazon Web Services
+        ///   - `GOOG4_HMAC_SHA256` — Google Cloud Services
+        ///   - `G2O` — Akamai Signature Header Authentication
+        ///   - `VP_QUEUE_IT` — Akamai Visitor Prioritization powered by Queue-it
         /// </summary>
         [Input("authenticationMethod", required: true)]
         public Input<string> AuthenticationMethod { get; set; } = null!;
@@ -181,7 +193,13 @@ namespace Pulumi.Akamai
         public Input<int>? AccessKeyUid { get; set; }
 
         /// <summary>
-        /// The type of signing process used to authenticate API requests: AWS4_HMAC_SHA256 for Amazon Web Services, GOOG4_HMAC_SHA256 for Google Cloud Services, AOS4_HMAC_SHA256 for Akamai Object Storage, AVM_CLOUDINARY for Akamai Video Manager Cloudinary, VP_QUEUE_IT for Akamai Visitor Prioritization powered by Queue-it.
+        /// The type of signing process used to authenticate API requests:
+        ///   - `AOS4_HMAC_SHA256` — Akamai Object Storage
+        ///   - `AVM_CLOUDINARY` — Akamai Video Manager Cloudinary
+        ///   - `AWS4_HMAC_SHA256` — Amazon Web Services
+        ///   - `GOOG4_HMAC_SHA256` — Google Cloud Services
+        ///   - `G2O` — Akamai Signature Header Authentication
+        ///   - `VP_QUEUE_IT` — Akamai Visitor Prioritization powered by Queue-it
         /// </summary>
         [Input("authenticationMethod")]
         public Input<string>? AuthenticationMethod { get; set; }

@@ -24,6 +24,12 @@ namespace Pulumi.Akamai.Inputs
         [Input("expirationDate")]
         public Input<string>? ExpirationDate { get; set; }
 
+        /// <summary>
+        /// Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        /// </summary>
+        [Input("key")]
+        public Input<string>? Key { get; set; }
+
         [Input("tags")]
         private InputList<string>? _tags;
 
@@ -37,10 +43,22 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
-        /// Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+        /// Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
         /// </summary>
-        [Input("value", required: true)]
-        public Input<string> Value { get; set; } = null!;
+        [Input("value")]
+        public Input<string>? Value { get; set; }
+
+        [Input("values")]
+        private InputList<string>? _values;
+
+        /// <summary>
+        /// Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        /// </summary>
+        public InputList<string> Values
+        {
+            get => _values ?? (_values = new InputList<string>());
+            set => _values = value;
+        }
 
         public ClientlistListItemArgs()
         {

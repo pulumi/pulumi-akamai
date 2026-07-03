@@ -5,7 +5,6 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -48,6 +47,21 @@ public final class ClientlistListItemArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    @Import(name="key")
+    private @Nullable Output<String> key;
+
+    /**
+     * @return Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    public Optional<Output<String>> key() {
+        return Optional.ofNullable(this.key);
+    }
+
+    /**
      * The item tags.
      * 
      */
@@ -63,18 +77,33 @@ public final class ClientlistListItemArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
      * 
      */
-    @Import(name="value", required=true)
-    private Output<String> value;
+    @Import(name="value")
+    private @Nullable Output<String> value;
 
     /**
-     * @return Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * @return Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
      * 
      */
-    public Output<String> value() {
-        return this.value;
+    public Optional<Output<String>> value() {
+        return Optional.ofNullable(this.value);
+    }
+
+    /**
+     * Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    @Import(name="values")
+    private @Nullable Output<List<String>> values;
+
+    /**
+     * @return Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    public Optional<Output<List<String>>> values() {
+        return Optional.ofNullable(this.values);
     }
 
     private ClientlistListItemArgs() {}
@@ -82,8 +111,10 @@ public final class ClientlistListItemArgs extends com.pulumi.resources.ResourceA
     private ClientlistListItemArgs(ClientlistListItemArgs $) {
         this.description = $.description;
         this.expirationDate = $.expirationDate;
+        this.key = $.key;
         this.tags = $.tags;
         this.value = $.value;
+        this.values = $.values;
     }
 
     public static Builder builder() {
@@ -147,6 +178,27 @@ public final class ClientlistListItemArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param key Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder key(@Nullable Output<String> key) {
+            $.key = key;
+            return this;
+        }
+
+        /**
+         * @param key Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder key(String key) {
+            return key(Output.of(key));
+        }
+
+        /**
          * @param tags The item tags.
          * 
          * @return builder
@@ -178,18 +230,18 @@ public final class ClientlistListItemArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param value Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+         * @param value Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
          * 
          * @return builder
          * 
          */
-        public Builder value(Output<String> value) {
+        public Builder value(@Nullable Output<String> value) {
             $.value = value;
             return this;
         }
 
         /**
-         * @param value Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+         * @param value Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
          * 
          * @return builder
          * 
@@ -198,10 +250,38 @@ public final class ClientlistListItemArgs extends com.pulumi.resources.ResourceA
             return value(Output.of(value));
         }
 
+        /**
+         * @param values Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder values(@Nullable Output<List<String>> values) {
+            $.values = values;
+            return this;
+        }
+
+        /**
+         * @param values Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder values(List<String> values) {
+            return values(Output.of(values));
+        }
+
+        /**
+         * @param values Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder values(String... values) {
+            return values(List.of(values));
+        }
+
         public ClientlistListItemArgs build() {
-            if ($.value == null) {
-                throw new MissingRequiredPropertyException("ClientlistListItemArgs", "value");
-            }
             return $;
         }
     }

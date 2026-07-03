@@ -11,6 +11,7 @@ export function getDatastreams(args?: GetDatastreamsArgs, opts?: pulumi.InvokeOp
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDatastreams:getDatastreams", {
         "groupId": args.groupId,
+        "logType": args.logType,
     }, opts);
 }
 
@@ -19,6 +20,7 @@ export function getDatastreams(args?: GetDatastreamsArgs, opts?: pulumi.InvokeOp
  */
 export interface GetDatastreamsArgs {
     groupId?: number;
+    logType?: string;
 }
 
 /**
@@ -30,6 +32,7 @@ export interface GetDatastreamsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly logType?: string;
     readonly streamsDetails: outputs.GetDatastreamsStreamsDetail[];
 }
 export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastreamsResult> {
@@ -37,6 +40,7 @@ export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pul
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getDatastreams:getDatastreams", {
         "groupId": args.groupId,
+        "logType": args.logType,
     }, opts);
 }
 
@@ -45,4 +49,5 @@ export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pul
  */
 export interface GetDatastreamsOutputArgs {
     groupId?: pulumi.Input<number | undefined>;
+    logType?: pulumi.Input<string | undefined>;
 }

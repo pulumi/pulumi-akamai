@@ -23,22 +23,24 @@ class DatastreamArgs:
     def __init__(__self__, *,
                  active: pulumi.Input[_builtins.bool],
                  contract_id: pulumi.Input[_builtins.str],
-                 dataset_fields: pulumi.Input[Sequence[pulumi.Input[_builtins.int]]],
                  delivery_configuration: pulumi.Input['DatastreamDeliveryConfigurationArgs'],
                  group_id: pulumi.Input[_builtins.str],
-                 properties: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  stream_name: pulumi.Input[_builtins.str],
+                 app_sec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  azure_connector: pulumi.Input[Optional['DatastreamAzureConnectorArgs']] = None,
                  collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
                  datadog_connector: pulumi.Input[Optional['DatastreamDatadogConnectorArgs']] = None,
+                 dataset_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  dynatrace_connector: pulumi.Input[Optional['DatastreamDynatraceConnectorArgs']] = None,
                  elasticsearch_connector: pulumi.Input[Optional['DatastreamElasticsearchConnectorArgs']] = None,
                  gcs_connector: pulumi.Input[Optional['DatastreamGcsConnectorArgs']] = None,
                  https_connector: pulumi.Input[Optional['DatastreamHttpsConnectorArgs']] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
                  loggly_connector: pulumi.Input[Optional['DatastreamLogglyConnectorArgs']] = None,
                  new_relic_connector: pulumi.Input[Optional['DatastreamNewRelicConnectorArgs']] = None,
                  notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oracle_connector: pulumi.Input[Optional['DatastreamOracleConnectorArgs']] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  s3_compatible_connector: pulumi.Input[Optional['DatastreamS3CompatibleConnectorArgs']] = None,
                  s3_connector: pulumi.Input[Optional['DatastreamS3ConnectorArgs']] = None,
                  sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
@@ -50,28 +52,32 @@ class DatastreamArgs:
 
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input['DatastreamDeliveryConfigurationArgs'] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
         :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
         """
         pulumi.set(__self__, "active", active)
         pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "dataset_fields", dataset_fields)
         pulumi.set(__self__, "delivery_configuration", delivery_configuration)
         pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "properties", properties)
         pulumi.set(__self__, "stream_name", stream_name)
+        if app_sec_configs is not None:
+            pulumi.set(__self__, "app_sec_configs", app_sec_configs)
         if azure_connector is not None:
             pulumi.set(__self__, "azure_connector", azure_connector)
         if collect_midgress is not None:
             pulumi.set(__self__, "collect_midgress", collect_midgress)
         if datadog_connector is not None:
             pulumi.set(__self__, "datadog_connector", datadog_connector)
+        if dataset_fields is not None:
+            pulumi.set(__self__, "dataset_fields", dataset_fields)
         if dynatrace_connector is not None:
             pulumi.set(__self__, "dynatrace_connector", dynatrace_connector)
         if elasticsearch_connector is not None:
@@ -80,6 +86,8 @@ class DatastreamArgs:
             pulumi.set(__self__, "gcs_connector", gcs_connector)
         if https_connector is not None:
             pulumi.set(__self__, "https_connector", https_connector)
+        if log_type is not None:
+            pulumi.set(__self__, "log_type", log_type)
         if loggly_connector is not None:
             pulumi.set(__self__, "loggly_connector", loggly_connector)
         if new_relic_connector is not None:
@@ -88,6 +96,8 @@ class DatastreamArgs:
             pulumi.set(__self__, "notification_emails", notification_emails)
         if oracle_connector is not None:
             pulumi.set(__self__, "oracle_connector", oracle_connector)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
         if s3_compatible_connector is not None:
             pulumi.set(__self__, "s3_compatible_connector", s3_compatible_connector)
         if s3_connector is not None:
@@ -126,18 +136,6 @@ class DatastreamArgs:
         pulumi.set(self, "contract_id", value)
 
     @_builtins.property
-    @pulumi.getter(name="datasetFields")
-    def dataset_fields(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]:
-        """
-        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
-        """
-        return pulumi.get(self, "dataset_fields")
-
-    @dataset_fields.setter
-    def dataset_fields(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]):
-        pulumi.set(self, "dataset_fields", value)
-
-    @_builtins.property
     @pulumi.getter(name="deliveryConfiguration")
     def delivery_configuration(self) -> pulumi.Input['DatastreamDeliveryConfigurationArgs']:
         """
@@ -162,18 +160,6 @@ class DatastreamArgs:
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
-    @pulumi.getter
-    def properties(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
-        """
-        Identifies the properties monitored in the stream
-        """
-        return pulumi.get(self, "properties")
-
-    @properties.setter
-    def properties(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        pulumi.set(self, "properties", value)
-
-    @_builtins.property
     @pulumi.getter(name="streamName")
     def stream_name(self) -> pulumi.Input[_builtins.str]:
         """
@@ -184,6 +170,18 @@ class DatastreamArgs:
     @stream_name.setter
     def stream_name(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "stream_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="appSecConfigs")
+    def app_sec_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        Identifies the application security configurations monitored in the stream
+        """
+        return pulumi.get(self, "app_sec_configs")
+
+    @app_sec_configs.setter
+    def app_sec_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "app_sec_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="azureConnector")
@@ -214,6 +212,18 @@ class DatastreamArgs:
     @datadog_connector.setter
     def datadog_connector(self, value: pulumi.Input[Optional['DatastreamDatadogConnectorArgs']]):
         pulumi.set(self, "datadog_connector", value)
+
+    @_builtins.property
+    @pulumi.getter(name="datasetFields")
+    def dataset_fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
+        """
+        return pulumi.get(self, "dataset_fields")
+
+    @dataset_fields.setter
+    def dataset_fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "dataset_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceConnector")
@@ -250,6 +260,18 @@ class DatastreamArgs:
     @https_connector.setter
     def https_connector(self, value: pulumi.Input[Optional['DatastreamHttpsConnectorArgs']]):
         pulumi.set(self, "https_connector", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of logs for the stream
+        """
+        return pulumi.get(self, "log_type")
+
+    @log_type.setter
+    def log_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "log_type", value)
 
     @_builtins.property
     @pulumi.getter(name="logglyConnector")
@@ -289,6 +311,18 @@ class DatastreamArgs:
     @oracle_connector.setter
     def oracle_connector(self, value: pulumi.Input[Optional['DatastreamOracleConnectorArgs']]):
         pulumi.set(self, "oracle_connector", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Identifies the properties monitored in the stream
+        """
+        return pulumi.get(self, "properties")
+
+    @properties.setter
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="s3CompatibleConnector")
@@ -352,6 +386,7 @@ class DatastreamArgs:
 class _DatastreamState:
     def __init__(__self__, *,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 app_sec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  azure_connector: pulumi.Input[Optional['DatastreamAzureConnectorArgs']] = None,
                  collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -367,6 +402,7 @@ class _DatastreamState:
                  https_connector: pulumi.Input[Optional['DatastreamHttpsConnectorArgs']] = None,
                  integration_type: pulumi.Input[Optional[_builtins.str]] = None,
                  latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
                  loggly_connector: pulumi.Input[Optional['DatastreamLogglyConnectorArgs']] = None,
                  modified_by: pulumi.Input[Optional[_builtins.str]] = None,
                  modified_date: pulumi.Input[Optional[_builtins.str]] = None,
@@ -388,6 +424,7 @@ class _DatastreamState:
         Input properties used for looking up and filtering Datastream resources.
 
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
         :param pulumi.Input[_builtins.str] created_by: The username who created the stream
@@ -397,6 +434,7 @@ class _DatastreamState:
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[_builtins.str] integration_type: The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
+        :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
         :param pulumi.Input[_builtins.str] modified_by: The username who modified the stream
         :param pulumi.Input[_builtins.str] modified_date: The date and time when the stream was modified
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
@@ -409,6 +447,8 @@ class _DatastreamState:
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
+        if app_sec_configs is not None:
+            pulumi.set(__self__, "app_sec_configs", app_sec_configs)
         if azure_connector is not None:
             pulumi.set(__self__, "azure_connector", azure_connector)
         if collect_midgress is not None:
@@ -439,6 +479,8 @@ class _DatastreamState:
             pulumi.set(__self__, "integration_type", integration_type)
         if latest_version is not None:
             pulumi.set(__self__, "latest_version", latest_version)
+        if log_type is not None:
+            pulumi.set(__self__, "log_type", log_type)
         if loggly_connector is not None:
             pulumi.set(__self__, "loggly_connector", loggly_connector)
         if modified_by is not None:
@@ -485,6 +527,18 @@ class _DatastreamState:
     @active.setter
     def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
+
+    @_builtins.property
+    @pulumi.getter(name="appSecConfigs")
+    def app_sec_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        Identifies the application security configurations monitored in the stream
+        """
+        return pulumi.get(self, "app_sec_configs")
+
+    @app_sec_configs.setter
+    def app_sec_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "app_sec_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="azureConnector")
@@ -647,6 +701,18 @@ class _DatastreamState:
     @latest_version.setter
     def latest_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "latest_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of logs for the stream
+        """
+        return pulumi.get(self, "log_type")
+
+    @log_type.setter
+    def log_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "log_type", value)
 
     @_builtins.property
     @pulumi.getter(name="logglyConnector")
@@ -836,6 +902,7 @@ class Datastream(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 app_sec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  azure_connector: pulumi.Input[Optional[Union['DatastreamAzureConnectorArgs', 'DatastreamAzureConnectorArgsDict']]] = None,
                  collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -847,6 +914,7 @@ class Datastream(pulumi.CustomResource):
                  gcs_connector: pulumi.Input[Optional[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  https_connector: pulumi.Input[Optional[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
                  loggly_connector: pulumi.Input[Optional[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
                  new_relic_connector: pulumi.Input[Optional[Union['DatastreamNewRelicConnectorArgs', 'DatastreamNewRelicConnectorArgsDict']]] = None,
                  notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -866,11 +934,13 @@ class Datastream(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
+        :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
         :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
@@ -901,6 +971,7 @@ class Datastream(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 app_sec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  azure_connector: pulumi.Input[Optional[Union['DatastreamAzureConnectorArgs', 'DatastreamAzureConnectorArgsDict']]] = None,
                  collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -912,6 +983,7 @@ class Datastream(pulumi.CustomResource):
                  gcs_connector: pulumi.Input[Optional[Union['DatastreamGcsConnectorArgs', 'DatastreamGcsConnectorArgsDict']]] = None,
                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  https_connector: pulumi.Input[Optional[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
                  loggly_connector: pulumi.Input[Optional[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
                  new_relic_connector: pulumi.Input[Optional[Union['DatastreamNewRelicConnectorArgs', 'DatastreamNewRelicConnectorArgsDict']]] = None,
                  notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -936,14 +1008,13 @@ class Datastream(pulumi.CustomResource):
             if active is None and not opts.urn:
                 raise TypeError("Missing required property 'active'")
             __props__.__dict__["active"] = active
+            __props__.__dict__["app_sec_configs"] = app_sec_configs
             __props__.__dict__["azure_connector"] = azure_connector
             __props__.__dict__["collect_midgress"] = collect_midgress
             if contract_id is None and not opts.urn:
                 raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
             __props__.__dict__["datadog_connector"] = datadog_connector
-            if dataset_fields is None and not opts.urn:
-                raise TypeError("Missing required property 'dataset_fields'")
             __props__.__dict__["dataset_fields"] = dataset_fields
             if delivery_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'delivery_configuration'")
@@ -955,12 +1026,11 @@ class Datastream(pulumi.CustomResource):
                 raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
             __props__.__dict__["https_connector"] = https_connector
+            __props__.__dict__["log_type"] = log_type
             __props__.__dict__["loggly_connector"] = loggly_connector
             __props__.__dict__["new_relic_connector"] = new_relic_connector
             __props__.__dict__["notification_emails"] = notification_emails
             __props__.__dict__["oracle_connector"] = oracle_connector
-            if properties is None and not opts.urn:
-                raise TypeError("Missing required property 'properties'")
             __props__.__dict__["properties"] = properties
             __props__.__dict__["s3_compatible_connector"] = s3_compatible_connector
             __props__.__dict__["s3_connector"] = s3_connector
@@ -991,6 +1061,7 @@ class Datastream(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             active: pulumi.Input[Optional[_builtins.bool]] = None,
+            app_sec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
             azure_connector: pulumi.Input[Optional[Union['DatastreamAzureConnectorArgs', 'DatastreamAzureConnectorArgsDict']]] = None,
             collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
             contract_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1006,6 +1077,7 @@ class Datastream(pulumi.CustomResource):
             https_connector: pulumi.Input[Optional[Union['DatastreamHttpsConnectorArgs', 'DatastreamHttpsConnectorArgsDict']]] = None,
             integration_type: pulumi.Input[Optional[_builtins.str]] = None,
             latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+            log_type: pulumi.Input[Optional[_builtins.str]] = None,
             loggly_connector: pulumi.Input[Optional[Union['DatastreamLogglyConnectorArgs', 'DatastreamLogglyConnectorArgsDict']]] = None,
             modified_by: pulumi.Input[Optional[_builtins.str]] = None,
             modified_date: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1031,6 +1103,7 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
         :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
         :param pulumi.Input[_builtins.str] created_by: The username who created the stream
@@ -1040,6 +1113,7 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[_builtins.str] integration_type: The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
+        :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
         :param pulumi.Input[_builtins.str] modified_by: The username who modified the stream
         :param pulumi.Input[_builtins.str] modified_date: The date and time when the stream was modified
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
@@ -1055,6 +1129,7 @@ class Datastream(pulumi.CustomResource):
         __props__ = _DatastreamState.__new__(_DatastreamState)
 
         __props__.__dict__["active"] = active
+        __props__.__dict__["app_sec_configs"] = app_sec_configs
         __props__.__dict__["azure_connector"] = azure_connector
         __props__.__dict__["collect_midgress"] = collect_midgress
         __props__.__dict__["contract_id"] = contract_id
@@ -1070,6 +1145,7 @@ class Datastream(pulumi.CustomResource):
         __props__.__dict__["https_connector"] = https_connector
         __props__.__dict__["integration_type"] = integration_type
         __props__.__dict__["latest_version"] = latest_version
+        __props__.__dict__["log_type"] = log_type
         __props__.__dict__["loggly_connector"] = loggly_connector
         __props__.__dict__["modified_by"] = modified_by
         __props__.__dict__["modified_date"] = modified_date
@@ -1096,6 +1172,14 @@ class Datastream(pulumi.CustomResource):
         Defining if stream should be active or not
         """
         return pulumi.get(self, "active")
+
+    @_builtins.property
+    @pulumi.getter(name="appSecConfigs")
+    def app_sec_configs(self) -> pulumi.Output[Optional[Sequence[_builtins.int]]]:
+        """
+        Identifies the application security configurations monitored in the stream
+        """
+        return pulumi.get(self, "app_sec_configs")
 
     @_builtins.property
     @pulumi.getter(name="azureConnector")
@@ -1141,7 +1225,7 @@ class Datastream(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="datasetFields")
-    def dataset_fields(self) -> pulumi.Output[Sequence[_builtins.int]]:
+    def dataset_fields(self) -> pulumi.Output[Optional[Sequence[_builtins.int]]]:
         """
         A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         """
@@ -1200,6 +1284,14 @@ class Datastream(pulumi.CustomResource):
         return pulumi.get(self, "latest_version")
 
     @_builtins.property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Type of logs for the stream
+        """
+        return pulumi.get(self, "log_type")
+
+    @_builtins.property
     @pulumi.getter(name="logglyConnector")
     def loggly_connector(self) -> pulumi.Output[Optional['outputs.DatastreamLogglyConnector']]:
         return pulumi.get(self, "loggly_connector")
@@ -1256,7 +1348,7 @@ class Datastream(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> pulumi.Output[Sequence[_builtins.str]]:
+    def properties(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
         Identifies the properties monitored in the stream
         """

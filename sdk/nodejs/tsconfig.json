@@ -275,6 +275,7 @@
         "getCpsDeployments.ts",
         "getCpsWarnings.ts",
         "getDatastreamActivationHistory.ts",
+        "getDatastreamAppsecConfigs.ts",
         "getDatastreamDatasetFields.ts",
         "getDatastreams.ts",
         "getDnsRecordSet.ts",

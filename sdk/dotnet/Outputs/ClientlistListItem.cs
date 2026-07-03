@@ -22,13 +22,21 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? ExpirationDate;
         /// <summary>
+        /// Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        /// </summary>
+        public readonly string? Key;
+        /// <summary>
         /// The item tags.
         /// </summary>
         public readonly ImmutableArray<string> Tags;
         /// <summary>
-        /// Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+        /// Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
+        /// <summary>
+        /// Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        /// </summary>
+        public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]
         private ClientlistListItem(
@@ -36,14 +44,20 @@ namespace Pulumi.Akamai.Outputs
 
             string? expirationDate,
 
+            string? key,
+
             ImmutableArray<string> tags,
 
-            string value)
+            string? value,
+
+            ImmutableArray<string> values)
         {
             Description = description;
             ExpirationDate = expirationDate;
+            Key = key;
             Tags = tags;
             Value = value;
+            Values = values;
         }
     }
 }

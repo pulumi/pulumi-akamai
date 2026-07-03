@@ -13,7 +13,7 @@ namespace Pulumi.Akamai
     public partial class EdgeKv : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Storage location for data
+        /// Storage location for data.
         /// </summary>
         [Output("geoLocation")]
         public Output<string?> GeoLocation { get; private set; } = null!;
@@ -25,13 +25,13 @@ namespace Pulumi.Akamai
         public Output<int> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// Name for the EKV namespace
+        /// Name for the EKV namespace.
         /// </summary>
         [Output("namespaceName")]
         public Output<string> NamespaceName { get; private set; } = null!;
 
         /// <summary>
-        /// The network on which the namespace will be activated
+        /// The network on which the namespace will be activated.
         /// </summary>
         [Output("network")]
         public Output<string> Network { get; private set; } = null!;
@@ -89,7 +89,7 @@ namespace Pulumi.Akamai
     public sealed class EdgeKvArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Storage location for data
+        /// Storage location for data.
         /// </summary>
         [Input("geoLocation")]
         public Input<string>? GeoLocation { get; set; }
@@ -101,13 +101,13 @@ namespace Pulumi.Akamai
         public Input<int> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// Name for the EKV namespace
+        /// Name for the EKV namespace.
         /// </summary>
         [Input("namespaceName", required: true)]
         public Input<string> NamespaceName { get; set; } = null!;
 
         /// <summary>
-        /// The network on which the namespace will be activated
+        /// The network on which the namespace will be activated.
         /// </summary>
         [Input("network", required: true)]
         public Input<string> Network { get; set; } = null!;
@@ -127,7 +127,7 @@ namespace Pulumi.Akamai
     public sealed class EdgeKvState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Storage location for data
+        /// Storage location for data.
         /// </summary>
         [Input("geoLocation")]
         public Input<string>? GeoLocation { get; set; }
@@ -139,13 +139,13 @@ namespace Pulumi.Akamai
         public Input<int>? GroupId { get; set; }
 
         /// <summary>
-        /// Name for the EKV namespace
+        /// Name for the EKV namespace.
         /// </summary>
         [Input("namespaceName")]
         public Input<string>? NamespaceName { get; set; }
 
         /// <summary>
-        /// The network on which the namespace will be activated
+        /// The network on which the namespace will be activated.
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }

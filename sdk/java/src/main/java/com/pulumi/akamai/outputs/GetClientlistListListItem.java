@@ -40,6 +40,11 @@ public final class GetClientlistListListItem {
      */
     private String expirationDate;
     /**
+     * @return Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    private String key;
+    /**
      * @return The client list activation status in production environment.
      * 
      */
@@ -55,7 +60,7 @@ public final class GetClientlistListListItem {
      */
     private List<String> tags;
     /**
-     * @return Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.
+     * @return Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
      * 
      */
     private String type;
@@ -70,10 +75,15 @@ public final class GetClientlistListListItem {
      */
     private String updatedBy;
     /**
-     * @return Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.
+     * @return Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
      * 
      */
     private String value;
+    /**
+     * @return Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    private List<String> values;
 
     private GetClientlistListListItem() {}
     /**
@@ -112,6 +122,13 @@ public final class GetClientlistListListItem {
         return this.expirationDate;
     }
     /**
+     * @return Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    public String key() {
+        return this.key;
+    }
+    /**
      * @return The client list activation status in production environment.
      * 
      */
@@ -133,7 +150,7 @@ public final class GetClientlistListListItem {
         return this.tags;
     }
     /**
-     * @return Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.
+     * @return Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
      * 
      */
     public String type() {
@@ -154,11 +171,18 @@ public final class GetClientlistListListItem {
         return this.updatedBy;
     }
     /**
-     * @return Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.
+     * @return Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
      * 
      */
     public String value() {
         return this.value;
+    }
+    /**
+     * @return Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    public List<String> values() {
+        return this.values;
     }
 
     public static Builder builder() {
@@ -175,6 +199,7 @@ public final class GetClientlistListListItem {
         private Integer createdVersion;
         private @Nullable String description;
         private String expirationDate;
+        private String key;
         private String productionActivationStatus;
         private String stagingActivationStatus;
         private List<String> tags;
@@ -182,6 +207,7 @@ public final class GetClientlistListListItem {
         private String updateDate;
         private String updatedBy;
         private String value;
+        private List<String> values;
         public Builder() {}
         public Builder(GetClientlistListListItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -190,6 +216,7 @@ public final class GetClientlistListListItem {
     	      this.createdVersion = defaults.createdVersion;
     	      this.description = defaults.description;
     	      this.expirationDate = defaults.expirationDate;
+    	      this.key = defaults.key;
     	      this.productionActivationStatus = defaults.productionActivationStatus;
     	      this.stagingActivationStatus = defaults.stagingActivationStatus;
     	      this.tags = defaults.tags;
@@ -197,6 +224,7 @@ public final class GetClientlistListListItem {
     	      this.updateDate = defaults.updateDate;
     	      this.updatedBy = defaults.updatedBy;
     	      this.value = defaults.value;
+    	      this.values = defaults.values;
         }
 
         @CustomType.Setter
@@ -235,6 +263,14 @@ public final class GetClientlistListListItem {
               throw new MissingRequiredPropertyException("GetClientlistListListItem", "expirationDate");
             }
             this.expirationDate = expirationDate;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder key(String key) {
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetClientlistListListItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
@@ -296,6 +332,17 @@ public final class GetClientlistListListItem {
             this.value = value;
             return this;
         }
+        @CustomType.Setter
+        public Builder values(List<String> values) {
+            if (values == null) {
+              throw new MissingRequiredPropertyException("GetClientlistListListItem", "values");
+            }
+            this.values = values;
+            return this;
+        }
+        public Builder values(String... values) {
+            return values(List.of(values));
+        }
         public GetClientlistListListItem build() {
             final var _resultValue = new GetClientlistListListItem();
             _resultValue.createDate = createDate;
@@ -303,6 +350,7 @@ public final class GetClientlistListListItem {
             _resultValue.createdVersion = createdVersion;
             _resultValue.description = description;
             _resultValue.expirationDate = expirationDate;
+            _resultValue.key = key;
             _resultValue.productionActivationStatus = productionActivationStatus;
             _resultValue.stagingActivationStatus = stagingActivationStatus;
             _resultValue.tags = tags;
@@ -310,6 +358,7 @@ public final class GetClientlistListListItem {
             _resultValue.updateDate = updateDate;
             _resultValue.updatedBy = updatedBy;
             _resultValue.value = value;
+            _resultValue.values = values;
             return _resultValue;
         }
     }

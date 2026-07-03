@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
+import com.pulumi.akamai.outputs.GetDatastreamsStreamsDetailAppSecConfig;
 import com.pulumi.akamai.outputs.GetDatastreamsStreamsDetailProperty;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -13,6 +14,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatastreamsStreamsDetail {
+    /**
+     * @return List of AppSec configs associated with the stream.
+     * 
+     */
+    private List<GetDatastreamsStreamsDetailAppSecConfig> appSecConfigs;
     /**
      * @return Identifies the contract that the stream is associated with.
      * 
@@ -43,6 +49,11 @@ public final class GetDatastreamsStreamsDetail {
      * 
      */
     private Integer latestVersion;
+    /**
+     * @return The log type of the stream.
+     * 
+     */
+    private String logType;
     /**
      * @return The username who activated or deactivated the stream
      * 
@@ -86,6 +97,13 @@ public final class GetDatastreamsStreamsDetail {
 
     private GetDatastreamsStreamsDetail() {}
     /**
+     * @return List of AppSec configs associated with the stream.
+     * 
+     */
+    public List<GetDatastreamsStreamsDetailAppSecConfig> appSecConfigs() {
+        return this.appSecConfigs;
+    }
+    /**
      * @return Identifies the contract that the stream is associated with.
      * 
      */
@@ -126,6 +144,13 @@ public final class GetDatastreamsStreamsDetail {
      */
     public Integer latestVersion() {
         return this.latestVersion;
+    }
+    /**
+     * @return The log type of the stream.
+     * 
+     */
+    public String logType() {
+        return this.logType;
     }
     /**
      * @return The username who activated or deactivated the stream
@@ -193,12 +218,14 @@ public final class GetDatastreamsStreamsDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetDatastreamsStreamsDetailAppSecConfig> appSecConfigs;
         private String contractId;
         private String createdBy;
         private String createdDate;
         private Integer groupId;
         private String integrationType;
         private Integer latestVersion;
+        private String logType;
         private String modifiedBy;
         private String modifiedDate;
         private String productId;
@@ -210,12 +237,14 @@ public final class GetDatastreamsStreamsDetail {
         public Builder() {}
         public Builder(GetDatastreamsStreamsDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.appSecConfigs = defaults.appSecConfigs;
     	      this.contractId = defaults.contractId;
     	      this.createdBy = defaults.createdBy;
     	      this.createdDate = defaults.createdDate;
     	      this.groupId = defaults.groupId;
     	      this.integrationType = defaults.integrationType;
     	      this.latestVersion = defaults.latestVersion;
+    	      this.logType = defaults.logType;
     	      this.modifiedBy = defaults.modifiedBy;
     	      this.modifiedDate = defaults.modifiedDate;
     	      this.productId = defaults.productId;
@@ -226,6 +255,17 @@ public final class GetDatastreamsStreamsDetail {
     	      this.streamVersion = defaults.streamVersion;
         }
 
+        @CustomType.Setter
+        public Builder appSecConfigs(List<GetDatastreamsStreamsDetailAppSecConfig> appSecConfigs) {
+            if (appSecConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDatastreamsStreamsDetail", "appSecConfigs");
+            }
+            this.appSecConfigs = appSecConfigs;
+            return this;
+        }
+        public Builder appSecConfigs(GetDatastreamsStreamsDetailAppSecConfig... appSecConfigs) {
+            return appSecConfigs(List.of(appSecConfigs));
+        }
         @CustomType.Setter
         public Builder contractId(String contractId) {
             if (contractId == null) {
@@ -272,6 +312,14 @@ public final class GetDatastreamsStreamsDetail {
               throw new MissingRequiredPropertyException("GetDatastreamsStreamsDetail", "latestVersion");
             }
             this.latestVersion = latestVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder logType(String logType) {
+            if (logType == null) {
+              throw new MissingRequiredPropertyException("GetDatastreamsStreamsDetail", "logType");
+            }
+            this.logType = logType;
             return this;
         }
         @CustomType.Setter
@@ -343,12 +391,14 @@ public final class GetDatastreamsStreamsDetail {
         }
         public GetDatastreamsStreamsDetail build() {
             final var _resultValue = new GetDatastreamsStreamsDetail();
+            _resultValue.appSecConfigs = appSecConfigs;
             _resultValue.contractId = contractId;
             _resultValue.createdBy = createdBy;
             _resultValue.createdDate = createdDate;
             _resultValue.groupId = groupId;
             _resultValue.integrationType = integrationType;
             _resultValue.latestVersion = latestVersion;
+            _resultValue.logType = logType;
             _resultValue.modifiedBy = modifiedBy;
             _resultValue.modifiedDate = modifiedDate;
             _resultValue.productId = productId;

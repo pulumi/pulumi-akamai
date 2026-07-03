@@ -33,7 +33,7 @@ export class EdgeKv extends pulumi.CustomResource {
     }
 
     /**
-     * Storage location for data
+     * Storage location for data.
      */
     declare public readonly geoLocation: pulumi.Output<string | undefined>;
     /**
@@ -41,11 +41,11 @@ export class EdgeKv extends pulumi.CustomResource {
      */
     declare public readonly groupId: pulumi.Output<number>;
     /**
-     * Name for the EKV namespace
+     * Name for the EKV namespace.
      */
     declare public readonly namespaceName: pulumi.Output<string>;
     /**
-     * The network on which the namespace will be activated
+     * The network on which the namespace will be activated.
      */
     declare public readonly network: pulumi.Output<string>;
     /**
@@ -101,7 +101,7 @@ export class EdgeKv extends pulumi.CustomResource {
  */
 export interface EdgeKvState {
     /**
-     * Storage location for data
+     * Storage location for data.
      */
     geoLocation?: pulumi.Input<string | undefined>;
     /**
@@ -109,11 +109,11 @@ export interface EdgeKvState {
      */
     groupId?: pulumi.Input<number | undefined>;
     /**
-     * Name for the EKV namespace
+     * Name for the EKV namespace.
      */
     namespaceName?: pulumi.Input<string | undefined>;
     /**
-     * The network on which the namespace will be activated
+     * The network on which the namespace will be activated.
      */
     network?: pulumi.Input<string | undefined>;
     /**
@@ -127,7 +127,7 @@ export interface EdgeKvState {
  */
 export interface EdgeKvArgs {
     /**
-     * Storage location for data
+     * Storage location for data.
      */
     geoLocation?: pulumi.Input<string | undefined>;
     /**
@@ -135,11 +135,11 @@ export interface EdgeKvArgs {
      */
     groupId: pulumi.Input<number>;
     /**
-     * Name for the EKV namespace
+     * Name for the EKV namespace.
      */
     namespaceName: pulumi.Input<string>;
     /**
-     * The network on which the namespace will be activated
+     * The network on which the namespace will be activated.
      */
     network: pulumi.Input<string>;
     /**

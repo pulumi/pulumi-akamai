@@ -15,13 +15,13 @@ import (
 type EdgeKv struct {
 	pulumi.CustomResourceState
 
-	// Storage location for data
+	// Storage location for data.
 	GeoLocation pulumi.StringPtrOutput `pulumi:"geoLocation"`
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
-	// Name for the EKV namespace
+	// Name for the EKV namespace.
 	NamespaceName pulumi.StringOutput `pulumi:"namespaceName"`
-	// The network on which the namespace will be activated
+	// The network on which the namespace will be activated.
 	Network pulumi.StringOutput `pulumi:"network"`
 	// Retention period for data in this namespace. An update of this value will just affect new EKV items.
 	RetentionInSeconds pulumi.IntOutput `pulumi:"retentionInSeconds"`
@@ -69,26 +69,26 @@ func GetEdgeKv(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering EdgeKv resources.
 type edgeKvState struct {
-	// Storage location for data
+	// Storage location for data.
 	GeoLocation *string `pulumi:"geoLocation"`
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId *int `pulumi:"groupId"`
-	// Name for the EKV namespace
+	// Name for the EKV namespace.
 	NamespaceName *string `pulumi:"namespaceName"`
-	// The network on which the namespace will be activated
+	// The network on which the namespace will be activated.
 	Network *string `pulumi:"network"`
 	// Retention period for data in this namespace. An update of this value will just affect new EKV items.
 	RetentionInSeconds *int `pulumi:"retentionInSeconds"`
 }
 
 type EdgeKvState struct {
-	// Storage location for data
+	// Storage location for data.
 	GeoLocation pulumi.StringPtrInput
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId pulumi.IntPtrInput
-	// Name for the EKV namespace
+	// Name for the EKV namespace.
 	NamespaceName pulumi.StringPtrInput
-	// The network on which the namespace will be activated
+	// The network on which the namespace will be activated.
 	Network pulumi.StringPtrInput
 	// Retention period for data in this namespace. An update of this value will just affect new EKV items.
 	RetentionInSeconds pulumi.IntPtrInput
@@ -99,13 +99,13 @@ func (EdgeKvState) ElementType() reflect.Type {
 }
 
 type edgeKvArgs struct {
-	// Storage location for data
+	// Storage location for data.
 	GeoLocation *string `pulumi:"geoLocation"`
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId int `pulumi:"groupId"`
-	// Name for the EKV namespace
+	// Name for the EKV namespace.
 	NamespaceName string `pulumi:"namespaceName"`
-	// The network on which the namespace will be activated
+	// The network on which the namespace will be activated.
 	Network string `pulumi:"network"`
 	// Retention period for data in this namespace. An update of this value will just affect new EKV items.
 	RetentionInSeconds int `pulumi:"retentionInSeconds"`
@@ -113,13 +113,13 @@ type edgeKvArgs struct {
 
 // The set of arguments for constructing a EdgeKv resource.
 type EdgeKvArgs struct {
-	// Storage location for data
+	// Storage location for data.
 	GeoLocation pulumi.StringPtrInput
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId pulumi.IntInput
-	// Name for the EKV namespace
+	// Name for the EKV namespace.
 	NamespaceName pulumi.StringInput
-	// The network on which the namespace will be activated
+	// The network on which the namespace will be activated.
 	Network pulumi.StringInput
 	// Retention period for data in this namespace. An update of this value will just affect new EKV items.
 	RetentionInSeconds pulumi.IntInput
@@ -212,7 +212,7 @@ func (o EdgeKvOutput) ToEdgeKvOutputWithContext(ctx context.Context) EdgeKvOutpu
 	return o
 }
 
-// Storage location for data
+// Storage location for data.
 func (o EdgeKvOutput) GeoLocation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.StringPtrOutput { return v.GeoLocation }).(pulumi.StringPtrOutput)
 }
@@ -222,12 +222,12 @@ func (o EdgeKvOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
 }
 
-// Name for the EKV namespace
+// Name for the EKV namespace.
 func (o EdgeKvOutput) NamespaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.StringOutput { return v.NamespaceName }).(pulumi.StringOutput)
 }
 
-// The network on which the namespace will be activated
+// The network on which the namespace will be activated.
 func (o EdgeKvOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
 }

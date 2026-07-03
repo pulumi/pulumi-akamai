@@ -38,6 +38,10 @@ export class Datastream extends pulumi.CustomResource {
      * Defining if stream should be active or not
      */
     declare public readonly active: pulumi.Output<boolean>;
+    /**
+     * Identifies the application security configurations monitored in the stream
+     */
+    declare public readonly appSecConfigs: pulumi.Output<number[] | undefined>;
     declare public readonly azureConnector: pulumi.Output<outputs.DatastreamAzureConnector | undefined>;
     /**
      * Identifies if stream needs to collect midgress data
@@ -59,7 +63,7 @@ export class Datastream extends pulumi.CustomResource {
     /**
      * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
      */
-    declare public readonly datasetFields: pulumi.Output<number[]>;
+    declare public readonly datasetFields: pulumi.Output<number[] | undefined>;
     /**
      * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
@@ -80,6 +84,10 @@ export class Datastream extends pulumi.CustomResource {
      * Identifies the latest active configuration version of the stream
      */
     declare public /*out*/ readonly latestVersion: pulumi.Output<number>;
+    /**
+     * Type of logs for the stream
+     */
+    declare public readonly logType: pulumi.Output<string | undefined>;
     declare public readonly logglyConnector: pulumi.Output<outputs.DatastreamLogglyConnector | undefined>;
     /**
      * The username who modified the stream
@@ -106,7 +114,7 @@ export class Datastream extends pulumi.CustomResource {
     /**
      * Identifies the properties monitored in the stream
      */
-    declare public readonly properties: pulumi.Output<string[]>;
+    declare public readonly properties: pulumi.Output<string[] | undefined>;
     declare public readonly s3CompatibleConnector: pulumi.Output<outputs.DatastreamS3CompatibleConnector | undefined>;
     declare public readonly s3Connector: pulumi.Output<outputs.DatastreamS3Connector | undefined>;
     /**
@@ -139,6 +147,7 @@ export class Datastream extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DatastreamState | undefined;
             resourceInputs["active"] = state?.active;
+            resourceInputs["appSecConfigs"] = state?.appSecConfigs;
             resourceInputs["azureConnector"] = state?.azureConnector;
             resourceInputs["collectMidgress"] = state?.collectMidgress;
             resourceInputs["contractId"] = state?.contractId;
@@ -154,6 +163,7 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["httpsConnector"] = state?.httpsConnector;
             resourceInputs["integrationType"] = state?.integrationType;
             resourceInputs["latestVersion"] = state?.latestVersion;
+            resourceInputs["logType"] = state?.logType;
             resourceInputs["logglyConnector"] = state?.logglyConnector;
             resourceInputs["modifiedBy"] = state?.modifiedBy;
             resourceInputs["modifiedDate"] = state?.modifiedDate;
@@ -179,22 +189,17 @@ export class Datastream extends pulumi.CustomResource {
             if (args?.contractId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if (args?.datasetFields === undefined && !opts.urn) {
-                throw new Error("Missing required property 'datasetFields'");
-            }
             if (args?.deliveryConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deliveryConfiguration'");
             }
             if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if (args?.properties === undefined && !opts.urn) {
-                throw new Error("Missing required property 'properties'");
-            }
             if (args?.streamName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'streamName'");
             }
             resourceInputs["active"] = args?.active;
+            resourceInputs["appSecConfigs"] = args?.appSecConfigs;
             resourceInputs["azureConnector"] = args?.azureConnector;
             resourceInputs["collectMidgress"] = args?.collectMidgress;
             resourceInputs["contractId"] = args?.contractId;
@@ -206,6 +211,7 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["gcsConnector"] = args?.gcsConnector;
             resourceInputs["groupId"] = args?.groupId;
             resourceInputs["httpsConnector"] = args?.httpsConnector;
+            resourceInputs["logType"] = args?.logType;
             resourceInputs["logglyConnector"] = args?.logglyConnector;
             resourceInputs["newRelicConnector"] = args?.newRelicConnector;
             resourceInputs["notificationEmails"] = args?.notificationEmails;
@@ -241,6 +247,10 @@ export interface DatastreamState {
      * Defining if stream should be active or not
      */
     active?: pulumi.Input<boolean | undefined>;
+    /**
+     * Identifies the application security configurations monitored in the stream
+     */
+    appSecConfigs?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     azureConnector?: pulumi.Input<inputs.DatastreamAzureConnector | undefined>;
     /**
      * Identifies if stream needs to collect midgress data
@@ -283,6 +293,10 @@ export interface DatastreamState {
      * Identifies the latest active configuration version of the stream
      */
     latestVersion?: pulumi.Input<number | undefined>;
+    /**
+     * Type of logs for the stream
+     */
+    logType?: pulumi.Input<string | undefined>;
     logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector | undefined>;
     /**
      * The username who modified the stream
@@ -337,6 +351,10 @@ export interface DatastreamArgs {
      * Defining if stream should be active or not
      */
     active: pulumi.Input<boolean>;
+    /**
+     * Identifies the application security configurations monitored in the stream
+     */
+    appSecConfigs?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     azureConnector?: pulumi.Input<inputs.DatastreamAzureConnector | undefined>;
     /**
      * Identifies if stream needs to collect midgress data
@@ -350,7 +368,7 @@ export interface DatastreamArgs {
     /**
      * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
      */
-    datasetFields: pulumi.Input<pulumi.Input<number>[]>;
+    datasetFields?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
@@ -363,6 +381,10 @@ export interface DatastreamArgs {
      */
     groupId: pulumi.Input<string>;
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector | undefined>;
+    /**
+     * Type of logs for the stream
+     */
+    logType?: pulumi.Input<string | undefined>;
     logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector | undefined>;
     newRelicConnector?: pulumi.Input<inputs.DatastreamNewRelicConnector | undefined>;
     /**
@@ -373,7 +395,7 @@ export interface DatastreamArgs {
     /**
      * Identifies the properties monitored in the stream
      */
-    properties: pulumi.Input<pulumi.Input<string>[]>;
+    properties?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     s3CompatibleConnector?: pulumi.Input<inputs.DatastreamS3CompatibleConnector | undefined>;
     s3Connector?: pulumi.Input<inputs.DatastreamS3Connector | undefined>;
     /**
