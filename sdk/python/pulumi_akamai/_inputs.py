@@ -1680,10 +1680,6 @@ class AppsecWafRulesetRuleArgs:
 
 
 class ClientlistListItemArgsDict(TypedDict):
-    value: pulumi.Input[_builtins.str]
-    """
-    Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
-    """
     description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A description of the item.
@@ -1692,43 +1688,52 @@ class ClientlistListItemArgsDict(TypedDict):
     """
     The item expiration date.
     """
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+    """
     tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The item tags.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
+    """
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
     """
 
 @pulumi.input_type
 class ClientlistListItemArgs:
     def __init__(__self__, *,
-                 value: pulumi.Input[_builtins.str],
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
-        :param pulumi.Input[_builtins.str] value: Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
         :param pulumi.Input[_builtins.str] description: A description of the item.
         :param pulumi.Input[_builtins.str] expiration_date: The item expiration date.
+        :param pulumi.Input[_builtins.str] key: Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: The item tags.
+        :param pulumi.Input[_builtins.str] value: Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
         """
-        pulumi.set(__self__, "value", value)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if expiration_date is not None:
             pulumi.set(__self__, "expiration_date", expiration_date)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
-
-    @_builtins.property
-    @pulumi.getter
-    def value(self) -> pulumi.Input[_builtins.str]:
-        """
-        Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
-        """
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "value", value)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
 
     @_builtins.property
     @pulumi.getter
@@ -1756,6 +1761,18 @@ class ClientlistListItemArgs:
 
     @_builtins.property
     @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
     def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The item tags.
@@ -1765,6 +1782,30 @@ class ClientlistListItemArgs:
     @tags.setter
     def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "values", value)
 
 
 class CloudAccessKeyCredentialsAArgsDict(TypedDict):

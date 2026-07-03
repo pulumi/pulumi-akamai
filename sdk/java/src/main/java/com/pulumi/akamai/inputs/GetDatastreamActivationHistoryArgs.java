@@ -7,12 +7,22 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetDatastreamActivationHistoryArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetDatastreamActivationHistoryArgs Empty = new GetDatastreamActivationHistoryArgs();
+
+    @Import(name="logType")
+    private @Nullable Output<String> logType;
+
+    public Optional<Output<String>> logType() {
+        return Optional.ofNullable(this.logType);
+    }
 
     @Import(name="streamId", required=true)
     private Output<Integer> streamId;
@@ -24,6 +34,7 @@ public final class GetDatastreamActivationHistoryArgs extends com.pulumi.resourc
     private GetDatastreamActivationHistoryArgs() {}
 
     private GetDatastreamActivationHistoryArgs(GetDatastreamActivationHistoryArgs $) {
+        this.logType = $.logType;
         this.streamId = $.streamId;
     }
 
@@ -43,6 +54,15 @@ public final class GetDatastreamActivationHistoryArgs extends com.pulumi.resourc
 
         public Builder(GetDatastreamActivationHistoryArgs defaults) {
             $ = new GetDatastreamActivationHistoryArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder logType(@Nullable Output<String> logType) {
+            $.logType = logType;
+            return this;
+        }
+
+        public Builder logType(String logType) {
+            return logType(Output.of(logType));
         }
 
         public Builder streamId(Output<Integer> streamId) {

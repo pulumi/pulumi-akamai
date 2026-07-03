@@ -23,15 +23,17 @@ func GetDatastreamActivationHistory(ctx *pulumi.Context, args *GetDatastreamActi
 
 // A collection of arguments for invoking getDatastreamActivationHistory.
 type GetDatastreamActivationHistoryArgs struct {
-	StreamId int `pulumi:"streamId"`
+	LogType  *string `pulumi:"logType"`
+	StreamId int     `pulumi:"streamId"`
 }
 
 // A collection of values returned by getDatastreamActivationHistory.
 type GetDatastreamActivationHistoryResult struct {
 	Activations []GetDatastreamActivationHistoryActivation `pulumi:"activations"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	StreamId int    `pulumi:"streamId"`
+	Id       string  `pulumi:"id"`
+	LogType  *string `pulumi:"logType"`
+	StreamId int     `pulumi:"streamId"`
 }
 
 func GetDatastreamActivationHistoryOutput(ctx *pulumi.Context, args GetDatastreamActivationHistoryOutputArgs, opts ...pulumi.InvokeOption) GetDatastreamActivationHistoryResultOutput {
@@ -45,7 +47,8 @@ func GetDatastreamActivationHistoryOutput(ctx *pulumi.Context, args GetDatastrea
 
 // A collection of arguments for invoking getDatastreamActivationHistory.
 type GetDatastreamActivationHistoryOutputArgs struct {
-	StreamId pulumi.IntInput `pulumi:"streamId"`
+	LogType  pulumi.StringPtrInput `pulumi:"logType"`
+	StreamId pulumi.IntInput       `pulumi:"streamId"`
 }
 
 func (GetDatastreamActivationHistoryOutputArgs) ElementType() reflect.Type {
@@ -76,6 +79,10 @@ func (o GetDatastreamActivationHistoryResultOutput) Activations() GetDatastreamA
 // The provider-assigned unique ID for this managed resource.
 func (o GetDatastreamActivationHistoryResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatastreamActivationHistoryResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamActivationHistoryResultOutput) LogType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatastreamActivationHistoryResult) *string { return v.LogType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDatastreamActivationHistoryResultOutput) StreamId() pulumi.IntOutput {

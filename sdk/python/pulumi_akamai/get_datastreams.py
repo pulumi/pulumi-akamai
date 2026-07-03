@@ -27,13 +27,16 @@ class GetDatastreamsResult:
     """
     A collection of values returned by getDatastreams.
     """
-    def __init__(__self__, group_id=None, id=None, streams_details=None):
+    def __init__(__self__, group_id=None, id=None, log_type=None, streams_details=None):
         if group_id and not isinstance(group_id, int):
             raise TypeError("Expected argument 'group_id' to be a int")
         pulumi.set(__self__, "group_id", group_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if log_type and not isinstance(log_type, str):
+            raise TypeError("Expected argument 'log_type' to be a str")
+        pulumi.set(__self__, "log_type", log_type)
         if streams_details and not isinstance(streams_details, list):
             raise TypeError("Expected argument 'streams_details' to be a list")
         pulumi.set(__self__, "streams_details", streams_details)
@@ -52,6 +55,11 @@ class GetDatastreamsResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "log_type")
+
+    @_builtins.property
     @pulumi.getter(name="streamsDetails")
     def streams_details(self) -> Sequence['outputs.GetDatastreamsStreamsDetailResult']:
         return pulumi.get(self, "streams_details")
@@ -65,33 +73,40 @@ class AwaitableGetDatastreamsResult(GetDatastreamsResult):
         return GetDatastreamsResult(
             group_id=self.group_id,
             id=self.id,
+            log_type=self.log_type,
             streams_details=self.streams_details)
 
 
 def get_datastreams(group_id: Optional[_builtins.int] = None,
+                    log_type: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastreamsResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['groupId'] = group_id
+    __args__['logType'] = log_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getDatastreams:getDatastreams', __args__, opts=opts, typ=GetDatastreamsResult).value
 
     return AwaitableGetDatastreamsResult(
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
+        log_type=pulumi.get(__ret__, 'log_type'),
         streams_details=pulumi.get(__ret__, 'streams_details'))
 def get_datastreams_output(group_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                           log_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastreamsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['groupId'] = group_id
+    __args__['logType'] = log_type
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getDatastreams:getDatastreams', __args__, opts=opts, typ=GetDatastreamsResult)
     return __ret__.apply(lambda __response__: GetDatastreamsResult(
         group_id=pulumi.get(__response__, 'group_id'),
         id=pulumi.get(__response__, 'id'),
+        log_type=pulumi.get(__response__, 'log_type'),
         streams_details=pulumi.get(__response__, 'streams_details')))

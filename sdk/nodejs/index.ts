@@ -1275,6 +1275,11 @@ export const getDatastreamActivationHistory: typeof import("./getDatastreamActiv
 export const getDatastreamActivationHistoryOutput: typeof import("./getDatastreamActivationHistory").getDatastreamActivationHistoryOutput = null as any;
 utilities.lazyLoad(exports, ["getDatastreamActivationHistory","getDatastreamActivationHistoryOutput"], () => require("./getDatastreamActivationHistory"));
 
+export { GetDatastreamAppsecConfigsArgs, GetDatastreamAppsecConfigsResult, GetDatastreamAppsecConfigsOutputArgs } from "./getDatastreamAppsecConfigs";
+export const getDatastreamAppsecConfigs: typeof import("./getDatastreamAppsecConfigs").getDatastreamAppsecConfigs = null as any;
+export const getDatastreamAppsecConfigsOutput: typeof import("./getDatastreamAppsecConfigs").getDatastreamAppsecConfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatastreamAppsecConfigs","getDatastreamAppsecConfigsOutput"], () => require("./getDatastreamAppsecConfigs"));
+
 export { GetDatastreamDatasetFieldsArgs, GetDatastreamDatasetFieldsResult, GetDatastreamDatasetFieldsOutputArgs } from "./getDatastreamDatasetFields";
 export const getDatastreamDatasetFields: typeof import("./getDatastreamDatasetFields").getDatastreamDatasetFields = null as any;
 export const getDatastreamDatasetFieldsOutput: typeof import("./getDatastreamDatasetFields").getDatastreamDatasetFieldsOutput = null as any;

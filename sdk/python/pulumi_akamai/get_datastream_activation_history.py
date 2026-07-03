@@ -27,13 +27,16 @@ class GetDatastreamActivationHistoryResult:
     """
     A collection of values returned by getDatastreamActivationHistory.
     """
-    def __init__(__self__, activations=None, id=None, stream_id=None):
+    def __init__(__self__, activations=None, id=None, log_type=None, stream_id=None):
         if activations and not isinstance(activations, list):
             raise TypeError("Expected argument 'activations' to be a list")
         pulumi.set(__self__, "activations", activations)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if log_type and not isinstance(log_type, str):
+            raise TypeError("Expected argument 'log_type' to be a str")
+        pulumi.set(__self__, "log_type", log_type)
         if stream_id and not isinstance(stream_id, int):
             raise TypeError("Expected argument 'stream_id' to be a int")
         pulumi.set(__self__, "stream_id", stream_id)
@@ -52,6 +55,11 @@ class GetDatastreamActivationHistoryResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "log_type")
+
+    @_builtins.property
     @pulumi.getter(name="streamId")
     def stream_id(self) -> _builtins.int:
         return pulumi.get(self, "stream_id")
@@ -65,15 +73,18 @@ class AwaitableGetDatastreamActivationHistoryResult(GetDatastreamActivationHisto
         return GetDatastreamActivationHistoryResult(
             activations=self.activations,
             id=self.id,
+            log_type=self.log_type,
             stream_id=self.stream_id)
 
 
-def get_datastream_activation_history(stream_id: Optional[_builtins.int] = None,
+def get_datastream_activation_history(log_type: Optional[_builtins.str] = None,
+                                      stream_id: Optional[_builtins.int] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastreamActivationHistoryResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['logType'] = log_type
     __args__['streamId'] = stream_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory', __args__, opts=opts, typ=GetDatastreamActivationHistoryResult).value
@@ -81,17 +92,21 @@ def get_datastream_activation_history(stream_id: Optional[_builtins.int] = None,
     return AwaitableGetDatastreamActivationHistoryResult(
         activations=pulumi.get(__ret__, 'activations'),
         id=pulumi.get(__ret__, 'id'),
+        log_type=pulumi.get(__ret__, 'log_type'),
         stream_id=pulumi.get(__ret__, 'stream_id'))
-def get_datastream_activation_history_output(stream_id: pulumi.Input[Optional[_builtins.int]] = None,
+def get_datastream_activation_history_output(log_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             stream_id: pulumi.Input[Optional[_builtins.int]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastreamActivationHistoryResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['logType'] = log_type
     __args__['streamId'] = stream_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory', __args__, opts=opts, typ=GetDatastreamActivationHistoryResult)
     return __ret__.apply(lambda __response__: GetDatastreamActivationHistoryResult(
         activations=pulumi.get(__response__, 'activations'),
         id=pulumi.get(__response__, 'id'),
+        log_type=pulumi.get(__response__, 'log_type'),
         stream_id=pulumi.get(__response__, 'stream_id')))

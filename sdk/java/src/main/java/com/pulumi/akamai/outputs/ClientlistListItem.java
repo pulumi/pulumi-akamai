@@ -4,7 +4,6 @@
 package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -24,15 +23,25 @@ public final class ClientlistListItem {
      */
     private @Nullable String expirationDate;
     /**
+     * @return Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    private @Nullable String key;
+    /**
      * @return The item tags.
      * 
      */
     private @Nullable List<String> tags;
     /**
-     * @return Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * @return Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
      * 
      */
-    private String value;
+    private @Nullable String value;
+    /**
+     * @return Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    private @Nullable List<String> values;
 
     private ClientlistListItem() {}
     /**
@@ -50,6 +59,13 @@ public final class ClientlistListItem {
         return Optional.ofNullable(this.expirationDate);
     }
     /**
+     * @return Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
+    }
+    /**
      * @return The item tags.
      * 
      */
@@ -57,11 +73,18 @@ public final class ClientlistListItem {
         return this.tags == null ? List.of() : this.tags;
     }
     /**
-     * @return Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * @return Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
+    }
+    /**
+     * @return Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     * 
+     */
+    public List<String> values() {
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -75,15 +98,19 @@ public final class ClientlistListItem {
     public static final class Builder {
         private @Nullable String description;
         private @Nullable String expirationDate;
+        private @Nullable String key;
         private @Nullable List<String> tags;
-        private String value;
+        private @Nullable String value;
+        private @Nullable List<String> values;
         public Builder() {}
         public Builder(ClientlistListItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
     	      this.expirationDate = defaults.expirationDate;
+    	      this.key = defaults.key;
     	      this.tags = defaults.tags;
     	      this.value = defaults.value;
+    	      this.values = defaults.values;
         }
 
         @CustomType.Setter
@@ -99,6 +126,12 @@ public final class ClientlistListItem {
             return this;
         }
         @CustomType.Setter
+        public Builder key(@Nullable String key) {
+
+            this.key = key;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tags(@Nullable List<String> tags) {
 
             this.tags = tags;
@@ -108,19 +141,28 @@ public final class ClientlistListItem {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            if (value == null) {
-              throw new MissingRequiredPropertyException("ClientlistListItem", "value");
-            }
+        public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
+        }
+        @CustomType.Setter
+        public Builder values(@Nullable List<String> values) {
+
+            this.values = values;
+            return this;
+        }
+        public Builder values(String... values) {
+            return values(List.of(values));
         }
         public ClientlistListItem build() {
             final var _resultValue = new ClientlistListItem();
             _resultValue.description = description;
             _resultValue.expirationDate = expirationDate;
+            _resultValue.key = key;
             _resultValue.tags = tags;
             _resultValue.value = value;
+            _resultValue.values = values;
             return _resultValue;
         }
     }

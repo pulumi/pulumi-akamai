@@ -34,6 +34,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string ExpirationDate;
         /// <summary>
+        /// Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        /// </summary>
+        public readonly string Key;
+        /// <summary>
         /// The client list activation status in production environment.
         /// </summary>
         public readonly string ProductionActivationStatus;
@@ -46,7 +50,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Tags;
         /// <summary>
-        /// Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, or USER.
+        /// Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
         /// </summary>
         public readonly string Type;
         /// <summary>
@@ -58,9 +62,13 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string UpdatedBy;
         /// <summary>
-        /// Value of the item, which is either an IP address, an Autonomous System Number (ASN), a Geo location, a TLS fingerprint, a file hash, or User ID.
+        /// Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
         /// </summary>
         public readonly string Value;
+        /// <summary>
+        /// Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+        /// </summary>
+        public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]
         private GetClientlistListListItemResult(
@@ -74,6 +82,8 @@ namespace Pulumi.Akamai.Outputs
 
             string expirationDate,
 
+            string key,
+
             string productionActivationStatus,
 
             string stagingActivationStatus,
@@ -86,13 +96,16 @@ namespace Pulumi.Akamai.Outputs
 
             string updatedBy,
 
-            string value)
+            string value,
+
+            ImmutableArray<string> values)
         {
             CreateDate = createDate;
             CreatedBy = createdBy;
             CreatedVersion = createdVersion;
             Description = description;
             ExpirationDate = expirationDate;
+            Key = key;
             ProductionActivationStatus = productionActivationStatus;
             StagingActivationStatus = stagingActivationStatus;
             Tags = tags;
@@ -100,6 +113,7 @@ namespace Pulumi.Akamai.Outputs
             UpdateDate = updateDate;
             UpdatedBy = updatedBy;
             Value = value;
+            Values = values;
         }
     }
 }

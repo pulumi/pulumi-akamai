@@ -23,7 +23,8 @@ func GetDatastreams(ctx *pulumi.Context, args *GetDatastreamsArgs, opts ...pulum
 
 // A collection of arguments for invoking getDatastreams.
 type GetDatastreamsArgs struct {
-	GroupId *int `pulumi:"groupId"`
+	GroupId *int    `pulumi:"groupId"`
+	LogType *string `pulumi:"logType"`
 }
 
 // A collection of values returned by getDatastreams.
@@ -31,6 +32,7 @@ type GetDatastreamsResult struct {
 	GroupId *int `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id             string                        `pulumi:"id"`
+	LogType        *string                       `pulumi:"logType"`
 	StreamsDetails []GetDatastreamsStreamsDetail `pulumi:"streamsDetails"`
 }
 
@@ -45,7 +47,8 @@ func GetDatastreamsOutput(ctx *pulumi.Context, args GetDatastreamsOutputArgs, op
 
 // A collection of arguments for invoking getDatastreams.
 type GetDatastreamsOutputArgs struct {
-	GroupId pulumi.IntPtrInput `pulumi:"groupId"`
+	GroupId pulumi.IntPtrInput    `pulumi:"groupId"`
+	LogType pulumi.StringPtrInput `pulumi:"logType"`
 }
 
 func (GetDatastreamsOutputArgs) ElementType() reflect.Type {
@@ -74,6 +77,10 @@ func (o GetDatastreamsResultOutput) GroupId() pulumi.IntPtrOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetDatastreamsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatastreamsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsResultOutput) LogType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatastreamsResult) *string { return v.LogType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDatastreamsResultOutput) StreamsDetails() GetDatastreamsStreamsDetailArrayOutput {

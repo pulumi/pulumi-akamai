@@ -16,7 +16,9 @@ type Datastream struct {
 	pulumi.CustomResourceState
 
 	// Defining if stream should be active or not
-	Active         pulumi.BoolOutput                 `pulumi:"active"`
+	Active pulumi.BoolOutput `pulumi:"active"`
+	// Identifies the application security configurations monitored in the stream
+	AppSecConfigs  pulumi.IntArrayOutput             `pulumi:"appSecConfigs"`
 	AzureConnector DatastreamAzureConnectorPtrOutput `pulumi:"azureConnector"`
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress pulumi.BoolPtrOutput `pulumi:"collectMidgress"`
@@ -40,7 +42,9 @@ type Datastream struct {
 	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
 	IntegrationType pulumi.StringOutput `pulumi:"integrationType"`
 	// Identifies the latest active configuration version of the stream
-	LatestVersion   pulumi.IntOutput                   `pulumi:"latestVersion"`
+	LatestVersion pulumi.IntOutput `pulumi:"latestVersion"`
+	// Type of logs for the stream
+	LogType         pulumi.StringPtrOutput             `pulumi:"logType"`
 	LogglyConnector DatastreamLogglyConnectorPtrOutput `pulumi:"logglyConnector"`
 	// The username who modified the stream
 	ModifiedBy pulumi.StringOutput `pulumi:"modifiedBy"`
@@ -82,17 +86,11 @@ func NewDatastream(ctx *pulumi.Context,
 	if args.ContractId == nil {
 		return nil, errors.New("invalid value for required argument 'ContractId'")
 	}
-	if args.DatasetFields == nil {
-		return nil, errors.New("invalid value for required argument 'DatasetFields'")
-	}
 	if args.DeliveryConfiguration == nil {
 		return nil, errors.New("invalid value for required argument 'DeliveryConfiguration'")
 	}
 	if args.GroupId == nil {
 		return nil, errors.New("invalid value for required argument 'GroupId'")
-	}
-	if args.Properties == nil {
-		return nil, errors.New("invalid value for required argument 'Properties'")
 	}
 	if args.StreamName == nil {
 		return nil, errors.New("invalid value for required argument 'StreamName'")
@@ -121,7 +119,9 @@ func GetDatastream(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Datastream resources.
 type datastreamState struct {
 	// Defining if stream should be active or not
-	Active         *bool                     `pulumi:"active"`
+	Active *bool `pulumi:"active"`
+	// Identifies the application security configurations monitored in the stream
+	AppSecConfigs  []int                     `pulumi:"appSecConfigs"`
 	AzureConnector *DatastreamAzureConnector `pulumi:"azureConnector"`
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress *bool `pulumi:"collectMidgress"`
@@ -145,7 +145,9 @@ type datastreamState struct {
 	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
 	IntegrationType *string `pulumi:"integrationType"`
 	// Identifies the latest active configuration version of the stream
-	LatestVersion   *int                       `pulumi:"latestVersion"`
+	LatestVersion *int `pulumi:"latestVersion"`
+	// Type of logs for the stream
+	LogType         *string                    `pulumi:"logType"`
 	LogglyConnector *DatastreamLogglyConnector `pulumi:"logglyConnector"`
 	// The username who modified the stream
 	ModifiedBy *string `pulumi:"modifiedBy"`
@@ -176,7 +178,9 @@ type datastreamState struct {
 
 type DatastreamState struct {
 	// Defining if stream should be active or not
-	Active         pulumi.BoolPtrInput
+	Active pulumi.BoolPtrInput
+	// Identifies the application security configurations monitored in the stream
+	AppSecConfigs  pulumi.IntArrayInput
 	AzureConnector DatastreamAzureConnectorPtrInput
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress pulumi.BoolPtrInput
@@ -200,7 +204,9 @@ type DatastreamState struct {
 	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
 	IntegrationType pulumi.StringPtrInput
 	// Identifies the latest active configuration version of the stream
-	LatestVersion   pulumi.IntPtrInput
+	LatestVersion pulumi.IntPtrInput
+	// Type of logs for the stream
+	LogType         pulumi.StringPtrInput
 	LogglyConnector DatastreamLogglyConnectorPtrInput
 	// The username who modified the stream
 	ModifiedBy pulumi.StringPtrInput
@@ -235,7 +241,9 @@ func (DatastreamState) ElementType() reflect.Type {
 
 type datastreamArgs struct {
 	// Defining if stream should be active or not
-	Active         bool                      `pulumi:"active"`
+	Active bool `pulumi:"active"`
+	// Identifies the application security configurations monitored in the stream
+	AppSecConfigs  []int                     `pulumi:"appSecConfigs"`
 	AzureConnector *DatastreamAzureConnector `pulumi:"azureConnector"`
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress *bool `pulumi:"collectMidgress"`
@@ -250,8 +258,10 @@ type datastreamArgs struct {
 	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
 	GcsConnector           *DatastreamGcsConnector           `pulumi:"gcsConnector"`
 	// Identifies the group that has access to the product and for which the stream configuration was created
-	GroupId           string                       `pulumi:"groupId"`
-	HttpsConnector    *DatastreamHttpsConnector    `pulumi:"httpsConnector"`
+	GroupId        string                    `pulumi:"groupId"`
+	HttpsConnector *DatastreamHttpsConnector `pulumi:"httpsConnector"`
+	// Type of logs for the stream
+	LogType           *string                      `pulumi:"logType"`
 	LogglyConnector   *DatastreamLogglyConnector   `pulumi:"logglyConnector"`
 	NewRelicConnector *DatastreamNewRelicConnector `pulumi:"newRelicConnector"`
 	// List of email addresses where the system sends notifications about activations and deactivations of the stream
@@ -273,7 +283,9 @@ type datastreamArgs struct {
 // The set of arguments for constructing a Datastream resource.
 type DatastreamArgs struct {
 	// Defining if stream should be active or not
-	Active         pulumi.BoolInput
+	Active pulumi.BoolInput
+	// Identifies the application security configurations monitored in the stream
+	AppSecConfigs  pulumi.IntArrayInput
 	AzureConnector DatastreamAzureConnectorPtrInput
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress pulumi.BoolPtrInput
@@ -288,8 +300,10 @@ type DatastreamArgs struct {
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
 	GcsConnector           DatastreamGcsConnectorPtrInput
 	// Identifies the group that has access to the product and for which the stream configuration was created
-	GroupId           pulumi.StringInput
-	HttpsConnector    DatastreamHttpsConnectorPtrInput
+	GroupId        pulumi.StringInput
+	HttpsConnector DatastreamHttpsConnectorPtrInput
+	// Type of logs for the stream
+	LogType           pulumi.StringPtrInput
 	LogglyConnector   DatastreamLogglyConnectorPtrInput
 	NewRelicConnector DatastreamNewRelicConnectorPtrInput
 	// List of email addresses where the system sends notifications about activations and deactivations of the stream
@@ -400,6 +414,11 @@ func (o DatastreamOutput) Active() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
 }
 
+// Identifies the application security configurations monitored in the stream
+func (o DatastreamOutput) AppSecConfigs() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.IntArrayOutput { return v.AppSecConfigs }).(pulumi.IntArrayOutput)
+}
+
 func (o DatastreamOutput) AzureConnector() DatastreamAzureConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamAzureConnectorPtrOutput { return v.AzureConnector }).(DatastreamAzureConnectorPtrOutput)
 }
@@ -467,6 +486,11 @@ func (o DatastreamOutput) IntegrationType() pulumi.StringOutput {
 // Identifies the latest active configuration version of the stream
 func (o DatastreamOutput) LatestVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.IntOutput { return v.LatestVersion }).(pulumi.IntOutput)
+}
+
+// Type of logs for the stream
+func (o DatastreamOutput) LogType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.StringPtrOutput { return v.LogType }).(pulumi.StringPtrOutput)
 }
 
 func (o DatastreamOutput) LogglyConnector() DatastreamLogglyConnectorPtrOutput {

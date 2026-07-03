@@ -79,7 +79,7 @@ public final class GetClientlistListsList {
      */
     private List<String> tags;
     /**
-     * @return The type of the client list
+     * @return Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
      * 
      */
     private String type;
@@ -192,7 +192,7 @@ public final class GetClientlistListsList {
         return this.tags;
     }
     /**
-     * @return The type of the client list
+     * @return Type of client list, which can be IP, GEO, ASN, TLS_FINGERPRINT, FILE_HASH, USER_ID, DOMAIN, or REQUEST_HEADER_NAME_VALUE.
      * 
      */
     public String type() {

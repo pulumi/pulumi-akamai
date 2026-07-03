@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/edgeKv:EdgeKv")
 public class EdgeKv extends com.pulumi.resources.CustomResource {
     /**
-     * Storage location for data
+     * Storage location for data.
      * 
      */
     @Export(name="geoLocation", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> geoLocation;
 
     /**
-     * @return Storage location for data
+     * @return Storage location for data.
      * 
      */
     public Output<Optional<String>> geoLocation() {
@@ -46,28 +46,28 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
         return this.groupId;
     }
     /**
-     * Name for the EKV namespace
+     * Name for the EKV namespace.
      * 
      */
     @Export(name="namespaceName", refs={String.class}, tree="[0]")
     private Output<String> namespaceName;
 
     /**
-     * @return Name for the EKV namespace
+     * @return Name for the EKV namespace.
      * 
      */
     public Output<String> namespaceName() {
         return this.namespaceName;
     }
     /**
-     * The network on which the namespace will be activated
+     * The network on which the namespace will be activated.
      * 
      */
     @Export(name="network", refs={String.class}, tree="[0]")
     private Output<String> network;
 
     /**
-     * @return The network on which the namespace will be activated
+     * @return The network on which the namespace will be activated.
      * 
      */
     public Output<String> network() {

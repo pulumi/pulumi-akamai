@@ -27,6 +27,9 @@ namespace Pulumi.Akamai
         [Input("groupId")]
         public int? GroupId { get; set; }
 
+        [Input("logType")]
+        public string? LogType { get; set; }
+
         public GetDatastreamsArgs()
         {
         }
@@ -37,6 +40,9 @@ namespace Pulumi.Akamai
     {
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
+
+        [Input("logType")]
+        public Input<string>? LogType { get; set; }
 
         public GetDatastreamsInvokeArgs()
         {
@@ -53,6 +59,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? LogType;
         public readonly ImmutableArray<Outputs.GetDatastreamsStreamsDetailResult> StreamsDetails;
 
         [OutputConstructor]
@@ -61,10 +68,13 @@ namespace Pulumi.Akamai
 
             string id,
 
+            string? logType,
+
             ImmutableArray<Outputs.GetDatastreamsStreamsDetailResult> streamsDetails)
         {
             GroupId = groupId;
             Id = id;
+            LogType = logType;
             StreamsDetails = streamsDetails;
         }
     }

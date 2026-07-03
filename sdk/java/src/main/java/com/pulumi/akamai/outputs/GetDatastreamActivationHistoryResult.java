@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatastreamActivationHistoryResult {
@@ -19,6 +21,7 @@ public final class GetDatastreamActivationHistoryResult {
      * 
      */
     private String id;
+    private @Nullable String logType;
     private Integer streamId;
 
     private GetDatastreamActivationHistoryResult() {}
@@ -31,6 +34,9 @@ public final class GetDatastreamActivationHistoryResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<String> logType() {
+        return Optional.ofNullable(this.logType);
     }
     public Integer streamId() {
         return this.streamId;
@@ -47,12 +53,14 @@ public final class GetDatastreamActivationHistoryResult {
     public static final class Builder {
         private List<GetDatastreamActivationHistoryActivation> activations;
         private String id;
+        private @Nullable String logType;
         private Integer streamId;
         public Builder() {}
         public Builder(GetDatastreamActivationHistoryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activations = defaults.activations;
     	      this.id = defaults.id;
+    	      this.logType = defaults.logType;
     	      this.streamId = defaults.streamId;
         }
 
@@ -76,6 +84,12 @@ public final class GetDatastreamActivationHistoryResult {
             return this;
         }
         @CustomType.Setter
+        public Builder logType(@Nullable String logType) {
+
+            this.logType = logType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder streamId(Integer streamId) {
             if (streamId == null) {
               throw new MissingRequiredPropertyException("GetDatastreamActivationHistoryResult", "streamId");
@@ -87,6 +101,7 @@ public final class GetDatastreamActivationHistoryResult {
             final var _resultValue = new GetDatastreamActivationHistoryResult();
             _resultValue.activations = activations;
             _resultValue.id = id;
+            _resultValue.logType = logType;
             _resultValue.streamId = streamId;
             return _resultValue;
         }

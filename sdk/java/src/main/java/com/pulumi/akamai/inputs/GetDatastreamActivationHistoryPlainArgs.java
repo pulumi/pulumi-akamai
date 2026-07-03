@@ -6,12 +6,22 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetDatastreamActivationHistoryPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetDatastreamActivationHistoryPlainArgs Empty = new GetDatastreamActivationHistoryPlainArgs();
+
+    @Import(name="logType")
+    private @Nullable String logType;
+
+    public Optional<String> logType() {
+        return Optional.ofNullable(this.logType);
+    }
 
     @Import(name="streamId", required=true)
     private Integer streamId;
@@ -23,6 +33,7 @@ public final class GetDatastreamActivationHistoryPlainArgs extends com.pulumi.re
     private GetDatastreamActivationHistoryPlainArgs() {}
 
     private GetDatastreamActivationHistoryPlainArgs(GetDatastreamActivationHistoryPlainArgs $) {
+        this.logType = $.logType;
         this.streamId = $.streamId;
     }
 
@@ -42,6 +53,11 @@ public final class GetDatastreamActivationHistoryPlainArgs extends com.pulumi.re
 
         public Builder(GetDatastreamActivationHistoryPlainArgs defaults) {
             $ = new GetDatastreamActivationHistoryPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder logType(@Nullable String logType) {
+            $.logType = logType;
+            return this;
         }
 
         public Builder streamId(Integer streamId) {

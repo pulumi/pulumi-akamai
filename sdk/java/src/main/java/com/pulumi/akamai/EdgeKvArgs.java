@@ -18,14 +18,14 @@ public final class EdgeKvArgs extends com.pulumi.resources.ResourceArgs {
     public static final EdgeKvArgs Empty = new EdgeKvArgs();
 
     /**
-     * Storage location for data
+     * Storage location for data.
      * 
      */
     @Import(name="geoLocation")
     private @Nullable Output<String> geoLocation;
 
     /**
-     * @return Storage location for data
+     * @return Storage location for data.
      * 
      */
     public Optional<Output<String>> geoLocation() {
@@ -48,14 +48,14 @@ public final class EdgeKvArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Name for the EKV namespace
+     * Name for the EKV namespace.
      * 
      */
     @Import(name="namespaceName", required=true)
     private Output<String> namespaceName;
 
     /**
-     * @return Name for the EKV namespace
+     * @return Name for the EKV namespace.
      * 
      */
     public Output<String> namespaceName() {
@@ -63,14 +63,14 @@ public final class EdgeKvArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The network on which the namespace will be activated
+     * The network on which the namespace will be activated.
      * 
      */
     @Import(name="network", required=true)
     private Output<String> network;
 
     /**
-     * @return The network on which the namespace will be activated
+     * @return The network on which the namespace will be activated.
      * 
      */
     public Output<String> network() {
@@ -121,7 +121,7 @@ public final class EdgeKvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param geoLocation Storage location for data
+         * @param geoLocation Storage location for data.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class EdgeKvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param geoLocation Storage location for data
+         * @param geoLocation Storage location for data.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class EdgeKvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespaceName Name for the EKV namespace
+         * @param namespaceName Name for the EKV namespace.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class EdgeKvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespaceName Name for the EKV namespace
+         * @param namespaceName Name for the EKV namespace.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class EdgeKvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param network The network on which the namespace will be activated
+         * @param network The network on which the namespace will be activated.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class EdgeKvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param network The network on which the namespace will be activated
+         * @param network The network on which the namespace will be activated.
          * 
          * @return builder
          * 

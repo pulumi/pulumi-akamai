@@ -223,13 +223,21 @@ export interface ClientlistListItem {
      */
     expirationDate?: pulumi.Input<string | undefined>;
     /**
+     * Key of the item (e.g. request header name). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     */
+    key?: pulumi.Input<string | undefined>;
+    /**
      * The item tags.
      */
     tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * Value of the item (e.g. IP address, AS Number, GEO, domain, TLS fingerprint, file hash, user ID). Not applicable for REQUEST_HEADER_NAME_VALUE list type.
      */
-    value: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
+    /**
+     * Values of the item (e.g. request header name values). Applicable only for REQUEST_HEADER_NAME_VALUE list type.
+     */
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface CloudAccessKeyCredentialsA {

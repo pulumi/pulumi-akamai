@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetDatastreamsStreamsDetailResult
     {
         /// <summary>
+        /// List of AppSec configs associated with the stream.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatastreamsStreamsDetailAppSecConfigResult> AppSecConfigs;
+        /// <summary>
         /// Identifies the contract that the stream is associated with.
         /// </summary>
         public readonly string ContractId;
@@ -37,6 +41,10 @@ namespace Pulumi.Akamai.Outputs
         /// Identifies the latestVersion version of the stream.
         /// </summary>
         public readonly int LatestVersion;
+        /// <summary>
+        /// The log type of the stream.
+        /// </summary>
+        public readonly string LogType;
         /// <summary>
         /// The username who activated or deactivated the stream
         /// </summary>
@@ -72,6 +80,8 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private GetDatastreamsStreamsDetailResult(
+            ImmutableArray<Outputs.GetDatastreamsStreamsDetailAppSecConfigResult> appSecConfigs,
+
             string contractId,
 
             string createdBy,
@@ -83,6 +93,8 @@ namespace Pulumi.Akamai.Outputs
             string integrationType,
 
             int latestVersion,
+
+            string logType,
 
             string modifiedBy,
 
@@ -100,12 +112,14 @@ namespace Pulumi.Akamai.Outputs
 
             int streamVersion)
         {
+            AppSecConfigs = appSecConfigs;
             ContractId = contractId;
             CreatedBy = createdBy;
             CreatedDate = createdDate;
             GroupId = groupId;
             IntegrationType = integrationType;
             LatestVersion = latestVersion;
+            LogType = logType;
             ModifiedBy = modifiedBy;
             ModifiedDate = modifiedDate;
             ProductId = productId;

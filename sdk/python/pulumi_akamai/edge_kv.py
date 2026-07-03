@@ -28,10 +28,10 @@ class EdgeKvArgs:
         The set of arguments for constructing a EdgeKv resource.
 
         :param pulumi.Input[_builtins.int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
-        :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace
-        :param pulumi.Input[_builtins.str] network: The network on which the namespace will be activated
+        :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace.
+        :param pulumi.Input[_builtins.str] network: The network on which the namespace will be activated.
         :param pulumi.Input[_builtins.int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
-        :param pulumi.Input[_builtins.str] geo_location: Storage location for data
+        :param pulumi.Input[_builtins.str] geo_location: Storage location for data.
         """
         pulumi.set(__self__, "group_id", group_id)
         pulumi.set(__self__, "namespace_name", namespace_name)
@@ -56,7 +56,7 @@ class EdgeKvArgs:
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> pulumi.Input[_builtins.str]:
         """
-        Name for the EKV namespace
+        Name for the EKV namespace.
         """
         return pulumi.get(self, "namespace_name")
 
@@ -68,7 +68,7 @@ class EdgeKvArgs:
     @pulumi.getter
     def network(self) -> pulumi.Input[_builtins.str]:
         """
-        The network on which the namespace will be activated
+        The network on which the namespace will be activated.
         """
         return pulumi.get(self, "network")
 
@@ -92,7 +92,7 @@ class EdgeKvArgs:
     @pulumi.getter(name="geoLocation")
     def geo_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Storage location for data
+        Storage location for data.
         """
         return pulumi.get(self, "geo_location")
 
@@ -112,10 +112,10 @@ class _EdgeKvState:
         """
         Input properties used for looking up and filtering EdgeKv resources.
 
-        :param pulumi.Input[_builtins.str] geo_location: Storage location for data
+        :param pulumi.Input[_builtins.str] geo_location: Storage location for data.
         :param pulumi.Input[_builtins.int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
-        :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace
-        :param pulumi.Input[_builtins.str] network: The network on which the namespace will be activated
+        :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace.
+        :param pulumi.Input[_builtins.str] network: The network on which the namespace will be activated.
         :param pulumi.Input[_builtins.int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
         """
         if geo_location is not None:
@@ -133,7 +133,7 @@ class _EdgeKvState:
     @pulumi.getter(name="geoLocation")
     def geo_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Storage location for data
+        Storage location for data.
         """
         return pulumi.get(self, "geo_location")
 
@@ -157,7 +157,7 @@ class _EdgeKvState:
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name for the EKV namespace
+        Name for the EKV namespace.
         """
         return pulumi.get(self, "namespace_name")
 
@@ -169,7 +169,7 @@ class _EdgeKvState:
     @pulumi.getter
     def network(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The network on which the namespace will be activated
+        The network on which the namespace will be activated.
         """
         return pulumi.get(self, "network")
 
@@ -207,10 +207,10 @@ class EdgeKv(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] geo_location: Storage location for data
+        :param pulumi.Input[_builtins.str] geo_location: Storage location for data.
         :param pulumi.Input[_builtins.int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
-        :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace
-        :param pulumi.Input[_builtins.str] network: The network on which the namespace will be activated
+        :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace.
+        :param pulumi.Input[_builtins.str] network: The network on which the namespace will be activated.
         :param pulumi.Input[_builtins.int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
         """
         ...
@@ -286,10 +286,10 @@ class EdgeKv(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] geo_location: Storage location for data
+        :param pulumi.Input[_builtins.str] geo_location: Storage location for data.
         :param pulumi.Input[_builtins.int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
-        :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace
-        :param pulumi.Input[_builtins.str] network: The network on which the namespace will be activated
+        :param pulumi.Input[_builtins.str] namespace_name: Name for the EKV namespace.
+        :param pulumi.Input[_builtins.str] network: The network on which the namespace will be activated.
         :param pulumi.Input[_builtins.int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -307,7 +307,7 @@ class EdgeKv(pulumi.CustomResource):
     @pulumi.getter(name="geoLocation")
     def geo_location(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Storage location for data
+        Storage location for data.
         """
         return pulumi.get(self, "geo_location")
 
@@ -323,7 +323,7 @@ class EdgeKv(pulumi.CustomResource):
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> pulumi.Output[_builtins.str]:
         """
-        Name for the EKV namespace
+        Name for the EKV namespace.
         """
         return pulumi.get(self, "namespace_name")
 
@@ -331,7 +331,7 @@ class EdgeKv(pulumi.CustomResource):
     @pulumi.getter
     def network(self) -> pulumi.Output[_builtins.str]:
         """
-        The network on which the namespace will be activated
+        The network on which the namespace will be activated.
         """
         return pulumi.get(self, "network")
 

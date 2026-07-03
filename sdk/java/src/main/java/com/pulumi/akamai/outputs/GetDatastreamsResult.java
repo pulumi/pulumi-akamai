@@ -21,6 +21,7 @@ public final class GetDatastreamsResult {
      * 
      */
     private String id;
+    private @Nullable String logType;
     private List<GetDatastreamsStreamsDetail> streamsDetails;
 
     private GetDatastreamsResult() {}
@@ -33,6 +34,9 @@ public final class GetDatastreamsResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<String> logType() {
+        return Optional.ofNullable(this.logType);
     }
     public List<GetDatastreamsStreamsDetail> streamsDetails() {
         return this.streamsDetails;
@@ -49,12 +53,14 @@ public final class GetDatastreamsResult {
     public static final class Builder {
         private @Nullable Integer groupId;
         private String id;
+        private @Nullable String logType;
         private List<GetDatastreamsStreamsDetail> streamsDetails;
         public Builder() {}
         public Builder(GetDatastreamsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.groupId = defaults.groupId;
     	      this.id = defaults.id;
+    	      this.logType = defaults.logType;
     	      this.streamsDetails = defaults.streamsDetails;
         }
 
@@ -73,6 +79,12 @@ public final class GetDatastreamsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder logType(@Nullable String logType) {
+
+            this.logType = logType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder streamsDetails(List<GetDatastreamsStreamsDetail> streamsDetails) {
             if (streamsDetails == null) {
               throw new MissingRequiredPropertyException("GetDatastreamsResult", "streamsDetails");
@@ -87,6 +99,7 @@ public final class GetDatastreamsResult {
             final var _resultValue = new GetDatastreamsResult();
             _resultValue.groupId = groupId;
             _resultValue.id = id;
+            _resultValue.logType = logType;
             _resultValue.streamsDetails = streamsDetails;
             return _resultValue;
         }

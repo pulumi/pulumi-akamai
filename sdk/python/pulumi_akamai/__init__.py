@@ -260,6 +260,7 @@ from .get_cps_enrollment import *
 from .get_cps_enrollments import *
 from .get_cps_warnings import *
 from .get_datastream_activation_history import *
+from .get_datastream_appsec_configs import *
 from .get_datastream_dataset_fields import *
 from .get_datastreams import *
 from .get_dns_record_set import *

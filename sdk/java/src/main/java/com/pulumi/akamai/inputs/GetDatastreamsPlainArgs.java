@@ -5,6 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -21,10 +22,18 @@ public final class GetDatastreamsPlainArgs extends com.pulumi.resources.InvokeAr
         return Optional.ofNullable(this.groupId);
     }
 
+    @Import(name="logType")
+    private @Nullable String logType;
+
+    public Optional<String> logType() {
+        return Optional.ofNullable(this.logType);
+    }
+
     private GetDatastreamsPlainArgs() {}
 
     private GetDatastreamsPlainArgs(GetDatastreamsPlainArgs $) {
         this.groupId = $.groupId;
+        this.logType = $.logType;
     }
 
     public static Builder builder() {
@@ -47,6 +56,11 @@ public final class GetDatastreamsPlainArgs extends com.pulumi.resources.InvokeAr
 
         public Builder groupId(@Nullable Integer groupId) {
             $.groupId = groupId;
+            return this;
+        }
+
+        public Builder logType(@Nullable String logType) {
+            $.logType = logType;
             return this;
         }
 

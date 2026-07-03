@@ -24,6 +24,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamActivationHistoryArgs : global::Pulumi.InvokeArgs
     {
+        [Input("logType")]
+        public string? LogType { get; set; }
+
         [Input("streamId", required: true)]
         public int StreamId { get; set; }
 
@@ -35,6 +38,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamActivationHistoryInvokeArgs : global::Pulumi.InvokeArgs
     {
+        [Input("logType")]
+        public Input<string>? LogType { get; set; }
+
         [Input("streamId", required: true)]
         public Input<int> StreamId { get; set; } = null!;
 
@@ -53,6 +59,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? LogType;
         public readonly int StreamId;
 
         [OutputConstructor]
@@ -61,10 +68,13 @@ namespace Pulumi.Akamai
 
             string id,
 
+            string? logType,
+
             int streamId)
         {
             Activations = activations;
             Id = id;
+            LogType = logType;
             StreamId = streamId;
         }
     }

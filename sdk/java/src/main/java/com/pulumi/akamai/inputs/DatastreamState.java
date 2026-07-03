@@ -48,6 +48,21 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.active);
     }
 
+    /**
+     * Identifies the application security configurations monitored in the stream
+     * 
+     */
+    @Import(name="appSecConfigs")
+    private @Nullable Output<List<Integer>> appSecConfigs;
+
+    /**
+     * @return Identifies the application security configurations monitored in the stream
+     * 
+     */
+    public Optional<Output<List<Integer>>> appSecConfigs() {
+        return Optional.ofNullable(this.appSecConfigs);
+    }
+
     @Import(name="azureConnector")
     private @Nullable Output<DatastreamAzureConnectorArgs> azureConnector;
 
@@ -223,6 +238,21 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> latestVersion() {
         return Optional.ofNullable(this.latestVersion);
+    }
+
+    /**
+     * Type of logs for the stream
+     * 
+     */
+    @Import(name="logType")
+    private @Nullable Output<String> logType;
+
+    /**
+     * @return Type of logs for the stream
+     * 
+     */
+    public Optional<Output<String>> logType() {
+        return Optional.ofNullable(this.logType);
     }
 
     @Import(name="logglyConnector")
@@ -420,6 +450,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
 
     private DatastreamState(DatastreamState $) {
         this.active = $.active;
+        this.appSecConfigs = $.appSecConfigs;
         this.azureConnector = $.azureConnector;
         this.collectMidgress = $.collectMidgress;
         this.contractId = $.contractId;
@@ -435,6 +466,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         this.httpsConnector = $.httpsConnector;
         this.integrationType = $.integrationType;
         this.latestVersion = $.latestVersion;
+        this.logType = $.logType;
         this.logglyConnector = $.logglyConnector;
         this.modifiedBy = $.modifiedBy;
         this.modifiedDate = $.modifiedDate;
@@ -491,6 +523,37 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder active(Boolean active) {
             return active(Output.of(active));
+        }
+
+        /**
+         * @param appSecConfigs Identifies the application security configurations monitored in the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appSecConfigs(@Nullable Output<List<Integer>> appSecConfigs) {
+            $.appSecConfigs = appSecConfigs;
+            return this;
+        }
+
+        /**
+         * @param appSecConfigs Identifies the application security configurations monitored in the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appSecConfigs(List<Integer> appSecConfigs) {
+            return appSecConfigs(Output.of(appSecConfigs));
+        }
+
+        /**
+         * @param appSecConfigs Identifies the application security configurations monitored in the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appSecConfigs(Integer... appSecConfigs) {
+            return appSecConfigs(List.of(appSecConfigs));
         }
 
         public Builder azureConnector(@Nullable Output<DatastreamAzureConnectorArgs> azureConnector) {
@@ -744,6 +807,27 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder latestVersion(Integer latestVersion) {
             return latestVersion(Output.of(latestVersion));
+        }
+
+        /**
+         * @param logType Type of logs for the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logType(@Nullable Output<String> logType) {
+            $.logType = logType;
+            return this;
+        }
+
+        /**
+         * @param logType Type of logs for the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logType(String logType) {
+            return logType(Output.of(logType));
         }
 
         public Builder logglyConnector(@Nullable Output<DatastreamLogglyConnectorArgs> logglyConnector) {

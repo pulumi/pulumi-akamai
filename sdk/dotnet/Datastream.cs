@@ -18,6 +18,12 @@ namespace Pulumi.Akamai
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
 
+        /// <summary>
+        /// Identifies the application security configurations monitored in the stream
+        /// </summary>
+        [Output("appSecConfigs")]
+        public Output<ImmutableArray<int>> AppSecConfigs { get; private set; } = null!;
+
         [Output("azureConnector")]
         public Output<Outputs.DatastreamAzureConnector?> AzureConnector { get; private set; } = null!;
 
@@ -89,6 +95,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("latestVersion")]
         public Output<int> LatestVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// Type of logs for the stream
+        /// </summary>
+        [Output("logType")]
+        public Output<string?> LogType { get; private set; } = null!;
 
         [Output("logglyConnector")]
         public Output<Outputs.DatastreamLogglyConnector?> LogglyConnector { get; private set; } = null!;
@@ -220,6 +232,18 @@ namespace Pulumi.Akamai
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
 
+        [Input("appSecConfigs")]
+        private InputList<int>? _appSecConfigs;
+
+        /// <summary>
+        /// Identifies the application security configurations monitored in the stream
+        /// </summary>
+        public InputList<int> AppSecConfigs
+        {
+            get => _appSecConfigs ?? (_appSecConfigs = new InputList<int>());
+            set => _appSecConfigs = value;
+        }
+
         [Input("azureConnector")]
         public Input<Inputs.DatastreamAzureConnectorArgs>? AzureConnector { get; set; }
 
@@ -238,7 +262,7 @@ namespace Pulumi.Akamai
         [Input("datadogConnector")]
         public Input<Inputs.DatastreamDatadogConnectorArgs>? DatadogConnector { get; set; }
 
-        [Input("datasetFields", required: true)]
+        [Input("datasetFields")]
         private InputList<int>? _datasetFields;
 
         /// <summary>
@@ -274,6 +298,12 @@ namespace Pulumi.Akamai
         [Input("httpsConnector")]
         public Input<Inputs.DatastreamHttpsConnectorArgs>? HttpsConnector { get; set; }
 
+        /// <summary>
+        /// Type of logs for the stream
+        /// </summary>
+        [Input("logType")]
+        public Input<string>? LogType { get; set; }
+
         [Input("logglyConnector")]
         public Input<Inputs.DatastreamLogglyConnectorArgs>? LogglyConnector { get; set; }
 
@@ -295,7 +325,7 @@ namespace Pulumi.Akamai
         [Input("oracleConnector")]
         public Input<Inputs.DatastreamOracleConnectorArgs>? OracleConnector { get; set; }
 
-        [Input("properties", required: true)]
+        [Input("properties")]
         private InputList<string>? _properties;
 
         /// <summary>
@@ -347,6 +377,18 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
+
+        [Input("appSecConfigs")]
+        private InputList<int>? _appSecConfigs;
+
+        /// <summary>
+        /// Identifies the application security configurations monitored in the stream
+        /// </summary>
+        public InputList<int> AppSecConfigs
+        {
+            get => _appSecConfigs ?? (_appSecConfigs = new InputList<int>());
+            set => _appSecConfigs = value;
+        }
 
         [Input("azureConnector")]
         public Input<Inputs.DatastreamAzureConnectorGetArgs>? AzureConnector { get; set; }
@@ -425,6 +467,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("latestVersion")]
         public Input<int>? LatestVersion { get; set; }
+
+        /// <summary>
+        /// Type of logs for the stream
+        /// </summary>
+        [Input("logType")]
+        public Input<string>? LogType { get; set; }
 
         [Input("logglyConnector")]
         public Input<Inputs.DatastreamLogglyConnectorGetArgs>? LogglyConnector { get; set; }
