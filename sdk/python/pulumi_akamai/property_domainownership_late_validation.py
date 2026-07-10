@@ -33,7 +33,7 @@ class PropertyDomainownershipLateValidationArgs:
         :param pulumi.Input[_builtins.str] contract_id: Contract ID of the Property.
         :param pulumi.Input[_builtins.str] group_id: Group ID of the Property.
         :param pulumi.Input[_builtins.str] property_id: Property ID of the Property which domains will be validated.
-        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are: 
+        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are:
                * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
                * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
                * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
@@ -87,7 +87,7 @@ class PropertyDomainownershipLateValidationArgs:
     @pulumi.getter(name="validationMethod")
     def validation_method(self) -> pulumi.Input[_builtins.str]:
         """
-        The method used to validate the domain. Possible values are: 
+        The method used to validate the domain. Possible values are:
         * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
         * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
         * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
@@ -135,7 +135,7 @@ class _PropertyDomainownershipLateValidationState:
         :param pulumi.Input[_builtins.str] contract_id: Contract ID of the Property.
         :param pulumi.Input[_builtins.str] group_id: Group ID of the Property.
         :param pulumi.Input[_builtins.str] property_id: Property ID of the Property which domains will be validated.
-        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are: 
+        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are:
                * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
                * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
                * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
@@ -203,7 +203,7 @@ class _PropertyDomainownershipLateValidationState:
     @pulumi.getter(name="validationMethod")
     def validation_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The method used to validate the domain. Possible values are: 
+        The method used to validate the domain. Possible values are:
         * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
         * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
         * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
@@ -248,7 +248,7 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] contract_id: Contract ID of the Property.
         :param pulumi.Input[_builtins.str] group_id: Group ID of the Property.
         :param pulumi.Input[_builtins.str] property_id: Property ID of the Property which domains will be validated.
-        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are: 
+        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are:
                * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
                * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
                * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
@@ -335,7 +335,7 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] contract_id: Contract ID of the Property.
         :param pulumi.Input[_builtins.str] group_id: Group ID of the Property.
         :param pulumi.Input[_builtins.str] property_id: Property ID of the Property which domains will be validated.
-        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are: 
+        :param pulumi.Input[_builtins.str] validation_method: The method used to validate the domain. Possible values are:
                * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
                * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
                * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
@@ -386,7 +386,7 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
     @pulumi.getter(name="validationMethod")
     def validation_method(self) -> pulumi.Output[_builtins.str]:
         """
-        The method used to validate the domain. Possible values are: 
+        The method used to validate the domain. Possible values are:
         * `DNS_CNAME` - For this method, Akamai generates a `cname_record` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
         * `DNS_TXT` - For this method, Akamai generates a `txt_record` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
         * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
