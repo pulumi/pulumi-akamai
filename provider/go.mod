@@ -37,7 +37,7 @@ require (
 	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/ProtonMail/go-crypto v1.4.1 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
-	github.com/akamai/AkamaiOPEN-edgegrid-golang/v13 v13.3.0 // indirect
+	github.com/akamai/AkamaiOPEN-edgegrid-golang/v13 v13.4.0 // indirect
 	github.com/allegro/bigcache/v2 v2.2.5 // indirect
 	github.com/apparentlymart/go-cidr v1.1.0 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
@@ -247,7 +247,7 @@ require (
 	golang.org/x/mod v0.37.0 // indirect
 	golang.org/x/net v0.56.0 // indirect
 	golang.org/x/oauth2 v0.36.0 // indirect
-	golang.org/x/sync v0.21.0 // indirect
+	golang.org/x/sync v0.22.0 // indirect
 	golang.org/x/sys v0.47.0 // indirect
 	golang.org/x/term v0.44.0 // indirect
 	golang.org/x/text v0.39.0 // indirect

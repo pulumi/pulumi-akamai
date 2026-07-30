@@ -22,18 +22,18 @@ __all__ = ['DatastreamArgs', 'Datastream']
 class DatastreamArgs:
     def __init__(__self__, *,
                  active: pulumi.Input[_builtins.bool],
-                 contract_id: pulumi.Input[_builtins.str],
                  delivery_configuration: pulumi.Input['DatastreamDeliveryConfigurationArgs'],
-                 group_id: pulumi.Input[_builtins.str],
                  stream_name: pulumi.Input[_builtins.str],
                  app_sec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  azure_connector: pulumi.Input[Optional['DatastreamAzureConnectorArgs']] = None,
                  collect_midgress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                  datadog_connector: pulumi.Input[Optional['DatastreamDatadogConnectorArgs']] = None,
                  dataset_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  dynatrace_connector: pulumi.Input[Optional['DatastreamDynatraceConnectorArgs']] = None,
                  elasticsearch_connector: pulumi.Input[Optional['DatastreamElasticsearchConnectorArgs']] = None,
                  gcs_connector: pulumi.Input[Optional['DatastreamGcsConnectorArgs']] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  https_connector: pulumi.Input[Optional['DatastreamHttpsConnectorArgs']] = None,
                  log_type: pulumi.Input[Optional[_builtins.str]] = None,
                  loggly_connector: pulumi.Input[Optional['DatastreamLogglyConnectorArgs']] = None,
@@ -51,22 +51,20 @@ class DatastreamArgs:
         The set of arguments for constructing a Datastream resource.
 
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
-        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
         :param pulumi.Input['DatastreamDeliveryConfigurationArgs'] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
-        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
         :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
         :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
         """
         pulumi.set(__self__, "active", active)
-        pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "delivery_configuration", delivery_configuration)
-        pulumi.set(__self__, "group_id", group_id)
         pulumi.set(__self__, "stream_name", stream_name)
         if app_sec_configs is not None:
             pulumi.set(__self__, "app_sec_configs", app_sec_configs)
@@ -74,6 +72,8 @@ class DatastreamArgs:
             pulumi.set(__self__, "azure_connector", azure_connector)
         if collect_midgress is not None:
             pulumi.set(__self__, "collect_midgress", collect_midgress)
+        if contract_id is not None:
+            pulumi.set(__self__, "contract_id", contract_id)
         if datadog_connector is not None:
             pulumi.set(__self__, "datadog_connector", datadog_connector)
         if dataset_fields is not None:
@@ -84,6 +84,8 @@ class DatastreamArgs:
             pulumi.set(__self__, "elasticsearch_connector", elasticsearch_connector)
         if gcs_connector is not None:
             pulumi.set(__self__, "gcs_connector", gcs_connector)
+        if group_id is not None:
+            pulumi.set(__self__, "group_id", group_id)
         if https_connector is not None:
             pulumi.set(__self__, "https_connector", https_connector)
         if log_type is not None:
@@ -124,18 +126,6 @@ class DatastreamArgs:
         pulumi.set(self, "active", value)
 
     @_builtins.property
-    @pulumi.getter(name="contractId")
-    def contract_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        Identifies the contract that has access to the product
-        """
-        return pulumi.get(self, "contract_id")
-
-    @contract_id.setter
-    def contract_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "contract_id", value)
-
-    @_builtins.property
     @pulumi.getter(name="deliveryConfiguration")
     def delivery_configuration(self) -> pulumi.Input['DatastreamDeliveryConfigurationArgs']:
         """
@@ -146,18 +136,6 @@ class DatastreamArgs:
     @delivery_configuration.setter
     def delivery_configuration(self, value: pulumi.Input['DatastreamDeliveryConfigurationArgs']):
         pulumi.set(self, "delivery_configuration", value)
-
-    @_builtins.property
-    @pulumi.getter(name="groupId")
-    def group_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        Identifies the group that has access to the product and for which the stream configuration was created
-        """
-        return pulumi.get(self, "group_id")
-
-    @group_id.setter
-    def group_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="streamName")
@@ -203,6 +181,18 @@ class DatastreamArgs:
     @collect_midgress.setter
     def collect_midgress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "collect_midgress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "contract_id", value)
 
     @_builtins.property
     @pulumi.getter(name="datadogConnector")
@@ -251,6 +241,18 @@ class DatastreamArgs:
     @gcs_connector.setter
     def gcs_connector(self, value: pulumi.Input[Optional['DatastreamGcsConnectorArgs']]):
         pulumi.set(self, "gcs_connector", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        """
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsConnector")
@@ -426,12 +428,12 @@ class _DatastreamState:
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
-        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
         :param pulumi.Input[_builtins.str] created_by: The username who created the stream
         :param pulumi.Input[_builtins.str] created_date: The date and time when the stream was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input['DatastreamDeliveryConfigurationArgs'] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
-        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
+        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
         :param pulumi.Input[_builtins.str] integration_type: The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
         :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
@@ -565,7 +567,7 @@ class _DatastreamState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Identifies the contract that has access to the product
+        Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
         """
         return pulumi.get(self, "contract_id")
 
@@ -661,7 +663,7 @@ class _DatastreamState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Identifies the group that has access to the product and for which the stream configuration was created
+        Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
         """
         return pulumi.get(self, "group_id")
 
@@ -936,10 +938,10 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
-        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
-        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
+        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
         :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
@@ -1011,8 +1013,6 @@ class Datastream(pulumi.CustomResource):
             __props__.__dict__["app_sec_configs"] = app_sec_configs
             __props__.__dict__["azure_connector"] = azure_connector
             __props__.__dict__["collect_midgress"] = collect_midgress
-            if contract_id is None and not opts.urn:
-                raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
             __props__.__dict__["datadog_connector"] = datadog_connector
             __props__.__dict__["dataset_fields"] = dataset_fields
@@ -1022,8 +1022,6 @@ class Datastream(pulumi.CustomResource):
             __props__.__dict__["dynatrace_connector"] = dynatrace_connector
             __props__.__dict__["elasticsearch_connector"] = elasticsearch_connector
             __props__.__dict__["gcs_connector"] = gcs_connector
-            if group_id is None and not opts.urn:
-                raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
             __props__.__dict__["https_connector"] = https_connector
             __props__.__dict__["log_type"] = log_type
@@ -1105,12 +1103,12 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
-        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
         :param pulumi.Input[_builtins.str] created_by: The username who created the stream
         :param pulumi.Input[_builtins.str] created_date: The date and time when the stream was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
-        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
+        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
         :param pulumi.Input[_builtins.str] integration_type: The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
         :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
@@ -1198,7 +1196,7 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[_builtins.str]:
         """
-        Identifies the contract that has access to the product
+        Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
         """
         return pulumi.get(self, "contract_id")
 
@@ -1258,7 +1256,7 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[_builtins.str]:
         """
-        Identifies the group that has access to the product and for which the stream configuration was created
+        Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
         """
         return pulumi.get(self, "group_id")
 

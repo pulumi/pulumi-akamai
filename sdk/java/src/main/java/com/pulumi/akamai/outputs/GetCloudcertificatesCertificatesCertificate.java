@@ -63,6 +63,11 @@ public final class GetCloudcertificatesCertificatesCertificate {
      */
     private String csrPem;
     /**
+     * @return The geographic network class of the certificate.
+     * 
+     */
+    private String geoClass;
+    /**
      * @return Size of the key used in the certificate signing request (CSR) in bits.
      * 
      */
@@ -205,6 +210,13 @@ public final class GetCloudcertificatesCertificatesCertificate {
         return this.csrPem;
     }
     /**
+     * @return The geographic network class of the certificate.
+     * 
+     */
+    public String geoClass() {
+        return this.geoClass;
+    }
+    /**
      * @return Size of the key used in the certificate signing request (CSR) in bits.
      * 
      */
@@ -322,6 +334,7 @@ public final class GetCloudcertificatesCertificatesCertificate {
         private String createdDate;
         private String csrExpirationDate;
         private String csrPem;
+        private String geoClass;
         private String keySize;
         private String keyType;
         private String modifiedBy;
@@ -349,6 +362,7 @@ public final class GetCloudcertificatesCertificatesCertificate {
     	      this.createdDate = defaults.createdDate;
     	      this.csrExpirationDate = defaults.csrExpirationDate;
     	      this.csrPem = defaults.csrPem;
+    	      this.geoClass = defaults.geoClass;
     	      this.keySize = defaults.keySize;
     	      this.keyType = defaults.keyType;
     	      this.modifiedBy = defaults.modifiedBy;
@@ -443,6 +457,14 @@ public final class GetCloudcertificatesCertificatesCertificate {
               throw new MissingRequiredPropertyException("GetCloudcertificatesCertificatesCertificate", "csrPem");
             }
             this.csrPem = csrPem;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder geoClass(String geoClass) {
+            if (geoClass == null) {
+              throw new MissingRequiredPropertyException("GetCloudcertificatesCertificatesCertificate", "geoClass");
+            }
+            this.geoClass = geoClass;
             return this;
         }
         @CustomType.Setter
@@ -572,6 +594,7 @@ public final class GetCloudcertificatesCertificatesCertificate {
             _resultValue.createdDate = createdDate;
             _resultValue.csrExpirationDate = csrExpirationDate;
             _resultValue.csrPem = csrPem;
+            _resultValue.geoClass = geoClass;
             _resultValue.keySize = keySize;
             _resultValue.keyType = keyType;
             _resultValue.modifiedBy = modifiedBy;

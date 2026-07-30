@@ -27,7 +27,7 @@ class GetCloudcertificatesCertificateResult:
     """
     A collection of values returned by getCloudcertificatesCertificate.
     """
-    def __init__(__self__, account_id=None, bindings=None, certificate_id=None, certificate_name=None, certificate_status=None, certificate_type=None, contract_id=None, created_by=None, created_date=None, csr_expiration_date=None, csr_pem=None, id=None, include_hostname_bindings=None, key_size=None, key_type=None, modified_by=None, modified_date=None, sans=None, secure_network=None, signed_certificate_issuer=None, signed_certificate_not_valid_after_date=None, signed_certificate_not_valid_before_date=None, signed_certificate_pem=None, signed_certificate_serial_number=None, signed_certificate_sha256_fingerprint=None, subject=None, trust_chain_pem=None):
+    def __init__(__self__, account_id=None, bindings=None, certificate_id=None, certificate_name=None, certificate_status=None, certificate_type=None, contract_id=None, created_by=None, created_date=None, csr_expiration_date=None, csr_pem=None, geo_class=None, id=None, include_hostname_bindings=None, key_size=None, key_type=None, modified_by=None, modified_date=None, sans=None, secure_network=None, signed_certificate_issuer=None, signed_certificate_not_valid_after_date=None, signed_certificate_not_valid_before_date=None, signed_certificate_pem=None, signed_certificate_serial_number=None, signed_certificate_sha256_fingerprint=None, subject=None, trust_chain_pem=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -61,6 +61,9 @@ class GetCloudcertificatesCertificateResult:
         if csr_pem and not isinstance(csr_pem, str):
             raise TypeError("Expected argument 'csr_pem' to be a str")
         pulumi.set(__self__, "csr_pem", csr_pem)
+        if geo_class and not isinstance(geo_class, str):
+            raise TypeError("Expected argument 'geo_class' to be a str")
+        pulumi.set(__self__, "geo_class", geo_class)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -166,6 +169,11 @@ class GetCloudcertificatesCertificateResult:
         return pulumi.get(self, "csr_pem")
 
     @_builtins.property
+    @pulumi.getter(name="geoClass")
+    def geo_class(self) -> _builtins.str:
+        return pulumi.get(self, "geo_class")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
@@ -266,6 +274,7 @@ class AwaitableGetCloudcertificatesCertificateResult(GetCloudcertificatesCertifi
             created_date=self.created_date,
             csr_expiration_date=self.csr_expiration_date,
             csr_pem=self.csr_pem,
+            geo_class=self.geo_class,
             id=self.id,
             include_hostname_bindings=self.include_hostname_bindings,
             key_size=self.key_size,
@@ -308,6 +317,7 @@ def get_cloudcertificates_certificate(certificate_id: Optional[_builtins.str] = 
         created_date=pulumi.get(__ret__, 'created_date'),
         csr_expiration_date=pulumi.get(__ret__, 'csr_expiration_date'),
         csr_pem=pulumi.get(__ret__, 'csr_pem'),
+        geo_class=pulumi.get(__ret__, 'geo_class'),
         id=pulumi.get(__ret__, 'id'),
         include_hostname_bindings=pulumi.get(__ret__, 'include_hostname_bindings'),
         key_size=pulumi.get(__ret__, 'key_size'),
@@ -347,6 +357,7 @@ def get_cloudcertificates_certificate_output(certificate_id: pulumi.Input[Option
         created_date=pulumi.get(__response__, 'created_date'),
         csr_expiration_date=pulumi.get(__response__, 'csr_expiration_date'),
         csr_pem=pulumi.get(__response__, 'csr_pem'),
+        geo_class=pulumi.get(__response__, 'geo_class'),
         id=pulumi.get(__response__, 'id'),
         include_hostname_bindings=pulumi.get(__response__, 'include_hostname_bindings'),
         key_size=pulumi.get(__response__, 'key_size'),

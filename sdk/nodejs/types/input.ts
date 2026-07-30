@@ -1044,11 +1044,11 @@ export interface DatastreamDeliveryConfiguration {
      */
     frequency: pulumi.Input<inputs.DatastreamDeliveryConfigurationFrequency>;
     /**
-     * The prefix of the log file that will be send to a destination
+     * The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      */
     uploadFilePrefix?: pulumi.Input<string | undefined>;
     /**
-     * The suffix of the log file that will be send to a destination
+     * The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      */
     uploadFileSuffix?: pulumi.Input<string | undefined>;
 }

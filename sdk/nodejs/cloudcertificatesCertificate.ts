@@ -79,6 +79,10 @@ export class CloudcertificatesCertificate extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly csrPem: pulumi.Output<string>;
     /**
+     * The geographic network class of the certificate. Valid values for ENHANCED_TLS: 'STANDARD_WORLDWIDE', 'CONTIGUOUS_US', 'RESERVED_GLOBAL'. Valid values for STANDARD_TLS: 'STANDARD_WORLDWIDE'. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+     */
+    declare public readonly geoClass: pulumi.Output<string>;
+    /**
      * Group that will be associated with the new certificate when it gets created. Required for creation.
      */
     declare public readonly groupId: pulumi.Output<string | undefined>;
@@ -147,6 +151,7 @@ export class CloudcertificatesCertificate extends pulumi.CustomResource {
             resourceInputs["createdDate"] = state?.createdDate;
             resourceInputs["csrExpirationDate"] = state?.csrExpirationDate;
             resourceInputs["csrPem"] = state?.csrPem;
+            resourceInputs["geoClass"] = state?.geoClass;
             resourceInputs["groupId"] = state?.groupId;
             resourceInputs["keySize"] = state?.keySize;
             resourceInputs["keyType"] = state?.keyType;
@@ -178,6 +183,7 @@ export class CloudcertificatesCertificate extends pulumi.CustomResource {
             resourceInputs["autoRenew"] = args?.autoRenew;
             resourceInputs["baseName"] = args?.baseName;
             resourceInputs["contractId"] = args?.contractId;
+            resourceInputs["geoClass"] = args?.geoClass;
             resourceInputs["groupId"] = args?.groupId;
             resourceInputs["keySize"] = args?.keySize;
             resourceInputs["keyType"] = args?.keyType;
@@ -252,6 +258,10 @@ export interface CloudcertificatesCertificateState {
      */
     csrPem?: pulumi.Input<string | undefined>;
     /**
+     * The geographic network class of the certificate. Valid values for ENHANCED_TLS: 'STANDARD_WORLDWIDE', 'CONTIGUOUS_US', 'RESERVED_GLOBAL'. Valid values for STANDARD_TLS: 'STANDARD_WORLDWIDE'. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+     */
+    geoClass?: pulumi.Input<string | undefined>;
+    /**
      * Group that will be associated with the new certificate when it gets created. Required for creation.
      */
     groupId?: pulumi.Input<string | undefined>;
@@ -313,6 +323,10 @@ export interface CloudcertificatesCertificateArgs {
      * Contract ID under which this certificate will be created.
      */
     contractId: pulumi.Input<string>;
+    /**
+     * The geographic network class of the certificate. Valid values for ENHANCED_TLS: 'STANDARD_WORLDWIDE', 'CONTIGUOUS_US', 'RESERVED_GLOBAL'. Valid values for STANDARD_TLS: 'STANDARD_WORLDWIDE'. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+     */
+    geoClass?: pulumi.Input<string | undefined>;
     /**
      * Group that will be associated with the new certificate when it gets created. Required for creation.
      */

@@ -66,6 +66,21 @@ public final class CloudcertificatesCertificateArgs extends com.pulumi.resources
     }
 
     /**
+     * The geographic network class of the certificate. Valid values for ENHANCED_TLS: &#39;STANDARD_WORLDWIDE&#39;, &#39;CONTIGUOUS_US&#39;, &#39;RESERVED_GLOBAL&#39;. Valid values for STANDARD_TLS: &#39;STANDARD_WORLDWIDE&#39;. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+     * 
+     */
+    @Import(name="geoClass")
+    private @Nullable Output<String> geoClass;
+
+    /**
+     * @return The geographic network class of the certificate. Valid values for ENHANCED_TLS: &#39;STANDARD_WORLDWIDE&#39;, &#39;CONTIGUOUS_US&#39;, &#39;RESERVED_GLOBAL&#39;. Valid values for STANDARD_TLS: &#39;STANDARD_WORLDWIDE&#39;. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+     * 
+     */
+    public Optional<Output<String>> geoClass() {
+        return Optional.ofNullable(this.geoClass);
+    }
+
+    /**
      * Group that will be associated with the new certificate when it gets created. Required for creation.
      * 
      */
@@ -176,6 +191,7 @@ public final class CloudcertificatesCertificateArgs extends com.pulumi.resources
         this.autoRenew = $.autoRenew;
         this.baseName = $.baseName;
         this.contractId = $.contractId;
+        this.geoClass = $.geoClass;
         this.groupId = $.groupId;
         this.keySize = $.keySize;
         this.keyType = $.keyType;
@@ -264,6 +280,27 @@ public final class CloudcertificatesCertificateArgs extends com.pulumi.resources
          */
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
+        }
+
+        /**
+         * @param geoClass The geographic network class of the certificate. Valid values for ENHANCED_TLS: &#39;STANDARD_WORLDWIDE&#39;, &#39;CONTIGUOUS_US&#39;, &#39;RESERVED_GLOBAL&#39;. Valid values for STANDARD_TLS: &#39;STANDARD_WORLDWIDE&#39;. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+         * 
+         * @return builder
+         * 
+         */
+        public Builder geoClass(@Nullable Output<String> geoClass) {
+            $.geoClass = geoClass;
+            return this;
+        }
+
+        /**
+         * @param geoClass The geographic network class of the certificate. Valid values for ENHANCED_TLS: &#39;STANDARD_WORLDWIDE&#39;, &#39;CONTIGUOUS_US&#39;, &#39;RESERVED_GLOBAL&#39;. Valid values for STANDARD_TLS: &#39;STANDARD_WORLDWIDE&#39;. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+         * 
+         * @return builder
+         * 
+         */
+        public Builder geoClass(String geoClass) {
+            return geoClass(Output.of(geoClass));
         }
 
         /**

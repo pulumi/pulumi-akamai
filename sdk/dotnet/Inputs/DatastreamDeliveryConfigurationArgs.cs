@@ -31,13 +31,13 @@ namespace Pulumi.Akamai.Inputs
         public Input<Inputs.DatastreamDeliveryConfigurationFrequencyArgs> Frequency { get; set; } = null!;
 
         /// <summary>
-        /// The prefix of the log file that will be send to a destination
+        /// The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
         /// </summary>
         [Input("uploadFilePrefix")]
         public Input<string>? UploadFilePrefix { get; set; }
 
         /// <summary>
-        /// The suffix of the log file that will be send to a destination
+        /// The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
         /// </summary>
         [Input("uploadFileSuffix")]
         public Input<string>? UploadFileSuffix { get; set; }

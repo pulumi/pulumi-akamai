@@ -5554,11 +5554,11 @@ class DatastreamDeliveryConfigurationArgsDict(TypedDict):
     """
     upload_file_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The prefix of the log file that will be send to a destination
+    The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
     """
     upload_file_suffix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The suffix of the log file that will be send to a destination
+    The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
     """
 
 @pulumi.input_type
@@ -5573,8 +5573,8 @@ class DatastreamDeliveryConfigurationArgs:
         :param pulumi.Input[_builtins.str] format: The format in which logs will be received
         :param pulumi.Input['DatastreamDeliveryConfigurationFrequencyArgs'] frequency: The frequency of collecting logs from each uploader and sending these logs to a destination
         :param pulumi.Input[_builtins.str] field_delimiter: A delimiter that you use to separate data set fields in log lines
-        :param pulumi.Input[_builtins.str] upload_file_prefix: The prefix of the log file that will be send to a destination
-        :param pulumi.Input[_builtins.str] upload_file_suffix: The suffix of the log file that will be send to a destination
+        :param pulumi.Input[_builtins.str] upload_file_prefix: The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
+        :param pulumi.Input[_builtins.str] upload_file_suffix: The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
         """
         pulumi.set(__self__, "format", format)
         pulumi.set(__self__, "frequency", frequency)
@@ -5625,7 +5625,7 @@ class DatastreamDeliveryConfigurationArgs:
     @pulumi.getter(name="uploadFilePrefix")
     def upload_file_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The prefix of the log file that will be send to a destination
+        The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
         """
         return pulumi.get(self, "upload_file_prefix")
 
@@ -5637,7 +5637,7 @@ class DatastreamDeliveryConfigurationArgs:
     @pulumi.getter(name="uploadFileSuffix")
     def upload_file_suffix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The suffix of the log file that will be send to a destination
+        The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
         """
         return pulumi.get(self, "upload_file_suffix")
 

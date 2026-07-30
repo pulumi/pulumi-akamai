@@ -27,6 +27,7 @@ public final class GetCloudcertificatesCertificateResult {
     private String createdDate;
     private String csrExpirationDate;
     private String csrPem;
+    private String geoClass;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -81,6 +82,9 @@ public final class GetCloudcertificatesCertificateResult {
     }
     public String csrPem() {
         return this.csrPem;
+    }
+    public String geoClass() {
+        return this.geoClass;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -155,6 +159,7 @@ public final class GetCloudcertificatesCertificateResult {
         private String createdDate;
         private String csrExpirationDate;
         private String csrPem;
+        private String geoClass;
         private String id;
         private @Nullable Boolean includeHostnameBindings;
         private String keySize;
@@ -185,6 +190,7 @@ public final class GetCloudcertificatesCertificateResult {
     	      this.createdDate = defaults.createdDate;
     	      this.csrExpirationDate = defaults.csrExpirationDate;
     	      this.csrPem = defaults.csrPem;
+    	      this.geoClass = defaults.geoClass;
     	      this.id = defaults.id;
     	      this.includeHostnameBindings = defaults.includeHostnameBindings;
     	      this.keySize = defaults.keySize;
@@ -292,6 +298,14 @@ public final class GetCloudcertificatesCertificateResult {
               throw new MissingRequiredPropertyException("GetCloudcertificatesCertificateResult", "csrPem");
             }
             this.csrPem = csrPem;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder geoClass(String geoClass) {
+            if (geoClass == null) {
+              throw new MissingRequiredPropertyException("GetCloudcertificatesCertificateResult", "geoClass");
+            }
+            this.geoClass = geoClass;
             return this;
         }
         @CustomType.Setter
@@ -436,6 +450,7 @@ public final class GetCloudcertificatesCertificateResult {
             _resultValue.createdDate = createdDate;
             _resultValue.csrExpirationDate = csrExpirationDate;
             _resultValue.csrPem = csrPem;
+            _resultValue.geoClass = geoClass;
             _resultValue.id = id;
             _resultValue.includeHostnameBindings = includeHostnameBindings;
             _resultValue.keySize = keySize;
