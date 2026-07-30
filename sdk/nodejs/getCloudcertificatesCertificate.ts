@@ -37,6 +37,7 @@ export interface GetCloudcertificatesCertificateResult {
     readonly createdDate: string;
     readonly csrExpirationDate: string;
     readonly csrPem: string;
+    readonly geoClass: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */

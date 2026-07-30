@@ -29,12 +29,12 @@ public final class DatastreamDeliveryConfiguration {
      */
     private DatastreamDeliveryConfigurationFrequency frequency;
     /**
-     * @return The prefix of the log file that will be send to a destination
+     * @return The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      * 
      */
     private @Nullable String uploadFilePrefix;
     /**
-     * @return The suffix of the log file that will be send to a destination
+     * @return The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      * 
      */
     private @Nullable String uploadFileSuffix;
@@ -62,14 +62,14 @@ public final class DatastreamDeliveryConfiguration {
         return this.frequency;
     }
     /**
-     * @return The prefix of the log file that will be send to a destination
+     * @return The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      * 
      */
     public Optional<String> uploadFilePrefix() {
         return Optional.ofNullable(this.uploadFilePrefix);
     }
     /**
-     * @return The suffix of the log file that will be send to a destination
+     * @return The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      * 
      */
     public Optional<String> uploadFileSuffix() {

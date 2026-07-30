@@ -34,7 +34,7 @@ namespace Pulumi.Akamai
         public Output<bool?> CollectMidgress { get; private set; } = null!;
 
         /// <summary>
-        /// Identifies the contract that has access to the product
+        /// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
@@ -76,7 +76,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamGcsConnector?> GcsConnector { get; private set; } = null!;
 
         /// <summary>
-        /// Identifies the group that has access to the product and for which the stream configuration was created
+        /// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
@@ -254,10 +254,10 @@ namespace Pulumi.Akamai
         public Input<bool>? CollectMidgress { get; set; }
 
         /// <summary>
-        /// Identifies the contract that has access to the product
+        /// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
         /// </summary>
-        [Input("contractId", required: true)]
-        public Input<string> ContractId { get; set; } = null!;
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
 
         [Input("datadogConnector")]
         public Input<Inputs.DatastreamDatadogConnectorArgs>? DatadogConnector { get; set; }
@@ -290,10 +290,10 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamGcsConnectorArgs>? GcsConnector { get; set; }
 
         /// <summary>
-        /// Identifies the group that has access to the product and for which the stream configuration was created
+        /// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
         /// </summary>
-        [Input("groupId", required: true)]
-        public Input<string> GroupId { get; set; } = null!;
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
 
         [Input("httpsConnector")]
         public Input<Inputs.DatastreamHttpsConnectorArgs>? HttpsConnector { get; set; }
@@ -400,7 +400,7 @@ namespace Pulumi.Akamai
         public Input<bool>? CollectMidgress { get; set; }
 
         /// <summary>
-        /// Identifies the contract that has access to the product
+        /// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -448,7 +448,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamGcsConnectorGetArgs>? GcsConnector { get; set; }
 
         /// <summary>
-        /// Identifies the group that has access to the product and for which the stream configuration was created
+        /// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }

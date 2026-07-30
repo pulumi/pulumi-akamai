@@ -86,14 +86,14 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Identifies the contract that has access to the product
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return Identifies the contract that has access to the product
+     * @return Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -189,14 +189,14 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return Identifies the group that has access to the product and for which the stream configuration was created
+     * @return Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -587,7 +587,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId Identifies the contract that has access to the product
+         * @param contractId Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId Identifies the contract that has access to the product
+         * @param contractId Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
          * 
          * @return builder
          * 
@@ -738,7 +738,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created
+         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
          * 
          * @return builder
          * 
@@ -749,7 +749,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created
+         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
          * 
          * @return builder
          * 

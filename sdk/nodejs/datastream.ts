@@ -48,7 +48,7 @@ export class Datastream extends pulumi.CustomResource {
      */
     declare public readonly collectMidgress: pulumi.Output<boolean | undefined>;
     /**
-     * Identifies the contract that has access to the product
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
      */
     declare public readonly contractId: pulumi.Output<string>;
     /**
@@ -72,7 +72,7 @@ export class Datastream extends pulumi.CustomResource {
     declare public readonly elasticsearchConnector: pulumi.Output<outputs.DatastreamElasticsearchConnector | undefined>;
     declare public readonly gcsConnector: pulumi.Output<outputs.DatastreamGcsConnector | undefined>;
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
      */
     declare public readonly groupId: pulumi.Output<string>;
     declare public readonly httpsConnector: pulumi.Output<outputs.DatastreamHttpsConnector | undefined>;
@@ -186,14 +186,8 @@ export class Datastream extends pulumi.CustomResource {
             if (args?.active === undefined && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
-            if (args?.contractId === undefined && !opts.urn) {
-                throw new Error("Missing required property 'contractId'");
-            }
             if (args?.deliveryConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deliveryConfiguration'");
-            }
-            if (args?.groupId === undefined && !opts.urn) {
-                throw new Error("Missing required property 'groupId'");
             }
             if (args?.streamName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'streamName'");
@@ -257,7 +251,7 @@ export interface DatastreamState {
      */
     collectMidgress?: pulumi.Input<boolean | undefined>;
     /**
-     * Identifies the contract that has access to the product
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
      */
     contractId?: pulumi.Input<string | undefined>;
     /**
@@ -281,7 +275,7 @@ export interface DatastreamState {
     elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector | undefined>;
     gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector | undefined>;
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
      */
     groupId?: pulumi.Input<string | undefined>;
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector | undefined>;
@@ -361,9 +355,9 @@ export interface DatastreamArgs {
      */
     collectMidgress?: pulumi.Input<boolean | undefined>;
     /**
-     * Identifies the contract that has access to the product
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
      */
-    contractId: pulumi.Input<string>;
+    contractId?: pulumi.Input<string | undefined>;
     datadogConnector?: pulumi.Input<inputs.DatastreamDatadogConnector | undefined>;
     /**
      * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
@@ -377,9 +371,9 @@ export interface DatastreamArgs {
     elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector | undefined>;
     gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector | undefined>;
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
      */
-    groupId: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector | undefined>;
     /**
      * Type of logs for the stream

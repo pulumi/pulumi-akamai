@@ -25,7 +25,7 @@ namespace Pulumi.Akamai
         public Output<int> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// The path to the EdgeWorkers tgz code bundle
+        /// The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         /// </summary>
         [Output("localBundle")]
         public Output<string?> LocalBundle { get; private set; } = null!;
@@ -119,7 +119,7 @@ namespace Pulumi.Akamai
         public Input<int> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// The path to the EdgeWorkers tgz code bundle
+        /// The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         /// </summary>
         [Input("localBundle")]
         public Input<string>? LocalBundle { get; set; }
@@ -163,7 +163,7 @@ namespace Pulumi.Akamai
         public Input<int>? GroupId { get; set; }
 
         /// <summary>
-        /// The path to the EdgeWorkers tgz code bundle
+        /// The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         /// </summary>
         [Input("localBundle")]
         public Input<string>? LocalBundle { get; set; }

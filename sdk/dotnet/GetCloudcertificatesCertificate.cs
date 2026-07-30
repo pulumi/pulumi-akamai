@@ -65,6 +65,7 @@ namespace Pulumi.Akamai
         public readonly string CreatedDate;
         public readonly string CsrExpirationDate;
         public readonly string CsrPem;
+        public readonly string GeoClass;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -109,6 +110,8 @@ namespace Pulumi.Akamai
 
             string csrPem,
 
+            string geoClass,
+
             string id,
 
             bool? includeHostnameBindings,
@@ -152,6 +155,7 @@ namespace Pulumi.Akamai
             CreatedDate = createdDate;
             CsrExpirationDate = csrExpirationDate;
             CsrPem = csrPem;
+            GeoClass = geoClass;
             Id = id;
             IncludeHostnameBindings = includeHostnameBindings;
             KeySize = keySize;

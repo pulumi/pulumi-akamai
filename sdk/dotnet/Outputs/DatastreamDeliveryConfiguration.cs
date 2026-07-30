@@ -26,11 +26,11 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly Outputs.DatastreamDeliveryConfigurationFrequency Frequency;
         /// <summary>
-        /// The prefix of the log file that will be send to a destination
+        /// The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
         /// </summary>
         public readonly string? UploadFilePrefix;
         /// <summary>
-        /// The suffix of the log file that will be send to a destination
+        /// The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
         /// </summary>
         public readonly string? UploadFileSuffix;
 

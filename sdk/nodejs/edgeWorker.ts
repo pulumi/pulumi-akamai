@@ -43,7 +43,7 @@ export class EdgeWorker extends pulumi.CustomResource {
      */
     declare public readonly groupId: pulumi.Output<number>;
     /**
-     * The path to the EdgeWorkers tgz code bundle
+     * The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
      */
     declare public readonly localBundle: pulumi.Output<string | undefined>;
     /**
@@ -129,7 +129,7 @@ export interface EdgeWorkerState {
      */
     groupId?: pulumi.Input<number | undefined>;
     /**
-     * The path to the EdgeWorkers tgz code bundle
+     * The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
      */
     localBundle?: pulumi.Input<string | undefined>;
     /**
@@ -167,7 +167,7 @@ export interface EdgeWorkerArgs {
      */
     groupId: pulumi.Input<number>;
     /**
-     * The path to the EdgeWorkers tgz code bundle
+     * The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
      */
     localBundle?: pulumi.Input<string | undefined>;
     /**

@@ -31,7 +31,7 @@ class EdgeWorkerArgs:
 
         :param pulumi.Input[_builtins.int] group_id: Defines the group association for the EdgeWorker
         :param pulumi.Input[_builtins.int] resource_tier_id: The unique identifier of a resource tier
-        :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle
+        :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         :param pulumi.Input[_builtins.str] name: The EdgeWorker name
         :param pulumi.Input['EdgeWorkerTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
@@ -72,7 +72,7 @@ class EdgeWorkerArgs:
     @pulumi.getter(name="localBundle")
     def local_bundle(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The path to the EdgeWorkers tgz code bundle
+        The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         """
         return pulumi.get(self, "local_bundle")
 
@@ -122,7 +122,7 @@ class _EdgeWorkerState:
 
         :param pulumi.Input[_builtins.int] edgeworker_id: The unique identifier of the EdgeWorker
         :param pulumi.Input[_builtins.int] group_id: Defines the group association for the EdgeWorker
-        :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle
+        :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         :param pulumi.Input[_builtins.str] local_bundle_hash: The local bundle hash for the EdgeWorker
         :param pulumi.Input[_builtins.str] name: The EdgeWorker name
         :param pulumi.Input[_builtins.int] resource_tier_id: The unique identifier of a resource tier
@@ -177,7 +177,7 @@ class _EdgeWorkerState:
     @pulumi.getter(name="localBundle")
     def local_bundle(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The path to the EdgeWorkers tgz code bundle
+        The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         """
         return pulumi.get(self, "local_bundle")
 
@@ -276,7 +276,7 @@ class EdgeWorker(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] group_id: Defines the group association for the EdgeWorker
-        :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle
+        :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         :param pulumi.Input[_builtins.str] name: The EdgeWorker name
         :param pulumi.Input[_builtins.int] resource_tier_id: The unique identifier of a resource tier
         :param pulumi.Input[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
@@ -360,7 +360,7 @@ class EdgeWorker(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] edgeworker_id: The unique identifier of the EdgeWorker
         :param pulumi.Input[_builtins.int] group_id: Defines the group association for the EdgeWorker
-        :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle
+        :param pulumi.Input[_builtins.str] local_bundle: The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         :param pulumi.Input[_builtins.str] local_bundle_hash: The local bundle hash for the EdgeWorker
         :param pulumi.Input[_builtins.str] name: The EdgeWorker name
         :param pulumi.Input[_builtins.int] resource_tier_id: The unique identifier of a resource tier
@@ -403,7 +403,7 @@ class EdgeWorker(pulumi.CustomResource):
     @pulumi.getter(name="localBundle")
     def local_bundle(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The path to the EdgeWorkers tgz code bundle
+        The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
         """
         return pulumi.get(self, "local_bundle")
 

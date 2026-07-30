@@ -40,6 +40,7 @@ type LookupCloudcertificatesCertificateResult struct {
 	CreatedDate       string                                   `pulumi:"createdDate"`
 	CsrExpirationDate string                                   `pulumi:"csrExpirationDate"`
 	CsrPem            string                                   `pulumi:"csrPem"`
+	GeoClass          string                                   `pulumi:"geoClass"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                                  string                                 `pulumi:"id"`
 	IncludeHostnameBindings             *bool                                  `pulumi:"includeHostnameBindings"`
@@ -137,6 +138,10 @@ func (o LookupCloudcertificatesCertificateResultOutput) CsrExpirationDate() pulu
 
 func (o LookupCloudcertificatesCertificateResultOutput) CsrPem() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudcertificatesCertificateResult) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+func (o LookupCloudcertificatesCertificateResultOutput) GeoClass() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudcertificatesCertificateResult) string { return v.GeoClass }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

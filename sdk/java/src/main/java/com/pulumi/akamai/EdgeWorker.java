@@ -48,14 +48,14 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
         return this.groupId;
     }
     /**
-     * The path to the EdgeWorkers tgz code bundle
+     * The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
      * 
      */
     @Export(name="localBundle", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> localBundle;
 
     /**
-     * @return The path to the EdgeWorkers tgz code bundle
+     * @return The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
      * 
      */
     public Output<Optional<String>> localBundle() {

@@ -175,6 +175,20 @@ public class CloudcertificatesCertificate extends com.pulumi.resources.CustomRes
         return this.csrPem;
     }
     /**
+     * The geographic network class of the certificate. Valid values for ENHANCED_TLS: &#39;STANDARD_WORLDWIDE&#39;, &#39;CONTIGUOUS_US&#39;, &#39;RESERVED_GLOBAL&#39;. Valid values for STANDARD_TLS: &#39;STANDARD_WORLDWIDE&#39;. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+     * 
+     */
+    @Export(name="geoClass", refs={String.class}, tree="[0]")
+    private Output<String> geoClass;
+
+    /**
+     * @return The geographic network class of the certificate. Valid values for ENHANCED_TLS: &#39;STANDARD_WORLDWIDE&#39;, &#39;CONTIGUOUS_US&#39;, &#39;RESERVED_GLOBAL&#39;. Valid values for STANDARD_TLS: &#39;STANDARD_WORLDWIDE&#39;. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+     * 
+     */
+    public Output<String> geoClass() {
+        return this.geoClass;
+    }
+    /**
      * Group that will be associated with the new certificate when it gets created. Required for creation.
      * 
      */

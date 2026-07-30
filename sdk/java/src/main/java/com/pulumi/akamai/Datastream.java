@@ -83,14 +83,14 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.collectMidgress);
     }
     /**
-     * Identifies the contract that has access to the product
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
      * 
      */
     @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
-     * @return Identifies the contract that has access to the product
+     * @return Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
      * 
      */
     public Output<String> contractId() {
@@ -177,14 +177,14 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.gcsConnector);
     }
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
      * 
      */
     @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
-     * @return Identifies the group that has access to the product and for which the stream configuration was created
+     * @return Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
      * 
      */
     public Output<String> groupId() {

@@ -19,7 +19,7 @@ type EdgeWorker struct {
 	EdgeworkerId pulumi.IntOutput `pulumi:"edgeworkerId"`
 	// Defines the group association for the EdgeWorker
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
-	// The path to the EdgeWorkers tgz code bundle
+	// The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
 	LocalBundle pulumi.StringPtrOutput `pulumi:"localBundle"`
 	// The local bundle hash for the EdgeWorker
 	LocalBundleHash pulumi.StringOutput `pulumi:"localBundleHash"`
@@ -75,7 +75,7 @@ type edgeWorkerState struct {
 	EdgeworkerId *int `pulumi:"edgeworkerId"`
 	// Defines the group association for the EdgeWorker
 	GroupId *int `pulumi:"groupId"`
-	// The path to the EdgeWorkers tgz code bundle
+	// The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
 	LocalBundle *string `pulumi:"localBundle"`
 	// The local bundle hash for the EdgeWorker
 	LocalBundleHash *string `pulumi:"localBundleHash"`
@@ -96,7 +96,7 @@ type EdgeWorkerState struct {
 	EdgeworkerId pulumi.IntPtrInput
 	// Defines the group association for the EdgeWorker
 	GroupId pulumi.IntPtrInput
-	// The path to the EdgeWorkers tgz code bundle
+	// The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
 	LocalBundle pulumi.StringPtrInput
 	// The local bundle hash for the EdgeWorker
 	LocalBundleHash pulumi.StringPtrInput
@@ -119,7 +119,7 @@ func (EdgeWorkerState) ElementType() reflect.Type {
 type edgeWorkerArgs struct {
 	// Defines the group association for the EdgeWorker
 	GroupId int `pulumi:"groupId"`
-	// The path to the EdgeWorkers tgz code bundle
+	// The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
 	LocalBundle *string `pulumi:"localBundle"`
 	// The EdgeWorker name
 	Name *string `pulumi:"name"`
@@ -133,7 +133,7 @@ type edgeWorkerArgs struct {
 type EdgeWorkerArgs struct {
 	// Defines the group association for the EdgeWorker
 	GroupId pulumi.IntInput
-	// The path to the EdgeWorkers tgz code bundle
+	// The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
 	LocalBundle pulumi.StringPtrInput
 	// The EdgeWorker name
 	Name pulumi.StringPtrInput
@@ -240,7 +240,7 @@ func (o EdgeWorkerOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeWorker) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
 }
 
-// The path to the EdgeWorkers tgz code bundle
+// The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
 func (o EdgeWorkerOutput) LocalBundle() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EdgeWorker) pulumi.StringPtrOutput { return v.LocalBundle }).(pulumi.StringPtrOutput)
 }

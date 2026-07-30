@@ -49,14 +49,14 @@ public final class EdgeWorkerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The path to the EdgeWorkers tgz code bundle
+     * The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
      * 
      */
     @Import(name="localBundle")
     private @Nullable Output<String> localBundle;
 
     /**
-     * @return The path to the EdgeWorkers tgz code bundle
+     * @return The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
      * 
      */
     public Optional<Output<String>> localBundle() {
@@ -228,7 +228,7 @@ public final class EdgeWorkerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param localBundle The path to the EdgeWorkers tgz code bundle
+         * @param localBundle The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class EdgeWorkerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param localBundle The path to the EdgeWorkers tgz code bundle
+         * @param localBundle The path to the EdgeWorkers tgz code bundle. If the value is not provided, the content of the `EW_DEFAULT_BUNDLE_URL` environment variable is used. If that is also not set, it falls back to the default hello-world package.
          * 
          * @return builder
          * 

@@ -54,6 +54,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string CsrPem;
         /// <summary>
+        /// The geographic network class of the certificate.
+        /// </summary>
+        public readonly string GeoClass;
+        /// <summary>
         /// Size of the key used in the certificate signing request (CSR) in bits.
         /// </summary>
         public readonly string KeySize;
@@ -132,6 +136,8 @@ namespace Pulumi.Akamai.Outputs
 
             string csrPem,
 
+            string geoClass,
+
             string keySize,
 
             string keyType,
@@ -170,6 +176,7 @@ namespace Pulumi.Akamai.Outputs
             CreatedDate = createdDate;
             CsrExpirationDate = csrExpirationDate;
             CsrPem = csrPem;
+            GeoClass = geoClass;
             KeySize = keySize;
             KeyType = keyType;
             ModifiedBy = modifiedBy;

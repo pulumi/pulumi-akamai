@@ -22,7 +22,7 @@ type Datastream struct {
 	AzureConnector DatastreamAzureConnectorPtrOutput `pulumi:"azureConnector"`
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress pulumi.BoolPtrOutput `pulumi:"collectMidgress"`
-	// Identifies the contract that has access to the product
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// The username who created the stream
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
@@ -36,7 +36,7 @@ type Datastream struct {
 	DynatraceConnector     DatastreamDynatraceConnectorPtrOutput     `pulumi:"dynatraceConnector"`
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrOutput `pulumi:"elasticsearchConnector"`
 	GcsConnector           DatastreamGcsConnectorPtrOutput           `pulumi:"gcsConnector"`
-	// Identifies the group that has access to the product and for which the stream configuration was created
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
 	GroupId        pulumi.StringOutput               `pulumi:"groupId"`
 	HttpsConnector DatastreamHttpsConnectorPtrOutput `pulumi:"httpsConnector"`
 	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
@@ -83,14 +83,8 @@ func NewDatastream(ctx *pulumi.Context,
 	if args.Active == nil {
 		return nil, errors.New("invalid value for required argument 'Active'")
 	}
-	if args.ContractId == nil {
-		return nil, errors.New("invalid value for required argument 'ContractId'")
-	}
 	if args.DeliveryConfiguration == nil {
 		return nil, errors.New("invalid value for required argument 'DeliveryConfiguration'")
-	}
-	if args.GroupId == nil {
-		return nil, errors.New("invalid value for required argument 'GroupId'")
 	}
 	if args.StreamName == nil {
 		return nil, errors.New("invalid value for required argument 'StreamName'")
@@ -125,7 +119,7 @@ type datastreamState struct {
 	AzureConnector *DatastreamAzureConnector `pulumi:"azureConnector"`
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress *bool `pulumi:"collectMidgress"`
-	// Identifies the contract that has access to the product
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
 	ContractId *string `pulumi:"contractId"`
 	// The username who created the stream
 	CreatedBy *string `pulumi:"createdBy"`
@@ -139,7 +133,7 @@ type datastreamState struct {
 	DynatraceConnector     *DatastreamDynatraceConnector     `pulumi:"dynatraceConnector"`
 	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
 	GcsConnector           *DatastreamGcsConnector           `pulumi:"gcsConnector"`
-	// Identifies the group that has access to the product and for which the stream configuration was created
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
 	GroupId        *string                   `pulumi:"groupId"`
 	HttpsConnector *DatastreamHttpsConnector `pulumi:"httpsConnector"`
 	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
@@ -184,7 +178,7 @@ type DatastreamState struct {
 	AzureConnector DatastreamAzureConnectorPtrInput
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress pulumi.BoolPtrInput
-	// Identifies the contract that has access to the product
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
 	ContractId pulumi.StringPtrInput
 	// The username who created the stream
 	CreatedBy pulumi.StringPtrInput
@@ -198,7 +192,7 @@ type DatastreamState struct {
 	DynatraceConnector     DatastreamDynatraceConnectorPtrInput
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
 	GcsConnector           DatastreamGcsConnectorPtrInput
-	// Identifies the group that has access to the product and for which the stream configuration was created
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
 	GroupId        pulumi.StringPtrInput
 	HttpsConnector DatastreamHttpsConnectorPtrInput
 	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
@@ -247,8 +241,8 @@ type datastreamArgs struct {
 	AzureConnector *DatastreamAzureConnector `pulumi:"azureConnector"`
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress *bool `pulumi:"collectMidgress"`
-	// Identifies the contract that has access to the product
-	ContractId       string                      `pulumi:"contractId"`
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+	ContractId       *string                     `pulumi:"contractId"`
 	DatadogConnector *DatastreamDatadogConnector `pulumi:"datadogConnector"`
 	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
 	DatasetFields []int `pulumi:"datasetFields"`
@@ -257,8 +251,8 @@ type datastreamArgs struct {
 	DynatraceConnector     *DatastreamDynatraceConnector     `pulumi:"dynatraceConnector"`
 	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
 	GcsConnector           *DatastreamGcsConnector           `pulumi:"gcsConnector"`
-	// Identifies the group that has access to the product and for which the stream configuration was created
-	GroupId        string                    `pulumi:"groupId"`
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+	GroupId        *string                   `pulumi:"groupId"`
 	HttpsConnector *DatastreamHttpsConnector `pulumi:"httpsConnector"`
 	// Type of logs for the stream
 	LogType           *string                      `pulumi:"logType"`
@@ -289,8 +283,8 @@ type DatastreamArgs struct {
 	AzureConnector DatastreamAzureConnectorPtrInput
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress pulumi.BoolPtrInput
-	// Identifies the contract that has access to the product
-	ContractId       pulumi.StringInput
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+	ContractId       pulumi.StringPtrInput
 	DatadogConnector DatastreamDatadogConnectorPtrInput
 	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
 	DatasetFields pulumi.IntArrayInput
@@ -299,8 +293,8 @@ type DatastreamArgs struct {
 	DynatraceConnector     DatastreamDynatraceConnectorPtrInput
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
 	GcsConnector           DatastreamGcsConnectorPtrInput
-	// Identifies the group that has access to the product and for which the stream configuration was created
-	GroupId        pulumi.StringInput
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+	GroupId        pulumi.StringPtrInput
 	HttpsConnector DatastreamHttpsConnectorPtrInput
 	// Type of logs for the stream
 	LogType           pulumi.StringPtrInput
@@ -428,7 +422,7 @@ func (o DatastreamOutput) CollectMidgress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.BoolPtrOutput { return v.CollectMidgress }).(pulumi.BoolPtrOutput)
 }
 
-// Identifies the contract that has access to the product
+// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
 func (o DatastreamOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
@@ -469,7 +463,7 @@ func (o DatastreamOutput) GcsConnector() DatastreamGcsConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamGcsConnectorPtrOutput { return v.GcsConnector }).(DatastreamGcsConnectorPtrOutput)
 }
 
-// Identifies the group that has access to the product and for which the stream configuration was created
+// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
 func (o DatastreamOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }

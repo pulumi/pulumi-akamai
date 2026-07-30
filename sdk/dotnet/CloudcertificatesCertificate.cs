@@ -79,6 +79,12 @@ namespace Pulumi.Akamai
         public Output<string> CsrPem { get; private set; } = null!;
 
         /// <summary>
+        /// The geographic network class of the certificate. Valid values for ENHANCED_TLS: 'STANDARD_WORLDWIDE', 'CONTIGUOUS_US', 'RESERVED_GLOBAL'. Valid values for STANDARD_TLS: 'STANDARD_WORLDWIDE'. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+        /// </summary>
+        [Output("geoClass")]
+        public Output<string> GeoClass { get; private set; } = null!;
+
+        /// <summary>
         /// Group that will be associated with the new certificate when it gets created. Required for creation.
         /// </summary>
         [Output("groupId")]
@@ -209,6 +215,12 @@ namespace Pulumi.Akamai
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
+        /// The geographic network class of the certificate. Valid values for ENHANCED_TLS: 'STANDARD_WORLDWIDE', 'CONTIGUOUS_US', 'RESERVED_GLOBAL'. Valid values for STANDARD_TLS: 'STANDARD_WORLDWIDE'. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+        /// </summary>
+        [Input("geoClass")]
+        public Input<string>? GeoClass { get; set; }
+
+        /// <summary>
         /// Group that will be associated with the new certificate when it gets created. Required for creation.
         /// </summary>
         [Input("groupId")]
@@ -329,6 +341,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("csrPem")]
         public Input<string>? CsrPem { get; set; }
+
+        /// <summary>
+        /// The geographic network class of the certificate. Valid values for ENHANCED_TLS: 'STANDARD_WORLDWIDE', 'CONTIGUOUS_US', 'RESERVED_GLOBAL'. Valid values for STANDARD_TLS: 'STANDARD_WORLDWIDE'. If not specified, the API assigns a default value - STANDARD_WORLDWIDE
+        /// </summary>
+        [Input("geoClass")]
+        public Input<string>? GeoClass { get; set; }
 
         /// <summary>
         /// Group that will be associated with the new certificate when it gets created. Required for creation.

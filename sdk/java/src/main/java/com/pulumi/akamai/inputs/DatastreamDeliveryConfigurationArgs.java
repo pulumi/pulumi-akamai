@@ -63,14 +63,14 @@ public final class DatastreamDeliveryConfigurationArgs extends com.pulumi.resour
     }
 
     /**
-     * The prefix of the log file that will be send to a destination
+     * The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      * 
      */
     @Import(name="uploadFilePrefix")
     private @Nullable Output<String> uploadFilePrefix;
 
     /**
-     * @return The prefix of the log file that will be send to a destination
+     * @return The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      * 
      */
     public Optional<Output<String>> uploadFilePrefix() {
@@ -78,14 +78,14 @@ public final class DatastreamDeliveryConfigurationArgs extends com.pulumi.resour
     }
 
     /**
-     * The suffix of the log file that will be send to a destination
+     * The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      * 
      */
     @Import(name="uploadFileSuffix")
     private @Nullable Output<String> uploadFileSuffix;
 
     /**
-     * @return The suffix of the log file that will be send to a destination
+     * @return The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
      * 
      */
     public Optional<Output<String>> uploadFileSuffix() {
@@ -184,7 +184,7 @@ public final class DatastreamDeliveryConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param uploadFilePrefix The prefix of the log file that will be send to a destination
+         * @param uploadFilePrefix The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class DatastreamDeliveryConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param uploadFilePrefix The prefix of the log file that will be send to a destination
+         * @param uploadFilePrefix The prefix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class DatastreamDeliveryConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param uploadFileSuffix The suffix of the log file that will be send to a destination
+         * @param uploadFileSuffix The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class DatastreamDeliveryConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param uploadFileSuffix The suffix of the log file that will be send to a destination
+         * @param uploadFileSuffix The suffix of the log file sent to a destination. Applies only to file-based connectors such as S3 and Azure. Not used by HTTP-based connectors.
          * 
          * @return builder
          * 
