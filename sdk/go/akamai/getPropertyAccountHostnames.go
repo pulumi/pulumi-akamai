@@ -42,10 +42,8 @@ type GetPropertyAccountHostnamesResult struct {
 	GroupId        string                                `pulumi:"groupId"`
 	Hostname       *string                               `pulumi:"hostname"`
 	Hostnames      []GetPropertyAccountHostnamesHostname `pulumi:"hostnames"`
-	// The provider-assigned unique ID for this managed resource.
-	Id      string  `pulumi:"id"`
-	Network *string `pulumi:"network"`
-	Sort    *string `pulumi:"sort"`
+	Network        *string                               `pulumi:"network"`
+	Sort           *string                               `pulumi:"sort"`
 }
 
 func GetPropertyAccountHostnamesOutput(ctx *pulumi.Context, args GetPropertyAccountHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetPropertyAccountHostnamesResultOutput {
@@ -120,11 +118,6 @@ func (o GetPropertyAccountHostnamesResultOutput) Hostname() pulumi.StringPtrOutp
 
 func (o GetPropertyAccountHostnamesResultOutput) Hostnames() GetPropertyAccountHostnamesHostnameArrayOutput {
 	return o.ApplyT(func(v GetPropertyAccountHostnamesResult) []GetPropertyAccountHostnamesHostname { return v.Hostnames }).(GetPropertyAccountHostnamesHostnameArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetPropertyAccountHostnamesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetPropertyAccountHostnamesResultOutput) Network() pulumi.StringPtrOutput {

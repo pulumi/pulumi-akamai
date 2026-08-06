@@ -74,10 +74,6 @@ namespace Pulumi.Akamai
         public readonly string ContractId;
         public readonly ImmutableArray<Outputs.GetEdgeHostnamesEdgeHostnameResult> EdgeHostnames;
         public readonly string GroupId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly ImmutableArray<string> Options;
 
         [OutputConstructor]
@@ -90,15 +86,12 @@ namespace Pulumi.Akamai
 
             string groupId,
 
-            string id,
-
             ImmutableArray<string> options)
         {
             AccountId = accountId;
             ContractId = contractId;
             EdgeHostnames = edgeHostnames;
             GroupId = groupId;
-            Id = id;
             Options = options;
         }
     }

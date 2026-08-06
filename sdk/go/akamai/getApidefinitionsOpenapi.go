@@ -33,8 +33,6 @@ type GetApidefinitionsOpenapiResult struct {
 	Api         *string `pulumi:"api"`
 	ApiFileName *string `pulumi:"apiFileName"`
 	FilePath    string  `pulumi:"filePath"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetApidefinitionsOpenapiOutput(ctx *pulumi.Context, args GetApidefinitionsOpenapiOutputArgs, opts ...pulumi.InvokeOption) GetApidefinitionsOpenapiResultOutput {
@@ -82,11 +80,6 @@ func (o GetApidefinitionsOpenapiResultOutput) ApiFileName() pulumi.StringPtrOutp
 
 func (o GetApidefinitionsOpenapiResultOutput) FilePath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApidefinitionsOpenapiResult) string { return v.FilePath }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetApidefinitionsOpenapiResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApidefinitionsOpenapiResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

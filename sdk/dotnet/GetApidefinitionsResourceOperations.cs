@@ -61,10 +61,6 @@ namespace Pulumi.Akamai
     public sealed class GetApidefinitionsResourceOperationsResult
     {
         public readonly int ApiId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string? ResourceName;
         public readonly string ResourceOperations;
         public readonly string? ResourcePath;
@@ -73,8 +69,6 @@ namespace Pulumi.Akamai
         [OutputConstructor]
         private GetApidefinitionsResourceOperationsResult(
             int apiId,
-
-            string id,
 
             string? resourceName,
 
@@ -85,7 +79,6 @@ namespace Pulumi.Akamai
             int version)
         {
             ApiId = apiId;
-            Id = id;
             ResourceName = resourceName;
             ResourceOperations = resourceOperations;
             ResourcePath = resourcePath;

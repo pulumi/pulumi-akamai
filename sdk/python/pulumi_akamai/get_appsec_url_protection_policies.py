@@ -27,13 +27,10 @@ class GetAppsecUrlProtectionPoliciesResult:
     """
     A collection of values returned by getAppsecUrlProtectionPolicies.
     """
-    def __init__(__self__, config_id=None, id=None, url_protection_policies=None):
+    def __init__(__self__, config_id=None, url_protection_policies=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if url_protection_policies and not isinstance(url_protection_policies, list):
             raise TypeError("Expected argument 'url_protection_policies' to be a list")
         pulumi.set(__self__, "url_protection_policies", url_protection_policies)
@@ -42,14 +39,6 @@ class GetAppsecUrlProtectionPoliciesResult:
     @pulumi.getter(name="configId")
     def config_id(self) -> _builtins.int:
         return pulumi.get(self, "config_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="urlProtectionPolicies")
@@ -64,7 +53,6 @@ class AwaitableGetAppsecUrlProtectionPoliciesResult(GetAppsecUrlProtectionPolici
             yield self
         return GetAppsecUrlProtectionPoliciesResult(
             config_id=self.config_id,
-            id=self.id,
             url_protection_policies=self.url_protection_policies)
 
 
@@ -80,7 +68,6 @@ def get_appsec_url_protection_policies(config_id: Optional[_builtins.int] = None
 
     return AwaitableGetAppsecUrlProtectionPoliciesResult(
         config_id=pulumi.get(__ret__, 'config_id'),
-        id=pulumi.get(__ret__, 'id'),
         url_protection_policies=pulumi.get(__ret__, 'url_protection_policies'))
 def get_appsec_url_protection_policies_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecUrlProtectionPoliciesResult]:
@@ -93,5 +80,4 @@ def get_appsec_url_protection_policies_output(config_id: pulumi.Input[Optional[_
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppsecUrlProtectionPolicies:getAppsecUrlProtectionPolicies', __args__, opts=opts, typ=GetAppsecUrlProtectionPoliciesResult)
     return __ret__.apply(lambda __response__: GetAppsecUrlProtectionPoliciesResult(
         config_id=pulumi.get(__response__, 'config_id'),
-        id=pulumi.get(__response__, 'id'),
         url_protection_policies=pulumi.get(__response__, 'url_protection_policies')))

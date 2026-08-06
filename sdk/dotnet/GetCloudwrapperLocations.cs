@@ -58,19 +58,11 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetCloudwrapperLocationsResult
     {
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly ImmutableArray<Outputs.GetCloudwrapperLocationsLocationResult> Locations;
 
         [OutputConstructor]
-        private GetCloudwrapperLocationsResult(
-            string id,
-
-            ImmutableArray<Outputs.GetCloudwrapperLocationsLocationResult> locations)
+        private GetCloudwrapperLocationsResult(ImmutableArray<Outputs.GetCloudwrapperLocationsLocationResult> locations)
         {
-            Id = id;
             Locations = locations;
         }
     }

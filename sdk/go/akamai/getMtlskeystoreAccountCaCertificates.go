@@ -29,9 +29,7 @@ type GetMtlskeystoreAccountCaCertificatesArgs struct {
 // A collection of values returned by getMtlskeystoreAccountCaCertificates.
 type GetMtlskeystoreAccountCaCertificatesResult struct {
 	Certificates []GetMtlskeystoreAccountCaCertificatesCertificate `pulumi:"certificates"`
-	// The provider-assigned unique ID for this managed resource.
-	Id       string   `pulumi:"id"`
-	Statuses []string `pulumi:"statuses"`
+	Statuses     []string                                          `pulumi:"statuses"`
 }
 
 func GetMtlskeystoreAccountCaCertificatesOutput(ctx *pulumi.Context, args GetMtlskeystoreAccountCaCertificatesOutputArgs, opts ...pulumi.InvokeOption) GetMtlskeystoreAccountCaCertificatesResultOutput {
@@ -71,11 +69,6 @@ func (o GetMtlskeystoreAccountCaCertificatesResultOutput) Certificates() GetMtls
 	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesResult) []GetMtlskeystoreAccountCaCertificatesCertificate {
 		return v.Certificates
 	}).(GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetMtlskeystoreAccountCaCertificatesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetMtlskeystoreAccountCaCertificatesResultOutput) Statuses() pulumi.StringArrayOutput {

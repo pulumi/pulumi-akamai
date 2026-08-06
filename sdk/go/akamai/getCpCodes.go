@@ -37,8 +37,6 @@ type GetCpCodesResult struct {
 	FilterByName      *string            `pulumi:"filterByName"`
 	FilterByProductId *string            `pulumi:"filterByProductId"`
 	GroupId           string             `pulumi:"groupId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetCpCodesOutput(ctx *pulumi.Context, args GetCpCodesOutputArgs, opts ...pulumi.InvokeOption) GetCpCodesResultOutput {
@@ -99,11 +97,6 @@ func (o GetCpCodesResultOutput) FilterByProductId() pulumi.StringPtrOutput {
 
 func (o GetCpCodesResultOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCpCodesResult) string { return v.GroupId }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCpCodesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCpCodesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

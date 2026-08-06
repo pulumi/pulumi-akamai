@@ -27,7 +27,7 @@ class GetIamBlockedPropertiesResult:
     """
     A collection of values returned by getIamBlockedProperties.
     """
-    def __init__(__self__, blocked_properties=None, contract_id=None, group_id=None, id=None, ui_identity_id=None):
+    def __init__(__self__, blocked_properties=None, contract_id=None, group_id=None, ui_identity_id=None):
         if blocked_properties and not isinstance(blocked_properties, list):
             raise TypeError("Expected argument 'blocked_properties' to be a list")
         pulumi.set(__self__, "blocked_properties", blocked_properties)
@@ -37,9 +37,6 @@ class GetIamBlockedPropertiesResult:
         if group_id and not isinstance(group_id, int):
             raise TypeError("Expected argument 'group_id' to be a int")
         pulumi.set(__self__, "group_id", group_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if ui_identity_id and not isinstance(ui_identity_id, str):
             raise TypeError("Expected argument 'ui_identity_id' to be a str")
         pulumi.set(__self__, "ui_identity_id", ui_identity_id)
@@ -60,14 +57,6 @@ class GetIamBlockedPropertiesResult:
         return pulumi.get(self, "group_id")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="uiIdentityId")
     def ui_identity_id(self) -> _builtins.str:
         return pulumi.get(self, "ui_identity_id")
@@ -82,7 +71,6 @@ class AwaitableGetIamBlockedPropertiesResult(GetIamBlockedPropertiesResult):
             blocked_properties=self.blocked_properties,
             contract_id=self.contract_id,
             group_id=self.group_id,
-            id=self.id,
             ui_identity_id=self.ui_identity_id)
 
 
@@ -104,7 +92,6 @@ def get_iam_blocked_properties(contract_id: Optional[_builtins.str] = None,
         blocked_properties=pulumi.get(__ret__, 'blocked_properties'),
         contract_id=pulumi.get(__ret__, 'contract_id'),
         group_id=pulumi.get(__ret__, 'group_id'),
-        id=pulumi.get(__ret__, 'id'),
         ui_identity_id=pulumi.get(__ret__, 'ui_identity_id'))
 def get_iam_blocked_properties_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       group_id: pulumi.Input[Optional[_builtins.int]] = None,
@@ -123,5 +110,4 @@ def get_iam_blocked_properties_output(contract_id: pulumi.Input[Optional[_builti
         blocked_properties=pulumi.get(__response__, 'blocked_properties'),
         contract_id=pulumi.get(__response__, 'contract_id'),
         group_id=pulumi.get(__response__, 'group_id'),
-        id=pulumi.get(__response__, 'id'),
         ui_identity_id=pulumi.get(__response__, 'ui_identity_id')))

@@ -30,18 +30,16 @@ type GetCloudletsSharedPolicyArgs struct {
 
 // A collection of values returned by getCloudletsSharedPolicy.
 type GetCloudletsSharedPolicyResult struct {
-	Activations  *GetCloudletsSharedPolicyActivations `pulumi:"activations"`
-	CloudletType string                               `pulumi:"cloudletType"`
-	Description  string                               `pulumi:"description"`
-	GroupId      int                                  `pulumi:"groupId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                 string `pulumi:"id"`
-	MatchRules         string `pulumi:"matchRules"`
-	Name               string `pulumi:"name"`
-	PolicyId           int    `pulumi:"policyId"`
-	Version            *int   `pulumi:"version"`
-	VersionDescription string `pulumi:"versionDescription"`
-	Warnings           string `pulumi:"warnings"`
+	Activations        *GetCloudletsSharedPolicyActivations `pulumi:"activations"`
+	CloudletType       string                               `pulumi:"cloudletType"`
+	Description        string                               `pulumi:"description"`
+	GroupId            int                                  `pulumi:"groupId"`
+	MatchRules         string                               `pulumi:"matchRules"`
+	Name               string                               `pulumi:"name"`
+	PolicyId           int                                  `pulumi:"policyId"`
+	Version            *int                                 `pulumi:"version"`
+	VersionDescription string                               `pulumi:"versionDescription"`
+	Warnings           string                               `pulumi:"warnings"`
 }
 
 func GetCloudletsSharedPolicyOutput(ctx *pulumi.Context, args GetCloudletsSharedPolicyOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsSharedPolicyResultOutput {
@@ -93,11 +91,6 @@ func (o GetCloudletsSharedPolicyResultOutput) Description() pulumi.StringOutput 
 
 func (o GetCloudletsSharedPolicyResultOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudletsSharedPolicyResult) int { return v.GroupId }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudletsSharedPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudletsSharedPolicyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetCloudletsSharedPolicyResultOutput) MatchRules() pulumi.StringOutput {

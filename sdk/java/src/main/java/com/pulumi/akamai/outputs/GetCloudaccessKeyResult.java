@@ -20,11 +20,6 @@ public final class GetCloudaccessKeyResult {
     private String createdBy;
     private String createdTime;
     private List<GetCloudaccessKeyGroup> groups;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private Integer latestVersion;
     private GetCloudaccessKeyNetworkConfiguration networkConfiguration;
 
@@ -46,13 +41,6 @@ public final class GetCloudaccessKeyResult {
     }
     public List<GetCloudaccessKeyGroup> groups() {
         return this.groups;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Integer latestVersion() {
         return this.latestVersion;
@@ -76,7 +64,6 @@ public final class GetCloudaccessKeyResult {
         private String createdBy;
         private String createdTime;
         private List<GetCloudaccessKeyGroup> groups;
-        private String id;
         private Integer latestVersion;
         private GetCloudaccessKeyNetworkConfiguration networkConfiguration;
         public Builder() {}
@@ -88,7 +75,6 @@ public final class GetCloudaccessKeyResult {
     	      this.createdBy = defaults.createdBy;
     	      this.createdTime = defaults.createdTime;
     	      this.groups = defaults.groups;
-    	      this.id = defaults.id;
     	      this.latestVersion = defaults.latestVersion;
     	      this.networkConfiguration = defaults.networkConfiguration;
         }
@@ -145,14 +131,6 @@ public final class GetCloudaccessKeyResult {
             return groups(List.of(groups));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudaccessKeyResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder latestVersion(Integer latestVersion) {
             if (latestVersion == null) {
               throw new MissingRequiredPropertyException("GetCloudaccessKeyResult", "latestVersion");
@@ -176,7 +154,6 @@ public final class GetCloudaccessKeyResult {
             _resultValue.createdBy = createdBy;
             _resultValue.createdTime = createdTime;
             _resultValue.groups = groups;
-            _resultValue.id = id;
             _resultValue.latestVersion = latestVersion;
             _resultValue.networkConfiguration = networkConfiguration;
             return _resultValue;

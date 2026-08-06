@@ -30,12 +30,10 @@ type GetIamUsersAffectedByMovingGroupArgs struct {
 
 // A collection of values returned by getIamUsersAffectedByMovingGroup.
 type GetIamUsersAffectedByMovingGroupResult struct {
-	DestinationGroupId int `pulumi:"destinationGroupId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id            string                                 `pulumi:"id"`
-	SourceGroupId int                                    `pulumi:"sourceGroupId"`
-	UserType      *string                                `pulumi:"userType"`
-	Users         []GetIamUsersAffectedByMovingGroupUser `pulumi:"users"`
+	DestinationGroupId int                                    `pulumi:"destinationGroupId"`
+	SourceGroupId      int                                    `pulumi:"sourceGroupId"`
+	UserType           *string                                `pulumi:"userType"`
+	Users              []GetIamUsersAffectedByMovingGroupUser `pulumi:"users"`
 }
 
 func GetIamUsersAffectedByMovingGroupOutput(ctx *pulumi.Context, args GetIamUsersAffectedByMovingGroupOutputArgs, opts ...pulumi.InvokeOption) GetIamUsersAffectedByMovingGroupResultOutput {
@@ -75,11 +73,6 @@ func (o GetIamUsersAffectedByMovingGroupResultOutput) ToGetIamUsersAffectedByMov
 
 func (o GetIamUsersAffectedByMovingGroupResultOutput) DestinationGroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIamUsersAffectedByMovingGroupResult) int { return v.DestinationGroupId }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetIamUsersAffectedByMovingGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamUsersAffectedByMovingGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetIamUsersAffectedByMovingGroupResultOutput) SourceGroupId() pulumi.IntOutput {

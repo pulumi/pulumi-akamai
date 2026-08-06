@@ -29,8 +29,6 @@ type GetCloudwrapperConfigurationsArgs struct {
 // A collection of values returned by getCloudwrapperConfigurations.
 type GetCloudwrapperConfigurationsResult struct {
 	Configurations []GetCloudwrapperConfigurationsConfiguration `pulumi:"configurations"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetCloudwrapperConfigurationsOutput(ctx *pulumi.Context, args GetCloudwrapperConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetCloudwrapperConfigurationsResultOutput {
@@ -70,11 +68,6 @@ func (o GetCloudwrapperConfigurationsResultOutput) Configurations() GetCloudwrap
 	return o.ApplyT(func(v GetCloudwrapperConfigurationsResult) []GetCloudwrapperConfigurationsConfiguration {
 		return v.Configurations
 	}).(GetCloudwrapperConfigurationsConfigurationArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudwrapperConfigurationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudwrapperConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -31,10 +31,6 @@ export interface GetIamCidrBlockResult {
     readonly createdBy: string;
     readonly createdDate: string;
     readonly enabled: boolean;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly modifiedBy: string;
     readonly modifiedDate: string;
 }

@@ -14,23 +14,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetGtmResourcesResult {
     private String domain;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable List<GetGtmResourcesResource> resources;
 
     private GetGtmResourcesResult() {}
     public String domain() {
         return this.domain;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public List<GetGtmResourcesResource> resources() {
         return this.resources == null ? List.of() : this.resources;
@@ -46,13 +34,11 @@ public final class GetGtmResourcesResult {
     @CustomType.Builder
     public static final class Builder {
         private String domain;
-        private String id;
         private @Nullable List<GetGtmResourcesResource> resources;
         public Builder() {}
         public Builder(GetGtmResourcesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.domain = defaults.domain;
-    	      this.id = defaults.id;
     	      this.resources = defaults.resources;
         }
 
@@ -62,14 +48,6 @@ public final class GetGtmResourcesResult {
               throw new MissingRequiredPropertyException("GetGtmResourcesResult", "domain");
             }
             this.domain = domain;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetGtmResourcesResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -84,7 +62,6 @@ public final class GetGtmResourcesResult {
         public GetGtmResourcesResult build() {
             final var _resultValue = new GetGtmResourcesResult();
             _resultValue.domain = domain;
-            _resultValue.id = id;
             _resultValue.resources = resources;
             return _resultValue;
         }

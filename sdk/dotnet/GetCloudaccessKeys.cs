@@ -26,19 +26,11 @@ namespace Pulumi.Akamai
     public sealed class GetCloudaccessKeysResult
     {
         public readonly ImmutableArray<Outputs.GetCloudaccessKeysAccessKeyResult> AccessKeys;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
-        private GetCloudaccessKeysResult(
-            ImmutableArray<Outputs.GetCloudaccessKeysAccessKeyResult> accessKeys,
-
-            string id)
+        private GetCloudaccessKeysResult(ImmutableArray<Outputs.GetCloudaccessKeysAccessKeyResult> accessKeys)
         {
             AccessKeys = accessKeys;
-            Id = id;
         }
     }
 }

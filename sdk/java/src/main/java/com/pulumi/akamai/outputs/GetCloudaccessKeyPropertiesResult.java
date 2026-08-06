@@ -15,11 +15,6 @@ import java.util.Objects;
 public final class GetCloudaccessKeyPropertiesResult {
     private String accessKeyName;
     private Integer accessKeyUid;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private List<GetCloudaccessKeyPropertiesProperty> properties;
 
     private GetCloudaccessKeyPropertiesResult() {}
@@ -28,13 +23,6 @@ public final class GetCloudaccessKeyPropertiesResult {
     }
     public Integer accessKeyUid() {
         return this.accessKeyUid;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public List<GetCloudaccessKeyPropertiesProperty> properties() {
         return this.properties;
@@ -51,14 +39,12 @@ public final class GetCloudaccessKeyPropertiesResult {
     public static final class Builder {
         private String accessKeyName;
         private Integer accessKeyUid;
-        private String id;
         private List<GetCloudaccessKeyPropertiesProperty> properties;
         public Builder() {}
         public Builder(GetCloudaccessKeyPropertiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessKeyName = defaults.accessKeyName;
     	      this.accessKeyUid = defaults.accessKeyUid;
-    	      this.id = defaults.id;
     	      this.properties = defaults.properties;
         }
 
@@ -79,14 +65,6 @@ public final class GetCloudaccessKeyPropertiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudaccessKeyPropertiesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder properties(List<GetCloudaccessKeyPropertiesProperty> properties) {
             if (properties == null) {
               throw new MissingRequiredPropertyException("GetCloudaccessKeyPropertiesResult", "properties");
@@ -101,7 +79,6 @@ public final class GetCloudaccessKeyPropertiesResult {
             final var _resultValue = new GetCloudaccessKeyPropertiesResult();
             _resultValue.accessKeyName = accessKeyName;
             _resultValue.accessKeyUid = accessKeyUid;
-            _resultValue.id = id;
             _resultValue.properties = properties;
             return _resultValue;
         }

@@ -14,11 +14,6 @@ import java.util.Objects;
 @CustomType
 public final class GetAppsecCustomRulesUsageResult {
     private Integer configId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String json;
     private String outputText;
     private List<Integer> ruleIds;
@@ -27,13 +22,6 @@ public final class GetAppsecCustomRulesUsageResult {
     private GetAppsecCustomRulesUsageResult() {}
     public Integer configId() {
         return this.configId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String json() {
         return this.json;
@@ -58,7 +46,6 @@ public final class GetAppsecCustomRulesUsageResult {
     @CustomType.Builder
     public static final class Builder {
         private Integer configId;
-        private String id;
         private String json;
         private String outputText;
         private List<Integer> ruleIds;
@@ -67,7 +54,6 @@ public final class GetAppsecCustomRulesUsageResult {
         public Builder(GetAppsecCustomRulesUsageResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configId = defaults.configId;
-    	      this.id = defaults.id;
     	      this.json = defaults.json;
     	      this.outputText = defaults.outputText;
     	      this.ruleIds = defaults.ruleIds;
@@ -80,14 +66,6 @@ public final class GetAppsecCustomRulesUsageResult {
               throw new MissingRequiredPropertyException("GetAppsecCustomRulesUsageResult", "configId");
             }
             this.configId = configId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetAppsecCustomRulesUsageResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -131,7 +109,6 @@ public final class GetAppsecCustomRulesUsageResult {
         public GetAppsecCustomRulesUsageResult build() {
             final var _resultValue = new GetAppsecCustomRulesUsageResult();
             _resultValue.configId = configId;
-            _resultValue.id = id;
             _resultValue.json = json;
             _resultValue.outputText = outputText;
             _resultValue.ruleIds = ruleIds;

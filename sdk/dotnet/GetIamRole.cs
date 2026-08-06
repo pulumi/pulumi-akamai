@@ -58,10 +58,6 @@ namespace Pulumi.Akamai
         public readonly string CreatedBy;
         public readonly string CreatedDate;
         public readonly ImmutableArray<Outputs.GetIamRoleGrantedRoleResult> GrantedRoles;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string ModifiedBy;
         public readonly string ModifiedDate;
         public readonly string RoleDescription;
@@ -79,8 +75,6 @@ namespace Pulumi.Akamai
             string createdDate,
 
             ImmutableArray<Outputs.GetIamRoleGrantedRoleResult> grantedRoles,
-
-            string id,
 
             string modifiedBy,
 
@@ -100,7 +94,6 @@ namespace Pulumi.Akamai
             CreatedBy = createdBy;
             CreatedDate = createdDate;
             GrantedRoles = grantedRoles;
-            Id = id;
             ModifiedBy = modifiedBy;
             ModifiedDate = modifiedDate;
             RoleDescription = roleDescription;

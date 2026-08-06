@@ -27,7 +27,7 @@ class GetCloudcertificatesCertificatesResult:
     """
     A collection of values returned by getCloudcertificatesCertificates.
     """
-    def __init__(__self__, certificate_name=None, certificate_statuses=None, certificates=None, contract_id=None, domain=None, expiring_in_days=None, group_id=None, id=None, include_certificate_materials=None, issuer=None, key_type=None, sort=None):
+    def __init__(__self__, certificate_name=None, certificate_statuses=None, certificates=None, contract_id=None, domain=None, expiring_in_days=None, group_id=None, include_certificate_materials=None, issuer=None, key_type=None, sort=None):
         if certificate_name and not isinstance(certificate_name, str):
             raise TypeError("Expected argument 'certificate_name' to be a str")
         pulumi.set(__self__, "certificate_name", certificate_name)
@@ -49,9 +49,6 @@ class GetCloudcertificatesCertificatesResult:
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
         pulumi.set(__self__, "group_id", group_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if include_certificate_materials and not isinstance(include_certificate_materials, bool):
             raise TypeError("Expected argument 'include_certificate_materials' to be a bool")
         pulumi.set(__self__, "include_certificate_materials", include_certificate_materials)
@@ -101,14 +98,6 @@ class GetCloudcertificatesCertificatesResult:
         return pulumi.get(self, "group_id")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="includeCertificateMaterials")
     def include_certificate_materials(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "include_certificate_materials")
@@ -142,7 +131,6 @@ class AwaitableGetCloudcertificatesCertificatesResult(GetCloudcertificatesCertif
             domain=self.domain,
             expiring_in_days=self.expiring_in_days,
             group_id=self.group_id,
-            id=self.id,
             include_certificate_materials=self.include_certificate_materials,
             issuer=self.issuer,
             key_type=self.key_type,
@@ -185,7 +173,6 @@ def get_cloudcertificates_certificates(certificate_name: Optional[_builtins.str]
         domain=pulumi.get(__ret__, 'domain'),
         expiring_in_days=pulumi.get(__ret__, 'expiring_in_days'),
         group_id=pulumi.get(__ret__, 'group_id'),
-        id=pulumi.get(__ret__, 'id'),
         include_certificate_materials=pulumi.get(__ret__, 'include_certificate_materials'),
         issuer=pulumi.get(__ret__, 'issuer'),
         key_type=pulumi.get(__ret__, 'key_type'),
@@ -225,7 +212,6 @@ def get_cloudcertificates_certificates_output(certificate_name: pulumi.Input[Opt
         domain=pulumi.get(__response__, 'domain'),
         expiring_in_days=pulumi.get(__response__, 'expiring_in_days'),
         group_id=pulumi.get(__response__, 'group_id'),
-        id=pulumi.get(__response__, 'id'),
         include_certificate_materials=pulumi.get(__response__, 'include_certificate_materials'),
         issuer=pulumi.get(__response__, 'issuer'),
         key_type=pulumi.get(__response__, 'key_type'),

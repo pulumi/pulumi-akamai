@@ -24,8 +24,6 @@ func GetIamApiClients(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIam
 // A collection of values returned by getIamApiClients.
 type GetIamApiClientsResult struct {
 	ApiClients []GetIamApiClientsApiClient `pulumi:"apiClients"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetIamApiClientsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamApiClientsResultOutput {
@@ -52,11 +50,6 @@ func (o GetIamApiClientsResultOutput) ToGetIamApiClientsResultOutputWithContext(
 
 func (o GetIamApiClientsResultOutput) ApiClients() GetIamApiClientsApiClientArrayOutput {
 	return o.ApplyT(func(v GetIamApiClientsResult) []GetIamApiClientsApiClient { return v.ApiClients }).(GetIamApiClientsApiClientArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetIamApiClientsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamApiClientsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

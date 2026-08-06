@@ -38,10 +38,6 @@ export interface GetCloudcertificatesHostnameBindingsResult {
     readonly domain?: string;
     readonly expiringInDays?: number;
     readonly groupId?: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly network?: string;
 }
 export function getCloudcertificatesHostnameBindingsOutput(args?: GetCloudcertificatesHostnameBindingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudcertificatesHostnameBindingsResult> {

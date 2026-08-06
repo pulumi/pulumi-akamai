@@ -17,10 +17,6 @@ export function getIamApiClients(opts?: pulumi.InvokeOptions): Promise<GetIamApi
  */
 export interface GetIamApiClientsResult {
     readonly apiClients: outputs.GetIamApiClientsApiClient[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getIamApiClientsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamApiClientsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -17,10 +17,6 @@ export function getCloudaccessKeys(opts?: pulumi.InvokeOptions): Promise<GetClou
  */
 export interface GetCloudaccessKeysResult {
     readonly accessKeys: outputs.GetCloudaccessKeysAccessKey[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getCloudaccessKeysOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudaccessKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

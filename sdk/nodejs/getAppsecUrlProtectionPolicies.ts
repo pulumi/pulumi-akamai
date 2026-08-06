@@ -25,10 +25,6 @@ export interface GetAppsecUrlProtectionPoliciesArgs {
  */
 export interface GetAppsecUrlProtectionPoliciesResult {
     readonly configId: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly urlProtectionPolicies: outputs.GetAppsecUrlProtectionPoliciesUrlProtectionPolicy[];
 }
 export function getAppsecUrlProtectionPoliciesOutput(args: GetAppsecUrlProtectionPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecUrlProtectionPoliciesResult> {

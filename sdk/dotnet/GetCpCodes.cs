@@ -72,10 +72,6 @@ namespace Pulumi.Akamai
         public readonly string? FilterByName;
         public readonly string? FilterByProductId;
         public readonly string GroupId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
         private GetCpCodesResult(
@@ -89,9 +85,7 @@ namespace Pulumi.Akamai
 
             string? filterByProductId,
 
-            string groupId,
-
-            string id)
+            string groupId)
         {
             AccountId = accountId;
             ContractId = contractId;
@@ -99,7 +93,6 @@ namespace Pulumi.Akamai
             FilterByName = filterByName;
             FilterByProductId = filterByProductId;
             GroupId = groupId;
-            Id = id;
         }
     }
 }

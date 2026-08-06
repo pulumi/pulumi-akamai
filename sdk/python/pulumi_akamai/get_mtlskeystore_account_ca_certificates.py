@@ -27,13 +27,10 @@ class GetMtlskeystoreAccountCaCertificatesResult:
     """
     A collection of values returned by getMtlskeystoreAccountCaCertificates.
     """
-    def __init__(__self__, certificates=None, id=None, statuses=None):
+    def __init__(__self__, certificates=None, statuses=None):
         if certificates and not isinstance(certificates, list):
             raise TypeError("Expected argument 'certificates' to be a list")
         pulumi.set(__self__, "certificates", certificates)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if statuses and not isinstance(statuses, list):
             raise TypeError("Expected argument 'statuses' to be a list")
         pulumi.set(__self__, "statuses", statuses)
@@ -42,14 +39,6 @@ class GetMtlskeystoreAccountCaCertificatesResult:
     @pulumi.getter
     def certificates(self) -> Sequence['outputs.GetMtlskeystoreAccountCaCertificatesCertificateResult']:
         return pulumi.get(self, "certificates")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter
@@ -64,7 +53,6 @@ class AwaitableGetMtlskeystoreAccountCaCertificatesResult(GetMtlskeystoreAccount
             yield self
         return GetMtlskeystoreAccountCaCertificatesResult(
             certificates=self.certificates,
-            id=self.id,
             statuses=self.statuses)
 
 
@@ -80,7 +68,6 @@ def get_mtlskeystore_account_ca_certificates(statuses: Optional[Sequence[_builti
 
     return AwaitableGetMtlskeystoreAccountCaCertificatesResult(
         certificates=pulumi.get(__ret__, 'certificates'),
-        id=pulumi.get(__ret__, 'id'),
         statuses=pulumi.get(__ret__, 'statuses'))
 def get_mtlskeystore_account_ca_certificates_output(statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMtlskeystoreAccountCaCertificatesResult]:
@@ -93,5 +80,4 @@ def get_mtlskeystore_account_ca_certificates_output(statuses: pulumi.Input[Optio
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getMtlskeystoreAccountCaCertificates:getMtlskeystoreAccountCaCertificates', __args__, opts=opts, typ=GetMtlskeystoreAccountCaCertificatesResult)
     return __ret__.apply(lambda __response__: GetMtlskeystoreAccountCaCertificatesResult(
         certificates=pulumi.get(__response__, 'certificates'),
-        id=pulumi.get(__response__, 'id'),
         statuses=pulumi.get(__response__, 'statuses')))

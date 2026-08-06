@@ -14,11 +14,6 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetCloudletsPolicyActivationResult {
     private @Nullable List<String> associatedProperties;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String network;
     private Integer policyId;
     private String status;
@@ -27,13 +22,6 @@ public final class GetCloudletsPolicyActivationResult {
     private GetCloudletsPolicyActivationResult() {}
     public List<String> associatedProperties() {
         return this.associatedProperties == null ? List.of() : this.associatedProperties;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String network() {
         return this.network;
@@ -58,7 +46,6 @@ public final class GetCloudletsPolicyActivationResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> associatedProperties;
-        private String id;
         private String network;
         private Integer policyId;
         private String status;
@@ -67,7 +54,6 @@ public final class GetCloudletsPolicyActivationResult {
         public Builder(GetCloudletsPolicyActivationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.associatedProperties = defaults.associatedProperties;
-    	      this.id = defaults.id;
     	      this.network = defaults.network;
     	      this.policyId = defaults.policyId;
     	      this.status = defaults.status;
@@ -82,14 +68,6 @@ public final class GetCloudletsPolicyActivationResult {
         }
         public Builder associatedProperties(String... associatedProperties) {
             return associatedProperties(List.of(associatedProperties));
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudletsPolicyActivationResult", "id");
-            }
-            this.id = id;
-            return this;
         }
         @CustomType.Setter
         public Builder network(String network) {
@@ -126,7 +104,6 @@ public final class GetCloudletsPolicyActivationResult {
         public GetCloudletsPolicyActivationResult build() {
             final var _resultValue = new GetCloudletsPolicyActivationResult();
             _resultValue.associatedProperties = associatedProperties;
-            _resultValue.id = id;
             _resultValue.network = network;
             _resultValue.policyId = policyId;
             _resultValue.status = status;

@@ -29,10 +29,6 @@ export interface GetIamUsersAffectedByMovingGroupArgs {
  */
 export interface GetIamUsersAffectedByMovingGroupResult {
     readonly destinationGroupId: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly sourceGroupId: number;
     readonly userType?: string;
     readonly users: outputs.GetIamUsersAffectedByMovingGroupUser[];

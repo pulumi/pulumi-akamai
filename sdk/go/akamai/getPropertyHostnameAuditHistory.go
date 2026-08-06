@@ -30,8 +30,6 @@ type GetPropertyHostnameAuditHistoryArgs struct {
 type GetPropertyHostnameAuditHistoryResult struct {
 	Histories []GetPropertyHostnameAuditHistoryHistory `pulumi:"histories"`
 	Hostname  string                                   `pulumi:"hostname"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetPropertyHostnameAuditHistoryOutput(ctx *pulumi.Context, args GetPropertyHostnameAuditHistoryOutputArgs, opts ...pulumi.InvokeOption) GetPropertyHostnameAuditHistoryResultOutput {
@@ -75,11 +73,6 @@ func (o GetPropertyHostnameAuditHistoryResultOutput) Histories() GetPropertyHost
 
 func (o GetPropertyHostnameAuditHistoryResultOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryResult) string { return v.Hostname }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetPropertyHostnameAuditHistoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyHostnameAuditHistoryResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

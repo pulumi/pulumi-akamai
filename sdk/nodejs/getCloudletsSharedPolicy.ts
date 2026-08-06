@@ -32,10 +32,6 @@ export interface GetCloudletsSharedPolicyResult {
     readonly cloudletType: string;
     readonly description: string;
     readonly groupId: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly matchRules: string;
     readonly name: string;
     readonly policyId: number;

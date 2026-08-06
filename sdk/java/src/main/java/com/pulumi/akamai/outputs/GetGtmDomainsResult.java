@@ -5,8 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.akamai.outputs.GetGtmDomainsDomain;
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
@@ -14,22 +12,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetGtmDomainsResult {
     private @Nullable List<GetGtmDomainsDomain> domains;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetGtmDomainsResult() {}
     public List<GetGtmDomainsDomain> domains() {
         return this.domains == null ? List.of() : this.domains;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -42,12 +28,10 @@ public final class GetGtmDomainsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetGtmDomainsDomain> domains;
-        private String id;
         public Builder() {}
         public Builder(GetGtmDomainsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.domains = defaults.domains;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -59,18 +43,9 @@ public final class GetGtmDomainsResult {
         public Builder domains(GetGtmDomainsDomain... domains) {
             return domains(List.of(domains));
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetGtmDomainsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetGtmDomainsResult build() {
             final var _resultValue = new GetGtmDomainsResult();
             _resultValue.domains = domains;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

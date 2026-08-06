@@ -29,10 +29,6 @@ export interface GetApidefinitionsOpenapiResult {
     readonly api?: string;
     readonly apiFileName?: string;
     readonly filePath: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getApidefinitionsOpenapiOutput(args: GetApidefinitionsOpenapiOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApidefinitionsOpenapiResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

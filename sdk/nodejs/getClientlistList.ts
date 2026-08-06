@@ -24,10 +24,6 @@ export interface GetClientlistListArgs {
  * A collection of values returned by getClientlistList.
  */
 export interface GetClientlistListResult {
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly json: string;
     readonly list: outputs.GetClientlistListList;
     readonly listId: string;

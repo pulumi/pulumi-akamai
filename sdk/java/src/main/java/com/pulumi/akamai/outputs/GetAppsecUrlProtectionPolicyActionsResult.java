@@ -12,11 +12,6 @@ import java.util.Objects;
 @CustomType
 public final class GetAppsecUrlProtectionPolicyActionsResult {
     private Integer configId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String loadSheddingAction;
     private String maxRateThresholdAction;
     private String securityPolicyId;
@@ -25,13 +20,6 @@ public final class GetAppsecUrlProtectionPolicyActionsResult {
     private GetAppsecUrlProtectionPolicyActionsResult() {}
     public Integer configId() {
         return this.configId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String loadSheddingAction() {
         return this.loadSheddingAction;
@@ -56,7 +44,6 @@ public final class GetAppsecUrlProtectionPolicyActionsResult {
     @CustomType.Builder
     public static final class Builder {
         private Integer configId;
-        private String id;
         private String loadSheddingAction;
         private String maxRateThresholdAction;
         private String securityPolicyId;
@@ -65,7 +52,6 @@ public final class GetAppsecUrlProtectionPolicyActionsResult {
         public Builder(GetAppsecUrlProtectionPolicyActionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configId = defaults.configId;
-    	      this.id = defaults.id;
     	      this.loadSheddingAction = defaults.loadSheddingAction;
     	      this.maxRateThresholdAction = defaults.maxRateThresholdAction;
     	      this.securityPolicyId = defaults.securityPolicyId;
@@ -78,14 +64,6 @@ public final class GetAppsecUrlProtectionPolicyActionsResult {
               throw new MissingRequiredPropertyException("GetAppsecUrlProtectionPolicyActionsResult", "configId");
             }
             this.configId = configId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetAppsecUrlProtectionPolicyActionsResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -123,7 +101,6 @@ public final class GetAppsecUrlProtectionPolicyActionsResult {
         public GetAppsecUrlProtectionPolicyActionsResult build() {
             final var _resultValue = new GetAppsecUrlProtectionPolicyActionsResult();
             _resultValue.configId = configId;
-            _resultValue.id = id;
             _resultValue.loadSheddingAction = loadSheddingAction;
             _resultValue.maxRateThresholdAction = maxRateThresholdAction;
             _resultValue.securityPolicyId = securityPolicyId;

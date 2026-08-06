@@ -27,26 +27,15 @@ class GetIamCidrBlocksResult:
     """
     A collection of values returned by getIamCidrBlocks.
     """
-    def __init__(__self__, cidr_blocks=None, id=None):
+    def __init__(__self__, cidr_blocks=None):
         if cidr_blocks and not isinstance(cidr_blocks, list):
             raise TypeError("Expected argument 'cidr_blocks' to be a list")
         pulumi.set(__self__, "cidr_blocks", cidr_blocks)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlocks")
     def cidr_blocks(self) -> Sequence['outputs.GetIamCidrBlocksCidrBlockResult']:
         return pulumi.get(self, "cidr_blocks")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
 
 class AwaitableGetIamCidrBlocksResult(GetIamCidrBlocksResult):
@@ -55,8 +44,7 @@ class AwaitableGetIamCidrBlocksResult(GetIamCidrBlocksResult):
         if False:
             yield self
         return GetIamCidrBlocksResult(
-            cidr_blocks=self.cidr_blocks,
-            id=self.id)
+            cidr_blocks=self.cidr_blocks)
 
 
 def get_iam_cidr_blocks(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamCidrBlocksResult:
@@ -68,8 +56,7 @@ def get_iam_cidr_blocks(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamCidrBlocks:getIamCidrBlocks', __args__, opts=opts, typ=GetIamCidrBlocksResult).value
 
     return AwaitableGetIamCidrBlocksResult(
-        cidr_blocks=pulumi.get(__ret__, 'cidr_blocks'),
-        id=pulumi.get(__ret__, 'id'))
+        cidr_blocks=pulumi.get(__ret__, 'cidr_blocks'))
 def get_iam_cidr_blocks_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamCidrBlocksResult]:
     """
     Use this data source to access information about an existing resource.
@@ -78,5 +65,4 @@ def get_iam_cidr_blocks_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamCidrBlocks:getIamCidrBlocks', __args__, opts=opts, typ=GetIamCidrBlocksResult)
     return __ret__.apply(lambda __response__: GetIamCidrBlocksResult(
-        cidr_blocks=pulumi.get(__response__, 'cidr_blocks'),
-        id=pulumi.get(__response__, 'id')))
+        cidr_blocks=pulumi.get(__response__, 'cidr_blocks')))

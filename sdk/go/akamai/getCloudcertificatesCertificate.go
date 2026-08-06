@@ -29,35 +29,33 @@ type LookupCloudcertificatesCertificateArgs struct {
 
 // A collection of values returned by getCloudcertificatesCertificate.
 type LookupCloudcertificatesCertificateResult struct {
-	AccountId         string                                   `pulumi:"accountId"`
-	Bindings          []GetCloudcertificatesCertificateBinding `pulumi:"bindings"`
-	CertificateId     string                                   `pulumi:"certificateId"`
-	CertificateName   string                                   `pulumi:"certificateName"`
-	CertificateStatus string                                   `pulumi:"certificateStatus"`
-	CertificateType   string                                   `pulumi:"certificateType"`
-	ContractId        string                                   `pulumi:"contractId"`
-	CreatedBy         string                                   `pulumi:"createdBy"`
-	CreatedDate       string                                   `pulumi:"createdDate"`
-	CsrExpirationDate string                                   `pulumi:"csrExpirationDate"`
-	CsrPem            string                                   `pulumi:"csrPem"`
-	GeoClass          string                                   `pulumi:"geoClass"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                                  string                                 `pulumi:"id"`
-	IncludeHostnameBindings             *bool                                  `pulumi:"includeHostnameBindings"`
-	KeySize                             string                                 `pulumi:"keySize"`
-	KeyType                             string                                 `pulumi:"keyType"`
-	ModifiedBy                          string                                 `pulumi:"modifiedBy"`
-	ModifiedDate                        string                                 `pulumi:"modifiedDate"`
-	Sans                                []string                               `pulumi:"sans"`
-	SecureNetwork                       string                                 `pulumi:"secureNetwork"`
-	SignedCertificateIssuer             string                                 `pulumi:"signedCertificateIssuer"`
-	SignedCertificateNotValidAfterDate  string                                 `pulumi:"signedCertificateNotValidAfterDate"`
-	SignedCertificateNotValidBeforeDate string                                 `pulumi:"signedCertificateNotValidBeforeDate"`
-	SignedCertificatePem                string                                 `pulumi:"signedCertificatePem"`
-	SignedCertificateSerialNumber       string                                 `pulumi:"signedCertificateSerialNumber"`
-	SignedCertificateSha256Fingerprint  string                                 `pulumi:"signedCertificateSha256Fingerprint"`
-	Subject                             GetCloudcertificatesCertificateSubject `pulumi:"subject"`
-	TrustChainPem                       string                                 `pulumi:"trustChainPem"`
+	AccountId                           string                                   `pulumi:"accountId"`
+	Bindings                            []GetCloudcertificatesCertificateBinding `pulumi:"bindings"`
+	CertificateId                       string                                   `pulumi:"certificateId"`
+	CertificateName                     string                                   `pulumi:"certificateName"`
+	CertificateStatus                   string                                   `pulumi:"certificateStatus"`
+	CertificateType                     string                                   `pulumi:"certificateType"`
+	ContractId                          string                                   `pulumi:"contractId"`
+	CreatedBy                           string                                   `pulumi:"createdBy"`
+	CreatedDate                         string                                   `pulumi:"createdDate"`
+	CsrExpirationDate                   string                                   `pulumi:"csrExpirationDate"`
+	CsrPem                              string                                   `pulumi:"csrPem"`
+	GeoClass                            string                                   `pulumi:"geoClass"`
+	IncludeHostnameBindings             *bool                                    `pulumi:"includeHostnameBindings"`
+	KeySize                             string                                   `pulumi:"keySize"`
+	KeyType                             string                                   `pulumi:"keyType"`
+	ModifiedBy                          string                                   `pulumi:"modifiedBy"`
+	ModifiedDate                        string                                   `pulumi:"modifiedDate"`
+	Sans                                []string                                 `pulumi:"sans"`
+	SecureNetwork                       string                                   `pulumi:"secureNetwork"`
+	SignedCertificateIssuer             string                                   `pulumi:"signedCertificateIssuer"`
+	SignedCertificateNotValidAfterDate  string                                   `pulumi:"signedCertificateNotValidAfterDate"`
+	SignedCertificateNotValidBeforeDate string                                   `pulumi:"signedCertificateNotValidBeforeDate"`
+	SignedCertificatePem                string                                   `pulumi:"signedCertificatePem"`
+	SignedCertificateSerialNumber       string                                   `pulumi:"signedCertificateSerialNumber"`
+	SignedCertificateSha256Fingerprint  string                                   `pulumi:"signedCertificateSha256Fingerprint"`
+	Subject                             GetCloudcertificatesCertificateSubject   `pulumi:"subject"`
+	TrustChainPem                       string                                   `pulumi:"trustChainPem"`
 }
 
 func LookupCloudcertificatesCertificateOutput(ctx *pulumi.Context, args LookupCloudcertificatesCertificateOutputArgs, opts ...pulumi.InvokeOption) LookupCloudcertificatesCertificateResultOutput {
@@ -142,11 +140,6 @@ func (o LookupCloudcertificatesCertificateResultOutput) CsrPem() pulumi.StringOu
 
 func (o LookupCloudcertificatesCertificateResultOutput) GeoClass() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudcertificatesCertificateResult) string { return v.GeoClass }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupCloudcertificatesCertificateResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudcertificatesCertificateResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupCloudcertificatesCertificateResultOutput) IncludeHostnameBindings() pulumi.BoolPtrOutput {

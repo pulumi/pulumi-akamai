@@ -27,16 +27,13 @@ class GetReportinggroupsGroupResult:
     """
     A collection of values returned by getReportinggroupsGroup.
     """
-    def __init__(__self__, access_group=None, contract=None, id=None, reporting_group_id=None, reporting_group_name=None):
+    def __init__(__self__, access_group=None, contract=None, reporting_group_id=None, reporting_group_name=None):
         if access_group and not isinstance(access_group, dict):
             raise TypeError("Expected argument 'access_group' to be a dict")
         pulumi.set(__self__, "access_group", access_group)
         if contract and not isinstance(contract, dict):
             raise TypeError("Expected argument 'contract' to be a dict")
         pulumi.set(__self__, "contract", contract)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if reporting_group_id and not isinstance(reporting_group_id, int):
             raise TypeError("Expected argument 'reporting_group_id' to be a int")
         pulumi.set(__self__, "reporting_group_id", reporting_group_id)
@@ -53,14 +50,6 @@ class GetReportinggroupsGroupResult:
     @pulumi.getter
     def contract(self) -> 'outputs.GetReportinggroupsGroupContractResult':
         return pulumi.get(self, "contract")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="reportingGroupId")
@@ -81,7 +70,6 @@ class AwaitableGetReportinggroupsGroupResult(GetReportinggroupsGroupResult):
         return GetReportinggroupsGroupResult(
             access_group=self.access_group,
             contract=self.contract,
-            id=self.id,
             reporting_group_id=self.reporting_group_id,
             reporting_group_name=self.reporting_group_name)
 
@@ -99,7 +87,6 @@ def get_reportinggroups_group(reporting_group_id: Optional[_builtins.int] = None
     return AwaitableGetReportinggroupsGroupResult(
         access_group=pulumi.get(__ret__, 'access_group'),
         contract=pulumi.get(__ret__, 'contract'),
-        id=pulumi.get(__ret__, 'id'),
         reporting_group_id=pulumi.get(__ret__, 'reporting_group_id'),
         reporting_group_name=pulumi.get(__ret__, 'reporting_group_name'))
 def get_reportinggroups_group_output(reporting_group_id: pulumi.Input[Optional[_builtins.int]] = None,
@@ -114,6 +101,5 @@ def get_reportinggroups_group_output(reporting_group_id: pulumi.Input[Optional[_
     return __ret__.apply(lambda __response__: GetReportinggroupsGroupResult(
         access_group=pulumi.get(__response__, 'access_group'),
         contract=pulumi.get(__response__, 'contract'),
-        id=pulumi.get(__response__, 'id'),
         reporting_group_id=pulumi.get(__response__, 'reporting_group_id'),
         reporting_group_name=pulumi.get(__response__, 'reporting_group_name')))

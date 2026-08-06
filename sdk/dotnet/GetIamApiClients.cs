@@ -26,19 +26,11 @@ namespace Pulumi.Akamai
     public sealed class GetIamApiClientsResult
     {
         public readonly ImmutableArray<Outputs.GetIamApiClientsApiClientResult> ApiClients;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
-        private GetIamApiClientsResult(
-            ImmutableArray<Outputs.GetIamApiClientsApiClientResult> apiClients,
-
-            string id)
+        private GetIamApiClientsResult(ImmutableArray<Outputs.GetIamApiClientsApiClientResult> apiClients)
         {
             ApiClients = apiClients;
-            Id = id;
         }
     }
 }

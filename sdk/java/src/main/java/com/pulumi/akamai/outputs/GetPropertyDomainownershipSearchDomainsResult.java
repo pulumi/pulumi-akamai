@@ -6,29 +6,16 @@ package com.pulumi.akamai.outputs;
 import com.pulumi.akamai.outputs.GetPropertyDomainownershipSearchDomainsDomain;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetPropertyDomainownershipSearchDomainsResult {
     private List<GetPropertyDomainownershipSearchDomainsDomain> domains;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetPropertyDomainownershipSearchDomainsResult() {}
     public List<GetPropertyDomainownershipSearchDomainsDomain> domains() {
         return this.domains;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -41,12 +28,10 @@ public final class GetPropertyDomainownershipSearchDomainsResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetPropertyDomainownershipSearchDomainsDomain> domains;
-        private String id;
         public Builder() {}
         public Builder(GetPropertyDomainownershipSearchDomainsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.domains = defaults.domains;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -60,18 +45,9 @@ public final class GetPropertyDomainownershipSearchDomainsResult {
         public Builder domains(GetPropertyDomainownershipSearchDomainsDomain... domains) {
             return domains(List.of(domains));
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetPropertyDomainownershipSearchDomainsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetPropertyDomainownershipSearchDomainsResult build() {
             final var _resultValue = new GetPropertyDomainownershipSearchDomainsResult();
             _resultValue.domains = domains;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

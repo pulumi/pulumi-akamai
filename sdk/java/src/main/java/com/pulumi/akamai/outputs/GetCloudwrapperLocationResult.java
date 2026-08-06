@@ -11,24 +11,12 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudwrapperLocationResult {
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String locationId;
     private String locationName;
     private String trafficType;
     private Integer trafficTypeId;
 
     private GetCloudwrapperLocationResult() {}
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
-    }
     public String locationId() {
         return this.locationId;
     }
@@ -51,7 +39,6 @@ public final class GetCloudwrapperLocationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
         private String locationId;
         private String locationName;
         private String trafficType;
@@ -59,21 +46,12 @@ public final class GetCloudwrapperLocationResult {
         public Builder() {}
         public Builder(GetCloudwrapperLocationResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.id = defaults.id;
     	      this.locationId = defaults.locationId;
     	      this.locationName = defaults.locationName;
     	      this.trafficType = defaults.trafficType;
     	      this.trafficTypeId = defaults.trafficTypeId;
         }
 
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudwrapperLocationResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         @CustomType.Setter
         public Builder locationId(String locationId) {
             if (locationId == null) {
@@ -108,7 +86,6 @@ public final class GetCloudwrapperLocationResult {
         }
         public GetCloudwrapperLocationResult build() {
             final var _resultValue = new GetCloudwrapperLocationResult();
-            _resultValue.id = id;
             _resultValue.locationId = locationId;
             _resultValue.locationName = locationName;
             _resultValue.trafficType = trafficType;

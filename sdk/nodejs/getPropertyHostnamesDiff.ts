@@ -32,10 +32,6 @@ export interface GetPropertyHostnamesDiffResult {
     readonly contractId: string;
     readonly groupId: string;
     readonly hostnames: outputs.GetPropertyHostnamesDiffHostname[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly propertyId: string;
 }
 export function getPropertyHostnamesDiffOutput(args: GetPropertyHostnamesDiffOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyHostnamesDiffResult> {

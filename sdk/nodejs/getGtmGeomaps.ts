@@ -26,10 +26,6 @@ export interface GetGtmGeomapsArgs {
 export interface GetGtmGeomapsResult {
     readonly domain: string;
     readonly geoMaps: outputs.GetGtmGeomapsGeoMap[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getGtmGeomapsOutput(args: GetGtmGeomapsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmGeomapsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

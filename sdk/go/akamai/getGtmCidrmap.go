@@ -35,10 +35,8 @@ type LookupGtmCidrmapResult struct {
 	Assignments       []GetGtmCidrmapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GetGtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
 	Domain            string                          `pulumi:"domain"`
-	// The provider-assigned unique ID for this managed resource.
-	Id      string              `pulumi:"id"`
-	Links   []GetGtmCidrmapLink `pulumi:"links"`
-	MapName string              `pulumi:"mapName"`
+	Links             []GetGtmCidrmapLink             `pulumi:"links"`
+	MapName           string                          `pulumi:"mapName"`
 }
 
 func LookupGtmCidrmapOutput(ctx *pulumi.Context, args LookupGtmCidrmapOutputArgs, opts ...pulumi.InvokeOption) LookupGtmCidrmapResultOutput {
@@ -88,11 +86,6 @@ func (o LookupGtmCidrmapResultOutput) DefaultDatacenter() GetGtmCidrmapDefaultDa
 
 func (o LookupGtmCidrmapResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmCidrmapResult) string { return v.Domain }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupGtmCidrmapResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGtmCidrmapResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupGtmCidrmapResultOutput) Links() GetGtmCidrmapLinkArrayOutput {

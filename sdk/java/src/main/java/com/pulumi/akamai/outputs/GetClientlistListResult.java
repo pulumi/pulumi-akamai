@@ -11,24 +11,12 @@ import java.util.Objects;
 
 @CustomType
 public final class GetClientlistListResult {
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String json;
     private GetClientlistListList list;
     private String listId;
     private String outputText;
 
     private GetClientlistListResult() {}
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
-    }
     public String json() {
         return this.json;
     }
@@ -51,7 +39,6 @@ public final class GetClientlistListResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
         private String json;
         private GetClientlistListList list;
         private String listId;
@@ -59,21 +46,12 @@ public final class GetClientlistListResult {
         public Builder() {}
         public Builder(GetClientlistListResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.id = defaults.id;
     	      this.json = defaults.json;
     	      this.list = defaults.list;
     	      this.listId = defaults.listId;
     	      this.outputText = defaults.outputText;
         }
 
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetClientlistListResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         @CustomType.Setter
         public Builder json(String json) {
             if (json == null) {
@@ -108,7 +86,6 @@ public final class GetClientlistListResult {
         }
         public GetClientlistListResult build() {
             final var _resultValue = new GetClientlistListResult();
-            _resultValue.id = id;
             _resultValue.json = json;
             _resultValue.list = list;
             _resultValue.listId = listId;

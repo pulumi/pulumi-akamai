@@ -30,9 +30,7 @@ type GetAppsecUrlProtectionPolicyActionsArgs struct {
 
 // A collection of values returned by getAppsecUrlProtectionPolicyActions.
 type GetAppsecUrlProtectionPolicyActionsResult struct {
-	ConfigId int `pulumi:"configId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                     string `pulumi:"id"`
+	ConfigId               int    `pulumi:"configId"`
 	LoadSheddingAction     string `pulumi:"loadSheddingAction"`
 	MaxRateThresholdAction string `pulumi:"maxRateThresholdAction"`
 	SecurityPolicyId       string `pulumi:"securityPolicyId"`
@@ -76,11 +74,6 @@ func (o GetAppsecUrlProtectionPolicyActionsResultOutput) ToGetAppsecUrlProtectio
 
 func (o GetAppsecUrlProtectionPolicyActionsResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAppsecUrlProtectionPolicyActionsResult) int { return v.ConfigId }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetAppsecUrlProtectionPolicyActionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppsecUrlProtectionPolicyActionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetAppsecUrlProtectionPolicyActionsResultOutput) LoadSheddingAction() pulumi.StringOutput {

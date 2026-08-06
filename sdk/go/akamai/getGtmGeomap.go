@@ -32,10 +32,8 @@ type LookupGtmGeomapResult struct {
 	Assignments       []GetGtmGeomapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GetGtmGeomapDefaultDatacenter `pulumi:"defaultDatacenter"`
 	Domain            string                        `pulumi:"domain"`
-	// The provider-assigned unique ID for this managed resource.
-	Id      string             `pulumi:"id"`
-	Links   []GetGtmGeomapLink `pulumi:"links"`
-	MapName string             `pulumi:"mapName"`
+	Links             []GetGtmGeomapLink            `pulumi:"links"`
+	MapName           string                        `pulumi:"mapName"`
 }
 
 func LookupGtmGeomapOutput(ctx *pulumi.Context, args LookupGtmGeomapOutputArgs, opts ...pulumi.InvokeOption) LookupGtmGeomapResultOutput {
@@ -82,11 +80,6 @@ func (o LookupGtmGeomapResultOutput) DefaultDatacenter() GetGtmGeomapDefaultData
 
 func (o LookupGtmGeomapResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmGeomapResult) string { return v.Domain }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupGtmGeomapResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGtmGeomapResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupGtmGeomapResultOutput) Links() GetGtmGeomapLinkArrayOutput {

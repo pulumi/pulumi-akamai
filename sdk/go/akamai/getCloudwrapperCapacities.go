@@ -31,8 +31,6 @@ type GetCloudwrapperCapacitiesArgs struct {
 type GetCloudwrapperCapacitiesResult struct {
 	Capacities  []GetCloudwrapperCapacitiesCapacity `pulumi:"capacities"`
 	ContractIds []string                            `pulumi:"contractIds"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetCloudwrapperCapacitiesOutput(ctx *pulumi.Context, args GetCloudwrapperCapacitiesOutputArgs, opts ...pulumi.InvokeOption) GetCloudwrapperCapacitiesResultOutput {
@@ -75,11 +73,6 @@ func (o GetCloudwrapperCapacitiesResultOutput) Capacities() GetCloudwrapperCapac
 
 func (o GetCloudwrapperCapacitiesResultOutput) ContractIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCloudwrapperCapacitiesResult) []string { return v.ContractIds }).(pulumi.StringArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudwrapperCapacitiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudwrapperCapacitiesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -21,11 +21,6 @@ public final class GetPropertyHostnameActivationResult {
     private String groupId;
     private String hostnameActivationId;
     private List<GetPropertyHostnameActivationHostname> hostnames;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable Boolean includeHostnames;
     private String network;
     private String note;
@@ -54,13 +49,6 @@ public final class GetPropertyHostnameActivationResult {
     }
     public List<GetPropertyHostnameActivationHostname> hostnames() {
         return this.hostnames;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<Boolean> includeHostnames() {
         return Optional.ofNullable(this.includeHostnames);
@@ -105,7 +93,6 @@ public final class GetPropertyHostnameActivationResult {
         private String groupId;
         private String hostnameActivationId;
         private List<GetPropertyHostnameActivationHostname> hostnames;
-        private String id;
         private @Nullable Boolean includeHostnames;
         private String network;
         private String note;
@@ -124,7 +111,6 @@ public final class GetPropertyHostnameActivationResult {
     	      this.groupId = defaults.groupId;
     	      this.hostnameActivationId = defaults.hostnameActivationId;
     	      this.hostnames = defaults.hostnames;
-    	      this.id = defaults.id;
     	      this.includeHostnames = defaults.includeHostnames;
     	      this.network = defaults.network;
     	      this.note = defaults.note;
@@ -186,14 +172,6 @@ public final class GetPropertyHostnameActivationResult {
         }
         public Builder hostnames(GetPropertyHostnameActivationHostname... hostnames) {
             return hostnames(List.of(hostnames));
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetPropertyHostnameActivationResult", "id");
-            }
-            this.id = id;
-            return this;
         }
         @CustomType.Setter
         public Builder includeHostnames(@Nullable Boolean includeHostnames) {
@@ -276,7 +254,6 @@ public final class GetPropertyHostnameActivationResult {
             _resultValue.groupId = groupId;
             _resultValue.hostnameActivationId = hostnameActivationId;
             _resultValue.hostnames = hostnames;
-            _resultValue.id = id;
             _resultValue.includeHostnames = includeHostnames;
             _resultValue.network = network;
             _resultValue.note = note;

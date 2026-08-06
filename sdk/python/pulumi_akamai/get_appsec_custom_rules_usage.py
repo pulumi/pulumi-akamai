@@ -27,13 +27,10 @@ class GetAppsecCustomRulesUsageResult:
     """
     A collection of values returned by getAppsecCustomRulesUsage.
     """
-    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, rule_ids=None, rules=None):
+    def __init__(__self__, config_id=None, json=None, output_text=None, rule_ids=None, rules=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
@@ -51,14 +48,6 @@ class GetAppsecCustomRulesUsageResult:
     @pulumi.getter(name="configId")
     def config_id(self) -> _builtins.int:
         return pulumi.get(self, "config_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter
@@ -88,7 +77,6 @@ class AwaitableGetAppsecCustomRulesUsageResult(GetAppsecCustomRulesUsageResult):
             yield self
         return GetAppsecCustomRulesUsageResult(
             config_id=self.config_id,
-            id=self.id,
             json=self.json,
             output_text=self.output_text,
             rule_ids=self.rule_ids,
@@ -109,7 +97,6 @@ def get_appsec_custom_rules_usage(config_id: Optional[_builtins.int] = None,
 
     return AwaitableGetAppsecCustomRulesUsageResult(
         config_id=pulumi.get(__ret__, 'config_id'),
-        id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'),
         rule_ids=pulumi.get(__ret__, 'rule_ids'),
@@ -127,7 +114,6 @@ def get_appsec_custom_rules_usage_output(config_id: pulumi.Input[Optional[_built
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppsecCustomRulesUsage:getAppsecCustomRulesUsage', __args__, opts=opts, typ=GetAppsecCustomRulesUsageResult)
     return __ret__.apply(lambda __response__: GetAppsecCustomRulesUsageResult(
         config_id=pulumi.get(__response__, 'config_id'),
-        id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
         output_text=pulumi.get(__response__, 'output_text'),
         rule_ids=pulumi.get(__response__, 'rule_ids'),

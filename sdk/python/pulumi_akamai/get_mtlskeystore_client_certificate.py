@@ -27,7 +27,7 @@ class GetMtlskeystoreClientCertificateResult:
     """
     A collection of values returned by getMtlskeystoreClientCertificate.
     """
-    def __init__(__self__, certificate_id=None, certificate_name=None, created_by=None, created_date=None, current=None, geography=None, id=None, include_associated_properties=None, key_algorithm=None, notification_emails=None, previous=None, secure_network=None, signer=None, subject=None, versions=None):
+    def __init__(__self__, certificate_id=None, certificate_name=None, created_by=None, created_date=None, current=None, geography=None, include_associated_properties=None, key_algorithm=None, notification_emails=None, previous=None, secure_network=None, signer=None, subject=None, versions=None):
         if certificate_id and not isinstance(certificate_id, int):
             raise TypeError("Expected argument 'certificate_id' to be a int")
         pulumi.set(__self__, "certificate_id", certificate_id)
@@ -46,9 +46,6 @@ class GetMtlskeystoreClientCertificateResult:
         if geography and not isinstance(geography, str):
             raise TypeError("Expected argument 'geography' to be a str")
         pulumi.set(__self__, "geography", geography)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if include_associated_properties and not isinstance(include_associated_properties, bool):
             raise TypeError("Expected argument 'include_associated_properties' to be a bool")
         pulumi.set(__self__, "include_associated_properties", include_associated_properties)
@@ -105,14 +102,6 @@ class GetMtlskeystoreClientCertificateResult:
         return pulumi.get(self, "geography")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="includeAssociatedProperties")
     def include_associated_properties(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "include_associated_properties")
@@ -165,7 +154,6 @@ class AwaitableGetMtlskeystoreClientCertificateResult(GetMtlskeystoreClientCerti
             created_date=self.created_date,
             current=self.current,
             geography=self.geography,
-            id=self.id,
             include_associated_properties=self.include_associated_properties,
             key_algorithm=self.key_algorithm,
             notification_emails=self.notification_emails,
@@ -195,7 +183,6 @@ def get_mtlskeystore_client_certificate(certificate_id: Optional[_builtins.int] 
         created_date=pulumi.get(__ret__, 'created_date'),
         current=pulumi.get(__ret__, 'current'),
         geography=pulumi.get(__ret__, 'geography'),
-        id=pulumi.get(__ret__, 'id'),
         include_associated_properties=pulumi.get(__ret__, 'include_associated_properties'),
         key_algorithm=pulumi.get(__ret__, 'key_algorithm'),
         notification_emails=pulumi.get(__ret__, 'notification_emails'),
@@ -222,7 +209,6 @@ def get_mtlskeystore_client_certificate_output(certificate_id: pulumi.Input[Opti
         created_date=pulumi.get(__response__, 'created_date'),
         current=pulumi.get(__response__, 'current'),
         geography=pulumi.get(__response__, 'geography'),
-        id=pulumi.get(__response__, 'id'),
         include_associated_properties=pulumi.get(__response__, 'include_associated_properties'),
         key_algorithm=pulumi.get(__response__, 'key_algorithm'),
         notification_emails=pulumi.get(__response__, 'notification_emails'),

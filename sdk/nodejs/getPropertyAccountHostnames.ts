@@ -44,10 +44,6 @@ export interface GetPropertyAccountHostnamesResult {
     readonly groupId: string;
     readonly hostname?: string;
     readonly hostnames: outputs.GetPropertyAccountHostnamesHostname[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly network?: string;
     readonly sort?: string;
 }

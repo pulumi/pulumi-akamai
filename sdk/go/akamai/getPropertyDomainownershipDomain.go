@@ -29,18 +29,16 @@ type GetPropertyDomainownershipDomainArgs struct {
 
 // A collection of values returned by getPropertyDomainownershipDomain.
 type GetPropertyDomainownershipDomainResult struct {
-	AccountId             string                                                `pulumi:"accountId"`
-	DomainName            string                                                `pulumi:"domainName"`
-	DomainStatus          string                                                `pulumi:"domainStatus"`
-	DomainStatusHistories []GetPropertyDomainownershipDomainDomainStatusHistory `pulumi:"domainStatusHistories"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                      string                                              `pulumi:"id"`
-	ValidationChallenge     GetPropertyDomainownershipDomainValidationChallenge `pulumi:"validationChallenge"`
-	ValidationCompletedDate string                                              `pulumi:"validationCompletedDate"`
-	ValidationMethod        string                                              `pulumi:"validationMethod"`
-	ValidationRequestedBy   string                                              `pulumi:"validationRequestedBy"`
-	ValidationRequestedDate string                                              `pulumi:"validationRequestedDate"`
-	ValidationScope         string                                              `pulumi:"validationScope"`
+	AccountId               string                                                `pulumi:"accountId"`
+	DomainName              string                                                `pulumi:"domainName"`
+	DomainStatus            string                                                `pulumi:"domainStatus"`
+	DomainStatusHistories   []GetPropertyDomainownershipDomainDomainStatusHistory `pulumi:"domainStatusHistories"`
+	ValidationChallenge     GetPropertyDomainownershipDomainValidationChallenge   `pulumi:"validationChallenge"`
+	ValidationCompletedDate string                                                `pulumi:"validationCompletedDate"`
+	ValidationMethod        string                                                `pulumi:"validationMethod"`
+	ValidationRequestedBy   string                                                `pulumi:"validationRequestedBy"`
+	ValidationRequestedDate string                                                `pulumi:"validationRequestedDate"`
+	ValidationScope         string                                                `pulumi:"validationScope"`
 }
 
 func GetPropertyDomainownershipDomainOutput(ctx *pulumi.Context, args GetPropertyDomainownershipDomainOutputArgs, opts ...pulumi.InvokeOption) GetPropertyDomainownershipDomainResultOutput {
@@ -93,11 +91,6 @@ func (o GetPropertyDomainownershipDomainResultOutput) DomainStatusHistories() Ge
 	return o.ApplyT(func(v GetPropertyDomainownershipDomainResult) []GetPropertyDomainownershipDomainDomainStatusHistory {
 		return v.DomainStatusHistories
 	}).(GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetPropertyDomainownershipDomainResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetPropertyDomainownershipDomainResultOutput) ValidationChallenge() GetPropertyDomainownershipDomainValidationChallengeOutput {

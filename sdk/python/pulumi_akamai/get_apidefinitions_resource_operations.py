@@ -26,13 +26,10 @@ class GetApidefinitionsResourceOperationsResult:
     """
     A collection of values returned by getApidefinitionsResourceOperations.
     """
-    def __init__(__self__, api_id=None, id=None, resource_name=None, resource_operations=None, resource_path=None, version=None):
+    def __init__(__self__, api_id=None, resource_name=None, resource_operations=None, resource_path=None, version=None):
         if api_id and not isinstance(api_id, int):
             raise TypeError("Expected argument 'api_id' to be a int")
         pulumi.set(__self__, "api_id", api_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if resource_name and not isinstance(resource_name, str):
             raise TypeError("Expected argument 'resource_name' to be a str")
         pulumi.set(__self__, "resource_name", resource_name)
@@ -50,14 +47,6 @@ class GetApidefinitionsResourceOperationsResult:
     @pulumi.getter(name="apiId")
     def api_id(self) -> _builtins.int:
         return pulumi.get(self, "api_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
@@ -87,7 +76,6 @@ class AwaitableGetApidefinitionsResourceOperationsResult(GetApidefinitionsResour
             yield self
         return GetApidefinitionsResourceOperationsResult(
             api_id=self.api_id,
-            id=self.id,
             resource_name=self.resource_name,
             resource_operations=self.resource_operations,
             resource_path=self.resource_path,
@@ -110,7 +98,6 @@ def get_apidefinitions_resource_operations(api_id: Optional[_builtins.int] = Non
 
     return AwaitableGetApidefinitionsResourceOperationsResult(
         api_id=pulumi.get(__ret__, 'api_id'),
-        id=pulumi.get(__ret__, 'id'),
         resource_name=pulumi.get(__ret__, 'resource_name'),
         resource_operations=pulumi.get(__ret__, 'resource_operations'),
         resource_path=pulumi.get(__ret__, 'resource_path'),
@@ -130,7 +117,6 @@ def get_apidefinitions_resource_operations_output(api_id: pulumi.Input[Optional[
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getApidefinitionsResourceOperations:getApidefinitionsResourceOperations', __args__, opts=opts, typ=GetApidefinitionsResourceOperationsResult)
     return __ret__.apply(lambda __response__: GetApidefinitionsResourceOperationsResult(
         api_id=pulumi.get(__response__, 'api_id'),
-        id=pulumi.get(__response__, 'id'),
         resource_name=pulumi.get(__response__, 'resource_name'),
         resource_operations=pulumi.get(__response__, 'resource_operations'),
         resource_path=pulumi.get(__response__, 'resource_path'),

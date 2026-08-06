@@ -5,7 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.akamai.outputs.GetCloudwrapperCapacitiesCapacity;
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -15,11 +14,6 @@ import javax.annotation.Nullable;
 public final class GetCloudwrapperCapacitiesResult {
     private @Nullable List<GetCloudwrapperCapacitiesCapacity> capacities;
     private @Nullable List<String> contractIds;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetCloudwrapperCapacitiesResult() {}
     public List<GetCloudwrapperCapacitiesCapacity> capacities() {
@@ -27,13 +21,6 @@ public final class GetCloudwrapperCapacitiesResult {
     }
     public List<String> contractIds() {
         return this.contractIds == null ? List.of() : this.contractIds;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -47,13 +34,11 @@ public final class GetCloudwrapperCapacitiesResult {
     public static final class Builder {
         private @Nullable List<GetCloudwrapperCapacitiesCapacity> capacities;
         private @Nullable List<String> contractIds;
-        private String id;
         public Builder() {}
         public Builder(GetCloudwrapperCapacitiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.capacities = defaults.capacities;
     	      this.contractIds = defaults.contractIds;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -74,19 +59,10 @@ public final class GetCloudwrapperCapacitiesResult {
         public Builder contractIds(String... contractIds) {
             return contractIds(List.of(contractIds));
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudwrapperCapacitiesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetCloudwrapperCapacitiesResult build() {
             final var _resultValue = new GetCloudwrapperCapacitiesResult();
             _resultValue.capacities = capacities;
             _resultValue.contractIds = contractIds;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

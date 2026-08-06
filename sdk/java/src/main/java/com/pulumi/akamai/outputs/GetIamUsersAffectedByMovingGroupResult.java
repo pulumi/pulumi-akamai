@@ -16,11 +16,6 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetIamUsersAffectedByMovingGroupResult {
     private Integer destinationGroupId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private Integer sourceGroupId;
     private @Nullable String userType;
     private List<GetIamUsersAffectedByMovingGroupUser> users;
@@ -28,13 +23,6 @@ public final class GetIamUsersAffectedByMovingGroupResult {
     private GetIamUsersAffectedByMovingGroupResult() {}
     public Integer destinationGroupId() {
         return this.destinationGroupId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Integer sourceGroupId() {
         return this.sourceGroupId;
@@ -56,7 +44,6 @@ public final class GetIamUsersAffectedByMovingGroupResult {
     @CustomType.Builder
     public static final class Builder {
         private Integer destinationGroupId;
-        private String id;
         private Integer sourceGroupId;
         private @Nullable String userType;
         private List<GetIamUsersAffectedByMovingGroupUser> users;
@@ -64,7 +51,6 @@ public final class GetIamUsersAffectedByMovingGroupResult {
         public Builder(GetIamUsersAffectedByMovingGroupResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinationGroupId = defaults.destinationGroupId;
-    	      this.id = defaults.id;
     	      this.sourceGroupId = defaults.sourceGroupId;
     	      this.userType = defaults.userType;
     	      this.users = defaults.users;
@@ -76,14 +62,6 @@ public final class GetIamUsersAffectedByMovingGroupResult {
               throw new MissingRequiredPropertyException("GetIamUsersAffectedByMovingGroupResult", "destinationGroupId");
             }
             this.destinationGroupId = destinationGroupId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetIamUsersAffectedByMovingGroupResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -114,7 +92,6 @@ public final class GetIamUsersAffectedByMovingGroupResult {
         public GetIamUsersAffectedByMovingGroupResult build() {
             final var _resultValue = new GetIamUsersAffectedByMovingGroupResult();
             _resultValue.destinationGroupId = destinationGroupId;
-            _resultValue.id = id;
             _resultValue.sourceGroupId = sourceGroupId;
             _resultValue.userType = userType;
             _resultValue.users = users;

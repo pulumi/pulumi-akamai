@@ -18,11 +18,6 @@ public final class GetMtlstruststoreCaSetActivationsResult {
     private List<GetMtlstruststoreCaSetActivationsActivation> activations;
     private String caSetId;
     private String caSetName;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable String network;
     private @Nullable String status;
     private @Nullable String type;
@@ -37,13 +32,6 @@ public final class GetMtlstruststoreCaSetActivationsResult {
     }
     public String caSetName() {
         return this.caSetName;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<String> network() {
         return Optional.ofNullable(this.network);
@@ -70,7 +58,6 @@ public final class GetMtlstruststoreCaSetActivationsResult {
         private List<GetMtlstruststoreCaSetActivationsActivation> activations;
         private String caSetId;
         private String caSetName;
-        private String id;
         private @Nullable String network;
         private @Nullable String status;
         private @Nullable String type;
@@ -81,7 +68,6 @@ public final class GetMtlstruststoreCaSetActivationsResult {
     	      this.activations = defaults.activations;
     	      this.caSetId = defaults.caSetId;
     	      this.caSetName = defaults.caSetName;
-    	      this.id = defaults.id;
     	      this.network = defaults.network;
     	      this.status = defaults.status;
     	      this.type = defaults.type;
@@ -116,14 +102,6 @@ public final class GetMtlstruststoreCaSetActivationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetActivationsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder network(@Nullable String network) {
 
             this.network = network;
@@ -152,7 +130,6 @@ public final class GetMtlstruststoreCaSetActivationsResult {
             _resultValue.activations = activations;
             _resultValue.caSetId = caSetId;
             _resultValue.caSetName = caSetName;
-            _resultValue.id = id;
             _resultValue.network = network;
             _resultValue.status = status;
             _resultValue.type = type;

@@ -27,16 +27,13 @@ class GetCloudaccessKeyPropertiesResult:
     """
     A collection of values returned by getCloudaccessKeyProperties.
     """
-    def __init__(__self__, access_key_name=None, access_key_uid=None, id=None, properties=None):
+    def __init__(__self__, access_key_name=None, access_key_uid=None, properties=None):
         if access_key_name and not isinstance(access_key_name, str):
             raise TypeError("Expected argument 'access_key_name' to be a str")
         pulumi.set(__self__, "access_key_name", access_key_name)
         if access_key_uid and not isinstance(access_key_uid, int):
             raise TypeError("Expected argument 'access_key_uid' to be a int")
         pulumi.set(__self__, "access_key_uid", access_key_uid)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if properties and not isinstance(properties, list):
             raise TypeError("Expected argument 'properties' to be a list")
         pulumi.set(__self__, "properties", properties)
@@ -53,14 +50,6 @@ class GetCloudaccessKeyPropertiesResult:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter
     def properties(self) -> Sequence['outputs.GetCloudaccessKeyPropertiesPropertyResult']:
         return pulumi.get(self, "properties")
 
@@ -73,7 +62,6 @@ class AwaitableGetCloudaccessKeyPropertiesResult(GetCloudaccessKeyPropertiesResu
         return GetCloudaccessKeyPropertiesResult(
             access_key_name=self.access_key_name,
             access_key_uid=self.access_key_uid,
-            id=self.id,
             properties=self.properties)
 
 
@@ -90,7 +78,6 @@ def get_cloudaccess_key_properties(access_key_name: Optional[_builtins.str] = No
     return AwaitableGetCloudaccessKeyPropertiesResult(
         access_key_name=pulumi.get(__ret__, 'access_key_name'),
         access_key_uid=pulumi.get(__ret__, 'access_key_uid'),
-        id=pulumi.get(__ret__, 'id'),
         properties=pulumi.get(__ret__, 'properties'))
 def get_cloudaccess_key_properties_output(access_key_name: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudaccessKeyPropertiesResult]:
@@ -104,5 +91,4 @@ def get_cloudaccess_key_properties_output(access_key_name: pulumi.Input[Optional
     return __ret__.apply(lambda __response__: GetCloudaccessKeyPropertiesResult(
         access_key_name=pulumi.get(__response__, 'access_key_name'),
         access_key_uid=pulumi.get(__response__, 'access_key_uid'),
-        id=pulumi.get(__response__, 'id'),
         properties=pulumi.get(__response__, 'properties')))

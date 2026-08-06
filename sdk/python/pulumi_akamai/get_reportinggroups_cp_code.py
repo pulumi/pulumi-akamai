@@ -27,7 +27,7 @@ class GetReportinggroupsCpCodeResult:
     """
     A collection of values returned by getReportinggroupsCpCode.
     """
-    def __init__(__self__, access_group=None, account_id=None, contracts=None, cp_code_id=None, default_time_zone=None, id=None, name=None, override_time_zone=None, products=None, purgeable=None, type=None):
+    def __init__(__self__, access_group=None, account_id=None, contracts=None, cp_code_id=None, default_time_zone=None, name=None, override_time_zone=None, products=None, purgeable=None, type=None):
         if access_group and not isinstance(access_group, dict):
             raise TypeError("Expected argument 'access_group' to be a dict")
         pulumi.set(__self__, "access_group", access_group)
@@ -43,9 +43,6 @@ class GetReportinggroupsCpCodeResult:
         if default_time_zone and not isinstance(default_time_zone, str):
             raise TypeError("Expected argument 'default_time_zone' to be a str")
         pulumi.set(__self__, "default_time_zone", default_time_zone)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -89,14 +86,6 @@ class GetReportinggroupsCpCodeResult:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter
     def name(self) -> _builtins.str:
         return pulumi.get(self, "name")
 
@@ -132,7 +121,6 @@ class AwaitableGetReportinggroupsCpCodeResult(GetReportinggroupsCpCodeResult):
             contracts=self.contracts,
             cp_code_id=self.cp_code_id,
             default_time_zone=self.default_time_zone,
-            id=self.id,
             name=self.name,
             override_time_zone=self.override_time_zone,
             products=self.products,
@@ -156,7 +144,6 @@ def get_reportinggroups_cp_code(cp_code_id: Optional[_builtins.int] = None,
         contracts=pulumi.get(__ret__, 'contracts'),
         cp_code_id=pulumi.get(__ret__, 'cp_code_id'),
         default_time_zone=pulumi.get(__ret__, 'default_time_zone'),
-        id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         override_time_zone=pulumi.get(__ret__, 'override_time_zone'),
         products=pulumi.get(__ret__, 'products'),
@@ -177,7 +164,6 @@ def get_reportinggroups_cp_code_output(cp_code_id: pulumi.Input[Optional[_builti
         contracts=pulumi.get(__response__, 'contracts'),
         cp_code_id=pulumi.get(__response__, 'cp_code_id'),
         default_time_zone=pulumi.get(__response__, 'default_time_zone'),
-        id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),
         override_time_zone=pulumi.get(__response__, 'override_time_zone'),
         products=pulumi.get(__response__, 'products'),

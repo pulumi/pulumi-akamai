@@ -27,10 +27,6 @@ export interface GetGtmResourcesArgs {
  */
 export interface GetGtmResourcesResult {
     readonly domain: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly resources?: outputs.GetGtmResourcesResource[];
 }
 export function getGtmResourcesOutput(args: GetGtmResourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmResourcesResult> {

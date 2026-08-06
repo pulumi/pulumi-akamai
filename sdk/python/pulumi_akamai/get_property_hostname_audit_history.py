@@ -27,16 +27,13 @@ class GetPropertyHostnameAuditHistoryResult:
     """
     A collection of values returned by getPropertyHostnameAuditHistory.
     """
-    def __init__(__self__, histories=None, hostname=None, id=None):
+    def __init__(__self__, histories=None, hostname=None):
         if histories and not isinstance(histories, list):
             raise TypeError("Expected argument 'histories' to be a list")
         pulumi.set(__self__, "histories", histories)
         if hostname and not isinstance(hostname, str):
             raise TypeError("Expected argument 'hostname' to be a str")
         pulumi.set(__self__, "hostname", hostname)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter
@@ -48,14 +45,6 @@ class GetPropertyHostnameAuditHistoryResult:
     def hostname(self) -> _builtins.str:
         return pulumi.get(self, "hostname")
 
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
 
 class AwaitableGetPropertyHostnameAuditHistoryResult(GetPropertyHostnameAuditHistoryResult):
     # pylint: disable=using-constant-test
@@ -64,8 +53,7 @@ class AwaitableGetPropertyHostnameAuditHistoryResult(GetPropertyHostnameAuditHis
             yield self
         return GetPropertyHostnameAuditHistoryResult(
             histories=self.histories,
-            hostname=self.hostname,
-            id=self.id)
+            hostname=self.hostname)
 
 
 def get_property_hostname_audit_history(hostname: Optional[_builtins.str] = None,
@@ -80,8 +68,7 @@ def get_property_hostname_audit_history(hostname: Optional[_builtins.str] = None
 
     return AwaitableGetPropertyHostnameAuditHistoryResult(
         histories=pulumi.get(__ret__, 'histories'),
-        hostname=pulumi.get(__ret__, 'hostname'),
-        id=pulumi.get(__ret__, 'id'))
+        hostname=pulumi.get(__ret__, 'hostname'))
 def get_property_hostname_audit_history_output(hostname: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyHostnameAuditHistoryResult]:
     """
@@ -93,5 +80,4 @@ def get_property_hostname_audit_history_output(hostname: pulumi.Input[Optional[_
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyHostnameAuditHistory:getPropertyHostnameAuditHistory', __args__, opts=opts, typ=GetPropertyHostnameAuditHistoryResult)
     return __ret__.apply(lambda __response__: GetPropertyHostnameAuditHistoryResult(
         histories=pulumi.get(__response__, 'histories'),
-        hostname=pulumi.get(__response__, 'hostname'),
-        id=pulumi.get(__response__, 'id')))
+        hostname=pulumi.get(__response__, 'hostname')))

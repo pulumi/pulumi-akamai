@@ -6,29 +6,16 @@ package com.pulumi.akamai.outputs;
 import com.pulumi.akamai.outputs.GetIamApiClientsApiClient;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetIamApiClientsResult {
     private List<GetIamApiClientsApiClient> apiClients;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetIamApiClientsResult() {}
     public List<GetIamApiClientsApiClient> apiClients() {
         return this.apiClients;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -41,12 +28,10 @@ public final class GetIamApiClientsResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetIamApiClientsApiClient> apiClients;
-        private String id;
         public Builder() {}
         public Builder(GetIamApiClientsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiClients = defaults.apiClients;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -60,18 +45,9 @@ public final class GetIamApiClientsResult {
         public Builder apiClients(GetIamApiClientsApiClient... apiClients) {
             return apiClients(List.of(apiClients));
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetIamApiClientsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetIamApiClientsResult build() {
             final var _resultValue = new GetIamApiClientsResult();
             _resultValue.apiClients = apiClients;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

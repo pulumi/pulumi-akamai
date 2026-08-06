@@ -81,10 +81,6 @@ namespace Pulumi.Akamai
     public sealed class GetCloudwrapperPropertiesResult
     {
         public readonly ImmutableArray<string> ContractIds;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly ImmutableArray<Outputs.GetCloudwrapperPropertiesPropertyResult> Properties;
         public readonly bool? Unused;
 
@@ -92,14 +88,11 @@ namespace Pulumi.Akamai
         private GetCloudwrapperPropertiesResult(
             ImmutableArray<string> contractIds,
 
-            string id,
-
             ImmutableArray<Outputs.GetCloudwrapperPropertiesPropertyResult> properties,
 
             bool? unused)
         {
             ContractIds = contractIds;
-            Id = id;
             Properties = properties;
             Unused = unused;
         }

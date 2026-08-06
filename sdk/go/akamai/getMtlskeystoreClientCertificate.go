@@ -29,14 +29,12 @@ type GetMtlskeystoreClientCertificateArgs struct {
 
 // A collection of values returned by getMtlskeystoreClientCertificate.
 type GetMtlskeystoreClientCertificateResult struct {
-	CertificateId   int                                     `pulumi:"certificateId"`
-	CertificateName string                                  `pulumi:"certificateName"`
-	CreatedBy       string                                  `pulumi:"createdBy"`
-	CreatedDate     string                                  `pulumi:"createdDate"`
-	Current         GetMtlskeystoreClientCertificateCurrent `pulumi:"current"`
-	Geography       string                                  `pulumi:"geography"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                          string                                    `pulumi:"id"`
+	CertificateId               int                                       `pulumi:"certificateId"`
+	CertificateName             string                                    `pulumi:"certificateName"`
+	CreatedBy                   string                                    `pulumi:"createdBy"`
+	CreatedDate                 string                                    `pulumi:"createdDate"`
+	Current                     GetMtlskeystoreClientCertificateCurrent   `pulumi:"current"`
+	Geography                   string                                    `pulumi:"geography"`
 	IncludeAssociatedProperties *bool                                     `pulumi:"includeAssociatedProperties"`
 	KeyAlgorithm                string                                    `pulumi:"keyAlgorithm"`
 	NotificationEmails          []string                                  `pulumi:"notificationEmails"`
@@ -105,11 +103,6 @@ func (o GetMtlskeystoreClientCertificateResultOutput) Current() GetMtlskeystoreC
 
 func (o GetMtlskeystoreClientCertificateResultOutput) Geography() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMtlskeystoreClientCertificateResult) string { return v.Geography }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetMtlskeystoreClientCertificateResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetMtlskeystoreClientCertificateResultOutput) IncludeAssociatedProperties() pulumi.BoolPtrOutput {

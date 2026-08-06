@@ -5,7 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.akamai.outputs.GetCloudwrapperPropertiesProperty;
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -16,24 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetCloudwrapperPropertiesResult {
     private @Nullable List<String> contractIds;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable List<GetCloudwrapperPropertiesProperty> properties;
     private @Nullable Boolean unused;
 
     private GetCloudwrapperPropertiesResult() {}
     public List<String> contractIds() {
         return this.contractIds == null ? List.of() : this.contractIds;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public List<GetCloudwrapperPropertiesProperty> properties() {
         return this.properties == null ? List.of() : this.properties;
@@ -52,14 +39,12 @@ public final class GetCloudwrapperPropertiesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> contractIds;
-        private String id;
         private @Nullable List<GetCloudwrapperPropertiesProperty> properties;
         private @Nullable Boolean unused;
         public Builder() {}
         public Builder(GetCloudwrapperPropertiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contractIds = defaults.contractIds;
-    	      this.id = defaults.id;
     	      this.properties = defaults.properties;
     	      this.unused = defaults.unused;
         }
@@ -72,14 +57,6 @@ public final class GetCloudwrapperPropertiesResult {
         }
         public Builder contractIds(String... contractIds) {
             return contractIds(List.of(contractIds));
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudwrapperPropertiesResult", "id");
-            }
-            this.id = id;
-            return this;
         }
         @CustomType.Setter
         public Builder properties(@Nullable List<GetCloudwrapperPropertiesProperty> properties) {
@@ -99,7 +76,6 @@ public final class GetCloudwrapperPropertiesResult {
         public GetCloudwrapperPropertiesResult build() {
             final var _resultValue = new GetCloudwrapperPropertiesResult();
             _resultValue.contractIds = contractIds;
-            _resultValue.id = id;
             _resultValue.properties = properties;
             _resultValue.unused = unused;
             return _resultValue;

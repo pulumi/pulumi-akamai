@@ -19,11 +19,6 @@ public final class GetGtmAsmapResult {
     private @Nullable List<GetGtmAsmapAssignment> assignments;
     private @Nullable GetGtmAsmapDefaultDatacenter defaultDatacenter;
     private String domain;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable List<GetGtmAsmapLink> links;
     private String mapName;
 
@@ -36,13 +31,6 @@ public final class GetGtmAsmapResult {
     }
     public String domain() {
         return this.domain;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public List<GetGtmAsmapLink> links() {
         return this.links == null ? List.of() : this.links;
@@ -63,7 +51,6 @@ public final class GetGtmAsmapResult {
         private @Nullable List<GetGtmAsmapAssignment> assignments;
         private @Nullable GetGtmAsmapDefaultDatacenter defaultDatacenter;
         private String domain;
-        private String id;
         private @Nullable List<GetGtmAsmapLink> links;
         private String mapName;
         public Builder() {}
@@ -72,7 +59,6 @@ public final class GetGtmAsmapResult {
     	      this.assignments = defaults.assignments;
     	      this.defaultDatacenter = defaults.defaultDatacenter;
     	      this.domain = defaults.domain;
-    	      this.id = defaults.id;
     	      this.links = defaults.links;
     	      this.mapName = defaults.mapName;
         }
@@ -101,14 +87,6 @@ public final class GetGtmAsmapResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetGtmAsmapResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder links(@Nullable List<GetGtmAsmapLink> links) {
 
             this.links = links;
@@ -130,7 +108,6 @@ public final class GetGtmAsmapResult {
             _resultValue.assignments = assignments;
             _resultValue.defaultDatacenter = defaultDatacenter;
             _resultValue.domain = domain;
-            _resultValue.id = id;
             _resultValue.links = links;
             _resultValue.mapName = mapName;
             return _resultValue;

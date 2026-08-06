@@ -18,11 +18,6 @@ public final class GetReportinggroupsGroupsResult {
     private @Nullable String cpCodeId;
     private @Nullable String groupId;
     private List<GetReportinggroupsGroupsGroup> groups;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable String reportingGroupName;
 
     private GetReportinggroupsGroupsResult() {}
@@ -37,13 +32,6 @@ public final class GetReportinggroupsGroupsResult {
     }
     public List<GetReportinggroupsGroupsGroup> groups() {
         return this.groups;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<String> reportingGroupName() {
         return Optional.ofNullable(this.reportingGroupName);
@@ -62,7 +50,6 @@ public final class GetReportinggroupsGroupsResult {
         private @Nullable String cpCodeId;
         private @Nullable String groupId;
         private List<GetReportinggroupsGroupsGroup> groups;
-        private String id;
         private @Nullable String reportingGroupName;
         public Builder() {}
         public Builder(GetReportinggroupsGroupsResult defaults) {
@@ -71,7 +58,6 @@ public final class GetReportinggroupsGroupsResult {
     	      this.cpCodeId = defaults.cpCodeId;
     	      this.groupId = defaults.groupId;
     	      this.groups = defaults.groups;
-    	      this.id = defaults.id;
     	      this.reportingGroupName = defaults.reportingGroupName;
         }
 
@@ -105,14 +91,6 @@ public final class GetReportinggroupsGroupsResult {
             return groups(List.of(groups));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetReportinggroupsGroupsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder reportingGroupName(@Nullable String reportingGroupName) {
 
             this.reportingGroupName = reportingGroupName;
@@ -124,7 +102,6 @@ public final class GetReportinggroupsGroupsResult {
             _resultValue.cpCodeId = cpCodeId;
             _resultValue.groupId = groupId;
             _resultValue.groups = groups;
-            _resultValue.id = id;
             _resultValue.reportingGroupName = reportingGroupName;
             return _resultValue;
         }

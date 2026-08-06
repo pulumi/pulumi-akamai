@@ -38,17 +38,15 @@ type GetPropertyHostnameActivationResult struct {
 	GroupId              string                                  `pulumi:"groupId"`
 	HostnameActivationId string                                  `pulumi:"hostnameActivationId"`
 	Hostnames            []GetPropertyHostnameActivationHostname `pulumi:"hostnames"`
-	// The provider-assigned unique ID for this managed resource.
-	Id               string   `pulumi:"id"`
-	IncludeHostnames *bool    `pulumi:"includeHostnames"`
-	Network          string   `pulumi:"network"`
-	Note             string   `pulumi:"note"`
-	NotifyEmails     []string `pulumi:"notifyEmails"`
-	PropertyId       string   `pulumi:"propertyId"`
-	PropertyName     string   `pulumi:"propertyName"`
-	Status           string   `pulumi:"status"`
-	SubmitDate       string   `pulumi:"submitDate"`
-	UpdateDate       string   `pulumi:"updateDate"`
+	IncludeHostnames     *bool                                   `pulumi:"includeHostnames"`
+	Network              string                                  `pulumi:"network"`
+	Note                 string                                  `pulumi:"note"`
+	NotifyEmails         []string                                `pulumi:"notifyEmails"`
+	PropertyId           string                                  `pulumi:"propertyId"`
+	PropertyName         string                                  `pulumi:"propertyName"`
+	Status               string                                  `pulumi:"status"`
+	SubmitDate           string                                  `pulumi:"submitDate"`
+	UpdateDate           string                                  `pulumi:"updateDate"`
 }
 
 func GetPropertyHostnameActivationOutput(ctx *pulumi.Context, args GetPropertyHostnameActivationOutputArgs, opts ...pulumi.InvokeOption) GetPropertyHostnameActivationResultOutput {
@@ -112,11 +110,6 @@ func (o GetPropertyHostnameActivationResultOutput) Hostnames() GetPropertyHostna
 	return o.ApplyT(func(v GetPropertyHostnameActivationResult) []GetPropertyHostnameActivationHostname {
 		return v.Hostnames
 	}).(GetPropertyHostnameActivationHostnameArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetPropertyHostnameActivationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyHostnameActivationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetPropertyHostnameActivationResultOutput) IncludeHostnames() pulumi.BoolPtrOutput {

@@ -55,10 +55,6 @@ namespace Pulumi.Akamai
         public readonly string CreatedBy;
         public readonly string CreatedDate;
         public readonly bool Enabled;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string ModifiedBy;
         public readonly string ModifiedDate;
 
@@ -78,8 +74,6 @@ namespace Pulumi.Akamai
 
             bool enabled,
 
-            string id,
-
             string modifiedBy,
 
             string modifiedDate)
@@ -91,7 +85,6 @@ namespace Pulumi.Akamai
             CreatedBy = createdBy;
             CreatedDate = createdDate;
             Enabled = enabled;
-            Id = id;
             ModifiedBy = modifiedBy;
             ModifiedDate = modifiedDate;
         }

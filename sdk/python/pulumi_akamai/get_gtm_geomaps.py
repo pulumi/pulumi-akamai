@@ -27,16 +27,13 @@ class GetGtmGeomapsResult:
     """
     A collection of values returned by getGtmGeomaps.
     """
-    def __init__(__self__, domain=None, geo_maps=None, id=None):
+    def __init__(__self__, domain=None, geo_maps=None):
         if domain and not isinstance(domain, str):
             raise TypeError("Expected argument 'domain' to be a str")
         pulumi.set(__self__, "domain", domain)
         if geo_maps and not isinstance(geo_maps, list):
             raise TypeError("Expected argument 'geo_maps' to be a list")
         pulumi.set(__self__, "geo_maps", geo_maps)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter
@@ -48,14 +45,6 @@ class GetGtmGeomapsResult:
     def geo_maps(self) -> Sequence['outputs.GetGtmGeomapsGeoMapResult']:
         return pulumi.get(self, "geo_maps")
 
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
 
 class AwaitableGetGtmGeomapsResult(GetGtmGeomapsResult):
     # pylint: disable=using-constant-test
@@ -64,8 +53,7 @@ class AwaitableGetGtmGeomapsResult(GetGtmGeomapsResult):
             yield self
         return GetGtmGeomapsResult(
             domain=self.domain,
-            geo_maps=self.geo_maps,
-            id=self.id)
+            geo_maps=self.geo_maps)
 
 
 def get_gtm_geomaps(domain: Optional[_builtins.str] = None,
@@ -80,8 +68,7 @@ def get_gtm_geomaps(domain: Optional[_builtins.str] = None,
 
     return AwaitableGetGtmGeomapsResult(
         domain=pulumi.get(__ret__, 'domain'),
-        geo_maps=pulumi.get(__ret__, 'geo_maps'),
-        id=pulumi.get(__ret__, 'id'))
+        geo_maps=pulumi.get(__ret__, 'geo_maps'))
 def get_gtm_geomaps_output(domain: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmGeomapsResult]:
     """
@@ -93,5 +80,4 @@ def get_gtm_geomaps_output(domain: pulumi.Input[Optional[_builtins.str]] = None,
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmGeomaps:getGtmGeomaps', __args__, opts=opts, typ=GetGtmGeomapsResult)
     return __ret__.apply(lambda __response__: GetGtmGeomapsResult(
         domain=pulumi.get(__response__, 'domain'),
-        geo_maps=pulumi.get(__response__, 'geo_maps'),
-        id=pulumi.get(__response__, 'id')))
+        geo_maps=pulumi.get(__response__, 'geo_maps')))

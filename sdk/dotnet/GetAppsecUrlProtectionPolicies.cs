@@ -49,22 +49,15 @@ namespace Pulumi.Akamai
     public sealed class GetAppsecUrlProtectionPoliciesResult
     {
         public readonly int ConfigId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly ImmutableArray<Outputs.GetAppsecUrlProtectionPoliciesUrlProtectionPolicyResult> UrlProtectionPolicies;
 
         [OutputConstructor]
         private GetAppsecUrlProtectionPoliciesResult(
             int configId,
 
-            string id,
-
             ImmutableArray<Outputs.GetAppsecUrlProtectionPoliciesUrlProtectionPolicyResult> urlProtectionPolicies)
         {
             ConfigId = configId;
-            Id = id;
             UrlProtectionPolicies = urlProtectionPolicies;
         }
     }

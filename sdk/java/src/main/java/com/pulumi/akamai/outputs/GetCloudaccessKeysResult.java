@@ -6,29 +6,16 @@ package com.pulumi.akamai.outputs;
 import com.pulumi.akamai.outputs.GetCloudaccessKeysAccessKey;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetCloudaccessKeysResult {
     private List<GetCloudaccessKeysAccessKey> accessKeys;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetCloudaccessKeysResult() {}
     public List<GetCloudaccessKeysAccessKey> accessKeys() {
         return this.accessKeys;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -41,12 +28,10 @@ public final class GetCloudaccessKeysResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetCloudaccessKeysAccessKey> accessKeys;
-        private String id;
         public Builder() {}
         public Builder(GetCloudaccessKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessKeys = defaults.accessKeys;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -60,18 +45,9 @@ public final class GetCloudaccessKeysResult {
         public Builder accessKeys(GetCloudaccessKeysAccessKey... accessKeys) {
             return accessKeys(List.of(accessKeys));
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudaccessKeysResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetCloudaccessKeysResult build() {
             final var _resultValue = new GetCloudaccessKeysResult();
             _resultValue.accessKeys = accessKeys;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

@@ -30,9 +30,7 @@ type LookupApidefinitionsResourceOperationsArgs struct {
 
 // A collection of values returned by getApidefinitionsResourceOperations.
 type LookupApidefinitionsResourceOperationsResult struct {
-	ApiId int `pulumi:"apiId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                 string  `pulumi:"id"`
+	ApiId              int     `pulumi:"apiId"`
 	ResourceName       *string `pulumi:"resourceName"`
 	ResourceOperations string  `pulumi:"resourceOperations"`
 	ResourcePath       *string `pulumi:"resourcePath"`
@@ -76,11 +74,6 @@ func (o LookupApidefinitionsResourceOperationsResultOutput) ToLookupApidefinitio
 
 func (o LookupApidefinitionsResourceOperationsResultOutput) ApiId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupApidefinitionsResourceOperationsResult) int { return v.ApiId }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupApidefinitionsResourceOperationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApidefinitionsResourceOperationsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupApidefinitionsResourceOperationsResultOutput) ResourceName() pulumi.StringPtrOutput {

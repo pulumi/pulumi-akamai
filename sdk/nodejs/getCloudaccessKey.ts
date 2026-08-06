@@ -30,10 +30,6 @@ export interface GetCloudaccessKeyResult {
     readonly createdBy: string;
     readonly createdTime: string;
     readonly groups: outputs.GetCloudaccessKeyGroup[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly latestVersion: number;
     readonly networkConfiguration: outputs.GetCloudaccessKeyNetworkConfiguration;
 }

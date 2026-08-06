@@ -35,10 +35,6 @@ export interface GetGtmCidrmapResult {
     readonly assignments?: outputs.GetGtmCidrmapAssignment[];
     readonly defaultDatacenter?: outputs.GetGtmCidrmapDefaultDatacenter;
     readonly domain: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly links?: outputs.GetGtmCidrmapLink[];
     readonly mapName: string;
 }

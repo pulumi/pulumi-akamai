@@ -16,11 +16,6 @@ public final class GetPropertyHostnamesDiffResult {
     private String contractId;
     private String groupId;
     private List<GetPropertyHostnamesDiffHostname> hostnames;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String propertyId;
 
     private GetPropertyHostnamesDiffResult() {}
@@ -35,13 +30,6 @@ public final class GetPropertyHostnamesDiffResult {
     }
     public List<GetPropertyHostnamesDiffHostname> hostnames() {
         return this.hostnames;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String propertyId() {
         return this.propertyId;
@@ -60,7 +48,6 @@ public final class GetPropertyHostnamesDiffResult {
         private String contractId;
         private String groupId;
         private List<GetPropertyHostnamesDiffHostname> hostnames;
-        private String id;
         private String propertyId;
         public Builder() {}
         public Builder(GetPropertyHostnamesDiffResult defaults) {
@@ -69,7 +56,6 @@ public final class GetPropertyHostnamesDiffResult {
     	      this.contractId = defaults.contractId;
     	      this.groupId = defaults.groupId;
     	      this.hostnames = defaults.hostnames;
-    	      this.id = defaults.id;
     	      this.propertyId = defaults.propertyId;
         }
 
@@ -109,14 +95,6 @@ public final class GetPropertyHostnamesDiffResult {
             return hostnames(List.of(hostnames));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetPropertyHostnamesDiffResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder propertyId(String propertyId) {
             if (propertyId == null) {
               throw new MissingRequiredPropertyException("GetPropertyHostnamesDiffResult", "propertyId");
@@ -130,7 +108,6 @@ public final class GetPropertyHostnamesDiffResult {
             _resultValue.contractId = contractId;
             _resultValue.groupId = groupId;
             _resultValue.hostnames = hostnames;
-            _resultValue.id = id;
             _resultValue.propertyId = propertyId;
             return _resultValue;
         }

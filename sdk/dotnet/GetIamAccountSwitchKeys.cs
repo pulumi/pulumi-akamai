@@ -57,10 +57,6 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<Outputs.GetIamAccountSwitchKeysAccountSwitchKeyResult> AccountSwitchKeys;
         public readonly string? ClientId;
         public readonly string? Filter;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
         private GetIamAccountSwitchKeysResult(
@@ -68,14 +64,11 @@ namespace Pulumi.Akamai
 
             string? clientId,
 
-            string? filter,
-
-            string id)
+            string? filter)
         {
             AccountSwitchKeys = accountSwitchKeys;
             ClientId = clientId;
             Filter = filter;
-            Id = id;
         }
     }
 }

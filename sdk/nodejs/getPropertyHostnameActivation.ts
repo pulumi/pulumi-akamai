@@ -38,10 +38,6 @@ export interface GetPropertyHostnameActivationResult {
     readonly groupId: string;
     readonly hostnameActivationId: string;
     readonly hostnames: outputs.GetPropertyHostnameActivationHostname[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly includeHostnames?: boolean;
     readonly network: string;
     readonly note: string;

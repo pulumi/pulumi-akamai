@@ -35,10 +35,8 @@ type LookupGtmAsmapResult struct {
 	Assignments       []GetGtmAsmapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GetGtmAsmapDefaultDatacenter `pulumi:"defaultDatacenter"`
 	Domain            string                        `pulumi:"domain"`
-	// The provider-assigned unique ID for this managed resource.
-	Id      string            `pulumi:"id"`
-	Links   []GetGtmAsmapLink `pulumi:"links"`
-	MapName string            `pulumi:"mapName"`
+	Links             []GetGtmAsmapLink             `pulumi:"links"`
+	MapName           string                        `pulumi:"mapName"`
 }
 
 func LookupGtmAsmapOutput(ctx *pulumi.Context, args LookupGtmAsmapOutputArgs, opts ...pulumi.InvokeOption) LookupGtmAsmapResultOutput {
@@ -88,11 +86,6 @@ func (o LookupGtmAsmapResultOutput) DefaultDatacenter() GetGtmAsmapDefaultDatace
 
 func (o LookupGtmAsmapResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmAsmapResult) string { return v.Domain }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupGtmAsmapResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGtmAsmapResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupGtmAsmapResultOutput) Links() GetGtmAsmapLinkArrayOutput {

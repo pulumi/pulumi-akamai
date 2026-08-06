@@ -27,10 +27,7 @@ class GetClientlistListResult:
     """
     A collection of values returned by getClientlistList.
     """
-    def __init__(__self__, id=None, json=None, list=None, list_id=None, output_text=None):
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
+    def __init__(__self__, json=None, list=None, list_id=None, output_text=None):
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
@@ -43,14 +40,6 @@ class GetClientlistListResult:
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter
@@ -79,7 +68,6 @@ class AwaitableGetClientlistListResult(GetClientlistListResult):
         if False:
             yield self
         return GetClientlistListResult(
-            id=self.id,
             json=self.json,
             list=self.list,
             list_id=self.list_id,
@@ -97,7 +85,6 @@ def get_clientlist_list(list_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getClientlistList:getClientlistList', __args__, opts=opts, typ=GetClientlistListResult).value
 
     return AwaitableGetClientlistListResult(
-        id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         list=pulumi.get(__ret__, 'list'),
         list_id=pulumi.get(__ret__, 'list_id'),
@@ -112,7 +99,6 @@ def get_clientlist_list_output(list_id: pulumi.Input[Optional[_builtins.str]] = 
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getClientlistList:getClientlistList', __args__, opts=opts, typ=GetClientlistListResult)
     return __ret__.apply(lambda __response__: GetClientlistListResult(
-        id=pulumi.get(__response__, 'id'),
         json=pulumi.get(__response__, 'json'),
         list=pulumi.get(__response__, 'list'),
         list_id=pulumi.get(__response__, 'list_id'),

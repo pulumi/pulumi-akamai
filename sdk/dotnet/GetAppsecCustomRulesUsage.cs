@@ -65,10 +65,6 @@ namespace Pulumi.Akamai
     public sealed class GetAppsecCustomRulesUsageResult
     {
         public readonly int ConfigId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string Json;
         public readonly string OutputText;
         public readonly ImmutableArray<int> RuleIds;
@@ -77,8 +73,6 @@ namespace Pulumi.Akamai
         [OutputConstructor]
         private GetAppsecCustomRulesUsageResult(
             int configId,
-
-            string id,
 
             string json,
 
@@ -89,7 +83,6 @@ namespace Pulumi.Akamai
             ImmutableArray<Outputs.GetAppsecCustomRulesUsageRuleResult> rules)
         {
             ConfigId = configId;
-            Id = id;
             Json = json;
             OutputText = outputText;
             RuleIds = ruleIds;

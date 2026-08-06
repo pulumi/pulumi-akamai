@@ -28,11 +28,9 @@ type GetCloudaccessKeyPropertiesArgs struct {
 
 // A collection of values returned by getCloudaccessKeyProperties.
 type GetCloudaccessKeyPropertiesResult struct {
-	AccessKeyName string `pulumi:"accessKeyName"`
-	AccessKeyUid  int    `pulumi:"accessKeyUid"`
-	// The provider-assigned unique ID for this managed resource.
-	Id         string                                `pulumi:"id"`
-	Properties []GetCloudaccessKeyPropertiesProperty `pulumi:"properties"`
+	AccessKeyName string                                `pulumi:"accessKeyName"`
+	AccessKeyUid  int                                   `pulumi:"accessKeyUid"`
+	Properties    []GetCloudaccessKeyPropertiesProperty `pulumi:"properties"`
 }
 
 func GetCloudaccessKeyPropertiesOutput(ctx *pulumi.Context, args GetCloudaccessKeyPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetCloudaccessKeyPropertiesResultOutput {
@@ -74,11 +72,6 @@ func (o GetCloudaccessKeyPropertiesResultOutput) AccessKeyName() pulumi.StringOu
 
 func (o GetCloudaccessKeyPropertiesResultOutput) AccessKeyUid() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudaccessKeyPropertiesResult) int { return v.AccessKeyUid }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudaccessKeyPropertiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudaccessKeyPropertiesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetCloudaccessKeyPropertiesResultOutput) Properties() GetCloudaccessKeyPropertiesPropertyArrayOutput {

@@ -18,11 +18,6 @@ public final class GetReportinggroupsCpCodesResult {
     private @Nullable String cpCodeName;
     private List<GetReportinggroupsCpCodesCpCode> cpCodes;
     private @Nullable String groupId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable String productId;
 
     private GetReportinggroupsCpCodesResult() {}
@@ -37,13 +32,6 @@ public final class GetReportinggroupsCpCodesResult {
     }
     public Optional<String> groupId() {
         return Optional.ofNullable(this.groupId);
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<String> productId() {
         return Optional.ofNullable(this.productId);
@@ -62,7 +50,6 @@ public final class GetReportinggroupsCpCodesResult {
         private @Nullable String cpCodeName;
         private List<GetReportinggroupsCpCodesCpCode> cpCodes;
         private @Nullable String groupId;
-        private String id;
         private @Nullable String productId;
         public Builder() {}
         public Builder(GetReportinggroupsCpCodesResult defaults) {
@@ -71,7 +58,6 @@ public final class GetReportinggroupsCpCodesResult {
     	      this.cpCodeName = defaults.cpCodeName;
     	      this.cpCodes = defaults.cpCodes;
     	      this.groupId = defaults.groupId;
-    	      this.id = defaults.id;
     	      this.productId = defaults.productId;
         }
 
@@ -105,14 +91,6 @@ public final class GetReportinggroupsCpCodesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetReportinggroupsCpCodesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder productId(@Nullable String productId) {
 
             this.productId = productId;
@@ -124,7 +102,6 @@ public final class GetReportinggroupsCpCodesResult {
             _resultValue.cpCodeName = cpCodeName;
             _resultValue.cpCodes = cpCodes;
             _resultValue.groupId = groupId;
-            _resultValue.id = id;
             _resultValue.productId = productId;
             return _resultValue;
         }

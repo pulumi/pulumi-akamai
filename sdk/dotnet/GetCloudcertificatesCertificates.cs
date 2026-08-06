@@ -119,10 +119,6 @@ namespace Pulumi.Akamai
         public readonly string? Domain;
         public readonly int? ExpiringInDays;
         public readonly string? GroupId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly bool? IncludeCertificateMaterials;
         public readonly string? Issuer;
         public readonly string? KeyType;
@@ -144,8 +140,6 @@ namespace Pulumi.Akamai
 
             string? groupId,
 
-            string id,
-
             bool? includeCertificateMaterials,
 
             string? issuer,
@@ -161,7 +155,6 @@ namespace Pulumi.Akamai
             Domain = domain;
             ExpiringInDays = expiringInDays;
             GroupId = groupId;
-            Id = id;
             IncludeCertificateMaterials = includeCertificateMaterials;
             Issuer = issuer;
             KeyType = keyType;

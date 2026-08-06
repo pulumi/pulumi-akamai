@@ -70,10 +70,6 @@ namespace Pulumi.Akamai
         public readonly string ContractId;
         public readonly string GroupId;
         public readonly ImmutableArray<Outputs.GetPropertyHostnameActivationsHostnameActivationResult> HostnameActivations;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string? Network;
         public readonly string PropertyId;
         public readonly string PropertyName;
@@ -88,8 +84,6 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetPropertyHostnameActivationsHostnameActivationResult> hostnameActivations,
 
-            string id,
-
             string? network,
 
             string propertyId,
@@ -100,7 +94,6 @@ namespace Pulumi.Akamai
             ContractId = contractId;
             GroupId = groupId;
             HostnameActivations = hostnameActivations;
-            Id = id;
             Network = network;
             PropertyId = propertyId;
             PropertyName = propertyName;

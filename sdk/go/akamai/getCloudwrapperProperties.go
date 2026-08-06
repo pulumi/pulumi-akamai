@@ -30,11 +30,9 @@ type GetCloudwrapperPropertiesArgs struct {
 
 // A collection of values returned by getCloudwrapperProperties.
 type GetCloudwrapperPropertiesResult struct {
-	ContractIds []string `pulumi:"contractIds"`
-	// The provider-assigned unique ID for this managed resource.
-	Id         string                              `pulumi:"id"`
-	Properties []GetCloudwrapperPropertiesProperty `pulumi:"properties"`
-	Unused     *bool                               `pulumi:"unused"`
+	ContractIds []string                            `pulumi:"contractIds"`
+	Properties  []GetCloudwrapperPropertiesProperty `pulumi:"properties"`
+	Unused      *bool                               `pulumi:"unused"`
 }
 
 func GetCloudwrapperPropertiesOutput(ctx *pulumi.Context, args GetCloudwrapperPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetCloudwrapperPropertiesResultOutput {
@@ -74,11 +72,6 @@ func (o GetCloudwrapperPropertiesResultOutput) ToGetCloudwrapperPropertiesResult
 
 func (o GetCloudwrapperPropertiesResultOutput) ContractIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCloudwrapperPropertiesResult) []string { return v.ContractIds }).(pulumi.StringArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudwrapperPropertiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudwrapperPropertiesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetCloudwrapperPropertiesResultOutput) Properties() GetCloudwrapperPropertiesPropertyArrayOutput {

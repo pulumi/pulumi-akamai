@@ -27,7 +27,7 @@ class GetEdgeHostnamesResult:
     """
     A collection of values returned by getEdgeHostnames.
     """
-    def __init__(__self__, account_id=None, contract_id=None, edge_hostnames=None, group_id=None, id=None, options=None):
+    def __init__(__self__, account_id=None, contract_id=None, edge_hostnames=None, group_id=None, options=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -40,9 +40,6 @@ class GetEdgeHostnamesResult:
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
         pulumi.set(__self__, "group_id", group_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if options and not isinstance(options, list):
             raise TypeError("Expected argument 'options' to be a list")
         pulumi.set(__self__, "options", options)
@@ -69,14 +66,6 @@ class GetEdgeHostnamesResult:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter
     def options(self) -> Optional[Sequence[_builtins.str]]:
         return pulumi.get(self, "options")
 
@@ -91,7 +80,6 @@ class AwaitableGetEdgeHostnamesResult(GetEdgeHostnamesResult):
             contract_id=self.contract_id,
             edge_hostnames=self.edge_hostnames,
             group_id=self.group_id,
-            id=self.id,
             options=self.options)
 
 
@@ -114,7 +102,6 @@ def get_edge_hostnames(contract_id: Optional[_builtins.str] = None,
         contract_id=pulumi.get(__ret__, 'contract_id'),
         edge_hostnames=pulumi.get(__ret__, 'edge_hostnames'),
         group_id=pulumi.get(__ret__, 'group_id'),
-        id=pulumi.get(__ret__, 'id'),
         options=pulumi.get(__ret__, 'options'))
 def get_edge_hostnames_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                               group_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -134,5 +121,4 @@ def get_edge_hostnames_output(contract_id: pulumi.Input[Optional[_builtins.str]]
         contract_id=pulumi.get(__response__, 'contract_id'),
         edge_hostnames=pulumi.get(__response__, 'edge_hostnames'),
         group_id=pulumi.get(__response__, 'group_id'),
-        id=pulumi.get(__response__, 'id'),
         options=pulumi.get(__response__, 'options')))

@@ -27,7 +27,7 @@ class GetPropertyHostnamesDiffResult:
     """
     A collection of values returned by getPropertyHostnamesDiff.
     """
-    def __init__(__self__, account_id=None, contract_id=None, group_id=None, hostnames=None, id=None, property_id=None):
+    def __init__(__self__, account_id=None, contract_id=None, group_id=None, hostnames=None, property_id=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -40,9 +40,6 @@ class GetPropertyHostnamesDiffResult:
         if hostnames and not isinstance(hostnames, list):
             raise TypeError("Expected argument 'hostnames' to be a list")
         pulumi.set(__self__, "hostnames", hostnames)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if property_id and not isinstance(property_id, str):
             raise TypeError("Expected argument 'property_id' to be a str")
         pulumi.set(__self__, "property_id", property_id)
@@ -68,14 +65,6 @@ class GetPropertyHostnamesDiffResult:
         return pulumi.get(self, "hostnames")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="propertyId")
     def property_id(self) -> _builtins.str:
         return pulumi.get(self, "property_id")
@@ -91,7 +80,6 @@ class AwaitableGetPropertyHostnamesDiffResult(GetPropertyHostnamesDiffResult):
             contract_id=self.contract_id,
             group_id=self.group_id,
             hostnames=self.hostnames,
-            id=self.id,
             property_id=self.property_id)
 
 
@@ -114,7 +102,6 @@ def get_property_hostnames_diff(contract_id: Optional[_builtins.str] = None,
         contract_id=pulumi.get(__ret__, 'contract_id'),
         group_id=pulumi.get(__ret__, 'group_id'),
         hostnames=pulumi.get(__ret__, 'hostnames'),
-        id=pulumi.get(__ret__, 'id'),
         property_id=pulumi.get(__ret__, 'property_id'))
 def get_property_hostnames_diff_output(contract_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -134,5 +121,4 @@ def get_property_hostnames_diff_output(contract_id: pulumi.Input[Optional[Option
         contract_id=pulumi.get(__response__, 'contract_id'),
         group_id=pulumi.get(__response__, 'group_id'),
         hostnames=pulumi.get(__response__, 'hostnames'),
-        id=pulumi.get(__response__, 'id'),
         property_id=pulumi.get(__response__, 'property_id')))

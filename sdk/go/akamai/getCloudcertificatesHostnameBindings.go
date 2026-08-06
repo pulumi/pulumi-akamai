@@ -37,9 +37,7 @@ type GetCloudcertificatesHostnameBindingsResult struct {
 	Domain         *string                                       `pulumi:"domain"`
 	ExpiringInDays *int                                          `pulumi:"expiringInDays"`
 	GroupId        *string                                       `pulumi:"groupId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id      string  `pulumi:"id"`
-	Network *string `pulumi:"network"`
+	Network        *string                                       `pulumi:"network"`
 }
 
 func GetCloudcertificatesHostnameBindingsOutput(ctx *pulumi.Context, args GetCloudcertificatesHostnameBindingsOutputArgs, opts ...pulumi.InvokeOption) GetCloudcertificatesHostnameBindingsResultOutput {
@@ -99,11 +97,6 @@ func (o GetCloudcertificatesHostnameBindingsResultOutput) ExpiringInDays() pulum
 
 func (o GetCloudcertificatesHostnameBindingsResultOutput) GroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCloudcertificatesHostnameBindingsResult) *string { return v.GroupId }).(pulumi.StringPtrOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudcertificatesHostnameBindingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesHostnameBindingsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetCloudcertificatesHostnameBindingsResultOutput) Network() pulumi.StringPtrOutput {

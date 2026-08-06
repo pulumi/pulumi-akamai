@@ -78,10 +78,6 @@ namespace Pulumi.Akamai
         public readonly string GroupId;
         public readonly string HostnameActivationId;
         public readonly ImmutableArray<Outputs.GetPropertyHostnameActivationHostnameResult> Hostnames;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly bool? IncludeHostnames;
         public readonly string Network;
         public readonly string Note;
@@ -105,8 +101,6 @@ namespace Pulumi.Akamai
             string hostnameActivationId,
 
             ImmutableArray<Outputs.GetPropertyHostnameActivationHostnameResult> hostnames,
-
-            string id,
 
             bool? includeHostnames,
 
@@ -132,7 +126,6 @@ namespace Pulumi.Akamai
             GroupId = groupId;
             HostnameActivationId = hostnameActivationId;
             Hostnames = hostnames;
-            Id = id;
             IncludeHostnames = includeHostnames;
             Network = network;
             Note = note;

@@ -33,9 +33,7 @@ type GetIamBlockedPropertiesResult struct {
 	BlockedProperties []GetIamBlockedPropertiesBlockedProperty `pulumi:"blockedProperties"`
 	ContractId        string                                   `pulumi:"contractId"`
 	GroupId           int                                      `pulumi:"groupId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	UiIdentityId string `pulumi:"uiIdentityId"`
+	UiIdentityId      string                                   `pulumi:"uiIdentityId"`
 }
 
 func GetIamBlockedPropertiesOutput(ctx *pulumi.Context, args GetIamBlockedPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetIamBlockedPropertiesResultOutput {
@@ -85,11 +83,6 @@ func (o GetIamBlockedPropertiesResultOutput) ContractId() pulumi.StringOutput {
 
 func (o GetIamBlockedPropertiesResultOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIamBlockedPropertiesResult) int { return v.GroupId }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetIamBlockedPropertiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamBlockedPropertiesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetIamBlockedPropertiesResultOutput) UiIdentityId() pulumi.StringOutput {

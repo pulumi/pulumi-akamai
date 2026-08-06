@@ -24,11 +24,6 @@ public final class GetAppsecUrlProtectionPolicyResult {
     private String createdBy;
     private String description;
     private List<GetAppsecUrlProtectionPolicyHostnamePath> hostnamePaths;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private GetAppsecUrlProtectionPolicyIntelligentLoadShedding intelligentLoadShedding;
     private Integer maxRateThreshold;
     private String name;
@@ -58,13 +53,6 @@ public final class GetAppsecUrlProtectionPolicyResult {
     }
     public List<GetAppsecUrlProtectionPolicyHostnamePath> hostnamePaths() {
         return this.hostnamePaths;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public GetAppsecUrlProtectionPolicyIntelligentLoadShedding intelligentLoadShedding() {
         return this.intelligentLoadShedding;
@@ -104,7 +92,6 @@ public final class GetAppsecUrlProtectionPolicyResult {
         private String createdBy;
         private String description;
         private List<GetAppsecUrlProtectionPolicyHostnamePath> hostnamePaths;
-        private String id;
         private GetAppsecUrlProtectionPolicyIntelligentLoadShedding intelligentLoadShedding;
         private Integer maxRateThreshold;
         private String name;
@@ -122,7 +109,6 @@ public final class GetAppsecUrlProtectionPolicyResult {
     	      this.createdBy = defaults.createdBy;
     	      this.description = defaults.description;
     	      this.hostnamePaths = defaults.hostnamePaths;
-    	      this.id = defaults.id;
     	      this.intelligentLoadShedding = defaults.intelligentLoadShedding;
     	      this.maxRateThreshold = defaults.maxRateThreshold;
     	      this.name = defaults.name;
@@ -198,14 +184,6 @@ public final class GetAppsecUrlProtectionPolicyResult {
             return hostnamePaths(List.of(hostnamePaths));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetAppsecUrlProtectionPolicyResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder intelligentLoadShedding(GetAppsecUrlProtectionPolicyIntelligentLoadShedding intelligentLoadShedding) {
             if (intelligentLoadShedding == null) {
               throw new MissingRequiredPropertyException("GetAppsecUrlProtectionPolicyResult", "intelligentLoadShedding");
@@ -270,7 +248,6 @@ public final class GetAppsecUrlProtectionPolicyResult {
             _resultValue.createdBy = createdBy;
             _resultValue.description = description;
             _resultValue.hostnamePaths = hostnamePaths;
-            _resultValue.id = id;
             _resultValue.intelligentLoadShedding = intelligentLoadShedding;
             _resultValue.maxRateThreshold = maxRateThreshold;
             _resultValue.name = name;

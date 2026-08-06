@@ -26,10 +26,6 @@ export interface GetMtlskeystoreAccountCaCertificatesArgs {
  */
 export interface GetMtlskeystoreAccountCaCertificatesResult {
     readonly certificates: outputs.GetMtlskeystoreAccountCaCertificatesCertificate[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly statuses?: string[];
 }
 export function getMtlskeystoreAccountCaCertificatesOutput(args?: GetMtlskeystoreAccountCaCertificatesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMtlskeystoreAccountCaCertificatesResult> {

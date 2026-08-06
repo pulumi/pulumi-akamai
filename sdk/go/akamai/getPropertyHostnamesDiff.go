@@ -34,9 +34,7 @@ type GetPropertyHostnamesDiffResult struct {
 	ContractId string                             `pulumi:"contractId"`
 	GroupId    string                             `pulumi:"groupId"`
 	Hostnames  []GetPropertyHostnamesDiffHostname `pulumi:"hostnames"`
-	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	PropertyId string `pulumi:"propertyId"`
+	PropertyId string                             `pulumi:"propertyId"`
 }
 
 func GetPropertyHostnamesDiffOutput(ctx *pulumi.Context, args GetPropertyHostnamesDiffOutputArgs, opts ...pulumi.InvokeOption) GetPropertyHostnamesDiffResultOutput {
@@ -88,11 +86,6 @@ func (o GetPropertyHostnamesDiffResultOutput) GroupId() pulumi.StringOutput {
 
 func (o GetPropertyHostnamesDiffResultOutput) Hostnames() GetPropertyHostnamesDiffHostnameArrayOutput {
 	return o.ApplyT(func(v GetPropertyHostnamesDiffResult) []GetPropertyHostnamesDiffHostname { return v.Hostnames }).(GetPropertyHostnamesDiffHostnameArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetPropertyHostnamesDiffResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyHostnamesDiffResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetPropertyHostnamesDiffResultOutput) PropertyId() pulumi.StringOutput {

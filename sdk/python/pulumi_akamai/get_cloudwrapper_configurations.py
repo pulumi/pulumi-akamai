@@ -28,26 +28,15 @@ class GetCloudwrapperConfigurationsResult:
     """
     A collection of values returned by getCloudwrapperConfigurations.
     """
-    def __init__(__self__, configurations=None, id=None):
+    def __init__(__self__, configurations=None):
         if configurations and not isinstance(configurations, list):
             raise TypeError("Expected argument 'configurations' to be a list")
         pulumi.set(__self__, "configurations", configurations)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter
     def configurations(self) -> Optional[Sequence['outputs.GetCloudwrapperConfigurationsConfigurationResult']]:
         return pulumi.get(self, "configurations")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
 
 class AwaitableGetCloudwrapperConfigurationsResult(GetCloudwrapperConfigurationsResult):
@@ -56,8 +45,7 @@ class AwaitableGetCloudwrapperConfigurationsResult(GetCloudwrapperConfigurations
         if False:
             yield self
         return GetCloudwrapperConfigurationsResult(
-            configurations=self.configurations,
-            id=self.id)
+            configurations=self.configurations)
 
 
 def get_cloudwrapper_configurations(configurations: Optional[Sequence[Union['GetCloudwrapperConfigurationsConfigurationArgs', 'GetCloudwrapperConfigurationsConfigurationArgsDict']]] = None,
@@ -71,8 +59,7 @@ def get_cloudwrapper_configurations(configurations: Optional[Sequence[Union['Get
     __ret__ = pulumi.runtime.invoke('akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations', __args__, opts=opts, typ=GetCloudwrapperConfigurationsResult).value
 
     return AwaitableGetCloudwrapperConfigurationsResult(
-        configurations=pulumi.get(__ret__, 'configurations'),
-        id=pulumi.get(__ret__, 'id'))
+        configurations=pulumi.get(__ret__, 'configurations'))
 def get_cloudwrapper_configurations_output(configurations: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperConfigurationsConfigurationArgs', 'GetCloudwrapperConfigurationsConfigurationArgsDict']]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperConfigurationsResult]:
     """
@@ -83,5 +70,4 @@ def get_cloudwrapper_configurations_output(configurations: pulumi.Input[Optional
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations', __args__, opts=opts, typ=GetCloudwrapperConfigurationsResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperConfigurationsResult(
-        configurations=pulumi.get(__response__, 'configurations'),
-        id=pulumi.get(__response__, 'id')))
+        configurations=pulumi.get(__response__, 'configurations')))

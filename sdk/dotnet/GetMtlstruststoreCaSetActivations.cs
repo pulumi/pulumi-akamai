@@ -81,10 +81,6 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<Outputs.GetMtlstruststoreCaSetActivationsActivationResult> Activations;
         public readonly string CaSetId;
         public readonly string CaSetName;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string? Network;
         public readonly string? Status;
         public readonly string? Type;
@@ -98,8 +94,6 @@ namespace Pulumi.Akamai
 
             string caSetName,
 
-            string id,
-
             string? network,
 
             string? status,
@@ -111,7 +105,6 @@ namespace Pulumi.Akamai
             Activations = activations;
             CaSetId = caSetId;
             CaSetName = caSetName;
-            Id = id;
             Network = network;
             Status = status;
             Type = type;

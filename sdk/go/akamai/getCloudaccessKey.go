@@ -28,14 +28,12 @@ type GetCloudaccessKeyArgs struct {
 
 // A collection of values returned by getCloudaccessKey.
 type GetCloudaccessKeyResult struct {
-	AccessKeyName        string                   `pulumi:"accessKeyName"`
-	AccessKeyUid         int                      `pulumi:"accessKeyUid"`
-	AuthenticationMethod string                   `pulumi:"authenticationMethod"`
-	CreatedBy            string                   `pulumi:"createdBy"`
-	CreatedTime          string                   `pulumi:"createdTime"`
-	Groups               []GetCloudaccessKeyGroup `pulumi:"groups"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                   string                                `pulumi:"id"`
+	AccessKeyName        string                                `pulumi:"accessKeyName"`
+	AccessKeyUid         int                                   `pulumi:"accessKeyUid"`
+	AuthenticationMethod string                                `pulumi:"authenticationMethod"`
+	CreatedBy            string                                `pulumi:"createdBy"`
+	CreatedTime          string                                `pulumi:"createdTime"`
+	Groups               []GetCloudaccessKeyGroup              `pulumi:"groups"`
 	LatestVersion        int                                   `pulumi:"latestVersion"`
 	NetworkConfiguration GetCloudaccessKeyNetworkConfiguration `pulumi:"networkConfiguration"`
 }
@@ -95,11 +93,6 @@ func (o GetCloudaccessKeyResultOutput) CreatedTime() pulumi.StringOutput {
 
 func (o GetCloudaccessKeyResultOutput) Groups() GetCloudaccessKeyGroupArrayOutput {
 	return o.ApplyT(func(v GetCloudaccessKeyResult) []GetCloudaccessKeyGroup { return v.Groups }).(GetCloudaccessKeyGroupArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudaccessKeyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudaccessKeyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetCloudaccessKeyResultOutput) LatestVersion() pulumi.IntOutput {

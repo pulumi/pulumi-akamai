@@ -26,10 +26,6 @@ namespace Pulumi.Akamai
     public sealed class GetIamPasswordPolicyResult
     {
         public readonly int CaseDif;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly int MaxRepeating;
         public readonly int MinDigits;
         public readonly int MinLength;
@@ -42,8 +38,6 @@ namespace Pulumi.Akamai
         [OutputConstructor]
         private GetIamPasswordPolicyResult(
             int caseDif,
-
-            string id,
 
             int maxRepeating,
 
@@ -62,7 +56,6 @@ namespace Pulumi.Akamai
             int rotateFrequency)
         {
             CaseDif = caseDif;
-            Id = id;
             MaxRepeating = maxRepeating;
             MinDigits = minDigits;
             MinLength = minLength;

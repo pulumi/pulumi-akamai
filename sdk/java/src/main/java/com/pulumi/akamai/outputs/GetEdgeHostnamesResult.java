@@ -17,11 +17,6 @@ public final class GetEdgeHostnamesResult {
     private String contractId;
     private List<GetEdgeHostnamesEdgeHostname> edgeHostnames;
     private String groupId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable List<String> options;
 
     private GetEdgeHostnamesResult() {}
@@ -36,13 +31,6 @@ public final class GetEdgeHostnamesResult {
     }
     public String groupId() {
         return this.groupId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public List<String> options() {
         return this.options == null ? List.of() : this.options;
@@ -61,7 +49,6 @@ public final class GetEdgeHostnamesResult {
         private String contractId;
         private List<GetEdgeHostnamesEdgeHostname> edgeHostnames;
         private String groupId;
-        private String id;
         private @Nullable List<String> options;
         public Builder() {}
         public Builder(GetEdgeHostnamesResult defaults) {
@@ -70,7 +57,6 @@ public final class GetEdgeHostnamesResult {
     	      this.contractId = defaults.contractId;
     	      this.edgeHostnames = defaults.edgeHostnames;
     	      this.groupId = defaults.groupId;
-    	      this.id = defaults.id;
     	      this.options = defaults.options;
         }
 
@@ -110,14 +96,6 @@ public final class GetEdgeHostnamesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetEdgeHostnamesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder options(@Nullable List<String> options) {
 
             this.options = options;
@@ -132,7 +110,6 @@ public final class GetEdgeHostnamesResult {
             _resultValue.contractId = contractId;
             _resultValue.edgeHostnames = edgeHostnames;
             _resultValue.groupId = groupId;
-            _resultValue.id = id;
             _resultValue.options = options;
             return _resultValue;
         }

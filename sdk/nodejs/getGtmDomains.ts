@@ -26,10 +26,6 @@ export interface GetGtmDomainsArgs {
  */
 export interface GetGtmDomainsResult {
     readonly domains?: outputs.GetGtmDomainsDomain[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getGtmDomainsOutput(args?: GetGtmDomainsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmDomainsResult> {
     args = args || {};

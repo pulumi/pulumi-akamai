@@ -28,10 +28,6 @@ export interface GetAppsecWafRulesetArgs {
 export interface GetAppsecWafRulesetResult {
     readonly attackGroups: outputs.GetAppsecWafRulesetAttackGroup[];
     readonly configId: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly rules: outputs.GetAppsecWafRulesetRule[];
     readonly securityPolicyId: string;
 }

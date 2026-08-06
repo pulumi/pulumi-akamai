@@ -27,16 +27,13 @@ class GetAppsecWafRulesetResult:
     """
     A collection of values returned by getAppsecWafRuleset.
     """
-    def __init__(__self__, attack_groups=None, config_id=None, id=None, rules=None, security_policy_id=None):
+    def __init__(__self__, attack_groups=None, config_id=None, rules=None, security_policy_id=None):
         if attack_groups and not isinstance(attack_groups, list):
             raise TypeError("Expected argument 'attack_groups' to be a list")
         pulumi.set(__self__, "attack_groups", attack_groups)
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if rules and not isinstance(rules, list):
             raise TypeError("Expected argument 'rules' to be a list")
         pulumi.set(__self__, "rules", rules)
@@ -53,14 +50,6 @@ class GetAppsecWafRulesetResult:
     @pulumi.getter(name="configId")
     def config_id(self) -> _builtins.int:
         return pulumi.get(self, "config_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter
@@ -81,7 +70,6 @@ class AwaitableGetAppsecWafRulesetResult(GetAppsecWafRulesetResult):
         return GetAppsecWafRulesetResult(
             attack_groups=self.attack_groups,
             config_id=self.config_id,
-            id=self.id,
             rules=self.rules,
             security_policy_id=self.security_policy_id)
 
@@ -101,7 +89,6 @@ def get_appsec_waf_ruleset(config_id: Optional[_builtins.int] = None,
     return AwaitableGetAppsecWafRulesetResult(
         attack_groups=pulumi.get(__ret__, 'attack_groups'),
         config_id=pulumi.get(__ret__, 'config_id'),
-        id=pulumi.get(__ret__, 'id'),
         rules=pulumi.get(__ret__, 'rules'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 def get_appsec_waf_ruleset_output(config_id: pulumi.Input[Optional[_builtins.int]] = None,
@@ -118,6 +105,5 @@ def get_appsec_waf_ruleset_output(config_id: pulumi.Input[Optional[_builtins.int
     return __ret__.apply(lambda __response__: GetAppsecWafRulesetResult(
         attack_groups=pulumi.get(__response__, 'attack_groups'),
         config_id=pulumi.get(__response__, 'config_id'),
-        id=pulumi.get(__response__, 'id'),
         rules=pulumi.get(__response__, 'rules'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id')))

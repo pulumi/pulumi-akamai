@@ -27,10 +27,6 @@ export interface GetAppsecUrlProtectionPolicyActionsArgs {
  */
 export interface GetAppsecUrlProtectionPolicyActionsResult {
     readonly configId: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly loadSheddingAction: string;
     readonly maxRateThresholdAction: string;
     readonly securityPolicyId: string;

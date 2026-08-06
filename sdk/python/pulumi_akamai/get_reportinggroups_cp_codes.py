@@ -27,7 +27,7 @@ class GetReportinggroupsCpCodesResult:
     """
     A collection of values returned by getReportinggroupsCpCodes.
     """
-    def __init__(__self__, contract_id=None, cp_code_name=None, cp_codes=None, group_id=None, id=None, product_id=None):
+    def __init__(__self__, contract_id=None, cp_code_name=None, cp_codes=None, group_id=None, product_id=None):
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
@@ -40,9 +40,6 @@ class GetReportinggroupsCpCodesResult:
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
         pulumi.set(__self__, "group_id", group_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if product_id and not isinstance(product_id, str):
             raise TypeError("Expected argument 'product_id' to be a str")
         pulumi.set(__self__, "product_id", product_id)
@@ -68,14 +65,6 @@ class GetReportinggroupsCpCodesResult:
         return pulumi.get(self, "group_id")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "product_id")
@@ -91,7 +80,6 @@ class AwaitableGetReportinggroupsCpCodesResult(GetReportinggroupsCpCodesResult):
             cp_code_name=self.cp_code_name,
             cp_codes=self.cp_codes,
             group_id=self.group_id,
-            id=self.id,
             product_id=self.product_id)
 
 
@@ -116,7 +104,6 @@ def get_reportinggroups_cp_codes(contract_id: Optional[_builtins.str] = None,
         cp_code_name=pulumi.get(__ret__, 'cp_code_name'),
         cp_codes=pulumi.get(__ret__, 'cp_codes'),
         group_id=pulumi.get(__ret__, 'group_id'),
-        id=pulumi.get(__ret__, 'id'),
         product_id=pulumi.get(__ret__, 'product_id'))
 def get_reportinggroups_cp_codes_output(contract_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         cp_code_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -138,5 +125,4 @@ def get_reportinggroups_cp_codes_output(contract_id: pulumi.Input[Optional[Optio
         cp_code_name=pulumi.get(__response__, 'cp_code_name'),
         cp_codes=pulumi.get(__response__, 'cp_codes'),
         group_id=pulumi.get(__response__, 'group_id'),
-        id=pulumi.get(__response__, 'id'),
         product_id=pulumi.get(__response__, 'product_id')))

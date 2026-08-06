@@ -28,16 +28,13 @@ class GetCloudwrapperCapacitiesResult:
     """
     A collection of values returned by getCloudwrapperCapacities.
     """
-    def __init__(__self__, capacities=None, contract_ids=None, id=None):
+    def __init__(__self__, capacities=None, contract_ids=None):
         if capacities and not isinstance(capacities, list):
             raise TypeError("Expected argument 'capacities' to be a list")
         pulumi.set(__self__, "capacities", capacities)
         if contract_ids and not isinstance(contract_ids, list):
             raise TypeError("Expected argument 'contract_ids' to be a list")
         pulumi.set(__self__, "contract_ids", contract_ids)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter
@@ -49,14 +46,6 @@ class GetCloudwrapperCapacitiesResult:
     def contract_ids(self) -> Optional[Sequence[_builtins.str]]:
         return pulumi.get(self, "contract_ids")
 
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
 
 class AwaitableGetCloudwrapperCapacitiesResult(GetCloudwrapperCapacitiesResult):
     # pylint: disable=using-constant-test
@@ -65,8 +54,7 @@ class AwaitableGetCloudwrapperCapacitiesResult(GetCloudwrapperCapacitiesResult):
             yield self
         return GetCloudwrapperCapacitiesResult(
             capacities=self.capacities,
-            contract_ids=self.contract_ids,
-            id=self.id)
+            contract_ids=self.contract_ids)
 
 
 def get_cloudwrapper_capacities(capacities: Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict']]] = None,
@@ -83,8 +71,7 @@ def get_cloudwrapper_capacities(capacities: Optional[Sequence[Union['GetCloudwra
 
     return AwaitableGetCloudwrapperCapacitiesResult(
         capacities=pulumi.get(__ret__, 'capacities'),
-        contract_ids=pulumi.get(__ret__, 'contract_ids'),
-        id=pulumi.get(__ret__, 'id'))
+        contract_ids=pulumi.get(__ret__, 'contract_ids'))
 def get_cloudwrapper_capacities_output(capacities: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict']]]]] = None,
                                        contract_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperCapacitiesResult]:
@@ -98,5 +85,4 @@ def get_cloudwrapper_capacities_output(capacities: pulumi.Input[Optional[Optiona
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities', __args__, opts=opts, typ=GetCloudwrapperCapacitiesResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperCapacitiesResult(
         capacities=pulumi.get(__response__, 'capacities'),
-        contract_ids=pulumi.get(__response__, 'contract_ids'),
-        id=pulumi.get(__response__, 'id')))
+        contract_ids=pulumi.get(__response__, 'contract_ids')))

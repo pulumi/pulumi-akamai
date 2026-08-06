@@ -27,26 +27,15 @@ class GetMtlskeystoreClientCertificatesResult:
     """
     A collection of values returned by getMtlskeystoreClientCertificates.
     """
-    def __init__(__self__, certificates=None, id=None):
+    def __init__(__self__, certificates=None):
         if certificates and not isinstance(certificates, list):
             raise TypeError("Expected argument 'certificates' to be a list")
         pulumi.set(__self__, "certificates", certificates)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter
     def certificates(self) -> Sequence['outputs.GetMtlskeystoreClientCertificatesCertificateResult']:
         return pulumi.get(self, "certificates")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
 
 class AwaitableGetMtlskeystoreClientCertificatesResult(GetMtlskeystoreClientCertificatesResult):
@@ -55,8 +44,7 @@ class AwaitableGetMtlskeystoreClientCertificatesResult(GetMtlskeystoreClientCert
         if False:
             yield self
         return GetMtlskeystoreClientCertificatesResult(
-            certificates=self.certificates,
-            id=self.id)
+            certificates=self.certificates)
 
 
 def get_mtlskeystore_client_certificates(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMtlskeystoreClientCertificatesResult:
@@ -68,8 +56,7 @@ def get_mtlskeystore_client_certificates(opts: Optional[pulumi.InvokeOptions] = 
     __ret__ = pulumi.runtime.invoke('akamai:index/getMtlskeystoreClientCertificates:getMtlskeystoreClientCertificates', __args__, opts=opts, typ=GetMtlskeystoreClientCertificatesResult).value
 
     return AwaitableGetMtlskeystoreClientCertificatesResult(
-        certificates=pulumi.get(__ret__, 'certificates'),
-        id=pulumi.get(__ret__, 'id'))
+        certificates=pulumi.get(__ret__, 'certificates'))
 def get_mtlskeystore_client_certificates_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMtlskeystoreClientCertificatesResult]:
     """
     Use this data source to access information about an existing resource.
@@ -78,5 +65,4 @@ def get_mtlskeystore_client_certificates_output(opts: Optional[Union[pulumi.Invo
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getMtlskeystoreClientCertificates:getMtlskeystoreClientCertificates', __args__, opts=opts, typ=GetMtlskeystoreClientCertificatesResult)
     return __ret__.apply(lambda __response__: GetMtlskeystoreClientCertificatesResult(
-        certificates=pulumi.get(__response__, 'certificates'),
-        id=pulumi.get(__response__, 'id')))
+        certificates=pulumi.get(__response__, 'certificates')))

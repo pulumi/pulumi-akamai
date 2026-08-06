@@ -50,10 +50,6 @@ export interface GetCloudcertificatesCertificatesResult {
     readonly domain?: string;
     readonly expiringInDays?: number;
     readonly groupId?: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly includeCertificateMaterials?: boolean;
     readonly issuer?: string;
     readonly keyType?: string;

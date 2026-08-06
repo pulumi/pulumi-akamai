@@ -70,10 +70,6 @@ namespace Pulumi.Akamai
         public readonly string? CpCodeId;
         public readonly string? GroupId;
         public readonly ImmutableArray<Outputs.GetReportinggroupsGroupsGroupResult> Groups;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string? ReportingGroupName;
 
         [OutputConstructor]
@@ -86,15 +82,12 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetReportinggroupsGroupsGroupResult> groups,
 
-            string id,
-
             string? reportingGroupName)
         {
             ContractId = contractId;
             CpCodeId = cpCodeId;
             GroupId = groupId;
             Groups = groups;
-            Id = id;
             ReportingGroupName = reportingGroupName;
         }
     }

@@ -26,19 +26,11 @@ namespace Pulumi.Akamai
     public sealed class GetMtlskeystoreClientCertificatesResult
     {
         public readonly ImmutableArray<Outputs.GetMtlskeystoreClientCertificatesCertificateResult> Certificates;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
-        private GetMtlskeystoreClientCertificatesResult(
-            ImmutableArray<Outputs.GetMtlskeystoreClientCertificatesCertificateResult> certificates,
-
-            string id)
+        private GetMtlskeystoreClientCertificatesResult(ImmutableArray<Outputs.GetMtlskeystoreClientCertificatesCertificateResult> certificates)
         {
             Certificates = certificates;
-            Id = id;
         }
     }
 }

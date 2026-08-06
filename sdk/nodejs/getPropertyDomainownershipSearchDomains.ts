@@ -25,10 +25,6 @@ export interface GetPropertyDomainownershipSearchDomainsArgs {
  */
 export interface GetPropertyDomainownershipSearchDomainsResult {
     readonly domains: outputs.GetPropertyDomainownershipSearchDomainsDomain[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getPropertyDomainownershipSearchDomainsOutput(args: GetPropertyDomainownershipSearchDomainsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyDomainownershipSearchDomainsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

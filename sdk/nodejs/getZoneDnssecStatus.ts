@@ -26,10 +26,6 @@ export interface GetZoneDnssecStatusArgs {
 export interface GetZoneDnssecStatusResult {
     readonly alerts: string[];
     readonly currentRecords: outputs.GetZoneDnssecStatusCurrentRecords;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly newRecords: outputs.GetZoneDnssecStatusNewRecords;
     readonly zone: string;
 }

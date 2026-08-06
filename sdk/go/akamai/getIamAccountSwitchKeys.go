@@ -32,8 +32,6 @@ type GetIamAccountSwitchKeysResult struct {
 	AccountSwitchKeys []GetIamAccountSwitchKeysAccountSwitchKey `pulumi:"accountSwitchKeys"`
 	ClientId          *string                                   `pulumi:"clientId"`
 	Filter            *string                                   `pulumi:"filter"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetIamAccountSwitchKeysOutput(ctx *pulumi.Context, args GetIamAccountSwitchKeysOutputArgs, opts ...pulumi.InvokeOption) GetIamAccountSwitchKeysResultOutput {
@@ -82,11 +80,6 @@ func (o GetIamAccountSwitchKeysResultOutput) ClientId() pulumi.StringPtrOutput {
 
 func (o GetIamAccountSwitchKeysResultOutput) Filter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetIamAccountSwitchKeysResult) *string { return v.Filter }).(pulumi.StringPtrOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetIamAccountSwitchKeysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamAccountSwitchKeysResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

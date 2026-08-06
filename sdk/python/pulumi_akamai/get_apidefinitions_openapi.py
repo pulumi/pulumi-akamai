@@ -26,7 +26,7 @@ class GetApidefinitionsOpenapiResult:
     """
     A collection of values returned by getApidefinitionsOpenapi.
     """
-    def __init__(__self__, api=None, api_file_name=None, file_path=None, id=None):
+    def __init__(__self__, api=None, api_file_name=None, file_path=None):
         if api and not isinstance(api, str):
             raise TypeError("Expected argument 'api' to be a str")
         pulumi.set(__self__, "api", api)
@@ -36,9 +36,6 @@ class GetApidefinitionsOpenapiResult:
         if file_path and not isinstance(file_path, str):
             raise TypeError("Expected argument 'file_path' to be a str")
         pulumi.set(__self__, "file_path", file_path)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter
@@ -55,14 +52,6 @@ class GetApidefinitionsOpenapiResult:
     def file_path(self) -> _builtins.str:
         return pulumi.get(self, "file_path")
 
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
 
 class AwaitableGetApidefinitionsOpenapiResult(GetApidefinitionsOpenapiResult):
     # pylint: disable=using-constant-test
@@ -72,8 +61,7 @@ class AwaitableGetApidefinitionsOpenapiResult(GetApidefinitionsOpenapiResult):
         return GetApidefinitionsOpenapiResult(
             api=self.api,
             api_file_name=self.api_file_name,
-            file_path=self.file_path,
-            id=self.id)
+            file_path=self.file_path)
 
 
 def get_apidefinitions_openapi(api: Optional[_builtins.str] = None,
@@ -93,8 +81,7 @@ def get_apidefinitions_openapi(api: Optional[_builtins.str] = None,
     return AwaitableGetApidefinitionsOpenapiResult(
         api=pulumi.get(__ret__, 'api'),
         api_file_name=pulumi.get(__ret__, 'api_file_name'),
-        file_path=pulumi.get(__ret__, 'file_path'),
-        id=pulumi.get(__ret__, 'id'))
+        file_path=pulumi.get(__ret__, 'file_path'))
 def get_apidefinitions_openapi_output(api: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       api_file_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       file_path: pulumi.Input[Optional[_builtins.str]] = None,
@@ -111,5 +98,4 @@ def get_apidefinitions_openapi_output(api: pulumi.Input[Optional[Optional[_built
     return __ret__.apply(lambda __response__: GetApidefinitionsOpenapiResult(
         api=pulumi.get(__response__, 'api'),
         api_file_name=pulumi.get(__response__, 'api_file_name'),
-        file_path=pulumi.get(__response__, 'file_path'),
-        id=pulumi.get(__response__, 'id')))
+        file_path=pulumi.get(__response__, 'file_path')))

@@ -61,10 +61,6 @@ namespace Pulumi.Akamai
         public readonly string CreatedBy;
         public readonly string Description;
         public readonly ImmutableArray<Outputs.GetAppsecUrlProtectionPolicyHostnamePathResult> HostnamePaths;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly Outputs.GetAppsecUrlProtectionPolicyIntelligentLoadSheddingResult IntelligentLoadShedding;
         public readonly int MaxRateThreshold;
         public readonly string Name;
@@ -89,8 +85,6 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetAppsecUrlProtectionPolicyHostnamePathResult> hostnamePaths,
 
-            string id,
-
             Outputs.GetAppsecUrlProtectionPolicyIntelligentLoadSheddingResult intelligentLoadShedding,
 
             int maxRateThreshold,
@@ -112,7 +106,6 @@ namespace Pulumi.Akamai
             CreatedBy = createdBy;
             Description = description;
             HostnamePaths = hostnamePaths;
-            Id = id;
             IntelligentLoadShedding = intelligentLoadShedding;
             MaxRateThreshold = maxRateThreshold;
             Name = name;

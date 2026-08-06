@@ -27,7 +27,7 @@ class GetCloudaccessKeyVersionsResult:
     """
     A collection of values returned by getCloudaccessKeyVersions.
     """
-    def __init__(__self__, access_key_name=None, access_key_uid=None, access_key_versions=None, id=None):
+    def __init__(__self__, access_key_name=None, access_key_uid=None, access_key_versions=None):
         if access_key_name and not isinstance(access_key_name, str):
             raise TypeError("Expected argument 'access_key_name' to be a str")
         pulumi.set(__self__, "access_key_name", access_key_name)
@@ -37,9 +37,6 @@ class GetCloudaccessKeyVersionsResult:
         if access_key_versions and not isinstance(access_key_versions, list):
             raise TypeError("Expected argument 'access_key_versions' to be a list")
         pulumi.set(__self__, "access_key_versions", access_key_versions)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter(name="accessKeyName")
@@ -56,14 +53,6 @@ class GetCloudaccessKeyVersionsResult:
     def access_key_versions(self) -> Sequence['outputs.GetCloudaccessKeyVersionsAccessKeyVersionResult']:
         return pulumi.get(self, "access_key_versions")
 
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
 
 class AwaitableGetCloudaccessKeyVersionsResult(GetCloudaccessKeyVersionsResult):
     # pylint: disable=using-constant-test
@@ -73,8 +62,7 @@ class AwaitableGetCloudaccessKeyVersionsResult(GetCloudaccessKeyVersionsResult):
         return GetCloudaccessKeyVersionsResult(
             access_key_name=self.access_key_name,
             access_key_uid=self.access_key_uid,
-            access_key_versions=self.access_key_versions,
-            id=self.id)
+            access_key_versions=self.access_key_versions)
 
 
 def get_cloudaccess_key_versions(access_key_name: Optional[_builtins.str] = None,
@@ -90,8 +78,7 @@ def get_cloudaccess_key_versions(access_key_name: Optional[_builtins.str] = None
     return AwaitableGetCloudaccessKeyVersionsResult(
         access_key_name=pulumi.get(__ret__, 'access_key_name'),
         access_key_uid=pulumi.get(__ret__, 'access_key_uid'),
-        access_key_versions=pulumi.get(__ret__, 'access_key_versions'),
-        id=pulumi.get(__ret__, 'id'))
+        access_key_versions=pulumi.get(__ret__, 'access_key_versions'))
 def get_cloudaccess_key_versions_output(access_key_name: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudaccessKeyVersionsResult]:
     """
@@ -104,5 +91,4 @@ def get_cloudaccess_key_versions_output(access_key_name: pulumi.Input[Optional[_
     return __ret__.apply(lambda __response__: GetCloudaccessKeyVersionsResult(
         access_key_name=pulumi.get(__response__, 'access_key_name'),
         access_key_uid=pulumi.get(__response__, 'access_key_uid'),
-        access_key_versions=pulumi.get(__response__, 'access_key_versions'),
-        id=pulumi.get(__response__, 'id')))
+        access_key_versions=pulumi.get(__response__, 'access_key_versions')))

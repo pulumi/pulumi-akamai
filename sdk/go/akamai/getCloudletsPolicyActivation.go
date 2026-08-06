@@ -31,12 +31,10 @@ type LookupCloudletsPolicyActivationArgs struct {
 // A collection of values returned by getCloudletsPolicyActivation.
 type LookupCloudletsPolicyActivationResult struct {
 	AssociatedProperties []string `pulumi:"associatedProperties"`
-	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	Network  string `pulumi:"network"`
-	PolicyId int    `pulumi:"policyId"`
-	Status   string `pulumi:"status"`
-	Version  int    `pulumi:"version"`
+	Network              string   `pulumi:"network"`
+	PolicyId             int      `pulumi:"policyId"`
+	Status               string   `pulumi:"status"`
+	Version              int      `pulumi:"version"`
 }
 
 func LookupCloudletsPolicyActivationOutput(ctx *pulumi.Context, args LookupCloudletsPolicyActivationOutputArgs, opts ...pulumi.InvokeOption) LookupCloudletsPolicyActivationResultOutput {
@@ -76,11 +74,6 @@ func (o LookupCloudletsPolicyActivationResultOutput) ToLookupCloudletsPolicyActi
 
 func (o LookupCloudletsPolicyActivationResultOutput) AssociatedProperties() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCloudletsPolicyActivationResult) []string { return v.AssociatedProperties }).(pulumi.StringArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupCloudletsPolicyActivationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCloudletsPolicyActivationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupCloudletsPolicyActivationResultOutput) Network() pulumi.StringOutput {

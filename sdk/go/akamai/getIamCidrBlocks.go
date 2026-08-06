@@ -24,8 +24,6 @@ func GetIamCidrBlocks(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIam
 // A collection of values returned by getIamCidrBlocks.
 type GetIamCidrBlocksResult struct {
 	CidrBlocks []GetIamCidrBlocksCidrBlock `pulumi:"cidrBlocks"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetIamCidrBlocksOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamCidrBlocksResultOutput {
@@ -52,11 +50,6 @@ func (o GetIamCidrBlocksResultOutput) ToGetIamCidrBlocksResultOutputWithContext(
 
 func (o GetIamCidrBlocksResultOutput) CidrBlocks() GetIamCidrBlocksCidrBlockArrayOutput {
 	return o.ApplyT(func(v GetIamCidrBlocksResult) []GetIamCidrBlocksCidrBlock { return v.CidrBlocks }).(GetIamCidrBlocksCidrBlockArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetIamCidrBlocksResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamCidrBlocksResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

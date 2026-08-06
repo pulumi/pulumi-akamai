@@ -29,12 +29,10 @@ type LookupAppsecWafRulesetArgs struct {
 
 // A collection of values returned by getAppsecWafRuleset.
 type LookupAppsecWafRulesetResult struct {
-	AttackGroups []GetAppsecWafRulesetAttackGroup `pulumi:"attackGroups"`
-	ConfigId     int                              `pulumi:"configId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id               string                    `pulumi:"id"`
-	Rules            []GetAppsecWafRulesetRule `pulumi:"rules"`
-	SecurityPolicyId string                    `pulumi:"securityPolicyId"`
+	AttackGroups     []GetAppsecWafRulesetAttackGroup `pulumi:"attackGroups"`
+	ConfigId         int                              `pulumi:"configId"`
+	Rules            []GetAppsecWafRulesetRule        `pulumi:"rules"`
+	SecurityPolicyId string                           `pulumi:"securityPolicyId"`
 }
 
 func LookupAppsecWafRulesetOutput(ctx *pulumi.Context, args LookupAppsecWafRulesetOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecWafRulesetResultOutput {
@@ -77,11 +75,6 @@ func (o LookupAppsecWafRulesetResultOutput) AttackGroups() GetAppsecWafRulesetAt
 
 func (o LookupAppsecWafRulesetResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAppsecWafRulesetResult) int { return v.ConfigId }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupAppsecWafRulesetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppsecWafRulesetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupAppsecWafRulesetResultOutput) Rules() GetAppsecWafRulesetRuleArrayOutput {

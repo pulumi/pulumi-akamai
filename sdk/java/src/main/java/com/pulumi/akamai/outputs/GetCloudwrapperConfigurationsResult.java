@@ -5,8 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.akamai.outputs.GetCloudwrapperConfigurationsConfiguration;
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
@@ -14,22 +12,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetCloudwrapperConfigurationsResult {
     private @Nullable List<GetCloudwrapperConfigurationsConfiguration> configurations;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetCloudwrapperConfigurationsResult() {}
     public List<GetCloudwrapperConfigurationsConfiguration> configurations() {
         return this.configurations == null ? List.of() : this.configurations;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -42,12 +28,10 @@ public final class GetCloudwrapperConfigurationsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetCloudwrapperConfigurationsConfiguration> configurations;
-        private String id;
         public Builder() {}
         public Builder(GetCloudwrapperConfigurationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configurations = defaults.configurations;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -59,18 +43,9 @@ public final class GetCloudwrapperConfigurationsResult {
         public Builder configurations(GetCloudwrapperConfigurationsConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudwrapperConfigurationsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetCloudwrapperConfigurationsResult build() {
             final var _resultValue = new GetCloudwrapperConfigurationsResult();
             _resultValue.configurations = configurations;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

@@ -29,15 +29,13 @@ type LookupAppsecUrlProtectionPolicyArgs struct {
 
 // A collection of values returned by getAppsecUrlProtectionPolicy.
 type LookupAppsecUrlProtectionPolicyResult struct {
-	ApiDefinitions   []GetAppsecUrlProtectionPolicyApiDefinition   `pulumi:"apiDefinitions"`
-	BypassConditions []GetAppsecUrlProtectionPolicyBypassCondition `pulumi:"bypassConditions"`
-	ConfigId         int                                           `pulumi:"configId"`
-	CreateDate       string                                        `pulumi:"createDate"`
-	CreatedBy        string                                        `pulumi:"createdBy"`
-	Description      string                                        `pulumi:"description"`
-	HostnamePaths    []GetAppsecUrlProtectionPolicyHostnamePath    `pulumi:"hostnamePaths"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                      string                                              `pulumi:"id"`
+	ApiDefinitions          []GetAppsecUrlProtectionPolicyApiDefinition         `pulumi:"apiDefinitions"`
+	BypassConditions        []GetAppsecUrlProtectionPolicyBypassCondition       `pulumi:"bypassConditions"`
+	ConfigId                int                                                 `pulumi:"configId"`
+	CreateDate              string                                              `pulumi:"createDate"`
+	CreatedBy               string                                              `pulumi:"createdBy"`
+	Description             string                                              `pulumi:"description"`
+	HostnamePaths           []GetAppsecUrlProtectionPolicyHostnamePath          `pulumi:"hostnamePaths"`
 	IntelligentLoadShedding GetAppsecUrlProtectionPolicyIntelligentLoadShedding `pulumi:"intelligentLoadShedding"`
 	MaxRateThreshold        int                                                 `pulumi:"maxRateThreshold"`
 	Name                    string                                              `pulumi:"name"`
@@ -113,11 +111,6 @@ func (o LookupAppsecUrlProtectionPolicyResultOutput) HostnamePaths() GetAppsecUr
 	return o.ApplyT(func(v LookupAppsecUrlProtectionPolicyResult) []GetAppsecUrlProtectionPolicyHostnamePath {
 		return v.HostnamePaths
 	}).(GetAppsecUrlProtectionPolicyHostnamePathArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupAppsecUrlProtectionPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppsecUrlProtectionPolicyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupAppsecUrlProtectionPolicyResultOutput) IntelligentLoadShedding() GetAppsecUrlProtectionPolicyIntelligentLoadSheddingOutput {

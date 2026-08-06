@@ -26,10 +26,7 @@ class GetCloudwrapperLocationResult:
     """
     A collection of values returned by getCloudwrapperLocation.
     """
-    def __init__(__self__, id=None, location_id=None, location_name=None, traffic_type=None, traffic_type_id=None):
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
+    def __init__(__self__, location_id=None, location_name=None, traffic_type=None, traffic_type_id=None):
         if location_id and not isinstance(location_id, str):
             raise TypeError("Expected argument 'location_id' to be a str")
         pulumi.set(__self__, "location_id", location_id)
@@ -42,14 +39,6 @@ class GetCloudwrapperLocationResult:
         if traffic_type_id and not isinstance(traffic_type_id, int):
             raise TypeError("Expected argument 'traffic_type_id' to be a int")
         pulumi.set(__self__, "traffic_type_id", traffic_type_id)
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="locationId")
@@ -78,7 +67,6 @@ class AwaitableGetCloudwrapperLocationResult(GetCloudwrapperLocationResult):
         if False:
             yield self
         return GetCloudwrapperLocationResult(
-            id=self.id,
             location_id=self.location_id,
             location_name=self.location_name,
             traffic_type=self.traffic_type,
@@ -98,7 +86,6 @@ def get_cloudwrapper_location(location_name: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getCloudwrapperLocation:getCloudwrapperLocation', __args__, opts=opts, typ=GetCloudwrapperLocationResult).value
 
     return AwaitableGetCloudwrapperLocationResult(
-        id=pulumi.get(__ret__, 'id'),
         location_id=pulumi.get(__ret__, 'location_id'),
         location_name=pulumi.get(__ret__, 'location_name'),
         traffic_type=pulumi.get(__ret__, 'traffic_type'),
@@ -115,7 +102,6 @@ def get_cloudwrapper_location_output(location_name: pulumi.Input[Optional[_built
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperLocation:getCloudwrapperLocation', __args__, opts=opts, typ=GetCloudwrapperLocationResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperLocationResult(
-        id=pulumi.get(__response__, 'id'),
         location_id=pulumi.get(__response__, 'location_id'),
         location_name=pulumi.get(__response__, 'location_name'),
         traffic_type=pulumi.get(__response__, 'traffic_type'),

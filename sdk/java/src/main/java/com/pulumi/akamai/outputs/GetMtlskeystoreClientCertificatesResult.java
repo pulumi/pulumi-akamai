@@ -6,29 +6,16 @@ package com.pulumi.akamai.outputs;
 import com.pulumi.akamai.outputs.GetMtlskeystoreClientCertificatesCertificate;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetMtlskeystoreClientCertificatesResult {
     private List<GetMtlskeystoreClientCertificatesCertificate> certificates;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetMtlskeystoreClientCertificatesResult() {}
     public List<GetMtlskeystoreClientCertificatesCertificate> certificates() {
         return this.certificates;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -41,12 +28,10 @@ public final class GetMtlskeystoreClientCertificatesResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetMtlskeystoreClientCertificatesCertificate> certificates;
-        private String id;
         public Builder() {}
         public Builder(GetMtlskeystoreClientCertificatesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificates = defaults.certificates;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -60,18 +45,9 @@ public final class GetMtlskeystoreClientCertificatesResult {
         public Builder certificates(GetMtlskeystoreClientCertificatesCertificate... certificates) {
             return certificates(List.of(certificates));
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetMtlskeystoreClientCertificatesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetMtlskeystoreClientCertificatesResult build() {
             final var _resultValue = new GetMtlskeystoreClientCertificatesResult();
             _resultValue.certificates = certificates;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

@@ -16,11 +16,6 @@ public final class GetCloudaccessKeyVersionsResult {
     private String accessKeyName;
     private Integer accessKeyUid;
     private List<GetCloudaccessKeyVersionsAccessKeyVersion> accessKeyVersions;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetCloudaccessKeyVersionsResult() {}
     public String accessKeyName() {
@@ -31,13 +26,6 @@ public final class GetCloudaccessKeyVersionsResult {
     }
     public List<GetCloudaccessKeyVersionsAccessKeyVersion> accessKeyVersions() {
         return this.accessKeyVersions;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -52,14 +40,12 @@ public final class GetCloudaccessKeyVersionsResult {
         private String accessKeyName;
         private Integer accessKeyUid;
         private List<GetCloudaccessKeyVersionsAccessKeyVersion> accessKeyVersions;
-        private String id;
         public Builder() {}
         public Builder(GetCloudaccessKeyVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessKeyName = defaults.accessKeyName;
     	      this.accessKeyUid = defaults.accessKeyUid;
     	      this.accessKeyVersions = defaults.accessKeyVersions;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -89,20 +75,11 @@ public final class GetCloudaccessKeyVersionsResult {
         public Builder accessKeyVersions(GetCloudaccessKeyVersionsAccessKeyVersion... accessKeyVersions) {
             return accessKeyVersions(List.of(accessKeyVersions));
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudaccessKeyVersionsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetCloudaccessKeyVersionsResult build() {
             final var _resultValue = new GetCloudaccessKeyVersionsResult();
             _resultValue.accessKeyName = accessKeyName;
             _resultValue.accessKeyUid = accessKeyUid;
             _resultValue.accessKeyVersions = accessKeyVersions;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

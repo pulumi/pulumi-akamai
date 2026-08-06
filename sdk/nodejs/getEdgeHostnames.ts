@@ -32,10 +32,6 @@ export interface GetEdgeHostnamesResult {
     readonly contractId: string;
     readonly edgeHostnames: outputs.GetEdgeHostnamesEdgeHostname[];
     readonly groupId: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly options?: string[];
 }
 export function getEdgeHostnamesOutput(args: GetEdgeHostnamesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEdgeHostnamesResult> {

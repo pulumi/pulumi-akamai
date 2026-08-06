@@ -27,10 +27,6 @@ export interface GetCloudaccessKeyVersionsResult {
     readonly accessKeyName: string;
     readonly accessKeyUid: number;
     readonly accessKeyVersions: outputs.GetCloudaccessKeyVersionsAccessKeyVersion[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getCloudaccessKeyVersionsOutput(args: GetCloudaccessKeyVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudaccessKeyVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

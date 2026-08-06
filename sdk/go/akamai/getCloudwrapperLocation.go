@@ -29,8 +29,6 @@ type GetCloudwrapperLocationArgs struct {
 
 // A collection of values returned by getCloudwrapperLocation.
 type GetCloudwrapperLocationResult struct {
-	// The provider-assigned unique ID for this managed resource.
-	Id            string `pulumi:"id"`
 	LocationId    string `pulumi:"locationId"`
 	LocationName  string `pulumi:"locationName"`
 	TrafficType   string `pulumi:"trafficType"`
@@ -69,11 +67,6 @@ func (o GetCloudwrapperLocationResultOutput) ToGetCloudwrapperLocationResultOutp
 
 func (o GetCloudwrapperLocationResultOutput) ToGetCloudwrapperLocationResultOutputWithContext(ctx context.Context) GetCloudwrapperLocationResultOutput {
 	return o
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudwrapperLocationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudwrapperLocationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetCloudwrapperLocationResultOutput) LocationId() pulumi.StringOutput {

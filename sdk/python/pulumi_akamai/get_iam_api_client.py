@@ -27,7 +27,7 @@ class GetIamApiClientResult:
     """
     A collection of values returned by getIamApiClient.
     """
-    def __init__(__self__, access_token=None, actions=None, active_credential_count=None, allow_account_switch=None, api_access=None, authorized_users=None, base_url=None, can_auto_create_credential=None, client_description=None, client_id=None, client_name=None, client_type=None, created_by=None, created_date=None, credentials=None, group_access=None, id=None, ip_acl=None, is_locked=None, notification_emails=None, purge_options=None):
+    def __init__(__self__, access_token=None, actions=None, active_credential_count=None, allow_account_switch=None, api_access=None, authorized_users=None, base_url=None, can_auto_create_credential=None, client_description=None, client_id=None, client_name=None, client_type=None, created_by=None, created_date=None, credentials=None, group_access=None, ip_acl=None, is_locked=None, notification_emails=None, purge_options=None):
         if access_token and not isinstance(access_token, str):
             raise TypeError("Expected argument 'access_token' to be a str")
         pulumi.set(__self__, "access_token", access_token)
@@ -76,9 +76,6 @@ class GetIamApiClientResult:
         if group_access and not isinstance(group_access, dict):
             raise TypeError("Expected argument 'group_access' to be a dict")
         pulumi.set(__self__, "group_access", group_access)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if ip_acl and not isinstance(ip_acl, dict):
             raise TypeError("Expected argument 'ip_acl' to be a dict")
         pulumi.set(__self__, "ip_acl", ip_acl)
@@ -173,14 +170,6 @@ class GetIamApiClientResult:
         return pulumi.get(self, "group_access")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="ipAcl")
     def ip_acl(self) -> 'outputs.GetIamApiClientIpAclResult':
         return pulumi.get(self, "ip_acl")
@@ -223,7 +212,6 @@ class AwaitableGetIamApiClientResult(GetIamApiClientResult):
             created_date=self.created_date,
             credentials=self.credentials,
             group_access=self.group_access,
-            id=self.id,
             ip_acl=self.ip_acl,
             is_locked=self.is_locked,
             notification_emails=self.notification_emails,
@@ -257,7 +245,6 @@ def get_iam_api_client(client_id: Optional[_builtins.str] = None,
         created_date=pulumi.get(__ret__, 'created_date'),
         credentials=pulumi.get(__ret__, 'credentials'),
         group_access=pulumi.get(__ret__, 'group_access'),
-        id=pulumi.get(__ret__, 'id'),
         ip_acl=pulumi.get(__ret__, 'ip_acl'),
         is_locked=pulumi.get(__ret__, 'is_locked'),
         notification_emails=pulumi.get(__ret__, 'notification_emails'),
@@ -288,7 +275,6 @@ def get_iam_api_client_output(client_id: pulumi.Input[Optional[Optional[_builtin
         created_date=pulumi.get(__response__, 'created_date'),
         credentials=pulumi.get(__response__, 'credentials'),
         group_access=pulumi.get(__response__, 'group_access'),
-        id=pulumi.get(__response__, 'id'),
         ip_acl=pulumi.get(__response__, 'ip_acl'),
         is_locked=pulumi.get(__response__, 'is_locked'),
         notification_emails=pulumi.get(__response__, 'notification_emails'),

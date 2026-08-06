@@ -27,10 +27,6 @@ export interface GetApidefinitionsResourceOperationsArgs {
  */
 export interface GetApidefinitionsResourceOperationsResult {
     readonly apiId: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly resourceName?: string;
     readonly resourceOperations: string;
     readonly resourcePath?: string;

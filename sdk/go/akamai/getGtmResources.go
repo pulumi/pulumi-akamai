@@ -29,9 +29,7 @@ type GetGtmResourcesArgs struct {
 
 // A collection of values returned by getGtmResources.
 type GetGtmResourcesResult struct {
-	Domain string `pulumi:"domain"`
-	// The provider-assigned unique ID for this managed resource.
-	Id        string                    `pulumi:"id"`
+	Domain    string                    `pulumi:"domain"`
 	Resources []GetGtmResourcesResource `pulumi:"resources"`
 }
 
@@ -71,11 +69,6 @@ func (o GetGtmResourcesResultOutput) ToGetGtmResourcesResultOutputWithContext(ct
 
 func (o GetGtmResourcesResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGtmResourcesResult) string { return v.Domain }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetGtmResourcesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGtmResourcesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetGtmResourcesResultOutput) Resources() GetGtmResourcesResourceArrayOutput {

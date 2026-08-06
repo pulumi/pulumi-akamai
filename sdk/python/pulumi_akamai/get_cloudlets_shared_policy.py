@@ -28,7 +28,7 @@ class GetCloudletsSharedPolicyResult:
     """
     A collection of values returned by getCloudletsSharedPolicy.
     """
-    def __init__(__self__, activations=None, cloudlet_type=None, description=None, group_id=None, id=None, match_rules=None, name=None, policy_id=None, version=None, version_description=None, warnings=None):
+    def __init__(__self__, activations=None, cloudlet_type=None, description=None, group_id=None, match_rules=None, name=None, policy_id=None, version=None, version_description=None, warnings=None):
         if activations and not isinstance(activations, dict):
             raise TypeError("Expected argument 'activations' to be a dict")
         pulumi.set(__self__, "activations", activations)
@@ -41,9 +41,6 @@ class GetCloudletsSharedPolicyResult:
         if group_id and not isinstance(group_id, int):
             raise TypeError("Expected argument 'group_id' to be a int")
         pulumi.set(__self__, "group_id", group_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if match_rules and not isinstance(match_rules, str):
             raise TypeError("Expected argument 'match_rules' to be a str")
         pulumi.set(__self__, "match_rules", match_rules)
@@ -82,14 +79,6 @@ class GetCloudletsSharedPolicyResult:
     @pulumi.getter(name="groupId")
     def group_id(self) -> _builtins.int:
         return pulumi.get(self, "group_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="matchRules")
@@ -132,7 +121,6 @@ class AwaitableGetCloudletsSharedPolicyResult(GetCloudletsSharedPolicyResult):
             cloudlet_type=self.cloudlet_type,
             description=self.description,
             group_id=self.group_id,
-            id=self.id,
             match_rules=self.match_rules,
             name=self.name,
             policy_id=self.policy_id,
@@ -160,7 +148,6 @@ def get_cloudlets_shared_policy(activations: Optional[Union['GetCloudletsSharedP
         cloudlet_type=pulumi.get(__ret__, 'cloudlet_type'),
         description=pulumi.get(__ret__, 'description'),
         group_id=pulumi.get(__ret__, 'group_id'),
-        id=pulumi.get(__ret__, 'id'),
         match_rules=pulumi.get(__ret__, 'match_rules'),
         name=pulumi.get(__ret__, 'name'),
         policy_id=pulumi.get(__ret__, 'policy_id'),
@@ -185,7 +172,6 @@ def get_cloudlets_shared_policy_output(activations: pulumi.Input[Optional[Option
         cloudlet_type=pulumi.get(__response__, 'cloudlet_type'),
         description=pulumi.get(__response__, 'description'),
         group_id=pulumi.get(__response__, 'group_id'),
-        id=pulumi.get(__response__, 'id'),
         match_rules=pulumi.get(__response__, 'match_rules'),
         name=pulumi.get(__response__, 'name'),
         policy_id=pulumi.get(__response__, 'policy_id'),

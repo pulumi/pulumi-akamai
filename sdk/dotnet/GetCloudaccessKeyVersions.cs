@@ -51,10 +51,6 @@ namespace Pulumi.Akamai
         public readonly string AccessKeyName;
         public readonly int AccessKeyUid;
         public readonly ImmutableArray<Outputs.GetCloudaccessKeyVersionsAccessKeyVersionResult> AccessKeyVersions;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
         private GetCloudaccessKeyVersionsResult(
@@ -62,14 +58,11 @@ namespace Pulumi.Akamai
 
             int accessKeyUid,
 
-            ImmutableArray<Outputs.GetCloudaccessKeyVersionsAccessKeyVersionResult> accessKeyVersions,
-
-            string id)
+            ImmutableArray<Outputs.GetCloudaccessKeyVersionsAccessKeyVersionResult> accessKeyVersions)
         {
             AccessKeyName = accessKeyName;
             AccessKeyUid = accessKeyUid;
             AccessKeyVersions = accessKeyVersions;
-            Id = id;
         }
     }
 }

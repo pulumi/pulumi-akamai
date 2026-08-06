@@ -30,10 +30,6 @@ export interface GetCloudwrapperPropertiesArgs {
  */
 export interface GetCloudwrapperPropertiesResult {
     readonly contractIds?: string[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly properties?: outputs.GetCloudwrapperPropertiesProperty[];
     readonly unused?: boolean;
 }

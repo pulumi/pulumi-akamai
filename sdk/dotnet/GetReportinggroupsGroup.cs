@@ -50,10 +50,6 @@ namespace Pulumi.Akamai
     {
         public readonly Outputs.GetReportinggroupsGroupAccessGroupResult AccessGroup;
         public readonly Outputs.GetReportinggroupsGroupContractResult Contract;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly int ReportingGroupId;
         public readonly string ReportingGroupName;
 
@@ -63,15 +59,12 @@ namespace Pulumi.Akamai
 
             Outputs.GetReportinggroupsGroupContractResult contract,
 
-            string id,
-
             int reportingGroupId,
 
             string reportingGroupName)
         {
             AccessGroup = accessGroup;
             Contract = contract;
-            Id = id;
             ReportingGroupId = reportingGroupId;
             ReportingGroupName = reportingGroupName;
         }

@@ -27,7 +27,7 @@ class GetPropertyDomainownershipDomainResult:
     """
     A collection of values returned by getPropertyDomainownershipDomain.
     """
-    def __init__(__self__, account_id=None, domain_name=None, domain_status=None, domain_status_histories=None, id=None, validation_challenge=None, validation_completed_date=None, validation_method=None, validation_requested_by=None, validation_requested_date=None, validation_scope=None):
+    def __init__(__self__, account_id=None, domain_name=None, domain_status=None, domain_status_histories=None, validation_challenge=None, validation_completed_date=None, validation_method=None, validation_requested_by=None, validation_requested_date=None, validation_scope=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -40,9 +40,6 @@ class GetPropertyDomainownershipDomainResult:
         if domain_status_histories and not isinstance(domain_status_histories, list):
             raise TypeError("Expected argument 'domain_status_histories' to be a list")
         pulumi.set(__self__, "domain_status_histories", domain_status_histories)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if validation_challenge and not isinstance(validation_challenge, dict):
             raise TypeError("Expected argument 'validation_challenge' to be a dict")
         pulumi.set(__self__, "validation_challenge", validation_challenge)
@@ -81,14 +78,6 @@ class GetPropertyDomainownershipDomainResult:
     @pulumi.getter(name="domainStatusHistories")
     def domain_status_histories(self) -> Sequence['outputs.GetPropertyDomainownershipDomainDomainStatusHistoryResult']:
         return pulumi.get(self, "domain_status_histories")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="validationChallenge")
@@ -131,7 +120,6 @@ class AwaitableGetPropertyDomainownershipDomainResult(GetPropertyDomainownership
             domain_name=self.domain_name,
             domain_status=self.domain_status,
             domain_status_histories=self.domain_status_histories,
-            id=self.id,
             validation_challenge=self.validation_challenge,
             validation_completed_date=self.validation_completed_date,
             validation_method=self.validation_method,
@@ -157,7 +145,6 @@ def get_property_domainownership_domain(domain_name: Optional[_builtins.str] = N
         domain_name=pulumi.get(__ret__, 'domain_name'),
         domain_status=pulumi.get(__ret__, 'domain_status'),
         domain_status_histories=pulumi.get(__ret__, 'domain_status_histories'),
-        id=pulumi.get(__ret__, 'id'),
         validation_challenge=pulumi.get(__ret__, 'validation_challenge'),
         validation_completed_date=pulumi.get(__ret__, 'validation_completed_date'),
         validation_method=pulumi.get(__ret__, 'validation_method'),
@@ -180,7 +167,6 @@ def get_property_domainownership_domain_output(domain_name: pulumi.Input[Optiona
         domain_name=pulumi.get(__response__, 'domain_name'),
         domain_status=pulumi.get(__response__, 'domain_status'),
         domain_status_histories=pulumi.get(__response__, 'domain_status_histories'),
-        id=pulumi.get(__response__, 'id'),
         validation_challenge=pulumi.get(__response__, 'validation_challenge'),
         validation_completed_date=pulumi.get(__response__, 'validation_completed_date'),
         validation_method=pulumi.get(__response__, 'validation_method'),

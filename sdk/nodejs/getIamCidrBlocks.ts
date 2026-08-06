@@ -17,10 +17,6 @@ export function getIamCidrBlocks(opts?: pulumi.InvokeOptions): Promise<GetIamCid
  */
 export interface GetIamCidrBlocksResult {
     readonly cidrBlocks: outputs.GetIamCidrBlocksCidrBlock[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getIamCidrBlocksOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamCidrBlocksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

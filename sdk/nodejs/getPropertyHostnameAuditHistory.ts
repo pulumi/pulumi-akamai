@@ -26,10 +26,6 @@ export interface GetPropertyHostnameAuditHistoryArgs {
 export interface GetPropertyHostnameAuditHistoryResult {
     readonly histories: outputs.GetPropertyHostnameAuditHistoryHistory[];
     readonly hostname: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getPropertyHostnameAuditHistoryOutput(args: GetPropertyHostnameAuditHistoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyHostnameAuditHistoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -20,11 +20,6 @@ public final class GetIamCidrBlockResult {
     private String createdBy;
     private String createdDate;
     private Boolean enabled;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String modifiedBy;
     private String modifiedDate;
 
@@ -50,13 +45,6 @@ public final class GetIamCidrBlockResult {
     public Boolean enabled() {
         return this.enabled;
     }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
-    }
     public String modifiedBy() {
         return this.modifiedBy;
     }
@@ -80,7 +68,6 @@ public final class GetIamCidrBlockResult {
         private String createdBy;
         private String createdDate;
         private Boolean enabled;
-        private String id;
         private String modifiedBy;
         private String modifiedDate;
         public Builder() {}
@@ -93,7 +80,6 @@ public final class GetIamCidrBlockResult {
     	      this.createdBy = defaults.createdBy;
     	      this.createdDate = defaults.createdDate;
     	      this.enabled = defaults.enabled;
-    	      this.id = defaults.id;
     	      this.modifiedBy = defaults.modifiedBy;
     	      this.modifiedDate = defaults.modifiedDate;
         }
@@ -155,14 +141,6 @@ public final class GetIamCidrBlockResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetIamCidrBlockResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder modifiedBy(String modifiedBy) {
             if (modifiedBy == null) {
               throw new MissingRequiredPropertyException("GetIamCidrBlockResult", "modifiedBy");
@@ -187,7 +165,6 @@ public final class GetIamCidrBlockResult {
             _resultValue.createdBy = createdBy;
             _resultValue.createdDate = createdDate;
             _resultValue.enabled = enabled;
-            _resultValue.id = id;
             _resultValue.modifiedBy = modifiedBy;
             _resultValue.modifiedDate = modifiedDate;
             return _resultValue;

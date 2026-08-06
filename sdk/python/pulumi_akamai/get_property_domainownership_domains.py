@@ -27,26 +27,15 @@ class GetPropertyDomainownershipDomainsResult:
     """
     A collection of values returned by getPropertyDomainownershipDomains.
     """
-    def __init__(__self__, domains=None, id=None):
+    def __init__(__self__, domains=None):
         if domains and not isinstance(domains, list):
             raise TypeError("Expected argument 'domains' to be a list")
         pulumi.set(__self__, "domains", domains)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter
     def domains(self) -> Sequence['outputs.GetPropertyDomainownershipDomainsDomainResult']:
         return pulumi.get(self, "domains")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
 
 class AwaitableGetPropertyDomainownershipDomainsResult(GetPropertyDomainownershipDomainsResult):
@@ -55,8 +44,7 @@ class AwaitableGetPropertyDomainownershipDomainsResult(GetPropertyDomainownershi
         if False:
             yield self
         return GetPropertyDomainownershipDomainsResult(
-            domains=self.domains,
-            id=self.id)
+            domains=self.domains)
 
 
 def get_property_domainownership_domains(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyDomainownershipDomainsResult:
@@ -68,8 +56,7 @@ def get_property_domainownership_domains(opts: Optional[pulumi.InvokeOptions] = 
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyDomainownershipDomains:getPropertyDomainownershipDomains', __args__, opts=opts, typ=GetPropertyDomainownershipDomainsResult).value
 
     return AwaitableGetPropertyDomainownershipDomainsResult(
-        domains=pulumi.get(__ret__, 'domains'),
-        id=pulumi.get(__ret__, 'id'))
+        domains=pulumi.get(__ret__, 'domains'))
 def get_property_domainownership_domains_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyDomainownershipDomainsResult]:
     """
     Use this data source to access information about an existing resource.
@@ -78,5 +65,4 @@ def get_property_domainownership_domains_output(opts: Optional[Union[pulumi.Invo
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyDomainownershipDomains:getPropertyDomainownershipDomains', __args__, opts=opts, typ=GetPropertyDomainownershipDomainsResult)
     return __ret__.apply(lambda __response__: GetPropertyDomainownershipDomainsResult(
-        domains=pulumi.get(__response__, 'domains'),
-        id=pulumi.get(__response__, 'id')))
+        domains=pulumi.get(__response__, 'domains')))

@@ -55,10 +55,6 @@ namespace Pulumi.Akamai
     public sealed class GetAppsecUrlProtectionPoliciesActionsResult
     {
         public readonly int ConfigId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string SecurityPolicyId;
         public readonly ImmutableArray<Outputs.GetAppsecUrlProtectionPoliciesActionsUrlProtectionPoliciesActionResult> UrlProtectionPoliciesActions;
 
@@ -66,14 +62,11 @@ namespace Pulumi.Akamai
         private GetAppsecUrlProtectionPoliciesActionsResult(
             int configId,
 
-            string id,
-
             string securityPolicyId,
 
             ImmutableArray<Outputs.GetAppsecUrlProtectionPoliciesActionsUrlProtectionPoliciesActionResult> urlProtectionPoliciesActions)
         {
             ConfigId = configId;
-            Id = id;
             SecurityPolicyId = securityPolicyId;
             UrlProtectionPoliciesActions = urlProtectionPoliciesActions;
         }

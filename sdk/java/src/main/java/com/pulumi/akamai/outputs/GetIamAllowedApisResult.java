@@ -18,11 +18,6 @@ public final class GetIamAllowedApisResult {
     private @Nullable Boolean allowAccountSwitch;
     private List<GetIamAllowedApisAllowedApi> allowedApis;
     private @Nullable String clientType;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String username;
 
     private GetIamAllowedApisResult() {}
@@ -34,13 +29,6 @@ public final class GetIamAllowedApisResult {
     }
     public Optional<String> clientType() {
         return Optional.ofNullable(this.clientType);
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String username() {
         return this.username;
@@ -58,7 +46,6 @@ public final class GetIamAllowedApisResult {
         private @Nullable Boolean allowAccountSwitch;
         private List<GetIamAllowedApisAllowedApi> allowedApis;
         private @Nullable String clientType;
-        private String id;
         private String username;
         public Builder() {}
         public Builder(GetIamAllowedApisResult defaults) {
@@ -66,7 +53,6 @@ public final class GetIamAllowedApisResult {
     	      this.allowAccountSwitch = defaults.allowAccountSwitch;
     	      this.allowedApis = defaults.allowedApis;
     	      this.clientType = defaults.clientType;
-    	      this.id = defaults.id;
     	      this.username = defaults.username;
         }
 
@@ -94,14 +80,6 @@ public final class GetIamAllowedApisResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetIamAllowedApisResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder username(String username) {
             if (username == null) {
               throw new MissingRequiredPropertyException("GetIamAllowedApisResult", "username");
@@ -114,7 +92,6 @@ public final class GetIamAllowedApisResult {
             _resultValue.allowAccountSwitch = allowAccountSwitch;
             _resultValue.allowedApis = allowedApis;
             _resultValue.clientType = clientType;
-            _resultValue.id = id;
             _resultValue.username = username;
             return _resultValue;
         }

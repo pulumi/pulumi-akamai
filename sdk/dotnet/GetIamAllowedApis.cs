@@ -63,10 +63,6 @@ namespace Pulumi.Akamai
         public readonly bool? AllowAccountSwitch;
         public readonly ImmutableArray<Outputs.GetIamAllowedApisAllowedApiResult> AllowedApis;
         public readonly string? ClientType;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string Username;
 
         [OutputConstructor]
@@ -77,14 +73,11 @@ namespace Pulumi.Akamai
 
             string? clientType,
 
-            string id,
-
             string username)
         {
             AllowAccountSwitch = allowAccountSwitch;
             AllowedApis = allowedApis;
             ClientType = clientType;
-            Id = id;
             Username = username;
         }
     }

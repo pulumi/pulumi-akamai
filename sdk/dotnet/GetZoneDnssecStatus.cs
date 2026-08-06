@@ -50,10 +50,6 @@ namespace Pulumi.Akamai
     {
         public readonly ImmutableArray<string> Alerts;
         public readonly Outputs.GetZoneDnssecStatusCurrentRecordsResult CurrentRecords;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly Outputs.GetZoneDnssecStatusNewRecordsResult NewRecords;
         public readonly string Zone;
 
@@ -63,15 +59,12 @@ namespace Pulumi.Akamai
 
             Outputs.GetZoneDnssecStatusCurrentRecordsResult currentRecords,
 
-            string id,
-
             Outputs.GetZoneDnssecStatusNewRecordsResult newRecords,
 
             string zone)
         {
             Alerts = alerts;
             CurrentRecords = currentRecords;
-            Id = id;
             NewRecords = newRecords;
             Zone = zone;
         }

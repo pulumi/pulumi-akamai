@@ -36,12 +36,10 @@ type GetMtlstruststoreCaSetActivationsResult struct {
 	Activations []GetMtlstruststoreCaSetActivationsActivation `pulumi:"activations"`
 	CaSetId     string                                        `pulumi:"caSetId"`
 	CaSetName   string                                        `pulumi:"caSetName"`
-	// The provider-assigned unique ID for this managed resource.
-	Id      string  `pulumi:"id"`
-	Network *string `pulumi:"network"`
-	Status  *string `pulumi:"status"`
-	Type    *string `pulumi:"type"`
-	Version *int    `pulumi:"version"`
+	Network     *string                                       `pulumi:"network"`
+	Status      *string                                       `pulumi:"status"`
+	Type        *string                                       `pulumi:"type"`
+	Version     *int                                          `pulumi:"version"`
 }
 
 func GetMtlstruststoreCaSetActivationsOutput(ctx *pulumi.Context, args GetMtlstruststoreCaSetActivationsOutputArgs, opts ...pulumi.InvokeOption) GetMtlstruststoreCaSetActivationsResultOutput {
@@ -94,11 +92,6 @@ func (o GetMtlstruststoreCaSetActivationsResultOutput) CaSetId() pulumi.StringOu
 
 func (o GetMtlstruststoreCaSetActivationsResultOutput) CaSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsResult) string { return v.CaSetName }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetMtlstruststoreCaSetActivationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetMtlstruststoreCaSetActivationsResultOutput) Network() pulumi.StringPtrOutput {
