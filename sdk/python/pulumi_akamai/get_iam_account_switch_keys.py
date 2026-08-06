@@ -27,7 +27,7 @@ class GetIamAccountSwitchKeysResult:
     """
     A collection of values returned by getIamAccountSwitchKeys.
     """
-    def __init__(__self__, account_switch_keys=None, client_id=None, filter=None, id=None):
+    def __init__(__self__, account_switch_keys=None, client_id=None, filter=None):
         if account_switch_keys and not isinstance(account_switch_keys, list):
             raise TypeError("Expected argument 'account_switch_keys' to be a list")
         pulumi.set(__self__, "account_switch_keys", account_switch_keys)
@@ -37,9 +37,6 @@ class GetIamAccountSwitchKeysResult:
         if filter and not isinstance(filter, str):
             raise TypeError("Expected argument 'filter' to be a str")
         pulumi.set(__self__, "filter", filter)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter(name="accountSwitchKeys")
@@ -56,14 +53,6 @@ class GetIamAccountSwitchKeysResult:
     def filter(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "filter")
 
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
 
 class AwaitableGetIamAccountSwitchKeysResult(GetIamAccountSwitchKeysResult):
     # pylint: disable=using-constant-test
@@ -73,8 +62,7 @@ class AwaitableGetIamAccountSwitchKeysResult(GetIamAccountSwitchKeysResult):
         return GetIamAccountSwitchKeysResult(
             account_switch_keys=self.account_switch_keys,
             client_id=self.client_id,
-            filter=self.filter,
-            id=self.id)
+            filter=self.filter)
 
 
 def get_iam_account_switch_keys(client_id: Optional[_builtins.str] = None,
@@ -92,8 +80,7 @@ def get_iam_account_switch_keys(client_id: Optional[_builtins.str] = None,
     return AwaitableGetIamAccountSwitchKeysResult(
         account_switch_keys=pulumi.get(__ret__, 'account_switch_keys'),
         client_id=pulumi.get(__ret__, 'client_id'),
-        filter=pulumi.get(__ret__, 'filter'),
-        id=pulumi.get(__ret__, 'id'))
+        filter=pulumi.get(__ret__, 'filter'))
 def get_iam_account_switch_keys_output(client_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccountSwitchKeysResult]:
@@ -108,5 +95,4 @@ def get_iam_account_switch_keys_output(client_id: pulumi.Input[Optional[Optional
     return __ret__.apply(lambda __response__: GetIamAccountSwitchKeysResult(
         account_switch_keys=pulumi.get(__response__, 'account_switch_keys'),
         client_id=pulumi.get(__response__, 'client_id'),
-        filter=pulumi.get(__response__, 'filter'),
-        id=pulumi.get(__response__, 'id')))
+        filter=pulumi.get(__response__, 'filter')))

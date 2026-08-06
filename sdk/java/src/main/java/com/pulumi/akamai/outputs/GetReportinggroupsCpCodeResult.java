@@ -22,11 +22,6 @@ public final class GetReportinggroupsCpCodeResult {
     private List<GetReportinggroupsCpCodeContract> contracts;
     private Integer cpCodeId;
     private String defaultTimeZone;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String name;
     private GetReportinggroupsCpCodeOverrideTimeZone overrideTimeZone;
     private List<GetReportinggroupsCpCodeProduct> products;
@@ -48,13 +43,6 @@ public final class GetReportinggroupsCpCodeResult {
     }
     public String defaultTimeZone() {
         return this.defaultTimeZone;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String name() {
         return this.name;
@@ -86,7 +74,6 @@ public final class GetReportinggroupsCpCodeResult {
         private List<GetReportinggroupsCpCodeContract> contracts;
         private Integer cpCodeId;
         private String defaultTimeZone;
-        private String id;
         private String name;
         private GetReportinggroupsCpCodeOverrideTimeZone overrideTimeZone;
         private List<GetReportinggroupsCpCodeProduct> products;
@@ -100,7 +87,6 @@ public final class GetReportinggroupsCpCodeResult {
     	      this.contracts = defaults.contracts;
     	      this.cpCodeId = defaults.cpCodeId;
     	      this.defaultTimeZone = defaults.defaultTimeZone;
-    	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.overrideTimeZone = defaults.overrideTimeZone;
     	      this.products = defaults.products;
@@ -149,14 +135,6 @@ public final class GetReportinggroupsCpCodeResult {
               throw new MissingRequiredPropertyException("GetReportinggroupsCpCodeResult", "defaultTimeZone");
             }
             this.defaultTimeZone = defaultTimeZone;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetReportinggroupsCpCodeResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -209,7 +187,6 @@ public final class GetReportinggroupsCpCodeResult {
             _resultValue.contracts = contracts;
             _resultValue.cpCodeId = cpCodeId;
             _resultValue.defaultTimeZone = defaultTimeZone;
-            _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.overrideTimeZone = overrideTimeZone;
             _resultValue.products = products;

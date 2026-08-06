@@ -33,9 +33,7 @@ type GetIamAllowedApisResult struct {
 	AllowAccountSwitch *bool                         `pulumi:"allowAccountSwitch"`
 	AllowedApis        []GetIamAllowedApisAllowedApi `pulumi:"allowedApis"`
 	ClientType         *string                       `pulumi:"clientType"`
-	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	Username string `pulumi:"username"`
+	Username           string                        `pulumi:"username"`
 }
 
 func GetIamAllowedApisOutput(ctx *pulumi.Context, args GetIamAllowedApisOutputArgs, opts ...pulumi.InvokeOption) GetIamAllowedApisResultOutput {
@@ -83,11 +81,6 @@ func (o GetIamAllowedApisResultOutput) AllowedApis() GetIamAllowedApisAllowedApi
 
 func (o GetIamAllowedApisResultOutput) ClientType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetIamAllowedApisResult) *string { return v.ClientType }).(pulumi.StringPtrOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetIamAllowedApisResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamAllowedApisResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetIamAllowedApisResultOutput) Username() pulumi.StringOutput {

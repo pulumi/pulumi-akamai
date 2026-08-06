@@ -26,10 +26,6 @@ export interface GetCloudwrapperConfigurationsArgs {
  */
 export interface GetCloudwrapperConfigurationsResult {
     readonly configurations?: outputs.GetCloudwrapperConfigurationsConfiguration[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getCloudwrapperConfigurationsOutput(args?: GetCloudwrapperConfigurationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudwrapperConfigurationsResult> {
     args = args || {};

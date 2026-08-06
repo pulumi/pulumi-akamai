@@ -20,11 +20,6 @@ public final class GetCpCodesResult {
     private @Nullable String filterByName;
     private @Nullable String filterByProductId;
     private String groupId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetCpCodesResult() {}
     public String accountId() {
@@ -45,13 +40,6 @@ public final class GetCpCodesResult {
     public String groupId() {
         return this.groupId;
     }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -68,7 +56,6 @@ public final class GetCpCodesResult {
         private @Nullable String filterByName;
         private @Nullable String filterByProductId;
         private String groupId;
-        private String id;
         public Builder() {}
         public Builder(GetCpCodesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -78,7 +65,6 @@ public final class GetCpCodesResult {
     	      this.filterByName = defaults.filterByName;
     	      this.filterByProductId = defaults.filterByProductId;
     	      this.groupId = defaults.groupId;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -128,14 +114,6 @@ public final class GetCpCodesResult {
             this.groupId = groupId;
             return this;
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCpCodesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetCpCodesResult build() {
             final var _resultValue = new GetCpCodesResult();
             _resultValue.accountId = accountId;
@@ -144,7 +122,6 @@ public final class GetCpCodesResult {
             _resultValue.filterByName = filterByName;
             _resultValue.filterByProductId = filterByProductId;
             _resultValue.groupId = groupId;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

@@ -31,10 +31,6 @@ export interface GetIamRoleResult {
     readonly createdBy: string;
     readonly createdDate: string;
     readonly grantedRoles: outputs.GetIamRoleGrantedRole[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly modifiedBy: string;
     readonly modifiedDate: string;
     readonly roleDescription: string;

@@ -14,11 +14,6 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetApidefinitionsResourceOperationsResult {
     private Integer apiId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable String resourceName;
     private String resourceOperations;
     private @Nullable String resourcePath;
@@ -27,13 +22,6 @@ public final class GetApidefinitionsResourceOperationsResult {
     private GetApidefinitionsResourceOperationsResult() {}
     public Integer apiId() {
         return this.apiId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<String> resourceName() {
         return Optional.ofNullable(this.resourceName);
@@ -58,7 +46,6 @@ public final class GetApidefinitionsResourceOperationsResult {
     @CustomType.Builder
     public static final class Builder {
         private Integer apiId;
-        private String id;
         private @Nullable String resourceName;
         private String resourceOperations;
         private @Nullable String resourcePath;
@@ -67,7 +54,6 @@ public final class GetApidefinitionsResourceOperationsResult {
         public Builder(GetApidefinitionsResourceOperationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiId = defaults.apiId;
-    	      this.id = defaults.id;
     	      this.resourceName = defaults.resourceName;
     	      this.resourceOperations = defaults.resourceOperations;
     	      this.resourcePath = defaults.resourcePath;
@@ -80,14 +66,6 @@ public final class GetApidefinitionsResourceOperationsResult {
               throw new MissingRequiredPropertyException("GetApidefinitionsResourceOperationsResult", "apiId");
             }
             this.apiId = apiId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetApidefinitionsResourceOperationsResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -121,7 +99,6 @@ public final class GetApidefinitionsResourceOperationsResult {
         public GetApidefinitionsResourceOperationsResult build() {
             final var _resultValue = new GetApidefinitionsResourceOperationsResult();
             _resultValue.apiId = apiId;
-            _resultValue.id = id;
             _resultValue.resourceName = resourceName;
             _resultValue.resourceOperations = resourceOperations;
             _resultValue.resourcePath = resourcePath;

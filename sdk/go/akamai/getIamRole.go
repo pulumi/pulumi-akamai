@@ -29,19 +29,17 @@ type LookupIamRoleArgs struct {
 
 // A collection of values returned by getIamRole.
 type LookupIamRoleResult struct {
-	Actions      GetIamRoleActions       `pulumi:"actions"`
-	CreatedBy    string                  `pulumi:"createdBy"`
-	CreatedDate  string                  `pulumi:"createdDate"`
-	GrantedRoles []GetIamRoleGrantedRole `pulumi:"grantedRoles"`
-	// The provider-assigned unique ID for this managed resource.
-	Id              string           `pulumi:"id"`
-	ModifiedBy      string           `pulumi:"modifiedBy"`
-	ModifiedDate    string           `pulumi:"modifiedDate"`
-	RoleDescription string           `pulumi:"roleDescription"`
-	RoleId          *int             `pulumi:"roleId"`
-	RoleName        string           `pulumi:"roleName"`
-	Type            string           `pulumi:"type"`
-	Users           []GetIamRoleUser `pulumi:"users"`
+	Actions         GetIamRoleActions       `pulumi:"actions"`
+	CreatedBy       string                  `pulumi:"createdBy"`
+	CreatedDate     string                  `pulumi:"createdDate"`
+	GrantedRoles    []GetIamRoleGrantedRole `pulumi:"grantedRoles"`
+	ModifiedBy      string                  `pulumi:"modifiedBy"`
+	ModifiedDate    string                  `pulumi:"modifiedDate"`
+	RoleDescription string                  `pulumi:"roleDescription"`
+	RoleId          *int                    `pulumi:"roleId"`
+	RoleName        string                  `pulumi:"roleName"`
+	Type            string                  `pulumi:"type"`
+	Users           []GetIamRoleUser        `pulumi:"users"`
 }
 
 func LookupIamRoleOutput(ctx *pulumi.Context, args LookupIamRoleOutputArgs, opts ...pulumi.InvokeOption) LookupIamRoleResultOutput {
@@ -92,11 +90,6 @@ func (o LookupIamRoleResultOutput) CreatedDate() pulumi.StringOutput {
 
 func (o LookupIamRoleResultOutput) GrantedRoles() GetIamRoleGrantedRoleArrayOutput {
 	return o.ApplyT(func(v LookupIamRoleResult) []GetIamRoleGrantedRole { return v.GrantedRoles }).(GetIamRoleGrantedRoleArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupIamRoleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIamRoleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupIamRoleResultOutput) ModifiedBy() pulumi.StringOutput {

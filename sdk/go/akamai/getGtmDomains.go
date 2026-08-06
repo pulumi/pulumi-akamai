@@ -29,8 +29,6 @@ type GetGtmDomainsArgs struct {
 // A collection of values returned by getGtmDomains.
 type GetGtmDomainsResult struct {
 	Domains []GetGtmDomainsDomain `pulumi:"domains"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetGtmDomainsOutput(ctx *pulumi.Context, args GetGtmDomainsOutputArgs, opts ...pulumi.InvokeOption) GetGtmDomainsResultOutput {
@@ -68,11 +66,6 @@ func (o GetGtmDomainsResultOutput) ToGetGtmDomainsResultOutputWithContext(ctx co
 
 func (o GetGtmDomainsResultOutput) Domains() GetGtmDomainsDomainArrayOutput {
 	return o.ApplyT(func(v GetGtmDomainsResult) []GetGtmDomainsDomain { return v.Domains }).(GetGtmDomainsDomainArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetGtmDomainsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGtmDomainsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -28,26 +28,15 @@ class GetGtmDomainsResult:
     """
     A collection of values returned by getGtmDomains.
     """
-    def __init__(__self__, domains=None, id=None):
+    def __init__(__self__, domains=None):
         if domains and not isinstance(domains, list):
             raise TypeError("Expected argument 'domains' to be a list")
         pulumi.set(__self__, "domains", domains)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter
     def domains(self) -> Optional[Sequence['outputs.GetGtmDomainsDomainResult']]:
         return pulumi.get(self, "domains")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
 
 class AwaitableGetGtmDomainsResult(GetGtmDomainsResult):
@@ -56,8 +45,7 @@ class AwaitableGetGtmDomainsResult(GetGtmDomainsResult):
         if False:
             yield self
         return GetGtmDomainsResult(
-            domains=self.domains,
-            id=self.id)
+            domains=self.domains)
 
 
 def get_gtm_domains(domains: Optional[Sequence[Union['GetGtmDomainsDomainArgs', 'GetGtmDomainsDomainArgsDict']]] = None,
@@ -71,8 +59,7 @@ def get_gtm_domains(domains: Optional[Sequence[Union['GetGtmDomainsDomainArgs', 
     __ret__ = pulumi.runtime.invoke('akamai:index/getGtmDomains:getGtmDomains', __args__, opts=opts, typ=GetGtmDomainsResult).value
 
     return AwaitableGetGtmDomainsResult(
-        domains=pulumi.get(__ret__, 'domains'),
-        id=pulumi.get(__ret__, 'id'))
+        domains=pulumi.get(__ret__, 'domains'))
 def get_gtm_domains_output(domains: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmDomainsDomainArgs', 'GetGtmDomainsDomainArgsDict']]]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmDomainsResult]:
     """
@@ -83,5 +70,4 @@ def get_gtm_domains_output(domains: pulumi.Input[Optional[Optional[Sequence[Unio
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmDomains:getGtmDomains', __args__, opts=opts, typ=GetGtmDomainsResult)
     return __ret__.apply(lambda __response__: GetGtmDomainsResult(
-        domains=pulumi.get(__response__, 'domains'),
-        id=pulumi.get(__response__, 'id')))
+        domains=pulumi.get(__response__, 'domains')))

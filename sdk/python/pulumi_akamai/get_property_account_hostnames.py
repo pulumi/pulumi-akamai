@@ -27,7 +27,7 @@ class GetPropertyAccountHostnamesResult:
     """
     A collection of values returned by getPropertyAccountHostnames.
     """
-    def __init__(__self__, account_id=None, available_sorts=None, cname_to=None, contract_id=None, current_sort=None, default_sort=None, group_id=None, hostname=None, hostnames=None, id=None, network=None, sort=None):
+    def __init__(__self__, account_id=None, available_sorts=None, cname_to=None, contract_id=None, current_sort=None, default_sort=None, group_id=None, hostname=None, hostnames=None, network=None, sort=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -55,9 +55,6 @@ class GetPropertyAccountHostnamesResult:
         if hostnames and not isinstance(hostnames, list):
             raise TypeError("Expected argument 'hostnames' to be a list")
         pulumi.set(__self__, "hostnames", hostnames)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if network and not isinstance(network, str):
             raise TypeError("Expected argument 'network' to be a str")
         pulumi.set(__self__, "network", network)
@@ -112,14 +109,6 @@ class GetPropertyAccountHostnamesResult:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter
     def network(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "network")
 
@@ -144,7 +133,6 @@ class AwaitableGetPropertyAccountHostnamesResult(GetPropertyAccountHostnamesResu
             group_id=self.group_id,
             hostname=self.hostname,
             hostnames=self.hostnames,
-            id=self.id,
             network=self.network,
             sort=self.sort)
 
@@ -179,7 +167,6 @@ def get_property_account_hostnames(cname_to: Optional[_builtins.str] = None,
         group_id=pulumi.get(__ret__, 'group_id'),
         hostname=pulumi.get(__ret__, 'hostname'),
         hostnames=pulumi.get(__ret__, 'hostnames'),
-        id=pulumi.get(__ret__, 'id'),
         network=pulumi.get(__ret__, 'network'),
         sort=pulumi.get(__ret__, 'sort'))
 def get_property_account_hostnames_output(cname_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -211,6 +198,5 @@ def get_property_account_hostnames_output(cname_to: pulumi.Input[Optional[Option
         group_id=pulumi.get(__response__, 'group_id'),
         hostname=pulumi.get(__response__, 'hostname'),
         hostnames=pulumi.get(__response__, 'hostnames'),
-        id=pulumi.get(__response__, 'id'),
         network=pulumi.get(__response__, 'network'),
         sort=pulumi.get(__response__, 'sort')))

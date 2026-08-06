@@ -28,11 +28,6 @@ public final class GetCloudcertificatesCertificateResult {
     private String csrExpirationDate;
     private String csrPem;
     private String geoClass;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable Boolean includeHostnameBindings;
     private String keySize;
     private String keyType;
@@ -85,13 +80,6 @@ public final class GetCloudcertificatesCertificateResult {
     }
     public String geoClass() {
         return this.geoClass;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<Boolean> includeHostnameBindings() {
         return Optional.ofNullable(this.includeHostnameBindings);
@@ -160,7 +148,6 @@ public final class GetCloudcertificatesCertificateResult {
         private String csrExpirationDate;
         private String csrPem;
         private String geoClass;
-        private String id;
         private @Nullable Boolean includeHostnameBindings;
         private String keySize;
         private String keyType;
@@ -191,7 +178,6 @@ public final class GetCloudcertificatesCertificateResult {
     	      this.csrExpirationDate = defaults.csrExpirationDate;
     	      this.csrPem = defaults.csrPem;
     	      this.geoClass = defaults.geoClass;
-    	      this.id = defaults.id;
     	      this.includeHostnameBindings = defaults.includeHostnameBindings;
     	      this.keySize = defaults.keySize;
     	      this.keyType = defaults.keyType;
@@ -306,14 +292,6 @@ public final class GetCloudcertificatesCertificateResult {
               throw new MissingRequiredPropertyException("GetCloudcertificatesCertificateResult", "geoClass");
             }
             this.geoClass = geoClass;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudcertificatesCertificateResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -451,7 +429,6 @@ public final class GetCloudcertificatesCertificateResult {
             _resultValue.csrExpirationDate = csrExpirationDate;
             _resultValue.csrPem = csrPem;
             _resultValue.geoClass = geoClass;
-            _resultValue.id = id;
             _resultValue.includeHostnameBindings = includeHostnameBindings;
             _resultValue.keySize = keySize;
             _resultValue.keyType = keyType;

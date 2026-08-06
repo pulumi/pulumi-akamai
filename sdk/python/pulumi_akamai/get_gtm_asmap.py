@@ -28,7 +28,7 @@ class GetGtmAsmapResult:
     """
     A collection of values returned by getGtmAsmap.
     """
-    def __init__(__self__, assignments=None, default_datacenter=None, domain=None, id=None, links=None, map_name=None):
+    def __init__(__self__, assignments=None, default_datacenter=None, domain=None, links=None, map_name=None):
         if assignments and not isinstance(assignments, list):
             raise TypeError("Expected argument 'assignments' to be a list")
         pulumi.set(__self__, "assignments", assignments)
@@ -38,9 +38,6 @@ class GetGtmAsmapResult:
         if domain and not isinstance(domain, str):
             raise TypeError("Expected argument 'domain' to be a str")
         pulumi.set(__self__, "domain", domain)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if links and not isinstance(links, list):
             raise TypeError("Expected argument 'links' to be a list")
         pulumi.set(__self__, "links", links)
@@ -65,14 +62,6 @@ class GetGtmAsmapResult:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter
     def links(self) -> Optional[Sequence['outputs.GetGtmAsmapLinkResult']]:
         return pulumi.get(self, "links")
 
@@ -91,7 +80,6 @@ class AwaitableGetGtmAsmapResult(GetGtmAsmapResult):
             assignments=self.assignments,
             default_datacenter=self.default_datacenter,
             domain=self.domain,
-            id=self.id,
             links=self.links,
             map_name=self.map_name)
 
@@ -118,7 +106,6 @@ def get_gtm_asmap(assignments: Optional[Sequence[Union['GetGtmAsmapAssignmentArg
         assignments=pulumi.get(__ret__, 'assignments'),
         default_datacenter=pulumi.get(__ret__, 'default_datacenter'),
         domain=pulumi.get(__ret__, 'domain'),
-        id=pulumi.get(__ret__, 'id'),
         links=pulumi.get(__ret__, 'links'),
         map_name=pulumi.get(__ret__, 'map_name'))
 def get_gtm_asmap_output(assignments: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmAsmapAssignmentArgs', 'GetGtmAsmapAssignmentArgsDict']]]]] = None,
@@ -142,6 +129,5 @@ def get_gtm_asmap_output(assignments: pulumi.Input[Optional[Optional[Sequence[Un
         assignments=pulumi.get(__response__, 'assignments'),
         default_datacenter=pulumi.get(__response__, 'default_datacenter'),
         domain=pulumi.get(__response__, 'domain'),
-        id=pulumi.get(__response__, 'id'),
         links=pulumi.get(__response__, 'links'),
         map_name=pulumi.get(__response__, 'map_name')))

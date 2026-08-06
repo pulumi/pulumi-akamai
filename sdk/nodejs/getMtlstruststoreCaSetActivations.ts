@@ -38,10 +38,6 @@ export interface GetMtlstruststoreCaSetActivationsResult {
     readonly activations: outputs.GetMtlstruststoreCaSetActivationsActivation[];
     readonly caSetId: string;
     readonly caSetName: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly network?: string;
     readonly status?: string;
     readonly type?: string;

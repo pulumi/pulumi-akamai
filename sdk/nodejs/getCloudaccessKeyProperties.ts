@@ -26,10 +26,6 @@ export interface GetCloudaccessKeyPropertiesArgs {
 export interface GetCloudaccessKeyPropertiesResult {
     readonly accessKeyName: string;
     readonly accessKeyUid: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly properties: outputs.GetCloudaccessKeyPropertiesProperty[];
 }
 export function getCloudaccessKeyPropertiesOutput(args: GetCloudaccessKeyPropertiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudaccessKeyPropertiesResult> {

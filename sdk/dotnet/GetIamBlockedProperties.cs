@@ -63,10 +63,6 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<Outputs.GetIamBlockedPropertiesBlockedPropertyResult> BlockedProperties;
         public readonly string ContractId;
         public readonly int GroupId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string UiIdentityId;
 
         [OutputConstructor]
@@ -77,14 +73,11 @@ namespace Pulumi.Akamai
 
             int groupId,
 
-            string id,
-
             string uiIdentityId)
         {
             BlockedProperties = blockedProperties;
             ContractId = contractId;
             GroupId = groupId;
-            Id = id;
             UiIdentityId = uiIdentityId;
         }
     }

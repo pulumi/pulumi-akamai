@@ -27,7 +27,7 @@ class GetAppsecUrlProtectionPolicyResult:
     """
     A collection of values returned by getAppsecUrlProtectionPolicy.
     """
-    def __init__(__self__, api_definitions=None, bypass_conditions=None, config_id=None, create_date=None, created_by=None, description=None, hostname_paths=None, id=None, intelligent_load_shedding=None, max_rate_threshold=None, name=None, update_date=None, updated_by=None, url_protection_policy_id=None, used=None):
+    def __init__(__self__, api_definitions=None, bypass_conditions=None, config_id=None, create_date=None, created_by=None, description=None, hostname_paths=None, intelligent_load_shedding=None, max_rate_threshold=None, name=None, update_date=None, updated_by=None, url_protection_policy_id=None, used=None):
         if api_definitions and not isinstance(api_definitions, list):
             raise TypeError("Expected argument 'api_definitions' to be a list")
         pulumi.set(__self__, "api_definitions", api_definitions)
@@ -49,9 +49,6 @@ class GetAppsecUrlProtectionPolicyResult:
         if hostname_paths and not isinstance(hostname_paths, list):
             raise TypeError("Expected argument 'hostname_paths' to be a list")
         pulumi.set(__self__, "hostname_paths", hostname_paths)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if intelligent_load_shedding and not isinstance(intelligent_load_shedding, dict):
             raise TypeError("Expected argument 'intelligent_load_shedding' to be a dict")
         pulumi.set(__self__, "intelligent_load_shedding", intelligent_load_shedding)
@@ -110,14 +107,6 @@ class GetAppsecUrlProtectionPolicyResult:
         return pulumi.get(self, "hostname_paths")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="intelligentLoadShedding")
     def intelligent_load_shedding(self) -> 'outputs.GetAppsecUrlProtectionPolicyIntelligentLoadSheddingResult':
         return pulumi.get(self, "intelligent_load_shedding")
@@ -166,7 +155,6 @@ class AwaitableGetAppsecUrlProtectionPolicyResult(GetAppsecUrlProtectionPolicyRe
             created_by=self.created_by,
             description=self.description,
             hostname_paths=self.hostname_paths,
-            id=self.id,
             intelligent_load_shedding=self.intelligent_load_shedding,
             max_rate_threshold=self.max_rate_threshold,
             name=self.name,
@@ -196,7 +184,6 @@ def get_appsec_url_protection_policy(config_id: Optional[_builtins.int] = None,
         created_by=pulumi.get(__ret__, 'created_by'),
         description=pulumi.get(__ret__, 'description'),
         hostname_paths=pulumi.get(__ret__, 'hostname_paths'),
-        id=pulumi.get(__ret__, 'id'),
         intelligent_load_shedding=pulumi.get(__ret__, 'intelligent_load_shedding'),
         max_rate_threshold=pulumi.get(__ret__, 'max_rate_threshold'),
         name=pulumi.get(__ret__, 'name'),
@@ -223,7 +210,6 @@ def get_appsec_url_protection_policy_output(config_id: pulumi.Input[Optional[_bu
         created_by=pulumi.get(__response__, 'created_by'),
         description=pulumi.get(__response__, 'description'),
         hostname_paths=pulumi.get(__response__, 'hostname_paths'),
-        id=pulumi.get(__response__, 'id'),
         intelligent_load_shedding=pulumi.get(__response__, 'intelligent_load_shedding'),
         max_rate_threshold=pulumi.get(__response__, 'max_rate_threshold'),
         name=pulumi.get(__response__, 'name'),

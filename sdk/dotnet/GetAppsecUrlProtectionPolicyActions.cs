@@ -61,10 +61,6 @@ namespace Pulumi.Akamai
     public sealed class GetAppsecUrlProtectionPolicyActionsResult
     {
         public readonly int ConfigId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string LoadSheddingAction;
         public readonly string MaxRateThresholdAction;
         public readonly string SecurityPolicyId;
@@ -73,8 +69,6 @@ namespace Pulumi.Akamai
         [OutputConstructor]
         private GetAppsecUrlProtectionPolicyActionsResult(
             int configId,
-
-            string id,
 
             string loadSheddingAction,
 
@@ -85,7 +79,6 @@ namespace Pulumi.Akamai
             int urlProtectionPolicyId)
         {
             ConfigId = configId;
-            Id = id;
             LoadSheddingAction = loadSheddingAction;
             MaxRateThresholdAction = maxRateThresholdAction;
             SecurityPolicyId = securityPolicyId;

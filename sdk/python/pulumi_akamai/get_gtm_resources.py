@@ -28,13 +28,10 @@ class GetGtmResourcesResult:
     """
     A collection of values returned by getGtmResources.
     """
-    def __init__(__self__, domain=None, id=None, resources=None):
+    def __init__(__self__, domain=None, resources=None):
         if domain and not isinstance(domain, str):
             raise TypeError("Expected argument 'domain' to be a str")
         pulumi.set(__self__, "domain", domain)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if resources and not isinstance(resources, list):
             raise TypeError("Expected argument 'resources' to be a list")
         pulumi.set(__self__, "resources", resources)
@@ -43,14 +40,6 @@ class GetGtmResourcesResult:
     @pulumi.getter
     def domain(self) -> _builtins.str:
         return pulumi.get(self, "domain")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter
@@ -65,7 +54,6 @@ class AwaitableGetGtmResourcesResult(GetGtmResourcesResult):
             yield self
         return GetGtmResourcesResult(
             domain=self.domain,
-            id=self.id,
             resources=self.resources)
 
 
@@ -83,7 +71,6 @@ def get_gtm_resources(domain: Optional[_builtins.str] = None,
 
     return AwaitableGetGtmResourcesResult(
         domain=pulumi.get(__ret__, 'domain'),
-        id=pulumi.get(__ret__, 'id'),
         resources=pulumi.get(__ret__, 'resources'))
 def get_gtm_resources_output(domain: pulumi.Input[Optional[_builtins.str]] = None,
                              resources: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmResourcesResourceArgs', 'GetGtmResourcesResourceArgsDict']]]]] = None,
@@ -98,5 +85,4 @@ def get_gtm_resources_output(domain: pulumi.Input[Optional[_builtins.str]] = Non
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmResources:getGtmResources', __args__, opts=opts, typ=GetGtmResourcesResult)
     return __ret__.apply(lambda __response__: GetGtmResourcesResult(
         domain=pulumi.get(__response__, 'domain'),
-        id=pulumi.get(__response__, 'id'),
         resources=pulumi.get(__response__, 'resources')))

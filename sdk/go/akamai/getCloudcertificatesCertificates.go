@@ -37,19 +37,17 @@ type GetCloudcertificatesCertificatesArgs struct {
 
 // A collection of values returned by getCloudcertificatesCertificates.
 type GetCloudcertificatesCertificatesResult struct {
-	CertificateName     *string                                       `pulumi:"certificateName"`
-	CertificateStatuses []string                                      `pulumi:"certificateStatuses"`
-	Certificates        []GetCloudcertificatesCertificatesCertificate `pulumi:"certificates"`
-	ContractId          *string                                       `pulumi:"contractId"`
-	Domain              *string                                       `pulumi:"domain"`
-	ExpiringInDays      *int                                          `pulumi:"expiringInDays"`
-	GroupId             *string                                       `pulumi:"groupId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                          string  `pulumi:"id"`
-	IncludeCertificateMaterials *bool   `pulumi:"includeCertificateMaterials"`
-	Issuer                      *string `pulumi:"issuer"`
-	KeyType                     *string `pulumi:"keyType"`
-	Sort                        *string `pulumi:"sort"`
+	CertificateName             *string                                       `pulumi:"certificateName"`
+	CertificateStatuses         []string                                      `pulumi:"certificateStatuses"`
+	Certificates                []GetCloudcertificatesCertificatesCertificate `pulumi:"certificates"`
+	ContractId                  *string                                       `pulumi:"contractId"`
+	Domain                      *string                                       `pulumi:"domain"`
+	ExpiringInDays              *int                                          `pulumi:"expiringInDays"`
+	GroupId                     *string                                       `pulumi:"groupId"`
+	IncludeCertificateMaterials *bool                                         `pulumi:"includeCertificateMaterials"`
+	Issuer                      *string                                       `pulumi:"issuer"`
+	KeyType                     *string                                       `pulumi:"keyType"`
+	Sort                        *string                                       `pulumi:"sort"`
 }
 
 func GetCloudcertificatesCertificatesOutput(ctx *pulumi.Context, args GetCloudcertificatesCertificatesOutputArgs, opts ...pulumi.InvokeOption) GetCloudcertificatesCertificatesResultOutput {
@@ -122,11 +120,6 @@ func (o GetCloudcertificatesCertificatesResultOutput) ExpiringInDays() pulumi.In
 
 func (o GetCloudcertificatesCertificatesResultOutput) GroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCloudcertificatesCertificatesResult) *string { return v.GroupId }).(pulumi.StringPtrOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudcertificatesCertificatesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetCloudcertificatesCertificatesResultOutput) IncludeCertificateMaterials() pulumi.BoolPtrOutput {

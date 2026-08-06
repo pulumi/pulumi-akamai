@@ -32,10 +32,6 @@ export interface GetMtlskeystoreClientCertificateResult {
     readonly createdDate: string;
     readonly current: outputs.GetMtlskeystoreClientCertificateCurrent;
     readonly geography: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly includeAssociatedProperties?: boolean;
     readonly keyAlgorithm: string;
     readonly notificationEmails: string[];

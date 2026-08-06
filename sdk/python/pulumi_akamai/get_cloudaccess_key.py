@@ -27,7 +27,7 @@ class GetCloudaccessKeyResult:
     """
     A collection of values returned by getCloudaccessKey.
     """
-    def __init__(__self__, access_key_name=None, access_key_uid=None, authentication_method=None, created_by=None, created_time=None, groups=None, id=None, latest_version=None, network_configuration=None):
+    def __init__(__self__, access_key_name=None, access_key_uid=None, authentication_method=None, created_by=None, created_time=None, groups=None, latest_version=None, network_configuration=None):
         if access_key_name and not isinstance(access_key_name, str):
             raise TypeError("Expected argument 'access_key_name' to be a str")
         pulumi.set(__self__, "access_key_name", access_key_name)
@@ -46,9 +46,6 @@ class GetCloudaccessKeyResult:
         if groups and not isinstance(groups, list):
             raise TypeError("Expected argument 'groups' to be a list")
         pulumi.set(__self__, "groups", groups)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if latest_version and not isinstance(latest_version, int):
             raise TypeError("Expected argument 'latest_version' to be a int")
         pulumi.set(__self__, "latest_version", latest_version)
@@ -87,14 +84,6 @@ class GetCloudaccessKeyResult:
         return pulumi.get(self, "groups")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> _builtins.int:
         return pulumi.get(self, "latest_version")
@@ -117,7 +106,6 @@ class AwaitableGetCloudaccessKeyResult(GetCloudaccessKeyResult):
             created_by=self.created_by,
             created_time=self.created_time,
             groups=self.groups,
-            id=self.id,
             latest_version=self.latest_version,
             network_configuration=self.network_configuration)
 
@@ -139,7 +127,6 @@ def get_cloudaccess_key(access_key_name: Optional[_builtins.str] = None,
         created_by=pulumi.get(__ret__, 'created_by'),
         created_time=pulumi.get(__ret__, 'created_time'),
         groups=pulumi.get(__ret__, 'groups'),
-        id=pulumi.get(__ret__, 'id'),
         latest_version=pulumi.get(__ret__, 'latest_version'),
         network_configuration=pulumi.get(__ret__, 'network_configuration'))
 def get_cloudaccess_key_output(access_key_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -158,6 +145,5 @@ def get_cloudaccess_key_output(access_key_name: pulumi.Input[Optional[_builtins.
         created_by=pulumi.get(__response__, 'created_by'),
         created_time=pulumi.get(__response__, 'created_time'),
         groups=pulumi.get(__response__, 'groups'),
-        id=pulumi.get(__response__, 'id'),
         latest_version=pulumi.get(__response__, 'latest_version'),
         network_configuration=pulumi.get(__response__, 'network_configuration')))

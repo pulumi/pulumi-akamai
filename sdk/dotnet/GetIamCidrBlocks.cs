@@ -26,19 +26,11 @@ namespace Pulumi.Akamai
     public sealed class GetIamCidrBlocksResult
     {
         public readonly ImmutableArray<Outputs.GetIamCidrBlocksCidrBlockResult> CidrBlocks;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
-        private GetIamCidrBlocksResult(
-            ImmutableArray<Outputs.GetIamCidrBlocksCidrBlockResult> cidrBlocks,
-
-            string id)
+        private GetIamCidrBlocksResult(ImmutableArray<Outputs.GetIamCidrBlocksCidrBlockResult> cidrBlocks)
         {
             CidrBlocks = cidrBlocks;
-            Id = id;
         }
     }
 }

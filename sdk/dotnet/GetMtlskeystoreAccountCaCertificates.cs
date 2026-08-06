@@ -59,22 +59,15 @@ namespace Pulumi.Akamai
     public sealed class GetMtlskeystoreAccountCaCertificatesResult
     {
         public readonly ImmutableArray<Outputs.GetMtlskeystoreAccountCaCertificatesCertificateResult> Certificates;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly ImmutableArray<string> Statuses;
 
         [OutputConstructor]
         private GetMtlskeystoreAccountCaCertificatesResult(
             ImmutableArray<Outputs.GetMtlskeystoreAccountCaCertificatesCertificateResult> certificates,
 
-            string id,
-
             ImmutableArray<string> statuses)
         {
             Certificates = certificates;
-            Id = id;
             Statuses = statuses;
         }
     }

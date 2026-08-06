@@ -36,10 +36,6 @@ export interface GetCpCodesResult {
     readonly filterByName?: string;
     readonly filterByProductId?: string;
     readonly groupId: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getCpCodesOutput(args: GetCpCodesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpCodesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

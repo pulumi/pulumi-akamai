@@ -61,10 +61,6 @@ namespace Pulumi.Akamai
     public sealed class GetIamUsersAffectedByMovingGroupResult
     {
         public readonly int DestinationGroupId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly int SourceGroupId;
         public readonly string? UserType;
         public readonly ImmutableArray<Outputs.GetIamUsersAffectedByMovingGroupUserResult> Users;
@@ -73,8 +69,6 @@ namespace Pulumi.Akamai
         private GetIamUsersAffectedByMovingGroupResult(
             int destinationGroupId,
 
-            string id,
-
             int sourceGroupId,
 
             string? userType,
@@ -82,7 +76,6 @@ namespace Pulumi.Akamai
             ImmutableArray<Outputs.GetIamUsersAffectedByMovingGroupUserResult> users)
         {
             DestinationGroupId = destinationGroupId;
-            Id = id;
             SourceGroupId = sourceGroupId;
             UserType = userType;
             Users = users;

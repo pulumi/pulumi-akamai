@@ -18,11 +18,6 @@ public final class GetPropertyHostnameActivationsResult {
     private String contractId;
     private String groupId;
     private List<GetPropertyHostnameActivationsHostnameActivation> hostnameActivations;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable String network;
     private String propertyId;
     private String propertyName;
@@ -39,13 +34,6 @@ public final class GetPropertyHostnameActivationsResult {
     }
     public List<GetPropertyHostnameActivationsHostnameActivation> hostnameActivations() {
         return this.hostnameActivations;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<String> network() {
         return Optional.ofNullable(this.network);
@@ -70,7 +58,6 @@ public final class GetPropertyHostnameActivationsResult {
         private String contractId;
         private String groupId;
         private List<GetPropertyHostnameActivationsHostnameActivation> hostnameActivations;
-        private String id;
         private @Nullable String network;
         private String propertyId;
         private String propertyName;
@@ -81,7 +68,6 @@ public final class GetPropertyHostnameActivationsResult {
     	      this.contractId = defaults.contractId;
     	      this.groupId = defaults.groupId;
     	      this.hostnameActivations = defaults.hostnameActivations;
-    	      this.id = defaults.id;
     	      this.network = defaults.network;
     	      this.propertyId = defaults.propertyId;
     	      this.propertyName = defaults.propertyName;
@@ -123,14 +109,6 @@ public final class GetPropertyHostnameActivationsResult {
             return hostnameActivations(List.of(hostnameActivations));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetPropertyHostnameActivationsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder network(@Nullable String network) {
 
             this.network = network;
@@ -158,7 +136,6 @@ public final class GetPropertyHostnameActivationsResult {
             _resultValue.contractId = contractId;
             _resultValue.groupId = groupId;
             _resultValue.hostnameActivations = hostnameActivations;
-            _resultValue.id = id;
             _resultValue.network = network;
             _resultValue.propertyId = propertyId;
             _resultValue.propertyName = propertyName;

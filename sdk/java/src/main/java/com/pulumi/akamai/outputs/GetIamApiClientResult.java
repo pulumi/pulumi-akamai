@@ -37,11 +37,6 @@ public final class GetIamApiClientResult {
     private String createdDate;
     private List<GetIamApiClientCredential> credentials;
     private GetIamApiClientGroupAccess groupAccess;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private GetIamApiClientIpAcl ipAcl;
     private Boolean isLocked;
     private List<String> notificationEmails;
@@ -96,13 +91,6 @@ public final class GetIamApiClientResult {
     public GetIamApiClientGroupAccess groupAccess() {
         return this.groupAccess;
     }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
-    }
     public GetIamApiClientIpAcl ipAcl() {
         return this.ipAcl;
     }
@@ -141,7 +129,6 @@ public final class GetIamApiClientResult {
         private String createdDate;
         private List<GetIamApiClientCredential> credentials;
         private GetIamApiClientGroupAccess groupAccess;
-        private String id;
         private GetIamApiClientIpAcl ipAcl;
         private Boolean isLocked;
         private List<String> notificationEmails;
@@ -165,7 +152,6 @@ public final class GetIamApiClientResult {
     	      this.createdDate = defaults.createdDate;
     	      this.credentials = defaults.credentials;
     	      this.groupAccess = defaults.groupAccess;
-    	      this.id = defaults.id;
     	      this.ipAcl = defaults.ipAcl;
     	      this.isLocked = defaults.isLocked;
     	      this.notificationEmails = defaults.notificationEmails;
@@ -305,14 +291,6 @@ public final class GetIamApiClientResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetIamApiClientResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder ipAcl(GetIamApiClientIpAcl ipAcl) {
             if (ipAcl == null) {
               throw new MissingRequiredPropertyException("GetIamApiClientResult", "ipAcl");
@@ -365,7 +343,6 @@ public final class GetIamApiClientResult {
             _resultValue.createdDate = createdDate;
             _resultValue.credentials = credentials;
             _resultValue.groupAccess = groupAccess;
-            _resultValue.id = id;
             _resultValue.ipAcl = ipAcl;
             _resultValue.isLocked = isLocked;
             _resultValue.notificationEmails = notificationEmails;

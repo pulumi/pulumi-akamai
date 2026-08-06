@@ -54,10 +54,6 @@ namespace Pulumi.Akamai
         public readonly string CreatedBy;
         public readonly string CreatedTime;
         public readonly ImmutableArray<Outputs.GetCloudaccessKeyGroupResult> Groups;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly int LatestVersion;
         public readonly Outputs.GetCloudaccessKeyNetworkConfigurationResult NetworkConfiguration;
 
@@ -75,8 +71,6 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetCloudaccessKeyGroupResult> groups,
 
-            string id,
-
             int latestVersion,
 
             Outputs.GetCloudaccessKeyNetworkConfigurationResult networkConfiguration)
@@ -87,7 +81,6 @@ namespace Pulumi.Akamai
             CreatedBy = createdBy;
             CreatedTime = createdTime;
             Groups = groups;
-            Id = id;
             LatestVersion = latestVersion;
             NetworkConfiguration = networkConfiguration;
         }

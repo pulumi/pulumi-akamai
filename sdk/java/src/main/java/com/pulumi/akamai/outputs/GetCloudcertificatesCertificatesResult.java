@@ -23,11 +23,6 @@ public final class GetCloudcertificatesCertificatesResult {
     private @Nullable String domain;
     private @Nullable Integer expiringInDays;
     private @Nullable String groupId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable Boolean includeCertificateMaterials;
     private @Nullable String issuer;
     private @Nullable String keyType;
@@ -54,13 +49,6 @@ public final class GetCloudcertificatesCertificatesResult {
     }
     public Optional<String> groupId() {
         return Optional.ofNullable(this.groupId);
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<Boolean> includeCertificateMaterials() {
         return Optional.ofNullable(this.includeCertificateMaterials);
@@ -91,7 +79,6 @@ public final class GetCloudcertificatesCertificatesResult {
         private @Nullable String domain;
         private @Nullable Integer expiringInDays;
         private @Nullable String groupId;
-        private String id;
         private @Nullable Boolean includeCertificateMaterials;
         private @Nullable String issuer;
         private @Nullable String keyType;
@@ -106,7 +93,6 @@ public final class GetCloudcertificatesCertificatesResult {
     	      this.domain = defaults.domain;
     	      this.expiringInDays = defaults.expiringInDays;
     	      this.groupId = defaults.groupId;
-    	      this.id = defaults.id;
     	      this.includeCertificateMaterials = defaults.includeCertificateMaterials;
     	      this.issuer = defaults.issuer;
     	      this.keyType = defaults.keyType;
@@ -164,14 +150,6 @@ public final class GetCloudcertificatesCertificatesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudcertificatesCertificatesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder includeCertificateMaterials(@Nullable Boolean includeCertificateMaterials) {
 
             this.includeCertificateMaterials = includeCertificateMaterials;
@@ -204,7 +182,6 @@ public final class GetCloudcertificatesCertificatesResult {
             _resultValue.domain = domain;
             _resultValue.expiringInDays = expiringInDays;
             _resultValue.groupId = groupId;
-            _resultValue.id = id;
             _resultValue.includeCertificateMaterials = includeCertificateMaterials;
             _resultValue.issuer = issuer;
             _resultValue.keyType = keyType;

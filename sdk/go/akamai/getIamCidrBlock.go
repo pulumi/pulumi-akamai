@@ -28,17 +28,15 @@ type LookupIamCidrBlockArgs struct {
 
 // A collection of values returned by getIamCidrBlock.
 type LookupIamCidrBlockResult struct {
-	Actions     GetIamCidrBlockActions `pulumi:"actions"`
-	CidrBlock   string                 `pulumi:"cidrBlock"`
-	CidrBlockId int                    `pulumi:"cidrBlockId"`
-	Comments    string                 `pulumi:"comments"`
-	CreatedBy   string                 `pulumi:"createdBy"`
-	CreatedDate string                 `pulumi:"createdDate"`
-	Enabled     bool                   `pulumi:"enabled"`
-	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	ModifiedBy   string `pulumi:"modifiedBy"`
-	ModifiedDate string `pulumi:"modifiedDate"`
+	Actions      GetIamCidrBlockActions `pulumi:"actions"`
+	CidrBlock    string                 `pulumi:"cidrBlock"`
+	CidrBlockId  int                    `pulumi:"cidrBlockId"`
+	Comments     string                 `pulumi:"comments"`
+	CreatedBy    string                 `pulumi:"createdBy"`
+	CreatedDate  string                 `pulumi:"createdDate"`
+	Enabled      bool                   `pulumi:"enabled"`
+	ModifiedBy   string                 `pulumi:"modifiedBy"`
+	ModifiedDate string                 `pulumi:"modifiedDate"`
 }
 
 func LookupIamCidrBlockOutput(ctx *pulumi.Context, args LookupIamCidrBlockOutputArgs, opts ...pulumi.InvokeOption) LookupIamCidrBlockResultOutput {
@@ -100,11 +98,6 @@ func (o LookupIamCidrBlockResultOutput) CreatedDate() pulumi.StringOutput {
 
 func (o LookupIamCidrBlockResultOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupIamCidrBlockResult) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupIamCidrBlockResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIamCidrBlockResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupIamCidrBlockResultOutput) ModifiedBy() pulumi.StringOutput {

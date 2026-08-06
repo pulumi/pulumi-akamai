@@ -28,13 +28,10 @@ class GetCloudwrapperPropertiesResult:
     """
     A collection of values returned by getCloudwrapperProperties.
     """
-    def __init__(__self__, contract_ids=None, id=None, properties=None, unused=None):
+    def __init__(__self__, contract_ids=None, properties=None, unused=None):
         if contract_ids and not isinstance(contract_ids, list):
             raise TypeError("Expected argument 'contract_ids' to be a list")
         pulumi.set(__self__, "contract_ids", contract_ids)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if properties and not isinstance(properties, list):
             raise TypeError("Expected argument 'properties' to be a list")
         pulumi.set(__self__, "properties", properties)
@@ -46,14 +43,6 @@ class GetCloudwrapperPropertiesResult:
     @pulumi.getter(name="contractIds")
     def contract_ids(self) -> Optional[Sequence[_builtins.str]]:
         return pulumi.get(self, "contract_ids")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter
@@ -73,7 +62,6 @@ class AwaitableGetCloudwrapperPropertiesResult(GetCloudwrapperPropertiesResult):
             yield self
         return GetCloudwrapperPropertiesResult(
             contract_ids=self.contract_ids,
-            id=self.id,
             properties=self.properties,
             unused=self.unused)
 
@@ -94,7 +82,6 @@ def get_cloudwrapper_properties(contract_ids: Optional[Sequence[_builtins.str]] 
 
     return AwaitableGetCloudwrapperPropertiesResult(
         contract_ids=pulumi.get(__ret__, 'contract_ids'),
-        id=pulumi.get(__ret__, 'id'),
         properties=pulumi.get(__ret__, 'properties'),
         unused=pulumi.get(__ret__, 'unused'))
 def get_cloudwrapper_properties_output(contract_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
@@ -112,6 +99,5 @@ def get_cloudwrapper_properties_output(contract_ids: pulumi.Input[Optional[Optio
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperProperties:getCloudwrapperProperties', __args__, opts=opts, typ=GetCloudwrapperPropertiesResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperPropertiesResult(
         contract_ids=pulumi.get(__response__, 'contract_ids'),
-        id=pulumi.get(__response__, 'id'),
         properties=pulumi.get(__response__, 'properties'),
         unused=pulumi.get(__response__, 'unused')))

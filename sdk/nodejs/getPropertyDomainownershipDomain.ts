@@ -30,10 +30,6 @@ export interface GetPropertyDomainownershipDomainResult {
     readonly domainName: string;
     readonly domainStatus: string;
     readonly domainStatusHistories: outputs.GetPropertyDomainownershipDomainDomainStatusHistory[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly validationChallenge: outputs.GetPropertyDomainownershipDomainValidationChallenge;
     readonly validationCompletedDate: string;
     readonly validationMethod: string;

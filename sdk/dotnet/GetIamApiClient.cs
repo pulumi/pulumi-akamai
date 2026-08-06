@@ -64,10 +64,6 @@ namespace Pulumi.Akamai
         public readonly string CreatedDate;
         public readonly ImmutableArray<Outputs.GetIamApiClientCredentialResult> Credentials;
         public readonly Outputs.GetIamApiClientGroupAccessResult GroupAccess;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly Outputs.GetIamApiClientIpAclResult IpAcl;
         public readonly bool IsLocked;
         public readonly ImmutableArray<string> NotificationEmails;
@@ -107,8 +103,6 @@ namespace Pulumi.Akamai
 
             Outputs.GetIamApiClientGroupAccessResult groupAccess,
 
-            string id,
-
             Outputs.GetIamApiClientIpAclResult ipAcl,
 
             bool isLocked,
@@ -133,7 +127,6 @@ namespace Pulumi.Akamai
             CreatedDate = createdDate;
             Credentials = credentials;
             GroupAccess = groupAccess;
-            Id = id;
             IpAcl = ipAcl;
             IsLocked = isLocked;
             NotificationEmails = notificationEmails;

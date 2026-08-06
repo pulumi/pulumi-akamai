@@ -27,13 +27,10 @@ class GetIamUsersAffectedByMovingGroupResult:
     """
     A collection of values returned by getIamUsersAffectedByMovingGroup.
     """
-    def __init__(__self__, destination_group_id=None, id=None, source_group_id=None, user_type=None, users=None):
+    def __init__(__self__, destination_group_id=None, source_group_id=None, user_type=None, users=None):
         if destination_group_id and not isinstance(destination_group_id, int):
             raise TypeError("Expected argument 'destination_group_id' to be a int")
         pulumi.set(__self__, "destination_group_id", destination_group_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if source_group_id and not isinstance(source_group_id, int):
             raise TypeError("Expected argument 'source_group_id' to be a int")
         pulumi.set(__self__, "source_group_id", source_group_id)
@@ -48,14 +45,6 @@ class GetIamUsersAffectedByMovingGroupResult:
     @pulumi.getter(name="destinationGroupId")
     def destination_group_id(self) -> _builtins.int:
         return pulumi.get(self, "destination_group_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="sourceGroupId")
@@ -80,7 +69,6 @@ class AwaitableGetIamUsersAffectedByMovingGroupResult(GetIamUsersAffectedByMovin
             yield self
         return GetIamUsersAffectedByMovingGroupResult(
             destination_group_id=self.destination_group_id,
-            id=self.id,
             source_group_id=self.source_group_id,
             user_type=self.user_type,
             users=self.users)
@@ -102,7 +90,6 @@ def get_iam_users_affected_by_moving_group(destination_group_id: Optional[_built
 
     return AwaitableGetIamUsersAffectedByMovingGroupResult(
         destination_group_id=pulumi.get(__ret__, 'destination_group_id'),
-        id=pulumi.get(__ret__, 'id'),
         source_group_id=pulumi.get(__ret__, 'source_group_id'),
         user_type=pulumi.get(__ret__, 'user_type'),
         users=pulumi.get(__ret__, 'users'))
@@ -121,7 +108,6 @@ def get_iam_users_affected_by_moving_group_output(destination_group_id: pulumi.I
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamUsersAffectedByMovingGroup:getIamUsersAffectedByMovingGroup', __args__, opts=opts, typ=GetIamUsersAffectedByMovingGroupResult)
     return __ret__.apply(lambda __response__: GetIamUsersAffectedByMovingGroupResult(
         destination_group_id=pulumi.get(__response__, 'destination_group_id'),
-        id=pulumi.get(__response__, 'id'),
         source_group_id=pulumi.get(__response__, 'source_group_id'),
         user_type=pulumi.get(__response__, 'user_type'),
         users=pulumi.get(__response__, 'users')))

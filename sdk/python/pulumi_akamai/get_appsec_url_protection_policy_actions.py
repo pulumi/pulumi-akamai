@@ -26,13 +26,10 @@ class GetAppsecUrlProtectionPolicyActionsResult:
     """
     A collection of values returned by getAppsecUrlProtectionPolicyActions.
     """
-    def __init__(__self__, config_id=None, id=None, load_shedding_action=None, max_rate_threshold_action=None, security_policy_id=None, url_protection_policy_id=None):
+    def __init__(__self__, config_id=None, load_shedding_action=None, max_rate_threshold_action=None, security_policy_id=None, url_protection_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if load_shedding_action and not isinstance(load_shedding_action, str):
             raise TypeError("Expected argument 'load_shedding_action' to be a str")
         pulumi.set(__self__, "load_shedding_action", load_shedding_action)
@@ -50,14 +47,6 @@ class GetAppsecUrlProtectionPolicyActionsResult:
     @pulumi.getter(name="configId")
     def config_id(self) -> _builtins.int:
         return pulumi.get(self, "config_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="loadSheddingAction")
@@ -87,7 +76,6 @@ class AwaitableGetAppsecUrlProtectionPolicyActionsResult(GetAppsecUrlProtectionP
             yield self
         return GetAppsecUrlProtectionPolicyActionsResult(
             config_id=self.config_id,
-            id=self.id,
             load_shedding_action=self.load_shedding_action,
             max_rate_threshold_action=self.max_rate_threshold_action,
             security_policy_id=self.security_policy_id,
@@ -110,7 +98,6 @@ def get_appsec_url_protection_policy_actions(config_id: Optional[_builtins.int] 
 
     return AwaitableGetAppsecUrlProtectionPolicyActionsResult(
         config_id=pulumi.get(__ret__, 'config_id'),
-        id=pulumi.get(__ret__, 'id'),
         load_shedding_action=pulumi.get(__ret__, 'load_shedding_action'),
         max_rate_threshold_action=pulumi.get(__ret__, 'max_rate_threshold_action'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
@@ -130,7 +117,6 @@ def get_appsec_url_protection_policy_actions_output(config_id: pulumi.Input[Opti
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppsecUrlProtectionPolicyActions:getAppsecUrlProtectionPolicyActions', __args__, opts=opts, typ=GetAppsecUrlProtectionPolicyActionsResult)
     return __ret__.apply(lambda __response__: GetAppsecUrlProtectionPolicyActionsResult(
         config_id=pulumi.get(__response__, 'config_id'),
-        id=pulumi.get(__response__, 'id'),
         load_shedding_action=pulumi.get(__response__, 'load_shedding_action'),
         max_rate_threshold_action=pulumi.get(__response__, 'max_rate_threshold_action'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id'),

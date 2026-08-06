@@ -53,10 +53,6 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<Outputs.GetReportinggroupsCpCodeContractResult> Contracts;
         public readonly int CpCodeId;
         public readonly string DefaultTimeZone;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string Name;
         public readonly Outputs.GetReportinggroupsCpCodeOverrideTimeZoneResult OverrideTimeZone;
         public readonly ImmutableArray<Outputs.GetReportinggroupsCpCodeProductResult> Products;
@@ -75,8 +71,6 @@ namespace Pulumi.Akamai
 
             string defaultTimeZone,
 
-            string id,
-
             string name,
 
             Outputs.GetReportinggroupsCpCodeOverrideTimeZoneResult overrideTimeZone,
@@ -92,7 +86,6 @@ namespace Pulumi.Akamai
             Contracts = contracts;
             CpCodeId = cpCodeId;
             DefaultTimeZone = defaultTimeZone;
-            Id = id;
             Name = name;
             OverrideTimeZone = overrideTimeZone;
             Products = products;

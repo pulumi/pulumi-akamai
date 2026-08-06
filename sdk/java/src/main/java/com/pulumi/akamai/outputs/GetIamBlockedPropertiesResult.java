@@ -16,11 +16,6 @@ public final class GetIamBlockedPropertiesResult {
     private List<GetIamBlockedPropertiesBlockedProperty> blockedProperties;
     private String contractId;
     private Integer groupId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String uiIdentityId;
 
     private GetIamBlockedPropertiesResult() {}
@@ -32,13 +27,6 @@ public final class GetIamBlockedPropertiesResult {
     }
     public Integer groupId() {
         return this.groupId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String uiIdentityId() {
         return this.uiIdentityId;
@@ -56,7 +44,6 @@ public final class GetIamBlockedPropertiesResult {
         private List<GetIamBlockedPropertiesBlockedProperty> blockedProperties;
         private String contractId;
         private Integer groupId;
-        private String id;
         private String uiIdentityId;
         public Builder() {}
         public Builder(GetIamBlockedPropertiesResult defaults) {
@@ -64,7 +51,6 @@ public final class GetIamBlockedPropertiesResult {
     	      this.blockedProperties = defaults.blockedProperties;
     	      this.contractId = defaults.contractId;
     	      this.groupId = defaults.groupId;
-    	      this.id = defaults.id;
     	      this.uiIdentityId = defaults.uiIdentityId;
         }
 
@@ -96,14 +82,6 @@ public final class GetIamBlockedPropertiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetIamBlockedPropertiesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder uiIdentityId(String uiIdentityId) {
             if (uiIdentityId == null) {
               throw new MissingRequiredPropertyException("GetIamBlockedPropertiesResult", "uiIdentityId");
@@ -116,7 +94,6 @@ public final class GetIamBlockedPropertiesResult {
             _resultValue.blockedProperties = blockedProperties;
             _resultValue.contractId = contractId;
             _resultValue.groupId = groupId;
-            _resultValue.id = id;
             _resultValue.uiIdentityId = uiIdentityId;
             return _resultValue;
         }

@@ -95,10 +95,6 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<Outputs.GetGtmAsmapAssignmentResult> Assignments;
         public readonly Outputs.GetGtmAsmapDefaultDatacenterResult? DefaultDatacenter;
         public readonly string Domain;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly ImmutableArray<Outputs.GetGtmAsmapLinkResult> Links;
         public readonly string MapName;
 
@@ -110,8 +106,6 @@ namespace Pulumi.Akamai
 
             string domain,
 
-            string id,
-
             ImmutableArray<Outputs.GetGtmAsmapLinkResult> links,
 
             string mapName)
@@ -119,7 +113,6 @@ namespace Pulumi.Akamai
             Assignments = assignments;
             DefaultDatacenter = defaultDatacenter;
             Domain = domain;
-            Id = id;
             Links = links;
             MapName = mapName;
         }

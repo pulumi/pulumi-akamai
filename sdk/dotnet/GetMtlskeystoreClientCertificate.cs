@@ -60,10 +60,6 @@ namespace Pulumi.Akamai
         public readonly string CreatedDate;
         public readonly Outputs.GetMtlskeystoreClientCertificateCurrentResult Current;
         public readonly string Geography;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly bool? IncludeAssociatedProperties;
         public readonly string KeyAlgorithm;
         public readonly ImmutableArray<string> NotificationEmails;
@@ -87,8 +83,6 @@ namespace Pulumi.Akamai
 
             string geography,
 
-            string id,
-
             bool? includeAssociatedProperties,
 
             string keyAlgorithm,
@@ -111,7 +105,6 @@ namespace Pulumi.Akamai
             CreatedDate = createdDate;
             Current = current;
             Geography = geography;
-            Id = id;
             IncludeAssociatedProperties = includeAssociatedProperties;
             KeyAlgorithm = keyAlgorithm;
             NotificationEmails = notificationEmails;

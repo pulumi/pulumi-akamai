@@ -44,12 +44,10 @@ type LookupIamApiClientResult struct {
 	CreatedDate             string                      `pulumi:"createdDate"`
 	Credentials             []GetIamApiClientCredential `pulumi:"credentials"`
 	GroupAccess             GetIamApiClientGroupAccess  `pulumi:"groupAccess"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                 string                      `pulumi:"id"`
-	IpAcl              GetIamApiClientIpAcl        `pulumi:"ipAcl"`
-	IsLocked           bool                        `pulumi:"isLocked"`
-	NotificationEmails []string                    `pulumi:"notificationEmails"`
-	PurgeOptions       GetIamApiClientPurgeOptions `pulumi:"purgeOptions"`
+	IpAcl                   GetIamApiClientIpAcl        `pulumi:"ipAcl"`
+	IsLocked                bool                        `pulumi:"isLocked"`
+	NotificationEmails      []string                    `pulumi:"notificationEmails"`
+	PurgeOptions            GetIamApiClientPurgeOptions `pulumi:"purgeOptions"`
 }
 
 func LookupIamApiClientOutput(ctx *pulumi.Context, args LookupIamApiClientOutputArgs, opts ...pulumi.InvokeOption) LookupIamApiClientResultOutput {
@@ -147,11 +145,6 @@ func (o LookupIamApiClientResultOutput) Credentials() GetIamApiClientCredentialA
 
 func (o LookupIamApiClientResultOutput) GroupAccess() GetIamApiClientGroupAccessOutput {
 	return o.ApplyT(func(v LookupIamApiClientResult) GetIamApiClientGroupAccess { return v.GroupAccess }).(GetIamApiClientGroupAccessOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupIamApiClientResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIamApiClientResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupIamApiClientResultOutput) IpAcl() GetIamApiClientIpAclOutput {

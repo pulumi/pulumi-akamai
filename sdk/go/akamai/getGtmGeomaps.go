@@ -30,8 +30,6 @@ type GetGtmGeomapsArgs struct {
 type GetGtmGeomapsResult struct {
 	Domain  string                `pulumi:"domain"`
 	GeoMaps []GetGtmGeomapsGeoMap `pulumi:"geoMaps"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetGtmGeomapsOutput(ctx *pulumi.Context, args GetGtmGeomapsOutputArgs, opts ...pulumi.InvokeOption) GetGtmGeomapsResultOutput {
@@ -73,11 +71,6 @@ func (o GetGtmGeomapsResultOutput) Domain() pulumi.StringOutput {
 
 func (o GetGtmGeomapsResultOutput) GeoMaps() GetGtmGeomapsGeoMapArrayOutput {
 	return o.ApplyT(func(v GetGtmGeomapsResult) []GetGtmGeomapsGeoMap { return v.GeoMaps }).(GetGtmGeomapsGeoMapArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetGtmGeomapsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGtmGeomapsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

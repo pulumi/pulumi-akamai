@@ -14,11 +14,6 @@ import java.util.Objects;
 public final class GetGtmGeomapsResult {
     private String domain;
     private List<GetGtmGeomapsGeoMap> geoMaps;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetGtmGeomapsResult() {}
     public String domain() {
@@ -26,13 +21,6 @@ public final class GetGtmGeomapsResult {
     }
     public List<GetGtmGeomapsGeoMap> geoMaps() {
         return this.geoMaps;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -46,13 +34,11 @@ public final class GetGtmGeomapsResult {
     public static final class Builder {
         private String domain;
         private List<GetGtmGeomapsGeoMap> geoMaps;
-        private String id;
         public Builder() {}
         public Builder(GetGtmGeomapsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.domain = defaults.domain;
     	      this.geoMaps = defaults.geoMaps;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -74,19 +60,10 @@ public final class GetGtmGeomapsResult {
         public Builder geoMaps(GetGtmGeomapsGeoMap... geoMaps) {
             return geoMaps(List.of(geoMaps));
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetGtmGeomapsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetGtmGeomapsResult build() {
             final var _resultValue = new GetGtmGeomapsResult();
             _resultValue.domain = domain;
             _resultValue.geoMaps = geoMaps;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

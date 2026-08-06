@@ -30,10 +30,8 @@ type GetZoneDnssecStatusArgs struct {
 type GetZoneDnssecStatusResult struct {
 	Alerts         []string                          `pulumi:"alerts"`
 	CurrentRecords GetZoneDnssecStatusCurrentRecords `pulumi:"currentRecords"`
-	// The provider-assigned unique ID for this managed resource.
-	Id         string                        `pulumi:"id"`
-	NewRecords GetZoneDnssecStatusNewRecords `pulumi:"newRecords"`
-	Zone       string                        `pulumi:"zone"`
+	NewRecords     GetZoneDnssecStatusNewRecords     `pulumi:"newRecords"`
+	Zone           string                            `pulumi:"zone"`
 }
 
 func GetZoneDnssecStatusOutput(ctx *pulumi.Context, args GetZoneDnssecStatusOutputArgs, opts ...pulumi.InvokeOption) GetZoneDnssecStatusResultOutput {
@@ -75,11 +73,6 @@ func (o GetZoneDnssecStatusResultOutput) Alerts() pulumi.StringArrayOutput {
 
 func (o GetZoneDnssecStatusResultOutput) CurrentRecords() GetZoneDnssecStatusCurrentRecordsOutput {
 	return o.ApplyT(func(v GetZoneDnssecStatusResult) GetZoneDnssecStatusCurrentRecords { return v.CurrentRecords }).(GetZoneDnssecStatusCurrentRecordsOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetZoneDnssecStatusResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZoneDnssecStatusResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetZoneDnssecStatusResultOutput) NewRecords() GetZoneDnssecStatusNewRecordsOutput {

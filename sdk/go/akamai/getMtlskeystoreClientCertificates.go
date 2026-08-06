@@ -24,8 +24,6 @@ func GetMtlskeystoreClientCertificates(ctx *pulumi.Context, opts ...pulumi.Invok
 // A collection of values returned by getMtlskeystoreClientCertificates.
 type GetMtlskeystoreClientCertificatesResult struct {
 	Certificates []GetMtlskeystoreClientCertificatesCertificate `pulumi:"certificates"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetMtlskeystoreClientCertificatesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetMtlskeystoreClientCertificatesResultOutput {
@@ -54,11 +52,6 @@ func (o GetMtlskeystoreClientCertificatesResultOutput) Certificates() GetMtlskey
 	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesResult) []GetMtlskeystoreClientCertificatesCertificate {
 		return v.Certificates
 	}).(GetMtlskeystoreClientCertificatesCertificateArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetMtlskeystoreClientCertificatesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

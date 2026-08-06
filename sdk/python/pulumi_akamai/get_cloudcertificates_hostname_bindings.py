@@ -27,7 +27,7 @@ class GetCloudcertificatesHostnameBindingsResult:
     """
     A collection of values returned by getCloudcertificatesHostnameBindings.
     """
-    def __init__(__self__, bindings=None, contract_id=None, domain=None, expiring_in_days=None, group_id=None, id=None, network=None):
+    def __init__(__self__, bindings=None, contract_id=None, domain=None, expiring_in_days=None, group_id=None, network=None):
         if bindings and not isinstance(bindings, list):
             raise TypeError("Expected argument 'bindings' to be a list")
         pulumi.set(__self__, "bindings", bindings)
@@ -43,9 +43,6 @@ class GetCloudcertificatesHostnameBindingsResult:
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
         pulumi.set(__self__, "group_id", group_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if network and not isinstance(network, str):
             raise TypeError("Expected argument 'network' to be a str")
         pulumi.set(__self__, "network", network)
@@ -77,14 +74,6 @@ class GetCloudcertificatesHostnameBindingsResult:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter
     def network(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "network")
 
@@ -100,7 +89,6 @@ class AwaitableGetCloudcertificatesHostnameBindingsResult(GetCloudcertificatesHo
             domain=self.domain,
             expiring_in_days=self.expiring_in_days,
             group_id=self.group_id,
-            id=self.id,
             network=self.network)
 
 
@@ -128,7 +116,6 @@ def get_cloudcertificates_hostname_bindings(contract_id: Optional[_builtins.str]
         domain=pulumi.get(__ret__, 'domain'),
         expiring_in_days=pulumi.get(__ret__, 'expiring_in_days'),
         group_id=pulumi.get(__ret__, 'group_id'),
-        id=pulumi.get(__ret__, 'id'),
         network=pulumi.get(__ret__, 'network'))
 def get_cloudcertificates_hostname_bindings_output(contract_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -153,5 +140,4 @@ def get_cloudcertificates_hostname_bindings_output(contract_id: pulumi.Input[Opt
         domain=pulumi.get(__response__, 'domain'),
         expiring_in_days=pulumi.get(__response__, 'expiring_in_days'),
         group_id=pulumi.get(__response__, 'group_id'),
-        id=pulumi.get(__response__, 'id'),
         network=pulumi.get(__response__, 'network')))

@@ -64,10 +64,6 @@ namespace Pulumi.Akamai
         public readonly string CloudletType;
         public readonly string Description;
         public readonly int GroupId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string MatchRules;
         public readonly string Name;
         public readonly int PolicyId;
@@ -85,8 +81,6 @@ namespace Pulumi.Akamai
 
             int groupId,
 
-            string id,
-
             string matchRules,
 
             string name,
@@ -103,7 +97,6 @@ namespace Pulumi.Akamai
             CloudletType = cloudletType;
             Description = description;
             GroupId = groupId;
-            Id = id;
             MatchRules = matchRules;
             Name = name;
             PolicyId = policyId;

@@ -27,7 +27,7 @@ class GetIamAllowedApisResult:
     """
     A collection of values returned by getIamAllowedApis.
     """
-    def __init__(__self__, allow_account_switch=None, allowed_apis=None, client_type=None, id=None, username=None):
+    def __init__(__self__, allow_account_switch=None, allowed_apis=None, client_type=None, username=None):
         if allow_account_switch and not isinstance(allow_account_switch, bool):
             raise TypeError("Expected argument 'allow_account_switch' to be a bool")
         pulumi.set(__self__, "allow_account_switch", allow_account_switch)
@@ -37,9 +37,6 @@ class GetIamAllowedApisResult:
         if client_type and not isinstance(client_type, str):
             raise TypeError("Expected argument 'client_type' to be a str")
         pulumi.set(__self__, "client_type", client_type)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if username and not isinstance(username, str):
             raise TypeError("Expected argument 'username' to be a str")
         pulumi.set(__self__, "username", username)
@@ -61,14 +58,6 @@ class GetIamAllowedApisResult:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter
     def username(self) -> _builtins.str:
         return pulumi.get(self, "username")
 
@@ -82,7 +71,6 @@ class AwaitableGetIamAllowedApisResult(GetIamAllowedApisResult):
             allow_account_switch=self.allow_account_switch,
             allowed_apis=self.allowed_apis,
             client_type=self.client_type,
-            id=self.id,
             username=self.username)
 
 
@@ -104,7 +92,6 @@ def get_iam_allowed_apis(allow_account_switch: Optional[_builtins.bool] = None,
         allow_account_switch=pulumi.get(__ret__, 'allow_account_switch'),
         allowed_apis=pulumi.get(__ret__, 'allowed_apis'),
         client_type=pulumi.get(__ret__, 'client_type'),
-        id=pulumi.get(__ret__, 'id'),
         username=pulumi.get(__ret__, 'username'))
 def get_iam_allowed_apis_output(allow_account_switch: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                 client_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -123,5 +110,4 @@ def get_iam_allowed_apis_output(allow_account_switch: pulumi.Input[Optional[Opti
         allow_account_switch=pulumi.get(__response__, 'allow_account_switch'),
         allowed_apis=pulumi.get(__response__, 'allowed_apis'),
         client_type=pulumi.get(__response__, 'client_type'),
-        id=pulumi.get(__response__, 'id'),
         username=pulumi.get(__response__, 'username')))

@@ -35,10 +35,6 @@ export interface GetGtmAsmapResult {
     readonly assignments?: outputs.GetGtmAsmapAssignment[];
     readonly defaultDatacenter?: outputs.GetGtmAsmapDefaultDatacenter;
     readonly domain: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly links?: outputs.GetGtmAsmapLink[];
     readonly mapName: string;
 }

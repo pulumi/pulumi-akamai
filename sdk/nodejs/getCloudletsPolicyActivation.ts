@@ -27,10 +27,6 @@ export interface GetCloudletsPolicyActivationArgs {
  */
 export interface GetCloudletsPolicyActivationResult {
     readonly associatedProperties?: string[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly network: string;
     readonly policyId: number;
     readonly status: string;

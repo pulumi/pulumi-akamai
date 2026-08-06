@@ -17,11 +17,6 @@ public final class GetMtlstruststoreCaSetsResult {
     private @Nullable String activatedOn;
     private @Nullable List<String> caSetStatuses;
     private List<GetMtlstruststoreCaSetsCaSet> caSets;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable String namePrefix;
 
     private GetMtlstruststoreCaSetsResult() {}
@@ -33,13 +28,6 @@ public final class GetMtlstruststoreCaSetsResult {
     }
     public List<GetMtlstruststoreCaSetsCaSet> caSets() {
         return this.caSets;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<String> namePrefix() {
         return Optional.ofNullable(this.namePrefix);
@@ -57,7 +45,6 @@ public final class GetMtlstruststoreCaSetsResult {
         private @Nullable String activatedOn;
         private @Nullable List<String> caSetStatuses;
         private List<GetMtlstruststoreCaSetsCaSet> caSets;
-        private String id;
         private @Nullable String namePrefix;
         public Builder() {}
         public Builder(GetMtlstruststoreCaSetsResult defaults) {
@@ -65,7 +52,6 @@ public final class GetMtlstruststoreCaSetsResult {
     	      this.activatedOn = defaults.activatedOn;
     	      this.caSetStatuses = defaults.caSetStatuses;
     	      this.caSets = defaults.caSets;
-    	      this.id = defaults.id;
     	      this.namePrefix = defaults.namePrefix;
         }
 
@@ -96,14 +82,6 @@ public final class GetMtlstruststoreCaSetsResult {
             return caSets(List.of(caSets));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetMtlstruststoreCaSetsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder namePrefix(@Nullable String namePrefix) {
 
             this.namePrefix = namePrefix;
@@ -114,7 +92,6 @@ public final class GetMtlstruststoreCaSetsResult {
             _resultValue.activatedOn = activatedOn;
             _resultValue.caSetStatuses = caSetStatuses;
             _resultValue.caSets = caSets;
-            _resultValue.id = id;
             _resultValue.namePrefix = namePrefix;
             return _resultValue;
         }

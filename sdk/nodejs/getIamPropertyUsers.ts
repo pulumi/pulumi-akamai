@@ -27,10 +27,6 @@ export interface GetIamPropertyUsersArgs {
  */
 export interface GetIamPropertyUsersResult {
     readonly assetId: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly userType?: string;
     readonly users: outputs.GetIamPropertyUsersUser[];
 }

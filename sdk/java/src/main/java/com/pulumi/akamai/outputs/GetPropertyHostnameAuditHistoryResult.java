@@ -14,11 +14,6 @@ import java.util.Objects;
 public final class GetPropertyHostnameAuditHistoryResult {
     private List<GetPropertyHostnameAuditHistoryHistory> histories;
     private String hostname;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetPropertyHostnameAuditHistoryResult() {}
     public List<GetPropertyHostnameAuditHistoryHistory> histories() {
@@ -26,13 +21,6 @@ public final class GetPropertyHostnameAuditHistoryResult {
     }
     public String hostname() {
         return this.hostname;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -46,13 +34,11 @@ public final class GetPropertyHostnameAuditHistoryResult {
     public static final class Builder {
         private List<GetPropertyHostnameAuditHistoryHistory> histories;
         private String hostname;
-        private String id;
         public Builder() {}
         public Builder(GetPropertyHostnameAuditHistoryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.histories = defaults.histories;
     	      this.hostname = defaults.hostname;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -74,19 +60,10 @@ public final class GetPropertyHostnameAuditHistoryResult {
             this.hostname = hostname;
             return this;
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetPropertyHostnameAuditHistoryResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetPropertyHostnameAuditHistoryResult build() {
             final var _resultValue = new GetPropertyHostnameAuditHistoryResult();
             _resultValue.histories = histories;
             _resultValue.hostname = hostname;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

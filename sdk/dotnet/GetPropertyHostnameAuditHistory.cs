@@ -50,22 +50,15 @@ namespace Pulumi.Akamai
     {
         public readonly ImmutableArray<Outputs.GetPropertyHostnameAuditHistoryHistoryResult> Histories;
         public readonly string Hostname;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
         private GetPropertyHostnameAuditHistoryResult(
             ImmutableArray<Outputs.GetPropertyHostnameAuditHistoryHistoryResult> histories,
 
-            string hostname,
-
-            string id)
+            string hostname)
         {
             Histories = histories;
             Hostname = hostname;
-            Id = id;
         }
     }
 }

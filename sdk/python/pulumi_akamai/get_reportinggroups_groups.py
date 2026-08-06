@@ -27,7 +27,7 @@ class GetReportinggroupsGroupsResult:
     """
     A collection of values returned by getReportinggroupsGroups.
     """
-    def __init__(__self__, contract_id=None, cp_code_id=None, group_id=None, groups=None, id=None, reporting_group_name=None):
+    def __init__(__self__, contract_id=None, cp_code_id=None, group_id=None, groups=None, reporting_group_name=None):
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
@@ -40,9 +40,6 @@ class GetReportinggroupsGroupsResult:
         if groups and not isinstance(groups, list):
             raise TypeError("Expected argument 'groups' to be a list")
         pulumi.set(__self__, "groups", groups)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if reporting_group_name and not isinstance(reporting_group_name, str):
             raise TypeError("Expected argument 'reporting_group_name' to be a str")
         pulumi.set(__self__, "reporting_group_name", reporting_group_name)
@@ -68,14 +65,6 @@ class GetReportinggroupsGroupsResult:
         return pulumi.get(self, "groups")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="reportingGroupName")
     def reporting_group_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "reporting_group_name")
@@ -91,7 +80,6 @@ class AwaitableGetReportinggroupsGroupsResult(GetReportinggroupsGroupsResult):
             cp_code_id=self.cp_code_id,
             group_id=self.group_id,
             groups=self.groups,
-            id=self.id,
             reporting_group_name=self.reporting_group_name)
 
 
@@ -116,7 +104,6 @@ def get_reportinggroups_groups(contract_id: Optional[_builtins.str] = None,
         cp_code_id=pulumi.get(__ret__, 'cp_code_id'),
         group_id=pulumi.get(__ret__, 'group_id'),
         groups=pulumi.get(__ret__, 'groups'),
-        id=pulumi.get(__ret__, 'id'),
         reporting_group_name=pulumi.get(__ret__, 'reporting_group_name'))
 def get_reportinggroups_groups_output(contract_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       cp_code_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -138,5 +125,4 @@ def get_reportinggroups_groups_output(contract_id: pulumi.Input[Optional[Optiona
         cp_code_id=pulumi.get(__response__, 'cp_code_id'),
         group_id=pulumi.get(__response__, 'group_id'),
         groups=pulumi.get(__response__, 'groups'),
-        id=pulumi.get(__response__, 'id'),
         reporting_group_name=pulumi.get(__response__, 'reporting_group_name')))

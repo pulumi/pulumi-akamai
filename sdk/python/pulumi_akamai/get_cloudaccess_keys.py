@@ -27,26 +27,15 @@ class GetCloudaccessKeysResult:
     """
     A collection of values returned by getCloudaccessKeys.
     """
-    def __init__(__self__, access_keys=None, id=None):
+    def __init__(__self__, access_keys=None):
         if access_keys and not isinstance(access_keys, list):
             raise TypeError("Expected argument 'access_keys' to be a list")
         pulumi.set(__self__, "access_keys", access_keys)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter(name="accessKeys")
     def access_keys(self) -> Sequence['outputs.GetCloudaccessKeysAccessKeyResult']:
         return pulumi.get(self, "access_keys")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
 
 class AwaitableGetCloudaccessKeysResult(GetCloudaccessKeysResult):
@@ -55,8 +44,7 @@ class AwaitableGetCloudaccessKeysResult(GetCloudaccessKeysResult):
         if False:
             yield self
         return GetCloudaccessKeysResult(
-            access_keys=self.access_keys,
-            id=self.id)
+            access_keys=self.access_keys)
 
 
 def get_cloudaccess_keys(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudaccessKeysResult:
@@ -68,8 +56,7 @@ def get_cloudaccess_keys(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitab
     __ret__ = pulumi.runtime.invoke('akamai:index/getCloudaccessKeys:getCloudaccessKeys', __args__, opts=opts, typ=GetCloudaccessKeysResult).value
 
     return AwaitableGetCloudaccessKeysResult(
-        access_keys=pulumi.get(__ret__, 'access_keys'),
-        id=pulumi.get(__ret__, 'id'))
+        access_keys=pulumi.get(__ret__, 'access_keys'))
 def get_cloudaccess_keys_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudaccessKeysResult]:
     """
     Use this data source to access information about an existing resource.
@@ -78,5 +65,4 @@ def get_cloudaccess_keys_output(opts: Optional[Union[pulumi.InvokeOptions, pulum
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudaccessKeys:getCloudaccessKeys', __args__, opts=opts, typ=GetCloudaccessKeysResult)
     return __ret__.apply(lambda __response__: GetCloudaccessKeysResult(
-        access_keys=pulumi.get(__response__, 'access_keys'),
-        id=pulumi.get(__response__, 'id')))
+        access_keys=pulumi.get(__response__, 'access_keys')))

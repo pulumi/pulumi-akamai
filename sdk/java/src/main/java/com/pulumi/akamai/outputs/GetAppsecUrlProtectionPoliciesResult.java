@@ -7,30 +7,17 @@ import com.pulumi.akamai.outputs.GetAppsecUrlProtectionPoliciesUrlProtectionPoli
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
-import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetAppsecUrlProtectionPoliciesResult {
     private Integer configId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private List<GetAppsecUrlProtectionPoliciesUrlProtectionPolicy> urlProtectionPolicies;
 
     private GetAppsecUrlProtectionPoliciesResult() {}
     public Integer configId() {
         return this.configId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public List<GetAppsecUrlProtectionPoliciesUrlProtectionPolicy> urlProtectionPolicies() {
         return this.urlProtectionPolicies;
@@ -46,13 +33,11 @@ public final class GetAppsecUrlProtectionPoliciesResult {
     @CustomType.Builder
     public static final class Builder {
         private Integer configId;
-        private String id;
         private List<GetAppsecUrlProtectionPoliciesUrlProtectionPolicy> urlProtectionPolicies;
         public Builder() {}
         public Builder(GetAppsecUrlProtectionPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configId = defaults.configId;
-    	      this.id = defaults.id;
     	      this.urlProtectionPolicies = defaults.urlProtectionPolicies;
         }
 
@@ -62,14 +47,6 @@ public final class GetAppsecUrlProtectionPoliciesResult {
               throw new MissingRequiredPropertyException("GetAppsecUrlProtectionPoliciesResult", "configId");
             }
             this.configId = configId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetAppsecUrlProtectionPoliciesResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -86,7 +63,6 @@ public final class GetAppsecUrlProtectionPoliciesResult {
         public GetAppsecUrlProtectionPoliciesResult build() {
             final var _resultValue = new GetAppsecUrlProtectionPoliciesResult();
             _resultValue.configId = configId;
-            _resultValue.id = id;
             _resultValue.urlProtectionPolicies = urlProtectionPolicies;
             return _resultValue;
         }

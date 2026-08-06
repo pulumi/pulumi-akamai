@@ -35,11 +35,9 @@ type GetPropertyHostnameActivationsResult struct {
 	ContractId          string                                             `pulumi:"contractId"`
 	GroupId             string                                             `pulumi:"groupId"`
 	HostnameActivations []GetPropertyHostnameActivationsHostnameActivation `pulumi:"hostnameActivations"`
-	// The provider-assigned unique ID for this managed resource.
-	Id           string  `pulumi:"id"`
-	Network      *string `pulumi:"network"`
-	PropertyId   string  `pulumi:"propertyId"`
-	PropertyName string  `pulumi:"propertyName"`
+	Network             *string                                            `pulumi:"network"`
+	PropertyId          string                                             `pulumi:"propertyId"`
+	PropertyName        string                                             `pulumi:"propertyName"`
 }
 
 func GetPropertyHostnameActivationsOutput(ctx *pulumi.Context, args GetPropertyHostnameActivationsOutputArgs, opts ...pulumi.InvokeOption) GetPropertyHostnameActivationsResultOutput {
@@ -94,11 +92,6 @@ func (o GetPropertyHostnameActivationsResultOutput) HostnameActivations() GetPro
 	return o.ApplyT(func(v GetPropertyHostnameActivationsResult) []GetPropertyHostnameActivationsHostnameActivation {
 		return v.HostnameActivations
 	}).(GetPropertyHostnameActivationsHostnameActivationArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetPropertyHostnameActivationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyHostnameActivationsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetPropertyHostnameActivationsResultOutput) Network() pulumi.StringPtrOutput {

@@ -28,12 +28,10 @@ type LookupReportinggroupsGroupArgs struct {
 
 // A collection of values returned by getReportinggroupsGroup.
 type LookupReportinggroupsGroupResult struct {
-	AccessGroup GetReportinggroupsGroupAccessGroup `pulumi:"accessGroup"`
-	Contract    GetReportinggroupsGroupContract    `pulumi:"contract"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                 string `pulumi:"id"`
-	ReportingGroupId   int    `pulumi:"reportingGroupId"`
-	ReportingGroupName string `pulumi:"reportingGroupName"`
+	AccessGroup        GetReportinggroupsGroupAccessGroup `pulumi:"accessGroup"`
+	Contract           GetReportinggroupsGroupContract    `pulumi:"contract"`
+	ReportingGroupId   int                                `pulumi:"reportingGroupId"`
+	ReportingGroupName string                             `pulumi:"reportingGroupName"`
 }
 
 func LookupReportinggroupsGroupOutput(ctx *pulumi.Context, args LookupReportinggroupsGroupOutputArgs, opts ...pulumi.InvokeOption) LookupReportinggroupsGroupResultOutput {
@@ -75,11 +73,6 @@ func (o LookupReportinggroupsGroupResultOutput) AccessGroup() GetReportinggroups
 
 func (o LookupReportinggroupsGroupResultOutput) Contract() GetReportinggroupsGroupContractOutput {
 	return o.ApplyT(func(v LookupReportinggroupsGroupResult) GetReportinggroupsGroupContract { return v.Contract }).(GetReportinggroupsGroupContractOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupReportinggroupsGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReportinggroupsGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupReportinggroupsGroupResultOutput) ReportingGroupId() pulumi.IntOutput {

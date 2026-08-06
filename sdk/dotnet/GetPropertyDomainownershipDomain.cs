@@ -58,10 +58,6 @@ namespace Pulumi.Akamai
         public readonly string DomainName;
         public readonly string DomainStatus;
         public readonly ImmutableArray<Outputs.GetPropertyDomainownershipDomainDomainStatusHistoryResult> DomainStatusHistories;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly Outputs.GetPropertyDomainownershipDomainValidationChallengeResult ValidationChallenge;
         public readonly string ValidationCompletedDate;
         public readonly string ValidationMethod;
@@ -79,8 +75,6 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetPropertyDomainownershipDomainDomainStatusHistoryResult> domainStatusHistories,
 
-            string id,
-
             Outputs.GetPropertyDomainownershipDomainValidationChallengeResult validationChallenge,
 
             string validationCompletedDate,
@@ -97,7 +91,6 @@ namespace Pulumi.Akamai
             DomainName = domainName;
             DomainStatus = domainStatus;
             DomainStatusHistories = domainStatusHistories;
-            Id = id;
             ValidationChallenge = validationChallenge;
             ValidationCompletedDate = validationCompletedDate;
             ValidationMethod = validationMethod;

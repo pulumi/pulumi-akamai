@@ -20,11 +20,6 @@ public final class GetCloudcertificatesHostnameBindingsResult {
     private @Nullable String domain;
     private @Nullable Integer expiringInDays;
     private @Nullable String groupId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable String network;
 
     private GetCloudcertificatesHostnameBindingsResult() {}
@@ -42,13 +37,6 @@ public final class GetCloudcertificatesHostnameBindingsResult {
     }
     public Optional<String> groupId() {
         return Optional.ofNullable(this.groupId);
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<String> network() {
         return Optional.ofNullable(this.network);
@@ -68,7 +56,6 @@ public final class GetCloudcertificatesHostnameBindingsResult {
         private @Nullable String domain;
         private @Nullable Integer expiringInDays;
         private @Nullable String groupId;
-        private String id;
         private @Nullable String network;
         public Builder() {}
         public Builder(GetCloudcertificatesHostnameBindingsResult defaults) {
@@ -78,7 +65,6 @@ public final class GetCloudcertificatesHostnameBindingsResult {
     	      this.domain = defaults.domain;
     	      this.expiringInDays = defaults.expiringInDays;
     	      this.groupId = defaults.groupId;
-    	      this.id = defaults.id;
     	      this.network = defaults.network;
         }
 
@@ -118,14 +104,6 @@ public final class GetCloudcertificatesHostnameBindingsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudcertificatesHostnameBindingsResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder network(@Nullable String network) {
 
             this.network = network;
@@ -138,7 +116,6 @@ public final class GetCloudcertificatesHostnameBindingsResult {
             _resultValue.domain = domain;
             _resultValue.expiringInDays = expiringInDays;
             _resultValue.groupId = groupId;
-            _resultValue.id = id;
             _resultValue.network = network;
             return _resultValue;
         }

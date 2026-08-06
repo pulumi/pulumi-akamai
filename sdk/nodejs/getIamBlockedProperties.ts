@@ -31,10 +31,6 @@ export interface GetIamBlockedPropertiesResult {
     readonly blockedProperties: outputs.GetIamBlockedPropertiesBlockedProperty[];
     readonly contractId: string;
     readonly groupId: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly uiIdentityId: string;
 }
 export function getIamBlockedPropertiesOutput(args: GetIamBlockedPropertiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamBlockedPropertiesResult> {

@@ -29,9 +29,7 @@ type GetIamPropertyUsersArgs struct {
 
 // A collection of values returned by getIamPropertyUsers.
 type GetIamPropertyUsersResult struct {
-	AssetId string `pulumi:"assetId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id       string                    `pulumi:"id"`
+	AssetId  string                    `pulumi:"assetId"`
 	UserType *string                   `pulumi:"userType"`
 	Users    []GetIamPropertyUsersUser `pulumi:"users"`
 }
@@ -72,11 +70,6 @@ func (o GetIamPropertyUsersResultOutput) ToGetIamPropertyUsersResultOutputWithCo
 
 func (o GetIamPropertyUsersResultOutput) AssetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIamPropertyUsersResult) string { return v.AssetId }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetIamPropertyUsersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamPropertyUsersResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetIamPropertyUsersResultOutput) UserType() pulumi.StringPtrOutput {

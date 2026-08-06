@@ -70,10 +70,6 @@ namespace Pulumi.Akamai
         public readonly string? CpCodeName;
         public readonly ImmutableArray<Outputs.GetReportinggroupsCpCodesCpCodeResult> CpCodes;
         public readonly string? GroupId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string? ProductId;
 
         [OutputConstructor]
@@ -86,15 +82,12 @@ namespace Pulumi.Akamai
 
             string? groupId,
 
-            string id,
-
             string? productId)
         {
             ContractId = contractId;
             CpCodeName = cpCodeName;
             CpCodes = cpCodes;
             GroupId = groupId;
-            Id = id;
             ProductId = productId;
         }
     }

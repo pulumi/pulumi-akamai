@@ -28,26 +28,15 @@ class GetPropertyDomainownershipSearchDomainsResult:
     """
     A collection of values returned by getPropertyDomainownershipSearchDomains.
     """
-    def __init__(__self__, domains=None, id=None):
+    def __init__(__self__, domains=None):
         if domains and not isinstance(domains, list):
             raise TypeError("Expected argument 'domains' to be a list")
         pulumi.set(__self__, "domains", domains)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter
     def domains(self) -> Sequence['outputs.GetPropertyDomainownershipSearchDomainsDomainResult']:
         return pulumi.get(self, "domains")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
 
 class AwaitableGetPropertyDomainownershipSearchDomainsResult(GetPropertyDomainownershipSearchDomainsResult):
@@ -56,8 +45,7 @@ class AwaitableGetPropertyDomainownershipSearchDomainsResult(GetPropertyDomainow
         if False:
             yield self
         return GetPropertyDomainownershipSearchDomainsResult(
-            domains=self.domains,
-            id=self.id)
+            domains=self.domains)
 
 
 def get_property_domainownership_search_domains(domains: Optional[Sequence[Union['GetPropertyDomainownershipSearchDomainsDomainArgs', 'GetPropertyDomainownershipSearchDomainsDomainArgsDict']]] = None,
@@ -71,8 +59,7 @@ def get_property_domainownership_search_domains(domains: Optional[Sequence[Union
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyDomainownershipSearchDomains:getPropertyDomainownershipSearchDomains', __args__, opts=opts, typ=GetPropertyDomainownershipSearchDomainsResult).value
 
     return AwaitableGetPropertyDomainownershipSearchDomainsResult(
-        domains=pulumi.get(__ret__, 'domains'),
-        id=pulumi.get(__ret__, 'id'))
+        domains=pulumi.get(__ret__, 'domains'))
 def get_property_domainownership_search_domains_output(domains: pulumi.Input[Optional[Sequence[Union['GetPropertyDomainownershipSearchDomainsDomainArgs', 'GetPropertyDomainownershipSearchDomainsDomainArgsDict']]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyDomainownershipSearchDomainsResult]:
     """
@@ -83,5 +70,4 @@ def get_property_domainownership_search_domains_output(domains: pulumi.Input[Opt
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyDomainownershipSearchDomains:getPropertyDomainownershipSearchDomains', __args__, opts=opts, typ=GetPropertyDomainownershipSearchDomainsResult)
     return __ret__.apply(lambda __response__: GetPropertyDomainownershipSearchDomainsResult(
-        domains=pulumi.get(__response__, 'domains'),
-        id=pulumi.get(__response__, 'id')))
+        domains=pulumi.get(__response__, 'domains')))

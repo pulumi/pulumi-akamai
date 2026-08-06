@@ -27,16 +27,13 @@ class GetZoneDnssecStatusResult:
     """
     A collection of values returned by getZoneDnssecStatus.
     """
-    def __init__(__self__, alerts=None, current_records=None, id=None, new_records=None, zone=None):
+    def __init__(__self__, alerts=None, current_records=None, new_records=None, zone=None):
         if alerts and not isinstance(alerts, list):
             raise TypeError("Expected argument 'alerts' to be a list")
         pulumi.set(__self__, "alerts", alerts)
         if current_records and not isinstance(current_records, dict):
             raise TypeError("Expected argument 'current_records' to be a dict")
         pulumi.set(__self__, "current_records", current_records)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if new_records and not isinstance(new_records, dict):
             raise TypeError("Expected argument 'new_records' to be a dict")
         pulumi.set(__self__, "new_records", new_records)
@@ -53,14 +50,6 @@ class GetZoneDnssecStatusResult:
     @pulumi.getter(name="currentRecords")
     def current_records(self) -> 'outputs.GetZoneDnssecStatusCurrentRecordsResult':
         return pulumi.get(self, "current_records")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="newRecords")
@@ -81,7 +70,6 @@ class AwaitableGetZoneDnssecStatusResult(GetZoneDnssecStatusResult):
         return GetZoneDnssecStatusResult(
             alerts=self.alerts,
             current_records=self.current_records,
-            id=self.id,
             new_records=self.new_records,
             zone=self.zone)
 
@@ -99,7 +87,6 @@ def get_zone_dnssec_status(zone: Optional[_builtins.str] = None,
     return AwaitableGetZoneDnssecStatusResult(
         alerts=pulumi.get(__ret__, 'alerts'),
         current_records=pulumi.get(__ret__, 'current_records'),
-        id=pulumi.get(__ret__, 'id'),
         new_records=pulumi.get(__ret__, 'new_records'),
         zone=pulumi.get(__ret__, 'zone'))
 def get_zone_dnssec_status_output(zone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -114,6 +101,5 @@ def get_zone_dnssec_status_output(zone: pulumi.Input[Optional[_builtins.str]] = 
     return __ret__.apply(lambda __response__: GetZoneDnssecStatusResult(
         alerts=pulumi.get(__response__, 'alerts'),
         current_records=pulumi.get(__response__, 'current_records'),
-        id=pulumi.get(__response__, 'id'),
         new_records=pulumi.get(__response__, 'new_records'),
         zone=pulumi.get(__response__, 'zone')))

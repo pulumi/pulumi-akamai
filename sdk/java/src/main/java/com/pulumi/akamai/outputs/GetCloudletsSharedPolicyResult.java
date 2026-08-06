@@ -18,11 +18,6 @@ public final class GetCloudletsSharedPolicyResult {
     private String cloudletType;
     private String description;
     private Integer groupId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String matchRules;
     private String name;
     private Integer policyId;
@@ -42,13 +37,6 @@ public final class GetCloudletsSharedPolicyResult {
     }
     public Integer groupId() {
         return this.groupId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String matchRules() {
         return this.matchRules;
@@ -82,7 +70,6 @@ public final class GetCloudletsSharedPolicyResult {
         private String cloudletType;
         private String description;
         private Integer groupId;
-        private String id;
         private String matchRules;
         private String name;
         private Integer policyId;
@@ -96,7 +83,6 @@ public final class GetCloudletsSharedPolicyResult {
     	      this.cloudletType = defaults.cloudletType;
     	      this.description = defaults.description;
     	      this.groupId = defaults.groupId;
-    	      this.id = defaults.id;
     	      this.matchRules = defaults.matchRules;
     	      this.name = defaults.name;
     	      this.policyId = defaults.policyId;
@@ -133,14 +119,6 @@ public final class GetCloudletsSharedPolicyResult {
               throw new MissingRequiredPropertyException("GetCloudletsSharedPolicyResult", "groupId");
             }
             this.groupId = groupId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetCloudletsSharedPolicyResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -195,7 +173,6 @@ public final class GetCloudletsSharedPolicyResult {
             _resultValue.cloudletType = cloudletType;
             _resultValue.description = description;
             _resultValue.groupId = groupId;
-            _resultValue.id = id;
             _resultValue.matchRules = matchRules;
             _resultValue.name = name;
             _resultValue.policyId = policyId;

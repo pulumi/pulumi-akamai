@@ -27,7 +27,7 @@ class GetMtlstruststoreCaSetActivationsResult:
     """
     A collection of values returned by getMtlstruststoreCaSetActivations.
     """
-    def __init__(__self__, activations=None, ca_set_id=None, ca_set_name=None, id=None, network=None, status=None, type=None, version=None):
+    def __init__(__self__, activations=None, ca_set_id=None, ca_set_name=None, network=None, status=None, type=None, version=None):
         if activations and not isinstance(activations, list):
             raise TypeError("Expected argument 'activations' to be a list")
         pulumi.set(__self__, "activations", activations)
@@ -37,9 +37,6 @@ class GetMtlstruststoreCaSetActivationsResult:
         if ca_set_name and not isinstance(ca_set_name, str):
             raise TypeError("Expected argument 'ca_set_name' to be a str")
         pulumi.set(__self__, "ca_set_name", ca_set_name)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if network and not isinstance(network, str):
             raise TypeError("Expected argument 'network' to be a str")
         pulumi.set(__self__, "network", network)
@@ -67,14 +64,6 @@ class GetMtlstruststoreCaSetActivationsResult:
     @pulumi.getter(name="caSetName")
     def ca_set_name(self) -> _builtins.str:
         return pulumi.get(self, "ca_set_name")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter
@@ -106,7 +95,6 @@ class AwaitableGetMtlstruststoreCaSetActivationsResult(GetMtlstruststoreCaSetAct
             activations=self.activations,
             ca_set_id=self.ca_set_id,
             ca_set_name=self.ca_set_name,
-            id=self.id,
             network=self.network,
             status=self.status,
             type=self.type,
@@ -137,7 +125,6 @@ def get_mtlstruststore_ca_set_activations(ca_set_id: Optional[_builtins.str] = N
         activations=pulumi.get(__ret__, 'activations'),
         ca_set_id=pulumi.get(__ret__, 'ca_set_id'),
         ca_set_name=pulumi.get(__ret__, 'ca_set_name'),
-        id=pulumi.get(__ret__, 'id'),
         network=pulumi.get(__ret__, 'network'),
         status=pulumi.get(__ret__, 'status'),
         type=pulumi.get(__ret__, 'type'),
@@ -165,7 +152,6 @@ def get_mtlstruststore_ca_set_activations_output(ca_set_id: pulumi.Input[Optiona
         activations=pulumi.get(__response__, 'activations'),
         ca_set_id=pulumi.get(__response__, 'ca_set_id'),
         ca_set_name=pulumi.get(__response__, 'ca_set_name'),
-        id=pulumi.get(__response__, 'id'),
         network=pulumi.get(__response__, 'network'),
         status=pulumi.get(__response__, 'status'),
         type=pulumi.get(__response__, 'type'),

@@ -21,11 +21,6 @@ public final class GetIamRoleResult {
     private String createdBy;
     private String createdDate;
     private List<GetIamRoleGrantedRole> grantedRoles;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String modifiedBy;
     private String modifiedDate;
     private String roleDescription;
@@ -46,13 +41,6 @@ public final class GetIamRoleResult {
     }
     public List<GetIamRoleGrantedRole> grantedRoles() {
         return this.grantedRoles;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String modifiedBy() {
         return this.modifiedBy;
@@ -89,7 +77,6 @@ public final class GetIamRoleResult {
         private String createdBy;
         private String createdDate;
         private List<GetIamRoleGrantedRole> grantedRoles;
-        private String id;
         private String modifiedBy;
         private String modifiedDate;
         private String roleDescription;
@@ -104,7 +91,6 @@ public final class GetIamRoleResult {
     	      this.createdBy = defaults.createdBy;
     	      this.createdDate = defaults.createdDate;
     	      this.grantedRoles = defaults.grantedRoles;
-    	      this.id = defaults.id;
     	      this.modifiedBy = defaults.modifiedBy;
     	      this.modifiedDate = defaults.modifiedDate;
     	      this.roleDescription = defaults.roleDescription;
@@ -148,14 +134,6 @@ public final class GetIamRoleResult {
         }
         public Builder grantedRoles(GetIamRoleGrantedRole... grantedRoles) {
             return grantedRoles(List.of(grantedRoles));
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetIamRoleResult", "id");
-            }
-            this.id = id;
-            return this;
         }
         @CustomType.Setter
         public Builder modifiedBy(String modifiedBy) {
@@ -220,7 +198,6 @@ public final class GetIamRoleResult {
             _resultValue.createdBy = createdBy;
             _resultValue.createdDate = createdDate;
             _resultValue.grantedRoles = grantedRoles;
-            _resultValue.id = id;
             _resultValue.modifiedBy = modifiedBy;
             _resultValue.modifiedDate = modifiedDate;
             _resultValue.roleDescription = roleDescription;

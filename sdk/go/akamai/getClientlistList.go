@@ -28,8 +28,6 @@ type LookupClientlistListArgs struct {
 
 // A collection of values returned by getClientlistList.
 type LookupClientlistListResult struct {
-	// The provider-assigned unique ID for this managed resource.
-	Id         string                `pulumi:"id"`
 	Json       string                `pulumi:"json"`
 	List       GetClientlistListList `pulumi:"list"`
 	ListId     string                `pulumi:"listId"`
@@ -67,11 +65,6 @@ func (o LookupClientlistListResultOutput) ToLookupClientlistListResultOutput() L
 
 func (o LookupClientlistListResultOutput) ToLookupClientlistListResultOutputWithContext(ctx context.Context) LookupClientlistListResultOutput {
 	return o
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupClientlistListResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClientlistListResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o LookupClientlistListResultOutput) Json() pulumi.StringOutput {

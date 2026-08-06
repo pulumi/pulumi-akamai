@@ -27,10 +27,6 @@ export interface GetAppsecCustomRulesUsageArgs {
  */
 export interface GetAppsecCustomRulesUsageResult {
     readonly configId: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly json: string;
     readonly outputText: string;
     readonly ruleIds: number[];

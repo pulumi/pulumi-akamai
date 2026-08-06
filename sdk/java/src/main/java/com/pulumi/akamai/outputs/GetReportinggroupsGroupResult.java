@@ -15,11 +15,6 @@ import java.util.Objects;
 public final class GetReportinggroupsGroupResult {
     private GetReportinggroupsGroupAccessGroup accessGroup;
     private GetReportinggroupsGroupContract contract;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private Integer reportingGroupId;
     private String reportingGroupName;
 
@@ -29,13 +24,6 @@ public final class GetReportinggroupsGroupResult {
     }
     public GetReportinggroupsGroupContract contract() {
         return this.contract;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Integer reportingGroupId() {
         return this.reportingGroupId;
@@ -55,7 +43,6 @@ public final class GetReportinggroupsGroupResult {
     public static final class Builder {
         private GetReportinggroupsGroupAccessGroup accessGroup;
         private GetReportinggroupsGroupContract contract;
-        private String id;
         private Integer reportingGroupId;
         private String reportingGroupName;
         public Builder() {}
@@ -63,7 +50,6 @@ public final class GetReportinggroupsGroupResult {
     	      Objects.requireNonNull(defaults);
     	      this.accessGroup = defaults.accessGroup;
     	      this.contract = defaults.contract;
-    	      this.id = defaults.id;
     	      this.reportingGroupId = defaults.reportingGroupId;
     	      this.reportingGroupName = defaults.reportingGroupName;
         }
@@ -82,14 +68,6 @@ public final class GetReportinggroupsGroupResult {
               throw new MissingRequiredPropertyException("GetReportinggroupsGroupResult", "contract");
             }
             this.contract = contract;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetReportinggroupsGroupResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -112,7 +90,6 @@ public final class GetReportinggroupsGroupResult {
             final var _resultValue = new GetReportinggroupsGroupResult();
             _resultValue.accessGroup = accessGroup;
             _resultValue.contract = contract;
-            _resultValue.id = id;
             _resultValue.reportingGroupId = reportingGroupId;
             _resultValue.reportingGroupName = reportingGroupName;
             return _resultValue;

@@ -27,7 +27,7 @@ class GetIamCidrBlockResult:
     """
     A collection of values returned by getIamCidrBlock.
     """
-    def __init__(__self__, actions=None, cidr_block=None, cidr_block_id=None, comments=None, created_by=None, created_date=None, enabled=None, id=None, modified_by=None, modified_date=None):
+    def __init__(__self__, actions=None, cidr_block=None, cidr_block_id=None, comments=None, created_by=None, created_date=None, enabled=None, modified_by=None, modified_date=None):
         if actions and not isinstance(actions, dict):
             raise TypeError("Expected argument 'actions' to be a dict")
         pulumi.set(__self__, "actions", actions)
@@ -49,9 +49,6 @@ class GetIamCidrBlockResult:
         if enabled and not isinstance(enabled, bool):
             raise TypeError("Expected argument 'enabled' to be a bool")
         pulumi.set(__self__, "enabled", enabled)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if modified_by and not isinstance(modified_by, str):
             raise TypeError("Expected argument 'modified_by' to be a str")
         pulumi.set(__self__, "modified_by", modified_by)
@@ -95,14 +92,6 @@ class GetIamCidrBlockResult:
         return pulumi.get(self, "enabled")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="modifiedBy")
     def modified_by(self) -> _builtins.str:
         return pulumi.get(self, "modified_by")
@@ -126,7 +115,6 @@ class AwaitableGetIamCidrBlockResult(GetIamCidrBlockResult):
             created_by=self.created_by,
             created_date=self.created_date,
             enabled=self.enabled,
-            id=self.id,
             modified_by=self.modified_by,
             modified_date=self.modified_date)
 
@@ -149,7 +137,6 @@ def get_iam_cidr_block(cidr_block_id: Optional[_builtins.int] = None,
         created_by=pulumi.get(__ret__, 'created_by'),
         created_date=pulumi.get(__ret__, 'created_date'),
         enabled=pulumi.get(__ret__, 'enabled'),
-        id=pulumi.get(__ret__, 'id'),
         modified_by=pulumi.get(__ret__, 'modified_by'),
         modified_date=pulumi.get(__ret__, 'modified_date'))
 def get_iam_cidr_block_output(cidr_block_id: pulumi.Input[Optional[_builtins.int]] = None,
@@ -169,6 +156,5 @@ def get_iam_cidr_block_output(cidr_block_id: pulumi.Input[Optional[_builtins.int
         created_by=pulumi.get(__response__, 'created_by'),
         created_date=pulumi.get(__response__, 'created_date'),
         enabled=pulumi.get(__response__, 'enabled'),
-        id=pulumi.get(__response__, 'id'),
         modified_by=pulumi.get(__response__, 'modified_by'),
         modified_date=pulumi.get(__response__, 'modified_date')))

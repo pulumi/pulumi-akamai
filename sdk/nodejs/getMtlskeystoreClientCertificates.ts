@@ -17,10 +17,6 @@ export function getMtlskeystoreClientCertificates(opts?: pulumi.InvokeOptions): 
  */
 export interface GetMtlskeystoreClientCertificatesResult {
     readonly certificates: outputs.GetMtlskeystoreClientCertificatesCertificate[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getMtlskeystoreClientCertificatesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMtlskeystoreClientCertificatesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

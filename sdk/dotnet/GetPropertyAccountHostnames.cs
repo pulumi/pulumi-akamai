@@ -87,10 +87,6 @@ namespace Pulumi.Akamai
         public readonly string GroupId;
         public readonly string? Hostname;
         public readonly ImmutableArray<Outputs.GetPropertyAccountHostnamesHostnameResult> Hostnames;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string? Network;
         public readonly string? Sort;
 
@@ -114,8 +110,6 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetPropertyAccountHostnamesHostnameResult> hostnames,
 
-            string id,
-
             string? network,
 
             string? sort)
@@ -129,7 +123,6 @@ namespace Pulumi.Akamai
             GroupId = groupId;
             Hostname = hostname;
             Hostnames = hostnames;
-            Id = id;
             Network = network;
             Sort = sort;
         }

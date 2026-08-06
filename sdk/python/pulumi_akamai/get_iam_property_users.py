@@ -27,13 +27,10 @@ class GetIamPropertyUsersResult:
     """
     A collection of values returned by getIamPropertyUsers.
     """
-    def __init__(__self__, asset_id=None, id=None, user_type=None, users=None):
+    def __init__(__self__, asset_id=None, user_type=None, users=None):
         if asset_id and not isinstance(asset_id, str):
             raise TypeError("Expected argument 'asset_id' to be a str")
         pulumi.set(__self__, "asset_id", asset_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if user_type and not isinstance(user_type, str):
             raise TypeError("Expected argument 'user_type' to be a str")
         pulumi.set(__self__, "user_type", user_type)
@@ -45,14 +42,6 @@ class GetIamPropertyUsersResult:
     @pulumi.getter(name="assetId")
     def asset_id(self) -> _builtins.str:
         return pulumi.get(self, "asset_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="userType")
@@ -72,7 +61,6 @@ class AwaitableGetIamPropertyUsersResult(GetIamPropertyUsersResult):
             yield self
         return GetIamPropertyUsersResult(
             asset_id=self.asset_id,
-            id=self.id,
             user_type=self.user_type,
             users=self.users)
 
@@ -91,7 +79,6 @@ def get_iam_property_users(asset_id: Optional[_builtins.str] = None,
 
     return AwaitableGetIamPropertyUsersResult(
         asset_id=pulumi.get(__ret__, 'asset_id'),
-        id=pulumi.get(__ret__, 'id'),
         user_type=pulumi.get(__ret__, 'user_type'),
         users=pulumi.get(__ret__, 'users'))
 def get_iam_property_users_output(asset_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -107,6 +94,5 @@ def get_iam_property_users_output(asset_id: pulumi.Input[Optional[_builtins.str]
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamPropertyUsers:getIamPropertyUsers', __args__, opts=opts, typ=GetIamPropertyUsersResult)
     return __ret__.apply(lambda __response__: GetIamPropertyUsersResult(
         asset_id=pulumi.get(__response__, 'asset_id'),
-        id=pulumi.get(__response__, 'id'),
         user_type=pulumi.get(__response__, 'user_type'),
         users=pulumi.get(__response__, 'users')))

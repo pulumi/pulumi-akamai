@@ -34,9 +34,7 @@ type GetEdgeHostnamesResult struct {
 	ContractId    string                         `pulumi:"contractId"`
 	EdgeHostnames []GetEdgeHostnamesEdgeHostname `pulumi:"edgeHostnames"`
 	GroupId       string                         `pulumi:"groupId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id      string   `pulumi:"id"`
-	Options []string `pulumi:"options"`
+	Options       []string                       `pulumi:"options"`
 }
 
 func GetEdgeHostnamesOutput(ctx *pulumi.Context, args GetEdgeHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetEdgeHostnamesResultOutput {
@@ -88,11 +86,6 @@ func (o GetEdgeHostnamesResultOutput) EdgeHostnames() GetEdgeHostnamesEdgeHostna
 
 func (o GetEdgeHostnamesResultOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEdgeHostnamesResult) string { return v.GroupId }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetEdgeHostnamesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEdgeHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetEdgeHostnamesResultOutput) Options() pulumi.StringArrayOutput {

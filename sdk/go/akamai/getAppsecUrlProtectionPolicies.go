@@ -28,9 +28,7 @@ type GetAppsecUrlProtectionPoliciesArgs struct {
 
 // A collection of values returned by getAppsecUrlProtectionPolicies.
 type GetAppsecUrlProtectionPoliciesResult struct {
-	ConfigId int `pulumi:"configId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id                    string                                              `pulumi:"id"`
+	ConfigId              int                                                 `pulumi:"configId"`
 	UrlProtectionPolicies []GetAppsecUrlProtectionPoliciesUrlProtectionPolicy `pulumi:"urlProtectionPolicies"`
 }
 
@@ -69,11 +67,6 @@ func (o GetAppsecUrlProtectionPoliciesResultOutput) ToGetAppsecUrlProtectionPoli
 
 func (o GetAppsecUrlProtectionPoliciesResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAppsecUrlProtectionPoliciesResult) int { return v.ConfigId }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetAppsecUrlProtectionPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppsecUrlProtectionPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetAppsecUrlProtectionPoliciesResultOutput) UrlProtectionPolicies() GetAppsecUrlProtectionPoliciesUrlProtectionPolicyArrayOutput {

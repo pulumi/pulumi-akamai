@@ -27,26 +27,15 @@ class GetIamApiClientsResult:
     """
     A collection of values returned by getIamApiClients.
     """
-    def __init__(__self__, api_clients=None, id=None):
+    def __init__(__self__, api_clients=None):
         if api_clients and not isinstance(api_clients, list):
             raise TypeError("Expected argument 'api_clients' to be a list")
         pulumi.set(__self__, "api_clients", api_clients)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter(name="apiClients")
     def api_clients(self) -> Sequence['outputs.GetIamApiClientsApiClientResult']:
         return pulumi.get(self, "api_clients")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
 
 class AwaitableGetIamApiClientsResult(GetIamApiClientsResult):
@@ -55,8 +44,7 @@ class AwaitableGetIamApiClientsResult(GetIamApiClientsResult):
         if False:
             yield self
         return GetIamApiClientsResult(
-            api_clients=self.api_clients,
-            id=self.id)
+            api_clients=self.api_clients)
 
 
 def get_iam_api_clients(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamApiClientsResult:
@@ -68,8 +56,7 @@ def get_iam_api_clients(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamApiClients:getIamApiClients', __args__, opts=opts, typ=GetIamApiClientsResult).value
 
     return AwaitableGetIamApiClientsResult(
-        api_clients=pulumi.get(__ret__, 'api_clients'),
-        id=pulumi.get(__ret__, 'id'))
+        api_clients=pulumi.get(__ret__, 'api_clients'))
 def get_iam_api_clients_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamApiClientsResult]:
     """
     Use this data source to access information about an existing resource.
@@ -78,5 +65,4 @@ def get_iam_api_clients_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamApiClients:getIamApiClients', __args__, opts=opts, typ=GetIamApiClientsResult)
     return __ret__.apply(lambda __response__: GetIamApiClientsResult(
-        api_clients=pulumi.get(__response__, 'api_clients'),
-        id=pulumi.get(__response__, 'id')))
+        api_clients=pulumi.get(__response__, 'api_clients')))

@@ -50,22 +50,15 @@ namespace Pulumi.Akamai
     {
         public readonly string Domain;
         public readonly ImmutableArray<Outputs.GetGtmGeomapsGeoMapResult> GeoMaps;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
         private GetGtmGeomapsResult(
             string domain,
 
-            ImmutableArray<Outputs.GetGtmGeomapsGeoMapResult> geoMaps,
-
-            string id)
+            ImmutableArray<Outputs.GetGtmGeomapsGeoMapResult> geoMaps)
         {
             Domain = domain;
             GeoMaps = geoMaps;
-            Id = id;
         }
     }
 }

@@ -24,10 +24,6 @@ export interface GetCloudwrapperLocationArgs {
  * A collection of values returned by getCloudwrapperLocation.
  */
 export interface GetCloudwrapperLocationResult {
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly locationId: string;
     readonly locationName: string;
     readonly trafficType: string;

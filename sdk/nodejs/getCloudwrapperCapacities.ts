@@ -29,10 +29,6 @@ export interface GetCloudwrapperCapacitiesArgs {
 export interface GetCloudwrapperCapacitiesResult {
     readonly capacities?: outputs.GetCloudwrapperCapacitiesCapacity[];
     readonly contractIds?: string[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getCloudwrapperCapacitiesOutput(args?: GetCloudwrapperCapacitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudwrapperCapacitiesResult> {
     args = args || {};

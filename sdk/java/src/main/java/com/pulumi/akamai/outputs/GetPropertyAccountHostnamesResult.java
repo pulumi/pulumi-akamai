@@ -23,11 +23,6 @@ public final class GetPropertyAccountHostnamesResult {
     private String groupId;
     private @Nullable String hostname;
     private List<GetPropertyAccountHostnamesHostname> hostnames;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable String network;
     private @Nullable String sort;
 
@@ -59,13 +54,6 @@ public final class GetPropertyAccountHostnamesResult {
     public List<GetPropertyAccountHostnamesHostname> hostnames() {
         return this.hostnames;
     }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
-    }
     public Optional<String> network() {
         return Optional.ofNullable(this.network);
     }
@@ -91,7 +79,6 @@ public final class GetPropertyAccountHostnamesResult {
         private String groupId;
         private @Nullable String hostname;
         private List<GetPropertyAccountHostnamesHostname> hostnames;
-        private String id;
         private @Nullable String network;
         private @Nullable String sort;
         public Builder() {}
@@ -106,7 +93,6 @@ public final class GetPropertyAccountHostnamesResult {
     	      this.groupId = defaults.groupId;
     	      this.hostname = defaults.hostname;
     	      this.hostnames = defaults.hostnames;
-    	      this.id = defaults.id;
     	      this.network = defaults.network;
     	      this.sort = defaults.sort;
         }
@@ -186,14 +172,6 @@ public final class GetPropertyAccountHostnamesResult {
             return hostnames(List.of(hostnames));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetPropertyAccountHostnamesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder network(@Nullable String network) {
 
             this.network = network;
@@ -216,7 +194,6 @@ public final class GetPropertyAccountHostnamesResult {
             _resultValue.groupId = groupId;
             _resultValue.hostname = hostname;
             _resultValue.hostnames = hostnames;
-            _resultValue.id = id;
             _resultValue.network = network;
             _resultValue.sort = sort;
             return _resultValue;

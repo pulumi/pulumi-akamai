@@ -54,10 +54,6 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetCloudwrapperLocationResult
     {
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string LocationId;
         public readonly string LocationName;
         public readonly string TrafficType;
@@ -65,8 +61,6 @@ namespace Pulumi.Akamai
 
         [OutputConstructor]
         private GetCloudwrapperLocationResult(
-            string id,
-
             string locationId,
 
             string locationName,
@@ -75,7 +69,6 @@ namespace Pulumi.Akamai
 
             int trafficTypeId)
         {
-            Id = id;
             LocationId = locationId;
             LocationName = locationName;
             TrafficType = trafficType;

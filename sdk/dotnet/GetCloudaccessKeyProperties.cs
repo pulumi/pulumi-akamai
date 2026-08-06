@@ -50,10 +50,6 @@ namespace Pulumi.Akamai
     {
         public readonly string AccessKeyName;
         public readonly int AccessKeyUid;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly ImmutableArray<Outputs.GetCloudaccessKeyPropertiesPropertyResult> Properties;
 
         [OutputConstructor]
@@ -62,13 +58,10 @@ namespace Pulumi.Akamai
 
             int accessKeyUid,
 
-            string id,
-
             ImmutableArray<Outputs.GetCloudaccessKeyPropertiesPropertyResult> properties)
         {
             AccessKeyName = accessKeyName;
             AccessKeyUid = accessKeyUid;
-            Id = id;
             Properties = properties;
         }
     }

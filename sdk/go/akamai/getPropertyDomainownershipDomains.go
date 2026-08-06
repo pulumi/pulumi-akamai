@@ -24,8 +24,6 @@ func LookupPropertyDomainownershipDomains(ctx *pulumi.Context, opts ...pulumi.In
 // A collection of values returned by getPropertyDomainownershipDomains.
 type LookupPropertyDomainownershipDomainsResult struct {
 	Domains []GetPropertyDomainownershipDomainsDomain `pulumi:"domains"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func LookupPropertyDomainownershipDomainsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) LookupPropertyDomainownershipDomainsResultOutput {
@@ -54,11 +52,6 @@ func (o LookupPropertyDomainownershipDomainsResultOutput) Domains() GetPropertyD
 	return o.ApplyT(func(v LookupPropertyDomainownershipDomainsResult) []GetPropertyDomainownershipDomainsDomain {
 		return v.Domains
 	}).(GetPropertyDomainownershipDomainsDomainArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o LookupPropertyDomainownershipDomainsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPropertyDomainownershipDomainsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -29,9 +29,7 @@ type GetAppsecCustomRulesUsageArgs struct {
 
 // A collection of values returned by getAppsecCustomRulesUsage.
 type GetAppsecCustomRulesUsageResult struct {
-	ConfigId int `pulumi:"configId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id         string                          `pulumi:"id"`
+	ConfigId   int                             `pulumi:"configId"`
 	Json       string                          `pulumi:"json"`
 	OutputText string                          `pulumi:"outputText"`
 	RuleIds    []int                           `pulumi:"ruleIds"`
@@ -74,11 +72,6 @@ func (o GetAppsecCustomRulesUsageResultOutput) ToGetAppsecCustomRulesUsageResult
 
 func (o GetAppsecCustomRulesUsageResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAppsecCustomRulesUsageResult) int { return v.ConfigId }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetAppsecCustomRulesUsageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppsecCustomRulesUsageResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetAppsecCustomRulesUsageResultOutput) Json() pulumi.StringOutput {

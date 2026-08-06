@@ -63,10 +63,6 @@ namespace Pulumi.Akamai
         public readonly string? Api;
         public readonly string? ApiFileName;
         public readonly string FilePath;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
         private GetApidefinitionsOpenapiResult(
@@ -74,14 +70,11 @@ namespace Pulumi.Akamai
 
             string? apiFileName,
 
-            string filePath,
-
-            string id)
+            string filePath)
         {
             Api = api;
             ApiFileName = apiFileName;
             FilePath = filePath;
-            Id = id;
         }
     }
 }

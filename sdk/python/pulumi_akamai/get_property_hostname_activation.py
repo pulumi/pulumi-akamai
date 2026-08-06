@@ -27,7 +27,7 @@ class GetPropertyHostnameActivationResult:
     """
     A collection of values returned by getPropertyHostnameActivation.
     """
-    def __init__(__self__, account_id=None, activation_type=None, contract_id=None, group_id=None, hostname_activation_id=None, hostnames=None, id=None, include_hostnames=None, network=None, note=None, notify_emails=None, property_id=None, property_name=None, status=None, submit_date=None, update_date=None):
+    def __init__(__self__, account_id=None, activation_type=None, contract_id=None, group_id=None, hostname_activation_id=None, hostnames=None, include_hostnames=None, network=None, note=None, notify_emails=None, property_id=None, property_name=None, status=None, submit_date=None, update_date=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -46,9 +46,6 @@ class GetPropertyHostnameActivationResult:
         if hostnames and not isinstance(hostnames, list):
             raise TypeError("Expected argument 'hostnames' to be a list")
         pulumi.set(__self__, "hostnames", hostnames)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if include_hostnames and not isinstance(include_hostnames, bool):
             raise TypeError("Expected argument 'include_hostnames' to be a bool")
         pulumi.set(__self__, "include_hostnames", include_hostnames)
@@ -108,14 +105,6 @@ class GetPropertyHostnameActivationResult:
         return pulumi.get(self, "hostnames")
 
     @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
     @pulumi.getter(name="includeHostnames")
     def include_hostnames(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "include_hostnames")
@@ -173,7 +162,6 @@ class AwaitableGetPropertyHostnameActivationResult(GetPropertyHostnameActivation
             group_id=self.group_id,
             hostname_activation_id=self.hostname_activation_id,
             hostnames=self.hostnames,
-            id=self.id,
             include_hostnames=self.include_hostnames,
             network=self.network,
             note=self.note,
@@ -210,7 +198,6 @@ def get_property_hostname_activation(contract_id: Optional[_builtins.str] = None
         group_id=pulumi.get(__ret__, 'group_id'),
         hostname_activation_id=pulumi.get(__ret__, 'hostname_activation_id'),
         hostnames=pulumi.get(__ret__, 'hostnames'),
-        id=pulumi.get(__ret__, 'id'),
         include_hostnames=pulumi.get(__ret__, 'include_hostnames'),
         network=pulumi.get(__ret__, 'network'),
         note=pulumi.get(__ret__, 'note'),
@@ -244,7 +231,6 @@ def get_property_hostname_activation_output(contract_id: pulumi.Input[Optional[O
         group_id=pulumi.get(__response__, 'group_id'),
         hostname_activation_id=pulumi.get(__response__, 'hostname_activation_id'),
         hostnames=pulumi.get(__response__, 'hostnames'),
-        id=pulumi.get(__response__, 'id'),
         include_hostnames=pulumi.get(__response__, 'include_hostnames'),
         network=pulumi.get(__response__, 'network'),
         note=pulumi.get(__response__, 'note'),

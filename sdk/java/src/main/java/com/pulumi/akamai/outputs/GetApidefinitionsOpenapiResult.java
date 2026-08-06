@@ -15,11 +15,6 @@ public final class GetApidefinitionsOpenapiResult {
     private @Nullable String api;
     private @Nullable String apiFileName;
     private String filePath;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetApidefinitionsOpenapiResult() {}
     public Optional<String> api() {
@@ -30,13 +25,6 @@ public final class GetApidefinitionsOpenapiResult {
     }
     public String filePath() {
         return this.filePath;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -51,14 +39,12 @@ public final class GetApidefinitionsOpenapiResult {
         private @Nullable String api;
         private @Nullable String apiFileName;
         private String filePath;
-        private String id;
         public Builder() {}
         public Builder(GetApidefinitionsOpenapiResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.api = defaults.api;
     	      this.apiFileName = defaults.apiFileName;
     	      this.filePath = defaults.filePath;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -81,20 +67,11 @@ public final class GetApidefinitionsOpenapiResult {
             this.filePath = filePath;
             return this;
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetApidefinitionsOpenapiResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetApidefinitionsOpenapiResult build() {
             final var _resultValue = new GetApidefinitionsOpenapiResult();
             _resultValue.api = api;
             _resultValue.apiFileName = apiFileName;
             _resultValue.filePath = filePath;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

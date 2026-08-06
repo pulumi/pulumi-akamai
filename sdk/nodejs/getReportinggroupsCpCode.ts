@@ -29,10 +29,6 @@ export interface GetReportinggroupsCpCodeResult {
     readonly contracts: outputs.GetReportinggroupsCpCodeContract[];
     readonly cpCodeId: number;
     readonly defaultTimeZone: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly name: string;
     readonly overrideTimeZone: outputs.GetReportinggroupsCpCodeOverrideTimeZone;
     readonly products: outputs.GetReportinggroupsCpCodeProduct[];

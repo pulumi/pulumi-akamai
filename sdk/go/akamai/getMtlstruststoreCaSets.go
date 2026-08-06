@@ -33,9 +33,7 @@ type GetMtlstruststoreCaSetsResult struct {
 	ActivatedOn   *string                        `pulumi:"activatedOn"`
 	CaSetStatuses []string                       `pulumi:"caSetStatuses"`
 	CaSets        []GetMtlstruststoreCaSetsCaSet `pulumi:"caSets"`
-	// The provider-assigned unique ID for this managed resource.
-	Id         string  `pulumi:"id"`
-	NamePrefix *string `pulumi:"namePrefix"`
+	NamePrefix    *string                        `pulumi:"namePrefix"`
 }
 
 func GetMtlstruststoreCaSetsOutput(ctx *pulumi.Context, args GetMtlstruststoreCaSetsOutputArgs, opts ...pulumi.InvokeOption) GetMtlstruststoreCaSetsResultOutput {
@@ -83,11 +81,6 @@ func (o GetMtlstruststoreCaSetsResultOutput) CaSetStatuses() pulumi.StringArrayO
 
 func (o GetMtlstruststoreCaSetsResultOutput) CaSets() GetMtlstruststoreCaSetsCaSetArrayOutput {
 	return o.ApplyT(func(v GetMtlstruststoreCaSetsResult) []GetMtlstruststoreCaSetsCaSet { return v.CaSets }).(GetMtlstruststoreCaSetsCaSetArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetMtlstruststoreCaSetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetMtlstruststoreCaSetsResultOutput) NamePrefix() pulumi.StringPtrOutput {

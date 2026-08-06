@@ -26,19 +26,11 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyDomainownershipDomainsResult
     {
         public readonly ImmutableArray<Outputs.GetPropertyDomainownershipDomainsDomainResult> Domains;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
 
         [OutputConstructor]
-        private GetPropertyDomainownershipDomainsResult(
-            ImmutableArray<Outputs.GetPropertyDomainownershipDomainsDomainResult> domains,
-
-            string id)
+        private GetPropertyDomainownershipDomainsResult(ImmutableArray<Outputs.GetPropertyDomainownershipDomainsDomainResult> domains)
         {
             Domains = domains;
-            Id = id;
         }
     }
 }

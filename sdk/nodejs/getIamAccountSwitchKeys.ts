@@ -30,10 +30,6 @@ export interface GetIamAccountSwitchKeysResult {
     readonly accountSwitchKeys: outputs.GetIamAccountSwitchKeysAccountSwitchKey[];
     readonly clientId?: string;
     readonly filter?: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
 }
 export function getIamAccountSwitchKeysOutput(args?: GetIamAccountSwitchKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamAccountSwitchKeysResult> {
     args = args || {};

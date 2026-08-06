@@ -26,13 +26,10 @@ class GetCloudletsPolicyActivationResult:
     """
     A collection of values returned by getCloudletsPolicyActivation.
     """
-    def __init__(__self__, associated_properties=None, id=None, network=None, policy_id=None, status=None, version=None):
+    def __init__(__self__, associated_properties=None, network=None, policy_id=None, status=None, version=None):
         if associated_properties and not isinstance(associated_properties, list):
             raise TypeError("Expected argument 'associated_properties' to be a list")
         pulumi.set(__self__, "associated_properties", associated_properties)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if network and not isinstance(network, str):
             raise TypeError("Expected argument 'network' to be a str")
         pulumi.set(__self__, "network", network)
@@ -50,14 +47,6 @@ class GetCloudletsPolicyActivationResult:
     @pulumi.getter(name="associatedProperties")
     def associated_properties(self) -> Optional[Sequence[_builtins.str]]:
         return pulumi.get(self, "associated_properties")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter
@@ -87,7 +76,6 @@ class AwaitableGetCloudletsPolicyActivationResult(GetCloudletsPolicyActivationRe
             yield self
         return GetCloudletsPolicyActivationResult(
             associated_properties=self.associated_properties,
-            id=self.id,
             network=self.network,
             policy_id=self.policy_id,
             status=self.status,
@@ -110,7 +98,6 @@ def get_cloudlets_policy_activation(associated_properties: Optional[Sequence[_bu
 
     return AwaitableGetCloudletsPolicyActivationResult(
         associated_properties=pulumi.get(__ret__, 'associated_properties'),
-        id=pulumi.get(__ret__, 'id'),
         network=pulumi.get(__ret__, 'network'),
         policy_id=pulumi.get(__ret__, 'policy_id'),
         status=pulumi.get(__ret__, 'status'),
@@ -130,7 +117,6 @@ def get_cloudlets_policy_activation_output(associated_properties: pulumi.Input[O
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsPolicyActivation:getCloudletsPolicyActivation', __args__, opts=opts, typ=GetCloudletsPolicyActivationResult)
     return __ret__.apply(lambda __response__: GetCloudletsPolicyActivationResult(
         associated_properties=pulumi.get(__response__, 'associated_properties'),
-        id=pulumi.get(__response__, 'id'),
         network=pulumi.get(__response__, 'network'),
         policy_id=pulumi.get(__response__, 'policy_id'),
         status=pulumi.get(__response__, 'status'),

@@ -29,10 +29,6 @@ export interface GetGtmGeomapResult {
     readonly assignments: outputs.GetGtmGeomapAssignment[];
     readonly defaultDatacenter: outputs.GetGtmGeomapDefaultDatacenter;
     readonly domain: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly links: outputs.GetGtmGeomapLink[];
     readonly mapName: string;
 }

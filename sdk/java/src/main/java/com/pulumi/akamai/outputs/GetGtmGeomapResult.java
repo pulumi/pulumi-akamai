@@ -17,11 +17,6 @@ public final class GetGtmGeomapResult {
     private List<GetGtmGeomapAssignment> assignments;
     private GetGtmGeomapDefaultDatacenter defaultDatacenter;
     private String domain;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private List<GetGtmGeomapLink> links;
     private String mapName;
 
@@ -34,13 +29,6 @@ public final class GetGtmGeomapResult {
     }
     public String domain() {
         return this.domain;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public List<GetGtmGeomapLink> links() {
         return this.links;
@@ -61,7 +49,6 @@ public final class GetGtmGeomapResult {
         private List<GetGtmGeomapAssignment> assignments;
         private GetGtmGeomapDefaultDatacenter defaultDatacenter;
         private String domain;
-        private String id;
         private List<GetGtmGeomapLink> links;
         private String mapName;
         public Builder() {}
@@ -70,7 +57,6 @@ public final class GetGtmGeomapResult {
     	      this.assignments = defaults.assignments;
     	      this.defaultDatacenter = defaults.defaultDatacenter;
     	      this.domain = defaults.domain;
-    	      this.id = defaults.id;
     	      this.links = defaults.links;
     	      this.mapName = defaults.mapName;
         }
@@ -103,14 +89,6 @@ public final class GetGtmGeomapResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetGtmGeomapResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder links(List<GetGtmGeomapLink> links) {
             if (links == null) {
               throw new MissingRequiredPropertyException("GetGtmGeomapResult", "links");
@@ -134,7 +112,6 @@ public final class GetGtmGeomapResult {
             _resultValue.assignments = assignments;
             _resultValue.defaultDatacenter = defaultDatacenter;
             _resultValue.domain = domain;
-            _resultValue.id = id;
             _resultValue.links = links;
             _resultValue.mapName = mapName;
             return _resultValue;

@@ -33,10 +33,6 @@ export interface GetAppsecUrlProtectionPolicyResult {
     readonly createdBy: string;
     readonly description: string;
     readonly hostnamePaths: outputs.GetAppsecUrlProtectionPolicyHostnamePath[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly intelligentLoadShedding: outputs.GetAppsecUrlProtectionPolicyIntelligentLoadShedding;
     readonly maxRateThreshold: number;
     readonly name: string;

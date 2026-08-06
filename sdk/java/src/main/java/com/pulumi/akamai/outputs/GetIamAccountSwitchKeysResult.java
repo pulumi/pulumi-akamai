@@ -17,11 +17,6 @@ public final class GetIamAccountSwitchKeysResult {
     private List<GetIamAccountSwitchKeysAccountSwitchKey> accountSwitchKeys;
     private @Nullable String clientId;
     private @Nullable String filter;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
 
     private GetIamAccountSwitchKeysResult() {}
     public List<GetIamAccountSwitchKeysAccountSwitchKey> accountSwitchKeys() {
@@ -32,13 +27,6 @@ public final class GetIamAccountSwitchKeysResult {
     }
     public Optional<String> filter() {
         return Optional.ofNullable(this.filter);
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
 
     public static Builder builder() {
@@ -53,14 +41,12 @@ public final class GetIamAccountSwitchKeysResult {
         private List<GetIamAccountSwitchKeysAccountSwitchKey> accountSwitchKeys;
         private @Nullable String clientId;
         private @Nullable String filter;
-        private String id;
         public Builder() {}
         public Builder(GetIamAccountSwitchKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accountSwitchKeys = defaults.accountSwitchKeys;
     	      this.clientId = defaults.clientId;
     	      this.filter = defaults.filter;
-    	      this.id = defaults.id;
         }
 
         @CustomType.Setter
@@ -86,20 +72,11 @@ public final class GetIamAccountSwitchKeysResult {
             this.filter = filter;
             return this;
         }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetIamAccountSwitchKeysResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
         public GetIamAccountSwitchKeysResult build() {
             final var _resultValue = new GetIamAccountSwitchKeysResult();
             _resultValue.accountSwitchKeys = accountSwitchKeys;
             _resultValue.clientId = clientId;
             _resultValue.filter = filter;
-            _resultValue.id = id;
             return _resultValue;
         }
     }

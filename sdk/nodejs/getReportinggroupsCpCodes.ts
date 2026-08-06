@@ -35,10 +35,6 @@ export interface GetReportinggroupsCpCodesResult {
     readonly cpCodeName?: string;
     readonly cpCodes: outputs.GetReportinggroupsCpCodesCpCode[];
     readonly groupId?: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly productId?: string;
 }
 export function getReportinggroupsCpCodesOutput(args?: GetReportinggroupsCpCodesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReportinggroupsCpCodesResult> {

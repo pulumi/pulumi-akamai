@@ -26,10 +26,6 @@ export interface GetReportinggroupsGroupArgs {
 export interface GetReportinggroupsGroupResult {
     readonly accessGroup: outputs.GetReportinggroupsGroupAccessGroup;
     readonly contract: outputs.GetReportinggroupsGroupContract;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly reportingGroupId: number;
     readonly reportingGroupName: string;
 }

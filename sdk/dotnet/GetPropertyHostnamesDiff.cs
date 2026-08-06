@@ -64,10 +64,6 @@ namespace Pulumi.Akamai
         public readonly string ContractId;
         public readonly string GroupId;
         public readonly ImmutableArray<Outputs.GetPropertyHostnamesDiffHostnameResult> Hostnames;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string PropertyId;
 
         [OutputConstructor]
@@ -80,15 +76,12 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetPropertyHostnamesDiffHostnameResult> hostnames,
 
-            string id,
-
             string propertyId)
         {
             AccountId = accountId;
             ContractId = contractId;
             GroupId = groupId;
             Hostnames = hostnames;
-            Id = id;
             PropertyId = propertyId;
         }
     }

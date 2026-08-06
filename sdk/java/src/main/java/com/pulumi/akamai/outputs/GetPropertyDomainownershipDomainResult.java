@@ -17,11 +17,6 @@ public final class GetPropertyDomainownershipDomainResult {
     private String domainName;
     private String domainStatus;
     private List<GetPropertyDomainownershipDomainDomainStatusHistory> domainStatusHistories;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private GetPropertyDomainownershipDomainValidationChallenge validationChallenge;
     private String validationCompletedDate;
     private String validationMethod;
@@ -41,13 +36,6 @@ public final class GetPropertyDomainownershipDomainResult {
     }
     public List<GetPropertyDomainownershipDomainDomainStatusHistory> domainStatusHistories() {
         return this.domainStatusHistories;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public GetPropertyDomainownershipDomainValidationChallenge validationChallenge() {
         return this.validationChallenge;
@@ -81,7 +69,6 @@ public final class GetPropertyDomainownershipDomainResult {
         private String domainName;
         private String domainStatus;
         private List<GetPropertyDomainownershipDomainDomainStatusHistory> domainStatusHistories;
-        private String id;
         private GetPropertyDomainownershipDomainValidationChallenge validationChallenge;
         private String validationCompletedDate;
         private String validationMethod;
@@ -95,7 +82,6 @@ public final class GetPropertyDomainownershipDomainResult {
     	      this.domainName = defaults.domainName;
     	      this.domainStatus = defaults.domainStatus;
     	      this.domainStatusHistories = defaults.domainStatusHistories;
-    	      this.id = defaults.id;
     	      this.validationChallenge = defaults.validationChallenge;
     	      this.validationCompletedDate = defaults.validationCompletedDate;
     	      this.validationMethod = defaults.validationMethod;
@@ -138,14 +124,6 @@ public final class GetPropertyDomainownershipDomainResult {
         }
         public Builder domainStatusHistories(GetPropertyDomainownershipDomainDomainStatusHistory... domainStatusHistories) {
             return domainStatusHistories(List.of(domainStatusHistories));
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetPropertyDomainownershipDomainResult", "id");
-            }
-            this.id = id;
-            return this;
         }
         @CustomType.Setter
         public Builder validationChallenge(GetPropertyDomainownershipDomainValidationChallenge validationChallenge) {
@@ -201,7 +179,6 @@ public final class GetPropertyDomainownershipDomainResult {
             _resultValue.domainName = domainName;
             _resultValue.domainStatus = domainStatus;
             _resultValue.domainStatusHistories = domainStatusHistories;
-            _resultValue.id = id;
             _resultValue.validationChallenge = validationChallenge;
             _resultValue.validationCompletedDate = validationCompletedDate;
             _resultValue.validationMethod = validationMethod;

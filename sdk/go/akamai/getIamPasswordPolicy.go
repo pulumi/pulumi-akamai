@@ -23,9 +23,7 @@ func GetIamPasswordPolicy(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*Ge
 
 // A collection of values returned by getIamPasswordPolicy.
 type GetIamPasswordPolicyResult struct {
-	CaseDif int `pulumi:"caseDif"`
-	// The provider-assigned unique ID for this managed resource.
-	Id              string `pulumi:"id"`
+	CaseDif         int    `pulumi:"caseDif"`
 	MaxRepeating    int    `pulumi:"maxRepeating"`
 	MinDigits       int    `pulumi:"minDigits"`
 	MinLength       int    `pulumi:"minLength"`
@@ -60,11 +58,6 @@ func (o GetIamPasswordPolicyResultOutput) ToGetIamPasswordPolicyResultOutputWith
 
 func (o GetIamPasswordPolicyResultOutput) CaseDif() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIamPasswordPolicyResult) int { return v.CaseDif }).(pulumi.IntOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetIamPasswordPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamPasswordPolicyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetIamPasswordPolicyResultOutput) MaxRepeating() pulumi.IntOutput {

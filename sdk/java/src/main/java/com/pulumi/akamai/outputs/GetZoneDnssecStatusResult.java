@@ -15,11 +15,6 @@ import java.util.Objects;
 public final class GetZoneDnssecStatusResult {
     private List<String> alerts;
     private GetZoneDnssecStatusCurrentRecords currentRecords;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private GetZoneDnssecStatusNewRecords newRecords;
     private String zone;
 
@@ -29,13 +24,6 @@ public final class GetZoneDnssecStatusResult {
     }
     public GetZoneDnssecStatusCurrentRecords currentRecords() {
         return this.currentRecords;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public GetZoneDnssecStatusNewRecords newRecords() {
         return this.newRecords;
@@ -55,7 +43,6 @@ public final class GetZoneDnssecStatusResult {
     public static final class Builder {
         private List<String> alerts;
         private GetZoneDnssecStatusCurrentRecords currentRecords;
-        private String id;
         private GetZoneDnssecStatusNewRecords newRecords;
         private String zone;
         public Builder() {}
@@ -63,7 +50,6 @@ public final class GetZoneDnssecStatusResult {
     	      Objects.requireNonNull(defaults);
     	      this.alerts = defaults.alerts;
     	      this.currentRecords = defaults.currentRecords;
-    	      this.id = defaults.id;
     	      this.newRecords = defaults.newRecords;
     	      this.zone = defaults.zone;
         }
@@ -88,14 +74,6 @@ public final class GetZoneDnssecStatusResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetZoneDnssecStatusResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder newRecords(GetZoneDnssecStatusNewRecords newRecords) {
             if (newRecords == null) {
               throw new MissingRequiredPropertyException("GetZoneDnssecStatusResult", "newRecords");
@@ -115,7 +93,6 @@ public final class GetZoneDnssecStatusResult {
             final var _resultValue = new GetZoneDnssecStatusResult();
             _resultValue.alerts = alerts;
             _resultValue.currentRecords = currentRecords;
-            _resultValue.id = id;
             _resultValue.newRecords = newRecords;
             _resultValue.zone = zone;
             return _resultValue;

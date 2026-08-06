@@ -32,10 +32,6 @@ export interface GetMtlstruststoreCaSetsResult {
     readonly activatedOn?: string;
     readonly caSetStatuses?: string[];
     readonly caSets: outputs.GetMtlstruststoreCaSetsCaSet[];
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly namePrefix?: string;
 }
 export function getMtlstruststoreCaSetsOutput(args?: GetMtlstruststoreCaSetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMtlstruststoreCaSetsResult> {

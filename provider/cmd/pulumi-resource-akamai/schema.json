@@ -35116,15 +35116,10 @@
                     },
                     "filePath": {
                         "type": "string"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
-                    "filePath",
-                    "id"
+                    "filePath"
                 ],
                 "type": "object"
             }
@@ -35154,10 +35149,6 @@
                     "apiId": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "resourceName": {
                         "type": "string"
                     },
@@ -35174,8 +35165,7 @@
                 "required": [
                     "apiId",
                     "resourceOperations",
-                    "version",
-                    "id"
+                    "version"
                 ],
                 "type": "object"
             }
@@ -37827,10 +37817,6 @@
                     "configId": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "json": {
                         "type": "string"
                     },
@@ -37855,8 +37841,7 @@
                     "json",
                     "outputText",
                     "ruleIds",
-                    "rules",
-                    "id"
+                    "rules"
                 ],
                 "type": "object"
             }
@@ -38043,10 +38028,6 @@
                     "configId": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "urlProtectionPolicies": {
                         "items": {
                             "$ref": "#/types/akamai:index/getAppsecUrlProtectionPoliciesUrlProtectionPolicy:getAppsecUrlProtectionPoliciesUrlProtectionPolicy"
@@ -38056,8 +38037,7 @@
                 },
                 "required": [
                     "configId",
-                    "urlProtectionPolicies",
-                    "id"
+                    "urlProtectionPolicies"
                 ],
                 "type": "object"
             }
@@ -38085,10 +38065,6 @@
                     "configId": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "securityPolicyId": {
                         "type": "string"
                     },
@@ -38102,8 +38078,7 @@
                 "required": [
                     "configId",
                     "securityPolicyId",
-                    "urlProtectionPoliciesActions",
-                    "id"
+                    "urlProtectionPoliciesActions"
                 ],
                 "type": "object"
             }
@@ -38158,10 +38133,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "intelligentLoadShedding": {
                         "$ref": "#/types/akamai:index/getAppsecUrlProtectionPolicyIntelligentLoadShedding:getAppsecUrlProtectionPolicyIntelligentLoadShedding"
                     },
@@ -38198,8 +38169,7 @@
                     "updateDate",
                     "updatedBy",
                     "urlProtectionPolicyId",
-                    "used",
-                    "id"
+                    "used"
                 ],
                 "type": "object"
             }
@@ -38231,10 +38201,6 @@
                     "configId": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "loadSheddingAction": {
                         "type": "string"
                     },
@@ -38253,8 +38219,7 @@
                     "loadSheddingAction",
                     "maxRateThresholdAction",
                     "securityPolicyId",
-                    "urlProtectionPolicyId",
-                    "id"
+                    "urlProtectionPolicyId"
                 ],
                 "type": "object"
             }
@@ -38288,10 +38253,6 @@
                     "configId": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "rules": {
                         "items": {
                             "$ref": "#/types/akamai:index/getAppsecWafRulesetRule:getAppsecWafRulesetRule"
@@ -38306,8 +38267,7 @@
                     "attackGroups",
                     "configId",
                     "rules",
-                    "securityPolicyId",
-                    "id"
+                    "securityPolicyId"
                 ],
                 "type": "object"
             }
@@ -40014,10 +39974,6 @@
             "outputs": {
                 "description": "A collection of values returned by getClientlistList.\n",
                 "properties": {
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "json": {
                         "type": "string"
                     },
@@ -40035,8 +39991,7 @@
                     "json",
                     "list",
                     "listId",
-                    "outputText",
-                    "id"
+                    "outputText"
                 ],
                 "type": "object"
             }
@@ -40138,10 +40093,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "latestVersion": {
                         "type": "integer"
                     },
@@ -40157,8 +40108,7 @@
                     "createdTime",
                     "groups",
                     "latestVersion",
-                    "networkConfiguration",
-                    "id"
+                    "networkConfiguration"
                 ],
                 "type": "object"
             }
@@ -40185,10 +40135,6 @@
                     "accessKeyUid": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "properties": {
                         "items": {
                             "$ref": "#/types/akamai:index/getCloudaccessKeyPropertiesProperty:getCloudaccessKeyPropertiesProperty"
@@ -40199,8 +40145,7 @@
                 "required": [
                     "accessKeyName",
                     "accessKeyUid",
-                    "properties",
-                    "id"
+                    "properties"
                 ],
                 "type": "object"
             }
@@ -40232,17 +40177,12 @@
                             "$ref": "#/types/akamai:index/getCloudaccessKeyVersionsAccessKeyVersion:getCloudaccessKeyVersionsAccessKeyVersion"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
                     "accessKeyName",
                     "accessKeyUid",
-                    "accessKeyVersions",
-                    "id"
+                    "accessKeyVersions"
                 ],
                 "type": "object"
             }
@@ -40256,15 +40196,10 @@
                             "$ref": "#/types/akamai:index/getCloudaccessKeysAccessKey:getCloudaccessKeysAccessKey"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
-                    "accessKeys",
-                    "id"
+                    "accessKeys"
                 ],
                 "type": "object"
             }
@@ -40325,10 +40260,6 @@
                         "type": "string"
                     },
                     "geoClass": {
-                        "type": "string"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
                     "includeHostnameBindings": {
@@ -40406,8 +40337,7 @@
                     "signedCertificateSerialNumber",
                     "signedCertificateSha256Fingerprint",
                     "subject",
-                    "trustChainPem",
-                    "id"
+                    "trustChainPem"
                 ],
                 "type": "object"
             }
@@ -40482,10 +40412,6 @@
                     "groupId": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "includeCertificateMaterials": {
                         "type": "boolean"
                     },
@@ -40500,8 +40426,7 @@
                     }
                 },
                 "required": [
-                    "certificates",
-                    "id"
+                    "certificates"
                 ],
                 "type": "object"
             }
@@ -40549,17 +40474,12 @@
                     "groupId": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "network": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "bindings",
-                    "id"
+                    "bindings"
                 ],
                 "type": "object"
             }
@@ -41001,10 +40921,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "network": {
                         "type": "string"
                     },
@@ -41022,8 +40938,7 @@
                     "network",
                     "policyId",
                     "status",
-                    "version",
-                    "id"
+                    "version"
                 ],
                 "type": "object"
             }
@@ -41099,10 +41014,6 @@
                     "groupId": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "matchRules": {
                         "type": "string"
                     },
@@ -41130,8 +41041,7 @@
                     "name",
                     "policyId",
                     "versionDescription",
-                    "warnings",
-                    "id"
+                    "warnings"
                 ],
                 "type": "object"
             }
@@ -41206,15 +41116,8 @@
                             "type": "string"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
-                "required": [
-                    "id"
-                ],
                 "type": "object"
             }
         },
@@ -41337,15 +41240,8 @@
                             "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfiguration:getCloudwrapperConfigurationsConfiguration"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
-                "required": [
-                    "id"
-                ],
                 "type": "object"
             }
         },
@@ -41369,10 +41265,6 @@
             "outputs": {
                 "description": "A collection of values returned by getCloudwrapperLocation.\n",
                 "properties": {
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "locationId": {
                         "type": "string"
                     },
@@ -41390,8 +41282,7 @@
                     "locationId",
                     "locationName",
                     "trafficType",
-                    "trafficTypeId",
-                    "id"
+                    "trafficTypeId"
                 ],
                 "type": "object"
             }
@@ -41412,10 +41303,6 @@
             "outputs": {
                 "description": "A collection of values returned by getCloudwrapperLocations.\n",
                 "properties": {
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "locations": {
                         "items": {
                             "$ref": "#/types/akamai:index/getCloudwrapperLocationsLocation:getCloudwrapperLocationsLocation"
@@ -41423,9 +41310,6 @@
                         "type": "array"
                     }
                 },
-                "required": [
-                    "id"
-                ],
                 "type": "object"
             }
         },
@@ -41460,10 +41344,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "properties": {
                         "items": {
                             "$ref": "#/types/akamai:index/getCloudwrapperPropertiesProperty:getCloudwrapperPropertiesProperty"
@@ -41474,9 +41354,6 @@
                         "type": "boolean"
                     }
                 },
-                "required": [
-                    "id"
-                ],
                 "type": "object"
             }
         },
@@ -41643,18 +41520,13 @@
                     },
                     "groupId": {
                         "type": "string"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
                     "accountId",
                     "contractId",
                     "cpCodes",
-                    "groupId",
-                    "id"
+                    "groupId"
                 ],
                 "type": "object"
             }
@@ -42096,10 +41968,6 @@
                     "groupId": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "options": {
                         "items": {
                             "type": "string"
@@ -42111,8 +41979,7 @@
                     "accountId",
                     "contractId",
                     "edgeHostnames",
-                    "groupId",
-                    "id"
+                    "groupId"
                 ],
                 "type": "object"
             }
@@ -42514,10 +42381,6 @@
                     "domain": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "links": {
                         "items": {
                             "$ref": "#/types/akamai:index/getGtmAsmapLink:getGtmAsmapLink"
@@ -42530,8 +42393,7 @@
                 },
                 "required": [
                     "domain",
-                    "mapName",
-                    "id"
+                    "mapName"
                 ],
                 "type": "object"
             }
@@ -42583,10 +42445,6 @@
                     "domain": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "links": {
                         "items": {
                             "$ref": "#/types/akamai:index/getGtmCidrmapLink:getGtmCidrmapLink"
@@ -42599,8 +42457,7 @@
                 },
                 "required": [
                     "domain",
-                    "mapName",
-                    "id"
+                    "mapName"
                 ],
                 "type": "object"
             }
@@ -43057,15 +42914,8 @@
                             "$ref": "#/types/akamai:index/getGtmDomainsDomain:getGtmDomainsDomain"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
-                "required": [
-                    "id"
-                ],
                 "type": "object"
             }
         },
@@ -43101,10 +42951,6 @@
                     "domain": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "links": {
                         "items": {
                             "$ref": "#/types/akamai:index/getGtmGeomapLink:getGtmGeomapLink"
@@ -43120,8 +42966,7 @@
                     "defaultDatacenter",
                     "domain",
                     "links",
-                    "mapName",
-                    "id"
+                    "mapName"
                 ],
                 "type": "object"
             }
@@ -43150,16 +42995,11 @@
                             "$ref": "#/types/akamai:index/getGtmGeomapsGeoMap:getGtmGeomapsGeoMap"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
                     "domain",
-                    "geoMaps",
-                    "id"
+                    "geoMaps"
                 ],
                 "type": "object"
             }
@@ -43295,10 +43135,6 @@
                     "domain": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "resources": {
                         "items": {
                             "$ref": "#/types/akamai:index/getGtmResourcesResource:getGtmResourcesResource"
@@ -43307,8 +43143,7 @@
                     }
                 },
                 "required": [
-                    "domain",
-                    "id"
+                    "domain"
                 ],
                 "type": "object"
             }
@@ -43340,15 +43175,10 @@
                     },
                     "filter": {
                         "type": "string"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
-                    "accountSwitchKeys",
-                    "id"
+                    "accountSwitchKeys"
                 ],
                 "type": "object"
             }
@@ -43387,18 +43217,13 @@
                     "clientType": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "username": {
                         "type": "string"
                     }
                 },
                 "required": [
                     "allowedApis",
-                    "username",
-                    "id"
+                    "username"
                 ],
                 "type": "object"
             }
@@ -43472,10 +43297,6 @@
                     "groupAccess": {
                         "$ref": "#/types/akamai:index/getIamApiClientGroupAccess:getIamApiClientGroupAccess"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "ipAcl": {
                         "$ref": "#/types/akamai:index/getIamApiClientIpAcl:getIamApiClientIpAcl"
                     },
@@ -43511,8 +43332,7 @@
                     "ipAcl",
                     "isLocked",
                     "notificationEmails",
-                    "purgeOptions",
-                    "id"
+                    "purgeOptions"
                 ],
                 "type": "object"
             }
@@ -43526,15 +43346,10 @@
                             "$ref": "#/types/akamai:index/getIamApiClientsApiClient:getIamApiClientsApiClient"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
-                    "apiClients",
-                    "id"
+                    "apiClients"
                 ],
                 "type": "object"
             }
@@ -43575,10 +43390,6 @@
                     "groupId": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "uiIdentityId": {
                         "type": "string"
                     }
@@ -43587,8 +43398,7 @@
                     "blockedProperties",
                     "contractId",
                     "groupId",
-                    "uiIdentityId",
-                    "id"
+                    "uiIdentityId"
                 ],
                 "type": "object"
             }
@@ -43630,10 +43440,6 @@
                     "enabled": {
                         "type": "boolean"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "modifiedBy": {
                         "type": "string"
                     },
@@ -43650,8 +43456,7 @@
                     "createdDate",
                     "enabled",
                     "modifiedBy",
-                    "modifiedDate",
-                    "id"
+                    "modifiedDate"
                 ],
                 "type": "object"
             }
@@ -43665,15 +43470,10 @@
                             "$ref": "#/types/akamai:index/getIamCidrBlocksCidrBlock:getIamCidrBlocksCidrBlock"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
-                    "cidrBlocks",
-                    "id"
+                    "cidrBlocks"
                 ],
                 "type": "object"
             }
@@ -43751,10 +43551,6 @@
                     "caseDif": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "maxRepeating": {
                         "type": "integer"
                     },
@@ -43789,8 +43585,7 @@
                     "minNonAlpha",
                     "minReuse",
                     "pwClass",
-                    "rotateFrequency",
-                    "id"
+                    "rotateFrequency"
                 ],
                 "type": "object"
             }
@@ -43817,10 +43612,6 @@
                     "assetId": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "userType": {
                         "type": "string"
                     },
@@ -43833,8 +43624,7 @@
                 },
                 "required": [
                     "assetId",
-                    "users",
-                    "id"
+                    "users"
                 ],
                 "type": "object"
             }
@@ -43869,10 +43659,6 @@
                             "$ref": "#/types/akamai:index/getIamRoleGrantedRole:getIamRoleGrantedRole"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     },
                     "modifiedBy": {
                         "type": "string"
@@ -43909,8 +43695,7 @@
                     "roleDescription",
                     "roleName",
                     "type",
-                    "users",
-                    "id"
+                    "users"
                 ],
                 "type": "object"
             }
@@ -44067,10 +43852,6 @@
                     "destinationGroupId": {
                         "type": "integer"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "sourceGroupId": {
                         "type": "integer"
                     },
@@ -44087,8 +43868,7 @@
                 "required": [
                     "destinationGroupId",
                     "sourceGroupId",
-                    "users",
-                    "id"
+                    "users"
                 ],
                 "type": "object"
             }
@@ -44185,10 +43965,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "statuses": {
                         "items": {
                             "type": "string"
@@ -44197,8 +43973,7 @@
                     }
                 },
                 "required": [
-                    "certificates",
-                    "id"
+                    "certificates"
                 ],
                 "type": "object"
             }
@@ -44238,10 +44013,6 @@
                         "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificateCurrent:getMtlskeystoreClientCertificateCurrent"
                     },
                     "geography": {
-                        "type": "string"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
                     "includeAssociatedProperties": {
@@ -44288,8 +44059,7 @@
                     "secureNetwork",
                     "signer",
                     "subject",
-                    "versions",
-                    "id"
+                    "versions"
                 ],
                 "type": "object"
             }
@@ -44303,15 +44073,10 @@
                             "$ref": "#/types/akamai:index/getMtlskeystoreClientCertificatesCertificate:getMtlskeystoreClientCertificatesCertificate"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
-                    "certificates",
-                    "id"
+                    "certificates"
                 ],
                 "type": "object"
             }
@@ -44544,10 +44309,6 @@
                     "caSetName": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "network": {
                         "type": "string"
                     },
@@ -44564,8 +44325,7 @@
                 "required": [
                     "activations",
                     "caSetId",
-                    "caSetName",
-                    "id"
+                    "caSetName"
                 ],
                 "type": "object"
             }
@@ -44855,17 +44615,12 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "namePrefix": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "caSets",
-                    "id"
+                    "caSets"
                 ],
                 "type": "object"
             }
@@ -45175,10 +44930,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "network": {
                         "type": "string"
                     },
@@ -45193,8 +44944,7 @@
                     "currentSort",
                     "defaultSort",
                     "groupId",
-                    "hostnames",
-                    "id"
+                    "hostnames"
                 ],
                 "type": "object"
             }
@@ -45304,10 +45054,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "validationChallenge": {
                         "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainValidationChallenge:getPropertyDomainownershipDomainValidationChallenge"
                     },
@@ -45337,8 +45083,7 @@
                     "validationMethod",
                     "validationRequestedBy",
                     "validationRequestedDate",
-                    "validationScope",
-                    "id"
+                    "validationScope"
                 ],
                 "type": "object"
             }
@@ -45352,15 +45097,10 @@
                             "$ref": "#/types/akamai:index/getPropertyDomainownershipDomainsDomain:getPropertyDomainownershipDomainsDomain"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
-                    "domains",
-                    "id"
+                    "domains"
                 ],
                 "type": "object"
             }
@@ -45389,15 +45129,10 @@
                             "$ref": "#/types/akamai:index/getPropertyDomainownershipSearchDomainsDomain:getPropertyDomainownershipSearchDomainsDomain"
                         },
                         "type": "array"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
-                    "domains",
-                    "id"
+                    "domains"
                 ],
                 "type": "object"
             }
@@ -45452,10 +45187,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "includeHostnames": {
                         "type": "boolean"
                     },
@@ -45501,8 +45232,7 @@
                     "propertyName",
                     "status",
                     "submitDate",
-                    "updateDate",
-                    "id"
+                    "updateDate"
                 ],
                 "type": "object"
             }
@@ -45547,10 +45277,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "network": {
                         "type": "string"
                     },
@@ -45567,8 +45293,7 @@
                     "groupId",
                     "hostnameActivations",
                     "propertyId",
-                    "propertyName",
-                    "id"
+                    "propertyName"
                 ],
                 "type": "object"
             }
@@ -45597,16 +45322,11 @@
                     },
                     "hostname": {
                         "type": "string"
-                    },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
                     }
                 },
                 "required": [
                     "histories",
-                    "hostname",
-                    "id"
+                    "hostname"
                 ],
                 "type": "object"
             }
@@ -45722,10 +45442,6 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "propertyId": {
                         "type": "string"
                     }
@@ -45735,8 +45451,7 @@
                     "contractId",
                     "groupId",
                     "hostnames",
-                    "propertyId",
-                    "id"
+                    "propertyId"
                 ],
                 "type": "object"
             }
@@ -46309,10 +46024,6 @@
                     "defaultTimeZone": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "name": {
                         "type": "string"
                     },
@@ -46342,8 +46053,7 @@
                     "overrideTimeZone",
                     "products",
                     "purgeable",
-                    "type",
-                    "id"
+                    "type"
                 ],
                 "type": "object"
             }
@@ -46385,17 +46095,12 @@
                     "groupId": {
                         "type": "string"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "productId": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "cpCodes",
-                    "id"
+                    "cpCodes"
                 ],
                 "type": "object"
             }
@@ -46422,10 +46127,6 @@
                     "contract": {
                         "$ref": "#/types/akamai:index/getReportinggroupsGroupContract:getReportinggroupsGroupContract"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "reportingGroupId": {
                         "type": "integer"
                     },
@@ -46437,8 +46138,7 @@
                     "accessGroup",
                     "contract",
                     "reportingGroupId",
-                    "reportingGroupName",
-                    "id"
+                    "reportingGroupName"
                 ],
                 "type": "object"
             }
@@ -46480,17 +46180,12 @@
                         },
                         "type": "array"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "reportingGroupName": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "groups",
-                    "id"
+                    "groups"
                 ],
                 "type": "object"
             }
@@ -46520,10 +46215,6 @@
                     "currentRecords": {
                         "$ref": "#/types/akamai:index/getZoneDnssecStatusCurrentRecords:getZoneDnssecStatusCurrentRecords"
                     },
-                    "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.",
-                        "type": "string"
-                    },
                     "newRecords": {
                         "$ref": "#/types/akamai:index/getZoneDnssecStatusNewRecords:getZoneDnssecStatusNewRecords"
                     },
@@ -46535,8 +46226,7 @@
                     "alerts",
                     "currentRecords",
                     "newRecords",
-                    "zone",
-                    "id"
+                    "zone"
                 ],
                 "type": "object"
             }

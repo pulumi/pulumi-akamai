@@ -26,13 +26,10 @@ class GetIamPasswordPolicyResult:
     """
     A collection of values returned by getIamPasswordPolicy.
     """
-    def __init__(__self__, case_dif=None, id=None, max_repeating=None, min_digits=None, min_length=None, min_letters=None, min_non_alpha=None, min_reuse=None, pw_class=None, rotate_frequency=None):
+    def __init__(__self__, case_dif=None, max_repeating=None, min_digits=None, min_length=None, min_letters=None, min_non_alpha=None, min_reuse=None, pw_class=None, rotate_frequency=None):
         if case_dif and not isinstance(case_dif, int):
             raise TypeError("Expected argument 'case_dif' to be a int")
         pulumi.set(__self__, "case_dif", case_dif)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if max_repeating and not isinstance(max_repeating, int):
             raise TypeError("Expected argument 'max_repeating' to be a int")
         pulumi.set(__self__, "max_repeating", max_repeating)
@@ -62,14 +59,6 @@ class GetIamPasswordPolicyResult:
     @pulumi.getter(name="caseDif")
     def case_dif(self) -> _builtins.int:
         return pulumi.get(self, "case_dif")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="maxRepeating")
@@ -119,7 +108,6 @@ class AwaitableGetIamPasswordPolicyResult(GetIamPasswordPolicyResult):
             yield self
         return GetIamPasswordPolicyResult(
             case_dif=self.case_dif,
-            id=self.id,
             max_repeating=self.max_repeating,
             min_digits=self.min_digits,
             min_length=self.min_length,
@@ -140,7 +128,6 @@ def get_iam_password_policy(opts: Optional[pulumi.InvokeOptions] = None) -> Awai
 
     return AwaitableGetIamPasswordPolicyResult(
         case_dif=pulumi.get(__ret__, 'case_dif'),
-        id=pulumi.get(__ret__, 'id'),
         max_repeating=pulumi.get(__ret__, 'max_repeating'),
         min_digits=pulumi.get(__ret__, 'min_digits'),
         min_length=pulumi.get(__ret__, 'min_length'),
@@ -158,7 +145,6 @@ def get_iam_password_policy_output(opts: Optional[Union[pulumi.InvokeOptions, pu
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamPasswordPolicy:getIamPasswordPolicy', __args__, opts=opts, typ=GetIamPasswordPolicyResult)
     return __ret__.apply(lambda __response__: GetIamPasswordPolicyResult(
         case_dif=pulumi.get(__response__, 'case_dif'),
-        id=pulumi.get(__response__, 'id'),
         max_repeating=pulumi.get(__response__, 'max_repeating'),
         min_digits=pulumi.get(__response__, 'min_digits'),
         min_length=pulumi.get(__response__, 'min_length'),

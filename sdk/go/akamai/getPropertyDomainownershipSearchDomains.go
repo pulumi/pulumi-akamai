@@ -29,8 +29,6 @@ type GetPropertyDomainownershipSearchDomainsArgs struct {
 // A collection of values returned by getPropertyDomainownershipSearchDomains.
 type GetPropertyDomainownershipSearchDomainsResult struct {
 	Domains []GetPropertyDomainownershipSearchDomainsDomain `pulumi:"domains"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetPropertyDomainownershipSearchDomainsOutput(ctx *pulumi.Context, args GetPropertyDomainownershipSearchDomainsOutputArgs, opts ...pulumi.InvokeOption) GetPropertyDomainownershipSearchDomainsResultOutput {
@@ -70,11 +68,6 @@ func (o GetPropertyDomainownershipSearchDomainsResultOutput) Domains() GetProper
 	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsResult) []GetPropertyDomainownershipSearchDomainsDomain {
 		return v.Domains
 	}).(GetPropertyDomainownershipSearchDomainsDomainArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetPropertyDomainownershipSearchDomainsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

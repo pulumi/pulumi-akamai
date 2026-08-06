@@ -28,13 +28,11 @@ type GetReportinggroupsCpCodeArgs struct {
 
 // A collection of values returned by getReportinggroupsCpCode.
 type GetReportinggroupsCpCodeResult struct {
-	AccessGroup     GetReportinggroupsCpCodeAccessGroup `pulumi:"accessGroup"`
-	AccountId       string                              `pulumi:"accountId"`
-	Contracts       []GetReportinggroupsCpCodeContract  `pulumi:"contracts"`
-	CpCodeId        int                                 `pulumi:"cpCodeId"`
-	DefaultTimeZone string                              `pulumi:"defaultTimeZone"`
-	// The provider-assigned unique ID for this managed resource.
-	Id               string                                   `pulumi:"id"`
+	AccessGroup      GetReportinggroupsCpCodeAccessGroup      `pulumi:"accessGroup"`
+	AccountId        string                                   `pulumi:"accountId"`
+	Contracts        []GetReportinggroupsCpCodeContract       `pulumi:"contracts"`
+	CpCodeId         int                                      `pulumi:"cpCodeId"`
+	DefaultTimeZone  string                                   `pulumi:"defaultTimeZone"`
 	Name             string                                   `pulumi:"name"`
 	OverrideTimeZone GetReportinggroupsCpCodeOverrideTimeZone `pulumi:"overrideTimeZone"`
 	Products         []GetReportinggroupsCpCodeProduct        `pulumi:"products"`
@@ -93,11 +91,6 @@ func (o GetReportinggroupsCpCodeResultOutput) CpCodeId() pulumi.IntOutput {
 
 func (o GetReportinggroupsCpCodeResultOutput) DefaultTimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportinggroupsCpCodeResult) string { return v.DefaultTimeZone }).(pulumi.StringOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetReportinggroupsCpCodeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportinggroupsCpCodeResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func (o GetReportinggroupsCpCodeResultOutput) Name() pulumi.StringOutput {

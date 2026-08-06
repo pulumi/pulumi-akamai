@@ -15,10 +15,6 @@ export function getIamPasswordPolicy(opts?: pulumi.InvokeOptions): Promise<GetIa
  */
 export interface GetIamPasswordPolicyResult {
     readonly caseDif: number;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly maxRepeating: number;
     readonly minDigits: number;
     readonly minLength: number;

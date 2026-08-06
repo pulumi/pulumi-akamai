@@ -27,7 +27,7 @@ class GetCpCodesResult:
     """
     A collection of values returned by getCpCodes.
     """
-    def __init__(__self__, account_id=None, contract_id=None, cp_codes=None, filter_by_name=None, filter_by_product_id=None, group_id=None, id=None):
+    def __init__(__self__, account_id=None, contract_id=None, cp_codes=None, filter_by_name=None, filter_by_product_id=None, group_id=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -46,9 +46,6 @@ class GetCpCodesResult:
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
         pulumi.set(__self__, "group_id", group_id)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
 
     @_builtins.property
     @pulumi.getter(name="accountId")
@@ -80,14 +77,6 @@ class GetCpCodesResult:
     def group_id(self) -> _builtins.str:
         return pulumi.get(self, "group_id")
 
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
-
 
 class AwaitableGetCpCodesResult(GetCpCodesResult):
     # pylint: disable=using-constant-test
@@ -100,8 +89,7 @@ class AwaitableGetCpCodesResult(GetCpCodesResult):
             cp_codes=self.cp_codes,
             filter_by_name=self.filter_by_name,
             filter_by_product_id=self.filter_by_product_id,
-            group_id=self.group_id,
-            id=self.id)
+            group_id=self.group_id)
 
 
 def get_cp_codes(contract_id: Optional[_builtins.str] = None,
@@ -126,8 +114,7 @@ def get_cp_codes(contract_id: Optional[_builtins.str] = None,
         cp_codes=pulumi.get(__ret__, 'cp_codes'),
         filter_by_name=pulumi.get(__ret__, 'filter_by_name'),
         filter_by_product_id=pulumi.get(__ret__, 'filter_by_product_id'),
-        group_id=pulumi.get(__ret__, 'group_id'),
-        id=pulumi.get(__ret__, 'id'))
+        group_id=pulumi.get(__ret__, 'group_id'))
 def get_cp_codes_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                         filter_by_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         filter_by_product_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -149,5 +136,4 @@ def get_cp_codes_output(contract_id: pulumi.Input[Optional[_builtins.str]] = Non
         cp_codes=pulumi.get(__response__, 'cp_codes'),
         filter_by_name=pulumi.get(__response__, 'filter_by_name'),
         filter_by_product_id=pulumi.get(__response__, 'filter_by_product_id'),
-        group_id=pulumi.get(__response__, 'group_id'),
-        id=pulumi.get(__response__, 'id')))
+        group_id=pulumi.get(__response__, 'group_id')))

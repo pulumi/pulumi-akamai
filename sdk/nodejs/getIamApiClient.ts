@@ -41,10 +41,6 @@ export interface GetIamApiClientResult {
     readonly createdDate: string;
     readonly credentials: outputs.GetIamApiClientCredential[];
     readonly groupAccess: outputs.GetIamApiClientGroupAccess;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly ipAcl: outputs.GetIamApiClientIpAcl;
     readonly isLocked: boolean;
     readonly notificationEmails: string[];

@@ -25,10 +25,6 @@ export interface GetCloudwrapperLocationsArgs {
  * A collection of values returned by getCloudwrapperLocations.
  */
 export interface GetCloudwrapperLocationsResult {
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly locations?: outputs.GetCloudwrapperLocationsLocation[];
 }
 export function getCloudwrapperLocationsOutput(args?: GetCloudwrapperLocationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudwrapperLocationsResult> {

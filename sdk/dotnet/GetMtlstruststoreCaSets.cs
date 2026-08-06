@@ -73,10 +73,6 @@ namespace Pulumi.Akamai
         public readonly string? ActivatedOn;
         public readonly ImmutableArray<string> CaSetStatuses;
         public readonly ImmutableArray<Outputs.GetMtlstruststoreCaSetsCaSetResult> CaSets;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string? NamePrefix;
 
         [OutputConstructor]
@@ -87,14 +83,11 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetMtlstruststoreCaSetsCaSetResult> caSets,
 
-            string id,
-
             string? namePrefix)
         {
             ActivatedOn = activatedOn;
             CaSetStatuses = caSetStatuses;
             CaSets = caSets;
-            Id = id;
             NamePrefix = namePrefix;
         }
     }

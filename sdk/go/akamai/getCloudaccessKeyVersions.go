@@ -31,8 +31,6 @@ type GetCloudaccessKeyVersionsResult struct {
 	AccessKeyName     string                                      `pulumi:"accessKeyName"`
 	AccessKeyUid      int                                         `pulumi:"accessKeyUid"`
 	AccessKeyVersions []GetCloudaccessKeyVersionsAccessKeyVersion `pulumi:"accessKeyVersions"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
 }
 
 func GetCloudaccessKeyVersionsOutput(ctx *pulumi.Context, args GetCloudaccessKeyVersionsOutputArgs, opts ...pulumi.InvokeOption) GetCloudaccessKeyVersionsResultOutput {
@@ -80,11 +78,6 @@ func (o GetCloudaccessKeyVersionsResultOutput) AccessKeyVersions() GetCloudacces
 	return o.ApplyT(func(v GetCloudaccessKeyVersionsResult) []GetCloudaccessKeyVersionsAccessKeyVersion {
 		return v.AccessKeyVersions
 	}).(GetCloudaccessKeyVersionsAccessKeyVersionArrayOutput)
-}
-
-// The provider-assigned unique ID for this managed resource.
-func (o GetCloudaccessKeyVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudaccessKeyVersionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 func init() {

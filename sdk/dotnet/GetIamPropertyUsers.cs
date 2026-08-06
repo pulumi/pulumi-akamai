@@ -55,10 +55,6 @@ namespace Pulumi.Akamai
     public sealed class GetIamPropertyUsersResult
     {
         public readonly string AssetId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
-        public readonly string Id;
         public readonly string? UserType;
         public readonly ImmutableArray<Outputs.GetIamPropertyUsersUserResult> Users;
 
@@ -66,14 +62,11 @@ namespace Pulumi.Akamai
         private GetIamPropertyUsersResult(
             string assetId,
 
-            string id,
-
             string? userType,
 
             ImmutableArray<Outputs.GetIamPropertyUsersUserResult> users)
         {
             AssetId = assetId;
-            Id = id;
             UserType = userType;
             Users = users;
         }

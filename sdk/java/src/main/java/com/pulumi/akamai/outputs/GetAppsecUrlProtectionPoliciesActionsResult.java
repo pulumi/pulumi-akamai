@@ -14,24 +14,12 @@ import java.util.Objects;
 @CustomType
 public final class GetAppsecUrlProtectionPoliciesActionsResult {
     private Integer configId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private String securityPolicyId;
     private List<GetAppsecUrlProtectionPoliciesActionsUrlProtectionPoliciesAction> urlProtectionPoliciesActions;
 
     private GetAppsecUrlProtectionPoliciesActionsResult() {}
     public Integer configId() {
         return this.configId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public String securityPolicyId() {
         return this.securityPolicyId;
@@ -50,14 +38,12 @@ public final class GetAppsecUrlProtectionPoliciesActionsResult {
     @CustomType.Builder
     public static final class Builder {
         private Integer configId;
-        private String id;
         private String securityPolicyId;
         private List<GetAppsecUrlProtectionPoliciesActionsUrlProtectionPoliciesAction> urlProtectionPoliciesActions;
         public Builder() {}
         public Builder(GetAppsecUrlProtectionPoliciesActionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configId = defaults.configId;
-    	      this.id = defaults.id;
     	      this.securityPolicyId = defaults.securityPolicyId;
     	      this.urlProtectionPoliciesActions = defaults.urlProtectionPoliciesActions;
         }
@@ -68,14 +54,6 @@ public final class GetAppsecUrlProtectionPoliciesActionsResult {
               throw new MissingRequiredPropertyException("GetAppsecUrlProtectionPoliciesActionsResult", "configId");
             }
             this.configId = configId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetAppsecUrlProtectionPoliciesActionsResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -100,7 +78,6 @@ public final class GetAppsecUrlProtectionPoliciesActionsResult {
         public GetAppsecUrlProtectionPoliciesActionsResult build() {
             final var _resultValue = new GetAppsecUrlProtectionPoliciesActionsResult();
             _resultValue.configId = configId;
-            _resultValue.id = id;
             _resultValue.securityPolicyId = securityPolicyId;
             _resultValue.urlProtectionPoliciesActions = urlProtectionPoliciesActions;
             return _resultValue;

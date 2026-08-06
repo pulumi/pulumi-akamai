@@ -15,24 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetIamPropertyUsersResult {
     private String assetId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable String userType;
     private List<GetIamPropertyUsersUser> users;
 
     private GetIamPropertyUsersResult() {}
     public String assetId() {
         return this.assetId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public Optional<String> userType() {
         return Optional.ofNullable(this.userType);
@@ -51,14 +39,12 @@ public final class GetIamPropertyUsersResult {
     @CustomType.Builder
     public static final class Builder {
         private String assetId;
-        private String id;
         private @Nullable String userType;
         private List<GetIamPropertyUsersUser> users;
         public Builder() {}
         public Builder(GetIamPropertyUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assetId = defaults.assetId;
-    	      this.id = defaults.id;
     	      this.userType = defaults.userType;
     	      this.users = defaults.users;
         }
@@ -69,14 +55,6 @@ public final class GetIamPropertyUsersResult {
               throw new MissingRequiredPropertyException("GetIamPropertyUsersResult", "assetId");
             }
             this.assetId = assetId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetIamPropertyUsersResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -99,7 +77,6 @@ public final class GetIamPropertyUsersResult {
         public GetIamPropertyUsersResult build() {
             final var _resultValue = new GetIamPropertyUsersResult();
             _resultValue.assetId = assetId;
-            _resultValue.id = id;
             _resultValue.userType = userType;
             _resultValue.users = users;
             return _resultValue;

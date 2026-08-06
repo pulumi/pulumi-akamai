@@ -31,10 +31,6 @@ export interface GetIamAllowedApisResult {
     readonly allowAccountSwitch?: boolean;
     readonly allowedApis: outputs.GetIamAllowedApisAllowedApi[];
     readonly clientType?: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
-    readonly id: string;
     readonly username: string;
 }
 export function getIamAllowedApisOutput(args: GetIamAllowedApisOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamAllowedApisResult> {

@@ -27,7 +27,7 @@ class GetIamRoleResult:
     """
     A collection of values returned by getIamRole.
     """
-    def __init__(__self__, actions=None, created_by=None, created_date=None, granted_roles=None, id=None, modified_by=None, modified_date=None, role_description=None, role_id=None, role_name=None, type=None, users=None):
+    def __init__(__self__, actions=None, created_by=None, created_date=None, granted_roles=None, modified_by=None, modified_date=None, role_description=None, role_id=None, role_name=None, type=None, users=None):
         if actions and not isinstance(actions, dict):
             raise TypeError("Expected argument 'actions' to be a dict")
         pulumi.set(__self__, "actions", actions)
@@ -40,9 +40,6 @@ class GetIamRoleResult:
         if granted_roles and not isinstance(granted_roles, list):
             raise TypeError("Expected argument 'granted_roles' to be a list")
         pulumi.set(__self__, "granted_roles", granted_roles)
-        if id and not isinstance(id, str):
-            raise TypeError("Expected argument 'id' to be a str")
-        pulumi.set(__self__, "id", id)
         if modified_by and not isinstance(modified_by, str):
             raise TypeError("Expected argument 'modified_by' to be a str")
         pulumi.set(__self__, "modified_by", modified_by)
@@ -84,14 +81,6 @@ class GetIamRoleResult:
     @pulumi.getter(name="grantedRoles")
     def granted_roles(self) -> Sequence['outputs.GetIamRoleGrantedRoleResult']:
         return pulumi.get(self, "granted_roles")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
-        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="modifiedBy")
@@ -139,7 +128,6 @@ class AwaitableGetIamRoleResult(GetIamRoleResult):
             created_by=self.created_by,
             created_date=self.created_date,
             granted_roles=self.granted_roles,
-            id=self.id,
             modified_by=self.modified_by,
             modified_date=self.modified_date,
             role_description=self.role_description,
@@ -166,7 +154,6 @@ def get_iam_role(role_id: Optional[_builtins.int] = None,
         created_by=pulumi.get(__ret__, 'created_by'),
         created_date=pulumi.get(__ret__, 'created_date'),
         granted_roles=pulumi.get(__ret__, 'granted_roles'),
-        id=pulumi.get(__ret__, 'id'),
         modified_by=pulumi.get(__ret__, 'modified_by'),
         modified_date=pulumi.get(__ret__, 'modified_date'),
         role_description=pulumi.get(__ret__, 'role_description'),
@@ -190,7 +177,6 @@ def get_iam_role_output(role_id: pulumi.Input[Optional[Optional[_builtins.int]]]
         created_by=pulumi.get(__response__, 'created_by'),
         created_date=pulumi.get(__response__, 'created_date'),
         granted_roles=pulumi.get(__response__, 'granted_roles'),
-        id=pulumi.get(__response__, 'id'),
         modified_by=pulumi.get(__response__, 'modified_by'),
         modified_date=pulumi.get(__response__, 'modified_date'),
         role_description=pulumi.get(__response__, 'role_description'),

@@ -16,11 +16,6 @@ import java.util.Objects;
 public final class GetAppsecWafRulesetResult {
     private List<GetAppsecWafRulesetAttackGroup> attackGroups;
     private Integer configId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private List<GetAppsecWafRulesetRule> rules;
     private String securityPolicyId;
 
@@ -30,13 +25,6 @@ public final class GetAppsecWafRulesetResult {
     }
     public Integer configId() {
         return this.configId;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public List<GetAppsecWafRulesetRule> rules() {
         return this.rules;
@@ -56,7 +44,6 @@ public final class GetAppsecWafRulesetResult {
     public static final class Builder {
         private List<GetAppsecWafRulesetAttackGroup> attackGroups;
         private Integer configId;
-        private String id;
         private List<GetAppsecWafRulesetRule> rules;
         private String securityPolicyId;
         public Builder() {}
@@ -64,7 +51,6 @@ public final class GetAppsecWafRulesetResult {
     	      Objects.requireNonNull(defaults);
     	      this.attackGroups = defaults.attackGroups;
     	      this.configId = defaults.configId;
-    	      this.id = defaults.id;
     	      this.rules = defaults.rules;
     	      this.securityPolicyId = defaults.securityPolicyId;
         }
@@ -86,14 +72,6 @@ public final class GetAppsecWafRulesetResult {
               throw new MissingRequiredPropertyException("GetAppsecWafRulesetResult", "configId");
             }
             this.configId = configId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetAppsecWafRulesetResult", "id");
-            }
-            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -119,7 +97,6 @@ public final class GetAppsecWafRulesetResult {
             final var _resultValue = new GetAppsecWafRulesetResult();
             _resultValue.attackGroups = attackGroups;
             _resultValue.configId = configId;
-            _resultValue.id = id;
             _resultValue.rules = rules;
             _resultValue.securityPolicyId = securityPolicyId;
             return _resultValue;

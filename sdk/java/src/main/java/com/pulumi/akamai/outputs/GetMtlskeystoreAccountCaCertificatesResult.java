@@ -14,23 +14,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetMtlskeystoreAccountCaCertificatesResult {
     private List<GetMtlskeystoreAccountCaCertificatesCertificate> certificates;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    private String id;
     private @Nullable List<String> statuses;
 
     private GetMtlskeystoreAccountCaCertificatesResult() {}
     public List<GetMtlskeystoreAccountCaCertificatesCertificate> certificates() {
         return this.certificates;
-    }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
-    public String id() {
-        return this.id;
     }
     public List<String> statuses() {
         return this.statuses == null ? List.of() : this.statuses;
@@ -46,13 +34,11 @@ public final class GetMtlskeystoreAccountCaCertificatesResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetMtlskeystoreAccountCaCertificatesCertificate> certificates;
-        private String id;
         private @Nullable List<String> statuses;
         public Builder() {}
         public Builder(GetMtlskeystoreAccountCaCertificatesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificates = defaults.certificates;
-    	      this.id = defaults.id;
     	      this.statuses = defaults.statuses;
         }
 
@@ -68,14 +54,6 @@ public final class GetMtlskeystoreAccountCaCertificatesResult {
             return certificates(List.of(certificates));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("GetMtlskeystoreAccountCaCertificatesResult", "id");
-            }
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
 
             this.statuses = statuses;
@@ -87,7 +65,6 @@ public final class GetMtlskeystoreAccountCaCertificatesResult {
         public GetMtlskeystoreAccountCaCertificatesResult build() {
             final var _resultValue = new GetMtlskeystoreAccountCaCertificatesResult();
             _resultValue.certificates = certificates;
-            _resultValue.id = id;
             _resultValue.statuses = statuses;
             return _resultValue;
         }
