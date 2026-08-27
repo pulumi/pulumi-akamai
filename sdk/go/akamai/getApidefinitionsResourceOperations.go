@@ -38,12 +38,8 @@ type LookupApidefinitionsResourceOperationsResult struct {
 }
 
 func LookupApidefinitionsResourceOperationsOutput(ctx *pulumi.Context, args LookupApidefinitionsResourceOperationsOutputArgs, opts ...pulumi.InvokeOption) LookupApidefinitionsResourceOperationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupApidefinitionsResourceOperationsResultOutput, error) {
-			args := v.(LookupApidefinitionsResourceOperationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getApidefinitionsResourceOperations:getApidefinitionsResourceOperations", args, LookupApidefinitionsResourceOperationsResultOutput{}, options).(LookupApidefinitionsResourceOperationsResultOutput), nil
-		}).(LookupApidefinitionsResourceOperationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getApidefinitionsResourceOperations:getApidefinitionsResourceOperations", args, LookupApidefinitionsResourceOperationsResultOutput{}, options).(LookupApidefinitionsResourceOperationsResultOutput)
 }
 
 // A collection of arguments for invoking getApidefinitionsResourceOperations.

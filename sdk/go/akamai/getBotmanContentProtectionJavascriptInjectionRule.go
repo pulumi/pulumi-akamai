@@ -39,12 +39,8 @@ type LookupBotmanContentProtectionJavascriptInjectionRuleResult struct {
 }
 
 func LookupBotmanContentProtectionJavascriptInjectionRuleOutput(ctx *pulumi.Context, args LookupBotmanContentProtectionJavascriptInjectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanContentProtectionJavascriptInjectionRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanContentProtectionJavascriptInjectionRuleResultOutput, error) {
-			args := v.(LookupBotmanContentProtectionJavascriptInjectionRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanContentProtectionJavascriptInjectionRule:getBotmanContentProtectionJavascriptInjectionRule", args, LookupBotmanContentProtectionJavascriptInjectionRuleResultOutput{}, options).(LookupBotmanContentProtectionJavascriptInjectionRuleResultOutput), nil
-		}).(LookupBotmanContentProtectionJavascriptInjectionRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanContentProtectionJavascriptInjectionRule:getBotmanContentProtectionJavascriptInjectionRule", args, LookupBotmanContentProtectionJavascriptInjectionRuleResultOutput{}, options).(LookupBotmanContentProtectionJavascriptInjectionRuleResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanContentProtectionJavascriptInjectionRule.

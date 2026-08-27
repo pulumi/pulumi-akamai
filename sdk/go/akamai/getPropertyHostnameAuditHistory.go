@@ -33,12 +33,8 @@ type GetPropertyHostnameAuditHistoryResult struct {
 }
 
 func GetPropertyHostnameAuditHistoryOutput(ctx *pulumi.Context, args GetPropertyHostnameAuditHistoryOutputArgs, opts ...pulumi.InvokeOption) GetPropertyHostnameAuditHistoryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyHostnameAuditHistoryResultOutput, error) {
-			args := v.(GetPropertyHostnameAuditHistoryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyHostnameAuditHistory:getPropertyHostnameAuditHistory", args, GetPropertyHostnameAuditHistoryResultOutput{}, options).(GetPropertyHostnameAuditHistoryResultOutput), nil
-		}).(GetPropertyHostnameAuditHistoryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyHostnameAuditHistory:getPropertyHostnameAuditHistory", args, GetPropertyHostnameAuditHistoryResultOutput{}, options).(GetPropertyHostnameAuditHistoryResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyHostnameAuditHistory.

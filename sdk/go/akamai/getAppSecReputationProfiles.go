@@ -38,12 +38,8 @@ type GetAppSecReputationProfilesResult struct {
 }
 
 func GetAppSecReputationProfilesOutput(ctx *pulumi.Context, args GetAppSecReputationProfilesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecReputationProfilesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecReputationProfilesResultOutput, error) {
-			args := v.(GetAppSecReputationProfilesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args, GetAppSecReputationProfilesResultOutput{}, options).(GetAppSecReputationProfilesResultOutput), nil
-		}).(GetAppSecReputationProfilesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args, GetAppSecReputationProfilesResultOutput{}, options).(GetAppSecReputationProfilesResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecReputationProfiles.

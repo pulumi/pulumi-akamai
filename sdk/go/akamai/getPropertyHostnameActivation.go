@@ -50,12 +50,8 @@ type GetPropertyHostnameActivationResult struct {
 }
 
 func GetPropertyHostnameActivationOutput(ctx *pulumi.Context, args GetPropertyHostnameActivationOutputArgs, opts ...pulumi.InvokeOption) GetPropertyHostnameActivationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyHostnameActivationResultOutput, error) {
-			args := v.(GetPropertyHostnameActivationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyHostnameActivation:getPropertyHostnameActivation", args, GetPropertyHostnameActivationResultOutput{}, options).(GetPropertyHostnameActivationResultOutput), nil
-		}).(GetPropertyHostnameActivationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyHostnameActivation:getPropertyHostnameActivation", args, GetPropertyHostnameActivationResultOutput{}, options).(GetPropertyHostnameActivationResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyHostnameActivation.

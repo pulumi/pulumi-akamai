@@ -38,12 +38,8 @@ type GetPropertyHostnamesDiffResult struct {
 }
 
 func GetPropertyHostnamesDiffOutput(ctx *pulumi.Context, args GetPropertyHostnamesDiffOutputArgs, opts ...pulumi.InvokeOption) GetPropertyHostnamesDiffResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyHostnamesDiffResultOutput, error) {
-			args := v.(GetPropertyHostnamesDiffArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyHostnamesDiff:getPropertyHostnamesDiff", args, GetPropertyHostnamesDiffResultOutput{}, options).(GetPropertyHostnamesDiffResultOutput), nil
-		}).(GetPropertyHostnamesDiffResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyHostnamesDiff:getPropertyHostnamesDiff", args, GetPropertyHostnamesDiffResultOutput{}, options).(GetPropertyHostnamesDiffResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyHostnamesDiff.

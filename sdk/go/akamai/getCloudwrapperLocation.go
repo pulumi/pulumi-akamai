@@ -36,12 +36,8 @@ type GetCloudwrapperLocationResult struct {
 }
 
 func GetCloudwrapperLocationOutput(ctx *pulumi.Context, args GetCloudwrapperLocationOutputArgs, opts ...pulumi.InvokeOption) GetCloudwrapperLocationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudwrapperLocationResultOutput, error) {
-			args := v.(GetCloudwrapperLocationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudwrapperLocation:getCloudwrapperLocation", args, GetCloudwrapperLocationResultOutput{}, options).(GetCloudwrapperLocationResultOutput), nil
-		}).(GetCloudwrapperLocationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudwrapperLocation:getCloudwrapperLocation", args, GetCloudwrapperLocationResultOutput{}, options).(GetCloudwrapperLocationResultOutput)
 }
 
 // A collection of arguments for invoking getCloudwrapperLocation.

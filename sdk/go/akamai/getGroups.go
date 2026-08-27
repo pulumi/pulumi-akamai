@@ -29,10 +29,8 @@ type GetGroupsResult struct {
 }
 
 func GetGroupsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetGroupsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetGroupsResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getGroups:getGroups", nil, GetGroupsResultOutput{}, options).(GetGroupsResultOutput), nil
-	}).(GetGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getGroups:getGroups", nil, GetGroupsResultOutput{}, options).(GetGroupsResultOutput)
 }
 
 // A collection of values returned by getGroups.

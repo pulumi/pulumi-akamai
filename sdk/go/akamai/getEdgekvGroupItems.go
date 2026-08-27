@@ -39,12 +39,8 @@ type LookupEdgekvGroupItemsResult struct {
 }
 
 func LookupEdgekvGroupItemsOutput(ctx *pulumi.Context, args LookupEdgekvGroupItemsOutputArgs, opts ...pulumi.InvokeOption) LookupEdgekvGroupItemsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupEdgekvGroupItemsResultOutput, error) {
-			args := v.(LookupEdgekvGroupItemsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", args, LookupEdgekvGroupItemsResultOutput{}, options).(LookupEdgekvGroupItemsResultOutput), nil
-		}).(LookupEdgekvGroupItemsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", args, LookupEdgekvGroupItemsResultOutput{}, options).(LookupEdgekvGroupItemsResultOutput)
 }
 
 // A collection of arguments for invoking getEdgekvGroupItems.

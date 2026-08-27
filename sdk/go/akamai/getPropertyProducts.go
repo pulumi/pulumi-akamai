@@ -35,12 +35,8 @@ type GetPropertyProductsResult struct {
 }
 
 func GetPropertyProductsOutput(ctx *pulumi.Context, args GetPropertyProductsOutputArgs, opts ...pulumi.InvokeOption) GetPropertyProductsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyProductsResultOutput, error) {
-			args := v.(GetPropertyProductsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyProducts:getPropertyProducts", args, GetPropertyProductsResultOutput{}, options).(GetPropertyProductsResultOutput), nil
-		}).(GetPropertyProductsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyProducts:getPropertyProducts", args, GetPropertyProductsResultOutput{}, options).(GetPropertyProductsResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyProducts.

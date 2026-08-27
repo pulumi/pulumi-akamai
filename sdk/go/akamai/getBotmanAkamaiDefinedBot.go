@@ -35,12 +35,8 @@ type GetBotmanAkamaiDefinedBotResult struct {
 }
 
 func GetBotmanAkamaiDefinedBotOutput(ctx *pulumi.Context, args GetBotmanAkamaiDefinedBotOutputArgs, opts ...pulumi.InvokeOption) GetBotmanAkamaiDefinedBotResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBotmanAkamaiDefinedBotResultOutput, error) {
-			args := v.(GetBotmanAkamaiDefinedBotArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanAkamaiDefinedBot:getBotmanAkamaiDefinedBot", args, GetBotmanAkamaiDefinedBotResultOutput{}, options).(GetBotmanAkamaiDefinedBotResultOutput), nil
-		}).(GetBotmanAkamaiDefinedBotResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanAkamaiDefinedBot:getBotmanAkamaiDefinedBot", args, GetBotmanAkamaiDefinedBotResultOutput{}, options).(GetBotmanAkamaiDefinedBotResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanAkamaiDefinedBot.

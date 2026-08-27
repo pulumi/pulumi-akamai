@@ -35,12 +35,8 @@ type GetCloudletsAudienceSegmentationMatchRuleResult struct {
 }
 
 func GetCloudletsAudienceSegmentationMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsAudienceSegmentationMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsAudienceSegmentationMatchRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudletsAudienceSegmentationMatchRuleResultOutput, error) {
-			args := v.(GetCloudletsAudienceSegmentationMatchRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args, GetCloudletsAudienceSegmentationMatchRuleResultOutput{}, options).(GetCloudletsAudienceSegmentationMatchRuleResultOutput), nil
-		}).(GetCloudletsAudienceSegmentationMatchRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args, GetCloudletsAudienceSegmentationMatchRuleResultOutput{}, options).(GetCloudletsAudienceSegmentationMatchRuleResultOutput)
 }
 
 // A collection of arguments for invoking getCloudletsAudienceSegmentationMatchRule.

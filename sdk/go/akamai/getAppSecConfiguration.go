@@ -40,12 +40,8 @@ type LookupAppSecConfigurationResult struct {
 }
 
 func LookupAppSecConfigurationOutput(ctx *pulumi.Context, args LookupAppSecConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppSecConfigurationResultOutput, error) {
-			args := v.(LookupAppSecConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args, LookupAppSecConfigurationResultOutput{}, options).(LookupAppSecConfigurationResultOutput), nil
-		}).(LookupAppSecConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args, LookupAppSecConfigurationResultOutput{}, options).(LookupAppSecConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecConfiguration.

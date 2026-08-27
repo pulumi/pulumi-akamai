@@ -45,12 +45,8 @@ type GetPropertyRulesTemplateResult struct {
 }
 
 func GetPropertyRulesTemplateOutput(ctx *pulumi.Context, args GetPropertyRulesTemplateOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesTemplateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyRulesTemplateResultOutput, error) {
-			args := v.(GetPropertyRulesTemplateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args, GetPropertyRulesTemplateResultOutput{}, options).(GetPropertyRulesTemplateResultOutput), nil
-		}).(GetPropertyRulesTemplateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args, GetPropertyRulesTemplateResultOutput{}, options).(GetPropertyRulesTemplateResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyRulesTemplate.

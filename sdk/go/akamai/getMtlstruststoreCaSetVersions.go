@@ -41,12 +41,8 @@ type GetMtlstruststoreCaSetVersionsResult struct {
 }
 
 func GetMtlstruststoreCaSetVersionsOutput(ctx *pulumi.Context, args GetMtlstruststoreCaSetVersionsOutputArgs, opts ...pulumi.InvokeOption) GetMtlstruststoreCaSetVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMtlstruststoreCaSetVersionsResultOutput, error) {
-			args := v.(GetMtlstruststoreCaSetVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getMtlstruststoreCaSetVersions:getMtlstruststoreCaSetVersions", args, GetMtlstruststoreCaSetVersionsResultOutput{}, options).(GetMtlstruststoreCaSetVersionsResultOutput), nil
-		}).(GetMtlstruststoreCaSetVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getMtlstruststoreCaSetVersions:getMtlstruststoreCaSetVersions", args, GetMtlstruststoreCaSetVersionsResultOutput{}, options).(GetMtlstruststoreCaSetVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getMtlstruststoreCaSetVersions.

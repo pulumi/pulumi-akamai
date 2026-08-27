@@ -35,12 +35,8 @@ type GetEdgeWorkersPropertyRulesResult struct {
 }
 
 func GetEdgeWorkersPropertyRulesOutput(ctx *pulumi.Context, args GetEdgeWorkersPropertyRulesOutputArgs, opts ...pulumi.InvokeOption) GetEdgeWorkersPropertyRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEdgeWorkersPropertyRulesResultOutput, error) {
-			args := v.(GetEdgeWorkersPropertyRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args, GetEdgeWorkersPropertyRulesResultOutput{}, options).(GetEdgeWorkersPropertyRulesResultOutput), nil
-		}).(GetEdgeWorkersPropertyRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args, GetEdgeWorkersPropertyRulesResultOutput{}, options).(GetEdgeWorkersPropertyRulesResultOutput)
 }
 
 // A collection of arguments for invoking getEdgeWorkersPropertyRules.

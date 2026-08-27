@@ -55,12 +55,8 @@ type LookupMtlstruststoreCaSetResult struct {
 }
 
 func LookupMtlstruststoreCaSetOutput(ctx *pulumi.Context, args LookupMtlstruststoreCaSetOutputArgs, opts ...pulumi.InvokeOption) LookupMtlstruststoreCaSetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMtlstruststoreCaSetResultOutput, error) {
-			args := v.(LookupMtlstruststoreCaSetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getMtlstruststoreCaSet:getMtlstruststoreCaSet", args, LookupMtlstruststoreCaSetResultOutput{}, options).(LookupMtlstruststoreCaSetResultOutput), nil
-		}).(LookupMtlstruststoreCaSetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getMtlstruststoreCaSet:getMtlstruststoreCaSet", args, LookupMtlstruststoreCaSetResultOutput{}, options).(LookupMtlstruststoreCaSetResultOutput)
 }
 
 // A collection of arguments for invoking getMtlstruststoreCaSet.

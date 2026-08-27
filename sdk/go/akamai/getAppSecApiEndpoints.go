@@ -41,12 +41,8 @@ type GetAppSecApiEndpointsResult struct {
 }
 
 func GetAppSecApiEndpointsOutput(ctx *pulumi.Context, args GetAppSecApiEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecApiEndpointsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecApiEndpointsResultOutput, error) {
-			args := v.(GetAppSecApiEndpointsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args, GetAppSecApiEndpointsResultOutput{}, options).(GetAppSecApiEndpointsResultOutput), nil
-		}).(GetAppSecApiEndpointsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args, GetAppSecApiEndpointsResultOutput{}, options).(GetAppSecApiEndpointsResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecApiEndpoints.

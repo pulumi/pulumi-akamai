@@ -44,12 +44,8 @@ type LookupPropertyActivationResult struct {
 }
 
 func LookupPropertyActivationOutput(ctx *pulumi.Context, args LookupPropertyActivationOutputArgs, opts ...pulumi.InvokeOption) LookupPropertyActivationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPropertyActivationResultOutput, error) {
-			args := v.(LookupPropertyActivationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyActivation:getPropertyActivation", args, LookupPropertyActivationResultOutput{}, options).(LookupPropertyActivationResultOutput), nil
-		}).(LookupPropertyActivationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyActivation:getPropertyActivation", args, LookupPropertyActivationResultOutput{}, options).(LookupPropertyActivationResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyActivation.

@@ -29,10 +29,8 @@ type GetContractsResult struct {
 }
 
 func GetContractsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetContractsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetContractsResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getContracts:getContracts", nil, GetContractsResultOutput{}, options).(GetContractsResultOutput), nil
-	}).(GetContractsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getContracts:getContracts", nil, GetContractsResultOutput{}, options).(GetContractsResultOutput)
 }
 
 // A collection of values returned by getContracts.

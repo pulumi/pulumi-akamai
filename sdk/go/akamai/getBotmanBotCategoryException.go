@@ -37,12 +37,8 @@ type LookupBotmanBotCategoryExceptionResult struct {
 }
 
 func LookupBotmanBotCategoryExceptionOutput(ctx *pulumi.Context, args LookupBotmanBotCategoryExceptionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanBotCategoryExceptionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanBotCategoryExceptionResultOutput, error) {
-			args := v.(LookupBotmanBotCategoryExceptionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanBotCategoryException:getBotmanBotCategoryException", args, LookupBotmanBotCategoryExceptionResultOutput{}, options).(LookupBotmanBotCategoryExceptionResultOutput), nil
-		}).(LookupBotmanBotCategoryExceptionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanBotCategoryException:getBotmanBotCategoryException", args, LookupBotmanBotCategoryExceptionResultOutput{}, options).(LookupBotmanBotCategoryExceptionResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanBotCategoryException.

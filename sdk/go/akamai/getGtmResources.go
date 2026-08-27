@@ -34,12 +34,8 @@ type GetGtmResourcesResult struct {
 }
 
 func GetGtmResourcesOutput(ctx *pulumi.Context, args GetGtmResourcesOutputArgs, opts ...pulumi.InvokeOption) GetGtmResourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGtmResourcesResultOutput, error) {
-			args := v.(GetGtmResourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getGtmResources:getGtmResources", args, GetGtmResourcesResultOutput{}, options).(GetGtmResourcesResultOutput), nil
-		}).(GetGtmResourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getGtmResources:getGtmResources", args, GetGtmResourcesResultOutput{}, options).(GetGtmResourcesResultOutput)
 }
 
 // A collection of arguments for invoking getGtmResources.

@@ -42,12 +42,8 @@ type LookupAppsecAapSelectedHostnamesResult struct {
 }
 
 func LookupAppsecAapSelectedHostnamesOutput(ctx *pulumi.Context, args LookupAppsecAapSelectedHostnamesOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAapSelectedHostnamesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppsecAapSelectedHostnamesResultOutput, error) {
-			args := v.(LookupAppsecAapSelectedHostnamesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppsecAapSelectedHostnames:getAppsecAapSelectedHostnames", args, LookupAppsecAapSelectedHostnamesResultOutput{}, options).(LookupAppsecAapSelectedHostnamesResultOutput), nil
-		}).(LookupAppsecAapSelectedHostnamesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppsecAapSelectedHostnames:getAppsecAapSelectedHostnames", args, LookupAppsecAapSelectedHostnamesResultOutput{}, options).(LookupAppsecAapSelectedHostnamesResultOutput)
 }
 
 // A collection of arguments for invoking getAppsecAapSelectedHostnames.

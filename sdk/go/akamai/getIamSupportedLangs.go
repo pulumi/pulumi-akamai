@@ -29,10 +29,8 @@ type GetIamSupportedLangsResult struct {
 }
 
 func GetIamSupportedLangsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamSupportedLangsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamSupportedLangsResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getIamSupportedLangs:getIamSupportedLangs", nil, GetIamSupportedLangsResultOutput{}, options).(GetIamSupportedLangsResultOutput), nil
-	}).(GetIamSupportedLangsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamSupportedLangs:getIamSupportedLangs", nil, GetIamSupportedLangsResultOutput{}, options).(GetIamSupportedLangsResultOutput)
 }
 
 // A collection of values returned by getIamSupportedLangs.

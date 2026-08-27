@@ -29,10 +29,8 @@ type GetBotmanBotAnalyticsCookieValuesResult struct {
 }
 
 func GetBotmanBotAnalyticsCookieValuesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetBotmanBotAnalyticsCookieValuesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetBotmanBotAnalyticsCookieValuesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", nil, GetBotmanBotAnalyticsCookieValuesResultOutput{}, options).(GetBotmanBotAnalyticsCookieValuesResultOutput), nil
-	}).(GetBotmanBotAnalyticsCookieValuesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", nil, GetBotmanBotAnalyticsCookieValuesResultOutput{}, options).(GetBotmanBotAnalyticsCookieValuesResultOutput)
 }
 
 // A collection of values returned by getBotmanBotAnalyticsCookieValues.

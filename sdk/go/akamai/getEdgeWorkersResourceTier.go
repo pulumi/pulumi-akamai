@@ -37,12 +37,8 @@ type GetEdgeWorkersResourceTierResult struct {
 }
 
 func GetEdgeWorkersResourceTierOutput(ctx *pulumi.Context, args GetEdgeWorkersResourceTierOutputArgs, opts ...pulumi.InvokeOption) GetEdgeWorkersResourceTierResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEdgeWorkersResourceTierResultOutput, error) {
-			args := v.(GetEdgeWorkersResourceTierArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args, GetEdgeWorkersResourceTierResultOutput{}, options).(GetEdgeWorkersResourceTierResultOutput), nil
-		}).(GetEdgeWorkersResourceTierResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args, GetEdgeWorkersResourceTierResultOutput{}, options).(GetEdgeWorkersResourceTierResultOutput)
 }
 
 // A collection of arguments for invoking getEdgeWorkersResourceTier.

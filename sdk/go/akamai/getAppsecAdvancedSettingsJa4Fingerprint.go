@@ -36,12 +36,8 @@ type LookupAppsecAdvancedSettingsJa4FingerprintResult struct {
 }
 
 func LookupAppsecAdvancedSettingsJa4FingerprintOutput(ctx *pulumi.Context, args LookupAppsecAdvancedSettingsJa4FingerprintOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAdvancedSettingsJa4FingerprintResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppsecAdvancedSettingsJa4FingerprintResultOutput, error) {
-			args := v.(LookupAppsecAdvancedSettingsJa4FingerprintArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppsecAdvancedSettingsJa4Fingerprint:getAppsecAdvancedSettingsJa4Fingerprint", args, LookupAppsecAdvancedSettingsJa4FingerprintResultOutput{}, options).(LookupAppsecAdvancedSettingsJa4FingerprintResultOutput), nil
-		}).(LookupAppsecAdvancedSettingsJa4FingerprintResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppsecAdvancedSettingsJa4Fingerprint:getAppsecAdvancedSettingsJa4Fingerprint", args, LookupAppsecAdvancedSettingsJa4FingerprintResultOutput{}, options).(LookupAppsecAdvancedSettingsJa4FingerprintResultOutput)
 }
 
 // A collection of arguments for invoking getAppsecAdvancedSettingsJa4Fingerprint.

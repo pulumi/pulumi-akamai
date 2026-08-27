@@ -35,12 +35,8 @@ type LookupBotmanBotAnalyticsCookieResult struct {
 }
 
 func LookupBotmanBotAnalyticsCookieOutput(ctx *pulumi.Context, args LookupBotmanBotAnalyticsCookieOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanBotAnalyticsCookieResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanBotAnalyticsCookieResultOutput, error) {
-			args := v.(LookupBotmanBotAnalyticsCookieArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanBotAnalyticsCookie:getBotmanBotAnalyticsCookie", args, LookupBotmanBotAnalyticsCookieResultOutput{}, options).(LookupBotmanBotAnalyticsCookieResultOutput), nil
-		}).(LookupBotmanBotAnalyticsCookieResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanBotAnalyticsCookie:getBotmanBotAnalyticsCookie", args, LookupBotmanBotAnalyticsCookieResultOutput{}, options).(LookupBotmanBotAnalyticsCookieResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanBotAnalyticsCookie.

@@ -35,12 +35,8 @@ type GetDatastreamDatasetFieldsResult struct {
 }
 
 func GetDatastreamDatasetFieldsOutput(ctx *pulumi.Context, args GetDatastreamDatasetFieldsOutputArgs, opts ...pulumi.InvokeOption) GetDatastreamDatasetFieldsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatastreamDatasetFieldsResultOutput, error) {
-			args := v.(GetDatastreamDatasetFieldsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args, GetDatastreamDatasetFieldsResultOutput{}, options).(GetDatastreamDatasetFieldsResultOutput), nil
-		}).(GetDatastreamDatasetFieldsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args, GetDatastreamDatasetFieldsResultOutput{}, options).(GetDatastreamDatasetFieldsResultOutput)
 }
 
 // A collection of arguments for invoking getDatastreamDatasetFields.

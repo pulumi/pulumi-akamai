@@ -40,12 +40,8 @@ type LookupIamCidrBlockResult struct {
 }
 
 func LookupIamCidrBlockOutput(ctx *pulumi.Context, args LookupIamCidrBlockOutputArgs, opts ...pulumi.InvokeOption) LookupIamCidrBlockResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupIamCidrBlockResultOutput, error) {
-			args := v.(LookupIamCidrBlockArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getIamCidrBlock:getIamCidrBlock", args, LookupIamCidrBlockResultOutput{}, options).(LookupIamCidrBlockResultOutput), nil
-		}).(LookupIamCidrBlockResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamCidrBlock:getIamCidrBlock", args, LookupIamCidrBlockResultOutput{}, options).(LookupIamCidrBlockResultOutput)
 }
 
 // A collection of arguments for invoking getIamCidrBlock.

@@ -35,10 +35,8 @@ type GetIamPasswordPolicyResult struct {
 }
 
 func GetIamPasswordPolicyOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamPasswordPolicyResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamPasswordPolicyResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getIamPasswordPolicy:getIamPasswordPolicy", nil, GetIamPasswordPolicyResultOutput{}, options).(GetIamPasswordPolicyResultOutput), nil
-	}).(GetIamPasswordPolicyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamPasswordPolicy:getIamPasswordPolicy", nil, GetIamPasswordPolicyResultOutput{}, options).(GetIamPasswordPolicyResultOutput)
 }
 
 // A collection of values returned by getIamPasswordPolicy.

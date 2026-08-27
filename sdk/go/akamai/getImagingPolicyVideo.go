@@ -35,12 +35,8 @@ type LookupImagingPolicyVideoResult struct {
 }
 
 func LookupImagingPolicyVideoOutput(ctx *pulumi.Context, args LookupImagingPolicyVideoOutputArgs, opts ...pulumi.InvokeOption) LookupImagingPolicyVideoResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupImagingPolicyVideoResultOutput, error) {
-			args := v.(LookupImagingPolicyVideoArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", args, LookupImagingPolicyVideoResultOutput{}, options).(LookupImagingPolicyVideoResultOutput), nil
-		}).(LookupImagingPolicyVideoResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", args, LookupImagingPolicyVideoResultOutput{}, options).(LookupImagingPolicyVideoResultOutput)
 }
 
 // A collection of arguments for invoking getImagingPolicyVideo.

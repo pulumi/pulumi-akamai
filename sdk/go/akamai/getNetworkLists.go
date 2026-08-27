@@ -44,12 +44,8 @@ type GetNetworkListsResult struct {
 }
 
 func GetNetworkListsOutput(ctx *pulumi.Context, args GetNetworkListsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkListsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNetworkListsResultOutput, error) {
-			args := v.(GetNetworkListsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getNetworkLists:getNetworkLists", args, GetNetworkListsResultOutput{}, options).(GetNetworkListsResultOutput), nil
-		}).(GetNetworkListsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getNetworkLists:getNetworkLists", args, GetNetworkListsResultOutput{}, options).(GetNetworkListsResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkLists.

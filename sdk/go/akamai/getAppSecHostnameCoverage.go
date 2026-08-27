@@ -30,10 +30,8 @@ type GetAppSecHostnameCoverageResult struct {
 }
 
 func GetAppSecHostnameCoverageOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetAppSecHostnameCoverageResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", nil, GetAppSecHostnameCoverageResultOutput{}, options).(GetAppSecHostnameCoverageResultOutput), nil
-	}).(GetAppSecHostnameCoverageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", nil, GetAppSecHostnameCoverageResultOutput{}, options).(GetAppSecHostnameCoverageResultOutput)
 }
 
 // A collection of values returned by getAppSecHostnameCoverage.

@@ -41,12 +41,8 @@ type GetCloudcertificatesHostnameBindingsResult struct {
 }
 
 func GetCloudcertificatesHostnameBindingsOutput(ctx *pulumi.Context, args GetCloudcertificatesHostnameBindingsOutputArgs, opts ...pulumi.InvokeOption) GetCloudcertificatesHostnameBindingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudcertificatesHostnameBindingsResultOutput, error) {
-			args := v.(GetCloudcertificatesHostnameBindingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings", args, GetCloudcertificatesHostnameBindingsResultOutput{}, options).(GetCloudcertificatesHostnameBindingsResultOutput), nil
-		}).(GetCloudcertificatesHostnameBindingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings", args, GetCloudcertificatesHostnameBindingsResultOutput{}, options).(GetCloudcertificatesHostnameBindingsResultOutput)
 }
 
 // A collection of arguments for invoking getCloudcertificatesHostnameBindings.

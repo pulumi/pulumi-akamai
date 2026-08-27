@@ -37,12 +37,8 @@ type GetIamAllowedApisResult struct {
 }
 
 func GetIamAllowedApisOutput(ctx *pulumi.Context, args GetIamAllowedApisOutputArgs, opts ...pulumi.InvokeOption) GetIamAllowedApisResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIamAllowedApisResultOutput, error) {
-			args := v.(GetIamAllowedApisArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getIamAllowedApis:getIamAllowedApis", args, GetIamAllowedApisResultOutput{}, options).(GetIamAllowedApisResultOutput), nil
-		}).(GetIamAllowedApisResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamAllowedApis:getIamAllowedApis", args, GetIamAllowedApisResultOutput{}, options).(GetIamAllowedApisResultOutput)
 }
 
 // A collection of arguments for invoking getIamAllowedApis.

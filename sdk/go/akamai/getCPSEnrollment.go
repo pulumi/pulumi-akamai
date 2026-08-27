@@ -59,12 +59,8 @@ type GetCPSEnrollmentResult struct {
 }
 
 func GetCPSEnrollmentOutput(ctx *pulumi.Context, args GetCPSEnrollmentOutputArgs, opts ...pulumi.InvokeOption) GetCPSEnrollmentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCPSEnrollmentResultOutput, error) {
-			args := v.(GetCPSEnrollmentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCPSEnrollment:getCPSEnrollment", args, GetCPSEnrollmentResultOutput{}, options).(GetCPSEnrollmentResultOutput), nil
-		}).(GetCPSEnrollmentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCPSEnrollment:getCPSEnrollment", args, GetCPSEnrollmentResultOutput{}, options).(GetCPSEnrollmentResultOutput)
 }
 
 // A collection of arguments for invoking getCPSEnrollment.

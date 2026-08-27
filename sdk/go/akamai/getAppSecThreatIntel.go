@@ -39,12 +39,8 @@ type LookupAppSecThreatIntelResult struct {
 }
 
 func LookupAppSecThreatIntelOutput(ctx *pulumi.Context, args LookupAppSecThreatIntelOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecThreatIntelResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppSecThreatIntelResultOutput, error) {
-			args := v.(LookupAppSecThreatIntelArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args, LookupAppSecThreatIntelResultOutput{}, options).(LookupAppSecThreatIntelResultOutput), nil
-		}).(LookupAppSecThreatIntelResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args, LookupAppSecThreatIntelResultOutput{}, options).(LookupAppSecThreatIntelResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecThreatIntel.

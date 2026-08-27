@@ -45,12 +45,8 @@ type GetAppSecSelectableHostnamesResult struct {
 }
 
 func GetAppSecSelectableHostnamesOutput(ctx *pulumi.Context, args GetAppSecSelectableHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecSelectableHostnamesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecSelectableHostnamesResultOutput, error) {
-			args := v.(GetAppSecSelectableHostnamesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args, GetAppSecSelectableHostnamesResultOutput{}, options).(GetAppSecSelectableHostnamesResultOutput), nil
-		}).(GetAppSecSelectableHostnamesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args, GetAppSecSelectableHostnamesResultOutput{}, options).(GetAppSecSelectableHostnamesResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecSelectableHostnames.

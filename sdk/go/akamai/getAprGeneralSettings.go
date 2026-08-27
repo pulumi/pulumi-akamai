@@ -37,12 +37,8 @@ type LookupAprGeneralSettingsResult struct {
 }
 
 func LookupAprGeneralSettingsOutput(ctx *pulumi.Context, args LookupAprGeneralSettingsOutputArgs, opts ...pulumi.InvokeOption) LookupAprGeneralSettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAprGeneralSettingsResultOutput, error) {
-			args := v.(LookupAprGeneralSettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAprGeneralSettings:getAprGeneralSettings", args, LookupAprGeneralSettingsResultOutput{}, options).(LookupAprGeneralSettingsResultOutput), nil
-		}).(LookupAprGeneralSettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAprGeneralSettings:getAprGeneralSettings", args, LookupAprGeneralSettingsResultOutput{}, options).(LookupAprGeneralSettingsResultOutput)
 }
 
 // A collection of arguments for invoking getAprGeneralSettings.

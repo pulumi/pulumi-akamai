@@ -38,12 +38,8 @@ type LookupAppSecAdvancedSettingsEvasivePathMatchResult struct {
 }
 
 func LookupAppSecAdvancedSettingsEvasivePathMatchOutput(ctx *pulumi.Context, args LookupAppSecAdvancedSettingsEvasivePathMatchOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput, error) {
-			args := v.(LookupAppSecAdvancedSettingsEvasivePathMatchArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args, LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput{}, options).(LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput), nil
-		}).(LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args, LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput{}, options).(LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecAdvancedSettingsEvasivePathMatch.

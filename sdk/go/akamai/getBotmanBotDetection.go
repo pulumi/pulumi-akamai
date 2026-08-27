@@ -35,12 +35,8 @@ type GetBotmanBotDetectionResult struct {
 }
 
 func GetBotmanBotDetectionOutput(ctx *pulumi.Context, args GetBotmanBotDetectionOutputArgs, opts ...pulumi.InvokeOption) GetBotmanBotDetectionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBotmanBotDetectionResultOutput, error) {
-			args := v.(GetBotmanBotDetectionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanBotDetection:getBotmanBotDetection", args, GetBotmanBotDetectionResultOutput{}, options).(GetBotmanBotDetectionResultOutput), nil
-		}).(GetBotmanBotDetectionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanBotDetection:getBotmanBotDetection", args, GetBotmanBotDetectionResultOutput{}, options).(GetBotmanBotDetectionResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanBotDetection.

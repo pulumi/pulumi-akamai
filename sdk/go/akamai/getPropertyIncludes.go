@@ -41,12 +41,8 @@ type GetPropertyIncludesResult struct {
 }
 
 func GetPropertyIncludesOutput(ctx *pulumi.Context, args GetPropertyIncludesOutputArgs, opts ...pulumi.InvokeOption) GetPropertyIncludesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyIncludesResultOutput, error) {
-			args := v.(GetPropertyIncludesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyIncludes:getPropertyIncludes", args, GetPropertyIncludesResultOutput{}, options).(GetPropertyIncludesResultOutput), nil
-		}).(GetPropertyIncludesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyIncludes:getPropertyIncludes", args, GetPropertyIncludesResultOutput{}, options).(GetPropertyIncludesResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyIncludes.

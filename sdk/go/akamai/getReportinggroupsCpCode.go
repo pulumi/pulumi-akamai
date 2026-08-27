@@ -41,12 +41,8 @@ type GetReportinggroupsCpCodeResult struct {
 }
 
 func GetReportinggroupsCpCodeOutput(ctx *pulumi.Context, args GetReportinggroupsCpCodeOutputArgs, opts ...pulumi.InvokeOption) GetReportinggroupsCpCodeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetReportinggroupsCpCodeResultOutput, error) {
-			args := v.(GetReportinggroupsCpCodeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getReportinggroupsCpCode:getReportinggroupsCpCode", args, GetReportinggroupsCpCodeResultOutput{}, options).(GetReportinggroupsCpCodeResultOutput), nil
-		}).(GetReportinggroupsCpCodeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getReportinggroupsCpCode:getReportinggroupsCpCode", args, GetReportinggroupsCpCodeResultOutput{}, options).(GetReportinggroupsCpCodeResultOutput)
 }
 
 // A collection of arguments for invoking getReportinggroupsCpCode.

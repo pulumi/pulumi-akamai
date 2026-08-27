@@ -29,10 +29,8 @@ type GetCpsWarningsResult struct {
 }
 
 func GetCpsWarningsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetCpsWarningsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetCpsWarningsResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getCpsWarnings:getCpsWarnings", nil, GetCpsWarningsResultOutput{}, options).(GetCpsWarningsResultOutput), nil
-	}).(GetCpsWarningsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCpsWarnings:getCpsWarnings", nil, GetCpsWarningsResultOutput{}, options).(GetCpsWarningsResultOutput)
 }
 
 // A collection of values returned by getCpsWarnings.

@@ -43,12 +43,8 @@ type GetAppSecTuningRecommendationsResult struct {
 }
 
 func GetAppSecTuningRecommendationsOutput(ctx *pulumi.Context, args GetAppSecTuningRecommendationsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecTuningRecommendationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecTuningRecommendationsResultOutput, error) {
-			args := v.(GetAppSecTuningRecommendationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args, GetAppSecTuningRecommendationsResultOutput{}, options).(GetAppSecTuningRecommendationsResultOutput), nil
-		}).(GetAppSecTuningRecommendationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args, GetAppSecTuningRecommendationsResultOutput{}, options).(GetAppSecTuningRecommendationsResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecTuningRecommendations.

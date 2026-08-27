@@ -44,12 +44,8 @@ type LookupAppSecIPGeoResult struct {
 }
 
 func LookupAppSecIPGeoOutput(ctx *pulumi.Context, args LookupAppSecIPGeoOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecIPGeoResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppSecIPGeoResultOutput, error) {
-			args := v.(LookupAppSecIPGeoArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args, LookupAppSecIPGeoResultOutput{}, options).(LookupAppSecIPGeoResultOutput), nil
-		}).(LookupAppSecIPGeoResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args, LookupAppSecIPGeoResultOutput{}, options).(LookupAppSecIPGeoResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecIPGeo.

@@ -37,12 +37,8 @@ type LookupBotmanBotManagementSettingsResult struct {
 }
 
 func LookupBotmanBotManagementSettingsOutput(ctx *pulumi.Context, args LookupBotmanBotManagementSettingsOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanBotManagementSettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanBotManagementSettingsResultOutput, error) {
-			args := v.(LookupBotmanBotManagementSettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", args, LookupBotmanBotManagementSettingsResultOutput{}, options).(LookupBotmanBotManagementSettingsResultOutput), nil
-		}).(LookupBotmanBotManagementSettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", args, LookupBotmanBotManagementSettingsResultOutput{}, options).(LookupBotmanBotManagementSettingsResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanBotManagementSettings.

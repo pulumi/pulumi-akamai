@@ -38,12 +38,8 @@ type GetAppSecHostnameCoverageMatchTargetsResult struct {
 }
 
 func GetAppSecHostnameCoverageMatchTargetsOutput(ctx *pulumi.Context, args GetAppSecHostnameCoverageMatchTargetsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageMatchTargetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecHostnameCoverageMatchTargetsResultOutput, error) {
-			args := v.(GetAppSecHostnameCoverageMatchTargetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args, GetAppSecHostnameCoverageMatchTargetsResultOutput{}, options).(GetAppSecHostnameCoverageMatchTargetsResultOutput), nil
-		}).(GetAppSecHostnameCoverageMatchTargetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args, GetAppSecHostnameCoverageMatchTargetsResultOutput{}, options).(GetAppSecHostnameCoverageMatchTargetsResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.

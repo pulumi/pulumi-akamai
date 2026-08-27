@@ -29,10 +29,8 @@ type GetIamContactTypesResult struct {
 }
 
 func GetIamContactTypesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamContactTypesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamContactTypesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getIamContactTypes:getIamContactTypes", nil, GetIamContactTypesResultOutput{}, options).(GetIamContactTypesResultOutput), nil
-	}).(GetIamContactTypesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamContactTypes:getIamContactTypes", nil, GetIamContactTypesResultOutput{}, options).(GetIamContactTypesResultOutput)
 }
 
 // A collection of values returned by getIamContactTypes.

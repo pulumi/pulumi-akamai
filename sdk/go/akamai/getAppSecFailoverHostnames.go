@@ -37,12 +37,8 @@ type GetAppSecFailoverHostnamesResult struct {
 }
 
 func GetAppSecFailoverHostnamesOutput(ctx *pulumi.Context, args GetAppSecFailoverHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecFailoverHostnamesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecFailoverHostnamesResultOutput, error) {
-			args := v.(GetAppSecFailoverHostnamesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args, GetAppSecFailoverHostnamesResultOutput{}, options).(GetAppSecFailoverHostnamesResultOutput), nil
-		}).(GetAppSecFailoverHostnamesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args, GetAppSecFailoverHostnamesResultOutput{}, options).(GetAppSecFailoverHostnamesResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecFailoverHostnames.

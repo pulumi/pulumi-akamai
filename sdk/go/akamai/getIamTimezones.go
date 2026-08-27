@@ -29,10 +29,8 @@ type GetIamTimezonesResult struct {
 }
 
 func GetIamTimezonesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamTimezonesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamTimezonesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getIamTimezones:getIamTimezones", nil, GetIamTimezonesResultOutput{}, options).(GetIamTimezonesResultOutput), nil
-	}).(GetIamTimezonesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamTimezones:getIamTimezones", nil, GetIamTimezonesResultOutput{}, options).(GetIamTimezonesResultOutput)
 }
 
 // A collection of values returned by getIamTimezones.

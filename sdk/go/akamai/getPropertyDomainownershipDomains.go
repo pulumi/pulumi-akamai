@@ -27,10 +27,8 @@ type LookupPropertyDomainownershipDomainsResult struct {
 }
 
 func LookupPropertyDomainownershipDomainsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) LookupPropertyDomainownershipDomainsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (LookupPropertyDomainownershipDomainsResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getPropertyDomainownershipDomains:getPropertyDomainownershipDomains", nil, LookupPropertyDomainownershipDomainsResultOutput{}, options).(LookupPropertyDomainownershipDomainsResultOutput), nil
-	}).(LookupPropertyDomainownershipDomainsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyDomainownershipDomains:getPropertyDomainownershipDomains", nil, LookupPropertyDomainownershipDomainsResultOutput{}, options).(LookupPropertyDomainownershipDomainsResultOutput)
 }
 
 // A collection of values returned by getPropertyDomainownershipDomains.

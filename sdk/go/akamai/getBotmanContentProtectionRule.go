@@ -39,12 +39,8 @@ type LookupBotmanContentProtectionRuleResult struct {
 }
 
 func LookupBotmanContentProtectionRuleOutput(ctx *pulumi.Context, args LookupBotmanContentProtectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanContentProtectionRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanContentProtectionRuleResultOutput, error) {
-			args := v.(LookupBotmanContentProtectionRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanContentProtectionRule:getBotmanContentProtectionRule", args, LookupBotmanContentProtectionRuleResultOutput{}, options).(LookupBotmanContentProtectionRuleResultOutput), nil
-		}).(LookupBotmanContentProtectionRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanContentProtectionRule:getBotmanContentProtectionRule", args, LookupBotmanContentProtectionRuleResultOutput{}, options).(LookupBotmanContentProtectionRuleResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanContentProtectionRule.

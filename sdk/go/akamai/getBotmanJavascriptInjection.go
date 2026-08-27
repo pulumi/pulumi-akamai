@@ -37,12 +37,8 @@ type LookupBotmanJavascriptInjectionResult struct {
 }
 
 func LookupBotmanJavascriptInjectionOutput(ctx *pulumi.Context, args LookupBotmanJavascriptInjectionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanJavascriptInjectionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanJavascriptInjectionResultOutput, error) {
-			args := v.(LookupBotmanJavascriptInjectionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", args, LookupBotmanJavascriptInjectionResultOutput{}, options).(LookupBotmanJavascriptInjectionResultOutput), nil
-		}).(LookupBotmanJavascriptInjectionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", args, LookupBotmanJavascriptInjectionResultOutput{}, options).(LookupBotmanJavascriptInjectionResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanJavascriptInjection.

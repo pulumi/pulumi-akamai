@@ -35,12 +35,8 @@ type GetIamStatesResult struct {
 }
 
 func GetIamStatesOutput(ctx *pulumi.Context, args GetIamStatesOutputArgs, opts ...pulumi.InvokeOption) GetIamStatesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIamStatesResultOutput, error) {
-			args := v.(GetIamStatesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getIamStates:getIamStates", args, GetIamStatesResultOutput{}, options).(GetIamStatesResultOutput), nil
-		}).(GetIamStatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamStates:getIamStates", args, GetIamStatesResultOutput{}, options).(GetIamStatesResultOutput)
 }
 
 // A collection of arguments for invoking getIamStates.

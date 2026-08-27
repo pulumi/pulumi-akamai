@@ -33,12 +33,8 @@ type GetMtlskeystoreAccountCaCertificatesResult struct {
 }
 
 func GetMtlskeystoreAccountCaCertificatesOutput(ctx *pulumi.Context, args GetMtlskeystoreAccountCaCertificatesOutputArgs, opts ...pulumi.InvokeOption) GetMtlskeystoreAccountCaCertificatesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMtlskeystoreAccountCaCertificatesResultOutput, error) {
-			args := v.(GetMtlskeystoreAccountCaCertificatesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getMtlskeystoreAccountCaCertificates:getMtlskeystoreAccountCaCertificates", args, GetMtlskeystoreAccountCaCertificatesResultOutput{}, options).(GetMtlskeystoreAccountCaCertificatesResultOutput), nil
-		}).(GetMtlskeystoreAccountCaCertificatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getMtlskeystoreAccountCaCertificates:getMtlskeystoreAccountCaCertificates", args, GetMtlskeystoreAccountCaCertificatesResultOutput{}, options).(GetMtlskeystoreAccountCaCertificatesResultOutput)
 }
 
 // A collection of arguments for invoking getMtlskeystoreAccountCaCertificates.

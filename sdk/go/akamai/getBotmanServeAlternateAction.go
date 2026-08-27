@@ -37,12 +37,8 @@ type LookupBotmanServeAlternateActionResult struct {
 }
 
 func LookupBotmanServeAlternateActionOutput(ctx *pulumi.Context, args LookupBotmanServeAlternateActionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanServeAlternateActionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanServeAlternateActionResultOutput, error) {
-			args := v.(LookupBotmanServeAlternateActionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", args, LookupBotmanServeAlternateActionResultOutput{}, options).(LookupBotmanServeAlternateActionResultOutput), nil
-		}).(LookupBotmanServeAlternateActionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", args, LookupBotmanServeAlternateActionResultOutput{}, options).(LookupBotmanServeAlternateActionResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanServeAlternateAction.
