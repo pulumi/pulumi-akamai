@@ -37,12 +37,8 @@ type GetPropertiesSearchResult struct {
 }
 
 func GetPropertiesSearchOutput(ctx *pulumi.Context, args GetPropertiesSearchOutputArgs, opts ...pulumi.InvokeOption) GetPropertiesSearchResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertiesSearchResultOutput, error) {
-			args := v.(GetPropertiesSearchArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertiesSearch:getPropertiesSearch", args, GetPropertiesSearchResultOutput{}, options).(GetPropertiesSearchResultOutput), nil
-		}).(GetPropertiesSearchResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertiesSearch:getPropertiesSearch", args, GetPropertiesSearchResultOutput{}, options).(GetPropertiesSearchResultOutput)
 }
 
 // A collection of arguments for invoking getPropertiesSearch.

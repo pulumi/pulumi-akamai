@@ -46,12 +46,8 @@ type GetPropertyIncludeRulesResult struct {
 }
 
 func GetPropertyIncludeRulesOutput(ctx *pulumi.Context, args GetPropertyIncludeRulesOutputArgs, opts ...pulumi.InvokeOption) GetPropertyIncludeRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyIncludeRulesResultOutput, error) {
-			args := v.(GetPropertyIncludeRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyIncludeRules:getPropertyIncludeRules", args, GetPropertyIncludeRulesResultOutput{}, options).(GetPropertyIncludeRulesResultOutput), nil
-		}).(GetPropertyIncludeRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyIncludeRules:getPropertyIncludeRules", args, GetPropertyIncludeRulesResultOutput{}, options).(GetPropertyIncludeRulesResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyIncludeRules.

@@ -35,12 +35,8 @@ type GetCloudletsEdgeRedirectorMatchRuleResult struct {
 }
 
 func GetCloudletsEdgeRedirectorMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsEdgeRedirectorMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsEdgeRedirectorMatchRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudletsEdgeRedirectorMatchRuleResultOutput, error) {
-			args := v.(GetCloudletsEdgeRedirectorMatchRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", args, GetCloudletsEdgeRedirectorMatchRuleResultOutput{}, options).(GetCloudletsEdgeRedirectorMatchRuleResultOutput), nil
-		}).(GetCloudletsEdgeRedirectorMatchRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", args, GetCloudletsEdgeRedirectorMatchRuleResultOutput{}, options).(GetCloudletsEdgeRedirectorMatchRuleResultOutput)
 }
 
 // A collection of arguments for invoking getCloudletsEdgeRedirectorMatchRule.

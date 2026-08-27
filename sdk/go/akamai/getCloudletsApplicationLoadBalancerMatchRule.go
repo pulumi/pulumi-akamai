@@ -35,12 +35,8 @@ type GetCloudletsApplicationLoadBalancerMatchRuleResult struct {
 }
 
 func GetCloudletsApplicationLoadBalancerMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsApplicationLoadBalancerMatchRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudletsApplicationLoadBalancerMatchRuleResultOutput, error) {
-			args := v.(GetCloudletsApplicationLoadBalancerMatchRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", args, GetCloudletsApplicationLoadBalancerMatchRuleResultOutput{}, options).(GetCloudletsApplicationLoadBalancerMatchRuleResultOutput), nil
-		}).(GetCloudletsApplicationLoadBalancerMatchRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", args, GetCloudletsApplicationLoadBalancerMatchRuleResultOutput{}, options).(GetCloudletsApplicationLoadBalancerMatchRuleResultOutput)
 }
 
 // A collection of arguments for invoking getCloudletsApplicationLoadBalancerMatchRule.

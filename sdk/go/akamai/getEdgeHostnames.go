@@ -38,12 +38,8 @@ type GetEdgeHostnamesResult struct {
 }
 
 func GetEdgeHostnamesOutput(ctx *pulumi.Context, args GetEdgeHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetEdgeHostnamesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEdgeHostnamesResultOutput, error) {
-			args := v.(GetEdgeHostnamesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getEdgeHostnames:getEdgeHostnames", args, GetEdgeHostnamesResultOutput{}, options).(GetEdgeHostnamesResultOutput), nil
-		}).(GetEdgeHostnamesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getEdgeHostnames:getEdgeHostnames", args, GetEdgeHostnamesResultOutput{}, options).(GetEdgeHostnamesResultOutput)
 }
 
 // A collection of arguments for invoking getEdgeHostnames.

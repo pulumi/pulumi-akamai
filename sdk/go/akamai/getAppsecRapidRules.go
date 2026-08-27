@@ -43,12 +43,8 @@ type LookupAppsecRapidRulesResult struct {
 }
 
 func LookupAppsecRapidRulesOutput(ctx *pulumi.Context, args LookupAppsecRapidRulesOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecRapidRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppsecRapidRulesResultOutput, error) {
-			args := v.(LookupAppsecRapidRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppsecRapidRules:getAppsecRapidRules", args, LookupAppsecRapidRulesResultOutput{}, options).(LookupAppsecRapidRulesResultOutput), nil
-		}).(LookupAppsecRapidRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppsecRapidRules:getAppsecRapidRules", args, LookupAppsecRapidRulesResultOutput{}, options).(LookupAppsecRapidRulesResultOutput)
 }
 
 // A collection of arguments for invoking getAppsecRapidRules.

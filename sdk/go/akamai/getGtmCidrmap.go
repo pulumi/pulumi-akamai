@@ -40,12 +40,8 @@ type LookupGtmCidrmapResult struct {
 }
 
 func LookupGtmCidrmapOutput(ctx *pulumi.Context, args LookupGtmCidrmapOutputArgs, opts ...pulumi.InvokeOption) LookupGtmCidrmapResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupGtmCidrmapResultOutput, error) {
-			args := v.(LookupGtmCidrmapArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getGtmCidrmap:getGtmCidrmap", args, LookupGtmCidrmapResultOutput{}, options).(LookupGtmCidrmapResultOutput), nil
-		}).(LookupGtmCidrmapResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getGtmCidrmap:getGtmCidrmap", args, LookupGtmCidrmapResultOutput{}, options).(LookupGtmCidrmapResultOutput)
 }
 
 // A collection of arguments for invoking getGtmCidrmap.

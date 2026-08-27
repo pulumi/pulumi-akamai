@@ -37,12 +37,8 @@ type LookupBotmanCustomDefinedBotResult struct {
 }
 
 func LookupBotmanCustomDefinedBotOutput(ctx *pulumi.Context, args LookupBotmanCustomDefinedBotOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanCustomDefinedBotResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanCustomDefinedBotResultOutput, error) {
-			args := v.(LookupBotmanCustomDefinedBotArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanCustomDefinedBot:getBotmanCustomDefinedBot", args, LookupBotmanCustomDefinedBotResultOutput{}, options).(LookupBotmanCustomDefinedBotResultOutput), nil
-		}).(LookupBotmanCustomDefinedBotResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanCustomDefinedBot:getBotmanCustomDefinedBot", args, LookupBotmanCustomDefinedBotResultOutput{}, options).(LookupBotmanCustomDefinedBotResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanCustomDefinedBot.

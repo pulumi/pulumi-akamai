@@ -34,12 +34,8 @@ type GetCloudaccessKeyPropertiesResult struct {
 }
 
 func GetCloudaccessKeyPropertiesOutput(ctx *pulumi.Context, args GetCloudaccessKeyPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetCloudaccessKeyPropertiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudaccessKeyPropertiesResultOutput, error) {
-			args := v.(GetCloudaccessKeyPropertiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudaccessKeyProperties:getCloudaccessKeyProperties", args, GetCloudaccessKeyPropertiesResultOutput{}, options).(GetCloudaccessKeyPropertiesResultOutput), nil
-		}).(GetCloudaccessKeyPropertiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudaccessKeyProperties:getCloudaccessKeyProperties", args, GetCloudaccessKeyPropertiesResultOutput{}, options).(GetCloudaccessKeyPropertiesResultOutput)
 }
 
 // A collection of arguments for invoking getCloudaccessKeyProperties.

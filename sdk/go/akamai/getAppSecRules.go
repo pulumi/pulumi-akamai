@@ -42,12 +42,8 @@ type GetAppSecRulesResult struct {
 }
 
 func GetAppSecRulesOutput(ctx *pulumi.Context, args GetAppSecRulesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecRulesResultOutput, error) {
-			args := v.(GetAppSecRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecRules:getAppSecRules", args, GetAppSecRulesResultOutput{}, options).(GetAppSecRulesResultOutput), nil
-		}).(GetAppSecRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecRules:getAppSecRules", args, GetAppSecRulesResultOutput{}, options).(GetAppSecRulesResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecRules.

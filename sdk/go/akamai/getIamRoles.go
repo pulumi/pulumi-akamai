@@ -29,10 +29,8 @@ type GetIamRolesResult struct {
 }
 
 func GetIamRolesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamRolesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamRolesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getIamRoles:getIamRoles", nil, GetIamRolesResultOutput{}, options).(GetIamRolesResultOutput), nil
-	}).(GetIamRolesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamRoles:getIamRoles", nil, GetIamRolesResultOutput{}, options).(GetIamRolesResultOutput)
 }
 
 // A collection of values returned by getIamRoles.

@@ -39,12 +39,8 @@ type GetPropertyIncludeParentsResult struct {
 }
 
 func GetPropertyIncludeParentsOutput(ctx *pulumi.Context, args GetPropertyIncludeParentsOutputArgs, opts ...pulumi.InvokeOption) GetPropertyIncludeParentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyIncludeParentsResultOutput, error) {
-			args := v.(GetPropertyIncludeParentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", args, GetPropertyIncludeParentsResultOutput{}, options).(GetPropertyIncludeParentsResultOutput), nil
-		}).(GetPropertyIncludeParentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", args, GetPropertyIncludeParentsResultOutput{}, options).(GetPropertyIncludeParentsResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyIncludeParents.

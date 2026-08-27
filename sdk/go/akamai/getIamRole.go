@@ -43,12 +43,8 @@ type LookupIamRoleResult struct {
 }
 
 func LookupIamRoleOutput(ctx *pulumi.Context, args LookupIamRoleOutputArgs, opts ...pulumi.InvokeOption) LookupIamRoleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupIamRoleResultOutput, error) {
-			args := v.(LookupIamRoleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getIamRole:getIamRole", args, LookupIamRoleResultOutput{}, options).(LookupIamRoleResultOutput), nil
-		}).(LookupIamRoleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamRole:getIamRole", args, LookupIamRoleResultOutput{}, options).(LookupIamRoleResultOutput)
 }
 
 // A collection of arguments for invoking getIamRole.

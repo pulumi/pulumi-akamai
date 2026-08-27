@@ -35,12 +35,8 @@ type LookupBotmanCustomBotCategorySequenceResult struct {
 }
 
 func LookupBotmanCustomBotCategorySequenceOutput(ctx *pulumi.Context, args LookupBotmanCustomBotCategorySequenceOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanCustomBotCategorySequenceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanCustomBotCategorySequenceResultOutput, error) {
-			args := v.(LookupBotmanCustomBotCategorySequenceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanCustomBotCategorySequence:getBotmanCustomBotCategorySequence", args, LookupBotmanCustomBotCategorySequenceResultOutput{}, options).(LookupBotmanCustomBotCategorySequenceResultOutput), nil
-		}).(LookupBotmanCustomBotCategorySequenceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanCustomBotCategorySequence:getBotmanCustomBotCategorySequence", args, LookupBotmanCustomBotCategorySequenceResultOutput{}, options).(LookupBotmanCustomBotCategorySequenceResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanCustomBotCategorySequence.

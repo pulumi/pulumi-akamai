@@ -38,12 +38,8 @@ type GetAppSecRuleUpgradeDetailsResult struct {
 }
 
 func GetAppSecRuleUpgradeDetailsOutput(ctx *pulumi.Context, args GetAppSecRuleUpgradeDetailsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecRuleUpgradeDetailsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecRuleUpgradeDetailsResultOutput, error) {
-			args := v.(GetAppSecRuleUpgradeDetailsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args, GetAppSecRuleUpgradeDetailsResultOutput{}, options).(GetAppSecRuleUpgradeDetailsResultOutput), nil
-		}).(GetAppSecRuleUpgradeDetailsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args, GetAppSecRuleUpgradeDetailsResultOutput{}, options).(GetAppSecRuleUpgradeDetailsResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecRuleUpgradeDetails.

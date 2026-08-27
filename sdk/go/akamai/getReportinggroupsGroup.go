@@ -35,12 +35,8 @@ type LookupReportinggroupsGroupResult struct {
 }
 
 func LookupReportinggroupsGroupOutput(ctx *pulumi.Context, args LookupReportinggroupsGroupOutputArgs, opts ...pulumi.InvokeOption) LookupReportinggroupsGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupReportinggroupsGroupResultOutput, error) {
-			args := v.(LookupReportinggroupsGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getReportinggroupsGroup:getReportinggroupsGroup", args, LookupReportinggroupsGroupResultOutput{}, options).(LookupReportinggroupsGroupResultOutput), nil
-		}).(LookupReportinggroupsGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getReportinggroupsGroup:getReportinggroupsGroup", args, LookupReportinggroupsGroupResultOutput{}, options).(LookupReportinggroupsGroupResultOutput)
 }
 
 // A collection of arguments for invoking getReportinggroupsGroup.

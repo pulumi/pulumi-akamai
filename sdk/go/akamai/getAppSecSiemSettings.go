@@ -36,12 +36,8 @@ type LookupAppSecSiemSettingsResult struct {
 }
 
 func LookupAppSecSiemSettingsOutput(ctx *pulumi.Context, args LookupAppSecSiemSettingsOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecSiemSettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppSecSiemSettingsResultOutput, error) {
-			args := v.(LookupAppSecSiemSettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args, LookupAppSecSiemSettingsResultOutput{}, options).(LookupAppSecSiemSettingsResultOutput), nil
-		}).(LookupAppSecSiemSettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args, LookupAppSecSiemSettingsResultOutput{}, options).(LookupAppSecSiemSettingsResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecSiemSettings.

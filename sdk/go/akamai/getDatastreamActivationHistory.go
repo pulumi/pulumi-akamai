@@ -37,12 +37,8 @@ type GetDatastreamActivationHistoryResult struct {
 }
 
 func GetDatastreamActivationHistoryOutput(ctx *pulumi.Context, args GetDatastreamActivationHistoryOutputArgs, opts ...pulumi.InvokeOption) GetDatastreamActivationHistoryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatastreamActivationHistoryResultOutput, error) {
-			args := v.(GetDatastreamActivationHistoryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args, GetDatastreamActivationHistoryResultOutput{}, options).(GetDatastreamActivationHistoryResultOutput), nil
-		}).(GetDatastreamActivationHistoryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args, GetDatastreamActivationHistoryResultOutput{}, options).(GetDatastreamActivationHistoryResultOutput)
 }
 
 // A collection of arguments for invoking getDatastreamActivationHistory.

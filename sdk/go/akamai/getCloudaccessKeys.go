@@ -27,10 +27,8 @@ type GetCloudaccessKeysResult struct {
 }
 
 func GetCloudaccessKeysOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetCloudaccessKeysResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetCloudaccessKeysResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getCloudaccessKeys:getCloudaccessKeys", nil, GetCloudaccessKeysResultOutput{}, options).(GetCloudaccessKeysResultOutput), nil
-	}).(GetCloudaccessKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudaccessKeys:getCloudaccessKeys", nil, GetCloudaccessKeysResultOutput{}, options).(GetCloudaccessKeysResultOutput)
 }
 
 // A collection of values returned by getCloudaccessKeys.

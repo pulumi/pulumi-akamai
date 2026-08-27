@@ -27,10 +27,8 @@ type GetIamApiClientsResult struct {
 }
 
 func GetIamApiClientsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamApiClientsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamApiClientsResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getIamApiClients:getIamApiClients", nil, GetIamApiClientsResultOutput{}, options).(GetIamApiClientsResultOutput), nil
-	}).(GetIamApiClientsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamApiClients:getIamApiClients", nil, GetIamApiClientsResultOutput{}, options).(GetIamApiClientsResultOutput)
 }
 
 // A collection of values returned by getIamApiClients.

@@ -35,12 +35,8 @@ type GetCloudletsPhasedReleaseMatchRuleResult struct {
 }
 
 func GetCloudletsPhasedReleaseMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsPhasedReleaseMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsPhasedReleaseMatchRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudletsPhasedReleaseMatchRuleResultOutput, error) {
-			args := v.(GetCloudletsPhasedReleaseMatchRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args, GetCloudletsPhasedReleaseMatchRuleResultOutput{}, options).(GetCloudletsPhasedReleaseMatchRuleResultOutput), nil
-		}).(GetCloudletsPhasedReleaseMatchRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args, GetCloudletsPhasedReleaseMatchRuleResultOutput{}, options).(GetCloudletsPhasedReleaseMatchRuleResultOutput)
 }
 
 // A collection of arguments for invoking getCloudletsPhasedReleaseMatchRule.

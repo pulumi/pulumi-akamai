@@ -37,12 +37,8 @@ type GetDatastreamAppsecConfigsResult struct {
 }
 
 func GetDatastreamAppsecConfigsOutput(ctx *pulumi.Context, args GetDatastreamAppsecConfigsOutputArgs, opts ...pulumi.InvokeOption) GetDatastreamAppsecConfigsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatastreamAppsecConfigsResultOutput, error) {
-			args := v.(GetDatastreamAppsecConfigsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getDatastreamAppsecConfigs:getDatastreamAppsecConfigs", args, GetDatastreamAppsecConfigsResultOutput{}, options).(GetDatastreamAppsecConfigsResultOutput), nil
-		}).(GetDatastreamAppsecConfigsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getDatastreamAppsecConfigs:getDatastreamAppsecConfigs", args, GetDatastreamAppsecConfigsResultOutput{}, options).(GetDatastreamAppsecConfigsResultOutput)
 }
 
 // A collection of arguments for invoking getDatastreamAppsecConfigs.

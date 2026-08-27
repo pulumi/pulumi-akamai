@@ -34,12 +34,8 @@ type GetCloudwrapperCapacitiesResult struct {
 }
 
 func GetCloudwrapperCapacitiesOutput(ctx *pulumi.Context, args GetCloudwrapperCapacitiesOutputArgs, opts ...pulumi.InvokeOption) GetCloudwrapperCapacitiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudwrapperCapacitiesResultOutput, error) {
-			args := v.(GetCloudwrapperCapacitiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities", args, GetCloudwrapperCapacitiesResultOutput{}, options).(GetCloudwrapperCapacitiesResultOutput), nil
-		}).(GetCloudwrapperCapacitiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities", args, GetCloudwrapperCapacitiesResultOutput{}, options).(GetCloudwrapperCapacitiesResultOutput)
 }
 
 // A collection of arguments for invoking getCloudwrapperCapacities.

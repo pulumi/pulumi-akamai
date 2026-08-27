@@ -48,12 +48,8 @@ type LookupCloudwrapperConfigurationResult struct {
 }
 
 func LookupCloudwrapperConfigurationOutput(ctx *pulumi.Context, args LookupCloudwrapperConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupCloudwrapperConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudwrapperConfigurationResultOutput, error) {
-			args := v.(LookupCloudwrapperConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration", args, LookupCloudwrapperConfigurationResultOutput{}, options).(LookupCloudwrapperConfigurationResultOutput), nil
-		}).(LookupCloudwrapperConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration", args, LookupCloudwrapperConfigurationResultOutput{}, options).(LookupCloudwrapperConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getCloudwrapperConfiguration.

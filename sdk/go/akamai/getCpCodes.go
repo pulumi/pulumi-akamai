@@ -40,12 +40,8 @@ type GetCpCodesResult struct {
 }
 
 func GetCpCodesOutput(ctx *pulumi.Context, args GetCpCodesOutputArgs, opts ...pulumi.InvokeOption) GetCpCodesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCpCodesResultOutput, error) {
-			args := v.(GetCpCodesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCpCodes:getCpCodes", args, GetCpCodesResultOutput{}, options).(GetCpCodesResultOutput), nil
-		}).(GetCpCodesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCpCodes:getCpCodes", args, GetCpCodesResultOutput{}, options).(GetCpCodesResultOutput)
 }
 
 // A collection of arguments for invoking getCpCodes.

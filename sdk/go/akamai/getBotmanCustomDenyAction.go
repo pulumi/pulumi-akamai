@@ -37,12 +37,8 @@ type LookupBotmanCustomDenyActionResult struct {
 }
 
 func LookupBotmanCustomDenyActionOutput(ctx *pulumi.Context, args LookupBotmanCustomDenyActionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanCustomDenyActionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanCustomDenyActionResultOutput, error) {
-			args := v.(LookupBotmanCustomDenyActionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", args, LookupBotmanCustomDenyActionResultOutput{}, options).(LookupBotmanCustomDenyActionResultOutput), nil
-		}).(LookupBotmanCustomDenyActionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", args, LookupBotmanCustomDenyActionResultOutput{}, options).(LookupBotmanCustomDenyActionResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanCustomDenyAction.

@@ -37,12 +37,8 @@ type LookupBotmanConditionalActionResult struct {
 }
 
 func LookupBotmanConditionalActionOutput(ctx *pulumi.Context, args LookupBotmanConditionalActionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanConditionalActionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanConditionalActionResultOutput, error) {
-			args := v.(LookupBotmanConditionalActionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanConditionalAction:getBotmanConditionalAction", args, LookupBotmanConditionalActionResultOutput{}, options).(LookupBotmanConditionalActionResultOutput), nil
-		}).(LookupBotmanConditionalActionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanConditionalAction:getBotmanConditionalAction", args, LookupBotmanConditionalActionResultOutput{}, options).(LookupBotmanConditionalActionResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanConditionalAction.

@@ -36,12 +36,8 @@ type GetCpsCsrResult struct {
 }
 
 func GetCpsCsrOutput(ctx *pulumi.Context, args GetCpsCsrOutputArgs, opts ...pulumi.InvokeOption) GetCpsCsrResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCpsCsrResultOutput, error) {
-			args := v.(GetCpsCsrArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCpsCsr:getCpsCsr", args, GetCpsCsrResultOutput{}, options).(GetCpsCsrResultOutput), nil
-		}).(GetCpsCsrResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCpsCsr:getCpsCsr", args, GetCpsCsrResultOutput{}, options).(GetCpsCsrResultOutput)
 }
 
 // A collection of arguments for invoking getCpsCsr.

@@ -29,10 +29,8 @@ type GetIamTimeoutPoliciesResult struct {
 }
 
 func GetIamTimeoutPoliciesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamTimeoutPoliciesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamTimeoutPoliciesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", nil, GetIamTimeoutPoliciesResultOutput{}, options).(GetIamTimeoutPoliciesResultOutput), nil
-	}).(GetIamTimeoutPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", nil, GetIamTimeoutPoliciesResultOutput{}, options).(GetIamTimeoutPoliciesResultOutput)
 }
 
 // A collection of values returned by getIamTimeoutPolicies.

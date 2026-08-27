@@ -38,12 +38,8 @@ type LookupAppSecAdvancedSettingsPragmaHeaderResult struct {
 }
 
 func LookupAppSecAdvancedSettingsPragmaHeaderOutput(ctx *pulumi.Context, args LookupAppSecAdvancedSettingsPragmaHeaderOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecAdvancedSettingsPragmaHeaderResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsPragmaHeaderResultOutput, error) {
-			args := v.(LookupAppSecAdvancedSettingsPragmaHeaderArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args, LookupAppSecAdvancedSettingsPragmaHeaderResultOutput{}, options).(LookupAppSecAdvancedSettingsPragmaHeaderResultOutput), nil
-		}).(LookupAppSecAdvancedSettingsPragmaHeaderResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args, LookupAppSecAdvancedSettingsPragmaHeaderResultOutput{}, options).(LookupAppSecAdvancedSettingsPragmaHeaderResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecAdvancedSettingsPragmaHeader.

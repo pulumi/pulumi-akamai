@@ -38,12 +38,8 @@ type GetMtlstruststoreCaSetAssociationsResult struct {
 }
 
 func GetMtlstruststoreCaSetAssociationsOutput(ctx *pulumi.Context, args GetMtlstruststoreCaSetAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetMtlstruststoreCaSetAssociationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMtlstruststoreCaSetAssociationsResultOutput, error) {
-			args := v.(GetMtlstruststoreCaSetAssociationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getMtlstruststoreCaSetAssociations:getMtlstruststoreCaSetAssociations", args, GetMtlstruststoreCaSetAssociationsResultOutput{}, options).(GetMtlstruststoreCaSetAssociationsResultOutput), nil
-		}).(GetMtlstruststoreCaSetAssociationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getMtlstruststoreCaSetAssociations:getMtlstruststoreCaSetAssociations", args, GetMtlstruststoreCaSetAssociationsResultOutput{}, options).(GetMtlstruststoreCaSetAssociationsResultOutput)
 }
 
 // A collection of arguments for invoking getMtlstruststoreCaSetAssociations.

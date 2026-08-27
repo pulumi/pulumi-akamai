@@ -51,12 +51,8 @@ type LookupIamApiClientResult struct {
 }
 
 func LookupIamApiClientOutput(ctx *pulumi.Context, args LookupIamApiClientOutputArgs, opts ...pulumi.InvokeOption) LookupIamApiClientResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupIamApiClientResultOutput, error) {
-			args := v.(LookupIamApiClientArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getIamApiClient:getIamApiClient", args, LookupIamApiClientResultOutput{}, options).(LookupIamApiClientResultOutput), nil
-		}).(LookupIamApiClientResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamApiClient:getIamApiClient", args, LookupIamApiClientResultOutput{}, options).(LookupIamApiClientResultOutput)
 }
 
 // A collection of arguments for invoking getIamApiClient.

@@ -40,12 +40,8 @@ type LookupAppSecSecurityPolicyResult struct {
 }
 
 func LookupAppSecSecurityPolicyOutput(ctx *pulumi.Context, args LookupAppSecSecurityPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecSecurityPolicyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppSecSecurityPolicyResultOutput, error) {
-			args := v.(LookupAppSecSecurityPolicyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args, LookupAppSecSecurityPolicyResultOutput{}, options).(LookupAppSecSecurityPolicyResultOutput), nil
-		}).(LookupAppSecSecurityPolicyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args, LookupAppSecSecurityPolicyResultOutput{}, options).(LookupAppSecSecurityPolicyResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecSecurityPolicy.

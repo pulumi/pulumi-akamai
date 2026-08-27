@@ -35,12 +35,8 @@ type GetIamPropertyUsersResult struct {
 }
 
 func GetIamPropertyUsersOutput(ctx *pulumi.Context, args GetIamPropertyUsersOutputArgs, opts ...pulumi.InvokeOption) GetIamPropertyUsersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIamPropertyUsersResultOutput, error) {
-			args := v.(GetIamPropertyUsersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getIamPropertyUsers:getIamPropertyUsers", args, GetIamPropertyUsersResultOutput{}, options).(GetIamPropertyUsersResultOutput), nil
-		}).(GetIamPropertyUsersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamPropertyUsers:getIamPropertyUsers", args, GetIamPropertyUsersResultOutput{}, options).(GetIamPropertyUsersResultOutput)
 }
 
 // A collection of arguments for invoking getIamPropertyUsers.

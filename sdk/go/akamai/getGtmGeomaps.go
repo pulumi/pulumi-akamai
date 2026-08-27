@@ -33,12 +33,8 @@ type GetGtmGeomapsResult struct {
 }
 
 func GetGtmGeomapsOutput(ctx *pulumi.Context, args GetGtmGeomapsOutputArgs, opts ...pulumi.InvokeOption) GetGtmGeomapsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGtmGeomapsResultOutput, error) {
-			args := v.(GetGtmGeomapsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getGtmGeomaps:getGtmGeomaps", args, GetGtmGeomapsResultOutput{}, options).(GetGtmGeomapsResultOutput), nil
-		}).(GetGtmGeomapsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getGtmGeomaps:getGtmGeomaps", args, GetGtmGeomapsResultOutput{}, options).(GetGtmGeomapsResultOutput)
 }
 
 // A collection of arguments for invoking getGtmGeomaps.

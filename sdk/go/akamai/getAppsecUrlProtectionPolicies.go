@@ -33,12 +33,8 @@ type GetAppsecUrlProtectionPoliciesResult struct {
 }
 
 func GetAppsecUrlProtectionPoliciesOutput(ctx *pulumi.Context, args GetAppsecUrlProtectionPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetAppsecUrlProtectionPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppsecUrlProtectionPoliciesResultOutput, error) {
-			args := v.(GetAppsecUrlProtectionPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppsecUrlProtectionPolicies:getAppsecUrlProtectionPolicies", args, GetAppsecUrlProtectionPoliciesResultOutput{}, options).(GetAppsecUrlProtectionPoliciesResultOutput), nil
-		}).(GetAppsecUrlProtectionPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppsecUrlProtectionPolicies:getAppsecUrlProtectionPolicies", args, GetAppsecUrlProtectionPoliciesResultOutput{}, options).(GetAppsecUrlProtectionPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getAppsecUrlProtectionPolicies.

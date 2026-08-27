@@ -35,12 +35,8 @@ type LookupBotmanCustomCodeResult struct {
 }
 
 func LookupBotmanCustomCodeOutput(ctx *pulumi.Context, args LookupBotmanCustomCodeOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanCustomCodeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanCustomCodeResultOutput, error) {
-			args := v.(LookupBotmanCustomCodeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanCustomCode:getBotmanCustomCode", args, LookupBotmanCustomCodeResultOutput{}, options).(LookupBotmanCustomCodeResultOutput), nil
-		}).(LookupBotmanCustomCodeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanCustomCode:getBotmanCustomCode", args, LookupBotmanCustomCodeResultOutput{}, options).(LookupBotmanCustomCodeResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanCustomCode.

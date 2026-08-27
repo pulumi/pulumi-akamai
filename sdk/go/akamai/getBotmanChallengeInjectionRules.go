@@ -35,12 +35,8 @@ type LookupBotmanChallengeInjectionRulesResult struct {
 }
 
 func LookupBotmanChallengeInjectionRulesOutput(ctx *pulumi.Context, args LookupBotmanChallengeInjectionRulesOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanChallengeInjectionRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanChallengeInjectionRulesResultOutput, error) {
-			args := v.(LookupBotmanChallengeInjectionRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanChallengeInjectionRules:getBotmanChallengeInjectionRules", args, LookupBotmanChallengeInjectionRulesResultOutput{}, options).(LookupBotmanChallengeInjectionRulesResultOutput), nil
-		}).(LookupBotmanChallengeInjectionRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanChallengeInjectionRules:getBotmanChallengeInjectionRules", args, LookupBotmanChallengeInjectionRulesResultOutput{}, options).(LookupBotmanChallengeInjectionRulesResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanChallengeInjectionRules.

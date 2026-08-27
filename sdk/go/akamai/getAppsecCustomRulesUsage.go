@@ -37,12 +37,8 @@ type GetAppsecCustomRulesUsageResult struct {
 }
 
 func GetAppsecCustomRulesUsageOutput(ctx *pulumi.Context, args GetAppsecCustomRulesUsageOutputArgs, opts ...pulumi.InvokeOption) GetAppsecCustomRulesUsageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppsecCustomRulesUsageResultOutput, error) {
-			args := v.(GetAppsecCustomRulesUsageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppsecCustomRulesUsage:getAppsecCustomRulesUsage", args, GetAppsecCustomRulesUsageResultOutput{}, options).(GetAppsecCustomRulesUsageResultOutput), nil
-		}).(GetAppsecCustomRulesUsageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppsecCustomRulesUsage:getAppsecCustomRulesUsage", args, GetAppsecCustomRulesUsageResultOutput{}, options).(GetAppsecCustomRulesUsageResultOutput)
 }
 
 // A collection of arguments for invoking getAppsecCustomRulesUsage.

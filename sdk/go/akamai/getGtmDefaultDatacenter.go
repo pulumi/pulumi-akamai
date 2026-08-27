@@ -38,12 +38,8 @@ type GetGtmDefaultDatacenterResult struct {
 }
 
 func GetGtmDefaultDatacenterOutput(ctx *pulumi.Context, args GetGtmDefaultDatacenterOutputArgs, opts ...pulumi.InvokeOption) GetGtmDefaultDatacenterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGtmDefaultDatacenterResultOutput, error) {
-			args := v.(GetGtmDefaultDatacenterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args, GetGtmDefaultDatacenterResultOutput{}, options).(GetGtmDefaultDatacenterResultOutput), nil
-		}).(GetGtmDefaultDatacenterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args, GetGtmDefaultDatacenterResultOutput{}, options).(GetGtmDefaultDatacenterResultOutput)
 }
 
 // A collection of arguments for invoking getGtmDefaultDatacenter.

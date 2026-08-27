@@ -35,12 +35,8 @@ type LookupClientlistListResult struct {
 }
 
 func LookupClientlistListOutput(ctx *pulumi.Context, args LookupClientlistListOutputArgs, opts ...pulumi.InvokeOption) LookupClientlistListResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupClientlistListResultOutput, error) {
-			args := v.(LookupClientlistListArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getClientlistList:getClientlistList", args, LookupClientlistListResultOutput{}, options).(LookupClientlistListResultOutput), nil
-		}).(LookupClientlistListResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getClientlistList:getClientlistList", args, LookupClientlistListResultOutput{}, options).(LookupClientlistListResultOutput)
 }
 
 // A collection of arguments for invoking getClientlistList.

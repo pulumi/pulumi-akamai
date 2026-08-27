@@ -29,10 +29,8 @@ type GetIamCountriesResult struct {
 }
 
 func GetIamCountriesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamCountriesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamCountriesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getIamCountries:getIamCountries", nil, GetIamCountriesResultOutput{}, options).(GetIamCountriesResultOutput), nil
-	}).(GetIamCountriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamCountries:getIamCountries", nil, GetIamCountriesResultOutput{}, options).(GetIamCountriesResultOutput)
 }
 
 // A collection of values returned by getIamCountries.

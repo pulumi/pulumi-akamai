@@ -36,12 +36,8 @@ type LookupAppsecWafRulesetResult struct {
 }
 
 func LookupAppsecWafRulesetOutput(ctx *pulumi.Context, args LookupAppsecWafRulesetOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecWafRulesetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppsecWafRulesetResultOutput, error) {
-			args := v.(LookupAppsecWafRulesetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppsecWafRuleset:getAppsecWafRuleset", args, LookupAppsecWafRulesetResultOutput{}, options).(LookupAppsecWafRulesetResultOutput), nil
-		}).(LookupAppsecWafRulesetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppsecWafRuleset:getAppsecWafRuleset", args, LookupAppsecWafRulesetResultOutput{}, options).(LookupAppsecWafRulesetResultOutput)
 }
 
 // A collection of arguments for invoking getAppsecWafRuleset.

@@ -35,12 +35,8 @@ type LookupBotmanClientSideSecurityResult struct {
 }
 
 func LookupBotmanClientSideSecurityOutput(ctx *pulumi.Context, args LookupBotmanClientSideSecurityOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanClientSideSecurityResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBotmanClientSideSecurityResultOutput, error) {
-			args := v.(LookupBotmanClientSideSecurityArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", args, LookupBotmanClientSideSecurityResultOutput{}, options).(LookupBotmanClientSideSecurityResultOutput), nil
-		}).(LookupBotmanClientSideSecurityResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", args, LookupBotmanClientSideSecurityResultOutput{}, options).(LookupBotmanClientSideSecurityResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanClientSideSecurity.

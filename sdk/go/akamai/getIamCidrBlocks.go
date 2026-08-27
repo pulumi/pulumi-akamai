@@ -27,10 +27,8 @@ type GetIamCidrBlocksResult struct {
 }
 
 func GetIamCidrBlocksOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamCidrBlocksResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamCidrBlocksResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getIamCidrBlocks:getIamCidrBlocks", nil, GetIamCidrBlocksResultOutput{}, options).(GetIamCidrBlocksResultOutput), nil
-	}).(GetIamCidrBlocksResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamCidrBlocks:getIamCidrBlocks", nil, GetIamCidrBlocksResultOutput{}, options).(GetIamCidrBlocksResultOutput)
 }
 
 // A collection of values returned by getIamCidrBlocks.

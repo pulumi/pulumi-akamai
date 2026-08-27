@@ -46,12 +46,8 @@ type GetMtlskeystoreClientCertificateResult struct {
 }
 
 func GetMtlskeystoreClientCertificateOutput(ctx *pulumi.Context, args GetMtlskeystoreClientCertificateOutputArgs, opts ...pulumi.InvokeOption) GetMtlskeystoreClientCertificateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMtlskeystoreClientCertificateResultOutput, error) {
-			args := v.(GetMtlskeystoreClientCertificateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getMtlskeystoreClientCertificate:getMtlskeystoreClientCertificate", args, GetMtlskeystoreClientCertificateResultOutput{}, options).(GetMtlskeystoreClientCertificateResultOutput), nil
-		}).(GetMtlskeystoreClientCertificateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getMtlskeystoreClientCertificate:getMtlskeystoreClientCertificate", args, GetMtlskeystoreClientCertificateResultOutput{}, options).(GetMtlskeystoreClientCertificateResultOutput)
 }
 
 // A collection of arguments for invoking getMtlskeystoreClientCertificate.

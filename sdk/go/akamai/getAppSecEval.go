@@ -37,12 +37,8 @@ type LookupAppSecEvalResult struct {
 }
 
 func LookupAppSecEvalOutput(ctx *pulumi.Context, args LookupAppSecEvalOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecEvalResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppSecEvalResultOutput, error) {
-			args := v.(LookupAppSecEvalArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecEval:getAppSecEval", args, LookupAppSecEvalResultOutput{}, options).(LookupAppSecEvalResultOutput), nil
-		}).(LookupAppSecEvalResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecEval:getAppSecEval", args, LookupAppSecEvalResultOutput{}, options).(LookupAppSecEvalResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecEval.

@@ -38,12 +38,8 @@ type GetAppSecRatePoliciesResult struct {
 }
 
 func GetAppSecRatePoliciesOutput(ctx *pulumi.Context, args GetAppSecRatePoliciesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecRatePoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecRatePoliciesResultOutput, error) {
-			args := v.(GetAppSecRatePoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args, GetAppSecRatePoliciesResultOutput{}, options).(GetAppSecRatePoliciesResultOutput), nil
-		}).(GetAppSecRatePoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args, GetAppSecRatePoliciesResultOutput{}, options).(GetAppSecRatePoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecRatePolicies.

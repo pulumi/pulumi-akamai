@@ -39,12 +39,8 @@ type GetDnsRecordSetResult struct {
 }
 
 func GetDnsRecordSetOutput(ctx *pulumi.Context, args GetDnsRecordSetOutputArgs, opts ...pulumi.InvokeOption) GetDnsRecordSetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDnsRecordSetResultOutput, error) {
-			args := v.(GetDnsRecordSetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getDnsRecordSet:getDnsRecordSet", args, GetDnsRecordSetResultOutput{}, options).(GetDnsRecordSetResultOutput), nil
-		}).(GetDnsRecordSetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getDnsRecordSet:getDnsRecordSet", args, GetDnsRecordSetResultOutput{}, options).(GetDnsRecordSetResultOutput)
 }
 
 // A collection of arguments for invoking getDnsRecordSet.

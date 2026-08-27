@@ -40,12 +40,8 @@ type LookupApidefinitionsApiResult struct {
 }
 
 func LookupApidefinitionsApiOutput(ctx *pulumi.Context, args LookupApidefinitionsApiOutputArgs, opts ...pulumi.InvokeOption) LookupApidefinitionsApiResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupApidefinitionsApiResultOutput, error) {
-			args := v.(LookupApidefinitionsApiArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getApidefinitionsApi:getApidefinitionsApi", args, LookupApidefinitionsApiResultOutput{}, options).(LookupApidefinitionsApiResultOutput), nil
-		}).(LookupApidefinitionsApiResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getApidefinitionsApi:getApidefinitionsApi", args, LookupApidefinitionsApiResultOutput{}, options).(LookupApidefinitionsApiResultOutput)
 }
 
 // A collection of arguments for invoking getApidefinitionsApi.

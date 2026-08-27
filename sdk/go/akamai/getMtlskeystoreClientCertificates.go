@@ -27,10 +27,8 @@ type GetMtlskeystoreClientCertificatesResult struct {
 }
 
 func GetMtlskeystoreClientCertificatesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetMtlskeystoreClientCertificatesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetMtlskeystoreClientCertificatesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("akamai:index/getMtlskeystoreClientCertificates:getMtlskeystoreClientCertificates", nil, GetMtlskeystoreClientCertificatesResultOutput{}, options).(GetMtlskeystoreClientCertificatesResultOutput), nil
-	}).(GetMtlskeystoreClientCertificatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getMtlskeystoreClientCertificates:getMtlskeystoreClientCertificates", nil, GetMtlskeystoreClientCertificatesResultOutput{}, options).(GetMtlskeystoreClientCertificatesResultOutput)
 }
 
 // A collection of values returned by getMtlskeystoreClientCertificates.

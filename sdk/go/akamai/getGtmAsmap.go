@@ -40,12 +40,8 @@ type LookupGtmAsmapResult struct {
 }
 
 func LookupGtmAsmapOutput(ctx *pulumi.Context, args LookupGtmAsmapOutputArgs, opts ...pulumi.InvokeOption) LookupGtmAsmapResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupGtmAsmapResultOutput, error) {
-			args := v.(LookupGtmAsmapArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getGtmAsmap:getGtmAsmap", args, LookupGtmAsmapResultOutput{}, options).(LookupGtmAsmapResultOutput), nil
-		}).(LookupGtmAsmapResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getGtmAsmap:getGtmAsmap", args, LookupGtmAsmapResultOutput{}, options).(LookupGtmAsmapResultOutput)
 }
 
 // A collection of arguments for invoking getGtmAsmap.

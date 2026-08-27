@@ -40,12 +40,8 @@ type LookupAppSecApiRequestConstraintsResult struct {
 }
 
 func LookupAppSecApiRequestConstraintsOutput(ctx *pulumi.Context, args LookupAppSecApiRequestConstraintsOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecApiRequestConstraintsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppSecApiRequestConstraintsResultOutput, error) {
-			args := v.(LookupAppSecApiRequestConstraintsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args, LookupAppSecApiRequestConstraintsResultOutput{}, options).(LookupAppSecApiRequestConstraintsResultOutput), nil
-		}).(LookupAppSecApiRequestConstraintsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args, LookupAppSecApiRequestConstraintsResultOutput{}, options).(LookupAppSecApiRequestConstraintsResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecApiRequestConstraints.

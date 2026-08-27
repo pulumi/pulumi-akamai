@@ -37,12 +37,8 @@ type GetIamUsersAffectedByMovingGroupResult struct {
 }
 
 func GetIamUsersAffectedByMovingGroupOutput(ctx *pulumi.Context, args GetIamUsersAffectedByMovingGroupOutputArgs, opts ...pulumi.InvokeOption) GetIamUsersAffectedByMovingGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIamUsersAffectedByMovingGroupResultOutput, error) {
-			args := v.(GetIamUsersAffectedByMovingGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getIamUsersAffectedByMovingGroup:getIamUsersAffectedByMovingGroup", args, GetIamUsersAffectedByMovingGroupResultOutput{}, options).(GetIamUsersAffectedByMovingGroupResultOutput), nil
-		}).(GetIamUsersAffectedByMovingGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamUsersAffectedByMovingGroup:getIamUsersAffectedByMovingGroup", args, GetIamUsersAffectedByMovingGroupResultOutput{}, options).(GetIamUsersAffectedByMovingGroupResultOutput)
 }
 
 // A collection of arguments for invoking getIamUsersAffectedByMovingGroup.

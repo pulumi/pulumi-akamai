@@ -39,12 +39,8 @@ type LookupAprProtectedOperationsResult struct {
 }
 
 func LookupAprProtectedOperationsOutput(ctx *pulumi.Context, args LookupAprProtectedOperationsOutputArgs, opts ...pulumi.InvokeOption) LookupAprProtectedOperationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAprProtectedOperationsResultOutput, error) {
-			args := v.(LookupAprProtectedOperationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAprProtectedOperations:getAprProtectedOperations", args, LookupAprProtectedOperationsResultOutput{}, options).(LookupAprProtectedOperationsResultOutput), nil
-		}).(LookupAprProtectedOperationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAprProtectedOperations:getAprProtectedOperations", args, LookupAprProtectedOperationsResultOutput{}, options).(LookupAprProtectedOperationsResultOutput)
 }
 
 // A collection of arguments for invoking getAprProtectedOperations.

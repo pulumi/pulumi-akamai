@@ -35,12 +35,8 @@ type GetIamAccountSwitchKeysResult struct {
 }
 
 func GetIamAccountSwitchKeysOutput(ctx *pulumi.Context, args GetIamAccountSwitchKeysOutputArgs, opts ...pulumi.InvokeOption) GetIamAccountSwitchKeysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIamAccountSwitchKeysResultOutput, error) {
-			args := v.(GetIamAccountSwitchKeysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getIamAccountSwitchKeys:getIamAccountSwitchKeys", args, GetIamAccountSwitchKeysResultOutput{}, options).(GetIamAccountSwitchKeysResultOutput), nil
-		}).(GetIamAccountSwitchKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamAccountSwitchKeys:getIamAccountSwitchKeys", args, GetIamAccountSwitchKeysResultOutput{}, options).(GetIamAccountSwitchKeysResultOutput)
 }
 
 // A collection of arguments for invoking getIamAccountSwitchKeys.

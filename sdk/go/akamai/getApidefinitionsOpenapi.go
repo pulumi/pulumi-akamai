@@ -36,12 +36,8 @@ type GetApidefinitionsOpenapiResult struct {
 }
 
 func GetApidefinitionsOpenapiOutput(ctx *pulumi.Context, args GetApidefinitionsOpenapiOutputArgs, opts ...pulumi.InvokeOption) GetApidefinitionsOpenapiResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetApidefinitionsOpenapiResultOutput, error) {
-			args := v.(GetApidefinitionsOpenapiArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getApidefinitionsOpenapi:getApidefinitionsOpenapi", args, GetApidefinitionsOpenapiResultOutput{}, options).(GetApidefinitionsOpenapiResultOutput), nil
-		}).(GetApidefinitionsOpenapiResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getApidefinitionsOpenapi:getApidefinitionsOpenapi", args, GetApidefinitionsOpenapiResultOutput{}, options).(GetApidefinitionsOpenapiResultOutput)
 }
 
 // A collection of arguments for invoking getApidefinitionsOpenapi.

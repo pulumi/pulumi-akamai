@@ -32,12 +32,8 @@ type GetPropertyDomainownershipSearchDomainsResult struct {
 }
 
 func GetPropertyDomainownershipSearchDomainsOutput(ctx *pulumi.Context, args GetPropertyDomainownershipSearchDomainsOutputArgs, opts ...pulumi.InvokeOption) GetPropertyDomainownershipSearchDomainsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyDomainownershipSearchDomainsResultOutput, error) {
-			args := v.(GetPropertyDomainownershipSearchDomainsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyDomainownershipSearchDomains:getPropertyDomainownershipSearchDomains", args, GetPropertyDomainownershipSearchDomainsResultOutput{}, options).(GetPropertyDomainownershipSearchDomainsResultOutput), nil
-		}).(GetPropertyDomainownershipSearchDomainsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyDomainownershipSearchDomains:getPropertyDomainownershipSearchDomains", args, GetPropertyDomainownershipSearchDomainsResultOutput{}, options).(GetPropertyDomainownershipSearchDomainsResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyDomainownershipSearchDomains.

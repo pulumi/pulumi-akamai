@@ -37,12 +37,8 @@ type GetIamBlockedPropertiesResult struct {
 }
 
 func GetIamBlockedPropertiesOutput(ctx *pulumi.Context, args GetIamBlockedPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetIamBlockedPropertiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIamBlockedPropertiesResultOutput, error) {
-			args := v.(GetIamBlockedPropertiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getIamBlockedProperties:getIamBlockedProperties", args, GetIamBlockedPropertiesResultOutput{}, options).(GetIamBlockedPropertiesResultOutput), nil
-		}).(GetIamBlockedPropertiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getIamBlockedProperties:getIamBlockedProperties", args, GetIamBlockedPropertiesResultOutput{}, options).(GetIamBlockedPropertiesResultOutput)
 }
 
 // A collection of arguments for invoking getIamBlockedProperties.

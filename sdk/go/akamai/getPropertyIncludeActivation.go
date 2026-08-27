@@ -44,12 +44,8 @@ type LookupPropertyIncludeActivationResult struct {
 }
 
 func LookupPropertyIncludeActivationOutput(ctx *pulumi.Context, args LookupPropertyIncludeActivationOutputArgs, opts ...pulumi.InvokeOption) LookupPropertyIncludeActivationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPropertyIncludeActivationResultOutput, error) {
-			args := v.(LookupPropertyIncludeActivationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", args, LookupPropertyIncludeActivationResultOutput{}, options).(LookupPropertyIncludeActivationResultOutput), nil
-		}).(LookupPropertyIncludeActivationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", args, LookupPropertyIncludeActivationResultOutput{}, options).(LookupPropertyIncludeActivationResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyIncludeActivation.

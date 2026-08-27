@@ -32,12 +32,8 @@ type GetGtmDomainsResult struct {
 }
 
 func GetGtmDomainsOutput(ctx *pulumi.Context, args GetGtmDomainsOutputArgs, opts ...pulumi.InvokeOption) GetGtmDomainsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGtmDomainsResultOutput, error) {
-			args := v.(GetGtmDomainsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getGtmDomains:getGtmDomains", args, GetGtmDomainsResultOutput{}, options).(GetGtmDomainsResultOutput), nil
-		}).(GetGtmDomainsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getGtmDomains:getGtmDomains", args, GetGtmDomainsResultOutput{}, options).(GetGtmDomainsResultOutput)
 }
 
 // A collection of arguments for invoking getGtmDomains.

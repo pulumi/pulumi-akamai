@@ -36,12 +36,8 @@ type GetAppSecVersionNotesResult struct {
 }
 
 func GetAppSecVersionNotesOutput(ctx *pulumi.Context, args GetAppSecVersionNotesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecVersionNotesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecVersionNotesResultOutput, error) {
-			args := v.(GetAppSecVersionNotesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args, GetAppSecVersionNotesResultOutput{}, options).(GetAppSecVersionNotesResultOutput), nil
-		}).(GetAppSecVersionNotesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args, GetAppSecVersionNotesResultOutput{}, options).(GetAppSecVersionNotesResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecVersionNotes.

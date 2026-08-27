@@ -37,12 +37,8 @@ type GetBotmanResponseActionResult struct {
 }
 
 func GetBotmanResponseActionOutput(ctx *pulumi.Context, args GetBotmanResponseActionOutputArgs, opts ...pulumi.InvokeOption) GetBotmanResponseActionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBotmanResponseActionResultOutput, error) {
-			args := v.(GetBotmanResponseActionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanResponseAction:getBotmanResponseAction", args, GetBotmanResponseActionResultOutput{}, options).(GetBotmanResponseActionResultOutput), nil
-		}).(GetBotmanResponseActionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanResponseAction:getBotmanResponseAction", args, GetBotmanResponseActionResultOutput{}, options).(GetBotmanResponseActionResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanResponseAction.

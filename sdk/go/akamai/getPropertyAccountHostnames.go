@@ -47,12 +47,8 @@ type GetPropertyAccountHostnamesResult struct {
 }
 
 func GetPropertyAccountHostnamesOutput(ctx *pulumi.Context, args GetPropertyAccountHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetPropertyAccountHostnamesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertyAccountHostnamesResultOutput, error) {
-			args := v.(GetPropertyAccountHostnamesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getPropertyAccountHostnames:getPropertyAccountHostnames", args, GetPropertyAccountHostnamesResultOutput{}, options).(GetPropertyAccountHostnamesResultOutput), nil
-		}).(GetPropertyAccountHostnamesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getPropertyAccountHostnames:getPropertyAccountHostnames", args, GetPropertyAccountHostnamesResultOutput{}, options).(GetPropertyAccountHostnamesResultOutput)
 }
 
 // A collection of arguments for invoking getPropertyAccountHostnames.

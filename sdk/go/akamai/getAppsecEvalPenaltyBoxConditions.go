@@ -38,12 +38,8 @@ type LookupAppsecEvalPenaltyBoxConditionsResult struct {
 }
 
 func LookupAppsecEvalPenaltyBoxConditionsOutput(ctx *pulumi.Context, args LookupAppsecEvalPenaltyBoxConditionsOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecEvalPenaltyBoxConditionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppsecEvalPenaltyBoxConditionsResultOutput, error) {
-			args := v.(LookupAppsecEvalPenaltyBoxConditionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppsecEvalPenaltyBoxConditions:getAppsecEvalPenaltyBoxConditions", args, LookupAppsecEvalPenaltyBoxConditionsResultOutput{}, options).(LookupAppsecEvalPenaltyBoxConditionsResultOutput), nil
-		}).(LookupAppsecEvalPenaltyBoxConditionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppsecEvalPenaltyBoxConditions:getAppsecEvalPenaltyBoxConditions", args, LookupAppsecEvalPenaltyBoxConditionsResultOutput{}, options).(LookupAppsecEvalPenaltyBoxConditionsResultOutput)
 }
 
 // A collection of arguments for invoking getAppsecEvalPenaltyBoxConditions.

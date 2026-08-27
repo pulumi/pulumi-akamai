@@ -38,12 +38,8 @@ type GetEdgeWorkerActivationResult struct {
 }
 
 func GetEdgeWorkerActivationOutput(ctx *pulumi.Context, args GetEdgeWorkerActivationOutputArgs, opts ...pulumi.InvokeOption) GetEdgeWorkerActivationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEdgeWorkerActivationResultOutput, error) {
-			args := v.(GetEdgeWorkerActivationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", args, GetEdgeWorkerActivationResultOutput{}, options).(GetEdgeWorkerActivationResultOutput), nil
-		}).(GetEdgeWorkerActivationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", args, GetEdgeWorkerActivationResultOutput{}, options).(GetEdgeWorkerActivationResultOutput)
 }
 
 // A collection of arguments for invoking getEdgeWorkerActivation.

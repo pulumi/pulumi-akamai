@@ -34,12 +34,8 @@ type GetCloudaccessKeyVersionsResult struct {
 }
 
 func GetCloudaccessKeyVersionsOutput(ctx *pulumi.Context, args GetCloudaccessKeyVersionsOutputArgs, opts ...pulumi.InvokeOption) GetCloudaccessKeyVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudaccessKeyVersionsResultOutput, error) {
-			args := v.(GetCloudaccessKeyVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudaccessKeyVersions:getCloudaccessKeyVersions", args, GetCloudaccessKeyVersionsResultOutput{}, options).(GetCloudaccessKeyVersionsResultOutput), nil
-		}).(GetCloudaccessKeyVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudaccessKeyVersions:getCloudaccessKeyVersions", args, GetCloudaccessKeyVersionsResultOutput{}, options).(GetCloudaccessKeyVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getCloudaccessKeyVersions.

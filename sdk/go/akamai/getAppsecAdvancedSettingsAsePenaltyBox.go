@@ -36,12 +36,8 @@ type LookupAppsecAdvancedSettingsAsePenaltyBoxResult struct {
 }
 
 func LookupAppsecAdvancedSettingsAsePenaltyBoxOutput(ctx *pulumi.Context, args LookupAppsecAdvancedSettingsAsePenaltyBoxOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput, error) {
-			args := v.(LookupAppsecAdvancedSettingsAsePenaltyBoxArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppsecAdvancedSettingsAsePenaltyBox:getAppsecAdvancedSettingsAsePenaltyBox", args, LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput{}, options).(LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput), nil
-		}).(LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppsecAdvancedSettingsAsePenaltyBox:getAppsecAdvancedSettingsAsePenaltyBox", args, LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput{}, options).(LookupAppsecAdvancedSettingsAsePenaltyBoxResultOutput)
 }
 
 // A collection of arguments for invoking getAppsecAdvancedSettingsAsePenaltyBox.

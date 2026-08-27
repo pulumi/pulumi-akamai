@@ -37,12 +37,8 @@ type GetDatastreamsResult struct {
 }
 
 func GetDatastreamsOutput(ctx *pulumi.Context, args GetDatastreamsOutputArgs, opts ...pulumi.InvokeOption) GetDatastreamsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatastreamsResultOutput, error) {
-			args := v.(GetDatastreamsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getDatastreams:getDatastreams", args, GetDatastreamsResultOutput{}, options).(GetDatastreamsResultOutput), nil
-		}).(GetDatastreamsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getDatastreams:getDatastreams", args, GetDatastreamsResultOutput{}, options).(GetDatastreamsResultOutput)
 }
 
 // A collection of arguments for invoking getDatastreams.

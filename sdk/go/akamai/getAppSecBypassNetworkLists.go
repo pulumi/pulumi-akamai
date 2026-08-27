@@ -39,12 +39,8 @@ type GetAppSecBypassNetworkListsResult struct {
 }
 
 func GetAppSecBypassNetworkListsOutput(ctx *pulumi.Context, args GetAppSecBypassNetworkListsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecBypassNetworkListsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecBypassNetworkListsResultOutput, error) {
-			args := v.(GetAppSecBypassNetworkListsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args, GetAppSecBypassNetworkListsResultOutput{}, options).(GetAppSecBypassNetworkListsResultOutput), nil
-		}).(GetAppSecBypassNetworkListsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args, GetAppSecBypassNetworkListsResultOutput{}, options).(GetAppSecBypassNetworkListsResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecBypassNetworkLists.

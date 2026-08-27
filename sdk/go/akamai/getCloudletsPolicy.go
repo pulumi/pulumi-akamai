@@ -50,12 +50,8 @@ type LookupCloudletsPolicyResult struct {
 }
 
 func LookupCloudletsPolicyOutput(ctx *pulumi.Context, args LookupCloudletsPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupCloudletsPolicyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudletsPolicyResultOutput, error) {
-			args := v.(LookupCloudletsPolicyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args, LookupCloudletsPolicyResultOutput{}, options).(LookupCloudletsPolicyResultOutput), nil
-		}).(LookupCloudletsPolicyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args, LookupCloudletsPolicyResultOutput{}, options).(LookupCloudletsPolicyResultOutput)
 }
 
 // A collection of arguments for invoking getCloudletsPolicy.

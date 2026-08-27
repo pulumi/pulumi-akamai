@@ -35,12 +35,8 @@ type GetAuthoritiesSetResult struct {
 }
 
 func GetAuthoritiesSetOutput(ctx *pulumi.Context, args GetAuthoritiesSetOutputArgs, opts ...pulumi.InvokeOption) GetAuthoritiesSetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAuthoritiesSetResultOutput, error) {
-			args := v.(GetAuthoritiesSetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args, GetAuthoritiesSetResultOutput{}, options).(GetAuthoritiesSetResultOutput), nil
-		}).(GetAuthoritiesSetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args, GetAuthoritiesSetResultOutput{}, options).(GetAuthoritiesSetResultOutput)
 }
 
 // A collection of arguments for invoking getAuthoritiesSet.

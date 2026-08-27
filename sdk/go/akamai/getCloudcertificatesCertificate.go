@@ -59,12 +59,8 @@ type LookupCloudcertificatesCertificateResult struct {
 }
 
 func LookupCloudcertificatesCertificateOutput(ctx *pulumi.Context, args LookupCloudcertificatesCertificateOutputArgs, opts ...pulumi.InvokeOption) LookupCloudcertificatesCertificateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudcertificatesCertificateResultOutput, error) {
-			args := v.(LookupCloudcertificatesCertificateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate", args, LookupCloudcertificatesCertificateResultOutput{}, options).(LookupCloudcertificatesCertificateResultOutput), nil
-		}).(LookupCloudcertificatesCertificateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate", args, LookupCloudcertificatesCertificateResultOutput{}, options).(LookupCloudcertificatesCertificateResultOutput)
 }
 
 // A collection of arguments for invoking getCloudcertificatesCertificate.

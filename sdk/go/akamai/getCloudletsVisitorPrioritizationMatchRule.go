@@ -35,12 +35,8 @@ type GetCloudletsVisitorPrioritizationMatchRuleResult struct {
 }
 
 func GetCloudletsVisitorPrioritizationMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsVisitorPrioritizationMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsVisitorPrioritizationMatchRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudletsVisitorPrioritizationMatchRuleResultOutput, error) {
-			args := v.(GetCloudletsVisitorPrioritizationMatchRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", args, GetCloudletsVisitorPrioritizationMatchRuleResultOutput{}, options).(GetCloudletsVisitorPrioritizationMatchRuleResultOutput), nil
-		}).(GetCloudletsVisitorPrioritizationMatchRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", args, GetCloudletsVisitorPrioritizationMatchRuleResultOutput{}, options).(GetCloudletsVisitorPrioritizationMatchRuleResultOutput)
 }
 
 // A collection of arguments for invoking getCloudletsVisitorPrioritizationMatchRule.

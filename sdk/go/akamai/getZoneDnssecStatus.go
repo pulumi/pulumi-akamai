@@ -35,12 +35,8 @@ type GetZoneDnssecStatusResult struct {
 }
 
 func GetZoneDnssecStatusOutput(ctx *pulumi.Context, args GetZoneDnssecStatusOutputArgs, opts ...pulumi.InvokeOption) GetZoneDnssecStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetZoneDnssecStatusResultOutput, error) {
-			args := v.(GetZoneDnssecStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getZoneDnssecStatus:getZoneDnssecStatus", args, GetZoneDnssecStatusResultOutput{}, options).(GetZoneDnssecStatusResultOutput), nil
-		}).(GetZoneDnssecStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getZoneDnssecStatus:getZoneDnssecStatus", args, GetZoneDnssecStatusResultOutput{}, options).(GetZoneDnssecStatusResultOutput)
 }
 
 // A collection of arguments for invoking getZoneDnssecStatus.

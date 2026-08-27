@@ -40,12 +40,8 @@ type GetCpsDeploymentsResult struct {
 }
 
 func GetCpsDeploymentsOutput(ctx *pulumi.Context, args GetCpsDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetCpsDeploymentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCpsDeploymentsResultOutput, error) {
-			args := v.(GetCpsDeploymentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getCpsDeployments:getCpsDeployments", args, GetCpsDeploymentsResultOutput{}, options).(GetCpsDeploymentsResultOutput), nil
-		}).(GetCpsDeploymentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getCpsDeployments:getCpsDeployments", args, GetCpsDeploymentsResultOutput{}, options).(GetCpsDeploymentsResultOutput)
 }
 
 // A collection of arguments for invoking getCpsDeployments.

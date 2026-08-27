@@ -35,12 +35,8 @@ type LookupAprUserRiskResponseStrategyResult struct {
 }
 
 func LookupAprUserRiskResponseStrategyOutput(ctx *pulumi.Context, args LookupAprUserRiskResponseStrategyOutputArgs, opts ...pulumi.InvokeOption) LookupAprUserRiskResponseStrategyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAprUserRiskResponseStrategyResultOutput, error) {
-			args := v.(LookupAprUserRiskResponseStrategyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAprUserRiskResponseStrategy:getAprUserRiskResponseStrategy", args, LookupAprUserRiskResponseStrategyResultOutput{}, options).(LookupAprUserRiskResponseStrategyResultOutput), nil
-		}).(LookupAprUserRiskResponseStrategyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAprUserRiskResponseStrategy:getAprUserRiskResponseStrategy", args, LookupAprUserRiskResponseStrategyResultOutput{}, options).(LookupAprUserRiskResponseStrategyResultOutput)
 }
 
 // A collection of arguments for invoking getAprUserRiskResponseStrategy.

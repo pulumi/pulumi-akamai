@@ -40,12 +40,8 @@ type GetAppSecConfigurationVersionResult struct {
 }
 
 func GetAppSecConfigurationVersionOutput(ctx *pulumi.Context, args GetAppSecConfigurationVersionOutputArgs, opts ...pulumi.InvokeOption) GetAppSecConfigurationVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppSecConfigurationVersionResultOutput, error) {
-			args := v.(GetAppSecConfigurationVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", args, GetAppSecConfigurationVersionResultOutput{}, options).(GetAppSecConfigurationVersionResultOutput), nil
-		}).(GetAppSecConfigurationVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", args, GetAppSecConfigurationVersionResultOutput{}, options).(GetAppSecConfigurationVersionResultOutput)
 }
 
 // A collection of arguments for invoking getAppSecConfigurationVersion.

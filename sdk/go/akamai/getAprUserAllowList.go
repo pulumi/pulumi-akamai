@@ -35,12 +35,8 @@ type LookupAprUserAllowListResult struct {
 }
 
 func LookupAprUserAllowListOutput(ctx *pulumi.Context, args LookupAprUserAllowListOutputArgs, opts ...pulumi.InvokeOption) LookupAprUserAllowListResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAprUserAllowListResultOutput, error) {
-			args := v.(LookupAprUserAllowListArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getAprUserAllowList:getAprUserAllowList", args, LookupAprUserAllowListResultOutput{}, options).(LookupAprUserAllowListResultOutput), nil
-		}).(LookupAprUserAllowListResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getAprUserAllowList:getAprUserAllowList", args, LookupAprUserAllowListResultOutput{}, options).(LookupAprUserAllowListResultOutput)
 }
 
 // A collection of arguments for invoking getAprUserAllowList.

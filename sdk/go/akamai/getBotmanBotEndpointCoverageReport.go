@@ -37,12 +37,8 @@ type GetBotmanBotEndpointCoverageReportResult struct {
 }
 
 func GetBotmanBotEndpointCoverageReportOutput(ctx *pulumi.Context, args GetBotmanBotEndpointCoverageReportOutputArgs, opts ...pulumi.InvokeOption) GetBotmanBotEndpointCoverageReportResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBotmanBotEndpointCoverageReportResultOutput, error) {
-			args := v.(GetBotmanBotEndpointCoverageReportArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", args, GetBotmanBotEndpointCoverageReportResultOutput{}, options).(GetBotmanBotEndpointCoverageReportResultOutput), nil
-		}).(GetBotmanBotEndpointCoverageReportResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", args, GetBotmanBotEndpointCoverageReportResultOutput{}, options).(GetBotmanBotEndpointCoverageReportResultOutput)
 }
 
 // A collection of arguments for invoking getBotmanBotEndpointCoverageReport.
