@@ -86,14 +86,14 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+     * @return Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -189,14 +189,14 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+     * @return Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -395,6 +395,21 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.samplingPercentage);
     }
 
+    /**
+     * Identifies the AnswerX service IDs monitored in the stream.
+     * 
+     */
+    @Import(name="serviceIds")
+    private @Nullable Output<List<Integer>> serviceIds;
+
+    /**
+     * @return Identifies the AnswerX service IDs monitored in the stream.
+     * 
+     */
+    public Optional<Output<List<Integer>>> serviceIds() {
+        return Optional.ofNullable(this.serviceIds);
+    }
+
     @Import(name="splunkConnector")
     private @Nullable Output<DatastreamSplunkConnectorArgs> splunkConnector;
 
@@ -479,6 +494,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         this.s3CompatibleConnector = $.s3CompatibleConnector;
         this.s3Connector = $.s3Connector;
         this.samplingPercentage = $.samplingPercentage;
+        this.serviceIds = $.serviceIds;
         this.splunkConnector = $.splunkConnector;
         this.streamName = $.streamName;
         this.streamVersion = $.streamVersion;
@@ -587,7 +603,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+         * @param contractId Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
          * 
          * @return builder
          * 
@@ -598,7 +614,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+         * @param contractId Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
          * 
          * @return builder
          * 
@@ -738,7 +754,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
          * 
          * @return builder
          * 
@@ -749,7 +765,7 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
          * 
          * @return builder
          * 
@@ -1040,6 +1056,37 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder samplingPercentage(Integer samplingPercentage) {
             return samplingPercentage(Output.of(samplingPercentage));
+        }
+
+        /**
+         * @param serviceIds Identifies the AnswerX service IDs monitored in the stream.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceIds(@Nullable Output<List<Integer>> serviceIds) {
+            $.serviceIds = serviceIds;
+            return this;
+        }
+
+        /**
+         * @param serviceIds Identifies the AnswerX service IDs monitored in the stream.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceIds(List<Integer> serviceIds) {
+            return serviceIds(Output.of(serviceIds));
+        }
+
+        /**
+         * @param serviceIds Identifies the AnswerX service IDs monitored in the stream.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceIds(Integer... serviceIds) {
+            return serviceIds(List.of(serviceIds));
         }
 
         public Builder splunkConnector(@Nullable Output<DatastreamSplunkConnectorArgs> splunkConnector) {

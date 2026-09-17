@@ -3,13 +3,20 @@
 
 package com.pulumi.akamai.outputs;
 
+import com.pulumi.akamai.outputs.GetPropertyHostnamesHostnameCertStatusAuthorization;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetPropertyHostnamesHostnameCertStatus {
+    /**
+     * @return Details of domain validation methods available for your certificate.
+     * 
+     */
+    private List<GetPropertyHostnamesHostnameCertStatusAuthorization> authorizations;
     /**
      * @return The hostname part of the CNAME record used to validate the certificate&#39;s domain.
      * 
@@ -32,6 +39,13 @@ public final class GetPropertyHostnamesHostnameCertStatus {
     private String target;
 
     private GetPropertyHostnamesHostnameCertStatus() {}
+    /**
+     * @return Details of domain validation methods available for your certificate.
+     * 
+     */
+    public List<GetPropertyHostnamesHostnameCertStatusAuthorization> authorizations() {
+        return this.authorizations;
+    }
     /**
      * @return The hostname part of the CNAME record used to validate the certificate&#39;s domain.
      * 
@@ -70,6 +84,7 @@ public final class GetPropertyHostnamesHostnameCertStatus {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetPropertyHostnamesHostnameCertStatusAuthorization> authorizations;
         private String hostname;
         private String productionStatus;
         private String stagingStatus;
@@ -77,12 +92,24 @@ public final class GetPropertyHostnamesHostnameCertStatus {
         public Builder() {}
         public Builder(GetPropertyHostnamesHostnameCertStatus defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.authorizations = defaults.authorizations;
     	      this.hostname = defaults.hostname;
     	      this.productionStatus = defaults.productionStatus;
     	      this.stagingStatus = defaults.stagingStatus;
     	      this.target = defaults.target;
         }
 
+        @CustomType.Setter
+        public Builder authorizations(List<GetPropertyHostnamesHostnameCertStatusAuthorization> authorizations) {
+            if (authorizations == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostnameCertStatus", "authorizations");
+            }
+            this.authorizations = authorizations;
+            return this;
+        }
+        public Builder authorizations(GetPropertyHostnamesHostnameCertStatusAuthorization... authorizations) {
+            return authorizations(List.of(authorizations));
+        }
         @CustomType.Setter
         public Builder hostname(String hostname) {
             if (hostname == null) {
@@ -117,6 +144,7 @@ public final class GetPropertyHostnamesHostnameCertStatus {
         }
         public GetPropertyHostnamesHostnameCertStatus build() {
             final var _resultValue = new GetPropertyHostnamesHostnameCertStatus();
+            _resultValue.authorizations = authorizations;
             _resultValue.hostname = hostname;
             _resultValue.productionStatus = productionStatus;
             _resultValue.stagingStatus = stagingStatus;

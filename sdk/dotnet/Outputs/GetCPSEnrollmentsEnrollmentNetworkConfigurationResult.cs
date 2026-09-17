@@ -26,6 +26,14 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<string> DisallowedTlsVersions;
         /// <summary>
+        /// Explicit DNS names for traffic direction when EnableForAllSans is false
+        /// </summary>
+        public readonly ImmutableArray<string> DnsNames;
+        /// <summary>
+        /// When true, traffic is directed using all SANs listed in the enrollment
+        /// </summary>
+        public readonly bool EnableForAllSans;
+        /// <summary>
         /// Geography type used for enrollment
         /// </summary>
         public readonly string Geography;
@@ -54,6 +62,10 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<string> disallowedTlsVersions,
 
+            ImmutableArray<string> dnsNames,
+
+            bool enableForAllSans,
+
             string geography,
 
             string mustHaveCiphers,
@@ -67,6 +79,8 @@ namespace Pulumi.Akamai.Outputs
             ClientMutualAuthentications = clientMutualAuthentications;
             CloneDnsNames = cloneDnsNames;
             DisallowedTlsVersions = disallowedTlsVersions;
+            DnsNames = dnsNames;
+            EnableForAllSans = enableForAllSans;
             Geography = geography;
             MustHaveCiphers = mustHaveCiphers;
             OcspStapling = ocspStapling;

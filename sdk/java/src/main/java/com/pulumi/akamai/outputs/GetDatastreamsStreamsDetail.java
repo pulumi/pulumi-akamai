@@ -5,6 +5,7 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.akamai.outputs.GetDatastreamsStreamsDetailAppSecConfig;
 import com.pulumi.akamai.outputs.GetDatastreamsStreamsDetailProperty;
+import com.pulumi.akamai.outputs.GetDatastreamsStreamsDetailServiceId;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
@@ -74,6 +75,11 @@ public final class GetDatastreamsStreamsDetail {
      * 
      */
     private List<GetDatastreamsStreamsDetailProperty> properties;
+    /**
+     * @return Set of service IDs associated with the stream.
+     * 
+     */
+    private List<GetDatastreamsStreamsDetailServiceId> serviceIds;
     /**
      * @return Identifies the stream.
      * 
@@ -181,6 +187,13 @@ public final class GetDatastreamsStreamsDetail {
         return this.properties;
     }
     /**
+     * @return Set of service IDs associated with the stream.
+     * 
+     */
+    public List<GetDatastreamsStreamsDetailServiceId> serviceIds() {
+        return this.serviceIds;
+    }
+    /**
      * @return Identifies the stream.
      * 
      */
@@ -230,6 +243,7 @@ public final class GetDatastreamsStreamsDetail {
         private String modifiedDate;
         private String productId;
         private List<GetDatastreamsStreamsDetailProperty> properties;
+        private List<GetDatastreamsStreamsDetailServiceId> serviceIds;
         private Integer streamId;
         private String streamName;
         private String streamStatus;
@@ -249,6 +263,7 @@ public final class GetDatastreamsStreamsDetail {
     	      this.modifiedDate = defaults.modifiedDate;
     	      this.productId = defaults.productId;
     	      this.properties = defaults.properties;
+    	      this.serviceIds = defaults.serviceIds;
     	      this.streamId = defaults.streamId;
     	      this.streamName = defaults.streamName;
     	      this.streamStatus = defaults.streamStatus;
@@ -358,6 +373,17 @@ public final class GetDatastreamsStreamsDetail {
             return properties(List.of(properties));
         }
         @CustomType.Setter
+        public Builder serviceIds(List<GetDatastreamsStreamsDetailServiceId> serviceIds) {
+            if (serviceIds == null) {
+              throw new MissingRequiredPropertyException("GetDatastreamsStreamsDetail", "serviceIds");
+            }
+            this.serviceIds = serviceIds;
+            return this;
+        }
+        public Builder serviceIds(GetDatastreamsStreamsDetailServiceId... serviceIds) {
+            return serviceIds(List.of(serviceIds));
+        }
+        @CustomType.Setter
         public Builder streamId(Integer streamId) {
             if (streamId == null) {
               throw new MissingRequiredPropertyException("GetDatastreamsStreamsDetail", "streamId");
@@ -403,6 +429,7 @@ public final class GetDatastreamsStreamsDetail {
             _resultValue.modifiedDate = modifiedDate;
             _resultValue.productId = productId;
             _resultValue.properties = properties;
+            _resultValue.serviceIds = serviceIds;
             _resultValue.streamId = streamId;
             _resultValue.streamName = streamName;
             _resultValue.streamStatus = streamStatus;

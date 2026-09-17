@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.DnsZoneMultiProviderDnssecArgs;
 import com.pulumi.akamai.inputs.DnsZoneOutboundZoneTransferArgs;
 import com.pulumi.akamai.inputs.DnsZoneTsigKeyArgs;
 import com.pulumi.core.Output;
@@ -67,6 +68,21 @@ public final class DnsZoneState extends com.pulumi.resources.ResourceArgs {
 
     public Optional<Output<List<String>>> masters() {
         return Optional.ofNullable(this.masters);
+    }
+
+    /**
+     * Multi-signer DNSSEC properties.
+     * 
+     */
+    @Import(name="multiProviderDnssec")
+    private @Nullable Output<DnsZoneMultiProviderDnssecArgs> multiProviderDnssec;
+
+    /**
+     * @return Multi-signer DNSSEC properties.
+     * 
+     */
+    public Optional<Output<DnsZoneMultiProviderDnssecArgs>> multiProviderDnssec() {
+        return Optional.ofNullable(this.multiProviderDnssec);
     }
 
     /**
@@ -143,6 +159,7 @@ public final class DnsZoneState extends com.pulumi.resources.ResourceArgs {
         this.endCustomerId = $.endCustomerId;
         this.group = $.group;
         this.masters = $.masters;
+        this.multiProviderDnssec = $.multiProviderDnssec;
         this.outboundZoneTransfer = $.outboundZoneTransfer;
         this.signAndServe = $.signAndServe;
         this.signAndServeAlgorithm = $.signAndServeAlgorithm;
@@ -236,6 +253,27 @@ public final class DnsZoneState extends com.pulumi.resources.ResourceArgs {
 
         public Builder masters(String... masters) {
             return masters(List.of(masters));
+        }
+
+        /**
+         * @param multiProviderDnssec Multi-signer DNSSEC properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiProviderDnssec(@Nullable Output<DnsZoneMultiProviderDnssecArgs> multiProviderDnssec) {
+            $.multiProviderDnssec = multiProviderDnssec;
+            return this;
+        }
+
+        /**
+         * @param multiProviderDnssec Multi-signer DNSSEC properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiProviderDnssec(DnsZoneMultiProviderDnssecArgs multiProviderDnssec) {
+            return multiProviderDnssec(Output.of(multiProviderDnssec));
         }
 
         /**

@@ -27,13 +27,16 @@ class GetDatastreamDatasetFieldsResult:
     """
     A collection of values returned by getDatastreamDatasetFields.
     """
-    def __init__(__self__, dataset_fields=None, id=None, product_id=None):
+    def __init__(__self__, dataset_fields=None, id=None, log_type=None, product_id=None):
         if dataset_fields and not isinstance(dataset_fields, list):
             raise TypeError("Expected argument 'dataset_fields' to be a list")
         pulumi.set(__self__, "dataset_fields", dataset_fields)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if log_type and not isinstance(log_type, str):
+            raise TypeError("Expected argument 'log_type' to be a str")
+        pulumi.set(__self__, "log_type", log_type)
         if product_id and not isinstance(product_id, str):
             raise TypeError("Expected argument 'product_id' to be a str")
         pulumi.set(__self__, "product_id", product_id)
@@ -52,6 +55,11 @@ class GetDatastreamDatasetFieldsResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "log_type")
+
+    @_builtins.property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "product_id")
@@ -65,15 +73,18 @@ class AwaitableGetDatastreamDatasetFieldsResult(GetDatastreamDatasetFieldsResult
         return GetDatastreamDatasetFieldsResult(
             dataset_fields=self.dataset_fields,
             id=self.id,
+            log_type=self.log_type,
             product_id=self.product_id)
 
 
-def get_datastream_dataset_fields(product_id: Optional[_builtins.str] = None,
+def get_datastream_dataset_fields(log_type: Optional[_builtins.str] = None,
+                                  product_id: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastreamDatasetFieldsResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['logType'] = log_type
     __args__['productId'] = product_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields', __args__, opts=opts, typ=GetDatastreamDatasetFieldsResult).value
@@ -81,17 +92,21 @@ def get_datastream_dataset_fields(product_id: Optional[_builtins.str] = None,
     return AwaitableGetDatastreamDatasetFieldsResult(
         dataset_fields=pulumi.get(__ret__, 'dataset_fields'),
         id=pulumi.get(__ret__, 'id'),
+        log_type=pulumi.get(__ret__, 'log_type'),
         product_id=pulumi.get(__ret__, 'product_id'))
-def get_datastream_dataset_fields_output(product_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_datastream_dataset_fields_output(log_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         product_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastreamDatasetFieldsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['logType'] = log_type
     __args__['productId'] = product_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields', __args__, opts=opts, typ=GetDatastreamDatasetFieldsResult)
     return __ret__.apply(lambda __response__: GetDatastreamDatasetFieldsResult(
         dataset_fields=pulumi.get(__response__, 'dataset_fields'),
         id=pulumi.get(__response__, 'id'),
+        log_type=pulumi.get(__response__, 'log_type'),
         product_id=pulumi.get(__response__, 'product_id')))

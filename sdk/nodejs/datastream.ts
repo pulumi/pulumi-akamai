@@ -48,7 +48,7 @@ export class Datastream extends pulumi.CustomResource {
      */
     declare public readonly collectMidgress: pulumi.Output<boolean | undefined>;
     /**
-     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
      */
     declare public readonly contractId: pulumi.Output<string>;
     /**
@@ -72,7 +72,7 @@ export class Datastream extends pulumi.CustomResource {
     declare public readonly elasticsearchConnector: pulumi.Output<outputs.DatastreamElasticsearchConnector | undefined>;
     declare public readonly gcsConnector: pulumi.Output<outputs.DatastreamGcsConnector | undefined>;
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
      */
     declare public readonly groupId: pulumi.Output<string>;
     declare public readonly httpsConnector: pulumi.Output<outputs.DatastreamHttpsConnector | undefined>;
@@ -121,6 +121,10 @@ export class Datastream extends pulumi.CustomResource {
      * The sample percentage of data that your stream will send to the destination
      */
     declare public readonly samplingPercentage: pulumi.Output<number>;
+    /**
+     * Identifies the AnswerX service IDs monitored in the stream.
+     */
+    declare public readonly serviceIds: pulumi.Output<number[] | undefined>;
     declare public readonly splunkConnector: pulumi.Output<outputs.DatastreamSplunkConnector | undefined>;
     /**
      * The name of the stream
@@ -176,6 +180,7 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["s3CompatibleConnector"] = state?.s3CompatibleConnector;
             resourceInputs["s3Connector"] = state?.s3Connector;
             resourceInputs["samplingPercentage"] = state?.samplingPercentage;
+            resourceInputs["serviceIds"] = state?.serviceIds;
             resourceInputs["splunkConnector"] = state?.splunkConnector;
             resourceInputs["streamName"] = state?.streamName;
             resourceInputs["streamVersion"] = state?.streamVersion;
@@ -214,6 +219,7 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["s3CompatibleConnector"] = args?.s3CompatibleConnector;
             resourceInputs["s3Connector"] = args?.s3Connector;
             resourceInputs["samplingPercentage"] = args?.samplingPercentage;
+            resourceInputs["serviceIds"] = args?.serviceIds;
             resourceInputs["splunkConnector"] = args?.splunkConnector;
             resourceInputs["streamName"] = args?.streamName;
             resourceInputs["sumologicConnector"] = args?.sumologicConnector;
@@ -251,7 +257,7 @@ export interface DatastreamState {
      */
     collectMidgress?: pulumi.Input<boolean | undefined>;
     /**
-     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
      */
     contractId?: pulumi.Input<string | undefined>;
     /**
@@ -275,7 +281,7 @@ export interface DatastreamState {
     elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector | undefined>;
     gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector | undefined>;
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
      */
     groupId?: pulumi.Input<string | undefined>;
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector | undefined>;
@@ -324,6 +330,10 @@ export interface DatastreamState {
      * The sample percentage of data that your stream will send to the destination
      */
     samplingPercentage?: pulumi.Input<number | undefined>;
+    /**
+     * Identifies the AnswerX service IDs monitored in the stream.
+     */
+    serviceIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector | undefined>;
     /**
      * The name of the stream
@@ -355,7 +365,7 @@ export interface DatastreamArgs {
      */
     collectMidgress?: pulumi.Input<boolean | undefined>;
     /**
-     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
      */
     contractId?: pulumi.Input<string | undefined>;
     datadogConnector?: pulumi.Input<inputs.DatastreamDatadogConnector | undefined>;
@@ -371,7 +381,7 @@ export interface DatastreamArgs {
     elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector | undefined>;
     gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector | undefined>;
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
      */
     groupId?: pulumi.Input<string | undefined>;
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector | undefined>;
@@ -396,6 +406,10 @@ export interface DatastreamArgs {
      * The sample percentage of data that your stream will send to the destination
      */
     samplingPercentage?: pulumi.Input<number | undefined>;
+    /**
+     * Identifies the AnswerX service IDs monitored in the stream.
+     */
+    serviceIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector | undefined>;
     /**
      * The name of the stream

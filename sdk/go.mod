@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-akamai/sdk/v11
+module github.com/pulumi/pulumi-akamai/sdk/v12
 
 go 1.25.11
 

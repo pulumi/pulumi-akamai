@@ -27,11 +27,14 @@ namespace Pulumi.Akamai
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
+        [Input("cpCodeId")]
+        public string? CpCodeId { get; set; }
+
+        [Input("cpCodeName")]
+        public string? CpCodeName { get; set; }
+
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
-
-        [Input("name", required: true)]
-        public string Name { get; set; } = null!;
 
         public GetCpCodeArgs()
         {
@@ -44,11 +47,14 @@ namespace Pulumi.Akamai
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
+        [Input("cpCodeId")]
+        public Input<string>? CpCodeId { get; set; }
+
+        [Input("cpCodeName")]
+        public Input<string>? CpCodeName { get; set; }
+
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
-
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
 
         public GetCpCodeInvokeArgs()
         {
@@ -61,18 +67,23 @@ namespace Pulumi.Akamai
     public sealed class GetCpCodeResult
     {
         public readonly string ContractId;
+        public readonly string CpCodeId;
+        public readonly string CpCodeName;
         public readonly string CreatedDate;
         public readonly string GroupId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string Name;
         public readonly ImmutableArray<string> ProductIds;
 
         [OutputConstructor]
         private GetCpCodeResult(
             string contractId,
+
+            string cpCodeId,
+
+            string cpCodeName,
 
             string createdDate,
 
@@ -80,15 +91,14 @@ namespace Pulumi.Akamai
 
             string id,
 
-            string name,
-
             ImmutableArray<string> productIds)
         {
             ContractId = contractId;
+            CpCodeId = cpCodeId;
+            CpCodeName = cpCodeName;
             CreatedDate = createdDate;
             GroupId = groupId;
             Id = id;
-            Name = name;
             ProductIds = productIds;
         }
     }

@@ -3,14 +3,21 @@
 
 package com.pulumi.akamai.outputs;
 
+import com.pulumi.akamai.outputs.PropertyHostnameCertStatusAuthorization;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyHostnameCertStatus {
+    /**
+     * @return Details of domain validation methods available for your certificate.
+     * 
+     */
+    private @Nullable List<PropertyHostnameCertStatusAuthorization> authorizations;
     /**
      * @return The hostname part of the CNAME record used to validate the certificate&#39;s domain.
      * 
@@ -33,6 +40,13 @@ public final class PropertyHostnameCertStatus {
     private @Nullable String target;
 
     private PropertyHostnameCertStatus() {}
+    /**
+     * @return Details of domain validation methods available for your certificate.
+     * 
+     */
+    public List<PropertyHostnameCertStatusAuthorization> authorizations() {
+        return this.authorizations == null ? List.of() : this.authorizations;
+    }
     /**
      * @return The hostname part of the CNAME record used to validate the certificate&#39;s domain.
      * 
@@ -71,6 +85,7 @@ public final class PropertyHostnameCertStatus {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<PropertyHostnameCertStatusAuthorization> authorizations;
         private @Nullable String hostname;
         private @Nullable String productionStatus;
         private @Nullable String stagingStatus;
@@ -78,12 +93,22 @@ public final class PropertyHostnameCertStatus {
         public Builder() {}
         public Builder(PropertyHostnameCertStatus defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.authorizations = defaults.authorizations;
     	      this.hostname = defaults.hostname;
     	      this.productionStatus = defaults.productionStatus;
     	      this.stagingStatus = defaults.stagingStatus;
     	      this.target = defaults.target;
         }
 
+        @CustomType.Setter
+        public Builder authorizations(@Nullable List<PropertyHostnameCertStatusAuthorization> authorizations) {
+
+            this.authorizations = authorizations;
+            return this;
+        }
+        public Builder authorizations(PropertyHostnameCertStatusAuthorization... authorizations) {
+            return authorizations(List.of(authorizations));
+        }
         @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
 
@@ -110,6 +135,7 @@ public final class PropertyHostnameCertStatus {
         }
         public PropertyHostnameCertStatus build() {
             final var _resultValue = new PropertyHostnameCertStatus();
+            _resultValue.authorizations = authorizations;
             _resultValue.hostname = hostname;
             _resultValue.productionStatus = productionStatus;
             _resultValue.stagingStatus = stagingStatus;

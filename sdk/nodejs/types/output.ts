@@ -96,6 +96,100 @@ export interface AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions {
     rules?: number[];
 }
 
+export interface AppsecAdvancedSettingsUrlEvasionDefenseRule {
+    /**
+     * The URL evasion mitigation rule action.
+     */
+    action: string;
+    /**
+     * Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+     */
+    conditionOperator?: string;
+    /**
+     * The list of match conditions.
+     */
+    conditions?: outputs.AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition[];
+    /**
+     * The URL evasion mitigation rule description.
+     */
+    description: string;
+    /**
+     * The URL evasion mitigation rule name.
+     */
+    name: string;
+    /**
+     * Uniquely identifies the URL evasion mitigation rule.
+     */
+    ruleId: number;
+}
+
+export interface AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition {
+    /**
+     * The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+     */
+    clientLists?: string[];
+    /**
+     * The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+     */
+    extensions?: string[];
+    /**
+     * The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+     */
+    filenames?: string[];
+    /**
+     * The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+     */
+    header?: string;
+    /**
+     * The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+     */
+    hosts?: string[];
+    /**
+     * The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+     */
+    ips?: string[];
+    /**
+     * The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+     */
+    methods?: string[];
+    /**
+     * The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+     */
+    name?: string;
+    /**
+     * Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+     */
+    paths?: string[];
+    /**
+     * Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+     */
+    positiveMatch?: boolean;
+    /**
+     * The condition type to match on.
+     */
+    type: string;
+    /**
+     * Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+     */
+    useHeaders?: boolean;
+    /**
+     * The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+     */
+    value?: string;
+    /**
+     * Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * Whether the provided parameter `value` is a wildcard. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+     */
+    valueWildcard?: boolean;
+}
+
 export interface AppsecUrlProtectionPolicyApiDefinition {
     /**
      * Unique identifier of the API definition
@@ -612,13 +706,23 @@ export interface CpsDvEnrollmentNetworkConfiguration {
      */
     clientMutualAuthentication?: outputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication;
     /**
-     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+     *
+     * @deprecated Use enableForAllSans instead.
      */
-    cloneDnsNames?: boolean;
+    cloneDnsNames: boolean;
     /**
      * TLS versions which are disallowed
      */
     disallowedTlsVersions?: string[];
+    /**
+     * Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+     */
+    dnsNames: string[];
+    /**
+     * When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+     */
+    enableForAllSans: boolean;
     /**
      * Geography type used for enrollment
      */
@@ -834,13 +938,23 @@ export interface CpsThirdPartyEnrollmentNetworkConfiguration {
      */
     clientMutualAuthentication?: outputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication;
     /**
-     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+     *
+     * @deprecated Use enableForAllSans instead.
      */
-    cloneDnsNames?: boolean;
+    cloneDnsNames: boolean;
     /**
      * TLS versions which are disallowed
      */
     disallowedTlsVersions?: string[];
+    /**
+     * Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+     */
+    dnsNames: string[];
+    /**
+     * When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+     */
+    enableForAllSans: boolean;
     /**
      * Geography type used for enrollment
      */
@@ -1504,6 +1618,17 @@ export interface DatastreamTrafficpeakConnector {
     userName: string;
 }
 
+export interface DnsZoneMultiProviderDnssec {
+    /**
+     * Enables multi-signer DNSSEC for the zone.
+     */
+    enabled: boolean;
+    /**
+     * The URL to call when a new ZSK secret has been generated.
+     */
+    webhook?: string;
+}
+
 export interface DnsZoneOutboundZoneTransfer {
     /**
      * The access control list, defined as IPv4 and IPv6 CIDR blocks.
@@ -1592,6 +1717,100 @@ export interface GetAppSecIPGeoIpControl {
      * List of IDs of IP network list to be blocked.
      */
     ipNetworkLists: string[];
+}
+
+export interface GetAppsecAdvancedSettingsUrlEvasionDefenseRule {
+    /**
+     * The URL evasion mitigation rule action.
+     */
+    action: string;
+    /**
+     * Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+     */
+    conditionOperator: string;
+    /**
+     * The list of match conditions.
+     */
+    conditions: outputs.GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition[];
+    /**
+     * The URL evasion mitigation rule description.
+     */
+    description: string;
+    /**
+     * The URL evasion mitigation rule name.
+     */
+    name: string;
+    /**
+     * Uniquely identifies the URL evasion mitigation rule.
+     */
+    ruleId: number;
+}
+
+export interface GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition {
+    /**
+     * The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+     */
+    clientLists: string[];
+    /**
+     * The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+     */
+    extensions: string[];
+    /**
+     * The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+     */
+    filenames: string[];
+    /**
+     * The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+     */
+    header: string;
+    /**
+     * The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+     */
+    hosts: string[];
+    /**
+     * The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+     */
+    ips: string[];
+    /**
+     * The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+     */
+    methods: string[];
+    /**
+     * The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+     */
+    name: string;
+    /**
+     * Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+     */
+    nameCaseSensitive: boolean;
+    /**
+     * The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+     */
+    paths: string[];
+    /**
+     * Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+     */
+    positiveMatch: boolean;
+    /**
+     * The condition type to match on.
+     */
+    type: string;
+    /**
+     * Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+     */
+    useHeaders: boolean;
+    /**
+     * The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+     */
+    value: string;
+    /**
+     * Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+     */
+    valueCaseSensitive: boolean;
+    /**
+     * Whether the provided parameter `value` is a wildcard. This only applies to the ` requestHeaderMatch and  `uriQueryMatch`condition`type`.
+     */
+    valueWildcard: boolean;
 }
 
 export interface GetAppsecCustomRulesUsageRule {
@@ -1903,6 +2122,37 @@ export interface GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriter
     type: string;
 }
 
+export interface GetAppsecWafAiRulesAiRule {
+    /**
+     * Action taken when the AI rule is triggered. Possible values: alert, deny, deny_custom_<custom_deny_id>, none.
+     */
+    action: string;
+    /**
+     * JSON-encoded list of group-level condition exceptions inherited by this AI rule. These are read-only and can only be set via the Akamai Control Center UI on the attack group. Cannot be managed via Terraform.
+     */
+    conditionException: string;
+    /**
+     * Risk score group the AI rule belongs to.
+     */
+    riskScoreGroup: string;
+    /**
+     * Description of what the AI rule detects.
+     */
+    ruleDescription: string;
+    /**
+     * Unique identifier of the AI rule.
+     */
+    ruleId: number;
+    /**
+     * Version of the AI rule.
+     */
+    ruleVersion: number;
+    /**
+     * Name of the AI rule.
+     */
+    title: string;
+}
+
 export interface GetAppsecWafRulesetAttackGroup {
     /**
      * Unique name of the attack group
@@ -2048,12 +2298,22 @@ export interface GetCPSEnrollmentNetworkConfiguration {
     clientMutualAuthentications: outputs.GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication[];
     /**
      * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     *
+     * @deprecated Use enableForAllSans instead.
      */
     cloneDnsNames: boolean;
     /**
      * TLS versions which are disallowed
      */
     disallowedTlsVersions: string[];
+    /**
+     * Explicit DNS names for traffic direction when enableForAllSans is false
+     */
+    dnsNames: string[];
+    /**
+     * When true, traffic is directed using all SANs listed in the enrollment
+     */
+    enableForAllSans: boolean;
     /**
      * Geography type used for enrollment
      */
@@ -2349,12 +2609,22 @@ export interface GetCPSEnrollmentsEnrollmentNetworkConfiguration {
     clientMutualAuthentications: outputs.GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication[];
     /**
      * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     *
+     * @deprecated Use enableForAllSans instead.
      */
     cloneDnsNames: boolean;
     /**
      * TLS versions which are disallowed
      */
     disallowedTlsVersions: string[];
+    /**
+     * Explicit DNS names for traffic direction when enableForAllSans is false
+     */
+    dnsNames: string[];
+    /**
+     * When true, traffic is directed using all SANs listed in the enrollment
+     */
+    enableForAllSans: boolean;
     /**
      * Geography type used for enrollment
      */
@@ -4864,6 +5134,21 @@ export interface GetDatastreamActivationHistoryActivation {
     streamVersion: number;
 }
 
+export interface GetDatastreamAnswerxServiceIdsServiceId {
+    /**
+     * Service ID monitored in the stream.
+     */
+    id: number;
+    /**
+     * Name of the service ID.
+     */
+    name: string;
+    /**
+     * The product associated with the service ID.
+     */
+    product: string;
+}
+
 export interface GetDatastreamAppsecConfigsAppSecConfig {
     /**
      * The file type of the AppSec configuration (e.g. RBAC, WAF)
@@ -4964,6 +5249,10 @@ export interface GetDatastreamsStreamsDetail {
      */
     properties: outputs.GetDatastreamsStreamsDetailProperty[];
     /**
+     * Set of service IDs associated with the stream.
+     */
+    serviceIds: outputs.GetDatastreamsStreamsDetailServiceId[];
+    /**
      * Identifies the stream.
      */
     streamId: number;
@@ -5005,6 +5294,21 @@ export interface GetDatastreamsStreamsDetailProperty {
      * The descriptive label for the property.
      */
     propertyName: string;
+}
+
+export interface GetDatastreamsStreamsDetailServiceId {
+    /**
+     * Service ID monitored in the stream.
+     */
+    id: number;
+    /**
+     * Name of the service ID.
+     */
+    name: string;
+    /**
+     * The product associated with the service ID.
+     */
+    product: string;
 }
 
 export interface GetEdgeHostnameEdgeHostname {
@@ -11050,6 +11354,10 @@ export interface GetPropertyHostnamesHostnameBucket {
 
 export interface GetPropertyHostnamesHostnameBucketCertStatus {
     /**
+     * Details of domain validation methods available for your certificate.
+     */
+    authorizations: outputs.GetPropertyHostnamesHostnameBucketCertStatusAuthorization[];
+    /**
      * The hostname part of the CNAME record used to validate the certificate's domain.
      */
     hostname: string;
@@ -11065,6 +11373,81 @@ export interface GetPropertyHostnamesHostnameBucketCertStatus {
      * The destination part of the CNAME record used to validate the certificate's domain.
      */
     target: string;
+}
+
+export interface GetPropertyHostnamesHostnameBucketCertStatusAuthorization {
+    /**
+     * Details on the manual DNS validation method.
+     */
+    dns01s: outputs.GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01[];
+    /**
+     * Details on the manual HTTP validation method.
+     */
+    http01s: outputs.GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01[];
+    /**
+     * The status of the validation that proves you control the domains listed in the certificate request.
+     */
+    status: string;
+    /**
+     * An ISO 8601 timestamp indicating when the domain validation challenge expires.
+     */
+    validUntil: string;
+}
+
+export interface GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01 {
+    /**
+     * Details on the validation challenge generation.
+     */
+    results: outputs.GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result[];
+    /**
+     * The token you need to copy to the DNS TXT record.
+     */
+    value: string;
+}
+
+export interface GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result {
+    /**
+     * A descriptive message on the challenge generation process.
+     */
+    message: string;
+    /**
+     * The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+     */
+    source: string;
+    /**
+     * The ISO 8601 timestamp indicating when the result was generated.
+     */
+    timestamp: string;
+}
+
+export interface GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01 {
+    /**
+     * The token you need to copy to the file on your origin server.
+     */
+    body: string;
+    /**
+     * Details on the validation challenge generation.
+     */
+    results: outputs.GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result[];
+    /**
+     * The location on your origin server where you save the file with the token.
+     */
+    url: string;
+}
+
+export interface GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result {
+    /**
+     * A descriptive message on the challenge generation process.
+     */
+    message: string;
+    /**
+     * The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+     */
+    source: string;
+    /**
+     * The ISO 8601 timestamp indicating when the result was generated.
+     */
+    timestamp: string;
 }
 
 export interface GetPropertyHostnamesHostnameCcmCertStatus {
@@ -11099,6 +11482,10 @@ export interface GetPropertyHostnamesHostnameCcmCertificate {
 
 export interface GetPropertyHostnamesHostnameCertStatus {
     /**
+     * Details of domain validation methods available for your certificate.
+     */
+    authorizations: outputs.GetPropertyHostnamesHostnameCertStatusAuthorization[];
+    /**
      * The hostname part of the CNAME record used to validate the certificate's domain.
      */
     hostname: string;
@@ -11114,6 +11501,81 @@ export interface GetPropertyHostnamesHostnameCertStatus {
      * The destination part of the CNAME record used to validate the certificate's domain.
      */
     target: string;
+}
+
+export interface GetPropertyHostnamesHostnameCertStatusAuthorization {
+    /**
+     * Details on the manual DNS validation method.
+     */
+    dns01s: outputs.GetPropertyHostnamesHostnameCertStatusAuthorizationDns01[];
+    /**
+     * Details on the manual HTTP validation method.
+     */
+    http01s: outputs.GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01[];
+    /**
+     * The status of the validation that proves you control the domains listed in the certificate request.
+     */
+    status: string;
+    /**
+     * An ISO 8601 timestamp indicating when the domain validation challenge expires.
+     */
+    validUntil: string;
+}
+
+export interface GetPropertyHostnamesHostnameCertStatusAuthorizationDns01 {
+    /**
+     * Details on the validation challenge generation.
+     */
+    results: outputs.GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result[];
+    /**
+     * The token you need to copy to the DNS TXT record.
+     */
+    value: string;
+}
+
+export interface GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result {
+    /**
+     * A descriptive message on the challenge generation process.
+     */
+    message: string;
+    /**
+     * The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+     */
+    source: string;
+    /**
+     * The ISO 8601 timestamp indicating when the result was generated.
+     */
+    timestamp: string;
+}
+
+export interface GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01 {
+    /**
+     * The token you need to copy to the file on your origin server.
+     */
+    body: string;
+    /**
+     * Details on the validation challenge generation.
+     */
+    results: outputs.GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result[];
+    /**
+     * The location on your origin server where you save the file with the token.
+     */
+    url: string;
+}
+
+export interface GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result {
+    /**
+     * A descriptive message on the challenge generation process.
+     */
+    message: string;
+    /**
+     * The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+     */
+    source: string;
+    /**
+     * The ISO 8601 timestamp indicating when the result was generated.
+     */
+    timestamp: string;
 }
 
 export interface GetPropertyHostnamesHostnameDomainOwnershipVerification {
@@ -12561,6 +13023,10 @@ export interface PropertyHostnameCcmCertificates {
 
 export interface PropertyHostnameCertStatus {
     /**
+     * Details of domain validation methods available for your certificate.
+     */
+    authorizations: outputs.PropertyHostnameCertStatusAuthorization[];
+    /**
      * The hostname part of the CNAME record used to validate the certificate's domain.
      */
     hostname: string;
@@ -12576,6 +13042,81 @@ export interface PropertyHostnameCertStatus {
      * The destination part of the CNAME record used to validate the certificate's domain.
      */
     target: string;
+}
+
+export interface PropertyHostnameCertStatusAuthorization {
+    /**
+     * Details on the manual DNS validation method.
+     */
+    dns01s: outputs.PropertyHostnameCertStatusAuthorizationDns01[];
+    /**
+     * Details on the manual HTTP validation method.
+     */
+    http01s: outputs.PropertyHostnameCertStatusAuthorizationHttp01[];
+    /**
+     * The status of the validation that proves you control the domains listed in the certificate request.
+     */
+    status: string;
+    /**
+     * An ISO 8601 timestamp indicating when the domain validation challenge expires.
+     */
+    validUntil: string;
+}
+
+export interface PropertyHostnameCertStatusAuthorizationDns01 {
+    /**
+     * Details on the validation challenge generation.
+     */
+    results: outputs.PropertyHostnameCertStatusAuthorizationDns01Result[];
+    /**
+     * The token you need to copy to the DNS TXT record.
+     */
+    value: string;
+}
+
+export interface PropertyHostnameCertStatusAuthorizationDns01Result {
+    /**
+     * A descriptive message on the challenge generation process.
+     */
+    message: string;
+    /**
+     * The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+     */
+    source: string;
+    /**
+     * The ISO 8601 timestamp indicating when the result was generated.
+     */
+    timestamp: string;
+}
+
+export interface PropertyHostnameCertStatusAuthorizationHttp01 {
+    /**
+     * The token you need to copy to the file on your origin server.
+     */
+    body: string;
+    /**
+     * Details on the validation challenge generation.
+     */
+    results: outputs.PropertyHostnameCertStatusAuthorizationHttp01Result[];
+    /**
+     * The location on your origin server where you save the file with the token.
+     */
+    url: string;
+}
+
+export interface PropertyHostnameCertStatusAuthorizationHttp01Result {
+    /**
+     * A descriptive message on the challenge generation process.
+     */
+    message: string;
+    /**
+     * The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+     */
+    source: string;
+    /**
+     * The ISO 8601 timestamp indicating when the result was generated.
+     */
+    timestamp: string;
 }
 
 export interface PropertyHostnameMtls {

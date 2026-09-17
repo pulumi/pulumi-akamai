@@ -12,6 +12,18 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class PropertyHostnameCertStatusArgs : global::Pulumi.ResourceArgs
     {
+        [Input("authorizations")]
+        private InputList<Inputs.PropertyHostnameCertStatusAuthorizationArgs>? _authorizations;
+
+        /// <summary>
+        /// Details of domain validation methods available for your certificate.
+        /// </summary>
+        public InputList<Inputs.PropertyHostnameCertStatusAuthorizationArgs> Authorizations
+        {
+            get => _authorizations ?? (_authorizations = new InputList<Inputs.PropertyHostnameCertStatusAuthorizationArgs>());
+            set => _authorizations = value;
+        }
+
         /// <summary>
         /// The hostname part of the CNAME record used to validate the certificate's domain.
         /// </summary>

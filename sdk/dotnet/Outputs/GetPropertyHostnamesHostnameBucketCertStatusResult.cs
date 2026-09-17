@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertyHostnamesHostnameBucketCertStatusResult
     {
         /// <summary>
+        /// Details of domain validation methods available for your certificate.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameBucketCertStatusAuthorizationResult> Authorizations;
+        /// <summary>
         /// The hostname part of the CNAME record used to validate the certificate's domain.
         /// </summary>
         public readonly string Hostname;
@@ -32,6 +36,8 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private GetPropertyHostnamesHostnameBucketCertStatusResult(
+            ImmutableArray<Outputs.GetPropertyHostnamesHostnameBucketCertStatusAuthorizationResult> authorizations,
+
             string hostname,
 
             string productionStatus,
@@ -40,6 +46,7 @@ namespace Pulumi.Akamai.Outputs
 
             string target)
         {
+            Authorizations = authorizations;
             Hostname = hostname;
             ProductionStatus = productionStatus;
             StagingStatus = stagingStatus;

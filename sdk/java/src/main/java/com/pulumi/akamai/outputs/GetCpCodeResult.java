@@ -12,6 +12,8 @@ import java.util.Objects;
 @CustomType
 public final class GetCpCodeResult {
     private String contractId;
+    private String cpCodeId;
+    private String cpCodeName;
     private String createdDate;
     private String groupId;
     /**
@@ -19,12 +21,17 @@ public final class GetCpCodeResult {
      * 
      */
     private String id;
-    private String name;
     private List<String> productIds;
 
     private GetCpCodeResult() {}
     public String contractId() {
         return this.contractId;
+    }
+    public String cpCodeId() {
+        return this.cpCodeId;
+    }
+    public String cpCodeName() {
+        return this.cpCodeName;
     }
     public String createdDate() {
         return this.createdDate;
@@ -38,9 +45,6 @@ public final class GetCpCodeResult {
      */
     public String id() {
         return this.id;
-    }
-    public String name() {
-        return this.name;
     }
     public List<String> productIds() {
         return this.productIds;
@@ -56,19 +60,21 @@ public final class GetCpCodeResult {
     @CustomType.Builder
     public static final class Builder {
         private String contractId;
+        private String cpCodeId;
+        private String cpCodeName;
         private String createdDate;
         private String groupId;
         private String id;
-        private String name;
         private List<String> productIds;
         public Builder() {}
         public Builder(GetCpCodeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contractId = defaults.contractId;
+    	      this.cpCodeId = defaults.cpCodeId;
+    	      this.cpCodeName = defaults.cpCodeName;
     	      this.createdDate = defaults.createdDate;
     	      this.groupId = defaults.groupId;
     	      this.id = defaults.id;
-    	      this.name = defaults.name;
     	      this.productIds = defaults.productIds;
         }
 
@@ -78,6 +84,22 @@ public final class GetCpCodeResult {
               throw new MissingRequiredPropertyException("GetCpCodeResult", "contractId");
             }
             this.contractId = contractId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cpCodeId(String cpCodeId) {
+            if (cpCodeId == null) {
+              throw new MissingRequiredPropertyException("GetCpCodeResult", "cpCodeId");
+            }
+            this.cpCodeId = cpCodeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cpCodeName(String cpCodeName) {
+            if (cpCodeName == null) {
+              throw new MissingRequiredPropertyException("GetCpCodeResult", "cpCodeName");
+            }
+            this.cpCodeName = cpCodeName;
             return this;
         }
         @CustomType.Setter
@@ -105,14 +127,6 @@ public final class GetCpCodeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            if (name == null) {
-              throw new MissingRequiredPropertyException("GetCpCodeResult", "name");
-            }
-            this.name = name;
-            return this;
-        }
-        @CustomType.Setter
         public Builder productIds(List<String> productIds) {
             if (productIds == null) {
               throw new MissingRequiredPropertyException("GetCpCodeResult", "productIds");
@@ -126,10 +140,11 @@ public final class GetCpCodeResult {
         public GetCpCodeResult build() {
             final var _resultValue = new GetCpCodeResult();
             _resultValue.contractId = contractId;
+            _resultValue.cpCodeId = cpCodeId;
+            _resultValue.cpCodeName = cpCodeName;
             _resultValue.createdDate = createdDate;
             _resultValue.groupId = groupId;
             _resultValue.id = id;
-            _resultValue.name = name;
             _resultValue.productIds = productIds;
             return _resultValue;
         }

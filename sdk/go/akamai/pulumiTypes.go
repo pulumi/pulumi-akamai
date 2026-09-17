@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -962,6 +962,382 @@ func (o AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsPtrOutput) Rul
 		}
 		return v.Rules
 	}).(pulumi.IntArrayOutput)
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRule struct {
+	// The URL evasion mitigation rule action.
+	Action string `pulumi:"action"`
+	// Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+	ConditionOperator *string `pulumi:"conditionOperator"`
+	// The list of match conditions.
+	Conditions []AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition `pulumi:"conditions"`
+	// The URL evasion mitigation rule description.
+	Description *string `pulumi:"description"`
+	// The URL evasion mitigation rule name.
+	Name *string `pulumi:"name"`
+	// Uniquely identifies the URL evasion mitigation rule.
+	RuleId int `pulumi:"ruleId"`
+}
+
+// AppsecAdvancedSettingsUrlEvasionDefenseRuleInput is an input type that accepts AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs and AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput values.
+// You can construct a concrete instance of `AppsecAdvancedSettingsUrlEvasionDefenseRuleInput` via:
+//
+//	AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs{...}
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleInput interface {
+	pulumi.Input
+
+	ToAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput
+	ToAppsecAdvancedSettingsUrlEvasionDefenseRuleOutputWithContext(context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs struct {
+	// The URL evasion mitigation rule action.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+	ConditionOperator pulumi.StringPtrInput `pulumi:"conditionOperator"`
+	// The list of match conditions.
+	Conditions AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput `pulumi:"conditions"`
+	// The URL evasion mitigation rule description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// The URL evasion mitigation rule name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Uniquely identifies the URL evasion mitigation rule.
+	RuleId pulumi.IntInput `pulumi:"ruleId"`
+}
+
+func (AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppsecAdvancedSettingsUrlEvasionDefenseRule)(nil)).Elem()
+}
+
+func (i AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return i.ToAppsecAdvancedSettingsUrlEvasionDefenseRuleOutputWithContext(context.Background())
+}
+
+func (i AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleOutputWithContext(ctx context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput)
+}
+
+// AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayInput is an input type that accepts AppsecAdvancedSettingsUrlEvasionDefenseRuleArray and AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput values.
+// You can construct a concrete instance of `AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayInput` via:
+//
+//	AppsecAdvancedSettingsUrlEvasionDefenseRuleArray{ AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs{...} }
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayInput interface {
+	pulumi.Input
+
+	ToAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput
+	ToAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutputWithContext(context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleArray []AppsecAdvancedSettingsUrlEvasionDefenseRuleInput
+
+func (AppsecAdvancedSettingsUrlEvasionDefenseRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppsecAdvancedSettingsUrlEvasionDefenseRule)(nil)).Elem()
+}
+
+func (i AppsecAdvancedSettingsUrlEvasionDefenseRuleArray) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput {
+	return i.ToAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutputWithContext(context.Background())
+}
+
+func (i AppsecAdvancedSettingsUrlEvasionDefenseRuleArray) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutputWithContext(ctx context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput)
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput struct{ *pulumi.OutputState }
+
+func (AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppsecAdvancedSettingsUrlEvasionDefenseRule)(nil)).Elem()
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return o
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleOutputWithContext(ctx context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return o
+}
+
+// The URL evasion mitigation rule action.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRule) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) ConditionOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRule) *string { return v.ConditionOperator }).(pulumi.StringPtrOutput)
+}
+
+// The list of match conditions.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) Conditions() AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRule) []AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition {
+		return v.Conditions
+	}).(AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput)
+}
+
+// The URL evasion mitigation rule description.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRule) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The URL evasion mitigation rule name.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRule) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Uniquely identifies the URL evasion mitigation rule.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) RuleId() pulumi.IntOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRule) int { return v.RuleId }).(pulumi.IntOutput)
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppsecAdvancedSettingsUrlEvasionDefenseRule)(nil)).Elem()
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput {
+	return o
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutputWithContext(ctx context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput {
+	return o
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput) Index(i pulumi.IntInput) AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppsecAdvancedSettingsUrlEvasionDefenseRule {
+		return vs[0].([]AppsecAdvancedSettingsUrlEvasionDefenseRule)[vs[1].(int)]
+	}).(AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput)
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition struct {
+	// The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+	ClientLists []string `pulumi:"clientLists"`
+	// The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+	Extensions []string `pulumi:"extensions"`
+	// The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+	Filenames []string `pulumi:"filenames"`
+	// The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+	Header *string `pulumi:"header"`
+	// The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+	Hosts []string `pulumi:"hosts"`
+	// The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+	Ips []string `pulumi:"ips"`
+	// The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+	Methods []string `pulumi:"methods"`
+	// The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+	Name *string `pulumi:"name"`
+	// Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+	NameCaseSensitive *bool `pulumi:"nameCaseSensitive"`
+	// The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+	Paths []string `pulumi:"paths"`
+	// Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+	PositiveMatch *bool `pulumi:"positiveMatch"`
+	// The condition type to match on.
+	Type string `pulumi:"type"`
+	// Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+	UseHeaders *bool `pulumi:"useHeaders"`
+	// The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+	Value *string `pulumi:"value"`
+	// Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+	ValueCaseSensitive *bool `pulumi:"valueCaseSensitive"`
+	// Whether the provided parameter `value` is a wildcard. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+	ValueWildcard *bool `pulumi:"valueWildcard"`
+}
+
+// AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput is an input type that accepts AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs and AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput values.
+// You can construct a concrete instance of `AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput` via:
+//
+//	AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs{...}
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput interface {
+	pulumi.Input
+
+	ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput
+	ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutputWithContext(context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs struct {
+	// The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+	ClientLists pulumi.StringArrayInput `pulumi:"clientLists"`
+	// The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+	Extensions pulumi.StringArrayInput `pulumi:"extensions"`
+	// The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+	Filenames pulumi.StringArrayInput `pulumi:"filenames"`
+	// The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+	Header pulumi.StringPtrInput `pulumi:"header"`
+	// The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+	Hosts pulumi.StringArrayInput `pulumi:"hosts"`
+	// The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+	Ips pulumi.StringArrayInput `pulumi:"ips"`
+	// The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+	Methods pulumi.StringArrayInput `pulumi:"methods"`
+	// The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+	NameCaseSensitive pulumi.BoolPtrInput `pulumi:"nameCaseSensitive"`
+	// The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+	Paths pulumi.StringArrayInput `pulumi:"paths"`
+	// Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+	PositiveMatch pulumi.BoolPtrInput `pulumi:"positiveMatch"`
+	// The condition type to match on.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+	UseHeaders pulumi.BoolPtrInput `pulumi:"useHeaders"`
+	// The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+	// Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+	ValueCaseSensitive pulumi.BoolPtrInput `pulumi:"valueCaseSensitive"`
+	// Whether the provided parameter `value` is a wildcard. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+	ValueWildcard pulumi.BoolPtrInput `pulumi:"valueWildcard"`
+}
+
+func (AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)(nil)).Elem()
+}
+
+func (i AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return i.ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutputWithContext(context.Background())
+}
+
+func (i AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutputWithContext(ctx context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput)
+}
+
+// AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput is an input type that accepts AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray and AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput values.
+// You can construct a concrete instance of `AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput` via:
+//
+//	AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray{ AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs{...} }
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput
+	ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutputWithContext(context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray []AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput
+
+func (AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)(nil)).Elem()
+}
+
+func (i AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return i.ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutputWithContext(ctx context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput)
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)(nil)).Elem()
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return o
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutputWithContext(ctx context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return o
+}
+
+// The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ClientLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.ClientLists }).(pulumi.StringArrayOutput)
+}
+
+// The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Extensions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Extensions }).(pulumi.StringArrayOutput)
+}
+
+// The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Filenames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Filenames }).(pulumi.StringArrayOutput)
+}
+
+// The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Header() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) *string { return v.Header }).(pulumi.StringPtrOutput)
+}
+
+// The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Hosts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Hosts }).(pulumi.StringArrayOutput)
+}
+
+// The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Ips() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Ips }).(pulumi.StringArrayOutput)
+}
+
+// The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Methods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Methods }).(pulumi.StringArrayOutput)
+}
+
+// The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) NameCaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) *bool { return v.NameCaseSensitive }).(pulumi.BoolPtrOutput)
+}
+
+// The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Paths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Paths }).(pulumi.StringArrayOutput)
+}
+
+// Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) PositiveMatch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) *bool { return v.PositiveMatch }).(pulumi.BoolPtrOutput)
+}
+
+// The condition type to match on.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) UseHeaders() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) *bool { return v.UseHeaders }).(pulumi.BoolPtrOutput)
+}
+
+// The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+// Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ValueCaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) *bool { return v.ValueCaseSensitive }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the provided parameter `value` is a wildcard. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ValueWildcard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) *bool { return v.ValueWildcard }).(pulumi.BoolPtrOutput)
+}
+
+type AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)(nil)).Elem()
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput() AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return o
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput) ToAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutputWithContext(ctx context.Context) AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return o
+}
+
+func (o AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput) Index(i pulumi.IntInput) AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition {
+		return vs[0].([]AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)[vs[1].(int)]
+	}).(AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput)
 }
 
 type AppsecUrlProtectionPolicyApiDefinition struct {
@@ -5339,10 +5715,16 @@ func (o CpsDvEnrollmentHttpChallengeArrayOutput) Index(i pulumi.IntInput) CpsDvE
 type CpsDvEnrollmentNetworkConfiguration struct {
 	// The trust chain configuration used for client mutual authentication
 	ClientMutualAuthentication *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication `pulumi:"clientMutualAuthentication"`
-	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+	//
+	// Deprecated: Use enableForAllSans instead.
 	CloneDnsNames *bool `pulumi:"cloneDnsNames"`
 	// TLS versions which are disallowed
 	DisallowedTlsVersions []string `pulumi:"disallowedTlsVersions"`
+	// Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+	DnsNames []string `pulumi:"dnsNames"`
+	// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+	EnableForAllSans *bool `pulumi:"enableForAllSans"`
 	// Geography type used for enrollment
 	Geography string `pulumi:"geography"`
 	// Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
@@ -5369,10 +5751,16 @@ type CpsDvEnrollmentNetworkConfigurationInput interface {
 type CpsDvEnrollmentNetworkConfigurationArgs struct {
 	// The trust chain configuration used for client mutual authentication
 	ClientMutualAuthentication CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput `pulumi:"clientMutualAuthentication"`
-	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+	//
+	// Deprecated: Use enableForAllSans instead.
 	CloneDnsNames pulumi.BoolPtrInput `pulumi:"cloneDnsNames"`
 	// TLS versions which are disallowed
 	DisallowedTlsVersions pulumi.StringArrayInput `pulumi:"disallowedTlsVersions"`
+	// Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+	DnsNames pulumi.StringArrayInput `pulumi:"dnsNames"`
+	// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+	EnableForAllSans pulumi.BoolPtrInput `pulumi:"enableForAllSans"`
 	// Geography type used for enrollment
 	Geography pulumi.StringInput `pulumi:"geography"`
 	// Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
@@ -5469,7 +5857,9 @@ func (o CpsDvEnrollmentNetworkConfigurationOutput) ClientMutualAuthentication() 
 	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
 }
 
-// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+//
+// Deprecated: Use enableForAllSans instead.
 func (o CpsDvEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *bool { return v.CloneDnsNames }).(pulumi.BoolPtrOutput)
 }
@@ -5477,6 +5867,16 @@ func (o CpsDvEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolPt
 // TLS versions which are disallowed
 func (o CpsDvEnrollmentNetworkConfigurationOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) []string { return v.DisallowedTlsVersions }).(pulumi.StringArrayOutput)
+}
+
+// Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+func (o CpsDvEnrollmentNetworkConfigurationOutput) DnsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) []string { return v.DnsNames }).(pulumi.StringArrayOutput)
+}
+
+// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+func (o CpsDvEnrollmentNetworkConfigurationOutput) EnableForAllSans() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *bool { return v.EnableForAllSans }).(pulumi.BoolPtrOutput)
 }
 
 // Geography type used for enrollment
@@ -5538,7 +5938,9 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) ClientMutualAuthentication
 	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
 }
 
-// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+//
+// Deprecated: Use enableForAllSans instead.
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) CloneDnsNames() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *bool {
 		if v == nil {
@@ -5556,6 +5958,26 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) DisallowedTlsVersions() pu
 		}
 		return v.DisallowedTlsVersions
 	}).(pulumi.StringArrayOutput)
+}
+
+// Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) DnsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DnsNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) EnableForAllSans() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableForAllSans
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Geography type used for enrollment
@@ -7248,10 +7670,16 @@ func (o CpsThirdPartyEnrollmentCsrPtrOutput) State() pulumi.StringPtrOutput {
 type CpsThirdPartyEnrollmentNetworkConfiguration struct {
 	// The trust chain configuration used for client mutual authentication
 	ClientMutualAuthentication *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication `pulumi:"clientMutualAuthentication"`
-	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+	//
+	// Deprecated: Use enableForAllSans instead.
 	CloneDnsNames *bool `pulumi:"cloneDnsNames"`
 	// TLS versions which are disallowed
 	DisallowedTlsVersions []string `pulumi:"disallowedTlsVersions"`
+	// Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+	DnsNames []string `pulumi:"dnsNames"`
+	// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+	EnableForAllSans *bool `pulumi:"enableForAllSans"`
 	// Geography type used for enrollment
 	Geography string `pulumi:"geography"`
 	// Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
@@ -7278,10 +7706,16 @@ type CpsThirdPartyEnrollmentNetworkConfigurationInput interface {
 type CpsThirdPartyEnrollmentNetworkConfigurationArgs struct {
 	// The trust chain configuration used for client mutual authentication
 	ClientMutualAuthentication CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput `pulumi:"clientMutualAuthentication"`
-	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+	//
+	// Deprecated: Use enableForAllSans instead.
 	CloneDnsNames pulumi.BoolPtrInput `pulumi:"cloneDnsNames"`
 	// TLS versions which are disallowed
 	DisallowedTlsVersions pulumi.StringArrayInput `pulumi:"disallowedTlsVersions"`
+	// Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+	DnsNames pulumi.StringArrayInput `pulumi:"dnsNames"`
+	// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+	EnableForAllSans pulumi.BoolPtrInput `pulumi:"enableForAllSans"`
 	// Geography type used for enrollment
 	Geography pulumi.StringInput `pulumi:"geography"`
 	// Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
@@ -7378,7 +7812,9 @@ func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) ClientMutualAuthentic
 	}).(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
 }
 
-// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+//
+// Deprecated: Use enableForAllSans instead.
 func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *bool { return v.CloneDnsNames }).(pulumi.BoolPtrOutput)
 }
@@ -7386,6 +7822,16 @@ func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulum
 // TLS versions which are disallowed
 func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) []string { return v.DisallowedTlsVersions }).(pulumi.StringArrayOutput)
+}
+
+// Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) DnsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) []string { return v.DnsNames }).(pulumi.StringArrayOutput)
+}
+
+// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) EnableForAllSans() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *bool { return v.EnableForAllSans }).(pulumi.BoolPtrOutput)
 }
 
 // Geography type used for enrollment
@@ -7447,7 +7893,9 @@ func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) ClientMutualAuthen
 	}).(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
 }
 
-// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+//
+// Deprecated: Use enableForAllSans instead.
 func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) CloneDnsNames() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *bool {
 		if v == nil {
@@ -7465,6 +7913,26 @@ func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) DisallowedTlsVersi
 		}
 		return v.DisallowedTlsVersions
 	}).(pulumi.StringArrayOutput)
+}
+
+// Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) DnsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DnsNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) EnableForAllSans() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableForAllSans
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Geography type used for enrollment
@@ -12762,6 +13230,162 @@ func (o DatastreamTrafficpeakConnectorPtrOutput) UserName() pulumi.StringPtrOutp
 			return nil
 		}
 		return &v.UserName
+	}).(pulumi.StringPtrOutput)
+}
+
+type DnsZoneMultiProviderDnssec struct {
+	// Enables multi-signer DNSSEC for the zone.
+	Enabled bool `pulumi:"enabled"`
+	// The URL to call when a new ZSK secret has been generated.
+	Webhook *string `pulumi:"webhook"`
+}
+
+// DnsZoneMultiProviderDnssecInput is an input type that accepts DnsZoneMultiProviderDnssecArgs and DnsZoneMultiProviderDnssecOutput values.
+// You can construct a concrete instance of `DnsZoneMultiProviderDnssecInput` via:
+//
+//	DnsZoneMultiProviderDnssecArgs{...}
+type DnsZoneMultiProviderDnssecInput interface {
+	pulumi.Input
+
+	ToDnsZoneMultiProviderDnssecOutput() DnsZoneMultiProviderDnssecOutput
+	ToDnsZoneMultiProviderDnssecOutputWithContext(context.Context) DnsZoneMultiProviderDnssecOutput
+}
+
+type DnsZoneMultiProviderDnssecArgs struct {
+	// Enables multi-signer DNSSEC for the zone.
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// The URL to call when a new ZSK secret has been generated.
+	Webhook pulumi.StringPtrInput `pulumi:"webhook"`
+}
+
+func (DnsZoneMultiProviderDnssecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsZoneMultiProviderDnssec)(nil)).Elem()
+}
+
+func (i DnsZoneMultiProviderDnssecArgs) ToDnsZoneMultiProviderDnssecOutput() DnsZoneMultiProviderDnssecOutput {
+	return i.ToDnsZoneMultiProviderDnssecOutputWithContext(context.Background())
+}
+
+func (i DnsZoneMultiProviderDnssecArgs) ToDnsZoneMultiProviderDnssecOutputWithContext(ctx context.Context) DnsZoneMultiProviderDnssecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneMultiProviderDnssecOutput)
+}
+
+func (i DnsZoneMultiProviderDnssecArgs) ToDnsZoneMultiProviderDnssecPtrOutput() DnsZoneMultiProviderDnssecPtrOutput {
+	return i.ToDnsZoneMultiProviderDnssecPtrOutputWithContext(context.Background())
+}
+
+func (i DnsZoneMultiProviderDnssecArgs) ToDnsZoneMultiProviderDnssecPtrOutputWithContext(ctx context.Context) DnsZoneMultiProviderDnssecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneMultiProviderDnssecOutput).ToDnsZoneMultiProviderDnssecPtrOutputWithContext(ctx)
+}
+
+// DnsZoneMultiProviderDnssecPtrInput is an input type that accepts DnsZoneMultiProviderDnssecArgs, DnsZoneMultiProviderDnssecPtr and DnsZoneMultiProviderDnssecPtrOutput values.
+// You can construct a concrete instance of `DnsZoneMultiProviderDnssecPtrInput` via:
+//
+//	        DnsZoneMultiProviderDnssecArgs{...}
+//
+//	or:
+//
+//	        nil
+type DnsZoneMultiProviderDnssecPtrInput interface {
+	pulumi.Input
+
+	ToDnsZoneMultiProviderDnssecPtrOutput() DnsZoneMultiProviderDnssecPtrOutput
+	ToDnsZoneMultiProviderDnssecPtrOutputWithContext(context.Context) DnsZoneMultiProviderDnssecPtrOutput
+}
+
+type dnsZoneMultiProviderDnssecPtrType DnsZoneMultiProviderDnssecArgs
+
+func DnsZoneMultiProviderDnssecPtr(v *DnsZoneMultiProviderDnssecArgs) DnsZoneMultiProviderDnssecPtrInput {
+	return (*dnsZoneMultiProviderDnssecPtrType)(v)
+}
+
+func (*dnsZoneMultiProviderDnssecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DnsZoneMultiProviderDnssec)(nil)).Elem()
+}
+
+func (i *dnsZoneMultiProviderDnssecPtrType) ToDnsZoneMultiProviderDnssecPtrOutput() DnsZoneMultiProviderDnssecPtrOutput {
+	return i.ToDnsZoneMultiProviderDnssecPtrOutputWithContext(context.Background())
+}
+
+func (i *dnsZoneMultiProviderDnssecPtrType) ToDnsZoneMultiProviderDnssecPtrOutputWithContext(ctx context.Context) DnsZoneMultiProviderDnssecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneMultiProviderDnssecPtrOutput)
+}
+
+type DnsZoneMultiProviderDnssecOutput struct{ *pulumi.OutputState }
+
+func (DnsZoneMultiProviderDnssecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsZoneMultiProviderDnssec)(nil)).Elem()
+}
+
+func (o DnsZoneMultiProviderDnssecOutput) ToDnsZoneMultiProviderDnssecOutput() DnsZoneMultiProviderDnssecOutput {
+	return o
+}
+
+func (o DnsZoneMultiProviderDnssecOutput) ToDnsZoneMultiProviderDnssecOutputWithContext(ctx context.Context) DnsZoneMultiProviderDnssecOutput {
+	return o
+}
+
+func (o DnsZoneMultiProviderDnssecOutput) ToDnsZoneMultiProviderDnssecPtrOutput() DnsZoneMultiProviderDnssecPtrOutput {
+	return o.ToDnsZoneMultiProviderDnssecPtrOutputWithContext(context.Background())
+}
+
+func (o DnsZoneMultiProviderDnssecOutput) ToDnsZoneMultiProviderDnssecPtrOutputWithContext(ctx context.Context) DnsZoneMultiProviderDnssecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DnsZoneMultiProviderDnssec) *DnsZoneMultiProviderDnssec {
+		return &v
+	}).(DnsZoneMultiProviderDnssecPtrOutput)
+}
+
+// Enables multi-signer DNSSEC for the zone.
+func (o DnsZoneMultiProviderDnssecOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v DnsZoneMultiProviderDnssec) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// The URL to call when a new ZSK secret has been generated.
+func (o DnsZoneMultiProviderDnssecOutput) Webhook() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DnsZoneMultiProviderDnssec) *string { return v.Webhook }).(pulumi.StringPtrOutput)
+}
+
+type DnsZoneMultiProviderDnssecPtrOutput struct{ *pulumi.OutputState }
+
+func (DnsZoneMultiProviderDnssecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DnsZoneMultiProviderDnssec)(nil)).Elem()
+}
+
+func (o DnsZoneMultiProviderDnssecPtrOutput) ToDnsZoneMultiProviderDnssecPtrOutput() DnsZoneMultiProviderDnssecPtrOutput {
+	return o
+}
+
+func (o DnsZoneMultiProviderDnssecPtrOutput) ToDnsZoneMultiProviderDnssecPtrOutputWithContext(ctx context.Context) DnsZoneMultiProviderDnssecPtrOutput {
+	return o
+}
+
+func (o DnsZoneMultiProviderDnssecPtrOutput) Elem() DnsZoneMultiProviderDnssecOutput {
+	return o.ApplyT(func(v *DnsZoneMultiProviderDnssec) DnsZoneMultiProviderDnssec {
+		if v != nil {
+			return *v
+		}
+		var ret DnsZoneMultiProviderDnssec
+		return ret
+	}).(DnsZoneMultiProviderDnssecOutput)
+}
+
+// Enables multi-signer DNSSEC for the zone.
+func (o DnsZoneMultiProviderDnssecPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DnsZoneMultiProviderDnssec) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The URL to call when a new ZSK secret has been generated.
+func (o DnsZoneMultiProviderDnssecPtrOutput) Webhook() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsZoneMultiProviderDnssec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Webhook
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -23035,6 +23659,8 @@ func (o PropertyHostnameCcmCertificatesPtrOutput) RsaCertId() pulumi.StringPtrOu
 }
 
 type PropertyHostnameCertStatus struct {
+	// Details of domain validation methods available for your certificate.
+	Authorizations []PropertyHostnameCertStatusAuthorization `pulumi:"authorizations"`
 	// The hostname part of the CNAME record used to validate the certificate's domain.
 	Hostname *string `pulumi:"hostname"`
 	// The certificate's deployment status on the production network.
@@ -23057,6 +23683,8 @@ type PropertyHostnameCertStatusInput interface {
 }
 
 type PropertyHostnameCertStatusArgs struct {
+	// Details of domain validation methods available for your certificate.
+	Authorizations PropertyHostnameCertStatusAuthorizationArrayInput `pulumi:"authorizations"`
 	// The hostname part of the CNAME record used to validate the certificate's domain.
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The certificate's deployment status on the production network.
@@ -23118,6 +23746,11 @@ func (o PropertyHostnameCertStatusOutput) ToPropertyHostnameCertStatusOutputWith
 	return o
 }
 
+// Details of domain validation methods available for your certificate.
+func (o PropertyHostnameCertStatusOutput) Authorizations() PropertyHostnameCertStatusAuthorizationArrayOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatus) []PropertyHostnameCertStatusAuthorization { return v.Authorizations }).(PropertyHostnameCertStatusAuthorizationArrayOutput)
+}
+
 // The hostname part of the CNAME record used to validate the certificate's domain.
 func (o PropertyHostnameCertStatusOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PropertyHostnameCertStatus) *string { return v.Hostname }).(pulumi.StringPtrOutput)
@@ -23156,6 +23789,589 @@ func (o PropertyHostnameCertStatusArrayOutput) Index(i pulumi.IntInput) Property
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostnameCertStatus {
 		return vs[0].([]PropertyHostnameCertStatus)[vs[1].(int)]
 	}).(PropertyHostnameCertStatusOutput)
+}
+
+type PropertyHostnameCertStatusAuthorization struct {
+	// Details on the manual DNS validation method.
+	Dns01s []PropertyHostnameCertStatusAuthorizationDns01 `pulumi:"dns01s"`
+	// Details on the manual HTTP validation method.
+	Http01s []PropertyHostnameCertStatusAuthorizationHttp01 `pulumi:"http01s"`
+	// The status of the validation that proves you control the domains listed in the certificate request.
+	Status *string `pulumi:"status"`
+	// An ISO 8601 timestamp indicating when the domain validation challenge expires.
+	ValidUntil *string `pulumi:"validUntil"`
+}
+
+// PropertyHostnameCertStatusAuthorizationInput is an input type that accepts PropertyHostnameCertStatusAuthorizationArgs and PropertyHostnameCertStatusAuthorizationOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationInput` via:
+//
+//	PropertyHostnameCertStatusAuthorizationArgs{...}
+type PropertyHostnameCertStatusAuthorizationInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationOutput() PropertyHostnameCertStatusAuthorizationOutput
+	ToPropertyHostnameCertStatusAuthorizationOutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationOutput
+}
+
+type PropertyHostnameCertStatusAuthorizationArgs struct {
+	// Details on the manual DNS validation method.
+	Dns01s PropertyHostnameCertStatusAuthorizationDns01ArrayInput `pulumi:"dns01s"`
+	// Details on the manual HTTP validation method.
+	Http01s PropertyHostnameCertStatusAuthorizationHttp01ArrayInput `pulumi:"http01s"`
+	// The status of the validation that proves you control the domains listed in the certificate request.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// An ISO 8601 timestamp indicating when the domain validation challenge expires.
+	ValidUntil pulumi.StringPtrInput `pulumi:"validUntil"`
+}
+
+func (PropertyHostnameCertStatusAuthorizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorization)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationArgs) ToPropertyHostnameCertStatusAuthorizationOutput() PropertyHostnameCertStatusAuthorizationOutput {
+	return i.ToPropertyHostnameCertStatusAuthorizationOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationArgs) ToPropertyHostnameCertStatusAuthorizationOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationOutput)
+}
+
+// PropertyHostnameCertStatusAuthorizationArrayInput is an input type that accepts PropertyHostnameCertStatusAuthorizationArray and PropertyHostnameCertStatusAuthorizationArrayOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationArrayInput` via:
+//
+//	PropertyHostnameCertStatusAuthorizationArray{ PropertyHostnameCertStatusAuthorizationArgs{...} }
+type PropertyHostnameCertStatusAuthorizationArrayInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationArrayOutput() PropertyHostnameCertStatusAuthorizationArrayOutput
+	ToPropertyHostnameCertStatusAuthorizationArrayOutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationArrayOutput
+}
+
+type PropertyHostnameCertStatusAuthorizationArray []PropertyHostnameCertStatusAuthorizationInput
+
+func (PropertyHostnameCertStatusAuthorizationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorization)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationArray) ToPropertyHostnameCertStatusAuthorizationArrayOutput() PropertyHostnameCertStatusAuthorizationArrayOutput {
+	return i.ToPropertyHostnameCertStatusAuthorizationArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationArray) ToPropertyHostnameCertStatusAuthorizationArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationArrayOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorization)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationOutput) ToPropertyHostnameCertStatusAuthorizationOutput() PropertyHostnameCertStatusAuthorizationOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationOutput) ToPropertyHostnameCertStatusAuthorizationOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationOutput {
+	return o
+}
+
+// Details on the manual DNS validation method.
+func (o PropertyHostnameCertStatusAuthorizationOutput) Dns01s() PropertyHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorization) []PropertyHostnameCertStatusAuthorizationDns01 {
+		return v.Dns01s
+	}).(PropertyHostnameCertStatusAuthorizationDns01ArrayOutput)
+}
+
+// Details on the manual HTTP validation method.
+func (o PropertyHostnameCertStatusAuthorizationOutput) Http01s() PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorization) []PropertyHostnameCertStatusAuthorizationHttp01 {
+		return v.Http01s
+	}).(PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput)
+}
+
+// The status of the validation that proves you control the domains listed in the certificate request.
+func (o PropertyHostnameCertStatusAuthorizationOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorization) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// An ISO 8601 timestamp indicating when the domain validation challenge expires.
+func (o PropertyHostnameCertStatusAuthorizationOutput) ValidUntil() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorization) *string { return v.ValidUntil }).(pulumi.StringPtrOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorization)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationArrayOutput) ToPropertyHostnameCertStatusAuthorizationArrayOutput() PropertyHostnameCertStatusAuthorizationArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationArrayOutput) ToPropertyHostnameCertStatusAuthorizationArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationArrayOutput) Index(i pulumi.IntInput) PropertyHostnameCertStatusAuthorizationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostnameCertStatusAuthorization {
+		return vs[0].([]PropertyHostnameCertStatusAuthorization)[vs[1].(int)]
+	}).(PropertyHostnameCertStatusAuthorizationOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01 struct {
+	// Details on the validation challenge generation.
+	Results []PropertyHostnameCertStatusAuthorizationDns01Result `pulumi:"results"`
+	// The token you need to copy to the DNS TXT record.
+	Value *string `pulumi:"value"`
+}
+
+// PropertyHostnameCertStatusAuthorizationDns01Input is an input type that accepts PropertyHostnameCertStatusAuthorizationDns01Args and PropertyHostnameCertStatusAuthorizationDns01Output values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationDns01Input` via:
+//
+//	PropertyHostnameCertStatusAuthorizationDns01Args{...}
+type PropertyHostnameCertStatusAuthorizationDns01Input interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationDns01Output() PropertyHostnameCertStatusAuthorizationDns01Output
+	ToPropertyHostnameCertStatusAuthorizationDns01OutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationDns01Output
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01Args struct {
+	// Details on the validation challenge generation.
+	Results PropertyHostnameCertStatusAuthorizationDns01ResultArrayInput `pulumi:"results"`
+	// The token you need to copy to the DNS TXT record.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (PropertyHostnameCertStatusAuthorizationDns01Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationDns01Args) ToPropertyHostnameCertStatusAuthorizationDns01Output() PropertyHostnameCertStatusAuthorizationDns01Output {
+	return i.ToPropertyHostnameCertStatusAuthorizationDns01OutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationDns01Args) ToPropertyHostnameCertStatusAuthorizationDns01OutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationDns01Output {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationDns01Output)
+}
+
+// PropertyHostnameCertStatusAuthorizationDns01ArrayInput is an input type that accepts PropertyHostnameCertStatusAuthorizationDns01Array and PropertyHostnameCertStatusAuthorizationDns01ArrayOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationDns01ArrayInput` via:
+//
+//	PropertyHostnameCertStatusAuthorizationDns01Array{ PropertyHostnameCertStatusAuthorizationDns01Args{...} }
+type PropertyHostnameCertStatusAuthorizationDns01ArrayInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationDns01ArrayOutput() PropertyHostnameCertStatusAuthorizationDns01ArrayOutput
+	ToPropertyHostnameCertStatusAuthorizationDns01ArrayOutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationDns01ArrayOutput
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01Array []PropertyHostnameCertStatusAuthorizationDns01Input
+
+func (PropertyHostnameCertStatusAuthorizationDns01Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationDns01Array) ToPropertyHostnameCertStatusAuthorizationDns01ArrayOutput() PropertyHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return i.ToPropertyHostnameCertStatusAuthorizationDns01ArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationDns01Array) ToPropertyHostnameCertStatusAuthorizationDns01ArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationDns01ArrayOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01Output struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationDns01Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01Output) ToPropertyHostnameCertStatusAuthorizationDns01Output() PropertyHostnameCertStatusAuthorizationDns01Output {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01Output) ToPropertyHostnameCertStatusAuthorizationDns01OutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationDns01Output {
+	return o
+}
+
+// Details on the validation challenge generation.
+func (o PropertyHostnameCertStatusAuthorizationDns01Output) Results() PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationDns01) []PropertyHostnameCertStatusAuthorizationDns01Result {
+		return v.Results
+	}).(PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput)
+}
+
+// The token you need to copy to the DNS TXT record.
+func (o PropertyHostnameCertStatusAuthorizationDns01Output) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationDns01) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01ArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationDns01ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01ArrayOutput) ToPropertyHostnameCertStatusAuthorizationDns01ArrayOutput() PropertyHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01ArrayOutput) ToPropertyHostnameCertStatusAuthorizationDns01ArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01ArrayOutput) Index(i pulumi.IntInput) PropertyHostnameCertStatusAuthorizationDns01Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostnameCertStatusAuthorizationDns01 {
+		return vs[0].([]PropertyHostnameCertStatusAuthorizationDns01)[vs[1].(int)]
+	}).(PropertyHostnameCertStatusAuthorizationDns01Output)
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01Result struct {
+	// A descriptive message on the challenge generation process.
+	Message *string `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source *string `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp *string `pulumi:"timestamp"`
+}
+
+// PropertyHostnameCertStatusAuthorizationDns01ResultInput is an input type that accepts PropertyHostnameCertStatusAuthorizationDns01ResultArgs and PropertyHostnameCertStatusAuthorizationDns01ResultOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationDns01ResultInput` via:
+//
+//	PropertyHostnameCertStatusAuthorizationDns01ResultArgs{...}
+type PropertyHostnameCertStatusAuthorizationDns01ResultInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationDns01ResultOutput() PropertyHostnameCertStatusAuthorizationDns01ResultOutput
+	ToPropertyHostnameCertStatusAuthorizationDns01ResultOutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationDns01ResultOutput
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01ResultArgs struct {
+	// A descriptive message on the challenge generation process.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source pulumi.StringPtrInput `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp pulumi.StringPtrInput `pulumi:"timestamp"`
+}
+
+func (PropertyHostnameCertStatusAuthorizationDns01ResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationDns01ResultArgs) ToPropertyHostnameCertStatusAuthorizationDns01ResultOutput() PropertyHostnameCertStatusAuthorizationDns01ResultOutput {
+	return i.ToPropertyHostnameCertStatusAuthorizationDns01ResultOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationDns01ResultArgs) ToPropertyHostnameCertStatusAuthorizationDns01ResultOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationDns01ResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationDns01ResultOutput)
+}
+
+// PropertyHostnameCertStatusAuthorizationDns01ResultArrayInput is an input type that accepts PropertyHostnameCertStatusAuthorizationDns01ResultArray and PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationDns01ResultArrayInput` via:
+//
+//	PropertyHostnameCertStatusAuthorizationDns01ResultArray{ PropertyHostnameCertStatusAuthorizationDns01ResultArgs{...} }
+type PropertyHostnameCertStatusAuthorizationDns01ResultArrayInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput() PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput
+	ToPropertyHostnameCertStatusAuthorizationDns01ResultArrayOutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01ResultArray []PropertyHostnameCertStatusAuthorizationDns01ResultInput
+
+func (PropertyHostnameCertStatusAuthorizationDns01ResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationDns01ResultArray) ToPropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput() PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return i.ToPropertyHostnameCertStatusAuthorizationDns01ResultArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationDns01ResultArray) ToPropertyHostnameCertStatusAuthorizationDns01ResultArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01ResultOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationDns01ResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01ResultOutput) ToPropertyHostnameCertStatusAuthorizationDns01ResultOutput() PropertyHostnameCertStatusAuthorizationDns01ResultOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01ResultOutput) ToPropertyHostnameCertStatusAuthorizationDns01ResultOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationDns01ResultOutput {
+	return o
+}
+
+// A descriptive message on the challenge generation process.
+func (o PropertyHostnameCertStatusAuthorizationDns01ResultOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationDns01Result) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+func (o PropertyHostnameCertStatusAuthorizationDns01ResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationDns01Result) *string { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+// The ISO 8601 timestamp indicating when the result was generated.
+func (o PropertyHostnameCertStatusAuthorizationDns01ResultOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationDns01Result) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput) ToPropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput() PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput) ToPropertyHostnameCertStatusAuthorizationDns01ResultArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput) Index(i pulumi.IntInput) PropertyHostnameCertStatusAuthorizationDns01ResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostnameCertStatusAuthorizationDns01Result {
+		return vs[0].([]PropertyHostnameCertStatusAuthorizationDns01Result)[vs[1].(int)]
+	}).(PropertyHostnameCertStatusAuthorizationDns01ResultOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01 struct {
+	// The token you need to copy to the file on your origin server.
+	Body *string `pulumi:"body"`
+	// Details on the validation challenge generation.
+	Results []PropertyHostnameCertStatusAuthorizationHttp01Result `pulumi:"results"`
+	// The location on your origin server where you save the file with the token.
+	Url *string `pulumi:"url"`
+}
+
+// PropertyHostnameCertStatusAuthorizationHttp01Input is an input type that accepts PropertyHostnameCertStatusAuthorizationHttp01Args and PropertyHostnameCertStatusAuthorizationHttp01Output values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationHttp01Input` via:
+//
+//	PropertyHostnameCertStatusAuthorizationHttp01Args{...}
+type PropertyHostnameCertStatusAuthorizationHttp01Input interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationHttp01Output() PropertyHostnameCertStatusAuthorizationHttp01Output
+	ToPropertyHostnameCertStatusAuthorizationHttp01OutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationHttp01Output
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01Args struct {
+	// The token you need to copy to the file on your origin server.
+	Body pulumi.StringPtrInput `pulumi:"body"`
+	// Details on the validation challenge generation.
+	Results PropertyHostnameCertStatusAuthorizationHttp01ResultArrayInput `pulumi:"results"`
+	// The location on your origin server where you save the file with the token.
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (PropertyHostnameCertStatusAuthorizationHttp01Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationHttp01Args) ToPropertyHostnameCertStatusAuthorizationHttp01Output() PropertyHostnameCertStatusAuthorizationHttp01Output {
+	return i.ToPropertyHostnameCertStatusAuthorizationHttp01OutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationHttp01Args) ToPropertyHostnameCertStatusAuthorizationHttp01OutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationHttp01Output {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationHttp01Output)
+}
+
+// PropertyHostnameCertStatusAuthorizationHttp01ArrayInput is an input type that accepts PropertyHostnameCertStatusAuthorizationHttp01Array and PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationHttp01ArrayInput` via:
+//
+//	PropertyHostnameCertStatusAuthorizationHttp01Array{ PropertyHostnameCertStatusAuthorizationHttp01Args{...} }
+type PropertyHostnameCertStatusAuthorizationHttp01ArrayInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationHttp01ArrayOutput() PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput
+	ToPropertyHostnameCertStatusAuthorizationHttp01ArrayOutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01Array []PropertyHostnameCertStatusAuthorizationHttp01Input
+
+func (PropertyHostnameCertStatusAuthorizationHttp01Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationHttp01Array) ToPropertyHostnameCertStatusAuthorizationHttp01ArrayOutput() PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return i.ToPropertyHostnameCertStatusAuthorizationHttp01ArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationHttp01Array) ToPropertyHostnameCertStatusAuthorizationHttp01ArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01Output struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationHttp01Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01Output) ToPropertyHostnameCertStatusAuthorizationHttp01Output() PropertyHostnameCertStatusAuthorizationHttp01Output {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01Output) ToPropertyHostnameCertStatusAuthorizationHttp01OutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationHttp01Output {
+	return o
+}
+
+// The token you need to copy to the file on your origin server.
+func (o PropertyHostnameCertStatusAuthorizationHttp01Output) Body() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationHttp01) *string { return v.Body }).(pulumi.StringPtrOutput)
+}
+
+// Details on the validation challenge generation.
+func (o PropertyHostnameCertStatusAuthorizationHttp01Output) Results() PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationHttp01) []PropertyHostnameCertStatusAuthorizationHttp01Result {
+		return v.Results
+	}).(PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput)
+}
+
+// The location on your origin server where you save the file with the token.
+func (o PropertyHostnameCertStatusAuthorizationHttp01Output) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationHttp01) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput) ToPropertyHostnameCertStatusAuthorizationHttp01ArrayOutput() PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput) ToPropertyHostnameCertStatusAuthorizationHttp01ArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput) Index(i pulumi.IntInput) PropertyHostnameCertStatusAuthorizationHttp01Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostnameCertStatusAuthorizationHttp01 {
+		return vs[0].([]PropertyHostnameCertStatusAuthorizationHttp01)[vs[1].(int)]
+	}).(PropertyHostnameCertStatusAuthorizationHttp01Output)
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01Result struct {
+	// A descriptive message on the challenge generation process.
+	Message *string `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source *string `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp *string `pulumi:"timestamp"`
+}
+
+// PropertyHostnameCertStatusAuthorizationHttp01ResultInput is an input type that accepts PropertyHostnameCertStatusAuthorizationHttp01ResultArgs and PropertyHostnameCertStatusAuthorizationHttp01ResultOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationHttp01ResultInput` via:
+//
+//	PropertyHostnameCertStatusAuthorizationHttp01ResultArgs{...}
+type PropertyHostnameCertStatusAuthorizationHttp01ResultInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationHttp01ResultOutput() PropertyHostnameCertStatusAuthorizationHttp01ResultOutput
+	ToPropertyHostnameCertStatusAuthorizationHttp01ResultOutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationHttp01ResultOutput
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01ResultArgs struct {
+	// A descriptive message on the challenge generation process.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source pulumi.StringPtrInput `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp pulumi.StringPtrInput `pulumi:"timestamp"`
+}
+
+func (PropertyHostnameCertStatusAuthorizationHttp01ResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationHttp01ResultArgs) ToPropertyHostnameCertStatusAuthorizationHttp01ResultOutput() PropertyHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return i.ToPropertyHostnameCertStatusAuthorizationHttp01ResultOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationHttp01ResultArgs) ToPropertyHostnameCertStatusAuthorizationHttp01ResultOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationHttp01ResultOutput)
+}
+
+// PropertyHostnameCertStatusAuthorizationHttp01ResultArrayInput is an input type that accepts PropertyHostnameCertStatusAuthorizationHttp01ResultArray and PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusAuthorizationHttp01ResultArrayInput` via:
+//
+//	PropertyHostnameCertStatusAuthorizationHttp01ResultArray{ PropertyHostnameCertStatusAuthorizationHttp01ResultArgs{...} }
+type PropertyHostnameCertStatusAuthorizationHttp01ResultArrayInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput() PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput
+	ToPropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutputWithContext(context.Context) PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01ResultArray []PropertyHostnameCertStatusAuthorizationHttp01ResultInput
+
+func (PropertyHostnameCertStatusAuthorizationHttp01ResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusAuthorizationHttp01ResultArray) ToPropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput() PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return i.ToPropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusAuthorizationHttp01ResultArray) ToPropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01ResultOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationHttp01ResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01ResultOutput) ToPropertyHostnameCertStatusAuthorizationHttp01ResultOutput() PropertyHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01ResultOutput) ToPropertyHostnameCertStatusAuthorizationHttp01ResultOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return o
+}
+
+// A descriptive message on the challenge generation process.
+func (o PropertyHostnameCertStatusAuthorizationHttp01ResultOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationHttp01Result) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+func (o PropertyHostnameCertStatusAuthorizationHttp01ResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationHttp01Result) *string { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+// The ISO 8601 timestamp indicating when the result was generated.
+func (o PropertyHostnameCertStatusAuthorizationHttp01ResultOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatusAuthorizationHttp01Result) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
+}
+
+type PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput) ToPropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput() PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput) ToPropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput) Index(i pulumi.IntInput) PropertyHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostnameCertStatusAuthorizationHttp01Result {
+		return vs[0].([]PropertyHostnameCertStatusAuthorizationHttp01Result)[vs[1].(int)]
+	}).(PropertyHostnameCertStatusAuthorizationHttp01ResultOutput)
 }
 
 type PropertyHostnameMtls struct {
@@ -25700,6 +26916,382 @@ func (o GetAppSecIPGeoIpControlArrayOutput) Index(i pulumi.IntInput) GetAppSecIP
 	}).(GetAppSecIPGeoIpControlOutput)
 }
 
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRule struct {
+	// The URL evasion mitigation rule action.
+	Action string `pulumi:"action"`
+	// Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+	ConditionOperator string `pulumi:"conditionOperator"`
+	// The list of match conditions.
+	Conditions []GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition `pulumi:"conditions"`
+	// The URL evasion mitigation rule description.
+	Description string `pulumi:"description"`
+	// The URL evasion mitigation rule name.
+	Name string `pulumi:"name"`
+	// Uniquely identifies the URL evasion mitigation rule.
+	RuleId int `pulumi:"ruleId"`
+}
+
+// GetAppsecAdvancedSettingsUrlEvasionDefenseRuleInput is an input type that accepts GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArgs and GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput values.
+// You can construct a concrete instance of `GetAppsecAdvancedSettingsUrlEvasionDefenseRuleInput` via:
+//
+//	GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArgs{...}
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleInput interface {
+	pulumi.Input
+
+	ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput
+	ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutputWithContext(context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput
+}
+
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArgs struct {
+	// The URL evasion mitigation rule action.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+	ConditionOperator pulumi.StringInput `pulumi:"conditionOperator"`
+	// The list of match conditions.
+	Conditions GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput `pulumi:"conditions"`
+	// The URL evasion mitigation rule description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The URL evasion mitigation rule name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Uniquely identifies the URL evasion mitigation rule.
+	RuleId pulumi.IntInput `pulumi:"ruleId"`
+}
+
+func (GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppsecAdvancedSettingsUrlEvasionDefenseRule)(nil)).Elem()
+}
+
+func (i GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArgs) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return i.ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutputWithContext(context.Background())
+}
+
+func (i GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArgs) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutputWithContext(ctx context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput)
+}
+
+// GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayInput is an input type that accepts GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArray and GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput values.
+// You can construct a concrete instance of `GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayInput` via:
+//
+//	GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArray{ GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArgs{...} }
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput
+	ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutputWithContext(context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput
+}
+
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArray []GetAppsecAdvancedSettingsUrlEvasionDefenseRuleInput
+
+func (GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAppsecAdvancedSettingsUrlEvasionDefenseRule)(nil)).Elem()
+}
+
+func (i GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArray) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput {
+	return i.ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArray) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutputWithContext(ctx context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput)
+}
+
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput struct{ *pulumi.OutputState }
+
+func (GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppsecAdvancedSettingsUrlEvasionDefenseRule)(nil)).Elem()
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return o
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutputWithContext(ctx context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return o
+}
+
+// The URL evasion mitigation rule action.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRule) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) ConditionOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRule) string { return v.ConditionOperator }).(pulumi.StringOutput)
+}
+
+// The list of match conditions.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) Conditions() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRule) []GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition {
+		return v.Conditions
+	}).(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput)
+}
+
+// The URL evasion mitigation rule description.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The URL evasion mitigation rule name.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Uniquely identifies the URL evasion mitigation rule.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput) RuleId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRule) int { return v.RuleId }).(pulumi.IntOutput)
+}
+
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAppsecAdvancedSettingsUrlEvasionDefenseRule)(nil)).Elem()
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput {
+	return o
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutputWithContext(ctx context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput {
+	return o
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput) Index(i pulumi.IntInput) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAppsecAdvancedSettingsUrlEvasionDefenseRule {
+		return vs[0].([]GetAppsecAdvancedSettingsUrlEvasionDefenseRule)[vs[1].(int)]
+	}).(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput)
+}
+
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition struct {
+	// The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+	ClientLists []string `pulumi:"clientLists"`
+	// The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+	Extensions []string `pulumi:"extensions"`
+	// The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+	Filenames []string `pulumi:"filenames"`
+	// The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+	Header string `pulumi:"header"`
+	// The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+	Hosts []string `pulumi:"hosts"`
+	// The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+	Ips []string `pulumi:"ips"`
+	// The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+	Methods []string `pulumi:"methods"`
+	// The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+	Name string `pulumi:"name"`
+	// Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+	NameCaseSensitive bool `pulumi:"nameCaseSensitive"`
+	// The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+	Paths []string `pulumi:"paths"`
+	// Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+	PositiveMatch bool `pulumi:"positiveMatch"`
+	// The condition type to match on.
+	Type string `pulumi:"type"`
+	// Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+	UseHeaders bool `pulumi:"useHeaders"`
+	// The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+	Value string `pulumi:"value"`
+	// Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+	ValueCaseSensitive bool `pulumi:"valueCaseSensitive"`
+	// Whether the provided parameter `value` is a wildcard. This only applies to the ` requestHeaderMatch and  `uriQueryMatch`condition`type`.
+	ValueWildcard bool `pulumi:"valueWildcard"`
+}
+
+// GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput is an input type that accepts GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs and GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput values.
+// You can construct a concrete instance of `GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput` via:
+//
+//	GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs{...}
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput interface {
+	pulumi.Input
+
+	ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput
+	ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutputWithContext(context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput
+}
+
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs struct {
+	// The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+	ClientLists pulumi.StringArrayInput `pulumi:"clientLists"`
+	// The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+	Extensions pulumi.StringArrayInput `pulumi:"extensions"`
+	// The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+	Filenames pulumi.StringArrayInput `pulumi:"filenames"`
+	// The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+	Header pulumi.StringInput `pulumi:"header"`
+	// The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+	Hosts pulumi.StringArrayInput `pulumi:"hosts"`
+	// The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+	Ips pulumi.StringArrayInput `pulumi:"ips"`
+	// The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+	Methods pulumi.StringArrayInput `pulumi:"methods"`
+	// The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+	NameCaseSensitive pulumi.BoolInput `pulumi:"nameCaseSensitive"`
+	// The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+	Paths pulumi.StringArrayInput `pulumi:"paths"`
+	// Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+	PositiveMatch pulumi.BoolInput `pulumi:"positiveMatch"`
+	// The condition type to match on.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+	UseHeaders pulumi.BoolInput `pulumi:"useHeaders"`
+	// The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+	Value pulumi.StringInput `pulumi:"value"`
+	// Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+	ValueCaseSensitive pulumi.BoolInput `pulumi:"valueCaseSensitive"`
+	// Whether the provided parameter `value` is a wildcard. This only applies to the ` requestHeaderMatch and  `uriQueryMatch`condition`type`.
+	ValueWildcard pulumi.BoolInput `pulumi:"valueWildcard"`
+}
+
+func (GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)(nil)).Elem()
+}
+
+func (i GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return i.ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutputWithContext(context.Background())
+}
+
+func (i GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutputWithContext(ctx context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput)
+}
+
+// GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput is an input type that accepts GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray and GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput values.
+// You can construct a concrete instance of `GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput` via:
+//
+//	GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray{ GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs{...} }
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput
+	ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutputWithContext(context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput
+}
+
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray []GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput
+
+func (GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)(nil)).Elem()
+}
+
+func (i GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return i.ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutputWithContext(ctx context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput)
+}
+
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)(nil)).Elem()
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return o
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutputWithContext(ctx context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return o
+}
+
+// The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ClientLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.ClientLists }).(pulumi.StringArrayOutput)
+}
+
+// The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Extensions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Extensions }).(pulumi.StringArrayOutput)
+}
+
+// The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Filenames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Filenames }).(pulumi.StringArrayOutput)
+}
+
+// The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Header() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) string { return v.Header }).(pulumi.StringOutput)
+}
+
+// The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Hosts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Hosts }).(pulumi.StringArrayOutput)
+}
+
+// The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Ips() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Ips }).(pulumi.StringArrayOutput)
+}
+
+// The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Methods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Methods }).(pulumi.StringArrayOutput)
+}
+
+// The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) NameCaseSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) bool { return v.NameCaseSensitive }).(pulumi.BoolOutput)
+}
+
+// The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Paths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) []string { return v.Paths }).(pulumi.StringArrayOutput)
+}
+
+// Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) PositiveMatch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) bool { return v.PositiveMatch }).(pulumi.BoolOutput)
+}
+
+// The condition type to match on.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) UseHeaders() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) bool { return v.UseHeaders }).(pulumi.BoolOutput)
+}
+
+// The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) string { return v.Value }).(pulumi.StringOutput)
+}
+
+// Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ValueCaseSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) bool { return v.ValueCaseSensitive }).(pulumi.BoolOutput)
+}
+
+// Whether the provided parameter `value` is a wildcard. This only applies to the ` requestHeaderMatch and  `uriQueryMatch`condition`type`.
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput) ValueWildcard() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition) bool { return v.ValueWildcard }).(pulumi.BoolOutput)
+}
+
+type GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)(nil)).Elem()
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput() GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput) ToGetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutputWithContext(ctx context.Context) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput) Index(i pulumi.IntInput) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition {
+		return vs[0].([]GetAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition)[vs[1].(int)]
+	}).(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput)
+}
+
 type GetAppsecCustomRulesUsageRule struct {
 	// A set of security policies in which a custom rule is used.
 	Policies []GetAppsecCustomRulesUsageRulePolicy `pulumi:"policies"`
@@ -27556,6 +29148,157 @@ func (o GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArrayOu
 	}).(GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaOutput)
 }
 
+type GetAppsecWafAiRulesAiRule struct {
+	// Action taken when the AI rule is triggered. Possible values: alert, deny, deny_custom_<custom_deny_id>, none.
+	Action string `pulumi:"action"`
+	// JSON-encoded list of group-level condition exceptions inherited by this AI rule. These are read-only and can only be set via the Akamai Control Center UI on the attack group. Cannot be managed via Terraform.
+	ConditionException string `pulumi:"conditionException"`
+	// Risk score group the AI rule belongs to.
+	RiskScoreGroup string `pulumi:"riskScoreGroup"`
+	// Description of what the AI rule detects.
+	RuleDescription string `pulumi:"ruleDescription"`
+	// Unique identifier of the AI rule.
+	RuleId int `pulumi:"ruleId"`
+	// Version of the AI rule.
+	RuleVersion int `pulumi:"ruleVersion"`
+	// Name of the AI rule.
+	Title string `pulumi:"title"`
+}
+
+// GetAppsecWafAiRulesAiRuleInput is an input type that accepts GetAppsecWafAiRulesAiRuleArgs and GetAppsecWafAiRulesAiRuleOutput values.
+// You can construct a concrete instance of `GetAppsecWafAiRulesAiRuleInput` via:
+//
+//	GetAppsecWafAiRulesAiRuleArgs{...}
+type GetAppsecWafAiRulesAiRuleInput interface {
+	pulumi.Input
+
+	ToGetAppsecWafAiRulesAiRuleOutput() GetAppsecWafAiRulesAiRuleOutput
+	ToGetAppsecWafAiRulesAiRuleOutputWithContext(context.Context) GetAppsecWafAiRulesAiRuleOutput
+}
+
+type GetAppsecWafAiRulesAiRuleArgs struct {
+	// Action taken when the AI rule is triggered. Possible values: alert, deny, deny_custom_<custom_deny_id>, none.
+	Action pulumi.StringInput `pulumi:"action"`
+	// JSON-encoded list of group-level condition exceptions inherited by this AI rule. These are read-only and can only be set via the Akamai Control Center UI on the attack group. Cannot be managed via Terraform.
+	ConditionException pulumi.StringInput `pulumi:"conditionException"`
+	// Risk score group the AI rule belongs to.
+	RiskScoreGroup pulumi.StringInput `pulumi:"riskScoreGroup"`
+	// Description of what the AI rule detects.
+	RuleDescription pulumi.StringInput `pulumi:"ruleDescription"`
+	// Unique identifier of the AI rule.
+	RuleId pulumi.IntInput `pulumi:"ruleId"`
+	// Version of the AI rule.
+	RuleVersion pulumi.IntInput `pulumi:"ruleVersion"`
+	// Name of the AI rule.
+	Title pulumi.StringInput `pulumi:"title"`
+}
+
+func (GetAppsecWafAiRulesAiRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppsecWafAiRulesAiRule)(nil)).Elem()
+}
+
+func (i GetAppsecWafAiRulesAiRuleArgs) ToGetAppsecWafAiRulesAiRuleOutput() GetAppsecWafAiRulesAiRuleOutput {
+	return i.ToGetAppsecWafAiRulesAiRuleOutputWithContext(context.Background())
+}
+
+func (i GetAppsecWafAiRulesAiRuleArgs) ToGetAppsecWafAiRulesAiRuleOutputWithContext(ctx context.Context) GetAppsecWafAiRulesAiRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAppsecWafAiRulesAiRuleOutput)
+}
+
+// GetAppsecWafAiRulesAiRuleArrayInput is an input type that accepts GetAppsecWafAiRulesAiRuleArray and GetAppsecWafAiRulesAiRuleArrayOutput values.
+// You can construct a concrete instance of `GetAppsecWafAiRulesAiRuleArrayInput` via:
+//
+//	GetAppsecWafAiRulesAiRuleArray{ GetAppsecWafAiRulesAiRuleArgs{...} }
+type GetAppsecWafAiRulesAiRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetAppsecWafAiRulesAiRuleArrayOutput() GetAppsecWafAiRulesAiRuleArrayOutput
+	ToGetAppsecWafAiRulesAiRuleArrayOutputWithContext(context.Context) GetAppsecWafAiRulesAiRuleArrayOutput
+}
+
+type GetAppsecWafAiRulesAiRuleArray []GetAppsecWafAiRulesAiRuleInput
+
+func (GetAppsecWafAiRulesAiRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAppsecWafAiRulesAiRule)(nil)).Elem()
+}
+
+func (i GetAppsecWafAiRulesAiRuleArray) ToGetAppsecWafAiRulesAiRuleArrayOutput() GetAppsecWafAiRulesAiRuleArrayOutput {
+	return i.ToGetAppsecWafAiRulesAiRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetAppsecWafAiRulesAiRuleArray) ToGetAppsecWafAiRulesAiRuleArrayOutputWithContext(ctx context.Context) GetAppsecWafAiRulesAiRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAppsecWafAiRulesAiRuleArrayOutput)
+}
+
+type GetAppsecWafAiRulesAiRuleOutput struct{ *pulumi.OutputState }
+
+func (GetAppsecWafAiRulesAiRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppsecWafAiRulesAiRule)(nil)).Elem()
+}
+
+func (o GetAppsecWafAiRulesAiRuleOutput) ToGetAppsecWafAiRulesAiRuleOutput() GetAppsecWafAiRulesAiRuleOutput {
+	return o
+}
+
+func (o GetAppsecWafAiRulesAiRuleOutput) ToGetAppsecWafAiRulesAiRuleOutputWithContext(ctx context.Context) GetAppsecWafAiRulesAiRuleOutput {
+	return o
+}
+
+// Action taken when the AI rule is triggered. Possible values: alert, deny, deny_custom_<custom_deny_id>, none.
+func (o GetAppsecWafAiRulesAiRuleOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecWafAiRulesAiRule) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// JSON-encoded list of group-level condition exceptions inherited by this AI rule. These are read-only and can only be set via the Akamai Control Center UI on the attack group. Cannot be managed via Terraform.
+func (o GetAppsecWafAiRulesAiRuleOutput) ConditionException() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecWafAiRulesAiRule) string { return v.ConditionException }).(pulumi.StringOutput)
+}
+
+// Risk score group the AI rule belongs to.
+func (o GetAppsecWafAiRulesAiRuleOutput) RiskScoreGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecWafAiRulesAiRule) string { return v.RiskScoreGroup }).(pulumi.StringOutput)
+}
+
+// Description of what the AI rule detects.
+func (o GetAppsecWafAiRulesAiRuleOutput) RuleDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecWafAiRulesAiRule) string { return v.RuleDescription }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the AI rule.
+func (o GetAppsecWafAiRulesAiRuleOutput) RuleId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppsecWafAiRulesAiRule) int { return v.RuleId }).(pulumi.IntOutput)
+}
+
+// Version of the AI rule.
+func (o GetAppsecWafAiRulesAiRuleOutput) RuleVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppsecWafAiRulesAiRule) int { return v.RuleVersion }).(pulumi.IntOutput)
+}
+
+// Name of the AI rule.
+func (o GetAppsecWafAiRulesAiRuleOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppsecWafAiRulesAiRule) string { return v.Title }).(pulumi.StringOutput)
+}
+
+type GetAppsecWafAiRulesAiRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAppsecWafAiRulesAiRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAppsecWafAiRulesAiRule)(nil)).Elem()
+}
+
+func (o GetAppsecWafAiRulesAiRuleArrayOutput) ToGetAppsecWafAiRulesAiRuleArrayOutput() GetAppsecWafAiRulesAiRuleArrayOutput {
+	return o
+}
+
+func (o GetAppsecWafAiRulesAiRuleArrayOutput) ToGetAppsecWafAiRulesAiRuleArrayOutputWithContext(ctx context.Context) GetAppsecWafAiRulesAiRuleArrayOutput {
+	return o
+}
+
+func (o GetAppsecWafAiRulesAiRuleArrayOutput) Index(i pulumi.IntInput) GetAppsecWafAiRulesAiRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAppsecWafAiRulesAiRule {
+		return vs[0].([]GetAppsecWafAiRulesAiRule)[vs[1].(int)]
+	}).(GetAppsecWafAiRulesAiRuleOutput)
+}
+
 type GetAppsecWafRulesetAttackGroup struct {
 	// Unique name of the attack group
 	AttackGroup string `pulumi:"attackGroup"`
@@ -28358,9 +30101,15 @@ type GetCPSEnrollmentNetworkConfiguration struct {
 	// The trust chain configuration used for client mutual authentication
 	ClientMutualAuthentications []GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication `pulumi:"clientMutualAuthentications"`
 	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+	//
+	// Deprecated: Use enableForAllSans instead.
 	CloneDnsNames bool `pulumi:"cloneDnsNames"`
 	// TLS versions which are disallowed
 	DisallowedTlsVersions []string `pulumi:"disallowedTlsVersions"`
+	// Explicit DNS names for traffic direction when enableForAllSans is false
+	DnsNames []string `pulumi:"dnsNames"`
+	// When true, traffic is directed using all SANs listed in the enrollment
+	EnableForAllSans bool `pulumi:"enableForAllSans"`
 	// Geography type used for enrollment
 	Geography string `pulumi:"geography"`
 	// Mandatory Ciphers which are included for enrollment
@@ -28388,9 +30137,15 @@ type GetCPSEnrollmentNetworkConfigurationArgs struct {
 	// The trust chain configuration used for client mutual authentication
 	ClientMutualAuthentications GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput `pulumi:"clientMutualAuthentications"`
 	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+	//
+	// Deprecated: Use enableForAllSans instead.
 	CloneDnsNames pulumi.BoolInput `pulumi:"cloneDnsNames"`
 	// TLS versions which are disallowed
 	DisallowedTlsVersions pulumi.StringArrayInput `pulumi:"disallowedTlsVersions"`
+	// Explicit DNS names for traffic direction when enableForAllSans is false
+	DnsNames pulumi.StringArrayInput `pulumi:"dnsNames"`
+	// When true, traffic is directed using all SANs listed in the enrollment
+	EnableForAllSans pulumi.BoolInput `pulumi:"enableForAllSans"`
 	// Geography type used for enrollment
 	Geography pulumi.StringInput `pulumi:"geography"`
 	// Mandatory Ciphers which are included for enrollment
@@ -28462,6 +30217,8 @@ func (o GetCPSEnrollmentNetworkConfigurationOutput) ClientMutualAuthentications(
 }
 
 // Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+//
+// Deprecated: Use enableForAllSans instead.
 func (o GetCPSEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) bool { return v.CloneDnsNames }).(pulumi.BoolOutput)
 }
@@ -28469,6 +30226,16 @@ func (o GetCPSEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolO
 // TLS versions which are disallowed
 func (o GetCPSEnrollmentNetworkConfigurationOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) []string { return v.DisallowedTlsVersions }).(pulumi.StringArrayOutput)
+}
+
+// Explicit DNS names for traffic direction when enableForAllSans is false
+func (o GetCPSEnrollmentNetworkConfigurationOutput) DnsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) []string { return v.DnsNames }).(pulumi.StringArrayOutput)
+}
+
+// When true, traffic is directed using all SANs listed in the enrollment
+func (o GetCPSEnrollmentNetworkConfigurationOutput) EnableForAllSans() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) bool { return v.EnableForAllSans }).(pulumi.BoolOutput)
 }
 
 // Geography type used for enrollment
@@ -29610,9 +31377,15 @@ type GetCPSEnrollmentsEnrollmentNetworkConfiguration struct {
 	// The trust chain configuration used for client mutual authentication
 	ClientMutualAuthentications []GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication `pulumi:"clientMutualAuthentications"`
 	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+	//
+	// Deprecated: Use enableForAllSans instead.
 	CloneDnsNames bool `pulumi:"cloneDnsNames"`
 	// TLS versions which are disallowed
 	DisallowedTlsVersions []string `pulumi:"disallowedTlsVersions"`
+	// Explicit DNS names for traffic direction when enableForAllSans is false
+	DnsNames []string `pulumi:"dnsNames"`
+	// When true, traffic is directed using all SANs listed in the enrollment
+	EnableForAllSans bool `pulumi:"enableForAllSans"`
 	// Geography type used for enrollment
 	Geography string `pulumi:"geography"`
 	// Mandatory Ciphers which are included for enrollment
@@ -29640,9 +31413,15 @@ type GetCPSEnrollmentsEnrollmentNetworkConfigurationArgs struct {
 	// The trust chain configuration used for client mutual authentication
 	ClientMutualAuthentications GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput `pulumi:"clientMutualAuthentications"`
 	// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+	//
+	// Deprecated: Use enableForAllSans instead.
 	CloneDnsNames pulumi.BoolInput `pulumi:"cloneDnsNames"`
 	// TLS versions which are disallowed
 	DisallowedTlsVersions pulumi.StringArrayInput `pulumi:"disallowedTlsVersions"`
+	// Explicit DNS names for traffic direction when enableForAllSans is false
+	DnsNames pulumi.StringArrayInput `pulumi:"dnsNames"`
+	// When true, traffic is directed using all SANs listed in the enrollment
+	EnableForAllSans pulumi.BoolInput `pulumi:"enableForAllSans"`
 	// Geography type used for enrollment
 	Geography pulumi.StringInput `pulumi:"geography"`
 	// Mandatory Ciphers which are included for enrollment
@@ -29714,6 +31493,8 @@ func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) ClientMutualAuthe
 }
 
 // Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+//
+// Deprecated: Use enableForAllSans instead.
 func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) bool { return v.CloneDnsNames }).(pulumi.BoolOutput)
 }
@@ -29721,6 +31502,16 @@ func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) CloneDnsNames() p
 // TLS versions which are disallowed
 func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) []string { return v.DisallowedTlsVersions }).(pulumi.StringArrayOutput)
+}
+
+// Explicit DNS names for traffic direction when enableForAllSans is false
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) DnsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) []string { return v.DnsNames }).(pulumi.StringArrayOutput)
+}
+
+// When true, traffic is directed using all SANs listed in the enrollment
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) EnableForAllSans() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) bool { return v.EnableForAllSans }).(pulumi.BoolOutput)
 }
 
 // Geography type used for enrollment
@@ -44300,6 +46091,121 @@ func (o GetDatastreamActivationHistoryActivationArrayOutput) Index(i pulumi.IntI
 	}).(GetDatastreamActivationHistoryActivationOutput)
 }
 
+type GetDatastreamAnswerxServiceIdsServiceId struct {
+	// Service ID monitored in the stream.
+	Id int `pulumi:"id"`
+	// Name of the service ID.
+	Name string `pulumi:"name"`
+	// The product associated with the service ID.
+	Product string `pulumi:"product"`
+}
+
+// GetDatastreamAnswerxServiceIdsServiceIdInput is an input type that accepts GetDatastreamAnswerxServiceIdsServiceIdArgs and GetDatastreamAnswerxServiceIdsServiceIdOutput values.
+// You can construct a concrete instance of `GetDatastreamAnswerxServiceIdsServiceIdInput` via:
+//
+//	GetDatastreamAnswerxServiceIdsServiceIdArgs{...}
+type GetDatastreamAnswerxServiceIdsServiceIdInput interface {
+	pulumi.Input
+
+	ToGetDatastreamAnswerxServiceIdsServiceIdOutput() GetDatastreamAnswerxServiceIdsServiceIdOutput
+	ToGetDatastreamAnswerxServiceIdsServiceIdOutputWithContext(context.Context) GetDatastreamAnswerxServiceIdsServiceIdOutput
+}
+
+type GetDatastreamAnswerxServiceIdsServiceIdArgs struct {
+	// Service ID monitored in the stream.
+	Id pulumi.IntInput `pulumi:"id"`
+	// Name of the service ID.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The product associated with the service ID.
+	Product pulumi.StringInput `pulumi:"product"`
+}
+
+func (GetDatastreamAnswerxServiceIdsServiceIdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamAnswerxServiceIdsServiceId)(nil)).Elem()
+}
+
+func (i GetDatastreamAnswerxServiceIdsServiceIdArgs) ToGetDatastreamAnswerxServiceIdsServiceIdOutput() GetDatastreamAnswerxServiceIdsServiceIdOutput {
+	return i.ToGetDatastreamAnswerxServiceIdsServiceIdOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamAnswerxServiceIdsServiceIdArgs) ToGetDatastreamAnswerxServiceIdsServiceIdOutputWithContext(ctx context.Context) GetDatastreamAnswerxServiceIdsServiceIdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamAnswerxServiceIdsServiceIdOutput)
+}
+
+// GetDatastreamAnswerxServiceIdsServiceIdArrayInput is an input type that accepts GetDatastreamAnswerxServiceIdsServiceIdArray and GetDatastreamAnswerxServiceIdsServiceIdArrayOutput values.
+// You can construct a concrete instance of `GetDatastreamAnswerxServiceIdsServiceIdArrayInput` via:
+//
+//	GetDatastreamAnswerxServiceIdsServiceIdArray{ GetDatastreamAnswerxServiceIdsServiceIdArgs{...} }
+type GetDatastreamAnswerxServiceIdsServiceIdArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastreamAnswerxServiceIdsServiceIdArrayOutput() GetDatastreamAnswerxServiceIdsServiceIdArrayOutput
+	ToGetDatastreamAnswerxServiceIdsServiceIdArrayOutputWithContext(context.Context) GetDatastreamAnswerxServiceIdsServiceIdArrayOutput
+}
+
+type GetDatastreamAnswerxServiceIdsServiceIdArray []GetDatastreamAnswerxServiceIdsServiceIdInput
+
+func (GetDatastreamAnswerxServiceIdsServiceIdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamAnswerxServiceIdsServiceId)(nil)).Elem()
+}
+
+func (i GetDatastreamAnswerxServiceIdsServiceIdArray) ToGetDatastreamAnswerxServiceIdsServiceIdArrayOutput() GetDatastreamAnswerxServiceIdsServiceIdArrayOutput {
+	return i.ToGetDatastreamAnswerxServiceIdsServiceIdArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamAnswerxServiceIdsServiceIdArray) ToGetDatastreamAnswerxServiceIdsServiceIdArrayOutputWithContext(ctx context.Context) GetDatastreamAnswerxServiceIdsServiceIdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamAnswerxServiceIdsServiceIdArrayOutput)
+}
+
+type GetDatastreamAnswerxServiceIdsServiceIdOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamAnswerxServiceIdsServiceIdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamAnswerxServiceIdsServiceId)(nil)).Elem()
+}
+
+func (o GetDatastreamAnswerxServiceIdsServiceIdOutput) ToGetDatastreamAnswerxServiceIdsServiceIdOutput() GetDatastreamAnswerxServiceIdsServiceIdOutput {
+	return o
+}
+
+func (o GetDatastreamAnswerxServiceIdsServiceIdOutput) ToGetDatastreamAnswerxServiceIdsServiceIdOutputWithContext(ctx context.Context) GetDatastreamAnswerxServiceIdsServiceIdOutput {
+	return o
+}
+
+// Service ID monitored in the stream.
+func (o GetDatastreamAnswerxServiceIdsServiceIdOutput) Id() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatastreamAnswerxServiceIdsServiceId) int { return v.Id }).(pulumi.IntOutput)
+}
+
+// Name of the service ID.
+func (o GetDatastreamAnswerxServiceIdsServiceIdOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamAnswerxServiceIdsServiceId) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The product associated with the service ID.
+func (o GetDatastreamAnswerxServiceIdsServiceIdOutput) Product() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamAnswerxServiceIdsServiceId) string { return v.Product }).(pulumi.StringOutput)
+}
+
+type GetDatastreamAnswerxServiceIdsServiceIdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamAnswerxServiceIdsServiceIdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamAnswerxServiceIdsServiceId)(nil)).Elem()
+}
+
+func (o GetDatastreamAnswerxServiceIdsServiceIdArrayOutput) ToGetDatastreamAnswerxServiceIdsServiceIdArrayOutput() GetDatastreamAnswerxServiceIdsServiceIdArrayOutput {
+	return o
+}
+
+func (o GetDatastreamAnswerxServiceIdsServiceIdArrayOutput) ToGetDatastreamAnswerxServiceIdsServiceIdArrayOutputWithContext(ctx context.Context) GetDatastreamAnswerxServiceIdsServiceIdArrayOutput {
+	return o
+}
+
+func (o GetDatastreamAnswerxServiceIdsServiceIdArrayOutput) Index(i pulumi.IntInput) GetDatastreamAnswerxServiceIdsServiceIdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastreamAnswerxServiceIdsServiceId {
+		return vs[0].([]GetDatastreamAnswerxServiceIdsServiceId)[vs[1].(int)]
+	}).(GetDatastreamAnswerxServiceIdsServiceIdOutput)
+}
+
 type GetDatastreamAppsecConfigsAppSecConfig struct {
 	// The file type of the AppSec configuration (e.g. RBAC, WAF)
 	FileType string `pulumi:"fileType"`
@@ -44600,6 +46506,8 @@ type GetDatastreamsStreamsDetail struct {
 	ProductId string `pulumi:"productId"`
 	// List of properties associated with the stream.
 	Properties []GetDatastreamsStreamsDetailProperty `pulumi:"properties"`
+	// Set of service IDs associated with the stream.
+	ServiceIds []GetDatastreamsStreamsDetailServiceId `pulumi:"serviceIds"`
 	// Identifies the stream.
 	StreamId int `pulumi:"streamId"`
 	// The name of the stream.
@@ -44646,6 +46554,8 @@ type GetDatastreamsStreamsDetailArgs struct {
 	ProductId pulumi.StringInput `pulumi:"productId"`
 	// List of properties associated with the stream.
 	Properties GetDatastreamsStreamsDetailPropertyArrayInput `pulumi:"properties"`
+	// Set of service IDs associated with the stream.
+	ServiceIds GetDatastreamsStreamsDetailServiceIdArrayInput `pulumi:"serviceIds"`
 	// Identifies the stream.
 	StreamId pulumi.IntInput `pulumi:"streamId"`
 	// The name of the stream.
@@ -44765,6 +46675,11 @@ func (o GetDatastreamsStreamsDetailOutput) ProductId() pulumi.StringOutput {
 // List of properties associated with the stream.
 func (o GetDatastreamsStreamsDetailOutput) Properties() GetDatastreamsStreamsDetailPropertyArrayOutput {
 	return o.ApplyT(func(v GetDatastreamsStreamsDetail) []GetDatastreamsStreamsDetailProperty { return v.Properties }).(GetDatastreamsStreamsDetailPropertyArrayOutput)
+}
+
+// Set of service IDs associated with the stream.
+func (o GetDatastreamsStreamsDetailOutput) ServiceIds() GetDatastreamsStreamsDetailServiceIdArrayOutput {
+	return o.ApplyT(func(v GetDatastreamsStreamsDetail) []GetDatastreamsStreamsDetailServiceId { return v.ServiceIds }).(GetDatastreamsStreamsDetailServiceIdArrayOutput)
 }
 
 // Identifies the stream.
@@ -45026,6 +46941,121 @@ func (o GetDatastreamsStreamsDetailPropertyArrayOutput) Index(i pulumi.IntInput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastreamsStreamsDetailProperty {
 		return vs[0].([]GetDatastreamsStreamsDetailProperty)[vs[1].(int)]
 	}).(GetDatastreamsStreamsDetailPropertyOutput)
+}
+
+type GetDatastreamsStreamsDetailServiceId struct {
+	// Service ID monitored in the stream.
+	Id int `pulumi:"id"`
+	// Name of the service ID.
+	Name string `pulumi:"name"`
+	// The product associated with the service ID.
+	Product string `pulumi:"product"`
+}
+
+// GetDatastreamsStreamsDetailServiceIdInput is an input type that accepts GetDatastreamsStreamsDetailServiceIdArgs and GetDatastreamsStreamsDetailServiceIdOutput values.
+// You can construct a concrete instance of `GetDatastreamsStreamsDetailServiceIdInput` via:
+//
+//	GetDatastreamsStreamsDetailServiceIdArgs{...}
+type GetDatastreamsStreamsDetailServiceIdInput interface {
+	pulumi.Input
+
+	ToGetDatastreamsStreamsDetailServiceIdOutput() GetDatastreamsStreamsDetailServiceIdOutput
+	ToGetDatastreamsStreamsDetailServiceIdOutputWithContext(context.Context) GetDatastreamsStreamsDetailServiceIdOutput
+}
+
+type GetDatastreamsStreamsDetailServiceIdArgs struct {
+	// Service ID monitored in the stream.
+	Id pulumi.IntInput `pulumi:"id"`
+	// Name of the service ID.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The product associated with the service ID.
+	Product pulumi.StringInput `pulumi:"product"`
+}
+
+func (GetDatastreamsStreamsDetailServiceIdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamsStreamsDetailServiceId)(nil)).Elem()
+}
+
+func (i GetDatastreamsStreamsDetailServiceIdArgs) ToGetDatastreamsStreamsDetailServiceIdOutput() GetDatastreamsStreamsDetailServiceIdOutput {
+	return i.ToGetDatastreamsStreamsDetailServiceIdOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamsStreamsDetailServiceIdArgs) ToGetDatastreamsStreamsDetailServiceIdOutputWithContext(ctx context.Context) GetDatastreamsStreamsDetailServiceIdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamsStreamsDetailServiceIdOutput)
+}
+
+// GetDatastreamsStreamsDetailServiceIdArrayInput is an input type that accepts GetDatastreamsStreamsDetailServiceIdArray and GetDatastreamsStreamsDetailServiceIdArrayOutput values.
+// You can construct a concrete instance of `GetDatastreamsStreamsDetailServiceIdArrayInput` via:
+//
+//	GetDatastreamsStreamsDetailServiceIdArray{ GetDatastreamsStreamsDetailServiceIdArgs{...} }
+type GetDatastreamsStreamsDetailServiceIdArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastreamsStreamsDetailServiceIdArrayOutput() GetDatastreamsStreamsDetailServiceIdArrayOutput
+	ToGetDatastreamsStreamsDetailServiceIdArrayOutputWithContext(context.Context) GetDatastreamsStreamsDetailServiceIdArrayOutput
+}
+
+type GetDatastreamsStreamsDetailServiceIdArray []GetDatastreamsStreamsDetailServiceIdInput
+
+func (GetDatastreamsStreamsDetailServiceIdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamsStreamsDetailServiceId)(nil)).Elem()
+}
+
+func (i GetDatastreamsStreamsDetailServiceIdArray) ToGetDatastreamsStreamsDetailServiceIdArrayOutput() GetDatastreamsStreamsDetailServiceIdArrayOutput {
+	return i.ToGetDatastreamsStreamsDetailServiceIdArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamsStreamsDetailServiceIdArray) ToGetDatastreamsStreamsDetailServiceIdArrayOutputWithContext(ctx context.Context) GetDatastreamsStreamsDetailServiceIdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamsStreamsDetailServiceIdArrayOutput)
+}
+
+type GetDatastreamsStreamsDetailServiceIdOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamsStreamsDetailServiceIdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamsStreamsDetailServiceId)(nil)).Elem()
+}
+
+func (o GetDatastreamsStreamsDetailServiceIdOutput) ToGetDatastreamsStreamsDetailServiceIdOutput() GetDatastreamsStreamsDetailServiceIdOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamsDetailServiceIdOutput) ToGetDatastreamsStreamsDetailServiceIdOutputWithContext(ctx context.Context) GetDatastreamsStreamsDetailServiceIdOutput {
+	return o
+}
+
+// Service ID monitored in the stream.
+func (o GetDatastreamsStreamsDetailServiceIdOutput) Id() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatastreamsStreamsDetailServiceId) int { return v.Id }).(pulumi.IntOutput)
+}
+
+// Name of the service ID.
+func (o GetDatastreamsStreamsDetailServiceIdOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStreamsDetailServiceId) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The product associated with the service ID.
+func (o GetDatastreamsStreamsDetailServiceIdOutput) Product() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStreamsDetailServiceId) string { return v.Product }).(pulumi.StringOutput)
+}
+
+type GetDatastreamsStreamsDetailServiceIdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamsStreamsDetailServiceIdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamsStreamsDetailServiceId)(nil)).Elem()
+}
+
+func (o GetDatastreamsStreamsDetailServiceIdArrayOutput) ToGetDatastreamsStreamsDetailServiceIdArrayOutput() GetDatastreamsStreamsDetailServiceIdArrayOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamsDetailServiceIdArrayOutput) ToGetDatastreamsStreamsDetailServiceIdArrayOutputWithContext(ctx context.Context) GetDatastreamsStreamsDetailServiceIdArrayOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamsDetailServiceIdArrayOutput) Index(i pulumi.IntInput) GetDatastreamsStreamsDetailServiceIdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastreamsStreamsDetailServiceId {
+		return vs[0].([]GetDatastreamsStreamsDetailServiceId)[vs[1].(int)]
+	}).(GetDatastreamsStreamsDetailServiceIdOutput)
 }
 
 type GetEdgeHostnameEdgeHostname struct {
@@ -75450,1259 +77480,6 @@ func (o GetPropertyAccountHostnamesHostnameArrayOutput) Index(i pulumi.IntInput)
 	}).(GetPropertyAccountHostnamesHostnameOutput)
 }
 
-type GetPropertyDomainownershipDomainDomainStatusHistory struct {
-	// The domain's validation status. Possible values are: `REQUEST_ACCEPTED`, `VALIDATION_IN_PROGRESS`, `VALIDATED`, `TOKEN_EXPIRED`, or `INVALIDATED`.
-	DomainStatus string `pulumi:"domainStatus"`
-	// Additional information about the status change.
-	Message string `pulumi:"message"`
-	// The timestamp indicating when the domain status changed.
-	ModifiedDate string `pulumi:"modifiedDate"`
-	// The name of the user who requested the status change.
-	ModifiedUser string `pulumi:"modifiedUser"`
-}
-
-// GetPropertyDomainownershipDomainDomainStatusHistoryInput is an input type that accepts GetPropertyDomainownershipDomainDomainStatusHistoryArgs and GetPropertyDomainownershipDomainDomainStatusHistoryOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainDomainStatusHistoryInput` via:
-//
-//	GetPropertyDomainownershipDomainDomainStatusHistoryArgs{...}
-type GetPropertyDomainownershipDomainDomainStatusHistoryInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainDomainStatusHistoryOutput() GetPropertyDomainownershipDomainDomainStatusHistoryOutput
-	ToGetPropertyDomainownershipDomainDomainStatusHistoryOutputWithContext(context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryOutput
-}
-
-type GetPropertyDomainownershipDomainDomainStatusHistoryArgs struct {
-	// The domain's validation status. Possible values are: `REQUEST_ACCEPTED`, `VALIDATION_IN_PROGRESS`, `VALIDATED`, `TOKEN_EXPIRED`, or `INVALIDATED`.
-	DomainStatus pulumi.StringInput `pulumi:"domainStatus"`
-	// Additional information about the status change.
-	Message pulumi.StringInput `pulumi:"message"`
-	// The timestamp indicating when the domain status changed.
-	ModifiedDate pulumi.StringInput `pulumi:"modifiedDate"`
-	// The name of the user who requested the status change.
-	ModifiedUser pulumi.StringInput `pulumi:"modifiedUser"`
-}
-
-func (GetPropertyDomainownershipDomainDomainStatusHistoryArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainDomainStatusHistory)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainDomainStatusHistoryArgs) ToGetPropertyDomainownershipDomainDomainStatusHistoryOutput() GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
-	return i.ToGetPropertyDomainownershipDomainDomainStatusHistoryOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainDomainStatusHistoryArgs) ToGetPropertyDomainownershipDomainDomainStatusHistoryOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainDomainStatusHistoryOutput)
-}
-
-// GetPropertyDomainownershipDomainDomainStatusHistoryArrayInput is an input type that accepts GetPropertyDomainownershipDomainDomainStatusHistoryArray and GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainDomainStatusHistoryArrayInput` via:
-//
-//	GetPropertyDomainownershipDomainDomainStatusHistoryArray{ GetPropertyDomainownershipDomainDomainStatusHistoryArgs{...} }
-type GetPropertyDomainownershipDomainDomainStatusHistoryArrayInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput() GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput
-	ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutputWithContext(context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput
-}
-
-type GetPropertyDomainownershipDomainDomainStatusHistoryArray []GetPropertyDomainownershipDomainDomainStatusHistoryInput
-
-func (GetPropertyDomainownershipDomainDomainStatusHistoryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertyDomainownershipDomainDomainStatusHistory)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainDomainStatusHistoryArray) ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput() GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput {
-	return i.ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainDomainStatusHistoryArray) ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput)
-}
-
-type GetPropertyDomainownershipDomainDomainStatusHistoryOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainDomainStatusHistory)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ToGetPropertyDomainownershipDomainDomainStatusHistoryOutput() GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ToGetPropertyDomainownershipDomainDomainStatusHistoryOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
-	return o
-}
-
-// The domain's validation status. Possible values are: `REQUEST_ACCEPTED`, `VALIDATION_IN_PROGRESS`, `VALIDATED`, `TOKEN_EXPIRED`, or `INVALIDATED`.
-func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) DomainStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainDomainStatusHistory) string { return v.DomainStatus }).(pulumi.StringOutput)
-}
-
-// Additional information about the status change.
-func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainDomainStatusHistory) string { return v.Message }).(pulumi.StringOutput)
-}
-
-// The timestamp indicating when the domain status changed.
-func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ModifiedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainDomainStatusHistory) string { return v.ModifiedDate }).(pulumi.StringOutput)
-}
-
-// The name of the user who requested the status change.
-func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ModifiedUser() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainDomainStatusHistory) string { return v.ModifiedUser }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertyDomainownershipDomainDomainStatusHistory)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput) ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput() GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput) ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput) Index(i pulumi.IntInput) GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyDomainownershipDomainDomainStatusHistory {
-		return vs[0].([]GetPropertyDomainownershipDomainDomainStatusHistory)[vs[1].(int)]
-	}).(GetPropertyDomainownershipDomainDomainStatusHistoryOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallenge struct {
-	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
-	CnameRecord GetPropertyDomainownershipDomainValidationChallengeCnameRecord `pulumi:"cnameRecord"`
-	// The timestamp indicating when the challenge data expires.
-	ExpirationDate string `pulumi:"expirationDate"`
-	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
-	HttpFile GetPropertyDomainownershipDomainValidationChallengeHttpFile `pulumi:"httpFile"`
-	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
-	HttpRedirect GetPropertyDomainownershipDomainValidationChallengeHttpRedirect `pulumi:"httpRedirect"`
-	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
-	TxtRecord GetPropertyDomainownershipDomainValidationChallengeTxtRecord `pulumi:"txtRecord"`
-}
-
-// GetPropertyDomainownershipDomainValidationChallengeInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeArgs and GetPropertyDomainownershipDomainValidationChallengeOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeInput` via:
-//
-//	GetPropertyDomainownershipDomainValidationChallengeArgs{...}
-type GetPropertyDomainownershipDomainValidationChallengeInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainValidationChallengeOutput() GetPropertyDomainownershipDomainValidationChallengeOutput
-	ToGetPropertyDomainownershipDomainValidationChallengeOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeOutput
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeArgs struct {
-	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
-	CnameRecord GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput `pulumi:"cnameRecord"`
-	// The timestamp indicating when the challenge data expires.
-	ExpirationDate pulumi.StringInput `pulumi:"expirationDate"`
-	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
-	HttpFile GetPropertyDomainownershipDomainValidationChallengeHttpFileInput `pulumi:"httpFile"`
-	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
-	HttpRedirect GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput `pulumi:"httpRedirect"`
-	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
-	TxtRecord GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput `pulumi:"txtRecord"`
-}
-
-func (GetPropertyDomainownershipDomainValidationChallengeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallenge)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeArgs) ToGetPropertyDomainownershipDomainValidationChallengeOutput() GetPropertyDomainownershipDomainValidationChallengeOutput {
-	return i.ToGetPropertyDomainownershipDomainValidationChallengeOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeArgs) ToGetPropertyDomainownershipDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainValidationChallengeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallenge)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeOutput) ToGetPropertyDomainownershipDomainValidationChallengeOutput() GetPropertyDomainownershipDomainValidationChallengeOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeOutput) ToGetPropertyDomainownershipDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeOutput {
-	return o
-}
-
-// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
-func (o GetPropertyDomainownershipDomainValidationChallengeOutput) CnameRecord() GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) GetPropertyDomainownershipDomainValidationChallengeCnameRecord {
-		return v.CnameRecord
-	}).(GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput)
-}
-
-// The timestamp indicating when the challenge data expires.
-func (o GetPropertyDomainownershipDomainValidationChallengeOutput) ExpirationDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) string { return v.ExpirationDate }).(pulumi.StringOutput)
-}
-
-// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
-func (o GetPropertyDomainownershipDomainValidationChallengeOutput) HttpFile() GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) GetPropertyDomainownershipDomainValidationChallengeHttpFile {
-		return v.HttpFile
-	}).(GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput)
-}
-
-// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
-func (o GetPropertyDomainownershipDomainValidationChallengeOutput) HttpRedirect() GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) GetPropertyDomainownershipDomainValidationChallengeHttpRedirect {
-		return v.HttpRedirect
-	}).(GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput)
-}
-
-// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
-func (o GetPropertyDomainownershipDomainValidationChallengeOutput) TxtRecord() GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) GetPropertyDomainownershipDomainValidationChallengeTxtRecord {
-		return v.TxtRecord
-	}).(GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeCnameRecord struct {
-	// The 'CNAME' record for your domain that you add to the DNS configuration.
-	Name string `pulumi:"name"`
-	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
-	Target string `pulumi:"target"`
-}
-
-// GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs and GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput` via:
-//
-//	GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs{...}
-type GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput
-	ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs struct {
-	// The 'CNAME' record for your domain that you add to the DNS configuration.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
-	Target pulumi.StringInput `pulumi:"target"`
-}
-
-func (GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeCnameRecord)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
-	return i.ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeCnameRecord)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
-	return o
-}
-
-// The 'CNAME' record for your domain that you add to the DNS configuration.
-func (o GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeCnameRecord) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
-func (o GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeCnameRecord) string { return v.Target }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeHttpFile struct {
-	// The content of the file that you should place at the specified URL.
-	Content string `pulumi:"content"`
-	// The content type of the file containing the token.
-	ContentType string `pulumi:"contentType"`
-	// The URL where you should place the file containing the challenge token.
-	Path string `pulumi:"path"`
-}
-
-// GetPropertyDomainownershipDomainValidationChallengeHttpFileInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs and GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeHttpFileInput` via:
-//
-//	GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs{...}
-type GetPropertyDomainownershipDomainValidationChallengeHttpFileInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput
-	ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs struct {
-	// The content of the file that you should place at the specified URL.
-	Content pulumi.StringInput `pulumi:"content"`
-	// The content type of the file containing the token.
-	ContentType pulumi.StringInput `pulumi:"contentType"`
-	// The URL where you should place the file containing the challenge token.
-	Path pulumi.StringInput `pulumi:"path"`
-}
-
-func (GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpFile)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
-	return i.ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpFile)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
-	return o
-}
-
-// The content of the file that you should place at the specified URL.
-func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpFile) string { return v.Content }).(pulumi.StringOutput)
-}
-
-// The content type of the file containing the token.
-func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpFile) string { return v.ContentType }).(pulumi.StringOutput)
-}
-
-// The URL where you should place the file containing the challenge token.
-func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpFile) string { return v.Path }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeHttpRedirect struct {
-	// The location on your HTTP server where you set up the redirect.
-	From string `pulumi:"from"`
-	// The redirect URL with the token that you place on your HTTP server.
-	To string `pulumi:"to"`
-}
-
-// GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs and GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput` via:
-//
-//	GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs{...}
-type GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput
-	ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs struct {
-	// The location on your HTTP server where you set up the redirect.
-	From pulumi.StringInput `pulumi:"from"`
-	// The redirect URL with the token that you place on your HTTP server.
-	To pulumi.StringInput `pulumi:"to"`
-}
-
-func (GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpRedirect)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
-	return i.ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpRedirect)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
-	return o
-}
-
-// The location on your HTTP server where you set up the redirect.
-func (o GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) From() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpRedirect) string { return v.From }).(pulumi.StringOutput)
-}
-
-// The redirect URL with the token that you place on your HTTP server.
-func (o GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) To() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpRedirect) string { return v.To }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeTxtRecord struct {
-	// The hostname where you should add the 'TXT' record to validate the domain ownership.
-	Name string `pulumi:"name"`
-	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
-	Value string `pulumi:"value"`
-}
-
-// GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs and GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput` via:
-//
-//	GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs{...}
-type GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput
-	ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs struct {
-	// The hostname where you should add the 'TXT' record to validate the domain ownership.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeTxtRecord)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
-	return i.ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput)
-}
-
-type GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeTxtRecord)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
-	return o
-}
-
-// The hostname where you should add the 'TXT' record to validate the domain ownership.
-func (o GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeTxtRecord) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
-func (o GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeTxtRecord) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomain struct {
-	// The account's ID.
-	AccountId string `pulumi:"accountId"`
-	// The domain's name.
-	DomainName string `pulumi:"domainName"`
-	// The domain's validation status. Possible values are:
-	// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
-	// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
-	// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
-	// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
-	// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
-	DomainStatus string `pulumi:"domainStatus"`
-	// The domain's validation challenge details.
-	ValidationChallenge GetPropertyDomainownershipDomainsDomainValidationChallenge `pulumi:"validationChallenge"`
-	// The timestamp indicating when the domain validation was completed.
-	ValidationCompletedDate string `pulumi:"validationCompletedDate"`
-	// The method used to validate the domain. Possible values are:
-	// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-	// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-	// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-	// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
-	// * `MANUAL` - For this method, the DOM team manually performed the validation.
-	ValidationMethod string `pulumi:"validationMethod"`
-	// The name of the user who requested the domain validation.
-	ValidationRequestedBy string `pulumi:"validationRequestedBy"`
-	// The timestamp indicating when the domain validation was requested.
-	ValidationRequestedDate string `pulumi:"validationRequestedDate"`
-	// Your domain's validation scope. Possible values are:
-	// * `HOST` - The scope is only the exactly specified domain.
-	// * `WILDCARD` - The scope covers any hostname within one subdomain level.
-	// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
-	ValidationScope string `pulumi:"validationScope"`
-}
-
-// GetPropertyDomainownershipDomainsDomainInput is an input type that accepts GetPropertyDomainownershipDomainsDomainArgs and GetPropertyDomainownershipDomainsDomainOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainInput` via:
-//
-//	GetPropertyDomainownershipDomainsDomainArgs{...}
-type GetPropertyDomainownershipDomainsDomainInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainsDomainOutput() GetPropertyDomainownershipDomainsDomainOutput
-	ToGetPropertyDomainownershipDomainsDomainOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainOutput
-}
-
-type GetPropertyDomainownershipDomainsDomainArgs struct {
-	// The account's ID.
-	AccountId pulumi.StringInput `pulumi:"accountId"`
-	// The domain's name.
-	DomainName pulumi.StringInput `pulumi:"domainName"`
-	// The domain's validation status. Possible values are:
-	// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
-	// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
-	// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
-	// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
-	// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
-	DomainStatus pulumi.StringInput `pulumi:"domainStatus"`
-	// The domain's validation challenge details.
-	ValidationChallenge GetPropertyDomainownershipDomainsDomainValidationChallengeInput `pulumi:"validationChallenge"`
-	// The timestamp indicating when the domain validation was completed.
-	ValidationCompletedDate pulumi.StringInput `pulumi:"validationCompletedDate"`
-	// The method used to validate the domain. Possible values are:
-	// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-	// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-	// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-	// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
-	// * `MANUAL` - For this method, the DOM team manually performed the validation.
-	ValidationMethod pulumi.StringInput `pulumi:"validationMethod"`
-	// The name of the user who requested the domain validation.
-	ValidationRequestedBy pulumi.StringInput `pulumi:"validationRequestedBy"`
-	// The timestamp indicating when the domain validation was requested.
-	ValidationRequestedDate pulumi.StringInput `pulumi:"validationRequestedDate"`
-	// Your domain's validation scope. Possible values are:
-	// * `HOST` - The scope is only the exactly specified domain.
-	// * `WILDCARD` - The scope covers any hostname within one subdomain level.
-	// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
-	ValidationScope pulumi.StringInput `pulumi:"validationScope"`
-}
-
-func (GetPropertyDomainownershipDomainsDomainArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomain)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainsDomainArgs) ToGetPropertyDomainownershipDomainsDomainOutput() GetPropertyDomainownershipDomainsDomainOutput {
-	return i.ToGetPropertyDomainownershipDomainsDomainOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainsDomainArgs) ToGetPropertyDomainownershipDomainsDomainOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainOutput)
-}
-
-// GetPropertyDomainownershipDomainsDomainArrayInput is an input type that accepts GetPropertyDomainownershipDomainsDomainArray and GetPropertyDomainownershipDomainsDomainArrayOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainArrayInput` via:
-//
-//	GetPropertyDomainownershipDomainsDomainArray{ GetPropertyDomainownershipDomainsDomainArgs{...} }
-type GetPropertyDomainownershipDomainsDomainArrayInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainsDomainArrayOutput() GetPropertyDomainownershipDomainsDomainArrayOutput
-	ToGetPropertyDomainownershipDomainsDomainArrayOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainArrayOutput
-}
-
-type GetPropertyDomainownershipDomainsDomainArray []GetPropertyDomainownershipDomainsDomainInput
-
-func (GetPropertyDomainownershipDomainsDomainArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertyDomainownershipDomainsDomain)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainsDomainArray) ToGetPropertyDomainownershipDomainsDomainArrayOutput() GetPropertyDomainownershipDomainsDomainArrayOutput {
-	return i.ToGetPropertyDomainownershipDomainsDomainArrayOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainsDomainArray) ToGetPropertyDomainownershipDomainsDomainArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainArrayOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainsDomainOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomain)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainsDomainOutput) ToGetPropertyDomainownershipDomainsDomainOutput() GetPropertyDomainownershipDomainsDomainOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainsDomainOutput) ToGetPropertyDomainownershipDomainsDomainOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainOutput {
-	return o
-}
-
-// The account's ID.
-func (o GetPropertyDomainownershipDomainsDomainOutput) AccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.AccountId }).(pulumi.StringOutput)
-}
-
-// The domain's name.
-func (o GetPropertyDomainownershipDomainsDomainOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.DomainName }).(pulumi.StringOutput)
-}
-
-// The domain's validation status. Possible values are:
-// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
-// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
-// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
-// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
-// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
-func (o GetPropertyDomainownershipDomainsDomainOutput) DomainStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.DomainStatus }).(pulumi.StringOutput)
-}
-
-// The domain's validation challenge details.
-func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationChallenge() GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) GetPropertyDomainownershipDomainsDomainValidationChallenge {
-		return v.ValidationChallenge
-	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeOutput)
-}
-
-// The timestamp indicating when the domain validation was completed.
-func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationCompletedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationCompletedDate }).(pulumi.StringOutput)
-}
-
-// The method used to validate the domain. Possible values are:
-// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
-// * `MANUAL` - For this method, the DOM team manually performed the validation.
-func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationMethod }).(pulumi.StringOutput)
-}
-
-// The name of the user who requested the domain validation.
-func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationRequestedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationRequestedBy }).(pulumi.StringOutput)
-}
-
-// The timestamp indicating when the domain validation was requested.
-func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationRequestedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationRequestedDate }).(pulumi.StringOutput)
-}
-
-// Your domain's validation scope. Possible values are:
-// * `HOST` - The scope is only the exactly specified domain.
-// * `WILDCARD` - The scope covers any hostname within one subdomain level.
-// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
-func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationScope() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationScope }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainsDomainArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertyDomainownershipDomainsDomain)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainsDomainArrayOutput) ToGetPropertyDomainownershipDomainsDomainArrayOutput() GetPropertyDomainownershipDomainsDomainArrayOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainsDomainArrayOutput) ToGetPropertyDomainownershipDomainsDomainArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainArrayOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainsDomainArrayOutput) Index(i pulumi.IntInput) GetPropertyDomainownershipDomainsDomainOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyDomainownershipDomainsDomain {
-		return vs[0].([]GetPropertyDomainownershipDomainsDomain)[vs[1].(int)]
-	}).(GetPropertyDomainownershipDomainsDomainOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallenge struct {
-	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
-	CnameRecord GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord `pulumi:"cnameRecord"`
-	// The timestamp indicating when the challenge data expires.
-	ExpirationDate string `pulumi:"expirationDate"`
-	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
-	HttpFile GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile `pulumi:"httpFile"`
-	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
-	HttpRedirect GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect `pulumi:"httpRedirect"`
-	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
-	TxtRecord GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord `pulumi:"txtRecord"`
-}
-
-// GetPropertyDomainownershipDomainsDomainValidationChallengeInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeInput` via:
-//
-//	GetPropertyDomainownershipDomainsDomainValidationChallengeArgs{...}
-type GetPropertyDomainownershipDomainsDomainValidationChallengeInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeOutput
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeOutput
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeArgs struct {
-	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
-	CnameRecord GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput `pulumi:"cnameRecord"`
-	// The timestamp indicating when the challenge data expires.
-	ExpirationDate pulumi.StringInput `pulumi:"expirationDate"`
-	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
-	HttpFile GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput `pulumi:"httpFile"`
-	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
-	HttpRedirect GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput `pulumi:"httpRedirect"`
-	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
-	TxtRecord GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput `pulumi:"txtRecord"`
-}
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallenge)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
-	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallenge)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
-	return o
-}
-
-// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) CnameRecord() GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord {
-		return v.CnameRecord
-	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput)
-}
-
-// The timestamp indicating when the challenge data expires.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) ExpirationDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) string { return v.ExpirationDate }).(pulumi.StringOutput)
-}
-
-// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) HttpFile() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile {
-		return v.HttpFile
-	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput)
-}
-
-// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) HttpRedirect() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect {
-		return v.HttpRedirect
-	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput)
-}
-
-// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) TxtRecord() GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord {
-		return v.TxtRecord
-	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord struct {
-	// The 'CNAME' record for your domain that you add to the DNS configuration.
-	Name string `pulumi:"name"`
-	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
-	Target string `pulumi:"target"`
-}
-
-// GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput` via:
-//
-//	GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs{...}
-type GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs struct {
-	// The 'CNAME' record for your domain that you add to the DNS configuration.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
-	Target pulumi.StringInput `pulumi:"target"`
-}
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
-	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
-	return o
-}
-
-// The 'CNAME' record for your domain that you add to the DNS configuration.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord) string { return v.Target }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile struct {
-	// The content of the file that you should place at the specified URL.
-	Content string `pulumi:"content"`
-	// The content type of the file containing the token.
-	ContentType string `pulumi:"contentType"`
-	// The URL where you should place the file containing the challenge token.
-	Path string `pulumi:"path"`
-}
-
-// GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput` via:
-//
-//	GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs{...}
-type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs struct {
-	// The content of the file that you should place at the specified URL.
-	Content pulumi.StringInput `pulumi:"content"`
-	// The content type of the file containing the token.
-	ContentType pulumi.StringInput `pulumi:"contentType"`
-	// The URL where you should place the file containing the challenge token.
-	Path pulumi.StringInput `pulumi:"path"`
-}
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
-	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
-	return o
-}
-
-// The content of the file that you should place at the specified URL.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile) string { return v.Content }).(pulumi.StringOutput)
-}
-
-// The content type of the file containing the token.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile) string {
-		return v.ContentType
-	}).(pulumi.StringOutput)
-}
-
-// The URL where you should place the file containing the challenge token.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile) string { return v.Path }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect struct {
-	// The location on your HTTP server where you set up the redirect.
-	From string `pulumi:"from"`
-	// The redirect URL with the token that you place on your HTTP server.
-	To string `pulumi:"to"`
-}
-
-// GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput` via:
-//
-//	GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs{...}
-type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs struct {
-	// The location on your HTTP server where you set up the redirect.
-	From pulumi.StringInput `pulumi:"from"`
-	// The redirect URL with the token that you place on your HTTP server.
-	To pulumi.StringInput `pulumi:"to"`
-}
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
-	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
-	return o
-}
-
-// The location on your HTTP server where you set up the redirect.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) From() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect) string { return v.From }).(pulumi.StringOutput)
-}
-
-// The redirect URL with the token that you place on your HTTP server.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) To() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect) string { return v.To }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord struct {
-	// The hostname where you should add the 'TXT' record to validate the domain ownership.
-	Name string `pulumi:"name"`
-	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
-	Value string `pulumi:"value"`
-}
-
-// GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput` via:
-//
-//	GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs{...}
-type GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput
-	ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs struct {
-	// The hostname where you should add the 'TXT' record to validate the domain ownership.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
-	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput)
-}
-
-type GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
-	return o
-}
-
-// The hostname where you should add the 'TXT' record to validate the domain ownership.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
-func (o GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipSearchDomainsDomain struct {
-	// Your account's ID.
-	AccountId string `pulumi:"accountId"`
-	// Your domain's name.
-	DomainName string `pulumi:"domainName"`
-	// The domain's validation status. Possible values are:
-	// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
-	// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
-	// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
-	// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
-	// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
-	DomainStatus string `pulumi:"domainStatus"`
-	// The domain's validation challenge details.
-	ValidationChallenge GetPropertyDomainownershipSearchDomainsDomainValidationChallenge `pulumi:"validationChallenge"`
-	// The timestamp indicating when the domain validation was completed.
-	ValidationCompletedDate string `pulumi:"validationCompletedDate"`
-	// The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
-	ValidationLevel string `pulumi:"validationLevel"`
-	// The method used to validate the domain. Possible values are:
-	// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-	// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-	// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-	// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
-	// * `MANUAL` - For this method, the DOM team manually performed the validation.
-	ValidationMethod string `pulumi:"validationMethod"`
-	// The name of the user who requested the domain validation.
-	ValidationRequestedBy string `pulumi:"validationRequestedBy"`
-	// The timestamp indicating when the domain validation was requested.
-	ValidationRequestedDate string `pulumi:"validationRequestedDate"`
-	// Your domain's validation scope. Possible values are:
-	// * `HOST` - The scope is only the exactly specified domain.
-	// * `WILDCARD` - The scope covers any hostname within one subdomain level.
-	// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
-	ValidationScope string `pulumi:"validationScope"`
-}
-
-// GetPropertyDomainownershipSearchDomainsDomainInput is an input type that accepts GetPropertyDomainownershipSearchDomainsDomainArgs and GetPropertyDomainownershipSearchDomainsDomainOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipSearchDomainsDomainInput` via:
-//
-//	GetPropertyDomainownershipSearchDomainsDomainArgs{...}
-type GetPropertyDomainownershipSearchDomainsDomainInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipSearchDomainsDomainOutput() GetPropertyDomainownershipSearchDomainsDomainOutput
-	ToGetPropertyDomainownershipSearchDomainsDomainOutputWithContext(context.Context) GetPropertyDomainownershipSearchDomainsDomainOutput
-}
-
-type GetPropertyDomainownershipSearchDomainsDomainArgs struct {
-	// Your account's ID.
-	AccountId pulumi.StringInput `pulumi:"accountId"`
-	// Your domain's name.
-	DomainName pulumi.StringInput `pulumi:"domainName"`
-	// The domain's validation status. Possible values are:
-	// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
-	// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
-	// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
-	// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
-	// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
-	DomainStatus pulumi.StringInput `pulumi:"domainStatus"`
-	// The domain's validation challenge details.
-	ValidationChallenge GetPropertyDomainownershipSearchDomainsDomainValidationChallengeInput `pulumi:"validationChallenge"`
-	// The timestamp indicating when the domain validation was completed.
-	ValidationCompletedDate pulumi.StringInput `pulumi:"validationCompletedDate"`
-	// The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
-	ValidationLevel pulumi.StringInput `pulumi:"validationLevel"`
-	// The method used to validate the domain. Possible values are:
-	// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-	// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-	// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-	// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
-	// * `MANUAL` - For this method, the DOM team manually performed the validation.
-	ValidationMethod pulumi.StringInput `pulumi:"validationMethod"`
-	// The name of the user who requested the domain validation.
-	ValidationRequestedBy pulumi.StringInput `pulumi:"validationRequestedBy"`
-	// The timestamp indicating when the domain validation was requested.
-	ValidationRequestedDate pulumi.StringInput `pulumi:"validationRequestedDate"`
-	// Your domain's validation scope. Possible values are:
-	// * `HOST` - The scope is only the exactly specified domain.
-	// * `WILDCARD` - The scope covers any hostname within one subdomain level.
-	// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
-	ValidationScope pulumi.StringInput `pulumi:"validationScope"`
-}
-
-func (GetPropertyDomainownershipSearchDomainsDomainArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomain)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipSearchDomainsDomainArgs) ToGetPropertyDomainownershipSearchDomainsDomainOutput() GetPropertyDomainownershipSearchDomainsDomainOutput {
-	return i.ToGetPropertyDomainownershipSearchDomainsDomainOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipSearchDomainsDomainArgs) ToGetPropertyDomainownershipSearchDomainsDomainOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipSearchDomainsDomainOutput)
-}
-
-// GetPropertyDomainownershipSearchDomainsDomainArrayInput is an input type that accepts GetPropertyDomainownershipSearchDomainsDomainArray and GetPropertyDomainownershipSearchDomainsDomainArrayOutput values.
-// You can construct a concrete instance of `GetPropertyDomainownershipSearchDomainsDomainArrayInput` via:
-//
-//	GetPropertyDomainownershipSearchDomainsDomainArray{ GetPropertyDomainownershipSearchDomainsDomainArgs{...} }
-type GetPropertyDomainownershipSearchDomainsDomainArrayInput interface {
-	pulumi.Input
-
-	ToGetPropertyDomainownershipSearchDomainsDomainArrayOutput() GetPropertyDomainownershipSearchDomainsDomainArrayOutput
-	ToGetPropertyDomainownershipSearchDomainsDomainArrayOutputWithContext(context.Context) GetPropertyDomainownershipSearchDomainsDomainArrayOutput
-}
-
-type GetPropertyDomainownershipSearchDomainsDomainArray []GetPropertyDomainownershipSearchDomainsDomainInput
-
-func (GetPropertyDomainownershipSearchDomainsDomainArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertyDomainownershipSearchDomainsDomain)(nil)).Elem()
-}
-
-func (i GetPropertyDomainownershipSearchDomainsDomainArray) ToGetPropertyDomainownershipSearchDomainsDomainArrayOutput() GetPropertyDomainownershipSearchDomainsDomainArrayOutput {
-	return i.ToGetPropertyDomainownershipSearchDomainsDomainArrayOutputWithContext(context.Background())
-}
-
-func (i GetPropertyDomainownershipSearchDomainsDomainArray) ToGetPropertyDomainownershipSearchDomainsDomainArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipSearchDomainsDomainArrayOutput)
-}
-
-type GetPropertyDomainownershipSearchDomainsDomainOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipSearchDomainsDomainOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomain)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ToGetPropertyDomainownershipSearchDomainsDomainOutput() GetPropertyDomainownershipSearchDomainsDomainOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ToGetPropertyDomainownershipSearchDomainsDomainOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainOutput {
-	return o
-}
-
-// Your account's ID.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) AccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.AccountId }).(pulumi.StringOutput)
-}
-
-// Your domain's name.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.DomainName }).(pulumi.StringOutput)
-}
-
-// The domain's validation status. Possible values are:
-// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
-// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
-// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
-// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
-// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) DomainStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.DomainStatus }).(pulumi.StringOutput)
-}
-
-// The domain's validation challenge details.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationChallenge() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) GetPropertyDomainownershipSearchDomainsDomainValidationChallenge {
-		return v.ValidationChallenge
-	}).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput)
-}
-
-// The timestamp indicating when the domain validation was completed.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationCompletedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationCompletedDate }).(pulumi.StringOutput)
-}
-
-// The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationLevel }).(pulumi.StringOutput)
-}
-
-// The method used to validate the domain. Possible values are:
-// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
-// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
-// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
-// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
-// * `MANUAL` - For this method, the DOM team manually performed the validation.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationMethod }).(pulumi.StringOutput)
-}
-
-// The name of the user who requested the domain validation.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationRequestedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationRequestedBy }).(pulumi.StringOutput)
-}
-
-// The timestamp indicating when the domain validation was requested.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationRequestedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationRequestedDate }).(pulumi.StringOutput)
-}
-
-// Your domain's validation scope. Possible values are:
-// * `HOST` - The scope is only the exactly specified domain.
-// * `WILDCARD` - The scope covers any hostname within one subdomain level.
-// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
-func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationScope() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationScope }).(pulumi.StringOutput)
-}
-
-type GetPropertyDomainownershipSearchDomainsDomainArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyDomainownershipSearchDomainsDomainArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertyDomainownershipSearchDomainsDomain)(nil)).Elem()
-}
-
-func (o GetPropertyDomainownershipSearchDomainsDomainArrayOutput) ToGetPropertyDomainownershipSearchDomainsDomainArrayOutput() GetPropertyDomainownershipSearchDomainsDomainArrayOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipSearchDomainsDomainArrayOutput) ToGetPropertyDomainownershipSearchDomainsDomainArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainArrayOutput {
-	return o
-}
-
-func (o GetPropertyDomainownershipSearchDomainsDomainArrayOutput) Index(i pulumi.IntInput) GetPropertyDomainownershipSearchDomainsDomainOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyDomainownershipSearchDomainsDomain {
-		return vs[0].([]GetPropertyDomainownershipSearchDomainsDomain)[vs[1].(int)]
-	}).(GetPropertyDomainownershipSearchDomainsDomainOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoAsnControlsInput)(nil)).Elem(), AppSecIPGeoAsnControlsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoAsnControlsPtrInput)(nil)).Elem(), AppSecIPGeoAsnControlsArgs{})
@@ -76714,6 +77491,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSiemSettingsExceptionsPtrInput)(nil)).Elem(), AppSecSiemSettingsExceptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsInput)(nil)).Elem(), AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsPtrInput)(nil)).Elem(), AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppsecAdvancedSettingsUrlEvasionDefenseRuleInput)(nil)).Elem(), AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayInput)(nil)).Elem(), AppsecAdvancedSettingsUrlEvasionDefenseRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput)(nil)).Elem(), AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput)(nil)).Elem(), AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppsecUrlProtectionPolicyApiDefinitionInput)(nil)).Elem(), AppsecUrlProtectionPolicyApiDefinitionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppsecUrlProtectionPolicyApiDefinitionArrayInput)(nil)).Elem(), AppsecUrlProtectionPolicyApiDefinitionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppsecUrlProtectionPolicyBypassConditionInput)(nil)).Elem(), AppsecUrlProtectionPolicyBypassConditionArgs{})
@@ -76827,6 +77608,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamSumologicConnectorPtrInput)(nil)).Elem(), DatastreamSumologicConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamTrafficpeakConnectorInput)(nil)).Elem(), DatastreamTrafficpeakConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamTrafficpeakConnectorPtrInput)(nil)).Elem(), DatastreamTrafficpeakConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DnsZoneMultiProviderDnssecInput)(nil)).Elem(), DnsZoneMultiProviderDnssecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DnsZoneMultiProviderDnssecPtrInput)(nil)).Elem(), DnsZoneMultiProviderDnssecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsZoneOutboundZoneTransferInput)(nil)).Elem(), DnsZoneOutboundZoneTransferArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsZoneOutboundZoneTransferPtrInput)(nil)).Elem(), DnsZoneOutboundZoneTransferArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsZoneOutboundZoneTransferTsigKeyInput)(nil)).Elem(), DnsZoneOutboundZoneTransferTsigKeyArgs{})
@@ -76955,6 +77738,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCcmCertificatesPtrInput)(nil)).Elem(), PropertyHostnameCcmCertificatesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusInput)(nil)).Elem(), PropertyHostnameCertStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusArrayInput)(nil)).Elem(), PropertyHostnameCertStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationInput)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationArrayInput)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationDns01Input)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationDns01Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationDns01ArrayInput)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationDns01Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationDns01ResultInput)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationDns01ResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationDns01ResultArrayInput)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationDns01ResultArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationHttp01Input)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationHttp01Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationHttp01ArrayInput)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationHttp01Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationHttp01ResultInput)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationHttp01ResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusAuthorizationHttp01ResultArrayInput)(nil)).Elem(), PropertyHostnameCertStatusAuthorizationHttp01ResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameMtlsInput)(nil)).Elem(), PropertyHostnameMtlsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameMtlsPtrInput)(nil)).Elem(), PropertyHostnameMtlsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameTlsConfigurationInput)(nil)).Elem(), PropertyHostnameTlsConfigurationArgs{})
@@ -76989,6 +77782,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppSecIPGeoGeoControlArrayInput)(nil)).Elem(), GetAppSecIPGeoGeoControlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppSecIPGeoIpControlInput)(nil)).Elem(), GetAppSecIPGeoIpControlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppSecIPGeoIpControlArrayInput)(nil)).Elem(), GetAppSecIPGeoIpControlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecAdvancedSettingsUrlEvasionDefenseRuleInput)(nil)).Elem(), GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayInput)(nil)).Elem(), GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionInput)(nil)).Elem(), GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayInput)(nil)).Elem(), GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecCustomRulesUsageRuleInput)(nil)).Elem(), GetAppsecCustomRulesUsageRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecCustomRulesUsageRuleArrayInput)(nil)).Elem(), GetAppsecCustomRulesUsageRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecCustomRulesUsageRulePolicyInput)(nil)).Elem(), GetAppsecCustomRulesUsageRulePolicyArgs{})
@@ -77017,6 +77814,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecUrlProtectionPolicyIntelligentLoadSheddingInput)(nil)).Elem(), GetAppsecUrlProtectionPolicyIntelligentLoadSheddingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaInput)(nil)).Elem(), GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArrayInput)(nil)).Elem(), GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecWafAiRulesAiRuleInput)(nil)).Elem(), GetAppsecWafAiRulesAiRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecWafAiRulesAiRuleArrayInput)(nil)).Elem(), GetAppsecWafAiRulesAiRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecWafRulesetAttackGroupInput)(nil)).Elem(), GetAppsecWafRulesetAttackGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecWafRulesetAttackGroupArrayInput)(nil)).Elem(), GetAppsecWafRulesetAttackGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAppsecWafRulesetRuleInput)(nil)).Elem(), GetAppsecWafRulesetRuleArgs{})
@@ -77218,6 +78017,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCpCodesCpCodeArrayInput)(nil)).Elem(), GetCpCodesCpCodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamActivationHistoryActivationInput)(nil)).Elem(), GetDatastreamActivationHistoryActivationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamActivationHistoryActivationArrayInput)(nil)).Elem(), GetDatastreamActivationHistoryActivationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamAnswerxServiceIdsServiceIdInput)(nil)).Elem(), GetDatastreamAnswerxServiceIdsServiceIdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamAnswerxServiceIdsServiceIdArrayInput)(nil)).Elem(), GetDatastreamAnswerxServiceIdsServiceIdArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamAppsecConfigsAppSecConfigInput)(nil)).Elem(), GetDatastreamAppsecConfigsAppSecConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamAppsecConfigsAppSecConfigArrayInput)(nil)).Elem(), GetDatastreamAppsecConfigsAppSecConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamDatasetFieldsDatasetFieldInput)(nil)).Elem(), GetDatastreamDatasetFieldsDatasetFieldArgs{})
@@ -77228,6 +78029,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamsDetailAppSecConfigArrayInput)(nil)).Elem(), GetDatastreamsStreamsDetailAppSecConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamsDetailPropertyInput)(nil)).Elem(), GetDatastreamsStreamsDetailPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamsDetailPropertyArrayInput)(nil)).Elem(), GetDatastreamsStreamsDetailPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamsDetailServiceIdInput)(nil)).Elem(), GetDatastreamsStreamsDetailServiceIdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamsDetailServiceIdArrayInput)(nil)).Elem(), GetDatastreamsStreamsDetailServiceIdArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEdgeHostnameEdgeHostnameInput)(nil)).Elem(), GetEdgeHostnameEdgeHostnameArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEdgeHostnameEdgeHostnameUseCaseInput)(nil)).Elem(), GetEdgeHostnameEdgeHostnameUseCaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEdgeHostnameEdgeHostnameUseCaseArrayInput)(nil)).Elem(), GetEdgeHostnameEdgeHostnameUseCaseArray{})
@@ -77629,22 +78432,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesSearchPropertyArrayInput)(nil)).Elem(), GetPropertiesSearchPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyAccountHostnamesHostnameInput)(nil)).Elem(), GetPropertyAccountHostnamesHostnameArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyAccountHostnamesHostnameArrayInput)(nil)).Elem(), GetPropertyAccountHostnamesHostnameArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainDomainStatusHistoryInput)(nil)).Elem(), GetPropertyDomainownershipDomainDomainStatusHistoryArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainDomainStatusHistoryArrayInput)(nil)).Elem(), GetPropertyDomainownershipDomainDomainStatusHistoryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpFileInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainArrayInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainArrayInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainArray{})
 	pulumi.RegisterOutputType(AppSecIPGeoAsnControlsOutput{})
 	pulumi.RegisterOutputType(AppSecIPGeoAsnControlsPtrOutput{})
 	pulumi.RegisterOutputType(AppSecIPGeoGeoControlsOutput{})
@@ -77655,6 +78442,10 @@ func init() {
 	pulumi.RegisterOutputType(AppSecSiemSettingsExceptionsPtrOutput{})
 	pulumi.RegisterOutputType(AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsOutput{})
 	pulumi.RegisterOutputType(AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsPtrOutput{})
+	pulumi.RegisterOutputType(AppsecAdvancedSettingsUrlEvasionDefenseRuleOutput{})
+	pulumi.RegisterOutputType(AppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput{})
+	pulumi.RegisterOutputType(AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput{})
+	pulumi.RegisterOutputType(AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(AppsecUrlProtectionPolicyApiDefinitionOutput{})
 	pulumi.RegisterOutputType(AppsecUrlProtectionPolicyApiDefinitionArrayOutput{})
 	pulumi.RegisterOutputType(AppsecUrlProtectionPolicyBypassConditionOutput{})
@@ -77768,6 +78559,8 @@ func init() {
 	pulumi.RegisterOutputType(DatastreamSumologicConnectorPtrOutput{})
 	pulumi.RegisterOutputType(DatastreamTrafficpeakConnectorOutput{})
 	pulumi.RegisterOutputType(DatastreamTrafficpeakConnectorPtrOutput{})
+	pulumi.RegisterOutputType(DnsZoneMultiProviderDnssecOutput{})
+	pulumi.RegisterOutputType(DnsZoneMultiProviderDnssecPtrOutput{})
 	pulumi.RegisterOutputType(DnsZoneOutboundZoneTransferOutput{})
 	pulumi.RegisterOutputType(DnsZoneOutboundZoneTransferPtrOutput{})
 	pulumi.RegisterOutputType(DnsZoneOutboundZoneTransferTsigKeyOutput{})
@@ -77896,6 +78689,16 @@ func init() {
 	pulumi.RegisterOutputType(PropertyHostnameCcmCertificatesPtrOutput{})
 	pulumi.RegisterOutputType(PropertyHostnameCertStatusOutput{})
 	pulumi.RegisterOutputType(PropertyHostnameCertStatusArrayOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationArrayOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationDns01Output{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationDns01ArrayOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationDns01ResultOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationDns01ResultArrayOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationHttp01Output{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationHttp01ArrayOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationHttp01ResultOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusAuthorizationHttp01ResultArrayOutput{})
 	pulumi.RegisterOutputType(PropertyHostnameMtlsOutput{})
 	pulumi.RegisterOutputType(PropertyHostnameMtlsPtrOutput{})
 	pulumi.RegisterOutputType(PropertyHostnameTlsConfigurationOutput{})
@@ -77930,6 +78733,10 @@ func init() {
 	pulumi.RegisterOutputType(GetAppSecIPGeoGeoControlArrayOutput{})
 	pulumi.RegisterOutputType(GetAppSecIPGeoIpControlOutput{})
 	pulumi.RegisterOutputType(GetAppSecIPGeoIpControlArrayOutput{})
+	pulumi.RegisterOutputType(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleOutput{})
+	pulumi.RegisterOutputType(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionOutput{})
+	pulumi.RegisterOutputType(GetAppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetAppsecCustomRulesUsageRuleOutput{})
 	pulumi.RegisterOutputType(GetAppsecCustomRulesUsageRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetAppsecCustomRulesUsageRulePolicyOutput{})
@@ -77958,6 +78765,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAppsecUrlProtectionPolicyIntelligentLoadSheddingOutput{})
 	pulumi.RegisterOutputType(GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaOutput{})
 	pulumi.RegisterOutputType(GetAppsecUrlProtectionPolicyIntelligentLoadSheddingCustomCriteriaArrayOutput{})
+	pulumi.RegisterOutputType(GetAppsecWafAiRulesAiRuleOutput{})
+	pulumi.RegisterOutputType(GetAppsecWafAiRulesAiRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetAppsecWafRulesetAttackGroupOutput{})
 	pulumi.RegisterOutputType(GetAppsecWafRulesetAttackGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetAppsecWafRulesetRuleOutput{})
@@ -78159,6 +78968,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCpCodesCpCodeArrayOutput{})
 	pulumi.RegisterOutputType(GetDatastreamActivationHistoryActivationOutput{})
 	pulumi.RegisterOutputType(GetDatastreamActivationHistoryActivationArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastreamAnswerxServiceIdsServiceIdOutput{})
+	pulumi.RegisterOutputType(GetDatastreamAnswerxServiceIdsServiceIdArrayOutput{})
 	pulumi.RegisterOutputType(GetDatastreamAppsecConfigsAppSecConfigOutput{})
 	pulumi.RegisterOutputType(GetDatastreamAppsecConfigsAppSecConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDatastreamDatasetFieldsDatasetFieldOutput{})
@@ -78169,6 +78980,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDatastreamsStreamsDetailAppSecConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDatastreamsStreamsDetailPropertyOutput{})
 	pulumi.RegisterOutputType(GetDatastreamsStreamsDetailPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastreamsStreamsDetailServiceIdOutput{})
+	pulumi.RegisterOutputType(GetDatastreamsStreamsDetailServiceIdArrayOutput{})
 	pulumi.RegisterOutputType(GetEdgeHostnameEdgeHostnameOutput{})
 	pulumi.RegisterOutputType(GetEdgeHostnameEdgeHostnameUseCaseOutput{})
 	pulumi.RegisterOutputType(GetEdgeHostnameEdgeHostnameUseCaseArrayOutput{})
@@ -78570,20 +79383,4 @@ func init() {
 	pulumi.RegisterOutputType(GetPropertiesSearchPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyAccountHostnamesHostnameOutput{})
 	pulumi.RegisterOutputType(GetPropertyAccountHostnamesHostnameArrayOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainDomainStatusHistoryOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainArrayOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainOutput{})
-	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainArrayOutput{})
 }

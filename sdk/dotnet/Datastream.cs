@@ -34,7 +34,7 @@ namespace Pulumi.Akamai
         public Output<bool?> CollectMidgress { get; private set; } = null!;
 
         /// <summary>
-        /// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        /// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
@@ -76,7 +76,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamGcsConnector?> GcsConnector { get; private set; } = null!;
 
         /// <summary>
-        /// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        /// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
@@ -158,6 +158,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("samplingPercentage")]
         public Output<int> SamplingPercentage { get; private set; } = null!;
+
+        /// <summary>
+        /// Identifies the AnswerX service IDs monitored in the stream.
+        /// </summary>
+        [Output("serviceIds")]
+        public Output<ImmutableArray<int>> ServiceIds { get; private set; } = null!;
 
         [Output("splunkConnector")]
         public Output<Outputs.DatastreamSplunkConnector?> SplunkConnector { get; private set; } = null!;
@@ -254,7 +260,7 @@ namespace Pulumi.Akamai
         public Input<bool>? CollectMidgress { get; set; }
 
         /// <summary>
-        /// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        /// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -290,7 +296,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamGcsConnectorArgs>? GcsConnector { get; set; }
 
         /// <summary>
-        /// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        /// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -349,6 +355,18 @@ namespace Pulumi.Akamai
         [Input("samplingPercentage")]
         public Input<int>? SamplingPercentage { get; set; }
 
+        [Input("serviceIds")]
+        private InputList<int>? _serviceIds;
+
+        /// <summary>
+        /// Identifies the AnswerX service IDs monitored in the stream.
+        /// </summary>
+        public InputList<int> ServiceIds
+        {
+            get => _serviceIds ?? (_serviceIds = new InputList<int>());
+            set => _serviceIds = value;
+        }
+
         [Input("splunkConnector")]
         public Input<Inputs.DatastreamSplunkConnectorArgs>? SplunkConnector { get; set; }
 
@@ -400,7 +418,7 @@ namespace Pulumi.Akamai
         public Input<bool>? CollectMidgress { get; set; }
 
         /// <summary>
-        /// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        /// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -448,7 +466,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamGcsConnectorGetArgs>? GcsConnector { get; set; }
 
         /// <summary>
-        /// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        /// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -542,6 +560,18 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("samplingPercentage")]
         public Input<int>? SamplingPercentage { get; set; }
+
+        [Input("serviceIds")]
+        private InputList<int>? _serviceIds;
+
+        /// <summary>
+        /// Identifies the AnswerX service IDs monitored in the stream.
+        /// </summary>
+        public InputList<int> ServiceIds
+        {
+            get => _serviceIds ?? (_serviceIds = new InputList<int>());
+            set => _serviceIds = value;
+        }
 
         [Input("splunkConnector")]
         public Input<Inputs.DatastreamSplunkConnectorGetArgs>? SplunkConnector { get; set; }

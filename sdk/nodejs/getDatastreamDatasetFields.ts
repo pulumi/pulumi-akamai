@@ -10,6 +10,7 @@ export function getDatastreamDatasetFields(args?: GetDatastreamDatasetFieldsArgs
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", {
+        "logType": args.logType,
         "productId": args.productId,
     }, opts);
 }
@@ -18,6 +19,7 @@ export function getDatastreamDatasetFields(args?: GetDatastreamDatasetFieldsArgs
  * A collection of arguments for invoking getDatastreamDatasetFields.
  */
 export interface GetDatastreamDatasetFieldsArgs {
+    logType?: string;
     productId?: string;
 }
 
@@ -30,12 +32,14 @@ export interface GetDatastreamDatasetFieldsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly logType?: string;
     readonly productId?: string;
 }
 export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFieldsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastreamDatasetFieldsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", {
+        "logType": args.logType,
         "productId": args.productId,
     }, opts);
 }
@@ -44,5 +48,6 @@ export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFiel
  * A collection of arguments for invoking getDatastreamDatasetFields.
  */
 export interface GetDatastreamDatasetFieldsOutputArgs {
+    logType?: pulumi.Input<string | undefined>;
     productId?: pulumi.Input<string | undefined>;
 }

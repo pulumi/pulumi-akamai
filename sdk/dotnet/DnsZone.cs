@@ -34,6 +34,12 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> Masters { get; private set; } = null!;
 
         /// <summary>
+        /// Multi-signer DNSSEC properties.
+        /// </summary>
+        [Output("multiProviderDnssec")]
+        public Output<Outputs.DnsZoneMultiProviderDnssec?> MultiProviderDnssec { get; private set; } = null!;
+
+        /// <summary>
         /// Outbound zone transfer properties.
         /// </summary>
         [Output("outboundZoneTransfer")]
@@ -131,6 +137,12 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
+        /// Multi-signer DNSSEC properties.
+        /// </summary>
+        [Input("multiProviderDnssec")]
+        public Input<Inputs.DnsZoneMultiProviderDnssecArgs>? MultiProviderDnssec { get; set; }
+
+        /// <summary>
         /// Outbound zone transfer properties.
         /// </summary>
         [Input("outboundZoneTransfer")]
@@ -187,6 +199,12 @@ namespace Pulumi.Akamai
             get => _masters ?? (_masters = new InputList<string>());
             set => _masters = value;
         }
+
+        /// <summary>
+        /// Multi-signer DNSSEC properties.
+        /// </summary>
+        [Input("multiProviderDnssec")]
+        public Input<Inputs.DnsZoneMultiProviderDnssecGetArgs>? MultiProviderDnssec { get; set; }
 
         /// <summary>
         /// Outbound zone transfer properties.

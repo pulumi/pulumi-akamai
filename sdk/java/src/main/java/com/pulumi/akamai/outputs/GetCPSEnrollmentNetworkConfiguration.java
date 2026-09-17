@@ -21,13 +21,27 @@ public final class GetCPSEnrollmentNetworkConfiguration {
     /**
      * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
      * 
+     * @deprecated
+     * Use enableForAllSans instead.
+     * 
      */
+    @Deprecated /* Use enableForAllSans instead. */
     private Boolean cloneDnsNames;
     /**
      * @return TLS versions which are disallowed
      * 
      */
     private List<String> disallowedTlsVersions;
+    /**
+     * @return Explicit DNS names for traffic direction when enableForAllSans is false
+     * 
+     */
+    private List<String> dnsNames;
+    /**
+     * @return When true, traffic is directed using all SANs listed in the enrollment
+     * 
+     */
+    private Boolean enableForAllSans;
     /**
      * @return Geography type used for enrollment
      * 
@@ -65,7 +79,11 @@ public final class GetCPSEnrollmentNetworkConfiguration {
     /**
      * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
      * 
+     * @deprecated
+     * Use enableForAllSans instead.
+     * 
      */
+    @Deprecated /* Use enableForAllSans instead. */
     public Boolean cloneDnsNames() {
         return this.cloneDnsNames;
     }
@@ -75,6 +93,20 @@ public final class GetCPSEnrollmentNetworkConfiguration {
      */
     public List<String> disallowedTlsVersions() {
         return this.disallowedTlsVersions;
+    }
+    /**
+     * @return Explicit DNS names for traffic direction when enableForAllSans is false
+     * 
+     */
+    public List<String> dnsNames() {
+        return this.dnsNames;
+    }
+    /**
+     * @return When true, traffic is directed using all SANs listed in the enrollment
+     * 
+     */
+    public Boolean enableForAllSans() {
+        return this.enableForAllSans;
     }
     /**
      * @return Geography type used for enrollment
@@ -124,6 +156,8 @@ public final class GetCPSEnrollmentNetworkConfiguration {
         private List<GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication> clientMutualAuthentications;
         private Boolean cloneDnsNames;
         private List<String> disallowedTlsVersions;
+        private List<String> dnsNames;
+        private Boolean enableForAllSans;
         private String geography;
         private String mustHaveCiphers;
         private String ocspStapling;
@@ -135,6 +169,8 @@ public final class GetCPSEnrollmentNetworkConfiguration {
     	      this.clientMutualAuthentications = defaults.clientMutualAuthentications;
     	      this.cloneDnsNames = defaults.cloneDnsNames;
     	      this.disallowedTlsVersions = defaults.disallowedTlsVersions;
+    	      this.dnsNames = defaults.dnsNames;
+    	      this.enableForAllSans = defaults.enableForAllSans;
     	      this.geography = defaults.geography;
     	      this.mustHaveCiphers = defaults.mustHaveCiphers;
     	      this.ocspStapling = defaults.ocspStapling;
@@ -171,6 +207,25 @@ public final class GetCPSEnrollmentNetworkConfiguration {
         }
         public Builder disallowedTlsVersions(String... disallowedTlsVersions) {
             return disallowedTlsVersions(List.of(disallowedTlsVersions));
+        }
+        @CustomType.Setter
+        public Builder dnsNames(List<String> dnsNames) {
+            if (dnsNames == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentNetworkConfiguration", "dnsNames");
+            }
+            this.dnsNames = dnsNames;
+            return this;
+        }
+        public Builder dnsNames(String... dnsNames) {
+            return dnsNames(List.of(dnsNames));
+        }
+        @CustomType.Setter
+        public Builder enableForAllSans(Boolean enableForAllSans) {
+            if (enableForAllSans == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentNetworkConfiguration", "enableForAllSans");
+            }
+            this.enableForAllSans = enableForAllSans;
+            return this;
         }
         @CustomType.Setter
         public Builder geography(String geography) {
@@ -217,6 +272,8 @@ public final class GetCPSEnrollmentNetworkConfiguration {
             _resultValue.clientMutualAuthentications = clientMutualAuthentications;
             _resultValue.cloneDnsNames = cloneDnsNames;
             _resultValue.disallowedTlsVersions = disallowedTlsVersions;
+            _resultValue.dnsNames = dnsNames;
+            _resultValue.enableForAllSans = enableForAllSans;
             _resultValue.geography = geography;
             _resultValue.mustHaveCiphers = mustHaveCiphers;
             _resultValue.ocspStapling = ocspStapling;

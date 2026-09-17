@@ -35,16 +35,24 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
     }
 
     /**
-     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+     * 
+     * @deprecated
+     * Use enableForAllSans instead.
      * 
      */
+    @Deprecated /* Use enableForAllSans instead. */
     @Import(name="cloneDnsNames")
     private @Nullable Output<Boolean> cloneDnsNames;
 
     /**
-     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+     * 
+     * @deprecated
+     * Use enableForAllSans instead.
      * 
      */
+    @Deprecated /* Use enableForAllSans instead. */
     public Optional<Output<Boolean>> cloneDnsNames() {
         return Optional.ofNullable(this.cloneDnsNames);
     }
@@ -62,6 +70,36 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
      */
     public Optional<Output<List<String>>> disallowedTlsVersions() {
         return Optional.ofNullable(this.disallowedTlsVersions);
+    }
+
+    /**
+     * Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+     * 
+     */
+    @Import(name="dnsNames")
+    private @Nullable Output<List<String>> dnsNames;
+
+    /**
+     * @return Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+     * 
+     */
+    public Optional<Output<List<String>>> dnsNames() {
+        return Optional.ofNullable(this.dnsNames);
+    }
+
+    /**
+     * When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+     * 
+     */
+    @Import(name="enableForAllSans")
+    private @Nullable Output<Boolean> enableForAllSans;
+
+    /**
+     * @return When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+     * 
+     */
+    public Optional<Output<Boolean>> enableForAllSans() {
+        return Optional.ofNullable(this.enableForAllSans);
     }
 
     /**
@@ -145,6 +183,8 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         this.clientMutualAuthentication = $.clientMutualAuthentication;
         this.cloneDnsNames = $.cloneDnsNames;
         this.disallowedTlsVersions = $.disallowedTlsVersions;
+        this.dnsNames = $.dnsNames;
+        this.enableForAllSans = $.enableForAllSans;
         this.geography = $.geography;
         this.mustHaveCiphers = $.mustHaveCiphers;
         this.ocspStapling = $.ocspStapling;
@@ -192,22 +232,30 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
          * 
          * @return builder
          * 
+         * @deprecated
+         * Use enableForAllSans instead.
+         * 
          */
+        @Deprecated /* Use enableForAllSans instead. */
         public Builder cloneDnsNames(@Nullable Output<Boolean> cloneDnsNames) {
             $.cloneDnsNames = cloneDnsNames;
             return this;
         }
 
         /**
-         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
          * 
          * @return builder
          * 
+         * @deprecated
+         * Use enableForAllSans instead.
+         * 
          */
+        @Deprecated /* Use enableForAllSans instead. */
         public Builder cloneDnsNames(Boolean cloneDnsNames) {
             return cloneDnsNames(Output.of(cloneDnsNames));
         }
@@ -241,6 +289,58 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
          */
         public Builder disallowedTlsVersions(String... disallowedTlsVersions) {
             return disallowedTlsVersions(List.of(disallowedTlsVersions));
+        }
+
+        /**
+         * @param dnsNames Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsNames(@Nullable Output<List<String>> dnsNames) {
+            $.dnsNames = dnsNames;
+            return this;
+        }
+
+        /**
+         * @param dnsNames Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsNames(List<String> dnsNames) {
+            return dnsNames(Output.of(dnsNames));
+        }
+
+        /**
+         * @param dnsNames Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsNames(String... dnsNames) {
+            return dnsNames(List.of(dnsNames));
+        }
+
+        /**
+         * @param enableForAllSans When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableForAllSans(@Nullable Output<Boolean> enableForAllSans) {
+            $.enableForAllSans = enableForAllSans;
+            return this;
+        }
+
+        /**
+         * @param enableForAllSans When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableForAllSans(Boolean enableForAllSans) {
+            return enableForAllSans(Output.of(enableForAllSans));
         }
 
         /**

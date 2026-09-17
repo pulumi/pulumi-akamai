@@ -133,15 +133,15 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
      * Settings containing network information and TLS Metadata used by CPS
      * 
      */
-    @Import(name="networkConfiguration", required=true)
-    private Output<CpsDvEnrollmentNetworkConfigurationArgs> networkConfiguration;
+    @Import(name="networkConfiguration")
+    private @Nullable Output<CpsDvEnrollmentNetworkConfigurationArgs> networkConfiguration;
 
     /**
      * @return Settings containing network information and TLS Metadata used by CPS
      * 
      */
-    public Output<CpsDvEnrollmentNetworkConfigurationArgs> networkConfiguration() {
-        return this.networkConfiguration;
+    public Optional<Output<CpsDvEnrollmentNetworkConfigurationArgs>> networkConfiguration() {
+        return Optional.ofNullable(this.networkConfiguration);
     }
 
     /**
@@ -440,7 +440,7 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder networkConfiguration(Output<CpsDvEnrollmentNetworkConfigurationArgs> networkConfiguration) {
+        public Builder networkConfiguration(@Nullable Output<CpsDvEnrollmentNetworkConfigurationArgs> networkConfiguration) {
             $.networkConfiguration = networkConfiguration;
             return this;
         }
@@ -624,9 +624,6 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
             }
             if ($.csr == null) {
                 throw new MissingRequiredPropertyException("CpsDvEnrollmentArgs", "csr");
-            }
-            if ($.networkConfiguration == null) {
-                throw new MissingRequiredPropertyException("CpsDvEnrollmentArgs", "networkConfiguration");
             }
             if ($.organization == null) {
                 throw new MissingRequiredPropertyException("CpsDvEnrollmentArgs", "organization");

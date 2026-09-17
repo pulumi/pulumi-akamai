@@ -18,13 +18,21 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly Outputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication? ClientMutualAuthentication;
         /// <summary>
-        /// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+        /// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
         /// </summary>
         public readonly bool? CloneDnsNames;
         /// <summary>
         /// TLS versions which are disallowed
         /// </summary>
         public readonly ImmutableArray<string> DisallowedTlsVersions;
+        /// <summary>
+        /// Explicit DNS names for traffic direction when EnableForAllSans or CloneDnsNames is false.
+        /// </summary>
+        public readonly ImmutableArray<string> DnsNames;
+        /// <summary>
+        /// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated CloneDnsNames attribute. Cannot be used together with clone_dns_names.
+        /// </summary>
+        public readonly bool? EnableForAllSans;
         /// <summary>
         /// Geography type used for enrollment
         /// </summary>
@@ -54,6 +62,10 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<string> disallowedTlsVersions,
 
+            ImmutableArray<string> dnsNames,
+
+            bool? enableForAllSans,
+
             string geography,
 
             string? mustHaveCiphers,
@@ -67,6 +79,8 @@ namespace Pulumi.Akamai.Outputs
             ClientMutualAuthentication = clientMutualAuthentication;
             CloneDnsNames = cloneDnsNames;
             DisallowedTlsVersions = disallowedTlsVersions;
+            DnsNames = dnsNames;
+            EnableForAllSans = enableForAllSans;
             Geography = geography;
             MustHaveCiphers = mustHaveCiphers;
             OcspStapling = ocspStapling;

@@ -25,6 +25,10 @@ __all__ = [
     'AppSecSiemSettingsExceptionsArgsDict',
     'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs',
     'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict',
+    'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs',
+    'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict',
+    'AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs',
+    'AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgsDict',
     'AppsecUrlProtectionPolicyApiDefinitionArgs',
     'AppsecUrlProtectionPolicyApiDefinitionArgsDict',
     'AppsecUrlProtectionPolicyBypassConditionArgs',
@@ -139,6 +143,8 @@ __all__ = [
     'DatastreamSumologicConnectorArgsDict',
     'DatastreamTrafficpeakConnectorArgs',
     'DatastreamTrafficpeakConnectorArgsDict',
+    'DnsZoneMultiProviderDnssecArgs',
+    'DnsZoneMultiProviderDnssecArgsDict',
     'DnsZoneOutboundZoneTransferArgs',
     'DnsZoneOutboundZoneTransferArgsDict',
     'DnsZoneOutboundZoneTransferTsigKeyArgs',
@@ -267,6 +273,16 @@ __all__ = [
     'PropertyHostnameCcmCertificatesArgsDict',
     'PropertyHostnameCertStatusArgs',
     'PropertyHostnameCertStatusArgsDict',
+    'PropertyHostnameCertStatusAuthorizationArgs',
+    'PropertyHostnameCertStatusAuthorizationArgsDict',
+    'PropertyHostnameCertStatusAuthorizationDns01Args',
+    'PropertyHostnameCertStatusAuthorizationDns01ArgsDict',
+    'PropertyHostnameCertStatusAuthorizationDns01ResultArgs',
+    'PropertyHostnameCertStatusAuthorizationDns01ResultArgsDict',
+    'PropertyHostnameCertStatusAuthorizationHttp01Args',
+    'PropertyHostnameCertStatusAuthorizationHttp01ArgsDict',
+    'PropertyHostnameCertStatusAuthorizationHttp01ResultArgs',
+    'PropertyHostnameCertStatusAuthorizationHttp01ResultArgsDict',
     'PropertyHostnameMtlsArgs',
     'PropertyHostnameMtlsArgsDict',
     'PropertyHostnameTlsConfigurationArgs',
@@ -1146,6 +1162,461 @@ class AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs:
     @rules.setter
     def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "rules", value)
+
+
+class AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    The URL evasion mitigation rule action.
+    """
+    rule_id: pulumi.Input[_builtins.int]
+    """
+    Uniquely identifies the URL evasion mitigation rule.
+    """
+    condition_operator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+    """
+    conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgsDict']]]]]
+    """
+    The list of match conditions.
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL evasion mitigation rule description.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL evasion mitigation rule name.
+    """
+
+@pulumi.input_type
+class AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs:
+    def __init__(__self__, *,
+                 action: pulumi.Input[_builtins.str],
+                 rule_id: pulumi.Input[_builtins.int],
+                 condition_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: The URL evasion mitigation rule action.
+        :param pulumi.Input[_builtins.int] rule_id: Uniquely identifies the URL evasion mitigation rule.
+        :param pulumi.Input[_builtins.str] condition_operator: Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+        :param pulumi.Input[Sequence[pulumi.Input['AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs']]] conditions: The list of match conditions.
+        :param pulumi.Input[_builtins.str] description: The URL evasion mitigation rule description.
+        :param pulumi.Input[_builtins.str] name: The URL evasion mitigation rule name.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "rule_id", rule_id)
+        if condition_operator is not None:
+            pulumi.set(__self__, "condition_operator", condition_operator)
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> pulumi.Input[_builtins.str]:
+        """
+        The URL evasion mitigation rule action.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleId")
+    def rule_id(self) -> pulumi.Input[_builtins.int]:
+        """
+        Uniquely identifies the URL evasion mitigation rule.
+        """
+        return pulumi.get(self, "rule_id")
+
+    @rule_id.setter
+    def rule_id(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "rule_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="conditionOperator")
+    def condition_operator(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+        """
+        return pulumi.get(self, "condition_operator")
+
+    @condition_operator.setter
+    def condition_operator(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "condition_operator", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs']]]]:
+        """
+        The list of match conditions.
+        """
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs']]]]):
+        pulumi.set(self, "conditions", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL evasion mitigation rule description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL evasion mitigation rule name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    The condition type to match on.
+    """
+    client_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+    """
+    extensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+    """
+    filenames: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+    """
+    header: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+    """
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+    """
+    ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+    """
+    methods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+    """
+    name_case_sensitive: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+    """
+    paths: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+    """
+    positive_match: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+    """
+    use_headers: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+    """
+    value_case_sensitive: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+    """
+    value_wildcard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the provided parameter `value` is a wildcard. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+    """
+
+@pulumi.input_type
+class AppsecAdvancedSettingsUrlEvasionDefenseRuleConditionArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 client_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 filenames: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 header: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_case_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 paths: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 positive_match: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_headers: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
+                 value_case_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value_wildcard: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: The condition type to match on.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] client_lists: The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] extensions: The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] filenames: The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+        :param pulumi.Input[_builtins.str] header: The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ips: The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] methods: The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+        :param pulumi.Input[_builtins.str] name: The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+        :param pulumi.Input[_builtins.bool] name_case_sensitive: Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] paths: The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+        :param pulumi.Input[_builtins.bool] positive_match: Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+        :param pulumi.Input[_builtins.bool] use_headers: Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+        :param pulumi.Input[_builtins.str] value: The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+        :param pulumi.Input[_builtins.bool] value_case_sensitive: Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+        :param pulumi.Input[_builtins.bool] value_wildcard: Whether the provided parameter `value` is a wildcard. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+        """
+        pulumi.set(__self__, "type", type)
+        if client_lists is not None:
+            pulumi.set(__self__, "client_lists", client_lists)
+        if extensions is not None:
+            pulumi.set(__self__, "extensions", extensions)
+        if filenames is not None:
+            pulumi.set(__self__, "filenames", filenames)
+        if header is not None:
+            pulumi.set(__self__, "header", header)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if ips is not None:
+            pulumi.set(__self__, "ips", ips)
+        if methods is not None:
+            pulumi.set(__self__, "methods", methods)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_case_sensitive is not None:
+            pulumi.set(__self__, "name_case_sensitive", name_case_sensitive)
+        if paths is not None:
+            pulumi.set(__self__, "paths", paths)
+        if positive_match is not None:
+            pulumi.set(__self__, "positive_match", positive_match)
+        if use_headers is not None:
+            pulumi.set(__self__, "use_headers", use_headers)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_case_sensitive is not None:
+            pulumi.set(__self__, "value_case_sensitive", value_case_sensitive)
+        if value_wildcard is not None:
+            pulumi.set(__self__, "value_wildcard", value_wildcard)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The condition type to match on.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clientLists")
+    def client_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+        """
+        return pulumi.get(self, "client_lists")
+
+    @client_lists.setter
+    def client_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "client_lists", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def extensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+        """
+        return pulumi.get(self, "extensions")
+
+    @extensions.setter
+    def extensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "extensions", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def filenames(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+        """
+        return pulumi.get(self, "filenames")
+
+    @filenames.setter
+    def filenames(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "filenames", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def header(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+        """
+        return pulumi.get(self, "header")
+
+    @header.setter
+    def header(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "header", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+        """
+        return pulumi.get(self, "hosts")
+
+    @hosts.setter
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "hosts", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+        """
+        return pulumi.get(self, "ips")
+
+    @ips.setter
+    def ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ips", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def methods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+        """
+        return pulumi.get(self, "methods")
+
+    @methods.setter
+    def methods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "methods", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nameCaseSensitive")
+    def name_case_sensitive(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+        """
+        return pulumi.get(self, "name_case_sensitive")
+
+    @name_case_sensitive.setter
+    def name_case_sensitive(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "name_case_sensitive", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def paths(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+        """
+        return pulumi.get(self, "paths")
+
+    @paths.setter
+    def paths(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "paths", value)
+
+    @_builtins.property
+    @pulumi.getter(name="positiveMatch")
+    def positive_match(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+        """
+        return pulumi.get(self, "positive_match")
+
+    @positive_match.setter
+    def positive_match(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "positive_match", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useHeaders")
+    def use_headers(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+        """
+        return pulumi.get(self, "use_headers")
+
+    @use_headers.setter
+    def use_headers(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_headers", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueCaseSensitive")
+    def value_case_sensitive(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+        """
+        return pulumi.get(self, "value_case_sensitive")
+
+    @value_case_sensitive.setter
+    def value_case_sensitive(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "value_case_sensitive", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueWildcard")
+    def value_wildcard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the provided parameter `value` is a wildcard. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+        """
+        return pulumi.get(self, "value_wildcard")
+
+    @value_wildcard.setter
+    def value_wildcard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "value_wildcard", value)
 
 
 class AppsecUrlProtectionPolicyApiDefinitionArgsDict(TypedDict):
@@ -3541,11 +4012,19 @@ class CpsDvEnrollmentNetworkConfigurationArgsDict(TypedDict):
     """
     clone_dns_names: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
-    Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+    Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
     """
     disallowed_tls_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     TLS versions which are disallowed
+    """
+    dns_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Explicit DNS names for traffic direction when enable_for_all_sans or clone_dns_names is false.
+    """
+    enable_for_all_sans: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated clone_dns_names attribute. Cannot be used together with clone_dns_names.
     """
     must_have_ciphers: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -3571,6 +4050,8 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
                  client_mutual_authentication: pulumi.Input[Optional['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs']] = None,
                  clone_dns_names: pulumi.Input[Optional[_builtins.bool]] = None,
                  disallowed_tls_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dns_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enable_for_all_sans: pulumi.Input[Optional[_builtins.bool]] = None,
                  must_have_ciphers: pulumi.Input[Optional[_builtins.str]] = None,
                  ocsp_stapling: pulumi.Input[Optional[_builtins.str]] = None,
                  preferred_ciphers: pulumi.Input[Optional[_builtins.str]] = None,
@@ -3578,8 +4059,10 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
         """
         :param pulumi.Input[_builtins.str] geography: Geography type used for enrollment
         :param pulumi.Input['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs'] client_mutual_authentication: The trust chain configuration used for client mutual authentication
-        :param pulumi.Input[_builtins.bool] clone_dns_names: Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+        :param pulumi.Input[_builtins.bool] clone_dns_names: Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disallowed_tls_versions: TLS versions which are disallowed
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dns_names: Explicit DNS names for traffic direction when enable_for_all_sans or clone_dns_names is false.
+        :param pulumi.Input[_builtins.bool] enable_for_all_sans: When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated clone_dns_names attribute. Cannot be used together with clone_dns_names.
         :param pulumi.Input[_builtins.str] must_have_ciphers: Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
         :param pulumi.Input[_builtins.str] ocsp_stapling: Enable OCSP stapling. Default is 'on'
         :param pulumi.Input[_builtins.str] preferred_ciphers: Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
@@ -3589,9 +4072,16 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
         if client_mutual_authentication is not None:
             pulumi.set(__self__, "client_mutual_authentication", client_mutual_authentication)
         if clone_dns_names is not None:
+            warnings.warn("""Use enable_for_all_sans instead.""", DeprecationWarning)
+            pulumi.log.warn("""clone_dns_names is deprecated: Use enable_for_all_sans instead.""")
+        if clone_dns_names is not None:
             pulumi.set(__self__, "clone_dns_names", clone_dns_names)
         if disallowed_tls_versions is not None:
             pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        if dns_names is not None:
+            pulumi.set(__self__, "dns_names", dns_names)
+        if enable_for_all_sans is not None:
+            pulumi.set(__self__, "enable_for_all_sans", enable_for_all_sans)
         if must_have_ciphers is not None:
             pulumi.set(__self__, "must_have_ciphers", must_have_ciphers)
         if ocsp_stapling is not None:
@@ -3627,9 +4117,10 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="cloneDnsNames")
+    @_utilities.deprecated("""Use enable_for_all_sans instead.""")
     def clone_dns_names(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+        Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
         """
         return pulumi.get(self, "clone_dns_names")
 
@@ -3648,6 +4139,30 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
     @disallowed_tls_versions.setter
     def disallowed_tls_versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disallowed_tls_versions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dnsNames")
+    def dns_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Explicit DNS names for traffic direction when enable_for_all_sans or clone_dns_names is false.
+        """
+        return pulumi.get(self, "dns_names")
+
+    @dns_names.setter
+    def dns_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "dns_names", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enableForAllSans")
+    def enable_for_all_sans(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated clone_dns_names attribute. Cannot be used together with clone_dns_names.
+        """
+        return pulumi.get(self, "enable_for_all_sans")
+
+    @enable_for_all_sans.setter
+    def enable_for_all_sans(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable_for_all_sans", value)
 
     @_builtins.property
     @pulumi.getter(name="mustHaveCiphers")
@@ -4596,11 +5111,19 @@ class CpsThirdPartyEnrollmentNetworkConfigurationArgsDict(TypedDict):
     """
     clone_dns_names: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
-    Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+    Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
     """
     disallowed_tls_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     TLS versions which are disallowed
+    """
+    dns_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Explicit DNS names for traffic direction when enable_for_all_sans or clone_dns_names is false.
+    """
+    enable_for_all_sans: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated clone_dns_names attribute. Cannot be used together with clone_dns_names.
     """
     must_have_ciphers: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -4626,6 +5149,8 @@ class CpsThirdPartyEnrollmentNetworkConfigurationArgs:
                  client_mutual_authentication: pulumi.Input[Optional['CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs']] = None,
                  clone_dns_names: pulumi.Input[Optional[_builtins.bool]] = None,
                  disallowed_tls_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dns_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enable_for_all_sans: pulumi.Input[Optional[_builtins.bool]] = None,
                  must_have_ciphers: pulumi.Input[Optional[_builtins.str]] = None,
                  ocsp_stapling: pulumi.Input[Optional[_builtins.str]] = None,
                  preferred_ciphers: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4633,8 +5158,10 @@ class CpsThirdPartyEnrollmentNetworkConfigurationArgs:
         """
         :param pulumi.Input[_builtins.str] geography: Geography type used for enrollment
         :param pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs'] client_mutual_authentication: The trust chain configuration used for client mutual authentication
-        :param pulumi.Input[_builtins.bool] clone_dns_names: Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+        :param pulumi.Input[_builtins.bool] clone_dns_names: Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disallowed_tls_versions: TLS versions which are disallowed
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dns_names: Explicit DNS names for traffic direction when enable_for_all_sans or clone_dns_names is false.
+        :param pulumi.Input[_builtins.bool] enable_for_all_sans: When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated clone_dns_names attribute. Cannot be used together with clone_dns_names.
         :param pulumi.Input[_builtins.str] must_have_ciphers: Mandatory Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
         :param pulumi.Input[_builtins.str] ocsp_stapling: Enable OCSP stapling. Default is 'on'
         :param pulumi.Input[_builtins.str] preferred_ciphers: Preferred Ciphers which are included for enrollment. Default is 'ak-akamai-2020q1'
@@ -4644,9 +5171,16 @@ class CpsThirdPartyEnrollmentNetworkConfigurationArgs:
         if client_mutual_authentication is not None:
             pulumi.set(__self__, "client_mutual_authentication", client_mutual_authentication)
         if clone_dns_names is not None:
+            warnings.warn("""Use enable_for_all_sans instead.""", DeprecationWarning)
+            pulumi.log.warn("""clone_dns_names is deprecated: Use enable_for_all_sans instead.""")
+        if clone_dns_names is not None:
             pulumi.set(__self__, "clone_dns_names", clone_dns_names)
         if disallowed_tls_versions is not None:
             pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        if dns_names is not None:
+            pulumi.set(__self__, "dns_names", dns_names)
+        if enable_for_all_sans is not None:
+            pulumi.set(__self__, "enable_for_all_sans", enable_for_all_sans)
         if must_have_ciphers is not None:
             pulumi.set(__self__, "must_have_ciphers", must_have_ciphers)
         if ocsp_stapling is not None:
@@ -4682,9 +5216,10 @@ class CpsThirdPartyEnrollmentNetworkConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="cloneDnsNames")
+    @_utilities.deprecated("""Use enable_for_all_sans instead.""")
     def clone_dns_names(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+        Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
         """
         return pulumi.get(self, "clone_dns_names")
 
@@ -4703,6 +5238,30 @@ class CpsThirdPartyEnrollmentNetworkConfigurationArgs:
     @disallowed_tls_versions.setter
     def disallowed_tls_versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disallowed_tls_versions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dnsNames")
+    def dns_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Explicit DNS names for traffic direction when enable_for_all_sans or clone_dns_names is false.
+        """
+        return pulumi.get(self, "dns_names")
+
+    @dns_names.setter
+    def dns_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "dns_names", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enableForAllSans")
+    def enable_for_all_sans(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated clone_dns_names attribute. Cannot be used together with clone_dns_names.
+        """
+        return pulumi.get(self, "enable_for_all_sans")
+
+    @enable_for_all_sans.setter
+    def enable_for_all_sans(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable_for_all_sans", value)
 
     @_builtins.property
     @pulumi.getter(name="mustHaveCiphers")
@@ -7767,6 +8326,54 @@ class DatastreamTrafficpeakConnectorArgs:
     @custom_header_value.setter
     def custom_header_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_header_value", value)
+
+
+class DnsZoneMultiProviderDnssecArgsDict(TypedDict):
+    enabled: pulumi.Input[_builtins.bool]
+    """
+    Enables multi-signer DNSSEC for the zone.
+    """
+    webhook: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL to call when a new ZSK secret has been generated.
+    """
+
+@pulumi.input_type
+class DnsZoneMultiProviderDnssecArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[_builtins.bool],
+                 webhook: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] enabled: Enables multi-signer DNSSEC for the zone.
+        :param pulumi.Input[_builtins.str] webhook: The URL to call when a new ZSK secret has been generated.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if webhook is not None:
+            pulumi.set(__self__, "webhook", webhook)
+
+    @_builtins.property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Enables multi-signer DNSSEC for the zone.
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "enabled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def webhook(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL to call when a new ZSK secret has been generated.
+        """
+        return pulumi.get(self, "webhook")
+
+    @webhook.setter
+    def webhook(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "webhook", value)
 
 
 class DnsZoneOutboundZoneTransferArgsDict(TypedDict):
@@ -13175,6 +13782,10 @@ class PropertyHostnameCcmCertificatesArgs:
 
 
 class PropertyHostnameCertStatusArgsDict(TypedDict):
+    authorizations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationArgsDict']]]]]
+    """
+    Details of domain validation methods available for your certificate.
+    """
     hostname: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The hostname part of the CNAME record used to validate the certificate's domain.
@@ -13195,16 +13806,20 @@ class PropertyHostnameCertStatusArgsDict(TypedDict):
 @pulumi.input_type
 class PropertyHostnameCertStatusArgs:
     def __init__(__self__, *,
+                 authorizations: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationArgs']]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  production_status: pulumi.Input[Optional[_builtins.str]] = None,
                  staging_status: pulumi.Input[Optional[_builtins.str]] = None,
                  target: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationArgs']]] authorizations: Details of domain validation methods available for your certificate.
         :param pulumi.Input[_builtins.str] hostname: The hostname part of the CNAME record used to validate the certificate's domain.
         :param pulumi.Input[_builtins.str] production_status: The certificate's deployment status on the production network.
         :param pulumi.Input[_builtins.str] staging_status: The certificate's deployment status on the staging network.
         :param pulumi.Input[_builtins.str] target: The destination part of the CNAME record used to validate the certificate's domain.
         """
+        if authorizations is not None:
+            pulumi.set(__self__, "authorizations", authorizations)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if production_status is not None:
@@ -13213,6 +13828,18 @@ class PropertyHostnameCertStatusArgs:
             pulumi.set(__self__, "staging_status", staging_status)
         if target is not None:
             pulumi.set(__self__, "target", target)
+
+    @_builtins.property
+    @pulumi.getter
+    def authorizations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationArgs']]]]:
+        """
+        Details of domain validation methods available for your certificate.
+        """
+        return pulumi.get(self, "authorizations")
+
+    @authorizations.setter
+    def authorizations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationArgs']]]]):
+        pulumi.set(self, "authorizations", value)
 
     @_builtins.property
     @pulumi.getter
@@ -13261,6 +13888,351 @@ class PropertyHostnameCertStatusArgs:
     @target.setter
     def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
+
+
+class PropertyHostnameCertStatusAuthorizationArgsDict(TypedDict):
+    dns01s: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01ArgsDict']]]]]
+    """
+    Details on the manual DNS validation method.
+    """
+    http01s: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01ArgsDict']]]]]
+    """
+    Details on the manual HTTP validation method.
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The status of the validation that proves you control the domains listed in the certificate request.
+    """
+    valid_until: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    An ISO 8601 timestamp indicating when the domain validation challenge expires.
+    """
+
+@pulumi.input_type
+class PropertyHostnameCertStatusAuthorizationArgs:
+    def __init__(__self__, *,
+                 dns01s: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01Args']]]] = None,
+                 http01s: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01Args']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 valid_until: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01Args']]] dns01s: Details on the manual DNS validation method.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01Args']]] http01s: Details on the manual HTTP validation method.
+        :param pulumi.Input[_builtins.str] status: The status of the validation that proves you control the domains listed in the certificate request.
+        :param pulumi.Input[_builtins.str] valid_until: An ISO 8601 timestamp indicating when the domain validation challenge expires.
+        """
+        if dns01s is not None:
+            pulumi.set(__self__, "dns01s", dns01s)
+        if http01s is not None:
+            pulumi.set(__self__, "http01s", http01s)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if valid_until is not None:
+            pulumi.set(__self__, "valid_until", valid_until)
+
+    @_builtins.property
+    @pulumi.getter
+    def dns01s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01Args']]]]:
+        """
+        Details on the manual DNS validation method.
+        """
+        return pulumi.get(self, "dns01s")
+
+    @dns01s.setter
+    def dns01s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01Args']]]]):
+        pulumi.set(self, "dns01s", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def http01s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01Args']]]]:
+        """
+        Details on the manual HTTP validation method.
+        """
+        return pulumi.get(self, "http01s")
+
+    @http01s.setter
+    def http01s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01Args']]]]):
+        pulumi.set(self, "http01s", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The status of the validation that proves you control the domains listed in the certificate request.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validUntil")
+    def valid_until(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        An ISO 8601 timestamp indicating when the domain validation challenge expires.
+        """
+        return pulumi.get(self, "valid_until")
+
+    @valid_until.setter
+    def valid_until(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "valid_until", value)
+
+
+class PropertyHostnameCertStatusAuthorizationDns01ArgsDict(TypedDict):
+    results: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01ResultArgsDict']]]]]
+    """
+    Details on the validation challenge generation.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The token you need to copy to the DNS TXT record.
+    """
+
+@pulumi.input_type
+class PropertyHostnameCertStatusAuthorizationDns01Args:
+    def __init__(__self__, *,
+                 results: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01ResultArgs']]]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01ResultArgs']]] results: Details on the validation challenge generation.
+        :param pulumi.Input[_builtins.str] value: The token you need to copy to the DNS TXT record.
+        """
+        if results is not None:
+            pulumi.set(__self__, "results", results)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def results(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01ResultArgs']]]]:
+        """
+        Details on the validation challenge generation.
+        """
+        return pulumi.get(self, "results")
+
+    @results.setter
+    def results(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationDns01ResultArgs']]]]):
+        pulumi.set(self, "results", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The token you need to copy to the DNS TXT record.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class PropertyHostnameCertStatusAuthorizationDns01ResultArgsDict(TypedDict):
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A descriptive message on the challenge generation process.
+    """
+    source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+    """
+    timestamp: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The ISO 8601 timestamp indicating when the result was generated.
+    """
+
+@pulumi.input_type
+class PropertyHostnameCertStatusAuthorizationDns01ResultArgs:
+    def __init__(__self__, *,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] message: A descriptive message on the challenge generation process.
+        :param pulumi.Input[_builtins.str] source: The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+        :param pulumi.Input[_builtins.str] timestamp: The ISO 8601 timestamp indicating when the result was generated.
+        """
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if timestamp is not None:
+            pulumi.set(__self__, "timestamp", timestamp)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A descriptive message on the challenge generation process.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The ISO 8601 timestamp indicating when the result was generated.
+        """
+        return pulumi.get(self, "timestamp")
+
+    @timestamp.setter
+    def timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "timestamp", value)
+
+
+class PropertyHostnameCertStatusAuthorizationHttp01ArgsDict(TypedDict):
+    body: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The token you need to copy to the file on your origin server.
+    """
+    results: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01ResultArgsDict']]]]]
+    """
+    Details on the validation challenge generation.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The location on your origin server where you save the file with the token.
+    """
+
+@pulumi.input_type
+class PropertyHostnameCertStatusAuthorizationHttp01Args:
+    def __init__(__self__, *,
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 results: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01ResultArgs']]]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] body: The token you need to copy to the file on your origin server.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01ResultArgs']]] results: Details on the validation challenge generation.
+        :param pulumi.Input[_builtins.str] url: The location on your origin server where you save the file with the token.
+        """
+        if body is not None:
+            pulumi.set(__self__, "body", body)
+        if results is not None:
+            pulumi.set(__self__, "results", results)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def body(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The token you need to copy to the file on your origin server.
+        """
+        return pulumi.get(self, "body")
+
+    @body.setter
+    def body(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "body", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def results(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01ResultArgs']]]]:
+        """
+        Details on the validation challenge generation.
+        """
+        return pulumi.get(self, "results")
+
+    @results.setter
+    def results(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PropertyHostnameCertStatusAuthorizationHttp01ResultArgs']]]]):
+        pulumi.set(self, "results", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The location on your origin server where you save the file with the token.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+class PropertyHostnameCertStatusAuthorizationHttp01ResultArgsDict(TypedDict):
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A descriptive message on the challenge generation process.
+    """
+    source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+    """
+    timestamp: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The ISO 8601 timestamp indicating when the result was generated.
+    """
+
+@pulumi.input_type
+class PropertyHostnameCertStatusAuthorizationHttp01ResultArgs:
+    def __init__(__self__, *,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] message: A descriptive message on the challenge generation process.
+        :param pulumi.Input[_builtins.str] source: The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+        :param pulumi.Input[_builtins.str] timestamp: The ISO 8601 timestamp indicating when the result was generated.
+        """
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if timestamp is not None:
+            pulumi.set(__self__, "timestamp", timestamp)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A descriptive message on the challenge generation process.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The ISO 8601 timestamp indicating when the result was generated.
+        """
+        return pulumi.get(self, "timestamp")
+
+    @timestamp.setter
+    def timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "timestamp", value)
 
 
 class PropertyHostnameMtlsArgsDict(TypedDict):

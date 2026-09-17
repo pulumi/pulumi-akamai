@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -75,9 +75,6 @@ func NewCpsDvEnrollment(ctx *pulumi.Context,
 	}
 	if args.Csr == nil {
 		return nil, errors.New("invalid value for required argument 'Csr'")
-	}
-	if args.NetworkConfiguration == nil {
-		return nil, errors.New("invalid value for required argument 'NetworkConfiguration'")
 	}
 	if args.Organization == nil {
 		return nil, errors.New("invalid value for required argument 'Organization'")
@@ -222,7 +219,7 @@ type cpsDvEnrollmentArgs struct {
 	// Certificate signing request generated during enrollment creation
 	Csr CpsDvEnrollmentCsr `pulumi:"csr"`
 	// Settings containing network information and TLS Metadata used by CPS
-	NetworkConfiguration CpsDvEnrollmentNetworkConfiguration `pulumi:"networkConfiguration"`
+	NetworkConfiguration *CpsDvEnrollmentNetworkConfiguration `pulumi:"networkConfiguration"`
 	// Organization information
 	Organization CpsDvEnrollmentOrganization `pulumi:"organization"`
 	// List of SANs
@@ -256,7 +253,7 @@ type CpsDvEnrollmentArgs struct {
 	// Certificate signing request generated during enrollment creation
 	Csr CpsDvEnrollmentCsrInput
 	// Settings containing network information and TLS Metadata used by CPS
-	NetworkConfiguration CpsDvEnrollmentNetworkConfigurationInput
+	NetworkConfiguration CpsDvEnrollmentNetworkConfigurationPtrInput
 	// Organization information
 	Organization CpsDvEnrollmentOrganizationInput
 	// List of SANs

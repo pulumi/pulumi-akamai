@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,19 +23,21 @@ func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getCpCode.
 type LookupCpCodeArgs struct {
-	ContractId string `pulumi:"contractId"`
-	GroupId    string `pulumi:"groupId"`
-	Name       string `pulumi:"name"`
+	ContractId string  `pulumi:"contractId"`
+	CpCodeId   *string `pulumi:"cpCodeId"`
+	CpCodeName *string `pulumi:"cpCodeName"`
+	GroupId    string  `pulumi:"groupId"`
 }
 
 // A collection of values returned by getCpCode.
 type LookupCpCodeResult struct {
 	ContractId  string `pulumi:"contractId"`
+	CpCodeId    string `pulumi:"cpCodeId"`
+	CpCodeName  string `pulumi:"cpCodeName"`
 	CreatedDate string `pulumi:"createdDate"`
 	GroupId     string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id         string   `pulumi:"id"`
-	Name       string   `pulumi:"name"`
 	ProductIds []string `pulumi:"productIds"`
 }
 
@@ -46,9 +48,10 @@ func LookupCpCodeOutput(ctx *pulumi.Context, args LookupCpCodeOutputArgs, opts .
 
 // A collection of arguments for invoking getCpCode.
 type LookupCpCodeOutputArgs struct {
-	ContractId pulumi.StringInput `pulumi:"contractId"`
-	GroupId    pulumi.StringInput `pulumi:"groupId"`
-	Name       pulumi.StringInput `pulumi:"name"`
+	ContractId pulumi.StringInput    `pulumi:"contractId"`
+	CpCodeId   pulumi.StringPtrInput `pulumi:"cpCodeId"`
+	CpCodeName pulumi.StringPtrInput `pulumi:"cpCodeName"`
+	GroupId    pulumi.StringInput    `pulumi:"groupId"`
 }
 
 func (LookupCpCodeOutputArgs) ElementType() reflect.Type {
@@ -74,6 +77,14 @@ func (o LookupCpCodeResultOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCpCodeResult) string { return v.ContractId }).(pulumi.StringOutput)
 }
 
+func (o LookupCpCodeResultOutput) CpCodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCpCodeResult) string { return v.CpCodeId }).(pulumi.StringOutput)
+}
+
+func (o LookupCpCodeResultOutput) CpCodeName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCpCodeResult) string { return v.CpCodeName }).(pulumi.StringOutput)
+}
+
 func (o LookupCpCodeResultOutput) CreatedDate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCpCodeResult) string { return v.CreatedDate }).(pulumi.StringOutput)
 }
@@ -85,10 +96,6 @@ func (o LookupCpCodeResultOutput) GroupId() pulumi.StringOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o LookupCpCodeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o LookupCpCodeResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
 func (o LookupCpCodeResultOutput) ProductIds() pulumi.StringArrayOutput {

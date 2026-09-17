@@ -8,8 +8,9 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCpCode:getCpCode", {
         "contractId": args.contractId,
+        "cpCodeId": args.cpCodeId,
+        "cpCodeName": args.cpCodeName,
         "groupId": args.groupId,
-        "name": args.name,
     }, opts);
 }
 
@@ -18,8 +19,9 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetCpCodeArgs {
     contractId: string;
+    cpCodeId?: string;
+    cpCodeName?: string;
     groupId: string;
-    name: string;
 }
 
 /**
@@ -27,21 +29,23 @@ export interface GetCpCodeArgs {
  */
 export interface GetCpCodeResult {
     readonly contractId: string;
+    readonly cpCodeId: string;
+    readonly cpCodeName: string;
     readonly createdDate: string;
     readonly groupId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly name: string;
     readonly productIds: string[];
 }
 export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpCodeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCpCode:getCpCode", {
         "contractId": args.contractId,
+        "cpCodeId": args.cpCodeId,
+        "cpCodeName": args.cpCodeName,
         "groupId": args.groupId,
-        "name": args.name,
     }, opts);
 }
 
@@ -50,6 +54,7 @@ export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeO
  */
 export interface GetCpCodeOutputArgs {
     contractId: pulumi.Input<string>;
+    cpCodeId?: pulumi.Input<string | undefined>;
+    cpCodeName?: pulumi.Input<string | undefined>;
     groupId: pulumi.Input<string>;
-    name: pulumi.Input<string>;
 }

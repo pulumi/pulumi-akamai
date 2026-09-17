@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -20,6 +22,20 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
         return this.contractId;
     }
 
+    @Import(name="cpCodeId")
+    private @Nullable String cpCodeId;
+
+    public Optional<String> cpCodeId() {
+        return Optional.ofNullable(this.cpCodeId);
+    }
+
+    @Import(name="cpCodeName")
+    private @Nullable String cpCodeName;
+
+    public Optional<String> cpCodeName() {
+        return Optional.ofNullable(this.cpCodeName);
+    }
+
     @Import(name="groupId", required=true)
     private String groupId;
 
@@ -27,19 +43,13 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
         return this.groupId;
     }
 
-    @Import(name="name", required=true)
-    private String name;
-
-    public String name() {
-        return this.name;
-    }
-
     private GetCpCodePlainArgs() {}
 
     private GetCpCodePlainArgs(GetCpCodePlainArgs $) {
         this.contractId = $.contractId;
+        this.cpCodeId = $.cpCodeId;
+        this.cpCodeName = $.cpCodeName;
         this.groupId = $.groupId;
-        this.name = $.name;
     }
 
     public static Builder builder() {
@@ -65,13 +75,18 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
             return this;
         }
 
-        public Builder groupId(String groupId) {
-            $.groupId = groupId;
+        public Builder cpCodeId(@Nullable String cpCodeId) {
+            $.cpCodeId = cpCodeId;
             return this;
         }
 
-        public Builder name(String name) {
-            $.name = name;
+        public Builder cpCodeName(@Nullable String cpCodeName) {
+            $.cpCodeName = cpCodeName;
+            return this;
+        }
+
+        public Builder groupId(String groupId) {
+            $.groupId = groupId;
             return this;
         }
 
@@ -81,9 +96,6 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
             }
             if ($.groupId == null) {
                 throw new MissingRequiredPropertyException("GetCpCodePlainArgs", "groupId");
-            }
-            if ($.name == null) {
-                throw new MissingRequiredPropertyException("GetCpCodePlainArgs", "name");
             }
             return $;
         }

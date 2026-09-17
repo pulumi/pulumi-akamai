@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,6 +23,7 @@ func GetDatastreamDatasetFields(ctx *pulumi.Context, args *GetDatastreamDatasetF
 
 // A collection of arguments for invoking getDatastreamDatasetFields.
 type GetDatastreamDatasetFieldsArgs struct {
+	LogType   *string `pulumi:"logType"`
 	ProductId *string `pulumi:"productId"`
 }
 
@@ -31,6 +32,7 @@ type GetDatastreamDatasetFieldsResult struct {
 	DatasetFields []GetDatastreamDatasetFieldsDatasetField `pulumi:"datasetFields"`
 	// The provider-assigned unique ID for this managed resource.
 	Id        string  `pulumi:"id"`
+	LogType   *string `pulumi:"logType"`
 	ProductId *string `pulumi:"productId"`
 }
 
@@ -41,6 +43,7 @@ func GetDatastreamDatasetFieldsOutput(ctx *pulumi.Context, args GetDatastreamDat
 
 // A collection of arguments for invoking getDatastreamDatasetFields.
 type GetDatastreamDatasetFieldsOutputArgs struct {
+	LogType   pulumi.StringPtrInput `pulumi:"logType"`
 	ProductId pulumi.StringPtrInput `pulumi:"productId"`
 }
 
@@ -72,6 +75,10 @@ func (o GetDatastreamDatasetFieldsResultOutput) DatasetFields() GetDatastreamDat
 // The provider-assigned unique ID for this managed resource.
 func (o GetDatastreamDatasetFieldsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatastreamDatasetFieldsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamDatasetFieldsResultOutput) LogType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatastreamDatasetFieldsResult) *string { return v.LogType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDatastreamDatasetFieldsResultOutput) ProductId() pulumi.StringPtrOutput {

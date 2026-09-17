@@ -3,9 +3,11 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.PropertyHostnameCertStatusAuthorizationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -14,6 +16,21 @@ import javax.annotation.Nullable;
 public final class PropertyHostnameCertStatusArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final PropertyHostnameCertStatusArgs Empty = new PropertyHostnameCertStatusArgs();
+
+    /**
+     * Details of domain validation methods available for your certificate.
+     * 
+     */
+    @Import(name="authorizations")
+    private @Nullable Output<List<PropertyHostnameCertStatusAuthorizationArgs>> authorizations;
+
+    /**
+     * @return Details of domain validation methods available for your certificate.
+     * 
+     */
+    public Optional<Output<List<PropertyHostnameCertStatusAuthorizationArgs>>> authorizations() {
+        return Optional.ofNullable(this.authorizations);
+    }
 
     /**
      * The hostname part of the CNAME record used to validate the certificate&#39;s domain.
@@ -78,6 +95,7 @@ public final class PropertyHostnameCertStatusArgs extends com.pulumi.resources.R
     private PropertyHostnameCertStatusArgs() {}
 
     private PropertyHostnameCertStatusArgs(PropertyHostnameCertStatusArgs $) {
+        this.authorizations = $.authorizations;
         this.hostname = $.hostname;
         this.productionStatus = $.productionStatus;
         this.stagingStatus = $.stagingStatus;
@@ -100,6 +118,37 @@ public final class PropertyHostnameCertStatusArgs extends com.pulumi.resources.R
 
         public Builder(PropertyHostnameCertStatusArgs defaults) {
             $ = new PropertyHostnameCertStatusArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param authorizations Details of domain validation methods available for your certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authorizations(@Nullable Output<List<PropertyHostnameCertStatusAuthorizationArgs>> authorizations) {
+            $.authorizations = authorizations;
+            return this;
+        }
+
+        /**
+         * @param authorizations Details of domain validation methods available for your certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authorizations(List<PropertyHostnameCertStatusAuthorizationArgs> authorizations) {
+            return authorizations(Output.of(authorizations));
+        }
+
+        /**
+         * @param authorizations Details of domain validation methods available for your certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authorizations(PropertyHostnameCertStatusAuthorizationArgs... authorizations) {
+            return authorizations(List.of(authorizations));
         }
 
         /**

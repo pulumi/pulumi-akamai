@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +43,9 @@ func NewClientlistActivation(ctx *pulumi.Context,
 	}
 	if args.Network == nil {
 		return nil, errors.New("invalid value for required argument 'Network'")
+	}
+	if args.Version == nil {
+		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ClientlistActivation
@@ -115,6 +118,8 @@ type clientlistActivationArgs struct {
 	NotificationRecipients []string `pulumi:"notificationRecipients"`
 	// Identifies the Siebel ticket, if the activation is linked to one.
 	SiebelTicketId *string `pulumi:"siebelTicketId"`
+	// The client list version.
+	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a ClientlistActivation resource.
@@ -129,6 +134,8 @@ type ClientlistActivationArgs struct {
 	NotificationRecipients pulumi.StringArrayInput
 	// Identifies the Siebel ticket, if the activation is linked to one.
 	SiebelTicketId pulumi.StringPtrInput
+	// The client list version.
+	Version pulumi.IntInput
 }
 
 func (ClientlistActivationArgs) ElementType() reflect.Type {

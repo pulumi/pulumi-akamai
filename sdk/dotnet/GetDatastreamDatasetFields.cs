@@ -24,6 +24,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamDatasetFieldsArgs : global::Pulumi.InvokeArgs
     {
+        [Input("logType")]
+        public string? LogType { get; set; }
+
         [Input("productId")]
         public string? ProductId { get; set; }
 
@@ -35,6 +38,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamDatasetFieldsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        [Input("logType")]
+        public Input<string>? LogType { get; set; }
+
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
@@ -53,6 +59,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? LogType;
         public readonly string? ProductId;
 
         [OutputConstructor]
@@ -61,10 +68,13 @@ namespace Pulumi.Akamai
 
             string id,
 
+            string? logType,
+
             string? productId)
         {
             DatasetFields = datasetFields;
             Id = id;
+            LogType = logType;
             ProductId = productId;
         }
     }
