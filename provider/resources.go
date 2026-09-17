@@ -21,11 +21,11 @@ import (
 	"path/filepath"
 	"unicode"
 
-	_ "embed"                                                        // for embedding schema-embed.json
-	_ "github.com/akamai/terraform-provider-akamai/v10/pkg/providers" // Load the providers
+	_ "embed"                                                         // for embedding schema-embed.json
+	_ "github.com/akamai/terraform-provider-akamai/v11/pkg/providers" // Load the providers
 
-	"github.com/akamai/terraform-provider-akamai/v10/pkg/akamai"
-	"github.com/akamai/terraform-provider-akamai/v10/pkg/providers/registry"
+	"github.com/akamai/terraform-provider-akamai/v11/pkg/akamai"
+	"github.com/akamai/terraform-provider-akamai/v11/pkg/providers/registry"
 
 	pf "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/pf/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
@@ -35,7 +35,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 
-	"github.com/pulumi/pulumi-akamai/provider/v11/pkg/version"
+	"github.com/pulumi/pulumi-akamai/provider/v12/pkg/version"
 )
 
 // all of the token components used below.

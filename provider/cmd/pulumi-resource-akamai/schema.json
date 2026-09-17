@@ -25,7 +25,7 @@
             "respectSchemaVersion": true
         },
         "go": {
-            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai",
+            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai",
             "generateResourceContainerTypes": true,
             "generateExtraInputTypes": true,
             "respectSchemaVersion": true
@@ -275,6 +275,145 @@
                 }
             },
             "type": "object"
+        },
+        "akamai:index/AppsecAdvancedSettingsUrlEvasionDefenseRule:AppsecAdvancedSettingsUrlEvasionDefenseRule": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "The URL evasion mitigation rule action.\n"
+                },
+                "conditionOperator": {
+                    "type": "string",
+                    "description": "Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.\n"
+                },
+                "conditions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition:AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition"
+                    },
+                    "description": "The list of match conditions.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The URL evasion mitigation rule description.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The URL evasion mitigation rule name.\n"
+                },
+                "ruleId": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the URL evasion mitigation rule.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "action",
+                "ruleId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "action",
+                        "description",
+                        "name",
+                        "ruleId"
+                    ]
+                }
+            }
+        },
+        "akamai:index/AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition:AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition": {
+            "properties": {
+                "clientLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The clientLists that trigger the condition. This only applies to the `clientListMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "extensions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The file extensions that trigger the condition. This only applies to the `extensionMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "filenames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The filenames that trigger the condition. This only applies to the `filenameMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "header": {
+                    "type": "string",
+                    "description": "The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "hosts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The hostnames that trigger the condition. This only applies to the `hostMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "ips": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The IPs that trigger the condition. This only applies to the `ipMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "methods": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "nameCaseSensitive": {
+                    "type": "boolean",
+                    "description": "Whether to consider the case-sensitivity of the provided query parameter \u003cspan pulumi-lang-nodejs=\"`name`\" pulumi-lang-dotnet=\"`Name`\" pulumi-lang-go=\"`name`\" pulumi-lang-python=\"`name`\" pulumi-lang-yaml=\"`name`\" pulumi-lang-java=\"`name`\" pulumi-lang-hcl=\"`name`\"\u003e`name`\u003c/span\u003e. This only applies to the `uriQueryMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "paths": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The paths that trigger the condition. This only applies to the  `pathMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "positiveMatch": {
+                    "type": "boolean",
+                    "description": "Whether the condition should trigger on a match (\u003cspan pulumi-lang-nodejs=\"`true`\" pulumi-lang-dotnet=\"`True`\" pulumi-lang-go=\"`true`\" pulumi-lang-python=\"`true`\" pulumi-lang-yaml=\"`true`\" pulumi-lang-java=\"`true`\" pulumi-lang-hcl=\"`true`\"\u003e`true`\u003c/span\u003e) or a lack of match (\u003cspan pulumi-lang-nodejs=\"`false`\" pulumi-lang-dotnet=\"`False`\" pulumi-lang-go=\"`false`\" pulumi-lang-python=\"`false`\" pulumi-lang-yaml=\"`false`\" pulumi-lang-java=\"`false`\" pulumi-lang-hcl=\"`false`\"\u003e`false`\u003c/span\u003e).\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The condition type to match on.\n"
+                },
+                "useHeaders": {
+                    "type": "boolean",
+                    "description": "Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The query parameter value if the condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e is `uriQueryMatch` and header value if the condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e is `requestHeaderMatch`. This only applies when the condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e is `uriQueryMatch` or `requestHeaderMatch`.\n"
+                },
+                "valueCaseSensitive": {
+                    "type": "boolean",
+                    "description": "Whether to consider the case-sensitivity of the provided \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\" pulumi-lang-hcl=\"`value`\"\u003e`value`\u003c/span\u003e. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "valueWildcard": {
+                    "type": "boolean",
+                    "description": "Whether the provided parameter \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\" pulumi-lang-hcl=\"`value`\"\u003e`value`\u003c/span\u003e is a wildcard. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "type"
+            ]
         },
         "akamai:index/AppsecUrlProtectionPolicyApiDefinition:AppsecUrlProtectionPolicyApiDefinition": {
             "properties": {
@@ -1011,7 +1150,8 @@
                 },
                 "cloneDnsNames": {
                     "type": "boolean",
-                    "description": "Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false\n"
+                    "description": "Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.\n",
+                    "deprecationMessage": "Use\u003cspan pulumi-lang-nodejs=\" enableForAllSans \" pulumi-lang-dotnet=\" EnableForAllSans \" pulumi-lang-go=\" enableForAllSans \" pulumi-lang-python=\" enable_for_all_sans \" pulumi-lang-yaml=\" enableForAllSans \" pulumi-lang-java=\" enableForAllSans \" pulumi-lang-hcl=\" enable_for_all_sans \"\u003e enableForAllSans \u003c/span\u003einstead."
                 },
                 "disallowedTlsVersions": {
                     "type": "array",
@@ -1019,6 +1159,17 @@
                         "type": "string"
                     },
                     "description": "TLS versions which are disallowed\n"
+                },
+                "dnsNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Explicit DNS names for traffic direction when\u003cspan pulumi-lang-nodejs=\" enableForAllSans \" pulumi-lang-dotnet=\" EnableForAllSans \" pulumi-lang-go=\" enableForAllSans \" pulumi-lang-python=\" enable_for_all_sans \" pulumi-lang-yaml=\" enableForAllSans \" pulumi-lang-java=\" enableForAllSans \" pulumi-lang-hcl=\" enable_for_all_sans \"\u003e enableForAllSans \u003c/span\u003eor\u003cspan pulumi-lang-nodejs=\" cloneDnsNames \" pulumi-lang-dotnet=\" CloneDnsNames \" pulumi-lang-go=\" cloneDnsNames \" pulumi-lang-python=\" clone_dns_names \" pulumi-lang-yaml=\" cloneDnsNames \" pulumi-lang-java=\" cloneDnsNames \" pulumi-lang-hcl=\" clone_dns_names \"\u003e cloneDnsNames \u003c/span\u003eis false.\n"
+                },
+                "enableForAllSans": {
+                    "type": "boolean",
+                    "description": "When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated\u003cspan pulumi-lang-nodejs=\" cloneDnsNames \" pulumi-lang-dotnet=\" CloneDnsNames \" pulumi-lang-go=\" cloneDnsNames \" pulumi-lang-python=\" clone_dns_names \" pulumi-lang-yaml=\" cloneDnsNames \" pulumi-lang-java=\" cloneDnsNames \" pulumi-lang-hcl=\" clone_dns_names \"\u003e cloneDnsNames \u003c/span\u003eattribute. Cannot be used together with clone_dns_names.\n"
                 },
                 "geography": {
                     "type": "string",
@@ -1044,7 +1195,17 @@
             "type": "object",
             "required": [
                 "geography"
-            ]
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "cloneDnsNames",
+                        "dnsNames",
+                        "enableForAllSans",
+                        "geography"
+                    ]
+                }
+            }
         },
         "akamai:index/CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication:CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication": {
             "properties": {
@@ -1285,7 +1446,8 @@
                 },
                 "cloneDnsNames": {
                     "type": "boolean",
-                    "description": "Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false\n"
+                    "description": "Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.\n",
+                    "deprecationMessage": "Use\u003cspan pulumi-lang-nodejs=\" enableForAllSans \" pulumi-lang-dotnet=\" EnableForAllSans \" pulumi-lang-go=\" enableForAllSans \" pulumi-lang-python=\" enable_for_all_sans \" pulumi-lang-yaml=\" enableForAllSans \" pulumi-lang-java=\" enableForAllSans \" pulumi-lang-hcl=\" enable_for_all_sans \"\u003e enableForAllSans \u003c/span\u003einstead."
                 },
                 "disallowedTlsVersions": {
                     "type": "array",
@@ -1293,6 +1455,17 @@
                         "type": "string"
                     },
                     "description": "TLS versions which are disallowed\n"
+                },
+                "dnsNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Explicit DNS names for traffic direction when\u003cspan pulumi-lang-nodejs=\" enableForAllSans \" pulumi-lang-dotnet=\" EnableForAllSans \" pulumi-lang-go=\" enableForAllSans \" pulumi-lang-python=\" enable_for_all_sans \" pulumi-lang-yaml=\" enableForAllSans \" pulumi-lang-java=\" enableForAllSans \" pulumi-lang-hcl=\" enable_for_all_sans \"\u003e enableForAllSans \u003c/span\u003eor\u003cspan pulumi-lang-nodejs=\" cloneDnsNames \" pulumi-lang-dotnet=\" CloneDnsNames \" pulumi-lang-go=\" cloneDnsNames \" pulumi-lang-python=\" clone_dns_names \" pulumi-lang-yaml=\" cloneDnsNames \" pulumi-lang-java=\" cloneDnsNames \" pulumi-lang-hcl=\" clone_dns_names \"\u003e cloneDnsNames \u003c/span\u003eis false.\n"
+                },
+                "enableForAllSans": {
+                    "type": "boolean",
+                    "description": "When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated\u003cspan pulumi-lang-nodejs=\" cloneDnsNames \" pulumi-lang-dotnet=\" CloneDnsNames \" pulumi-lang-go=\" cloneDnsNames \" pulumi-lang-python=\" clone_dns_names \" pulumi-lang-yaml=\" cloneDnsNames \" pulumi-lang-java=\" cloneDnsNames \" pulumi-lang-hcl=\" clone_dns_names \"\u003e cloneDnsNames \u003c/span\u003eattribute. Cannot be used together with clone_dns_names.\n"
                 },
                 "geography": {
                     "type": "string",
@@ -1318,7 +1491,17 @@
             "type": "object",
             "required": [
                 "geography"
-            ]
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "cloneDnsNames",
+                        "dnsNames",
+                        "enableForAllSans",
+                        "geography"
+                    ]
+                }
+            }
         },
         "akamai:index/CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication:CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication": {
             "properties": {
@@ -2242,6 +2425,22 @@
                 "endpoint",
                 "password",
                 "userName"
+            ]
+        },
+        "akamai:index/DnsZoneMultiProviderDnssec:DnsZoneMultiProviderDnssec": {
+            "properties": {
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Enables multi-signer DNSSEC for the zone.\n"
+                },
+                "webhook": {
+                    "type": "string",
+                    "description": "The URL to call when a new ZSK secret has been generated.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "enabled"
             ]
         },
         "akamai:index/DnsZoneOutboundZoneTransfer:DnsZoneOutboundZoneTransfer": {
@@ -4027,6 +4226,13 @@
         },
         "akamai:index/PropertyHostnameCertStatus:PropertyHostnameCertStatus": {
             "properties": {
+                "authorizations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyHostnameCertStatusAuthorization:PropertyHostnameCertStatusAuthorization"
+                    },
+                    "description": "Details of domain validation methods available for your certificate.\n"
+                },
                 "hostname": {
                     "type": "string",
                     "description": "The hostname part of the CNAME record used to validate the certificate's domain.\n"
@@ -4048,10 +4254,153 @@
             "language": {
                 "nodejs": {
                     "requiredOutputs": [
+                        "authorizations",
                         "hostname",
                         "productionStatus",
                         "stagingStatus",
                         "target"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyHostnameCertStatusAuthorization:PropertyHostnameCertStatusAuthorization": {
+            "properties": {
+                "dns01s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyHostnameCertStatusAuthorizationDns01:PropertyHostnameCertStatusAuthorizationDns01"
+                    },
+                    "description": "Details on the manual DNS validation method.\n"
+                },
+                "http01s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyHostnameCertStatusAuthorizationHttp01:PropertyHostnameCertStatusAuthorizationHttp01"
+                    },
+                    "description": "Details on the manual HTTP validation method.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the validation that proves you control the domains listed in the certificate request.\n"
+                },
+                "validUntil": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the domain validation challenge expires.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "dns01s",
+                        "http01s",
+                        "status",
+                        "validUntil"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyHostnameCertStatusAuthorizationDns01:PropertyHostnameCertStatusAuthorizationDns01": {
+            "properties": {
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyHostnameCertStatusAuthorizationDns01Result:PropertyHostnameCertStatusAuthorizationDns01Result"
+                    },
+                    "description": "Details on the validation challenge generation.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The token you need to copy to the DNS TXT record.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "results",
+                        "value"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyHostnameCertStatusAuthorizationDns01Result:PropertyHostnameCertStatusAuthorizationDns01Result": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "A descriptive message on the challenge generation process.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).\n"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the result was generated.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "message",
+                        "source",
+                        "timestamp"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyHostnameCertStatusAuthorizationHttp01:PropertyHostnameCertStatusAuthorizationHttp01": {
+            "properties": {
+                "body": {
+                    "type": "string",
+                    "description": "The token you need to copy to the file on your origin server.\n"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/PropertyHostnameCertStatusAuthorizationHttp01Result:PropertyHostnameCertStatusAuthorizationHttp01Result"
+                    },
+                    "description": "Details on the validation challenge generation.\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The location on your origin server where you save the file with the token.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "body",
+                        "results",
+                        "url"
+                    ]
+                }
+            }
+        },
+        "akamai:index/PropertyHostnameCertStatusAuthorizationHttp01Result:PropertyHostnameCertStatusAuthorizationHttp01Result": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "A descriptive message on the challenge generation process.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).\n"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the result was generated.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "message",
+                        "source",
+                        "timestamp"
                     ]
                 }
             }
@@ -4398,6 +4747,164 @@
             "required": [
                 "action",
                 "ipNetworkLists"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getAppsecAdvancedSettingsUrlEvasionDefenseRule:getAppsecAdvancedSettingsUrlEvasionDefenseRule": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "The URL evasion mitigation rule action.\n"
+                },
+                "conditionOperator": {
+                    "type": "string",
+                    "description": "Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.\n"
+                },
+                "conditions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition:getAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition"
+                    },
+                    "description": "The list of match conditions.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The URL evasion mitigation rule description.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The URL evasion mitigation rule name.\n"
+                },
+                "ruleId": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the URL evasion mitigation rule.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "action",
+                "conditionOperator",
+                "conditions",
+                "description",
+                "name",
+                "ruleId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition:getAppsecAdvancedSettingsUrlEvasionDefenseRuleCondition": {
+            "properties": {
+                "clientLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The clientLists that trigger the condition. This only applies to the `clientListMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "extensions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The file extensions that trigger the condition. This only applies to the `extensionMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "filenames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The filenames that trigger the condition. This only applies to the `filenameMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "header": {
+                    "type": "string",
+                    "description": "The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "hosts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The hostnames that trigger the condition. This only applies to the `hostMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "ips": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The IPs that trigger the condition. This only applies to the `ipMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "methods": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "nameCaseSensitive": {
+                    "type": "boolean",
+                    "description": "Whether to consider the case-sensitivity of the provided query parameter \u003cspan pulumi-lang-nodejs=\"`name`\" pulumi-lang-dotnet=\"`Name`\" pulumi-lang-go=\"`name`\" pulumi-lang-python=\"`name`\" pulumi-lang-yaml=\"`name`\" pulumi-lang-java=\"`name`\" pulumi-lang-hcl=\"`name`\"\u003e`name`\u003c/span\u003e. This only applies to the `uriQueryMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "paths": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The paths that trigger the condition. This only applies to the  `pathMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "positiveMatch": {
+                    "type": "boolean",
+                    "description": "Whether the condition should trigger on a match (\u003cspan pulumi-lang-nodejs=\"`true`\" pulumi-lang-dotnet=\"`True`\" pulumi-lang-go=\"`true`\" pulumi-lang-python=\"`true`\" pulumi-lang-yaml=\"`true`\" pulumi-lang-java=\"`true`\" pulumi-lang-hcl=\"`true`\"\u003e`true`\u003c/span\u003e) or a lack of match (\u003cspan pulumi-lang-nodejs=\"`false`\" pulumi-lang-dotnet=\"`False`\" pulumi-lang-go=\"`false`\" pulumi-lang-python=\"`false`\" pulumi-lang-yaml=\"`false`\" pulumi-lang-java=\"`false`\" pulumi-lang-hcl=\"`false`\"\u003e`false`\u003c/span\u003e).\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The condition type to match on.\n"
+                },
+                "useHeaders": {
+                    "type": "boolean",
+                    "description": "Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The query parameter value if the condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e is `uriQueryMatch` and header value if the condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e is `requestHeaderMatch`. This only applies when the condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e is `uriQueryMatch` or `requestHeaderMatch`.\n"
+                },
+                "valueCaseSensitive": {
+                    "type": "boolean",
+                    "description": "Whether to consider the case-sensitivity of the provided \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\" pulumi-lang-hcl=\"`value`\"\u003e`value`\u003c/span\u003e. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                },
+                "valueWildcard": {
+                    "type": "boolean",
+                    "description": "Whether the provided parameter \u003cspan pulumi-lang-nodejs=\"`value`\" pulumi-lang-dotnet=\"`Value`\" pulumi-lang-go=\"`value`\" pulumi-lang-python=\"`value`\" pulumi-lang-yaml=\"`value`\" pulumi-lang-java=\"`value`\" pulumi-lang-hcl=\"`value`\"\u003e`value`\u003c/span\u003e is a wildcard. This only applies to the `requestHeaderMatch and `uriQueryMatch` condition \u003cspan pulumi-lang-nodejs=\"`type`\" pulumi-lang-dotnet=\"`Type`\" pulumi-lang-go=\"`type`\" pulumi-lang-python=\"`type`\" pulumi-lang-yaml=\"`type`\" pulumi-lang-java=\"`type`\" pulumi-lang-hcl=\"`type`\"\u003e`type`\u003c/span\u003e.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "clientLists",
+                "extensions",
+                "filenames",
+                "header",
+                "hosts",
+                "ips",
+                "methods",
+                "name",
+                "nameCaseSensitive",
+                "paths",
+                "positiveMatch",
+                "type",
+                "useHeaders",
+                "value",
+                "valueCaseSensitive",
+                "valueWildcard"
             ],
             "language": {
                 "nodejs": {
@@ -4969,6 +5476,53 @@
                 }
             }
         },
+        "akamai:index/getAppsecWafAiRulesAiRule:getAppsecWafAiRulesAiRule": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action taken when the AI rule is triggered. Possible values: alert, deny, deny_custom_\u003ccustom_deny_id\u003e, none.\n"
+                },
+                "conditionException": {
+                    "type": "string",
+                    "description": "JSON-encoded list of group-level condition exceptions inherited by this AI rule. These are read-only and can only be set via the Akamai Control Center UI on the attack group. Cannot be managed via Terraform.\n"
+                },
+                "riskScoreGroup": {
+                    "type": "string",
+                    "description": "Risk score group the AI rule belongs to.\n"
+                },
+                "ruleDescription": {
+                    "type": "string",
+                    "description": "Description of what the AI rule detects.\n"
+                },
+                "ruleId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the AI rule.\n"
+                },
+                "ruleVersion": {
+                    "type": "integer",
+                    "description": "Version of the AI rule.\n"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Name of the AI rule.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "action",
+                "conditionException",
+                "riskScoreGroup",
+                "ruleDescription",
+                "ruleId",
+                "ruleVersion",
+                "title"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getAppsecWafRulesetAttackGroup:getAppsecWafRulesetAttackGroup": {
             "properties": {
                 "attackGroup": {
@@ -5194,7 +5748,8 @@
                 },
                 "cloneDnsNames": {
                     "type": "boolean",
-                    "description": "Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created\n"
+                    "description": "Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created\n",
+                    "deprecationMessage": "Use\u003cspan pulumi-lang-nodejs=\" enableForAllSans \" pulumi-lang-dotnet=\" EnableForAllSans \" pulumi-lang-go=\" enableForAllSans \" pulumi-lang-python=\" enable_for_all_sans \" pulumi-lang-yaml=\" enableForAllSans \" pulumi-lang-java=\" enableForAllSans \" pulumi-lang-hcl=\" enable_for_all_sans \"\u003e enableForAllSans \u003c/span\u003einstead."
                 },
                 "disallowedTlsVersions": {
                     "type": "array",
@@ -5202,6 +5757,17 @@
                         "type": "string"
                     },
                     "description": "TLS versions which are disallowed\n"
+                },
+                "dnsNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Explicit DNS names for traffic direction when\u003cspan pulumi-lang-nodejs=\" enableForAllSans \" pulumi-lang-dotnet=\" EnableForAllSans \" pulumi-lang-go=\" enableForAllSans \" pulumi-lang-python=\" enable_for_all_sans \" pulumi-lang-yaml=\" enableForAllSans \" pulumi-lang-java=\" enableForAllSans \" pulumi-lang-hcl=\" enable_for_all_sans \"\u003e enableForAllSans \u003c/span\u003eis false\n"
+                },
+                "enableForAllSans": {
+                    "type": "boolean",
+                    "description": "When true, traffic is directed using all SANs listed in the enrollment\n"
                 },
                 "geography": {
                     "type": "string",
@@ -5229,6 +5795,8 @@
                 "clientMutualAuthentications",
                 "cloneDnsNames",
                 "disallowedTlsVersions",
+                "dnsNames",
+                "enableForAllSans",
                 "geography",
                 "mustHaveCiphers",
                 "ocspStapling",
@@ -5645,7 +6213,8 @@
                 },
                 "cloneDnsNames": {
                     "type": "boolean",
-                    "description": "Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created\n"
+                    "description": "Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created\n",
+                    "deprecationMessage": "Use\u003cspan pulumi-lang-nodejs=\" enableForAllSans \" pulumi-lang-dotnet=\" EnableForAllSans \" pulumi-lang-go=\" enableForAllSans \" pulumi-lang-python=\" enable_for_all_sans \" pulumi-lang-yaml=\" enableForAllSans \" pulumi-lang-java=\" enableForAllSans \" pulumi-lang-hcl=\" enable_for_all_sans \"\u003e enableForAllSans \u003c/span\u003einstead."
                 },
                 "disallowedTlsVersions": {
                     "type": "array",
@@ -5653,6 +6222,17 @@
                         "type": "string"
                     },
                     "description": "TLS versions which are disallowed\n"
+                },
+                "dnsNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Explicit DNS names for traffic direction when\u003cspan pulumi-lang-nodejs=\" enableForAllSans \" pulumi-lang-dotnet=\" EnableForAllSans \" pulumi-lang-go=\" enableForAllSans \" pulumi-lang-python=\" enable_for_all_sans \" pulumi-lang-yaml=\" enableForAllSans \" pulumi-lang-java=\" enableForAllSans \" pulumi-lang-hcl=\" enable_for_all_sans \"\u003e enableForAllSans \u003c/span\u003eis false\n"
+                },
+                "enableForAllSans": {
+                    "type": "boolean",
+                    "description": "When true, traffic is directed using all SANs listed in the enrollment\n"
                 },
                 "geography": {
                     "type": "string",
@@ -5680,6 +6260,8 @@
                 "clientMutualAuthentications",
                 "cloneDnsNames",
                 "disallowedTlsVersions",
+                "dnsNames",
+                "enableForAllSans",
                 "geography",
                 "mustHaveCiphers",
                 "ocspStapling",
@@ -9363,6 +9945,33 @@
                 }
             }
         },
+        "akamai:index/getDatastreamAnswerxServiceIdsServiceId:getDatastreamAnswerxServiceIdsServiceId": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Service ID monitored in the stream.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the service ID.\n"
+                },
+                "product": {
+                    "type": "string",
+                    "description": "The product associated with the service ID.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "id",
+                "name",
+                "product"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getDatastreamAppsecConfigsAppSecConfig:getDatastreamAppsecConfigsAppSecConfig": {
             "properties": {
                 "fileType": {
@@ -9498,6 +10107,13 @@
                     },
                     "description": "List of properties associated with the stream.\n"
                 },
+                "serviceIds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getDatastreamsStreamsDetailServiceId:getDatastreamsStreamsDetailServiceId"
+                    },
+                    "description": "Set of service IDs associated with the stream.\n"
+                },
                 "streamId": {
                     "type": "integer",
                     "description": "Identifies the stream.\n"
@@ -9529,6 +10145,7 @@
                 "modifiedDate",
                 "productId",
                 "properties",
+                "serviceIds",
                 "streamId",
                 "streamName",
                 "streamStatus",
@@ -9582,6 +10199,33 @@
                 "integrationType",
                 "propertyId",
                 "propertyName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getDatastreamsStreamsDetailServiceId:getDatastreamsStreamsDetailServiceId": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Service ID monitored in the stream.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the service ID.\n"
+                },
+                "product": {
+                    "type": "string",
+                    "description": "The product associated with the service ID.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "id",
+                "name",
+                "product"
             ],
             "language": {
                 "nodejs": {
@@ -18578,6 +19222,13 @@
         },
         "akamai:index/getPropertyHostnamesHostnameBucketCertStatus:getPropertyHostnamesHostnameBucketCertStatus": {
             "properties": {
+                "authorizations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorization:getPropertyHostnamesHostnameBucketCertStatusAuthorization"
+                    },
+                    "description": "Details of domain validation methods available for your certificate.\n"
+                },
                 "hostname": {
                     "type": "string",
                     "description": "The hostname part of the CNAME record used to validate the certificate's domain.\n"
@@ -18597,10 +19248,158 @@
             },
             "type": "object",
             "required": [
+                "authorizations",
                 "hostname",
                 "productionStatus",
                 "stagingStatus",
                 "target"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorization:getPropertyHostnamesHostnameBucketCertStatusAuthorization": {
+            "properties": {
+                "dns01s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01:getPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01"
+                    },
+                    "description": "Details on the manual DNS validation method.\n"
+                },
+                "http01s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01:getPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01"
+                    },
+                    "description": "Details on the manual HTTP validation method.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the validation that proves you control the domains listed in the certificate request.\n"
+                },
+                "validUntil": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the domain validation challenge expires.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dns01s",
+                "http01s",
+                "status",
+                "validUntil"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01:getPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01": {
+            "properties": {
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result:getPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result"
+                    },
+                    "description": "Details on the validation challenge generation.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The token you need to copy to the DNS TXT record.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "results",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result:getPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "A descriptive message on the challenge generation process.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).\n"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the result was generated.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "source",
+                "timestamp"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01:getPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01": {
+            "properties": {
+                "body": {
+                    "type": "string",
+                    "description": "The token you need to copy to the file on your origin server.\n"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result:getPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result"
+                    },
+                    "description": "Details on the validation challenge generation.\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The location on your origin server where you save the file with the token.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "body",
+                "results",
+                "url"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result:getPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "A descriptive message on the challenge generation process.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).\n"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the result was generated.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "source",
+                "timestamp"
             ],
             "language": {
                 "nodejs": {
@@ -18664,6 +19463,13 @@
         },
         "akamai:index/getPropertyHostnamesHostnameCertStatus:getPropertyHostnamesHostnameCertStatus": {
             "properties": {
+                "authorizations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameCertStatusAuthorization:getPropertyHostnamesHostnameCertStatusAuthorization"
+                    },
+                    "description": "Details of domain validation methods available for your certificate.\n"
+                },
                 "hostname": {
                     "type": "string",
                     "description": "The hostname part of the CNAME record used to validate the certificate's domain.\n"
@@ -18683,10 +19489,158 @@
             },
             "type": "object",
             "required": [
+                "authorizations",
                 "hostname",
                 "productionStatus",
                 "stagingStatus",
                 "target"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameCertStatusAuthorization:getPropertyHostnamesHostnameCertStatusAuthorization": {
+            "properties": {
+                "dns01s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameCertStatusAuthorizationDns01:getPropertyHostnamesHostnameCertStatusAuthorizationDns01"
+                    },
+                    "description": "Details on the manual DNS validation method.\n"
+                },
+                "http01s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameCertStatusAuthorizationHttp01:getPropertyHostnamesHostnameCertStatusAuthorizationHttp01"
+                    },
+                    "description": "Details on the manual HTTP validation method.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the validation that proves you control the domains listed in the certificate request.\n"
+                },
+                "validUntil": {
+                    "type": "string",
+                    "description": "An ISO 8601 timestamp indicating when the domain validation challenge expires.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dns01s",
+                "http01s",
+                "status",
+                "validUntil"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameCertStatusAuthorizationDns01:getPropertyHostnamesHostnameCertStatusAuthorizationDns01": {
+            "properties": {
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameCertStatusAuthorizationDns01Result:getPropertyHostnamesHostnameCertStatusAuthorizationDns01Result"
+                    },
+                    "description": "Details on the validation challenge generation.\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The token you need to copy to the DNS TXT record.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "results",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameCertStatusAuthorizationDns01Result:getPropertyHostnamesHostnameCertStatusAuthorizationDns01Result": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "A descriptive message on the challenge generation process.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).\n"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the result was generated.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "source",
+                "timestamp"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameCertStatusAuthorizationHttp01:getPropertyHostnamesHostnameCertStatusAuthorizationHttp01": {
+            "properties": {
+                "body": {
+                    "type": "string",
+                    "description": "The token you need to copy to the file on your origin server.\n"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result:getPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result"
+                    },
+                    "description": "Details on the validation challenge generation.\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The location on your origin server where you save the file with the token.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "body",
+                "results",
+                "url"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result:getPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "A descriptive message on the challenge generation process.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).\n"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "description": "The ISO 8601 timestamp indicating when the result was generated.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "message",
+                "source",
+                "timestamp"
             ],
             "language": {
                 "nodejs": {
@@ -23612,6 +24566,92 @@
                 "type": "object"
             }
         },
+        "akamai:index/appsecAdvancedSettingsUrlEvasionDefense:AppsecAdvancedSettingsUrlEvasionDefense": {
+            "properties": {
+                "bypassLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Client list identifiers for trusted clients who are exempt from URL evasion mitigation rules."
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "Security configuration ID."
+                },
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/AppsecAdvancedSettingsUrlEvasionDefenseRule:AppsecAdvancedSettingsUrlEvasionDefenseRule"
+                    },
+                    "description": "URL Evasion Defense rules."
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Sets whether the feature is \u003cspan pulumi-lang-nodejs=\"`enabled`\" pulumi-lang-dotnet=\"`Enabled`\" pulumi-lang-go=\"`enabled`\" pulumi-lang-python=\"`enabled`\" pulumi-lang-yaml=\"`enabled`\" pulumi-lang-java=\"`enabled`\" pulumi-lang-hcl=\"`enabled`\"\u003e`enabled`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`disabled`\" pulumi-lang-dotnet=\"`Disabled`\" pulumi-lang-go=\"`disabled`\" pulumi-lang-python=\"`disabled`\" pulumi-lang-yaml=\"`disabled`\" pulumi-lang-java=\"`disabled`\" pulumi-lang-hcl=\"`disabled`\"\u003e`disabled`\u003c/span\u003e."
+                }
+            },
+            "required": [
+                "configId",
+                "status"
+            ],
+            "inputProperties": {
+                "bypassLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Client list identifiers for trusted clients who are exempt from URL evasion mitigation rules."
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "Security configuration ID."
+                },
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/AppsecAdvancedSettingsUrlEvasionDefenseRule:AppsecAdvancedSettingsUrlEvasionDefenseRule"
+                    },
+                    "description": "URL Evasion Defense rules."
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Sets whether the feature is \u003cspan pulumi-lang-nodejs=\"`enabled`\" pulumi-lang-dotnet=\"`Enabled`\" pulumi-lang-go=\"`enabled`\" pulumi-lang-python=\"`enabled`\" pulumi-lang-yaml=\"`enabled`\" pulumi-lang-java=\"`enabled`\" pulumi-lang-hcl=\"`enabled`\"\u003e`enabled`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`disabled`\" pulumi-lang-dotnet=\"`Disabled`\" pulumi-lang-go=\"`disabled`\" pulumi-lang-python=\"`disabled`\" pulumi-lang-yaml=\"`disabled`\" pulumi-lang-java=\"`disabled`\" pulumi-lang-hcl=\"`disabled`\"\u003e`disabled`\u003c/span\u003e."
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "status"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AppsecAdvancedSettingsUrlEvasionDefense resources.\n",
+                "properties": {
+                    "bypassLists": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Client list identifiers for trusted clients who are exempt from URL evasion mitigation rules."
+                    },
+                    "configId": {
+                        "type": "integer",
+                        "description": "Security configuration ID."
+                    },
+                    "rules": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/AppsecAdvancedSettingsUrlEvasionDefenseRule:AppsecAdvancedSettingsUrlEvasionDefenseRule"
+                        },
+                        "description": "URL Evasion Defense rules."
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Sets whether the feature is \u003cspan pulumi-lang-nodejs=\"`enabled`\" pulumi-lang-dotnet=\"`Enabled`\" pulumi-lang-go=\"`enabled`\" pulumi-lang-python=\"`enabled`\" pulumi-lang-yaml=\"`enabled`\" pulumi-lang-java=\"`enabled`\" pulumi-lang-hcl=\"`enabled`\"\u003e`enabled`\u003c/span\u003e or \u003cspan pulumi-lang-nodejs=\"`disabled`\" pulumi-lang-dotnet=\"`Disabled`\" pulumi-lang-go=\"`disabled`\" pulumi-lang-python=\"`disabled`\" pulumi-lang-yaml=\"`disabled`\" pulumi-lang-java=\"`disabled`\" pulumi-lang-hcl=\"`disabled`\"\u003e`disabled`\u003c/span\u003e."
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions": {
             "properties": {
                 "configId": {
@@ -24331,6 +25371,95 @@
                 "type": "object"
             }
         },
+        "akamai:index/appsecWafAiRules:AppsecWafAiRules": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action to set for the AI rule specified by rule_id. Valid values: alert, deny, deny_custom_\u003ccustom_deny_id\u003e, none. Mutually exclusive with ai_rule_status."
+                },
+                "aiRuleStatus": {
+                    "type": "string",
+                    "description": "AI rules status for the policy. Valid values: ENABLED, DISABLED. NOT_ENROLLED is returned by the API when the policy is not enrolled but cannot be set. Mutually exclusive with\u003cspan pulumi-lang-nodejs=\" ruleId \" pulumi-lang-dotnet=\" RuleId \" pulumi-lang-go=\" ruleId \" pulumi-lang-python=\" rule_id \" pulumi-lang-yaml=\" ruleId \" pulumi-lang-java=\" ruleId \" pulumi-lang-hcl=\" rule_id \"\u003e ruleId \u003c/span\u003eand action."
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration."
+                },
+                "ruleDescription": {
+                    "type": "string",
+                    "description": "Description of what the AI rule detects. Populated automatically from the rule list."
+                },
+                "ruleId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the AI rule whose action to manage. Mutually exclusive with ai_rule_status."
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "Unique identifier of the security policy."
+                }
+            },
+            "required": [
+                "configId",
+                "ruleDescription",
+                "securityPolicyId"
+            ],
+            "inputProperties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action to set for the AI rule specified by rule_id. Valid values: alert, deny, deny_custom_\u003ccustom_deny_id\u003e, none. Mutually exclusive with ai_rule_status."
+                },
+                "aiRuleStatus": {
+                    "type": "string",
+                    "description": "AI rules status for the policy. Valid values: ENABLED, DISABLED. NOT_ENROLLED is returned by the API when the policy is not enrolled but cannot be set. Mutually exclusive with\u003cspan pulumi-lang-nodejs=\" ruleId \" pulumi-lang-dotnet=\" RuleId \" pulumi-lang-go=\" ruleId \" pulumi-lang-python=\" rule_id \" pulumi-lang-yaml=\" ruleId \" pulumi-lang-java=\" ruleId \" pulumi-lang-hcl=\" rule_id \"\u003e ruleId \u003c/span\u003eand action."
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration."
+                },
+                "ruleId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the AI rule whose action to manage. Mutually exclusive with ai_rule_status."
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "Unique identifier of the security policy."
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "securityPolicyId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AppsecWafAiRules resources.\n",
+                "properties": {
+                    "action": {
+                        "type": "string",
+                        "description": "Action to set for the AI rule specified by rule_id. Valid values: alert, deny, deny_custom_\u003ccustom_deny_id\u003e, none. Mutually exclusive with ai_rule_status."
+                    },
+                    "aiRuleStatus": {
+                        "type": "string",
+                        "description": "AI rules status for the policy. Valid values: ENABLED, DISABLED. NOT_ENROLLED is returned by the API when the policy is not enrolled but cannot be set. Mutually exclusive with\u003cspan pulumi-lang-nodejs=\" ruleId \" pulumi-lang-dotnet=\" RuleId \" pulumi-lang-go=\" ruleId \" pulumi-lang-python=\" rule_id \" pulumi-lang-yaml=\" ruleId \" pulumi-lang-java=\" ruleId \" pulumi-lang-hcl=\" rule_id \"\u003e ruleId \u003c/span\u003eand action."
+                    },
+                    "configId": {
+                        "type": "integer",
+                        "description": "Unique identifier of the security configuration."
+                    },
+                    "ruleDescription": {
+                        "type": "string",
+                        "description": "Description of what the AI rule detects. Populated automatically from the rule list."
+                    },
+                    "ruleId": {
+                        "type": "integer",
+                        "description": "Unique identifier of the AI rule whose action to manage. Mutually exclusive with ai_rule_status."
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "Unique identifier of the security policy."
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/appsecWafRuleset:AppsecWafRuleset": {
             "properties": {
                 "attackGroups": {
@@ -24714,6 +25843,50 @@
                     },
                     "configId": {
                         "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/botmanBotAnalyticsSettings:BotmanBotAnalyticsSettings": {
+            "properties": {
+                "botAnalyticsSettings": {
+                    "type": "string",
+                    "description": "JSON-formatted bot analytics settings."
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration."
+                }
+            },
+            "required": [
+                "botAnalyticsSettings",
+                "configId"
+            ],
+            "inputProperties": {
+                "botAnalyticsSettings": {
+                    "type": "string",
+                    "description": "JSON-formatted bot analytics settings."
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration."
+                }
+            },
+            "requiredInputs": [
+                "botAnalyticsSettings",
+                "configId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering BotmanBotAnalyticsSettings resources.\n",
+                "properties": {
+                    "botAnalyticsSettings": {
+                        "type": "string",
+                        "description": "JSON-formatted bot analytics settings."
+                    },
+                    "configId": {
+                        "type": "integer",
+                        "description": "Unique identifier of the security configuration."
                     }
                 },
                 "type": "object"
@@ -25987,11 +27160,16 @@
                 "siebelTicketId": {
                     "type": "string",
                     "description": "Identifies the Siebel ticket, if the activation is linked to one."
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The client list version."
                 }
             },
             "requiredInputs": [
                 "listId",
-                "network"
+                "network",
+                "version"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering ClientlistActivation resources.\n",
@@ -27679,7 +28857,6 @@
                 "commonName",
                 "contractId",
                 "csr",
-                "networkConfiguration",
                 "organization",
                 "secureNetwork",
                 "signatureAlgorithm",
@@ -28055,7 +29232,6 @@
                 "commonName",
                 "contractId",
                 "csr",
-                "networkConfiguration",
                 "organization",
                 "secureNetwork",
                 "sniOnly",
@@ -28321,7 +29497,7 @@
                 },
                 "contractId": {
                     "type": "string",
-                    "description": "Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN."
+                    "description": "Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN."
                 },
                 "createdBy": {
                     "type": "string",
@@ -28356,7 +29532,7 @@
                 },
                 "groupId": {
                     "type": "string",
-                    "description": "Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API."
+                    "description": "Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API."
                 },
                 "httpsConnector": {
                     "$ref": "#/types/akamai:index/DatastreamHttpsConnector:DatastreamHttpsConnector"
@@ -28422,6 +29598,13 @@
                     "type": "integer",
                     "description": "The sample percentage of data that your stream will send to the destination"
                 },
+                "serviceIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Identifies the AnswerX service IDs monitored in the stream."
+                },
                 "splunkConnector": {
                     "$ref": "#/types/akamai:index/DatastreamSplunkConnector:DatastreamSplunkConnector"
                 },
@@ -28478,7 +29661,7 @@
                 },
                 "contractId": {
                     "type": "string",
-                    "description": "Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN."
+                    "description": "Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN."
                 },
                 "datadogConnector": {
                     "$ref": "#/types/akamai:index/DatastreamDatadogConnector:DatastreamDatadogConnector"
@@ -28505,7 +29688,7 @@
                 },
                 "groupId": {
                     "type": "string",
-                    "description": "Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API."
+                    "description": "Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API."
                 },
                 "httpsConnector": {
                     "$ref": "#/types/akamai:index/DatastreamHttpsConnector:DatastreamHttpsConnector"
@@ -28547,6 +29730,13 @@
                 "samplingPercentage": {
                     "type": "integer",
                     "description": "The sample percentage of data that your stream will send to the destination"
+                },
+                "serviceIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Identifies the AnswerX service IDs monitored in the stream."
                 },
                 "splunkConnector": {
                     "$ref": "#/types/akamai:index/DatastreamSplunkConnector:DatastreamSplunkConnector"
@@ -28590,7 +29780,7 @@
                     },
                     "contractId": {
                         "type": "string",
-                        "description": "Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN."
+                        "description": "Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN."
                     },
                     "createdBy": {
                         "type": "string",
@@ -28625,7 +29815,7 @@
                     },
                     "groupId": {
                         "type": "string",
-                        "description": "Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API."
+                        "description": "Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API."
                     },
                     "httpsConnector": {
                         "$ref": "#/types/akamai:index/DatastreamHttpsConnector:DatastreamHttpsConnector"
@@ -28691,6 +29881,13 @@
                     "samplingPercentage": {
                         "type": "integer",
                         "description": "The sample percentage of data that your stream will send to the destination"
+                    },
+                    "serviceIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "Identifies the AnswerX service IDs monitored in the stream."
                     },
                     "splunkConnector": {
                         "$ref": "#/types/akamai:index/DatastreamSplunkConnector:DatastreamSplunkConnector"
@@ -29305,6 +30502,10 @@
                         "type": "string"
                     }
                 },
+                "multiProviderDnssec": {
+                    "$ref": "#/types/akamai:index/DnsZoneMultiProviderDnssec:DnsZoneMultiProviderDnssec",
+                    "description": "Multi-signer DNSSEC properties."
+                },
                 "outboundZoneTransfer": {
                     "$ref": "#/types/akamai:index/DnsZoneOutboundZoneTransfer:DnsZoneOutboundZoneTransfer",
                     "description": "Outbound zone transfer properties."
@@ -29357,6 +30558,10 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "multiProviderDnssec": {
+                    "$ref": "#/types/akamai:index/DnsZoneMultiProviderDnssec:DnsZoneMultiProviderDnssec",
+                    "description": "Multi-signer DNSSEC properties."
                 },
                 "outboundZoneTransfer": {
                     "$ref": "#/types/akamai:index/DnsZoneOutboundZoneTransfer:DnsZoneOutboundZoneTransfer",
@@ -29413,6 +30618,10 @@
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "multiProviderDnssec": {
+                        "$ref": "#/types/akamai:index/DnsZoneMultiProviderDnssec:DnsZoneMultiProviderDnssec",
+                        "description": "Multi-signer DNSSEC properties."
                     },
                     "outboundZoneTransfer": {
                         "$ref": "#/types/akamai:index/DnsZoneOutboundZoneTransfer:DnsZoneOutboundZoneTransfer",
@@ -37791,6 +39000,50 @@
                 "type": "object"
             }
         },
+        "akamai:index/getAppsecAdvancedSettingsUrlEvasionDefense:getAppsecAdvancedSettingsUrlEvasionDefense": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAppsecAdvancedSettingsUrlEvasionDefense.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAppsecAdvancedSettingsUrlEvasionDefense.\n",
+                "properties": {
+                    "bypassLists": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "rules": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getAppsecAdvancedSettingsUrlEvasionDefenseRule:getAppsecAdvancedSettingsUrlEvasionDefenseRule"
+                        },
+                        "type": "array"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "bypassLists",
+                    "configId",
+                    "rules",
+                    "status"
+                ],
+                "type": "object"
+            }
+        },
         "akamai:index/getAppsecCustomRulesUsage:getAppsecCustomRulesUsage": {
             "inputs": {
                 "description": "A collection of arguments for invoking getAppsecCustomRulesUsage.\n",
@@ -38224,6 +39477,59 @@
                 "type": "object"
             }
         },
+        "akamai:index/getAppsecWafAiRules:getAppsecWafAiRules": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAppsecWafAiRules.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "securityPolicyId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAppsecWafAiRules.\n",
+                "properties": {
+                    "aiRuleStatus": {
+                        "type": "string"
+                    },
+                    "aiRules": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getAppsecWafAiRulesAiRule:getAppsecWafAiRulesAiRule"
+                        },
+                        "type": "array"
+                    },
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "outputText": {
+                        "type": "string"
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "aiRuleStatus",
+                    "aiRules",
+                    "configId",
+                    "id",
+                    "outputText",
+                    "securityPolicyId"
+                ],
+                "type": "object"
+            }
+        },
         "akamai:index/getAppsecWafRuleset:getAppsecWafRuleset": {
             "inputs": {
                 "description": "A collection of arguments for invoking getAppsecWafRuleset.\n",
@@ -38621,6 +39927,60 @@
         "akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues": {
             "outputs": {
                 "description": "A collection of values returned by getBotmanBotAnalyticsCookieValues.\n",
+                "properties": {
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "json",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getBotmanBotAnalyticsSettings:getBotmanBotAnalyticsSettings": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getBotmanBotAnalyticsSettings.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getBotmanBotAnalyticsSettings.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "json": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "configId",
+                    "json",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "akamai:index/getBotmanBotAnalyticsSettingsValues:getBotmanBotAnalyticsSettingsValues": {
+            "outputs": {
+                "description": "A collection of values returned by getBotmanBotAnalyticsSettingsValues.\n",
                 "properties": {
                     "id": {
                         "description": "The provider-assigned unique ID for this managed resource.",
@@ -41422,25 +42782,33 @@
                         "type": "string",
                         "willReplaceOnChanges": true
                     },
+                    "cpCodeId": {
+                        "type": "string"
+                    },
+                    "cpCodeName": {
+                        "type": "string"
+                    },
                     "groupId": {
                         "type": "string",
                         "willReplaceOnChanges": true
-                    },
-                    "name": {
-                        "type": "string"
                     }
                 },
                 "type": "object",
                 "required": [
                     "contractId",
-                    "groupId",
-                    "name"
+                    "groupId"
                 ]
             },
             "outputs": {
                 "description": "A collection of values returned by getCpCode.\n",
                 "properties": {
                     "contractId": {
+                        "type": "string"
+                    },
+                    "cpCodeId": {
+                        "type": "string"
+                    },
+                    "cpCodeName": {
                         "type": "string"
                     },
                     "createdDate": {
@@ -41453,9 +42821,6 @@
                         "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
-                    "name": {
-                        "type": "string"
-                    },
                     "productIds": {
                         "items": {
                             "type": "string"
@@ -41465,9 +42830,10 @@
                 },
                 "required": [
                     "contractId",
+                    "cpCodeId",
+                    "cpCodeName",
                     "createdDate",
                     "groupId",
-                    "name",
                     "productIds",
                     "id"
                 ],
@@ -41691,6 +43057,39 @@
                 "type": "object"
             }
         },
+        "akamai:index/getDatastreamAnswerxServiceIds:getDatastreamAnswerxServiceIds": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getDatastreamAnswerxServiceIds.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "contractId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getDatastreamAnswerxServiceIds.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "serviceIds": {
+                        "items": {
+                            "$ref": "#/types/akamai:index/getDatastreamAnswerxServiceIdsServiceId:getDatastreamAnswerxServiceIdsServiceId"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "contractId",
+                    "serviceIds"
+                ],
+                "type": "object"
+            }
+        },
         "akamai:index/getDatastreamAppsecConfigs:getDatastreamAppsecConfigs": {
             "inputs": {
                 "description": "A collection of arguments for invoking getDatastreamAppsecConfigs.\n",
@@ -41741,6 +43140,9 @@
             "inputs": {
                 "description": "A collection of arguments for invoking getDatastreamDatasetFields.\n",
                 "properties": {
+                    "logType": {
+                        "type": "string"
+                    },
                     "productId": {
                         "type": "string"
                     }
@@ -41758,6 +43160,9 @@
                     },
                     "id": {
                         "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "logType": {
                         "type": "string"
                     },
                     "productId": {
