@@ -7,11 +7,1264 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 var _ = internal.GetEnvOrDefault
+
+type GetPropertyDomainownershipDomainDomainStatusHistory struct {
+	// The domain's validation status. Possible values are: `REQUEST_ACCEPTED`, `VALIDATION_IN_PROGRESS`, `VALIDATED`, `TOKEN_EXPIRED`, or `INVALIDATED`.
+	DomainStatus string `pulumi:"domainStatus"`
+	// Additional information about the status change.
+	Message string `pulumi:"message"`
+	// The timestamp indicating when the domain status changed.
+	ModifiedDate string `pulumi:"modifiedDate"`
+	// The name of the user who requested the status change.
+	ModifiedUser string `pulumi:"modifiedUser"`
+}
+
+// GetPropertyDomainownershipDomainDomainStatusHistoryInput is an input type that accepts GetPropertyDomainownershipDomainDomainStatusHistoryArgs and GetPropertyDomainownershipDomainDomainStatusHistoryOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainDomainStatusHistoryInput` via:
+//
+//	GetPropertyDomainownershipDomainDomainStatusHistoryArgs{...}
+type GetPropertyDomainownershipDomainDomainStatusHistoryInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainDomainStatusHistoryOutput() GetPropertyDomainownershipDomainDomainStatusHistoryOutput
+	ToGetPropertyDomainownershipDomainDomainStatusHistoryOutputWithContext(context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryOutput
+}
+
+type GetPropertyDomainownershipDomainDomainStatusHistoryArgs struct {
+	// The domain's validation status. Possible values are: `REQUEST_ACCEPTED`, `VALIDATION_IN_PROGRESS`, `VALIDATED`, `TOKEN_EXPIRED`, or `INVALIDATED`.
+	DomainStatus pulumi.StringInput `pulumi:"domainStatus"`
+	// Additional information about the status change.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The timestamp indicating when the domain status changed.
+	ModifiedDate pulumi.StringInput `pulumi:"modifiedDate"`
+	// The name of the user who requested the status change.
+	ModifiedUser pulumi.StringInput `pulumi:"modifiedUser"`
+}
+
+func (GetPropertyDomainownershipDomainDomainStatusHistoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainDomainStatusHistory)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainDomainStatusHistoryArgs) ToGetPropertyDomainownershipDomainDomainStatusHistoryOutput() GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
+	return i.ToGetPropertyDomainownershipDomainDomainStatusHistoryOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainDomainStatusHistoryArgs) ToGetPropertyDomainownershipDomainDomainStatusHistoryOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainDomainStatusHistoryOutput)
+}
+
+// GetPropertyDomainownershipDomainDomainStatusHistoryArrayInput is an input type that accepts GetPropertyDomainownershipDomainDomainStatusHistoryArray and GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainDomainStatusHistoryArrayInput` via:
+//
+//	GetPropertyDomainownershipDomainDomainStatusHistoryArray{ GetPropertyDomainownershipDomainDomainStatusHistoryArgs{...} }
+type GetPropertyDomainownershipDomainDomainStatusHistoryArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput() GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput
+	ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutputWithContext(context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput
+}
+
+type GetPropertyDomainownershipDomainDomainStatusHistoryArray []GetPropertyDomainownershipDomainDomainStatusHistoryInput
+
+func (GetPropertyDomainownershipDomainDomainStatusHistoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyDomainownershipDomainDomainStatusHistory)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainDomainStatusHistoryArray) ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput() GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput {
+	return i.ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainDomainStatusHistoryArray) ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput)
+}
+
+type GetPropertyDomainownershipDomainDomainStatusHistoryOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainDomainStatusHistory)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ToGetPropertyDomainownershipDomainDomainStatusHistoryOutput() GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ToGetPropertyDomainownershipDomainDomainStatusHistoryOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
+	return o
+}
+
+// The domain's validation status. Possible values are: `REQUEST_ACCEPTED`, `VALIDATION_IN_PROGRESS`, `VALIDATED`, `TOKEN_EXPIRED`, or `INVALIDATED`.
+func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) DomainStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainDomainStatusHistory) string { return v.DomainStatus }).(pulumi.StringOutput)
+}
+
+// Additional information about the status change.
+func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainDomainStatusHistory) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The timestamp indicating when the domain status changed.
+func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ModifiedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainDomainStatusHistory) string { return v.ModifiedDate }).(pulumi.StringOutput)
+}
+
+// The name of the user who requested the status change.
+func (o GetPropertyDomainownershipDomainDomainStatusHistoryOutput) ModifiedUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainDomainStatusHistory) string { return v.ModifiedUser }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyDomainownershipDomainDomainStatusHistory)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput) ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput() GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput) ToGetPropertyDomainownershipDomainDomainStatusHistoryArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput) Index(i pulumi.IntInput) GetPropertyDomainownershipDomainDomainStatusHistoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyDomainownershipDomainDomainStatusHistory {
+		return vs[0].([]GetPropertyDomainownershipDomainDomainStatusHistory)[vs[1].(int)]
+	}).(GetPropertyDomainownershipDomainDomainStatusHistoryOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallenge struct {
+	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+	CnameRecord GetPropertyDomainownershipDomainValidationChallengeCnameRecord `pulumi:"cnameRecord"`
+	// The timestamp indicating when the challenge data expires.
+	ExpirationDate string `pulumi:"expirationDate"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+	HttpFile GetPropertyDomainownershipDomainValidationChallengeHttpFile `pulumi:"httpFile"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+	HttpRedirect GetPropertyDomainownershipDomainValidationChallengeHttpRedirect `pulumi:"httpRedirect"`
+	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+	TxtRecord GetPropertyDomainownershipDomainValidationChallengeTxtRecord `pulumi:"txtRecord"`
+}
+
+// GetPropertyDomainownershipDomainValidationChallengeInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeArgs and GetPropertyDomainownershipDomainValidationChallengeOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeInput` via:
+//
+//	GetPropertyDomainownershipDomainValidationChallengeArgs{...}
+type GetPropertyDomainownershipDomainValidationChallengeInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainValidationChallengeOutput() GetPropertyDomainownershipDomainValidationChallengeOutput
+	ToGetPropertyDomainownershipDomainValidationChallengeOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeOutput
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeArgs struct {
+	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+	CnameRecord GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput `pulumi:"cnameRecord"`
+	// The timestamp indicating when the challenge data expires.
+	ExpirationDate pulumi.StringInput `pulumi:"expirationDate"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+	HttpFile GetPropertyDomainownershipDomainValidationChallengeHttpFileInput `pulumi:"httpFile"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+	HttpRedirect GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput `pulumi:"httpRedirect"`
+	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+	TxtRecord GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput `pulumi:"txtRecord"`
+}
+
+func (GetPropertyDomainownershipDomainValidationChallengeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallenge)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeArgs) ToGetPropertyDomainownershipDomainValidationChallengeOutput() GetPropertyDomainownershipDomainValidationChallengeOutput {
+	return i.ToGetPropertyDomainownershipDomainValidationChallengeOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeArgs) ToGetPropertyDomainownershipDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainValidationChallengeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallenge)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeOutput) ToGetPropertyDomainownershipDomainValidationChallengeOutput() GetPropertyDomainownershipDomainValidationChallengeOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeOutput) ToGetPropertyDomainownershipDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeOutput {
+	return o
+}
+
+// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+func (o GetPropertyDomainownershipDomainValidationChallengeOutput) CnameRecord() GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) GetPropertyDomainownershipDomainValidationChallengeCnameRecord {
+		return v.CnameRecord
+	}).(GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput)
+}
+
+// The timestamp indicating when the challenge data expires.
+func (o GetPropertyDomainownershipDomainValidationChallengeOutput) ExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) string { return v.ExpirationDate }).(pulumi.StringOutput)
+}
+
+// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+func (o GetPropertyDomainownershipDomainValidationChallengeOutput) HttpFile() GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) GetPropertyDomainownershipDomainValidationChallengeHttpFile {
+		return v.HttpFile
+	}).(GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput)
+}
+
+// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+func (o GetPropertyDomainownershipDomainValidationChallengeOutput) HttpRedirect() GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) GetPropertyDomainownershipDomainValidationChallengeHttpRedirect {
+		return v.HttpRedirect
+	}).(GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput)
+}
+
+// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+func (o GetPropertyDomainownershipDomainValidationChallengeOutput) TxtRecord() GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallenge) GetPropertyDomainownershipDomainValidationChallengeTxtRecord {
+		return v.TxtRecord
+	}).(GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeCnameRecord struct {
+	// The 'CNAME' record for your domain that you add to the DNS configuration.
+	Name string `pulumi:"name"`
+	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+	Target string `pulumi:"target"`
+}
+
+// GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs and GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput` via:
+//
+//	GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs{...}
+type GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput
+	ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs struct {
+	// The 'CNAME' record for your domain that you add to the DNS configuration.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+	Target pulumi.StringInput `pulumi:"target"`
+}
+
+func (GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeCnameRecord)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
+	return i.ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeCnameRecord)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput {
+	return o
+}
+
+// The 'CNAME' record for your domain that you add to the DNS configuration.
+func (o GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeCnameRecord) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+func (o GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeCnameRecord) string { return v.Target }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeHttpFile struct {
+	// The content of the file that you should place at the specified URL.
+	Content string `pulumi:"content"`
+	// The content type of the file containing the token.
+	ContentType string `pulumi:"contentType"`
+	// The URL where you should place the file containing the challenge token.
+	Path string `pulumi:"path"`
+}
+
+// GetPropertyDomainownershipDomainValidationChallengeHttpFileInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs and GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeHttpFileInput` via:
+//
+//	GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs{...}
+type GetPropertyDomainownershipDomainValidationChallengeHttpFileInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput
+	ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs struct {
+	// The content of the file that you should place at the specified URL.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The content type of the file containing the token.
+	ContentType pulumi.StringInput `pulumi:"contentType"`
+	// The URL where you should place the file containing the challenge token.
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpFile)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
+	return i.ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpFile)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput {
+	return o
+}
+
+// The content of the file that you should place at the specified URL.
+func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpFile) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The content type of the file containing the token.
+func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) ContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpFile) string { return v.ContentType }).(pulumi.StringOutput)
+}
+
+// The URL where you should place the file containing the challenge token.
+func (o GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpFile) string { return v.Path }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeHttpRedirect struct {
+	// The location on your HTTP server where you set up the redirect.
+	From string `pulumi:"from"`
+	// The redirect URL with the token that you place on your HTTP server.
+	To string `pulumi:"to"`
+}
+
+// GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs and GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput` via:
+//
+//	GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs{...}
+type GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput
+	ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs struct {
+	// The location on your HTTP server where you set up the redirect.
+	From pulumi.StringInput `pulumi:"from"`
+	// The redirect URL with the token that you place on your HTTP server.
+	To pulumi.StringInput `pulumi:"to"`
+}
+
+func (GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpRedirect)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
+	return i.ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpRedirect)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput {
+	return o
+}
+
+// The location on your HTTP server where you set up the redirect.
+func (o GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) From() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpRedirect) string { return v.From }).(pulumi.StringOutput)
+}
+
+// The redirect URL with the token that you place on your HTTP server.
+func (o GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput) To() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeHttpRedirect) string { return v.To }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeTxtRecord struct {
+	// The hostname where you should add the 'TXT' record to validate the domain ownership.
+	Name string `pulumi:"name"`
+	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+	Value string `pulumi:"value"`
+}
+
+// GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput is an input type that accepts GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs and GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput` via:
+//
+//	GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs{...}
+type GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput
+	ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutputWithContext(context.Context) GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs struct {
+	// The hostname where you should add the 'TXT' record to validate the domain ownership.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeTxtRecord)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
+	return i.ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput)
+}
+
+type GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeTxtRecord)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput {
+	return o
+}
+
+// The hostname where you should add the 'TXT' record to validate the domain ownership.
+func (o GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeTxtRecord) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+func (o GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainValidationChallengeTxtRecord) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomain struct {
+	// The account's ID.
+	AccountId string `pulumi:"accountId"`
+	// The domain's name.
+	DomainName string `pulumi:"domainName"`
+	// The domain's validation status. Possible values are:
+	// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+	// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+	// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+	// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+	// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+	DomainStatus string `pulumi:"domainStatus"`
+	// The domain's validation challenge details.
+	ValidationChallenge GetPropertyDomainownershipDomainsDomainValidationChallenge `pulumi:"validationChallenge"`
+	// The timestamp indicating when the domain validation was completed.
+	ValidationCompletedDate string `pulumi:"validationCompletedDate"`
+	// The method used to validate the domain. Possible values are:
+	// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+	// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+	// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+	// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+	// * `MANUAL` - For this method, the DOM team manually performed the validation.
+	ValidationMethod string `pulumi:"validationMethod"`
+	// The name of the user who requested the domain validation.
+	ValidationRequestedBy string `pulumi:"validationRequestedBy"`
+	// The timestamp indicating when the domain validation was requested.
+	ValidationRequestedDate string `pulumi:"validationRequestedDate"`
+	// Your domain's validation scope. Possible values are:
+	// * `HOST` - The scope is only the exactly specified domain.
+	// * `WILDCARD` - The scope covers any hostname within one subdomain level.
+	// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+	ValidationScope string `pulumi:"validationScope"`
+}
+
+// GetPropertyDomainownershipDomainsDomainInput is an input type that accepts GetPropertyDomainownershipDomainsDomainArgs and GetPropertyDomainownershipDomainsDomainOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainInput` via:
+//
+//	GetPropertyDomainownershipDomainsDomainArgs{...}
+type GetPropertyDomainownershipDomainsDomainInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainsDomainOutput() GetPropertyDomainownershipDomainsDomainOutput
+	ToGetPropertyDomainownershipDomainsDomainOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainOutput
+}
+
+type GetPropertyDomainownershipDomainsDomainArgs struct {
+	// The account's ID.
+	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// The domain's name.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
+	// The domain's validation status. Possible values are:
+	// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+	// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+	// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+	// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+	// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+	DomainStatus pulumi.StringInput `pulumi:"domainStatus"`
+	// The domain's validation challenge details.
+	ValidationChallenge GetPropertyDomainownershipDomainsDomainValidationChallengeInput `pulumi:"validationChallenge"`
+	// The timestamp indicating when the domain validation was completed.
+	ValidationCompletedDate pulumi.StringInput `pulumi:"validationCompletedDate"`
+	// The method used to validate the domain. Possible values are:
+	// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+	// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+	// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+	// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+	// * `MANUAL` - For this method, the DOM team manually performed the validation.
+	ValidationMethod pulumi.StringInput `pulumi:"validationMethod"`
+	// The name of the user who requested the domain validation.
+	ValidationRequestedBy pulumi.StringInput `pulumi:"validationRequestedBy"`
+	// The timestamp indicating when the domain validation was requested.
+	ValidationRequestedDate pulumi.StringInput `pulumi:"validationRequestedDate"`
+	// Your domain's validation scope. Possible values are:
+	// * `HOST` - The scope is only the exactly specified domain.
+	// * `WILDCARD` - The scope covers any hostname within one subdomain level.
+	// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+	ValidationScope pulumi.StringInput `pulumi:"validationScope"`
+}
+
+func (GetPropertyDomainownershipDomainsDomainArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomain)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainsDomainArgs) ToGetPropertyDomainownershipDomainsDomainOutput() GetPropertyDomainownershipDomainsDomainOutput {
+	return i.ToGetPropertyDomainownershipDomainsDomainOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainsDomainArgs) ToGetPropertyDomainownershipDomainsDomainOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainOutput)
+}
+
+// GetPropertyDomainownershipDomainsDomainArrayInput is an input type that accepts GetPropertyDomainownershipDomainsDomainArray and GetPropertyDomainownershipDomainsDomainArrayOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainArrayInput` via:
+//
+//	GetPropertyDomainownershipDomainsDomainArray{ GetPropertyDomainownershipDomainsDomainArgs{...} }
+type GetPropertyDomainownershipDomainsDomainArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainsDomainArrayOutput() GetPropertyDomainownershipDomainsDomainArrayOutput
+	ToGetPropertyDomainownershipDomainsDomainArrayOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainArrayOutput
+}
+
+type GetPropertyDomainownershipDomainsDomainArray []GetPropertyDomainownershipDomainsDomainInput
+
+func (GetPropertyDomainownershipDomainsDomainArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyDomainownershipDomainsDomain)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainsDomainArray) ToGetPropertyDomainownershipDomainsDomainArrayOutput() GetPropertyDomainownershipDomainsDomainArrayOutput {
+	return i.ToGetPropertyDomainownershipDomainsDomainArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainsDomainArray) ToGetPropertyDomainownershipDomainsDomainArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainArrayOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainsDomainOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomain)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainsDomainOutput) ToGetPropertyDomainownershipDomainsDomainOutput() GetPropertyDomainownershipDomainsDomainOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainsDomainOutput) ToGetPropertyDomainownershipDomainsDomainOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainOutput {
+	return o
+}
+
+// The account's ID.
+func (o GetPropertyDomainownershipDomainsDomainOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.AccountId }).(pulumi.StringOutput)
+}
+
+// The domain's name.
+func (o GetPropertyDomainownershipDomainsDomainOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.DomainName }).(pulumi.StringOutput)
+}
+
+// The domain's validation status. Possible values are:
+// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+func (o GetPropertyDomainownershipDomainsDomainOutput) DomainStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.DomainStatus }).(pulumi.StringOutput)
+}
+
+// The domain's validation challenge details.
+func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationChallenge() GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) GetPropertyDomainownershipDomainsDomainValidationChallenge {
+		return v.ValidationChallenge
+	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeOutput)
+}
+
+// The timestamp indicating when the domain validation was completed.
+func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationCompletedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationCompletedDate }).(pulumi.StringOutput)
+}
+
+// The method used to validate the domain. Possible values are:
+// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+// * `MANUAL` - For this method, the DOM team manually performed the validation.
+func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationMethod }).(pulumi.StringOutput)
+}
+
+// The name of the user who requested the domain validation.
+func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationRequestedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationRequestedBy }).(pulumi.StringOutput)
+}
+
+// The timestamp indicating when the domain validation was requested.
+func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationRequestedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationRequestedDate }).(pulumi.StringOutput)
+}
+
+// Your domain's validation scope. Possible values are:
+// * `HOST` - The scope is only the exactly specified domain.
+// * `WILDCARD` - The scope covers any hostname within one subdomain level.
+// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+func (o GetPropertyDomainownershipDomainsDomainOutput) ValidationScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomain) string { return v.ValidationScope }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainsDomainArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyDomainownershipDomainsDomain)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainsDomainArrayOutput) ToGetPropertyDomainownershipDomainsDomainArrayOutput() GetPropertyDomainownershipDomainsDomainArrayOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainsDomainArrayOutput) ToGetPropertyDomainownershipDomainsDomainArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainArrayOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainsDomainArrayOutput) Index(i pulumi.IntInput) GetPropertyDomainownershipDomainsDomainOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyDomainownershipDomainsDomain {
+		return vs[0].([]GetPropertyDomainownershipDomainsDomain)[vs[1].(int)]
+	}).(GetPropertyDomainownershipDomainsDomainOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallenge struct {
+	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+	CnameRecord GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord `pulumi:"cnameRecord"`
+	// The timestamp indicating when the challenge data expires.
+	ExpirationDate string `pulumi:"expirationDate"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+	HttpFile GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile `pulumi:"httpFile"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+	HttpRedirect GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect `pulumi:"httpRedirect"`
+	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+	TxtRecord GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord `pulumi:"txtRecord"`
+}
+
+// GetPropertyDomainownershipDomainsDomainValidationChallengeInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeInput` via:
+//
+//	GetPropertyDomainownershipDomainsDomainValidationChallengeArgs{...}
+type GetPropertyDomainownershipDomainsDomainValidationChallengeInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeOutput
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeOutput
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeArgs struct {
+	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+	CnameRecord GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput `pulumi:"cnameRecord"`
+	// The timestamp indicating when the challenge data expires.
+	ExpirationDate pulumi.StringInput `pulumi:"expirationDate"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+	HttpFile GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput `pulumi:"httpFile"`
+	// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+	HttpRedirect GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput `pulumi:"httpRedirect"`
+	// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+	TxtRecord GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput `pulumi:"txtRecord"`
+}
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallenge)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
+	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallenge)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeOutput {
+	return o
+}
+
+// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) CnameRecord() GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord {
+		return v.CnameRecord
+	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput)
+}
+
+// The timestamp indicating when the challenge data expires.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) ExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) string { return v.ExpirationDate }).(pulumi.StringOutput)
+}
+
+// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you create a file containing a token and save it on your HTTP server at the provided URL. Alternatively, you can use the 'http_redirect' method.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) HttpFile() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile {
+		return v.HttpFile
+	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput)
+}
+
+// Available only for the 'HOST' validation scope. The details for the HTTP validation method in which you use a redirect URL with the token. Alternatively, you can use the 'http_file' method.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) HttpRedirect() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect {
+		return v.HttpRedirect
+	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput)
+}
+
+// The details of the 'TXT' record with the challenge token that you copy to your DNS configuration to prove you own the domain.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeOutput) TxtRecord() GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallenge) GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord {
+		return v.TxtRecord
+	}).(GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord struct {
+	// The 'CNAME' record for your domain that you add to the DNS configuration.
+	Name string `pulumi:"name"`
+	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+	Target string `pulumi:"target"`
+}
+
+// GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput` via:
+//
+//	GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs{...}
+type GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs struct {
+	// The 'CNAME' record for your domain that you add to the DNS configuration.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+	Target pulumi.StringInput `pulumi:"target"`
+}
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
+	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput {
+	return o
+}
+
+// The 'CNAME' record for your domain that you add to the DNS configuration.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The 'target' value you set in the 'CNAME' record that validates the domain ownership.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecord) string { return v.Target }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile struct {
+	// The content of the file that you should place at the specified URL.
+	Content string `pulumi:"content"`
+	// The content type of the file containing the token.
+	ContentType string `pulumi:"contentType"`
+	// The URL where you should place the file containing the challenge token.
+	Path string `pulumi:"path"`
+}
+
+// GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput` via:
+//
+//	GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs{...}
+type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs struct {
+	// The content of the file that you should place at the specified URL.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The content type of the file containing the token.
+	ContentType pulumi.StringInput `pulumi:"contentType"`
+	// The URL where you should place the file containing the challenge token.
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
+	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput {
+	return o
+}
+
+// The content of the file that you should place at the specified URL.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The content type of the file containing the token.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) ContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile) string {
+		return v.ContentType
+	}).(pulumi.StringOutput)
+}
+
+// The URL where you should place the file containing the challenge token.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFile) string { return v.Path }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect struct {
+	// The location on your HTTP server where you set up the redirect.
+	From string `pulumi:"from"`
+	// The redirect URL with the token that you place on your HTTP server.
+	To string `pulumi:"to"`
+}
+
+// GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput` via:
+//
+//	GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs{...}
+type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs struct {
+	// The location on your HTTP server where you set up the redirect.
+	From pulumi.StringInput `pulumi:"from"`
+	// The redirect URL with the token that you place on your HTTP server.
+	To pulumi.StringInput `pulumi:"to"`
+}
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
+	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput {
+	return o
+}
+
+// The location on your HTTP server where you set up the redirect.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) From() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect) string { return v.From }).(pulumi.StringOutput)
+}
+
+// The redirect URL with the token that you place on your HTTP server.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput) To() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirect) string { return v.To }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord struct {
+	// The hostname where you should add the 'TXT' record to validate the domain ownership.
+	Name string `pulumi:"name"`
+	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+	Value string `pulumi:"value"`
+}
+
+// GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput is an input type that accepts GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs and GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput` via:
+//
+//	GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs{...}
+type GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput
+	ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutputWithContext(context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs struct {
+	// The hostname where you should add the 'TXT' record to validate the domain ownership.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
+	return i.ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs) ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput)
+}
+
+type GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput() GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) ToGetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutputWithContext(ctx context.Context) GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput {
+	return o
+}
+
+// The hostname where you should add the 'TXT' record to validate the domain ownership.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The token you need to copy to the DNS 'TXT' record that validates the domain ownership.
+func (o GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecord) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomain struct {
+	// Your account's ID.
+	AccountId string `pulumi:"accountId"`
+	// Your domain's name.
+	DomainName string `pulumi:"domainName"`
+	// The domain's validation status. Possible values are:
+	// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+	// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+	// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+	// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+	// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+	DomainStatus string `pulumi:"domainStatus"`
+	// The domain's validation challenge details.
+	ValidationChallenge GetPropertyDomainownershipSearchDomainsDomainValidationChallenge `pulumi:"validationChallenge"`
+	// The timestamp indicating when the domain validation was completed.
+	ValidationCompletedDate string `pulumi:"validationCompletedDate"`
+	// The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
+	ValidationLevel string `pulumi:"validationLevel"`
+	// The method used to validate the domain. Possible values are:
+	// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+	// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+	// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+	// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+	// * `MANUAL` - For this method, the DOM team manually performed the validation.
+	ValidationMethod string `pulumi:"validationMethod"`
+	// The name of the user who requested the domain validation.
+	ValidationRequestedBy string `pulumi:"validationRequestedBy"`
+	// The timestamp indicating when the domain validation was requested.
+	ValidationRequestedDate string `pulumi:"validationRequestedDate"`
+	// Your domain's validation scope. Possible values are:
+	// * `HOST` - The scope is only the exactly specified domain.
+	// * `WILDCARD` - The scope covers any hostname within one subdomain level.
+	// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+	ValidationScope string `pulumi:"validationScope"`
+}
+
+// GetPropertyDomainownershipSearchDomainsDomainInput is an input type that accepts GetPropertyDomainownershipSearchDomainsDomainArgs and GetPropertyDomainownershipSearchDomainsDomainOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipSearchDomainsDomainInput` via:
+//
+//	GetPropertyDomainownershipSearchDomainsDomainArgs{...}
+type GetPropertyDomainownershipSearchDomainsDomainInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipSearchDomainsDomainOutput() GetPropertyDomainownershipSearchDomainsDomainOutput
+	ToGetPropertyDomainownershipSearchDomainsDomainOutputWithContext(context.Context) GetPropertyDomainownershipSearchDomainsDomainOutput
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainArgs struct {
+	// Your account's ID.
+	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// Your domain's name.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
+	// The domain's validation status. Possible values are:
+	// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+	// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+	// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+	// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+	// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+	DomainStatus pulumi.StringInput `pulumi:"domainStatus"`
+	// The domain's validation challenge details.
+	ValidationChallenge GetPropertyDomainownershipSearchDomainsDomainValidationChallengeInput `pulumi:"validationChallenge"`
+	// The timestamp indicating when the domain validation was completed.
+	ValidationCompletedDate pulumi.StringInput `pulumi:"validationCompletedDate"`
+	// The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
+	ValidationLevel pulumi.StringInput `pulumi:"validationLevel"`
+	// The method used to validate the domain. Possible values are:
+	// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+	// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+	// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+	// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+	// * `MANUAL` - For this method, the DOM team manually performed the validation.
+	ValidationMethod pulumi.StringInput `pulumi:"validationMethod"`
+	// The name of the user who requested the domain validation.
+	ValidationRequestedBy pulumi.StringInput `pulumi:"validationRequestedBy"`
+	// The timestamp indicating when the domain validation was requested.
+	ValidationRequestedDate pulumi.StringInput `pulumi:"validationRequestedDate"`
+	// Your domain's validation scope. Possible values are:
+	// * `HOST` - The scope is only the exactly specified domain.
+	// * `WILDCARD` - The scope covers any hostname within one subdomain level.
+	// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+	ValidationScope pulumi.StringInput `pulumi:"validationScope"`
+}
+
+func (GetPropertyDomainownershipSearchDomainsDomainArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomain)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainArgs) ToGetPropertyDomainownershipSearchDomainsDomainOutput() GetPropertyDomainownershipSearchDomainsDomainOutput {
+	return i.ToGetPropertyDomainownershipSearchDomainsDomainOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainArgs) ToGetPropertyDomainownershipSearchDomainsDomainOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipSearchDomainsDomainOutput)
+}
+
+// GetPropertyDomainownershipSearchDomainsDomainArrayInput is an input type that accepts GetPropertyDomainownershipSearchDomainsDomainArray and GetPropertyDomainownershipSearchDomainsDomainArrayOutput values.
+// You can construct a concrete instance of `GetPropertyDomainownershipSearchDomainsDomainArrayInput` via:
+//
+//	GetPropertyDomainownershipSearchDomainsDomainArray{ GetPropertyDomainownershipSearchDomainsDomainArgs{...} }
+type GetPropertyDomainownershipSearchDomainsDomainArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyDomainownershipSearchDomainsDomainArrayOutput() GetPropertyDomainownershipSearchDomainsDomainArrayOutput
+	ToGetPropertyDomainownershipSearchDomainsDomainArrayOutputWithContext(context.Context) GetPropertyDomainownershipSearchDomainsDomainArrayOutput
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainArray []GetPropertyDomainownershipSearchDomainsDomainInput
+
+func (GetPropertyDomainownershipSearchDomainsDomainArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyDomainownershipSearchDomainsDomain)(nil)).Elem()
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainArray) ToGetPropertyDomainownershipSearchDomainsDomainArrayOutput() GetPropertyDomainownershipSearchDomainsDomainArrayOutput {
+	return i.ToGetPropertyDomainownershipSearchDomainsDomainArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyDomainownershipSearchDomainsDomainArray) ToGetPropertyDomainownershipSearchDomainsDomainArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyDomainownershipSearchDomainsDomainArrayOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipSearchDomainsDomainOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomain)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ToGetPropertyDomainownershipSearchDomainsDomainOutput() GetPropertyDomainownershipSearchDomainsDomainOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ToGetPropertyDomainownershipSearchDomainsDomainOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainOutput {
+	return o
+}
+
+// Your account's ID.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.AccountId }).(pulumi.StringOutput)
+}
+
+// Your domain's name.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.DomainName }).(pulumi.StringOutput)
+}
+
+// The domain's validation status. Possible values are:
+// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
+// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
+// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
+// * `TOKEN_EXPIRED` - When you haven't completed the validation in the requested time frame and the challenge token is not valid anymore. You need to generate new validation challenges for the domain.
+// * `INVALIDATED` - When the domain was invalidated and Akamai doesn't recognize you as its owner.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) DomainStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.DomainStatus }).(pulumi.StringOutput)
+}
+
+// The domain's validation challenge details.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationChallenge() GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) GetPropertyDomainownershipSearchDomainsDomainValidationChallenge {
+		return v.ValidationChallenge
+	}).(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput)
+}
+
+// The timestamp indicating when the domain validation was completed.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationCompletedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationCompletedDate }).(pulumi.StringOutput)
+}
+
+// The domain's validation level, either 'FQDN' (fully qualified domain name) or 'ROOT/WILDCARD'.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationLevel }).(pulumi.StringOutput)
+}
+
+// The method used to validate the domain. Possible values are:
+// * `DNS_CNAME` - For this method, Akamai generates a `cnameRecord` that you copy as the `target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
+// * `DNS_TXT` - For this method, Akamai generates a `txtRecord` with a token `value` that you copy as the `target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
+// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
+// * `SYSTEM` - This method refers to domains that were automatically validated before Domain Validation Manager (DOM) was introduced.
+// * `MANUAL` - For this method, the DOM team manually performed the validation.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationMethod }).(pulumi.StringOutput)
+}
+
+// The name of the user who requested the domain validation.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationRequestedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationRequestedBy }).(pulumi.StringOutput)
+}
+
+// The timestamp indicating when the domain validation was requested.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationRequestedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationRequestedDate }).(pulumi.StringOutput)
+}
+
+// Your domain's validation scope. Possible values are:
+// * `HOST` - The scope is only the exactly specified domain.
+// * `WILDCARD` - The scope covers any hostname within one subdomain level.
+// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.
+func (o GetPropertyDomainownershipSearchDomainsDomainOutput) ValidationScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyDomainownershipSearchDomainsDomain) string { return v.ValidationScope }).(pulumi.StringOutput)
+}
+
+type GetPropertyDomainownershipSearchDomainsDomainArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyDomainownershipSearchDomainsDomainArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyDomainownershipSearchDomainsDomain)(nil)).Elem()
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainArrayOutput) ToGetPropertyDomainownershipSearchDomainsDomainArrayOutput() GetPropertyDomainownershipSearchDomainsDomainArrayOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainArrayOutput) ToGetPropertyDomainownershipSearchDomainsDomainArrayOutputWithContext(ctx context.Context) GetPropertyDomainownershipSearchDomainsDomainArrayOutput {
+	return o
+}
+
+func (o GetPropertyDomainownershipSearchDomainsDomainArrayOutput) Index(i pulumi.IntInput) GetPropertyDomainownershipSearchDomainsDomainOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyDomainownershipSearchDomainsDomain {
+		return vs[0].([]GetPropertyDomainownershipSearchDomainsDomain)[vs[1].(int)]
+	}).(GetPropertyDomainownershipSearchDomainsDomainOutput)
+}
 
 type GetPropertyDomainownershipSearchDomainsDomainValidationChallenge struct {
 	// The details of the 'CNAME' record you copy to your DNS configuration to prove you own the domain. You should use the 'DNS_CNAME' method in most cases.
@@ -1420,6 +2673,8 @@ func (o GetPropertyHostnamesHostnameBucketArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetPropertyHostnamesHostnameBucketCertStatus struct {
+	// Details of domain validation methods available for your certificate.
+	Authorizations []GetPropertyHostnamesHostnameBucketCertStatusAuthorization `pulumi:"authorizations"`
 	// The hostname part of the CNAME record used to validate the certificate's domain.
 	Hostname string `pulumi:"hostname"`
 	// The certificate's deployment status on the production network.
@@ -1442,6 +2697,8 @@ type GetPropertyHostnamesHostnameBucketCertStatusInput interface {
 }
 
 type GetPropertyHostnamesHostnameBucketCertStatusArgs struct {
+	// Details of domain validation methods available for your certificate.
+	Authorizations GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayInput `pulumi:"authorizations"`
 	// The hostname part of the CNAME record used to validate the certificate's domain.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The certificate's deployment status on the production network.
@@ -1503,6 +2760,13 @@ func (o GetPropertyHostnamesHostnameBucketCertStatusOutput) ToGetPropertyHostnam
 	return o
 }
 
+// Details of domain validation methods available for your certificate.
+func (o GetPropertyHostnamesHostnameBucketCertStatusOutput) Authorizations() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatus) []GetPropertyHostnamesHostnameBucketCertStatusAuthorization {
+		return v.Authorizations
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput)
+}
+
 // The hostname part of the CNAME record used to validate the certificate's domain.
 func (o GetPropertyHostnamesHostnameBucketCertStatusOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatus) string { return v.Hostname }).(pulumi.StringOutput)
@@ -1541,6 +2805,593 @@ func (o GetPropertyHostnamesHostnameBucketCertStatusArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameBucketCertStatus {
 		return vs[0].([]GetPropertyHostnamesHostnameBucketCertStatus)[vs[1].(int)]
 	}).(GetPropertyHostnamesHostnameBucketCertStatusOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorization struct {
+	// Details on the manual DNS validation method.
+	Dns01s []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01 `pulumi:"dns01s"`
+	// Details on the manual HTTP validation method.
+	Http01s []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01 `pulumi:"http01s"`
+	// The status of the validation that proves you control the domains listed in the certificate request.
+	Status string `pulumi:"status"`
+	// An ISO 8601 timestamp indicating when the domain validation challenge expires.
+	ValidUntil string `pulumi:"validUntil"`
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationInput is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArgs and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationInput` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArgs{...}
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArgs struct {
+	// Details on the manual DNS validation method.
+	Dns01s GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayInput `pulumi:"dns01s"`
+	// Details on the manual HTTP validation method.
+	Http01s GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayInput `pulumi:"http01s"`
+	// The status of the validation that proves you control the domains listed in the certificate request.
+	Status pulumi.StringInput `pulumi:"status"`
+	// An ISO 8601 timestamp indicating when the domain validation challenge expires.
+	ValidUntil pulumi.StringInput `pulumi:"validUntil"`
+}
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorization)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArgs) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArgs) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput)
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayInput is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArray and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArray{ GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArgs{...} }
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArray []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationInput
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorization)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArray) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArray) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorization)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput {
+	return o
+}
+
+// Details on the manual DNS validation method.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput) Dns01s() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorization) []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01 {
+		return v.Dns01s
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput)
+}
+
+// Details on the manual HTTP validation method.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput) Http01s() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorization) []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01 {
+		return v.Http01s
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput)
+}
+
+// The status of the validation that proves you control the domains listed in the certificate request.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorization) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the domain validation challenge expires.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput) ValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorization) string { return v.ValidUntil }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorization)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameBucketCertStatusAuthorization {
+		return vs[0].([]GetPropertyHostnamesHostnameBucketCertStatusAuthorization)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01 struct {
+	// Details on the validation challenge generation.
+	Results []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result `pulumi:"results"`
+	// The token you need to copy to the DNS TXT record.
+	Value string `pulumi:"value"`
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Input is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Args and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Input` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Args{...}
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Input interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01OutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Args struct {
+	// Details on the validation challenge generation.
+	Results GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayInput `pulumi:"results"`
+	// The token you need to copy to the DNS TXT record.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Args) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01OutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Args) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01OutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output)
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayInput is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Array and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Array{ GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Args{...} }
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Array []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Input
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Array) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Array) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01OutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output {
+	return o
+}
+
+// Details on the validation challenge generation.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output) Results() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01) []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result {
+		return v.Results
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput)
+}
+
+// The token you need to copy to the DNS TXT record.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01 {
+		return vs[0].([]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result struct {
+	// A descriptive message on the challenge generation process.
+	Message string `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source string `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultInput is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArgs and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultInput` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArgs{...}
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArgs struct {
+	// A descriptive message on the challenge generation process.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source pulumi.StringInput `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArgs) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArgs) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput)
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayInput is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArray and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArray{ GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArgs{...} }
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArray []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultInput
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArray) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArray) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput {
+	return o
+}
+
+// A descriptive message on the challenge generation process.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 timestamp indicating when the result was generated.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result) string {
+		return v.Timestamp
+	}).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result {
+		return vs[0].([]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Result)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01 struct {
+	// The token you need to copy to the file on your origin server.
+	Body string `pulumi:"body"`
+	// Details on the validation challenge generation.
+	Results []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result `pulumi:"results"`
+	// The location on your origin server where you save the file with the token.
+	Url string `pulumi:"url"`
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Input is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Args and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Input` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Args{...}
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Input interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01OutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Args struct {
+	// The token you need to copy to the file on your origin server.
+	Body pulumi.StringInput `pulumi:"body"`
+	// Details on the validation challenge generation.
+	Results GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayInput `pulumi:"results"`
+	// The location on your origin server where you save the file with the token.
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Args) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01OutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Args) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01OutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output)
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayInput is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Array and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Array{ GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Args{...} }
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Array []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Input
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Array) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Array) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01OutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output {
+	return o
+}
+
+// The token you need to copy to the file on your origin server.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output) Body() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01) string { return v.Body }).(pulumi.StringOutput)
+}
+
+// Details on the validation challenge generation.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output) Results() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01) []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result {
+		return v.Results
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput)
+}
+
+// The location on your origin server where you save the file with the token.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01 {
+		return vs[0].([]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result struct {
+	// A descriptive message on the challenge generation process.
+	Message string `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source string `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultInput is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArgs and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultInput` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArgs{...}
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArgs struct {
+	// A descriptive message on the challenge generation process.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source pulumi.StringInput `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArgs) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArgs) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput)
+}
+
+// GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayInput is an input type that accepts GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArray and GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArray{ GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArgs{...} }
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput
+	ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArray []GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultInput
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArray) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArray) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput {
+	return o
+}
+
+// A descriptive message on the challenge generation process.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 timestamp indicating when the result was generated.
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result) string {
+		return v.Timestamp
+	}).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput() GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput) ToGetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result {
+		return vs[0].([]GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Result)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput)
 }
 
 type GetPropertyHostnamesHostnameCcmCertStatus struct {
@@ -1774,6 +3625,8 @@ func (o GetPropertyHostnamesHostnameCcmCertificateArrayOutput) Index(i pulumi.In
 }
 
 type GetPropertyHostnamesHostnameCertStatus struct {
+	// Details of domain validation methods available for your certificate.
+	Authorizations []GetPropertyHostnamesHostnameCertStatusAuthorization `pulumi:"authorizations"`
 	// The hostname part of the CNAME record used to validate the certificate's domain.
 	Hostname string `pulumi:"hostname"`
 	// The certificate's deployment status on the production network.
@@ -1796,6 +3649,8 @@ type GetPropertyHostnamesHostnameCertStatusInput interface {
 }
 
 type GetPropertyHostnamesHostnameCertStatusArgs struct {
+	// Details of domain validation methods available for your certificate.
+	Authorizations GetPropertyHostnamesHostnameCertStatusAuthorizationArrayInput `pulumi:"authorizations"`
 	// The hostname part of the CNAME record used to validate the certificate's domain.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The certificate's deployment status on the production network.
@@ -1857,6 +3712,13 @@ func (o GetPropertyHostnamesHostnameCertStatusOutput) ToGetPropertyHostnamesHost
 	return o
 }
 
+// Details of domain validation methods available for your certificate.
+func (o GetPropertyHostnamesHostnameCertStatusOutput) Authorizations() GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatus) []GetPropertyHostnamesHostnameCertStatusAuthorization {
+		return v.Authorizations
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput)
+}
+
 // The hostname part of the CNAME record used to validate the certificate's domain.
 func (o GetPropertyHostnamesHostnameCertStatusOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatus) string { return v.Hostname }).(pulumi.StringOutput)
@@ -1895,6 +3757,589 @@ func (o GetPropertyHostnamesHostnameCertStatusArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameCertStatus {
 		return vs[0].([]GetPropertyHostnamesHostnameCertStatus)[vs[1].(int)]
 	}).(GetPropertyHostnamesHostnameCertStatusOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorization struct {
+	// Details on the manual DNS validation method.
+	Dns01s []GetPropertyHostnamesHostnameCertStatusAuthorizationDns01 `pulumi:"dns01s"`
+	// Details on the manual HTTP validation method.
+	Http01s []GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01 `pulumi:"http01s"`
+	// The status of the validation that proves you control the domains listed in the certificate request.
+	Status string `pulumi:"status"`
+	// An ISO 8601 timestamp indicating when the domain validation challenge expires.
+	ValidUntil string `pulumi:"validUntil"`
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationArgs and GetPropertyHostnamesHostnameCertStatusAuthorizationOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationInput` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationArgs{...}
+type GetPropertyHostnamesHostnameCertStatusAuthorizationInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationOutput
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationArgs struct {
+	// Details on the manual DNS validation method.
+	Dns01s GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayInput `pulumi:"dns01s"`
+	// Details on the manual HTTP validation method.
+	Http01s GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayInput `pulumi:"http01s"`
+	// The status of the validation that proves you control the domains listed in the certificate request.
+	Status pulumi.StringInput `pulumi:"status"`
+	// An ISO 8601 timestamp indicating when the domain validation challenge expires.
+	ValidUntil pulumi.StringInput `pulumi:"validUntil"`
+}
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorization)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationArgs) ToGetPropertyHostnamesHostnameCertStatusAuthorizationOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationArgs) ToGetPropertyHostnamesHostnameCertStatusAuthorizationOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationOutput)
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationArrayInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationArray and GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationArray{ GetPropertyHostnamesHostnameCertStatusAuthorizationArgs{...} }
+type GetPropertyHostnamesHostnameCertStatusAuthorizationArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationArray []GetPropertyHostnamesHostnameCertStatusAuthorizationInput
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorization)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationArray) ToGetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationArray) ToGetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorization)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationOutput {
+	return o
+}
+
+// Details on the manual DNS validation method.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationOutput) Dns01s() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorization) []GetPropertyHostnamesHostnameCertStatusAuthorizationDns01 {
+		return v.Dns01s
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput)
+}
+
+// Details on the manual HTTP validation method.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationOutput) Http01s() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorization) []GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01 {
+		return v.Http01s
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput)
+}
+
+// The status of the validation that proves you control the domains listed in the certificate request.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorization) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// An ISO 8601 timestamp indicating when the domain validation challenge expires.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationOutput) ValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorization) string { return v.ValidUntil }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorization)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameCertStatusAuthorizationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameCertStatusAuthorization {
+		return vs[0].([]GetPropertyHostnamesHostnameCertStatusAuthorization)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01 struct {
+	// Details on the validation challenge generation.
+	Results []GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result `pulumi:"results"`
+	// The token you need to copy to the DNS TXT record.
+	Value string `pulumi:"value"`
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Input is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Args and GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Input` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Args{...}
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Input interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01OutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Args struct {
+	// Details on the validation challenge generation.
+	Results GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayInput `pulumi:"results"`
+	// The token you need to copy to the DNS TXT record.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Args) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01OutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Args) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01OutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output)
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Array and GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Array{ GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Args{...} }
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Array []GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Input
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Array) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Array) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01OutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output {
+	return o
+}
+
+// Details on the validation challenge generation.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output) Results() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationDns01) []GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result {
+		return v.Results
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput)
+}
+
+// The token you need to copy to the DNS TXT record.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationDns01) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorizationDns01)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01 {
+		return vs[0].([]GetPropertyHostnamesHostnameCertStatusAuthorizationDns01)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result struct {
+	// A descriptive message on the challenge generation process.
+	Message string `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source string `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArgs and GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultInput` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArgs{...}
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArgs struct {
+	// A descriptive message on the challenge generation process.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source pulumi.StringInput `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArgs) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArgs) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput)
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArray and GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArray{ GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArgs{...} }
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArray []GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultInput
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArray) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArray) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput {
+	return o
+}
+
+// A descriptive message on the challenge generation process.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 timestamp indicating when the result was generated.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result {
+		return vs[0].([]GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Result)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01 struct {
+	// The token you need to copy to the file on your origin server.
+	Body string `pulumi:"body"`
+	// Details on the validation challenge generation.
+	Results []GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result `pulumi:"results"`
+	// The location on your origin server where you save the file with the token.
+	Url string `pulumi:"url"`
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Input is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Args and GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Input` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Args{...}
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Input interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01OutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Args struct {
+	// The token you need to copy to the file on your origin server.
+	Body pulumi.StringInput `pulumi:"body"`
+	// Details on the validation challenge generation.
+	Results GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayInput `pulumi:"results"`
+	// The location on your origin server where you save the file with the token.
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Args) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01OutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Args) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01OutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output)
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Array and GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Array{ GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Args{...} }
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Array []GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Input
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Array) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Array) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01OutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output {
+	return o
+}
+
+// The token you need to copy to the file on your origin server.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output) Body() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01) string { return v.Body }).(pulumi.StringOutput)
+}
+
+// Details on the validation challenge generation.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output) Results() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01) []GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result {
+		return v.Results
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput)
+}
+
+// The location on your origin server where you save the file with the token.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01 {
+		return vs[0].([]GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result struct {
+	// A descriptive message on the challenge generation process.
+	Message string `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source string `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArgs and GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultInput` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArgs{...}
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArgs struct {
+	// A descriptive message on the challenge generation process.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+	Source pulumi.StringInput `pulumi:"source"`
+	// The ISO 8601 timestamp indicating when the result was generated.
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArgs) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArgs) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput)
+}
+
+// GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArray and GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayInput` via:
+//
+//	GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArray{ GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArgs{...} }
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput
+	ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArray []GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultInput
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArray) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArray) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return o
+}
+
+// A descriptive message on the challenge generation process.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 timestamp indicating when the result was generated.
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput() GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput) ToGetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result {
+		return vs[0].([]GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Result)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput)
 }
 
 type GetPropertyHostnamesHostnameDomainOwnershipVerification struct {
@@ -5166,6 +7611,22 @@ func (o GetZoneDnssecStatusNewRecordsOutput) LastModifiedDate() pulumi.StringOut
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainDomainStatusHistoryInput)(nil)).Elem(), GetPropertyDomainownershipDomainDomainStatusHistoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainDomainStatusHistoryArrayInput)(nil)).Elem(), GetPropertyDomainownershipDomainDomainStatusHistoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeCnameRecordInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeCnameRecordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpFileInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeHttpFileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeHttpRedirectInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeHttpRedirectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainValidationChallengeTxtRecordInput)(nil)).Elem(), GetPropertyDomainownershipDomainValidationChallengeTxtRecordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainArrayInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordInput)(nil)).Elem(), GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainArrayInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileInput)(nil)).Elem(), GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileArgs{})
@@ -5185,12 +7646,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Input)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Input)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCcmCertStatusInput)(nil)).Elem(), GetPropertyHostnamesHostnameCcmCertStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCcmCertStatusArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCcmCertStatusArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCcmCertificateInput)(nil)).Elem(), GetPropertyHostnamesHostnameCcmCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCcmCertificateArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCcmCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Input)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Input)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameDomainOwnershipVerificationInput)(nil)).Elem(), GetPropertyHostnamesHostnameDomainOwnershipVerificationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameDomainOwnershipVerificationArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameDomainOwnershipVerificationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCnameInput)(nil)).Elem(), GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCnameArgs{})
@@ -5245,6 +7726,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReportinggroupsGroupsGroupContractCpCodeArrayInput)(nil)).Elem(), GetReportinggroupsGroupsGroupContractCpCodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecStatusCurrentRecordsInput)(nil)).Elem(), GetZoneDnssecStatusCurrentRecordsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecStatusNewRecordsInput)(nil)).Elem(), GetZoneDnssecStatusNewRecordsArgs{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainDomainStatusHistoryOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainDomainStatusHistoryArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeCnameRecordOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeHttpFileOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeHttpRedirectOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainValidationChallengeTxtRecordOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeCnameRecordOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpFileOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeHttpRedirectOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipDomainsDomainValidationChallengeTxtRecordOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainOutput{})
+	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeOutput{})
 	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeCnameRecordOutput{})
 	pulumi.RegisterOutputType(GetPropertyDomainownershipSearchDomainsDomainValidationChallengeHttpFileOutput{})
@@ -5264,12 +7761,32 @@ func init() {
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01Output{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationDns01ResultArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01Output{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCcmCertStatusOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCcmCertStatusArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCcmCertificateOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCcmCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01Output{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationDns01ResultArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01Output{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusAuthorizationHttp01ResultArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameDomainOwnershipVerificationOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameDomainOwnershipVerificationArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameDomainOwnershipVerificationValidationCnameOutput{})

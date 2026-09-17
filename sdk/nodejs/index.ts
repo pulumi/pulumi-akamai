@@ -275,6 +275,11 @@ export type AppsecAdvancedSettingsRequestBody = import("./appsecAdvancedSettings
 export const AppsecAdvancedSettingsRequestBody: typeof import("./appsecAdvancedSettingsRequestBody").AppsecAdvancedSettingsRequestBody = null as any;
 utilities.lazyLoad(exports, ["AppsecAdvancedSettingsRequestBody"], () => require("./appsecAdvancedSettingsRequestBody"));
 
+export { AppsecAdvancedSettingsUrlEvasionDefenseArgs, AppsecAdvancedSettingsUrlEvasionDefenseState } from "./appsecAdvancedSettingsUrlEvasionDefense";
+export type AppsecAdvancedSettingsUrlEvasionDefense = import("./appsecAdvancedSettingsUrlEvasionDefense").AppsecAdvancedSettingsUrlEvasionDefense;
+export const AppsecAdvancedSettingsUrlEvasionDefense: typeof import("./appsecAdvancedSettingsUrlEvasionDefense").AppsecAdvancedSettingsUrlEvasionDefense = null as any;
+utilities.lazyLoad(exports, ["AppsecAdvancedSettingsUrlEvasionDefense"], () => require("./appsecAdvancedSettingsUrlEvasionDefense"));
+
 export { AppsecEvalPenaltyBoxConditionsArgs, AppsecEvalPenaltyBoxConditionsState } from "./appsecEvalPenaltyBoxConditions";
 export type AppsecEvalPenaltyBoxConditions = import("./appsecEvalPenaltyBoxConditions").AppsecEvalPenaltyBoxConditions;
 export const AppsecEvalPenaltyBoxConditions: typeof import("./appsecEvalPenaltyBoxConditions").AppsecEvalPenaltyBoxConditions = null as any;
@@ -310,6 +315,11 @@ export type AppsecUrlProtectionPolicy = import("./appsecUrlProtectionPolicy").Ap
 export const AppsecUrlProtectionPolicy: typeof import("./appsecUrlProtectionPolicy").AppsecUrlProtectionPolicy = null as any;
 utilities.lazyLoad(exports, ["AppsecUrlProtectionPolicy"], () => require("./appsecUrlProtectionPolicy"));
 
+export { AppsecWafAiRulesArgs, AppsecWafAiRulesState } from "./appsecWafAiRules";
+export type AppsecWafAiRules = import("./appsecWafAiRules").AppsecWafAiRules;
+export const AppsecWafAiRules: typeof import("./appsecWafAiRules").AppsecWafAiRules = null as any;
+utilities.lazyLoad(exports, ["AppsecWafAiRules"], () => require("./appsecWafAiRules"));
+
 export { AppsecWafRulesetArgs, AppsecWafRulesetState } from "./appsecWafRuleset";
 export type AppsecWafRuleset = import("./appsecWafRuleset").AppsecWafRuleset;
 export const AppsecWafRuleset: typeof import("./appsecWafRuleset").AppsecWafRuleset = null as any;
@@ -344,6 +354,11 @@ export { BotmanBotAnalyticsCookieArgs, BotmanBotAnalyticsCookieState } from "./b
 export type BotmanBotAnalyticsCookie = import("./botmanBotAnalyticsCookie").BotmanBotAnalyticsCookie;
 export const BotmanBotAnalyticsCookie: typeof import("./botmanBotAnalyticsCookie").BotmanBotAnalyticsCookie = null as any;
 utilities.lazyLoad(exports, ["BotmanBotAnalyticsCookie"], () => require("./botmanBotAnalyticsCookie"));
+
+export { BotmanBotAnalyticsSettingsArgs, BotmanBotAnalyticsSettingsState } from "./botmanBotAnalyticsSettings";
+export type BotmanBotAnalyticsSettings = import("./botmanBotAnalyticsSettings").BotmanBotAnalyticsSettings;
+export const BotmanBotAnalyticsSettings: typeof import("./botmanBotAnalyticsSettings").BotmanBotAnalyticsSettings = null as any;
+utilities.lazyLoad(exports, ["BotmanBotAnalyticsSettings"], () => require("./botmanBotAnalyticsSettings"));
 
 export { BotmanBotCategoryExceptionArgs, BotmanBotCategoryExceptionState } from "./botmanBotCategoryException";
 export type BotmanBotCategoryException = import("./botmanBotCategoryException").BotmanBotCategoryException;
@@ -860,6 +875,11 @@ export const getAppsecAdvancedSettingsRequestBody: typeof import("./getAppsecAdv
 export const getAppsecAdvancedSettingsRequestBodyOutput: typeof import("./getAppsecAdvancedSettingsRequestBody").getAppsecAdvancedSettingsRequestBodyOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsRequestBody","getAppsecAdvancedSettingsRequestBodyOutput"], () => require("./getAppsecAdvancedSettingsRequestBody"));
 
+export { GetAppsecAdvancedSettingsUrlEvasionDefenseArgs, GetAppsecAdvancedSettingsUrlEvasionDefenseResult, GetAppsecAdvancedSettingsUrlEvasionDefenseOutputArgs } from "./getAppsecAdvancedSettingsUrlEvasionDefense";
+export const getAppsecAdvancedSettingsUrlEvasionDefense: typeof import("./getAppsecAdvancedSettingsUrlEvasionDefense").getAppsecAdvancedSettingsUrlEvasionDefense = null as any;
+export const getAppsecAdvancedSettingsUrlEvasionDefenseOutput: typeof import("./getAppsecAdvancedSettingsUrlEvasionDefense").getAppsecAdvancedSettingsUrlEvasionDefenseOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsUrlEvasionDefense","getAppsecAdvancedSettingsUrlEvasionDefenseOutput"], () => require("./getAppsecAdvancedSettingsUrlEvasionDefense"));
+
 export { GetAppsecCustomRulesUsageArgs, GetAppsecCustomRulesUsageResult, GetAppsecCustomRulesUsageOutputArgs } from "./getAppsecCustomRulesUsage";
 export const getAppsecCustomRulesUsage: typeof import("./getAppsecCustomRulesUsage").getAppsecCustomRulesUsage = null as any;
 export const getAppsecCustomRulesUsageOutput: typeof import("./getAppsecCustomRulesUsage").getAppsecCustomRulesUsageOutput = null as any;
@@ -899,6 +919,11 @@ export { GetAppsecUrlProtectionPolicyActionsArgs, GetAppsecUrlProtectionPolicyAc
 export const getAppsecUrlProtectionPolicyActions: typeof import("./getAppsecUrlProtectionPolicyActions").getAppsecUrlProtectionPolicyActions = null as any;
 export const getAppsecUrlProtectionPolicyActionsOutput: typeof import("./getAppsecUrlProtectionPolicyActions").getAppsecUrlProtectionPolicyActionsOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecUrlProtectionPolicyActions","getAppsecUrlProtectionPolicyActionsOutput"], () => require("./getAppsecUrlProtectionPolicyActions"));
+
+export { GetAppsecWafAiRulesArgs, GetAppsecWafAiRulesResult, GetAppsecWafAiRulesOutputArgs } from "./getAppsecWafAiRules";
+export const getAppsecWafAiRules: typeof import("./getAppsecWafAiRules").getAppsecWafAiRules = null as any;
+export const getAppsecWafAiRulesOutput: typeof import("./getAppsecWafAiRules").getAppsecWafAiRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecWafAiRules","getAppsecWafAiRulesOutput"], () => require("./getAppsecWafAiRules"));
 
 export { GetAppsecWafRulesetArgs, GetAppsecWafRulesetResult, GetAppsecWafRulesetOutputArgs } from "./getAppsecWafRuleset";
 export const getAppsecWafRuleset: typeof import("./getAppsecWafRuleset").getAppsecWafRuleset = null as any;
@@ -954,6 +979,16 @@ export { GetBotmanBotAnalyticsCookieValuesResult } from "./getBotmanBotAnalytics
 export const getBotmanBotAnalyticsCookieValues: typeof import("./getBotmanBotAnalyticsCookieValues").getBotmanBotAnalyticsCookieValues = null as any;
 export const getBotmanBotAnalyticsCookieValuesOutput: typeof import("./getBotmanBotAnalyticsCookieValues").getBotmanBotAnalyticsCookieValuesOutput = null as any;
 utilities.lazyLoad(exports, ["getBotmanBotAnalyticsCookieValues","getBotmanBotAnalyticsCookieValuesOutput"], () => require("./getBotmanBotAnalyticsCookieValues"));
+
+export { GetBotmanBotAnalyticsSettingsArgs, GetBotmanBotAnalyticsSettingsResult, GetBotmanBotAnalyticsSettingsOutputArgs } from "./getBotmanBotAnalyticsSettings";
+export const getBotmanBotAnalyticsSettings: typeof import("./getBotmanBotAnalyticsSettings").getBotmanBotAnalyticsSettings = null as any;
+export const getBotmanBotAnalyticsSettingsOutput: typeof import("./getBotmanBotAnalyticsSettings").getBotmanBotAnalyticsSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotAnalyticsSettings","getBotmanBotAnalyticsSettingsOutput"], () => require("./getBotmanBotAnalyticsSettings"));
+
+export { GetBotmanBotAnalyticsSettingsValuesResult } from "./getBotmanBotAnalyticsSettingsValues";
+export const getBotmanBotAnalyticsSettingsValues: typeof import("./getBotmanBotAnalyticsSettingsValues").getBotmanBotAnalyticsSettingsValues = null as any;
+export const getBotmanBotAnalyticsSettingsValuesOutput: typeof import("./getBotmanBotAnalyticsSettingsValues").getBotmanBotAnalyticsSettingsValuesOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotAnalyticsSettingsValues","getBotmanBotAnalyticsSettingsValuesOutput"], () => require("./getBotmanBotAnalyticsSettingsValues"));
 
 export { GetBotmanBotCategoryExceptionArgs, GetBotmanBotCategoryExceptionResult, GetBotmanBotCategoryExceptionOutputArgs } from "./getBotmanBotCategoryException";
 export const getBotmanBotCategoryException: typeof import("./getBotmanBotCategoryException").getBotmanBotCategoryException = null as any;
@@ -1274,6 +1309,11 @@ export { GetDatastreamActivationHistoryArgs, GetDatastreamActivationHistoryResul
 export const getDatastreamActivationHistory: typeof import("./getDatastreamActivationHistory").getDatastreamActivationHistory = null as any;
 export const getDatastreamActivationHistoryOutput: typeof import("./getDatastreamActivationHistory").getDatastreamActivationHistoryOutput = null as any;
 utilities.lazyLoad(exports, ["getDatastreamActivationHistory","getDatastreamActivationHistoryOutput"], () => require("./getDatastreamActivationHistory"));
+
+export { GetDatastreamAnswerxServiceIdsArgs, GetDatastreamAnswerxServiceIdsResult, GetDatastreamAnswerxServiceIdsOutputArgs } from "./getDatastreamAnswerxServiceIds";
+export const getDatastreamAnswerxServiceIds: typeof import("./getDatastreamAnswerxServiceIds").getDatastreamAnswerxServiceIds = null as any;
+export const getDatastreamAnswerxServiceIdsOutput: typeof import("./getDatastreamAnswerxServiceIds").getDatastreamAnswerxServiceIdsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatastreamAnswerxServiceIds","getDatastreamAnswerxServiceIdsOutput"], () => require("./getDatastreamAnswerxServiceIds"));
 
 export { GetDatastreamAppsecConfigsArgs, GetDatastreamAppsecConfigsResult, GetDatastreamAppsecConfigsOutputArgs } from "./getDatastreamAppsecConfigs";
 export const getDatastreamAppsecConfigs: typeof import("./getDatastreamAppsecConfigs").getDatastreamAppsecConfigs = null as any;
@@ -2005,6 +2045,8 @@ const _module = {
                 return new AppsecAdvancedSettingsPiiLearning(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
                 return new AppsecAdvancedSettingsRequestBody(name, <any>undefined, { urn })
+            case "akamai:index/appsecAdvancedSettingsUrlEvasionDefense:AppsecAdvancedSettingsUrlEvasionDefense":
+                return new AppsecAdvancedSettingsUrlEvasionDefense(name, <any>undefined, { urn })
             case "akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions":
                 return new AppsecEvalPenaltyBoxConditions(name, <any>undefined, { urn })
             case "akamai:index/appsecPenaltyBoxConditions:AppsecPenaltyBoxConditions":
@@ -2019,6 +2061,8 @@ const _module = {
                 return new AppsecUrlProtectionAction(name, <any>undefined, { urn })
             case "akamai:index/appsecUrlProtectionPolicy:AppsecUrlProtectionPolicy":
                 return new AppsecUrlProtectionPolicy(name, <any>undefined, { urn })
+            case "akamai:index/appsecWafAiRules:AppsecWafAiRules":
+                return new AppsecWafAiRules(name, <any>undefined, { urn })
             case "akamai:index/appsecWafRuleset:AppsecWafRuleset":
                 return new AppsecWafRuleset(name, <any>undefined, { urn })
             case "akamai:index/aprGeneralSettings:AprGeneralSettings":
@@ -2033,6 +2077,8 @@ const _module = {
                 return new BotmanAkamaiBotCategoryAction(name, <any>undefined, { urn })
             case "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie":
                 return new BotmanBotAnalyticsCookie(name, <any>undefined, { urn })
+            case "akamai:index/botmanBotAnalyticsSettings:BotmanBotAnalyticsSettings":
+                return new BotmanBotAnalyticsSettings(name, <any>undefined, { urn })
             case "akamai:index/botmanBotCategoryException:BotmanBotCategoryException":
                 return new BotmanBotCategoryException(name, <any>undefined, { urn })
             case "akamai:index/botmanBotDetectionAction:BotmanBotDetectionAction":
@@ -2260,6 +2306,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsAtt
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsJa4Fingerprint", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsPiiLearning", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsRequestBody", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsUrlEvasionDefense", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecEvalPenaltyBoxConditions", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecPenaltyBoxConditions", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecRapidRules", _module)
@@ -2267,6 +2314,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/appsecSecurityPolicyDefau
 pulumi.runtime.registerResourceModule("akamai", "index/appsecSecurityPolicyProtections", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecUrlProtectionAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecUrlProtectionPolicy", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecWafAiRules", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecWafRuleset", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/aprGeneralSettings", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/aprProtectedOperations", _module)
@@ -2274,6 +2322,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/aprUserAllowList", _modul
 pulumi.runtime.registerResourceModule("akamai", "index/aprUserRiskResponseStrategy", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanAkamaiBotCategoryAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotAnalyticsCookie", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanBotAnalyticsSettings", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotCategoryException", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotDetectionAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotManagementSettings", _module)

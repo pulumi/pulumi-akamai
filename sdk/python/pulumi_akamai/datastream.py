@@ -44,6 +44,7 @@ class DatastreamArgs:
                  s3_compatible_connector: pulumi.Input[Optional['DatastreamS3CompatibleConnectorArgs']] = None,
                  s3_connector: pulumi.Input[Optional['DatastreamS3ConnectorArgs']] = None,
                  sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  splunk_connector: pulumi.Input[Optional['DatastreamSplunkConnectorArgs']] = None,
                  sumologic_connector: pulumi.Input[Optional['DatastreamSumologicConnectorArgs']] = None,
                  trafficpeak_connector: pulumi.Input[Optional['DatastreamTrafficpeakConnectorArgs']] = None):
@@ -55,13 +56,14 @@ class DatastreamArgs:
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
-        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
-        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
         :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] service_ids: Identifies the AnswerX service IDs monitored in the stream.
         """
         pulumi.set(__self__, "active", active)
         pulumi.set(__self__, "delivery_configuration", delivery_configuration)
@@ -106,6 +108,8 @@ class DatastreamArgs:
             pulumi.set(__self__, "s3_connector", s3_connector)
         if sampling_percentage is not None:
             pulumi.set(__self__, "sampling_percentage", sampling_percentage)
+        if service_ids is not None:
+            pulumi.set(__self__, "service_ids", service_ids)
         if splunk_connector is not None:
             pulumi.set(__self__, "splunk_connector", splunk_connector)
         if sumologic_connector is not None:
@@ -186,7 +190,7 @@ class DatastreamArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         """
         return pulumi.get(self, "contract_id")
 
@@ -246,7 +250,7 @@ class DatastreamArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         """
         return pulumi.get(self, "group_id")
 
@@ -357,6 +361,18 @@ class DatastreamArgs:
         pulumi.set(self, "sampling_percentage", value)
 
     @_builtins.property
+    @pulumi.getter(name="serviceIds")
+    def service_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        Identifies the AnswerX service IDs monitored in the stream.
+        """
+        return pulumi.get(self, "service_ids")
+
+    @service_ids.setter
+    def service_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "service_ids", value)
+
+    @_builtins.property
     @pulumi.getter(name="splunkConnector")
     def splunk_connector(self) -> pulumi.Input[Optional['DatastreamSplunkConnectorArgs']]:
         return pulumi.get(self, "splunk_connector")
@@ -417,6 +433,7 @@ class _DatastreamState:
                  s3_compatible_connector: pulumi.Input[Optional['DatastreamS3CompatibleConnectorArgs']] = None,
                  s3_connector: pulumi.Input[Optional['DatastreamS3ConnectorArgs']] = None,
                  sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  splunk_connector: pulumi.Input[Optional['DatastreamSplunkConnectorArgs']] = None,
                  stream_name: pulumi.Input[Optional[_builtins.str]] = None,
                  stream_version: pulumi.Input[Optional[_builtins.int]] = None,
@@ -428,12 +445,12 @@ class _DatastreamState:
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
-        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         :param pulumi.Input[_builtins.str] created_by: The username who created the stream
         :param pulumi.Input[_builtins.str] created_date: The date and time when the stream was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input['DatastreamDeliveryConfigurationArgs'] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
-        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         :param pulumi.Input[_builtins.str] integration_type: The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
         :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
@@ -444,6 +461,7 @@ class _DatastreamState:
         :param pulumi.Input[_builtins.str] product_id: The ID of the product for which the stream was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
         :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] service_ids: Identifies the AnswerX service IDs monitored in the stream.
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
         :param pulumi.Input[_builtins.int] stream_version: Identifies the configuration version of the stream
         """
@@ -507,6 +525,8 @@ class _DatastreamState:
             pulumi.set(__self__, "s3_connector", s3_connector)
         if sampling_percentage is not None:
             pulumi.set(__self__, "sampling_percentage", sampling_percentage)
+        if service_ids is not None:
+            pulumi.set(__self__, "service_ids", service_ids)
         if splunk_connector is not None:
             pulumi.set(__self__, "splunk_connector", splunk_connector)
         if stream_name is not None:
@@ -567,7 +587,7 @@ class _DatastreamState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         """
         return pulumi.get(self, "contract_id")
 
@@ -663,7 +683,7 @@ class _DatastreamState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         """
         return pulumi.get(self, "group_id")
 
@@ -846,6 +866,18 @@ class _DatastreamState:
         pulumi.set(self, "sampling_percentage", value)
 
     @_builtins.property
+    @pulumi.getter(name="serviceIds")
+    def service_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        Identifies the AnswerX service IDs monitored in the stream.
+        """
+        return pulumi.get(self, "service_ids")
+
+    @service_ids.setter
+    def service_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "service_ids", value)
+
+    @_builtins.property
     @pulumi.getter(name="splunkConnector")
     def splunk_connector(self) -> pulumi.Input[Optional['DatastreamSplunkConnectorArgs']]:
         return pulumi.get(self, "splunk_connector")
@@ -925,6 +957,7 @@ class Datastream(pulumi.CustomResource):
                  s3_compatible_connector: pulumi.Input[Optional[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
                  s3_connector: pulumi.Input[Optional[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
                  sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  splunk_connector: pulumi.Input[Optional[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
                  stream_name: pulumi.Input[Optional[_builtins.str]] = None,
                  sumologic_connector: pulumi.Input[Optional[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
@@ -938,14 +971,15 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
-        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
-        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
         :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] service_ids: Identifies the AnswerX service IDs monitored in the stream.
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
         """
         ...
@@ -994,6 +1028,7 @@ class Datastream(pulumi.CustomResource):
                  s3_compatible_connector: pulumi.Input[Optional[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
                  s3_connector: pulumi.Input[Optional[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
                  sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  splunk_connector: pulumi.Input[Optional[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
                  stream_name: pulumi.Input[Optional[_builtins.str]] = None,
                  sumologic_connector: pulumi.Input[Optional[Union['DatastreamSumologicConnectorArgs', 'DatastreamSumologicConnectorArgsDict']]] = None,
@@ -1033,6 +1068,7 @@ class Datastream(pulumi.CustomResource):
             __props__.__dict__["s3_compatible_connector"] = s3_compatible_connector
             __props__.__dict__["s3_connector"] = s3_connector
             __props__.__dict__["sampling_percentage"] = sampling_percentage
+            __props__.__dict__["service_ids"] = service_ids
             __props__.__dict__["splunk_connector"] = splunk_connector
             if stream_name is None and not opts.urn:
                 raise TypeError("Missing required property 'stream_name'")
@@ -1088,6 +1124,7 @@ class Datastream(pulumi.CustomResource):
             s3_compatible_connector: pulumi.Input[Optional[Union['DatastreamS3CompatibleConnectorArgs', 'DatastreamS3CompatibleConnectorArgsDict']]] = None,
             s3_connector: pulumi.Input[Optional[Union['DatastreamS3ConnectorArgs', 'DatastreamS3ConnectorArgsDict']]] = None,
             sampling_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
             splunk_connector: pulumi.Input[Optional[Union['DatastreamSplunkConnectorArgs', 'DatastreamSplunkConnectorArgsDict']]] = None,
             stream_name: pulumi.Input[Optional[_builtins.str]] = None,
             stream_version: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1103,12 +1140,12 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] active: Defining if stream should be active or not
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] app_sec_configs: Identifies the application security configurations monitored in the stream
         :param pulumi.Input[_builtins.bool] collect_midgress: Identifies if stream needs to collect midgress data
-        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        :param pulumi.Input[_builtins.str] contract_id: Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         :param pulumi.Input[_builtins.str] created_by: The username who created the stream
         :param pulumi.Input[_builtins.str] created_date: The date and time when the stream was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dataset_fields: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
         :param pulumi.Input[Union['DatastreamDeliveryConfigurationArgs', 'DatastreamDeliveryConfigurationArgsDict']] delivery_configuration: Provides information about the configuration related to logs (format, file names, delivery frequency)
-        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        :param pulumi.Input[_builtins.str] group_id: Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         :param pulumi.Input[_builtins.str] integration_type: The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
         :param pulumi.Input[_builtins.int] latest_version: Identifies the latest active configuration version of the stream
         :param pulumi.Input[_builtins.str] log_type: Type of logs for the stream
@@ -1119,6 +1156,7 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] product_id: The ID of the product for which the stream was created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] properties: Identifies the properties monitored in the stream
         :param pulumi.Input[_builtins.int] sampling_percentage: The sample percentage of data that your stream will send to the destination
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] service_ids: Identifies the AnswerX service IDs monitored in the stream.
         :param pulumi.Input[_builtins.str] stream_name: The name of the stream
         :param pulumi.Input[_builtins.int] stream_version: Identifies the configuration version of the stream
         """
@@ -1156,6 +1194,7 @@ class Datastream(pulumi.CustomResource):
         __props__.__dict__["s3_compatible_connector"] = s3_compatible_connector
         __props__.__dict__["s3_connector"] = s3_connector
         __props__.__dict__["sampling_percentage"] = sampling_percentage
+        __props__.__dict__["service_ids"] = service_ids
         __props__.__dict__["splunk_connector"] = splunk_connector
         __props__.__dict__["stream_name"] = stream_name
         __props__.__dict__["stream_version"] = stream_version
@@ -1196,7 +1235,7 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[_builtins.str]:
         """
-        Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+        Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
         """
         return pulumi.get(self, "contract_id")
 
@@ -1256,7 +1295,7 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[_builtins.str]:
         """
-        Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+        Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
         """
         return pulumi.get(self, "group_id")
 
@@ -1369,6 +1408,14 @@ class Datastream(pulumi.CustomResource):
         The sample percentage of data that your stream will send to the destination
         """
         return pulumi.get(self, "sampling_percentage")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceIds")
+    def service_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.int]]]:
+        """
+        Identifies the AnswerX service IDs monitored in the stream.
+        """
+        return pulumi.get(self, "service_ids")
 
     @_builtins.property
     @pulumi.getter(name="splunkConnector")

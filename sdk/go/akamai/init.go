@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -129,6 +129,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppsecAdvancedSettingsPiiLearning{}
 	case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
 		r = &AppsecAdvancedSettingsRequestBody{}
+	case "akamai:index/appsecAdvancedSettingsUrlEvasionDefense:AppsecAdvancedSettingsUrlEvasionDefense":
+		r = &AppsecAdvancedSettingsUrlEvasionDefense{}
 	case "akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions":
 		r = &AppsecEvalPenaltyBoxConditions{}
 	case "akamai:index/appsecPenaltyBoxConditions:AppsecPenaltyBoxConditions":
@@ -143,6 +145,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppsecUrlProtectionAction{}
 	case "akamai:index/appsecUrlProtectionPolicy:AppsecUrlProtectionPolicy":
 		r = &AppsecUrlProtectionPolicy{}
+	case "akamai:index/appsecWafAiRules:AppsecWafAiRules":
+		r = &AppsecWafAiRules{}
 	case "akamai:index/appsecWafRuleset:AppsecWafRuleset":
 		r = &AppsecWafRuleset{}
 	case "akamai:index/aprGeneralSettings:AprGeneralSettings":
@@ -157,6 +161,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BotmanAkamaiBotCategoryAction{}
 	case "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie":
 		r = &BotmanBotAnalyticsCookie{}
+	case "akamai:index/botmanBotAnalyticsSettings:BotmanBotAnalyticsSettings":
+		r = &BotmanBotAnalyticsSettings{}
 	case "akamai:index/botmanBotCategoryException:BotmanBotCategoryException":
 		r = &BotmanBotCategoryException{}
 	case "akamai:index/botmanBotDetectionAction:BotmanBotDetectionAction":
@@ -628,6 +634,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/appsecAdvancedSettingsUrlEvasionDefense",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/appsecEvalPenaltyBoxConditions",
 		&module{version},
 	)
@@ -663,6 +674,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/appsecWafAiRules",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/appsecWafRuleset",
 		&module{version},
 	)
@@ -694,6 +710,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/botmanBotAnalyticsCookie",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanBotAnalyticsSettings",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -60,6 +60,7 @@ from .appsec_advanced_settings_attack_payload_logging import *
 from .appsec_advanced_settings_ja4_fingerprint import *
 from .appsec_advanced_settings_pii_learning import *
 from .appsec_advanced_settings_request_body import *
+from .appsec_advanced_settings_url_evasion_defense import *
 from .appsec_eval_penalty_box_conditions import *
 from .appsec_penalty_box_conditions import *
 from .appsec_rapid_rules import *
@@ -67,6 +68,7 @@ from .appsec_security_policy_default_protections import *
 from .appsec_security_policy_protections import *
 from .appsec_url_protection_action import *
 from .appsec_url_protection_policy import *
+from .appsec_waf_ai_rules import *
 from .appsec_waf_ruleset import *
 from .apr_general_settings import *
 from .apr_protected_operations import *
@@ -74,6 +76,7 @@ from .apr_user_allow_list import *
 from .apr_user_risk_response_strategy import *
 from .botman_akamai_bot_category_action import *
 from .botman_bot_analytics_cookie import *
+from .botman_bot_analytics_settings import *
 from .botman_bot_category_exception import *
 from .botman_bot_detection_action import *
 from .botman_bot_management_settings import *
@@ -177,6 +180,7 @@ from .get_appsec_advanced_settings_attack_payload_logging import *
 from .get_appsec_advanced_settings_ja4_fingerprint import *
 from .get_appsec_advanced_settings_pii_learning import *
 from .get_appsec_advanced_settings_request_body import *
+from .get_appsec_advanced_settings_url_evasion_defense import *
 from .get_appsec_custom_rules_usage import *
 from .get_appsec_eval_penalty_box_conditions import *
 from .get_appsec_penalty_box_conditions import *
@@ -185,6 +189,7 @@ from .get_appsec_url_protection_policies import *
 from .get_appsec_url_protection_policies_actions import *
 from .get_appsec_url_protection_policy import *
 from .get_appsec_url_protection_policy_actions import *
+from .get_appsec_waf_ai_rules import *
 from .get_appsec_waf_ruleset import *
 from .get_apr_general_settings import *
 from .get_apr_protected_operations import *
@@ -196,6 +201,8 @@ from .get_botman_akamai_bot_category_action import *
 from .get_botman_akamai_defined_bot import *
 from .get_botman_bot_analytics_cookie import *
 from .get_botman_bot_analytics_cookie_values import *
+from .get_botman_bot_analytics_settings import *
+from .get_botman_bot_analytics_settings_values import *
 from .get_botman_bot_category_exception import *
 from .get_botman_bot_detection import *
 from .get_botman_bot_detection_action import *
@@ -260,6 +267,7 @@ from .get_cps_enrollment import *
 from .get_cps_enrollments import *
 from .get_cps_warnings import *
 from .get_datastream_activation_history import *
+from .get_datastream_answerx_service_ids import *
 from .get_datastream_appsec_configs import *
 from .get_datastream_dataset_fields import *
 from .get_datastreams import *
@@ -829,6 +837,14 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/appsecAdvancedSettingsUrlEvasionDefense",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecAdvancedSettingsUrlEvasionDefense:AppsecAdvancedSettingsUrlEvasionDefense": "AppsecAdvancedSettingsUrlEvasionDefense"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/appsecEvalPenaltyBoxConditions",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -885,6 +901,14 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/appsecWafAiRules",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecWafAiRules:AppsecWafAiRules": "AppsecWafAiRules"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/appsecWafRuleset",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -937,6 +961,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie": "BotmanBotAnalyticsCookie"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanBotAnalyticsSettings",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanBotAnalyticsSettings:BotmanBotAnalyticsSettings": "BotmanBotAnalyticsSettings"
   }
  },
  {

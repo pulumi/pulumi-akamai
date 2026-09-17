@@ -223,8 +223,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// Settings containing network information and TLS Metadata used by CPS
         /// </summary>
-        [Input("networkConfiguration", required: true)]
-        public Input<Inputs.CpsDvEnrollmentNetworkConfigurationArgs> NetworkConfiguration { get; set; } = null!;
+        [Input("networkConfiguration")]
+        public Input<Inputs.CpsDvEnrollmentNetworkConfigurationArgs>? NetworkConfiguration { get; set; }
 
         /// <summary>
         /// Organization information

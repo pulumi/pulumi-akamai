@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,6 +22,8 @@ type DnsZone struct {
 	EndCustomerId   pulumi.StringPtrOutput   `pulumi:"endCustomerId"`
 	Group           pulumi.StringPtrOutput   `pulumi:"group"`
 	Masters         pulumi.StringArrayOutput `pulumi:"masters"`
+	// Multi-signer DNSSEC properties.
+	MultiProviderDnssec DnsZoneMultiProviderDnssecPtrOutput `pulumi:"multiProviderDnssec"`
 	// Outbound zone transfer properties.
 	OutboundZoneTransfer  DnsZoneOutboundZoneTransferPtrOutput `pulumi:"outboundZoneTransfer"`
 	SignAndServe          pulumi.BoolPtrOutput                 `pulumi:"signAndServe"`
@@ -85,6 +87,8 @@ type dnsZoneState struct {
 	EndCustomerId   *string  `pulumi:"endCustomerId"`
 	Group           *string  `pulumi:"group"`
 	Masters         []string `pulumi:"masters"`
+	// Multi-signer DNSSEC properties.
+	MultiProviderDnssec *DnsZoneMultiProviderDnssec `pulumi:"multiProviderDnssec"`
 	// Outbound zone transfer properties.
 	OutboundZoneTransfer  *DnsZoneOutboundZoneTransfer `pulumi:"outboundZoneTransfer"`
 	SignAndServe          *bool                        `pulumi:"signAndServe"`
@@ -104,6 +108,8 @@ type DnsZoneState struct {
 	EndCustomerId   pulumi.StringPtrInput
 	Group           pulumi.StringPtrInput
 	Masters         pulumi.StringArrayInput
+	// Multi-signer DNSSEC properties.
+	MultiProviderDnssec DnsZoneMultiProviderDnssecPtrInput
 	// Outbound zone transfer properties.
 	OutboundZoneTransfer  DnsZoneOutboundZoneTransferPtrInput
 	SignAndServe          pulumi.BoolPtrInput
@@ -125,6 +131,8 @@ type dnsZoneArgs struct {
 	EndCustomerId *string  `pulumi:"endCustomerId"`
 	Group         *string  `pulumi:"group"`
 	Masters       []string `pulumi:"masters"`
+	// Multi-signer DNSSEC properties.
+	MultiProviderDnssec *DnsZoneMultiProviderDnssec `pulumi:"multiProviderDnssec"`
 	// Outbound zone transfer properties.
 	OutboundZoneTransfer  *DnsZoneOutboundZoneTransfer `pulumi:"outboundZoneTransfer"`
 	SignAndServe          *bool                        `pulumi:"signAndServe"`
@@ -142,6 +150,8 @@ type DnsZoneArgs struct {
 	EndCustomerId pulumi.StringPtrInput
 	Group         pulumi.StringPtrInput
 	Masters       pulumi.StringArrayInput
+	// Multi-signer DNSSEC properties.
+	MultiProviderDnssec DnsZoneMultiProviderDnssecPtrInput
 	// Outbound zone transfer properties.
 	OutboundZoneTransfer  DnsZoneOutboundZoneTransferPtrInput
 	SignAndServe          pulumi.BoolPtrInput
@@ -265,6 +275,11 @@ func (o DnsZoneOutput) Group() pulumi.StringPtrOutput {
 
 func (o DnsZoneOutput) Masters() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DnsZone) pulumi.StringArrayOutput { return v.Masters }).(pulumi.StringArrayOutput)
+}
+
+// Multi-signer DNSSEC properties.
+func (o DnsZoneOutput) MultiProviderDnssec() DnsZoneMultiProviderDnssecPtrOutput {
+	return o.ApplyT(func(v *DnsZone) DnsZoneMultiProviderDnssecPtrOutput { return v.MultiProviderDnssec }).(DnsZoneMultiProviderDnssecPtrOutput)
 }
 
 // Outbound zone transfer properties.

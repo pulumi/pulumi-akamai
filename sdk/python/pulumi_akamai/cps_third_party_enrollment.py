@@ -25,7 +25,6 @@ class CpsThirdPartyEnrollmentArgs:
                  common_name: pulumi.Input[_builtins.str],
                  contract_id: pulumi.Input[_builtins.str],
                  csr: pulumi.Input['CpsThirdPartyEnrollmentCsrArgs'],
-                 network_configuration: pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs'],
                  organization: pulumi.Input['CpsThirdPartyEnrollmentOrganizationArgs'],
                  secure_network: pulumi.Input[_builtins.str],
                  sni_only: pulumi.Input[_builtins.bool],
@@ -36,6 +35,7 @@ class CpsThirdPartyEnrollmentArgs:
                  certificate_chain_type: pulumi.Input[Optional[_builtins.str]] = None,
                  change_management: pulumi.Input[Optional[_builtins.bool]] = None,
                  exclude_sans: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_configuration: pulumi.Input[Optional['CpsThirdPartyEnrollmentNetworkConfigurationArgs']] = None,
                  sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  timeouts: pulumi.Input[Optional['CpsThirdPartyEnrollmentTimeoutsArgs']] = None):
@@ -46,7 +46,6 @@ class CpsThirdPartyEnrollmentArgs:
         :param pulumi.Input[_builtins.str] common_name: Common name used for enrollment
         :param pulumi.Input[_builtins.str] contract_id: Contract ID for which enrollment is retrieved
         :param pulumi.Input['CpsThirdPartyEnrollmentCsrArgs'] csr: Data used for generation of Certificate Signing Request
-        :param pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs'] network_configuration: Settings containing network information and TLS metadata used by CPS
         :param pulumi.Input['CpsThirdPartyEnrollmentOrganizationArgs'] organization: Organization information
         :param pulumi.Input[_builtins.str] secure_network: Type of TLS deployment network
         :param pulumi.Input[_builtins.bool] sni_only: Whether Server Name Indication is used for enrollment
@@ -57,6 +56,7 @@ class CpsThirdPartyEnrollmentArgs:
         :param pulumi.Input[_builtins.str] certificate_chain_type: Certificate trust chain type. Default is 'default'
         :param pulumi.Input[_builtins.bool] change_management: When set to false, the certificate will be deployed to both staging and production networks
         :param pulumi.Input[_builtins.bool] exclude_sans: When true, SANs are excluded from the CSR
+        :param pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs'] network_configuration: Settings containing network information and TLS metadata used by CPS
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: List of SANs
         :param pulumi.Input[_builtins.str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
         :param pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs'] timeouts: Enables to set timeout for processing
@@ -65,7 +65,6 @@ class CpsThirdPartyEnrollmentArgs:
         pulumi.set(__self__, "common_name", common_name)
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "csr", csr)
-        pulumi.set(__self__, "network_configuration", network_configuration)
         pulumi.set(__self__, "organization", organization)
         pulumi.set(__self__, "secure_network", secure_network)
         pulumi.set(__self__, "sni_only", sni_only)
@@ -82,6 +81,8 @@ class CpsThirdPartyEnrollmentArgs:
             pulumi.set(__self__, "change_management", change_management)
         if exclude_sans is not None:
             pulumi.set(__self__, "exclude_sans", exclude_sans)
+        if network_configuration is not None:
+            pulumi.set(__self__, "network_configuration", network_configuration)
         if sans is not None:
             pulumi.set(__self__, "sans", sans)
         if signature_algorithm is not None:
@@ -136,18 +137,6 @@ class CpsThirdPartyEnrollmentArgs:
     @csr.setter
     def csr(self, value: pulumi.Input['CpsThirdPartyEnrollmentCsrArgs']):
         pulumi.set(self, "csr", value)
-
-    @_builtins.property
-    @pulumi.getter(name="networkConfiguration")
-    def network_configuration(self) -> pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs']:
-        """
-        Settings containing network information and TLS metadata used by CPS
-        """
-        return pulumi.get(self, "network_configuration")
-
-    @network_configuration.setter
-    def network_configuration(self, value: pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs']):
-        pulumi.set(self, "network_configuration", value)
 
     @_builtins.property
     @pulumi.getter
@@ -268,6 +257,18 @@ class CpsThirdPartyEnrollmentArgs:
     @exclude_sans.setter
     def exclude_sans(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "exclude_sans", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfiguration")
+    def network_configuration(self) -> pulumi.Input[Optional['CpsThirdPartyEnrollmentNetworkConfigurationArgs']]:
+        """
+        Settings containing network information and TLS metadata used by CPS
+        """
+        return pulumi.get(self, "network_configuration")
+
+    @network_configuration.setter
+    def network_configuration(self, value: pulumi.Input[Optional['CpsThirdPartyEnrollmentNetworkConfigurationArgs']]):
+        pulumi.set(self, "network_configuration", value)
 
     @_builtins.property
     @pulumi.getter
@@ -721,8 +722,6 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
                 raise TypeError("Missing required property 'csr'")
             __props__.__dict__["csr"] = csr
             __props__.__dict__["exclude_sans"] = exclude_sans
-            if network_configuration is None and not opts.urn:
-                raise TypeError("Missing required property 'network_configuration'")
             __props__.__dict__["network_configuration"] = network_configuration
             if organization is None and not opts.urn:
                 raise TypeError("Missing required property 'organization'")

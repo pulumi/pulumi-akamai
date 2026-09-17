@@ -19,7 +19,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<Inputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationGetArgs>? ClientMutualAuthentication { get; set; }
 
         /// <summary>
-        /// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+        /// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
         /// </summary>
         [Input("cloneDnsNames")]
         public Input<bool>? CloneDnsNames { get; set; }
@@ -35,6 +35,24 @@ namespace Pulumi.Akamai.Inputs
             get => _disallowedTlsVersions ?? (_disallowedTlsVersions = new InputList<string>());
             set => _disallowedTlsVersions = value;
         }
+
+        [Input("dnsNames")]
+        private InputList<string>? _dnsNames;
+
+        /// <summary>
+        /// Explicit DNS names for traffic direction when EnableForAllSans or CloneDnsNames is false.
+        /// </summary>
+        public InputList<string> DnsNames
+        {
+            get => _dnsNames ?? (_dnsNames = new InputList<string>());
+            set => _dnsNames = value;
+        }
+
+        /// <summary>
+        /// When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated CloneDnsNames attribute. Cannot be used together with clone_dns_names.
+        /// </summary>
+        [Input("enableForAllSans")]
+        public Input<bool>? EnableForAllSans { get; set; }
 
         /// <summary>
         /// Geography type used for enrollment

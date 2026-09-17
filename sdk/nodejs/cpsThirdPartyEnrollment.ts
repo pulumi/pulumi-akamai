@@ -152,9 +152,6 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
             if (args?.csr === undefined && !opts.urn) {
                 throw new Error("Missing required property 'csr'");
             }
-            if (args?.networkConfiguration === undefined && !opts.urn) {
-                throw new Error("Missing required property 'networkConfiguration'");
-            }
             if (args?.organization === undefined && !opts.urn) {
                 throw new Error("Missing required property 'organization'");
             }
@@ -316,7 +313,7 @@ export interface CpsThirdPartyEnrollmentArgs {
     /**
      * Settings containing network information and TLS metadata used by CPS
      */
-    networkConfiguration: pulumi.Input<inputs.CpsThirdPartyEnrollmentNetworkConfiguration>;
+    networkConfiguration?: pulumi.Input<inputs.CpsThirdPartyEnrollmentNetworkConfiguration | undefined>;
     /**
      * Organization information
      */

@@ -62,6 +62,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatastreamsStreamsDetailPropertyResult> Properties;
         /// <summary>
+        /// Set of service IDs associated with the stream.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatastreamsStreamsDetailServiceIdResult> ServiceIds;
+        /// <summary>
         /// Identifies the stream.
         /// </summary>
         public readonly int StreamId;
@@ -104,6 +108,8 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<Outputs.GetDatastreamsStreamsDetailPropertyResult> properties,
 
+            ImmutableArray<Outputs.GetDatastreamsStreamsDetailServiceIdResult> serviceIds,
+
             int streamId,
 
             string streamName,
@@ -124,6 +130,7 @@ namespace Pulumi.Akamai.Outputs
             ModifiedDate = modifiedDate;
             ProductId = productId;
             Properties = properties;
+            ServiceIds = serviceIds;
             StreamId = streamId;
             StreamName = streamName;
             StreamStatus = streamStatus;

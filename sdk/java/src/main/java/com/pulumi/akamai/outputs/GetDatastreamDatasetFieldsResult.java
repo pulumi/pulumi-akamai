@@ -20,6 +20,7 @@ public final class GetDatastreamDatasetFieldsResult {
      * 
      */
     private String id;
+    private @Nullable String logType;
     private @Nullable String productId;
 
     private GetDatastreamDatasetFieldsResult() {}
@@ -32,6 +33,9 @@ public final class GetDatastreamDatasetFieldsResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<String> logType() {
+        return Optional.ofNullable(this.logType);
     }
     public Optional<String> productId() {
         return Optional.ofNullable(this.productId);
@@ -48,12 +52,14 @@ public final class GetDatastreamDatasetFieldsResult {
     public static final class Builder {
         private List<GetDatastreamDatasetFieldsDatasetField> datasetFields;
         private String id;
+        private @Nullable String logType;
         private @Nullable String productId;
         public Builder() {}
         public Builder(GetDatastreamDatasetFieldsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.datasetFields = defaults.datasetFields;
     	      this.id = defaults.id;
+    	      this.logType = defaults.logType;
     	      this.productId = defaults.productId;
         }
 
@@ -77,6 +83,12 @@ public final class GetDatastreamDatasetFieldsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder logType(@Nullable String logType) {
+
+            this.logType = logType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder productId(@Nullable String productId) {
 
             this.productId = productId;
@@ -86,6 +98,7 @@ public final class GetDatastreamDatasetFieldsResult {
             final var _resultValue = new GetDatastreamDatasetFieldsResult();
             _resultValue.datasetFields = datasetFields;
             _resultValue.id = id;
+            _resultValue.logType = logType;
             _resultValue.productId = productId;
             return _resultValue;
         }

@@ -25,7 +25,6 @@ class CpsDvEnrollmentArgs:
                  common_name: pulumi.Input[_builtins.str],
                  contract_id: pulumi.Input[_builtins.str],
                  csr: pulumi.Input['CpsDvEnrollmentCsrArgs'],
-                 network_configuration: pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs'],
                  organization: pulumi.Input['CpsDvEnrollmentOrganizationArgs'],
                  secure_network: pulumi.Input[_builtins.str],
                  signature_algorithm: pulumi.Input[_builtins.str],
@@ -34,6 +33,7 @@ class CpsDvEnrollmentArgs:
                  acknowledge_pre_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
                  allow_duplicate_common_name: pulumi.Input[Optional[_builtins.bool]] = None,
                  certificate_chain_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_configuration: pulumi.Input[Optional['CpsDvEnrollmentNetworkConfigurationArgs']] = None,
                  sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  timeouts: pulumi.Input[Optional['CpsDvEnrollmentTimeoutsArgs']] = None):
         """
@@ -43,7 +43,6 @@ class CpsDvEnrollmentArgs:
         :param pulumi.Input[_builtins.str] common_name: Common name used for enrollment
         :param pulumi.Input[_builtins.str] contract_id: Contract ID for which enrollment is retrieved
         :param pulumi.Input['CpsDvEnrollmentCsrArgs'] csr: Certificate signing request generated during enrollment creation
-        :param pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs'] network_configuration: Settings containing network information and TLS Metadata used by CPS
         :param pulumi.Input['CpsDvEnrollmentOrganizationArgs'] organization: Organization information
         :param pulumi.Input[_builtins.str] secure_network: Type of TLS deployment network
         :param pulumi.Input[_builtins.str] signature_algorithm: SHA algorithm type
@@ -52,6 +51,7 @@ class CpsDvEnrollmentArgs:
         :param pulumi.Input[_builtins.bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification. Default is false
         :param pulumi.Input[_builtins.bool] allow_duplicate_common_name: Allow to duplicate common name. Default is false
         :param pulumi.Input[_builtins.str] certificate_chain_type: Certificate trust chain type. Default is 'default'
+        :param pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs'] network_configuration: Settings containing network information and TLS Metadata used by CPS
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: List of SANs
         :param pulumi.Input['CpsDvEnrollmentTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
@@ -59,7 +59,6 @@ class CpsDvEnrollmentArgs:
         pulumi.set(__self__, "common_name", common_name)
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "csr", csr)
-        pulumi.set(__self__, "network_configuration", network_configuration)
         pulumi.set(__self__, "organization", organization)
         pulumi.set(__self__, "secure_network", secure_network)
         pulumi.set(__self__, "signature_algorithm", signature_algorithm)
@@ -71,6 +70,8 @@ class CpsDvEnrollmentArgs:
             pulumi.set(__self__, "allow_duplicate_common_name", allow_duplicate_common_name)
         if certificate_chain_type is not None:
             pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
+        if network_configuration is not None:
+            pulumi.set(__self__, "network_configuration", network_configuration)
         if sans is not None:
             pulumi.set(__self__, "sans", sans)
         if timeouts is not None:
@@ -123,18 +124,6 @@ class CpsDvEnrollmentArgs:
     @csr.setter
     def csr(self, value: pulumi.Input['CpsDvEnrollmentCsrArgs']):
         pulumi.set(self, "csr", value)
-
-    @_builtins.property
-    @pulumi.getter(name="networkConfiguration")
-    def network_configuration(self) -> pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs']:
-        """
-        Settings containing network information and TLS Metadata used by CPS
-        """
-        return pulumi.get(self, "network_configuration")
-
-    @network_configuration.setter
-    def network_configuration(self, value: pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs']):
-        pulumi.set(self, "network_configuration", value)
 
     @_builtins.property
     @pulumi.getter
@@ -231,6 +220,18 @@ class CpsDvEnrollmentArgs:
     @certificate_chain_type.setter
     def certificate_chain_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_chain_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfiguration")
+    def network_configuration(self) -> pulumi.Input[Optional['CpsDvEnrollmentNetworkConfigurationArgs']]:
+        """
+        Settings containing network information and TLS Metadata used by CPS
+        """
+        return pulumi.get(self, "network_configuration")
+
+    @network_configuration.setter
+    def network_configuration(self, value: pulumi.Input[Optional['CpsDvEnrollmentNetworkConfigurationArgs']]):
+        pulumi.set(self, "network_configuration", value)
 
     @_builtins.property
     @pulumi.getter
@@ -692,8 +693,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
             if csr is None and not opts.urn:
                 raise TypeError("Missing required property 'csr'")
             __props__.__dict__["csr"] = csr
-            if network_configuration is None and not opts.urn:
-                raise TypeError("Missing required property 'network_configuration'")
             __props__.__dict__["network_configuration"] = network_configuration
             if organization is None and not opts.urn:
                 raise TypeError("Missing required property 'organization'")

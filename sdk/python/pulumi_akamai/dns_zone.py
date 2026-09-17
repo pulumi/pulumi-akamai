@@ -28,6 +28,7 @@ class DnsZoneArgs:
                  end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group: pulumi.Input[Optional[_builtins.str]] = None,
                  masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 multi_provider_dnssec: pulumi.Input[Optional['DnsZoneMultiProviderDnssecArgs']] = None,
                  outbound_zone_transfer: pulumi.Input[Optional['DnsZoneOutboundZoneTransferArgs']] = None,
                  sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
                  sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
@@ -36,6 +37,7 @@ class DnsZoneArgs:
         """
         The set of arguments for constructing a DnsZone resource.
 
+        :param pulumi.Input['DnsZoneMultiProviderDnssecArgs'] multi_provider_dnssec: Multi-signer DNSSEC properties.
         :param pulumi.Input['DnsZoneOutboundZoneTransferArgs'] outbound_zone_transfer: Outbound zone transfer properties.
         """
         pulumi.set(__self__, "contract", contract)
@@ -49,6 +51,8 @@ class DnsZoneArgs:
             pulumi.set(__self__, "group", group)
         if masters is not None:
             pulumi.set(__self__, "masters", masters)
+        if multi_provider_dnssec is not None:
+            pulumi.set(__self__, "multi_provider_dnssec", multi_provider_dnssec)
         if outbound_zone_transfer is not None:
             pulumi.set(__self__, "outbound_zone_transfer", outbound_zone_transfer)
         if sign_and_serve is not None:
@@ -124,6 +128,18 @@ class DnsZoneArgs:
         pulumi.set(self, "masters", value)
 
     @_builtins.property
+    @pulumi.getter(name="multiProviderDnssec")
+    def multi_provider_dnssec(self) -> pulumi.Input[Optional['DnsZoneMultiProviderDnssecArgs']]:
+        """
+        Multi-signer DNSSEC properties.
+        """
+        return pulumi.get(self, "multi_provider_dnssec")
+
+    @multi_provider_dnssec.setter
+    def multi_provider_dnssec(self, value: pulumi.Input[Optional['DnsZoneMultiProviderDnssecArgs']]):
+        pulumi.set(self, "multi_provider_dnssec", value)
+
+    @_builtins.property
     @pulumi.getter(name="outboundZoneTransfer")
     def outbound_zone_transfer(self) -> pulumi.Input[Optional['DnsZoneOutboundZoneTransferArgs']]:
         """
@@ -182,6 +198,7 @@ class _DnsZoneState:
                  end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group: pulumi.Input[Optional[_builtins.str]] = None,
                  masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 multi_provider_dnssec: pulumi.Input[Optional['DnsZoneMultiProviderDnssecArgs']] = None,
                  outbound_zone_transfer: pulumi.Input[Optional['DnsZoneOutboundZoneTransferArgs']] = None,
                  sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
                  sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
@@ -193,6 +210,7 @@ class _DnsZoneState:
         """
         Input properties used for looking up and filtering DnsZone resources.
 
+        :param pulumi.Input['DnsZoneMultiProviderDnssecArgs'] multi_provider_dnssec: Multi-signer DNSSEC properties.
         :param pulumi.Input['DnsZoneOutboundZoneTransferArgs'] outbound_zone_transfer: Outbound zone transfer properties.
         """
         if activation_state is not None:
@@ -209,6 +227,8 @@ class _DnsZoneState:
             pulumi.set(__self__, "group", group)
         if masters is not None:
             pulumi.set(__self__, "masters", masters)
+        if multi_provider_dnssec is not None:
+            pulumi.set(__self__, "multi_provider_dnssec", multi_provider_dnssec)
         if outbound_zone_transfer is not None:
             pulumi.set(__self__, "outbound_zone_transfer", outbound_zone_transfer)
         if sign_and_serve is not None:
@@ -288,6 +308,18 @@ class _DnsZoneState:
     @masters.setter
     def masters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "masters", value)
+
+    @_builtins.property
+    @pulumi.getter(name="multiProviderDnssec")
+    def multi_provider_dnssec(self) -> pulumi.Input[Optional['DnsZoneMultiProviderDnssecArgs']]:
+        """
+        Multi-signer DNSSEC properties.
+        """
+        return pulumi.get(self, "multi_provider_dnssec")
+
+    @multi_provider_dnssec.setter
+    def multi_provider_dnssec(self, value: pulumi.Input[Optional['DnsZoneMultiProviderDnssecArgs']]):
+        pulumi.set(self, "multi_provider_dnssec", value)
 
     @_builtins.property
     @pulumi.getter(name="outboundZoneTransfer")
@@ -376,6 +408,7 @@ class DnsZone(pulumi.CustomResource):
                  end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group: pulumi.Input[Optional[_builtins.str]] = None,
                  masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 multi_provider_dnssec: pulumi.Input[Optional[Union['DnsZoneMultiProviderDnssecArgs', 'DnsZoneMultiProviderDnssecArgsDict']]] = None,
                  outbound_zone_transfer: pulumi.Input[Optional[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
                  sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
                  sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
@@ -389,6 +422,7 @@ class DnsZone(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['DnsZoneMultiProviderDnssecArgs', 'DnsZoneMultiProviderDnssecArgsDict']] multi_provider_dnssec: Multi-signer DNSSEC properties.
         :param pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']] outbound_zone_transfer: Outbound zone transfer properties.
         """
         ...
@@ -420,6 +454,7 @@ class DnsZone(pulumi.CustomResource):
                  end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group: pulumi.Input[Optional[_builtins.str]] = None,
                  masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 multi_provider_dnssec: pulumi.Input[Optional[Union['DnsZoneMultiProviderDnssecArgs', 'DnsZoneMultiProviderDnssecArgsDict']]] = None,
                  outbound_zone_transfer: pulumi.Input[Optional[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
                  sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
                  sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
@@ -443,6 +478,7 @@ class DnsZone(pulumi.CustomResource):
             __props__.__dict__["end_customer_id"] = end_customer_id
             __props__.__dict__["group"] = group
             __props__.__dict__["masters"] = masters
+            __props__.__dict__["multi_provider_dnssec"] = multi_provider_dnssec
             __props__.__dict__["outbound_zone_transfer"] = outbound_zone_transfer
             __props__.__dict__["sign_and_serve"] = sign_and_serve
             __props__.__dict__["sign_and_serve_algorithm"] = sign_and_serve_algorithm
@@ -476,6 +512,7 @@ class DnsZone(pulumi.CustomResource):
             end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
             group: pulumi.Input[Optional[_builtins.str]] = None,
             masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            multi_provider_dnssec: pulumi.Input[Optional[Union['DnsZoneMultiProviderDnssecArgs', 'DnsZoneMultiProviderDnssecArgsDict']]] = None,
             outbound_zone_transfer: pulumi.Input[Optional[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
             sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
             sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
@@ -491,6 +528,7 @@ class DnsZone(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['DnsZoneMultiProviderDnssecArgs', 'DnsZoneMultiProviderDnssecArgsDict']] multi_provider_dnssec: Multi-signer DNSSEC properties.
         :param pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']] outbound_zone_transfer: Outbound zone transfer properties.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -504,6 +542,7 @@ class DnsZone(pulumi.CustomResource):
         __props__.__dict__["end_customer_id"] = end_customer_id
         __props__.__dict__["group"] = group
         __props__.__dict__["masters"] = masters
+        __props__.__dict__["multi_provider_dnssec"] = multi_provider_dnssec
         __props__.__dict__["outbound_zone_transfer"] = outbound_zone_transfer
         __props__.__dict__["sign_and_serve"] = sign_and_serve
         __props__.__dict__["sign_and_serve_algorithm"] = sign_and_serve_algorithm
@@ -548,6 +587,14 @@ class DnsZone(pulumi.CustomResource):
     @pulumi.getter
     def masters(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         return pulumi.get(self, "masters")
+
+    @_builtins.property
+    @pulumi.getter(name="multiProviderDnssec")
+    def multi_provider_dnssec(self) -> pulumi.Output[Optional['outputs.DnsZoneMultiProviderDnssec']]:
+        """
+        Multi-signer DNSSEC properties.
+        """
+        return pulumi.get(self, "multi_provider_dnssec")
 
     @_builtins.property
     @pulumi.getter(name="outboundZoneTransfer")

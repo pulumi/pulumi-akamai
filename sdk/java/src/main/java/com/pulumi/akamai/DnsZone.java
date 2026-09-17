@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.DnsZoneArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.DnsZoneState;
+import com.pulumi.akamai.outputs.DnsZoneMultiProviderDnssec;
 import com.pulumi.akamai.outputs.DnsZoneOutboundZoneTransfer;
 import com.pulumi.akamai.outputs.DnsZoneTsigKey;
 import com.pulumi.core.Alias;
@@ -63,6 +64,20 @@ public class DnsZone extends com.pulumi.resources.CustomResource {
 
     public Output<Optional<List<String>>> masters() {
         return Codegen.optional(this.masters);
+    }
+    /**
+     * Multi-signer DNSSEC properties.
+     * 
+     */
+    @Export(name="multiProviderDnssec", refs={DnsZoneMultiProviderDnssec.class}, tree="[0]")
+    private Output</* @Nullable */ DnsZoneMultiProviderDnssec> multiProviderDnssec;
+
+    /**
+     * @return Multi-signer DNSSEC properties.
+     * 
+     */
+    public Output<Optional<DnsZoneMultiProviderDnssec>> multiProviderDnssec() {
+        return Codegen.optional(this.multiProviderDnssec);
     }
     /**
      * Outbound zone transfer properties.

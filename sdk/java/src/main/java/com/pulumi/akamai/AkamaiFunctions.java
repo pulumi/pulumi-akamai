@@ -112,6 +112,8 @@ import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsPiiLearningArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsPiiLearningPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsRequestBodyArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsRequestBodyPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsUrlEvasionDefenseArgs;
+import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsUrlEvasionDefensePlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecCustomRulesUsageArgs;
 import com.pulumi.akamai.inputs.GetAppsecCustomRulesUsagePlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecEvalPenaltyBoxConditionsArgs;
@@ -128,6 +130,8 @@ import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPolicyActionsArgs;
 import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPolicyActionsPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPolicyArgs;
 import com.pulumi.akamai.inputs.GetAppsecUrlProtectionPolicyPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecWafAiRulesArgs;
+import com.pulumi.akamai.inputs.GetAppsecWafAiRulesPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecWafRulesetArgs;
 import com.pulumi.akamai.inputs.GetAppsecWafRulesetPlainArgs;
 import com.pulumi.akamai.inputs.GetAprGeneralSettingsArgs;
@@ -148,6 +152,8 @@ import com.pulumi.akamai.inputs.GetBotmanAkamaiDefinedBotArgs;
 import com.pulumi.akamai.inputs.GetBotmanAkamaiDefinedBotPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanBotAnalyticsCookieArgs;
 import com.pulumi.akamai.inputs.GetBotmanBotAnalyticsCookiePlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotAnalyticsSettingsArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotAnalyticsSettingsPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanBotCategoryExceptionArgs;
 import com.pulumi.akamai.inputs.GetBotmanBotCategoryExceptionPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanBotDetectionActionArgs;
@@ -270,6 +276,8 @@ import com.pulumi.akamai.inputs.GetCpsDeploymentsArgs;
 import com.pulumi.akamai.inputs.GetCpsDeploymentsPlainArgs;
 import com.pulumi.akamai.inputs.GetDatastreamActivationHistoryArgs;
 import com.pulumi.akamai.inputs.GetDatastreamActivationHistoryPlainArgs;
+import com.pulumi.akamai.inputs.GetDatastreamAnswerxServiceIdsArgs;
+import com.pulumi.akamai.inputs.GetDatastreamAnswerxServiceIdsPlainArgs;
 import com.pulumi.akamai.inputs.GetDatastreamAppsecConfigsArgs;
 import com.pulumi.akamai.inputs.GetDatastreamAppsecConfigsPlainArgs;
 import com.pulumi.akamai.inputs.GetDatastreamDatasetFieldsArgs;
@@ -467,6 +475,7 @@ import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsAttackPayloadLoggingRe
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsJa4FingerprintResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsPiiLearningResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsRequestBodyResult;
+import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsUrlEvasionDefenseResult;
 import com.pulumi.akamai.outputs.GetAppsecCustomRulesUsageResult;
 import com.pulumi.akamai.outputs.GetAppsecEvalPenaltyBoxConditionsResult;
 import com.pulumi.akamai.outputs.GetAppsecPenaltyBoxConditionsResult;
@@ -475,6 +484,7 @@ import com.pulumi.akamai.outputs.GetAppsecUrlProtectionPoliciesActionsResult;
 import com.pulumi.akamai.outputs.GetAppsecUrlProtectionPoliciesResult;
 import com.pulumi.akamai.outputs.GetAppsecUrlProtectionPolicyActionsResult;
 import com.pulumi.akamai.outputs.GetAppsecUrlProtectionPolicyResult;
+import com.pulumi.akamai.outputs.GetAppsecWafAiRulesResult;
 import com.pulumi.akamai.outputs.GetAppsecWafRulesetResult;
 import com.pulumi.akamai.outputs.GetAprGeneralSettingsResult;
 import com.pulumi.akamai.outputs.GetAprProtectedOperationsResult;
@@ -486,6 +496,8 @@ import com.pulumi.akamai.outputs.GetBotmanAkamaiBotCategoryResult;
 import com.pulumi.akamai.outputs.GetBotmanAkamaiDefinedBotResult;
 import com.pulumi.akamai.outputs.GetBotmanBotAnalyticsCookieResult;
 import com.pulumi.akamai.outputs.GetBotmanBotAnalyticsCookieValuesResult;
+import com.pulumi.akamai.outputs.GetBotmanBotAnalyticsSettingsResult;
+import com.pulumi.akamai.outputs.GetBotmanBotAnalyticsSettingsValuesResult;
 import com.pulumi.akamai.outputs.GetBotmanBotCategoryExceptionResult;
 import com.pulumi.akamai.outputs.GetBotmanBotDetectionActionResult;
 import com.pulumi.akamai.outputs.GetBotmanBotDetectionResult;
@@ -550,6 +562,7 @@ import com.pulumi.akamai.outputs.GetCpsCsrResult;
 import com.pulumi.akamai.outputs.GetCpsDeploymentsResult;
 import com.pulumi.akamai.outputs.GetCpsWarningsResult;
 import com.pulumi.akamai.outputs.GetDatastreamActivationHistoryResult;
+import com.pulumi.akamai.outputs.GetDatastreamAnswerxServiceIdsResult;
 import com.pulumi.akamai.outputs.GetDatastreamAppsecConfigsResult;
 import com.pulumi.akamai.outputs.GetDatastreamDatasetFieldsResult;
 import com.pulumi.akamai.outputs.GetDatastreamsResult;
@@ -1505,6 +1518,21 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetAppsecAdvancedSettingsRequestBodyResult> getAppsecAdvancedSettingsRequestBodyPlain(GetAppsecAdvancedSettingsRequestBodyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getAppsecAdvancedSettingsRequestBody:getAppsecAdvancedSettingsRequestBody", TypeShape.of(GetAppsecAdvancedSettingsRequestBodyResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetAppsecAdvancedSettingsUrlEvasionDefenseResult> getAppsecAdvancedSettingsUrlEvasionDefense(GetAppsecAdvancedSettingsUrlEvasionDefenseArgs args) {
+        return getAppsecAdvancedSettingsUrlEvasionDefense(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecAdvancedSettingsUrlEvasionDefenseResult> getAppsecAdvancedSettingsUrlEvasionDefensePlain(GetAppsecAdvancedSettingsUrlEvasionDefensePlainArgs args) {
+        return getAppsecAdvancedSettingsUrlEvasionDefensePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecAdvancedSettingsUrlEvasionDefenseResult> getAppsecAdvancedSettingsUrlEvasionDefense(GetAppsecAdvancedSettingsUrlEvasionDefenseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecAdvancedSettingsUrlEvasionDefense:getAppsecAdvancedSettingsUrlEvasionDefense", TypeShape.of(GetAppsecAdvancedSettingsUrlEvasionDefenseResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecAdvancedSettingsUrlEvasionDefenseResult> getAppsecAdvancedSettingsUrlEvasionDefense(GetAppsecAdvancedSettingsUrlEvasionDefenseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecAdvancedSettingsUrlEvasionDefense:getAppsecAdvancedSettingsUrlEvasionDefense", TypeShape.of(GetAppsecAdvancedSettingsUrlEvasionDefenseResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecAdvancedSettingsUrlEvasionDefenseResult> getAppsecAdvancedSettingsUrlEvasionDefensePlain(GetAppsecAdvancedSettingsUrlEvasionDefensePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecAdvancedSettingsUrlEvasionDefense:getAppsecAdvancedSettingsUrlEvasionDefense", TypeShape.of(GetAppsecAdvancedSettingsUrlEvasionDefenseResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetAppsecCustomRulesUsageResult> getAppsecCustomRulesUsage(GetAppsecCustomRulesUsageArgs args) {
         return getAppsecCustomRulesUsage(args, InvokeOptions.Empty);
     }
@@ -1624,6 +1652,21 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetAppsecUrlProtectionPolicyActionsResult> getAppsecUrlProtectionPolicyActionsPlain(GetAppsecUrlProtectionPolicyActionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getAppsecUrlProtectionPolicyActions:getAppsecUrlProtectionPolicyActions", TypeShape.of(GetAppsecUrlProtectionPolicyActionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecWafAiRulesResult> getAppsecWafAiRules(GetAppsecWafAiRulesArgs args) {
+        return getAppsecWafAiRules(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecWafAiRulesResult> getAppsecWafAiRulesPlain(GetAppsecWafAiRulesPlainArgs args) {
+        return getAppsecWafAiRulesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecWafAiRulesResult> getAppsecWafAiRules(GetAppsecWafAiRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecWafAiRules:getAppsecWafAiRules", TypeShape.of(GetAppsecWafAiRulesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecWafAiRulesResult> getAppsecWafAiRules(GetAppsecWafAiRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecWafAiRules:getAppsecWafAiRules", TypeShape.of(GetAppsecWafAiRulesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecWafAiRulesResult> getAppsecWafAiRulesPlain(GetAppsecWafAiRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecWafAiRules:getAppsecWafAiRules", TypeShape.of(GetAppsecWafAiRulesResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetAppsecWafRulesetResult> getAppsecWafRuleset(GetAppsecWafRulesetArgs args) {
         return getAppsecWafRuleset(args, InvokeOptions.Empty);
@@ -1807,6 +1850,42 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetBotmanBotAnalyticsCookieValuesResult> getBotmanBotAnalyticsCookieValuesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", TypeShape.of(GetBotmanBotAnalyticsCookieValuesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotAnalyticsSettingsResult> getBotmanBotAnalyticsSettings(GetBotmanBotAnalyticsSettingsArgs args) {
+        return getBotmanBotAnalyticsSettings(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsSettingsResult> getBotmanBotAnalyticsSettingsPlain(GetBotmanBotAnalyticsSettingsPlainArgs args) {
+        return getBotmanBotAnalyticsSettingsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotAnalyticsSettingsResult> getBotmanBotAnalyticsSettings(GetBotmanBotAnalyticsSettingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotAnalyticsSettings:getBotmanBotAnalyticsSettings", TypeShape.of(GetBotmanBotAnalyticsSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotAnalyticsSettingsResult> getBotmanBotAnalyticsSettings(GetBotmanBotAnalyticsSettingsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotAnalyticsSettings:getBotmanBotAnalyticsSettings", TypeShape.of(GetBotmanBotAnalyticsSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsSettingsResult> getBotmanBotAnalyticsSettingsPlain(GetBotmanBotAnalyticsSettingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotAnalyticsSettings:getBotmanBotAnalyticsSettings", TypeShape.of(GetBotmanBotAnalyticsSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotAnalyticsSettingsValuesResult> getBotmanBotAnalyticsSettingsValues() {
+        return getBotmanBotAnalyticsSettingsValues(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsSettingsValuesResult> getBotmanBotAnalyticsSettingsValuesPlain() {
+        return getBotmanBotAnalyticsSettingsValuesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotAnalyticsSettingsValuesResult> getBotmanBotAnalyticsSettingsValues(InvokeArgs args) {
+        return getBotmanBotAnalyticsSettingsValues(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsSettingsValuesResult> getBotmanBotAnalyticsSettingsValuesPlain(InvokeArgs args) {
+        return getBotmanBotAnalyticsSettingsValuesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotAnalyticsSettingsValuesResult> getBotmanBotAnalyticsSettingsValues(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotAnalyticsSettingsValues:getBotmanBotAnalyticsSettingsValues", TypeShape.of(GetBotmanBotAnalyticsSettingsValuesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotAnalyticsSettingsValuesResult> getBotmanBotAnalyticsSettingsValues(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotAnalyticsSettingsValues:getBotmanBotAnalyticsSettingsValues", TypeShape.of(GetBotmanBotAnalyticsSettingsValuesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsSettingsValuesResult> getBotmanBotAnalyticsSettingsValuesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotAnalyticsSettingsValues:getBotmanBotAnalyticsSettingsValues", TypeShape.of(GetBotmanBotAnalyticsSettingsValuesResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetBotmanBotCategoryExceptionResult> getBotmanBotCategoryException(GetBotmanBotCategoryExceptionArgs args) {
         return getBotmanBotCategoryException(args, InvokeOptions.Empty);
@@ -2899,6 +2978,21 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetDatastreamActivationHistoryResult> getDatastreamActivationHistoryPlain(GetDatastreamActivationHistoryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", TypeShape.of(GetDatastreamActivationHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetDatastreamAnswerxServiceIdsResult> getDatastreamAnswerxServiceIds(GetDatastreamAnswerxServiceIdsArgs args) {
+        return getDatastreamAnswerxServiceIds(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetDatastreamAnswerxServiceIdsResult> getDatastreamAnswerxServiceIdsPlain(GetDatastreamAnswerxServiceIdsPlainArgs args) {
+        return getDatastreamAnswerxServiceIdsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetDatastreamAnswerxServiceIdsResult> getDatastreamAnswerxServiceIds(GetDatastreamAnswerxServiceIdsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getDatastreamAnswerxServiceIds:getDatastreamAnswerxServiceIds", TypeShape.of(GetDatastreamAnswerxServiceIdsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetDatastreamAnswerxServiceIdsResult> getDatastreamAnswerxServiceIds(GetDatastreamAnswerxServiceIdsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getDatastreamAnswerxServiceIds:getDatastreamAnswerxServiceIds", TypeShape.of(GetDatastreamAnswerxServiceIdsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetDatastreamAnswerxServiceIdsResult> getDatastreamAnswerxServiceIdsPlain(GetDatastreamAnswerxServiceIdsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getDatastreamAnswerxServiceIds:getDatastreamAnswerxServiceIds", TypeShape.of(GetDatastreamAnswerxServiceIdsResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetDatastreamAppsecConfigsResult> getDatastreamAppsecConfigs(GetDatastreamAppsecConfigsArgs args) {
         return getDatastreamAppsecConfigs(args, InvokeOptions.Empty);

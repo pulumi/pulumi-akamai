@@ -83,14 +83,14 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.collectMidgress);
     }
     /**
-     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+     * Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
      * 
      */
     @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
-     * @return Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+     * @return Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
      * 
      */
     public Output<String> contractId() {
@@ -177,14 +177,14 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.gcsConnector);
     }
     /**
-     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+     * Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
      * 
      */
     @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
-     * @return Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+     * @return Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
      * 
      */
     public Output<String> groupId() {
@@ -365,6 +365,20 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> samplingPercentage() {
         return this.samplingPercentage;
+    }
+    /**
+     * Identifies the AnswerX service IDs monitored in the stream.
+     * 
+     */
+    @Export(name="serviceIds", refs={List.class,Integer.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<Integer>> serviceIds;
+
+    /**
+     * @return Identifies the AnswerX service IDs monitored in the stream.
+     * 
+     */
+    public Output<Optional<List<Integer>>> serviceIds() {
+        return Codegen.optional(this.serviceIds);
     }
     @Export(name="splunkConnector", refs={DatastreamSplunkConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamSplunkConnector> splunkConnector;

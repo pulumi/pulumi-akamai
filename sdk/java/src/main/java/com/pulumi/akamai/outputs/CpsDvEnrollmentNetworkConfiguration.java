@@ -21,15 +21,29 @@ public final class CpsDvEnrollmentNetworkConfiguration {
      */
     private @Nullable CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication clientMutualAuthentication;
     /**
-     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+     * 
+     * @deprecated
+     * Use enableForAllSans instead.
      * 
      */
+    @Deprecated /* Use enableForAllSans instead. */
     private @Nullable Boolean cloneDnsNames;
     /**
      * @return TLS versions which are disallowed
      * 
      */
     private @Nullable List<String> disallowedTlsVersions;
+    /**
+     * @return Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+     * 
+     */
+    private @Nullable List<String> dnsNames;
+    /**
+     * @return When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+     * 
+     */
+    private @Nullable Boolean enableForAllSans;
     /**
      * @return Geography type used for enrollment
      * 
@@ -65,9 +79,13 @@ public final class CpsDvEnrollmentNetworkConfiguration {
         return Optional.ofNullable(this.clientMutualAuthentication);
     }
     /**
-     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+     * 
+     * @deprecated
+     * Use enableForAllSans instead.
      * 
      */
+    @Deprecated /* Use enableForAllSans instead. */
     public Optional<Boolean> cloneDnsNames() {
         return Optional.ofNullable(this.cloneDnsNames);
     }
@@ -77,6 +95,20 @@ public final class CpsDvEnrollmentNetworkConfiguration {
      */
     public List<String> disallowedTlsVersions() {
         return this.disallowedTlsVersions == null ? List.of() : this.disallowedTlsVersions;
+    }
+    /**
+     * @return Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+     * 
+     */
+    public List<String> dnsNames() {
+        return this.dnsNames == null ? List.of() : this.dnsNames;
+    }
+    /**
+     * @return When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+     * 
+     */
+    public Optional<Boolean> enableForAllSans() {
+        return Optional.ofNullable(this.enableForAllSans);
     }
     /**
      * @return Geography type used for enrollment
@@ -126,6 +158,8 @@ public final class CpsDvEnrollmentNetworkConfiguration {
         private @Nullable CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication clientMutualAuthentication;
         private @Nullable Boolean cloneDnsNames;
         private @Nullable List<String> disallowedTlsVersions;
+        private @Nullable List<String> dnsNames;
+        private @Nullable Boolean enableForAllSans;
         private String geography;
         private @Nullable String mustHaveCiphers;
         private @Nullable String ocspStapling;
@@ -137,6 +171,8 @@ public final class CpsDvEnrollmentNetworkConfiguration {
     	      this.clientMutualAuthentication = defaults.clientMutualAuthentication;
     	      this.cloneDnsNames = defaults.cloneDnsNames;
     	      this.disallowedTlsVersions = defaults.disallowedTlsVersions;
+    	      this.dnsNames = defaults.dnsNames;
+    	      this.enableForAllSans = defaults.enableForAllSans;
     	      this.geography = defaults.geography;
     	      this.mustHaveCiphers = defaults.mustHaveCiphers;
     	      this.ocspStapling = defaults.ocspStapling;
@@ -164,6 +200,21 @@ public final class CpsDvEnrollmentNetworkConfiguration {
         }
         public Builder disallowedTlsVersions(String... disallowedTlsVersions) {
             return disallowedTlsVersions(List.of(disallowedTlsVersions));
+        }
+        @CustomType.Setter
+        public Builder dnsNames(@Nullable List<String> dnsNames) {
+
+            this.dnsNames = dnsNames;
+            return this;
+        }
+        public Builder dnsNames(String... dnsNames) {
+            return dnsNames(List.of(dnsNames));
+        }
+        @CustomType.Setter
+        public Builder enableForAllSans(@Nullable Boolean enableForAllSans) {
+
+            this.enableForAllSans = enableForAllSans;
+            return this;
         }
         @CustomType.Setter
         public Builder geography(String geography) {
@@ -202,6 +253,8 @@ public final class CpsDvEnrollmentNetworkConfiguration {
             _resultValue.clientMutualAuthentication = clientMutualAuthentication;
             _resultValue.cloneDnsNames = cloneDnsNames;
             _resultValue.disallowedTlsVersions = disallowedTlsVersions;
+            _resultValue.dnsNames = dnsNames;
+            _resultValue.enableForAllSans = enableForAllSans;
             _resultValue.geography = geography;
             _resultValue.mustHaveCiphers = mustHaveCiphers;
             _resultValue.ocspStapling = ocspStapling;

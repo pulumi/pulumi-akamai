@@ -96,6 +96,100 @@ export interface AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions {
     rules?: pulumi.Input<pulumi.Input<number>[] | undefined>;
 }
 
+export interface AppsecAdvancedSettingsUrlEvasionDefenseRule {
+    /**
+     * The URL evasion mitigation rule action.
+     */
+    action: pulumi.Input<string>;
+    /**
+     * Sets how the rule evaluates conditions. Use `OR` to match any condition, or `AND` to match on all conditions. When the specified conditions are met, the rule does not trigger.
+     */
+    conditionOperator?: pulumi.Input<string | undefined>;
+    /**
+     * The list of match conditions.
+     */
+    conditions?: pulumi.Input<pulumi.Input<inputs.AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition>[] | undefined>;
+    /**
+     * The URL evasion mitigation rule description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * The URL evasion mitigation rule name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Uniquely identifies the URL evasion mitigation rule.
+     */
+    ruleId: pulumi.Input<number>;
+}
+
+export interface AppsecAdvancedSettingsUrlEvasionDefenseRuleCondition {
+    /**
+     * The clientLists that trigger the condition. This only applies to the `clientListMatch` condition `type`.
+     */
+    clientLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The file extensions that trigger the condition. This only applies to the `extensionMatch` condition `type`.
+     */
+    extensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The filenames that trigger the condition. This only applies to the `filenameMatch` condition `type`.
+     */
+    filenames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The HTTP header that triggers the condition. This only applies to the `requestHeaderMatch` condition `type`.
+     */
+    header?: pulumi.Input<string | undefined>;
+    /**
+     * The hostnames that trigger the condition. This only applies to the `hostMatch` condition `type`.
+     */
+    hosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The IPs that trigger the condition. This only applies to the `ipMatch` condition `type`.
+     */
+    ips?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The HTTP request methods that trigger the condition. The possible values are `GET`, `POST`, `HEAD`, `PUT`, `DELETE`, `OPTIONS`, `TRACE`, `CONNECT` and `PATCH`. This only applies to the `requestMethodMatch` condition `type`.
+     */
+    methods?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The query parameter name that triggers the condition. This only applies to the `uriQueryMatch` condition `type`.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Whether to consider the case-sensitivity of the provided query parameter `name`. This only applies to the `uriQueryMatch` condition `type`.
+     */
+    nameCaseSensitive?: pulumi.Input<boolean | undefined>;
+    /**
+     * The paths that trigger the condition. This only applies to the  `pathMatch` condition `type`.
+     */
+    paths?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Whether the condition should trigger on a match (`true`) or a lack of match (`false`).
+     */
+    positiveMatch?: pulumi.Input<boolean | undefined>;
+    /**
+     * The condition type to match on.
+     */
+    type: pulumi.Input<string>;
+    /**
+     * Whether the condition should include `X-Forwarded-For` (XFF) header. This applies to the `ipMatch` and `clientListMatch` condition `type`.
+     */
+    useHeaders?: pulumi.Input<boolean | undefined>;
+    /**
+     * The query parameter value if the condition `type` is `uriQueryMatch` and header value if the condition `type` is `requestHeaderMatch`. This only applies when the condition `type` is `uriQueryMatch` or `requestHeaderMatch`.
+     */
+    value?: pulumi.Input<string | undefined>;
+    /**
+     * Whether to consider the case-sensitivity of the provided `value`. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+     */
+    valueCaseSensitive?: pulumi.Input<boolean | undefined>;
+    /**
+     * Whether the provided parameter `value` is a wildcard. This only applies to the `requestHeaderMatch` and `uriQueryMatch` condition `type`.
+     */
+    valueWildcard?: pulumi.Input<boolean | undefined>;
+}
+
 export interface AppsecUrlProtectionPolicyApiDefinition {
     /**
      * Unique identifier of the API definition
@@ -612,13 +706,23 @@ export interface CpsDvEnrollmentNetworkConfiguration {
      */
     clientMutualAuthentication?: pulumi.Input<inputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication | undefined>;
     /**
-     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+     *
+     * @deprecated Use enableForAllSans instead.
      */
     cloneDnsNames?: pulumi.Input<boolean | undefined>;
     /**
      * TLS versions which are disallowed
      */
     disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+     */
+    dnsNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+     */
+    enableForAllSans?: pulumi.Input<boolean | undefined>;
     /**
      * Geography type used for enrollment
      */
@@ -834,13 +938,23 @@ export interface CpsThirdPartyEnrollmentNetworkConfiguration {
      */
     clientMutualAuthentication?: pulumi.Input<inputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication | undefined>;
     /**
-     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created. Default is false
+     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
+     *
+     * @deprecated Use enableForAllSans instead.
      */
     cloneDnsNames?: pulumi.Input<boolean | undefined>;
     /**
      * TLS versions which are disallowed
      */
     disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Explicit DNS names for traffic direction when enableForAllSans or cloneDnsNames is false.
+     */
+    dnsNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * When true (default), traffic is directed using all SANs listed in the enrollment. Replacement for the deprecated cloneDnsNames attribute. Cannot be used together with clone_dns_names.
+     */
+    enableForAllSans?: pulumi.Input<boolean | undefined>;
     /**
      * Geography type used for enrollment
      */
@@ -1502,6 +1616,17 @@ export interface DatastreamTrafficpeakConnector {
      * Enter the valid username you set in your TrafficPeak endpoint for authentication.
      */
     userName: pulumi.Input<string>;
+}
+
+export interface DnsZoneMultiProviderDnssec {
+    /**
+     * Enables multi-signer DNSSEC for the zone.
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * The URL to call when a new ZSK secret has been generated.
+     */
+    webhook?: pulumi.Input<string | undefined>;
 }
 
 export interface DnsZoneOutboundZoneTransfer {
@@ -12899,6 +13024,10 @@ export interface PropertyHostnameCcmCertificates {
 
 export interface PropertyHostnameCertStatus {
     /**
+     * Details of domain validation methods available for your certificate.
+     */
+    authorizations?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatusAuthorization>[] | undefined>;
+    /**
      * The hostname part of the CNAME record used to validate the certificate's domain.
      */
     hostname?: pulumi.Input<string | undefined>;
@@ -12914,6 +13043,81 @@ export interface PropertyHostnameCertStatus {
      * The destination part of the CNAME record used to validate the certificate's domain.
      */
     target?: pulumi.Input<string | undefined>;
+}
+
+export interface PropertyHostnameCertStatusAuthorization {
+    /**
+     * Details on the manual DNS validation method.
+     */
+    dns01s?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatusAuthorizationDns01>[] | undefined>;
+    /**
+     * Details on the manual HTTP validation method.
+     */
+    http01s?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatusAuthorizationHttp01>[] | undefined>;
+    /**
+     * The status of the validation that proves you control the domains listed in the certificate request.
+     */
+    status?: pulumi.Input<string | undefined>;
+    /**
+     * An ISO 8601 timestamp indicating when the domain validation challenge expires.
+     */
+    validUntil?: pulumi.Input<string | undefined>;
+}
+
+export interface PropertyHostnameCertStatusAuthorizationDns01 {
+    /**
+     * Details on the validation challenge generation.
+     */
+    results?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatusAuthorizationDns01Result>[] | undefined>;
+    /**
+     * The token you need to copy to the DNS TXT record.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface PropertyHostnameCertStatusAuthorizationDns01Result {
+    /**
+     * A descriptive message on the challenge generation process.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+     */
+    source?: pulumi.Input<string | undefined>;
+    /**
+     * The ISO 8601 timestamp indicating when the result was generated.
+     */
+    timestamp?: pulumi.Input<string | undefined>;
+}
+
+export interface PropertyHostnameCertStatusAuthorizationHttp01 {
+    /**
+     * The token you need to copy to the file on your origin server.
+     */
+    body?: pulumi.Input<string | undefined>;
+    /**
+     * Details on the validation challenge generation.
+     */
+    results?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatusAuthorizationHttp01Result>[] | undefined>;
+    /**
+     * The location on your origin server where you save the file with the token.
+     */
+    url?: pulumi.Input<string | undefined>;
+}
+
+export interface PropertyHostnameCertStatusAuthorizationHttp01Result {
+    /**
+     * A descriptive message on the challenge generation process.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * The system that sent the result details, either the Certificate Authority (CA) server or Certificate Management System (CPS).
+     */
+    source?: pulumi.Input<string | undefined>;
+    /**
+     * The ISO 8601 timestamp indicating when the result was generated.
+     */
+    timestamp?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyHostnameMtls {

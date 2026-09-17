@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -71,9 +71,6 @@ func NewCpsThirdPartyEnrollment(ctx *pulumi.Context,
 	}
 	if args.Csr == nil {
 		return nil, errors.New("invalid value for required argument 'Csr'")
-	}
-	if args.NetworkConfiguration == nil {
-		return nil, errors.New("invalid value for required argument 'NetworkConfiguration'")
 	}
 	if args.Organization == nil {
 		return nil, errors.New("invalid value for required argument 'Organization'")
@@ -213,7 +210,7 @@ type cpsThirdPartyEnrollmentArgs struct {
 	// When true, SANs are excluded from the CSR
 	ExcludeSans *bool `pulumi:"excludeSans"`
 	// Settings containing network information and TLS metadata used by CPS
-	NetworkConfiguration CpsThirdPartyEnrollmentNetworkConfiguration `pulumi:"networkConfiguration"`
+	NetworkConfiguration *CpsThirdPartyEnrollmentNetworkConfiguration `pulumi:"networkConfiguration"`
 	// Organization information
 	Organization CpsThirdPartyEnrollmentOrganization `pulumi:"organization"`
 	// List of SANs
@@ -253,7 +250,7 @@ type CpsThirdPartyEnrollmentArgs struct {
 	// When true, SANs are excluded from the CSR
 	ExcludeSans pulumi.BoolPtrInput
 	// Settings containing network information and TLS metadata used by CPS
-	NetworkConfiguration CpsThirdPartyEnrollmentNetworkConfigurationInput
+	NetworkConfiguration CpsThirdPartyEnrollmentNetworkConfigurationPtrInput
 	// Organization information
 	Organization CpsThirdPartyEnrollmentOrganizationInput
 	// List of SANs

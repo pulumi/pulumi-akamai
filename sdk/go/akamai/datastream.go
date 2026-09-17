@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v11/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v12/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ type Datastream struct {
 	AzureConnector DatastreamAzureConnectorPtrOutput `pulumi:"azureConnector"`
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress pulumi.BoolPtrOutput `pulumi:"collectMidgress"`
-	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// The username who created the stream
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
@@ -36,7 +36,7 @@ type Datastream struct {
 	DynatraceConnector     DatastreamDynatraceConnectorPtrOutput     `pulumi:"dynatraceConnector"`
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrOutput `pulumi:"elasticsearchConnector"`
 	GcsConnector           DatastreamGcsConnectorPtrOutput           `pulumi:"gcsConnector"`
-	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
 	GroupId        pulumi.StringOutput               `pulumi:"groupId"`
 	HttpsConnector DatastreamHttpsConnectorPtrOutput `pulumi:"httpsConnector"`
 	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
@@ -63,8 +63,10 @@ type Datastream struct {
 	S3CompatibleConnector DatastreamS3CompatibleConnectorPtrOutput `pulumi:"s3CompatibleConnector"`
 	S3Connector           DatastreamS3ConnectorPtrOutput           `pulumi:"s3Connector"`
 	// The sample percentage of data that your stream will send to the destination
-	SamplingPercentage pulumi.IntOutput                   `pulumi:"samplingPercentage"`
-	SplunkConnector    DatastreamSplunkConnectorPtrOutput `pulumi:"splunkConnector"`
+	SamplingPercentage pulumi.IntOutput `pulumi:"samplingPercentage"`
+	// Identifies the AnswerX service IDs monitored in the stream.
+	ServiceIds      pulumi.IntArrayOutput              `pulumi:"serviceIds"`
+	SplunkConnector DatastreamSplunkConnectorPtrOutput `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName pulumi.StringOutput `pulumi:"streamName"`
 	// Identifies the configuration version of the stream
@@ -119,7 +121,7 @@ type datastreamState struct {
 	AzureConnector *DatastreamAzureConnector `pulumi:"azureConnector"`
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress *bool `pulumi:"collectMidgress"`
-	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
 	ContractId *string `pulumi:"contractId"`
 	// The username who created the stream
 	CreatedBy *string `pulumi:"createdBy"`
@@ -133,7 +135,7 @@ type datastreamState struct {
 	DynatraceConnector     *DatastreamDynatraceConnector     `pulumi:"dynatraceConnector"`
 	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
 	GcsConnector           *DatastreamGcsConnector           `pulumi:"gcsConnector"`
-	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
 	GroupId        *string                   `pulumi:"groupId"`
 	HttpsConnector *DatastreamHttpsConnector `pulumi:"httpsConnector"`
 	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
@@ -160,8 +162,10 @@ type datastreamState struct {
 	S3CompatibleConnector *DatastreamS3CompatibleConnector `pulumi:"s3CompatibleConnector"`
 	S3Connector           *DatastreamS3Connector           `pulumi:"s3Connector"`
 	// The sample percentage of data that your stream will send to the destination
-	SamplingPercentage *int                       `pulumi:"samplingPercentage"`
-	SplunkConnector    *DatastreamSplunkConnector `pulumi:"splunkConnector"`
+	SamplingPercentage *int `pulumi:"samplingPercentage"`
+	// Identifies the AnswerX service IDs monitored in the stream.
+	ServiceIds      []int                      `pulumi:"serviceIds"`
+	SplunkConnector *DatastreamSplunkConnector `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName *string `pulumi:"streamName"`
 	// Identifies the configuration version of the stream
@@ -178,7 +182,7 @@ type DatastreamState struct {
 	AzureConnector DatastreamAzureConnectorPtrInput
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress pulumi.BoolPtrInput
-	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
 	ContractId pulumi.StringPtrInput
 	// The username who created the stream
 	CreatedBy pulumi.StringPtrInput
@@ -192,7 +196,7 @@ type DatastreamState struct {
 	DynatraceConnector     DatastreamDynatraceConnectorPtrInput
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
 	GcsConnector           DatastreamGcsConnectorPtrInput
-	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
 	GroupId        pulumi.StringPtrInput
 	HttpsConnector DatastreamHttpsConnectorPtrInput
 	// The integration mode for the stream (e.g., PM_DEPENDENT, HYBRID, DS_MANAGED)
@@ -220,7 +224,9 @@ type DatastreamState struct {
 	S3Connector           DatastreamS3ConnectorPtrInput
 	// The sample percentage of data that your stream will send to the destination
 	SamplingPercentage pulumi.IntPtrInput
-	SplunkConnector    DatastreamSplunkConnectorPtrInput
+	// Identifies the AnswerX service IDs monitored in the stream.
+	ServiceIds      pulumi.IntArrayInput
+	SplunkConnector DatastreamSplunkConnectorPtrInput
 	// The name of the stream
 	StreamName pulumi.StringPtrInput
 	// Identifies the configuration version of the stream
@@ -241,7 +247,7 @@ type datastreamArgs struct {
 	AzureConnector *DatastreamAzureConnector `pulumi:"azureConnector"`
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress *bool `pulumi:"collectMidgress"`
-	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
 	ContractId       *string                     `pulumi:"contractId"`
 	DatadogConnector *DatastreamDatadogConnector `pulumi:"datadogConnector"`
 	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
@@ -251,7 +257,7 @@ type datastreamArgs struct {
 	DynatraceConnector     *DatastreamDynatraceConnector     `pulumi:"dynatraceConnector"`
 	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
 	GcsConnector           *DatastreamGcsConnector           `pulumi:"gcsConnector"`
-	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
 	GroupId        *string                   `pulumi:"groupId"`
 	HttpsConnector *DatastreamHttpsConnector `pulumi:"httpsConnector"`
 	// Type of logs for the stream
@@ -266,8 +272,10 @@ type datastreamArgs struct {
 	S3CompatibleConnector *DatastreamS3CompatibleConnector `pulumi:"s3CompatibleConnector"`
 	S3Connector           *DatastreamS3Connector           `pulumi:"s3Connector"`
 	// The sample percentage of data that your stream will send to the destination
-	SamplingPercentage *int                       `pulumi:"samplingPercentage"`
-	SplunkConnector    *DatastreamSplunkConnector `pulumi:"splunkConnector"`
+	SamplingPercentage *int `pulumi:"samplingPercentage"`
+	// Identifies the AnswerX service IDs monitored in the stream.
+	ServiceIds      []int                      `pulumi:"serviceIds"`
+	SplunkConnector *DatastreamSplunkConnector `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName           string                          `pulumi:"streamName"`
 	SumologicConnector   *DatastreamSumologicConnector   `pulumi:"sumologicConnector"`
@@ -283,7 +291,7 @@ type DatastreamArgs struct {
 	AzureConnector DatastreamAzureConnectorPtrInput
 	// Identifies if stream needs to collect midgress data
 	CollectMidgress pulumi.BoolPtrInput
-	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+	// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
 	ContractId       pulumi.StringPtrInput
 	DatadogConnector DatastreamDatadogConnectorPtrInput
 	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the identifiers define how the value for these fields appear in the log lines
@@ -293,7 +301,7 @@ type DatastreamArgs struct {
 	DynatraceConnector     DatastreamDynatraceConnectorPtrInput
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
 	GcsConnector           DatastreamGcsConnectorPtrInput
-	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+	// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
 	GroupId        pulumi.StringPtrInput
 	HttpsConnector DatastreamHttpsConnectorPtrInput
 	// Type of logs for the stream
@@ -309,7 +317,9 @@ type DatastreamArgs struct {
 	S3Connector           DatastreamS3ConnectorPtrInput
 	// The sample percentage of data that your stream will send to the destination
 	SamplingPercentage pulumi.IntPtrInput
-	SplunkConnector    DatastreamSplunkConnectorPtrInput
+	// Identifies the AnswerX service IDs monitored in the stream.
+	ServiceIds      pulumi.IntArrayInput
+	SplunkConnector DatastreamSplunkConnectorPtrInput
 	// The name of the stream
 	StreamName           pulumi.StringInput
 	SumologicConnector   DatastreamSumologicConnectorPtrInput
@@ -422,7 +432,7 @@ func (o DatastreamOutput) CollectMidgress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.BoolPtrOutput { return v.CollectMidgress }).(pulumi.BoolPtrOutput)
 }
 
-// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC. Whitespace-only values are treated as omitted for CDN.
+// Identifies the contract that has access to the product. Optional for CDN log type. Required for APPSEC and ANSWERX. Whitespace-only values are treated as omitted for CDN.
 func (o DatastreamOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
@@ -463,7 +473,7 @@ func (o DatastreamOutput) GcsConnector() DatastreamGcsConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamGcsConnectorPtrOutput { return v.GcsConnector }).(DatastreamGcsConnectorPtrOutput)
 }
 
-// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC. On update, this value is not sent to the API.
+// Identifies the group that has access to the product and for which the stream configuration was created. Optional for CDN log type. Required for APPSEC and ANSWERX. On update, this value is not sent to the API.
 func (o DatastreamOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
@@ -540,6 +550,11 @@ func (o DatastreamOutput) S3Connector() DatastreamS3ConnectorPtrOutput {
 // The sample percentage of data that your stream will send to the destination
 func (o DatastreamOutput) SamplingPercentage() pulumi.IntOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.IntOutput { return v.SamplingPercentage }).(pulumi.IntOutput)
+}
+
+// Identifies the AnswerX service IDs monitored in the stream.
+func (o DatastreamOutput) ServiceIds() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.IntArrayOutput { return v.ServiceIds }).(pulumi.IntArrayOutput)
 }
 
 func (o DatastreamOutput) SplunkConnector() DatastreamSplunkConnectorPtrOutput {

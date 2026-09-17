@@ -15,6 +15,13 @@ public final class GetDatastreamDatasetFieldsArgs extends com.pulumi.resources.I
 
     public static final GetDatastreamDatasetFieldsArgs Empty = new GetDatastreamDatasetFieldsArgs();
 
+    @Import(name="logType")
+    private @Nullable Output<String> logType;
+
+    public Optional<Output<String>> logType() {
+        return Optional.ofNullable(this.logType);
+    }
+
     @Import(name="productId")
     private @Nullable Output<String> productId;
 
@@ -25,6 +32,7 @@ public final class GetDatastreamDatasetFieldsArgs extends com.pulumi.resources.I
     private GetDatastreamDatasetFieldsArgs() {}
 
     private GetDatastreamDatasetFieldsArgs(GetDatastreamDatasetFieldsArgs $) {
+        this.logType = $.logType;
         this.productId = $.productId;
     }
 
@@ -44,6 +52,15 @@ public final class GetDatastreamDatasetFieldsArgs extends com.pulumi.resources.I
 
         public Builder(GetDatastreamDatasetFieldsArgs defaults) {
             $ = new GetDatastreamDatasetFieldsArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder logType(@Nullable Output<String> logType) {
+            $.logType = logType;
+            return this;
+        }
+
+        public Builder logType(String logType) {
+            return logType(Output.of(logType));
         }
 
         public Builder productId(@Nullable Output<String> productId) {
