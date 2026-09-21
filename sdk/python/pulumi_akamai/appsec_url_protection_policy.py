@@ -376,12 +376,12 @@ class AppsecUrlProtectionPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_definitions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict']]]]] = None,
-                 bypass_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict']]]]] = None,
+                 api_definitions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict', 'outputs.AppsecUrlProtectionPolicyApiDefinition']]]]] = None,
+                 bypass_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict', 'outputs.AppsecUrlProtectionPolicyBypassCondition']]]]] = None,
                  config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 hostname_paths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict']]]]] = None,
-                 intelligent_load_shedding: pulumi.Input[Optional[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict']]] = None,
+                 hostname_paths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict', 'outputs.AppsecUrlProtectionPolicyHostnamePath']]]]] = None,
+                 intelligent_load_shedding: pulumi.Input[Optional[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict', 'outputs.AppsecUrlProtectionPolicyIntelligentLoadShedding']]] = None,
                  max_rate_threshold: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -390,12 +390,12 @@ class AppsecUrlProtectionPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict']]]] api_definitions: List of API definitions associated with the URL protection policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict']]]] bypass_conditions: List of bypass conditions for the URL protection policy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict', 'outputs.AppsecUrlProtectionPolicyApiDefinition']]]] api_definitions: List of API definitions associated with the URL protection policy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict', 'outputs.AppsecUrlProtectionPolicyBypassCondition']]]] bypass_conditions: List of bypass conditions for the URL protection policy
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] description: Description of the URL protection policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict']]]] hostname_paths: List of hostname and path configurations
-        :param pulumi.Input[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict']] intelligent_load_shedding: Intelligent load shedding configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict', 'outputs.AppsecUrlProtectionPolicyHostnamePath']]]] hostname_paths: List of hostname and path configurations
+        :param pulumi.Input[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict', 'outputs.AppsecUrlProtectionPolicyIntelligentLoadShedding']] intelligent_load_shedding: Intelligent load shedding configuration
         :param pulumi.Input[_builtins.int] max_rate_threshold: Maximum rate threshold for the URL protection policy
         :param pulumi.Input[_builtins.str] name: Name of the URL protection policy
         """
@@ -423,12 +423,12 @@ class AppsecUrlProtectionPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_definitions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict']]]]] = None,
-                 bypass_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict']]]]] = None,
+                 api_definitions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict', 'outputs.AppsecUrlProtectionPolicyApiDefinition']]]]] = None,
+                 bypass_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict', 'outputs.AppsecUrlProtectionPolicyBypassCondition']]]]] = None,
                  config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 hostname_paths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict']]]]] = None,
-                 intelligent_load_shedding: pulumi.Input[Optional[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict']]] = None,
+                 hostname_paths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict', 'outputs.AppsecUrlProtectionPolicyHostnamePath']]]]] = None,
+                 intelligent_load_shedding: pulumi.Input[Optional[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict', 'outputs.AppsecUrlProtectionPolicyIntelligentLoadShedding']]] = None,
                  max_rate_threshold: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -467,14 +467,14 @@ class AppsecUrlProtectionPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_definitions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict']]]]] = None,
-            bypass_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict']]]]] = None,
+            api_definitions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict', 'outputs.AppsecUrlProtectionPolicyApiDefinition']]]]] = None,
+            bypass_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict', 'outputs.AppsecUrlProtectionPolicyBypassCondition']]]]] = None,
             config_id: pulumi.Input[Optional[_builtins.int]] = None,
             create_date: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            hostname_paths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict']]]]] = None,
-            intelligent_load_shedding: pulumi.Input[Optional[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict']]] = None,
+            hostname_paths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict', 'outputs.AppsecUrlProtectionPolicyHostnamePath']]]]] = None,
+            intelligent_load_shedding: pulumi.Input[Optional[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict', 'outputs.AppsecUrlProtectionPolicyIntelligentLoadShedding']]] = None,
             max_rate_threshold: pulumi.Input[Optional[_builtins.int]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             update_date: pulumi.Input[Optional[_builtins.str]] = None,
@@ -487,14 +487,14 @@ class AppsecUrlProtectionPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict']]]] api_definitions: List of API definitions associated with the URL protection policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict']]]] bypass_conditions: List of bypass conditions for the URL protection policy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict', 'outputs.AppsecUrlProtectionPolicyApiDefinition']]]] api_definitions: List of API definitions associated with the URL protection policy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict', 'outputs.AppsecUrlProtectionPolicyBypassCondition']]]] bypass_conditions: List of bypass conditions for the URL protection policy
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[_builtins.str] create_date: Date when the URL protection policy was created
         :param pulumi.Input[_builtins.str] created_by: User who created the URL protection policy
         :param pulumi.Input[_builtins.str] description: Description of the URL protection policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict']]]] hostname_paths: List of hostname and path configurations
-        :param pulumi.Input[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict']] intelligent_load_shedding: Intelligent load shedding configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict', 'outputs.AppsecUrlProtectionPolicyHostnamePath']]]] hostname_paths: List of hostname and path configurations
+        :param pulumi.Input[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict', 'outputs.AppsecUrlProtectionPolicyIntelligentLoadShedding']] intelligent_load_shedding: Intelligent load shedding configuration
         :param pulumi.Input[_builtins.int] max_rate_threshold: Maximum rate threshold for the URL protection policy
         :param pulumi.Input[_builtins.str] name: Name of the URL protection policy
         :param pulumi.Input[_builtins.str] update_date: Date when the URL protection policy was last updated

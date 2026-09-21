@@ -313,7 +313,7 @@ class ClientlistList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict', 'outputs.ClientlistListItem']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  notes: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -326,7 +326,7 @@ class ClientlistList(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID for which client list is assigned.
         :param pulumi.Input[_builtins.int] group_id: Group ID for which client list is assigned.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict']]]] items: Set of items containing item information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict', 'outputs.ClientlistListItem']]]] items: Set of items containing item information.
         :param pulumi.Input[_builtins.str] name: The name of the client list.
         :param pulumi.Input[_builtins.str] notes: The client list notes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: The client list tags.
@@ -358,7 +358,7 @@ class ClientlistList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict', 'outputs.ClientlistListItem']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  notes: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -400,7 +400,7 @@ class ClientlistList(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             contract_id: pulumi.Input[Optional[_builtins.str]] = None,
             group_id: pulumi.Input[Optional[_builtins.int]] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict', 'outputs.ClientlistListItem']]]]] = None,
             items_count: pulumi.Input[Optional[_builtins.int]] = None,
             list_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -417,7 +417,7 @@ class ClientlistList(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID for which client list is assigned.
         :param pulumi.Input[_builtins.int] group_id: Group ID for which client list is assigned.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict']]]] items: Set of items containing item information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict', 'outputs.ClientlistListItem']]]] items: Set of items containing item information.
         :param pulumi.Input[_builtins.int] items_count: The number of items that a client list contains.
         :param pulumi.Input[_builtins.str] list_id: The ID of the client list.
         :param pulumi.Input[_builtins.str] name: The name of the client list.

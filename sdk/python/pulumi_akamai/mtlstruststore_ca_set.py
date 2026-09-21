@@ -386,10 +386,10 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_insecure_sha1: pulumi.Input[Optional[_builtins.bool]] = None,
-                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict', 'outputs.MtlstruststoreCaSetCertificate']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict', 'outputs.MtlstruststoreCaSetTimeouts']]] = None,
                  version_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -398,7 +398,7 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_insecure_sha1: Allows certificates with SHA-1 signatures if enabled.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]] certificates: The certificates that are valid, non-expired, root, or intermediate.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict', 'outputs.MtlstruststoreCaSetCertificate']]]] certificates: The certificates that are valid, non-expired, root, or intermediate.
         :param pulumi.Input[_builtins.str] description: Any additional comments you can add to the CA set.
         :param pulumi.Input[_builtins.str] name: The name of the CA set.
         :param pulumi.Input[_builtins.str] version_description: Additional description for the CA set version.
@@ -428,10 +428,10 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_insecure_sha1: pulumi.Input[Optional[_builtins.bool]] = None,
-                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict', 'outputs.MtlstruststoreCaSetCertificate']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict', 'outputs.MtlstruststoreCaSetTimeouts']]] = None,
                  version_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -472,7 +472,7 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             account_id: pulumi.Input[Optional[_builtins.str]] = None,
             allow_insecure_sha1: pulumi.Input[Optional[_builtins.bool]] = None,
-            certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]]] = None,
+            certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict', 'outputs.MtlstruststoreCaSetCertificate']]]]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             created_date: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -480,7 +480,7 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
             name: pulumi.Input[Optional[_builtins.str]] = None,
             production_version: pulumi.Input[Optional[_builtins.int]] = None,
             staging_version: pulumi.Input[Optional[_builtins.int]] = None,
-            timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict']]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict', 'outputs.MtlstruststoreCaSetTimeouts']]] = None,
             version_created_by: pulumi.Input[Optional[_builtins.str]] = None,
             version_created_date: pulumi.Input[Optional[_builtins.str]] = None,
             version_description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -495,7 +495,7 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account_id: Identifies the account the CA set belongs to.
         :param pulumi.Input[_builtins.bool] allow_insecure_sha1: Allows certificates with SHA-1 signatures if enabled.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict']]]] certificates: The certificates that are valid, non-expired, root, or intermediate.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict', 'outputs.MtlstruststoreCaSetCertificate']]]] certificates: The certificates that are valid, non-expired, root, or intermediate.
         :param pulumi.Input[_builtins.str] created_by: The user who created the CA set.
         :param pulumi.Input[_builtins.str] created_date: When the CA set was created.
         :param pulumi.Input[_builtins.str] description: Any additional comments you can add to the CA set.

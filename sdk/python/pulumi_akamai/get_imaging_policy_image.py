@@ -69,7 +69,7 @@ class AwaitableGetImagingPolicyImageResult(GetImagingPolicyImageResult):
             policy=self.policy)
 
 
-def get_imaging_policy_image(policy: Optional[Union['GetImagingPolicyImagePolicyArgs', 'GetImagingPolicyImagePolicyArgsDict']] = None,
+def get_imaging_policy_image(policy: Optional[Union['GetImagingPolicyImagePolicyArgs', 'GetImagingPolicyImagePolicyArgsDict', 'outputs.GetImagingPolicyImagePolicyResult']] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImagingPolicyImageResult:
     """
     Use this data source to access information about an existing resource.
@@ -83,7 +83,7 @@ def get_imaging_policy_image(policy: Optional[Union['GetImagingPolicyImagePolicy
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         policy=pulumi.get(__ret__, 'policy'))
-def get_imaging_policy_image_output(policy: pulumi.Input[Optional[Union['GetImagingPolicyImagePolicyArgs', 'GetImagingPolicyImagePolicyArgsDict']]] = None,
+def get_imaging_policy_image_output(policy: pulumi.Input[Optional[Union['GetImagingPolicyImagePolicyArgs', 'GetImagingPolicyImagePolicyArgsDict', 'outputs.GetImagingPolicyImagePolicyResult']]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagingPolicyImageResult]:
     """
     Use this data source to access information about an existing resource.

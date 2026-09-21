@@ -304,7 +304,7 @@ class IamCidrBlock(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actions: pulumi.Input[Optional[Union['IamCidrBlockActionsArgs', 'IamCidrBlockActionsArgsDict']]] = None,
+            actions: pulumi.Input[Optional[Union['IamCidrBlockActionsArgs', 'IamCidrBlockActionsArgsDict', 'outputs.IamCidrBlockActions']]] = None,
             cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
             cidr_block_id: pulumi.Input[Optional[_builtins.int]] = None,
             comments: pulumi.Input[Optional[_builtins.str]] = None,
@@ -320,7 +320,7 @@ class IamCidrBlock(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['IamCidrBlockActionsArgs', 'IamCidrBlockActionsArgsDict']] actions: Specifies activities available for the CIDR block.
+        :param pulumi.Input[Union['IamCidrBlockActionsArgs', 'IamCidrBlockActionsArgsDict', 'outputs.IamCidrBlockActions']] actions: Specifies activities available for the CIDR block.
         :param pulumi.Input[_builtins.str] cidr_block: The value of an IP address or IP address range.
         :param pulumi.Input[_builtins.int] cidr_block_id: Unique identifier for each CIDR block.
         :param pulumi.Input[_builtins.str] comments: Descriptive label you provide for the CIDR block.

@@ -461,7 +461,7 @@ class Property(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
+                 hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict', 'outputs.PropertyHostname']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  product_id: pulumi.Input[Optional[_builtins.str]] = None,
                  property_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -511,7 +511,7 @@ class Property(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
+                 hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict', 'outputs.PropertyHostname']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  product_id: pulumi.Input[Optional[_builtins.str]] = None,
                  property_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -566,16 +566,16 @@ class Property(pulumi.CustomResource):
             asset_id: pulumi.Input[Optional[_builtins.str]] = None,
             contract_id: pulumi.Input[Optional[_builtins.str]] = None,
             group_id: pulumi.Input[Optional[_builtins.str]] = None,
-            hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
+            hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict', 'outputs.PropertyHostname']]]]] = None,
             latest_version: pulumi.Input[Optional[_builtins.int]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             product_id: pulumi.Input[Optional[_builtins.str]] = None,
             production_version: pulumi.Input[Optional[_builtins.int]] = None,
             property_id: pulumi.Input[Optional[_builtins.str]] = None,
             read_version: pulumi.Input[Optional[_builtins.int]] = None,
-            rule_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyRuleErrorArgs', 'PropertyRuleErrorArgsDict']]]]] = None,
+            rule_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyRuleErrorArgs', 'PropertyRuleErrorArgsDict', 'outputs.PropertyRuleError']]]]] = None,
             rule_format: pulumi.Input[Optional[_builtins.str]] = None,
-            rule_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict']]]]] = None,
+            rule_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict', 'outputs.PropertyRuleWarning']]]]] = None,
             rules: pulumi.Input[Optional[_builtins.str]] = None,
             staging_version: pulumi.Input[Optional[_builtins.int]] = None,
             use_hostname_bucket: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -597,7 +597,7 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] property_id: Property ID
         :param pulumi.Input[_builtins.int] read_version: Required property's version to be read
         :param pulumi.Input[_builtins.str] rule_format: Specify the rule format version (defaults to latest version available when created)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict']]]] rule_warnings: Rule validation warnings
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict', 'outputs.PropertyRuleWarning']]]] rule_warnings: Rule validation warnings
         :param pulumi.Input[_builtins.str] rules: Property Rules as JSON
         :param pulumi.Input[_builtins.int] staging_version: Property's version currently activated in staging (zero when not active in staging)
         :param pulumi.Input[_builtins.bool] use_hostname_bucket: Specifies whether hostname bucket is used with this property. It allows you to add or remove property hostnames without incrementing property versions.

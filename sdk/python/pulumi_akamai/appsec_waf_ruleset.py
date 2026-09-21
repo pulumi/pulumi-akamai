@@ -168,9 +168,9 @@ class AppsecWafRuleset(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]]] = None,
+                 attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict', 'outputs.AppsecWafRulesetAttackGroup']]]]] = None,
                  config_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict', 'outputs.AppsecWafRulesetRule']]]]] = None,
                  security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -178,9 +178,9 @@ class AppsecWafRuleset(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]] attack_groups: List of attack group objects including action and condition exceptions
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict', 'outputs.AppsecWafRulesetAttackGroup']]]] attack_groups: List of attack group objects including action and condition exceptions
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]] rules: List of rule objects including action and condition exceptions
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict', 'outputs.AppsecWafRulesetRule']]]] rules: List of rule objects including action and condition exceptions
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
         ...
@@ -207,9 +207,9 @@ class AppsecWafRuleset(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]]] = None,
+                 attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict', 'outputs.AppsecWafRulesetAttackGroup']]]]] = None,
                  config_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict', 'outputs.AppsecWafRulesetRule']]]]] = None,
                  security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -238,9 +238,9 @@ class AppsecWafRuleset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]]] = None,
+            attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict', 'outputs.AppsecWafRulesetAttackGroup']]]]] = None,
             config_id: pulumi.Input[Optional[_builtins.int]] = None,
-            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict', 'outputs.AppsecWafRulesetRule']]]]] = None,
             security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppsecWafRuleset':
         """
         Get an existing AppsecWafRuleset resource's state with the given name, id, and optional extra
@@ -249,9 +249,9 @@ class AppsecWafRuleset(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict']]]] attack_groups: List of attack group objects including action and condition exceptions
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict', 'outputs.AppsecWafRulesetAttackGroup']]]] attack_groups: List of attack group objects including action and condition exceptions
         :param pulumi.Input[_builtins.int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict']]]] rules: List of rule objects including action and condition exceptions
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict', 'outputs.AppsecWafRulesetRule']]]] rules: List of rule objects including action and condition exceptions
         :param pulumi.Input[_builtins.str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

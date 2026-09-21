@@ -841,7 +841,7 @@ class IamUser(pulumi.CustomResource):
                  session_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']]] = None,
+                 user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict', 'outputs.IamUserUserNotifications']]] = None,
                  zip_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -869,7 +869,7 @@ class IamUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] session_timeout: The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
         :param pulumi.Input[_builtins.str] state: The user's state.
         :param pulumi.Input[_builtins.str] time_zone: The user's time zone. The value can be any that are available from the view-time-zones operation.
-        :param pulumi.Input[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']] user_notifications: Specifies email notifications the user receives for products.
+        :param pulumi.Input[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict', 'outputs.IamUserUserNotifications']] user_notifications: Specifies email notifications the user receives for products.
         :param pulumi.Input[_builtins.str] zip_code: The user's five-digit ZIP code.
         """
         ...
@@ -916,7 +916,7 @@ class IamUser(pulumi.CustomResource):
                  session_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']]] = None,
+                 user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict', 'outputs.IamUserUserNotifications']]] = None,
                  zip_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1001,7 +1001,7 @@ class IamUser(pulumi.CustomResource):
             tfa_configured: pulumi.Input[Optional[_builtins.bool]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
             user_name: pulumi.Input[Optional[_builtins.str]] = None,
-            user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']]] = None,
+            user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict', 'outputs.IamUserUserNotifications']]] = None,
             zip_code: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamUser':
         """
         Get an existing IamUser resource's state with the given name, id, and optional extra
@@ -1035,7 +1035,7 @@ class IamUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] tfa_configured: Indicates whether two-factor authentication is configured.
         :param pulumi.Input[_builtins.str] time_zone: The user's time zone. The value can be any that are available from the view-time-zones operation.
         :param pulumi.Input[_builtins.str] user_name: A user's `loginId`. Typically, a user's email address.
-        :param pulumi.Input[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict']] user_notifications: Specifies email notifications the user receives for products.
+        :param pulumi.Input[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict', 'outputs.IamUserUserNotifications']] user_notifications: Specifies email notifications the user receives for products.
         :param pulumi.Input[_builtins.str] zip_code: The user's five-digit ZIP code.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

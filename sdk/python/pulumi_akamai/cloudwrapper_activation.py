@@ -130,7 +130,7 @@ class CloudwrapperActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  revision: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict', 'outputs.CloudwrapperActivationTimeouts']]] = None,
                  __props__=None):
         """
         Create a CloudwrapperActivation resource with the given unique name, props, and options.
@@ -166,7 +166,7 @@ class CloudwrapperActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: pulumi.Input[Optional[_builtins.int]] = None,
                  revision: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict', 'outputs.CloudwrapperActivationTimeouts']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -195,7 +195,7 @@ class CloudwrapperActivation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: pulumi.Input[Optional[_builtins.int]] = None,
             revision: pulumi.Input[Optional[_builtins.str]] = None,
-            timeouts: pulumi.Input[Optional[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None) -> 'CloudwrapperActivation':
+            timeouts: pulumi.Input[Optional[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict', 'outputs.CloudwrapperActivationTimeouts']]] = None) -> 'CloudwrapperActivation':
         """
         Get an existing CloudwrapperActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

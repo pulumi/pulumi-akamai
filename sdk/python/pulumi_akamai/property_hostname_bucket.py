@@ -362,7 +362,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  hostname_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]]] = None,
+                 hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict', 'outputs.PropertyHostnameBucketHostnames']]]]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
                  notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -377,7 +377,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
-        :param pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
+        :param pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict', 'outputs.PropertyHostnameBucketHostnames']]]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         :param pulumi.Input[_builtins.str] network: The network to activate on, either `STAGING` or `PRODUCTION`.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the request.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.
@@ -411,7 +411,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  hostname_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]]] = None,
+                 hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict', 'outputs.PropertyHostnameBucketHostnames']]]]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
                  notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -457,7 +457,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
             contract_id: pulumi.Input[Optional[_builtins.str]] = None,
             group_id: pulumi.Input[Optional[_builtins.str]] = None,
             hostname_count: pulumi.Input[Optional[_builtins.int]] = None,
-            hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]]] = None,
+            hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict', 'outputs.PropertyHostnameBucketHostnames']]]]] = None,
             network: pulumi.Input[Optional[_builtins.str]] = None,
             note: pulumi.Input[Optional[_builtins.str]] = None,
             notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -475,7 +475,7 @@ class PropertyHostnameBucket(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] contract_id: The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         :param pulumi.Input[_builtins.str] group_id: The unique identifier for the group. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
         :param pulumi.Input[_builtins.int] hostname_count: The computed number of hostnames after applying desired modifications. Used only to informduring the plan phase about the number of hostnames that will be active after making the changes.
-        :param pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict']]]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
+        :param pulumi.Input[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict', 'outputs.PropertyHostnameBucketHostnames']]]] hostnames: The hostnames mapping. The key represents 'cname_from' and the value contains hostnames details, consisting of certificate provisioning type and edge hostname.
         :param pulumi.Input[_builtins.str] network: The network to activate on, either `STAGING` or `PRODUCTION`.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the request.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notify_emails: Email addresses to notify when the activation status changes.

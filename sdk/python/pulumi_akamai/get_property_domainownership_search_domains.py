@@ -48,7 +48,7 @@ class AwaitableGetPropertyDomainownershipSearchDomainsResult(GetPropertyDomainow
             domains=self.domains)
 
 
-def get_property_domainownership_search_domains(domains: Optional[Sequence[Union['GetPropertyDomainownershipSearchDomainsDomainArgs', 'GetPropertyDomainownershipSearchDomainsDomainArgsDict']]] = None,
+def get_property_domainownership_search_domains(domains: Optional[Sequence[Union['GetPropertyDomainownershipSearchDomainsDomainArgs', 'GetPropertyDomainownershipSearchDomainsDomainArgsDict', 'outputs.GetPropertyDomainownershipSearchDomainsDomainResult']]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyDomainownershipSearchDomainsResult:
     """
     Use this data source to access information about an existing resource.
@@ -60,7 +60,7 @@ def get_property_domainownership_search_domains(domains: Optional[Sequence[Union
 
     return AwaitableGetPropertyDomainownershipSearchDomainsResult(
         domains=pulumi.get(__ret__, 'domains'))
-def get_property_domainownership_search_domains_output(domains: pulumi.Input[Optional[Sequence[Union['GetPropertyDomainownershipSearchDomainsDomainArgs', 'GetPropertyDomainownershipSearchDomainsDomainArgsDict']]]] = None,
+def get_property_domainownership_search_domains_output(domains: pulumi.Input[Optional[Sequence[Union['GetPropertyDomainownershipSearchDomainsDomainArgs', 'GetPropertyDomainownershipSearchDomainsDomainArgsDict', 'outputs.GetPropertyDomainownershipSearchDomainsDomainResult']]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyDomainownershipSearchDomainsResult]:
     """
     Use this data source to access information about an existing resource.

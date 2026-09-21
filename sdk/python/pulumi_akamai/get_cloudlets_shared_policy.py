@@ -129,7 +129,7 @@ class AwaitableGetCloudletsSharedPolicyResult(GetCloudletsSharedPolicyResult):
             warnings=self.warnings)
 
 
-def get_cloudlets_shared_policy(activations: Optional[Union['GetCloudletsSharedPolicyActivationsArgs', 'GetCloudletsSharedPolicyActivationsArgsDict']] = None,
+def get_cloudlets_shared_policy(activations: Optional[Union['GetCloudletsSharedPolicyActivationsArgs', 'GetCloudletsSharedPolicyActivationsArgsDict', 'outputs.GetCloudletsSharedPolicyActivationsResult']] = None,
                                 policy_id: Optional[_builtins.int] = None,
                                 version: Optional[_builtins.int] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsSharedPolicyResult:
@@ -154,7 +154,7 @@ def get_cloudlets_shared_policy(activations: Optional[Union['GetCloudletsSharedP
         version=pulumi.get(__ret__, 'version'),
         version_description=pulumi.get(__ret__, 'version_description'),
         warnings=pulumi.get(__ret__, 'warnings'))
-def get_cloudlets_shared_policy_output(activations: pulumi.Input[Optional[Optional[Union['GetCloudletsSharedPolicyActivationsArgs', 'GetCloudletsSharedPolicyActivationsArgsDict']]]] = None,
+def get_cloudlets_shared_policy_output(activations: pulumi.Input[Optional[Optional[Union['GetCloudletsSharedPolicyActivationsArgs', 'GetCloudletsSharedPolicyActivationsArgsDict', 'outputs.GetCloudletsSharedPolicyActivationsResult']]]] = None,
                                        policy_id: pulumi.Input[Optional[_builtins.int]] = None,
                                        version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsSharedPolicyResult]:

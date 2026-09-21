@@ -184,8 +184,8 @@ class AwaitableGetGtmResourceResult(GetGtmResourceResult):
 
 
 def get_gtm_resource(domain: Optional[_builtins.str] = None,
-                     links: Optional[Sequence[Union['GetGtmResourceLinkArgs', 'GetGtmResourceLinkArgsDict']]] = None,
-                     resource_instances: Optional[Sequence[Union['GetGtmResourceResourceInstanceArgs', 'GetGtmResourceResourceInstanceArgsDict']]] = None,
+                     links: Optional[Sequence[Union['GetGtmResourceLinkArgs', 'GetGtmResourceLinkArgsDict', 'outputs.GetGtmResourceLinkResult']]] = None,
+                     resource_instances: Optional[Sequence[Union['GetGtmResourceResourceInstanceArgs', 'GetGtmResourceResourceInstanceArgsDict', 'outputs.GetGtmResourceResourceInstanceResult']]] = None,
                      resource_name: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmResourceResult:
     """
@@ -217,8 +217,8 @@ def get_gtm_resource(domain: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         upper_bound=pulumi.get(__ret__, 'upper_bound'))
 def get_gtm_resource_output(domain: pulumi.Input[Optional[_builtins.str]] = None,
-                            links: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmResourceLinkArgs', 'GetGtmResourceLinkArgsDict']]]]] = None,
-                            resource_instances: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmResourceResourceInstanceArgs', 'GetGtmResourceResourceInstanceArgsDict']]]]] = None,
+                            links: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmResourceLinkArgs', 'GetGtmResourceLinkArgsDict', 'outputs.GetGtmResourceLinkResult']]]]] = None,
+                            resource_instances: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmResourceResourceInstanceArgs', 'GetGtmResourceResourceInstanceArgsDict', 'outputs.GetGtmResourceResourceInstanceResult']]]]] = None,
                             resource_name: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmResourceResult]:
     """

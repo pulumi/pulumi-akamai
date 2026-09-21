@@ -151,8 +151,8 @@ class ReportinggroupsGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_group: pulumi.Input[Optional[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict']]] = None,
-                 contract: pulumi.Input[Optional[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict']]] = None,
+                 access_group: pulumi.Input[Optional[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict', 'outputs.ReportinggroupsGroupAccessGroup']]] = None,
+                 contract: pulumi.Input[Optional[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict', 'outputs.ReportinggroupsGroupContract']]] = None,
                  reporting_group_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -160,8 +160,8 @@ class ReportinggroupsGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict']] access_group: The access control group that controls access to specific CP codes.
-        :param pulumi.Input[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict']] contract: A collection of contracts and CP codes assigned to the reporting group. Exactly one contract is allowed.
+        :param pulumi.Input[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict', 'outputs.ReportinggroupsGroupAccessGroup']] access_group: The access control group that controls access to specific CP codes.
+        :param pulumi.Input[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict', 'outputs.ReportinggroupsGroupContract']] contract: A collection of contracts and CP codes assigned to the reporting group. Exactly one contract is allowed.
         :param pulumi.Input[_builtins.str] reporting_group_name: The descriptive label for the reporting group.
         """
         ...
@@ -188,8 +188,8 @@ class ReportinggroupsGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_group: pulumi.Input[Optional[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict']]] = None,
-                 contract: pulumi.Input[Optional[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict']]] = None,
+                 access_group: pulumi.Input[Optional[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict', 'outputs.ReportinggroupsGroupAccessGroup']]] = None,
+                 contract: pulumi.Input[Optional[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict', 'outputs.ReportinggroupsGroupContract']]] = None,
                  reporting_group_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -220,8 +220,8 @@ class ReportinggroupsGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_group: pulumi.Input[Optional[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict']]] = None,
-            contract: pulumi.Input[Optional[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict']]] = None,
+            access_group: pulumi.Input[Optional[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict', 'outputs.ReportinggroupsGroupAccessGroup']]] = None,
+            contract: pulumi.Input[Optional[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict', 'outputs.ReportinggroupsGroupContract']]] = None,
             reporting_group_id: pulumi.Input[Optional[_builtins.int]] = None,
             reporting_group_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'ReportinggroupsGroup':
         """
@@ -231,8 +231,8 @@ class ReportinggroupsGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict']] access_group: The access control group that controls access to specific CP codes.
-        :param pulumi.Input[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict']] contract: A collection of contracts and CP codes assigned to the reporting group. Exactly one contract is allowed.
+        :param pulumi.Input[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict', 'outputs.ReportinggroupsGroupAccessGroup']] access_group: The access control group that controls access to specific CP codes.
+        :param pulumi.Input[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict', 'outputs.ReportinggroupsGroupContract']] contract: A collection of contracts and CP codes assigned to the reporting group. Exactly one contract is allowed.
         :param pulumi.Input[_builtins.int] reporting_group_id: Unique identifier of the reporting group. Populated after creation.
         :param pulumi.Input[_builtins.str] reporting_group_name: The descriptive label for the reporting group.
         """

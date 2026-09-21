@@ -337,11 +337,11 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
                  comments: pulumi.Input[Optional[_builtins.str]] = None,
                  config_name: pulumi.Input[Optional[_builtins.str]] = None,
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict', 'outputs.CloudwrapperConfigurationLocation']]]]] = None,
                  notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  property_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  retain_idle_objects: pulumi.Input[Optional[_builtins.bool]] = None,
-                 timeouts: pulumi.Input[Optional[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict', 'outputs.CloudwrapperConfigurationTimeouts']]] = None,
                  __props__=None):
         """
         Create a CloudwrapperConfiguration resource with the given unique name, props, and options.
@@ -352,7 +352,7 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] comments: Additional information you provide to differentiate or track changes of the configuration.
         :param pulumi.Input[_builtins.str] config_name: Name of the configuration.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID having Cloud Wrapper entitlement.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]] locations: List of locations to use with the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict', 'outputs.CloudwrapperConfigurationLocation']]]] locations: List of locations to use with the configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: Email addresses to use for notifications.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] property_ids: List of properties belonging to eligible products.
         :param pulumi.Input[_builtins.bool] retain_idle_objects: Retain idle objects beyond their max idle lifetime.
@@ -385,11 +385,11 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
                  comments: pulumi.Input[Optional[_builtins.str]] = None,
                  config_name: pulumi.Input[Optional[_builtins.str]] = None,
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict', 'outputs.CloudwrapperConfigurationLocation']]]]] = None,
                  notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  property_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  retain_idle_objects: pulumi.Input[Optional[_builtins.bool]] = None,
-                 timeouts: pulumi.Input[Optional[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict', 'outputs.CloudwrapperConfigurationTimeouts']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -433,12 +433,12 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
             comments: pulumi.Input[Optional[_builtins.str]] = None,
             config_name: pulumi.Input[Optional[_builtins.str]] = None,
             contract_id: pulumi.Input[Optional[_builtins.str]] = None,
-            locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict', 'outputs.CloudwrapperConfigurationLocation']]]]] = None,
             notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             property_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             retain_idle_objects: pulumi.Input[Optional[_builtins.bool]] = None,
             revision: pulumi.Input[Optional[_builtins.str]] = None,
-            timeouts: pulumi.Input[Optional[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict']]] = None) -> 'CloudwrapperConfiguration':
+            timeouts: pulumi.Input[Optional[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict', 'outputs.CloudwrapperConfigurationTimeouts']]] = None) -> 'CloudwrapperConfiguration':
         """
         Get an existing CloudwrapperConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -450,7 +450,7 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] comments: Additional information you provide to differentiate or track changes of the configuration.
         :param pulumi.Input[_builtins.str] config_name: Name of the configuration.
         :param pulumi.Input[_builtins.str] contract_id: Contract ID having Cloud Wrapper entitlement.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]] locations: List of locations to use with the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict', 'outputs.CloudwrapperConfigurationLocation']]]] locations: List of locations to use with the configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: Email addresses to use for notifications.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] property_ids: List of properties belonging to eligible products.
         :param pulumi.Input[_builtins.bool] retain_idle_objects: Retain idle objects beyond their max idle lifetime.

@@ -225,7 +225,7 @@ class MtlstruststoreCaSetActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ca_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict', 'outputs.MtlstruststoreCaSetActivationTimeouts']]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -263,7 +263,7 @@ class MtlstruststoreCaSetActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ca_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict', 'outputs.MtlstruststoreCaSetActivationTimeouts']]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -304,7 +304,7 @@ class MtlstruststoreCaSetActivation(pulumi.CustomResource):
             modified_by: pulumi.Input[Optional[_builtins.str]] = None,
             modified_date: pulumi.Input[Optional[_builtins.str]] = None,
             network: pulumi.Input[Optional[_builtins.str]] = None,
-            timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict']]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict', 'outputs.MtlstruststoreCaSetActivationTimeouts']]] = None,
             version: pulumi.Input[Optional[_builtins.int]] = None) -> 'MtlstruststoreCaSetActivation':
         """
         Get an existing MtlstruststoreCaSetActivation resource's state with the given name, id, and optional extra

@@ -170,7 +170,7 @@ class AppsecAdvancedSettingsUrlEvasionDefense(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bypass_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  config_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict', 'outputs.AppsecAdvancedSettingsUrlEvasionDefenseRule']]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -180,7 +180,7 @@ class AppsecAdvancedSettingsUrlEvasionDefense(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] bypass_lists: Client list identifiers for trusted clients who are exempt from URL evasion mitigation rules.
         :param pulumi.Input[_builtins.int] config_id: Security configuration ID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict']]]] rules: URL Evasion Defense rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict', 'outputs.AppsecAdvancedSettingsUrlEvasionDefenseRule']]]] rules: URL Evasion Defense rules.
         :param pulumi.Input[_builtins.str] status: Sets whether the feature is `enabled` or `disabled`.
         """
         ...
@@ -209,7 +209,7 @@ class AppsecAdvancedSettingsUrlEvasionDefense(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bypass_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  config_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict', 'outputs.AppsecAdvancedSettingsUrlEvasionDefenseRule']]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -240,7 +240,7 @@ class AppsecAdvancedSettingsUrlEvasionDefense(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             bypass_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             config_id: pulumi.Input[Optional[_builtins.int]] = None,
-            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict', 'outputs.AppsecAdvancedSettingsUrlEvasionDefenseRule']]]]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppsecAdvancedSettingsUrlEvasionDefense':
         """
         Get an existing AppsecAdvancedSettingsUrlEvasionDefense resource's state with the given name, id, and optional extra
@@ -251,7 +251,7 @@ class AppsecAdvancedSettingsUrlEvasionDefense(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] bypass_lists: Client list identifiers for trusted clients who are exempt from URL evasion mitigation rules.
         :param pulumi.Input[_builtins.int] config_id: Security configuration ID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict']]]] rules: URL Evasion Defense rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict', 'outputs.AppsecAdvancedSettingsUrlEvasionDefenseRule']]]] rules: URL Evasion Defense rules.
         :param pulumi.Input[_builtins.str] status: Sets whether the feature is `enabled` or `disabled`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

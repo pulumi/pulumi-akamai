@@ -591,7 +591,7 @@ class CloudcertificatesCertificate(pulumi.CustomResource):
                  renew_before_expiration_days: pulumi.Input[Optional[_builtins.int]] = None,
                  sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  secure_network: pulumi.Input[Optional[_builtins.str]] = None,
-                 subject: pulumi.Input[Optional[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict']]] = None,
+                 subject: pulumi.Input[Optional[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict', 'outputs.CloudcertificatesCertificateSubject']]] = None,
                  __props__=None):
         """
         Create a CloudcertificatesCertificate resource with the given unique name, props, and options.
@@ -608,7 +608,7 @@ class CloudcertificatesCertificate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] renew_before_expiration_days: Number of days before the certificate's expiration date when renewal should be indicated. Only non-negative values are accepted.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: The list of Subject Alternative Names (SANs) for the certificate.
         :param pulumi.Input[_builtins.str] secure_network: Secure network type to use for the certificate. Valid values are 'ENHANCED_TLS' and 'STANDARD_TLS'.
-        :param pulumi.Input[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict']] subject: Subject fields as defined in X.509 certificates (RFC 5280). At least one of the inner fields must be specified.
+        :param pulumi.Input[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict', 'outputs.CloudcertificatesCertificateSubject']] subject: Subject fields as defined in X.509 certificates (RFC 5280). At least one of the inner fields must be specified.
         """
         ...
     @overload
@@ -644,7 +644,7 @@ class CloudcertificatesCertificate(pulumi.CustomResource):
                  renew_before_expiration_days: pulumi.Input[Optional[_builtins.int]] = None,
                  sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  secure_network: pulumi.Input[Optional[_builtins.str]] = None,
-                 subject: pulumi.Input[Optional[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict']]] = None,
+                 subject: pulumi.Input[Optional[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict', 'outputs.CloudcertificatesCertificateSubject']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -719,7 +719,7 @@ class CloudcertificatesCertificate(pulumi.CustomResource):
             renew_pending: pulumi.Input[Optional[_builtins.bool]] = None,
             sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             secure_network: pulumi.Input[Optional[_builtins.str]] = None,
-            subject: pulumi.Input[Optional[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict']]] = None) -> 'CloudcertificatesCertificate':
+            subject: pulumi.Input[Optional[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict', 'outputs.CloudcertificatesCertificateSubject']]] = None) -> 'CloudcertificatesCertificate':
         """
         Get an existing CloudcertificatesCertificate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -749,7 +749,7 @@ class CloudcertificatesCertificate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] renew_pending: Indicates whether the certificate needs renewal. Set to true when the current time is within 'renew_before_expiration_days' of the certificate's expiration date.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sans: The list of Subject Alternative Names (SANs) for the certificate.
         :param pulumi.Input[_builtins.str] secure_network: Secure network type to use for the certificate. Valid values are 'ENHANCED_TLS' and 'STANDARD_TLS'.
-        :param pulumi.Input[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict']] subject: Subject fields as defined in X.509 certificates (RFC 5280). At least one of the inner fields must be specified.
+        :param pulumi.Input[Union['CloudcertificatesCertificateSubjectArgs', 'CloudcertificatesCertificateSubjectArgsDict', 'outputs.CloudcertificatesCertificateSubject']] subject: Subject fields as defined in X.509 certificates (RFC 5280). At least one of the inner fields must be specified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

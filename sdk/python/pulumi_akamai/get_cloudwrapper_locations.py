@@ -48,7 +48,7 @@ class AwaitableGetCloudwrapperLocationsResult(GetCloudwrapperLocationsResult):
             locations=self.locations)
 
 
-def get_cloudwrapper_locations(locations: Optional[Sequence[Union['GetCloudwrapperLocationsLocationArgs', 'GetCloudwrapperLocationsLocationArgsDict']]] = None,
+def get_cloudwrapper_locations(locations: Optional[Sequence[Union['GetCloudwrapperLocationsLocationArgs', 'GetCloudwrapperLocationsLocationArgsDict', 'outputs.GetCloudwrapperLocationsLocationResult']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudwrapperLocationsResult:
     """
     Use this data source to access information about an existing resource.
@@ -60,7 +60,7 @@ def get_cloudwrapper_locations(locations: Optional[Sequence[Union['GetCloudwrapp
 
     return AwaitableGetCloudwrapperLocationsResult(
         locations=pulumi.get(__ret__, 'locations'))
-def get_cloudwrapper_locations_output(locations: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperLocationsLocationArgs', 'GetCloudwrapperLocationsLocationArgsDict']]]]] = None,
+def get_cloudwrapper_locations_output(locations: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperLocationsLocationArgs', 'GetCloudwrapperLocationsLocationArgsDict', 'outputs.GetCloudwrapperLocationsLocationResult']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperLocationsResult]:
     """
     Use this data source to access information about an existing resource.

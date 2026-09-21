@@ -557,18 +557,18 @@ class IamApiClient(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_account_switch: pulumi.Input[Optional[_builtins.bool]] = None,
-                 api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']]] = None,
+                 api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict', 'outputs.IamApiClientApiAccess']]] = None,
                  authorized_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  can_auto_create_credential: pulumi.Input[Optional[_builtins.bool]] = None,
                  client_description: pulumi.Input[Optional[_builtins.str]] = None,
                  client_name: pulumi.Input[Optional[_builtins.str]] = None,
                  client_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict']]] = None,
-                 group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']]] = None,
-                 ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']]] = None,
+                 credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict', 'outputs.IamApiClientCredential']]] = None,
+                 group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict', 'outputs.IamApiClientGroupAccess']]] = None,
+                 ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict', 'outputs.IamApiClientIpAcl']]] = None,
                  lock: pulumi.Input[Optional[_builtins.bool]] = None,
                  notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']]] = None,
+                 purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict', 'outputs.IamApiClientPurgeOptions']]] = None,
                  __props__=None):
         """
         Create a IamApiClient resource with the given unique name, props, and options.
@@ -576,17 +576,17 @@ class IamApiClient(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_account_switch: Enables the API client to manage more than one account.
-        :param pulumi.Input[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']] api_access: The APIs the API client can access.
+        :param pulumi.Input[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict', 'outputs.IamApiClientApiAccess']] api_access: The APIs the API client can access.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         :param pulumi.Input[_builtins.bool] can_auto_create_credential: Whether the API client can create a credential for a new API client. The default is false.
         :param pulumi.Input[_builtins.str] client_description: A human-readable description of the API client.
         :param pulumi.Input[_builtins.str] client_name: A human-readable name for the API client.
         :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
-        :param pulumi.Input[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']] group_access: Specifies the API client's group access.
-        :param pulumi.Input[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']] ip_acl: Specifies the API client's IP list restriction.
+        :param pulumi.Input[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict', 'outputs.IamApiClientGroupAccess']] group_access: Specifies the API client's group access.
+        :param pulumi.Input[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict', 'outputs.IamApiClientIpAcl']] ip_acl: Specifies the API client's IP list restriction.
         :param pulumi.Input[_builtins.bool] lock: Whether to lock or unlock the API client.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: Email addresses to notify users when credentials expire.
-        :param pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+        :param pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict', 'outputs.IamApiClientPurgeOptions']] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         ...
     @overload
@@ -613,18 +613,18 @@ class IamApiClient(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_account_switch: pulumi.Input[Optional[_builtins.bool]] = None,
-                 api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']]] = None,
+                 api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict', 'outputs.IamApiClientApiAccess']]] = None,
                  authorized_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  can_auto_create_credential: pulumi.Input[Optional[_builtins.bool]] = None,
                  client_description: pulumi.Input[Optional[_builtins.str]] = None,
                  client_name: pulumi.Input[Optional[_builtins.str]] = None,
                  client_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict']]] = None,
-                 group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']]] = None,
-                 ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']]] = None,
+                 credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict', 'outputs.IamApiClientCredential']]] = None,
+                 group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict', 'outputs.IamApiClientGroupAccess']]] = None,
+                 ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict', 'outputs.IamApiClientIpAcl']]] = None,
                  lock: pulumi.Input[Optional[_builtins.bool]] = None,
                  notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']]] = None,
+                 purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict', 'outputs.IamApiClientPurgeOptions']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -679,10 +679,10 @@ class IamApiClient(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             access_token: pulumi.Input[Optional[_builtins.str]] = None,
-            actions: pulumi.Input[Optional[Union['IamApiClientActionsArgs', 'IamApiClientActionsArgsDict']]] = None,
+            actions: pulumi.Input[Optional[Union['IamApiClientActionsArgs', 'IamApiClientActionsArgsDict', 'outputs.IamApiClientActions']]] = None,
             active_credential_count: pulumi.Input[Optional[_builtins.int]] = None,
             allow_account_switch: pulumi.Input[Optional[_builtins.bool]] = None,
-            api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']]] = None,
+            api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict', 'outputs.IamApiClientApiAccess']]] = None,
             authorized_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             base_url: pulumi.Input[Optional[_builtins.str]] = None,
             can_auto_create_credential: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -692,12 +692,12 @@ class IamApiClient(pulumi.CustomResource):
             client_type: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             created_date: pulumi.Input[Optional[_builtins.str]] = None,
-            credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict']]] = None,
-            group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']]] = None,
-            ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']]] = None,
+            credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict', 'outputs.IamApiClientCredential']]] = None,
+            group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict', 'outputs.IamApiClientGroupAccess']]] = None,
+            ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict', 'outputs.IamApiClientIpAcl']]] = None,
             lock: pulumi.Input[Optional[_builtins.bool]] = None,
             notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']]] = None) -> 'IamApiClient':
+            purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict', 'outputs.IamApiClientPurgeOptions']]] = None) -> 'IamApiClient':
         """
         Get an existing IamApiClient resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -706,10 +706,10 @@ class IamApiClient(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_token: The part of the client secret that identifies your API client and lets you access applications and resources.
-        :param pulumi.Input[Union['IamApiClientActionsArgs', 'IamApiClientActionsArgsDict']] actions: Specifies activities available for the API client.
+        :param pulumi.Input[Union['IamApiClientActionsArgs', 'IamApiClientActionsArgsDict', 'outputs.IamApiClientActions']] actions: Specifies activities available for the API client.
         :param pulumi.Input[_builtins.int] active_credential_count: The number of credentials active for the API client. When the count is zero, you can delete the API client without interruption.
         :param pulumi.Input[_builtins.bool] allow_account_switch: Enables the API client to manage more than one account.
-        :param pulumi.Input[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict']] api_access: The APIs the API client can access.
+        :param pulumi.Input[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict', 'outputs.IamApiClientApiAccess']] api_access: The APIs the API client can access.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authorized_users: The API client's valid users. When the 'client_type' is either 'CLIENT' or 'USER_CLIENT', you need to specify a single username in an array.
         :param pulumi.Input[_builtins.str] base_url: The base URL for the service.
         :param pulumi.Input[_builtins.bool] can_auto_create_credential: Whether the API client can create a credential for a new API client. The default is false.
@@ -719,11 +719,11 @@ class IamApiClient(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] client_type: Specifies the API client's ownership and credential management. 'CLIENT' indicates the creator owns and manages the credentials. 'USER_CLIENT' indicates another user owns the client and manages the credentials.
         :param pulumi.Input[_builtins.str] created_by: The user who created the API client.
         :param pulumi.Input[_builtins.str] created_date: The ISO 8601 timestamp indicating when the API client was created.
-        :param pulumi.Input[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict']] group_access: Specifies the API client's group access.
-        :param pulumi.Input[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict']] ip_acl: Specifies the API client's IP list restriction.
+        :param pulumi.Input[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict', 'outputs.IamApiClientGroupAccess']] group_access: Specifies the API client's group access.
+        :param pulumi.Input[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict', 'outputs.IamApiClientIpAcl']] ip_acl: Specifies the API client's IP list restriction.
         :param pulumi.Input[_builtins.bool] lock: Whether to lock or unlock the API client.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: Email addresses to notify users when credentials expire.
-        :param pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict']] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
+        :param pulumi.Input[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict', 'outputs.IamApiClientPurgeOptions']] purge_options: Configures the API client to access the Fast Purge API. Provide it only if the `apis` attribute includes an `api_name` of `CCU API`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

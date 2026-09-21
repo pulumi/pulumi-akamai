@@ -57,7 +57,7 @@ class AwaitableGetCloudwrapperCapacitiesResult(GetCloudwrapperCapacitiesResult):
             contract_ids=self.contract_ids)
 
 
-def get_cloudwrapper_capacities(capacities: Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict']]] = None,
+def get_cloudwrapper_capacities(capacities: Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict', 'outputs.GetCloudwrapperCapacitiesCapacityResult']]] = None,
                                 contract_ids: Optional[Sequence[_builtins.str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudwrapperCapacitiesResult:
     """
@@ -72,7 +72,7 @@ def get_cloudwrapper_capacities(capacities: Optional[Sequence[Union['GetCloudwra
     return AwaitableGetCloudwrapperCapacitiesResult(
         capacities=pulumi.get(__ret__, 'capacities'),
         contract_ids=pulumi.get(__ret__, 'contract_ids'))
-def get_cloudwrapper_capacities_output(capacities: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict']]]]] = None,
+def get_cloudwrapper_capacities_output(capacities: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict', 'outputs.GetCloudwrapperCapacitiesCapacityResult']]]]] = None,
                                        contract_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperCapacitiesResult]:
     """
