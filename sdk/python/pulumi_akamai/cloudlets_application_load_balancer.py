@@ -257,9 +257,9 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  balancing_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]]] = None,
+                 data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict', 'outputs.CloudletsApplicationLoadBalancerDataCenter']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict']]] = None,
+                 liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict', 'outputs.CloudletsApplicationLoadBalancerLivenessSettings']]] = None,
                  origin_description: pulumi.Input[Optional[_builtins.str]] = None,
                  origin_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -269,7 +269,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict', 'outputs.CloudletsApplicationLoadBalancerDataCenter']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         :param pulumi.Input[_builtins.str] description: The load balancer configuration version description
         :param pulumi.Input[_builtins.str] origin_description: The load balancer configuration description
         :param pulumi.Input[_builtins.str] origin_id: The conditional origin's unique identifier
@@ -299,9 +299,9 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  balancing_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]]] = None,
+                 data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict', 'outputs.CloudletsApplicationLoadBalancerDataCenter']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict']]] = None,
+                 liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict', 'outputs.CloudletsApplicationLoadBalancerLivenessSettings']]] = None,
                  origin_description: pulumi.Input[Optional[_builtins.str]] = None,
                  origin_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -336,9 +336,9 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             balancing_type: pulumi.Input[Optional[_builtins.str]] = None,
-            data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]]] = None,
+            data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict', 'outputs.CloudletsApplicationLoadBalancerDataCenter']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict']]] = None,
+            liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict', 'outputs.CloudletsApplicationLoadBalancerLivenessSettings']]] = None,
             origin_description: pulumi.Input[Optional[_builtins.str]] = None,
             origin_id: pulumi.Input[Optional[_builtins.str]] = None,
             version: pulumi.Input[Optional[_builtins.int]] = None,
@@ -351,7 +351,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict', 'outputs.CloudletsApplicationLoadBalancerDataCenter']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an application load balancer configuration.
         :param pulumi.Input[_builtins.str] description: The load balancer configuration version description
         :param pulumi.Input[_builtins.str] origin_description: The load balancer configuration description
         :param pulumi.Input[_builtins.str] origin_id: The conditional origin's unique identifier

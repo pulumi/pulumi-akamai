@@ -234,7 +234,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
                  associated_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict', 'outputs.CloudletsPolicyActivationTimeouts']]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -245,7 +245,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] associated_properties: Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         :param pulumi.Input[_builtins.str] network: The network you want to activate the policy version on (options are Staging and Production)
         :param pulumi.Input[_builtins.int] policy_id: ID of the Cloudlets policy you want to activate
-        :param pulumi.Input[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict', 'outputs.CloudletsPolicyActivationTimeouts']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] version: Cloudlets policy version you want to activate
         """
         ...
@@ -275,7 +275,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
                  associated_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict', 'outputs.CloudletsPolicyActivationTimeouts']]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -314,7 +314,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
             network: pulumi.Input[Optional[_builtins.str]] = None,
             policy_id: pulumi.Input[Optional[_builtins.int]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict', 'outputs.CloudletsPolicyActivationTimeouts']]] = None,
             version: pulumi.Input[Optional[_builtins.int]] = None) -> 'CloudletsPolicyActivation':
         """
         Get an existing CloudletsPolicyActivation resource's state with the given name, id, and optional extra
@@ -328,7 +328,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] network: The network you want to activate the policy version on (options are Staging and Production)
         :param pulumi.Input[_builtins.int] policy_id: ID of the Cloudlets policy you want to activate
         :param pulumi.Input[_builtins.str] status: Activation status for this Cloudlets policy
-        :param pulumi.Input[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict', 'outputs.CloudletsPolicyActivationTimeouts']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] version: Cloudlets policy version you want to activate
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

@@ -379,7 +379,7 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
                  notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  secure_network: pulumi.Input[Optional[_builtins.str]] = None,
                  subject: pulumi.Input[Optional[_builtins.str]] = None,
-                 versions: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict']]]]] = None,
+                 versions: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict', 'outputs.MtlskeystoreClientCertificateThirdPartyVersions']]]]] = None,
                  __props__=None):
         """
         Create a MtlskeystoreClientCertificateThirdParty resource with the given unique name, props, and options.
@@ -394,7 +394,7 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: The email addresses to notify for client certificate-related issues. Must have at least one email address.
         :param pulumi.Input[_builtins.str] secure_network: Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
         :param pulumi.Input[_builtins.str] subject: The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
-        :param pulumi.Input[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict']]]] versions: A map of client certificate versions as a value and user defined identifier as a key. Each version represents a specific iteration of the client certificate.
+        :param pulumi.Input[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict', 'outputs.MtlskeystoreClientCertificateThirdPartyVersions']]]] versions: A map of client certificate versions as a value and user defined identifier as a key. Each version represents a specific iteration of the client certificate.
         """
         ...
     @overload
@@ -428,7 +428,7 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
                  notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  secure_network: pulumi.Input[Optional[_builtins.str]] = None,
                  subject: pulumi.Input[Optional[_builtins.str]] = None,
-                 versions: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict']]]]] = None,
+                 versions: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict', 'outputs.MtlskeystoreClientCertificateThirdPartyVersions']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -485,7 +485,7 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
             notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             secure_network: pulumi.Input[Optional[_builtins.str]] = None,
             subject: pulumi.Input[Optional[_builtins.str]] = None,
-            versions: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict']]]]] = None) -> 'MtlskeystoreClientCertificateThirdParty':
+            versions: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict', 'outputs.MtlskeystoreClientCertificateThirdPartyVersions']]]]] = None) -> 'MtlskeystoreClientCertificateThirdParty':
         """
         Get an existing MtlskeystoreClientCertificateThirdParty resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -504,7 +504,7 @@ class MtlskeystoreClientCertificateThirdParty(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_emails: The email addresses to notify for client certificate-related issues. Must have at least one email address.
         :param pulumi.Input[_builtins.str] secure_network: Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
         :param pulumi.Input[_builtins.str] subject: The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
-        :param pulumi.Input[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict']]]] versions: A map of client certificate versions as a value and user defined identifier as a key. Each version represents a specific iteration of the client certificate.
+        :param pulumi.Input[Mapping[str, pulumi.Input[Union['MtlskeystoreClientCertificateThirdPartyVersionsArgs', 'MtlskeystoreClientCertificateThirdPartyVersionsArgsDict', 'outputs.MtlskeystoreClientCertificateThirdPartyVersions']]]] versions: A map of client certificate versions as a value and user defined identifier as a key. Each version represents a specific iteration of the client certificate.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

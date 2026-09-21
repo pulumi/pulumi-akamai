@@ -98,7 +98,7 @@ class AwaitableGetPropertyIncludesResult(GetPropertyIncludesResult):
 
 def get_property_includes(contract_id: Optional[_builtins.str] = None,
                           group_id: Optional[_builtins.str] = None,
-                          parent_property: Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict']] = None,
+                          parent_property: Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict', 'outputs.GetPropertyIncludesParentPropertyResult']] = None,
                           type: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyIncludesResult:
     """
@@ -121,7 +121,7 @@ def get_property_includes(contract_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_property_includes_output(contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                 parent_property: pulumi.Input[Optional[Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict']]]] = None,
+                                 parent_property: pulumi.Input[Optional[Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict', 'outputs.GetPropertyIncludesParentPropertyResult']]]] = None,
                                  type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyIncludesResult]:
     """

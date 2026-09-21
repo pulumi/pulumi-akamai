@@ -251,7 +251,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
                  edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict', 'outputs.EdgeWorkersActivationTimeouts']]] = None,
                  version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -263,7 +263,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[_builtins.str] network: The network on which the version will be activated
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the activation request
-        :param pulumi.Input[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict', 'outputs.EdgeWorkersActivationTimeouts']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.str] version: The version of EdgeWorker to activate
         """
         ...
@@ -294,7 +294,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
                  edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict', 'outputs.EdgeWorkersActivationTimeouts']]] = None,
                  version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -333,7 +333,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
             edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
             network: pulumi.Input[Optional[_builtins.str]] = None,
             note: pulumi.Input[Optional[_builtins.str]] = None,
-            timeouts: pulumi.Input[Optional[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict']]] = None,
+            timeouts: pulumi.Input[Optional[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict', 'outputs.EdgeWorkersActivationTimeouts']]] = None,
             version: pulumi.Input[Optional[_builtins.str]] = None) -> 'EdgeWorkersActivation':
         """
         Get an existing EdgeWorkersActivation resource's state with the given name, id, and optional extra
@@ -347,7 +347,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[_builtins.str] network: The network on which the version will be activated
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the activation request
-        :param pulumi.Input[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict', 'outputs.EdgeWorkersActivationTimeouts']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.str] version: The version of EdgeWorker to activate
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

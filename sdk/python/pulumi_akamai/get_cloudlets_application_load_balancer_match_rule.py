@@ -69,7 +69,7 @@ class AwaitableGetCloudletsApplicationLoadBalancerMatchRuleResult(GetCloudletsAp
             match_rules=self.match_rules)
 
 
-def get_cloudlets_application_load_balancer_match_rule(match_rules: Optional[Sequence[Union['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs', 'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgsDict']]] = None,
+def get_cloudlets_application_load_balancer_match_rule(match_rules: Optional[Sequence[Union['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs', 'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgsDict', 'outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleResult']]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsApplicationLoadBalancerMatchRuleResult:
     """
     Use this data source to access information about an existing resource.
@@ -83,7 +83,7 @@ def get_cloudlets_application_load_balancer_match_rule(match_rules: Optional[Seq
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         match_rules=pulumi.get(__ret__, 'match_rules'))
-def get_cloudlets_application_load_balancer_match_rule_output(match_rules: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs', 'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgsDict']]]]] = None,
+def get_cloudlets_application_load_balancer_match_rule_output(match_rules: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs', 'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgsDict', 'outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleResult']]]]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsApplicationLoadBalancerMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.

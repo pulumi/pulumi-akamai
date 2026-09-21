@@ -116,10 +116,10 @@ class AwaitableGetPropertyRulesTemplateResult(GetPropertyRulesTemplateResult):
 
 def get_property_rules_template(follow_links: Optional[_builtins.bool] = None,
                                 template_file: Optional[_builtins.str] = None,
-                                templates: Optional[Sequence[Union['GetPropertyRulesTemplateTemplateArgs', 'GetPropertyRulesTemplateTemplateArgsDict']]] = None,
+                                templates: Optional[Sequence[Union['GetPropertyRulesTemplateTemplateArgs', 'GetPropertyRulesTemplateTemplateArgsDict', 'outputs.GetPropertyRulesTemplateTemplateResult']]] = None,
                                 var_definition_file: Optional[_builtins.str] = None,
                                 var_values_file: Optional[_builtins.str] = None,
-                                variables: Optional[Sequence[Union['GetPropertyRulesTemplateVariableArgs', 'GetPropertyRulesTemplateVariableArgsDict']]] = None,
+                                variables: Optional[Sequence[Union['GetPropertyRulesTemplateVariableArgs', 'GetPropertyRulesTemplateVariableArgsDict', 'outputs.GetPropertyRulesTemplateVariableResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesTemplateResult:
     """
     Use this data source to access information about an existing resource.
@@ -145,10 +145,10 @@ def get_property_rules_template(follow_links: Optional[_builtins.bool] = None,
         variables=pulumi.get(__ret__, 'variables'))
 def get_property_rules_template_output(follow_links: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                        template_file: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                       templates: pulumi.Input[Optional[Optional[Sequence[Union['GetPropertyRulesTemplateTemplateArgs', 'GetPropertyRulesTemplateTemplateArgsDict']]]]] = None,
+                                       templates: pulumi.Input[Optional[Optional[Sequence[Union['GetPropertyRulesTemplateTemplateArgs', 'GetPropertyRulesTemplateTemplateArgsDict', 'outputs.GetPropertyRulesTemplateTemplateResult']]]]] = None,
                                        var_definition_file: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        var_values_file: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                       variables: pulumi.Input[Optional[Optional[Sequence[Union['GetPropertyRulesTemplateVariableArgs', 'GetPropertyRulesTemplateVariableArgsDict']]]]] = None,
+                                       variables: pulumi.Input[Optional[Optional[Sequence[Union['GetPropertyRulesTemplateVariableArgs', 'GetPropertyRulesTemplateVariableArgsDict', 'outputs.GetPropertyRulesTemplateVariableResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyRulesTemplateResult]:
     """
     Use this data source to access information about an existing resource.

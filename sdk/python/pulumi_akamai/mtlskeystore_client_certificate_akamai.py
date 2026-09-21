@@ -486,7 +486,7 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
                  revoked_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  secure_network: pulumi.Input[Optional[_builtins.str]] = None,
                  subject: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict', 'outputs.MtlskeystoreClientCertificateAkamaiTimeouts']]] = None,
                  __props__=None):
         """
         Create a MtlskeystoreClientCertificateAkamai resource with the given unique name, props, and options.
@@ -538,7 +538,7 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
                  revoked_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  secure_network: pulumi.Input[Optional[_builtins.str]] = None,
                  subject: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict', 'outputs.MtlskeystoreClientCertificateAkamaiTimeouts']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -602,8 +602,8 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
             revoked_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
             secure_network: pulumi.Input[Optional[_builtins.str]] = None,
             subject: pulumi.Input[Optional[_builtins.str]] = None,
-            timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict']]] = None,
-            versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiVersionArgs', 'MtlskeystoreClientCertificateAkamaiVersionArgsDict']]]]] = None) -> 'MtlskeystoreClientCertificateAkamai':
+            timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict', 'outputs.MtlskeystoreClientCertificateAkamaiTimeouts']]] = None,
+            versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiVersionArgs', 'MtlskeystoreClientCertificateAkamaiVersionArgsDict', 'outputs.MtlskeystoreClientCertificateAkamaiVersion']]]]] = None) -> 'MtlskeystoreClientCertificateAkamai':
         """
         Get an existing MtlskeystoreClientCertificateAkamai resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -626,7 +626,7 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] revoked_versions: A set of client certificate versions that should be revoked.
         :param pulumi.Input[_builtins.str] secure_network: Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
         :param pulumi.Input[_builtins.str] subject: The CA certificate’s key value details. The `CN` attribute is required and included in the subject. When not specified, the subject is constructed in this format: `/C=US/O=Akamai Technologies, Inc./OU={vcd_id} {contract_id} {group_id}/CN={certificate_name}/`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiVersionArgs', 'MtlskeystoreClientCertificateAkamaiVersionArgsDict']]]] versions: A list of client certificate versions. Each version represents a specific iteration of the client certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiVersionArgs', 'MtlskeystoreClientCertificateAkamaiVersionArgsDict', 'outputs.MtlskeystoreClientCertificateAkamaiVersion']]]] versions: A list of client certificate versions. Each version represents a specific iteration of the client certificate.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

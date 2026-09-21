@@ -67,7 +67,7 @@ class AwaitableGetCloudwrapperPropertiesResult(GetCloudwrapperPropertiesResult):
 
 
 def get_cloudwrapper_properties(contract_ids: Optional[Sequence[_builtins.str]] = None,
-                                properties: Optional[Sequence[Union['GetCloudwrapperPropertiesPropertyArgs', 'GetCloudwrapperPropertiesPropertyArgsDict']]] = None,
+                                properties: Optional[Sequence[Union['GetCloudwrapperPropertiesPropertyArgs', 'GetCloudwrapperPropertiesPropertyArgsDict', 'outputs.GetCloudwrapperPropertiesPropertyResult']]] = None,
                                 unused: Optional[_builtins.bool] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudwrapperPropertiesResult:
     """
@@ -85,7 +85,7 @@ def get_cloudwrapper_properties(contract_ids: Optional[Sequence[_builtins.str]] 
         properties=pulumi.get(__ret__, 'properties'),
         unused=pulumi.get(__ret__, 'unused'))
 def get_cloudwrapper_properties_output(contract_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                       properties: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperPropertiesPropertyArgs', 'GetCloudwrapperPropertiesPropertyArgsDict']]]]] = None,
+                                       properties: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudwrapperPropertiesPropertyArgs', 'GetCloudwrapperPropertiesPropertyArgsDict', 'outputs.GetCloudwrapperPropertiesPropertyResult']]]]] = None,
                                        unused: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperPropertiesResult]:
     """

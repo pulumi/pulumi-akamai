@@ -367,7 +367,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
                  certificate_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  certificate_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict', 'outputs.CpsUploadCertificateTimeouts']]] = None,
                  trust_chain_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  trust_chain_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -383,7 +383,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] certificate_ecdsa_pem: ECDSA certificate in pem format to be uploaded
         :param pulumi.Input[_builtins.str] certificate_rsa_pem: RSA certificate in pem format to be uploaded
         :param pulumi.Input[_builtins.int] enrollment_id: The unique identifier of the enrollment
-        :param pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict', 'outputs.CpsUploadCertificateTimeouts']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[_builtins.str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
         :param pulumi.Input[_builtins.bool] wait_for_deployment: Whether to wait for certificate to be deployed
@@ -418,7 +418,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
                  certificate_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  certificate_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict', 'outputs.CpsUploadCertificateTimeouts']]] = None,
                  trust_chain_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  trust_chain_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -459,7 +459,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
             certificate_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
             certificate_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
             enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
-            timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
+            timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict', 'outputs.CpsUploadCertificateTimeouts']]] = None,
             trust_chain_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
             trust_chain_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
             wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None) -> 'CpsUploadCertificate':
@@ -476,7 +476,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] certificate_ecdsa_pem: ECDSA certificate in pem format to be uploaded
         :param pulumi.Input[_builtins.str] certificate_rsa_pem: RSA certificate in pem format to be uploaded
         :param pulumi.Input[_builtins.int] enrollment_id: The unique identifier of the enrollment
-        :param pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict', 'outputs.CpsUploadCertificateTimeouts']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[_builtins.str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
         :param pulumi.Input[_builtins.bool] wait_for_deployment: Whether to wait for certificate to be deployed

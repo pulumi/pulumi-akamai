@@ -236,7 +236,7 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  property_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict', 'outputs.PropertyDomainownershipLateValidationTimeouts']]] = None,
                  validation_method: pulumi.Input[Optional[_builtins.str]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
@@ -281,7 +281,7 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
                  contract_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  property_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict', 'outputs.PropertyDomainownershipLateValidationTimeouts']]] = None,
                  validation_method: pulumi.Input[Optional[_builtins.str]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
@@ -322,7 +322,7 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
             contract_id: pulumi.Input[Optional[_builtins.str]] = None,
             group_id: pulumi.Input[Optional[_builtins.str]] = None,
             property_id: pulumi.Input[Optional[_builtins.str]] = None,
-            timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict']]] = None,
+            timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict', 'outputs.PropertyDomainownershipLateValidationTimeouts']]] = None,
             validation_method: pulumi.Input[Optional[_builtins.str]] = None,
             version: pulumi.Input[Optional[_builtins.int]] = None) -> 'PropertyDomainownershipLateValidation':
         """

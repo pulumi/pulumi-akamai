@@ -298,7 +298,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  enable_botman_siem: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_for_all_policies: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_siem: pulumi.Input[Optional[_builtins.bool]] = None,
-                 exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
+                 exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict', 'outputs.AppSecSiemSettingsExceptions']]] = None,
                  include_ja4_fingerprint_to_siem: pulumi.Input[Optional[_builtins.bool]] = None,
                  security_policy_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  siem_id: pulumi.Input[Optional[_builtins.int]] = None,
@@ -312,7 +312,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
         :param pulumi.Input[_builtins.bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[_builtins.bool] enable_siem: Whether to enable SIEM
-        :param pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']] exceptions: Describes all the protections and actions to be excluded from SIEM events
+        :param pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict', 'outputs.AppSecSiemSettingsExceptions']] exceptions: Describes all the protections and actions to be excluded from SIEM events
         :param pulumi.Input[_builtins.bool] include_ja4_fingerprint_to_siem: Whether JA4 Fingerprint should be included in SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         :param pulumi.Input[_builtins.int] siem_id: Unique identifier of the SIEM settings being modified
@@ -345,7 +345,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  enable_botman_siem: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_for_all_policies: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_siem: pulumi.Input[Optional[_builtins.bool]] = None,
-                 exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
+                 exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict', 'outputs.AppSecSiemSettingsExceptions']]] = None,
                  include_ja4_fingerprint_to_siem: pulumi.Input[Optional[_builtins.bool]] = None,
                  security_policy_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  siem_id: pulumi.Input[Optional[_builtins.int]] = None,
@@ -388,7 +388,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
             enable_botman_siem: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_for_all_policies: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_siem: pulumi.Input[Optional[_builtins.bool]] = None,
-            exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
+            exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict', 'outputs.AppSecSiemSettingsExceptions']]] = None,
             include_ja4_fingerprint_to_siem: pulumi.Input[Optional[_builtins.bool]] = None,
             security_policy_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             siem_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'AppSecSiemSettings':
@@ -403,7 +403,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
         :param pulumi.Input[_builtins.bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[_builtins.bool] enable_siem: Whether to enable SIEM
-        :param pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']] exceptions: Describes all the protections and actions to be excluded from SIEM events
+        :param pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict', 'outputs.AppSecSiemSettingsExceptions']] exceptions: Describes all the protections and actions to be excluded from SIEM events
         :param pulumi.Input[_builtins.bool] include_ja4_fingerprint_to_siem: Whether JA4 Fingerprint should be included in SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         :param pulumi.Input[_builtins.int] siem_id: Unique identifier of the SIEM settings being modified

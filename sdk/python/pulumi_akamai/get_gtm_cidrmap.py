@@ -84,10 +84,10 @@ class AwaitableGetGtmCidrmapResult(GetGtmCidrmapResult):
             map_name=self.map_name)
 
 
-def get_gtm_cidrmap(assignments: Optional[Sequence[Union['GetGtmCidrmapAssignmentArgs', 'GetGtmCidrmapAssignmentArgsDict']]] = None,
-                    default_datacenter: Optional[Union['GetGtmCidrmapDefaultDatacenterArgs', 'GetGtmCidrmapDefaultDatacenterArgsDict']] = None,
+def get_gtm_cidrmap(assignments: Optional[Sequence[Union['GetGtmCidrmapAssignmentArgs', 'GetGtmCidrmapAssignmentArgsDict', 'outputs.GetGtmCidrmapAssignmentResult']]] = None,
+                    default_datacenter: Optional[Union['GetGtmCidrmapDefaultDatacenterArgs', 'GetGtmCidrmapDefaultDatacenterArgsDict', 'outputs.GetGtmCidrmapDefaultDatacenterResult']] = None,
                     domain: Optional[_builtins.str] = None,
-                    links: Optional[Sequence[Union['GetGtmCidrmapLinkArgs', 'GetGtmCidrmapLinkArgsDict']]] = None,
+                    links: Optional[Sequence[Union['GetGtmCidrmapLinkArgs', 'GetGtmCidrmapLinkArgsDict', 'outputs.GetGtmCidrmapLinkResult']]] = None,
                     map_name: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmCidrmapResult:
     """
@@ -108,10 +108,10 @@ def get_gtm_cidrmap(assignments: Optional[Sequence[Union['GetGtmCidrmapAssignmen
         domain=pulumi.get(__ret__, 'domain'),
         links=pulumi.get(__ret__, 'links'),
         map_name=pulumi.get(__ret__, 'map_name'))
-def get_gtm_cidrmap_output(assignments: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmCidrmapAssignmentArgs', 'GetGtmCidrmapAssignmentArgsDict']]]]] = None,
-                           default_datacenter: pulumi.Input[Optional[Optional[Union['GetGtmCidrmapDefaultDatacenterArgs', 'GetGtmCidrmapDefaultDatacenterArgsDict']]]] = None,
+def get_gtm_cidrmap_output(assignments: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmCidrmapAssignmentArgs', 'GetGtmCidrmapAssignmentArgsDict', 'outputs.GetGtmCidrmapAssignmentResult']]]]] = None,
+                           default_datacenter: pulumi.Input[Optional[Optional[Union['GetGtmCidrmapDefaultDatacenterArgs', 'GetGtmCidrmapDefaultDatacenterArgsDict', 'outputs.GetGtmCidrmapDefaultDatacenterResult']]]] = None,
                            domain: pulumi.Input[Optional[_builtins.str]] = None,
-                           links: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmCidrmapLinkArgs', 'GetGtmCidrmapLinkArgsDict']]]]] = None,
+                           links: pulumi.Input[Optional[Optional[Sequence[Union['GetGtmCidrmapLinkArgs', 'GetGtmCidrmapLinkArgsDict', 'outputs.GetGtmCidrmapLinkResult']]]]] = None,
                            map_name: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmCidrmapResult]:
     """

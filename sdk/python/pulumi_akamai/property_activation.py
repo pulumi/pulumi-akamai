@@ -393,12 +393,12 @@ class PropertyActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
-                 compliance_record: pulumi.Input[Optional[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']]] = None,
+                 compliance_record: pulumi.Input[Optional[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict', 'outputs.PropertyActivationComplianceRecord']]] = None,
                  contacts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
                  property_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict', 'outputs.PropertyActivationTimeouts']]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -408,12 +408,12 @@ class PropertyActivation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] activation_id: The ID given to the activation event while it's in progress.
         :param pulumi.Input[_builtins.bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
-        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']] compliance_record: Provides an audit record when activating on a production network.
+        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict', 'outputs.PropertyActivationComplianceRecord']] compliance_record: Provides an audit record when activating on a production network.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] contacts: One or more email addresses to which to send activation status changes.
         :param pulumi.Input[_builtins.str] network: Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the activation request.
         :param pulumi.Input[_builtins.str] property_id: Your property's ID, including the prp_ prefix.
-        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing.
+        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict', 'outputs.PropertyActivationTimeouts']] timeouts: Enables to set timeout for processing.
         :param pulumi.Input[_builtins.int] version: Your property's version number.
         """
         ...
@@ -442,12 +442,12 @@ class PropertyActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
-                 compliance_record: pulumi.Input[Optional[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']]] = None,
+                 compliance_record: pulumi.Input[Optional[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict', 'outputs.PropertyActivationComplianceRecord']]] = None,
                  contacts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  network: pulumi.Input[Optional[_builtins.str]] = None,
                  note: pulumi.Input[Optional[_builtins.str]] = None,
                  property_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict', 'outputs.PropertyActivationTimeouts']]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -491,15 +491,15 @@ class PropertyActivation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             activation_id: pulumi.Input[Optional[_builtins.str]] = None,
             auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
-            compliance_record: pulumi.Input[Optional[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']]] = None,
+            compliance_record: pulumi.Input[Optional[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict', 'outputs.PropertyActivationComplianceRecord']]] = None,
             contacts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             errors: pulumi.Input[Optional[_builtins.str]] = None,
             network: pulumi.Input[Optional[_builtins.str]] = None,
             note: pulumi.Input[Optional[_builtins.str]] = None,
             property_id: pulumi.Input[Optional[_builtins.str]] = None,
-            rule_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict']]]]] = None,
+            rule_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict', 'outputs.PropertyActivationRuleError']]]]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            timeouts: pulumi.Input[Optional[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']]] = None,
+            timeouts: pulumi.Input[Optional[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict', 'outputs.PropertyActivationTimeouts']]] = None,
             version: pulumi.Input[Optional[_builtins.int]] = None,
             warnings: pulumi.Input[Optional[_builtins.str]] = None) -> 'PropertyActivation':
         """
@@ -511,15 +511,15 @@ class PropertyActivation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] activation_id: The ID given to the activation event while it's in progress.
         :param pulumi.Input[_builtins.bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
-        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']] compliance_record: Provides an audit record when activating on a production network.
+        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict', 'outputs.PropertyActivationComplianceRecord']] compliance_record: Provides an audit record when activating on a production network.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] contacts: One or more email addresses to which to send activation status changes.
         :param pulumi.Input[_builtins.str] errors: Errors returned during activation.
         :param pulumi.Input[_builtins.str] network: Akamai network in which to activate your property, either STAGING or PRODUCTION. The default is STAGING.
         :param pulumi.Input[_builtins.str] note: Assigns a log message to the activation request.
         :param pulumi.Input[_builtins.str] property_id: Your property's ID, including the prp_ prefix.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict']]]] rule_errors: Any errors returned by the API about rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict', 'outputs.PropertyActivationRuleError']]]] rule_errors: Any errors returned by the API about rules.
         :param pulumi.Input[_builtins.str] status: The property version's activation status on the given network.
-        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing.
+        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict', 'outputs.PropertyActivationTimeouts']] timeouts: Enables to set timeout for processing.
         :param pulumi.Input[_builtins.int] version: Your property's version number.
         :param pulumi.Input[_builtins.str] warnings: Warnings returned during activation.
         """

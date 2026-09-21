@@ -350,7 +350,7 @@ class EdgeHostName(pulumi.CustomResource):
                  ip_behavior: pulumi.Input[Optional[_builtins.str]] = None,
                  product_id: pulumi.Input[Optional[_builtins.str]] = None,
                  status_update_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeouts: pulumi.Input[Optional[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict', 'outputs.EdgeHostNameTimeouts']]] = None,
                  ttl: pulumi.Input[Optional[_builtins.int]] = None,
                  use_cases: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -361,7 +361,7 @@ class EdgeHostName(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] https_service_binding: Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
-        :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict', 'outputs.EdgeHostNameTimeouts']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
         :param pulumi.Input[_builtins.str] use_cases: A JSON encoded list of use cases
         """
@@ -397,7 +397,7 @@ class EdgeHostName(pulumi.CustomResource):
                  ip_behavior: pulumi.Input[Optional[_builtins.str]] = None,
                  product_id: pulumi.Input[Optional[_builtins.str]] = None,
                  status_update_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeouts: pulumi.Input[Optional[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict', 'outputs.EdgeHostNameTimeouts']]] = None,
                  ttl: pulumi.Input[Optional[_builtins.int]] = None,
                  use_cases: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -448,7 +448,7 @@ class EdgeHostName(pulumi.CustomResource):
             ip_behavior: pulumi.Input[Optional[_builtins.str]] = None,
             product_id: pulumi.Input[Optional[_builtins.str]] = None,
             status_update_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            timeouts: pulumi.Input[Optional[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']]] = None,
+            timeouts: pulumi.Input[Optional[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict', 'outputs.EdgeHostNameTimeouts']]] = None,
             ttl: pulumi.Input[Optional[_builtins.int]] = None,
             use_cases: pulumi.Input[Optional[_builtins.str]] = None) -> 'EdgeHostName':
         """
@@ -460,7 +460,7 @@ class EdgeHostName(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] https_service_binding: Specifies the HTTPS service binding. Allowed values: H2, H3, H2_AND_H3.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
-        :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict', 'outputs.EdgeHostNameTimeouts']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[_builtins.int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default value for product is used.
         :param pulumi.Input[_builtins.str] use_cases: A JSON encoded list of use cases
         """
