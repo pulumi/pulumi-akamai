@@ -406,27 +406,708 @@ export interface CloudAccessKeyTimeouts {
     update?: string;
 }
 
-export interface CloudcertificatesCertificateSubject {
+export interface CloudcertificatesActivationProduction {
     /**
-     * Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
+     * The time the activation request was created.
      */
-    commonName?: string;
+    activationCreatedTime: string;
     /**
-     * Two-letter ISO 3166 country code.
+     * Unique identifier of the activation request.
      */
-    country?: string;
+    activationId: number;
     /**
-     * City or locality name.
+     * The time the activation request was last modified.
      */
-    locality?: string;
+    activationModifiedTime: string;
     /**
-     * Legal name of the organization.
+     * The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
      */
-    organization?: string;
+    activationStatus: string;
     /**
-     * Full name of the state or province.
+     * The type of the activation operation. Always `PROMOTE` for this resource.
      */
-    state?: string;
+    activationType: string;
+    /**
+     * The user who created the activation request.
+     */
+    createdBy: string;
+    /**
+     * Error type information when the activation failed, or null otherwise.
+     */
+    errorTypes: string;
+    /**
+     * Unique identifier of the generation actually tracked as active on the PRODUCTION network.
+     */
+    generationId: number;
+    /**
+     * The number of hostnames still in progress for this activation, or null if not yet known.
+     */
+    inProgressHostnameCount: number;
+    /**
+     * The user who last modified the activation request.
+     */
+    modifiedBy: string;
+    /**
+     * The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+     */
+    preEmptedBy: number;
+    /**
+     * The total number of hostnames being deployed as part of this activation, or null if not yet known.
+     */
+    totalHostnameCount: number;
+}
+
+export interface CloudcertificatesActivationStaging {
+    /**
+     * The time the activation request was created.
+     */
+    activationCreatedTime: string;
+    /**
+     * Unique identifier of the activation request.
+     */
+    activationId: number;
+    /**
+     * The time the activation request was last modified.
+     */
+    activationModifiedTime: string;
+    /**
+     * The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+     */
+    activationStatus: string;
+    /**
+     * The type of the activation operation. Always `PROMOTE` for this resource.
+     */
+    activationType: string;
+    /**
+     * The user who created the activation request.
+     */
+    createdBy: string;
+    /**
+     * Error type information when the activation failed, or null otherwise.
+     */
+    errorTypes: string;
+    /**
+     * Unique identifier of the generation actually tracked as active on the STAGING network.
+     */
+    generationId: number;
+    /**
+     * The number of hostnames still in progress for this activation, or null if not yet known.
+     */
+    inProgressHostnameCount: number;
+    /**
+     * The user who last modified the activation request.
+     */
+    modifiedBy: string;
+    /**
+     * The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+     */
+    preEmptedBy: number;
+    /**
+     * The total number of hostnames being deployed as part of this activation, or null if not yet known.
+     */
+    totalHostnameCount: number;
+}
+
+export interface CloudcertificatesActivationTimeouts {
+    /**
+     * Optional configurable timeout for waiting for a newly created activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+     */
+    create?: string;
+    /**
+     * Optional configurable timeout for waiting for a network's changed activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+     */
+    update?: string;
+}
+
+export interface CloudcertificatesLineageCurrentProduction {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms: {[key: string]: outputs.CloudcertificatesLineageCurrentProductionAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of this generation.
+     */
+    generationStatus: string;
+}
+
+export interface CloudcertificatesLineageCurrentProductionAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface CloudcertificatesLineageCurrentStaging {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms: {[key: string]: outputs.CloudcertificatesLineageCurrentStagingAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of this generation.
+     */
+    generationStatus: string;
+}
+
+export interface CloudcertificatesLineageCurrentStagingAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface CloudcertificatesLineageHead {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms: {[key: string]: outputs.CloudcertificatesLineageHeadAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of this generation.
+     */
+    generationStatus: string;
+}
+
+export interface CloudcertificatesLineageHeadAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface CloudcertificatesLineagePreviousProduction {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms: {[key: string]: outputs.CloudcertificatesLineagePreviousProductionAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of this generation.
+     */
+    generationStatus: string;
+}
+
+export interface CloudcertificatesLineagePreviousProductionAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface CloudcertificatesLineageSigningTarget {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms: {[key: string]: outputs.CloudcertificatesLineageSigningTargetAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of this generation.
+     */
+    generationStatus: string;
+}
+
+export interface CloudcertificatesLineageSigningTargetAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface CloudcertificatesLineageSubject {
+    /**
+     * Common name (CN).
+     */
+    commonName: string;
+    /**
+     * Two-letter ISO 3166 country code (C).
+     */
+    country: string;
+    /**
+     * Locality or city name (L).
+     */
+    locality: string;
+    /**
+     * Organization (O).
+     */
+    organization: string;
+    /**
+     * Organizational unit (OU).
+     */
+    organizationalUnit: string;
+    /**
+     * State or province name (ST).
+     */
+    state: string;
+}
+
+export interface CloudcertificatesUploadAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate to upload for this key type.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * Optional PEM-encoded trust chain to upload alongside the signed certificate.
+     */
+    trustChainPem?: string;
+}
+
+export interface CloudcertificatesUploadTimeouts {
+    /**
+     * Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+     */
+    create?: string;
+    /**
+     * Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+     */
+    update?: string;
 }
 
 export interface CloudletsApplicationLoadBalancerActivationTimeouts {
@@ -3090,191 +3771,1395 @@ export interface GetCloudaccessKeysAccessKeyNetworkConfiguration {
     securityNetwork: string;
 }
 
-export interface GetCloudcertificatesCertificateBinding {
+export interface GetCloudcertificatesActivationsActivation {
     /**
-     * Unique identifier for the third-party certificate.
+     * The time the activation request was created.
      */
-    certificateId: string;
+    activationCreatedTime: string;
     /**
-     * Hostname on the Akamai CDN the certificate applies to.
+     * The unique identifier of the activation request.
      */
-    hostname: string;
+    activationId: number;
     /**
-     * The deployment network, either STAGING or PRODUCTION, on which the certificate is active for a property version.
+     * The time the activation request was last modified.
      */
-    network: string;
+    activationModifiedTime: string;
     /**
-     * Resource type this binding applies to. Currently, only CDN_HOSTNAME is available.
+     * The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
      */
-    resourceType: string;
-}
-
-export interface GetCloudcertificatesCertificateSubject {
+    activationStatus: string;
     /**
-     * Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
+     * The type of the activation operation: `PROMOTE`, `ROLLBACK`, or `REPLACE_STAGING`.
      */
-    commonName: string;
+    activationType: string;
     /**
-     * Two-letter ISO 3166 country code.
-     */
-    country: string;
-    /**
-     * City or locality name.
-     */
-    locality: string;
-    /**
-     * Legal name of the organization.
-     */
-    organization: string;
-    /**
-     * Full name of the state or province.
-     */
-    state: string;
-}
-
-export interface GetCloudcertificatesCertificatesCertificate {
-    /**
-     * The account identifier associated with the certificate.
-     */
-    accountId: string;
-    /**
-     * The unique identifier for the certificate.
-     */
-    certificateId: string;
-    /**
-     * The name of the certificate.
-     */
-    certificateName: string;
-    /**
-     * The status of the certificate.
-     */
-    certificateStatus: string;
-    /**
-     * The type of the certificate.
-     */
-    certificateType: string;
-    /**
-     * The contract identifier associated with the certificate.
-     */
-    contractId: string;
-    /**
-     * The user who created the certificate.
+     * The user who created the activation request.
      */
     createdBy: string;
     /**
-     * The date when the certificate was created.
+     * Error type information when the activation failed, or null otherwise.
      */
-    createdDate: string;
+    errorTypes: string;
     /**
-     * The expiration date of the CSR.
+     * The unique identifier of the generation being activated.
      */
-    csrExpirationDate: string;
+    generationId: number;
     /**
-     * PEM-encoded certificate signing request (CSR) generated by Akamai for your selected key type.
+     * The number of hostnames still in progress for this activation, or null if not yet known.
      */
-    csrPem: string;
+    inProgressHostnameCount: number;
     /**
-     * The geographic network class of the certificate.
+     * The unique identifier of the certificate lineage associated with the activation.
      */
-    geoClass: string;
+    lineageId: number;
     /**
-     * Size of the key used in the certificate signing request (CSR) in bits.
-     */
-    keySize: string;
-    /**
-     * The key type of the algorithm used in the certificate signing request (CSR).
-     */
-    keyType: string;
-    /**
-     * The user who last modified the certificate.
+     * The user who last modified the activation request.
      */
     modifiedBy: string;
     /**
-     * The date when the certificate was last modified.
+     * The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
      */
-    modifiedDate: string;
+    preEmptedBy: number;
     /**
-     * The list of SAN (Subject Alternative Name) domains included in the certificate.
+     * The target network for the generation activation: `STAGING` or `PRODUCTION`.
      */
-    sans: string[];
+    targetEnvironment: string;
     /**
-     * The secure network associated with the certificate.
+     * The total number of hostnames being deployed as part of this activation, or null if not yet known.
      */
-    secureNetwork: string;
+    totalHostnameCount: number;
+}
+
+export interface GetCloudcertificatesActivityActivity {
     /**
-     * The issuer of the signed certificate.
+     * The unique identifier of the activity event.
+     */
+    activityId: number;
+    /**
+     * The user or system that triggered the activity event.
+     */
+    createdBy: string;
+    /**
+     * The time the activity event was recorded in UTC.
+     */
+    createdTime: string;
+    /**
+     * The type of operation recorded by the activity event.
+     */
+    eventType: string;
+    /**
+     * The generation identifier associated with the activity event, or null for lineage-level events.
+     */
+    generationId: number;
+    /**
+     * The unique identifier of the certificate lineage associated with the activity event.
+     */
+    lineageId: number;
+    /**
+     * The target network associated with the activity event, or null if not applicable.
+     */
+    network: string;
+    /**
+     * The execution result of the activity event, or null if not applicable.
+     */
+    outcome: string;
+}
+
+export interface GetCloudcertificatesArchivedGenerationsGeneration {
+    /**
+     * Per key-type certificate details for this generation. Sparse details are returned by default; complete details are returned when includeAlgorithms is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesArchivedGenerationsGenerationAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime: string;
+    /**
+     * The unique identifier of the archived generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Null if never modified.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * The status of the archived generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesArchivedGenerationsGenerationAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
      */
     signedCertificateIssuer: string;
     /**
-     * The date after which the signed certificate is no longer valid.
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
      */
     signedCertificateNotValidAfterDate: string;
     /**
-     * The date before which the signed certificate is not valid.
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
      */
     signedCertificateNotValidBeforeDate: string;
     /**
-     * PEM-encoded signed certificate you uploaded for your selected key type.
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
      */
     signedCertificatePem: string;
     /**
-     * Signed certificate serial number in hex format.
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
      */
     signedCertificateSerialNumber: string;
     /**
-     * The SHA256 fingerprint of the signed certificate.
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
      */
     signedCertificateSha256Fingerprint: string;
     /**
-     * Subject fields as defined in X.509 certificates (RFC 5280).
-     */
-    subject: outputs.GetCloudcertificatesCertificatesCertificateSubject;
-    /**
-     * The trust chain PEM content uploaded by end user.
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
      */
     trustChainPem: string;
 }
 
-export interface GetCloudcertificatesCertificatesCertificateSubject {
+export interface GetCloudcertificatesBindingsBinding {
     /**
-     * Fully qualified domain name (FQDN) or other name associated with the subject.
+     * Whether the binding is currently active.
+     */
+    active: boolean;
+    /**
+     * The bound hostname.
+     */
+    hostname: string;
+    /**
+     * The networks to which the hostname is bound, e.g., `STAGING`, `PRODUCTION`, or both.
+     */
+    networks: string[];
+}
+
+export interface GetCloudcertificatesGenerationAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineageCurrentProduction {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineageCurrentProductionAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineageCurrentProductionAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineageCurrentStaging {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineageCurrentStagingAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineageCurrentStagingAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineageHead {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineageHeadAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineageHeadAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineagePreviousProduction {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineagePreviousProductionAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineagePreviousProductionAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineageSigningTarget {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineageSigningTargetAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineageSigningTargetAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineageSubject {
+    /**
+     * Common name (CN). Null if not provided.
      */
     commonName: string;
     /**
-     * Two-letter ISO 3166 country code.
+     * Two-letter ISO 3166 country code (C). Null if not provided.
      */
     country: string;
     /**
-     * City or locality name.
+     * Locality or city name (L). Null if not provided.
      */
     locality: string;
     /**
-     * Legal name of the organization.
+     * Organization (O). Null if not provided.
      */
     organization: string;
     /**
-     * Full name of the state or province.
+     * Organizational unit (OU). Null if not provided.
+     */
+    organizationalUnit: string;
+    /**
+     * State or province name (ST). Null if not provided.
      */
     state: string;
 }
 
-export interface GetCloudcertificatesHostnameBindingsBinding {
+export interface GetCloudcertificatesLineagesLineage {
     /**
-     * Unique identifier for the third-party certificate.
+     * Account identifier associated with the contract.
      */
-    certificateId: string;
+    accountId: string;
     /**
-     * Hostname on the Akamai CDN the certificate applies to.
+     * Contract identifier under which the lineage was created.
      */
-    hostname: string;
+    contractId: string;
     /**
-     * The deployment network, either 'STAGING' or 'PRODUCTION', on which the certificate is active for a property version.
+     * Generation currently deployed to the production network. Null when no current production generation exists. Populated only when expandGenerations is true.
      */
-    network: string;
+    currentProduction: outputs.GetCloudcertificatesLineagesLineageCurrentProduction;
     /**
-     * Resource type this binding applies to. Currently, only 'CDN_HOSTNAME' is available.
+     * Generation currently deployed to the staging network. Null when no current staging generation exists. Populated only when expandGenerations is true.
      */
-    resourceType: string;
+    currentStaging: outputs.GetCloudcertificatesLineagesLineageCurrentStaging;
+    /**
+     * Geographic class of the certificate.
+     */
+    geoClass: string;
+    /**
+     * Unique identifier of the group.
+     */
+    groupId: number;
+    /**
+     * Head generation of the lineage. Null when no head generation exists. Populated only when expandGenerations is true.
+     */
+    head: outputs.GetCloudcertificatesLineagesLineageHead;
+    /**
+     * Key specifications declared for the lineage, mapping keyType (e.g. RSA or ECDSA) to keySize (e.g. 2048 or P-256).
+     */
+    keySpecs: {[key: string]: string};
+    /**
+     * Username of the person who created the lineage.
+     */
+    lineageCreatedBy: string;
+    /**
+     * Time the lineage was created, in RFC3339 format.
+     */
+    lineageCreatedTime: string;
+    /**
+     * Unique identifier of the lineage.
+     */
+    lineageId: number;
+    /**
+     * Username of the person who last modified the lineage.
+     */
+    lineageModifiedBy: string;
+    /**
+     * Time the lineage was last modified, in RFC3339 format.
+     */
+    lineageModifiedTime: string;
+    /**
+     * Name of the lineage.
+     */
+    lineageName: string;
+    /**
+     * Type of the lineage, e.g. MULTIPLE_GENERATION or SINGLE_GENERATION.
+     */
+    lineageType: string;
+    /**
+     * Generation previously deployed to production (rollback candidate). Null when no previous production generation exists. Populated only when expandGenerations is true.
+     */
+    previousProduction: outputs.GetCloudcertificatesLineagesLineagePreviousProduction;
+    /**
+     * Subject Alternative Names (SANs) for the certificate.
+     */
+    sans: string[];
+    /**
+     * Secure network type, e.g. ENHANCED_TLS or STANDARD_TLS.
+     */
+    secureNetwork: string;
+    /**
+     * Derived convenience field, not a distinct API concept: the generation whose CSR currently needs to be signed and uploaded - the lineage's head generation if one exists, otherwise its current production generation (e.g. while completing a MULTIPLE_STACK lineage's second algorithm). It is null if neither exists or if expandGenerations is false.
+     */
+    signingTarget: outputs.GetCloudcertificatesLineagesLineageSigningTarget;
+    /**
+     * Stack mode of the lineage, e.g. SINGLE_STACK or MULTIPLE_STACK.
+     */
+    stackMode: string;
+    /**
+     * X.509 subject fields of the certificate. All fields are null if no subject was provided when the lineage was created.
+     */
+    subject: outputs.GetCloudcertificatesLineagesLineageSubject;
+}
+
+export interface GetCloudcertificatesLineagesLineageCurrentProduction {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineagesLineageCurrentStaging {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineagesLineageHead {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineagesLineageHeadAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineagesLineageHeadAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineagesLineagePreviousProduction {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineagesLineageSigningTarget {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+     */
+    algorithms: {[key: string]: outputs.GetCloudcertificatesLineagesLineageSigningTargetAlgorithms};
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+     */
+    firstPromotedToProductionTime: string;
+    /**
+     * Username of the person who created this generation. Populated only when expandGenerations is true.
+     */
+    generationCreatedBy: string;
+    /**
+     * Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+     */
+    generationCreatedTime: string;
+    /**
+     * Unique identifier of the generation.
+     */
+    generationId: number;
+    /**
+     * Username of the person who last modified this generation. Populated only when expandGenerations is true.
+     */
+    generationModifiedBy: string;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+     */
+    generationModifiedTime: string;
+    /**
+     * Status of the generation.
+     */
+    generationStatus: string;
+}
+
+export interface GetCloudcertificatesLineagesLineageSigningTargetAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy: string;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime: string;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId: number;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy: string;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime: string;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus: string;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate: string;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem: string;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer: string;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate: string;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate: string;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem: string;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber: string;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint: string;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem: string;
+}
+
+export interface GetCloudcertificatesLineagesLineageSubject {
+    /**
+     * Common name (CN). Null if not provided.
+     */
+    commonName: string;
+    /**
+     * Two-letter ISO 3166 country code (C). Null if not provided.
+     */
+    country: string;
+    /**
+     * Locality or city name (L). Null if not provided.
+     */
+    locality: string;
+    /**
+     * Organization (O). Null if not provided.
+     */
+    organization: string;
+    /**
+     * Organizational unit (OU). Null if not provided.
+     */
+    organizationalUnit: string;
+    /**
+     * State or province name (ST). Null if not provided.
+     */
+    state: string;
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRule {
@@ -11274,7 +13159,19 @@ export interface GetPropertyHostnamesDiffHostname {
 
 export interface GetPropertyHostnamesHostname {
     /**
+     * The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate bound to the hostname.
+     */
+    ccmCertId: string;
+    /**
+     * The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+     */
+    ccmCertLink: string;
+    /**
      * CCM certificate deployment status for RSA and ECDSA certificates.
+     */
+    ccmCertStatus: outputs.GetPropertyHostnamesHostnameCcmCertStatus[];
+    /**
+     * The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname are listed by key type and network.
      */
     ccmCertStatuses: outputs.GetPropertyHostnamesHostnameCcmCertStatus[];
     /**
@@ -11452,21 +13349,17 @@ export interface GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01
 
 export interface GetPropertyHostnamesHostnameCcmCertStatus {
     /**
-     * Status of the ECDSA certificate on production network.
+     * The key algorithm type of the certificate, either `RSA` or `ECDSA`.
      */
-    ecdsaProductionStatus: string;
+    keyType: string;
     /**
-     * Status of the ECDSA certificate on staging network.
+     * The network the status applies to, either `STAGING` or `PRODUCTION`.
      */
-    ecdsaStagingStatus: string;
+    network: string;
     /**
-     * Status of the RSA certificate on production network.
+     * The deployment status of the certificate on the given network.
      */
-    rsaProductionStatus: string;
-    /**
-     * Status of the RSA certificate on staging network.
-     */
-    rsaStagingStatus: string;
+    status: string;
 }
 
 export interface GetPropertyHostnamesHostnameCcmCertificate {
@@ -12953,11 +14846,27 @@ export interface PropertyDomainownershipValidationTimeouts {
 
 export interface PropertyHostname {
     /**
+     * The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+     */
+    ccmCertId?: string;
+    /**
+     * The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+     */
+    ccmCertLink: string;
+    /**
      * Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     *
+     * @deprecated Will be replaced by ccm_cert_statuses.
+     */
+    ccmCertStatus: outputs.PropertyHostnameCcmCertStatus[];
+    /**
+     * The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
      */
     ccmCertStatuses: outputs.PropertyHostnameCcmCertStatus[];
     /**
      * Certificate identifiers and links for the CCM-managed certificates.
+     *
+     * @deprecated Use ccmCertId instead.
      */
     ccmCertificates?: outputs.PropertyHostnameCcmCertificates;
     certProvisioningType: string;
@@ -12993,21 +14902,17 @@ export interface PropertyHostnameBucketHostnames {
 
 export interface PropertyHostnameCcmCertStatus {
     /**
-     * Status of the ECDSA certificate on production network.
+     * The key algorithm type of the certificate, either `RSA` or `ECDSA`.
      */
-    ecdsaProductionStatus: string;
+    keyType: string;
     /**
-     * Status of the ECDSA certificate on staging network.
+     * The network the status applies to, either `STAGING` or `PRODUCTION`.
      */
-    ecdsaStagingStatus: string;
+    network: string;
     /**
-     * Status of the RSA certificate on production network.
+     * The deployment status of the certificate on the given network.
      */
-    rsaProductionStatus: string;
-    /**
-     * Status of the RSA certificate on staging network.
-     */
-    rsaStagingStatus: string;
+    status: string;
 }
 
 export interface PropertyHostnameCcmCertificates {

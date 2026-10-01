@@ -18,7 +18,22 @@ import java.util.Objects;
 @CustomType
 public final class GetPropertyHostnamesHostname {
     /**
+     * @return The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate bound to the hostname.
+     * 
+     */
+    private String ccmCertId;
+    /**
+     * @return The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+     * 
+     */
+    private String ccmCertLink;
+    /**
      * @return CCM certificate deployment status for RSA and ECDSA certificates.
+     * 
+     */
+    private List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatus;
+    /**
+     * @return The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname are listed by key type and network.
      * 
      */
     private List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatuses;
@@ -71,7 +86,28 @@ public final class GetPropertyHostnamesHostname {
 
     private GetPropertyHostnamesHostname() {}
     /**
+     * @return The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate bound to the hostname.
+     * 
+     */
+    public String ccmCertId() {
+        return this.ccmCertId;
+    }
+    /**
+     * @return The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+     * 
+     */
+    public String ccmCertLink() {
+        return this.ccmCertLink;
+    }
+    /**
      * @return CCM certificate deployment status for RSA and ECDSA certificates.
+     * 
+     */
+    public List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatus() {
+        return this.ccmCertStatus;
+    }
+    /**
+     * @return The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname are listed by key type and network.
      * 
      */
     public List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatuses() {
@@ -153,6 +189,9 @@ public final class GetPropertyHostnamesHostname {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String ccmCertId;
+        private String ccmCertLink;
+        private List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatus;
         private List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatuses;
         private List<GetPropertyHostnamesHostnameCcmCertificate> ccmCertificates;
         private String certProvisioningType;
@@ -167,6 +206,9 @@ public final class GetPropertyHostnamesHostname {
         public Builder() {}
         public Builder(GetPropertyHostnamesHostname defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.ccmCertId = defaults.ccmCertId;
+    	      this.ccmCertLink = defaults.ccmCertLink;
+    	      this.ccmCertStatus = defaults.ccmCertStatus;
     	      this.ccmCertStatuses = defaults.ccmCertStatuses;
     	      this.ccmCertificates = defaults.ccmCertificates;
     	      this.certProvisioningType = defaults.certProvisioningType;
@@ -180,6 +222,33 @@ public final class GetPropertyHostnamesHostname {
     	      this.tlsConfigurations = defaults.tlsConfigurations;
         }
 
+        @CustomType.Setter
+        public Builder ccmCertId(String ccmCertId) {
+            if (ccmCertId == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostname", "ccmCertId");
+            }
+            this.ccmCertId = ccmCertId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ccmCertLink(String ccmCertLink) {
+            if (ccmCertLink == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostname", "ccmCertLink");
+            }
+            this.ccmCertLink = ccmCertLink;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ccmCertStatus(List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatus) {
+            if (ccmCertStatus == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostname", "ccmCertStatus");
+            }
+            this.ccmCertStatus = ccmCertStatus;
+            return this;
+        }
+        public Builder ccmCertStatus(GetPropertyHostnamesHostnameCcmCertStatus... ccmCertStatus) {
+            return ccmCertStatus(List.of(ccmCertStatus));
+        }
         @CustomType.Setter
         public Builder ccmCertStatuses(List<GetPropertyHostnamesHostnameCcmCertStatus> ccmCertStatuses) {
             if (ccmCertStatuses == null) {
@@ -288,6 +357,9 @@ public final class GetPropertyHostnamesHostname {
         }
         public GetPropertyHostnamesHostname build() {
             final var _resultValue = new GetPropertyHostnamesHostname();
+            _resultValue.ccmCertId = ccmCertId;
+            _resultValue.ccmCertLink = ccmCertLink;
+            _resultValue.ccmCertStatus = ccmCertStatus;
             _resultValue.ccmCertStatuses = ccmCertStatuses;
             _resultValue.ccmCertificates = ccmCertificates;
             _resultValue.certProvisioningType = certProvisioningType;

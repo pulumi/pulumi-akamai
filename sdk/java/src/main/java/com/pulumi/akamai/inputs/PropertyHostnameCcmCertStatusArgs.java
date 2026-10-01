@@ -16,72 +16,56 @@ public final class PropertyHostnameCcmCertStatusArgs extends com.pulumi.resource
     public static final PropertyHostnameCcmCertStatusArgs Empty = new PropertyHostnameCcmCertStatusArgs();
 
     /**
-     * Status of the ECDSA certificate on production network.
+     * The key algorithm type of the certificate, either `RSA` or `ECDSA`.
      * 
      */
-    @Import(name="ecdsaProductionStatus")
-    private @Nullable Output<String> ecdsaProductionStatus;
+    @Import(name="keyType")
+    private @Nullable Output<String> keyType;
 
     /**
-     * @return Status of the ECDSA certificate on production network.
+     * @return The key algorithm type of the certificate, either `RSA` or `ECDSA`.
      * 
      */
-    public Optional<Output<String>> ecdsaProductionStatus() {
-        return Optional.ofNullable(this.ecdsaProductionStatus);
+    public Optional<Output<String>> keyType() {
+        return Optional.ofNullable(this.keyType);
     }
 
     /**
-     * Status of the ECDSA certificate on staging network.
+     * The network the status applies to, either `STAGING` or `PRODUCTION`.
      * 
      */
-    @Import(name="ecdsaStagingStatus")
-    private @Nullable Output<String> ecdsaStagingStatus;
+    @Import(name="network")
+    private @Nullable Output<String> network;
 
     /**
-     * @return Status of the ECDSA certificate on staging network.
+     * @return The network the status applies to, either `STAGING` or `PRODUCTION`.
      * 
      */
-    public Optional<Output<String>> ecdsaStagingStatus() {
-        return Optional.ofNullable(this.ecdsaStagingStatus);
+    public Optional<Output<String>> network() {
+        return Optional.ofNullable(this.network);
     }
 
     /**
-     * Status of the RSA certificate on production network.
+     * The deployment status of the certificate on the given network.
      * 
      */
-    @Import(name="rsaProductionStatus")
-    private @Nullable Output<String> rsaProductionStatus;
+    @Import(name="status")
+    private @Nullable Output<String> status;
 
     /**
-     * @return Status of the RSA certificate on production network.
+     * @return The deployment status of the certificate on the given network.
      * 
      */
-    public Optional<Output<String>> rsaProductionStatus() {
-        return Optional.ofNullable(this.rsaProductionStatus);
-    }
-
-    /**
-     * Status of the RSA certificate on staging network.
-     * 
-     */
-    @Import(name="rsaStagingStatus")
-    private @Nullable Output<String> rsaStagingStatus;
-
-    /**
-     * @return Status of the RSA certificate on staging network.
-     * 
-     */
-    public Optional<Output<String>> rsaStagingStatus() {
-        return Optional.ofNullable(this.rsaStagingStatus);
+    public Optional<Output<String>> status() {
+        return Optional.ofNullable(this.status);
     }
 
     private PropertyHostnameCcmCertStatusArgs() {}
 
     private PropertyHostnameCcmCertStatusArgs(PropertyHostnameCcmCertStatusArgs $) {
-        this.ecdsaProductionStatus = $.ecdsaProductionStatus;
-        this.ecdsaStagingStatus = $.ecdsaStagingStatus;
-        this.rsaProductionStatus = $.rsaProductionStatus;
-        this.rsaStagingStatus = $.rsaStagingStatus;
+        this.keyType = $.keyType;
+        this.network = $.network;
+        this.status = $.status;
     }
 
     public static Builder builder() {
@@ -103,87 +87,66 @@ public final class PropertyHostnameCcmCertStatusArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ecdsaProductionStatus Status of the ECDSA certificate on production network.
+         * @param keyType The key algorithm type of the certificate, either `RSA` or `ECDSA`.
          * 
          * @return builder
          * 
          */
-        public Builder ecdsaProductionStatus(@Nullable Output<String> ecdsaProductionStatus) {
-            $.ecdsaProductionStatus = ecdsaProductionStatus;
+        public Builder keyType(@Nullable Output<String> keyType) {
+            $.keyType = keyType;
             return this;
         }
 
         /**
-         * @param ecdsaProductionStatus Status of the ECDSA certificate on production network.
+         * @param keyType The key algorithm type of the certificate, either `RSA` or `ECDSA`.
          * 
          * @return builder
          * 
          */
-        public Builder ecdsaProductionStatus(String ecdsaProductionStatus) {
-            return ecdsaProductionStatus(Output.of(ecdsaProductionStatus));
+        public Builder keyType(String keyType) {
+            return keyType(Output.of(keyType));
         }
 
         /**
-         * @param ecdsaStagingStatus Status of the ECDSA certificate on staging network.
+         * @param network The network the status applies to, either `STAGING` or `PRODUCTION`.
          * 
          * @return builder
          * 
          */
-        public Builder ecdsaStagingStatus(@Nullable Output<String> ecdsaStagingStatus) {
-            $.ecdsaStagingStatus = ecdsaStagingStatus;
+        public Builder network(@Nullable Output<String> network) {
+            $.network = network;
             return this;
         }
 
         /**
-         * @param ecdsaStagingStatus Status of the ECDSA certificate on staging network.
+         * @param network The network the status applies to, either `STAGING` or `PRODUCTION`.
          * 
          * @return builder
          * 
          */
-        public Builder ecdsaStagingStatus(String ecdsaStagingStatus) {
-            return ecdsaStagingStatus(Output.of(ecdsaStagingStatus));
+        public Builder network(String network) {
+            return network(Output.of(network));
         }
 
         /**
-         * @param rsaProductionStatus Status of the RSA certificate on production network.
+         * @param status The deployment status of the certificate on the given network.
          * 
          * @return builder
          * 
          */
-        public Builder rsaProductionStatus(@Nullable Output<String> rsaProductionStatus) {
-            $.rsaProductionStatus = rsaProductionStatus;
+        public Builder status(@Nullable Output<String> status) {
+            $.status = status;
             return this;
         }
 
         /**
-         * @param rsaProductionStatus Status of the RSA certificate on production network.
+         * @param status The deployment status of the certificate on the given network.
          * 
          * @return builder
          * 
          */
-        public Builder rsaProductionStatus(String rsaProductionStatus) {
-            return rsaProductionStatus(Output.of(rsaProductionStatus));
-        }
-
-        /**
-         * @param rsaStagingStatus Status of the RSA certificate on staging network.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder rsaStagingStatus(@Nullable Output<String> rsaStagingStatus) {
-            $.rsaStagingStatus = rsaStagingStatus;
-            return this;
-        }
-
-        /**
-         * @param rsaStagingStatus Status of the RSA certificate on staging network.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder rsaStagingStatus(String rsaStagingStatus) {
-            return rsaStagingStatus(Output.of(rsaStagingStatus));
+        public Builder status(String status) {
+            return status(Output.of(status));
         }
 
         public PropertyHostnameCcmCertStatusArgs build() {

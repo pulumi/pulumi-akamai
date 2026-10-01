@@ -217,10 +217,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ClientlistList{}
 	case "akamai:index/cloudAccessKey:CloudAccessKey":
 		r = &CloudAccessKey{}
-	case "akamai:index/cloudcertificatesCertificate:CloudcertificatesCertificate":
-		r = &CloudcertificatesCertificate{}
-	case "akamai:index/cloudcertificatesUploadSignedCertificate:CloudcertificatesUploadSignedCertificate":
-		r = &CloudcertificatesUploadSignedCertificate{}
+	case "akamai:index/cloudcertificatesActivation:CloudcertificatesActivation":
+		r = &CloudcertificatesActivation{}
+	case "akamai:index/cloudcertificatesLineage:CloudcertificatesLineage":
+		r = &CloudcertificatesLineage{}
+	case "akamai:index/cloudcertificatesUpload:CloudcertificatesUpload":
+		r = &CloudcertificatesUpload{}
 	case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
 		r = &CloudletsApplicationLoadBalancer{}
 	case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -854,12 +856,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
-		"index/cloudcertificatesCertificate",
+		"index/cloudcertificatesActivation",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
-		"index/cloudcertificatesUploadSignedCertificate",
+		"index/cloudcertificatesLineage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cloudcertificatesUpload",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

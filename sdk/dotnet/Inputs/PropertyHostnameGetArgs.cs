@@ -12,11 +12,36 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class PropertyHostnameGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `CcmCertificates`.
+        /// </summary>
+        [Input("ccmCertId")]
+        public Input<string>? CcmCertId { get; set; }
+
+        /// <summary>
+        /// The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+        /// </summary>
+        [Input("ccmCertLink")]
+        public Input<string>? CcmCertLink { get; set; }
+
+        [Input("ccmCertStatus")]
+        private InputList<Inputs.PropertyHostnameCcmCertStatusGetArgs>? _ccmCertStatus;
+
+        /// <summary>
+        /// Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        /// </summary>
+        [Obsolete(@"Will be replaced by ccm_cert_statuses.")]
+        public InputList<Inputs.PropertyHostnameCcmCertStatusGetArgs> CcmCertStatus
+        {
+            get => _ccmCertStatus ?? (_ccmCertStatus = new InputList<Inputs.PropertyHostnameCcmCertStatusGetArgs>());
+            set => _ccmCertStatus = value;
+        }
+
         [Input("ccmCertStatuses")]
         private InputList<Inputs.PropertyHostnameCcmCertStatusGetArgs>? _ccmCertStatuses;
 
         /// <summary>
-        /// Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        /// The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
         /// </summary>
         public InputList<Inputs.PropertyHostnameCcmCertStatusGetArgs> CcmCertStatuses
         {

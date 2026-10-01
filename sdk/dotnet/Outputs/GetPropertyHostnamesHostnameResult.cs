@@ -14,7 +14,19 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertyHostnamesHostnameResult
     {
         /// <summary>
+        /// The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate bound to the hostname.
+        /// </summary>
+        public readonly string CcmCertId;
+        /// <summary>
+        /// The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+        /// </summary>
+        public readonly string CcmCertLink;
+        /// <summary>
         /// CCM certificate deployment status for RSA and ECDSA certificates.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameCcmCertStatusResult> CcmCertStatus;
+        /// <summary>
+        /// The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname are listed by key type and network.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertyHostnamesHostnameCcmCertStatusResult> CcmCertStatuses;
         /// <summary>
@@ -57,6 +69,12 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private GetPropertyHostnamesHostnameResult(
+            string ccmCertId,
+
+            string ccmCertLink,
+
+            ImmutableArray<Outputs.GetPropertyHostnamesHostnameCcmCertStatusResult> ccmCertStatus,
+
             ImmutableArray<Outputs.GetPropertyHostnamesHostnameCcmCertStatusResult> ccmCertStatuses,
 
             ImmutableArray<Outputs.GetPropertyHostnamesHostnameCcmCertificateResult> ccmCertificates,
@@ -79,6 +97,9 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<Outputs.GetPropertyHostnamesHostnameTlsConfigurationResult> tlsConfigurations)
         {
+            CcmCertId = ccmCertId;
+            CcmCertLink = ccmCertLink;
+            CcmCertStatus = ccmCertStatus;
             CcmCertStatuses = ccmCertStatuses;
             CcmCertificates = ccmCertificates;
             CertProvisioningType = certProvisioningType;

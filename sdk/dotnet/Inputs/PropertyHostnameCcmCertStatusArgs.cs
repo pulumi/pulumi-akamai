@@ -13,28 +13,22 @@ namespace Pulumi.Akamai.Inputs
     public sealed class PropertyHostnameCcmCertStatusArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Status of the ECDSA certificate on production network.
+        /// The key algorithm type of the certificate, either `RSA` or `ECDSA`.
         /// </summary>
-        [Input("ecdsaProductionStatus")]
-        public Input<string>? EcdsaProductionStatus { get; set; }
+        [Input("keyType")]
+        public Input<string>? KeyType { get; set; }
 
         /// <summary>
-        /// Status of the ECDSA certificate on staging network.
+        /// The network the status applies to, either `STAGING` or `PRODUCTION`.
         /// </summary>
-        [Input("ecdsaStagingStatus")]
-        public Input<string>? EcdsaStagingStatus { get; set; }
+        [Input("network")]
+        public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// Status of the RSA certificate on production network.
+        /// The deployment status of the certificate on the given network.
         /// </summary>
-        [Input("rsaProductionStatus")]
-        public Input<string>? RsaProductionStatus { get; set; }
-
-        /// <summary>
-        /// Status of the RSA certificate on staging network.
-        /// </summary>
-        [Input("rsaStagingStatus")]
-        public Input<string>? RsaStagingStatus { get; set; }
+        [Input("status")]
+        public Input<string>? Status { get; set; }
 
         public PropertyHostnameCcmCertStatusArgs()
         {
