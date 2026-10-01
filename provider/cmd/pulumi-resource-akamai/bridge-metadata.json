@@ -669,8 +669,12 @@
                 "current": "akamai:index/cloudAccessKey:CloudAccessKey",
                 "majorVersion": 12
             },
-            "akamai_cloudcertificates_certificate": {
-                "current": "akamai:index/cloudcertificatesCertificate:CloudcertificatesCertificate",
+            "akamai_cloudcertificates_activation": {
+                "current": "akamai:index/cloudcertificatesActivation:CloudcertificatesActivation",
+                "majorVersion": 12
+            },
+            "akamai_cloudcertificates_lineage": {
+                "current": "akamai:index/cloudcertificatesLineage:CloudcertificatesLineage",
                 "majorVersion": 12,
                 "fields": {
                     "sans": {
@@ -678,8 +682,8 @@
                     }
                 }
             },
-            "akamai_cloudcertificates_upload_signed_certificate": {
-                "current": "akamai:index/cloudcertificatesUploadSignedCertificate:CloudcertificatesUploadSignedCertificate",
+            "akamai_cloudcertificates_upload": {
+                "current": "akamai:index/cloudcertificatesUpload:CloudcertificatesUpload",
                 "majorVersion": 12
             },
             "akamai_cloudlets_application_load_balancer": {
@@ -1801,6 +1805,9 @@
                                 "ccm_cert_status": {
                                     "maxItemsOne": false
                                 },
+                                "ccm_cert_statuses": {
+                                    "maxItemsOne": false
+                                },
                                 "ccm_certificates": {
                                     "maxItemsOne": true
                                 },
@@ -2815,26 +2822,77 @@
                     }
                 }
             },
-            "akamai_cloudcertificates_certificate": {
-                "current": "akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate",
+            "akamai_cloudcertificates_activation_status": {
+                "current": "akamai:index/getCloudcertificatesActivationStatus:getCloudcertificatesActivationStatus",
+                "majorVersion": 12
+            },
+            "akamai_cloudcertificates_activations": {
+                "current": "akamai:index/getCloudcertificatesActivations:getCloudcertificatesActivations",
+                "majorVersion": 12,
+                "fields": {
+                    "activations": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_cloudcertificates_activity": {
+                "current": "akamai:index/getCloudcertificatesActivity:getCloudcertificatesActivity",
+                "majorVersion": 12,
+                "fields": {
+                    "activities": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_cloudcertificates_archived_generations": {
+                "current": "akamai:index/getCloudcertificatesArchivedGenerations:getCloudcertificatesArchivedGenerations",
+                "majorVersion": 12,
+                "fields": {
+                    "generations": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_cloudcertificates_bindings": {
+                "current": "akamai:index/getCloudcertificatesBindings:getCloudcertificatesBindings",
                 "majorVersion": 12,
                 "fields": {
                     "bindings": {
-                        "maxItemsOne": false
-                    },
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "networks": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cloudcertificates_generation": {
+                "current": "akamai:index/getCloudcertificatesGeneration:getCloudcertificatesGeneration",
+                "majorVersion": 12
+            },
+            "akamai_cloudcertificates_lineage": {
+                "current": "akamai:index/getCloudcertificatesLineage:getCloudcertificatesLineage",
+                "majorVersion": 12,
+                "fields": {
                     "sans": {
                         "maxItemsOne": false
                     }
                 }
             },
-            "akamai_cloudcertificates_certificates": {
-                "current": "akamai:index/getCloudcertificatesCertificates:getCloudcertificatesCertificates",
+            "akamai_cloudcertificates_lineages": {
+                "current": "akamai:index/getCloudcertificatesLineages:getCloudcertificatesLineages",
                 "majorVersion": 12,
                 "fields": {
-                    "certificate_status": {
+                    "generation_status": {
                         "maxItemsOne": false
                     },
-                    "certificates": {
+                    "lineage_ids": {
+                        "maxItemsOne": false
+                    },
+                    "lineages": {
                         "maxItemsOne": false,
                         "elem": {
                             "fields": {
@@ -2843,15 +2901,6 @@
                                 }
                             }
                         }
-                    }
-                }
-            },
-            "akamai_cloudcertificates_hostname_bindings": {
-                "current": "akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings",
-                "majorVersion": 12,
-                "fields": {
-                    "bindings": {
-                        "maxItemsOne": false
                     }
                 }
             },
@@ -38006,6 +38055,9 @@
                                 "ccm_cert_status": {
                                     "maxItemsOne": false
                                 },
+                                "ccm_cert_statuses": {
+                                    "maxItemsOne": false
+                                },
                                 "ccm_certificates": {
                                     "maxItemsOne": false
                                 },
@@ -38373,12 +38425,17 @@
                 }
             },
             "akamai_cloudaccess_key": {},
-            "akamai_cloudcertificates_certificate": {
+            "akamai_cloudcertificates_activation": {
                 "computeID": {
                     "kind": "missing"
                 }
             },
-            "akamai_cloudcertificates_upload_signed_certificate": {
+            "akamai_cloudcertificates_lineage": {
+                "computeID": {
+                    "kind": "missing"
+                }
+            },
+            "akamai_cloudcertificates_upload": {
                 "computeID": {
                     "kind": "missing"
                 }
@@ -38532,8 +38589,9 @@
             "akamai:index/clientlistActivation:ClientlistActivation": 0,
             "akamai:index/clientlistList:ClientlistList": 0,
             "akamai:index/cloudAccessKey:CloudAccessKey": 1,
-            "akamai:index/cloudcertificatesCertificate:CloudcertificatesCertificate": 1,
-            "akamai:index/cloudcertificatesUploadSignedCertificate:CloudcertificatesUploadSignedCertificate": 1,
+            "akamai:index/cloudcertificatesActivation:CloudcertificatesActivation": 1,
+            "akamai:index/cloudcertificatesLineage:CloudcertificatesLineage": 1,
+            "akamai:index/cloudcertificatesUpload:CloudcertificatesUpload": 1,
             "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer": 0,
             "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation": 0,
             "akamai:index/cloudletsPolicy:CloudletsPolicy": 0,
@@ -38704,9 +38762,14 @@
             "akamai:index/getCloudaccessKeyProperties:getCloudaccessKeyProperties": 1,
             "akamai:index/getCloudaccessKeyVersions:getCloudaccessKeyVersions": 1,
             "akamai:index/getCloudaccessKeys:getCloudaccessKeys": 1,
-            "akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate": 1,
-            "akamai:index/getCloudcertificatesCertificates:getCloudcertificatesCertificates": 1,
-            "akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings": 1,
+            "akamai:index/getCloudcertificatesActivationStatus:getCloudcertificatesActivationStatus": 1,
+            "akamai:index/getCloudcertificatesActivations:getCloudcertificatesActivations": 1,
+            "akamai:index/getCloudcertificatesActivity:getCloudcertificatesActivity": 1,
+            "akamai:index/getCloudcertificatesArchivedGenerations:getCloudcertificatesArchivedGenerations": 1,
+            "akamai:index/getCloudcertificatesBindings:getCloudcertificatesBindings": 1,
+            "akamai:index/getCloudcertificatesGeneration:getCloudcertificatesGeneration": 1,
+            "akamai:index/getCloudcertificatesLineage:getCloudcertificatesLineage": 1,
+            "akamai:index/getCloudcertificatesLineages:getCloudcertificatesLineages": 1,
             "akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule": 0,
             "akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer": 0,
             "akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule": 0,
